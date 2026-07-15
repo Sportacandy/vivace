@@ -14,11 +14,14 @@
 #include <QStringList>
 
 namespace {
-// PLACEHOLDER endpoints. The .invalid TLD (RFC 6761) never resolves, so an
-// automatic check simply fails silently until these are pointed at the real
-// version-info document and release page.
-constexpr auto kDefaultCheckUrl = "https://updates.vivace-player.invalid/latest.json";
-constexpr auto kDefaultDownloadUrl = "https://vivace-player.invalid/download";
+// The version manifest is a small JSON file committed to the repo (see
+// updates.json at the repo root) and fetched straight from GitHub's raw-file
+// CDN; bump its "version" field whenever a new release is tagged. The
+// download URL always redirects to whichever release is newest, so it never
+// needs updating.
+constexpr auto kDefaultCheckUrl =
+        "https://raw.githubusercontent.com/Sportacandy/vivace/main/updates.json";
+constexpr auto kDefaultDownloadUrl = "https://github.com/Sportacandy/vivace/releases/latest";
 
 // Which platform key to read from the version document.
 #if defined(Q_OS_WIN)
