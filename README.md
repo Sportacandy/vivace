@@ -7,11 +7,22 @@ No external player processes, no widgets.
 Vivace is a ground-up successor to the ideas of SMPlayer, without the mplayer/mpv
 process backends.
 
+![Vivace screenshot](screenshot.png)
+
 ## Status
 
-**Phase 1 — playback spike.** A minimal player that validates the Qt Multimedia FFmpeg
-backend against real media: open / seek / pause, playback speed with pitch compensation,
-audio & subtitle track switching, fullscreen. Not yet a daily-driver.
+**v0.1.0 — first public release.** Vivace is a working daily-driver media player:
+playback (mkv/mp4/mpeg2, seeking, embedded + external subtitles, audio/subtitle
+track switching, speed control with pitch compensation), a full SMPlayer-style
+menu layout (Open/Play/Video/Audio/Subtitles/Browse/View/Options/Help),
+playlists, favorites, bookmarks, a video equalizer, screenshots, unencrypted
+DVD playback (including interactive menus), optional YouTube playback/download
+(via yt-dlp), OpenSubtitles search, casting to a phone/tablet over an embedded
+web server, OS media integration (Windows SMTC, Linux MPRIS2), credentials
+stored securely via the OS keychain, and Windows/Linux/macOS installers. UI
+translated into 24 languages, partial coverage elsewhere.
+
+Prebuilt Windows installers: see [Releases](https://github.com/Sportacandy/vivace/releases).
 
 ## Requirements
 
