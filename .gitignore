@@ -1,0 +1,23 @@
+build*/
+CMakeLists.txt.user*
+*.autosave
+.qtcreator/
+compile_commands.json
+.cache/
+media
+
+# Packaging: staged deploy output, generated license, and built installers.
+packaging/*/packages/*/data/
+packaging/*/packages/*/meta/license.txt
+# Brand icons staged into the config dir by build_installer.ps1 (source: icons/).
+packaging/windows/config/vivace.ico
+packaging/windows/config/vivace.png
+VivaceSetup*
+
+# Re-include the packaging build scripts: a global core.excludesFile pattern
+# ("*build*") otherwise ignores them for their "build" filename.
+!packaging/*/build_installer.*
+
+# Compiled translation catalogs — CMake generates these into build/ from the
+# .ts sources; the copies lrelease may drop next to the .ts are artifacts.
+translations/*.qm

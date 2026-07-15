@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Qt Installer Framework configuration for the Windows installer.
+     Keep <Version> in sync with project(vivace VERSION ...) in CMakeLists.txt.
+     The brand icons (vivace.ico / vivace.png) are copied into this config
+     directory by build_installer.ps1 and referenced below by base name. -->
+<Installer>
+    <!-- <Name> is the product name shown in Windows "Installed apps" /
+         Programs and Features. Use the descriptive name so unfamiliar users
+         recognise it as a media player. The app's own window title stays
+         "Vivace" (set in the app), and the install directory stays Vivace. -->
+    <Name>Vivace Media Player</Name>
+    <Version>0.1.0</Version>
+    <Title>Vivace Media Player</Title>
+    <Publisher>Vivace</Publisher>
+    <ProductUrl>https://github.com/vivace-player</ProductUrl>
+    <!-- Start Menu folder/entry shown under "All apps" > V. -->
+    <StartMenuDir>Vivace Media Player</StartMenuDir>
+    <!-- Installer/maintenancetool executable icon (.ico) and the wizard window
+         title-bar icon (.png); base names, resolved from this config dir. -->
+    <InstallerApplicationIcon>vivace</InstallerApplicationIcon>
+    <InstallerWindowIcon>vivace</InstallerWindowIcon>
+    <!-- Default to a user-writable location so the installer starts WITHOUT
+         admin rights. IFW auto-elevates (UAC) at startup when the default
+         target needs admin (e.g. @ApplicationsDir@ = Program Files); defaulting
+         to the user's home avoids that, and IFW then prompts for elevation only
+         if the user browses to a protected directory like Program Files. -->
+    <TargetDir>@HomeDir@/Vivace</TargetDir>
+    <!-- Reinstall over an existing installation by uninstalling the previous one
+         first (via its maintenancetool). See control.qs. -->
+    <ControlScript>control.qs</ControlScript>
+    <AllowSpaceInPath>true</AllowSpaceInPath>
+    <!-- The Qt CMake deploy uses the standard layout: the exe + Qt DLLs live in
+         bin/, with plugins/ qml/ translations/ alongside. -->
+    <RunProgram>@TargetDir@/bin/vivace.exe</RunProgram>
+    <RunProgramDescription>Launch Vivace</RunProgramDescription>
+</Installer>

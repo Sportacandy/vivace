@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Qt Installer Framework configuration for the macOS installer.
+     Keep <Version> in sync with project(vivace VERSION ...) in CMakeLists.txt.
+     A .icns can be referenced via <InstallerApplicationIcon> once the brand
+     icon exists. -->
+<Installer>
+    <Name>Vivace</Name>
+    <Version>0.1.0</Version>
+    <Title>Vivace Media Player</Title>
+    <Publisher>Vivace</Publisher>
+    <ProductUrl>https://github.com/vivace-player</ProductUrl>
+    <TargetDir>@ApplicationsDir@/Vivace</TargetDir>
+    <RunProgram>@TargetDir@/vivace.app/Contents/MacOS/vivace</RunProgram>
+    <RunProgramDescription>Launch Vivace</RunProgramDescription>
+</Installer>

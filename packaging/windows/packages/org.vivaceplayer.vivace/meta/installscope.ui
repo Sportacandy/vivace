@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Custom install-scope page inserted before the target-directory page.
+     Lets the user pick a per-machine (all users) or per-user install; the
+     component script (installscript.qs) switches TargetDir and elevates
+     accordingly. The root widget's object name (InstallScopeWidget) must match
+     the name passed to installer.addWizardPage(); IFW exposes the live page as
+     "Dynamic" + that name. -->
+<ui version="4.0">
+ <class>InstallScopeWidget</class>
+ <widget class="QWidget" name="InstallScopeWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>420</width>
+    <height>220</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Installation Scope</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="descriptionLabel">
+     <property name="text">
+      <string>Choose whether to install Vivace for everyone who uses this computer or only for you.</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QRadioButton" name="justMeRadioButton">
+     <property name="text">
+      <string>Install only for me (no administrator rights required)</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QRadioButton" name="allUsersRadioButton">
+     <property name="text">
+      <string>Install for all users of this computer (requires administrator rights)</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <connections/>
+</ui>

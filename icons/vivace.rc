@@ -1,0 +1,4 @@
+/* Windows application icon. Icon ID 1 (lowest) becomes the executable icon
+   shown by Explorer, the taskbar, shortcuts (iconId=0), file-type
+   associations (DefaultIcon "exe",0) and the SMTC "now playing" flyout. */
+1 ICON "vivace.ico"

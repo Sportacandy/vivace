@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package>
+    <DisplayName>Vivace Media Player</DisplayName>
+    <Description>A fast, pure-Qt media player (QML + Qt Multimedia).</Description>
+    <Version>0.1.0</Version>
+    <ReleaseDate>2026-07-11</ReleaseDate>
+    <Default>true</Default>
+    <ForcedInstallation>true</ForcedInstallation>
+    <Licenses>
+        <License name="GNU General Public License v3.0" file="license.txt"/>
+    </Licenses>
+    <Script>installscript.qs</Script>
+</Package>

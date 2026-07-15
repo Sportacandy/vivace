@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Vivace
+GenericName=Media Player
+Comment=A fast, pure-Qt media player
+Exec=vivace %U
+Icon=vivace
+Terminal=false
+Categories=AudioVideo;Player;Video;
+MimeType=video/mp4;video/x-matroska;video/webm;video/mpeg;video/quicktime;video/x-msvideo;audio/mpeg;audio/flac;audio/x-wav;audio/ogg;

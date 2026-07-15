@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Qt Installer Framework configuration for the Linux installer.
+     Keep <Version> in sync with project(vivace VERSION ...) in CMakeLists.txt. -->
+<Installer>
+    <Name>Vivace</Name>
+    <Version>0.1.0</Version>
+    <Title>Vivace Media Player</Title>
+    <Publisher>Vivace</Publisher>
+    <ProductUrl>https://github.com/vivace-player</ProductUrl>
+    <TargetDir>@HomeDir@/Vivace</TargetDir>
+    <!-- Qt CMake deploy uses the standard layout: exe in bin/, Qt libs in lib/,
+         with plugins/ qml/ alongside. -->
+    <RunProgram>@TargetDir@/bin/vivace</RunProgram>
+    <RunProgramDescription>Launch Vivace</RunProgramDescription>
+</Installer>

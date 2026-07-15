@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Consent page shown (only when the target already contains an installation)
+     right before the "Ready to Install" summary. It asks the user to confirm
+     that the existing Vivace will be uninstalled first; Next proceeds (the
+     uninstall then runs on the Ready page, before any files are written), Cancel
+     quits the installer without touching the existing installation. When there
+     is no existing installation the component script auto-skips this page.
+     Root object name (UninstallCommitWidget) must match the addWizardPage name;
+     IFW exposes the live page as "Dynamic" + that name. -->
+<ui version="4.0">
+ <class>UninstallCommitWidget</class>
+ <widget class="QWidget" name="UninstallCommitWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>420</width>
+    <height>220</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Uninstall Existing Version</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="titleLabel">
+     <property name="text">
+      <string>&lt;b&gt;An existing Vivace installation was found&lt;/b&gt;</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="messageLabel">
+     <property name="text">
+      <string>The existing Vivace installation must be uninstalled before this version can be installed.</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <connections/>
+</ui>

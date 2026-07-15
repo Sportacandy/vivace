@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The single installable component (the whole application). license.txt is
+     copied from the repo LICENSE by build_installer.ps1 before packaging. -->
+<Package>
+    <DisplayName>Vivace Media Player</DisplayName>
+    <Description>A fast, pure-Qt media player (QML + Qt Multimedia).</Description>
+    <Version>0.1.0</Version>
+    <ReleaseDate>2026-07-11</ReleaseDate>
+    <Default>true</Default>
+    <ForcedInstallation>true</ForcedInstallation>
+    <Licenses>
+        <License name="GNU General Public License v3.0" file="license.txt"/>
+    </Licenses>
+    <Script>installscript.qs</Script>
+    <!-- Custom pages: install-scope ("all users / just me") and the
+         uninstall-consent page shown when reinstalling (see installscript.qs). -->
+    <UserInterfaces>
+        <UserInterface>installscope.ui</UserInterface>
+        <UserInterface>uninstallcommit.ui</UserInterface>
+    </UserInterfaces>
+</Package>
