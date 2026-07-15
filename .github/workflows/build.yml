@@ -1,0 +1,52 @@
+name: Build
+
+# Fast feedback: configure + build only, no packaging, across all three
+# target platforms. Runs on every push/PR to main; see release.yml for the
+# tag-triggered Windows installer build.
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            qt-arch: win64_msvc2022_64
+          - os: ubuntu-latest
+            qt-arch: gcc_64
+          - os: macos-latest
+            qt-arch: clang_64
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Linux system dependencies
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libgl1-mesa-dev libxkbcommon-dev patchelf
+
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: '6.11.1'
+          arch: ${{ matrix.qt-arch }}
+          modules: 'qtmultimedia qtshadertools'
+
+      - name: Configure (Windows)
+        if: runner.os == 'Windows'
+        run: cmake -B build -G "Visual Studio 17 2022" -A x64 -DCMAKE_PREFIX_PATH="$env:QT_ROOT_DIR"
+
+      - name: Configure (Linux/macOS)
+        if: runner.os != 'Windows'
+        run: cmake -B build -DCMAKE_PREFIX_PATH="$QT_ROOT_DIR"
+
+      - name: Build
+        run: cmake --build build --config Release --parallel
