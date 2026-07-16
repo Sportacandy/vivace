@@ -39,6 +39,12 @@ jobs:
           version: '6.11.1'
           arch: ${{ matrix.qt-arch }}
           modules: 'qtmultimedia qtshadertools'
+          # aqtinstall's last PyPI release (3.3.0) predates Qt 6.11's repository
+          # restructuring (per-toolchain top-level dirs on Windows, modules moved
+          # under an "addons." package namespace) -- see aqtinstall#959, fixed by
+          # aqtinstall PR#1000 (merged, not yet tagged/released to PyPI). Install
+          # aqtinstall from that merge commit until a release picks it up.
+          aqtsource: 'git+https://github.com/miurahr/aqtinstall.git@8c3695d4a4e1ceabf6a74dc6c79681656dc6b74b'
 
       - name: Configure (Windows)
         if: runner.os == 'Windows'
