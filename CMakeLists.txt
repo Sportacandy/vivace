@@ -166,6 +166,10 @@ elseif(UNIX)
     qt_add_dbus_interface(vivace_kwallet_dbus_sources
         "${vivace_qtkeychain_dir}/org.kde.KWallet.xml" kwallet_interface)
     target_sources(vivace PRIVATE ${vivace_kwallet_dbus_sources})
+    # qt_add_dbus_interface() writes kwallet_interface.h into the current
+    # binary dir; keychain_p.h's quoted #include only searches its own source
+    # dir by default, so the binary dir needs to be an explicit include path.
+    target_include_directories(vivace PRIVATE "${CMAKE_CURRENT_BINARY_DIR}")
     find_package(PkgConfig)
     if(PkgConfig_FOUND)
         pkg_check_modules(LIBSECRET libsecret-1)
