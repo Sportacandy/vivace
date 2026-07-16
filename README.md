@@ -7,6 +7,9 @@ No external player processes, no widgets.
 Vivace is a ground-up successor to the ideas of SMPlayer, without the mplayer/mpv
 process backends.
 
+**[Download the latest release](https://github.com/Sportacandy/vivace/releases)**
+— prebuilt Windows installer (Linux/macOS: build from source, see below).
+
 ![Vivace screenshot](screenshot.png)
 
 ## Status
