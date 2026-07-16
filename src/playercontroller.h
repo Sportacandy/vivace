@@ -419,6 +419,11 @@ public:
     Q_INVOKABLE void next();
     Q_INVOKABLE void previous();
     Q_INVOKABLE void togglePlayPause();
+    // Gateway for every legitimate pause request (also used internally by
+    // togglePlayPause()/frameStep()); see the playbackStateChanged handler in
+    // the .cpp for why this matters -- a pause that didn't come through here
+    // is treated as a spurious backend transition and reversed.
+    Q_INVOKABLE void pause();
     Q_INVOKABLE void stop();
     // Stop AND clear the source, releasing the file handle (so the file can be
     // deleted, e.g. from the YouTube cache browser). Returns the URL that was
@@ -553,6 +558,17 @@ private:
     // after install). We remember the paused position and undo such a rewind.
     QMediaPlayer::PlaybackState m_lastPlaybackState = QMediaPlayer::StoppedState;
     qint64 m_resumeGuardPos = -1;
+    // Set right before the only four call sites that ever legitimately pause
+    // the player (pause(), frameStep(), SMTC's Pause button, pause-on-minimize).
+    // A transition to PausedState seen without this flag is the backend
+    // pausing itself spuriously (a race installed builds seem to hit more
+    // than a locally-run dev build) -- auto-resume rather than leave the user
+    // staring at a paused video they never asked to pause.
+    bool m_intentionalPause = false;
+    // Guards the one-time per-file setup in handleMediaStatus()'s LoadedMedia
+    // branch (recents, track restore, resume seek) against a redundant second
+    // LoadedMedia for the same source; reset in the sourceChanged handler.
+    bool m_loadedMediaSetupDone = false;
     // Mirrors player.position but skips the one backward blip the guard undoes,
     // so UI position displays never flash to the start on resume.
     qint64 m_smoothPosition = 0;

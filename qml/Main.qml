@@ -153,7 +153,7 @@ ApplicationWindow {
             return
         if (visibility === Window.Minimized
                 && playerController.player.playbackState === MediaPlayer.PlayingState) {
-            playerController.player.pause()
+            playerController.pause()
             autoPaused = true
         } else if (visibility !== Window.Minimized && autoPaused) {
             autoPaused = false
@@ -1117,18 +1117,30 @@ ApplicationWindow {
             if (!drop.hasUrls)
                 return
             // Capture the dropped URLs as plain strings (the drop event is only
-            // valid during this handler) and defer the actual open to the next
-            // event-loop iteration. Opening media synchronously here would run
-            // setSource()/play() inside Windows' OLE drag-and-drop nested modal
-            // loop, which intermittently makes the media backend fail with
-            // "Media session serious error". openDroppedUrls() then routes a
-            // single item through openMediaUrl (expanding ".url" shortcuts and
-            // YouTube links) and multiple items into a playlist.
+            // valid during this handler) and defer the actual open. Opening
+            // media synchronously here would run setSource()/play() inside
+            // Windows' OLE drag-and-drop nested modal loop, which corrupts the
+            // FFmpeg backend's initialisation -- seen as either "Media session
+            // serious error" or a spurious "Unsupported media, a codec is
+            // missing" depending on timing/codec. A Qt.callLater() defer was
+            // tried first and did NOT fix it: it only queues to the next idle
+            // moment, which can still be *inside* the OLE loop's own nested
+            // message pump. A real Timer delay gives that native loop actual
+            // wall-clock time to finish unwinding before the media backend is
+            // touched.
             var urls = []
             for (var i = 0; i < drop.urls.length; i++)
                 urls.push(drop.urls[i].toString())
-            Qt.callLater(root.openDroppedUrls, urls)
+            dropOpenTimer.pendingUrls = urls
+            dropOpenTimer.restart()
         }
+    }
+
+    Timer {
+        id: dropOpenTimer
+        interval: 150
+        property var pendingUrls: []
+        onTriggered: root.openDroppedUrls(pendingUrls)
     }
 
     FileDialog {
@@ -1327,11 +1339,11 @@ ApplicationWindow {
         }
     }
 
-    // Open URLs captured from a drag-and-drop. Called deferred (Qt.callLater)
+    // Open URLs captured from a drag-and-drop. Called deferred (dropOpenTimer)
     // from DropArea.onDropped so the media backend is not initialised inside
-    // Windows' OLE drag-and-drop nested modal loop — doing so intermittently
-    // fails with "Media session serious error". `urls` is a plain array of
-    // strings (the drop event is not valid past its handler).
+    // Windows' OLE drag-and-drop nested modal loop — doing so corrupts the
+    // FFmpeg backend's init. `urls` is a plain array of strings (the drop
+    // event is not valid past its handler).
     function openDroppedUrls(urls) {
         if (urls.length === 0)
             return

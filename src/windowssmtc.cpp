@@ -130,7 +130,7 @@ void WindowsSmtc::handleButton(int button)
         player->play();
         break;
     case SystemMediaTransportControlsButton::Pause:
-        player->pause();
+        m_controller->pause();
         break;
     case SystemMediaTransportControlsButton::Stop:
         m_controller->stop();

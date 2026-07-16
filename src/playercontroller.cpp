@@ -353,6 +353,19 @@ PlayerController::PlayerController(QObject *parent)
                     if (p > 3000)
                         m_resumeGuardPos = p;
                 }
+                // A pause the backend produced on its own, not through our
+                // pause() gateway (the only place that legitimately sets this
+                // flag), is the same class of asynchronous-pipeline race
+                // documented above for m_resumeGuardPos -- observed shortly
+                // after playback starts, more often in installed/deployed
+                // builds than a locally-run one. Recover instead of leaving
+                // the user staring at a video they never asked to pause.
+                if (state == QMediaPlayer::PausedState && !m_intentionalPause
+                    && m_lastPlaybackState == QMediaPlayer::PlayingState
+                    && !m_dvdDevice && m_menuVts < 0) {
+                    m_player->play();
+                }
+                m_intentionalPause = false;
                 m_lastPlaybackState = state;
             });
 
@@ -360,6 +373,7 @@ PlayerController::PlayerController(QObject *parent)
             this, &PlayerController::mediaInfoChanged);
     // A-B markers and external subtitles are per-file; reset on media change.
     connect(m_player, &QMediaPlayer::sourceChanged, this, [this]() {
+        m_loadedMediaSetupDone = false;
         if (m_abMarkerA >= 0 || m_abMarkerB >= 0) {
             m_abMarkerA = -1;
             m_abMarkerB = -1;
@@ -2307,10 +2321,16 @@ void PlayerController::previous()
         m_player->setPosition(0);
 }
 
+void PlayerController::pause()
+{
+    m_intentionalPause = true;
+    m_player->pause();
+}
+
 void PlayerController::togglePlayPause()
 {
     if (m_player->playbackState() == QMediaPlayer::PlayingState) {
-        m_player->pause();
+        pause();
         return;
     }
 
@@ -2520,7 +2540,7 @@ void PlayerController::frameStep(int frames)
     if (fps <= 0)
         fps = 25.0;
 
-    m_player->pause();
+    pause();
     const qint64 delta = qRound64(1000.0 / fps * frames);
     seekRelative(delta == 0 ? (frames > 0 ? 1 : -1) : delta);
 }
@@ -2547,6 +2567,17 @@ void PlayerController::handleMediaStatus(QMediaPlayer::MediaStatus status)
             return;
         }
 
+        // Qt's FFmpeg backend can emit LoadedMedia a second time for the same
+        // source well after playback has already started (observed only in
+        // installed/deployed builds, not a locally-run one) -- rerunning the
+        // one-time setup below, in particular the resume seek, on an
+        // already-playing pipeline this early froze playback entirely
+        // (position/audio/video all stuck, playbackState still Playing).
+        // Only do this setup once per sourceChanged.
+        if (m_loadedMediaSetupDone)
+            return;
+        m_loadedMediaSetupDone = true;
+
         const QUrl url = m_player->source();
         m_bookmarks->setCurrentKey(url.toString());
         if (m_externalSubs.isEmpty())
@@ -2557,6 +2588,22 @@ void PlayerController::handleMediaStatus(QMediaPlayer::MediaStatus status)
         if (title.isEmpty())
             title = url.fileName();
         m_recents->add(url, title);
+
+        // Track selection (selectPreferredTracks()/restoreTrackSelections(),
+        // via setActiveAudioTrack()/setActiveSubtitleTrack()) and the resume
+        // seek below all reconfigure the player this early, shortly after
+        // load. Doing that while actively playing appears able to wedge the
+        // pipeline in some deployed-build environments (position and
+        // audio/video all freeze, though playbackState keeps reporting
+        // Playing) -- confirmed for the resume seek, and a stored track
+        // selection that actually differs from the default is the likely
+        // reason some files still freeze even once the seek alone is
+        // bracketed. Pause across the whole setup and resume afterward,
+        // mirroring the sequence that reliably un-freezes it manually (press
+        // Pause, then Play).
+        const bool wasPlaying = m_player->playbackState() == QMediaPlayer::PlayingState;
+        if (wasPlaying)
+            pause();
 
         selectPreferredTracks();
         restoreTrackSelections(); // stored per-file choices win over defaults
@@ -2573,6 +2620,9 @@ void PlayerController::handleMediaStatus(QMediaPlayer::MediaStatus status)
             m_player->setPosition(resumePos);
             emit seeked(resumePos);
         }
+
+        if (wasPlaying)
+            m_player->play();
         return;
     }
 
