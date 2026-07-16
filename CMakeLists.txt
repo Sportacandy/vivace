@@ -158,8 +158,13 @@ elseif(UNIX)
         ${vivace_qtkeychain_dir}/plaintextstore_p.h
     )
     target_compile_definitions(vivace PRIVATE KEYCHAIN_DBUS=1)
+    # The generated class name is a CLASSNAME source-file property, not a 4th
+    # positional argument -- qt_add_dbus_interface's versionless wrapper (Qt
+    # 6.11's Qt6DBusMacros.cmake) takes exactly 3 args and FATAL_ERRORs on more.
+    set_source_files_properties("${vivace_qtkeychain_dir}/org.kde.KWallet.xml"
+        PROPERTIES CLASSNAME KWalletInterface)
     qt_add_dbus_interface(vivace_kwallet_dbus_sources
-        "${vivace_qtkeychain_dir}/org.kde.KWallet.xml" kwallet_interface KWalletInterface)
+        "${vivace_qtkeychain_dir}/org.kde.KWallet.xml" kwallet_interface)
     target_sources(vivace PRIVATE ${vivace_kwallet_dbus_sources})
     find_package(PkgConfig)
     if(PkgConfig_FOUND)
@@ -266,6 +271,10 @@ endif()
 # live in a Windows SDK subdirectory that is not on the default include path.
 if(WIN32)
     target_sources(vivace PRIVATE src/windowssmtc.h src/windowssmtc.cpp)
+    # C++/WinRT's generated headers still use <experimental/coroutine>; recent
+    # MSVC STLs (e.g. VS2026's, toolset 18) hard-error on that deprecated
+    # header (STL1011) instead of just warning.
+    target_compile_definitions(vivace PRIVATE _SILENCE_EXPERIMENTAL_COROUTINE_DEPRECATION_WARNINGS)
     if(DEFINED ENV{WindowsSdkDir})
         set(_wsdk "$ENV{WindowsSdkDir}")
     else()
