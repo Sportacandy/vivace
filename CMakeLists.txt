@@ -281,6 +281,42 @@ if(WIN32)
     target_link_libraries(vivace PRIVATE RuntimeObject.lib)
 endif()
 
+# libx264-164.dll: avcodec-60.dll (this custom Qt's FFmpeg build) statically
+# imports it for H.264 *encode* support, even though playback (decode-only)
+# never calls into it -- Windows' loader still resolves a DLL's entire import
+# table before any of its code can run, so this DLL's absence makes
+# avcodec-60.dll -- and therefore ffmpegmediaplugin.dll -- fail to load at
+# all. Qt Multimedia then silently falls back to the Windows Media Foundation
+# backend: HEVC fails outright ("Unsupported media, a codec is missing", MF
+# needs the separate Store extension) and H.264 intermittently hits MF's own
+# "Media session serious error" on some files. Diagnosed 2026-07-16: this DLL
+# lives in the FFmpeg build directory Qt was configured against
+# (C:/opt/ffmpeg-devel/bin) but is NOT copied into Qt's own bin/, so
+# windeployqt's FFmpeg deployment never picks it up. It had only ever loaded
+# by coincidence in QtCreator-launched dev builds because an unrelated, older
+# Qt 6.8.3 kit's bin/ (also on PATH there) happens to ship a same-named copy.
+if(WIN32)
+    set(VIVACE_FFMPEG_BIN_DIR "C:/opt/ffmpeg-devel/bin" CACHE PATH
+        "Directory holding libx264-164.dll (and other private FFmpeg deps not deployed by windeployqt)")
+    find_file(VIVACE_LIBX264_DLL
+        NAMES libx264-164.dll
+        HINTS "${VIVACE_FFMPEG_BIN_DIR}"
+        PATHS "$ENV{FFMPEG_DIR}/bin"
+    )
+    if(VIVACE_LIBX264_DLL)
+        install(FILES "${VIVACE_LIBX264_DLL}" DESTINATION ${CMAKE_INSTALL_BINDIR})
+        add_custom_command(TARGET vivace POST_BUILD
+            COMMAND ${CMAKE_COMMAND} -E copy_if_different
+                    "${VIVACE_LIBX264_DLL}" "$<TARGET_FILE_DIR:vivace>"
+            COMMENT "Copying libx264-164.dll (avcodec's encode-only dependency, absent from Qt's own bin)"
+        )
+    else()
+        message(WARNING "libx264-164.dll not found (looked in VIVACE_FFMPEG_BIN_DIR=${VIVACE_FFMPEG_BIN_DIR}) -- "
+                        "avcodec-60.dll will fail to load and Vivace will silently fall back to the Windows "
+                        "Media Foundation backend. Set VIVACE_FFMPEG_BIN_DIR to the FFmpeg build's bin directory.")
+    endif()
+endif()
+
 install(TARGETS vivace
     BUNDLE DESTINATION .
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
