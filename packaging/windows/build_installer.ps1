@@ -25,11 +25,12 @@
 #>
 param(
     [ValidateSet("NSIS", "IFW")][string]$Installer = "NSIS",
-    [string]$QtDir   = "C:/Qt/6.11.1/msvc2022_64",
-    [string]$NsisDir = "",
-    [string]$IfwDir  = "",
-    [string]$Config  = "Release",
-    [string]$Version = "0.1.0"   # keep in sync with project() VERSION / config.xml
+    [string]$QtDir      = "C:/Qt/6.11.1/msvc2022_64",
+    [string]$NsisDir    = "",
+    [string]$IfwDir     = "",
+    [string]$Config     = "Release",
+    [string]$Version    = "0.1.0",  # keep in sync with project() VERSION / config.xml
+    [string]$Generator  = ""        # e.g. "Visual Studio 17 2022"; empty = let CMake auto-pick
 )
 $ErrorActionPreference = "Stop"
 
@@ -46,7 +47,15 @@ $data  = Join-Path $pkg "data"
 $env:PATH = "$QtDir/bin;$env:PATH"   # let the deploy step find windeployqt
 
 Write-Host "== Configure + build ($Config) =="
-cmake -S $root -B $build -G "Visual Studio 17 2022" -A x64 -DCMAKE_PREFIX_PATH=$QtDir
+# No -G pinned by default: this script runs both on local dev machines (VS2022
+# here) and in CI (windows-latest, VS2026 as of 2026-07) -- hardcoding either
+# version breaks the other. Omitting -G lets CMake auto-pick the newest
+# installed Visual Studio generator; pass -Generator to force a specific one.
+if ($Generator -ne "") {
+    cmake -S $root -B $build -G $Generator -A x64 -DCMAKE_PREFIX_PATH=$QtDir
+} else {
+    cmake -S $root -B $build -A x64 -DCMAKE_PREFIX_PATH=$QtDir
+}
 Assert-LastExit "cmake configure"
 cmake --build $build --config $Config
 Assert-LastExit "cmake build"
