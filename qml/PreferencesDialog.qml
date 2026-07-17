@@ -29,7 +29,7 @@ Window {
     height: 620
     minimumWidth: 560
     minimumHeight: 420
-    color: "#f0f0f0"
+    color: palette.window
 
     // Settings snapshot taken on open / last Apply; Cancel restores it.
     // The pages apply changes instantly, so this is how reverting works.
@@ -198,7 +198,7 @@ Window {
         flags: Qt.Dialog
         width: 460
         height: 520
-        color: "#f0f0f0"
+        color: palette.window
 
         function showText(html) {
             helpText.text = html
