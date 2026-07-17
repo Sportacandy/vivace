@@ -29,7 +29,15 @@ jobs:
           aqtsource: 'git+https://github.com/miurahr/aqtinstall.git@8c3695d4a4e1ceabf6a74dc6c79681656dc6b74b'
 
       - name: Install NSIS
-        run: choco install nsis -y
+        shell: pwsh
+        run: |
+          for ($i = 1; $i -le 3; $i++) {
+            choco install nsis -y
+            if ($LASTEXITCODE -eq 0) { exit 0 }
+            Write-Host "choco install nsis failed (attempt $i), retrying in 30s..."
+            Start-Sleep -Seconds 30
+          }
+          exit 1
 
       - name: Build installer
         shell: pwsh
