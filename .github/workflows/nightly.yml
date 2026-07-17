@@ -1,12 +1,11 @@
-name: Release
+name: Nightly
 
-# Triggered by pushing a version tag (git tag v0.1.1 && git push origin v0.1.1).
-# Builds the NSIS installer and publishes it as a release asset automatically
-# -- going forward this replaces the manual `gh release create` step.
+# Rebuilds a single rolling "nightly" pre-release on every push to main, so
+# users can grab the latest build between version tags. See release.yml for
+# the tag-triggered permanent releases.
 on:
   push:
-    tags:
-      - 'v*'
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -25,6 +24,9 @@ jobs:
           version: '6.11.1'
           arch: 'win64_msvc2022_64'
           modules: 'qtmultimedia qtshadertools'
+          # See build.yml for why this is needed: aqtinstall's last PyPI
+          # release (3.3.0) predates Qt 6.11's repository restructuring.
+          aqtsource: 'git+https://github.com/miurahr/aqtinstall.git@8c3695d4a4e1ceabf6a74dc6c79681656dc6b74b'
 
       - name: Install NSIS
         run: choco install nsis -y
@@ -32,13 +34,26 @@ jobs:
       - name: Build installer
         shell: pwsh
         run: |
-          $version = "${{ github.ref_name }}" -replace '^v', ''
-          packaging/windows/build_installer.ps1 -QtDir "$env:QT_ROOT_DIR" -Version $version
+          $sha = "${{ github.sha }}".Substring(0, 7)
+          packaging/windows/build_installer.ps1 -QtDir "$env:QT_ROOT_DIR" -Version "0.0.0-nightly.$sha"
 
-      - name: Upload installer to release
+      - name: Rename installer
+        shell: pwsh
+        run: Rename-Item VivaceSetup-Release.exe VivaceSetup-Nightly.exe
+
+      - name: Update nightly release
         uses: softprops/action-gh-release@v2
         with:
-          files: VivaceSetup-Release.exe
+          tag_name: nightly
+          name: Nightly build
+          target_commitish: ${{ github.sha }}
+          prerelease: true
+          make_latest: false
+          body: |
+            Automatic build from the latest `main` commit (${{ github.sha }}).
+            May be unstable — prefer a tagged release for daily use.
+          files: VivaceSetup-Nightly.exe
+
   build-and-release-linux:
     needs: build-and-release
     runs-on: ubuntu-latest
@@ -64,9 +79,12 @@ jobs:
           chmod +x packaging/linux/build_installer.sh
           QT_DIR="$QT_ROOT_DIR" packaging/linux/build_installer.sh --tarball
 
-      - name: Upload to release
+      - name: Update nightly release
         uses: softprops/action-gh-release@v2
         with:
+          tag_name: nightly
+          prerelease: true
+          make_latest: false
           files: Vivace-linux-x86_64.tar.gz
 
   build-and-release-macos:
@@ -88,7 +106,10 @@ jobs:
           chmod +x packaging/macos/build_installer.sh
           QT_DIR="$QT_ROOT_DIR" packaging/macos/build_installer.sh --dmg
 
-      - name: Upload to release
+      - name: Update nightly release
         uses: softprops/action-gh-release@v2
         with:
+          tag_name: nightly
+          prerelease: true
+          make_latest: false
           files: Vivace-macos.dmg

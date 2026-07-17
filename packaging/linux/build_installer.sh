@@ -9,13 +9,26 @@
 # to gather the Qt libraries, QML modules and plugins into the standard
 # bin/ + lib/ + plugins/ + qml/ layout with a bundled qt.conf.
 #
+# Two distribution outputs (pick per your needs):
+#   * A Qt Installer Framework installer (default here, for parity with
+#     Windows/macOS) — set IFW_DIR or install IFW via the Qt Maintenance Tool.
+#   * A .tar.gz of the deployed tree — pass --tarball, which skips IFW
+#     entirely (no binarycreator, no config.xml/packages/ involved). This is
+#     the CI-friendly path: IFW has no apt package and building/installing it
+#     is its own undertaking (see the Windows packaging notes on IFW needing
+#     a fully static build) -- a plain tarball is enough for this stage.
+#
 # Prerequisites:
 #   * Qt 6.11.x gcc_64 kit.
 #   * Patchelf (used by the CMake deploy to fix rpaths).
-#   * Qt Installer Framework (binarycreator) via the Qt Maintenance Tool.
+#   * Qt Installer Framework (binarycreator) via the Qt Maintenance Tool --
+#     only needed without --tarball.
 #
 # Env overrides: QT_DIR, IFW_DIR.
 set -euo pipefail
+
+MODE="ifw"
+[ "${1:-}" = "--tarball" ] && MODE="tarball"
 
 QT_DIR="${QT_DIR:-$HOME/Qt/6.11.1/gcc_64}"
 IFW_DIR="${IFW_DIR:-}"
@@ -35,13 +48,21 @@ rm -rf "$data"
 cmake --install "$build" --prefix "$data"
 cp "$root/icons/app_256.png" "$data/vivace.png"      # placeholder until brand icon
 
+if [ "$MODE" = "tarball" ]; then
+    echo "== tar czf =="
+    out="$root/Vivace-linux-x86_64.tar.gz"
+    tar czf "$out" -C "$pkg" --transform 's/^data/vivace/' data
+    echo "Archive: $out"
+    exit 0
+fi
+
 echo "== License =="
 cp "$root/LICENSE" "$pkg/meta/license.txt"
 
 if [ -z "$IFW_DIR" ]; then
     IFW_DIR="$(ls -d "$HOME"/Qt/Tools/QtInstallerFramework/*/bin 2>/dev/null | sort -r | head -1 || true)"
 fi
-[ -n "$IFW_DIR" ] || { echo "Qt Installer Framework not found; set IFW_DIR." >&2; exit 1; }
+[ -n "$IFW_DIR" ] || { echo "Qt Installer Framework not found; set IFW_DIR or use --tarball." >&2; exit 1; }
 
 echo "== binarycreator =="
 out="$root/VivaceSetup-linux"

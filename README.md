@@ -8,7 +8,9 @@ Vivace is a ground-up successor to the ideas of SMPlayer, without the mplayer/mp
 process backends.
 
 **[Download the latest release](https://github.com/Sportacandy/vivace/releases)**
-— prebuilt Windows installer (Linux/macOS: build from source, see below).
+— Windows installer, Linux tarball, and macOS `.dmg`. A rolling
+[nightly build](https://github.com/Sportacandy/vivace/releases/tag/nightly)
+is also published from the tip of `main` between tagged releases.
 
 ![Vivace screenshot](screenshot.png)
 
@@ -25,7 +27,9 @@ web server, OS media integration (Windows SMTC, Linux MPRIS2), credentials
 stored securely via the OS keychain, and Windows/Linux/macOS installers. UI
 translated into 24 languages, partial coverage elsewhere.
 
-Prebuilt Windows installers: see [Releases](https://github.com/Sportacandy/vivace/releases).
+Prebuilt packages: see [Releases](https://github.com/Sportacandy/vivace/releases) —
+a Windows NSIS installer, a Linux `.tar.gz`, and a macOS `.dmg`, plus a
+rolling nightly build from `main`.
 
 ## Requirements
 
@@ -54,13 +58,19 @@ dependency scanning on Linux — there is no `linuxdeployqt` in Qt 6). On
 - **`NSIS`** (default) — `nsis/vivace.nsi` via `makensis`; the primary installer.
 - **`IFW`** — the **Qt Installer Framework** (`binarycreator`).
 
-Linux and macOS use the Qt Installer Framework.
+macOS defaults to the Qt Installer Framework too, or pass `--dmg` for a plain
+`.dmg` (via `macdeployqt`, no IFW needed — this is what CI/releases use).
+Linux defaults to the Qt Installer Framework, or pass `--tarball` for a plain
+`.tar.gz` of the deployed tree (no IFW needed — also what CI/releases use,
+since IFW has no package manager entry and building/installing it is its own
+undertaking; a tarball is enough for this stage).
 
 Prerequisites, in addition to the build requirements above:
 
 - **NSIS** (Windows default) — install from <https://nsis.sourceforge.io>;
   `makensis.exe` is auto-detected under `Program Files\NSIS` (or pass `-NsisDir`).
-- **Qt Installer Framework** — for `-Installer IFW` and for Linux/macOS. Install
+- **Qt Installer Framework** — only needed for `-Installer IFW` / the Linux
+  and macOS default modes (skip it with `--tarball` / `--dmg`). Install
   a prebuilt copy with the Qt Maintenance Tool (*Qt → Developer and Designer
   Tools → Qt Installer Framework*), or build it from source for single-file
   installers — see [`packaging/README.md`](packaging/README.md). It must be a
@@ -79,8 +89,9 @@ packaging\windows\build_installer.ps1 -Installer IFW -QtDir C:/Qt/6.11.1/msvc202
     -IfwDir C:/Qt/Tools/QtInstallerFramework/<ver>/bin
 ```
 ```bash
-# Linux
+# Linux — Qt Installer Framework installer, or a .tar.gz with --tarball
 QT_DIR=~/Qt/6.11.1/gcc_64 packaging/linux/build_installer.sh
+QT_DIR=~/Qt/6.11.1/gcc_64 packaging/linux/build_installer.sh --tarball
 
 # macOS — Qt Installer Framework installer, or a .dmg with --dmg
 QT_DIR=~/Qt/6.11.1/macos packaging/macos/build_installer.sh
@@ -89,8 +100,8 @@ QT_DIR=~/Qt/6.11.1/macos packaging/macos/build_installer.sh --dmg
 
 `-NsisDir`, `-IfwDir` (and `IFW_DIR` on Unix) are auto-detected if omitted. Each
 script configures a Release build, deploys the Qt runtime + QML + plugins +
-FFmpeg into the installer's staging dir, and writes `VivaceSetup-*` (or
-`Vivace-macos.dmg`) to the repo root. See
+FFmpeg into the installer's staging dir, and writes `VivaceSetup-*` /
+`Vivace-linux-x86_64.tar.gz` / `Vivace-macos.dmg` to the repo root. See
 [`packaging/README.md`](packaging/README.md) for the full details and follow-ups.
 
 Keys: `Space` play/pause · `←/→` seek ±5 s · `↑/↓` volume · `M` mute · `F` fullscreen ·

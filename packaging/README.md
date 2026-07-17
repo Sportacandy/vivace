@@ -3,7 +3,11 @@
 Vivace is deployed with **Qt's CMake deployment API**. On **Windows** it is
 packaged with **NSIS** (`makensis`, the primary/default installer, as SMPlayer
 uses) or the **Qt Installer Framework** (`binarycreator`); pick with
-`-Installer NSIS|IFW`. Linux and macOS use the Qt Installer Framework.
+`-Installer NSIS|IFW`. Linux and macOS default to the Qt Installer Framework
+too, or skip it with `--tarball` (Linux, a plain `.tar.gz`) / `--dmg` (macOS,
+via `macdeployqt`) — which is what CI/releases actually use, since IFW has no
+package-manager entry on either platform and building/installing it is its
+own undertaking (see the Windows notes on IFW needing a fully static build).
 
 `CMakeLists.txt` calls `qt_generate_deploy_qml_app_script()` + `install(SCRIPT …)`,
 so `cmake --install` gathers the Qt runtime, QML modules, plugins and FFmpeg for
@@ -34,7 +38,8 @@ and `meta/license.txt` (copied from the repo `LICENSE`).
   macOS).
 - **NSIS** (Windows default) — install from https://nsis.sourceforge.io;
   `makensis.exe` is auto-detected under `Program Files\NSIS` (or pass `-NsisDir`).
-- **Qt Installer Framework** — for `-Installer IFW` (and Linux/macOS). Add it
+- **Qt Installer Framework** — only for `-Installer IFW` / the Linux and macOS
+  default modes (skip it with `--tarball` / `--dmg`). Add it
   with the Qt Maintenance Tool: *Qt → Developer and Designer Tools → Qt Installer
   Framework*. `binarycreator` then lives under `…/Qt/Tools/QtInstallerFramework/<ver>/bin`.
 - Linux only: **patchelf** (the CMake deploy uses it to fix rpaths).
@@ -48,15 +53,17 @@ packaging\windows\build_installer.ps1 -QtDir C:/Qt/6.11.1/msvc2022_64
 packaging\windows\build_installer.ps1 -Installer IFW -QtDir C:/Qt/6.11.1/msvc2022_64
 ```
 ```bash
-# Linux
+# Linux — IFW installer, or a .tar.gz with --tarball
 QT_DIR=~/Qt/6.11.1/gcc_64 packaging/linux/build_installer.sh
+QT_DIR=~/Qt/6.11.1/gcc_64 packaging/linux/build_installer.sh --tarball
 
 # macOS — IFW installer, or a .dmg with --dmg
 QT_DIR=~/Qt/6.11.1/macos packaging/macos/build_installer.sh
 QT_DIR=~/Qt/6.11.1/macos packaging/macos/build_installer.sh --dmg
 ```
 
-Each produces `VivaceSetup-*` (or `Vivace-macos.dmg`) at the repo root.
+Each produces `VivaceSetup-*` / `Vivace-linux-x86_64.tar.gz` / `Vivace-macos.dmg`
+at the repo root.
 
 ## Installed layout
 
