@@ -16,7 +16,9 @@ is also published from the tip of `main` between tagged releases.
 
 ## Status
 
-**v0.1.0 — first public release.** Vivace is a working daily-driver media player:
+**v0.1.1** — fixes a critical Windows issue where AV1 video hung/leaked
+memory instead of playing (see "AV1 support" below). Vivace is a working
+daily-driver media player:
 playback (mkv/mp4/mpeg2, seeking, embedded + external subtitles, audio/subtitle
 track switching, speed control with pitch compensation), a full SMPlayer-style
 menu layout (Open/Play/Video/Audio/Subtitles/Browse/View/Options/Help),

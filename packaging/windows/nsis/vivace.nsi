@@ -24,7 +24,7 @@ Unicode true
 !define UNINST_KEY   "Software\Microsoft\Windows\CurrentVersion\Uninstall\Vivace"
 
 !ifndef VERSION
-  !define VERSION "0.1.0"
+  !define VERSION "0.1.1"
 !endif
 !ifndef DEPLOY
   !define DEPLOY "..\packages\org.vivaceplayer.vivace\data"

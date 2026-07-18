@@ -9,7 +9,7 @@
          recognise it as a media player. The app's own window title stays
          "Vivace" (set in the app), and the install directory stays Vivace. -->
     <Name>Vivace Media Player</Name>
-    <Version>0.1.0</Version>
+    <Version>0.1.1</Version>
     <Title>Vivace Media Player</Title>
     <Publisher>Vivace</Publisher>
     <ProductUrl>https://github.com/vivace-player</ProductUrl>

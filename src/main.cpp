@@ -314,7 +314,7 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
     QCoreApplication::setApplicationName(QStringLiteral("vivace"));
     QCoreApplication::setOrganizationName(QStringLiteral("vivace-player"));
-    QCoreApplication::setApplicationVersion(QStringLiteral("0.1.0"));
+    QCoreApplication::setApplicationVersion(QStringLiteral("0.1.1"));
     QGuiApplication::setApplicationDisplayName(QStringLiteral("Vivace"));
 
     installFileLogger(); // capture Qt/QML warnings to a file for troubleshooting
