@@ -1,0 +1,57 @@
+Qt module:   qtmultimedia
+Base tag:    v6.11.1 (qtmultimedia HEAD at the time of writing:
+             43b808343682048d5170499217cf8a0f80e421aa, 2025-10-28)
+Applies to:  src/plugins/multimedia/ffmpeg/qffmpegcodecstorage.cpp
+
+Why: AV1 hardware-accelerated decode (via D3D11VA, at least on this
+machine's GPU/driver) hangs and leaks memory rather than failing cleanly,
+while software decode via libdav1d works correctly and quickly. Verified
+directly with plain `ffmpeg.exe` outside of Qt entirely: `-c:v libdav1d`
+decodes a real-world AV1 file cleanly (30/30 frames, no errors), while
+`-hwaccel d3d11va` (letting FFmpeg pick the native hw-capable "av1"
+decoder) never finishes and shows continuous, unbounded working-set
+growth (65 MB -> 120+ MB over 10 seconds) for a clip that should decode
+in a fraction of a second. This is very likely why the Qt Company's own
+official FFmpeg build doesn't ship libdav1d/AV1 support at all -- across
+the huge range of real-world GPU/driver combinations, enabling AV1
+without very careful hwaccel fallback handling is a real stability risk.
+
+Qt's own hwaccel device-type selection (HWAccel::decodingDeviceTypes(),
+qffmpeghwaccel.cpp) has no per-codec granularity: it's a single
+process-wide, statically-cached list read from
+QT_FFMPEG_DECODING_HW_DEVICE_TYPES, applied uniformly to every codec.
+Disabling hardware decode globally to work around AV1 previously
+regressed H.264 playback in this project, so a codec-specific exclusion
+is needed instead.
+
+Fix: in isCodecValid() (used when building the cached decoder list),
+reject every AV1 decoder implementation except libdav1d -- so the
+hw-capable native "av1" decoder (and av1_qsv/av1_cuvid/av1_amf, if
+present) are never even considered as candidates, while every other
+codec's hardware acceleration (H.264, H.265, ...) is untouched.
+
+To apply: cd <qtmultimedia source root> && git apply
+patches/qtmultimedia-av1-hwaccel-disable.patch (or `patch -p1 <
+...patch` if not a git checkout), then rebuild qtmultimedia (or all of
+Qt) and Vivace.
+
+diff --git a/src/plugins/multimedia/ffmpeg/qffmpegcodecstorage.cpp b/src/plugins/multimedia/ffmpeg/qffmpegcodecstorage.cpp
+index b297d16aa..249353373 100644
+--- a/src/plugins/multimedia/ffmpeg/qffmpegcodecstorage.cpp
++++ b/src/plugins/multimedia/ffmpeg/qffmpegcodecstorage.cpp
+@@ -191,6 +191,15 @@ bool isCodecValid(const Codec &codec, const std::vector<AVHWDeviceType> &availab
+     if (codec.type() != AVMEDIA_TYPE_VIDEO)
+         return true;
+
++    // AV1 hardware-accelerated decode (e.g. D3D11VA) has been observed to hang and leak
++    // memory rather than fail cleanly on some GPU/driver combinations, while software
++    // decode via libdav1d works correctly. Force AV1 decoding through libdav1d only by
++    // rejecting every other AV1 decoder implementation here (the native hw-capable "av1"
++    // decoder, "av1_qsv", "av1_cuvid", "av1_amf", ...).
++    if (codec.id() == AV_CODEC_ID_AV1 && codec.isDecoder()
++        && codec.name() != QLatin1StringView("libdav1d"))
++        return false;
++
+     const auto pixelFormats = codec.pixelFormats();
+     if (pixelFormats.empty()) {
+ #if defined(Q_OS_LINUX) || defined(Q_OS_ANDROID)

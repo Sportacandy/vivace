@@ -37,6 +37,37 @@ rolling nightly build from `main`.
 - CMake 3.24+
 - A C++17 compiler (developed with MSVC 2022 on Windows)
 
+## AV1 support
+
+Prebuilt releases (and Vivace built normally against a stock Qt) do **not**
+play AV1 video — such files show "Unsupported media, a codec is missing" and
+play audio only. This isn't a Vivace-specific limitation: Qt's own official
+FFmpeg build ships without `libdav1d`/AV1 decode support at all. Investigation
+found a likely reason: AV1's *hardware*-accelerated decode path (e.g. D3D11VA
+on Windows) hangs and leaks memory rather than failing cleanly on at least
+some GPU/driver combinations, rather than this being a licensing choice —
+enabling AV1 without very careful hwaccel-failure handling is a real
+stability risk across the huge range of real-world hardware.
+
+To enable AV1 playback, you need a **custom-built Qt**:
+
+1. Build (or download a prebuilt) FFmpeg with `libdav1d` enabled — e.g.
+   [BtbN/FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds)' `n7.1` line
+   (`*-gpl-shared-7.1.*`), which conveniently matches the soname versions of
+   Qt's own officially bundled FFmpeg.
+2. Apply [`patches/qtmultimedia-av1-hwaccel-disable.patch`](patches/qtmultimedia-av1-hwaccel-disable.patch)
+   to your `qtmultimedia` source checkout — this forces AV1 decoding through
+   the software `libdav1d` decoder specifically, since Qt's *hardware*-
+   accelerated AV1 path is the actual source of the hang/leak, not AV1
+   decoding itself.
+3. Configure Qt with `-DFFMPEG_DIR=<path to your dav1d-enabled FFmpeg>
+   -DQT_DEPLOY_FFMPEG=TRUE` and rebuild (`qtmultimedia` alone is enough if
+   you don't want to rebuild all of Qt).
+4. Build Vivace against that custom Qt as usual.
+
+See the "AV1 video plays audio-only" entry in this project's `CLAUDE.md`
+Known Issues section for the full investigation and root-cause details.
+
 ## Building
 
 ```
