@@ -26,16 +26,16 @@ jobs:
           arch: 'win64_msvc2022_64'
           modules: 'qtmultimedia qtshadertools'
 
-      - name: Swap in an AV1-capable FFmpeg (official Qt's bundle lacks libdav1d)
+      - name: Swap in the patched qtmultimedia AV1 fix (prebuilt)
         shell: pwsh
         run: |
-          Invoke-WebRequest -Uri "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n7.1-latest-win64-gpl-shared-7.1.zip" -OutFile ffmpeg-av1.zip
-          Expand-Archive -Path ffmpeg-av1.zip -DestinationPath ffmpeg-av1
-          $src = Get-ChildItem -Path ffmpeg-av1 -Directory | Select-Object -First 1
+          Invoke-WebRequest -Uri "https://github.com/Sportacandy/vivace/releases/download/qt-av1-prebuilt-win64/qt-av1-prebuilt-win64.zip" -OutFile qt-av1-prebuilt.zip
+          Expand-Archive -Path qt-av1-prebuilt.zip -DestinationPath qt-av1-prebuilt
+          Copy-Item qt-av1-prebuilt\ffmpegmediaplugin.dll "$env:QT_ROOT_DIR\plugins\multimedia\ffmpegmediaplugin.dll" -Force
           foreach ($dll in "avcodec-61.dll","avformat-61.dll","avutil-59.dll","swresample-5.dll","swscale-8.dll") {
-            Copy-Item "$($src.FullName)\bin\$dll" "$env:QT_ROOT_DIR\bin\$dll" -Force
+            Copy-Item "qt-av1-prebuilt\$dll" "$env:QT_ROOT_DIR\bin\$dll" -Force
           }
-
+          
       - name: Install NSIS
         shell: pwsh
         run: |

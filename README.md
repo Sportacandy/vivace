@@ -39,17 +39,34 @@ rolling nightly build from `main`.
 
 ## AV1 support
 
-Prebuilt releases (and Vivace built normally against a stock Qt) do **not**
-play AV1 video — such files show "Unsupported media, a codec is missing" and
-play audio only. This isn't a Vivace-specific limitation: Qt's own official
-FFmpeg build ships without `libdav1d`/AV1 decode support at all. Investigation
-found a likely reason: AV1's *hardware*-accelerated decode path (e.g. D3D11VA
-on Windows) hangs and leaks memory rather than failing cleanly on at least
+**Windows** prebuilt releases and the [nightly build](https://github.com/Sportacandy/vivace/releases/tag/nightly)
+play AV1 video: CI swaps in a patched Qt Multimedia FFmpeg plugin plus a
+`libdav1d`-enabled FFmpeg build right after installing Qt. **Linux and
+macOS** prebuilt releases, and Vivace built normally against a stock Qt on
+any platform, do **not** — such files show "Unsupported media, a codec is
+missing" and play audio only.
+
+This isn't a Vivace-specific limitation: Qt's own official FFmpeg build
+ships without `libdav1d`/AV1 decode support at all. Investigation found a
+likely reason: AV1's *hardware*-accelerated decode path (e.g. D3D11VA on
+Windows) hangs and leaks memory rather than failing cleanly on at least
 some GPU/driver combinations, rather than this being a licensing choice —
 enabling AV1 without very careful hwaccel-failure handling is a real
 stability risk across the huge range of real-world hardware.
 
-To enable AV1 playback, you need a **custom-built Qt**:
+To get AV1 support elsewhere (Linux/macOS, or a Vivace you build yourself):
+
+**Windows quick path**: download the prebuilt, patched
+[`ffmpegmediaplugin.dll` + dav1d-enabled FFmpeg bundle](https://github.com/Sportacandy/vivace/releases/tag/qt-av1-prebuilt-win64)
+(the same one CI uses) and copy its files into your own Qt 6.11.1
+`msvc2022_64` installation — `ffmpegmediaplugin.dll` into
+`plugins/multimedia/`, the rest (`avcodec-61.dll`, `avformat-61.dll`,
+`avutil-59.dll`, `swresample-5.dll`, `swscale-8.dll`) into `bin/`,
+overwriting the existing files. No rebuild needed; just rebuild Vivace
+itself against that same Qt install afterward.
+
+To build it yourself from scratch (any platform, including Linux/macOS),
+you need a **custom-built Qt**:
 
 1. Build (or download a prebuilt) FFmpeg with `libdav1d` enabled — e.g.
    [BtbN/FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds)' `n7.1` line
@@ -64,9 +81,6 @@ To enable AV1 playback, you need a **custom-built Qt**:
    -DQT_DEPLOY_FFMPEG=TRUE` and rebuild (`qtmultimedia` alone is enough if
    you don't want to rebuild all of Qt).
 4. Build Vivace against that custom Qt as usual.
-
-See the "AV1 video plays audio-only" entry in this project's `CLAUDE.md`
-Known Issues section for the full investigation and root-cause details.
 
 ## Building
 
