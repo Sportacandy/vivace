@@ -3,11 +3,13 @@
     SPDX-License-Identifier: GPL-3.0-or-later
 
     About dialog, following SMPlayer's about.ui: a header (logo + name) and
-    Info / Contributions / Translations / License tabs. Info and License
-    carry real content; Contributions credits SMPlayer (whose icon theme and
-    UI conventions Vivace ports under the GPL); Translations fills in when
-    localization arrives (Phase 6). A normal top-level modal dialog (OS window
-    frame), like the other Vivace dialogs.
+    Info / Contributions / Translations / License tabs. Contributions credits
+    SMPlayer (whose icon theme and UI conventions Vivace ports under the GPL);
+    Translations lists the embedded UI languages (derived from
+    UiHelpers.availableUiLanguages(), the same source as the Preferences
+    language combo, so it can't drift out of sync with what's actually
+    shipped). A normal top-level modal dialog (OS window frame), like the
+    other Vivace dialogs.
 */
 
 import QtQuick
@@ -44,6 +46,17 @@ Window {
     // Qt versions for the Info tab (qVersion()/QT_VERSION_STR via C++).
     readonly property string runtimeQtVersion: UiHelpers.qtRuntimeVersion()
     readonly property string compileQtVersion: UiHelpers.qtBuildVersion()
+
+    // Translations tab: derived from the embedded catalogs (same source as
+    // the Preferences language combo) so this never goes stale again the
+    // way the old hardcoded "not translated yet" text did.
+    readonly property var translatedLanguages: UiHelpers.availableUiLanguages()
+    readonly property string translatedLanguageNames: {
+        const names = []
+        for (let i = 0; i < translatedLanguages.length; ++i)
+            names.push(translatedLanguages[i].label)
+        return names.join(" · ")
+    }
 
     ColumnLayout {
         anchors.fill: parent
@@ -140,7 +153,7 @@ Window {
                     textFormat: Text.RichText
                     background: null
                     onLinkActivated: link => Qt.openUrlExternally(link)
-                    text: qsTr("Vivace is developed by %1.").arg("Hironori Komaba")
+                    text: qsTr("Vivace is developed by %1.").arg("Hironori KOMABA")
                           + "<br><br>"
                           + qsTr("Vivace ports UI conventions and the icon themes "
                                  + "(H2O and the default theme) from %1, used under "
@@ -156,16 +169,25 @@ Window {
             }
 
             // ----------------------------------------- Translations
-            Item {
-                Label {
-                    anchors.centerIn: parent
-                    width: parent.width - 24
-                    horizontalAlignment: Text.AlignHCenter
+            ScrollView {
+                clip: true
+                contentWidth: availableWidth
+                TextArea {
+                    readOnly: true
                     wrapMode: Text.WordWrap
-                    opacity: 0.8
-                    text: qsTr("Vivace is not translated yet. Localization is "
-                               + "planned for a later phase; contributions will be "
-                               + "credited here.")
+                    textFormat: Text.RichText
+                    background: null
+                    onLinkActivated: link => Qt.openUrlExternally(link)
+                    text: qsTr("Vivace's interface is available in %1 languages, "
+                               + "in addition to English. Japanese is the most "
+                               + "complete (hand-translated); most of the others "
+                               + "combine translations ported from %2 with machine "
+                               + "translation, so quality varies — native-speaker "
+                               + "review is welcome.")
+                                .arg(dialog.translatedLanguages.length)
+                                .arg("<a href=\"https://www.smplayer.info\">SMPlayer</a>")
+                          + "<br><br>"
+                          + dialog.translatedLanguageNames
                 }
             }
 

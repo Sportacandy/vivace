@@ -4,92 +4,96 @@
 <context>
     <name>AboutDialog</name>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="20"/>
+        <location filename="../qml/AboutDialog.qml" line="22"/>
         <source>About Vivace</source>
         <translation>关于 Vivace</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="71"/>
+        <location filename="../qml/AboutDialog.qml" line="84"/>
         <source>A fast, pure-Qt media player — vee-VAH-cheh</source>
         <translation>一款纯 Qt 打造的快速媒体播放器 — vee-VAH-cheh</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="81"/>
+        <location filename="../qml/AboutDialog.qml" line="94"/>
         <source>Info</source>
         <translation>信息(&amp;I)</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="86"/>
+        <location filename="../qml/AboutDialog.qml" line="99"/>
         <source>Contributions</source>
         <translation>贡献(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="91"/>
+        <location filename="../qml/AboutDialog.qml" line="104"/>
         <source>Translations</source>
         <translation>翻译</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="96"/>
+        <location filename="../qml/AboutDialog.qml" line="109"/>
         <source>License</source>
         <translation>许可证(&amp;L)</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="117"/>
+        <location filename="../qml/AboutDialog.qml" line="130"/>
         <source>Version: %1</source>
         <translation>版本: %1</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="119"/>
+        <location filename="../qml/AboutDialog.qml" line="132"/>
         <source>A ground-up rewrite inspired by SMPlayer, built on Qt Quick and Qt Multimedia (FFmpeg backend) — no mplayer/mpv process backend and no Qt Widgets.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="123"/>
+        <location filename="../qml/AboutDialog.qml" line="136"/>
         <source>Using Qt %1 (compiled with Qt %2)</source>
         <translation>使用 Qt %1 (用 Qt %2 编译)</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="126"/>
+        <location filename="../qml/AboutDialog.qml" line="139"/>
         <source>Links:</source>
         <translation>链接:</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="127"/>
+        <location filename="../qml/AboutDialog.qml" line="140"/>
         <source>Project home:</source>
         <translation>项目主页：</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="143"/>
+        <location filename="../qml/AboutDialog.qml" line="156"/>
         <source>Vivace is developed by %1.</source>
         <translation>Vivace 由 %1 开发。</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="145"/>
+        <location filename="../qml/AboutDialog.qml" line="158"/>
         <source>Vivace ports UI conventions and the icon themes (H2O and the default theme) from %1, used under the GPL. Many thanks to its author Ricardo Villalba and contributors.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="151"/>
+        <location filename="../qml/AboutDialog.qml" line="164"/>
         <source>Secure password storage uses %1 by Frank Osterfeld and contributors, used under the modified BSD license.</source>
         <translation>安全密码存储使用了由 Frank Osterfeld 及贡献者开发的 %1，依据修改版 BSD 许可证使用。</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="161"/>
-        <source>Vivace is not translated yet. Localization is planned for a later phase; contributions will be credited here.</source>
-        <translation>Vivace 尚未翻译。本地化计划在后续阶段进行；贡献者将在此列出。</translation>
+        <location filename="../qml/AboutDialog.qml" line="181"/>
+        <source>Vivace&apos;s interface is available in %1 languages, in addition to English. Japanese is the most complete (hand-translated); most of the others combine translations ported from %2 with machine translation, so quality varies — native-speaker review is welcome.</source>
+        <translation>除英语外，Vivace 的界面还提供 %1 种语言版本。日语翻译最为完整（人工翻译）；其余大多数语言结合了从 %2 移植的翻译和机器翻译，因此质量参差不齐——欢迎母语者审校。</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="177"/>
+        <source>Vivace is not translated yet. Localization is planned for a later phase; contributions will be credited here.</source>
+        <translation type="vanished">Vivace 尚未翻译。本地化计划在后续阶段进行；贡献者将在此列出。</translation>
+    </message>
+    <message>
+        <location filename="../qml/AboutDialog.qml" line="204"/>
         <source>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="183"/>
+        <location filename="../qml/AboutDialog.qml" line="210"/>
         <source>Read the entire license</source>
         <translation>阅读整个许可证</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="194"/>
+        <location filename="../qml/AboutDialog.qml" line="221"/>
         <source>Close</source>
         <translation>关闭</translation>
     </message>
@@ -740,7 +744,7 @@
     </message>
     <message>
         <location filename="../qml/Main.qml" line="635"/>
-        <location filename="../qml/Main.qml" line="1428"/>
+        <location filename="../qml/Main.qml" line="1440"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
@@ -785,156 +789,156 @@
         <translation>速度：%1x</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1139"/>
+        <location filename="../qml/Main.qml" line="1151"/>
         <source>Media files (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1140"/>
-        <location filename="../qml/Main.qml" line="1178"/>
-        <location filename="../qml/Main.qml" line="1364"/>
+        <location filename="../qml/Main.qml" line="1152"/>
+        <location filename="../qml/Main.qml" line="1190"/>
+        <location filename="../qml/Main.qml" line="1376"/>
         <source>All files (*)</source>
         <translation>所有文件 (*)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1163"/>
+        <location filename="../qml/Main.qml" line="1175"/>
         <source>Select the DVD drive or a folder containing VIDEO_TS</source>
         <translation>选择 DVD 驱动器或包含 VIDEO_TS 的文件夹</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1167"/>
+        <location filename="../qml/Main.qml" line="1179"/>
         <source>No DVD video found in %1</source>
         <translation>在 %1 中未找到 DVD 视频</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1177"/>
+        <location filename="../qml/Main.qml" line="1189"/>
         <source>Playlists (*.m3u *.m3u8)</source>
         <translation>播放列表 (*.m3u *.m3u8)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1211"/>
+        <location filename="../qml/Main.qml" line="1223"/>
         <source>Playing stream</source>
         <translation>正在播放流</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1217"/>
-        <location filename="../qml/Main.qml" line="1237"/>
+        <location filename="../qml/Main.qml" line="1229"/>
+        <location filename="../qml/Main.qml" line="1249"/>
         <source>Playing downloaded video</source>
         <translation>正在播放已下载的视频</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1221"/>
+        <location filename="../qml/Main.qml" line="1233"/>
         <source>YouTube: %1</source>
         <translation>YouTube：%1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1241"/>
+        <location filename="../qml/Main.qml" line="1253"/>
         <source>Download failed: %1</source>
         <translation>下载失败：%1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1303"/>
+        <location filename="../qml/Main.qml" line="1315"/>
         <source>Could not read the shortcut file.</source>
         <translation>无法读取快捷方式文件。</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1317"/>
+        <location filename="../qml/Main.qml" line="1329"/>
         <source>Starting download…</source>
         <translation>正在开始下载…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1318"/>
+        <location filename="../qml/Main.qml" line="1330"/>
         <source>Downloading video (this can take a while)…</source>
         <translation>正在下载视频（这可能需要一些时间）…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1322"/>
+        <location filename="../qml/Main.qml" line="1334"/>
         <source>Resolving with yt-dlp…</source>
         <translation>正在使用 yt-dlp 解析…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1359"/>
+        <location filename="../qml/Main.qml" line="1371"/>
         <source>Load subtitle file</source>
         <translation>加载字幕文件</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1363"/>
+        <location filename="../qml/Main.qml" line="1375"/>
         <source>Subtitle files (*.srt *.vtt *.ass *.ssa)</source>
         <translation>字幕文件 (*.srt *.vtt *.ass *.ssa)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1371"/>
+        <location filename="../qml/Main.qml" line="1383"/>
         <source>Subtitle delay</source>
         <translation>字幕延迟</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1405"/>
+        <location filename="../qml/Main.qml" line="1417"/>
         <source>Delay:</source>
         <translation>延迟：</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1411"/>
-        <location filename="../qml/Main.qml" line="1483"/>
+        <location filename="../qml/Main.qml" line="1423"/>
+        <location filename="../qml/Main.qml" line="1495"/>
         <source>ms</source>
         <translation>毫秒</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1421"/>
+        <location filename="../qml/Main.qml" line="1433"/>
         <source>OK</source>
         <translation>确定(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1440"/>
+        <location filename="../qml/Main.qml" line="1452"/>
         <source>Audio delay — Vivace</source>
         <translation>音频延迟 — Vivace</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1471"/>
+        <location filename="../qml/Main.qml" line="1483"/>
         <source>No delay for this file (use the global delay only)</source>
         <translation>此文件无延迟（仅使用全局延迟）</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1476"/>
+        <location filename="../qml/Main.qml" line="1488"/>
         <source>This file&apos;s delay:</source>
         <translation>此文件的延迟：</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1491"/>
+        <location filename="../qml/Main.qml" line="1503"/>
         <source>The delay applied to this file is this value plus the global delay for the current audio device (%1 ms), set in Preferences &gt; General &gt; Audio. Negative values delay the video to match audio that arrives late (e.g. Bluetooth headphones).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1504"/>
+        <location filename="../qml/Main.qml" line="1516"/>
         <source>&amp;Apply</source>
         <translation>应用(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1513"/>
+        <location filename="../qml/Main.qml" line="1525"/>
         <source>&amp;Close</source>
         <translation>关闭(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1609"/>
+        <location filename="../qml/Main.qml" line="1621"/>
         <source>Hide window</source>
         <translation>隐藏窗口</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1609"/>
+        <location filename="../qml/Main.qml" line="1621"/>
         <source>Show window</source>
         <translation>显示窗口</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1614"/>
+        <location filename="../qml/Main.qml" line="1626"/>
         <source>Play / Pause</source>
         <translation>播放/暂停</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1618"/>
+        <location filename="../qml/Main.qml" line="1630"/>
         <source>Stop</source>
         <translation>停止</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1623"/>
+        <location filename="../qml/Main.qml" line="1635"/>
         <source>Quit</source>
         <translation>退出(&amp;Q)</translation>
     </message>
@@ -1768,262 +1772,262 @@
         <translation>轨道 %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="543"/>
+        <location filename="../src/playercontroller.cpp" line="557"/>
         <source>A/V delay: %1 ms</source>
         <translation>音视频延迟：%1 毫秒</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="921"/>
+        <location filename="../src/playercontroller.cpp" line="935"/>
         <source>DVD title %1 could not be assembled</source>
         <translation>无法组合 DVD 标题 %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="927"/>
+        <location filename="../src/playercontroller.cpp" line="941"/>
         <source>DVD title %1 could not be opened</source>
         <translation>无法打开 DVD 标题 %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="989"/>
+        <location filename="../src/playercontroller.cpp" line="1003"/>
         <source>Title %1 (%2)</source>
         <translation>标题 %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1005"/>
+        <location filename="../src/playercontroller.cpp" line="1019"/>
         <source>Chapter %1 (%2)</source>
         <translation>章节 %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1627"/>
+        <location filename="../src/playercontroller.cpp" line="1641"/>
         <source>Could not open the stream</source>
         <translation>无法打开流</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1686"/>
+        <location filename="../src/playercontroller.cpp" line="1700"/>
         <source>System default</source>
         <translation>系统默认</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1850"/>
+        <location filename="../src/playercontroller.cpp" line="1864"/>
         <source>A marker set to %1</source>
         <translation>A 标记已设置为 %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1861"/>
+        <location filename="../src/playercontroller.cpp" line="1875"/>
         <source>B marker set to %1</source>
         <translation>B 标记已设置为 %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1871"/>
+        <location filename="../src/playercontroller.cpp" line="1885"/>
         <source>A-B markers cleared</source>
         <translation>A-B 标记已清除</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1985"/>
+        <location filename="../src/playercontroller.cpp" line="1999"/>
         <source>Could not load subtitles from %1</source>
         <translation>无法从 %1 加载字幕</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1997"/>
+        <location filename="../src/playercontroller.cpp" line="2011"/>
         <source>Subtitles loaded: %1</source>
         <translation>字幕已加载：%1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2008"/>
+        <location filename="../src/playercontroller.cpp" line="2022"/>
         <source>Subtitles unloaded</source>
         <translation>字幕已卸载</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2018"/>
+        <location filename="../src/playercontroller.cpp" line="2032"/>
         <source>Subtitle delay: %1 ms</source>
         <translation>字幕延迟: %1毫秒</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2137"/>
+        <location filename="../src/playercontroller.cpp" line="2151"/>
         <source>General</source>
         <translation>常规</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2140"/>
+        <location filename="../src/playercontroller.cpp" line="2154"/>
         <source>File</source>
         <translation>文件</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2143"/>
+        <location filename="../src/playercontroller.cpp" line="2157"/>
         <source>Size</source>
         <translation>大小</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2143"/>
+        <location filename="../src/playercontroller.cpp" line="2157"/>
         <source>%1 KB (%2 MB)</source>
         <translation>%1 KB (%2 MB)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2147"/>
-        <location filename="../src/playercontroller.cpp" line="2173"/>
+        <location filename="../src/playercontroller.cpp" line="2161"/>
+        <location filename="../src/playercontroller.cpp" line="2187"/>
         <source>URL</source>
         <translation>URL</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2150"/>
+        <location filename="../src/playercontroller.cpp" line="2164"/>
         <source>Length</source>
         <translation>时长</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2151"/>
+        <location filename="../src/playercontroller.cpp" line="2165"/>
         <source>Demuxer</source>
         <translation>解复用器</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2156"/>
-        <location filename="../src/playercontroller.cpp" line="2206"/>
-        <location filename="../src/playercontroller.cpp" line="2225"/>
-        <location filename="../src/playercontroller.cpp" line="2234"/>
+        <location filename="../src/playercontroller.cpp" line="2170"/>
+        <location filename="../src/playercontroller.cpp" line="2220"/>
+        <location filename="../src/playercontroller.cpp" line="2239"/>
+        <location filename="../src/playercontroller.cpp" line="2248"/>
         <source>Name</source>
         <translation>名称</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2157"/>
+        <location filename="../src/playercontroller.cpp" line="2171"/>
         <source>Artist</source>
         <translation>艺术家</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2159"/>
+        <location filename="../src/playercontroller.cpp" line="2173"/>
         <source>Album artist</source>
         <translation>专辑艺术家</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2161"/>
+        <location filename="../src/playercontroller.cpp" line="2175"/>
         <source>Author</source>
         <translation>作者</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2162"/>
+        <location filename="../src/playercontroller.cpp" line="2176"/>
         <source>Composer</source>
         <translation>作曲家</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2163"/>
+        <location filename="../src/playercontroller.cpp" line="2177"/>
         <source>Album</source>
         <translation>专辑</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2164"/>
+        <location filename="../src/playercontroller.cpp" line="2178"/>
         <source>Genre</source>
         <translation>流派</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2165"/>
+        <location filename="../src/playercontroller.cpp" line="2179"/>
         <source>Date</source>
         <translation>日期</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2166"/>
+        <location filename="../src/playercontroller.cpp" line="2180"/>
         <source>Track</source>
         <translation>轨道</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2167"/>
+        <location filename="../src/playercontroller.cpp" line="2181"/>
         <source>Copyright</source>
         <translation>版权</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2168"/>
+        <location filename="../src/playercontroller.cpp" line="2182"/>
         <source>Comment</source>
         <translation>注释</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2169"/>
+        <location filename="../src/playercontroller.cpp" line="2183"/>
         <source>Description</source>
         <translation>描述</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2171"/>
+        <location filename="../src/playercontroller.cpp" line="2185"/>
         <source>Publisher</source>
         <translation>发行者</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2172"/>
-        <location filename="../src/playercontroller.cpp" line="2206"/>
-        <location filename="../src/playercontroller.cpp" line="2225"/>
-        <location filename="../src/playercontroller.cpp" line="2234"/>
+        <location filename="../src/playercontroller.cpp" line="2186"/>
+        <location filename="../src/playercontroller.cpp" line="2220"/>
+        <location filename="../src/playercontroller.cpp" line="2239"/>
+        <location filename="../src/playercontroller.cpp" line="2248"/>
         <source>Language</source>
         <translation>语言</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2175"/>
+        <location filename="../src/playercontroller.cpp" line="2189"/>
         <source>Clip info</source>
         <translation>剪辑信息</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2179"/>
+        <location filename="../src/playercontroller.cpp" line="2193"/>
         <source>Initial Video Stream</source>
         <translation>初始视频流</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2182"/>
+        <location filename="../src/playercontroller.cpp" line="2196"/>
         <source>Resolution</source>
         <translation>分辨率</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2185"/>
+        <location filename="../src/playercontroller.cpp" line="2199"/>
         <source>Aspect ratio</source>
         <translation>长宽比</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2189"/>
-        <location filename="../src/playercontroller.cpp" line="2214"/>
+        <location filename="../src/playercontroller.cpp" line="2203"/>
+        <location filename="../src/playercontroller.cpp" line="2228"/>
         <source>Format</source>
         <translation>格式</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2192"/>
-        <location filename="../src/playercontroller.cpp" line="2217"/>
+        <location filename="../src/playercontroller.cpp" line="2206"/>
+        <location filename="../src/playercontroller.cpp" line="2231"/>
         <source>Bitrate</source>
         <translation>比特率</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2192"/>
-        <location filename="../src/playercontroller.cpp" line="2217"/>
+        <location filename="../src/playercontroller.cpp" line="2206"/>
+        <location filename="../src/playercontroller.cpp" line="2231"/>
         <source>%1 kbps</source>
         <translation>%1kbps</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2195"/>
+        <location filename="../src/playercontroller.cpp" line="2209"/>
         <source>Frames per second</source>
         <translation>每秒帧数</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2198"/>
+        <location filename="../src/playercontroller.cpp" line="2212"/>
         <source>HDR</source>
         <translation>HDR</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2198"/>
+        <location filename="../src/playercontroller.cpp" line="2212"/>
         <source>yes</source>
         <translation>是</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2205"/>
+        <location filename="../src/playercontroller.cpp" line="2219"/>
         <source>Video Streams</source>
         <translation>视频流</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2213"/>
+        <location filename="../src/playercontroller.cpp" line="2227"/>
         <source>Initial Audio Stream</source>
         <translation>初始音频流</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2224"/>
+        <location filename="../src/playercontroller.cpp" line="2238"/>
         <source>Audio Streams</source>
         <translation>音频流</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2233"/>
+        <location filename="../src/playercontroller.cpp" line="2247"/>
         <source>Subtitles</source>
         <translation>字幕</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2403"/>
+        <location filename="../src/playercontroller.cpp" line="2436"/>
         <source>Chapter %1</source>
         <translation>章节 %1</translation>
     </message>
@@ -3091,72 +3095,67 @@
 <context>
     <name>PrefNetworkPage</name>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="60"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="82"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="62"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="84"/>
         <source>OpenSubtitles</source>
         <translation>OpenSubtitles</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="61"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="63"/>
         <source>YouTube</source>
         <translation>YouTube</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="63"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="540"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="65"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="544"/>
         <source>Cast</source>
         <translation>投射</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="92"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="94"/>
         <source>API key:</source>
         <translation>API 密钥：</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="93"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="95"/>
         <source>A free per-application key from opensubtitles.com (create an API consumer); subtitle search will not work until this is set.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="98"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="100"/>
         <source>from opensubtitles.com → API consumers</source>
         <translation>来自 opensubtitles.com → API consumers</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="103"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="492"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="105"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="496"/>
         <source>Username:</source>
         <translation>用户名(&amp;U):</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="104"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="106"/>
         <source>Optional opensubtitles.com account login; signing in is not required but raises the daily download limit.</source>
         <translation>可选的 opensubtitles.com 账户登录；登录不是必需的，但会提高每日下载限额。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="111"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="498"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="113"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="502"/>
         <source>Password:</source>
         <translation>密码(&amp;S):</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="126"/>
-        <source>The account password is stored securely using your operating system's credential manager.</source>
+        <location filename="../qml/PrefNetworkPage.qml" line="128"/>
+        <source>The account password is stored securely using your operating system&apos;s credential manager.</source>
         <translation>账户密码通过您操作系统的凭据管理器安全存储。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="62"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="449"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="64"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="453"/>
         <source>Proxy</source>
         <translation>代理</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="23"/>
-        <source>&lt;h1&gt;Network&lt;/h1&gt;&lt;p&gt;&lt;b&gt;OpenSubtitles&lt;/b&gt; search uses the REST API, which requires a free per-application API key: register at opensubtitles.com, create an API consumer, and paste the key here. An account login (username and password) is optional but raises the daily download limit.&lt;/p&gt;&lt;p&gt;&lt;b&gt;YouTube&lt;/b&gt;: the optional resolver uses an external yt-dlp program — when enabled, opening a YouTube URL runs yt-dlp to obtain a directly-playable stream. Install yt-dlp yourself and, if it is not on the PATH, set its full path. Because QMediaPlayer plays a single muxed stream, streaming tops out at the best progressive format (about 720p on YouTube). Cookies are deliberately NOT used for streaming: an authenticated (cookie) session returns URLs a plain player cannot open.&lt;/p&gt;&lt;p&gt;For &lt;b&gt;HD&lt;/b&gt; (and for cookies), enable the external downloader and point it at your own tool (a program or .bat/.cmd). HD formats are separate video and audio streams that cannot be streamed muxed, so Vivace runs the tool to download and merge the video, then plays the file it writes into the download folder. The tool keeps its own format selection and cookies (add e.g. --cookies to its arguments); Vivace only runs it and plays the result.&lt;/p&gt;&lt;p&gt;The stream &lt;b&gt;connection timeout&lt;/b&gt; (used mainly by live TV tuners) has moved to &lt;i&gt;Preferences ▸ TV and radio&lt;/i&gt;.&lt;/p&gt;&lt;p&gt;The &lt;b&gt;Proxy&lt;/b&gt; tab applies application-wide: both HTTP and SOCKS5 cover OpenSubtitles search and the update check; only HTTP additionally covers media playback and yt-dlp (they read the http_proxy/https_proxy convention directly instead of going through Qt&apos;s network stack, and there is no SOCKS5 equivalent for that convention).&lt;/p&gt;&lt;p&gt;The &lt;b&gt;Cast&lt;/b&gt; tab sets the port Play ▸ Cast ▸ Smartphone/tablet listens on. It&apos;s here (rather than only in the Cast dialog) so it stays fixed — set it once, allow that port through your firewall/router once, and casting keeps working without a new firewall prompt every time.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="505"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="509"/>
         <source>Type:</source>
         <translation>类型(&amp;T):</translation>
     </message>
@@ -3165,302 +3164,307 @@
         <translation type="vanished">无</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="479"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="483"/>
         <source>Host:</source>
         <translation>主机(&amp;H):</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="485"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="550"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="489"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="554"/>
         <source>Port:</source>
         <translation>端口(&amp;P):</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="145"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="147"/>
         <source>YouTube (yt-dlp)</source>
         <translation>YouTube (yt-dlp)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="155"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="23"/>
+        <source>&lt;h1&gt;Network&lt;/h1&gt;&lt;p&gt;&lt;b&gt;OpenSubtitles&lt;/b&gt; search uses the REST API, which requires a free per-application API key: register at opensubtitles.com, create an API consumer, and paste the key here. An account login (username and password) is optional but raises the daily download limit.&lt;/p&gt;&lt;p&gt;&lt;b&gt;YouTube&lt;/b&gt;: the optional resolver uses an external yt-dlp program — when enabled, opening a YouTube URL runs yt-dlp to obtain a directly-playable stream. Install yt-dlp yourself and, if it is not on the PATH, set its full path. Because QMediaPlayer plays a single muxed stream, streaming tops out at the best progressive format (about 720p on YouTube). Cookies are deliberately NOT used for streaming: an authenticated (cookie) session returns URLs a plain player cannot open.&lt;/p&gt;&lt;p&gt;For &lt;b&gt;HD&lt;/b&gt; (and for cookies), enable the external downloader and point it at your own tool (a program or .bat/.cmd). HD formats are separate video and audio streams that cannot be streamed muxed, so Vivace runs the tool to download and merge the video, then plays the file it writes into the download folder. The tool keeps its own format selection and cookies (add e.g. --cookies to its arguments); Vivace only runs it and plays the result.&lt;/p&gt;&lt;p&gt;See &lt;b&gt;Help ▸ Contents ▸ Options&lt;/b&gt; for step-by-step instructions on exporting a cookies.txt file from your browser.&lt;/p&gt;&lt;p&gt;The stream &lt;b&gt;connection timeout&lt;/b&gt; (used mainly by live TV tuners) has moved to &lt;i&gt;Preferences ▸ TV and radio&lt;/i&gt;.&lt;/p&gt;&lt;p&gt;The &lt;b&gt;Proxy&lt;/b&gt; tab applies application-wide: both HTTP and SOCKS5 cover OpenSubtitles search and the update check; only HTTP additionally covers media playback and yt-dlp (they read the http_proxy/https_proxy convention directly instead of going through Qt&apos;s network stack, and there is no SOCKS5 equivalent for that convention).&lt;/p&gt;&lt;p&gt;The &lt;b&gt;Cast&lt;/b&gt; tab sets the port Play ▸ Cast ▸ Smartphone/tablet listens on. It&apos;s here (rather than only in the Cast dialog) so it stays fixed — set it once, allow that port through your firewall/router once, and casting keeps working without a new firewall prompt every time.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="157"/>
         <source>Play YouTube URLs with yt-dlp</source>
         <translation>使用 yt-dlp 播放 YouTube URL</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="159"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="161"/>
         <source>When on, opening a YouTube URL runs yt-dlp instead of trying to play the page URL as-is.</source>
         <translation>开启时，打开 YouTube URL 将运行 yt-dlp，而不是尝试按原样播放页面 URL。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="172"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="174"/>
         <source>Open YouTube URLs by:</source>
         <translation>打开 YouTube URL 的方式：</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="173"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="175"/>
         <source>Streaming is fastest but caps at ~720p and can&apos;t use cookies. Downloading gets full HD (uses cookies + ffmpeg), then plays and deletes the file. Or hand off to your own external downloader tool.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="183"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="185"/>
         <source>Streaming (fast, up to ~720p)</source>
         <translation>串流（快速，最高约 720p）</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="184"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="186"/>
         <source>Downloading then playing (HD, cookies)</source>
         <translation>先下载再播放（高清，Cookie）</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="185"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="187"/>
         <source>An external downloader tool</source>
         <translation>外部下载工具</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="193"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="195"/>
         <source>yt-dlp path:</source>
         <translation>yt-dlp 路径：</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="194"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="196"/>
         <source>Leave as &quot;yt-dlp&quot; if it is on your system PATH; otherwise enter the full path to the yt-dlp executable.</source>
         <translation>如果 yt-dlp 在系统 PATH 中，请保留 &quot;yt-dlp&quot;；否则请输入 yt-dlp 可执行文件的完整路径。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="199"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="201"/>
         <source>yt-dlp (on PATH) or a full path</source>
         <translation>yt-dlp（在 PATH 中）或完整路径</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="204"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="206"/>
         <source>Maximum quality:</source>
         <translation>最高质量：</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="205"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="207"/>
         <source>Upper limit on resolution. Streaming is capped at ~720p regardless; downloading can reach this height in full HD.</source>
         <translation>分辨率上限。无论如何，串流都限制在约 720p；下载可以达到此高度的完整高清。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="215"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="217"/>
         <source>360p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="216"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="218"/>
         <source>480p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="217"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="219"/>
         <source>720p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="218"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="220"/>
         <source>1080p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="219"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="221"/>
         <source>1440p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="220"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="222"/>
         <source>2160p (4K)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="221"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="223"/>
         <source>Best available</source>
         <translation>可用的最佳</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="236"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="238"/>
         <source>yt-dlp is a separate program and is not bundled with Vivace.</source>
         <translation>yt-dlp 是一个独立程序，不随 Vivace 一起提供。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="242"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="244"/>
         <source>Download &amp; play</source>
         <translation>下载并播放</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="254"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="256"/>
         <source>Downloads the video (merging HD video and audio with ffmpeg), plays it, and keeps it in a cache folder so replaying it is instant. The cache holds the most recent downloads up to the size below; older ones are removed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="268"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="270"/>
         <source>Cookies file:</source>
         <translation>Cookie 文件：</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="269"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="271"/>
         <source>Optional cookies.txt exported from your browser (yt-dlp --cookies); unlocks HD, members-only and age-restricted videos. Safe here — cookies only affect the download, not a stream a player must open. See Help ▸ Contents ▸ Options for step-by-step export instructions.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="281"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="285"/>
         <source>optional cookies.txt</source>
         <translation>可选的 cookies.txt</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="284"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="303"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="321"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="393"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="429"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="288"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="307"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="325"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="397"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="433"/>
         <source>Browse…</source>
         <translation>浏览…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="289"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="293"/>
         <source>ffmpeg location:</source>
         <translation>ffmpeg 位置：</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="290"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="294"/>
         <source>Folder containing ffmpeg (yt-dlp needs it to merge HD video+audio). Leave empty to use ffmpeg from the system PATH.</source>
         <translation>包含 ffmpeg 的文件夹（yt-dlp 需要它来合并高清视频和音频）。留空以使用系统 PATH 中的 ffmpeg。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="300"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="304"/>
         <source>empty = use PATH</source>
         <translation>留空 = 使用 PATH</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="308"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="312"/>
         <source>Cache folder:</source>
         <translation>缓存文件夹：</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="309"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="313"/>
         <source>Where downloaded videos are kept for reuse. A video already here is replayed without downloading again.</source>
         <translation>已下载视频保存以供重用的位置。此处已有的视频会直接播放，无需再次下载。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="326"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="330"/>
         <source>Cache size:</source>
         <translation>缓存大小：</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="327"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="331"/>
         <source>How many downloaded videos to keep. When the limit is reached, the least-recently-played one is deleted.</source>
         <translation>要保留多少已下载的视频。达到上限时，将删除最久未播放的视频。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="338"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="342"/>
         <source>files</source>
         <translation>个文件</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="344"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="348"/>
         <source>Thumbnail fallback at:</source>
         <translation>缩略图回退位置：</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="345"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="349"/>
         <source>The cache thumbnail is normally YouTube&apos;s own poster image. Only if that is missing or black does Vivace grab a video frame — this is how many seconds in (past a black intro).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="358"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="362"/>
         <source>seconds</source>
         <translation>秒</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="368"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="372"/>
         <source>External downloader tool</source>
         <translation>外部下载工具</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="379"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="383"/>
         <source>Downloader command:</source>
         <translation>下载命令：</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="380"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="384"/>
         <source>The program or .bat/.cmd script that downloads the video; it receives the URL as an argument.</source>
         <translation>下载视频的程序或 .bat/.cmd 脚本；它以 URL 作为参数。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="390"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="394"/>
         <source>e.g. C:ToolsYouTubeDL.bat</source>
         <translation>例如 C:\Tools\YouTubeDL.bat</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="398"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="402"/>
         <source>Arguments:</source>
         <translation>参数：</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="399"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="403"/>
         <source>Arguments passed to the tool; the token {url} is replaced by the video URL (if omitted, the URL is appended). Add any cookies/format flags your tool needs here, e.g. --cookies C:pathcookies.txt.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="414"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="418"/>
         <source>Download folder:</source>
         <translation>下载文件夹：</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="415"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="419"/>
         <source>The folder the tool writes the finished file into; Vivace plays the newest media file that appears there, so set it to match your tool&apos;s output folder.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="426"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="430"/>
         <source>your tool&apos;s output folder</source>
         <translation>您工具的输出文件夹</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="459"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="463"/>
         <source>Enable proxy</source>
         <translation>启用代理</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="463"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="467"/>
         <source>Applies to OpenSubtitles search and the update check (both proxy types). Only an HTTP proxy also applies to media playback and yt-dlp — a SOCKS5 proxy does not reach either, since neither goes through Qt&apos;s network stack.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="521"/>
-        <source>The proxy password is stored securely using your operating system's credential manager.</source>
+        <location filename="../qml/PrefNetworkPage.qml" line="525"/>
+        <source>The proxy password is stored securely using your operating system&apos;s credential manager.</source>
         <translation>代理密码通过您操作系统的凭据管理器安全存储。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="551"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="555"/>
         <source>The port Play ▸ Cast ▸ Smartphone/tablet listens on. Kept fixed here (rather than editable each time in the Cast dialog) so you can allow it through your firewall/router once and it keeps working.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="573"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="577"/>
         <source>Your OS&apos;s firewall (and most routers) block an app listening on a fresh port until you allow it. Pick a port once here, allow Vivace through your firewall for it, and Cast will keep working without a new prompt each time.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="588"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="592"/>
         <source>Select the cookies.txt file</source>
         <translation>选择 cookies.txt 文件</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="594"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="598"/>
         <source>Select the folder containing ffmpeg</source>
         <translation>选择包含 ffmpeg 的文件夹</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="599"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="603"/>
         <source>Select the download cache folder</source>
         <translation>选择下载缓存文件夹</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="604"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="608"/>
         <source>Select the downloader program</source>
         <translation>选择下载程序</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="610"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="614"/>
         <source>Select the download folder</source>
         <translation>选择下载文件夹</translation>
     </message>
@@ -4249,7 +4253,7 @@
 <context>
     <name>UpdateChecker</name>
     <message>
-        <location filename="../src/updatechecker.cpp" line="90"/>
+        <location filename="../src/updatechecker.cpp" line="93"/>
         <source>Could not read the latest version number.</source>
         <translation>无法读取最新版本号。</translation>
     </message>

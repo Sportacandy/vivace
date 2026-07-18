@@ -4,87 +4,96 @@
 <context>
     <name>AboutDialog</name>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="20"/>
+        <location filename="../qml/AboutDialog.qml" line="22"/>
         <source>About Vivace</source>
         <translation>Ku Vivace</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="71"/>
+        <location filename="../qml/AboutDialog.qml" line="84"/>
         <source>A fast, pure-Qt media player — vee-VAH-cheh</source>
         <translation>Player wa mizanyo ow&apos;amaanyi, akolebwa ku Qt yokka — vee-VAH-cheh</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="81"/>
+        <location filename="../qml/AboutDialog.qml" line="94"/>
         <source>Info</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="86"/>
+        <location filename="../qml/AboutDialog.qml" line="99"/>
         <source>Contributions</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="91"/>
+        <location filename="../qml/AboutDialog.qml" line="104"/>
         <source>Translations</source>
         <translation>Enkyusa</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="96"/>
+        <location filename="../qml/AboutDialog.qml" line="109"/>
         <source>License</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="117"/>
+        <location filename="../qml/AboutDialog.qml" line="130"/>
         <source>Version: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="119"/>
+        <location filename="../qml/AboutDialog.qml" line="132"/>
         <source>A ground-up rewrite inspired by SMPlayer, built on Qt Quick and Qt Multimedia (FFmpeg backend) — no mplayer/mpv process backend and no Qt Widgets.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="123"/>
+        <location filename="../qml/AboutDialog.qml" line="136"/>
         <source>Using Qt %1 (compiled with Qt %2)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="126"/>
+        <location filename="../qml/AboutDialog.qml" line="139"/>
         <source>Links:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="127"/>
+        <location filename="../qml/AboutDialog.qml" line="140"/>
         <source>Project home:</source>
         <translation>Omuko gw&apos;omulimu:</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="143"/>
+        <location filename="../qml/AboutDialog.qml" line="156"/>
         <source>Vivace is developed by %1.</source>
         <translation>Vivace akolebwa %1.</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="145"/>
+        <location filename="../qml/AboutDialog.qml" line="158"/>
         <source>Vivace ports UI conventions and the icon themes (H2O and the default theme) from %1, used under the GPL. Many thanks to its author Ricardo Villalba and contributors.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="161"/>
-        <source>Vivace is not translated yet. Localization is planned for a later phase; contributions will be credited here.</source>
-        <translation>Vivace tannakyusibwa mu lulimi. Okukyusa kuteekeddwa mu kiseera eky&apos;omu maaso; ebiweebwayo bijja kulagibwa wano.</translation>
+        <location filename="../qml/AboutDialog.qml" line="164"/>
+        <source>Secure password storage uses %1 by Frank Osterfeld and contributors, used under the modified BSD license.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="177"/>
+        <location filename="../qml/AboutDialog.qml" line="181"/>
+        <source>Vivace&apos;s interface is available in %1 languages, in addition to English. Japanese is the most complete (hand-translated); most of the others combine translations ported from %2 with machine translation, so quality varies — native-speaker review is welcome.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vivace is not translated yet. Localization is planned for a later phase; contributions will be credited here.</source>
+        <translation type="vanished">Vivace tannakyusibwa mu lulimi. Okukyusa kuteekeddwa mu kiseera eky&apos;omu maaso; ebiweebwayo bijja kulagibwa wano.</translation>
+    </message>
+    <message>
+        <location filename="../qml/AboutDialog.qml" line="204"/>
         <source>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="183"/>
+        <location filename="../qml/AboutDialog.qml" line="210"/>
         <source>Read the entire license</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="194"/>
+        <location filename="../qml/AboutDialog.qml" line="221"/>
         <source>Close</source>
         <translation type="unfinished"></translation>
     </message>
@@ -735,7 +744,7 @@
     </message>
     <message>
         <location filename="../qml/Main.qml" line="635"/>
-        <location filename="../qml/Main.qml" line="1428"/>
+        <location filename="../qml/Main.qml" line="1440"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
@@ -780,156 +789,156 @@
         <translation>Sipiidi: %1x</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1139"/>
+        <location filename="../qml/Main.qml" line="1151"/>
         <source>Media files (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1140"/>
-        <location filename="../qml/Main.qml" line="1178"/>
-        <location filename="../qml/Main.qml" line="1364"/>
+        <location filename="../qml/Main.qml" line="1152"/>
+        <location filename="../qml/Main.qml" line="1190"/>
+        <location filename="../qml/Main.qml" line="1376"/>
         <source>All files (*)</source>
         <translation>Fayiro zonna (*)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1163"/>
+        <location filename="../qml/Main.qml" line="1175"/>
         <source>Select the DVD drive or a folder containing VIDEO_TS</source>
         <translation>Londa dulaayivu ya DVD oba efolda erimu VIDEO_TS</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1167"/>
+        <location filename="../qml/Main.qml" line="1179"/>
         <source>No DVD video found in %1</source>
         <translation>Tewali vidiyo ya DVD esangiddwa mu %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1177"/>
+        <location filename="../qml/Main.qml" line="1189"/>
         <source>Playlists (*.m3u *.m3u8)</source>
         <translation>Enkalala z&apos;okuzannya (*.m3u *.m3u8)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1211"/>
+        <location filename="../qml/Main.qml" line="1223"/>
         <source>Playing stream</source>
         <translation>Kuzannya omukutu</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1217"/>
-        <location filename="../qml/Main.qml" line="1237"/>
+        <location filename="../qml/Main.qml" line="1229"/>
+        <location filename="../qml/Main.qml" line="1249"/>
         <source>Playing downloaded video</source>
         <translation>Kuzannya vidiyo edownulodeddwa</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1221"/>
+        <location filename="../qml/Main.qml" line="1233"/>
         <source>YouTube: %1</source>
         <translation>YouTube: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1241"/>
+        <location filename="../qml/Main.qml" line="1253"/>
         <source>Download failed: %1</source>
         <translation>Okudownuloda kugaanye: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1303"/>
+        <location filename="../qml/Main.qml" line="1315"/>
         <source>Could not read the shortcut file.</source>
         <translation>Tekisoboka kusoma fayiro y&apos;akakubo akaympi.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1317"/>
+        <location filename="../qml/Main.qml" line="1329"/>
         <source>Starting download…</source>
         <translation>Kutandika okudownuloda…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1318"/>
+        <location filename="../qml/Main.qml" line="1330"/>
         <source>Downloading video (this can take a while)…</source>
         <translation>Kudownuloda vidiyo (kino kiyinza okutwala akaseera)…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1322"/>
+        <location filename="../qml/Main.qml" line="1334"/>
         <source>Resolving with yt-dlp…</source>
         <translation>Kukolako ne yt-dlp…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1359"/>
+        <location filename="../qml/Main.qml" line="1371"/>
         <source>Load subtitle file</source>
         <translation>Tikka fayiro y&apos;ebiwandiiko wansi</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1363"/>
+        <location filename="../qml/Main.qml" line="1375"/>
         <source>Subtitle files (*.srt *.vtt *.ass *.ssa)</source>
         <translation>Fayiro z&apos;ebiwandiiko wansi (*.srt *.vtt *.ass *.ssa)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1371"/>
+        <location filename="../qml/Main.qml" line="1383"/>
         <source>Subtitle delay</source>
         <translation>Okulwawo kw&apos;ebiwandiiko wansi</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1405"/>
+        <location filename="../qml/Main.qml" line="1417"/>
         <source>Delay:</source>
         <translation>Okulwawo:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1411"/>
-        <location filename="../qml/Main.qml" line="1483"/>
+        <location filename="../qml/Main.qml" line="1423"/>
+        <location filename="../qml/Main.qml" line="1495"/>
         <source>ms</source>
         <translation>ms</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1421"/>
+        <location filename="../qml/Main.qml" line="1433"/>
         <source>OK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1440"/>
+        <location filename="../qml/Main.qml" line="1452"/>
         <source>Audio delay — Vivace</source>
         <translation>Okulwawo kw&apos;amaloboozi — Vivace</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1471"/>
+        <location filename="../qml/Main.qml" line="1483"/>
         <source>No delay for this file (use the global delay only)</source>
         <translation>Tewali kulwawo ku fayiro eno (kozesa kulwawo okwa bulijjo kwokka)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1476"/>
+        <location filename="../qml/Main.qml" line="1488"/>
         <source>This file&apos;s delay:</source>
         <translation>Okulwawo kwa fayiro eno:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1491"/>
+        <location filename="../qml/Main.qml" line="1503"/>
         <source>The delay applied to this file is this value plus the global delay for the current audio device (%1 ms), set in Preferences &gt; General &gt; Audio. Negative values delay the video to match audio that arrives late (e.g. Bluetooth headphones).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1504"/>
+        <location filename="../qml/Main.qml" line="1516"/>
         <source>&amp;Apply</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1513"/>
+        <location filename="../qml/Main.qml" line="1525"/>
         <source>&amp;Close</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1609"/>
+        <location filename="../qml/Main.qml" line="1621"/>
         <source>Hide window</source>
         <translation>Kweka eddirisa</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1609"/>
+        <location filename="../qml/Main.qml" line="1621"/>
         <source>Show window</source>
         <translation>Laga eddirisa</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1614"/>
+        <location filename="../qml/Main.qml" line="1626"/>
         <source>Play / Pause</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1618"/>
+        <location filename="../qml/Main.qml" line="1630"/>
         <source>Stop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1623"/>
+        <location filename="../qml/Main.qml" line="1635"/>
         <source>Quit</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1766,262 +1775,262 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="543"/>
+        <location filename="../src/playercontroller.cpp" line="557"/>
         <source>A/V delay: %1 ms</source>
         <translation>Okulwawo kwa A/V: %1 ms</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="921"/>
+        <location filename="../src/playercontroller.cpp" line="935"/>
         <source>DVD title %1 could not be assembled</source>
         <translation>Omutwe gwa DVD %1 tegusobose kukuŋŋaanyizibwa</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="927"/>
+        <location filename="../src/playercontroller.cpp" line="941"/>
         <source>DVD title %1 could not be opened</source>
         <translation>Omutwe gwa DVD %1 tegusobose kubikkulwa</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="989"/>
+        <location filename="../src/playercontroller.cpp" line="1003"/>
         <source>Title %1 (%2)</source>
         <translation>Omutwe %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1005"/>
+        <location filename="../src/playercontroller.cpp" line="1019"/>
         <source>Chapter %1 (%2)</source>
         <translation>Essuula %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1627"/>
+        <location filename="../src/playercontroller.cpp" line="1641"/>
         <source>Could not open the stream</source>
         <translation>Tekisoboka kubikkula omukutu</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1686"/>
+        <location filename="../src/playercontroller.cpp" line="1700"/>
         <source>System default</source>
         <translation>Eky&apos;awo eky&apos;ensengeka</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1850"/>
+        <location filename="../src/playercontroller.cpp" line="1864"/>
         <source>A marker set to %1</source>
         <translation>Akabonero A kateekeddwa ku %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1861"/>
+        <location filename="../src/playercontroller.cpp" line="1875"/>
         <source>B marker set to %1</source>
         <translation>Akabonero B kateekeddwa ku %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1871"/>
+        <location filename="../src/playercontroller.cpp" line="1885"/>
         <source>A-B markers cleared</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1985"/>
+        <location filename="../src/playercontroller.cpp" line="1999"/>
         <source>Could not load subtitles from %1</source>
         <translation>Tekisoboka kutikka biwandiiko wansi okuva mu %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1997"/>
+        <location filename="../src/playercontroller.cpp" line="2011"/>
         <source>Subtitles loaded: %1</source>
         <translation>Ebiwandiiko wansi bitikkiddwa: %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2008"/>
+        <location filename="../src/playercontroller.cpp" line="2022"/>
         <source>Subtitles unloaded</source>
         <translation>Ebiwandiiko wansi biggyiddwawo</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2018"/>
+        <location filename="../src/playercontroller.cpp" line="2032"/>
         <source>Subtitle delay: %1 ms</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2137"/>
+        <location filename="../src/playercontroller.cpp" line="2151"/>
         <source>General</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2140"/>
+        <location filename="../src/playercontroller.cpp" line="2154"/>
         <source>File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2143"/>
+        <location filename="../src/playercontroller.cpp" line="2157"/>
         <source>Size</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2143"/>
+        <location filename="../src/playercontroller.cpp" line="2157"/>
         <source>%1 KB (%2 MB)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2147"/>
-        <location filename="../src/playercontroller.cpp" line="2173"/>
+        <location filename="../src/playercontroller.cpp" line="2161"/>
+        <location filename="../src/playercontroller.cpp" line="2187"/>
         <source>URL</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2150"/>
+        <location filename="../src/playercontroller.cpp" line="2164"/>
         <source>Length</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2151"/>
+        <location filename="../src/playercontroller.cpp" line="2165"/>
         <source>Demuxer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2156"/>
-        <location filename="../src/playercontroller.cpp" line="2206"/>
-        <location filename="../src/playercontroller.cpp" line="2225"/>
-        <location filename="../src/playercontroller.cpp" line="2234"/>
+        <location filename="../src/playercontroller.cpp" line="2170"/>
+        <location filename="../src/playercontroller.cpp" line="2220"/>
+        <location filename="../src/playercontroller.cpp" line="2239"/>
+        <location filename="../src/playercontroller.cpp" line="2248"/>
         <source>Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2157"/>
+        <location filename="../src/playercontroller.cpp" line="2171"/>
         <source>Artist</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2159"/>
+        <location filename="../src/playercontroller.cpp" line="2173"/>
         <source>Album artist</source>
         <translation>Omuyimbi w&apos;alubamu</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2161"/>
+        <location filename="../src/playercontroller.cpp" line="2175"/>
         <source>Author</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2162"/>
+        <location filename="../src/playercontroller.cpp" line="2176"/>
         <source>Composer</source>
         <translation>Omukubi w&apos;ennyimba</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2163"/>
+        <location filename="../src/playercontroller.cpp" line="2177"/>
         <source>Album</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2164"/>
+        <location filename="../src/playercontroller.cpp" line="2178"/>
         <source>Genre</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2165"/>
+        <location filename="../src/playercontroller.cpp" line="2179"/>
         <source>Date</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2166"/>
+        <location filename="../src/playercontroller.cpp" line="2180"/>
         <source>Track</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2167"/>
+        <location filename="../src/playercontroller.cpp" line="2181"/>
         <source>Copyright</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2168"/>
+        <location filename="../src/playercontroller.cpp" line="2182"/>
         <source>Comment</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2169"/>
+        <location filename="../src/playercontroller.cpp" line="2183"/>
         <source>Description</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2171"/>
+        <location filename="../src/playercontroller.cpp" line="2185"/>
         <source>Publisher</source>
         <translation>Omufulumya</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2172"/>
-        <location filename="../src/playercontroller.cpp" line="2206"/>
-        <location filename="../src/playercontroller.cpp" line="2225"/>
-        <location filename="../src/playercontroller.cpp" line="2234"/>
+        <location filename="../src/playercontroller.cpp" line="2186"/>
+        <location filename="../src/playercontroller.cpp" line="2220"/>
+        <location filename="../src/playercontroller.cpp" line="2239"/>
+        <location filename="../src/playercontroller.cpp" line="2248"/>
         <source>Language</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2175"/>
+        <location filename="../src/playercontroller.cpp" line="2189"/>
         <source>Clip info</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2179"/>
+        <location filename="../src/playercontroller.cpp" line="2193"/>
         <source>Initial Video Stream</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2182"/>
+        <location filename="../src/playercontroller.cpp" line="2196"/>
         <source>Resolution</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2185"/>
+        <location filename="../src/playercontroller.cpp" line="2199"/>
         <source>Aspect ratio</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2189"/>
-        <location filename="../src/playercontroller.cpp" line="2214"/>
+        <location filename="../src/playercontroller.cpp" line="2203"/>
+        <location filename="../src/playercontroller.cpp" line="2228"/>
         <source>Format</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2192"/>
-        <location filename="../src/playercontroller.cpp" line="2217"/>
+        <location filename="../src/playercontroller.cpp" line="2206"/>
+        <location filename="../src/playercontroller.cpp" line="2231"/>
         <source>Bitrate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2192"/>
-        <location filename="../src/playercontroller.cpp" line="2217"/>
+        <location filename="../src/playercontroller.cpp" line="2206"/>
+        <location filename="../src/playercontroller.cpp" line="2231"/>
         <source>%1 kbps</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2195"/>
+        <location filename="../src/playercontroller.cpp" line="2209"/>
         <source>Frames per second</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2198"/>
+        <location filename="../src/playercontroller.cpp" line="2212"/>
         <source>HDR</source>
         <translation>HDR</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2198"/>
+        <location filename="../src/playercontroller.cpp" line="2212"/>
         <source>yes</source>
         <translation>yee</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2205"/>
+        <location filename="../src/playercontroller.cpp" line="2219"/>
         <source>Video Streams</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2213"/>
+        <location filename="../src/playercontroller.cpp" line="2227"/>
         <source>Initial Audio Stream</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2224"/>
+        <location filename="../src/playercontroller.cpp" line="2238"/>
         <source>Audio Streams</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2233"/>
+        <location filename="../src/playercontroller.cpp" line="2247"/>
         <source>Subtitles</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2403"/>
+        <location filename="../src/playercontroller.cpp" line="2436"/>
         <source>Chapter %1</source>
         <translation>Essuula %1</translation>
     </message>
@@ -3089,372 +3098,376 @@
 <context>
     <name>PrefNetworkPage</name>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="60"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="82"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="62"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="84"/>
         <source>OpenSubtitles</source>
         <translation>OpenSubtitles</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="61"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="63"/>
         <source>YouTube</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="63"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="540"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="65"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="544"/>
         <source>Cast</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="92"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="94"/>
         <source>API key:</source>
         <translation>Ekisumuluzo kya API:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="93"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="95"/>
         <source>A free per-application key from opensubtitles.com (create an API consumer); subtitle search will not work until this is set.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="98"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="100"/>
         <source>from opensubtitles.com → API consumers</source>
         <translation>okuva ku opensubtitles.com → API consumers</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="103"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="492"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="105"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="496"/>
         <source>Username:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="104"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="106"/>
         <source>Optional opensubtitles.com account login; signing in is not required but raises the daily download limit.</source>
         <translation>Okuyingira mu akaawunti ya opensubtitles.com kwa ky&apos;olonda; okuyingira tekyetaagisa naye kwongera ekkomo ery&apos;okudownuloda erya buli lunaku.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="111"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="498"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="113"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="502"/>
         <source>Password:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="126"/>
         <source>The account password is stored in plain text in the application settings.</source>
-        <translation>Ekigambo eky&apos;ekyama eky&apos;akaawunti kiterekebwa mu bwandiike obuweebweevu mu nteekateeka za pulogulaamu.</translation>
+        <translation type="vanished">Ekigambo eky&apos;ekyama eky&apos;akaawunti kiterekebwa mu bwandiike obuweebweevu mu nteekateeka za pulogulaamu.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="62"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="449"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="64"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="453"/>
         <source>Proxy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="23"/>
-        <source>&lt;h1&gt;Network&lt;/h1&gt;&lt;p&gt;&lt;b&gt;OpenSubtitles&lt;/b&gt; search uses the REST API, which requires a free per-application API key: register at opensubtitles.com, create an API consumer, and paste the key here. An account login (username and password) is optional but raises the daily download limit.&lt;/p&gt;&lt;p&gt;&lt;b&gt;YouTube&lt;/b&gt;: the optional resolver uses an external yt-dlp program — when enabled, opening a YouTube URL runs yt-dlp to obtain a directly-playable stream. Install yt-dlp yourself and, if it is not on the PATH, set its full path. Because QMediaPlayer plays a single muxed stream, streaming tops out at the best progressive format (about 720p on YouTube). Cookies are deliberately NOT used for streaming: an authenticated (cookie) session returns URLs a plain player cannot open.&lt;/p&gt;&lt;p&gt;For &lt;b&gt;HD&lt;/b&gt; (and for cookies), enable the external downloader and point it at your own tool (a program or .bat/.cmd). HD formats are separate video and audio streams that cannot be streamed muxed, so Vivace runs the tool to download and merge the video, then plays the file it writes into the download folder. The tool keeps its own format selection and cookies (add e.g. --cookies to its arguments); Vivace only runs it and plays the result.&lt;/p&gt;&lt;p&gt;The stream &lt;b&gt;connection timeout&lt;/b&gt; (used mainly by live TV tuners) has moved to &lt;i&gt;Preferences ▸ TV and radio&lt;/i&gt;.&lt;/p&gt;&lt;p&gt;The &lt;b&gt;Proxy&lt;/b&gt; tab applies application-wide: both HTTP and SOCKS5 cover OpenSubtitles search and the update check; only HTTP additionally covers media playback and yt-dlp (they read the http_proxy/https_proxy convention directly instead of going through Qt&apos;s network stack, and there is no SOCKS5 equivalent for that convention).&lt;/p&gt;&lt;p&gt;The &lt;b&gt;Cast&lt;/b&gt; tab sets the port Play ▸ Cast ▸ Smartphone/tablet listens on. It&apos;s here (rather than only in the Cast dialog) so it stays fixed — set it once, allow that port through your firewall/router once, and casting keeps working without a new firewall prompt every time.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="505"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="509"/>
         <source>Type:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="479"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="483"/>
         <source>Host:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="485"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="550"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="271"/>
+        <source>Optional cookies.txt exported from your browser (yt-dlp --cookies); unlocks HD, members-only and age-restricted videos. Safe here — cookies only affect the download, not a stream a player must open. See Help ▸ Contents ▸ Options for step-by-step export instructions.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="489"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="554"/>
         <source>Port:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="145"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="147"/>
         <source>YouTube (yt-dlp)</source>
         <translation>YouTube (yt-dlp)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="155"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="23"/>
+        <source>&lt;h1&gt;Network&lt;/h1&gt;&lt;p&gt;&lt;b&gt;OpenSubtitles&lt;/b&gt; search uses the REST API, which requires a free per-application API key: register at opensubtitles.com, create an API consumer, and paste the key here. An account login (username and password) is optional but raises the daily download limit.&lt;/p&gt;&lt;p&gt;&lt;b&gt;YouTube&lt;/b&gt;: the optional resolver uses an external yt-dlp program — when enabled, opening a YouTube URL runs yt-dlp to obtain a directly-playable stream. Install yt-dlp yourself and, if it is not on the PATH, set its full path. Because QMediaPlayer plays a single muxed stream, streaming tops out at the best progressive format (about 720p on YouTube). Cookies are deliberately NOT used for streaming: an authenticated (cookie) session returns URLs a plain player cannot open.&lt;/p&gt;&lt;p&gt;For &lt;b&gt;HD&lt;/b&gt; (and for cookies), enable the external downloader and point it at your own tool (a program or .bat/.cmd). HD formats are separate video and audio streams that cannot be streamed muxed, so Vivace runs the tool to download and merge the video, then plays the file it writes into the download folder. The tool keeps its own format selection and cookies (add e.g. --cookies to its arguments); Vivace only runs it and plays the result.&lt;/p&gt;&lt;p&gt;See &lt;b&gt;Help ▸ Contents ▸ Options&lt;/b&gt; for step-by-step instructions on exporting a cookies.txt file from your browser.&lt;/p&gt;&lt;p&gt;The stream &lt;b&gt;connection timeout&lt;/b&gt; (used mainly by live TV tuners) has moved to &lt;i&gt;Preferences ▸ TV and radio&lt;/i&gt;.&lt;/p&gt;&lt;p&gt;The &lt;b&gt;Proxy&lt;/b&gt; tab applies application-wide: both HTTP and SOCKS5 cover OpenSubtitles search and the update check; only HTTP additionally covers media playback and yt-dlp (they read the http_proxy/https_proxy convention directly instead of going through Qt&apos;s network stack, and there is no SOCKS5 equivalent for that convention).&lt;/p&gt;&lt;p&gt;The &lt;b&gt;Cast&lt;/b&gt; tab sets the port Play ▸ Cast ▸ Smartphone/tablet listens on. It&apos;s here (rather than only in the Cast dialog) so it stays fixed — set it once, allow that port through your firewall/router once, and casting keeps working without a new firewall prompt every time.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="128"/>
+        <source>The account password is stored securely using your operating system&apos;s credential manager.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="157"/>
         <source>Play YouTube URLs with yt-dlp</source>
         <translation>Zannya URL za YouTube ne yt-dlp</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="159"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="161"/>
         <source>When on, opening a YouTube URL runs yt-dlp instead of trying to play the page URL as-is.</source>
         <translation>Bwe kiba kikola, okubikkula URL ya YouTube kutandika yt-dlp mu kifo ky&apos;okugezaako okuzannya URL y&apos;olupapula nga bw&apos;eri.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="172"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="174"/>
         <source>Open YouTube URLs by:</source>
         <translation>Bikkula URL za YouTube nga okozesa:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="173"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="175"/>
         <source>Streaming is fastest but caps at ~720p and can&apos;t use cookies. Downloading gets full HD (uses cookies + ffmpeg), then plays and deletes the file. Or hand off to your own external downloader tool.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="183"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="185"/>
         <source>Streaming (fast, up to ~720p)</source>
         <translation>Streaming (kya mangu, okutuuka ku ~720p)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="184"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="186"/>
         <source>Downloading then playing (HD, cookies)</source>
         <translation>Okudownuloda n&apos;oluvannyuma okuzannya (HD, cookies)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="185"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="187"/>
         <source>An external downloader tool</source>
         <translation>Ekyuma eky&apos;okudownuloda eky&apos;ebweru</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="193"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="195"/>
         <source>yt-dlp path:</source>
         <translation>Ekkubo lya yt-dlp:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="194"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="196"/>
         <source>Leave as &quot;yt-dlp&quot; if it is on your system PATH; otherwise enter the full path to the yt-dlp executable.</source>
         <translation>Leka nga &quot;yt-dlp&quot; bwe kiba kiri ku PATH ya sisitemu yo; oba nno yingiza ekkubo erijjuvu ery&apos;okutuuka ku yt-dlp.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="199"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="201"/>
         <source>yt-dlp (on PATH) or a full path</source>
         <translation>yt-dlp (ku PATH) oba ekkubo erijjuvu</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="204"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="206"/>
         <source>Maximum quality:</source>
         <translation>Omutindo ogusukkulumu:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="205"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="207"/>
         <source>Upper limit on resolution. Streaming is capped at ~720p regardless; downloading can reach this height in full HD.</source>
         <translation>Ekkomo ery&apos;engulu ku resolution. Streaming ekomekerezebwa ku ~720p wadde kiri kitya; okudownuloda kuyinza okutuuka ku buwanvu buno mu HD enjuvu.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="215"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="217"/>
         <source>360p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="216"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="218"/>
         <source>480p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="217"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="219"/>
         <source>720p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="218"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="220"/>
         <source>1080p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="219"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="221"/>
         <source>1440p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="220"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="222"/>
         <source>2160p (4K)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="221"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="223"/>
         <source>Best available</source>
         <translation>Ekisinga obulungi ekiriwo</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="236"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="238"/>
         <source>yt-dlp is a separate program and is not bundled with Vivace.</source>
         <translation>yt-dlp pulogulaamu ya yokka era teteberezebwa wamu ne Vivace.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="242"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="244"/>
         <source>Download &amp; play</source>
         <translation>Downuloda ozannye</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="254"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="256"/>
         <source>Downloads the video (merging HD video and audio with ffmpeg), plays it, and keeps it in a cache folder so replaying it is instant. The cache holds the most recent downloads up to the size below; older ones are removed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="268"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="270"/>
         <source>Cookies file:</source>
         <translation>Fayiro ya cookies:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="269"/>
-        <source>Optional cookies.txt exported from your browser (yt-dlp --cookies); unlocks HD, members-only and age-restricted videos. Safe here — cookies only affect the download, not a stream a player must open.</source>
+        <location filename="../qml/PrefNetworkPage.qml" line="525"/>
+        <source>The proxy password is stored securely using your operating system&apos;s credential manager.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="281"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="285"/>
         <source>optional cookies.txt</source>
         <translation>cookies.txt eya ky&apos;olonda</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="284"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="303"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="321"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="393"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="429"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="288"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="307"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="325"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="397"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="433"/>
         <source>Browse…</source>
         <translation>Noonya…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="289"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="293"/>
         <source>ffmpeg location:</source>
         <translation>Ekifo kya ffmpeg:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="290"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="294"/>
         <source>Folder containing ffmpeg (yt-dlp needs it to merge HD video+audio). Leave empty to use ffmpeg from the system PATH.</source>
         <translation>Efolda erimu ffmpeg (yt-dlp agyetaaga okugatta vidiyo n&apos;amaloboozi aga HD). Leka nga terimu okukozesa ffmpeg okuva ku PATH ya sisitemu.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="300"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="304"/>
         <source>empty = use PATH</source>
         <translation>terimu = kozesa PATH</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="308"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="312"/>
         <source>Cache folder:</source>
         <translation>Efolda y&apos;etterekero:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="309"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="313"/>
         <source>Where downloaded videos are kept for reuse. A video already here is replayed without downloading again.</source>
         <translation>Awo vidiyo ezadownulodeddwa we ziterekerwa okuddamu okukozesa. Vidiyo eri wano dda ezannyibwa okuddamu awatali kuddamu kudownuloda.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="326"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="330"/>
         <source>Cache size:</source>
         <translation>Obunene bw&apos;etterekero:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="327"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="331"/>
         <source>How many downloaded videos to keep. When the limit is reached, the least-recently-played one is deleted.</source>
         <translation>Vidiyo ezadownulodeddwa mmeka z&apos;okukuuma. Ekkomo bwe lituukibwa, esemba okuzannyibwa esangulwa.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="338"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="342"/>
         <source>files</source>
         <translation>fayiro</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="344"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="348"/>
         <source>Thumbnail fallback at:</source>
         <translation>Akafaananyi akaddirira ku:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="345"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="349"/>
         <source>The cache thumbnail is normally YouTube&apos;s own poster image. Only if that is missing or black does Vivace grab a video frame — this is how many seconds in (past a black intro).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="358"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="362"/>
         <source>seconds</source>
         <translation>sekonda</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="368"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="372"/>
         <source>External downloader tool</source>
         <translation>Ekyuma eky&apos;okudownuloda eky&apos;ebweru</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="379"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="383"/>
         <source>Downloader command:</source>
         <translation>Ekiragiro kya kadownuloda:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="380"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="384"/>
         <source>The program or .bat/.cmd script that downloads the video; it receives the URL as an argument.</source>
         <translation>Pulogulaamu oba sikuliputi .bat/.cmd edownuloda vidiyo; efuna URL ng&apos;akawandiiko.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="390"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="394"/>
         <source>e.g. C:ToolsYouTubeDL.bat</source>
         <translation>okugeza C:\Tools\YouTubeDL.bat</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="398"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="402"/>
         <source>Arguments:</source>
         <translation>Ebiwandiiko:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="399"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="403"/>
         <source>Arguments passed to the tool; the token {url} is replaced by the video URL (if omitted, the URL is appended). Add any cookies/format flags your tool needs here, e.g. --cookies C:pathcookies.txt.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="414"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="418"/>
         <source>Download folder:</source>
         <translation>Efolda y&apos;okudownuloda:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="415"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="419"/>
         <source>The folder the tool writes the finished file into; Vivace plays the newest media file that appears there, so set it to match your tool&apos;s output folder.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="426"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="430"/>
         <source>your tool&apos;s output folder</source>
         <translation>efolda y&apos;ebivaamu ey&apos;ekyuma kyo</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="459"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="463"/>
         <source>Enable proxy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="463"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="467"/>
         <source>Applies to OpenSubtitles search and the update check (both proxy types). Only an HTTP proxy also applies to media playback and yt-dlp — a SOCKS5 proxy does not reach either, since neither goes through Qt&apos;s network stack.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="521"/>
-        <source>The proxy password is stored in plain text in the application settings.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="551"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="555"/>
         <source>The port Play ▸ Cast ▸ Smartphone/tablet listens on. Kept fixed here (rather than editable each time in the Cast dialog) so you can allow it through your firewall/router once and it keeps working.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="573"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="577"/>
         <source>Your OS&apos;s firewall (and most routers) block an app listening on a fresh port until you allow it. Pick a port once here, allow Vivace through your firewall for it, and Cast will keep working without a new prompt each time.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="588"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="592"/>
         <source>Select the cookies.txt file</source>
         <translation>Londa fayiro cookies.txt</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="594"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="598"/>
         <source>Select the folder containing ffmpeg</source>
         <translation>Londa efolda erimu ffmpeg</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="599"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="603"/>
         <source>Select the download cache folder</source>
         <translation>Londa efolda y&apos;etterekero ery&apos;okudownuloda</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="604"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="608"/>
         <source>Select the downloader program</source>
         <translation>Londa pulogulaamu ya kadownuloda</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="610"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="614"/>
         <source>Select the download folder</source>
         <translation>Londa efolda y&apos;okudownuloda</translation>
     </message>
@@ -4243,7 +4256,7 @@
 <context>
     <name>UpdateChecker</name>
     <message>
-        <location filename="../src/updatechecker.cpp" line="90"/>
+        <location filename="../src/updatechecker.cpp" line="93"/>
         <source>Could not read the latest version number.</source>
         <translation>Tekisoboka kusoma ennamba y&apos;enkyusa esembayo.</translation>
     </message>

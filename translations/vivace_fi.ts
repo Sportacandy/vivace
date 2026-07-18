@@ -4,92 +4,96 @@
 <context>
     <name>AboutDialog</name>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="20"/>
+        <location filename="../qml/AboutDialog.qml" line="22"/>
         <source>About Vivace</source>
         <translation>Tietoja Vivacesta</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="71"/>
+        <location filename="../qml/AboutDialog.qml" line="84"/>
         <source>A fast, pure-Qt media player — vee-VAH-cheh</source>
         <translation>Nopea, täysin Qt-pohjainen mediasoitin — vii-VA-tše</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="81"/>
+        <location filename="../qml/AboutDialog.qml" line="94"/>
         <source>Info</source>
         <translation>&amp;Tietoa</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="86"/>
+        <location filename="../qml/AboutDialog.qml" line="99"/>
         <source>Contributions</source>
         <translation>&amp;Avustajat</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="91"/>
+        <location filename="../qml/AboutDialog.qml" line="104"/>
         <source>Translations</source>
         <translation>Käännökset</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="96"/>
+        <location filename="../qml/AboutDialog.qml" line="109"/>
         <source>License</source>
         <translation>&amp;Lisenssi</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="117"/>
+        <location filename="../qml/AboutDialog.qml" line="130"/>
         <source>Version: %1</source>
         <translation>Versio: %1</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="119"/>
+        <location filename="../qml/AboutDialog.qml" line="132"/>
         <source>A ground-up rewrite inspired by SMPlayer, built on Qt Quick and Qt Multimedia (FFmpeg backend) — no mplayer/mpv process backend and no Qt Widgets.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="123"/>
+        <location filename="../qml/AboutDialog.qml" line="136"/>
         <source>Using Qt %1 (compiled with Qt %2)</source>
         <translation>Käyttää Qt %1 (tehty Qt %2)</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="126"/>
+        <location filename="../qml/AboutDialog.qml" line="139"/>
         <source>Links:</source>
         <translation>Linkit:</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="127"/>
+        <location filename="../qml/AboutDialog.qml" line="140"/>
         <source>Project home:</source>
         <translation>Projektin sivu:</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="143"/>
+        <location filename="../qml/AboutDialog.qml" line="156"/>
         <source>Vivace is developed by %1.</source>
         <translation>Vivacea kehittää %1.</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="145"/>
+        <location filename="../qml/AboutDialog.qml" line="158"/>
         <source>Vivace ports UI conventions and the icon themes (H2O and the default theme) from %1, used under the GPL. Many thanks to its author Ricardo Villalba and contributors.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="151"/>
+        <location filename="../qml/AboutDialog.qml" line="164"/>
         <source>Secure password storage uses %1 by Frank Osterfeld and contributors, used under the modified BSD license.</source>
         <translation>Suojattu salasanojen tallennus käyttää %1-kirjastoa (tekijä Frank Osterfeld ja avustajat), jota käytetään muokatun BSD-lisenssin mukaisesti.</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="161"/>
-        <source>Vivace is not translated yet. Localization is planned for a later phase; contributions will be credited here.</source>
-        <translation>Vivacea ei ole vielä käännetty. Lokalisointi on suunniteltu myöhempään vaiheeseen; osallistujat mainitaan täällä.</translation>
+        <location filename="../qml/AboutDialog.qml" line="181"/>
+        <source>Vivace&apos;s interface is available in %1 languages, in addition to English. Japanese is the most complete (hand-translated); most of the others combine translations ported from %2 with machine translation, so quality varies — native-speaker review is welcome.</source>
+        <translation>Vivacen käyttöliittymä on saatavilla %1 kielellä englannin lisäksi. Japani on kattavin (käsin käännetty); useimmat muut yhdistävät %2:sta siirrettyjä käännöksiä konekäännökseen, joten laatu vaihtelee — äidinkielisten tarkistus on tervetullutta.</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="177"/>
+        <source>Vivace is not translated yet. Localization is planned for a later phase; contributions will be credited here.</source>
+        <translation type="vanished">Vivacea ei ole vielä käännetty. Lokalisointi on suunniteltu myöhempään vaiheeseen; osallistujat mainitaan täällä.</translation>
+    </message>
+    <message>
+        <location filename="../qml/AboutDialog.qml" line="204"/>
         <source>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="183"/>
+        <location filename="../qml/AboutDialog.qml" line="210"/>
         <source>Read the entire license</source>
         <translation>Lue koko lisenssi</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="194"/>
+        <location filename="../qml/AboutDialog.qml" line="221"/>
         <source>Close</source>
         <translation>Sulje</translation>
     </message>
@@ -740,7 +744,7 @@
     </message>
     <message>
         <location filename="../qml/Main.qml" line="635"/>
-        <location filename="../qml/Main.qml" line="1428"/>
+        <location filename="../qml/Main.qml" line="1440"/>
         <source>Cancel</source>
         <translation>Peruuta</translation>
     </message>
@@ -785,156 +789,156 @@
         <translation>Nopeus: %1x</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1139"/>
+        <location filename="../qml/Main.qml" line="1151"/>
         <source>Media files (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1140"/>
-        <location filename="../qml/Main.qml" line="1178"/>
-        <location filename="../qml/Main.qml" line="1364"/>
+        <location filename="../qml/Main.qml" line="1152"/>
+        <location filename="../qml/Main.qml" line="1190"/>
+        <location filename="../qml/Main.qml" line="1376"/>
         <source>All files (*)</source>
         <translation>Kaikki tiedostot (*)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1163"/>
+        <location filename="../qml/Main.qml" line="1175"/>
         <source>Select the DVD drive or a folder containing VIDEO_TS</source>
         <translation>Valitse DVD-asema tai VIDEO_TS-kansion sisältävä kansio</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1167"/>
+        <location filename="../qml/Main.qml" line="1179"/>
         <source>No DVD video found in %1</source>
         <translation>Kohteesta %1 ei löytynyt DVD-videota</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1177"/>
+        <location filename="../qml/Main.qml" line="1189"/>
         <source>Playlists (*.m3u *.m3u8)</source>
         <translation>Soittolistat (*.m3u *.m3u8)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1211"/>
+        <location filename="../qml/Main.qml" line="1223"/>
         <source>Playing stream</source>
         <translation>Toistetaan suoratoistoa</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1217"/>
-        <location filename="../qml/Main.qml" line="1237"/>
+        <location filename="../qml/Main.qml" line="1229"/>
+        <location filename="../qml/Main.qml" line="1249"/>
         <source>Playing downloaded video</source>
         <translation>Toistetaan ladattua videota</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1221"/>
+        <location filename="../qml/Main.qml" line="1233"/>
         <source>YouTube: %1</source>
         <translation>YouTube: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1241"/>
+        <location filename="../qml/Main.qml" line="1253"/>
         <source>Download failed: %1</source>
         <translation>Lataus epäonnistui: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1303"/>
+        <location filename="../qml/Main.qml" line="1315"/>
         <source>Could not read the shortcut file.</source>
         <translation>Pikakuvaketiedostoa ei voitu lukea.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1317"/>
+        <location filename="../qml/Main.qml" line="1329"/>
         <source>Starting download…</source>
         <translation>Aloitetaan latausta…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1318"/>
+        <location filename="../qml/Main.qml" line="1330"/>
         <source>Downloading video (this can take a while)…</source>
         <translation>Ladataan videota (tämä voi kestää hetken)…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1322"/>
+        <location filename="../qml/Main.qml" line="1334"/>
         <source>Resolving with yt-dlp…</source>
         <translation>Käsitellään yt-dlp:llä…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1359"/>
+        <location filename="../qml/Main.qml" line="1371"/>
         <source>Load subtitle file</source>
         <translation>Avaa tekstitystiedosto</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1363"/>
+        <location filename="../qml/Main.qml" line="1375"/>
         <source>Subtitle files (*.srt *.vtt *.ass *.ssa)</source>
         <translation>Tekstitystiedostot (*.srt *.vtt *.ass *.ssa)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1371"/>
+        <location filename="../qml/Main.qml" line="1383"/>
         <source>Subtitle delay</source>
         <translation>Tekstityksen viive</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1405"/>
+        <location filename="../qml/Main.qml" line="1417"/>
         <source>Delay:</source>
         <translation>Viive:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1411"/>
-        <location filename="../qml/Main.qml" line="1483"/>
+        <location filename="../qml/Main.qml" line="1423"/>
+        <location filename="../qml/Main.qml" line="1495"/>
         <source>ms</source>
         <translation>ms</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1421"/>
+        <location filename="../qml/Main.qml" line="1433"/>
         <source>OK</source>
         <translation>&amp;OK</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1440"/>
+        <location filename="../qml/Main.qml" line="1452"/>
         <source>Audio delay — Vivace</source>
         <translation>Äänen viive — Vivace</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1471"/>
+        <location filename="../qml/Main.qml" line="1483"/>
         <source>No delay for this file (use the global delay only)</source>
         <translation>Ei viivettä tälle tiedostolle (käytä vain yleistä viivettä)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1476"/>
+        <location filename="../qml/Main.qml" line="1488"/>
         <source>This file&apos;s delay:</source>
         <translation>Tämän tiedoston viive:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1491"/>
+        <location filename="../qml/Main.qml" line="1503"/>
         <source>The delay applied to this file is this value plus the global delay for the current audio device (%1 ms), set in Preferences &gt; General &gt; Audio. Negative values delay the video to match audio that arrives late (e.g. Bluetooth headphones).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1504"/>
+        <location filename="../qml/Main.qml" line="1516"/>
         <source>&amp;Apply</source>
         <translation>&amp;Käytä</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1513"/>
+        <location filename="../qml/Main.qml" line="1525"/>
         <source>&amp;Close</source>
         <translation>&amp;Sulje</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1609"/>
+        <location filename="../qml/Main.qml" line="1621"/>
         <source>Hide window</source>
         <translation>Piilota ikkuna</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1609"/>
+        <location filename="../qml/Main.qml" line="1621"/>
         <source>Show window</source>
         <translation>Näytä ikkuna</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1614"/>
+        <location filename="../qml/Main.qml" line="1626"/>
         <source>Play / Pause</source>
         <translation>Toista / Pysäytä</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1618"/>
+        <location filename="../qml/Main.qml" line="1630"/>
         <source>Stop</source>
         <translation>Pysäytä</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1623"/>
+        <location filename="../qml/Main.qml" line="1635"/>
         <source>Quit</source>
         <translation>&amp;Lopeta</translation>
     </message>
@@ -1771,262 +1775,262 @@
         <translation>Kappale %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="543"/>
+        <location filename="../src/playercontroller.cpp" line="557"/>
         <source>A/V delay: %1 ms</source>
         <translation>A/V-viive: %1 ms</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="921"/>
+        <location filename="../src/playercontroller.cpp" line="935"/>
         <source>DVD title %1 could not be assembled</source>
         <translation>DVD-nimikettä %1 ei voitu koota</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="927"/>
+        <location filename="../src/playercontroller.cpp" line="941"/>
         <source>DVD title %1 could not be opened</source>
         <translation>DVD-nimikettä %1 ei voitu avata</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="989"/>
+        <location filename="../src/playercontroller.cpp" line="1003"/>
         <source>Title %1 (%2)</source>
         <translation>Nimike %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1005"/>
+        <location filename="../src/playercontroller.cpp" line="1019"/>
         <source>Chapter %1 (%2)</source>
         <translation>Luku %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1627"/>
+        <location filename="../src/playercontroller.cpp" line="1641"/>
         <source>Could not open the stream</source>
         <translation>Suoratoistoa ei voitu avata</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1686"/>
+        <location filename="../src/playercontroller.cpp" line="1700"/>
         <source>System default</source>
         <translation>Järjestelmän oletus</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1850"/>
+        <location filename="../src/playercontroller.cpp" line="1864"/>
         <source>A marker set to %1</source>
         <translation>A-merkki asetettu kohtaan %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1861"/>
+        <location filename="../src/playercontroller.cpp" line="1875"/>
         <source>B marker set to %1</source>
         <translation>B-merkki asetettu kohtaan %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1871"/>
+        <location filename="../src/playercontroller.cpp" line="1885"/>
         <source>A-B markers cleared</source>
         <translation>A-B merkit tyhjennetty</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1985"/>
+        <location filename="../src/playercontroller.cpp" line="1999"/>
         <source>Could not load subtitles from %1</source>
         <translation>Tekstityksiä ei voitu ladata kohteesta %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1997"/>
+        <location filename="../src/playercontroller.cpp" line="2011"/>
         <source>Subtitles loaded: %1</source>
         <translation>Tekstitykset ladattu: %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2008"/>
+        <location filename="../src/playercontroller.cpp" line="2022"/>
         <source>Subtitles unloaded</source>
         <translation>Tekstitykset poistettu</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2018"/>
+        <location filename="../src/playercontroller.cpp" line="2032"/>
         <source>Subtitle delay: %1 ms</source>
         <translation>Tekstityksen viive: %1 ms</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2137"/>
+        <location filename="../src/playercontroller.cpp" line="2151"/>
         <source>General</source>
         <translation>Yleinen</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2140"/>
+        <location filename="../src/playercontroller.cpp" line="2154"/>
         <source>File</source>
         <translation>Tiedosto</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2143"/>
+        <location filename="../src/playercontroller.cpp" line="2157"/>
         <source>Size</source>
         <translation>Koko</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2143"/>
+        <location filename="../src/playercontroller.cpp" line="2157"/>
         <source>%1 KB (%2 MB)</source>
         <translation>%1 kt (%2 Mt)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2147"/>
-        <location filename="../src/playercontroller.cpp" line="2173"/>
+        <location filename="../src/playercontroller.cpp" line="2161"/>
+        <location filename="../src/playercontroller.cpp" line="2187"/>
         <source>URL</source>
         <translation>Verkko-osoite</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2150"/>
+        <location filename="../src/playercontroller.cpp" line="2164"/>
         <source>Length</source>
         <translation>Pituus</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2151"/>
+        <location filename="../src/playercontroller.cpp" line="2165"/>
         <source>Demuxer</source>
         <translation>Demukseri</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2156"/>
-        <location filename="../src/playercontroller.cpp" line="2206"/>
-        <location filename="../src/playercontroller.cpp" line="2225"/>
-        <location filename="../src/playercontroller.cpp" line="2234"/>
+        <location filename="../src/playercontroller.cpp" line="2170"/>
+        <location filename="../src/playercontroller.cpp" line="2220"/>
+        <location filename="../src/playercontroller.cpp" line="2239"/>
+        <location filename="../src/playercontroller.cpp" line="2248"/>
         <source>Name</source>
         <translation>Nimi</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2157"/>
+        <location filename="../src/playercontroller.cpp" line="2171"/>
         <source>Artist</source>
         <translation>Artisti</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2159"/>
+        <location filename="../src/playercontroller.cpp" line="2173"/>
         <source>Album artist</source>
         <translation>Albumin esittäjä</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2161"/>
+        <location filename="../src/playercontroller.cpp" line="2175"/>
         <source>Author</source>
         <translation>Tekijä</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2162"/>
+        <location filename="../src/playercontroller.cpp" line="2176"/>
         <source>Composer</source>
         <translation>Säveltäjä</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2163"/>
+        <location filename="../src/playercontroller.cpp" line="2177"/>
         <source>Album</source>
         <translation>Albumi</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2164"/>
+        <location filename="../src/playercontroller.cpp" line="2178"/>
         <source>Genre</source>
         <translation>Laji</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2165"/>
+        <location filename="../src/playercontroller.cpp" line="2179"/>
         <source>Date</source>
         <translation>Päivämäärä</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2166"/>
+        <location filename="../src/playercontroller.cpp" line="2180"/>
         <source>Track</source>
         <translation>Kappale</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2167"/>
+        <location filename="../src/playercontroller.cpp" line="2181"/>
         <source>Copyright</source>
         <translation>Tekijänoikeudet</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2168"/>
+        <location filename="../src/playercontroller.cpp" line="2182"/>
         <source>Comment</source>
         <translation>Kommentti</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2169"/>
+        <location filename="../src/playercontroller.cpp" line="2183"/>
         <source>Description</source>
         <translation>Kuvaus</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2171"/>
+        <location filename="../src/playercontroller.cpp" line="2185"/>
         <source>Publisher</source>
         <translation>Julkaisija</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2172"/>
-        <location filename="../src/playercontroller.cpp" line="2206"/>
-        <location filename="../src/playercontroller.cpp" line="2225"/>
-        <location filename="../src/playercontroller.cpp" line="2234"/>
+        <location filename="../src/playercontroller.cpp" line="2186"/>
+        <location filename="../src/playercontroller.cpp" line="2220"/>
+        <location filename="../src/playercontroller.cpp" line="2239"/>
+        <location filename="../src/playercontroller.cpp" line="2248"/>
         <source>Language</source>
         <translation>Kieli</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2175"/>
+        <location filename="../src/playercontroller.cpp" line="2189"/>
         <source>Clip info</source>
         <translation>Tietoja videoleikkeestä</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2179"/>
+        <location filename="../src/playercontroller.cpp" line="2193"/>
         <source>Initial Video Stream</source>
         <translation>Alkuperäinen videovirta</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2182"/>
+        <location filename="../src/playercontroller.cpp" line="2196"/>
         <source>Resolution</source>
         <translation>Resoluutio</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2185"/>
+        <location filename="../src/playercontroller.cpp" line="2199"/>
         <source>Aspect ratio</source>
         <translation>Kuvasuhde</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2189"/>
-        <location filename="../src/playercontroller.cpp" line="2214"/>
+        <location filename="../src/playercontroller.cpp" line="2203"/>
+        <location filename="../src/playercontroller.cpp" line="2228"/>
         <source>Format</source>
         <translation>Muoto</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2192"/>
-        <location filename="../src/playercontroller.cpp" line="2217"/>
+        <location filename="../src/playercontroller.cpp" line="2206"/>
+        <location filename="../src/playercontroller.cpp" line="2231"/>
         <source>Bitrate</source>
         <translation>Bittinopeus</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2192"/>
-        <location filename="../src/playercontroller.cpp" line="2217"/>
+        <location filename="../src/playercontroller.cpp" line="2206"/>
+        <location filename="../src/playercontroller.cpp" line="2231"/>
         <source>%1 kbps</source>
         <translation>%1 kbps</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2195"/>
+        <location filename="../src/playercontroller.cpp" line="2209"/>
         <source>Frames per second</source>
         <translation>Ruutuja per sekunti</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2198"/>
+        <location filename="../src/playercontroller.cpp" line="2212"/>
         <source>HDR</source>
         <translation>HDR</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2198"/>
+        <location filename="../src/playercontroller.cpp" line="2212"/>
         <source>yes</source>
         <translation>kyllä</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2205"/>
+        <location filename="../src/playercontroller.cpp" line="2219"/>
         <source>Video Streams</source>
         <translation>Video suoratoisto</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2213"/>
+        <location filename="../src/playercontroller.cpp" line="2227"/>
         <source>Initial Audio Stream</source>
         <translation>Alkuperäinen äänivirta</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2224"/>
+        <location filename="../src/playercontroller.cpp" line="2238"/>
         <source>Audio Streams</source>
         <translation>Äänivirrat</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2233"/>
+        <location filename="../src/playercontroller.cpp" line="2247"/>
         <source>Subtitles</source>
         <translation>Tekstitykset</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2403"/>
+        <location filename="../src/playercontroller.cpp" line="2436"/>
         <source>Chapter %1</source>
         <translation>Luku %1</translation>
     </message>
@@ -3094,72 +3098,67 @@
 <context>
     <name>PrefNetworkPage</name>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="60"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="82"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="62"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="84"/>
         <source>OpenSubtitles</source>
         <translation>OpenSubtitles</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="61"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="63"/>
         <source>YouTube</source>
         <translation>YouTube</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="63"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="540"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="65"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="544"/>
         <source>Cast</source>
         <translation>Lähetys</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="92"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="94"/>
         <source>API key:</source>
         <translation>API-avain:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="93"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="95"/>
         <source>A free per-application key from opensubtitles.com (create an API consumer); subtitle search will not work until this is set.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="98"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="100"/>
         <source>from opensubtitles.com → API consumers</source>
         <translation>osoitteesta opensubtitles.com → API consumers</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="103"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="492"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="105"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="496"/>
         <source>Username:</source>
         <translation>&amp;Käyttäjätunnus:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="104"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="106"/>
         <source>Optional opensubtitles.com account login; signing in is not required but raises the daily download limit.</source>
         <translation>Valinnainen kirjautuminen opensubtitles.com-tilille; kirjautuminen ei ole pakollista, mutta nostaa päivittäistä latausrajaa.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="111"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="498"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="113"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="502"/>
         <source>Password:</source>
         <translation>&amp;Salasana:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="126"/>
-        <source>The account password is stored securely using your operating system's credential manager.</source>
+        <location filename="../qml/PrefNetworkPage.qml" line="128"/>
+        <source>The account password is stored securely using your operating system&apos;s credential manager.</source>
         <translation>Tilin salasana tallennetaan turvallisesti käyttöjärjestelmän tunnistetietojen hallintaan.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="62"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="449"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="64"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="453"/>
         <source>Proxy</source>
         <translation>Välityspalvelin</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="23"/>
-        <source>&lt;h1&gt;Network&lt;/h1&gt;&lt;p&gt;&lt;b&gt;OpenSubtitles&lt;/b&gt; search uses the REST API, which requires a free per-application API key: register at opensubtitles.com, create an API consumer, and paste the key here. An account login (username and password) is optional but raises the daily download limit.&lt;/p&gt;&lt;p&gt;&lt;b&gt;YouTube&lt;/b&gt;: the optional resolver uses an external yt-dlp program — when enabled, opening a YouTube URL runs yt-dlp to obtain a directly-playable stream. Install yt-dlp yourself and, if it is not on the PATH, set its full path. Because QMediaPlayer plays a single muxed stream, streaming tops out at the best progressive format (about 720p on YouTube). Cookies are deliberately NOT used for streaming: an authenticated (cookie) session returns URLs a plain player cannot open.&lt;/p&gt;&lt;p&gt;For &lt;b&gt;HD&lt;/b&gt; (and for cookies), enable the external downloader and point it at your own tool (a program or .bat/.cmd). HD formats are separate video and audio streams that cannot be streamed muxed, so Vivace runs the tool to download and merge the video, then plays the file it writes into the download folder. The tool keeps its own format selection and cookies (add e.g. --cookies to its arguments); Vivace only runs it and plays the result.&lt;/p&gt;&lt;p&gt;The stream &lt;b&gt;connection timeout&lt;/b&gt; (used mainly by live TV tuners) has moved to &lt;i&gt;Preferences ▸ TV and radio&lt;/i&gt;.&lt;/p&gt;&lt;p&gt;The &lt;b&gt;Proxy&lt;/b&gt; tab applies application-wide: both HTTP and SOCKS5 cover OpenSubtitles search and the update check; only HTTP additionally covers media playback and yt-dlp (they read the http_proxy/https_proxy convention directly instead of going through Qt&apos;s network stack, and there is no SOCKS5 equivalent for that convention).&lt;/p&gt;&lt;p&gt;The &lt;b&gt;Cast&lt;/b&gt; tab sets the port Play ▸ Cast ▸ Smartphone/tablet listens on. It&apos;s here (rather than only in the Cast dialog) so it stays fixed — set it once, allow that port through your firewall/router once, and casting keeps working without a new firewall prompt every time.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="505"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="509"/>
         <source>Type:</source>
         <translation>&amp;Tyyppi:</translation>
     </message>
@@ -3168,302 +3167,307 @@
         <translation type="vanished">Ei mitään</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="479"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="483"/>
         <source>Host:</source>
         <translation>&amp;Isäntä:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="485"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="550"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="489"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="554"/>
         <source>Port:</source>
         <translation>&amp;Portti:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="145"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="147"/>
         <source>YouTube (yt-dlp)</source>
         <translation>YouTube (yt-dlp)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="155"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="23"/>
+        <source>&lt;h1&gt;Network&lt;/h1&gt;&lt;p&gt;&lt;b&gt;OpenSubtitles&lt;/b&gt; search uses the REST API, which requires a free per-application API key: register at opensubtitles.com, create an API consumer, and paste the key here. An account login (username and password) is optional but raises the daily download limit.&lt;/p&gt;&lt;p&gt;&lt;b&gt;YouTube&lt;/b&gt;: the optional resolver uses an external yt-dlp program — when enabled, opening a YouTube URL runs yt-dlp to obtain a directly-playable stream. Install yt-dlp yourself and, if it is not on the PATH, set its full path. Because QMediaPlayer plays a single muxed stream, streaming tops out at the best progressive format (about 720p on YouTube). Cookies are deliberately NOT used for streaming: an authenticated (cookie) session returns URLs a plain player cannot open.&lt;/p&gt;&lt;p&gt;For &lt;b&gt;HD&lt;/b&gt; (and for cookies), enable the external downloader and point it at your own tool (a program or .bat/.cmd). HD formats are separate video and audio streams that cannot be streamed muxed, so Vivace runs the tool to download and merge the video, then plays the file it writes into the download folder. The tool keeps its own format selection and cookies (add e.g. --cookies to its arguments); Vivace only runs it and plays the result.&lt;/p&gt;&lt;p&gt;See &lt;b&gt;Help ▸ Contents ▸ Options&lt;/b&gt; for step-by-step instructions on exporting a cookies.txt file from your browser.&lt;/p&gt;&lt;p&gt;The stream &lt;b&gt;connection timeout&lt;/b&gt; (used mainly by live TV tuners) has moved to &lt;i&gt;Preferences ▸ TV and radio&lt;/i&gt;.&lt;/p&gt;&lt;p&gt;The &lt;b&gt;Proxy&lt;/b&gt; tab applies application-wide: both HTTP and SOCKS5 cover OpenSubtitles search and the update check; only HTTP additionally covers media playback and yt-dlp (they read the http_proxy/https_proxy convention directly instead of going through Qt&apos;s network stack, and there is no SOCKS5 equivalent for that convention).&lt;/p&gt;&lt;p&gt;The &lt;b&gt;Cast&lt;/b&gt; tab sets the port Play ▸ Cast ▸ Smartphone/tablet listens on. It&apos;s here (rather than only in the Cast dialog) so it stays fixed — set it once, allow that port through your firewall/router once, and casting keeps working without a new firewall prompt every time.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="157"/>
         <source>Play YouTube URLs with yt-dlp</source>
         <translation>Toista YouTube-URL-osoitteet yt-dlp:llä</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="159"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="161"/>
         <source>When on, opening a YouTube URL runs yt-dlp instead of trying to play the page URL as-is.</source>
         <translation>Kun käytössä, YouTube-URL:n avaaminen suorittaa yt-dlp:n sen sijaan, että sivun URL:ää yritettäisiin toistaa sellaisenaan.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="172"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="174"/>
         <source>Open YouTube URLs by:</source>
         <translation>Avaa YouTube-URL-osoitteet tavalla:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="173"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="175"/>
         <source>Streaming is fastest but caps at ~720p and can&apos;t use cookies. Downloading gets full HD (uses cookies + ffmpeg), then plays and deletes the file. Or hand off to your own external downloader tool.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="183"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="185"/>
         <source>Streaming (fast, up to ~720p)</source>
         <translation>Suoratoisto (nopea, jopa ~720p)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="184"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="186"/>
         <source>Downloading then playing (HD, cookies)</source>
         <translation>Lataus ja sitten toisto (HD, evästeet)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="185"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="187"/>
         <source>An external downloader tool</source>
         <translation>Ulkoinen latausohjelma</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="193"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="195"/>
         <source>yt-dlp path:</source>
         <translation>yt-dlp-polku:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="194"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="196"/>
         <source>Leave as &quot;yt-dlp&quot; if it is on your system PATH; otherwise enter the full path to the yt-dlp executable.</source>
         <translation>Jätä arvoksi &quot;yt-dlp&quot;, jos se on järjestelmän PATH-polussa; anna muutoin täysi polku yt-dlp-ohjelmaan.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="199"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="201"/>
         <source>yt-dlp (on PATH) or a full path</source>
         <translation>yt-dlp (PATH-polussa) tai täysi polku</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="204"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="206"/>
         <source>Maximum quality:</source>
         <translation>Enimmäislaatu:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="205"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="207"/>
         <source>Upper limit on resolution. Streaming is capped at ~720p regardless; downloading can reach this height in full HD.</source>
         <translation>Tarkkuuden yläraja. Suoratoisto on joka tapauksessa rajattu ~720p:hen; lataus voi saavuttaa tämän korkeuden täydellä HD:llä.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="215"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="217"/>
         <source>360p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="216"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="218"/>
         <source>480p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="217"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="219"/>
         <source>720p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="218"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="220"/>
         <source>1080p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="219"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="221"/>
         <source>1440p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="220"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="222"/>
         <source>2160p (4K)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="221"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="223"/>
         <source>Best available</source>
         <translation>Paras saatavilla oleva</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="236"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="238"/>
         <source>yt-dlp is a separate program and is not bundled with Vivace.</source>
         <translation>yt-dlp on erillinen ohjelma, eikä sitä toimiteta Vivacen mukana.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="242"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="244"/>
         <source>Download &amp; play</source>
         <translation>Lataa ja toista</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="254"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="256"/>
         <source>Downloads the video (merging HD video and audio with ffmpeg), plays it, and keeps it in a cache folder so replaying it is instant. The cache holds the most recent downloads up to the size below; older ones are removed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="268"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="270"/>
         <source>Cookies file:</source>
         <translation>Evästetiedosto:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="269"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="271"/>
         <source>Optional cookies.txt exported from your browser (yt-dlp --cookies); unlocks HD, members-only and age-restricted videos. Safe here — cookies only affect the download, not a stream a player must open. See Help ▸ Contents ▸ Options for step-by-step export instructions.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="281"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="285"/>
         <source>optional cookies.txt</source>
         <translation>valinnainen cookies.txt</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="284"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="303"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="321"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="393"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="429"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="288"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="307"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="325"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="397"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="433"/>
         <source>Browse…</source>
         <translation>Selaa…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="289"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="293"/>
         <source>ffmpeg location:</source>
         <translation>ffmpegin sijainti:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="290"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="294"/>
         <source>Folder containing ffmpeg (yt-dlp needs it to merge HD video+audio). Leave empty to use ffmpeg from the system PATH.</source>
         <translation>Kansio, joka sisältää ffmpegin (yt-dlp tarvitsee sitä HD-videon ja -äänen yhdistämiseen). Jätä tyhjäksi käyttääksesi ffmpegiä järjestelmän PATH-polusta.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="300"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="304"/>
         <source>empty = use PATH</source>
         <translation>tyhjä = käytä PATH-polkua</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="308"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="312"/>
         <source>Cache folder:</source>
         <translation>Välimuistikansio:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="309"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="313"/>
         <source>Where downloaded videos are kept for reuse. A video already here is replayed without downloading again.</source>
         <translation>Missä ladattuja videoita säilytetään uudelleenkäyttöä varten. Jo täällä oleva video toistetaan lataamatta uudelleen.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="326"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="330"/>
         <source>Cache size:</source>
         <translation>Välimuistin koko:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="327"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="331"/>
         <source>How many downloaded videos to keep. When the limit is reached, the least-recently-played one is deleted.</source>
         <translation>Kuinka monta ladattua videota säilytetään. Kun raja saavutetaan, vähiten hiljattain toistettu poistetaan.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="338"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="342"/>
         <source>files</source>
         <translation>tiedostoa</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="344"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="348"/>
         <source>Thumbnail fallback at:</source>
         <translation>Varapienoiskuva kohdassa:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="345"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="349"/>
         <source>The cache thumbnail is normally YouTube&apos;s own poster image. Only if that is missing or black does Vivace grab a video frame — this is how many seconds in (past a black intro).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="358"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="362"/>
         <source>seconds</source>
         <translation>sekuntia</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="368"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="372"/>
         <source>External downloader tool</source>
         <translation>Ulkoinen latausohjelma</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="379"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="383"/>
         <source>Downloader command:</source>
         <translation>Latauskomento:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="380"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="384"/>
         <source>The program or .bat/.cmd script that downloads the video; it receives the URL as an argument.</source>
         <translation>Ohjelma tai .bat/.cmd-komentosarja, joka lataa videon; se saa URL:n argumenttina.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="390"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="394"/>
         <source>e.g. C:ToolsYouTubeDL.bat</source>
         <translation>esim. C:\Tools\YouTubeDL.bat</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="398"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="402"/>
         <source>Arguments:</source>
         <translation>Argumentit:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="399"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="403"/>
         <source>Arguments passed to the tool; the token {url} is replaced by the video URL (if omitted, the URL is appended). Add any cookies/format flags your tool needs here, e.g. --cookies C:pathcookies.txt.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="414"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="418"/>
         <source>Download folder:</source>
         <translation>Latauskansio:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="415"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="419"/>
         <source>The folder the tool writes the finished file into; Vivace plays the newest media file that appears there, so set it to match your tool&apos;s output folder.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="426"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="430"/>
         <source>your tool&apos;s output folder</source>
         <translation>työkalusi tuloskansio</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="459"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="463"/>
         <source>Enable proxy</source>
         <translation>Käytä välityspalvelinta</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="463"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="467"/>
         <source>Applies to OpenSubtitles search and the update check (both proxy types). Only an HTTP proxy also applies to media playback and yt-dlp — a SOCKS5 proxy does not reach either, since neither goes through Qt&apos;s network stack.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="521"/>
-        <source>The proxy password is stored securely using your operating system's credential manager.</source>
+        <location filename="../qml/PrefNetworkPage.qml" line="525"/>
+        <source>The proxy password is stored securely using your operating system&apos;s credential manager.</source>
         <translation>Välityspalvelimen salasana tallennetaan turvallisesti käyttöjärjestelmän tunnistetietojen hallintaan.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="551"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="555"/>
         <source>The port Play ▸ Cast ▸ Smartphone/tablet listens on. Kept fixed here (rather than editable each time in the Cast dialog) so you can allow it through your firewall/router once and it keeps working.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="573"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="577"/>
         <source>Your OS&apos;s firewall (and most routers) block an app listening on a fresh port until you allow it. Pick a port once here, allow Vivace through your firewall for it, and Cast will keep working without a new prompt each time.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="588"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="592"/>
         <source>Select the cookies.txt file</source>
         <translation>Valitse cookies.txt-tiedosto</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="594"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="598"/>
         <source>Select the folder containing ffmpeg</source>
         <translation>Valitse ffmpegin sisältävä kansio</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="599"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="603"/>
         <source>Select the download cache folder</source>
         <translation>Valitse latausvälimuistikansio</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="604"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="608"/>
         <source>Select the downloader program</source>
         <translation>Valitse latausohjelma</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="610"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="614"/>
         <source>Select the download folder</source>
         <translation>Valitse latauskansio</translation>
     </message>
@@ -4252,7 +4256,7 @@
 <context>
     <name>UpdateChecker</name>
     <message>
-        <location filename="../src/updatechecker.cpp" line="90"/>
+        <location filename="../src/updatechecker.cpp" line="93"/>
         <source>Could not read the latest version number.</source>
         <translation>Uusinta versionumeroa ei voitu lukea.</translation>
     </message>
