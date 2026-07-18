@@ -43,10 +43,13 @@ rolling nightly build from `main`.
 
 **Windows** prebuilt releases and the [nightly build](https://github.com/Sportacandy/vivace/releases/tag/nightly)
 play AV1 video: CI swaps in a patched Qt Multimedia FFmpeg plugin plus a
-`libdav1d`-enabled FFmpeg build right after installing Qt. **Linux and
-macOS** prebuilt releases, and Vivace built normally against a stock Qt on
-any platform, do **not** — such files show "Unsupported media, a codec is
-missing" and play audio only.
+`libdav1d`-enabled FFmpeg build right after installing Qt. This same swap
+also carries the improved audio speed/pitch compensation described below,
+since both fixes now ship in one combined bundle. **Linux and macOS**
+prebuilt releases, and Vivace built normally against a stock Qt on any
+platform, get **neither**: AV1 files show "Unsupported media, a codec is
+missing" and play audio only, and speed control falls back to Qt's stock
+pitch-compensation behavior.
 
 This isn't a Vivace-specific limitation: Qt's own official FFmpeg build
 ships without `libdav1d`/AV1 decode support at all. Investigation found a
@@ -59,8 +62,9 @@ stability risk across the huge range of real-world hardware.
 To get AV1 support elsewhere (Linux/macOS, or a Vivace you build yourself):
 
 **Windows quick path**: download the prebuilt, patched
-[`ffmpegmediaplugin.dll` + dav1d-enabled FFmpeg bundle](https://github.com/Sportacandy/vivace/releases/tag/qt-av1-prebuilt-win64)
-(the same one CI uses) and copy its files into your own Qt 6.11.1
+[`ffmpegmediaplugin.dll` + dav1d-enabled FFmpeg bundle](https://github.com/Sportacandy/vivace/releases/tag/qt-patched-prebuilt-win64)
+(the same one CI uses — it includes both the AV1 fix and the speed/pitch
+compensation fix below) and copy its files into your own Qt 6.11.1
 `msvc2022_64` installation — `ffmpegmediaplugin.dll` into
 `plugins/multimedia/`, the rest (`avcodec-61.dll`, `avformat-61.dll`,
 `avutil-59.dll`, `swresample-5.dll`, `swscale-8.dll`) into `bin/`,
@@ -83,6 +87,44 @@ you need a **custom-built Qt**:
    -DQT_DEPLOY_FFMPEG=TRUE` and rebuild (`qtmultimedia` alone is enough if
    you don't want to rebuild all of Qt).
 4. Build Vivace against that custom Qt as usual.
+
+(Optionally also apply the speed/pitch compensation patch from the next
+section to the same `qtmultimedia` checkout before rebuilding — both
+patches touch different files and apply independently.)
+
+## Audio speed/pitch compensation
+
+Vivace's speed control (`Play > Speed`) can preserve pitch when playing
+faster or slower than 1x ("pitch compensation" in Preferences). With a
+**stock Qt**, this uses Qt's built-in phase-vocoder algorithm for every
+speed, which sounds clean when slowing down but produces audible vibrato/
+echo when speeding up (e.g. 2x) on speech-heavy content.
+
+**Windows** prebuilt releases and the nightly build get the fix below via
+the same combined [prebuilt bundle](https://github.com/Sportacandy/vivace/releases/tag/qt-patched-prebuilt-win64)
+described in "AV1 support" above. **Linux and macOS** prebuilt releases,
+and Vivace built normally against a stock Qt on any platform, use Qt's
+stock behavior — there is no artifact-free option without a custom Qt
+build, for the same reason as AV1: the fix requires source changes to
+`qtmultimedia` itself, not just Vivace.
+
+Investigation found the phase vocoder and the alternative WSOLA (time-
+domain) approach have exactly opposite strengths: the phase vocoder holds
+up well slowing down but degrades speeding up (denser frame overlap makes
+phase-coherence harder), while WSOLA is clean speeding up but introduces a
+buzz/seam artifact slowing down (it has to repeat audio to fill time,
+without pitch-synchronized splicing). So the fix uses each algorithm only
+in the direction it's strong: WSOLA (via the vendored
+[SoundTouch](https://codeberg.org/soundtouch/soundtouch) library) above 1x,
+Qt's original phase vocoder below 1x.
+
+To build this yourself, apply
+[`patches/qtmultimedia-wsola-pitch-compensation.patch`](patches/qtmultimedia-wsola-pitch-compensation.patch)
+to your `qtmultimedia` source checkout (vendors SoundTouch alongside Qt's
+existing Signalsmith Stretch phase vocoder, then picks per playback
+direction), rebuild `qtmultimedia`, and rebuild Vivace against that Qt.
+(This patch is independent of the AV1 one above and can be applied to the
+same checkout either alongside it or on its own.)
 
 ## Building
 
