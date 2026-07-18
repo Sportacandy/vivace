@@ -77,6 +77,15 @@ jobs:
           modules: 'qtmultimedia qtshadertools'
           aqtsource: 'git+https://github.com/miurahr/aqtinstall.git@8c3695d4a4e1ceabf6a74dc6c79681656dc6b74b'
 
+      - name: Swap in an AV1-capable FFmpeg (official Qt's bundle lacks libdav1d)
+        run: |
+          curl -L -o ffmpeg-av1.tar.xz "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n7.1-latest-linux64-gpl-shared-7.1.tar.xz"
+          mkdir ffmpeg-av1
+          tar -xJf ffmpeg-av1.tar.xz -C ffmpeg-av1 --strip-components=1
+          for so in libavcodec.so.61 libavformat.so.61 libavutil.so.59 libswresample.so.5 libswscale.so.8; do
+            cp "ffmpeg-av1/lib/$so" "$QT_ROOT_DIR/lib/$so"
+          done
+
       - name: Build tarball
         run: |
           chmod +x packaging/linux/build_installer.sh
@@ -100,6 +109,14 @@ jobs:
           version: '6.11.1'
           arch: 'clang_64'
           modules: 'qtmultimedia qtshadertools'
+
+      - name: Swap in an AV1-capable FFmpeg (official Qt's bundle lacks libdav1d)
+        run: |
+          brew install ffmpeg@7
+          FFMPEG7=$(brew --prefix ffmpeg@7)
+          for dylib in libavcodec.61.dylib libavformat.61.dylib libavutil.59.dylib libswresample.5.dylib libswscale.8.dylib; do
+            cp "$FFMPEG7/lib/$dylib" "$QT_ROOT_DIR/lib/$dylib"
+          done
 
       - name: Build dmg
         run: |
