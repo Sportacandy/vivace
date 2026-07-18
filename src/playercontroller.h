@@ -480,6 +480,11 @@ signals:
 
 private:
     void handleMediaStatus(QMediaPlayer::MediaStatus status);
+    // Clears the player's source on the next event-loop turn, releasing the
+    // file handle without re-entering media-status handling synchronously.
+    // Used when playback genuinely has nothing left to do (end of media,
+    // no next item) so a finished file isn't left open/undeletable.
+    void releaseSourceDeferred();
     // Load playlist item `index` and play; `resume` seeks to the stored
     // position (opening a file) vs starting from the beginning (playlist pick).
     void playIndex(int index, bool resume);

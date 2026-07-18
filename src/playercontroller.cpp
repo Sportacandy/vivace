@@ -2346,8 +2346,10 @@ void PlayerController::togglePlayPause()
 
 void PlayerController::stop()
 {
-    saveCurrentPosition();
-    m_player->stop();
+    // Release the file handle (not just stop playback) so a stopped file
+    // isn't left open -- and therefore un-deletable/un-renameable on Windows
+    // -- for the rest of the process's lifetime.
+    closeSource();
 }
 
 QUrl PlayerController::closeSource()
@@ -2357,6 +2359,17 @@ QUrl PlayerController::closeSource()
     m_player->stop();
     m_player->setSource(QUrl()); // release the file handle
     return was;
+}
+
+// Same effect as closeSource()'s setSource(QUrl()), but queued: called from
+// within handleMediaStatus() (itself a mediaStatusChanged handler), so
+// clearing the source synchronously here would re-enter Qt's media status
+// machinery from inside its own signal emission. A queued call runs on the
+// next event-loop turn instead.
+void PlayerController::releaseSourceDeferred()
+{
+    QMetaObject::invokeMethod(
+            this, [this] { m_player->setSource(QUrl()); }, Qt::QueuedConnection);
 }
 
 void PlayerController::seekRelative(qint64 deltaMs)
@@ -2660,6 +2673,7 @@ void PlayerController::handleMediaStatus(QMediaPlayer::MediaStatus status)
                 applyDvdTitle(*title, m_dvdRunEndCell,
                               title->cellStartsMs.at(m_dvdRunEndCell));
             } else {
+                releaseSourceDeferred();
                 emit playbackFinished();
             }
             return;
@@ -2667,10 +2681,12 @@ void PlayerController::handleMediaStatus(QMediaPlayer::MediaStatus status)
 
         m_fileSettings->remove(m_player->source()); // watched to the end
         const int index = m_autoPlayNext ? pickNextIndex() : -1;
-        if (index >= 0)
+        if (index >= 0) {
             playAt(index);
-        else
+        } else {
+            releaseSourceDeferred();
             emit playbackFinished();
+        }
     }
 }
 
