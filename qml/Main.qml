@@ -29,6 +29,12 @@ ApplicationWindow {
     // Consumed on the first LoadedMedia after a CLI/second-instance open.
     property url pendingSubtitle: ""
     property int pendingStartMs: -1
+    // Guards the per-file eq/speed reset below against re-firing on a seek:
+    // QFFmpegMediaPlayer::setPosition() (Qt's FFmpeg backend) unconditionally
+    // re-emits mediaStatusChanged(LoadedMedia) on every seek, not just on a
+    // genuine new-file load, so that handler must not key off mediaStatus
+    // alone.
+    property url perFileResetSource: ""
     // --close-at-end: close when playback finishes (session override).
     property bool cliCloseAtEnd: false
 
@@ -759,18 +765,26 @@ ApplicationWindow {
     Connections {
         target: playerController.player
         function onMediaStatusChanged() {
-            if (playerController.player.mediaStatus === MediaPlayer.LoadedMedia) {
-                Settings.eqContrast = Settings.eqDefContrast
-                Settings.eqBrightness = Settings.eqDefBrightness
-                Settings.eqHue = Settings.eqDefHue
-                Settings.eqSaturation = Settings.eqDefSaturation
-                Settings.eqGamma = Settings.eqDefGamma
-                // Playback speed is per-file (SMPlayer's mset.speed): each new
-                // file starts at normal speed. Skip DVD — its LoadedMedia fires
-                // on every chapter rebuild, which would reset speed mid-disc.
-                if (!playerController.dvdPlayback)
-                    Settings.playbackRate = 1.0
-            }
+            if (playerController.player.mediaStatus !== MediaPlayer.LoadedMedia)
+                return
+            // Seeking re-fires LoadedMedia for the SAME file (see the
+            // perFileResetSource comment above) — only reset once per
+            // genuinely new source, not on every seek. DVD's per-chapter
+            // rebuilds still reset each time, since each chapter gets its
+            // own unique hint URL (source genuinely changes).
+            if (playerController.player.source === root.perFileResetSource)
+                return
+            root.perFileResetSource = playerController.player.source
+            Settings.eqContrast = Settings.eqDefContrast
+            Settings.eqBrightness = Settings.eqDefBrightness
+            Settings.eqHue = Settings.eqDefHue
+            Settings.eqSaturation = Settings.eqDefSaturation
+            Settings.eqGamma = Settings.eqDefGamma
+            // Playback speed is per-file (SMPlayer's mset.speed): each new
+            // file starts at normal speed. Skip DVD — its LoadedMedia fires
+            // on every chapter rebuild, which would reset speed mid-disc.
+            if (!playerController.dvdPlayback)
+                Settings.playbackRate = 1.0
         }
     }
 

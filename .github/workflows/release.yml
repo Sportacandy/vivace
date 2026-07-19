@@ -56,10 +56,26 @@ jobs:
           $version = "${{ github.ref_name }}" -replace '^v', ''
           packaging/windows/build_installer.ps1 -QtDir "$env:QT_ROOT_DIR" -Version $version
 
+      - name: Extract changelog notes for this version
+        shell: pwsh
+        run: |
+          $version = "${{ github.ref_name }}" -replace '^v', ''
+          $changelog = Get-Content CHANGELOG.md -Raw
+          $pattern = "(?ms)^## \[$([regex]::Escape($version))\].*?(?=^## \[|\z)"
+          $match = [regex]::Match($changelog, $pattern)
+          if ($match.Success) {
+            $match.Value.TrimEnd() | Set-Content -Path release_notes.md -NoNewline
+          } else {
+            Write-Host "No CHANGELOG.md section found for $version; release will have no notes."
+            "" | Set-Content -Path release_notes.md -NoNewline
+          }
+
       - name: Upload installer to release
         uses: softprops/action-gh-release@v2
         with:
           files: VivaceSetup-Release.exe
+          body_path: release_notes.md
+
   build-and-release-linux:
     needs: build-and-release
     runs-on: ubuntu-latest

@@ -10,7 +10,8 @@ process backends.
 **[Download the latest release](https://github.com/Sportacandy/vivace/releases)**
 — Windows installer, Linux tarball, and macOS `.dmg`. A rolling
 [nightly build](https://github.com/Sportacandy/vivace/releases/tag/nightly)
-is also published from the tip of `main` between tagged releases.
+is also published from the tip of `main` between tagged releases. See
+[CHANGELOG.md](CHANGELOG.md) for what's changed in each release.
 
 ![Vivace screenshot](screenshot.png)
 
