@@ -22,6 +22,11 @@ Unicode true
 !define EXE          "bin\vivace.exe"
 !define AUMID        "VivacePlayer.Vivace"   ; must match main.cpp's AUMID
 !define UNINST_KEY   "Software\Microsoft\Windows\CurrentVersion\Uninstall\Vivace"
+; Must match uihelpers.cpp's kProgId - the installer and the app's own
+; runtime Preferences > File types page (UiHelpers::setFileAssociations)
+; deliberately write the same ProgID, see the comment above the
+; "Default Programs registration" block in Section "!${APPNAME}" below.
+!define PROGID       "Vivace.MediaFile"
 
 !ifndef VERSION
   !define VERSION "0.1.1"
@@ -128,6 +133,67 @@ Function LaunchAppDeElevated
   Exec '"$WINDIR\explorer.exe" "$INSTDIR\${EXE}"'
 FunctionEnd
 
+; ---- Default Programs registration (Windows "Default apps" support) --------
+; Ported from SMPlayer's RegisterDefaultPrograms (setup/smplayer.nsi) at the
+; user's request, for the same reason SMPlayer has it: without this, a fresh
+; install has no file-type association at all, and a user has to know to dig
+; into Preferences > File types (Vivace's own runtime, HKCU-only mechanism,
+; UiHelpers::setFileAssociations in src/uihelpers.cpp) to make Vivace appear
+; as an option for opening media files.
+;
+; Differences from SMPlayer's version (deliberate, not oversights):
+; - Extension list: Vivace's own 19 formats (must stay in sync with
+;   qml/PrefFileTypesPage.qml's `extensions` property - the exact same list
+;   Preferences > File types offers), not SMPlayer's ~60-format list, which
+;   reflects mplayer/mpv's much broader demuxer support that Vivace's Qt
+;   Multimedia (FFmpeg) backend does not uniformly match.
+; - No "shell\enqueue" verb: that is SMPlayer's "-add-to-playlist <file>" CLI
+;   flag, which Vivace's command line (see main.cpp's CLI parser) has no
+;   equivalent of; not worth inventing a new flag just to mirror this one
+;   context-menu entry.
+; - Uses SHELL_CONTEXT (HKLM for an all-users install, HKCU for a per-user
+;   install - resolved by MultiUser.nsh from the install-scope page already
+;   in this installer), not a hardcoded HKLM: SMPlayer's installer always
+;   requires admin, but Vivace's supports a non-admin "just me" install, and
+;   HKLM is not writable there.
+; - Reuses the SAME "Vivace.MediaFile" ProgID the runtime Preferences page
+;   writes (always to HKCU) rather than inventing a second, competing ProgID
+;   like SMPlayer's separate "MPlayerFileVideo" - Windows merges HKCU over
+;   HKLM for Software\Classes lookups, so an all-users install's HKLM entry
+;   and a later per-user Preferences opt-in do not conflict.
+;
+; Like SMPlayer's, this is unconditional (not an opt-out checkbox): it only
+; registers Vivace as a CANDIDATE in Windows' Default Apps / "Open with" UI
+; for these extensions (Capabilities\FileAssociations + RegisteredApplications
+; is the standard, non-intrusive scheme for that) - it does not silently
+; steal any extension's existing default the way overwriting the plain
+; per-extension ProgID key would.
+!macro AssocExt EXT
+  WriteRegStr SHELL_CONTEXT "Software\Clients\Media\${SHORTNAME}\Capabilities\FileAssociations" ".${EXT}" "${PROGID}"
+!macroend
+
+!macro AllMediaExtensions _action
+  !insertmacro ${_action} "mp4"
+  !insertmacro ${_action} "mkv"
+  !insertmacro ${_action} "avi"
+  !insertmacro ${_action} "mov"
+  !insertmacro ${_action} "webm"
+  !insertmacro ${_action} "wmv"
+  !insertmacro ${_action} "ts"
+  !insertmacro ${_action} "m2ts"
+  !insertmacro ${_action} "flv"
+  !insertmacro ${_action} "ogv"
+  !insertmacro ${_action} "mp3"
+  !insertmacro ${_action} "m4a"
+  !insertmacro ${_action} "flac"
+  !insertmacro ${_action} "ogg"
+  !insertmacro ${_action} "opus"
+  !insertmacro ${_action} "wav"
+  !insertmacro ${_action} "wma"
+  !insertmacro ${_action} "m3u"
+  !insertmacro ${_action} "m3u8"
+!macroend
+
 ; ---- Sections ---------------------------------------------------------------
 Section "!${APPNAME}" SecMain
   SectionIn RO
@@ -194,6 +260,24 @@ Section "!${APPNAME}" SecMain
   ; state after an installer changes something outside the normal registry/
   ; environment paths those windows already watch.
   System::Call 'user32::SendMessageTimeout(i 0xFFFF, i 0x001A, i 0, i 0, i 2, i 5000, *i .r0)'
+
+  ; Default Programs registration - see the comment above the AssocExt/
+  ; AllMediaExtensions macros for the full rationale and how this differs
+  ; from SMPlayer's RegisterDefaultPrograms.
+  WriteRegStr SHELL_CONTEXT "Software\Classes\${PROGID}\DefaultIcon" "" '"$INSTDIR\${EXE}",0'
+  WriteRegStr SHELL_CONTEXT "Software\Classes\${PROGID}\shell\open" "FriendlyAppName" "${APPNAME}"
+  WriteRegStr SHELL_CONTEXT "Software\Classes\${PROGID}\shell\open\command" "" '"$INSTDIR\${EXE}" "%1"'
+
+  WriteRegStr SHELL_CONTEXT "Software\Clients\Media\${SHORTNAME}" "" "${SHORTNAME}"
+  WriteRegStr SHELL_CONTEXT "Software\Clients\Media\${SHORTNAME}\Capabilities" "ApplicationName" "${SHORTNAME}"
+  WriteRegStr SHELL_CONTEXT "Software\Clients\Media\${SHORTNAME}\Capabilities" "ApplicationDescription" "A fast, pure-Qt media player."
+  WriteRegStr SHELL_CONTEXT "Software\RegisteredApplications" "${SHORTNAME}" "Software\Clients\Media\${SHORTNAME}\Capabilities"
+  !insertmacro AllMediaExtensions AssocExt
+
+  ; SHCNE_ASSOCCHANGED/SHCNF_IDLIST - same call uihelpers.cpp's
+  ; setFileAssociations() makes, so Explorer picks up the new association
+  ; immediately instead of only after a logoff/reboot.
+  System::Call 'shell32::SHChangeNotify(i 0x08000000, i 0x0000, i 0, i 0)'
 SectionEnd
 
 ; Set System.AppUserModel.ID on a shortcut so the SMTC media flyout resolves to
@@ -275,6 +359,16 @@ Section "Uninstall"
 
   RMDir /r "$INSTDIR"
   DeleteRegKey SHELL_CONTEXT "${UNINST_KEY}"
+
+  ; Undo the Default Programs registration from Section "!${APPNAME}". Only
+  ; removes what the installer itself wrote - the runtime Preferences page's
+  ; own HKCU association (a separate opt-in the user made through the app,
+  ; not the installer) is left alone, same as it would be for any other app
+  ; whose install-time and runtime association mechanisms are independent.
+  DeleteRegKey SHELL_CONTEXT "Software\Classes\${PROGID}"
+  DeleteRegKey SHELL_CONTEXT "Software\Clients\Media\${SHORTNAME}"
+  DeleteRegValue SHELL_CONTEXT "Software\RegisteredApplications" "${SHORTNAME}"
+  System::Call 'shell32::SHChangeNotify(i 0x08000000, i 0x0000, i 0, i 0)'
 
   ; Same Start Menu "All apps" cache-refresh gotcha as the install side
   ; (see Section "!${APPNAME}"), mirrored here: without an explicit nudge,

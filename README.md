@@ -26,8 +26,11 @@ playlists, favorites, bookmarks, a video equalizer, screenshots, unencrypted
 DVD playback (including interactive menus), optional YouTube playback/download
 (via yt-dlp), OpenSubtitles search, casting to a phone/tablet over an embedded
 web server, OS media integration (Windows SMTC, Linux MPRIS2), credentials
-stored securely via the OS keychain, and Windows/Linux/macOS installers. UI
-translated into 24 languages, partial coverage elsewhere.
+stored securely via the OS keychain, and Windows/Linux/macOS installers (the
+Windows installer also registers Vivace as a file-type option in Windows'
+Default Apps, so it appears as a candidate for opening media files right
+after installing). UI translated into 24 languages, partial coverage
+elsewhere.
 
 Prebuilt packages: see [Releases](https://github.com/Sportacandy/vivace/releases) —
 a Windows NSIS installer, a Linux `.tar.gz`, and a macOS `.dmg`, plus a
