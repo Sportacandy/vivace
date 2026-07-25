@@ -269,8 +269,26 @@ PlayerController::PlayerController(QObject *parent)
             this, &PlayerController::presentDueFrames);
     connect(this, &PlayerController::seeked,
             this, &PlayerController::flushVideoDelayQueue);
-    connect(m_player, &QMediaPlayer::sourceChanged,
-            this, &PlayerController::flushVideoDelayQueue);
+    connect(m_player, &QMediaPlayer::sourceChanged, this, [this](const QUrl &source) {
+        flushVideoDelayQueue();
+        // With a negative A/V delay, the player renders into m_videoDelaySink
+        // (our intercept), not m_targetVideoSink (the VideoOutput actually on
+        // screen) -- see applyVideoDelayRouting(). So when playback genuinely
+        // ends with nothing queued next (source cleared to empty), Qt's own
+        // "clear the video output" behavior on stop never reaches
+        // m_targetVideoSink, since it was never the player's direct sink to
+        // begin with. Without this, the last frame presented via
+        // presentDueFrames() stays on screen forever, and the "drop a file
+        // here" placeholder (bound to source being empty, see Main.qml) never
+        // visually takes over the video area. flushVideoDelayQueue() above
+        // only discards not-yet-due queued frames -- it doesn't touch what's
+        // already been presented to the screen -- so an explicit invalid
+        // frame is the actual fix. Not needed with delay==0/direct routing:
+        // there source-clearing already reaches the VideoOutput sink
+        // directly through Qt's own normal handling.
+        if (source.isEmpty() && m_targetVideoSink)
+            m_targetVideoSink->setVideoFrame(QVideoFrame());
+    });
 
     connect(m_mediaDevices, &QMediaDevices::audioOutputsChanged, this, [this]() {
         emit audioDevicesChanged();
