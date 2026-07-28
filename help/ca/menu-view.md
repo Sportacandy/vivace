@@ -11,4 +11,8 @@ El menú **Visualitza** mostra informació i plafons secundaris.
 - **OSD** — la informació en pantalla mostrada sobre el vídeo:
   - el nivell de detall (només subtítols; volum + cerca; volum + cerca +
     temporitzador) s'està ampliant; la durada de l'OSD i la mida de la lletra són a
-    *Preferències ▸ General*.
+    *Preferències ▸ Interfície ▸ Text*.
+  - Els missatges d'error (una baixada fallida, una carpeta sense vídeo DVD,
+    un fitxer de drecera il·legible, etc.) sempre es mostren durant 20 segons
+    fixos, independentment de la durada de l'OSD configurada — temps
+    suficient per llegir fins i tot un missatge d'error més llarg.

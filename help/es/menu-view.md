@@ -11,4 +11,8 @@ El menú **Ver** muestra información y paneles secundarios.
 - **OSD** — la información en pantalla mostrada sobre el vídeo:
   - el nivel de detalle (solo subtítulos; volumen + búsqueda; volumen + búsqueda
     + tiempo) se está ampliando; la duración del OSD y el tamaño de fuente están
-    en *Preferencias ▸ General*.
+    en *Preferencias ▸ Interfaz ▸ Texto*.
+  - Los mensajes de error (una descarga fallida, una carpeta sin vídeo de DVD,
+    un archivo de acceso directo ilegible, etc.) siempre se muestran durante
+    20 segundos fijos, sin importar la duración de OSD configurada — tiempo
+    suficiente para leer incluso un mensaje de error más largo.

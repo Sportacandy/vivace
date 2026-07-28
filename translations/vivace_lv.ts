@@ -733,212 +733,212 @@
         <translation>Nometiet multivides failus šeit vai nospiediet Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="625"/>
+        <location filename="../qml/Main.qml" line="624"/>
         <source>Downloading video…</source>
         <translation>Lejupielādē video…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="632"/>
+        <location filename="../qml/Main.qml" line="631"/>
         <source>This can take a while — the external tool is downloading and merging HD video and audio.</source>
         <translation>Tas var aizņemt kādu laiku — ārējais rīks lejupielādē un apvieno HD video un audio.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="646"/>
-        <location filename="../qml/Main.qml" line="1460"/>
+        <location filename="../qml/Main.qml" line="645"/>
+        <location filename="../qml/Main.qml" line="1468"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="719"/>
+        <location filename="../qml/Main.qml" line="718"/>
         <source>Loading…</source>
         <translation>Ielādē…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="720"/>
+        <location filename="../qml/Main.qml" line="719"/>
         <source>Connecting…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="721"/>
+        <location filename="../qml/Main.qml" line="720"/>
         <source>Buffering… %1%</source>
         <translation>Buferē… %1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="729"/>
+        <location filename="../qml/Main.qml" line="728"/>
         <source>Live streams can take several seconds to start.</source>
         <translation>Tiešraižu sākšanai var būt nepieciešamas vairākas sekundes.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="757"/>
+        <location filename="../qml/Main.qml" line="763"/>
         <source>Volume: %1%</source>
         <translation>Skaļums: %1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="760"/>
+        <location filename="../qml/Main.qml" line="766"/>
         <source>Mute</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="760"/>
+        <location filename="../qml/Main.qml" line="766"/>
         <source>Mute off</source>
         <translation>Skaņas izslēgšana atslēgta</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="763"/>
+        <location filename="../qml/Main.qml" line="769"/>
         <source>Speed: %1x</source>
         <translation>Ātrums: %1x</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1170"/>
+        <location filename="../qml/Main.qml" line="1176"/>
         <source>Media files (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1171"/>
-        <location filename="../qml/Main.qml" line="1209"/>
-        <location filename="../qml/Main.qml" line="1396"/>
+        <location filename="../qml/Main.qml" line="1177"/>
+        <location filename="../qml/Main.qml" line="1216"/>
+        <location filename="../qml/Main.qml" line="1404"/>
         <source>All files (*)</source>
         <translation>Visi faili (*)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1194"/>
+        <location filename="../qml/Main.qml" line="1200"/>
         <source>Select the DVD drive or a folder containing VIDEO_TS</source>
         <translation>Atlasiet DVD dzini vai mapi, kas satur VIDEO_TS</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1198"/>
+        <location filename="../qml/Main.qml" line="1204"/>
         <source>No DVD video found in %1</source>
         <translation>%1 nav atrasts DVD video</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1208"/>
+        <location filename="../qml/Main.qml" line="1215"/>
         <source>Playlists (*.m3u *.m3u8)</source>
         <translation>Atskaņošanas saraksti (*.m3u *.m3u8)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1243"/>
+        <location filename="../qml/Main.qml" line="1250"/>
         <source>Playing stream</source>
         <translation>Atskaņo straumi</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1249"/>
-        <location filename="../qml/Main.qml" line="1269"/>
+        <location filename="../qml/Main.qml" line="1256"/>
+        <location filename="../qml/Main.qml" line="1276"/>
         <source>Playing downloaded video</source>
         <translation>Atskaņo lejupielādēto video</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1253"/>
+        <location filename="../qml/Main.qml" line="1260"/>
         <source>YouTube: %1</source>
         <translation>YouTube: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1273"/>
+        <location filename="../qml/Main.qml" line="1280"/>
         <source>Download failed: %1</source>
         <translation>Lejupielāde neizdevās: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1335"/>
+        <location filename="../qml/Main.qml" line="1342"/>
         <source>Could not read the shortcut file.</source>
         <translation>Neizdevās nolasīt saīsnes failu.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1349"/>
+        <location filename="../qml/Main.qml" line="1357"/>
         <source>Starting download…</source>
         <translation>Sāk lejupielādi…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1350"/>
+        <location filename="../qml/Main.qml" line="1358"/>
         <source>Downloading video (this can take a while)…</source>
         <translation>Lejupielādē video (tas var aizņemt kādu laiku)…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1354"/>
+        <location filename="../qml/Main.qml" line="1362"/>
         <source>Resolving with yt-dlp…</source>
         <translation>Apstrādā ar yt-dlp…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1391"/>
+        <location filename="../qml/Main.qml" line="1399"/>
         <source>Load subtitle file</source>
         <translation>Ielādēt subtitru failu</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1395"/>
+        <location filename="../qml/Main.qml" line="1403"/>
         <source>Subtitle files (*.srt *.vtt *.ass *.ssa)</source>
         <translation>Subtitru faili (*.srt *.vtt *.ass *.ssa)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1403"/>
+        <location filename="../qml/Main.qml" line="1411"/>
         <source>Subtitle delay</source>
         <translation>Subtitru aizture</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1437"/>
+        <location filename="../qml/Main.qml" line="1445"/>
         <source>Delay:</source>
         <translation>Aizture:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1443"/>
-        <location filename="../qml/Main.qml" line="1515"/>
+        <location filename="../qml/Main.qml" line="1451"/>
+        <location filename="../qml/Main.qml" line="1523"/>
         <source>ms</source>
         <translation>ms</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1453"/>
+        <location filename="../qml/Main.qml" line="1461"/>
         <source>OK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1472"/>
+        <location filename="../qml/Main.qml" line="1480"/>
         <source>Audio delay — Vivace</source>
         <translation>Audio aizture — Vivace</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1503"/>
+        <location filename="../qml/Main.qml" line="1511"/>
         <source>No delay for this file (use the global delay only)</source>
         <translation>Šim failam aiztures nav (izmantot tikai globālo aizturi)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1508"/>
+        <location filename="../qml/Main.qml" line="1516"/>
         <source>This file&apos;s delay:</source>
         <translation>Šī faila aizture:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1523"/>
+        <location filename="../qml/Main.qml" line="1531"/>
         <source>The delay applied to this file is this value plus the global delay for the current audio device (%1 ms), set in Preferences &gt; General &gt; Audio. Negative values delay the video to match audio that arrives late (e.g. Bluetooth headphones).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1536"/>
+        <location filename="../qml/Main.qml" line="1544"/>
         <source>&amp;Apply</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1545"/>
+        <location filename="../qml/Main.qml" line="1553"/>
         <source>&amp;Close</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1641"/>
+        <location filename="../qml/Main.qml" line="1649"/>
         <source>Hide window</source>
         <translation>Slēpt logu</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1641"/>
+        <location filename="../qml/Main.qml" line="1649"/>
         <source>Show window</source>
         <translation>Rādīt logu</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1646"/>
+        <location filename="../qml/Main.qml" line="1654"/>
         <source>Play / Pause</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1650"/>
+        <location filename="../qml/Main.qml" line="1658"/>
         <source>Stop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1655"/>
+        <location filename="../qml/Main.qml" line="1663"/>
         <source>Quit</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2824,11 +2824,6 @@
         <translation>Saskarne:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="21"/>
-        <source>&lt;h1&gt;Interface&lt;/h1&gt;&lt;p&gt;&lt;b&gt;Interface&lt;/b&gt; — the GUI layout (Basic / Mini / Mpc), icon set, language, and Qt Quick Controls style, plus main-window behaviour (auto-resize, centre, keep on screen, remember geometry, hide the video area for audio-only files).&lt;/p&gt;&lt;p&gt;&lt;b&gt;Text&lt;/b&gt; — the application font, the toolbar gradient, the native file dialog toggle, OSD options, touch-friendly sizing, and the high-DPI scale-factor override (Vivace scales automatically otherwise).&lt;/p&gt;&lt;p&gt;&lt;b&gt;Seeking&lt;/b&gt; — the jump lengths for the seek buttons and the mouse wheel, and whether the time slider seeks while dragging or on release.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Instances&lt;/b&gt; — reuse a single running instance so files open in the existing window (takes effect next launch).&lt;/p&gt;&lt;p&gt;&lt;b&gt;Fullscreen&lt;/b&gt; — hide the mouse pointer after inactivity.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Privacy&lt;/b&gt; — how many recent files and URLs to remember, and whether to remember the last folder.&lt;/p&gt;&lt;p&gt;Style, font and scale-factor changes take effect after restarting Vivace.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../qml/PrefInterfacePage.qml" line="54"/>
         <source>Text</source>
         <translation type="unfinished"></translation>
@@ -2870,7 +2865,7 @@
     </message>
     <message>
         <location filename="../qml/PrefInterfacePage.qml" line="185"/>
-        <location filename="../qml/PrefInterfacePage.qml" line="242"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="253"/>
         <source>System default</source>
         <translation>Sistēmas noklusējums</translation>
     </message>
@@ -2890,210 +2885,215 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="237"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="248"/>
         <source>Application font:</source>
         <translation>Lietotnes fonts:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="248"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="259"/>
         <source>Change…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="259"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="270"/>
         <source>Reset</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="273"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="284"/>
         <source>Font changes take effect after restarting Vivace. (The default font already renders Japanese and other scripts; a custom font only needs to be set for preference.)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="277"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="223"/>
         <source>Gradient background for the toolbar and control bar</source>
         <translation>Gradienta fons rīkjoslai un vadības joslai</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="282"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="21"/>
+        <source>&lt;h1&gt;Interface&lt;/h1&gt;&lt;p&gt;&lt;b&gt;Interface&lt;/b&gt; — the GUI layout (Basic / Mini / Mpc), icon set, language, and Qt Quick Controls style, plus main-window behaviour (auto-resize, centre, keep on screen, remember geometry, hide the video area for audio-only files), the toolbar gradient, and the native file dialog toggle.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Text&lt;/b&gt; — the application font, OSD options, touch-friendly sizing, and the high-DPI scale-factor override (Vivace scales automatically otherwise).&lt;/p&gt;&lt;p&gt;&lt;b&gt;Seeking&lt;/b&gt; — the jump lengths for the seek buttons and the mouse wheel, and whether the time slider seeks while dragging or on release.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Instances&lt;/b&gt; — reuse a single running instance so files open in the existing window (takes effect next launch).&lt;/p&gt;&lt;p&gt;&lt;b&gt;Fullscreen&lt;/b&gt; — hide the mouse pointer after inactivity.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Privacy&lt;/b&gt; — how many recent files and URLs to remember, and whether to remember the last folder.&lt;/p&gt;&lt;p&gt;Style, font and scale-factor changes take effect after restarting Vivace.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefInterfacePage.qml" line="228"/>
         <source>Use the system native file dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="288"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="289"/>
         <source>OSD</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="295"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="296"/>
         <source>Show OSD messages</source>
         <translation>Rādīt OSD ziņojumus</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="301"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="302"/>
         <source>Duration of OSD messages:</source>
         <translation>OSD ziņojumu ilgums:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="307"/>
-        <location filename="../qml/PrefInterfacePage.qml" line="558"/>
-        <location filename="../qml/PrefInterfacePage.qml" line="566"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="308"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="559"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="567"/>
         <source>ms</source>
         <translation>ms</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="312"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="313"/>
         <source>OSD font size:</source>
         <translation>OSD fonta izmērs:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="318"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="319"/>
         <source>px</source>
         <translation>px</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="326"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="327"/>
         <source>Touch</source>
         <translation>Skāriens</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="335"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="336"/>
         <source>Touch-friendly controls (larger fonts and icons)</source>
         <translation>Skārienam draudzīgas vadīklas (lielāki fonti un ikonas)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="340"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="341"/>
         <source>Enlarges the interface for finger use on a tablet. Toolbar icons resize immediately; the larger fonts take effect after you restart Vivace.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="350"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="351"/>
         <source>Swipe across the video to seek</source>
         <translation>Velciet pāri video, lai meklētu</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="355"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="356"/>
         <source>Drag left or right on the video (with a finger or the mouse) to jump backward or forward. An on-screen message previews the target while you drag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="439"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="440"/>
         <source>seconds</source>
         <translation>sekundes</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="445"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="446"/>
         <source>Short jump:</source>
         <translation>Īss lēciens:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="452"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="453"/>
         <source>Medium jump:</source>
         <translation>Vidējs lēciens:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="459"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="460"/>
         <source>Long jump:</source>
         <translation>Garš lēciens:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="465"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="466"/>
         <source>Mouse wheel jump:</source>
         <translation>Peles rullīša lēciens:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="475"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="476"/>
         <source>Behaviour of time slider:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="479"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="480"/>
         <source>Seek to position while dragging</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="480"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="481"/>
         <source>Seek to position when released</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="491"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="492"/>
         <source>Absolute/relative seeking method and precise seeking are mplayer/mpv-specific and do not apply to Vivace&apos;s Qt Multimedia backend (seeking is already position-based).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="514"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="515"/>
         <source>Use only one running instance of Vivace</source>
         <translation>Izmantot tikai vienu palaistu Vivace instanci</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="525"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="526"/>
         <source>When enabled, opening a file while Vivace is already running hands it to the existing window instead of starting a new one. Takes effect on the next launch.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="539"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="540"/>
         <source>Hide the mouse pointer after inactivity</source>
         <translation>Slēpt peles rādītāju pēc neaktivitātes</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="544"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="545"/>
         <source>While a video is playing, hide the mouse pointer over the video after the delay below — in the normal window as well as in fullscreen.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="552"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="553"/>
         <source>Hide after:</source>
         <translation>Slēpt pēc:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="564"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="565"/>
         <source>Time to hide the control bar:</source>
         <translation>Laiks vadības joslas slēpšanai:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="573"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="574"/>
         <source>The fullscreen control bar currently shows while the pointer is near the bottom edge; a time-based autohide is planned.</source>
         <translation>Pilnekrāna vadības josla pašlaik tiek rādīta, kamēr rādītājs ir tuvu apakšējai malai; plānota uz laiku balstīta automātiska slēpšana.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="585"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="586"/>
         <source>Recent files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="590"/>
-        <location filename="../qml/PrefInterfacePage.qml" line="606"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="591"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="607"/>
         <source>Max. items:</source>
         <translation>Maks. vienumi:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="601"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="602"/>
         <source>URLs</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="616"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="617"/>
         <source>Remember last directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="368"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="369"/>
         <source>Vivace scales the interface on high-DPI screens automatically. You can override the scale factor here if needed.</source>
         <translation>Vivace automātiski mērogo saskarni augstas DPI ekrānos. Nepieciešamības gadījumā šeit varat pārrakstīt mēroga koeficientu.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="372"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="373"/>
         <source>Scale factor:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="379"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="380"/>
         <source>Automatic</source>
         <translation>Automātiski</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="396"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="397"/>
         <source>Scale factor changes take effect after restarting Vivace.</source>
         <translation>Mēroga koeficienta izmaiņas stājas spēkā pēc Vivace restartēšanas.</translation>
     </message>

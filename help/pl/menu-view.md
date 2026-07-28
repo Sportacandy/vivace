@@ -11,4 +11,8 @@ Menu **Widok** pokazuje informacje i dodatkowe panele.
 - **OSD** — wyświetlacz ekranowy pokazywany na wideo:
   - poziom szczegółowości (tylko napisy; głośność + przewijanie; głośność +
     przewijanie + czas) jest rozbudowywany; czas trwania OSD i rozmiar czcionki
-    są w *Ustawienia ▸ Ogólne*.
+    są w *Ustawienia ▸ Interfejs ▸ Tekst*.
+  - Komunikaty o błędach (nieudane pobieranie, folder bez wideo DVD,
+    nieczytelny plik skrótu itp.) zawsze wyświetlają się przez stałe 20
+    sekund, niezależnie od ustawionego czasu trwania OSD — wystarczająco
+    długo, by przeczytać nawet dłuższy komunikat o błędzie.

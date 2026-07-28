@@ -11,4 +11,8 @@ The **View** menu shows information and secondary panels.
 - **OSD** — the on-screen display shown over the video:
   - the level of detail (subtitles only; volume + seek; volume + seek + timer)
     is being expanded; OSD duration and font size are in
-    *Preferences ▸ General*.
+    *Preferences ▸ Interface ▸ Text*.
+  - Error messages (a failed download, a folder with no DVD video, an
+    unreadable shortcut file, and similar) always show for a fixed 20
+    seconds, regardless of the configured OSD duration — long enough to
+    read even a longer error message.

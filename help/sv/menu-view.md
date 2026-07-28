@@ -10,4 +10,9 @@ Menyn **Visa** visar information och sekundära paneler.
   fönster. Se [Öppna](menu-open.md) för att ladda spellistor.
 - **OSD** — skärmvisningen över videon:
   - detaljnivån (endast undertexter; volym + spolning; volym + spolning + timer)
-    utökas; OSD-varaktighet och teckenstorlek finns i *Inställningar ▸ Allmänt*.
+    utökas; OSD-varaktighet och teckenstorlek finns i
+    *Inställningar ▸ Gränssnitt ▸ Text*.
+  - Felmeddelanden (en misslyckad nedladdning, en mapp utan DVD-video, en
+    oläsbar genvägsfil osv.) visas alltid i fasta 20 sekunder, oavsett den
+    inställda OSD-varaktigheten — tillräckligt länge för att läsa även ett
+    längre felmeddelande.

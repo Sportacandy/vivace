@@ -11,4 +11,7 @@ Ponuka **Zobraziť** ukazuje informácie a vedľajšie panely.
 - **OSD** — zobrazenie na obrazovke nad videom:
   - úroveň podrobností (len titulky; hlasitosť + prevíjanie; hlasitosť +
     prevíjanie + časovač) sa rozširuje; dĺžka OSD a veľkosť písma sú v
-    *Nastavenia ▸ Všeobecné*.
+    *Nastavenia ▸ Rozhranie ▸ Text*.
+  - Chybové hlásenia (neúspešné stiahnutie, priečinok bez DVD videa, nečitateľný
+    súbor odkazu a pod.) sa vždy zobrazujú počas pevných 20 sekúnd bez ohľadu
+    na nastavenú dĺžku OSD — dosť dlho na prečítanie aj dlhšej chybovej správy.

@@ -11,4 +11,8 @@ Il menu **Visualizza** mostra informazioni e pannelli secondari.
 - **OSD** — l'indicazione a schermo mostrata sopra il video:
   - il livello di dettaglio (solo sottotitoli; volume + ricerca; volume +
     ricerca + tempo) è in fase di ampliamento; durata dell'OSD e dimensione del
-    carattere sono in *Preferenze ▸ Generale*.
+    carattere sono in *Preferenze ▸ Interfaccia ▸ Testo*.
+  - I messaggi di errore (un download non riuscito, una cartella senza video
+    DVD, un file di collegamento illeggibile, ecc.) vengono sempre mostrati
+    per 20 secondi fissi, indipendentemente dalla durata OSD configurata —
+    abbastanza a lungo da leggere anche un messaggio di errore più lungo.

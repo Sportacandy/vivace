@@ -11,4 +11,8 @@ Het menu **Weergave** toont informatie en secundaire panelen.
 - **OSD** — de weergave op het scherm boven de video:
   - het detailniveau (alleen ondertitels; volume + zoeken; volume + zoeken +
     timer) wordt uitgebreid; de OSD-duur en lettergrootte staan bij
-    *Voorkeuren ▸ Algemeen*.
+    *Voorkeuren ▸ Interface ▸ Tekst*.
+  - Foutmeldingen (een mislukte download, een map zonder dvd-video, een
+    onleesbaar snelkoppelingsbestand, enz.) worden altijd 20 seconden lang
+    getoond, ongeacht de ingestelde OSD-duur — lang genoeg om ook een langere
+    foutmelding te lezen.

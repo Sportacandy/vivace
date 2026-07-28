@@ -11,4 +11,8 @@ O menu **Exibir** mostra informações e painéis secundários.
 - **OSD** — a exibição na tela mostrada sobre o vídeo:
   - o nível de detalhe (apenas legendas; volume + busca; volume + busca +
     cronômetro) está sendo ampliado; a duração do OSD e o tamanho da fonte estão
-    em *Preferências ▸ Geral*.
+    em *Preferências ▸ Interface ▸ Texto*.
+  - Mensagens de erro (uma falha de download, uma pasta sem vídeo de DVD, um
+    arquivo de atalho ilegível etc.) sempre são exibidas por 20 segundos fixos,
+    independentemente da duração de OSD configurada — tempo suficiente para
+    ler até uma mensagem de erro mais longa.

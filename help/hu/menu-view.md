@@ -10,4 +10,9 @@ A **Nézet** menü információkat és másodlagos paneleket jelenít meg.
   meg. Lásd [Megnyitás](menu-open.md) a lejátszási listák betöltéséhez.
 - **OSD** — a videó felett megjelenő képernyőkijelzés:
   - a részletességi szint (csak felirat; hangerő + tekerés; hangerő + tekerés +
-    időzítő) bővül; az OSD időtartama és betűmérete a *Beállítások ▸ Általános* alatt van.
+    időzítő) bővül; az OSD időtartama és betűmérete a
+    *Beállítások ▸ Felület ▸ Szöveg* alatt van.
+  - A hibaüzenetek (sikertelen letöltés, DVD-videót nem tartalmazó mappa,
+    olvashatatlan parancsikon-fájl stb.) a beállított OSD-időtartamtól
+    függetlenül mindig fix 20 másodpercig jelennek meg — elég sokáig ahhoz,
+    hogy egy hosszabb hibaüzenetet is el lehessen olvasni.

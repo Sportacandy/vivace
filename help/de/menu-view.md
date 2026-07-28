@@ -11,4 +11,8 @@ Das Menü **Anzeigen** zeigt Informationen und zusätzliche Bereiche.
 - **OSD** — die über dem Video angezeigte Bildschirmanzeige:
   - Der Detailgrad (nur Untertitel; Lautstärke + Suchlauf; Lautstärke + Suchlauf
     + Zeit) wird erweitert; OSD-Anzeigedauer und Schriftgröße finden Sie unter
-    *Einstellungen ▸ Allgemein*.
+    *Einstellungen ▸ Oberfläche ▸ Text*.
+  - Fehlermeldungen (ein fehlgeschlagener Download, ein Ordner ohne DVD-Video,
+    eine nicht lesbare Verknüpfungsdatei usw.) werden unabhängig von der
+    eingestellten OSD-Dauer immer 20 Sekunden lang angezeigt — lang genug, um
+    auch eine längere Fehlermeldung zu lesen.

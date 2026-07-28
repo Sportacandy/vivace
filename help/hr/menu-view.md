@@ -11,4 +11,8 @@ Izbornik **Prikaz** prikazuje informacije i sekundarne ploče.
 - **OSD** — zaslonski prikaz preko videozapisa:
   - razina detalja (samo titlovi; glasnoća + premotavanje; glasnoća +
     premotavanje + mjerač vremena) proširuje se; trajanje OSD-a i veličina fonta
-    nalaze se u *Postavke ▸ Općenito*.
+    nalaze se u *Postavke ▸ Sučelje ▸ Tekst*.
+  - Poruke o pogrešci (neuspjelo preuzimanje, mapa bez DVD videozapisa,
+    nečitljiva datoteka prečaca itd.) uvijek se prikazuju točno 20 sekundi,
+    bez obzira na postavljeno trajanje OSD-a — dovoljno dugo za čitanje čak i
+    dulje poruke o pogrešci.

@@ -733,212 +733,212 @@
         <translation>Leig às faidhlichean mheadhanan an seo, no brùth Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="625"/>
+        <location filename="../qml/Main.qml" line="624"/>
         <source>Downloading video…</source>
         <translation>A&apos; luchdachadh a-nuas bhidio…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="632"/>
+        <location filename="../qml/Main.qml" line="631"/>
         <source>This can take a while — the external tool is downloading and merging HD video and audio.</source>
         <translation>Faodaidh seo greis a thoirt — tha an t-inneal taobh a-muigh a&apos; luchdachadh a-nuas is a&apos; cur còmhla bhidio is fuaim HD.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="646"/>
-        <location filename="../qml/Main.qml" line="1460"/>
+        <location filename="../qml/Main.qml" line="645"/>
+        <location filename="../qml/Main.qml" line="1468"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="719"/>
+        <location filename="../qml/Main.qml" line="718"/>
         <source>Loading…</source>
         <translation>A&apos; luchdadh…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="720"/>
+        <location filename="../qml/Main.qml" line="719"/>
         <source>Connecting…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="721"/>
+        <location filename="../qml/Main.qml" line="720"/>
         <source>Buffering… %1%</source>
         <translation>A&apos; bufaireadh… %1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="729"/>
+        <location filename="../qml/Main.qml" line="728"/>
         <source>Live streams can take several seconds to start.</source>
         <translation>Faodaidh sruthan beò grunn dhiogan a thoirt gus tòiseachadh.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="757"/>
+        <location filename="../qml/Main.qml" line="763"/>
         <source>Volume: %1%</source>
         <translation>Àirde na fuaime: %1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="760"/>
+        <location filename="../qml/Main.qml" line="766"/>
         <source>Mute</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="760"/>
+        <location filename="../qml/Main.qml" line="766"/>
         <source>Mute off</source>
         <translation>Mùchadh dheth</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="763"/>
+        <location filename="../qml/Main.qml" line="769"/>
         <source>Speed: %1x</source>
         <translation>Astar: %1x</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1170"/>
+        <location filename="../qml/Main.qml" line="1176"/>
         <source>Media files (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1171"/>
-        <location filename="../qml/Main.qml" line="1209"/>
-        <location filename="../qml/Main.qml" line="1396"/>
+        <location filename="../qml/Main.qml" line="1177"/>
+        <location filename="../qml/Main.qml" line="1216"/>
+        <location filename="../qml/Main.qml" line="1404"/>
         <source>All files (*)</source>
         <translation>Na h-uile faidhle (*)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1194"/>
+        <location filename="../qml/Main.qml" line="1200"/>
         <source>Select the DVD drive or a folder containing VIDEO_TS</source>
         <translation>Tagh an draibh DVD no pasgan anns a bheil VIDEO_TS</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1198"/>
+        <location filename="../qml/Main.qml" line="1204"/>
         <source>No DVD video found in %1</source>
         <translation>Cha deach bhidio DVD a lorg ann an %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1208"/>
+        <location filename="../qml/Main.qml" line="1215"/>
         <source>Playlists (*.m3u *.m3u8)</source>
         <translation>Liostaichean-cluich (*.m3u *.m3u8)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1243"/>
+        <location filename="../qml/Main.qml" line="1250"/>
         <source>Playing stream</source>
         <translation>A&apos; cluich sruth</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1249"/>
-        <location filename="../qml/Main.qml" line="1269"/>
+        <location filename="../qml/Main.qml" line="1256"/>
+        <location filename="../qml/Main.qml" line="1276"/>
         <source>Playing downloaded video</source>
         <translation>A&apos; cluich bhidio a chaidh a luchdachadh a-nuas</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1253"/>
+        <location filename="../qml/Main.qml" line="1260"/>
         <source>YouTube: %1</source>
         <translation>YouTube: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1273"/>
+        <location filename="../qml/Main.qml" line="1280"/>
         <source>Download failed: %1</source>
         <translation>Dh&apos;fhàillig an luchdadh a-nuas: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1335"/>
+        <location filename="../qml/Main.qml" line="1342"/>
         <source>Could not read the shortcut file.</source>
         <translation>Cha b&apos; urrainn am faidhle ath-ghoirid a leughadh.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1349"/>
+        <location filename="../qml/Main.qml" line="1357"/>
         <source>Starting download…</source>
         <translation>A&apos; tòiseachadh an luchdaidh a-nuas…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1350"/>
+        <location filename="../qml/Main.qml" line="1358"/>
         <source>Downloading video (this can take a while)…</source>
         <translation>A&apos; luchdachadh a-nuas bhidio (faodaidh seo greis a thoirt)…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1354"/>
+        <location filename="../qml/Main.qml" line="1362"/>
         <source>Resolving with yt-dlp…</source>
         <translation>A&apos; fuasgladh le yt-dlp…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1391"/>
+        <location filename="../qml/Main.qml" line="1399"/>
         <source>Load subtitle file</source>
         <translation>Luchdaich faidhle fho-thiotalan</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1395"/>
+        <location filename="../qml/Main.qml" line="1403"/>
         <source>Subtitle files (*.srt *.vtt *.ass *.ssa)</source>
         <translation>Faidhlichean fho-thiotalan (*.srt *.vtt *.ass *.ssa)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1403"/>
+        <location filename="../qml/Main.qml" line="1411"/>
         <source>Subtitle delay</source>
         <translation>Dàil fho-thiotalan</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1437"/>
+        <location filename="../qml/Main.qml" line="1445"/>
         <source>Delay:</source>
         <translation>Dàil:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1443"/>
-        <location filename="../qml/Main.qml" line="1515"/>
+        <location filename="../qml/Main.qml" line="1451"/>
+        <location filename="../qml/Main.qml" line="1523"/>
         <source>ms</source>
         <translation>ms</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1453"/>
+        <location filename="../qml/Main.qml" line="1461"/>
         <source>OK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1472"/>
+        <location filename="../qml/Main.qml" line="1480"/>
         <source>Audio delay — Vivace</source>
         <translation>Dàil fuaime — Vivace</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1503"/>
+        <location filename="../qml/Main.qml" line="1511"/>
         <source>No delay for this file (use the global delay only)</source>
         <translation>Gun dàil airson an fhaidhle seo (cleachd an dàil choitcheann a-mhàin)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1508"/>
+        <location filename="../qml/Main.qml" line="1516"/>
         <source>This file&apos;s delay:</source>
         <translation>Dàil an fhaidhle seo:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1523"/>
+        <location filename="../qml/Main.qml" line="1531"/>
         <source>The delay applied to this file is this value plus the global delay for the current audio device (%1 ms), set in Preferences &gt; General &gt; Audio. Negative values delay the video to match audio that arrives late (e.g. Bluetooth headphones).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1536"/>
+        <location filename="../qml/Main.qml" line="1544"/>
         <source>&amp;Apply</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1545"/>
+        <location filename="../qml/Main.qml" line="1553"/>
         <source>&amp;Close</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1641"/>
+        <location filename="../qml/Main.qml" line="1649"/>
         <source>Hide window</source>
         <translation>Falaich an uinneag</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1641"/>
+        <location filename="../qml/Main.qml" line="1649"/>
         <source>Show window</source>
         <translation>Seall an uinneag</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1646"/>
+        <location filename="../qml/Main.qml" line="1654"/>
         <source>Play / Pause</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1650"/>
+        <location filename="../qml/Main.qml" line="1658"/>
         <source>Stop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1655"/>
+        <location filename="../qml/Main.qml" line="1663"/>
         <source>Quit</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2827,11 +2827,6 @@
         <translation>Eadar-aghaidh:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="21"/>
-        <source>&lt;h1&gt;Interface&lt;/h1&gt;&lt;p&gt;&lt;b&gt;Interface&lt;/b&gt; — the GUI layout (Basic / Mini / Mpc), icon set, language, and Qt Quick Controls style, plus main-window behaviour (auto-resize, centre, keep on screen, remember geometry, hide the video area for audio-only files).&lt;/p&gt;&lt;p&gt;&lt;b&gt;Text&lt;/b&gt; — the application font, the toolbar gradient, the native file dialog toggle, OSD options, touch-friendly sizing, and the high-DPI scale-factor override (Vivace scales automatically otherwise).&lt;/p&gt;&lt;p&gt;&lt;b&gt;Seeking&lt;/b&gt; — the jump lengths for the seek buttons and the mouse wheel, and whether the time slider seeks while dragging or on release.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Instances&lt;/b&gt; — reuse a single running instance so files open in the existing window (takes effect next launch).&lt;/p&gt;&lt;p&gt;&lt;b&gt;Fullscreen&lt;/b&gt; — hide the mouse pointer after inactivity.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Privacy&lt;/b&gt; — how many recent files and URLs to remember, and whether to remember the last folder.&lt;/p&gt;&lt;p&gt;Style, font and scale-factor changes take effect after restarting Vivace.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../qml/PrefInterfacePage.qml" line="54"/>
         <source>Text</source>
         <translation type="unfinished"></translation>
@@ -2873,7 +2868,7 @@
     </message>
     <message>
         <location filename="../qml/PrefInterfacePage.qml" line="185"/>
-        <location filename="../qml/PrefInterfacePage.qml" line="242"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="253"/>
         <source>System default</source>
         <translation>Bunaiteach an t-siostaim</translation>
     </message>
@@ -2893,210 +2888,215 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="237"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="248"/>
         <source>Application font:</source>
         <translation>Cruth-clò na h-aplacaid:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="248"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="259"/>
         <source>Change…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="259"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="270"/>
         <source>Reset</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="273"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="284"/>
         <source>Font changes take effect after restarting Vivace. (The default font already renders Japanese and other scripts; a custom font only needs to be set for preference.)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="277"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="223"/>
         <source>Gradient background for the toolbar and control bar</source>
         <translation>Cùl-raon caisead airson a&apos; bhàr-inneil is a&apos; bhàr-smachd</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="282"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="21"/>
+        <source>&lt;h1&gt;Interface&lt;/h1&gt;&lt;p&gt;&lt;b&gt;Interface&lt;/b&gt; — the GUI layout (Basic / Mini / Mpc), icon set, language, and Qt Quick Controls style, plus main-window behaviour (auto-resize, centre, keep on screen, remember geometry, hide the video area for audio-only files), the toolbar gradient, and the native file dialog toggle.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Text&lt;/b&gt; — the application font, OSD options, touch-friendly sizing, and the high-DPI scale-factor override (Vivace scales automatically otherwise).&lt;/p&gt;&lt;p&gt;&lt;b&gt;Seeking&lt;/b&gt; — the jump lengths for the seek buttons and the mouse wheel, and whether the time slider seeks while dragging or on release.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Instances&lt;/b&gt; — reuse a single running instance so files open in the existing window (takes effect next launch).&lt;/p&gt;&lt;p&gt;&lt;b&gt;Fullscreen&lt;/b&gt; — hide the mouse pointer after inactivity.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Privacy&lt;/b&gt; — how many recent files and URLs to remember, and whether to remember the last folder.&lt;/p&gt;&lt;p&gt;Style, font and scale-factor changes take effect after restarting Vivace.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefInterfacePage.qml" line="228"/>
         <source>Use the system native file dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="288"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="289"/>
         <source>OSD</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="295"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="296"/>
         <source>Show OSD messages</source>
         <translation>Seall teachdaireachdan OSD</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="301"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="302"/>
         <source>Duration of OSD messages:</source>
         <translation>Faid theachdaireachdan OSD:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="307"/>
-        <location filename="../qml/PrefInterfacePage.qml" line="558"/>
-        <location filename="../qml/PrefInterfacePage.qml" line="566"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="308"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="559"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="567"/>
         <source>ms</source>
         <translation>ms</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="312"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="313"/>
         <source>OSD font size:</source>
         <translation>Meud cruth-clò OSD:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="318"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="319"/>
         <source>px</source>
         <translation>px</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="326"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="327"/>
         <source>Touch</source>
         <translation>Suathadh</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="335"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="336"/>
         <source>Touch-friendly controls (larger fonts and icons)</source>
         <translation>Innealan-smachd freagarrach do shuathadh (cruthan-clò is ìomhaigheagan nas motha)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="340"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="341"/>
         <source>Enlarges the interface for finger use on a tablet. Toolbar icons resize immediately; the larger fonts take effect after you restart Vivace.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="350"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="351"/>
         <source>Swipe across the video to seek</source>
         <translation>Sguab thairis air a&apos; bhidio airson sireadh</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="355"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="356"/>
         <source>Drag left or right on the video (with a finger or the mouse) to jump backward or forward. An on-screen message previews the target while you drag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="439"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="440"/>
         <source>seconds</source>
         <translation>diogan</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="445"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="446"/>
         <source>Short jump:</source>
         <translation>Leum goirid:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="452"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="453"/>
         <source>Medium jump:</source>
         <translation>Leum meadhanach:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="459"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="460"/>
         <source>Long jump:</source>
         <translation>Leum fada:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="465"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="466"/>
         <source>Mouse wheel jump:</source>
         <translation>Leum cuibhle-luchaige:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="475"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="476"/>
         <source>Behaviour of time slider:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="479"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="480"/>
         <source>Seek to position while dragging</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="480"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="481"/>
         <source>Seek to position when released</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="491"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="492"/>
         <source>Absolute/relative seeking method and precise seeking are mplayer/mpv-specific and do not apply to Vivace&apos;s Qt Multimedia backend (seeking is already position-based).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="514"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="515"/>
         <source>Use only one running instance of Vivace</source>
         <translation>Cleachd dìreach aon ionstans de Vivace a tha a&apos; ruith</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="525"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="526"/>
         <source>When enabled, opening a file while Vivace is already running hands it to the existing window instead of starting a new one. Takes effect on the next launch.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="539"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="540"/>
         <source>Hide the mouse pointer after inactivity</source>
         <translation>Falaich tomhaire na luchaige às dèidh neo-ghnìomhachd</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="544"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="545"/>
         <source>While a video is playing, hide the mouse pointer over the video after the delay below — in the normal window as well as in fullscreen.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="552"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="553"/>
         <source>Hide after:</source>
         <translation>Falaich às dèidh:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="564"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="565"/>
         <source>Time to hide the control bar:</source>
         <translation>Ùine gus am bàr-smachd fhalach:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="573"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="574"/>
         <source>The fullscreen control bar currently shows while the pointer is near the bottom edge; a time-based autohide is planned.</source>
         <translation>Tha am bàr-smachd làn-sgrìn ri fhaicinn an-dràsta fhad &apos;s a tha an tomhaire faisg air an oir bhun; tha fèin-fhalach stèidhichte air ùine air a phlanadh.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="585"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="586"/>
         <source>Recent files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="590"/>
-        <location filename="../qml/PrefInterfacePage.qml" line="606"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="591"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="607"/>
         <source>Max. items:</source>
         <translation>Nithean as motha:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="601"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="602"/>
         <source>URLs</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="616"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="617"/>
         <source>Remember last directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="368"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="369"/>
         <source>Vivace scales the interface on high-DPI screens automatically. You can override the scale factor here if needed.</source>
         <translation>Sgèilidh Vivace an eadar-aghaidh air sgrìnichean àrd-DPI gu fèin-obrachail. &apos;S urrainn dhut factar na sgèile a thar-àithneadh an seo ma tha feum air.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="372"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="373"/>
         <source>Scale factor:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="379"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="380"/>
         <source>Automatic</source>
         <translation>Fèin-obrachail</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="396"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="397"/>
         <source>Scale factor changes take effect after restarting Vivace.</source>
         <translation>Bidh atharraichean factar sgèile an gnìomh às dèidh ath-thòiseachadh Vivace.</translation>
     </message>

@@ -23,10 +23,10 @@ ColumnLayout {
         + "<p><b>Interface</b> — the GUI layout (Basic / Mini / Mpc), icon set, "
         + "language, and Qt Quick Controls style, plus main-window behaviour "
         + "(auto-resize, centre, keep on screen, remember geometry, hide the "
-        + "video area for audio-only files).</p>"
-        + "<p><b>Text</b> — the application font, the toolbar gradient, the "
-        + "native file dialog toggle, OSD options, touch-friendly sizing, "
-        + "and the high-DPI scale-factor override (Vivace scales "
+        + "video area for audio-only files), the toolbar gradient, and the "
+        + "native file dialog toggle.</p>"
+        + "<p><b>Text</b> — the application font, OSD options, touch-friendly "
+        + "sizing, and the high-DPI scale-factor override (Vivace scales "
         + "automatically otherwise).</p>"
         + "<p><b>Seeking</b> — the jump lengths for the seek buttons and the "
         + "mouse wheel, and whether the time slider seeks while dragging or on "
@@ -219,6 +219,17 @@ ColumnLayout {
                     text: qsTr("Style changes take effect after restarting Vivace. Fusion is recommended: other styles may not render the custom menus and sliders correctly.")
                 }
 
+                CheckBox {
+                    text: qsTr("Gradient background for the toolbar and control bar")
+                    checked: Settings.toolbarGradient
+                    onToggled: Settings.toolbarGradient = checked
+                }
+                CheckBox {
+                    text: qsTr("Use the system native file dialog")
+                    checked: Settings.useNativeFileDialog
+                    onToggled: Settings.useNativeFileDialog = checked
+                }
+
                 Item { Layout.fillHeight: true }
             }
         }
@@ -273,16 +284,6 @@ ColumnLayout {
                     text: qsTr("Font changes take effect after restarting Vivace. (The default font already renders Japanese and other scripts; a custom font only needs to be set for preference.)")
                 }
 
-                CheckBox {
-                    text: qsTr("Gradient background for the toolbar and control bar")
-                    checked: Settings.toolbarGradient
-                    onToggled: Settings.toolbarGradient = checked
-                }
-                CheckBox {
-                    text: qsTr("Use the system native file dialog")
-                    checked: Settings.useNativeFileDialog
-                    onToggled: Settings.useNativeFileDialog = checked
-                }
                 GroupBox {
                     Layout.fillWidth: true
                     title: qsTr("OSD")

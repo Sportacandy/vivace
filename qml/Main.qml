@@ -600,7 +600,6 @@ ApplicationWindow {
 
         Timer {
             id: osdTimer
-            interval: Settings.osdDuration
             onTriggered: osd.opacity = 0
         }
     }
@@ -734,11 +733,18 @@ ApplicationWindow {
         }
     }
 
-    function showOsd(text) {
+    // Errors get a longer, fixed display time (not the user's configured OSD
+    // duration, which defaults to a much shorter 2 s meant for routine status
+    // messages) since an error's text is longer and often unexpected, so it
+    // takes more time to read.
+    readonly property int osdErrorDurationMs: 20000
+
+    function showOsd(text, durationMs) {
         if (!Settings.osdEnabled)
             return
         osdLabel.text = text
         osd.opacity = 1
+        osdTimer.interval = durationMs !== undefined ? durationMs : Settings.osdDuration
         osdTimer.restart()
     }
 
@@ -866,7 +872,7 @@ ApplicationWindow {
                 root.close()
         }
         function onErrorMessage(message) {
-            root.showOsd(message)
+            root.showOsd(message, root.osdErrorDurationMs)
         }
         function onOsdMessage(message) {
             root.showOsd(message)
@@ -1196,7 +1202,8 @@ ApplicationWindow {
         onAccepted: {
             if (!playerController.openDvd(selectedFolder))
                 root.showOsd(qsTr("No DVD video found in %1")
-                             .arg(UiHelpers.toLocalPath(selectedFolder)))
+                             .arg(UiHelpers.toLocalPath(selectedFolder)),
+                             root.osdErrorDurationMs)
         }
     }
 
@@ -1250,7 +1257,7 @@ ApplicationWindow {
         }
         onFailed: message => {
             root.downloadStatus = ""
-            root.showOsd(qsTr("YouTube: %1").arg(message))
+            root.showOsd(qsTr("YouTube: %1").arg(message), root.osdErrorDurationMs)
         }
     }
 
@@ -1270,7 +1277,7 @@ ApplicationWindow {
         }
         onFailed: message => {
             root.downloadStatus = ""
-            root.showOsd(qsTr("Download failed: %1").arg(message))
+            root.showOsd(qsTr("Download failed: %1").arg(message), root.osdErrorDurationMs)
         }
     }
 
@@ -1332,7 +1339,8 @@ ApplicationWindow {
         if (s.toLowerCase().endsWith(".url")) {
             const target = UiHelpers.readInternetShortcut(url)
             if (target === "") {
-                root.showOsd(qsTr("Could not read the shortcut file."))
+                root.showOsd(qsTr("Could not read the shortcut file."),
+                             root.osdErrorDurationMs)
                 return
             }
             s = target

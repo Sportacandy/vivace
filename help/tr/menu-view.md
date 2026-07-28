@@ -10,4 +10,9 @@
   görünür. Oynatma listelerini yüklemek için [Aç](menu-open.md) bölümüne bakın.
 - **OSD** — videonun üzerinde gösterilen ekran görüntüsü:
   - ayrıntı düzeyi (yalnızca altyazı; ses + sarma; ses + sarma + sayaç)
-    genişletiliyor; OSD süresi ve yazı tipi boyutu *Tercihler ▸ Genel* bölümündedir.
+    genişletiliyor; OSD süresi ve yazı tipi boyutu *Tercihler ▸ Arayüz ▸ Metin*
+    bölümündedir.
+  - Hata mesajları (başarısız bir indirme, DVD videosu bulunamayan bir klasör,
+    okunamayan bir kısayol dosyası vb.) yapılandırılmış OSD süresinden bağımsız
+    olarak her zaman sabit 20 saniye gösterilir — daha uzun bir hata mesajını
+    bile okumaya yetecek kadar.

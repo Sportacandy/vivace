@@ -12,4 +12,8 @@ Le menu **Afficher** montre des informations et des panneaux secondaires.
 - **OSD** — l'affichage à l'écran superposé à la vidéo :
   - le niveau de détail (sous-titres seuls ; volume + navigation ; volume +
     navigation + minuteur) est en cours d'extension ; la durée de l'OSD et la
-    taille de police sont dans *Préférences ▸ Général*.
+    taille de police sont dans *Préférences ▸ Interface ▸ Texte*.
+  - Les messages d'erreur (un téléchargement échoué, un dossier sans vidéo DVD,
+    un fichier raccourci illisible, etc.) s'affichent toujours pendant 20
+    secondes fixes, quelle que soit la durée d'OSD configurée — assez longtemps
+    pour lire même un message d'erreur plus long.

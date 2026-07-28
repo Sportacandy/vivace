@@ -733,212 +733,212 @@
         <translation>Presuňte sem súbory médií alebo stlačte Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="625"/>
+        <location filename="../qml/Main.qml" line="624"/>
         <source>Downloading video…</source>
         <translation>Sťahovanie videa…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="632"/>
+        <location filename="../qml/Main.qml" line="631"/>
         <source>This can take a while — the external tool is downloading and merging HD video and audio.</source>
         <translation>Môže to chvíľu trvať — externý nástroj sťahuje a spája HD video a zvuk.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="646"/>
-        <location filename="../qml/Main.qml" line="1460"/>
+        <location filename="../qml/Main.qml" line="645"/>
+        <location filename="../qml/Main.qml" line="1468"/>
         <source>Cancel</source>
         <translation>Zrušiť</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="719"/>
+        <location filename="../qml/Main.qml" line="718"/>
         <source>Loading…</source>
         <translation>Načítava sa…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="720"/>
+        <location filename="../qml/Main.qml" line="719"/>
         <source>Connecting…</source>
         <translation>Pripája sa...</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="721"/>
+        <location filename="../qml/Main.qml" line="720"/>
         <source>Buffering… %1%</source>
         <translation>Ukladanie do vyrovnávacej pamäte… %1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="729"/>
+        <location filename="../qml/Main.qml" line="728"/>
         <source>Live streams can take several seconds to start.</source>
         <translation>Živé prenosy sa môžu spúšťať niekoľko sekúnd.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="757"/>
+        <location filename="../qml/Main.qml" line="763"/>
         <source>Volume: %1%</source>
         <translation>Hlasitosť: %1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="760"/>
+        <location filename="../qml/Main.qml" line="766"/>
         <source>Mute</source>
         <translation>Stíšiť</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="760"/>
+        <location filename="../qml/Main.qml" line="766"/>
         <source>Mute off</source>
         <translation>Stlmenie vypnuté</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="763"/>
+        <location filename="../qml/Main.qml" line="769"/>
         <source>Speed: %1x</source>
         <translation>Rýchlosť: %1x</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1170"/>
+        <location filename="../qml/Main.qml" line="1176"/>
         <source>Media files (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1171"/>
-        <location filename="../qml/Main.qml" line="1209"/>
-        <location filename="../qml/Main.qml" line="1396"/>
+        <location filename="../qml/Main.qml" line="1177"/>
+        <location filename="../qml/Main.qml" line="1216"/>
+        <location filename="../qml/Main.qml" line="1404"/>
         <source>All files (*)</source>
         <translation>Všetky súbory (*)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1194"/>
+        <location filename="../qml/Main.qml" line="1200"/>
         <source>Select the DVD drive or a folder containing VIDEO_TS</source>
         <translation>Vyberte jednotku DVD alebo priečinok obsahujúci VIDEO_TS</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1198"/>
+        <location filename="../qml/Main.qml" line="1204"/>
         <source>No DVD video found in %1</source>
         <translation>V %1 sa nenašlo žiadne DVD video</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1208"/>
+        <location filename="../qml/Main.qml" line="1215"/>
         <source>Playlists (*.m3u *.m3u8)</source>
         <translation>Zoznamy skladieb (*.m3u *.m3u8)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1243"/>
+        <location filename="../qml/Main.qml" line="1250"/>
         <source>Playing stream</source>
         <translation>Prehrávanie streamu</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1249"/>
-        <location filename="../qml/Main.qml" line="1269"/>
+        <location filename="../qml/Main.qml" line="1256"/>
+        <location filename="../qml/Main.qml" line="1276"/>
         <source>Playing downloaded video</source>
         <translation>Prehrávanie stiahnutého videa</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1253"/>
+        <location filename="../qml/Main.qml" line="1260"/>
         <source>YouTube: %1</source>
         <translation>YouTube: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1273"/>
+        <location filename="../qml/Main.qml" line="1280"/>
         <source>Download failed: %1</source>
         <translation>Sťahovanie zlyhalo: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1335"/>
+        <location filename="../qml/Main.qml" line="1342"/>
         <source>Could not read the shortcut file.</source>
         <translation>Nedá sa prečítať súbor odkazu.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1349"/>
+        <location filename="../qml/Main.qml" line="1357"/>
         <source>Starting download…</source>
         <translation>Spúšťanie sťahovania…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1350"/>
+        <location filename="../qml/Main.qml" line="1358"/>
         <source>Downloading video (this can take a while)…</source>
         <translation>Sťahovanie videa (môže to chvíľu trvať)…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1354"/>
+        <location filename="../qml/Main.qml" line="1362"/>
         <source>Resolving with yt-dlp…</source>
         <translation>Spracovanie pomocou yt-dlp…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1391"/>
+        <location filename="../qml/Main.qml" line="1399"/>
         <source>Load subtitle file</source>
         <translation>Načítať súbor titulkov</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1395"/>
+        <location filename="../qml/Main.qml" line="1403"/>
         <source>Subtitle files (*.srt *.vtt *.ass *.ssa)</source>
         <translation>Súbory titulkov (*.srt *.vtt *.ass *.ssa)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1403"/>
+        <location filename="../qml/Main.qml" line="1411"/>
         <source>Subtitle delay</source>
         <translation>Oneskorenie titulkov</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1437"/>
+        <location filename="../qml/Main.qml" line="1445"/>
         <source>Delay:</source>
         <translation>Oneskorenie:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1443"/>
-        <location filename="../qml/Main.qml" line="1515"/>
+        <location filename="../qml/Main.qml" line="1451"/>
+        <location filename="../qml/Main.qml" line="1523"/>
         <source>ms</source>
         <translation>ms</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1453"/>
+        <location filename="../qml/Main.qml" line="1461"/>
         <source>OK</source>
         <translation>&amp;OK</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1472"/>
+        <location filename="../qml/Main.qml" line="1480"/>
         <source>Audio delay — Vivace</source>
         <translation>Oneskorenie zvuku — Vivace</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1503"/>
+        <location filename="../qml/Main.qml" line="1511"/>
         <source>No delay for this file (use the global delay only)</source>
         <translation>Bez oneskorenia pre tento súbor (použiť iba globálne oneskorenie)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1508"/>
+        <location filename="../qml/Main.qml" line="1516"/>
         <source>This file&apos;s delay:</source>
         <translation>Oneskorenie tohto súboru:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1523"/>
+        <location filename="../qml/Main.qml" line="1531"/>
         <source>The delay applied to this file is this value plus the global delay for the current audio device (%1 ms), set in Preferences &gt; General &gt; Audio. Negative values delay the video to match audio that arrives late (e.g. Bluetooth headphones).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1536"/>
+        <location filename="../qml/Main.qml" line="1544"/>
         <source>&amp;Apply</source>
         <translation>&amp;Použiť</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1545"/>
+        <location filename="../qml/Main.qml" line="1553"/>
         <source>&amp;Close</source>
         <translation>&amp;Zavrieť</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1641"/>
+        <location filename="../qml/Main.qml" line="1649"/>
         <source>Hide window</source>
         <translation>Skryť okno</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1641"/>
+        <location filename="../qml/Main.qml" line="1649"/>
         <source>Show window</source>
         <translation>Zobraziť okno</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1646"/>
+        <location filename="../qml/Main.qml" line="1654"/>
         <source>Play / Pause</source>
         <translation>Prehrať / Pauza</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1650"/>
+        <location filename="../qml/Main.qml" line="1658"/>
         <source>Stop</source>
         <translation>Zastav</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1655"/>
+        <location filename="../qml/Main.qml" line="1663"/>
         <source>Quit</source>
         <translation>&amp;Koniec</translation>
     </message>
@@ -2828,11 +2828,6 @@
         <translation>Rozhranie:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="21"/>
-        <source>&lt;h1&gt;Interface&lt;/h1&gt;&lt;p&gt;&lt;b&gt;Interface&lt;/b&gt; — the GUI layout (Basic / Mini / Mpc), icon set, language, and Qt Quick Controls style, plus main-window behaviour (auto-resize, centre, keep on screen, remember geometry, hide the video area for audio-only files).&lt;/p&gt;&lt;p&gt;&lt;b&gt;Text&lt;/b&gt; — the application font, the toolbar gradient, the native file dialog toggle, OSD options, touch-friendly sizing, and the high-DPI scale-factor override (Vivace scales automatically otherwise).&lt;/p&gt;&lt;p&gt;&lt;b&gt;Seeking&lt;/b&gt; — the jump lengths for the seek buttons and the mouse wheel, and whether the time slider seeks while dragging or on release.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Instances&lt;/b&gt; — reuse a single running instance so files open in the existing window (takes effect next launch).&lt;/p&gt;&lt;p&gt;&lt;b&gt;Fullscreen&lt;/b&gt; — hide the mouse pointer after inactivity.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Privacy&lt;/b&gt; — how many recent files and URLs to remember, and whether to remember the last folder.&lt;/p&gt;&lt;p&gt;Style, font and scale-factor changes take effect after restarting Vivace.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../qml/PrefInterfacePage.qml" line="54"/>
         <source>Text</source>
         <translation>Text</translation>
@@ -2874,7 +2869,7 @@
     </message>
     <message>
         <location filename="../qml/PrefInterfacePage.qml" line="185"/>
-        <location filename="../qml/PrefInterfacePage.qml" line="242"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="253"/>
         <source>System default</source>
         <translation>Predvolené systému</translation>
     </message>
@@ -2894,210 +2889,215 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="237"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="248"/>
         <source>Application font:</source>
         <translation>Písmo aplikácie:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="248"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="259"/>
         <source>Change…</source>
         <translation>&amp;Zmeniť...</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="259"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="270"/>
         <source>Reset</source>
         <translation>&amp;Resetovať</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="273"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="284"/>
         <source>Font changes take effect after restarting Vivace. (The default font already renders Japanese and other scripts; a custom font only needs to be set for preference.)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="277"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="223"/>
         <source>Gradient background for the toolbar and control bar</source>
         <translation>Prechodové pozadie panela nástrojov a ovládacieho panela</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="282"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="21"/>
+        <source>&lt;h1&gt;Interface&lt;/h1&gt;&lt;p&gt;&lt;b&gt;Interface&lt;/b&gt; — the GUI layout (Basic / Mini / Mpc), icon set, language, and Qt Quick Controls style, plus main-window behaviour (auto-resize, centre, keep on screen, remember geometry, hide the video area for audio-only files), the toolbar gradient, and the native file dialog toggle.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Text&lt;/b&gt; — the application font, OSD options, touch-friendly sizing, and the high-DPI scale-factor override (Vivace scales automatically otherwise).&lt;/p&gt;&lt;p&gt;&lt;b&gt;Seeking&lt;/b&gt; — the jump lengths for the seek buttons and the mouse wheel, and whether the time slider seeks while dragging or on release.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Instances&lt;/b&gt; — reuse a single running instance so files open in the existing window (takes effect next launch).&lt;/p&gt;&lt;p&gt;&lt;b&gt;Fullscreen&lt;/b&gt; — hide the mouse pointer after inactivity.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Privacy&lt;/b&gt; — how many recent files and URLs to remember, and whether to remember the last folder.&lt;/p&gt;&lt;p&gt;Style, font and scale-factor changes take effect after restarting Vivace.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefInterfacePage.qml" line="228"/>
         <source>Use the system native file dialog</source>
         <translation>Použiť pôvodné systémové súborové dialógové okno</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="288"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="289"/>
         <source>OSD</source>
         <translation>&amp;OSD</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="295"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="296"/>
         <source>Show OSD messages</source>
         <translation>Zobrazovať správy OSD</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="301"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="302"/>
         <source>Duration of OSD messages:</source>
         <translation>Trvanie správ OSD:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="307"/>
-        <location filename="../qml/PrefInterfacePage.qml" line="558"/>
-        <location filename="../qml/PrefInterfacePage.qml" line="566"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="308"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="559"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="567"/>
         <source>ms</source>
         <translation>ms</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="312"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="313"/>
         <source>OSD font size:</source>
         <translation>Veľkosť písma OSD:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="318"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="319"/>
         <source>px</source>
         <translation>px</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="326"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="327"/>
         <source>Touch</source>
         <translation>Dotyk</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="335"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="336"/>
         <source>Touch-friendly controls (larger fonts and icons)</source>
         <translation>Ovládanie vhodné pre dotyk (väčšie písma a ikony)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="340"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="341"/>
         <source>Enlarges the interface for finger use on a tablet. Toolbar icons resize immediately; the larger fonts take effect after you restart Vivace.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="350"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="351"/>
         <source>Swipe across the video to seek</source>
         <translation>Potiahnutím po videu sa posuniete</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="355"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="356"/>
         <source>Drag left or right on the video (with a finger or the mouse) to jump backward or forward. An on-screen message previews the target while you drag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="439"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="440"/>
         <source>seconds</source>
         <translation>sekúnd</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="445"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="446"/>
         <source>Short jump:</source>
         <translation>Krátky skok:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="452"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="453"/>
         <source>Medium jump:</source>
         <translation>Stredný skok:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="459"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="460"/>
         <source>Long jump:</source>
         <translation>Dlhý skok:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="465"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="466"/>
         <source>Mouse wheel jump:</source>
         <translation>Skok kolieskom myši:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="475"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="476"/>
         <source>Behaviour of time slider:</source>
         <translation>Chovanie časového &amp;posuvníka:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="479"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="480"/>
         <source>Seek to position while dragging</source>
         <translation>Zmeniť pozíciu počas ťahania</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="480"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="481"/>
         <source>Seek to position when released</source>
         <translation>Zmeniť pozíciu po uvoľnení</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="491"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="492"/>
         <source>Absolute/relative seeking method and precise seeking are mplayer/mpv-specific and do not apply to Vivace&apos;s Qt Multimedia backend (seeking is already position-based).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="514"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="515"/>
         <source>Use only one running instance of Vivace</source>
         <translation>Používať iba jednu spustenú inštanciu Vivace</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="525"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="526"/>
         <source>When enabled, opening a file while Vivace is already running hands it to the existing window instead of starting a new one. Takes effect on the next launch.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="539"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="540"/>
         <source>Hide the mouse pointer after inactivity</source>
         <translation>Skryť ukazovateľ myši po nečinnosti</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="544"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="545"/>
         <source>While a video is playing, hide the mouse pointer over the video after the delay below — in the normal window as well as in fullscreen.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="552"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="553"/>
         <source>Hide after:</source>
         <translation>Skryť po:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="564"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="565"/>
         <source>Time to hide the control bar:</source>
         <translation>Čas do skrytia ovládacieho panela:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="573"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="574"/>
         <source>The fullscreen control bar currently shows while the pointer is near the bottom edge; a time-based autohide is planned.</source>
         <translation>V režime celej obrazovky sa ovládací panel teraz zobrazuje, kým je ukazovateľ pri dolnom okraji; časovo riadené automatické skrývanie je plánované.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="585"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="586"/>
         <source>Recent files</source>
         <translation>Posledné použité súbory</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="590"/>
-        <location filename="../qml/PrefInterfacePage.qml" line="606"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="591"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="607"/>
         <source>Max. items:</source>
         <translation>Max. položiek:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="601"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="602"/>
         <source>URLs</source>
         <translation>URL adresy</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="616"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="617"/>
         <source>Remember last directory</source>
         <translation>Pamätať si posledný adresár</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="368"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="369"/>
         <source>Vivace scales the interface on high-DPI screens automatically. You can override the scale factor here if needed.</source>
         <translation>Vivace automaticky škáluje rozhranie na obrazovkách s vysokým DPI. V prípade potreby tu môžete faktor škálovania zmeniť.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="372"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="373"/>
         <source>Scale factor:</source>
         <translation>K&amp;oeficient mierky:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="379"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="380"/>
         <source>Automatic</source>
         <translation>Automaticky</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="396"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="397"/>
         <source>Scale factor changes take effect after restarting Vivace.</source>
         <translation>Zmeny faktora škálovania sa prejavia po reštarte Vivace.</translation>
     </message>
@@ -3640,8 +3640,12 @@
     </message>
     <message>
         <location filename="../qml/PrefPlaylistPage.qml" line="233"/>
-        <source>Restore\ the\ playlist\ you\ had\ open\ the\ last\ time\ Vivace\ was\ closed\.</source>
+        <source>Restore the playlist you had open the last time Vivace was closed.</source>
         <translation>Obnoví zoznam skladieb, ktorý bol otvorený pri poslednom ukončení Vivace.</translation>
+    </message>
+    <message>
+        <source>Restore\ the\ playlist\ you\ had\ open\ the\ last\ time\ Vivace\ was\ closed\.</source>
+        <translation type="vanished">Obnoví zoznam skladieb, ktorý bol otvorený pri poslednom ukončení Vivace.</translation>
     </message>
     <message>
         <source>Sessions</source>

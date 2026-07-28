@@ -9,6 +9,19 @@ typical changelog, the `[0.1.1]` entry below has grown across those re-cuts
 rather than being written once. Future releases that bump the version will
 each get their own entry instead.
 
+## [Unreleased]
+
+### Fixed
+- Error-type OSD messages (playback errors, YouTube/download failures, a
+  folder with no DVD video, an unreadable shortcut file) now stay on
+  screen for a fixed 20 seconds, instead of the user's regular (often much
+  shorter) OSD duration setting — long error text needs more time to read
+  than a routine status message like a volume or seek notification.
+- Preferences ▸ Interface: moved "Gradient background for the toolbar and
+  control bar" and "Use the system native file dialog" back from the
+  *Text* subtab to *Interface*, alongside the other main-window/appearance
+  settings they belong with.
+
 ## [0.1.2] — 2026-07-28
 
 ### Fixed

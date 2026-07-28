@@ -11,4 +11,8 @@ Menuen **Vis** viser oplysninger og sekundære paneler.
 - **OSD** — skærmvisningen over videoen:
   - detaljeringsgraden (kun undertekster; lydstyrke + søgning; lydstyrke +
     søgning + timer) udvides; OSD-varighed og skriftstørrelse findes i
-    *Indstillinger ▸ Generelt*.
+    *Indstillinger ▸ Grænseflade ▸ Tekst*.
+  - Fejlmeddelelser (en mislykket download, en mappe uden dvd-video, en
+    ulæselig genvejsfil osv.) vises altid i faste 20 sekunder, uanset den
+    indstillede OSD-varighed — længe nok til at læse selv en længere
+    fejlmeddelelse.
