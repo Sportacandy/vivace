@@ -17,9 +17,12 @@ is also published from the tip of `main` between tagged releases. See
 
 ## Status
 
-**v0.1.1** — fixes a critical Windows issue where AV1 video hung/leaked
-memory instead of playing (see "AV1 support" below). Vivace is a working
-daily-driver media player:
+**v0.1.2** — adds a configurable Deno path for full-quality YouTube
+downloads, fixes long OSD messages overflowing the window instead of
+wrapping, fixes tall Preferences pages that were easy to scroll past
+unnoticed, and fixes the last video frame staying on screen after playback
+ended with a negative A/V delay set. Vivace is a working daily-driver media
+player:
 playback (mkv/mp4/mpeg2, seeking, embedded + external subtitles, audio/subtitle
 track switching, speed control with pitch compensation), a full SMPlayer-style
 menu layout (Open/Play/Video/Audio/Subtitles/Browse/View/Options/Help),
