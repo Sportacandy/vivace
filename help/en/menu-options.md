@@ -62,3 +62,45 @@ cookies directly out of a browser's profile.
   configured.
 - Cookies expire. If downloads that previously worked start failing, or fall
   back to a lower-quality/public result, export a fresh `cookies.txt`.
+
+## Installing Deno for YouTube downloads
+
+yt-dlp itself — not just Vivace — uses a separate external JavaScript
+runtime to solve challenges YouTube presents before handing out a video's
+real download URL. Per yt-dlp's own documentation, running without one is
+"deprecated" but does not outright fail: format availability is simply
+reduced, and **severely so for a signed-in (cookie) request** — exactly
+the kind of request **Download & play** mode makes to unlock HD,
+members-only, and age-restricted videos. **Streaming** mode never sends
+cookies (see "Exporting cookies for YouTube downloads" above), so it isn't
+the severe case and works fine without Deno in most cases. This is why the
+**Deno path:** field lives under *Preferences ▸ Network ▸ YouTube ▸
+Download & play*, not as a general YouTube setting. yt-dlp supports
+several JS runtimes; Deno is the one it looks for by default.
+
+**To install Deno:**
+
+1. Follow the official installation instructions at
+   [docs.deno.com](https://docs.deno.com/runtime/getting_started/installation/)
+   for your operating system (an installer script, or a package manager like
+   winget/scoop/Homebrew/apt, depending on platform).
+2. Make sure the `deno` executable ends up on your system PATH — the
+   installers above normally do this for you. On Windows, be sure to get
+   `deno`, not `denort` (a different, related executable that won't work
+   here).
+3. If you'd rather not modify PATH, leave it where it is and instead paste
+   its full path into **Deno path:** (*Preferences ▸ Network ▸ YouTube ▸
+   Download & play*).
+4. Restart Vivace (or just retry a download) after installing.
+
+**Keep in mind:**
+
+- This is a dependency of **yt-dlp**, not of Vivace directly — Vivace only
+  ever runs yt-dlp as an external process and never invokes Deno itself.
+- yt-dlp requires a reasonably recent Deno version (2.3.0 or later at the
+  time of writing). If downloads still show reduced quality/format errors
+  after installing, check `deno --version` and update it if it's older.
+- This requirement comes from changes on YouTube's/yt-dlp's side, not from
+  Vivace — the same **Deno path:** field exists for exactly this reason and
+  needs no further configuration once Deno itself is installed and
+  reachable.

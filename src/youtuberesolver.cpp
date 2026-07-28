@@ -72,6 +72,14 @@ void YoutubeResolver::setFfmpegLocation(const QString &path)
     emit ffmpegLocationChanged();
 }
 
+void YoutubeResolver::setDenoLocation(const QString &path)
+{
+    if (path == m_denoLocation)
+        return;
+    m_denoLocation = path;
+    emit denoLocationChanged();
+}
+
 void YoutubeResolver::setCacheDir(const QString &path)
 {
     if (path == m_cacheDir)
@@ -191,12 +199,22 @@ void YoutubeResolver::resolve(const QString &pageUrl)
     if (m_preferredHeight > 0)
         format = QStringLiteral("best[height<=?%1]/best").arg(m_preferredHeight);
 
-    const QStringList args = { QStringLiteral("-j"),
-                               QStringLiteral("-f"),
-                               format,
-                               QStringLiteral("--no-playlist"),
-                               QStringLiteral("--no-warnings"),
-                               requestUrl };
+    QStringList args = { QStringLiteral("-j"),
+                        QStringLiteral("-f"),
+                        format,
+                        QStringLiteral("--no-playlist"),
+                        QStringLiteral("--no-warnings") };
+    // Per yt-dlp's own announcement, YouTube without a JS runtime (Deno by
+    // default) is merely "deprecated", not broken: format availability is
+    // just reduced, severely so for a signed-in (cookie) request. Streaming
+    // never sends cookies (see the class doc comment), so it isn't the
+    // "severe" case -- but passing this along when configured (e.g. for
+    // download mode, see denoLocation's doc comment) is still harmless here
+    // and can only improve format availability, never hurt it. Omit the flag
+    // when empty: yt-dlp already looks for "deno" on PATH itself by default.
+    if (!m_denoLocation.isEmpty())
+        args << QStringLiteral("--js-runtimes") << (QStringLiteral("deno:") + m_denoLocation);
+    args << requestUrl;
     m_process->start(m_ytdlPath, args);
 }
 
@@ -262,6 +280,8 @@ void YoutubeResolver::download(const QString &pageUrl)
         args << QStringLiteral("--cookies") << m_cookiesFile;
     if (!m_ffmpegLocation.isEmpty())
         args << QStringLiteral("--ffmpeg-location") << m_ffmpegLocation;
+    if (!m_denoLocation.isEmpty())
+        args << QStringLiteral("--js-runtimes") << (QStringLiteral("deno:") + m_denoLocation);
     args << requestUrl;
 
     m_op = Op::Download;
@@ -379,7 +399,7 @@ void YoutubeResolver::finishDownload(int exitCode, QProcess::ExitStatus status)
         return;
     }
     emit failed(tr("yt-dlp produced no file (exit code %1). If this is an HD "
-                   "video, check the ffmpeg location.").arg(exitCode));
+                   "video, check the ffmpeg and Deno paths.").arg(exitCode));
 }
 
 // Matches the FINAL merged output "…[<id>].<ext>" — the id followed by exactly

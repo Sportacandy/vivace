@@ -29,19 +29,26 @@ ColumnLayout {
         + "<p><b>YouTube</b>: the optional resolver uses an external yt-dlp "
         + "program — when enabled, opening a YouTube URL runs yt-dlp to obtain a "
         + "directly-playable stream. Install yt-dlp yourself and, if it is not on "
-        + "the PATH, set its full path. Because QMediaPlayer plays a single muxed "
-        + "stream, streaming tops out at the best progressive format (about 720p "
-        + "on YouTube). Cookies are deliberately NOT used for streaming: an "
-        + "authenticated (cookie) session returns URLs a plain player cannot open.</p>"
-        + "<p>For <b>HD</b> (and for cookies), enable the external downloader and "
-        + "point it at your own tool (a program or .bat/.cmd). HD formats are "
-        + "separate video and audio streams that cannot be streamed muxed, so "
-        + "Vivace runs the tool to download and merge the video, then plays the "
-        + "file it writes into the download folder. The tool keeps its own format "
-        + "selection and cookies (add e.g. --cookies to its arguments); Vivace "
-        + "only runs it and plays the result.</p>"
+        + "the PATH, set its full path. Because QMediaPlayer "
+        + "plays a single muxed stream, streaming tops out at the best "
+        + "progressive format (about 720p on YouTube). Cookies are deliberately "
+        + "NOT used for streaming: an authenticated (cookie) session returns "
+        + "URLs a plain player cannot open.</p>"
+        + "<p>For <b>HD</b> (and for cookies), enable download mode, or point "
+        + "the external downloader at your own tool (a program or .bat/.cmd). "
+        + "HD formats are separate video and audio streams that "
+        + "cannot be streamed muxed, so Vivace runs yt-dlp (or your tool) to "
+        + "download and merge the video, then plays the file it writes into the "
+        + "download folder. Download mode also needs Deno, a further external "
+        + "program yt-dlp itself uses to solve YouTube's JavaScript challenges — "
+        + "without it, a signed-in (cookie) request, exactly what HD downloads "
+        + "rely on, sees severely limited format availability. Streaming mode, "
+        + "which never sends cookies, is largely unaffected and doesn't need "
+        + "Deno. Install Deno yourself and, if it is not on the PATH, set its "
+        + "full path in the Download & play settings.</p>"
         + "<p>See <b>Help ▸ Contents ▸ Options</b> for step-by-step "
-        + "instructions on exporting a cookies.txt file from your browser.</p>"
+        + "instructions on exporting a cookies.txt file from your browser, and "
+        + "on installing Deno.</p>"
         + "<p>The stream <b>connection timeout</b> (used mainly by live TV "
         + "tuners) has moved to <i>Preferences ▸ TV and radio</i>.</p>"
         + "<p>The <b>Proxy</b> tab applies application-wide: both HTTP and "
@@ -305,6 +312,33 @@ ColumnLayout {
                                     onEditingFinished: Settings.youtubeFfmpegLocation = text
                                 }
                                 Button { text: qsTr("Browse…"); onClicked: ffmpegFolderDialog.open() }
+                            }
+
+                            RowLayout {
+                                spacing: 6
+                                Label { text: qsTr("Deno path:") }
+                                HelpMark { text: qsTr("yt-dlp uses a separate program, Deno, to "
+                                                      + "solve YouTube's JavaScript challenges. It's "
+                                                      + "most needed here: a signed-in (cookie) "
+                                                      + "request — exactly what unlocks HD above — "
+                                                      + "sees severely limited format availability "
+                                                      + "without it. Streaming mode, which never "
+                                                      + "sends cookies, is largely unaffected. Leave "
+                                                      + "empty if \"deno\" is already on your system "
+                                                      + "PATH; otherwise enter the full path to the "
+                                                      + "deno executable. See Help ▸ Contents ▸ "
+                                                      + "Options for installation instructions.") }
+                            }
+                            RowLayout {
+                                Layout.fillWidth: true
+                                spacing: 6
+                                TextField {
+                                    Layout.fillWidth: true
+                                    text: Settings.youtubeDenoLocation
+                                    placeholderText: qsTr("empty = use PATH")
+                                    onEditingFinished: Settings.youtubeDenoLocation = text
+                                }
+                                Button { text: qsTr("Browse…"); onClicked: denoFileDialog.open() }
                             }
 
                             RowLayout {
@@ -592,6 +626,12 @@ ColumnLayout {
         title: qsTr("Select the cookies.txt file")
         options: Settings.useNativeFileDialog ? 0 : FileDialog.DontUseNativeDialog
         onAccepted: Settings.youtubeCookiesFile = UiHelpers.toLocalPath(selectedFile)
+    }
+    FileDialog {
+        id: denoFileDialog
+        title: qsTr("Select the deno executable")
+        options: Settings.useNativeFileDialog ? 0 : FileDialog.DontUseNativeDialog
+        onAccepted: Settings.youtubeDenoLocation = UiHelpers.toLocalPath(selectedFile)
     }
     FolderDialog {
         id: ffmpegFolderDialog

@@ -66,6 +66,7 @@ constexpr auto youtubeQuality = "youtube/quality";
 constexpr auto youtubeMode = "youtube/mode";
 constexpr auto youtubeCookiesFile = "youtube/cookiesFile";
 constexpr auto youtubeFfmpegLocation = "youtube/ffmpegLocation";
+constexpr auto youtubeDenoLocation = "youtube/denoLocation";
 constexpr auto youtubeCacheDir = "youtube/cacheDir";
 constexpr auto youtubeCacheSize = "youtube/cacheSize";
 constexpr auto youtubeThumbnailOffset = "youtube/thumbnailOffset";
@@ -245,6 +246,8 @@ Settings::Settings(QObject *parent)
       m_youtubeCookiesFile(m_store.value(Keys::youtubeCookiesFile).toString()),
       m_youtubeFfmpegLocation(
               m_store.value(Keys::youtubeFfmpegLocation).toString()),
+      m_youtubeDenoLocation(
+              m_store.value(Keys::youtubeDenoLocation).toString()),
       m_youtubeCacheDir(m_store.value(Keys::youtubeCacheDir,
                                       defaultYoutubeCacheDir()).toString()),
       m_youtubeCacheSize(
@@ -1182,6 +1185,15 @@ void Settings::setYoutubeFfmpegLocation(const QString &path)
         return;
     m_youtubeFfmpegLocation = path;
     m_store.setValue(Keys::youtubeFfmpegLocation, path);
+    emit youtubeChanged();
+}
+
+void Settings::setYoutubeDenoLocation(const QString &path)
+{
+    if (path == m_youtubeDenoLocation)
+        return;
+    m_youtubeDenoLocation = path;
+    m_store.setValue(Keys::youtubeDenoLocation, path);
     emit youtubeChanged();
 }
 

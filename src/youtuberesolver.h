@@ -9,7 +9,11 @@
     single MUXED stream ("best[height<=?N]/best") because QMediaPlayer cannot
     merge the separate DASH video+audio streams SMPlayer hands to mpv — so the
     resolvable ceiling is whatever progressive format the site offers (≈720p on
-    YouTube). Optional feature, off by default; yt-dlp is user-provided.
+    YouTube). Optional feature, off by default; yt-dlp is user-provided, and so
+    is Deno, the external JavaScript runtime yt-dlp itself uses to solve
+    YouTube's JS challenges (see denoLocation's doc comment for how much this
+    actually matters, and for which mode) -- Vivace doesn't bundle or invoke
+    either directly, it only shells out to yt-dlp.
 */
 
 #ifndef YOUTUBERESOLVER_H
@@ -41,6 +45,18 @@ class YoutubeResolver : public QObject
                        NOTIFY cookiesFileChanged)
     Q_PROPERTY(QString ffmpegLocation READ ffmpegLocation WRITE setFfmpegLocation
                        NOTIFY ffmpegLocationChanged)
+    // Path to the Deno executable yt-dlp uses to solve YouTube's JavaScript
+    // challenges (empty => yt-dlp looks for "deno" on PATH itself, its own
+    // default behavior). Matters most for DOWNLOAD mode: per yt-dlp's own
+    // announcement, YouTube without a JS runtime is "deprecated" but still
+    // works, with format availability "severely" reduced specifically for a
+    // signed-in (cookie) request -- exactly what download mode's cookies
+    // field is for. Streaming never sends cookies (see the class doc
+    // comment), so it isn't the severe case and doesn't need this to work;
+    // it's applied there too (see resolve()) only because doing so is
+    // harmless and can only help, never hurt.
+    Q_PROPERTY(QString denoLocation READ denoLocation WRITE setDenoLocation
+                       NOTIFY denoLocationChanged)
     // Download-mode LRU cache: folder that downloaded videos are kept in, and
     // the max number of files retained (least-recently-used evicted).
     Q_PROPERTY(QString cacheDir READ cacheDir WRITE setCacheDir
@@ -71,6 +87,8 @@ public:
     void setCookiesFile(const QString &path);
     QString ffmpegLocation() const { return m_ffmpegLocation; }
     void setFfmpegLocation(const QString &path);
+    QString denoLocation() const { return m_denoLocation; }
+    void setDenoLocation(const QString &path);
     QString cacheDir() const { return m_cacheDir; }
     void setCacheDir(const QString &path);
     int cacheSize() const { return m_cacheSize; }
@@ -123,6 +141,7 @@ signals:
     void preferredHeightChanged();
     void cookiesFileChanged();
     void ffmpegLocationChanged();
+    void denoLocationChanged();
     void cacheDirChanged();
     void cacheSizeChanged();
     void thumbnailOffsetChanged();
@@ -176,6 +195,7 @@ private:
     int m_preferredHeight = 720;
     QString m_cookiesFile;
     QString m_ffmpegLocation;
+    QString m_denoLocation;
     QString m_cacheDir;
     int m_cacheSize = 100;
     int m_thumbnailOffset = 10;

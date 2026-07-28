@@ -9,7 +9,7 @@ typical changelog, the `[0.1.1]` entry below has grown across those re-cuts
 rather than being written once. Future releases that bump the version will
 each get their own entry instead.
 
-## [0.1.1] — 2026-07-18 (updated 2026-07-19)
+## [0.1.1] — 2026-07-18 (updated 2026-07-28)
 
 ### Fixed
 - Critical Windows issue where AV1 video hung and leaked memory instead of
@@ -30,6 +30,19 @@ each get their own entry instead.
 - Playback speed silently resetting to 1x when dragging the seek bar,
   instead of staying at the speed the user set (matches SMPlayer's
   behavior, which keeps the set speed across a seek).
+- The last video frame staying on screen forever after playback ended with
+  a negative A/V delay set, instead of the window returning to the default
+  "drop a file here" placeholder.
+- Long OSD messages (e.g. a YouTube download failure) overflowing past the
+  right edge of the main window instead of wrapping.
+- Preferences pages taller than the window, making it easy to miss content
+  below the fold: *Interface* is now split into *Interface* and *Text*
+  subtabs (the latter absorbing the former standalone *High DPI* subtab),
+  and *Playlist*'s "Remember the playlist between sessions" moved to the
+  *Misc* subtab — both now fit without scrolling. *Keyboard and mouse ▸
+  Keyboard shortcuts*' list keeps its scrollbar (needed, since the full
+  shortcut list is long) but the scrollbar no longer auto-hides and no
+  longer overlaps the row text.
 
 ### Added
 - Linux and macOS release packaging (`.tar.gz` tarball / `.dmg`), alongside
@@ -39,6 +52,10 @@ each get their own entry instead.
 - The Windows (NSIS) installer now registers Vivace as a file-type option
   in Windows' Default Apps / "Open with" list right after installing,
   instead of only being discoverable via Preferences > File types.
+- A **Deno path** field in *Preferences ▸ Network ▸ YouTube ▸ Download &
+  play*, since yt-dlp itself now depends on an external Deno runtime for
+  full-quality YouTube downloads and previously assumed it was already on
+  PATH with no way to point at a different location.
 
 ## [0.1.0] — 2026-07-16
 

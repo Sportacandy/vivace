@@ -21,8 +21,9 @@ ColumnLayout {
         + "mode: none, video, audio, both or consecutive; recursive folders); "
         + "whether to show each item's title instead of its file name, and "
         + "whether the playlist is a docked panel or a separate window.</p>"
-        + "<p><b>Misc</b> tab — auto-sort the list, case-sensitive search, and "
-        + "save a copy of the playlist on exit.</p>")
+        + "<p><b>Misc</b> tab — auto-sort the list, case-sensitive search, "
+        + "save a copy of the playlist on exit, and remember the playlist "
+        + "between sessions.</p>")
 
     TabBar {
         id: tabs
@@ -190,22 +191,6 @@ ColumnLayout {
                     }
                 }
 
-                GroupBox {
-                    Layout.fillWidth: true
-                    title: qsTr("Sessions")
-
-                    ColumnLayout {
-                        anchors.fill: parent
-                        spacing: 6
-
-                        CheckBox {
-                            text: qsTr("Remember the playlist between sessions")
-                            checked: Settings.restorePlaylist
-                            onToggled: Settings.restorePlaylist = checked
-                        }
-                    }
-                }
-
                 Item { Layout.fillHeight: true }
             }
         }
@@ -236,6 +221,19 @@ ColumnLayout {
                 text: qsTr("Save a copy of the playlist on exit")
                 checked: Settings.autosavePlaylistOnExit
                 onToggled: Settings.autosavePlaylistOnExit = checked
+            }
+            RowLayout {
+                spacing: 6
+                CheckBox {
+                    text: qsTr("Remember the playlist between sessions")
+                    checked: Settings.restorePlaylist
+                    onToggled: Settings.restorePlaylist = checked
+                }
+                HelpMark {
+                    text: qsTr("Restore the playlist you had open the last time "
+                               + "Vivace was closed.")
+                }
+                Item { Layout.fillWidth: true }
             }
 
             Item { Layout.fillHeight: true }

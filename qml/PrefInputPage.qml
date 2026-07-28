@@ -67,12 +67,17 @@ ColumnLayout {
                 Layout.fillHeight: true
                 clip: true
                 model: page.rows
-                ScrollBar.vertical: ScrollBar {}
+                ScrollBar.vertical: ScrollBar {
+                    id: vbar
+                    policy: ScrollBar.AlwaysOn
+                }
 
                 delegate: Rectangle {
                     required property int index
                     required property var modelData
-                    width: ListView.view.width
+                    // Reserve the scrollbar's own width so it never sits on
+                    // top of the row text (it defaults to an overlay).
+                    width: ListView.view.width - vbar.width
                     height: 34
                     color: index % 2 ? "transparent" : "#f4f4f4"
 

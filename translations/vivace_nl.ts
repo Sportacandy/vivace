@@ -671,274 +671,274 @@
 <context>
     <name>Main</name>
     <message>
-        <location filename="../qml/Main.qml" line="371"/>
+        <location filename="../qml/Main.qml" line="377"/>
         <source>TV editor</source>
         <translation>Tv-bewerker</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="371"/>
+        <location filename="../qml/Main.qml" line="377"/>
         <source>TV channels</source>
         <translation>Tv-kanalen</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="374"/>
+        <location filename="../qml/Main.qml" line="380"/>
         <source>Radio editor</source>
         <translation>Radiobewerker</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="374"/>
+        <location filename="../qml/Main.qml" line="380"/>
         <source>Radio channels</source>
         <translation>Radiozenders</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="377"/>
-        <location filename="../qml/Main.qml" line="421"/>
+        <location filename="../qml/Main.qml" line="383"/>
+        <location filename="../qml/Main.qml" line="427"/>
         <source>Favorite editor</source>
         <translation>Favoriete editor</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="377"/>
-        <location filename="../qml/Main.qml" line="421"/>
+        <location filename="../qml/Main.qml" line="383"/>
+        <location filename="../qml/Main.qml" line="427"/>
         <source>Favorite list</source>
         <translation>Favoriete lijst</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="381"/>
+        <location filename="../qml/Main.qml" line="387"/>
         <source>Bookmark added</source>
         <translation>Bladwijzer toegevoegd</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="396"/>
+        <location filename="../qml/Main.qml" line="402"/>
         <source>Edit main toolbar</source>
         <translation>&amp;Hoofdwerkblad wijzigen</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="399"/>
+        <location filename="../qml/Main.qml" line="405"/>
         <source>Edit control bar</source>
         <translation>&amp;Controlebalk wijzigen</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="428"/>
+        <location filename="../qml/Main.qml" line="434"/>
         <source>Screenshot saved as %1</source>
         <translation>Schermafdruk opgeslagen als %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="429"/>
+        <location filename="../qml/Main.qml" line="435"/>
         <source>Could not take the screenshot</source>
         <translation>Kon de schermafbeelding niet maken</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="542"/>
+        <location filename="../qml/Main.qml" line="548"/>
         <source>Drop media files here, or press Ctrl+O</source>
         <translation>Sleep mediabestanden hierheen, of druk op Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="614"/>
+        <location filename="../qml/Main.qml" line="625"/>
         <source>Downloading video…</source>
         <translation>Video wordt gedownload…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="621"/>
+        <location filename="../qml/Main.qml" line="632"/>
         <source>This can take a while — the external tool is downloading and merging HD video and audio.</source>
         <translation>Dit kan even duren — de externe tool downloadt en voegt HD-video en -audio samen.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="635"/>
-        <location filename="../qml/Main.qml" line="1440"/>
+        <location filename="../qml/Main.qml" line="646"/>
+        <location filename="../qml/Main.qml" line="1460"/>
         <source>Cancel</source>
         <translation>Annuleren</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="708"/>
+        <location filename="../qml/Main.qml" line="719"/>
         <source>Loading…</source>
         <translation>Laden…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="709"/>
+        <location filename="../qml/Main.qml" line="720"/>
         <source>Connecting…</source>
         <translation>Verbinden...</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="710"/>
+        <location filename="../qml/Main.qml" line="721"/>
         <source>Buffering… %1%</source>
         <translation>Bufferen… %1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="718"/>
+        <location filename="../qml/Main.qml" line="729"/>
         <source>Live streams can take several seconds to start.</source>
         <translation>Livestreams kunnen enkele seconden nodig hebben om te starten.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="746"/>
+        <location filename="../qml/Main.qml" line="757"/>
         <source>Volume: %1%</source>
         <translation>Volume: %1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="749"/>
+        <location filename="../qml/Main.qml" line="760"/>
         <source>Mute</source>
         <translation>Dempen</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="749"/>
+        <location filename="../qml/Main.qml" line="760"/>
         <source>Mute off</source>
         <translation>Dempen uit</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="752"/>
+        <location filename="../qml/Main.qml" line="763"/>
         <source>Speed: %1x</source>
         <translation>Snelheid: %1x</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1151"/>
+        <location filename="../qml/Main.qml" line="1170"/>
         <source>Media files (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1152"/>
-        <location filename="../qml/Main.qml" line="1190"/>
-        <location filename="../qml/Main.qml" line="1376"/>
+        <location filename="../qml/Main.qml" line="1171"/>
+        <location filename="../qml/Main.qml" line="1209"/>
+        <location filename="../qml/Main.qml" line="1396"/>
         <source>All files (*)</source>
         <translation>Alle bestanden (*)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1175"/>
+        <location filename="../qml/Main.qml" line="1194"/>
         <source>Select the DVD drive or a folder containing VIDEO_TS</source>
         <translation>Selecteer het dvd-station of een map met VIDEO_TS</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1179"/>
+        <location filename="../qml/Main.qml" line="1198"/>
         <source>No DVD video found in %1</source>
         <translation>Geen dvd-video gevonden in %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1189"/>
+        <location filename="../qml/Main.qml" line="1208"/>
         <source>Playlists (*.m3u *.m3u8)</source>
         <translation>Afspeellijsten (*.m3u *.m3u8)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1223"/>
+        <location filename="../qml/Main.qml" line="1243"/>
         <source>Playing stream</source>
         <translation>Stream wordt afgespeeld</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1229"/>
         <location filename="../qml/Main.qml" line="1249"/>
+        <location filename="../qml/Main.qml" line="1269"/>
         <source>Playing downloaded video</source>
         <translation>Gedownloade video wordt afgespeeld</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1233"/>
+        <location filename="../qml/Main.qml" line="1253"/>
         <source>YouTube: %1</source>
         <translation>YouTube: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1253"/>
+        <location filename="../qml/Main.qml" line="1273"/>
         <source>Download failed: %1</source>
         <translation>Downloaden mislukt: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1315"/>
+        <location filename="../qml/Main.qml" line="1335"/>
         <source>Could not read the shortcut file.</source>
         <translation>Kon het snelkoppelingsbestand niet lezen.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1329"/>
+        <location filename="../qml/Main.qml" line="1349"/>
         <source>Starting download…</source>
         <translation>Downloaden starten…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1330"/>
+        <location filename="../qml/Main.qml" line="1350"/>
         <source>Downloading video (this can take a while)…</source>
         <translation>Video wordt gedownload (dit kan even duren)…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1334"/>
+        <location filename="../qml/Main.qml" line="1354"/>
         <source>Resolving with yt-dlp…</source>
         <translation>Oplossen met yt-dlp…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1371"/>
+        <location filename="../qml/Main.qml" line="1391"/>
         <source>Load subtitle file</source>
         <translation>Ondertitelbestand laden</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1375"/>
+        <location filename="../qml/Main.qml" line="1395"/>
         <source>Subtitle files (*.srt *.vtt *.ass *.ssa)</source>
         <translation>Ondertitelbestanden (*.srt *.vtt *.ass *.ssa)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1383"/>
+        <location filename="../qml/Main.qml" line="1403"/>
         <source>Subtitle delay</source>
         <translation>Ondertitelvertraging</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1417"/>
+        <location filename="../qml/Main.qml" line="1437"/>
         <source>Delay:</source>
         <translation>Vertraging:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1423"/>
-        <location filename="../qml/Main.qml" line="1495"/>
+        <location filename="../qml/Main.qml" line="1443"/>
+        <location filename="../qml/Main.qml" line="1515"/>
         <source>ms</source>
         <translation>ms</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1433"/>
+        <location filename="../qml/Main.qml" line="1453"/>
         <source>OK</source>
         <translation>&amp;OK</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1452"/>
+        <location filename="../qml/Main.qml" line="1472"/>
         <source>Audio delay — Vivace</source>
         <translation>Audiovertraging — Vivace</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1483"/>
+        <location filename="../qml/Main.qml" line="1503"/>
         <source>No delay for this file (use the global delay only)</source>
         <translation>Geen vertraging voor dit bestand (alleen de globale vertraging gebruiken)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1488"/>
+        <location filename="../qml/Main.qml" line="1508"/>
         <source>This file&apos;s delay:</source>
         <translation>Vertraging van dit bestand:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1503"/>
+        <location filename="../qml/Main.qml" line="1523"/>
         <source>The delay applied to this file is this value plus the global delay for the current audio device (%1 ms), set in Preferences &gt; General &gt; Audio. Negative values delay the video to match audio that arrives late (e.g. Bluetooth headphones).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1516"/>
+        <location filename="../qml/Main.qml" line="1536"/>
         <source>&amp;Apply</source>
         <translation>Toep&amp;assen</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1525"/>
+        <location filename="../qml/Main.qml" line="1545"/>
         <source>&amp;Close</source>
         <translation>&amp;Sluiten</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1621"/>
+        <location filename="../qml/Main.qml" line="1641"/>
         <source>Hide window</source>
         <translation>Venster verbergen</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1621"/>
+        <location filename="../qml/Main.qml" line="1641"/>
         <source>Show window</source>
         <translation>Venster tonen</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1626"/>
+        <location filename="../qml/Main.qml" line="1646"/>
         <source>Play / Pause</source>
         <translation>Afspelen / Pauzeren</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1630"/>
+        <location filename="../qml/Main.qml" line="1650"/>
         <source>Stop</source>
         <translation>Stop</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1635"/>
+        <location filename="../qml/Main.qml" line="1655"/>
         <source>Quit</source>
         <translation>&amp;Afsluiten</translation>
     </message>
@@ -1775,262 +1775,262 @@
         <translation>Nummer %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="557"/>
+        <location filename="../src/playercontroller.cpp" line="575"/>
         <source>A/V delay: %1 ms</source>
         <translation>A/V-vertraging: %1 ms</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="935"/>
+        <location filename="../src/playercontroller.cpp" line="953"/>
         <source>DVD title %1 could not be assembled</source>
         <translation>Dvd-titel %1 kon niet worden samengesteld</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="941"/>
+        <location filename="../src/playercontroller.cpp" line="959"/>
         <source>DVD title %1 could not be opened</source>
         <translation>Dvd-titel %1 kon niet worden geopend</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1003"/>
+        <location filename="../src/playercontroller.cpp" line="1021"/>
         <source>Title %1 (%2)</source>
         <translation>Titel %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1019"/>
+        <location filename="../src/playercontroller.cpp" line="1037"/>
         <source>Chapter %1 (%2)</source>
         <translation>Hoofdstuk %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1641"/>
+        <location filename="../src/playercontroller.cpp" line="1659"/>
         <source>Could not open the stream</source>
         <translation>Kon de stream niet openen</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1700"/>
+        <location filename="../src/playercontroller.cpp" line="1718"/>
         <source>System default</source>
         <translation>Systeemstandaard</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1864"/>
+        <location filename="../src/playercontroller.cpp" line="1882"/>
         <source>A marker set to %1</source>
         <translation>A-markering ingesteld op %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1875"/>
+        <location filename="../src/playercontroller.cpp" line="1893"/>
         <source>B marker set to %1</source>
         <translation>B-markering ingesteld op %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1885"/>
+        <location filename="../src/playercontroller.cpp" line="1903"/>
         <source>A-B markers cleared</source>
         <translation>A-B markering leeggemaakt</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1999"/>
+        <location filename="../src/playercontroller.cpp" line="2017"/>
         <source>Could not load subtitles from %1</source>
         <translation>Kon ondertitels niet laden vanaf %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2011"/>
+        <location filename="../src/playercontroller.cpp" line="2029"/>
         <source>Subtitles loaded: %1</source>
         <translation>Ondertitels geladen: %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2022"/>
+        <location filename="../src/playercontroller.cpp" line="2040"/>
         <source>Subtitles unloaded</source>
         <translation>Ondertitels ontladen</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2032"/>
+        <location filename="../src/playercontroller.cpp" line="2050"/>
         <source>Subtitle delay: %1 ms</source>
         <translation>Ondertitelvertraging: %1 ms</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2151"/>
+        <location filename="../src/playercontroller.cpp" line="2169"/>
         <source>General</source>
         <translation>Algemeen</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2154"/>
+        <location filename="../src/playercontroller.cpp" line="2172"/>
         <source>File</source>
         <translation>Bestand</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2157"/>
+        <location filename="../src/playercontroller.cpp" line="2175"/>
         <source>Size</source>
         <translation>Grootte</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2157"/>
+        <location filename="../src/playercontroller.cpp" line="2175"/>
         <source>%1 KB (%2 MB)</source>
         <translation>%1 KB (%2 MB)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2161"/>
-        <location filename="../src/playercontroller.cpp" line="2187"/>
+        <location filename="../src/playercontroller.cpp" line="2179"/>
+        <location filename="../src/playercontroller.cpp" line="2205"/>
         <source>URL</source>
         <translation>URL</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2164"/>
+        <location filename="../src/playercontroller.cpp" line="2182"/>
         <source>Length</source>
         <translation>Lengte</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2165"/>
+        <location filename="../src/playercontroller.cpp" line="2183"/>
         <source>Demuxer</source>
         <translation>Demuxer</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2170"/>
-        <location filename="../src/playercontroller.cpp" line="2220"/>
-        <location filename="../src/playercontroller.cpp" line="2239"/>
-        <location filename="../src/playercontroller.cpp" line="2248"/>
+        <location filename="../src/playercontroller.cpp" line="2188"/>
+        <location filename="../src/playercontroller.cpp" line="2238"/>
+        <location filename="../src/playercontroller.cpp" line="2257"/>
+        <location filename="../src/playercontroller.cpp" line="2266"/>
         <source>Name</source>
         <translation>Naam</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2171"/>
+        <location filename="../src/playercontroller.cpp" line="2189"/>
         <source>Artist</source>
         <translation>Artiest</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2173"/>
+        <location filename="../src/playercontroller.cpp" line="2191"/>
         <source>Album artist</source>
         <translation>Albumartiest</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2175"/>
+        <location filename="../src/playercontroller.cpp" line="2193"/>
         <source>Author</source>
         <translation>Auteur</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2176"/>
+        <location filename="../src/playercontroller.cpp" line="2194"/>
         <source>Composer</source>
         <translation>Componist</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2177"/>
+        <location filename="../src/playercontroller.cpp" line="2195"/>
         <source>Album</source>
         <translation>Album</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2178"/>
+        <location filename="../src/playercontroller.cpp" line="2196"/>
         <source>Genre</source>
         <translation>Genre</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2179"/>
+        <location filename="../src/playercontroller.cpp" line="2197"/>
         <source>Date</source>
         <translation>Datum</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2180"/>
+        <location filename="../src/playercontroller.cpp" line="2198"/>
         <source>Track</source>
         <translation>Nummer</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2181"/>
+        <location filename="../src/playercontroller.cpp" line="2199"/>
         <source>Copyright</source>
         <translation>Auteursrecht</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2182"/>
+        <location filename="../src/playercontroller.cpp" line="2200"/>
         <source>Comment</source>
         <translation>Opmerking</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2183"/>
+        <location filename="../src/playercontroller.cpp" line="2201"/>
         <source>Description</source>
         <translation>Omschrijving</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2185"/>
+        <location filename="../src/playercontroller.cpp" line="2203"/>
         <source>Publisher</source>
         <translation>Uitgever</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2186"/>
-        <location filename="../src/playercontroller.cpp" line="2220"/>
-        <location filename="../src/playercontroller.cpp" line="2239"/>
-        <location filename="../src/playercontroller.cpp" line="2248"/>
+        <location filename="../src/playercontroller.cpp" line="2204"/>
+        <location filename="../src/playercontroller.cpp" line="2238"/>
+        <location filename="../src/playercontroller.cpp" line="2257"/>
+        <location filename="../src/playercontroller.cpp" line="2266"/>
         <source>Language</source>
         <translation>Taal</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2189"/>
+        <location filename="../src/playercontroller.cpp" line="2207"/>
         <source>Clip info</source>
         <translation>Clip info</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2193"/>
+        <location filename="../src/playercontroller.cpp" line="2211"/>
         <source>Initial Video Stream</source>
         <translation>Oorspronkelijk videostream</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2196"/>
+        <location filename="../src/playercontroller.cpp" line="2214"/>
         <source>Resolution</source>
         <translation>Resolutie</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2199"/>
+        <location filename="../src/playercontroller.cpp" line="2217"/>
         <source>Aspect ratio</source>
         <translation>Aspectverhouding</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2203"/>
-        <location filename="../src/playercontroller.cpp" line="2228"/>
+        <location filename="../src/playercontroller.cpp" line="2221"/>
+        <location filename="../src/playercontroller.cpp" line="2246"/>
         <source>Format</source>
         <translation>Indeling</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2206"/>
-        <location filename="../src/playercontroller.cpp" line="2231"/>
+        <location filename="../src/playercontroller.cpp" line="2224"/>
+        <location filename="../src/playercontroller.cpp" line="2249"/>
         <source>Bitrate</source>
         <translation>Bitsnelheid</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2206"/>
-        <location filename="../src/playercontroller.cpp" line="2231"/>
+        <location filename="../src/playercontroller.cpp" line="2224"/>
+        <location filename="../src/playercontroller.cpp" line="2249"/>
         <source>%1 kbps</source>
         <translation>%1 kbps</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2209"/>
+        <location filename="../src/playercontroller.cpp" line="2227"/>
         <source>Frames per second</source>
         <translation>Frames per seconde</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2212"/>
+        <location filename="../src/playercontroller.cpp" line="2230"/>
         <source>HDR</source>
         <translation>HDR</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2212"/>
+        <location filename="../src/playercontroller.cpp" line="2230"/>
         <source>yes</source>
         <translation>ja</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2219"/>
+        <location filename="../src/playercontroller.cpp" line="2237"/>
         <source>Video Streams</source>
         <translation>Videostreams</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2227"/>
+        <location filename="../src/playercontroller.cpp" line="2245"/>
         <source>Initial Audio Stream</source>
         <translation>Oorspronkelijk Audiospoor</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2238"/>
+        <location filename="../src/playercontroller.cpp" line="2256"/>
         <source>Audio Streams</source>
         <translation>Audiosporen</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2247"/>
+        <location filename="../src/playercontroller.cpp" line="2265"/>
         <source>Subtitles</source>
         <translation>Ondertiteling</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2436"/>
+        <location filename="../src/playercontroller.cpp" line="2454"/>
         <source>Chapter %1</source>
         <translation>Hoofdstuk %1</translation>
     </message>
@@ -2621,119 +2621,119 @@
         <translation>Alles resetten</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="98"/>
+        <location filename="../qml/PrefInputPage.qml" line="103"/>
         <source>(none)</source>
         <translation>(geen)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="106"/>
+        <location filename="../qml/PrefInputPage.qml" line="111"/>
         <source>Reset to default</source>
         <translation>Terugzetten naar standaard</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="118"/>
+        <location filename="../qml/PrefInputPage.qml" line="123"/>
         <source>Mouse</source>
         <translation>Muis</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="126"/>
+        <location filename="../qml/PrefInputPage.qml" line="131"/>
         <source>Left click function:</source>
         <translation>Functie voor linkermuisklik:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="129"/>
-        <location filename="../qml/PrefInputPage.qml" line="139"/>
-        <location filename="../qml/PrefInputPage.qml" line="148"/>
-        <location filename="../qml/PrefInputPage.qml" line="161"/>
+        <location filename="../qml/PrefInputPage.qml" line="134"/>
+        <location filename="../qml/PrefInputPage.qml" line="144"/>
+        <location filename="../qml/PrefInputPage.qml" line="153"/>
+        <location filename="../qml/PrefInputPage.qml" line="166"/>
         <source>No function</source>
         <translation>Geen functie</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="129"/>
-        <location filename="../qml/PrefInputPage.qml" line="138"/>
-        <location filename="../qml/PrefInputPage.qml" line="147"/>
+        <location filename="../qml/PrefInputPage.qml" line="134"/>
+        <location filename="../qml/PrefInputPage.qml" line="143"/>
+        <location filename="../qml/PrefInputPage.qml" line="152"/>
         <source>Play / Pause</source>
         <translation>Afspelen / Pauzeren</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="130"/>
-        <location filename="../qml/PrefInputPage.qml" line="138"/>
-        <location filename="../qml/PrefInputPage.qml" line="148"/>
+        <location filename="../qml/PrefInputPage.qml" line="135"/>
+        <location filename="../qml/PrefInputPage.qml" line="143"/>
+        <location filename="../qml/PrefInputPage.qml" line="153"/>
         <source>Toggle fullscreen</source>
         <translation>Volledig scherm in-/uitschakelen</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="135"/>
+        <location filename="../qml/PrefInputPage.qml" line="140"/>
         <source>Double click function:</source>
         <translation>Functie voor dubbelklik:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="144"/>
+        <location filename="../qml/PrefInputPage.qml" line="149"/>
         <source>Middle click function:</source>
         <translation>Functie voor middelste klik:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="147"/>
+        <location filename="../qml/PrefInputPage.qml" line="152"/>
         <source>Mute</source>
         <translation>Dempen</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="155"/>
+        <location filename="../qml/PrefInputPage.qml" line="160"/>
         <source>Wheel function:</source>
         <translation>&amp;Wielfunctie:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="156"/>
+        <location filename="../qml/PrefInputPage.qml" line="161"/>
         <source>Chooses what turning the mouse wheel over the video does: seek through the file or change the volume.</source>
         <translation>Kiest wat het draaien van het muiswiel over de video doet: door het bestand zoeken of het volume wijzigen.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="160"/>
+        <location filename="../qml/PrefInputPage.qml" line="165"/>
         <source>Media seeking</source>
         <translation>Media zoeken</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="160"/>
+        <location filename="../qml/PrefInputPage.qml" line="165"/>
         <source>Volume control</source>
         <translation>Volumeregeling</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="177"/>
+        <location filename="../qml/PrefInputPage.qml" line="182"/>
         <source>Set shortcut</source>
         <translation>Sneltoets instellen</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="230"/>
+        <location filename="../qml/PrefInputPage.qml" line="235"/>
         <source>Press the new shortcut for “%1”.</source>
         <translation>Druk op de nieuwe sneltoets voor “%1”.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="238"/>
+        <location filename="../qml/PrefInputPage.qml" line="243"/>
         <source>…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="245"/>
+        <location filename="../qml/PrefInputPage.qml" line="250"/>
         <source>Already used by “%1”. Assigning will clear it there.</source>
         <translation>Al in gebruik door “%1”. Bij toewijzen wordt deze daar gewist.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="254"/>
+        <location filename="../qml/PrefInputPage.qml" line="259"/>
         <source>Clear</source>
         <translation>Leegmaken</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="255"/>
+        <location filename="../qml/PrefInputPage.qml" line="260"/>
         <source>Leave this action without a shortcut</source>
         <translation>Deze actie zonder sneltoets laten</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="264"/>
+        <location filename="../qml/PrefInputPage.qml" line="269"/>
         <source>Assign</source>
         <translation>Toewijzen</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="275"/>
+        <location filename="../qml/PrefInputPage.qml" line="280"/>
         <source>Cancel</source>
         <translation>Annuleren</translation>
     </message>
@@ -2741,356 +2741,360 @@
 <context>
     <name>PrefInterfacePage</name>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="17"/>
-        <source>&lt;h1&gt;Interface&lt;/h1&gt;&lt;p&gt;&lt;b&gt;Interface&lt;/b&gt; — the GUI layout (Basic / Mini / Mpc), icon set, Qt Quick Controls style and application font, plus main-window behaviour (auto-resize, centre, keep on screen, remember geometry, hide the video area for audio-only files), the toolbar gradient, the native file dialog toggle and OSD options.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Seeking&lt;/b&gt; — the jump lengths for the seek buttons and the mouse wheel, and whether the time slider seeks while dragging or on release.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Instances&lt;/b&gt; — reuse a single running instance so files open in the existing window (takes effect next launch).&lt;/p&gt;&lt;p&gt;&lt;b&gt;Fullscreen&lt;/b&gt; — hide the mouse pointer after inactivity.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Privacy&lt;/b&gt; — how many recent files and URLs to remember, and whether to remember the last folder.&lt;/p&gt;&lt;p&gt;&lt;b&gt;High DPI&lt;/b&gt; — override the interface scale factor (Vivace scales automatically otherwise).&lt;/p&gt;&lt;p&gt;Style, font and scale-factor changes take effect after restarting Vivace.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="48"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="53"/>
         <source>Interface</source>
         <translation>Interface</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="49"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="55"/>
         <source>Seeking</source>
         <translation>Zoeken</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="50"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="56"/>
         <source>Instances</source>
         <translation>Instanties</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="51"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="57"/>
         <source>Fullscreen</source>
         <translation>Beeldvullend</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="52"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="58"/>
         <source>Privacy</source>
         <translation>Privé</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="53"/>
         <source>High DPI</source>
-        <translation>Hoge &amp;DPI</translation>
+        <translation type="vanished">Hoge &amp;DPI</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="72"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="77"/>
         <source>Main window</source>
         <translation>Hoofdvenster</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="80"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="85"/>
         <source>Auto-resize:</source>
         <translation>Automatisch schalen:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="85"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="90"/>
         <source>Never</source>
         <translation>Nooit</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="86"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="91"/>
         <source>Whenever it&apos;s needed</source>
         <translation>Indien nodig</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="87"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="92"/>
         <source>Only after loading a new video</source>
         <translation>Alleen na laden van een nieuw videobestand</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="94"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="99"/>
         <source>Center window</source>
         <translation>Venster centreren</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="99"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="104"/>
         <source>Prevent the window from getting outside of the screen</source>
         <translation>Voorkomen dat het venster buiten het scherm terechtkomt</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="104"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="109"/>
         <source>Remember size and position of the main window</source>
         <translation>Grootte en positie van het hoofdvenster onthouden</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="109"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="114"/>
         <source>Hide the video window when playing audio files</source>
         <translation>Het videovenster verbergen bij het afspelen van audiobestanden</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="171"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="176"/>
         <source>Language:</source>
         <translation>Taa&amp;l:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="118"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="123"/>
         <source>GUI:</source>
         <translation>Interface:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="128"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="21"/>
+        <source>&lt;h1&gt;Interface&lt;/h1&gt;&lt;p&gt;&lt;b&gt;Interface&lt;/b&gt; — the GUI layout (Basic / Mini / Mpc), icon set, language, and Qt Quick Controls style, plus main-window behaviour (auto-resize, centre, keep on screen, remember geometry, hide the video area for audio-only files).&lt;/p&gt;&lt;p&gt;&lt;b&gt;Text&lt;/b&gt; — the application font, the toolbar gradient, the native file dialog toggle, OSD options, touch-friendly sizing, and the high-DPI scale-factor override (Vivace scales automatically otherwise).&lt;/p&gt;&lt;p&gt;&lt;b&gt;Seeking&lt;/b&gt; — the jump lengths for the seek buttons and the mouse wheel, and whether the time slider seeks while dragging or on release.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Instances&lt;/b&gt; — reuse a single running instance so files open in the existing window (takes effect next launch).&lt;/p&gt;&lt;p&gt;&lt;b&gt;Fullscreen&lt;/b&gt; — hide the mouse pointer after inactivity.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Privacy&lt;/b&gt; — how many recent files and URLs to remember, and whether to remember the last folder.&lt;/p&gt;&lt;p&gt;Style, font and scale-factor changes take effect after restarting Vivace.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefInterfacePage.qml" line="54"/>
+        <source>Text</source>
+        <translation>Tekst</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefInterfacePage.qml" line="133"/>
         <source>Basic GUI</source>
         <translation>Basis GUI</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="129"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="134"/>
         <source>Mini GUI</source>
         <translation>Mini GUI</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="130"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="135"/>
         <source>Mpc GUI</source>
         <translation>Mpc GUI</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="131"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="136"/>
         <source>Skinnable GUI</source>
         <translation>Schaalbare GUI</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="154"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="159"/>
         <source>Icon set:</source>
         <translation>Pictogramme&amp;n-set:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="162"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="167"/>
         <source>Default</source>
         <translation>Standaard</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="163"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="168"/>
         <source>Classic</source>
         <translation>Klassiek</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="180"/>
-        <location filename="../qml/PrefInterfacePage.qml" line="224"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="185"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="242"/>
         <source>System default</source>
         <translation>Systeemstandaard</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="194"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="199"/>
         <source>Language changes take effect after restarting Vivace. Untranslated text falls back to English.</source>
         <translation>Taalwijzigingen worden van kracht na het herstarten van Vivace. Niet-vertaalde tekst wordt in het Engels weergegeven.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="199"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="204"/>
         <source>Style:</source>
         <translation>&amp;Stijl:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="214"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="219"/>
         <source>Style changes take effect after restarting Vivace. Fusion is recommended: other styles may not render the custom menus and sliders correctly.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="219"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="237"/>
         <source>Application font:</source>
         <translation>Toepassingslettertype:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="230"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="248"/>
         <source>Change…</source>
         <translation>&amp;Wijzigen...</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="241"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="259"/>
         <source>Reset</source>
         <translation>&amp;Resetten</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="255"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="273"/>
         <source>Font changes take effect after restarting Vivace. (The default font already renders Japanese and other scripts; a custom font only needs to be set for preference.)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="259"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="277"/>
         <source>Gradient background for the toolbar and control bar</source>
         <translation>Verloopachtergrond voor de werkbalk en de bedieningsbalk</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="264"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="282"/>
         <source>Use the system native file dialog</source>
         <translation>Gebruik het systeemeigen bestandsdialoogvenster</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="270"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="288"/>
         <source>OSD</source>
         <translation>&amp;OSD</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="277"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="295"/>
         <source>Show OSD messages</source>
         <translation>OSD-berichten tonen</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="283"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="301"/>
         <source>Duration of OSD messages:</source>
         <translation>Duur van OSD-berichten:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="289"/>
-        <location filename="../qml/PrefInterfacePage.qml" line="506"/>
-        <location filename="../qml/PrefInterfacePage.qml" line="514"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="307"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="558"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="566"/>
         <source>ms</source>
         <translation>ms</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="294"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="312"/>
         <source>OSD font size:</source>
         <translation>OSD-lettergrootte:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="300"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="318"/>
         <source>px</source>
         <translation>px</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="308"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="326"/>
         <source>Touch</source>
         <translation>Aanraking</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="317"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="335"/>
         <source>Touch-friendly controls (larger fonts and icons)</source>
         <translation>Aanraakvriendelijke bediening (grotere lettertypen en pictogrammen)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="322"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="340"/>
         <source>Enlarges the interface for finger use on a tablet. Toolbar icons resize immediately; the larger fonts take effect after you restart Vivace.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="332"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="350"/>
         <source>Swipe across the video to seek</source>
         <translation>Veeg over de video om te zoeken</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="337"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="355"/>
         <source>Drag left or right on the video (with a finger or the mouse) to jump backward or forward. An on-screen message previews the target while you drag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="387"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="439"/>
         <source>seconds</source>
         <translation>seconden</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="393"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="445"/>
         <source>Short jump:</source>
         <translation>Korte sprong:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="400"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="452"/>
         <source>Medium jump:</source>
         <translation>Gemiddelde sprong:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="407"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="459"/>
         <source>Long jump:</source>
         <translation>Lange sprong:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="413"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="465"/>
         <source>Mouse wheel jump:</source>
         <translation>Muiswielsprong:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="423"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="475"/>
         <source>Behaviour of time slider:</source>
         <translation>&amp;Gedrag van tijdschuif:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="427"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="479"/>
         <source>Seek to position while dragging</source>
         <translation>Tijdens slepen naar positie zoeken</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="428"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="480"/>
         <source>Seek to position when released</source>
         <translation>Na loslaten naar positie zoeken</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="439"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="491"/>
         <source>Absolute/relative seeking method and precise seeking are mplayer/mpv-specific and do not apply to Vivace&apos;s Qt Multimedia backend (seeking is already position-based).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="462"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="514"/>
         <source>Use only one running instance of Vivace</source>
         <translation>Slechts één actieve instantie van Vivace gebruiken</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="473"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="525"/>
         <source>When enabled, opening a file while Vivace is already running hands it to the existing window instead of starting a new one. Takes effect on the next launch.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="487"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="539"/>
         <source>Hide the mouse pointer after inactivity</source>
         <translation>De muisaanwijzer verbergen na inactiviteit</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="492"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="544"/>
         <source>While a video is playing, hide the mouse pointer over the video after the delay below — in the normal window as well as in fullscreen.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="500"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="552"/>
         <source>Hide after:</source>
         <translation>Verbergen na:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="512"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="564"/>
         <source>Time to hide the control bar:</source>
         <translation>Tijd om de bedieningsbalk te verbergen:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="521"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="573"/>
         <source>The fullscreen control bar currently shows while the pointer is near the bottom edge; a time-based autohide is planned.</source>
         <translation>In volledig scherm wordt de bedieningsbalk momenteel getoond terwijl de aanwijzer zich bij de onderrand bevindt; een tijdgebaseerd automatisch verbergen is gepland.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="533"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="585"/>
         <source>Recent files</source>
         <translation>Recente bestanden</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="538"/>
-        <location filename="../qml/PrefInterfacePage.qml" line="554"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="590"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="606"/>
         <source>Max. items:</source>
         <translation>Max. items:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="549"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="601"/>
         <source>URLs</source>
         <translation>URL</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="564"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="616"/>
         <source>Remember last directory</source>
         <translation>Laatste map onthouden</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="579"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="368"/>
         <source>Vivace scales the interface on high-DPI screens automatically. You can override the scale factor here if needed.</source>
         <translation>Vivace schaalt de interface automatisch op high-dpi-schermen. U kunt de schaalfactor hier zo nodig overschrijven.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="583"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="372"/>
         <source>Scale factor:</source>
         <translation>Schaal&amp;factor:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="590"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="379"/>
         <source>Automatic</source>
         <translation>Automatisch</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="607"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="396"/>
         <source>Scale factor changes take effect after restarting Vivace.</source>
         <translation>Wijzigingen van de schaalfactor worden van kracht na het herstarten van Vivace.</translation>
     </message>
@@ -3098,67 +3102,72 @@
 <context>
     <name>PrefNetworkPage</name>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="62"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="84"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="69"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="91"/>
         <source>OpenSubtitles</source>
         <translation>OpenSubtitles</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="63"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="70"/>
         <source>YouTube</source>
         <translation>YouTube</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="65"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="544"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="72"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="578"/>
         <source>Cast</source>
         <translation>Casten</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="94"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="101"/>
         <source>API key:</source>
         <translation>API-sleutel:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="95"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="102"/>
         <source>A free per-application key from opensubtitles.com (create an API consumer); subtitle search will not work until this is set.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="100"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="107"/>
         <source>from opensubtitles.com → API consumers</source>
         <translation>van opensubtitles.com → API consumers</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="105"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="496"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="112"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="530"/>
         <source>Username:</source>
         <translation>Gebr&amp;uikersnaam:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="106"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="113"/>
         <source>Optional opensubtitles.com account login; signing in is not required but raises the daily download limit.</source>
         <translation>Optionele aanmelding met een opensubtitles.com-account; aanmelden is niet vereist, maar verhoogt de dagelijkse downloadlimiet.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="113"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="502"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="120"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="536"/>
         <source>Password:</source>
         <translation>Wa&amp;chtwoord:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="128"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="135"/>
         <source>The account password is stored securely using your operating system&apos;s credential manager.</source>
         <translation>Het accountwachtwoord wordt veilig opgeslagen via de referentiebeheerder van uw besturingssysteem.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="64"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="453"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="71"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="487"/>
         <source>Proxy</source>
         <translation>Proxy</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="509"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="23"/>
+        <source>&lt;h1&gt;Network&lt;/h1&gt;&lt;p&gt;&lt;b&gt;OpenSubtitles&lt;/b&gt; search uses the REST API, which requires a free per-application API key: register at opensubtitles.com, create an API consumer, and paste the key here. An account login (username and password) is optional but raises the daily download limit.&lt;/p&gt;&lt;p&gt;&lt;b&gt;YouTube&lt;/b&gt;: the optional resolver uses an external yt-dlp program — when enabled, opening a YouTube URL runs yt-dlp to obtain a directly-playable stream. Install yt-dlp yourself and, if it is not on the PATH, set its full path. Because QMediaPlayer plays a single muxed stream, streaming tops out at the best progressive format (about 720p on YouTube). Cookies are deliberately NOT used for streaming: an authenticated (cookie) session returns URLs a plain player cannot open.&lt;/p&gt;&lt;p&gt;For &lt;b&gt;HD&lt;/b&gt; (and for cookies), enable download mode, or point the external downloader at your own tool (a program or .bat/.cmd). HD formats are separate video and audio streams that cannot be streamed muxed, so Vivace runs yt-dlp (or your tool) to download and merge the video, then plays the file it writes into the download folder. Download mode also needs Deno, a further external program yt-dlp itself uses to solve YouTube&apos;s JavaScript challenges — without it, a signed-in (cookie) request, exactly what HD downloads rely on, sees severely limited format availability. Streaming mode, which never sends cookies, is largely unaffected and doesn&apos;t need Deno. Install Deno yourself and, if it is not on the PATH, set its full path in the Download &amp; play settings.&lt;/p&gt;&lt;p&gt;See &lt;b&gt;Help ▸ Contents ▸ Options&lt;/b&gt; for step-by-step instructions on exporting a cookies.txt file from your browser, and on installing Deno.&lt;/p&gt;&lt;p&gt;The stream &lt;b&gt;connection timeout&lt;/b&gt; (used mainly by live TV tuners) has moved to &lt;i&gt;Preferences ▸ TV and radio&lt;/i&gt;.&lt;/p&gt;&lt;p&gt;The &lt;b&gt;Proxy&lt;/b&gt; tab applies application-wide: both HTTP and SOCKS5 cover OpenSubtitles search and the update check; only HTTP additionally covers media playback and yt-dlp (they read the http_proxy/https_proxy convention directly instead of going through Qt&apos;s network stack, and there is no SOCKS5 equivalent for that convention).&lt;/p&gt;&lt;p&gt;The &lt;b&gt;Cast&lt;/b&gt; tab sets the port Play ▸ Cast ▸ Smartphone/tablet listens on. It&apos;s here (rather than only in the Cast dialog) so it stays fixed — set it once, allow that port through your firewall/router once, and casting keeps working without a new firewall prompt every time.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="543"/>
         <source>Type:</source>
         <translation>&amp;Type:</translation>
     </message>
@@ -3167,307 +3176,319 @@
         <translation type="vanished">Geen</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="483"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="517"/>
         <source>Host:</source>
         <translation>&amp;Host:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="489"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="554"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="523"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="588"/>
         <source>Port:</source>
         <translation>&amp;Poort:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="147"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="154"/>
         <source>YouTube (yt-dlp)</source>
         <translation>YouTube (yt-dlp)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="23"/>
-        <source>&lt;h1&gt;Network&lt;/h1&gt;&lt;p&gt;&lt;b&gt;OpenSubtitles&lt;/b&gt; search uses the REST API, which requires a free per-application API key: register at opensubtitles.com, create an API consumer, and paste the key here. An account login (username and password) is optional but raises the daily download limit.&lt;/p&gt;&lt;p&gt;&lt;b&gt;YouTube&lt;/b&gt;: the optional resolver uses an external yt-dlp program — when enabled, opening a YouTube URL runs yt-dlp to obtain a directly-playable stream. Install yt-dlp yourself and, if it is not on the PATH, set its full path. Because QMediaPlayer plays a single muxed stream, streaming tops out at the best progressive format (about 720p on YouTube). Cookies are deliberately NOT used for streaming: an authenticated (cookie) session returns URLs a plain player cannot open.&lt;/p&gt;&lt;p&gt;For &lt;b&gt;HD&lt;/b&gt; (and for cookies), enable the external downloader and point it at your own tool (a program or .bat/.cmd). HD formats are separate video and audio streams that cannot be streamed muxed, so Vivace runs the tool to download and merge the video, then plays the file it writes into the download folder. The tool keeps its own format selection and cookies (add e.g. --cookies to its arguments); Vivace only runs it and plays the result.&lt;/p&gt;&lt;p&gt;See &lt;b&gt;Help ▸ Contents ▸ Options&lt;/b&gt; for step-by-step instructions on exporting a cookies.txt file from your browser.&lt;/p&gt;&lt;p&gt;The stream &lt;b&gt;connection timeout&lt;/b&gt; (used mainly by live TV tuners) has moved to &lt;i&gt;Preferences ▸ TV and radio&lt;/i&gt;.&lt;/p&gt;&lt;p&gt;The &lt;b&gt;Proxy&lt;/b&gt; tab applies application-wide: both HTTP and SOCKS5 cover OpenSubtitles search and the update check; only HTTP additionally covers media playback and yt-dlp (they read the http_proxy/https_proxy convention directly instead of going through Qt&apos;s network stack, and there is no SOCKS5 equivalent for that convention).&lt;/p&gt;&lt;p&gt;The &lt;b&gt;Cast&lt;/b&gt; tab sets the port Play ▸ Cast ▸ Smartphone/tablet listens on. It&apos;s here (rather than only in the Cast dialog) so it stays fixed — set it once, allow that port through your firewall/router once, and casting keeps working without a new firewall prompt every time.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="157"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="164"/>
         <source>Play YouTube URLs with yt-dlp</source>
         <translation>YouTube-URL&apos;s afspelen met yt-dlp</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="161"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="168"/>
         <source>When on, opening a YouTube URL runs yt-dlp instead of trying to play the page URL as-is.</source>
         <translation>Indien ingeschakeld, wordt bij het openen van een YouTube-URL yt-dlp uitgevoerd in plaats van te proberen de pagina-URL rechtstreeks af te spelen.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="174"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="181"/>
         <source>Open YouTube URLs by:</source>
         <translation>YouTube-URL&apos;s openen via:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="175"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="182"/>
         <source>Streaming is fastest but caps at ~720p and can&apos;t use cookies. Downloading gets full HD (uses cookies + ffmpeg), then plays and deletes the file. Or hand off to your own external downloader tool.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="185"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="192"/>
         <source>Streaming (fast, up to ~720p)</source>
         <translation>Streamen (snel, tot ~720p)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="186"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="193"/>
         <source>Downloading then playing (HD, cookies)</source>
         <translation>Downloaden en dan afspelen (HD, cookies)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="187"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="194"/>
         <source>An external downloader tool</source>
         <translation>Een externe downloadtool</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="195"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="202"/>
         <source>yt-dlp path:</source>
         <translation>yt-dlp-pad:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="196"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="203"/>
         <source>Leave as &quot;yt-dlp&quot; if it is on your system PATH; otherwise enter the full path to the yt-dlp executable.</source>
         <translation>Laat &quot;yt-dlp&quot; staan als het in het systeem-PATH staat; voer anders het volledige pad naar het yt-dlp-programma in.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="201"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="208"/>
         <source>yt-dlp (on PATH) or a full path</source>
         <translation>yt-dlp (in PATH) of een volledig pad</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="206"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="213"/>
         <source>Maximum quality:</source>
         <translation>Maximale kwaliteit:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="207"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="214"/>
         <source>Upper limit on resolution. Streaming is capped at ~720p regardless; downloading can reach this height in full HD.</source>
         <translation>Bovengrens voor de resolutie. Streamen is hoe dan ook beperkt tot ~720p; downloaden kan deze hoogte in volledige HD bereiken.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="217"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="224"/>
         <source>360p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="218"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="225"/>
         <source>480p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="219"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="226"/>
         <source>720p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="220"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="227"/>
         <source>1080p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="221"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="228"/>
         <source>1440p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="222"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="229"/>
         <source>2160p (4K)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="223"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="230"/>
         <source>Best available</source>
         <translation>Beste beschikbare</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="238"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="245"/>
         <source>yt-dlp is a separate program and is not bundled with Vivace.</source>
         <translation>yt-dlp is een apart programma en wordt niet met Vivace meegeleverd.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="244"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="251"/>
         <source>Download &amp; play</source>
         <translation>Downloaden en afspelen</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="256"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="263"/>
         <source>Downloads the video (merging HD video and audio with ffmpeg), plays it, and keeps it in a cache folder so replaying it is instant. The cache holds the most recent downloads up to the size below; older ones are removed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="270"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="277"/>
         <source>Cookies file:</source>
         <translation>Cookiebestand:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="271"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="278"/>
         <source>Optional cookies.txt exported from your browser (yt-dlp --cookies); unlocks HD, members-only and age-restricted videos. Safe here — cookies only affect the download, not a stream a player must open. See Help ▸ Contents ▸ Options for step-by-step export instructions.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="285"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="292"/>
         <source>optional cookies.txt</source>
         <translation>optioneel cookies.txt</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="288"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="307"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="325"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="397"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="433"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="295"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="314"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="341"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="359"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="431"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="467"/>
         <source>Browse…</source>
         <translation>Bladeren…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="293"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="300"/>
         <source>ffmpeg location:</source>
         <translation>ffmpeg-locatie:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="294"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="301"/>
         <source>Folder containing ffmpeg (yt-dlp needs it to merge HD video+audio). Leave empty to use ffmpeg from the system PATH.</source>
         <translation>Map met ffmpeg (yt-dlp heeft het nodig om HD-video en -audio samen te voegen). Laat leeg om ffmpeg uit het systeem-PATH te gebruiken.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="304"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="311"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="338"/>
         <source>empty = use PATH</source>
         <translation>leeg = PATH gebruiken</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="312"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="319"/>
+        <source>Deno path:</source>
+        <translation>Deno-locatie:</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="320"/>
+        <source>yt-dlp uses a separate program, Deno, to solve YouTube&apos;s JavaScript challenges. It&apos;s most needed here: a signed-in (cookie) request — exactly what unlocks HD above — sees severely limited format availability without it. Streaming mode, which never sends cookies, is largely unaffected. Leave empty if &quot;deno&quot; is already on your system PATH; otherwise enter the full path to the deno executable. See Help ▸ Contents ▸ Options for installation instructions.</source>
+        <translation>yt-dlp gebruikt een apart programma, Deno, om YouTube&apos;s JavaScript-uitdagingen op te lossen. Dat is hier het belangrijkst: een aangemelde (cookie-)aanvraag — precies wat HD hierboven ontgrendelt — heeft zonder Deno een sterk beperkte formaatbeschikbaarheid. Streamingmodus, die nooit cookies verstuurt, ondervindt hier weinig hinder van. Laat leeg als «deno» al op je systeem-PATH staat; voer anders het volledige pad naar het deno-programma in. Zie Help ▸ Inhoud ▸ Opties voor installatie-instructies.</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="346"/>
         <source>Cache folder:</source>
         <translation>Cachemap:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="313"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="347"/>
         <source>Where downloaded videos are kept for reuse. A video already here is replayed without downloading again.</source>
         <translation>Waar gedownloade video&apos;s worden bewaard voor hergebruik. Een video die hier al staat, wordt afgespeeld zonder opnieuw te downloaden.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="330"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="364"/>
         <source>Cache size:</source>
         <translation>Cachegrootte:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="331"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="365"/>
         <source>How many downloaded videos to keep. When the limit is reached, the least-recently-played one is deleted.</source>
         <translation>Hoeveel gedownloade video&apos;s worden bewaard. Wanneer de limiet is bereikt, wordt de video die het langst niet is afgespeeld verwijderd.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="342"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="376"/>
         <source>files</source>
         <translation>bestanden</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="348"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="382"/>
         <source>Thumbnail fallback at:</source>
         <translation>Miniatuur terugval op:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="349"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="383"/>
         <source>The cache thumbnail is normally YouTube&apos;s own poster image. Only if that is missing or black does Vivace grab a video frame — this is how many seconds in (past a black intro).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="362"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="396"/>
         <source>seconds</source>
         <translation>seconden</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="372"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="406"/>
         <source>External downloader tool</source>
         <translation>Externe downloadtool</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="383"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="417"/>
         <source>Downloader command:</source>
         <translation>Downloadopdracht:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="384"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="418"/>
         <source>The program or .bat/.cmd script that downloads the video; it receives the URL as an argument.</source>
         <translation>Het programma of .bat/.cmd-script dat de video downloadt; het ontvangt de URL als argument.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="394"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="428"/>
         <source>e.g. C:ToolsYouTubeDL.bat</source>
         <translation>bijv. C:\Tools\YouTubeDL.bat</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="402"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="436"/>
         <source>Arguments:</source>
         <translation>Argumenten:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="403"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="437"/>
         <source>Arguments passed to the tool; the token {url} is replaced by the video URL (if omitted, the URL is appended). Add any cookies/format flags your tool needs here, e.g. --cookies C:pathcookies.txt.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="418"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="452"/>
         <source>Download folder:</source>
         <translation>Downloadmap:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="419"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="453"/>
         <source>The folder the tool writes the finished file into; Vivace plays the newest media file that appears there, so set it to match your tool&apos;s output folder.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="430"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="464"/>
         <source>your tool&apos;s output folder</source>
         <translation>uitvoermap van uw tool</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="463"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="497"/>
         <source>Enable proxy</source>
         <translation>Proxy inschakelen</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="467"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="501"/>
         <source>Applies to OpenSubtitles search and the update check (both proxy types). Only an HTTP proxy also applies to media playback and yt-dlp — a SOCKS5 proxy does not reach either, since neither goes through Qt&apos;s network stack.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="525"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="559"/>
         <source>The proxy password is stored securely using your operating system&apos;s credential manager.</source>
         <translation>Het proxywachtwoord wordt veilig opgeslagen via de referentiebeheerder van uw besturingssysteem.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="555"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="589"/>
         <source>The port Play ▸ Cast ▸ Smartphone/tablet listens on. Kept fixed here (rather than editable each time in the Cast dialog) so you can allow it through your firewall/router once and it keeps working.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="577"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="611"/>
         <source>Your OS&apos;s firewall (and most routers) block an app listening on a fresh port until you allow it. Pick a port once here, allow Vivace through your firewall for it, and Cast will keep working without a new prompt each time.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="592"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="626"/>
         <source>Select the cookies.txt file</source>
         <translation>Selecteer het cookies.txt-bestand</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="598"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="632"/>
+        <source>Select the deno executable</source>
+        <translation>Selecteer het deno-programma</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="638"/>
         <source>Select the folder containing ffmpeg</source>
         <translation>Selecteer de map met ffmpeg</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="603"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="643"/>
         <source>Select the download cache folder</source>
         <translation>Selecteer de downloadcachemap</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="608"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="648"/>
         <source>Select the downloader program</source>
         <translation>Selecteer het downloadprogramma</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="614"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="654"/>
         <source>Select the download folder</source>
         <translation>Selecteer de downloadmap</translation>
     </message>
@@ -3475,177 +3496,181 @@
 <context>
     <name>PrefPlaylistPage</name>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="15"/>
-        <source>&lt;h1&gt;Playlist&lt;/h1&gt;&lt;p&gt;&lt;b&gt;Playlist&lt;/b&gt; tab — playback options (play files from start, start playing after loading a playlist, play the next file automatically, ignore playback errors, repeat, shuffle); how opening one file adds its folder siblings (the &quot;Add files from folder&quot; mode: none, video, audio, both or consecutive; recursive folders); whether to show each item&apos;s title instead of its file name, and whether the playlist is a docked panel or a separate window.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Misc&lt;/b&gt; tab — auto-sort the list, case-sensitive search, and save a copy of the playlist on exit.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="30"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="31"/>
         <source>Playlist</source>
         <translation>Afspeellijst</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="31"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="32"/>
         <source>Misc</source>
         <translation>Diversen</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="50"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="51"/>
         <source>Playback</source>
         <translation>Afspelen</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="59"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="60"/>
         <source>Play files from start</source>
         <translation>Speel bestanden af vanaf het begin</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="64"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="65"/>
         <source>Always begin at the beginning, ignoring any remembered resume position for the file.</source>
         <translation>Altijd bij het begin starten en elke onthouden hervattingspositie voor het bestand negeren.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="70"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="71"/>
         <source>Start playback after loading a playlist</source>
         <translation>Start met afspelen na het laden van een speellijst</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="75"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="76"/>
         <source>Play next file automatically</source>
         <translation>Volgend bestand automatisch afspelen</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="82"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="83"/>
         <source>Ignore playback errors</source>
         <translation>Afspeel fouten negeren</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="87"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="88"/>
         <source>When a file fails to play, skip on to the next item instead of stopping the playlist.</source>
         <translation>Wanneer een bestand niet kan worden afgespeeld, doorgaan naar het volgende item in plaats van de afspeellijst te stoppen.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="93"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="94"/>
         <source>Repeat playlist</source>
         <translation>Afspeellijst herhalen</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="98"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="99"/>
         <source>Shuffle</source>
         <translation>&amp;Willekeurig</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="107"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="108"/>
         <source>Adding files</source>
         <translation>Het toevoegen van bestanden</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="117"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="118"/>
         <source>Add files to the playlist automatically</source>
         <translation>Voeg bestanden automatisch toe aan de afspeellijst</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="122"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="123"/>
         <source>When you open a single file, also add the other media files from its folder to the playlist.</source>
         <translation>Wanneer u één bestand opent, ook de andere mediabestanden uit de map ervan aan de afspeellijst toevoegen.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="131"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="132"/>
         <source>Add files from folder:</source>
         <translation>Bestanden toevoegen vanuit &amp;map:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="133"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="134"/>
         <source>Which sibling files to add: none, only video, only audio, both, or just the files consecutive to the opened one (matching its name pattern).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="142"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="143"/>
         <source>None</source>
         <translation>Geen</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="143"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="144"/>
         <source>Video files</source>
         <translation>Video bestanden</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="144"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="145"/>
         <source>Audio files</source>
         <translation>Audio bestanden</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="145"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="146"/>
         <source>Video and audio files</source>
         <translation>Video en audio bestanden</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="146"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="147"/>
         <source>Consecutive files</source>
         <translation>Bij elkaar horende bestanden</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="153"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="154"/>
         <source>Add files in directories recursively</source>
         <translation>Voeg bestanden recursief toe aan directories</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="160"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="161"/>
         <source>Get info automatically about files added (slow)</source>
         <translation>Krijg automatisch &amp;informatie over de toegevoegde bestanden (langzaam)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="169"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="170"/>
         <source>Display title name instead of filename</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="174"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="175"/>
         <source>Show each entry&apos;s stored title (from the playlist or media metadata) rather than its file name.</source>
         <translation>De opgeslagen titel van elke vermelding (uit de afspeellijst of metadata) tonen in plaats van de bestandsnaam.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="184"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="185"/>
         <source>Playlist style:</source>
         <translation>Stijl van afspeellijst:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="187"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="188"/>
         <source>Docked panel</source>
         <translation>Vastgezet paneel</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="187"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="188"/>
         <source>Separate window</source>
         <translation>Apart venster</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="195"/>
-        <source>Sessions</source>
-        <translation>Sessies</translation>
+        <location filename="../qml/PrefPlaylistPage.qml" line="233"/>
+        <source>Restore\ the\ playlist\ you\ had\ open\ the\ last\ time\ Vivace\ was\ closed\.</source>
+        <translation>Herstelt de afspeellijst die open was toen Vivace de laatste keer werd afgesloten.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="202"/>
+        <source>Sessions</source>
+        <translation type="vanished">Sessies</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefPlaylistPage.qml" line="228"/>
         <source>Remember the playlist between sessions</source>
         <translation>De afspeellijst tussen sessies onthouden</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="220"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="205"/>
         <source>Auto sort</source>
         <translation>Automatisch sorteren</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="225"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="15"/>
+        <source>&lt;h1&gt;Playlist&lt;/h1&gt;&lt;p&gt;&lt;b&gt;Playlist&lt;/b&gt; tab — playback options (play files from start, start playing after loading a playlist, play the next file automatically, ignore playback errors, repeat, shuffle); how opening one file adds its folder siblings (the &quot;Add files from folder&quot; mode: none, video, audio, both or consecutive; recursive folders); whether to show each item&apos;s title instead of its file name, and whether the playlist is a docked panel or a separate window.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Misc&lt;/b&gt; tab — auto-sort the list, case-sensitive search, save a copy of the playlist on exit, and remember the playlist between sessions.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefPlaylistPage.qml" line="210"/>
         <source>Keep the playlist sorted by name as items are added, rather than in the order they were added.</source>
         <translation>De afspeellijst op naam gesorteerd houden terwijl items worden toegevoegd, in plaats van in de volgorde van toevoeging.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="231"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="216"/>
         <source>Case sensitive search</source>
         <translation>Hoofdlettergevoelig zoeken</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="236"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="221"/>
         <source>Save a copy of the playlist on exit</source>
         <translation>Bewaar een kopie van de afspeellijst na het sluiten</translation>
     </message>
@@ -4427,52 +4452,56 @@
 <context>
     <name>YoutubeResolver</name>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="213"/>
+        <location filename="../src/youtuberesolver.cpp" line="231"/>
         <source>Could not create the download cache folder.</source>
         <translation>Kon de downloadcachemap niet aanmaken.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="227"/>
+        <location filename="../src/youtuberesolver.cpp" line="245"/>
         <source>Could not determine the video id to download.</source>
         <translation>Kon de te downloaden video-id niet bepalen.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="312"/>
+        <location filename="../src/youtuberesolver.cpp" line="332"/>
         <source>Could not run yt-dlp (&quot;%1&quot;). Check the path in Preferences &gt; Network.</source>
         <translation>Kon yt-dlp niet uitvoeren (&quot;%1&quot;). Controleer het pad in Voorkeuren &gt; Netwerk.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="334"/>
+        <location filename="../src/youtuberesolver.cpp" line="354"/>
         <source>yt-dlp did not finish normally.</source>
         <translation>yt-dlp is niet normaal beëindigd.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="341"/>
+        <location filename="../src/youtuberesolver.cpp" line="361"/>
         <source>yt-dlp exited with code %1.</source>
         <translation>yt-dlp is beëindigd met code %1.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="356"/>
+        <location filename="../src/youtuberesolver.cpp" line="376"/>
         <source>yt-dlp returned no playable stream.</source>
         <translation>yt-dlp heeft geen afspeelbare stream geretourneerd.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="378"/>
+        <location filename="../src/youtuberesolver.cpp" line="398"/>
         <source>The download did not finish normally.</source>
         <translation>De download is niet normaal beëindigd.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="381"/>
-        <source>yt-dlp produced no file (exit code %1). If this is an HD video, check the ffmpeg location.</source>
-        <translation>yt-dlp heeft geen bestand geproduceerd (afsluitcode %1). Als dit een HD-video is, controleer dan de ffmpeg-locatie.</translation>
+        <location filename="../src/youtuberesolver.cpp" line="401"/>
+        <source>yt-dlp produced no file (exit code %1). If this is an HD video, check the ffmpeg and Deno paths.</source>
+        <translation>yt-dlp heeft geen bestand gemaakt (afsluitcode %1). Als dit een HD-video is, controleer de paden van ffmpeg en Deno.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="690"/>
+        <source>yt-dlp produced no file (exit code %1). If this is an HD video, check the ffmpeg location.</source>
+        <translation type="vanished">yt-dlp heeft geen bestand geproduceerd (afsluitcode %1). Als dit een HD-video is, controleer dan de ffmpeg-locatie.</translation>
+    </message>
+    <message>
+        <location filename="../src/youtuberesolver.cpp" line="710"/>
         <source>Could not write %1.</source>
         <translation>Kon %1 niet schrijven.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="696"/>
+        <location filename="../src/youtuberesolver.cpp" line="716"/>
         <source>Could not save %1.</source>
         <translation>Kon %1 niet opslaan.</translation>
     </message>

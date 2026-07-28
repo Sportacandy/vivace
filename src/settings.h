@@ -139,6 +139,14 @@ class Settings : public QObject
                WRITE setYoutubeCookiesFile NOTIFY youtubeChanged)
     Q_PROPERTY(QString youtubeFfmpegLocation READ youtubeFfmpegLocation
                WRITE setYoutubeFfmpegLocation NOTIFY youtubeChanged)
+    // Path to Deno (or empty to rely on PATH): yt-dlp's own external
+    // JavaScript runtime dependency, used to solve YouTube's JS challenges.
+    // Matters most for download mode (its cookie-authenticated requests see
+    // severely reduced format availability without it); streaming never
+    // sends cookies so it's largely unaffected. See PrefNetworkPage.qml's
+    // Download & play section, where this setting's field lives.
+    Q_PROPERTY(QString youtubeDenoLocation READ youtubeDenoLocation
+               WRITE setYoutubeDenoLocation NOTIFY youtubeChanged)
     // Download-mode cache: downloaded videos are kept here as an LRU cache
     // (a cached video is replayed without re-downloading); cacheSize caps the
     // number of files kept (least-recently-used evicted).
@@ -461,6 +469,8 @@ public:
     void setYoutubeCookiesFile(const QString &path);
     QString youtubeFfmpegLocation() const { return m_youtubeFfmpegLocation; }
     void setYoutubeFfmpegLocation(const QString &path);
+    QString youtubeDenoLocation() const { return m_youtubeDenoLocation; }
+    void setYoutubeDenoLocation(const QString &path);
     QString youtubeCacheDir() const { return m_youtubeCacheDir; }
     void setYoutubeCacheDir(const QString &path);
     int youtubeCacheSize() const { return m_youtubeCacheSize; }
@@ -868,6 +878,7 @@ private:
     int m_youtubeMode;
     QString m_youtubeCookiesFile;
     QString m_youtubeFfmpegLocation;
+    QString m_youtubeDenoLocation;
     QString m_youtubeCacheDir;
     int m_youtubeCacheSize;
     int m_youtubeThumbnailOffset;

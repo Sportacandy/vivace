@@ -2,8 +2,12 @@
     Copyright (C) 2026 Hironori Komaba
     SPDX-License-Identifier: GPL-3.0-or-later
 
-    Preferences > Interface, with SMPlayer's subtabs: Interface / Seeking /
-    Instances / Fullscreen / Privacy / High DPI.
+    Preferences > Interface: Interface / Text / Seeking / Instances /
+    Fullscreen / Privacy. The original single "Interface" subtab (SMPlayer's
+    layout) grew taller than the Preferences window, so its font/OSD/touch/
+    high-DPI items were split out into a second "Text" subtab (and the
+    former standalone "High DPI" subtab folded into it) — content only,
+    no behavior change.
 */
 
 import QtQuick
@@ -17,10 +21,13 @@ ColumnLayout {
     readonly property string helpText: qsTr(
         "<h1>Interface</h1>"
         + "<p><b>Interface</b> — the GUI layout (Basic / Mini / Mpc), icon set, "
-        + "Qt Quick Controls style and application font, plus main-window "
-        + "behaviour (auto-resize, centre, keep on screen, remember geometry, "
-        + "hide the video area for audio-only files), the toolbar gradient, "
-        + "the native file dialog toggle and OSD options.</p>"
+        + "language, and Qt Quick Controls style, plus main-window behaviour "
+        + "(auto-resize, centre, keep on screen, remember geometry, hide the "
+        + "video area for audio-only files).</p>"
+        + "<p><b>Text</b> — the application font, the toolbar gradient, the "
+        + "native file dialog toggle, OSD options, touch-friendly sizing, "
+        + "and the high-DPI scale-factor override (Vivace scales "
+        + "automatically otherwise).</p>"
         + "<p><b>Seeking</b> — the jump lengths for the seek buttons and the "
         + "mouse wheel, and whether the time slider seeks while dragging or on "
         + "release.</p>"
@@ -29,8 +36,6 @@ ColumnLayout {
         + "<p><b>Fullscreen</b> — hide the mouse pointer after inactivity.</p>"
         + "<p><b>Privacy</b> — how many recent files and URLs to remember, and "
         + "whether to remember the last folder.</p>"
-        + "<p><b>High DPI</b> — override the interface scale factor (Vivace "
-        + "scales automatically otherwise).</p>"
         + "<p>Style, font and scale-factor changes take effect after "
         + "restarting Vivace.</p>")
 
@@ -46,11 +51,11 @@ ColumnLayout {
         id: tabs
         Layout.fillWidth: true
         TabButton { text: qsTr("Interface") }
+        TabButton { text: qsTr("Text") }
         TabButton { text: qsTr("Seeking") }
         TabButton { text: qsTr("Instances") }
         TabButton { text: qsTr("Fullscreen") }
         TabButton { text: qsTr("Privacy") }
-        TabButton { text: qsTr("High DPI") }
     }
 
     StackLayout {
@@ -214,6 +219,19 @@ ColumnLayout {
                     text: qsTr("Style changes take effect after restarting Vivace. Fusion is recommended: other styles may not render the custom menus and sliders correctly.")
                 }
 
+                Item { Layout.fillHeight: true }
+            }
+        }
+
+        // ----------------------------------------------------- Text
+        ScrollView {
+            clip: true
+            contentWidth: availableWidth
+
+            ColumnLayout {
+                width: parent.width
+                spacing: 10
+
                 RowLayout {
                     spacing: 8
                     Label { text: qsTr("Application font:") }
@@ -342,6 +360,40 @@ ColumnLayout {
                             Item { Layout.fillWidth: true }
                         }
                     }
+                }
+
+                Label {
+                    Layout.fillWidth: true
+                    wrapMode: Text.WordWrap
+                    text: qsTr("Vivace scales the interface on high-DPI screens automatically. You can override the scale factor here if needed.")
+                }
+                RowLayout {
+                    spacing: 8
+                    Label { text: qsTr("Scale factor:") }
+                    ComboBox {
+                        id: scaleCombo
+                        Layout.fillWidth: true
+                        textRole: "label"
+                        valueRole: "value"
+                        model: [
+                            { label: qsTr("Automatic"), value: 0.0 },
+                            { label: "1.0", value: 1.0 },
+                            { label: "1.25", value: 1.25 },
+                            { label: "1.5", value: 1.5 },
+                            { label: "1.75", value: 1.75 },
+                            { label: "2.0", value: 2.0 }
+                        ]
+                        currentIndex: Math.max(0, model.findIndex(
+                                e => Math.abs(e.value - Settings.interfaceScaleFactor) < 0.001))
+                        onActivated: Settings.interfaceScaleFactor = currentValue
+                    }
+                }
+                Label {
+                    Layout.fillWidth: true
+                    wrapMode: Text.WordWrap
+                    opacity: 0.7
+                    font.pixelSize: 12
+                    text: qsTr("Scale factor changes take effect after restarting Vivace.")
                 }
 
                 Item { Layout.fillHeight: true }
@@ -564,47 +616,6 @@ ColumnLayout {
                 text: qsTr("Remember last directory")
                 checked: Settings.rememberLastDir
                 onToggled: Settings.rememberLastDir = checked
-            }
-
-            Item { Layout.fillHeight: true }
-        }
-
-        // ----------------------------------------------- High DPI
-        ColumnLayout {
-            spacing: 10
-
-            Label {
-                Layout.fillWidth: true
-                wrapMode: Text.WordWrap
-                text: qsTr("Vivace scales the interface on high-DPI screens automatically. You can override the scale factor here if needed.")
-            }
-            RowLayout {
-                spacing: 8
-                Label { text: qsTr("Scale factor:") }
-                ComboBox {
-                    id: scaleCombo
-                    Layout.fillWidth: true
-                    textRole: "label"
-                    valueRole: "value"
-                    model: [
-                        { label: qsTr("Automatic"), value: 0.0 },
-                        { label: "1.0", value: 1.0 },
-                        { label: "1.25", value: 1.25 },
-                        { label: "1.5", value: 1.5 },
-                        { label: "1.75", value: 1.75 },
-                        { label: "2.0", value: 2.0 }
-                    ]
-                    currentIndex: Math.max(0, model.findIndex(
-                            e => Math.abs(e.value - Settings.interfaceScaleFactor) < 0.001))
-                    onActivated: Settings.interfaceScaleFactor = currentValue
-                }
-            }
-            Label {
-                Layout.fillWidth: true
-                wrapMode: Text.WordWrap
-                opacity: 0.7
-                font.pixelSize: 12
-                text: qsTr("Scale factor changes take effect after restarting Vivace.")
             }
 
             Item { Layout.fillHeight: true }

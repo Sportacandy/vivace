@@ -570,13 +570,16 @@ ApplicationWindow {
                      ? Settings.subFontFamily : Qt.application.font.family
     }
 
-    // OSD, top-left over the video like SMPlayer's.
+    // OSD, top-left over the video like SMPlayer's. Long messages (e.g. a
+    // YouTube/download failure reason) wrap within a max width instead of
+    // overflowing past the window's right edge — osdLabel.width is capped,
+    // not left to grow to the unwrapped implicitWidth.
     Rectangle {
         id: osd
         anchors.left: parent.left
         anchors.top: parent.top
         anchors.margins: 24
-        width: osdLabel.implicitWidth + 24
+        width: osdLabel.width + 24
         height: osdLabel.implicitHeight + 12
         radius: 4
         color: "#c0202020"
@@ -591,6 +594,8 @@ ApplicationWindow {
             anchors.centerIn: parent
             color: "white"
             font.pixelSize: Settings.osdFontSize
+            wrapMode: Text.WordWrap
+            width: Math.min(implicitWidth, root.width * 0.9 - 24)
         }
 
         Timer {
@@ -1229,6 +1234,7 @@ ApplicationWindow {
         preferredHeight: Settings.youtubeQuality
         cookiesFile: Settings.youtubeCookiesFile
         ffmpegLocation: Settings.youtubeFfmpegLocation
+        denoLocation: Settings.youtubeDenoLocation
         cacheDir: Settings.youtubeCacheDir
         cacheSize: Settings.youtubeCacheSize
         thumbnailOffset: Settings.youtubeThumbnailOffset
