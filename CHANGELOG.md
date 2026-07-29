@@ -21,6 +21,11 @@ each get their own entry instead.
   control bar" and "Use the system native file dialog" back from the
   *Text* subtab to *Interface*, alongside the other main-window/appearance
   settings they belong with.
+- The remembered window position could point at empty space if a monitor
+  was unplugged or the display layout changed since the last run, leaving
+  the main window impossible to find. The remembered position is now only
+  restored when it still lands on a currently connected screen; the
+  remembered size is kept either way.
 
 ## [0.1.2] — 2026-07-28
 

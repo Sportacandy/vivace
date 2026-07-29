@@ -71,6 +71,28 @@ ApplicationWindow {
         visibility = fullscreen ? Window.Windowed : Window.FullScreen
     }
 
+    // True if enough of rect (x,y,w,h) — in virtual-desktop coordinates —
+    // overlaps some CURRENTLY CONNECTED screen to be seen and dragged back
+    // into view (a title bar's worth, not just one stray pixel). Checked
+    // against every screen in Qt.application.screens, not just whichever
+    // screen the window itself currently resolves to, since a remembered
+    // rect from a monitor that has since been unplugged/rearranged can
+    // otherwise still read back as "on screen" on some platforms until the
+    // window is actually moved.
+    function rectVisibleOnAnyScreen(x, y, w, h) {
+        const minVisibleWidth = 100
+        const minVisibleHeight = 30
+        const screens = Qt.application.screens
+        for (let i = 0; i < screens.length; ++i) {
+            const s = screens[i]
+            const overlapW = Math.min(x + w, s.virtualX + s.width) - Math.max(x, s.virtualX)
+            const overlapH = Math.min(y + h, s.virtualY + s.height) - Math.max(y, s.virtualY)
+            if (overlapW >= minVisibleWidth && overlapH >= minVisibleHeight)
+                return true
+        }
+        return false
+    }
+
     // Center on screen and/or keep the window inside the available area
     // (SMPlayer's "Center window" / "Prevent window from getting outside").
     function applyWindowPlacement() {
@@ -179,10 +201,20 @@ ApplicationWindow {
         if (Settings.rememberGeometry) {
             const g = Settings.windowGeometry
             if (g.width >= 400 && g.height >= 300) {
-                root.x = g.x
-                root.y = g.y
                 root.width = g.width
                 root.height = g.height
+                // Only restore the remembered POSITION if it still lands on
+                // a currently connected screen — a display layout change
+                // since the last run (a monitor unplugged, or rearranged)
+                // can otherwise leave the window positioned in now-empty
+                // virtual-desktop space with no way to reach it. When it
+                // doesn't fit, keep the size but fall back to the default
+                // placement (applyWindowPlacement below then centers it, or
+                // the OS places it, depending on preferences).
+                if (root.rectVisibleOnAnyScreen(g.x, g.y, g.width, g.height)) {
+                    root.x = g.x
+                    root.y = g.y
+                }
             }
         }
         applyWindowPlacement()
