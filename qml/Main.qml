@@ -418,7 +418,6 @@ ApplicationWindow {
         onAboutRequested: aboutDialog.open()
         onHelpContentsRequested: helpDialog.open()
         onCheckForUpdatesRequested: updateChecker.checkNow()
-        onInstallYoutubeSupportRequested: youtubeSupportDialog.openDialog()
     }
 
     header: MainToolBar {
@@ -1278,6 +1277,11 @@ ApplicationWindow {
         cacheDir: Settings.youtubeCacheDir
         cacheSize: Settings.youtubeCacheSize
         thumbnailOffset: Settings.youtubeThumbnailOffset
+        autoUpdatePolicy: Settings.youtubeAutoUpdate
+        useManagedYtdlp: Settings.youtubeUseManagedYtdlp
+        lastAutoUpdateCheck: Settings.youtubeLastAutoUpdateCheck
+        onLastAutoUpdateCheckChanged:
+                Settings.youtubeLastAutoUpdateCheck = youtubeResolver.lastAutoUpdateCheck
         onResolved: (mediaUrl, title, pageUrl) => {
             playerController.openStream(mediaUrl, title)
             root.showOsd(title !== "" ? title : qsTr("Playing stream"))
@@ -1684,6 +1688,7 @@ ApplicationWindow {
     PreferencesDialog {
         id: preferencesDialog
         controller: playerController
+        youtubeInstallDialog: youtubeSupportDialog
     }
 
     FavoritesDialog {
@@ -1848,7 +1853,7 @@ ApplicationWindow {
                 "screenshotRequested", "infoRequested", "preferencesRequested",
                 "editMainToolbarRequested", "editControlBarRequested",
                 "aboutRequested", "checkForUpdatesRequested",
-                "installYoutubeSupportRequested", "helpContentsRequested"]
+                "helpContentsRequested"]
             for (const n of mm)
                 fsMenuBar[n].connect(mainMenuBar[n])
             const tt = ["openFileRequested", "openUrlRequested", "openDvdRequested",

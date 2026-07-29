@@ -34,6 +34,10 @@ YoutubeResolver::YoutubeResolver(QObject *parent) : QObject(parent)
 
 YoutubeResolver::~YoutubeResolver()
 {
+    if (m_updateProcess && m_updateProcess->state() != QProcess::NotRunning) {
+        m_updateProcess->kill();
+        m_updateProcess->waitForFinished(1000);
+    }
     if (m_process->state() != QProcess::NotRunning) {
         m_process->kill();
         m_process->waitForFinished(1000);
@@ -131,6 +135,86 @@ void YoutubeResolver::setInstalling(bool installing)
     emit installingChanged();
 }
 
+void YoutubeResolver::setAutoUpdatePolicy(int policy)
+{
+    if (policy == m_autoUpdatePolicy)
+        return;
+    m_autoUpdatePolicy = policy;
+    emit autoUpdatePolicyChanged();
+}
+
+void YoutubeResolver::setLastAutoUpdateCheck(const QString &isoDateTime)
+{
+    if (isoDateTime == m_lastAutoUpdateCheck)
+        return;
+    m_lastAutoUpdateCheck = isoDateTime;
+    emit lastAutoUpdateCheckChanged();
+}
+
+void YoutubeResolver::setUseManagedYtdlp(bool managed)
+{
+    if (managed == m_useManagedYtdlp)
+        return;
+    m_useManagedYtdlp = managed;
+    emit useManagedYtdlpChanged();
+}
+
+bool YoutubeResolver::isAutoUpdateDue() const
+{
+    if (!m_useManagedYtdlp)
+        return false; // a user-supplied yt-dlp is never touched by Vivace
+    switch (m_autoUpdatePolicy) {
+    case 1: // every invocation
+        return true;
+    case 2: // once a day
+    case 3: { // once a week
+        if (m_lastAutoUpdateCheck.isEmpty())
+            return true;
+        const QDateTime last =
+                QDateTime::fromString(m_lastAutoUpdateCheck, Qt::ISODate);
+        if (!last.isValid())
+            return true;
+        const int days = (m_autoUpdatePolicy == 2) ? 1 : 7;
+        return last.addDays(days) <= QDateTime::currentDateTime();
+    }
+    default: // 0 = never
+        return false;
+    }
+}
+
+void YoutubeResolver::recordAutoUpdateCheck()
+{
+    if (m_autoUpdatePolicy != 2 && m_autoUpdatePolicy != 3)
+        return; // "every invocation" doesn't need a timestamp
+    setLastAutoUpdateCheck(QDateTime::currentDateTime().toString(Qt::ISODate));
+}
+
+void YoutubeResolver::maybeAutoUpdateThen(const std::function<void()> &next)
+{
+    if (!isAutoUpdateDue()) {
+        next();
+        return;
+    }
+    recordAutoUpdateCheck(); // stamp now regardless of outcome below
+
+    m_updateProcess = new QProcess(this);
+    auto finish = [this, next] {
+        if (!m_updateProcess)
+            return; // already handled (e.g. cancel()) -- don't invoke twice
+        m_updateProcess->deleteLater();
+        m_updateProcess = nullptr;
+        next();
+    };
+    connect(m_updateProcess, &QProcess::finished, this,
+            [finish](int, QProcess::ExitStatus) { finish(); });
+    connect(m_updateProcess, &QProcess::errorOccurred, this,
+            [finish](QProcess::ProcessError) { finish(); });
+    // yt-dlp's own self-update. Failures (offline, or a non-standalone
+    // install that rejects -U) are ignored by finish() above -- resolve()/
+    // download() proceed with whatever version is already installed.
+    m_updateProcess->start(m_ytdlPath, { QStringLiteral("-U") });
+}
+
 bool YoutubeResolver::isSupportedUrl(const QString &url)
 {
     return !videoId(url).isEmpty();
@@ -190,9 +274,14 @@ void YoutubeResolver::resolve(const QString &pageUrl)
 
     const QString requestUrl = canonicalUrl(pageUrl);
     m_pageUrl = QUrl(requestUrl);
+    setBusy(true);
+    maybeAutoUpdateThen([this, requestUrl] { startResolve(requestUrl); });
+}
+
+void YoutubeResolver::startResolve(const QString &requestUrl)
+{
     m_op = Op::Resolve;
     m_process->setProcessChannelMode(QProcess::SeparateChannels);
-    setBusy(true);
 
     // -j (dump single JSON), a MUXED format (see the header note), no playlist.
     QString format = QStringLiteral("best");
@@ -246,6 +335,15 @@ void YoutubeResolver::download(const QString &pageUrl)
         return;
     }
 
+    setBusy(true);
+    setDownloading(true);
+    maybeAutoUpdateThen([this, requestUrl] { startDownload(requestUrl); });
+}
+
+void YoutubeResolver::startDownload(const QString &requestUrl)
+{
+    const QString dir = cacheDir();
+
     // Prefer H.264 video + m4a audio: those merge into MP4 as a clean remux that
     // works with any ffmpeg (incl. old builds) and plays everywhere. Fall back to
     // the best video+audio (VP9/AV1, e.g. for >1080p) then best progressive. The
@@ -286,14 +384,24 @@ void YoutubeResolver::download(const QString &pageUrl)
 
     m_op = Op::Download;
     m_process->setProcessChannelMode(QProcess::MergedChannels); // progress lines
-    setBusy(true);
-    setDownloading(true);
     m_process->start(m_ytdlPath, args);
 }
 
 void YoutubeResolver::cancel()
 {
     const bool wasDownload = (m_op == Op::Download);
+    // Drop the pending auto-update step, if any, WITHOUT invoking its
+    // continuation (which would otherwise start the real resolve/download
+    // right after this cancel).
+    if (m_updateProcess) {
+        m_updateProcess->disconnect(this);
+        if (m_updateProcess->state() != QProcess::NotRunning) {
+            m_updateProcess->kill();
+            m_updateProcess->waitForFinished(1000);
+        }
+        m_updateProcess->deleteLater();
+        m_updateProcess = nullptr;
+    }
     if (m_process->state() != QProcess::NotRunning) {
         m_process->kill();
         m_process->waitForFinished(1000);

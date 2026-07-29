@@ -131,6 +131,12 @@ class Settings : public QObject
                NOTIFY youtubeChanged)
     Q_PROPERTY(QString ytdlPath READ ytdlPath WRITE setYtdlPath
                NOTIFY youtubeChanged)
+    // True: Vivace installs/updates yt-dlp itself (ytdlPath is not
+    // user-edited; use the Install / Update button) and the auto-update
+    // cadence below applies. False: ytdlPath points at the user's own
+    // yt-dlp -- Vivace never installs or auto-updates it.
+    Q_PROPERTY(bool youtubeUseManagedYtdlp READ youtubeUseManagedYtdlp
+               WRITE setYoutubeUseManagedYtdlp NOTIFY youtubeChanged)
     Q_PROPERTY(int youtubeQuality READ youtubeQuality WRITE setYoutubeQuality
                NOTIFY youtubeChanged)
     // How to open a YouTube URL: 0 = stream (yt-dlp -> direct URL, no cookies,
@@ -174,6 +180,17 @@ class Settings : public QObject
                WRITE setYoutubeDownloaderArgs NOTIFY youtubeChanged)
     Q_PROPERTY(QString youtubeDownloadFolder READ youtubeDownloadFolder
                WRITE setYoutubeDownloadFolder NOTIFY youtubeChanged)
+    // Automatic yt-dlp self-update cadence: 0 = never, 1 = before every
+    // yt-dlp invocation, 2 = once a day, 3 = once a week. YoutubeResolver
+    // runs "<ytdlPath> -U" (yt-dlp's own self-update) before the actual
+    // resolve/download when due.
+    Q_PROPERTY(int youtubeAutoUpdate READ youtubeAutoUpdate
+               WRITE setYoutubeAutoUpdate NOTIFY youtubeChanged)
+    // ISO date-time of the last automatic update check (daily/weekly
+    // cadence only -- "every invocation" needs no timestamp). Internal
+    // bookkeeping, not shown in the UI.
+    Q_PROPERTY(QString youtubeLastAutoUpdateCheck READ youtubeLastAutoUpdateCheck
+               WRITE setYoutubeLastAutoUpdateCheck NOTIFY youtubeChanged)
     Q_PROPERTY(bool updateCheckEnabled READ updateCheckEnabled
                WRITE setUpdateCheckEnabled NOTIFY updateSettingsChanged)
     Q_PROPERTY(int updateCheckIntervalDays READ updateCheckIntervalDays
@@ -469,6 +486,8 @@ public:
     void setYoutubeEnabled(bool enabled);
     QString ytdlPath() const { return m_ytdlPath; }
     void setYtdlPath(const QString &path);
+    bool youtubeUseManagedYtdlp() const { return m_youtubeUseManagedYtdlp; }
+    void setYoutubeUseManagedYtdlp(bool managed);
     int youtubeQuality() const { return m_youtubeQuality; }
     void setYoutubeQuality(int height);
     int youtubeMode() const { return m_youtubeMode; }
@@ -493,6 +512,10 @@ public:
     void setYoutubeDownloaderArgs(const QString &args);
     QString youtubeDownloadFolder() const { return m_youtubeDownloadFolder; }
     void setYoutubeDownloadFolder(const QString &folder);
+    int youtubeAutoUpdate() const { return m_youtubeAutoUpdate; }
+    void setYoutubeAutoUpdate(int policy);
+    QString youtubeLastAutoUpdateCheck() const { return m_youtubeLastAutoUpdateCheck; }
+    void setYoutubeLastAutoUpdateCheck(const QString &isoDateTime);
     void setScreenshotFolder(const QString &folder);
 
     bool updateCheckEnabled() const { return m_updateCheckEnabled; }
@@ -884,6 +907,7 @@ private:
     QString m_opensubtitlesPassword;
     bool m_youtubeEnabled;
     QString m_ytdlPath;
+    bool m_youtubeUseManagedYtdlp;
     int m_youtubeQuality;
     int m_youtubeMode;
     QString m_youtubeCookiesFile;
@@ -896,6 +920,8 @@ private:
     QString m_youtubeDownloaderCommand;
     QString m_youtubeDownloaderArgs;
     QString m_youtubeDownloadFolder;
+    int m_youtubeAutoUpdate;
+    QString m_youtubeLastAutoUpdateCheck;
     bool m_updateCheckEnabled;
     int m_updateCheckIntervalDays;
     QString m_updateLastCheck;

@@ -20,6 +20,8 @@ import QtQuick.Layouts
 ColumnLayout {
     spacing: 8
 
+    required property YoutubeSupportDialog youtubeInstallDialog
+
     readonly property string helpText: qsTr(
         "<h1>Network</h1>"
         + "<p><b>OpenSubtitles</b> search uses the REST API, which requires a "
@@ -28,8 +30,10 @@ ColumnLayout {
         + "and password) is optional but raises the daily download limit.</p>"
         + "<p><b>YouTube</b>: the optional resolver uses an external yt-dlp "
         + "program — when enabled, opening a YouTube URL runs yt-dlp to obtain a "
-        + "directly-playable stream. Install yt-dlp yourself and, if it is not on "
-        + "the PATH, set its full path. Because QMediaPlayer "
+        + "directly-playable stream. Vivace offers to install yt-dlp for you the "
+        + "first time you turn this on (or point it at your own copy with the "
+        + "path field below), and can keep it updated on its own per the "
+        + "\"Update yt-dlp automatically\" setting. Because QMediaPlayer "
         + "plays a single muxed stream, streaming tops out at the best "
         + "progressive format (about 720p on YouTube). Cookies are deliberately "
         + "NOT used for streaming: an authenticated (cookie) session returns "
@@ -198,15 +202,66 @@ ColumnLayout {
                             }
 
                             RowLayout {
+                                Layout.columnSpan: 2
                                 spacing: 6
+                                CheckBox {
+                                    id: managedYtdlp
+                                    text: qsTr("Use managed yt-dlp")
+                                    checked: Settings.youtubeUseManagedYtdlp
+                                    onToggled: Settings.youtubeUseManagedYtdlp = checked
+                                }
+                                HelpMark { text: qsTr("When on, Vivace installs yt-dlp for you "
+                                                      + "(see the button here) and can keep it "
+                                                      + "updated automatically below. Turn this "
+                                                      + "off to point at your own yt-dlp instead "
+                                                      + "-- Vivace will not install or "
+                                                      + "auto-update it.") }
+                                Item { Layout.fillWidth: true }
+                                Button {
+                                    text: qsTr("Install / Update yt-dlp…")
+                                    enabled: managedYtdlp.checked
+                                    onClicked: youtubeInstallDialog.openDialog()
+                                }
+                            }
+
+                            RowLayout {
+                                spacing: 6
+                                enabled: !managedYtdlp.checked
                                 Label { text: qsTr("yt-dlp path:") }
                                 HelpMark { text: qsTr("Leave as \"yt-dlp\" if it is on your system PATH; otherwise enter the full path to the yt-dlp executable.") }
                             }
                             TextField {
                                 Layout.fillWidth: true
+                                enabled: !managedYtdlp.checked
                                 text: Settings.ytdlPath
                                 placeholderText: qsTr("yt-dlp (on PATH) or a full path")
                                 onEditingFinished: Settings.ytdlPath = text
+                            }
+                            RowLayout {
+                                spacing: 6
+                                enabled: managedYtdlp.checked
+                                Label { text: qsTr("Update yt-dlp automatically:") }
+                                HelpMark { text: qsTr("Runs yt-dlp's own self-update before "
+                                                      + "playing a YouTube video. \"Every time\" "
+                                                      + "adds a short delay to each play; the "
+                                                      + "daily/weekly options check only that "
+                                                      + "often. Failures (e.g. no network) are "
+                                                      + "ignored and playback proceeds with "
+                                                      + "whatever version is installed. Only "
+                                                      + "applies to a managed yt-dlp.") }
+                            }
+                            ComboBox {
+                                id: autoUpdateCombo
+                                Layout.fillWidth: true
+                                enabled: managedYtdlp.checked
+                                model: [
+                                    qsTr("Never"),
+                                    qsTr("Every time yt-dlp runs"),
+                                    qsTr("Once a day"),
+                                    qsTr("Once a week")
+                                ]
+                                currentIndex: Settings.youtubeAutoUpdate
+                                onActivated: Settings.youtubeAutoUpdate = currentIndex
                             }
                             RowLayout {
                                 spacing: 6

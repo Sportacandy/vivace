@@ -2,11 +2,15 @@
     Copyright (C) 2026 Hironori Komaba
     SPDX-License-Identifier: GPL-3.0-or-later
 
-    Help > Install / Update YouTube support (SMPlayer's CodeDownloader): offers
-    to download the latest official yt-dlp binary and install it, then enables
-    the YouTube resolver. Confirm -> progress -> result, all in one dialog.
-    A normal top-level modal dialog (OS window frame), matching the other
-    Vivace dialogs.
+    Offers to download the latest official yt-dlp binary and install it
+    (SMPlayer's CodeDownloader). Confirm -> progress -> result, all in one
+    dialog. Opened on demand by the "Install / Update yt-dlp…" button in
+    Preferences > Network > YouTube, enabled only while "Use managed
+    yt-dlp" is on (a user-supplied yt-dlp is never installed/updated by
+    Vivace, on demand or automatically). Ongoing updates between manual
+    clicks are handled separately and automatically by YoutubeResolver's
+    own auto-update cadence. A normal top-level modal dialog (OS window
+    frame), matching the other Vivace dialogs.
 */
 
 import QtQuick
@@ -57,11 +61,9 @@ Window {
         }
         function onInstallFinished(path) {
             Settings.ytdlPath = path
-            Settings.youtubeEnabled = true
             dlg.phase = "done"
             dlg.resultText =
                 qsTr("yt-dlp was installed successfully as:") + "\n" + path
-                + "\n\n" + qsTr("YouTube playback is now enabled.")
         }
         function onInstallFailed(message) {
             dlg.phase = "error"

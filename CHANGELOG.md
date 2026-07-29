@@ -51,6 +51,17 @@ each get their own entry instead.
   Adding to the currently loaded playlist updates it live, including in a
   separate (modeless) Playlist window, and auto-saves it if it's backed by
   a file.
+- Automated yt-dlp setup and updates in Preferences ▸ Network ▸ YouTube,
+  replacing the old Help ▸ "Install / Update YouTube support" menu item
+  (removed): a new **Use managed yt-dlp** checkbox lets Vivace install and
+  maintain its own copy of yt-dlp — with a manual **Install / Update
+  yt-dlp…** button, and an **Update yt-dlp automatically** option (Never /
+  every time yt-dlp runs / once a day / once a week) that runs yt-dlp's own
+  self-update right before a YouTube URL is played. Turning the checkbox
+  off instead points Vivace at a yt-dlp you manage yourself (e.g. via
+  `pip`); Vivace never installs, updates, or auto-updates that copy. A
+  failed automatic update is silently ignored and playback proceeds with
+  whatever version is already installed.
 
 ## [0.1.2] — 2026-07-28
 

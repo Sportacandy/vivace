@@ -49,7 +49,6 @@ MenuBar {
     signal editControlBarRequested()
     signal aboutRequested()
     signal checkForUpdatesRequested()
-    signal installYoutubeSupportRequested()
     signal helpContentsRequested()
     signal castRequested()
 
@@ -997,11 +996,6 @@ MenuBar {
             text: qsTr("&Check for updates")
             icon.source: Theme.icon("check_updates")
             onTriggered: bar.checkForUpdatesRequested()
-        }
-        AppMenuItem {
-            text: qsTr("Install / Update &YouTube support")
-            icon.source: Theme.icon("update_youtube")
-            onTriggered: bar.installYoutubeSupportRequested()
         }
         MenuSeparator {}
         Action {

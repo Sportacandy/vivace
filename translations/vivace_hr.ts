@@ -766,284 +766,284 @@
 <context>
     <name>Main</name>
     <message>
-        <location filename="../qml/Main.qml" line="409"/>
+        <location filename="../qml/Main.qml" line="388"/>
         <source>TV editor</source>
         <translation>TV uređivač</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="409"/>
+        <location filename="../qml/Main.qml" line="388"/>
         <source>TV channels</source>
         <translation>TV kanali</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="412"/>
+        <location filename="../qml/Main.qml" line="391"/>
         <source>Radio editor</source>
         <translation>Uređivač radija</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="412"/>
+        <location filename="../qml/Main.qml" line="391"/>
         <source>Radio channels</source>
         <translation>Radijske postaje</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="415"/>
-        <location filename="../qml/Main.qml" line="459"/>
+        <location filename="../qml/Main.qml" line="394"/>
+        <location filename="../qml/Main.qml" line="437"/>
         <source>Favorite editor</source>
         <translation>Omiljeni uređivač</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="415"/>
-        <location filename="../qml/Main.qml" line="459"/>
+        <location filename="../qml/Main.qml" line="394"/>
+        <location filename="../qml/Main.qml" line="437"/>
         <source>Favorite list</source>
         <translation>Omiljeni popis</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="419"/>
+        <location filename="../qml/Main.qml" line="398"/>
         <source>Bookmark added</source>
         <translation>Oznaka dodana</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="434"/>
+        <location filename="../qml/Main.qml" line="413"/>
         <source>Edit main toolbar</source>
         <translation>Uredi glavnu alatnu  &amp;traku</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="437"/>
+        <location filename="../qml/Main.qml" line="416"/>
         <source>Edit control bar</source>
         <translation>Uredi &amp;traku upravljanja</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="466"/>
+        <location filename="../qml/Main.qml" line="444"/>
         <source>Screenshot saved as %1</source>
         <translation>Snimka zaslona spremljena kao %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="467"/>
+        <location filename="../qml/Main.qml" line="445"/>
         <source>Could not take the screenshot</source>
         <translation>Nije moguće snimiti zaslon</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="580"/>
+        <location filename="../qml/Main.qml" line="558"/>
         <source>Drop media files here, or press Ctrl+O</source>
         <translation>Ovdje ispustite medijske datoteke ili pritisnite Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="656"/>
+        <location filename="../qml/Main.qml" line="634"/>
         <source>Downloading video…</source>
         <translation>Preuzimanje videozapisa…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="663"/>
+        <location filename="../qml/Main.qml" line="641"/>
         <source>This can take a while — the external tool is downloading and merging HD video and audio.</source>
         <translation>Ovo može potrajati — vanjski alat preuzima i spaja HD videozapis i zvuk.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="677"/>
-        <location filename="../qml/Main.qml" line="1552"/>
+        <location filename="../qml/Main.qml" line="655"/>
+        <location filename="../qml/Main.qml" line="1557"/>
         <source>Cancel</source>
         <translation>Odustani</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="750"/>
+        <location filename="../qml/Main.qml" line="728"/>
         <source>Loading…</source>
         <translation>Učitavanje…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="751"/>
+        <location filename="../qml/Main.qml" line="729"/>
         <source>Connecting…</source>
         <translation>Povezivanje...</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="752"/>
+        <location filename="../qml/Main.qml" line="730"/>
         <source>Buffering… %1%</source>
         <translation>Međuspremanje… %1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="760"/>
+        <location filename="../qml/Main.qml" line="738"/>
         <source>Live streams can take several seconds to start.</source>
         <translation>Prijenosi uživo mogu se pokretati nekoliko sekundi.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="795"/>
+        <location filename="../qml/Main.qml" line="773"/>
         <source>Volume: %1%</source>
         <translation>Glasnoća: %1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="798"/>
+        <location filename="../qml/Main.qml" line="776"/>
         <source>Mute</source>
         <translation>Utišaj</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="798"/>
+        <location filename="../qml/Main.qml" line="776"/>
         <source>Mute off</source>
         <translation>Utišavanje isključeno</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="801"/>
+        <location filename="../qml/Main.qml" line="779"/>
         <source>Speed: %1x</source>
         <translation>Brzina: %1x</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1208"/>
+        <location filename="../qml/Main.qml" line="1186"/>
         <source>Media files (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1209"/>
-        <location filename="../qml/Main.qml" line="1248"/>
-        <location filename="../qml/Main.qml" line="1488"/>
+        <location filename="../qml/Main.qml" line="1187"/>
+        <location filename="../qml/Main.qml" line="1245"/>
+        <location filename="../qml/Main.qml" line="1493"/>
         <source>All files (*)</source>
         <translation>Sve datoteke (*)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1232"/>
+        <location filename="../qml/Main.qml" line="1229"/>
         <source>Select the DVD drive or a folder containing VIDEO_TS</source>
         <translation>Odaberite DVD pogon ili mapu koja sadrži VIDEO_TS</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1236"/>
+        <location filename="../qml/Main.qml" line="1233"/>
         <source>No DVD video found in %1</source>
         <translation>Nije pronađen DVD videozapis u %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1247"/>
+        <location filename="../qml/Main.qml" line="1244"/>
         <source>Playlists (*.m3u *.m3u8)</source>
         <translation>Popisi za reprodukciju (*.m3u *.m3u8)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1282"/>
+        <location filename="../qml/Main.qml" line="1287"/>
         <source>Playing stream</source>
         <translation>Reprodukcija toka</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1288"/>
-        <location filename="../qml/Main.qml" line="1308"/>
+        <location filename="../qml/Main.qml" line="1293"/>
+        <location filename="../qml/Main.qml" line="1313"/>
         <source>Playing downloaded video</source>
         <translation>Reprodukcija preuzetog videozapisa</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1292"/>
+        <location filename="../qml/Main.qml" line="1297"/>
         <source>YouTube: %1</source>
         <translation>YouTube: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1312"/>
+        <location filename="../qml/Main.qml" line="1317"/>
         <source>Download failed: %1</source>
         <translation>Preuzimanje nije uspjelo: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1409"/>
+        <location filename="../qml/Main.qml" line="1414"/>
         <source>Saved %1 file(s); %2 failed.</source>
         <translation>Spremljeno datoteka: %1; neuspjelo: %2.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1413"/>
+        <location filename="../qml/Main.qml" line="1418"/>
         <source>Saved %1 file(s).</source>
         <translation>Spremljeno datoteka: %1.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1426"/>
+        <location filename="../qml/Main.qml" line="1431"/>
         <source>Could not read the shortcut file.</source>
         <translation>Nije moguće pročitati datoteku prečaca.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1441"/>
+        <location filename="../qml/Main.qml" line="1446"/>
         <source>Starting download…</source>
         <translation>Pokretanje preuzimanja…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1442"/>
+        <location filename="../qml/Main.qml" line="1447"/>
         <source>Downloading video (this can take a while)…</source>
         <translation>Preuzimanje videozapisa (ovo može potrajati)…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1446"/>
+        <location filename="../qml/Main.qml" line="1451"/>
         <source>Resolving with yt-dlp…</source>
         <translation>Obrada pomoću yt-dlp…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1483"/>
+        <location filename="../qml/Main.qml" line="1488"/>
         <source>Load subtitle file</source>
         <translation>Učitaj datoteku titlova</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1487"/>
+        <location filename="../qml/Main.qml" line="1492"/>
         <source>Subtitle files (*.srt *.vtt *.ass *.ssa)</source>
         <translation>Datoteke titlova (*.srt *.vtt *.ass *.ssa)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1495"/>
+        <location filename="../qml/Main.qml" line="1500"/>
         <source>Subtitle delay</source>
         <translation>Kašnjenje titlova</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1529"/>
+        <location filename="../qml/Main.qml" line="1534"/>
         <source>Delay:</source>
         <translation>Kašnjenje:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1535"/>
-        <location filename="../qml/Main.qml" line="1607"/>
+        <location filename="../qml/Main.qml" line="1540"/>
+        <location filename="../qml/Main.qml" line="1612"/>
         <source>ms</source>
         <translation>ms</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1545"/>
+        <location filename="../qml/Main.qml" line="1550"/>
         <source>OK</source>
         <translation>&amp;U redu</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1564"/>
+        <location filename="../qml/Main.qml" line="1569"/>
         <source>Audio delay — Vivace</source>
         <translation>Kašnjenje zvuka — Vivace</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1595"/>
+        <location filename="../qml/Main.qml" line="1600"/>
         <source>No delay for this file (use the global delay only)</source>
         <translation>Bez kašnjenja za ovu datoteku (koristi samo globalno kašnjenje)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1600"/>
+        <location filename="../qml/Main.qml" line="1605"/>
         <source>This file&apos;s delay:</source>
         <translation>Kašnjenje ove datoteke:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1615"/>
+        <location filename="../qml/Main.qml" line="1620"/>
         <source>The delay applied to this file is this value plus the global delay for the current audio device (%1 ms), set in Preferences &gt; General &gt; Audio. Negative values delay the video to match audio that arrives late (e.g. Bluetooth headphones).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1628"/>
+        <location filename="../qml/Main.qml" line="1633"/>
         <source>&amp;Apply</source>
         <translation>&amp;Primjeni</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1637"/>
+        <location filename="../qml/Main.qml" line="1642"/>
         <source>&amp;Close</source>
         <translation>&amp;Zatvori</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1733"/>
+        <location filename="../qml/Main.qml" line="1739"/>
         <source>Hide window</source>
         <translation>Sakrij prozor</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1733"/>
+        <location filename="../qml/Main.qml" line="1739"/>
         <source>Show window</source>
         <translation>Prikaži prozor</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1738"/>
+        <location filename="../qml/Main.qml" line="1744"/>
         <source>Play / Pause</source>
         <translation>Reprodukcija / Pauza</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1742"/>
+        <location filename="../qml/Main.qml" line="1748"/>
         <source>Stop</source>
         <translation>Zaustavi</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1747"/>
+        <location filename="../qml/Main.qml" line="1753"/>
         <source>Quit</source>
         <translation>&amp;Isključi</translation>
     </message>
@@ -1051,12 +1051,12 @@
 <context>
     <name>MainMenuBar</name>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="63"/>
+        <location filename="../qml/MainMenuBar.qml" line="62"/>
         <source>&amp;Auto</source>
         <translation>&amp;Automatski</translation>
     </message>
     <message numerus="yes">
-        <location filename="../qml/MainMenuBar.qml" line="83"/>
+        <location filename="../qml/MainMenuBar.qml" line="82"/>
         <source>%n minute(s)</source>
         <translation type="unfinished">
             <numerusform></numerusform>
@@ -1065,7 +1065,7 @@
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../qml/MainMenuBar.qml" line="84"/>
+        <location filename="../qml/MainMenuBar.qml" line="83"/>
         <source>%n second(s)</source>
         <translation type="unfinished">
             <numerusform></numerusform>
@@ -1074,635 +1074,634 @@
         </translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="106"/>
+        <location filename="../qml/MainMenuBar.qml" line="105"/>
         <source>&amp;Open</source>
         <translation>&amp;Otvori</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="109"/>
+        <location filename="../qml/MainMenuBar.qml" line="108"/>
         <source>&amp;File…</source>
         <translation>&amp;Datoteka...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="116"/>
+        <location filename="../qml/MainMenuBar.qml" line="115"/>
         <source>&amp;Recent files</source>
         <translation>&amp;Nedavne datoteke</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="132"/>
+        <location filename="../qml/MainMenuBar.qml" line="131"/>
         <source>(empty)</source>
         <translation>(prazno)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="139"/>
+        <location filename="../qml/MainMenuBar.qml" line="138"/>
         <source>&amp;Clear</source>
         <translation>&amp;Očisti</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="145"/>
+        <location filename="../qml/MainMenuBar.qml" line="144"/>
         <source>F&amp;avorites</source>
         <translation>&amp;Omiljeno</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="154"/>
+        <location filename="../qml/MainMenuBar.qml" line="153"/>
         <source>&amp;Directory…</source>
         <translation>Di&amp;rektorij...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="159"/>
+        <location filename="../qml/MainMenuBar.qml" line="158"/>
         <source>&amp;Playlist…</source>
         <translation>&amp;Popis izvođenja...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="164"/>
+        <location filename="../qml/MainMenuBar.qml" line="163"/>
         <source>D&amp;isc</source>
         <translation>&amp;Disk</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="168"/>
+        <location filename="../qml/MainMenuBar.qml" line="167"/>
         <source>&amp;DVD from drive or folder…</source>
         <translation>&amp;DVD s pogona ili mape…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="173"/>
+        <location filename="../qml/MainMenuBar.qml" line="172"/>
         <source>&amp;Blu-ray</source>
         <translation>&amp;Blu-ray</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="177"/>
+        <location filename="../qml/MainMenuBar.qml" line="176"/>
         <source>&amp;Audio CD</source>
         <translation>&amp;Glazbeni CD</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="182"/>
+        <location filename="../qml/MainMenuBar.qml" line="181"/>
         <source>&amp;URL…</source>
         <translation>&amp;URL...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="188"/>
+        <location filename="../qml/MainMenuBar.qml" line="187"/>
         <source>YouTube &amp;cache…</source>
         <translation>YouTube &amp;predmemorija…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="196"/>
+        <location filename="../qml/MainMenuBar.qml" line="195"/>
         <source>&amp;TV</source>
         <translation>&amp;TV</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="206"/>
+        <location filename="../qml/MainMenuBar.qml" line="205"/>
         <source>Radi&amp;o</source>
         <translation>R&amp;adio</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="217"/>
+        <location filename="../qml/MainMenuBar.qml" line="216"/>
         <source>&amp;Quit</source>
         <translation>&amp;Isključi</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="227"/>
+        <location filename="../qml/MainMenuBar.qml" line="226"/>
         <source>&amp;Play</source>
         <translation>&amp;Reprodukcija</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="230"/>
+        <location filename="../qml/MainMenuBar.qml" line="229"/>
         <source>P&amp;lay</source>
         <translation>R&amp;eproduciraj</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="237"/>
+        <location filename="../qml/MainMenuBar.qml" line="236"/>
         <source>&amp;Pause</source>
         <translation>&amp;Pauziraj</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="243"/>
+        <location filename="../qml/MainMenuBar.qml" line="242"/>
         <source>&amp;Stop</source>
         <translation>&amp;Zaustavi</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="249"/>
+        <location filename="../qml/MainMenuBar.qml" line="248"/>
         <source>Frame &amp;step</source>
         <translation>&amp;Pomak sličice</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="255"/>
+        <location filename="../qml/MainMenuBar.qml" line="254"/>
         <source>Fra&amp;me back step</source>
         <translation>Pom&amp;ak sličice unatrag</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="262"/>
+        <location filename="../qml/MainMenuBar.qml" line="261"/>
         <source>&amp;Rewind %1</source>
         <translation>&amp;Natrag %1</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="269"/>
+        <location filename="../qml/MainMenuBar.qml" line="268"/>
         <source>&amp;Forward %1</source>
         <translation>&amp;Naprijed %1</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="276"/>
-        <location filename="../qml/MainMenuBar.qml" line="290"/>
+        <location filename="../qml/MainMenuBar.qml" line="275"/>
+        <location filename="../qml/MainMenuBar.qml" line="289"/>
         <source>Rewind %1</source>
         <translation>Natrag %1</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="283"/>
-        <location filename="../qml/MainMenuBar.qml" line="297"/>
+        <location filename="../qml/MainMenuBar.qml" line="282"/>
+        <location filename="../qml/MainMenuBar.qml" line="296"/>
         <source>Forward %1</source>
         <translation>Naprijed %1</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="305"/>
+        <location filename="../qml/MainMenuBar.qml" line="304"/>
         <source>Sp&amp;eed</source>
         <translation>Br&amp;zina</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="309"/>
+        <location filename="../qml/MainMenuBar.qml" line="308"/>
         <source>&amp;Normal speed</source>
         <translation>&amp;Normalna brzina</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="315"/>
+        <location filename="../qml/MainMenuBar.qml" line="314"/>
         <source>&amp;Halve speed</source>
         <translation>&amp;Prepolovi brzinu</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="320"/>
+        <location filename="../qml/MainMenuBar.qml" line="319"/>
         <source>&amp;Double speed</source>
         <translation>&amp;Dvostruka brzina</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="326"/>
+        <location filename="../qml/MainMenuBar.qml" line="325"/>
         <source>Speed &amp;-10%</source>
         <translation>Brzina &amp;-10%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="331"/>
+        <location filename="../qml/MainMenuBar.qml" line="330"/>
         <source>Speed &amp;+10%</source>
         <translation>Brzina &amp;+10%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="336"/>
+        <location filename="../qml/MainMenuBar.qml" line="335"/>
         <source>Speed -4%</source>
         <translation>Brzina -&amp;4%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="337"/>
+        <location filename="../qml/MainMenuBar.qml" line="336"/>
         <source>Speed +4%</source>
         <translation>&amp;Brzina +4%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="339"/>
+        <location filename="../qml/MainMenuBar.qml" line="338"/>
         <source>Speed -1%</source>
         <translation>Brzina -&amp;1%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="340"/>
+        <location filename="../qml/MainMenuBar.qml" line="339"/>
         <source>Speed +1%</source>
         <translation>B&amp;rzina +1%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="343"/>
+        <location filename="../qml/MainMenuBar.qml" line="342"/>
         <source>Pi&amp;tch compensation</source>
         <translation>Kompenzacija &amp;visine tona</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="352"/>
+        <location filename="../qml/MainMenuBar.qml" line="351"/>
         <source>&amp;A-B section</source>
         <translation>&amp;A-B odabir</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="356"/>
+        <location filename="../qml/MainMenuBar.qml" line="355"/>
         <source>Set &amp;A marker</source>
         <translation>Postavi &amp;A oznaku</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="362"/>
+        <location filename="../qml/MainMenuBar.qml" line="361"/>
         <source>Set &amp;B marker</source>
         <translation>Postavi &amp;B oznaku</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="368"/>
+        <location filename="../qml/MainMenuBar.qml" line="367"/>
         <source>&amp;Clear A-B markers</source>
         <translation>&amp;Obriši A-B oznake</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="376"/>
+        <location filename="../qml/MainMenuBar.qml" line="375"/>
         <source>&amp;Repeat</source>
         <translation>&amp;Ponovi</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="382"/>
+        <location filename="../qml/MainMenuBar.qml" line="381"/>
         <source>&amp;Jump to…</source>
         <translation>&amp;Premotaj na...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="385"/>
+        <location filename="../qml/MainMenuBar.qml" line="384"/>
         <source>Pre&amp;vious</source>
         <translation>Pri&amp;jašnje</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="392"/>
+        <location filename="../qml/MainMenuBar.qml" line="391"/>
         <source>&amp;Next</source>
         <translation>&amp;Sljedeće</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="401"/>
+        <location filename="../qml/MainMenuBar.qml" line="400"/>
         <source>Ca&amp;st</source>
         <translation>&amp;Emitiraj na</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="405"/>
+        <location filename="../qml/MainMenuBar.qml" line="404"/>
         <source>&amp;Smartphone/tablet…</source>
         <translation>&amp;Pametni telefon/Tablet…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="413"/>
+        <location filename="../qml/MainMenuBar.qml" line="412"/>
         <source>&amp;Video</source>
         <translation>&amp;Slika</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="417"/>
-        <location filename="../qml/MainMenuBar.qml" line="608"/>
-        <location filename="../qml/MainMenuBar.qml" line="678"/>
+        <location filename="../qml/MainMenuBar.qml" line="416"/>
+        <location filename="../qml/MainMenuBar.qml" line="607"/>
+        <location filename="../qml/MainMenuBar.qml" line="677"/>
         <source>&amp;Track</source>
         <translation>&amp;Video zapis</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="421"/>
-        <location filename="../qml/MainMenuBar.qml" line="612"/>
-        <location filename="../qml/MainMenuBar.qml" line="777"/>
-        <location filename="../qml/MainMenuBar.qml" line="800"/>
+        <location filename="../qml/MainMenuBar.qml" line="420"/>
+        <location filename="../qml/MainMenuBar.qml" line="611"/>
+        <location filename="../qml/MainMenuBar.qml" line="776"/>
+        <location filename="../qml/MainMenuBar.qml" line="799"/>
         <source>&lt;empty&gt;</source>
         <translation>&lt;prazno&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="444"/>
+        <location filename="../qml/MainMenuBar.qml" line="443"/>
         <source>&amp;Fullscreen</source>
         <translation>&amp;Cijeli zaslon</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="452"/>
+        <location filename="../qml/MainMenuBar.qml" line="451"/>
         <source>Si&amp;ze</source>
         <translation>Ve&amp;ličina</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="455"/>
+        <location filename="../qml/MainMenuBar.qml" line="454"/>
         <source>50%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="456"/>
+        <location filename="../qml/MainMenuBar.qml" line="455"/>
         <source>100%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="457"/>
+        <location filename="../qml/MainMenuBar.qml" line="456"/>
         <source>200%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="460"/>
+        <location filename="../qml/MainMenuBar.qml" line="459"/>
         <source>&amp;Zoom and pan</source>
         <translation>&amp;Zumiranje i pomicanje</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="464"/>
+        <location filename="../qml/MainMenuBar.qml" line="463"/>
         <source>&amp;Reset</source>
         <translation>&amp;Vrati zadano</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="469"/>
+        <location filename="../qml/MainMenuBar.qml" line="468"/>
         <source>Zoom &amp;-</source>
         <translation>Smanji &amp;-</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="474"/>
+        <location filename="../qml/MainMenuBar.qml" line="473"/>
         <source>Zoom &amp;+</source>
         <translation>Uvećaj &amp;+</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="480"/>
+        <location filename="../qml/MainMenuBar.qml" line="479"/>
         <source>Move &amp;left</source>
         <translation>Pomakni &amp;lijevo</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="485"/>
+        <location filename="../qml/MainMenuBar.qml" line="484"/>
         <source>Move &amp;right</source>
         <translation>Pomakni &amp;desno</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="490"/>
+        <location filename="../qml/MainMenuBar.qml" line="489"/>
         <source>Move &amp;up</source>
         <translation>Pomakni &amp;gore</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="495"/>
+        <location filename="../qml/MainMenuBar.qml" line="494"/>
         <source>Move &amp;down</source>
         <translation>Pomakni &amp;dolje</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="502"/>
+        <location filename="../qml/MainMenuBar.qml" line="501"/>
         <source>&amp;Aspect ratio</source>
         <translation>&amp;Omjer slike</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="524"/>
+        <location filename="../qml/MainMenuBar.qml" line="523"/>
         <source>&amp;Rotate</source>
         <translation>&amp;Zakretanje</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="528"/>
+        <location filename="../qml/MainMenuBar.qml" line="527"/>
         <source>&amp;None</source>
         <translation>&amp;Nepoznato</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="537"/>
+        <location filename="../qml/MainMenuBar.qml" line="536"/>
         <source>&amp;Rotate by 90° clockwise</source>
         <translation>&amp;Zakreni za 90° udesno</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="546"/>
+        <location filename="../qml/MainMenuBar.qml" line="545"/>
         <source>Rotate by 90° &amp;counterclockwise</source>
         <translation>Zakreni za 90° &amp;ulijevo</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="555"/>
+        <location filename="../qml/MainMenuBar.qml" line="554"/>
         <source>Rotate by &amp;180°</source>
         <translation>Zakreni za &amp;180°</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="565"/>
+        <location filename="../qml/MainMenuBar.qml" line="564"/>
         <source>Fli&amp;p image</source>
         <translation>Okr&amp;eni sliku</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="576"/>
+        <location filename="../qml/MainMenuBar.qml" line="575"/>
         <source>Mirr&amp;or image</source>
         <translation>Zrca&amp;li sliku</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="588"/>
+        <location filename="../qml/MainMenuBar.qml" line="587"/>
         <source>E&amp;qualizer…</source>
         <translation>E&amp;kvilizator…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="594"/>
+        <location filename="../qml/MainMenuBar.qml" line="593"/>
         <source>&amp;Screenshot</source>
         <translation>&amp;Snimka zaslona</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="604"/>
+        <location filename="../qml/MainMenuBar.qml" line="603"/>
         <source>&amp;Audio</source>
         <translation>&amp;Zvuk</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="636"/>
+        <location filename="../qml/MainMenuBar.qml" line="635"/>
         <source>&amp;Mute</source>
         <translation>&amp;Utišaj</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="645"/>
+        <location filename="../qml/MainMenuBar.qml" line="644"/>
         <source>Volume &amp;-</source>
         <translation>Glasnoća zvuka &amp;-</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="651"/>
+        <location filename="../qml/MainMenuBar.qml" line="650"/>
         <source>Volume &amp;+</source>
         <translation>Glasnoća zvuka &amp;+</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="659"/>
-        <location filename="../qml/MainMenuBar.qml" line="730"/>
+        <location filename="../qml/MainMenuBar.qml" line="658"/>
+        <location filename="../qml/MainMenuBar.qml" line="729"/>
         <source>Delay &amp;-</source>
         <translation>Kašnjenje &amp;-</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="663"/>
+        <location filename="../qml/MainMenuBar.qml" line="662"/>
         <source>D&amp;elay +</source>
         <translation>P&amp;rednačenje +</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="667"/>
+        <location filename="../qml/MainMenuBar.qml" line="666"/>
         <source>Set dela&amp;y…</source>
         <translation>Postavi kašnjenj&amp;e/prednačenje...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="674"/>
+        <location filename="../qml/MainMenuBar.qml" line="673"/>
         <source>&amp;Subtitles</source>
         <translation>&amp;Podnaslovi</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="682"/>
+        <location filename="../qml/MainMenuBar.qml" line="681"/>
         <source>&amp;Off</source>
         <translation>&amp;Isključi</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="713"/>
+        <location filename="../qml/MainMenuBar.qml" line="712"/>
         <source>&amp;Load subtitles…</source>
         <translation>&amp;Učitaj titlove…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="719"/>
+        <location filename="../qml/MainMenuBar.qml" line="718"/>
         <source>&amp;Find subtitles at OpenSubtitles…</source>
         <translation>&amp;Pronađi titlove na OpenSubtitles…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="724"/>
+        <location filename="../qml/MainMenuBar.qml" line="723"/>
         <source>U&amp;nload subtitles</source>
         <translation>U&amp;kloni titlove</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="735"/>
+        <location filename="../qml/MainMenuBar.qml" line="734"/>
         <source>Delay &amp;+</source>
         <translation>Prednjačenje &amp;+</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="740"/>
+        <location filename="../qml/MainMenuBar.qml" line="739"/>
         <source>Se&amp;t delay…</source>
         <translation>Postav&amp;i kašnjenje/prednačenje...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="748"/>
+        <location filename="../qml/MainMenuBar.qml" line="747"/>
         <source>&amp;Browse</source>
         <translation>&amp;Pregled</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="751"/>
+        <location filename="../qml/MainMenuBar.qml" line="750"/>
         <source>&amp;DVD menu</source>
         <translation>DVD &amp;izbornik</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="760"/>
+        <location filename="../qml/MainMenuBar.qml" line="759"/>
         <source>&amp;Title</source>
         <translation>&amp;Naslov</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="785"/>
+        <location filename="../qml/MainMenuBar.qml" line="784"/>
         <source>&amp;Chapters</source>
         <translation>&amp;Poglavlja</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="808"/>
+        <location filename="../qml/MainMenuBar.qml" line="807"/>
         <source>&amp;Bookmarks</source>
         <translation>&amp;Zabilješke</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="818"/>
+        <location filename="../qml/MainMenuBar.qml" line="817"/>
         <source>&amp;Add new bookmark</source>
         <translation>&amp;Dodaj novu zabilješku</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="825"/>
+        <location filename="../qml/MainMenuBar.qml" line="824"/>
         <source>&amp;Edit bookmarks…</source>
         <translation>&amp;Uredi oznake…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="849"/>
+        <location filename="../qml/MainMenuBar.qml" line="848"/>
         <source>Vie&amp;w</source>
         <translation>Pog&amp;led</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="852"/>
+        <location filename="../qml/MainMenuBar.qml" line="851"/>
         <source>&amp;Information and properties…</source>
         <translation>&amp;Informacije i svojstva...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="859"/>
+        <location filename="../qml/MainMenuBar.qml" line="858"/>
         <source>&amp;Playlist</source>
         <translation>&amp;Popis izvođenja</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="867"/>
+        <location filename="../qml/MainMenuBar.qml" line="866"/>
         <source>&amp;OSD</source>
         <translation>&amp;OSD</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="869"/>
+        <location filename="../qml/MainMenuBar.qml" line="868"/>
         <source>Subtitles only</source>
         <translation>Samo podnaslov&amp;i</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="870"/>
+        <location filename="../qml/MainMenuBar.qml" line="869"/>
         <source>Volume + seek</source>
         <translation>Glasnoća + pomicanje</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="871"/>
+        <location filename="../qml/MainMenuBar.qml" line="870"/>
         <source>Volume + seek + timer</source>
         <translation>Glasnoća + pomicanje + vrijeme</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="877"/>
+        <location filename="../qml/MainMenuBar.qml" line="876"/>
         <source>Op&amp;tions</source>
         <translation>Mo&amp;gućnosti</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="880"/>
+        <location filename="../qml/MainMenuBar.qml" line="879"/>
         <source>&amp;Preferences…</source>
         <translation>&amp;Postavke…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="887"/>
+        <location filename="../qml/MainMenuBar.qml" line="886"/>
         <source>S&amp;how icon in system tray</source>
         <translation>Prikaži i&amp;konu u traci sustava</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="893"/>
+        <location filename="../qml/MainMenuBar.qml" line="892"/>
         <source>&amp;Toolbars</source>
         <translation>&amp;Alatne trake</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="896"/>
+        <location filename="../qml/MainMenuBar.qml" line="895"/>
         <source>&amp;Toolbar</source>
         <translation>&amp;Alatna traka</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="902"/>
+        <location filename="../qml/MainMenuBar.qml" line="901"/>
         <source>&amp;Control bar</source>
         <translation>Upravljačka traka</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="909"/>
+        <location filename="../qml/MainMenuBar.qml" line="908"/>
         <source>Edit main &amp;toolbar…</source>
         <translation>Uredi glavnu &amp;alatnu traku…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="913"/>
+        <location filename="../qml/MainMenuBar.qml" line="912"/>
         <source>Edit control &amp;bar…</source>
         <translation>Uredi &amp;upravljačku traku…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="918"/>
+        <location filename="../qml/MainMenuBar.qml" line="917"/>
         <source>&amp;Status bar</source>
         <translation>&amp;Statusna traka</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="921"/>
+        <location filename="../qml/MainMenuBar.qml" line="920"/>
         <source>&amp;Show status bar</source>
         <translation>&amp;Prikaži statusnu traku</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="928"/>
+        <location filename="../qml/MainMenuBar.qml" line="927"/>
         <source>&amp;Video info</source>
         <translation>&amp;Informacije video zapisa</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="935"/>
+        <location filename="../qml/MainMenuBar.qml" line="934"/>
         <source>&amp;Audio info</source>
         <translation>&amp;Informacije o zvuku</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="942"/>
+        <location filename="../qml/MainMenuBar.qml" line="941"/>
         <source>F&amp;ormat info</source>
         <translation>I&amp;nformacije formata</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="949"/>
+        <location filename="../qml/MainMenuBar.qml" line="948"/>
         <source>&amp;Bitrate info</source>
         <translation>&amp;Informacije brzine prijenosa</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="956"/>
+        <location filename="../qml/MainMenuBar.qml" line="955"/>
         <source>&amp;Frame counter</source>
         <translation>&amp;Brojač sličica</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="964"/>
+        <location filename="../qml/MainMenuBar.qml" line="963"/>
         <source>Display &amp;total time</source>
         <translation>Prikaži &amp;ukupno vrijeme</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="970"/>
+        <location filename="../qml/MainMenuBar.qml" line="969"/>
         <source>Display &amp;remaining time</source>
         <translation>Prikaži &amp;preostalo vrijeme</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="977"/>
+        <location filename="../qml/MainMenuBar.qml" line="976"/>
         <source>Show the current time with &amp;milliseconds</source>
         <translation>&amp;Prikaži trenutno vrijeme s milisekundama</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="987"/>
+        <location filename="../qml/MainMenuBar.qml" line="986"/>
         <source>&amp;Help</source>
         <translation>&amp;Pomoć</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="990"/>
+        <location filename="../qml/MainMenuBar.qml" line="989"/>
         <source>&amp;Contents</source>
         <translation>&amp;Sadržaj</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="997"/>
+        <location filename="../qml/MainMenuBar.qml" line="996"/>
         <source>&amp;Check for updates</source>
         <translation>&amp;Provjeri za nadopune</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1002"/>
         <source>Install / Update &amp;YouTube support</source>
-        <translation>Instaliraj / Nadopuni &amp;Youtube podršku</translation>
+        <translation type="vanished">Instaliraj / Nadopuni &amp;Youtube podršku</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1008"/>
+        <location filename="../qml/MainMenuBar.qml" line="1002"/>
         <source>&amp;About Vivace</source>
         <translation>&amp;O programu Vivace</translation>
     </message>
@@ -2280,7 +2279,7 @@
 <context>
     <name>PlaylistWindow</name>
     <message>
-        <location filename="../qml/PlaylistWindow.qml" line="18"/>
+        <location filename="../qml/PlaylistWindow.qml" line="19"/>
         <source>Playlist — Vivace</source>
         <translation>Popis za reprodukciju — Vivace</translation>
     </message>
@@ -3210,72 +3209,67 @@
 <context>
     <name>PrefNetworkPage</name>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="69"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="91"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="73"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="95"/>
         <source>OpenSubtitles</source>
         <translation>OpenSubtitles</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="70"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="74"/>
         <source>YouTube</source>
         <translation>YouTube</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="72"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="578"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="76"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="633"/>
         <source>Cast</source>
         <translation>Emitiranje</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="101"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="105"/>
         <source>API key:</source>
         <translation>API ključ:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="102"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="106"/>
         <source>A free per-application key from opensubtitles.com (create an API consumer); subtitle search will not work until this is set.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="107"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="111"/>
         <source>from opensubtitles.com → API consumers</source>
         <translation>s opensubtitles.com → API consumers</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="112"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="530"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="116"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="585"/>
         <source>Username:</source>
         <translation>&amp;Korisničko ime:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="113"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="117"/>
         <source>Optional opensubtitles.com account login; signing in is not required but raises the daily download limit.</source>
         <translation>Neobavezna prijava na račun opensubtitles.com; prijava nije potrebna, ali povećava dnevno ograničenje preuzimanja.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="120"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="536"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="124"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="591"/>
         <source>Password:</source>
         <translation>Lo&amp;zinka:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="135"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="139"/>
         <source>The account password is stored securely using your operating system&apos;s credential manager.</source>
         <translation>Lozinka računa sigurno se pohranjuje pomoću upravitelja vjerodajnicama vašeg operacijskog sustava.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="71"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="487"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="75"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="542"/>
         <source>Proxy</source>
         <translation>Proxy</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="23"/>
-        <source>&lt;h1&gt;Network&lt;/h1&gt;&lt;p&gt;&lt;b&gt;OpenSubtitles&lt;/b&gt; search uses the REST API, which requires a free per-application API key: register at opensubtitles.com, create an API consumer, and paste the key here. An account login (username and password) is optional but raises the daily download limit.&lt;/p&gt;&lt;p&gt;&lt;b&gt;YouTube&lt;/b&gt;: the optional resolver uses an external yt-dlp program — when enabled, opening a YouTube URL runs yt-dlp to obtain a directly-playable stream. Install yt-dlp yourself and, if it is not on the PATH, set its full path. Because QMediaPlayer plays a single muxed stream, streaming tops out at the best progressive format (about 720p on YouTube). Cookies are deliberately NOT used for streaming: an authenticated (cookie) session returns URLs a plain player cannot open.&lt;/p&gt;&lt;p&gt;For &lt;b&gt;HD&lt;/b&gt; (and for cookies), enable download mode, or point the external downloader at your own tool (a program or .bat/.cmd). HD formats are separate video and audio streams that cannot be streamed muxed, so Vivace runs yt-dlp (or your tool) to download and merge the video, then plays the file it writes into the download folder. Download mode also needs Deno, a further external program yt-dlp itself uses to solve YouTube&apos;s JavaScript challenges — without it, a signed-in (cookie) request, exactly what HD downloads rely on, sees severely limited format availability. Streaming mode, which never sends cookies, is largely unaffected and doesn&apos;t need Deno. Install Deno yourself and, if it is not on the PATH, set its full path in the Download &amp; play settings.&lt;/p&gt;&lt;p&gt;See &lt;b&gt;Help ▸ Contents ▸ Options&lt;/b&gt; for step-by-step instructions on exporting a cookies.txt file from your browser, and on installing Deno.&lt;/p&gt;&lt;p&gt;The stream &lt;b&gt;connection timeout&lt;/b&gt; (used mainly by live TV tuners) has moved to &lt;i&gt;Preferences ▸ TV and radio&lt;/i&gt;.&lt;/p&gt;&lt;p&gt;The &lt;b&gt;Proxy&lt;/b&gt; tab applies application-wide: both HTTP and SOCKS5 cover OpenSubtitles search and the update check; only HTTP additionally covers media playback and yt-dlp (they read the http_proxy/https_proxy convention directly instead of going through Qt&apos;s network stack, and there is no SOCKS5 equivalent for that convention).&lt;/p&gt;&lt;p&gt;The &lt;b&gt;Cast&lt;/b&gt; tab sets the port Play ▸ Cast ▸ Smartphone/tablet listens on. It&apos;s here (rather than only in the Cast dialog) so it stays fixed — set it once, allow that port through your firewall/router once, and casting keeps working without a new firewall prompt every time.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="543"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="598"/>
         <source>Type:</source>
         <translation>&amp;Vrsta:</translation>
     </message>
@@ -3284,319 +3278,369 @@
         <translation type="vanished">Nepoznato</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="517"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="572"/>
         <source>Host:</source>
         <translation>&amp;Računalo:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="523"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="588"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="578"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="643"/>
         <source>Port:</source>
         <translation>&amp;Ulaz:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="154"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="158"/>
         <source>YouTube (yt-dlp)</source>
         <translation>YouTube (yt-dlp)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="164"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="25"/>
+        <source>&lt;h1&gt;Network&lt;/h1&gt;&lt;p&gt;&lt;b&gt;OpenSubtitles&lt;/b&gt; search uses the REST API, which requires a free per-application API key: register at opensubtitles.com, create an API consumer, and paste the key here. An account login (username and password) is optional but raises the daily download limit.&lt;/p&gt;&lt;p&gt;&lt;b&gt;YouTube&lt;/b&gt;: the optional resolver uses an external yt-dlp program — when enabled, opening a YouTube URL runs yt-dlp to obtain a directly-playable stream. Vivace offers to install yt-dlp for you the first time you turn this on (or point it at your own copy with the path field below), and can keep it updated on its own per the &quot;Update yt-dlp automatically&quot; setting. Because QMediaPlayer plays a single muxed stream, streaming tops out at the best progressive format (about 720p on YouTube). Cookies are deliberately NOT used for streaming: an authenticated (cookie) session returns URLs a plain player cannot open.&lt;/p&gt;&lt;p&gt;For &lt;b&gt;HD&lt;/b&gt; (and for cookies), enable download mode, or point the external downloader at your own tool (a program or .bat/.cmd). HD formats are separate video and audio streams that cannot be streamed muxed, so Vivace runs yt-dlp (or your tool) to download and merge the video, then plays the file it writes into the download folder. Download mode also needs Deno, a further external program yt-dlp itself uses to solve YouTube&apos;s JavaScript challenges — without it, a signed-in (cookie) request, exactly what HD downloads rely on, sees severely limited format availability. Streaming mode, which never sends cookies, is largely unaffected and doesn&apos;t need Deno. Install Deno yourself and, if it is not on the PATH, set its full path in the Download &amp; play settings.&lt;/p&gt;&lt;p&gt;See &lt;b&gt;Help ▸ Contents ▸ Options&lt;/b&gt; for step-by-step instructions on exporting a cookies.txt file from your browser, and on installing Deno.&lt;/p&gt;&lt;p&gt;The stream &lt;b&gt;connection timeout&lt;/b&gt; (used mainly by live TV tuners) has moved to &lt;i&gt;Preferences ▸ TV and radio&lt;/i&gt;.&lt;/p&gt;&lt;p&gt;The &lt;b&gt;Proxy&lt;/b&gt; tab applies application-wide: both HTTP and SOCKS5 cover OpenSubtitles search and the update check; only HTTP additionally covers media playback and yt-dlp (they read the http_proxy/https_proxy convention directly instead of going through Qt&apos;s network stack, and there is no SOCKS5 equivalent for that convention).&lt;/p&gt;&lt;p&gt;The &lt;b&gt;Cast&lt;/b&gt; tab sets the port Play ▸ Cast ▸ Smartphone/tablet listens on. It&apos;s here (rather than only in the Cast dialog) so it stays fixed — set it once, allow that port through your firewall/router once, and casting keeps working without a new firewall prompt every time.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="168"/>
         <source>Play YouTube URLs with yt-dlp</source>
         <translation>Reproduciraj YouTube URL-ove pomoću yt-dlp</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="168"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="172"/>
         <source>When on, opening a YouTube URL runs yt-dlp instead of trying to play the page URL as-is.</source>
         <translation>Kad je uključeno, otvaranje YouTube URL-a pokreće yt-dlp umjesto pokušaja izravne reprodukcije URL-a stranice.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="181"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="185"/>
         <source>Open YouTube URLs by:</source>
         <translation>Otvaraj YouTube URL-ove putem:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="182"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="186"/>
         <source>Streaming is fastest but caps at ~720p and can&apos;t use cookies. Downloading gets full HD (uses cookies + ffmpeg), then plays and deletes the file. Or hand off to your own external downloader tool.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="192"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="196"/>
         <source>Streaming (fast, up to ~720p)</source>
         <translation>Strujanje (brzo, do ~720p)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="193"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="197"/>
         <source>Downloading then playing (HD, cookies)</source>
         <translation>Preuzimanje pa reprodukcija (HD, kolačići)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="194"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="198"/>
         <source>An external downloader tool</source>
         <translation>Vanjski alat za preuzimanje</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="202"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="209"/>
+        <source>Use managed yt-dlp</source>
+            <translation>Koristi upravljani yt-dlp</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="213"/>
+        <source>When on, Vivace installs yt-dlp for you (see the button here) and can keep it updated automatically below. Turn this off to point at your own yt-dlp instead -- Vivace will not install or auto-update it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="221"/>
+        <source>Install / Update yt-dlp…</source>
+            <translation>Instaliraj / ažuriraj yt-dlp…</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="230"/>
         <source>yt-dlp path:</source>
         <translation>Putanja yt-dlp:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="203"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="231"/>
         <source>Leave as &quot;yt-dlp&quot; if it is on your system PATH; otherwise enter the full path to the yt-dlp executable.</source>
         <translation>Ostavite &quot;yt-dlp&quot; ako je na sistemskoj PATH varijabli; u protivnom unesite punu putanju do izvršne datoteke yt-dlp.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="208"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="237"/>
         <source>yt-dlp (on PATH) or a full path</source>
         <translation>yt-dlp (na PATH-u) ili puna putanja</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="213"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="243"/>
+        <source>Update yt-dlp automatically:</source>
+            <translation>Automatski ažuriraj yt-dlp:</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="244"/>
+        <source>Runs yt-dlp&apos;s own self-update before playing a YouTube video. &quot;Every time&quot; adds a short delay to each play; the daily/weekly options check only that often. Failures (e.g. no network) are ignored and playback proceeds with whatever version is installed. Only applies to a managed yt-dlp.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="258"/>
+        <source>Never</source>
+            <translation>Nikada</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="259"/>
+        <source>Every time yt-dlp runs</source>
+            <translation>Svaki put kad se yt-dlp pokrene</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="260"/>
+        <source>Once a day</source>
+            <translation>Jednom dnevno</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="261"/>
+        <source>Once a week</source>
+            <translation>Jednom tjedno</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="268"/>
         <source>Maximum quality:</source>
         <translation>Maksimalna kvaliteta:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="214"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="269"/>
         <source>Upper limit on resolution. Streaming is capped at ~720p regardless; downloading can reach this height in full HD.</source>
         <translation>Gornja granica razlučivosti. Strujanje je ionako ograničeno na ~720p; preuzimanje može doseći ovu visinu u punom HD-u.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="224"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="279"/>
         <source>360p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="225"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="280"/>
         <source>480p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="226"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="281"/>
         <source>720p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="227"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="282"/>
         <source>1080p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="228"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="283"/>
         <source>1440p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="229"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="284"/>
         <source>2160p (4K)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="230"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="285"/>
         <source>Best available</source>
         <translation>Najbolja dostupna</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="245"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="300"/>
         <source>yt-dlp is a separate program and is not bundled with Vivace.</source>
         <translation>yt-dlp je zaseban program i ne isporučuje se s Vivaceom.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="251"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="306"/>
         <source>Download &amp; play</source>
         <translation>Preuzmi i reproduciraj</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="263"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="318"/>
         <source>Downloads the video (merging HD video and audio with ffmpeg), plays it, and keeps it in a cache folder so replaying it is instant. The cache holds the most recent downloads up to the size below; older ones are removed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="277"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="332"/>
         <source>Cookies file:</source>
         <translation>Datoteka kolačića:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="278"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="333"/>
         <source>Optional cookies.txt exported from your browser (yt-dlp --cookies); unlocks HD, members-only and age-restricted videos. Safe here — cookies only affect the download, not a stream a player must open. See Help ▸ Contents ▸ Options for step-by-step export instructions.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="292"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="347"/>
         <source>optional cookies.txt</source>
         <translation>neobavezni cookies.txt</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="295"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="314"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="341"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="359"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="431"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="467"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="350"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="369"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="396"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="414"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="486"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="522"/>
         <source>Browse…</source>
         <translation>Pregledaj…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="300"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="355"/>
         <source>ffmpeg location:</source>
         <translation>Lokacija ffmpeg:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="301"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="356"/>
         <source>Folder containing ffmpeg (yt-dlp needs it to merge HD video+audio). Leave empty to use ffmpeg from the system PATH.</source>
         <translation>Mapa koja sadrži ffmpeg (yt-dlp ga treba za spajanje HD videozapisa i zvuka). Ostavite prazno za korištenje ffmpeg-a sa sistemskog PATH-a.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="311"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="338"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="366"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="393"/>
         <source>empty = use PATH</source>
         <translation>prazno = koristi PATH</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="319"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="374"/>
         <source>Deno path:</source>
         <translation>Putanja do Deno-a:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="320"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="375"/>
         <source>yt-dlp uses a separate program, Deno, to solve YouTube&apos;s JavaScript challenges. It&apos;s most needed here: a signed-in (cookie) request — exactly what unlocks HD above — sees severely limited format availability without it. Streaming mode, which never sends cookies, is largely unaffected. Leave empty if &quot;deno&quot; is already on your system PATH; otherwise enter the full path to the deno executable. See Help ▸ Contents ▸ Options for installation instructions.</source>
         <translation>yt-dlp koristi zaseban program, Deno, za rješavanje JavaScript izazova YouTubea. To je najpotrebnije baš ovdje: prijavljeni (kolačić) zahtjev — točno ono što otključava HD iznad — bez njega ima znatno ograničenu dostupnost formata. Način streaminga, koji nikad ne šalje kolačiće, time je gotovo netaknut. Ostavite prazno ako je &quot;deno&quot; već u sistemskom PATH-u; inače unesite potpunu putanju do deno izvršne datoteke. Upute za instalaciju potražite u Pomoć ▸ Sadržaj ▸ Opcije.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="346"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="401"/>
         <source>Cache folder:</source>
         <translation>Mapa predmemorije:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="347"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="402"/>
         <source>Where downloaded videos are kept for reuse. A video already here is replayed without downloading again.</source>
         <translation>Gdje se čuvaju preuzeti videozapisi za ponovno korištenje. Videozapis koji je već ovdje reproducira se bez ponovnog preuzimanja.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="364"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="419"/>
         <source>Cache size:</source>
         <translation>Veličina predmemorije:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="365"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="420"/>
         <source>How many downloaded videos to keep. When the limit is reached, the least-recently-played one is deleted.</source>
         <translation>Koliko preuzetih videozapisa zadržati. Kad se dosegne ograničenje, briše se onaj koji je najdulje reproduciran.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="376"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="431"/>
         <source>files</source>
         <translation>datoteka</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="382"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="437"/>
         <source>Thumbnail fallback at:</source>
         <translation>Zamjenska minijatura na:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="383"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="438"/>
         <source>The cache thumbnail is normally YouTube&apos;s own poster image. Only if that is missing or black does Vivace grab a video frame — this is how many seconds in (past a black intro).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="396"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="451"/>
         <source>seconds</source>
         <translation>sekundi</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="406"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="461"/>
         <source>External downloader tool</source>
         <translation>Vanjski alat za preuzimanje</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="417"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="472"/>
         <source>Downloader command:</source>
         <translation>Naredba za preuzimanje:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="418"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="473"/>
         <source>The program or .bat/.cmd script that downloads the video; it receives the URL as an argument.</source>
         <translation>Program ili .bat/.cmd skripta koja preuzima videozapis; prima URL kao argument.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="428"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="483"/>
         <source>e.g. C:ToolsYouTubeDL.bat</source>
         <translation>npr. C:\Tools\YouTubeDL.bat</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="436"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="491"/>
         <source>Arguments:</source>
         <translation>Argumenti:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="437"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="492"/>
         <source>Arguments passed to the tool; the token {url} is replaced by the video URL (if omitted, the URL is appended). Add any cookies/format flags your tool needs here, e.g. --cookies C:pathcookies.txt.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="452"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="507"/>
         <source>Download folder:</source>
         <translation>Mapa za preuzimanje:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="453"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="508"/>
         <source>The folder the tool writes the finished file into; Vivace plays the newest media file that appears there, so set it to match your tool&apos;s output folder.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="464"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="519"/>
         <source>your tool&apos;s output folder</source>
         <translation>izlazna mapa vašeg alata</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="497"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="552"/>
         <source>Enable proxy</source>
         <translation>Omogući proxy</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="501"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="556"/>
         <source>Applies to OpenSubtitles search and the update check (both proxy types). Only an HTTP proxy also applies to media playback and yt-dlp — a SOCKS5 proxy does not reach either, since neither goes through Qt&apos;s network stack.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="559"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="614"/>
         <source>The proxy password is stored securely using your operating system&apos;s credential manager.</source>
         <translation>Lozinka proxyja sigurno se pohranjuje pomoću upravitelja vjerodajnicama vašeg operacijskog sustava.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="589"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="644"/>
         <source>The port Play ▸ Cast ▸ Smartphone/tablet listens on. Kept fixed here (rather than editable each time in the Cast dialog) so you can allow it through your firewall/router once and it keeps working.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="611"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="666"/>
         <source>Your OS&apos;s firewall (and most routers) block an app listening on a fresh port until you allow it. Pick a port once here, allow Vivace through your firewall for it, and Cast will keep working without a new prompt each time.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="626"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="681"/>
         <source>Select the cookies.txt file</source>
         <translation>Odaberite datoteku cookies.txt</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="632"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="687"/>
         <source>Select the deno executable</source>
         <translation>Odaberite izvršnu datoteku deno</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="638"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="693"/>
         <source>Select the folder containing ffmpeg</source>
         <translation>Odaberite mapu koja sadrži ffmpeg</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="643"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="698"/>
         <source>Select the download cache folder</source>
         <translation>Odaberite mapu predmemorije preuzimanja</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="648"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="703"/>
         <source>Select the downloader program</source>
         <translation>Odaberite program za preuzimanje</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="654"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="709"/>
         <source>Select the download folder</source>
         <translation>Odaberite mapu za preuzimanje</translation>
     </message>
@@ -3964,97 +4008,97 @@
 <context>
     <name>PreferencesDialog</name>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="25"/>
+        <location filename="../qml/PreferencesDialog.qml" line="26"/>
         <source>Preferences</source>
         <translation>Osobitosti</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="78"/>
+        <location filename="../qml/PreferencesDialog.qml" line="79"/>
         <source>&lt;h1&gt;Help&lt;/h1&gt;&lt;p&gt;No help is available for this section.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="117"/>
+        <location filename="../qml/PreferencesDialog.qml" line="118"/>
         <source>General</source>
         <translation>Općenito</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="118"/>
+        <location filename="../qml/PreferencesDialog.qml" line="119"/>
         <source>Drives</source>
         <translation>Pogoni</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="119"/>
+        <location filename="../qml/PreferencesDialog.qml" line="120"/>
         <source>Subtitles</source>
         <translation>Podnaslovi</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="120"/>
+        <location filename="../qml/PreferencesDialog.qml" line="121"/>
         <source>Interface</source>
         <translation>Sučelje</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="121"/>
+        <location filename="../qml/PreferencesDialog.qml" line="122"/>
         <source>Keyboard and mouse</source>
         <translation>Tipkovnica i miš</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="122"/>
+        <location filename="../qml/PreferencesDialog.qml" line="123"/>
         <source>Playlist</source>
         <translation>Popis izvođenja</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="123"/>
+        <location filename="../qml/PreferencesDialog.qml" line="124"/>
         <source>TV and radio</source>
         <translation>TV i radio</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="124"/>
+        <location filename="../qml/PreferencesDialog.qml" line="125"/>
         <source>File types</source>
         <translation>Vrste datoteka</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="125"/>
+        <location filename="../qml/PreferencesDialog.qml" line="126"/>
         <source>Updates</source>
         <translation>Nadopune</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="126"/>
+        <location filename="../qml/PreferencesDialog.qml" line="127"/>
         <source>Network</source>
         <translation>Mreža</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="127"/>
+        <location filename="../qml/PreferencesDialog.qml" line="128"/>
         <source>Advanced</source>
         <translation>Napredno</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="173"/>
+        <location filename="../qml/PreferencesDialog.qml" line="176"/>
         <source>&amp;Help</source>
         <translation>&amp;Pomoć</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="178"/>
+        <location filename="../qml/PreferencesDialog.qml" line="181"/>
         <source>OK</source>
         <translation>&amp;U redu</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="182"/>
+        <location filename="../qml/PreferencesDialog.qml" line="185"/>
         <source>Apply</source>
         <translation>Primjeni</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="188"/>
+        <location filename="../qml/PreferencesDialog.qml" line="191"/>
         <source>Cancel</source>
         <translation>Odustani</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="197"/>
+        <location filename="../qml/PreferencesDialog.qml" line="200"/>
         <source>Vivace — Help</source>
         <translation>Vivace — Pomoć</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="245"/>
+        <location filename="../qml/PreferencesDialog.qml" line="248"/>
         <source>Close</source>
         <translation>Zatvori</translation>
     </message>
@@ -4564,62 +4608,62 @@
 <context>
     <name>YoutubeResolver</name>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="231"/>
+        <location filename="../src/youtuberesolver.cpp" line="320"/>
         <source>Could not create the download cache folder.</source>
         <translation>Nije moguće stvoriti mapu predmemorije preuzimanja.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="245"/>
+        <location filename="../src/youtuberesolver.cpp" line="334"/>
         <source>Could not determine the video id to download.</source>
         <translation>Nije moguće odrediti ID videozapisa za preuzimanje.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="332"/>
+        <location filename="../src/youtuberesolver.cpp" line="440"/>
         <source>Could not run yt-dlp (&quot;%1&quot;). Check the path in Preferences &gt; Network.</source>
         <translation>Nije moguće pokrenuti yt-dlp (&quot;%1&quot;). Provjerite putanju u Postavke &gt; Mreža.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="354"/>
+        <location filename="../src/youtuberesolver.cpp" line="462"/>
         <source>yt-dlp did not finish normally.</source>
         <translation>yt-dlp nije normalno završio.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="361"/>
+        <location filename="../src/youtuberesolver.cpp" line="469"/>
         <source>yt-dlp exited with code %1.</source>
         <translation>yt-dlp je završio s kodom %1.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="376"/>
+        <location filename="../src/youtuberesolver.cpp" line="484"/>
         <source>yt-dlp returned no playable stream.</source>
         <translation>yt-dlp nije vratio reproducibilan tok.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="398"/>
+        <location filename="../src/youtuberesolver.cpp" line="506"/>
         <source>The download did not finish normally.</source>
         <translation>Preuzimanje nije normalno završilo.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="401"/>
+        <location filename="../src/youtuberesolver.cpp" line="509"/>
         <source>yt-dlp produced no file (exit code %1). If this is an HD video, check the ffmpeg and Deno paths.</source>
         <translation>yt-dlp nije izradio datoteku (izlazni kod %1). Ako se radi o HD videu, provjerite putanje do ffmpeg-a i Deno-a.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="656"/>
+        <location filename="../src/youtuberesolver.cpp" line="764"/>
         <source>Could not create the destination folder</source>
         <translation>Nije moguće izraditi odredišnu mapu</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="672"/>
+        <location filename="../src/youtuberesolver.cpp" line="780"/>
         <source>File no longer exists</source>
         <translation>Datoteka više ne postoji</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="694"/>
+        <location filename="../src/youtuberesolver.cpp" line="802"/>
         <source>Could not move the file</source>
         <translation>Nije moguće premjestiti datoteku</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="695"/>
+        <location filename="../src/youtuberesolver.cpp" line="803"/>
         <source>Could not copy the file</source>
         <translation>Nije moguće kopirati datoteku</translation>
     </message>
@@ -4628,12 +4672,12 @@
         <translation type="vanished">yt-dlp nije stvorio datoteku (izlazni kôd %1). Ako je ovo HD videozapis, provjerite lokaciju ffmpeg-a.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="815"/>
+        <location filename="../src/youtuberesolver.cpp" line="923"/>
         <source>Could not write %1.</source>
         <translation>Nije moguće zapisati %1.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="821"/>
+        <location filename="../src/youtuberesolver.cpp" line="929"/>
         <source>Could not save %1.</source>
         <translation>Nije moguće spremiti %1.</translation>
     </message>
@@ -4641,57 +4685,56 @@
 <context>
     <name>YoutubeSupportDialog</name>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="22"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="26"/>
         <source>Install / Update YouTube support</source>
         <translation>Instaliraj / Nadopuni Youtube podršku</translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="63"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="66"/>
         <source>yt-dlp was installed successfully as:</source>
         <translation>yt-dlp je uspješno instaliran kao:</translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="64"/>
         <source>YouTube playback is now enabled.</source>
-        <translation>Reprodukcija YouTubea sada je omogućena.</translation>
+        <translation type="vanished">Reprodukcija YouTubea sada je omogućena.</translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="68"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="70"/>
         <source>The download failed:</source>
         <translation>Preuzimanje nije uspjelo:</translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="84"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="86"/>
         <source>To play YouTube videos, Vivace uses an external program called yt-dlp.</source>
         <translation>Za reprodukciju videozapisa s YouTubea Vivace koristi vanjski program pod nazivom yt-dlp.</translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="87"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="89"/>
         <source>Vivace can download the latest version from the official website and install it as:</source>
         <translation>Vivace može preuzeti najnoviju verziju sa službene web-stranice i instalirati je kao:</translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="90"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="92"/>
         <source>Would you like to proceed?</source>
         <translation>Želite li nastaviti?</translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="98"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="100"/>
         <source>Downloading yt-dlp…</source>
         <translation>Preuzimanje yt-dlp…</translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="122"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="124"/>
         <source>Install</source>
         <translation>Instaliraj</translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="131"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="133"/>
         <source>Cancel</source>
         <translation>Odustani</translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="136"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="138"/>
         <source>Close</source>
         <translation>Zatvori</translation>
     </message>

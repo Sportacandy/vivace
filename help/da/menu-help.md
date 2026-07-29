@@ -7,9 +7,6 @@ Menuen **Hjælp**.
   en side åbner det relaterede emne her; eksterne links åbnes i din webbrowser.
 - **Søg efter opdateringer** — se, om et nyere Vivace er tilgængeligt. Automatiske
   kontroller kan aktiveres i *Indstillinger ▸ Opdateringer*.
-- **Installer / opdater YouTube-understøttelse** — hent eller opdater `yt-dlp`,
-  hjælpeprogrammet, Vivace bruger til at afspille YouTube-links (se
-  *Indstillinger ▸ Netværk*).
 - **Om Vivace** — version, Qt-versioner, tak til og licens.
 
 Vivace er en medieafspiller helt i Qt, bygget fra bunden og inspireret af

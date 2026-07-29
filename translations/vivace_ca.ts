@@ -192,12 +192,12 @@
     <message>
         <location filename="../qml/CacheBrowserDialog.qml" line="198"/>
         <source>Copy (keep them in the cache too)</source>
-        <translation>Copia (conserva'ls també a la memòria cau)</translation>
+        <translation>Copia (conserva&apos;ls també a la memòria cau)</translation>
     </message>
     <message>
         <location filename="../qml/CacheBrowserDialog.qml" line="203"/>
         <source>Move (remove them from the cache)</source>
-        <translation>Mou (elimina'ls de la memòria cau)</translation>
+        <translation>Mou (elimina&apos;ls de la memòria cau)</translation>
     </message>
     <message>
         <location filename="../qml/CacheBrowserDialog.qml" line="214"/>
@@ -322,7 +322,7 @@
     <message>
         <location filename="../qml/CacheBrowserDialog.qml" line="350"/>
         <source>Tick videos with the checkbox in their corner, then pick where to save them: a plain folder, a new playlist file, an existing one, or the currently loaded playlist. Every option asks for a destination folder and whether to move the files out of the cache or keep a copy there -- the cache is a limited-size rotation, so a file left only there can eventually be evicted.</source>
-        <translation>Marqueu vídeos amb la casella de la cantonada i després trieu on desar-los: una carpeta normal, un nou fitxer de llista de reproducció, un d'existent, o la llista de reproducció carregada actualment. Cada opció demana una carpeta de destinació i si cal moure els fitxers fora de la memòria cau o deixar-hi una còpia -- la memòria cau té una mida limitada, així que un fitxer deixat només allà pot acabar eliminant-se.</translation>
+        <translation>Marqueu vídeos amb la casella de la cantonada i després trieu on desar-los: una carpeta normal, un nou fitxer de llista de reproducció, un d&apos;existent, o la llista de reproducció carregada actualment. Cada opció demana una carpeta de destinació i si cal moure els fitxers fora de la memòria cau o deixar-hi una còpia -- la memòria cau té una mida limitada, així que un fitxer deixat només allà pot acabar eliminant-se.</translation>
     </message>
     <message>
         <location filename="../qml/CacheBrowserDialog.qml" line="370"/>
@@ -766,284 +766,284 @@
 <context>
     <name>Main</name>
     <message>
-        <location filename="../qml/Main.qml" line="409"/>
+        <location filename="../qml/Main.qml" line="388"/>
         <source>TV editor</source>
         <translation>Editor de TV</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="409"/>
+        <location filename="../qml/Main.qml" line="388"/>
         <source>TV channels</source>
         <translation>Canals de TV</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="412"/>
+        <location filename="../qml/Main.qml" line="391"/>
         <source>Radio editor</source>
         <translation>Editor de ràdio</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="412"/>
+        <location filename="../qml/Main.qml" line="391"/>
         <source>Radio channels</source>
         <translation>Emissores de ràdio</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="415"/>
-        <location filename="../qml/Main.qml" line="459"/>
+        <location filename="../qml/Main.qml" line="394"/>
+        <location filename="../qml/Main.qml" line="437"/>
         <source>Favorite editor</source>
         <translation>Editor de preferits</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="415"/>
-        <location filename="../qml/Main.qml" line="459"/>
+        <location filename="../qml/Main.qml" line="394"/>
+        <location filename="../qml/Main.qml" line="437"/>
         <source>Favorite list</source>
         <translation>Llista dels preferits</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="419"/>
+        <location filename="../qml/Main.qml" line="398"/>
         <source>Bookmark added</source>
         <translation>S&apos;ha afegit el marcador</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="434"/>
+        <location filename="../qml/Main.qml" line="413"/>
         <source>Edit main toolbar</source>
         <translation>Edi&amp;ta la barra d&apos;eines principal</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="437"/>
+        <location filename="../qml/Main.qml" line="416"/>
         <source>Edit control bar</source>
         <translation>Edita la barra de &amp;control</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="466"/>
+        <location filename="../qml/Main.qml" line="444"/>
         <source>Screenshot saved as %1</source>
         <translation>S&apos;ha desat la captura de pantalla com a %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="467"/>
+        <location filename="../qml/Main.qml" line="445"/>
         <source>Could not take the screenshot</source>
         <translation>No s&apos;ha pogut fer la captura de pantalla</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="580"/>
+        <location filename="../qml/Main.qml" line="558"/>
         <source>Drop media files here, or press Ctrl+O</source>
         <translation>Deixeu anar fitxers multimèdia aquí, o premeu Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="656"/>
+        <location filename="../qml/Main.qml" line="634"/>
         <source>Downloading video…</source>
         <translation>S&apos;està baixant el vídeo…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="663"/>
+        <location filename="../qml/Main.qml" line="641"/>
         <source>This can take a while — the external tool is downloading and merging HD video and audio.</source>
         <translation>Això pot trigar una estona — l&apos;eina externa està baixant i combinant vídeo i àudio en HD.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="677"/>
-        <location filename="../qml/Main.qml" line="1552"/>
+        <location filename="../qml/Main.qml" line="655"/>
+        <location filename="../qml/Main.qml" line="1557"/>
         <source>Cancel</source>
         <translation>Cancel·la</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="750"/>
+        <location filename="../qml/Main.qml" line="728"/>
         <source>Loading…</source>
         <translation>S&apos;està carregant…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="751"/>
+        <location filename="../qml/Main.qml" line="729"/>
         <source>Connecting…</source>
         <translation>S&apos;està connectant...</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="752"/>
+        <location filename="../qml/Main.qml" line="730"/>
         <source>Buffering… %1%</source>
         <translation>S&apos;està emplenant la memòria intermèdia… %1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="760"/>
+        <location filename="../qml/Main.qml" line="738"/>
         <source>Live streams can take several seconds to start.</source>
         <translation>Les transmissions en directe poden trigar uns segons a començar.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="795"/>
+        <location filename="../qml/Main.qml" line="773"/>
         <source>Volume: %1%</source>
         <translation>Volum: %1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="798"/>
+        <location filename="../qml/Main.qml" line="776"/>
         <source>Mute</source>
         <translation>Silenci</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="798"/>
+        <location filename="../qml/Main.qml" line="776"/>
         <source>Mute off</source>
         <translation>Silenci desactivat</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="801"/>
+        <location filename="../qml/Main.qml" line="779"/>
         <source>Speed: %1x</source>
         <translation>Velocitat: %1x</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1208"/>
+        <location filename="../qml/Main.qml" line="1186"/>
         <source>Media files (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1209"/>
-        <location filename="../qml/Main.qml" line="1248"/>
-        <location filename="../qml/Main.qml" line="1488"/>
+        <location filename="../qml/Main.qml" line="1187"/>
+        <location filename="../qml/Main.qml" line="1245"/>
+        <location filename="../qml/Main.qml" line="1493"/>
         <source>All files (*)</source>
         <translation>Tots els fitxers (*)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1232"/>
+        <location filename="../qml/Main.qml" line="1229"/>
         <source>Select the DVD drive or a folder containing VIDEO_TS</source>
         <translation>Seleccioneu la unitat de DVD o una carpeta que contingui VIDEO_TS</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1236"/>
+        <location filename="../qml/Main.qml" line="1233"/>
         <source>No DVD video found in %1</source>
         <translation>No s&apos;ha trobat cap vídeo de DVD a %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1247"/>
+        <location filename="../qml/Main.qml" line="1244"/>
         <source>Playlists (*.m3u *.m3u8)</source>
         <translation>Llistes de reproducció (*.m3u *.m3u8)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1282"/>
+        <location filename="../qml/Main.qml" line="1287"/>
         <source>Playing stream</source>
         <translation>S&apos;està reproduint el flux</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1288"/>
-        <location filename="../qml/Main.qml" line="1308"/>
+        <location filename="../qml/Main.qml" line="1293"/>
+        <location filename="../qml/Main.qml" line="1313"/>
         <source>Playing downloaded video</source>
         <translation>S&apos;està reproduint el vídeo baixat</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1292"/>
+        <location filename="../qml/Main.qml" line="1297"/>
         <source>YouTube: %1</source>
         <translation>YouTube: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1312"/>
+        <location filename="../qml/Main.qml" line="1317"/>
         <source>Download failed: %1</source>
         <translation>Ha fallat la baixada: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1409"/>
+        <location filename="../qml/Main.qml" line="1414"/>
         <source>Saved %1 file(s); %2 failed.</source>
         <translation>%1 fitxer(s) desat(s); %2 han fallat.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1413"/>
+        <location filename="../qml/Main.qml" line="1418"/>
         <source>Saved %1 file(s).</source>
         <translation>%1 fitxer(s) desat(s).</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1426"/>
+        <location filename="../qml/Main.qml" line="1431"/>
         <source>Could not read the shortcut file.</source>
         <translation>No s&apos;ha pogut llegir el fitxer de drecera.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1441"/>
+        <location filename="../qml/Main.qml" line="1446"/>
         <source>Starting download…</source>
         <translation>S&apos;està iniciant la baixada…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1442"/>
+        <location filename="../qml/Main.qml" line="1447"/>
         <source>Downloading video (this can take a while)…</source>
         <translation>S&apos;està baixant el vídeo (això pot trigar una estona)…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1446"/>
+        <location filename="../qml/Main.qml" line="1451"/>
         <source>Resolving with yt-dlp…</source>
         <translation>S&apos;està resolent amb yt-dlp…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1483"/>
+        <location filename="../qml/Main.qml" line="1488"/>
         <source>Load subtitle file</source>
         <translation>Carrega un fitxer de subtítols</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1487"/>
+        <location filename="../qml/Main.qml" line="1492"/>
         <source>Subtitle files (*.srt *.vtt *.ass *.ssa)</source>
         <translation>Fitxers de subtítols (*.srt *.vtt *.ass *.ssa)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1495"/>
+        <location filename="../qml/Main.qml" line="1500"/>
         <source>Subtitle delay</source>
         <translation>Retard dels subtítols</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1529"/>
+        <location filename="../qml/Main.qml" line="1534"/>
         <source>Delay:</source>
         <translation>Retard:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1535"/>
-        <location filename="../qml/Main.qml" line="1607"/>
+        <location filename="../qml/Main.qml" line="1540"/>
+        <location filename="../qml/Main.qml" line="1612"/>
         <source>ms</source>
         <translation>ms</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1545"/>
+        <location filename="../qml/Main.qml" line="1550"/>
         <source>OK</source>
         <translation>D&apos;ac&amp;ord</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1564"/>
+        <location filename="../qml/Main.qml" line="1569"/>
         <source>Audio delay — Vivace</source>
         <translation>Retard de l&apos;àudio — Vivace</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1595"/>
+        <location filename="../qml/Main.qml" line="1600"/>
         <source>No delay for this file (use the global delay only)</source>
         <translation>Sense retard per a aquest fitxer (usa només el retard global)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1600"/>
+        <location filename="../qml/Main.qml" line="1605"/>
         <source>This file&apos;s delay:</source>
         <translation>Retard d&apos;aquest fitxer:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1615"/>
+        <location filename="../qml/Main.qml" line="1620"/>
         <source>The delay applied to this file is this value plus the global delay for the current audio device (%1 ms), set in Preferences &gt; General &gt; Audio. Negative values delay the video to match audio that arrives late (e.g. Bluetooth headphones).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1628"/>
+        <location filename="../qml/Main.qml" line="1633"/>
         <source>&amp;Apply</source>
         <translation>&amp;Aplica</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1637"/>
+        <location filename="../qml/Main.qml" line="1642"/>
         <source>&amp;Close</source>
         <translation>Tan&amp;ca</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1733"/>
+        <location filename="../qml/Main.qml" line="1739"/>
         <source>Hide window</source>
         <translation>Amaga la finestra</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1733"/>
+        <location filename="../qml/Main.qml" line="1739"/>
         <source>Show window</source>
         <translation>Mostra la finestra</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1738"/>
+        <location filename="../qml/Main.qml" line="1744"/>
         <source>Play / Pause</source>
         <translation>Reprodueix / Pausa</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1742"/>
+        <location filename="../qml/Main.qml" line="1748"/>
         <source>Stop</source>
         <translation>Atura</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1747"/>
+        <location filename="../qml/Main.qml" line="1753"/>
         <source>Quit</source>
         <translation>&amp;Surt</translation>
     </message>
@@ -1051,12 +1051,12 @@
 <context>
     <name>MainMenuBar</name>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="63"/>
+        <location filename="../qml/MainMenuBar.qml" line="62"/>
         <source>&amp;Auto</source>
         <translation>&amp;Automàtic</translation>
     </message>
     <message numerus="yes">
-        <location filename="../qml/MainMenuBar.qml" line="83"/>
+        <location filename="../qml/MainMenuBar.qml" line="82"/>
         <source>%n minute(s)</source>
         <translation type="unfinished">
             <numerusform></numerusform>
@@ -1064,7 +1064,7 @@
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../qml/MainMenuBar.qml" line="84"/>
+        <location filename="../qml/MainMenuBar.qml" line="83"/>
         <source>%n second(s)</source>
         <translation type="unfinished">
             <numerusform></numerusform>
@@ -1072,635 +1072,630 @@
         </translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="106"/>
+        <location filename="../qml/MainMenuBar.qml" line="105"/>
         <source>&amp;Open</source>
         <translation>&amp;Obre</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="109"/>
+        <location filename="../qml/MainMenuBar.qml" line="108"/>
         <source>&amp;File…</source>
         <translation>&amp;Fitxer...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="116"/>
+        <location filename="../qml/MainMenuBar.qml" line="115"/>
         <source>&amp;Recent files</source>
         <translation>Fitxers &amp;recents</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="132"/>
+        <location filename="../qml/MainMenuBar.qml" line="131"/>
         <source>(empty)</source>
         <translation>(buit)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="139"/>
+        <location filename="../qml/MainMenuBar.qml" line="138"/>
         <source>&amp;Clear</source>
         <translation>&amp;Neteja</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="145"/>
+        <location filename="../qml/MainMenuBar.qml" line="144"/>
         <source>F&amp;avorites</source>
         <translation>Pr&amp;eferits</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="154"/>
+        <location filename="../qml/MainMenuBar.qml" line="153"/>
         <source>&amp;Directory…</source>
         <translation>D&amp;irectori...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="159"/>
+        <location filename="../qml/MainMenuBar.qml" line="158"/>
         <source>&amp;Playlist…</source>
         <translation>Llista de re&amp;producció...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="164"/>
+        <location filename="../qml/MainMenuBar.qml" line="163"/>
         <source>D&amp;isc</source>
         <translation>&amp;Disc</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="168"/>
+        <location filename="../qml/MainMenuBar.qml" line="167"/>
         <source>&amp;DVD from drive or folder…</source>
         <translation>&amp;DVD des d&apos;una unitat o carpeta…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="173"/>
+        <location filename="../qml/MainMenuBar.qml" line="172"/>
         <source>&amp;Blu-ray</source>
         <translation>&amp;Blu-ray</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="177"/>
+        <location filename="../qml/MainMenuBar.qml" line="176"/>
         <source>&amp;Audio CD</source>
         <translation>CD d&apos;&amp;àudio</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="182"/>
+        <location filename="../qml/MainMenuBar.qml" line="181"/>
         <source>&amp;URL…</source>
         <translation>&amp;URL...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="188"/>
+        <location filename="../qml/MainMenuBar.qml" line="187"/>
         <source>YouTube &amp;cache…</source>
         <translation>Memòria &amp;cau de YouTube…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="196"/>
+        <location filename="../qml/MainMenuBar.qml" line="195"/>
         <source>&amp;TV</source>
         <translation>&amp;TV</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="206"/>
+        <location filename="../qml/MainMenuBar.qml" line="205"/>
         <source>Radi&amp;o</source>
         <translation>Ràdi&amp;o</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="217"/>
+        <location filename="../qml/MainMenuBar.qml" line="216"/>
         <source>&amp;Quit</source>
         <translation>&amp;Surt</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="227"/>
+        <location filename="../qml/MainMenuBar.qml" line="226"/>
         <source>&amp;Play</source>
         <translation>Re&amp;produeix</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="230"/>
+        <location filename="../qml/MainMenuBar.qml" line="229"/>
         <source>P&amp;lay</source>
         <translation>Repro&amp;dueix</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="237"/>
+        <location filename="../qml/MainMenuBar.qml" line="236"/>
         <source>&amp;Pause</source>
         <translation>&amp;Pausa</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="243"/>
+        <location filename="../qml/MainMenuBar.qml" line="242"/>
         <source>&amp;Stop</source>
         <translation>&amp;Atura</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="249"/>
+        <location filename="../qml/MainMenuBar.qml" line="248"/>
         <source>Frame &amp;step</source>
         <translation>Pas de &amp;fotograma</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="255"/>
+        <location filename="../qml/MainMenuBar.qml" line="254"/>
         <source>Fra&amp;me back step</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="262"/>
+        <location filename="../qml/MainMenuBar.qml" line="261"/>
         <source>&amp;Rewind %1</source>
         <translation>&amp;Enrere %1</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="269"/>
+        <location filename="../qml/MainMenuBar.qml" line="268"/>
         <source>&amp;Forward %1</source>
         <translation>&amp;Endavant %1</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="276"/>
-        <location filename="../qml/MainMenuBar.qml" line="290"/>
+        <location filename="../qml/MainMenuBar.qml" line="275"/>
+        <location filename="../qml/MainMenuBar.qml" line="289"/>
         <source>Rewind %1</source>
         <translation>Enrere %1</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="283"/>
-        <location filename="../qml/MainMenuBar.qml" line="297"/>
+        <location filename="../qml/MainMenuBar.qml" line="282"/>
+        <location filename="../qml/MainMenuBar.qml" line="296"/>
         <source>Forward %1</source>
         <translation>Endavant %1</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="305"/>
+        <location filename="../qml/MainMenuBar.qml" line="304"/>
         <source>Sp&amp;eed</source>
         <translation>V&amp;elocitat</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="309"/>
+        <location filename="../qml/MainMenuBar.qml" line="308"/>
         <source>&amp;Normal speed</source>
         <translation>Velocitat &amp;normal</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="315"/>
+        <location filename="../qml/MainMenuBar.qml" line="314"/>
         <source>&amp;Halve speed</source>
         <translation>&amp;Redueix la velocitat a la meitat</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="320"/>
+        <location filename="../qml/MainMenuBar.qml" line="319"/>
         <source>&amp;Double speed</source>
         <translation>Velocitat &amp;doble</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="326"/>
+        <location filename="../qml/MainMenuBar.qml" line="325"/>
         <source>Speed &amp;-10%</source>
         <translation>&amp;-10% de velocitat</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="331"/>
+        <location filename="../qml/MainMenuBar.qml" line="330"/>
         <source>Speed &amp;+10%</source>
         <translation>&amp;+10% de velocitat</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="336"/>
+        <location filename="../qml/MainMenuBar.qml" line="335"/>
         <source>Speed -4%</source>
         <translation>-&amp;4% de velocitat</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="337"/>
+        <location filename="../qml/MainMenuBar.qml" line="336"/>
         <source>Speed +4%</source>
         <translation>+4% de &amp;velocitat</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="339"/>
+        <location filename="../qml/MainMenuBar.qml" line="338"/>
         <source>Speed -1%</source>
         <translation>-&amp;1% de velocitat</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="340"/>
+        <location filename="../qml/MainMenuBar.qml" line="339"/>
         <source>Speed +1%</source>
         <translation>+1% de &amp;velocitat</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="343"/>
+        <location filename="../qml/MainMenuBar.qml" line="342"/>
         <source>Pi&amp;tch compensation</source>
         <translation>Compensació de &amp;to</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="352"/>
+        <location filename="../qml/MainMenuBar.qml" line="351"/>
         <source>&amp;A-B section</source>
         <translation>Secció &amp;A-B</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="356"/>
+        <location filename="../qml/MainMenuBar.qml" line="355"/>
         <source>Set &amp;A marker</source>
         <translation>Estableix la marca &amp;A</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="362"/>
+        <location filename="../qml/MainMenuBar.qml" line="361"/>
         <source>Set &amp;B marker</source>
         <translation>Estableix la marca &amp;B</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="368"/>
+        <location filename="../qml/MainMenuBar.qml" line="367"/>
         <source>&amp;Clear A-B markers</source>
         <translation>&amp;Neteja les marques A-B</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="376"/>
+        <location filename="../qml/MainMenuBar.qml" line="375"/>
         <source>&amp;Repeat</source>
         <translation>&amp;Repeteix</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="382"/>
+        <location filename="../qml/MainMenuBar.qml" line="381"/>
         <source>&amp;Jump to…</source>
         <translation>&amp;Salta a...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="385"/>
+        <location filename="../qml/MainMenuBar.qml" line="384"/>
         <source>Pre&amp;vious</source>
         <translation>&amp;Anterior</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="392"/>
+        <location filename="../qml/MainMenuBar.qml" line="391"/>
         <source>&amp;Next</source>
         <translation>&amp;Següent</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="401"/>
+        <location filename="../qml/MainMenuBar.qml" line="400"/>
         <source>Ca&amp;st</source>
         <translation>&amp;Transmet a</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="405"/>
+        <location filename="../qml/MainMenuBar.qml" line="404"/>
         <source>&amp;Smartphone/tablet…</source>
         <translation>&amp;Mòbil/tauleta…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="413"/>
+        <location filename="../qml/MainMenuBar.qml" line="412"/>
         <source>&amp;Video</source>
         <translation>&amp;Vídeo</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="417"/>
-        <location filename="../qml/MainMenuBar.qml" line="608"/>
-        <location filename="../qml/MainMenuBar.qml" line="678"/>
+        <location filename="../qml/MainMenuBar.qml" line="416"/>
+        <location filename="../qml/MainMenuBar.qml" line="607"/>
+        <location filename="../qml/MainMenuBar.qml" line="677"/>
         <source>&amp;Track</source>
         <translation>Pis&amp;ta</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="421"/>
-        <location filename="../qml/MainMenuBar.qml" line="612"/>
-        <location filename="../qml/MainMenuBar.qml" line="777"/>
-        <location filename="../qml/MainMenuBar.qml" line="800"/>
+        <location filename="../qml/MainMenuBar.qml" line="420"/>
+        <location filename="../qml/MainMenuBar.qml" line="611"/>
+        <location filename="../qml/MainMenuBar.qml" line="776"/>
+        <location filename="../qml/MainMenuBar.qml" line="799"/>
         <source>&lt;empty&gt;</source>
         <translation>&lt;buit&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="444"/>
+        <location filename="../qml/MainMenuBar.qml" line="443"/>
         <source>&amp;Fullscreen</source>
         <translation>Panta&amp;lla completa</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="452"/>
+        <location filename="../qml/MainMenuBar.qml" line="451"/>
         <source>Si&amp;ze</source>
         <translation>&amp;Mida</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="455"/>
+        <location filename="../qml/MainMenuBar.qml" line="454"/>
         <source>50%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="456"/>
+        <location filename="../qml/MainMenuBar.qml" line="455"/>
         <source>100%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="457"/>
+        <location filename="../qml/MainMenuBar.qml" line="456"/>
         <source>200%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="460"/>
+        <location filename="../qml/MainMenuBar.qml" line="459"/>
         <source>&amp;Zoom and pan</source>
         <translation>&amp;Zoom i desplaçament</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="464"/>
+        <location filename="../qml/MainMenuBar.qml" line="463"/>
         <source>&amp;Reset</source>
         <translation>&amp;Restableix</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="469"/>
+        <location filename="../qml/MainMenuBar.qml" line="468"/>
         <source>Zoom &amp;-</source>
         <translation>&amp;- zoom</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="474"/>
+        <location filename="../qml/MainMenuBar.qml" line="473"/>
         <source>Zoom &amp;+</source>
         <translation>&amp;+ zoom</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="480"/>
+        <location filename="../qml/MainMenuBar.qml" line="479"/>
         <source>Move &amp;left</source>
         <translation>Mou a l&apos;&amp;esquerra</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="485"/>
+        <location filename="../qml/MainMenuBar.qml" line="484"/>
         <source>Move &amp;right</source>
         <translation>Mou a la &amp;dreta</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="490"/>
+        <location filename="../qml/MainMenuBar.qml" line="489"/>
         <source>Move &amp;up</source>
         <translation>Mou &amp;amunt</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="495"/>
+        <location filename="../qml/MainMenuBar.qml" line="494"/>
         <source>Move &amp;down</source>
         <translation>Mou a&amp;vall</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="502"/>
+        <location filename="../qml/MainMenuBar.qml" line="501"/>
         <source>&amp;Aspect ratio</source>
         <translation>Relació d&apos;&amp;aspecte</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="524"/>
+        <location filename="../qml/MainMenuBar.qml" line="523"/>
         <source>&amp;Rotate</source>
         <translation>Gi&amp;ra</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="528"/>
+        <location filename="../qml/MainMenuBar.qml" line="527"/>
         <source>&amp;None</source>
         <translation>Se&amp;nse</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="537"/>
+        <location filename="../qml/MainMenuBar.qml" line="536"/>
         <source>&amp;Rotate by 90° clockwise</source>
         <translation>&amp;Gira 90° en sentit horari</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="546"/>
+        <location filename="../qml/MainMenuBar.qml" line="545"/>
         <source>Rotate by 90° &amp;counterclockwise</source>
         <translation>Gira 90° en sentit &amp;antihorari</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="555"/>
+        <location filename="../qml/MainMenuBar.qml" line="554"/>
         <source>Rotate by &amp;180°</source>
         <translation>Gira &amp;180°</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="565"/>
+        <location filename="../qml/MainMenuBar.qml" line="564"/>
         <source>Fli&amp;p image</source>
         <translation>Invertei&amp;x la imatge</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="576"/>
+        <location filename="../qml/MainMenuBar.qml" line="575"/>
         <source>Mirr&amp;or image</source>
         <translation>Re&amp;flecteix la imatge</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="588"/>
+        <location filename="../qml/MainMenuBar.qml" line="587"/>
         <source>E&amp;qualizer…</source>
         <translation>E&amp;qualitzador…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="594"/>
+        <location filename="../qml/MainMenuBar.qml" line="593"/>
         <source>&amp;Screenshot</source>
         <translation>C&amp;aptura de pantalla</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="604"/>
+        <location filename="../qml/MainMenuBar.qml" line="603"/>
         <source>&amp;Audio</source>
         <translation>À&amp;udio</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="636"/>
+        <location filename="../qml/MainMenuBar.qml" line="635"/>
         <source>&amp;Mute</source>
         <translation>Sile&amp;nci</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="645"/>
+        <location filename="../qml/MainMenuBar.qml" line="644"/>
         <source>Volume &amp;-</source>
         <translation>&amp;- volum</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="651"/>
+        <location filename="../qml/MainMenuBar.qml" line="650"/>
         <source>Volume &amp;+</source>
         <translation>&amp;+ volum</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="659"/>
-        <location filename="../qml/MainMenuBar.qml" line="730"/>
+        <location filename="../qml/MainMenuBar.qml" line="658"/>
+        <location filename="../qml/MainMenuBar.qml" line="729"/>
         <source>Delay &amp;-</source>
         <translation>&amp;- retard</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="663"/>
+        <location filename="../qml/MainMenuBar.qml" line="662"/>
         <source>D&amp;elay +</source>
         <translation>+ r&amp;etard</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="667"/>
+        <location filename="../qml/MainMenuBar.qml" line="666"/>
         <source>Set dela&amp;y…</source>
         <translation>Es&amp;tableix el retard...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="674"/>
+        <location filename="../qml/MainMenuBar.qml" line="673"/>
         <source>&amp;Subtitles</source>
         <translation>&amp;Subtítols</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="682"/>
+        <location filename="../qml/MainMenuBar.qml" line="681"/>
         <source>&amp;Off</source>
         <translation>&amp;Inactiu</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="713"/>
+        <location filename="../qml/MainMenuBar.qml" line="712"/>
         <source>&amp;Load subtitles…</source>
         <translation>&amp;Carrega subtítols…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="719"/>
+        <location filename="../qml/MainMenuBar.qml" line="718"/>
         <source>&amp;Find subtitles at OpenSubtitles…</source>
         <translation>&amp;Cerca subtítols a OpenSubtitles…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="724"/>
+        <location filename="../qml/MainMenuBar.qml" line="723"/>
         <source>U&amp;nload subtitles</source>
         <translation>&amp;Descarrega subtítols</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="735"/>
+        <location filename="../qml/MainMenuBar.qml" line="734"/>
         <source>Delay &amp;+</source>
         <translation>&amp;+ retard</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="740"/>
+        <location filename="../qml/MainMenuBar.qml" line="739"/>
         <source>Se&amp;t delay…</source>
         <translation>Es&amp;tableix el retard...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="748"/>
+        <location filename="../qml/MainMenuBar.qml" line="747"/>
         <source>&amp;Browse</source>
         <translation>Na&amp;vega</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="751"/>
+        <location filename="../qml/MainMenuBar.qml" line="750"/>
         <source>&amp;DVD menu</source>
         <translation>&amp;Menú del DVD</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="760"/>
+        <location filename="../qml/MainMenuBar.qml" line="759"/>
         <source>&amp;Title</source>
         <translation>&amp;Títol</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="785"/>
+        <location filename="../qml/MainMenuBar.qml" line="784"/>
         <source>&amp;Chapters</source>
         <translation>&amp;Capítols</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="808"/>
+        <location filename="../qml/MainMenuBar.qml" line="807"/>
         <source>&amp;Bookmarks</source>
         <translation>&amp;Marcadors</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="818"/>
+        <location filename="../qml/MainMenuBar.qml" line="817"/>
         <source>&amp;Add new bookmark</source>
         <translation>&amp;Afegeix un marcador nou</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="825"/>
+        <location filename="../qml/MainMenuBar.qml" line="824"/>
         <source>&amp;Edit bookmarks…</source>
         <translation>&amp;Edita els marcadors…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="849"/>
+        <location filename="../qml/MainMenuBar.qml" line="848"/>
         <source>Vie&amp;w</source>
         <translation>Visualit&amp;za</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="852"/>
+        <location filename="../qml/MainMenuBar.qml" line="851"/>
         <source>&amp;Information and properties…</source>
         <translation>&amp;Informació i propietats...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="859"/>
+        <location filename="../qml/MainMenuBar.qml" line="858"/>
         <source>&amp;Playlist</source>
         <translation>Llista de re&amp;producció</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="867"/>
+        <location filename="../qml/MainMenuBar.qml" line="866"/>
         <source>&amp;OSD</source>
         <translation>&amp;OSD</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="869"/>
+        <location filename="../qml/MainMenuBar.qml" line="868"/>
         <source>Subtitles only</source>
         <translation>Única&amp;ment els subtítols</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="870"/>
+        <location filename="../qml/MainMenuBar.qml" line="869"/>
         <source>Volume + seek</source>
         <translation>Volum + cerca</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="871"/>
+        <location filename="../qml/MainMenuBar.qml" line="870"/>
         <source>Volume + seek + timer</source>
         <translation>Volum + cerca + temps</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="877"/>
+        <location filename="../qml/MainMenuBar.qml" line="876"/>
         <source>Op&amp;tions</source>
         <translation>O&amp;pcions</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="880"/>
+        <location filename="../qml/MainMenuBar.qml" line="879"/>
         <source>&amp;Preferences…</source>
         <translation>&amp;Preferències…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="887"/>
+        <location filename="../qml/MainMenuBar.qml" line="886"/>
         <source>S&amp;how icon in system tray</source>
         <translation>&amp;Mostra la icona a la safata del sistema</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="893"/>
+        <location filename="../qml/MainMenuBar.qml" line="892"/>
         <source>&amp;Toolbars</source>
         <translation>&amp;Barres d&apos;eines</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="896"/>
+        <location filename="../qml/MainMenuBar.qml" line="895"/>
         <source>&amp;Toolbar</source>
         <translation>Barra d&apos;&amp;eines</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="902"/>
+        <location filename="../qml/MainMenuBar.qml" line="901"/>
         <source>&amp;Control bar</source>
         <translation>Barra de control</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="909"/>
+        <location filename="../qml/MainMenuBar.qml" line="908"/>
         <source>Edit main &amp;toolbar…</source>
         <translation>Edita la barra d&apos;&amp;eines principal…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="913"/>
+        <location filename="../qml/MainMenuBar.qml" line="912"/>
         <source>Edit control &amp;bar…</source>
         <translation>Edita la &amp;barra de control…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="918"/>
+        <location filename="../qml/MainMenuBar.qml" line="917"/>
         <source>&amp;Status bar</source>
         <translation>Barra d&apos;e&amp;stat</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="921"/>
+        <location filename="../qml/MainMenuBar.qml" line="920"/>
         <source>&amp;Show status bar</source>
         <translation>&amp;Mostra la barra d&apos;estat</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="928"/>
+        <location filename="../qml/MainMenuBar.qml" line="927"/>
         <source>&amp;Video info</source>
         <translation>Informació del &amp;vídeo</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="935"/>
+        <location filename="../qml/MainMenuBar.qml" line="934"/>
         <source>&amp;Audio info</source>
         <translation>Informació d&apos;à&amp;udio</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="942"/>
+        <location filename="../qml/MainMenuBar.qml" line="941"/>
         <source>F&amp;ormat info</source>
         <translation>Inf&amp;ormació del format</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="949"/>
+        <location filename="../qml/MainMenuBar.qml" line="948"/>
         <source>&amp;Bitrate info</source>
         <translation>Informació de la taxa de &amp;bits</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="956"/>
+        <location filename="../qml/MainMenuBar.qml" line="955"/>
         <source>&amp;Frame counter</source>
         <translation>Comptador de &amp;fotogrames</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="964"/>
+        <location filename="../qml/MainMenuBar.qml" line="963"/>
         <source>Display &amp;total time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="970"/>
+        <location filename="../qml/MainMenuBar.qml" line="969"/>
         <source>Display &amp;remaining time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="977"/>
+        <location filename="../qml/MainMenuBar.qml" line="976"/>
         <source>Show the current time with &amp;milliseconds</source>
         <translation>Mo&amp;stra l&apos;instant actual amb mil·lisegons</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="987"/>
+        <location filename="../qml/MainMenuBar.qml" line="986"/>
         <source>&amp;Help</source>
         <translation>&amp;Ajuda</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="990"/>
+        <location filename="../qml/MainMenuBar.qml" line="989"/>
         <source>&amp;Contents</source>
         <translation>&amp;Contingut</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="997"/>
+        <location filename="../qml/MainMenuBar.qml" line="996"/>
         <source>&amp;Check for updates</source>
         <translation>Comprova si hi ha act&amp;ualitzacions</translation>
     </message>
     <message>
         <location filename="../qml/MainMenuBar.qml" line="1002"/>
-        <source>Install / Update &amp;YouTube support</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/MainMenuBar.qml" line="1008"/>
         <source>&amp;About Vivace</source>
         <translation>&amp;Quant al Vivace</translation>
     </message>
@@ -2277,7 +2272,7 @@
 <context>
     <name>PlaylistWindow</name>
     <message>
-        <location filename="../qml/PlaylistWindow.qml" line="18"/>
+        <location filename="../qml/PlaylistWindow.qml" line="19"/>
         <source>Playlist — Vivace</source>
         <translation>Llista de reproducció — Vivace</translation>
     </message>
@@ -3207,72 +3202,67 @@
 <context>
     <name>PrefNetworkPage</name>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="69"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="91"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="73"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="95"/>
         <source>OpenSubtitles</source>
         <translation>OpenSubtitles</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="70"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="74"/>
         <source>YouTube</source>
         <translation>YouTube</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="72"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="578"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="76"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="633"/>
         <source>Cast</source>
         <translation>Transmissió</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="101"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="105"/>
         <source>API key:</source>
         <translation>Clau d&apos;API:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="102"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="106"/>
         <source>A free per-application key from opensubtitles.com (create an API consumer); subtitle search will not work until this is set.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="107"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="111"/>
         <source>from opensubtitles.com → API consumers</source>
         <translation>des d&apos;opensubtitles.com → API consumers</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="112"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="530"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="116"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="585"/>
         <source>Username:</source>
         <translation>Nom d&apos;&amp;usuari:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="113"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="117"/>
         <source>Optional opensubtitles.com account login; signing in is not required but raises the daily download limit.</source>
         <translation>Inici de sessió opcional amb un compte d&apos;opensubtitles.com; no és obligatori, però augmenta el límit diari de baixades.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="120"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="536"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="124"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="591"/>
         <source>Password:</source>
         <translation>Contra&amp;senya:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="135"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="139"/>
         <source>The account password is stored securely using your operating system&apos;s credential manager.</source>
         <translation>La contrasenya del compte es desa de manera segura mitjançant el gestor de credencials del sistema operatiu.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="71"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="487"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="75"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="542"/>
         <source>Proxy</source>
         <translation>Servidor intermediari</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="23"/>
-        <source>&lt;h1&gt;Network&lt;/h1&gt;&lt;p&gt;&lt;b&gt;OpenSubtitles&lt;/b&gt; search uses the REST API, which requires a free per-application API key: register at opensubtitles.com, create an API consumer, and paste the key here. An account login (username and password) is optional but raises the daily download limit.&lt;/p&gt;&lt;p&gt;&lt;b&gt;YouTube&lt;/b&gt;: the optional resolver uses an external yt-dlp program — when enabled, opening a YouTube URL runs yt-dlp to obtain a directly-playable stream. Install yt-dlp yourself and, if it is not on the PATH, set its full path. Because QMediaPlayer plays a single muxed stream, streaming tops out at the best progressive format (about 720p on YouTube). Cookies are deliberately NOT used for streaming: an authenticated (cookie) session returns URLs a plain player cannot open.&lt;/p&gt;&lt;p&gt;For &lt;b&gt;HD&lt;/b&gt; (and for cookies), enable download mode, or point the external downloader at your own tool (a program or .bat/.cmd). HD formats are separate video and audio streams that cannot be streamed muxed, so Vivace runs yt-dlp (or your tool) to download and merge the video, then plays the file it writes into the download folder. Download mode also needs Deno, a further external program yt-dlp itself uses to solve YouTube&apos;s JavaScript challenges — without it, a signed-in (cookie) request, exactly what HD downloads rely on, sees severely limited format availability. Streaming mode, which never sends cookies, is largely unaffected and doesn&apos;t need Deno. Install Deno yourself and, if it is not on the PATH, set its full path in the Download &amp; play settings.&lt;/p&gt;&lt;p&gt;See &lt;b&gt;Help ▸ Contents ▸ Options&lt;/b&gt; for step-by-step instructions on exporting a cookies.txt file from your browser, and on installing Deno.&lt;/p&gt;&lt;p&gt;The stream &lt;b&gt;connection timeout&lt;/b&gt; (used mainly by live TV tuners) has moved to &lt;i&gt;Preferences ▸ TV and radio&lt;/i&gt;.&lt;/p&gt;&lt;p&gt;The &lt;b&gt;Proxy&lt;/b&gt; tab applies application-wide: both HTTP and SOCKS5 cover OpenSubtitles search and the update check; only HTTP additionally covers media playback and yt-dlp (they read the http_proxy/https_proxy convention directly instead of going through Qt&apos;s network stack, and there is no SOCKS5 equivalent for that convention).&lt;/p&gt;&lt;p&gt;The &lt;b&gt;Cast&lt;/b&gt; tab sets the port Play ▸ Cast ▸ Smartphone/tablet listens on. It&apos;s here (rather than only in the Cast dialog) so it stays fixed — set it once, allow that port through your firewall/router once, and casting keeps working without a new firewall prompt every time.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="543"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="598"/>
         <source>Type:</source>
         <translation>&amp;Tipus:</translation>
     </message>
@@ -3281,319 +3271,369 @@
         <translation type="vanished">Sense</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="517"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="572"/>
         <source>Host:</source>
         <translation>Am&amp;fitrió:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="523"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="588"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="578"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="643"/>
         <source>Port:</source>
         <translation>&amp;Port:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="154"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="158"/>
         <source>YouTube (yt-dlp)</source>
         <translation>YouTube (yt-dlp)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="164"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="25"/>
+        <source>&lt;h1&gt;Network&lt;/h1&gt;&lt;p&gt;&lt;b&gt;OpenSubtitles&lt;/b&gt; search uses the REST API, which requires a free per-application API key: register at opensubtitles.com, create an API consumer, and paste the key here. An account login (username and password) is optional but raises the daily download limit.&lt;/p&gt;&lt;p&gt;&lt;b&gt;YouTube&lt;/b&gt;: the optional resolver uses an external yt-dlp program — when enabled, opening a YouTube URL runs yt-dlp to obtain a directly-playable stream. Vivace offers to install yt-dlp for you the first time you turn this on (or point it at your own copy with the path field below), and can keep it updated on its own per the &quot;Update yt-dlp automatically&quot; setting. Because QMediaPlayer plays a single muxed stream, streaming tops out at the best progressive format (about 720p on YouTube). Cookies are deliberately NOT used for streaming: an authenticated (cookie) session returns URLs a plain player cannot open.&lt;/p&gt;&lt;p&gt;For &lt;b&gt;HD&lt;/b&gt; (and for cookies), enable download mode, or point the external downloader at your own tool (a program or .bat/.cmd). HD formats are separate video and audio streams that cannot be streamed muxed, so Vivace runs yt-dlp (or your tool) to download and merge the video, then plays the file it writes into the download folder. Download mode also needs Deno, a further external program yt-dlp itself uses to solve YouTube&apos;s JavaScript challenges — without it, a signed-in (cookie) request, exactly what HD downloads rely on, sees severely limited format availability. Streaming mode, which never sends cookies, is largely unaffected and doesn&apos;t need Deno. Install Deno yourself and, if it is not on the PATH, set its full path in the Download &amp; play settings.&lt;/p&gt;&lt;p&gt;See &lt;b&gt;Help ▸ Contents ▸ Options&lt;/b&gt; for step-by-step instructions on exporting a cookies.txt file from your browser, and on installing Deno.&lt;/p&gt;&lt;p&gt;The stream &lt;b&gt;connection timeout&lt;/b&gt; (used mainly by live TV tuners) has moved to &lt;i&gt;Preferences ▸ TV and radio&lt;/i&gt;.&lt;/p&gt;&lt;p&gt;The &lt;b&gt;Proxy&lt;/b&gt; tab applies application-wide: both HTTP and SOCKS5 cover OpenSubtitles search and the update check; only HTTP additionally covers media playback and yt-dlp (they read the http_proxy/https_proxy convention directly instead of going through Qt&apos;s network stack, and there is no SOCKS5 equivalent for that convention).&lt;/p&gt;&lt;p&gt;The &lt;b&gt;Cast&lt;/b&gt; tab sets the port Play ▸ Cast ▸ Smartphone/tablet listens on. It&apos;s here (rather than only in the Cast dialog) so it stays fixed — set it once, allow that port through your firewall/router once, and casting keeps working without a new firewall prompt every time.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="168"/>
         <source>Play YouTube URLs with yt-dlp</source>
         <translation>Reprodueix els URL de YouTube amb yt-dlp</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="168"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="172"/>
         <source>When on, opening a YouTube URL runs yt-dlp instead of trying to play the page URL as-is.</source>
         <translation>Quan està activat, obrir un URL de YouTube executa yt-dlp en lloc d&apos;intentar reproduir l&apos;URL de la pàgina tal com és.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="181"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="185"/>
         <source>Open YouTube URLs by:</source>
         <translation>Obre els URL de YouTube mitjançant:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="182"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="186"/>
         <source>Streaming is fastest but caps at ~720p and can&apos;t use cookies. Downloading gets full HD (uses cookies + ffmpeg), then plays and deletes the file. Or hand off to your own external downloader tool.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="192"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="196"/>
         <source>Streaming (fast, up to ~720p)</source>
         <translation>Reproducció en flux (ràpid, fins a ~720p)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="193"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="197"/>
         <source>Downloading then playing (HD, cookies)</source>
         <translation>Baixa i després reprodueix (HD, galetes)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="194"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="198"/>
         <source>An external downloader tool</source>
         <translation>Una eina de baixada externa</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="202"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="209"/>
+        <source>Use managed yt-dlp</source>
+            <translation>Utilitza yt-dlp gestionat</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="213"/>
+        <source>When on, Vivace installs yt-dlp for you (see the button here) and can keep it updated automatically below. Turn this off to point at your own yt-dlp instead -- Vivace will not install or auto-update it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="221"/>
+        <source>Install / Update yt-dlp…</source>
+            <translation>Instal·la / actualitza yt-dlp…</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="230"/>
         <source>yt-dlp path:</source>
         <translation>Camí de yt-dlp:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="203"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="231"/>
         <source>Leave as &quot;yt-dlp&quot; if it is on your system PATH; otherwise enter the full path to the yt-dlp executable.</source>
         <translation>Deixeu &quot;yt-dlp&quot; si és al PATH del sistema; altrament, introduïu el camí complet a l&apos;executable yt-dlp.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="208"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="237"/>
         <source>yt-dlp (on PATH) or a full path</source>
         <translation>yt-dlp (al PATH) o un camí complet</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="213"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="243"/>
+        <source>Update yt-dlp automatically:</source>
+            <translation>Actualitza yt-dlp automàticament:</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="244"/>
+        <source>Runs yt-dlp&apos;s own self-update before playing a YouTube video. &quot;Every time&quot; adds a short delay to each play; the daily/weekly options check only that often. Failures (e.g. no network) are ignored and playback proceeds with whatever version is installed. Only applies to a managed yt-dlp.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="258"/>
+        <source>Never</source>
+            <translation>Mai</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="259"/>
+        <source>Every time yt-dlp runs</source>
+            <translation>Cada vegada que s&apos;executa yt-dlp</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="260"/>
+        <source>Once a day</source>
+            <translation>Un cop al dia</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="261"/>
+        <source>Once a week</source>
+            <translation>Un cop a la setmana</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="268"/>
         <source>Maximum quality:</source>
         <translation>Qualitat màxima:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="214"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="269"/>
         <source>Upper limit on resolution. Streaming is capped at ~720p regardless; downloading can reach this height in full HD.</source>
         <translation>Límit superior de resolució. La reproducció en flux es limita a ~720p de tota manera; la baixada pot arribar a aquesta alçada en HD complet.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="224"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="279"/>
         <source>360p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="225"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="280"/>
         <source>480p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="226"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="281"/>
         <source>720p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="227"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="282"/>
         <source>1080p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="228"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="283"/>
         <source>1440p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="229"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="284"/>
         <source>2160p (4K)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="230"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="285"/>
         <source>Best available</source>
         <translation>La millor disponible</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="245"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="300"/>
         <source>yt-dlp is a separate program and is not bundled with Vivace.</source>
         <translation>yt-dlp és un programa a part i no s&apos;inclou amb el Vivace.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="251"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="306"/>
         <source>Download &amp; play</source>
         <translation>Baixa i reprodueix</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="263"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="318"/>
         <source>Downloads the video (merging HD video and audio with ffmpeg), plays it, and keeps it in a cache folder so replaying it is instant. The cache holds the most recent downloads up to the size below; older ones are removed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="277"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="332"/>
         <source>Cookies file:</source>
         <translation>Fitxer de galetes:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="278"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="333"/>
         <source>Optional cookies.txt exported from your browser (yt-dlp --cookies); unlocks HD, members-only and age-restricted videos. Safe here — cookies only affect the download, not a stream a player must open. See Help ▸ Contents ▸ Options for step-by-step export instructions.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="292"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="347"/>
         <source>optional cookies.txt</source>
         <translation>cookies.txt (opcional)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="295"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="314"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="341"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="359"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="431"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="467"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="350"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="369"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="396"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="414"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="486"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="522"/>
         <source>Browse…</source>
         <translation>Navega…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="300"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="355"/>
         <source>ffmpeg location:</source>
         <translation>Ubicació de ffmpeg:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="301"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="356"/>
         <source>Folder containing ffmpeg (yt-dlp needs it to merge HD video+audio). Leave empty to use ffmpeg from the system PATH.</source>
         <translation>Carpeta que conté ffmpeg (yt-dlp el necessita per combinar vídeo i àudio HD). Deixeu-ho buit per usar ffmpeg del PATH del sistema.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="311"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="338"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="366"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="393"/>
         <source>empty = use PATH</source>
         <translation>buit = usa el PATH</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="319"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="374"/>
         <source>Deno path:</source>
         <translation>Camí de Deno:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="320"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="375"/>
         <source>yt-dlp uses a separate program, Deno, to solve YouTube&apos;s JavaScript challenges. It&apos;s most needed here: a signed-in (cookie) request — exactly what unlocks HD above — sees severely limited format availability without it. Streaming mode, which never sends cookies, is largely unaffected. Leave empty if &quot;deno&quot; is already on your system PATH; otherwise enter the full path to the deno executable. See Help ▸ Contents ▸ Options for installation instructions.</source>
         <translation>yt-dlp utilitza un programa separat, Deno, per resoldre els reptes de JavaScript de YouTube. És on més falta fa: una sol·licitud autenticada (amb cookies) — exactament el que desbloqueja l&apos;HD anterior — té una disponibilitat de formats molt limitada sense ell. El mode de transmissió, que mai envia cookies, gairebé no se&apos;n veu afectat. Deixeu-ho en blanc si «deno» ja és al PATH del sistema; en cas contrari, introduïu el camí complet a l&apos;executable de deno. Vegeu Ajuda ▸ Sumari ▸ Opcions per obtenir instruccions d&apos;instal·lació.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="346"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="401"/>
         <source>Cache folder:</source>
         <translation>Carpeta de memòria cau:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="347"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="402"/>
         <source>Where downloaded videos are kept for reuse. A video already here is replayed without downloading again.</source>
         <translation>On es guarden els vídeos baixats per reutilitzar-los. Un vídeo que ja hi és es reprodueix sense tornar-lo a baixar.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="364"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="419"/>
         <source>Cache size:</source>
         <translation>Mida de la memòria cau:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="365"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="420"/>
         <source>How many downloaded videos to keep. When the limit is reached, the least-recently-played one is deleted.</source>
         <translation>Quants vídeos baixats s&apos;han de conservar. En assolir el límit, s&apos;elimina el reproduït menys recentment.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="376"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="431"/>
         <source>files</source>
         <translation>fitxers</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="382"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="437"/>
         <source>Thumbnail fallback at:</source>
         <translation>Miniatura alternativa a:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="383"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="438"/>
         <source>The cache thumbnail is normally YouTube&apos;s own poster image. Only if that is missing or black does Vivace grab a video frame — this is how many seconds in (past a black intro).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="396"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="451"/>
         <source>seconds</source>
         <translation>segons</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="406"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="461"/>
         <source>External downloader tool</source>
         <translation>Eina de baixada externa</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="417"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="472"/>
         <source>Downloader command:</source>
         <translation>Ordre de baixada:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="418"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="473"/>
         <source>The program or .bat/.cmd script that downloads the video; it receives the URL as an argument.</source>
         <translation>El programa o script .bat/.cmd que baixa el vídeo; rep l&apos;URL com a argument.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="428"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="483"/>
         <source>e.g. C:ToolsYouTubeDL.bat</source>
         <translation>p. ex. C:\Tools\YouTubeDL.bat</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="436"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="491"/>
         <source>Arguments:</source>
         <translation>Arguments:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="437"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="492"/>
         <source>Arguments passed to the tool; the token {url} is replaced by the video URL (if omitted, the URL is appended). Add any cookies/format flags your tool needs here, e.g. --cookies C:pathcookies.txt.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="452"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="507"/>
         <source>Download folder:</source>
         <translation>Carpeta de baixades:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="453"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="508"/>
         <source>The folder the tool writes the finished file into; Vivace plays the newest media file that appears there, so set it to match your tool&apos;s output folder.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="464"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="519"/>
         <source>your tool&apos;s output folder</source>
         <translation>carpeta de sortida de la vostra eina</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="497"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="552"/>
         <source>Enable proxy</source>
         <translation>Habilita el servidor intermediari</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="501"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="556"/>
         <source>Applies to OpenSubtitles search and the update check (both proxy types). Only an HTTP proxy also applies to media playback and yt-dlp — a SOCKS5 proxy does not reach either, since neither goes through Qt&apos;s network stack.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="559"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="614"/>
         <source>The proxy password is stored securely using your operating system&apos;s credential manager.</source>
         <translation>La contrasenya del servidor intermediari es desa de manera segura mitjançant el gestor de credencials del sistema operatiu.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="589"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="644"/>
         <source>The port Play ▸ Cast ▸ Smartphone/tablet listens on. Kept fixed here (rather than editable each time in the Cast dialog) so you can allow it through your firewall/router once and it keeps working.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="611"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="666"/>
         <source>Your OS&apos;s firewall (and most routers) block an app listening on a fresh port until you allow it. Pick a port once here, allow Vivace through your firewall for it, and Cast will keep working without a new prompt each time.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="626"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="681"/>
         <source>Select the cookies.txt file</source>
         <translation>Seleccioneu el fitxer cookies.txt</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="632"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="687"/>
         <source>Select the deno executable</source>
         <translation>Seleccioneu l&apos;executable de deno</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="638"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="693"/>
         <source>Select the folder containing ffmpeg</source>
         <translation>Seleccioneu la carpeta que conté ffmpeg</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="643"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="698"/>
         <source>Select the download cache folder</source>
         <translation>Seleccioneu la carpeta de memòria cau de baixades</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="648"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="703"/>
         <source>Select the downloader program</source>
         <translation>Seleccioneu el programa de baixada</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="654"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="709"/>
         <source>Select the download folder</source>
         <translation>Seleccioneu la carpeta de baixades</translation>
     </message>
@@ -3961,97 +4001,97 @@
 <context>
     <name>PreferencesDialog</name>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="25"/>
+        <location filename="../qml/PreferencesDialog.qml" line="26"/>
         <source>Preferences</source>
         <translation>Preferències</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="78"/>
+        <location filename="../qml/PreferencesDialog.qml" line="79"/>
         <source>&lt;h1&gt;Help&lt;/h1&gt;&lt;p&gt;No help is available for this section.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="117"/>
+        <location filename="../qml/PreferencesDialog.qml" line="118"/>
         <source>General</source>
         <translation>General</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="118"/>
+        <location filename="../qml/PreferencesDialog.qml" line="119"/>
         <source>Drives</source>
         <translation>Unitats</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="119"/>
+        <location filename="../qml/PreferencesDialog.qml" line="120"/>
         <source>Subtitles</source>
         <translation>Subtítols</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="120"/>
+        <location filename="../qml/PreferencesDialog.qml" line="121"/>
         <source>Interface</source>
         <translation>Interfície</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="121"/>
+        <location filename="../qml/PreferencesDialog.qml" line="122"/>
         <source>Keyboard and mouse</source>
         <translation>Teclat i ratolí</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="122"/>
+        <location filename="../qml/PreferencesDialog.qml" line="123"/>
         <source>Playlist</source>
         <translation>Llista de reproducció</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="123"/>
+        <location filename="../qml/PreferencesDialog.qml" line="124"/>
         <source>TV and radio</source>
         <translation>TV i ràdio</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="124"/>
+        <location filename="../qml/PreferencesDialog.qml" line="125"/>
         <source>File types</source>
         <translation>Tipus de fitxers</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="125"/>
+        <location filename="../qml/PreferencesDialog.qml" line="126"/>
         <source>Updates</source>
         <translation>Actualitzacions</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="126"/>
+        <location filename="../qml/PreferencesDialog.qml" line="127"/>
         <source>Network</source>
         <translation>Xarxa</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="127"/>
+        <location filename="../qml/PreferencesDialog.qml" line="128"/>
         <source>Advanced</source>
         <translation>Avançat</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="173"/>
+        <location filename="../qml/PreferencesDialog.qml" line="176"/>
         <source>&amp;Help</source>
         <translation>&amp;Ajuda</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="178"/>
+        <location filename="../qml/PreferencesDialog.qml" line="181"/>
         <source>OK</source>
         <translation>D&apos;ac&amp;ord</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="182"/>
+        <location filename="../qml/PreferencesDialog.qml" line="185"/>
         <source>Apply</source>
         <translation>Aplica</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="188"/>
+        <location filename="../qml/PreferencesDialog.qml" line="191"/>
         <source>Cancel</source>
         <translation>Cancel·la</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="197"/>
+        <location filename="../qml/PreferencesDialog.qml" line="200"/>
         <source>Vivace — Help</source>
         <translation>Vivace — Ajuda</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="245"/>
+        <location filename="../qml/PreferencesDialog.qml" line="248"/>
         <source>Close</source>
         <translation>Tanca</translation>
     </message>
@@ -4561,76 +4601,76 @@
 <context>
     <name>YoutubeResolver</name>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="231"/>
+        <location filename="../src/youtuberesolver.cpp" line="320"/>
         <source>Could not create the download cache folder.</source>
         <translation>No s&apos;ha pogut crear la carpeta de memòria cau de baixades.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="245"/>
+        <location filename="../src/youtuberesolver.cpp" line="334"/>
         <source>Could not determine the video id to download.</source>
         <translation>No s&apos;ha pogut determinar l&apos;id del vídeo a baixar.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="332"/>
+        <location filename="../src/youtuberesolver.cpp" line="440"/>
         <source>Could not run yt-dlp (&quot;%1&quot;). Check the path in Preferences &gt; Network.</source>
         <translation>No s&apos;ha pogut executar yt-dlp (&quot;%1&quot;). Comproveu el camí a Preferències &gt; Xarxa.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="354"/>
+        <location filename="../src/youtuberesolver.cpp" line="462"/>
         <source>yt-dlp did not finish normally.</source>
         <translation>yt-dlp no ha finalitzat correctament.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="361"/>
+        <location filename="../src/youtuberesolver.cpp" line="469"/>
         <source>yt-dlp exited with code %1.</source>
         <translation>yt-dlp ha finalitzat amb el codi %1.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="376"/>
+        <location filename="../src/youtuberesolver.cpp" line="484"/>
         <source>yt-dlp returned no playable stream.</source>
         <translation>yt-dlp no ha retornat cap flux reproduïble.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="398"/>
+        <location filename="../src/youtuberesolver.cpp" line="506"/>
         <source>The download did not finish normally.</source>
         <translation>La baixada no ha finalitzat correctament.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="401"/>
+        <location filename="../src/youtuberesolver.cpp" line="509"/>
         <source>yt-dlp produced no file (exit code %1). If this is an HD video, check the ffmpeg and Deno paths.</source>
         <translation>yt-dlp no ha generat cap fitxer (codi de sortida %1). Si es tracta d&apos;un vídeo HD, comproveu els camins de ffmpeg i Deno.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="656"/>
+        <location filename="../src/youtuberesolver.cpp" line="764"/>
         <source>Could not create the destination folder</source>
-        <translation>No s'ha pogut crear la carpeta de destinació</translation>
+        <translation>No s&apos;ha pogut crear la carpeta de destinació</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="672"/>
+        <location filename="../src/youtuberesolver.cpp" line="780"/>
         <source>File no longer exists</source>
         <translation>El fitxer ja no existeix</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="694"/>
+        <location filename="../src/youtuberesolver.cpp" line="802"/>
         <source>Could not move the file</source>
-        <translation>No s'ha pogut moure el fitxer</translation>
+        <translation>No s&apos;ha pogut moure el fitxer</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="695"/>
+        <location filename="../src/youtuberesolver.cpp" line="803"/>
         <source>Could not copy the file</source>
-        <translation>No s'ha pogut copiar el fitxer</translation>
+        <translation>No s&apos;ha pogut copiar el fitxer</translation>
     </message>
     <message>
         <source>yt-dlp produced no file (exit code %1). If this is an HD video, check the ffmpeg location.</source>
         <translation type="vanished">yt-dlp no ha produït cap fitxer (codi de sortida %1). Si és un vídeo HD, comproveu la ubicació de ffmpeg.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="815"/>
+        <location filename="../src/youtuberesolver.cpp" line="923"/>
         <source>Could not write %1.</source>
         <translation>No s&apos;ha pogut escriure %1.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="821"/>
+        <location filename="../src/youtuberesolver.cpp" line="929"/>
         <source>Could not save %1.</source>
         <translation>No s&apos;ha pogut desar %1.</translation>
     </message>
@@ -4638,57 +4678,56 @@
 <context>
     <name>YoutubeSupportDialog</name>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="22"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="26"/>
         <source>Install / Update YouTube support</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="63"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="66"/>
         <source>yt-dlp was installed successfully as:</source>
         <translation>yt-dlp s&apos;ha instal·lat correctament com a:</translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="64"/>
         <source>YouTube playback is now enabled.</source>
-        <translation>La reproducció de YouTube ara està activada.</translation>
+        <translation type="vanished">La reproducció de YouTube ara està activada.</translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="68"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="70"/>
         <source>The download failed:</source>
         <translation>La baixada ha fallat:</translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="84"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="86"/>
         <source>To play YouTube videos, Vivace uses an external program called yt-dlp.</source>
         <translation>Per reproduir vídeos de YouTube, el Vivace usa un programa extern anomenat yt-dlp.</translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="87"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="89"/>
         <source>Vivace can download the latest version from the official website and install it as:</source>
         <translation>El Vivace pot baixar l&apos;última versió del lloc web oficial i instal·lar-la com a:</translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="90"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="92"/>
         <source>Would you like to proceed?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="98"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="100"/>
         <source>Downloading yt-dlp…</source>
         <translation>S&apos;està baixant yt-dlp…</translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="122"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="124"/>
         <source>Install</source>
         <translation>Instal·la</translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="131"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="133"/>
         <source>Cancel</source>
         <translation>Cancel·la</translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="136"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="138"/>
         <source>Close</source>
         <translation>Tanca</translation>
     </message>

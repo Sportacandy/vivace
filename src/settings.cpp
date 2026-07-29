@@ -63,6 +63,7 @@ constexpr auto proxyUsername = "network/proxyUsername";
 constexpr auto proxyPassword = "network/proxyPassword";
 constexpr auto youtubeEnabled = "youtube/enabled";
 constexpr auto ytdlPath = "youtube/ytdlPath";
+constexpr auto youtubeUseManagedYtdlp = "youtube/useManagedYtdlp";
 constexpr auto youtubeQuality = "youtube/quality";
 constexpr auto youtubeMode = "youtube/mode";
 constexpr auto youtubeCookiesFile = "youtube/cookiesFile";
@@ -75,6 +76,8 @@ constexpr auto youtubeCacheThumbSize = "youtube/cacheThumbSize";
 constexpr auto youtubeDownloaderCommand = "youtube/downloaderCommand";
 constexpr auto youtubeDownloaderArgs = "youtube/downloaderArgs";
 constexpr auto youtubeDownloadFolder = "youtube/downloadFolder";
+constexpr auto youtubeAutoUpdate = "youtube/autoUpdate";
+constexpr auto youtubeLastAutoUpdateCheck = "youtube/lastAutoUpdateCheck";
 constexpr auto updateCheckEnabled = "updates/checkEnabled";
 constexpr auto updateCheckIntervalDays = "updates/checkIntervalDays";
 constexpr auto updateLastCheck = "updates/lastCheck";
@@ -244,6 +247,8 @@ Settings::Settings(QObject *parent)
       m_youtubeEnabled(m_store.value(Keys::youtubeEnabled, false).toBool()),
       m_ytdlPath(m_store.value(Keys::ytdlPath, QStringLiteral("yt-dlp"))
                          .toString()),
+      m_youtubeUseManagedYtdlp(
+              m_store.value(Keys::youtubeUseManagedYtdlp, true).toBool()),
       m_youtubeQuality(m_store.value(Keys::youtubeQuality, 720).toInt()),
       m_youtubeMode(qBound(0, m_store.value(Keys::youtubeMode, 0).toInt(), 2)),
       m_youtubeCookiesFile(m_store.value(Keys::youtubeCookiesFile).toString()),
@@ -265,6 +270,10 @@ Settings::Settings(QObject *parent)
                                             QStringLiteral("{url}")).toString()),
       m_youtubeDownloadFolder(
               m_store.value(Keys::youtubeDownloadFolder).toString()),
+      m_youtubeAutoUpdate(
+              qBound(0, m_store.value(Keys::youtubeAutoUpdate, 0).toInt(), 3)),
+      m_youtubeLastAutoUpdateCheck(
+              m_store.value(Keys::youtubeLastAutoUpdateCheck).toString()),
       m_updateCheckEnabled(
               m_store.value(Keys::updateCheckEnabled, true).toBool()),
       m_updateCheckIntervalDays(
@@ -1163,6 +1172,15 @@ void Settings::setYtdlPath(const QString &path)
     emit youtubeChanged();
 }
 
+void Settings::setYoutubeUseManagedYtdlp(bool managed)
+{
+    if (managed == m_youtubeUseManagedYtdlp)
+        return;
+    m_youtubeUseManagedYtdlp = managed;
+    m_store.setValue(Keys::youtubeUseManagedYtdlp, managed);
+    emit youtubeChanged();
+}
+
 void Settings::setYoutubeQuality(int height)
 {
     if (height == m_youtubeQuality)
@@ -1274,6 +1292,24 @@ void Settings::setYoutubeDownloadFolder(const QString &folder)
         return;
     m_youtubeDownloadFolder = folder;
     m_store.setValue(Keys::youtubeDownloadFolder, folder);
+    emit youtubeChanged();
+}
+
+void Settings::setYoutubeAutoUpdate(int policy)
+{
+    if (policy == m_youtubeAutoUpdate)
+        return;
+    m_youtubeAutoUpdate = policy;
+    m_store.setValue(Keys::youtubeAutoUpdate, policy);
+    emit youtubeChanged();
+}
+
+void Settings::setYoutubeLastAutoUpdateCheck(const QString &isoDateTime)
+{
+    if (isoDateTime == m_youtubeLastAutoUpdateCheck)
+        return;
+    m_youtubeLastAutoUpdateCheck = isoDateTime;
+    m_store.setValue(Keys::youtubeLastAutoUpdateCheck, isoDateTime);
     emit youtubeChanged();
 }
 

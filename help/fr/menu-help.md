@@ -9,9 +9,6 @@ Le menu **Aide**.
 - **Rechercher des mises à jour** — voir si une version plus récente de Vivace
   est disponible. Les vérifications automatiques s'activent dans
   *Préférences ▸ Mises à jour*.
-- **Installer / Mettre à jour la prise en charge de YouTube** — télécharger ou
-  mettre à jour `yt-dlp`, l'utilitaire dont Vivace se sert pour lire les liens
-  YouTube (voir *Préférences ▸ Réseau*).
 - **À propos de Vivace** — version, versions de Qt, remerciements et licence.
 
 Vivace est un lecteur multimédia entièrement en Qt, conçu de zéro et inspiré de

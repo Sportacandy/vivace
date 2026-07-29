@@ -26,6 +26,29 @@ The **Options** menu holds preferences and interface configuration.
 **Tip:** the overall layout (Basic / Mini / MPC) is chosen under
 *Preferences ▸ Interface*.
 
+## Installing and updating yt-dlp
+
+*Preferences ▸ Network ▸ YouTube* has a **Use managed yt-dlp** checkbox that
+controls how Vivace gets and maintains the `yt-dlp` program it uses to play
+YouTube links:
+
+- **On** (the default) — Vivace can install `yt-dlp` for you and keep it
+  current. The **yt-dlp path:** field is fixed to Vivace's own copy and
+  can't be edited directly; use the **Install / Update yt-dlp…** button
+  (next to the checkbox) whenever you want to fetch the latest official
+  release. The **Update yt-dlp automatically:** setting also becomes
+  available, letting Vivace run this update on its own — **Never**, before
+  **Every time yt-dlp runs**, or once a **day**/**week**. An automatic
+  update runs right before a YouTube URL is actually resolved or downloaded,
+  so the first play after it becomes due takes a little longer; if the
+  update itself fails (e.g. no network), Vivace quietly proceeds with
+  whatever version is already installed rather than blocking playback.
+- **Off** — for a yt-dlp you manage yourself (e.g. installed via `pip` or
+  your OS package manager). The **yt-dlp path:** field becomes editable so
+  you can point it at that copy, and **Update yt-dlp automatically** is
+  disabled — Vivace never installs or updates a yt-dlp it doesn't manage.
+  The **Install / Update yt-dlp…** button is also disabled in this mode.
+
 ## Exporting cookies for YouTube downloads
 
 The **Cookies file:** field (*Preferences ▸ Network ▸ YouTube*) lets the

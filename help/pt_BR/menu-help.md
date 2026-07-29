@@ -7,9 +7,6 @@ O menu **Ajuda**.
   abrem o tópico relacionado aqui; links externos abrem no seu navegador web.
 - **Verificar atualizações** — ver se há uma versão mais recente do Vivace. As
   verificações automáticas podem ser ativadas em *Preferências ▸ Atualizações*.
-- **Instalar / Atualizar o suporte ao YouTube** — baixar ou atualizar o `yt-dlp`,
-  o utilitário que o Vivace usa para reproduzir links do YouTube (veja
-  *Preferências ▸ Rede*).
 - **Sobre o Vivace** — versão, versões do Qt, créditos e licença.
 
 O Vivace é um reprodutor de mídia em Qt puro, criado do zero e inspirado no

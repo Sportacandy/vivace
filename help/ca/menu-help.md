@@ -8,9 +8,6 @@ El menú **Ajuda**.
   s'obren al navegador web.
 - **Comprova si hi ha actualitzacions** — veure si hi ha una versió més recent del
   Vivace. Les comprovacions automàtiques es poden activar a *Preferències ▸ Actualitzacions*.
-- **Instal·la / Actualitza la compatibilitat amb YouTube** — baixar o actualitzar
-  el `yt-dlp`, la utilitat que el Vivace fa servir per reproduir enllaços de
-  YouTube (vegeu *Preferències ▸ Xarxa*).
 - **Quant al Vivace** — versió, versions de Qt, crèdits i llicència.
 
 El Vivace és un reproductor multimèdia en Qt pur, creat des de zero i inspirat en

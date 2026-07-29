@@ -8,9 +8,6 @@ Das Menü **Hilfe**.
   sich im Webbrowser.
 - **Nach Updates suchen** — prüfen, ob ein neueres Vivace verfügbar ist.
   Automatische Prüfungen können unter *Einstellungen ▸ Updates* aktiviert werden.
-- **YouTube-Unterstützung installieren / aktualisieren** — `yt-dlp`
-  herunterladen oder aktualisieren, das Hilfsprogramm, mit dem Vivace
-  YouTube-Links abspielt (siehe *Einstellungen ▸ Netzwerk*).
 - **Über Vivace** — Version, Qt-Versionen, Danksagungen und Lizenz.
 
 Vivace ist ein von Grund auf neu entwickelter, reiner Qt-Mediaplayer, inspiriert

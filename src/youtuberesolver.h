@@ -19,6 +19,8 @@
 #ifndef YOUTUBERESOLVER_H
 #define YOUTUBERESOLVER_H
 
+#include <functional>
+
 #include <QNetworkAccessManager>
 #include <QObject>
 #include <QProcess>
@@ -73,8 +75,27 @@ class YoutubeResolver : public QObject
     // True only while a download() (mode 1) is in progress, for the busy overlay
     // (streaming resolve() also sets busy but is quick).
     Q_PROPERTY(bool downloading READ downloading NOTIFY downloadingChanged)
-    // True while yt-dlp itself is being downloaded/updated.
+    // True while yt-dlp itself is being downloaded/updated (installOrUpdate(),
+    // the "yt-dlp isn't installed yet" flow -- not the per-invocation
+    // self-update below, which is much quicker and doesn't toggle this).
     Q_PROPERTY(bool installing READ installing NOTIFY installingChanged)
+    // Automatic self-update cadence applied before every resolve()/download()
+    // call: 0 = never, 1 = every invocation, 2 = once a day, 3 = once a week.
+    // Runs "<ytdlPath> -U" (yt-dlp's own self-update); failures are ignored
+    // (proceed with whatever is installed) so a self-update problem (offline,
+    // or a non-standalone install that rejects -U) never blocks playback.
+    Q_PROPERTY(int autoUpdatePolicy READ autoUpdatePolicy
+                       WRITE setAutoUpdatePolicy NOTIFY autoUpdatePolicyChanged)
+    // ISO date-time of the last daily/weekly auto-update check; bound from and
+    // written back to Settings.youtubeLastAutoUpdateCheck (see Main.qml) so
+    // the cadence survives a restart.
+    Q_PROPERTY(QString lastAutoUpdateCheck READ lastAutoUpdateCheck
+                       WRITE setLastAutoUpdateCheck NOTIFY lastAutoUpdateCheckChanged)
+    // False for a user-supplied yt-dlp (a custom ytdlPath): the auto-update
+    // cadence above never runs, regardless of autoUpdatePolicy -- Vivace
+    // never touches a yt-dlp it doesn't manage.
+    Q_PROPERTY(bool useManagedYtdlp READ useManagedYtdlp
+                       WRITE setUseManagedYtdlp NOTIFY useManagedYtdlpChanged)
 
 public:
     explicit YoutubeResolver(QObject *parent = nullptr);
@@ -119,6 +140,12 @@ public:
     bool busy() const { return m_busy; }
     bool downloading() const { return m_downloading; }
     bool installing() const { return m_installing; }
+    int autoUpdatePolicy() const { return m_autoUpdatePolicy; }
+    void setAutoUpdatePolicy(int policy);
+    QString lastAutoUpdateCheck() const { return m_lastAutoUpdateCheck; }
+    void setLastAutoUpdateCheck(const QString &isoDateTime);
+    bool useManagedYtdlp() const { return m_useManagedYtdlp; }
+    void setUseManagedYtdlp(bool managed);
 
     // Where installOrUpdate() would place the yt-dlp binary (in-place if
     // ytdlPath is already an absolute file, else the app data dir).
@@ -161,6 +188,9 @@ signals:
     void cacheCountChanged();
     void busyChanged();
     void downloadingChanged();
+    void autoUpdatePolicyChanged();
+    void lastAutoUpdateCheckChanged();
+    void useManagedYtdlpChanged();
     // mediaUrl is directly playable; title is the video title; pageUrl echoes
     // the original request.
     void resolved(const QUrl &mediaUrl, const QString &title, const QUrl &pageUrl);
@@ -185,6 +215,13 @@ private:
     void onReadyRead();
     void finishResolve(int exitCode, QProcess::ExitStatus status);
     void finishDownload(int exitCode, QProcess::ExitStatus status);
+    void startResolve(const QString &requestUrl);
+    void startDownload(const QString &requestUrl);
+    // Runs the auto-update step (if due) then calls next(); calls next()
+    // immediately when no update is due.
+    void maybeAutoUpdateThen(const std::function<void()> &next);
+    bool isAutoUpdateDue() const;
+    void recordAutoUpdateCheck(); // stamps lastAutoUpdateCheck (daily/weekly only)
     // The cached file for a video id ("…[<id>].<ext>"), or empty if not cached.
     QString cachedFileForId(const QString &id) const;
     void touchFile(const QString &path) const;  // bump mtime (LRU last-used)
@@ -206,6 +243,7 @@ private:
     static QString defaultBinName();
 
     QProcess *m_process = nullptr;
+    QProcess *m_updateProcess = nullptr; // transient "<ytdlPath> -U" self-update
     QNetworkAccessManager m_net;
     QString m_ytdlPath = QStringLiteral("yt-dlp");
     int m_preferredHeight = 720;
@@ -219,6 +257,9 @@ private:
     bool m_busy = false;
     bool m_downloading = false;
     bool m_installing = false;
+    int m_autoUpdatePolicy = 0;
+    QString m_lastAutoUpdateCheck;
+    bool m_useManagedYtdlp = true;
     Op m_op = Op::None;              // which operation m_process is running
     QString m_downloadId;            // video id of the in-flight download
     QUrl m_pageUrl; // the request currently in flight

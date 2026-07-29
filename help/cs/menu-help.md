@@ -7,9 +7,6 @@ Nabídka **Nápověda**.
   téma; externí odkazy se otevřou ve webovém prohlížeči.
 - **Zkontrolovat aktualizace** — zjistit, zda je dostupná novější verze Vivace.
   Automatické kontroly lze zapnout v *Předvolby ▸ Aktualizace*.
-- **Nainstalovat / aktualizovat podporu YouTube** — stáhnout nebo aktualizovat
-  `yt-dlp`, pomocný program, který Vivace používá k přehrávání odkazů YouTube
-  (viz *Předvolby ▸ Síť*).
 - **O programu Vivace** — verze, verze Qt, poděkování a licence.
 
 Vivace je od základu vytvořený přehrávač médií čistě v Qt, inspirovaný SMPlayer,

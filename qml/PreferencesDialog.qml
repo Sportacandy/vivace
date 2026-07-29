@@ -21,6 +21,7 @@ Window {
     id: prefsDialog
 
     required property PlayerController controller
+    required property YoutubeSupportDialog youtubeInstallDialog
 
     title: qsTr("Preferences")
     modality: Qt.WindowModal
@@ -160,7 +161,9 @@ Window {
                 PrefTVPage {}
                 PrefFileTypesPage {}
                 PrefUpdatesPage {}
-                PrefNetworkPage {}
+                PrefNetworkPage {
+                    youtubeInstallDialog: prefsDialog.youtubeInstallDialog
+                }
                 PrefAdvancedPage { controller: prefsDialog.controller }
             }
         }

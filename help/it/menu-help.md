@@ -8,9 +8,6 @@ Il menu **Aiuto**.
   esterni si aprono nel browser web.
 - **Controlla aggiornamenti** — vedere se è disponibile una versione più recente
   di Vivace. I controlli automatici si attivano in *Preferenze ▸ Aggiornamenti*.
-- **Installa / Aggiorna il supporto YouTube** — scaricare o aggiornare `yt-dlp`,
-  l'utilità che Vivace usa per riprodurre i collegamenti YouTube (vedi
-  *Preferenze ▸ Rete*).
 - **Informazioni su Vivace** — versione, versioni di Qt, crediti e licenza.
 
 Vivace è un lettore multimediale in puro Qt, creato da zero e ispirato a
