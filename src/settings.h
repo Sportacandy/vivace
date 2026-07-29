@@ -77,6 +77,11 @@ class Settings : public QObject
                WRITE setRememberGeometry NOTIFY rememberGeometryChanged)
     Q_PROPERTY(QRect windowGeometry READ windowGeometry WRITE setWindowGeometry
                NOTIFY windowGeometryChanged)
+    // Only used when Playlist ▸ Playlist style is "Separate window"
+    // (Settings.playlistAsWindow); gated by the same rememberGeometry
+    // toggle as the main window.
+    Q_PROPERTY(QRect playlistWindowGeometry READ playlistWindowGeometry
+               WRITE setPlaylistWindowGeometry NOTIFY playlistWindowGeometryChanged)
     Q_PROPERTY(bool restorePlaylist READ restorePlaylist WRITE setRestorePlaylist
                NOTIFY restorePlaylistChanged)
     Q_PROPERTY(bool playOnLoadPlaylist READ playOnLoadPlaylist
@@ -411,6 +416,9 @@ public:
 
     QRect windowGeometry() const { return m_windowGeometry; }
     void setWindowGeometry(const QRect &geometry);
+
+    QRect playlistWindowGeometry() const { return m_playlistWindowGeometry; }
+    void setPlaylistWindowGeometry(const QRect &geometry);
 
     bool restorePlaylist() const { return m_restorePlaylist; }
     void setRestorePlaylist(bool restore);
@@ -747,6 +755,7 @@ signals:
     void audioDeviceDelaysChanged();
     void rememberGeometryChanged();
     void windowGeometryChanged();
+    void playlistWindowGeometryChanged();
     void restorePlaylistChanged();
     void playOnLoadPlaylistChanged();
     void ignorePlaybackErrorsChanged();
@@ -854,6 +863,7 @@ private:
     int m_audioDeviceDelaysRevision = 0;
     bool m_rememberGeometry;
     QRect m_windowGeometry;
+    QRect m_playlistWindowGeometry;
     bool m_restorePlaylist;
     bool m_playOnLoadPlaylist;
     bool m_ignorePlaybackErrors;

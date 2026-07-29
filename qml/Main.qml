@@ -16,6 +16,7 @@ import QtQuick.Layouts
 import QtMultimedia
 import Qt.labs.platform as Platform
 import "ToolbarItems.js" as ToolbarItems
+import "GeometryUtils.js" as GeometryUtils
 
 // (FolderDialog also comes from QtQuick.Dialogs)
 
@@ -69,28 +70,6 @@ ApplicationWindow {
 
     function toggleFullscreen() {
         visibility = fullscreen ? Window.Windowed : Window.FullScreen
-    }
-
-    // True if enough of rect (x,y,w,h) — in virtual-desktop coordinates —
-    // overlaps some CURRENTLY CONNECTED screen to be seen and dragged back
-    // into view (a title bar's worth, not just one stray pixel). Checked
-    // against every screen in Qt.application.screens, not just whichever
-    // screen the window itself currently resolves to, since a remembered
-    // rect from a monitor that has since been unplugged/rearranged can
-    // otherwise still read back as "on screen" on some platforms until the
-    // window is actually moved.
-    function rectVisibleOnAnyScreen(x, y, w, h) {
-        const minVisibleWidth = 100
-        const minVisibleHeight = 30
-        const screens = Qt.application.screens
-        for (let i = 0; i < screens.length; ++i) {
-            const s = screens[i]
-            const overlapW = Math.min(x + w, s.virtualX + s.width) - Math.max(x, s.virtualX)
-            const overlapH = Math.min(y + h, s.virtualY + s.height) - Math.max(y, s.virtualY)
-            if (overlapW >= minVisibleWidth && overlapH >= minVisibleHeight)
-                return true
-        }
-        return false
     }
 
     // Center on screen and/or keep the window inside the available area
@@ -211,7 +190,7 @@ ApplicationWindow {
                 // doesn't fit, keep the size but fall back to the default
                 // placement (applyWindowPlacement below then centers it, or
                 // the OS places it, depending on preferences).
-                if (root.rectVisibleOnAnyScreen(g.x, g.y, g.width, g.height)) {
+                if (GeometryUtils.rectVisibleOnAnyScreen(g.x, g.y, g.width, g.height)) {
                     root.x = g.x
                     root.y = g.y
                 }
@@ -1213,18 +1192,37 @@ ApplicationWindow {
                 Settings.lastOpenFolder = currentFolder
             playerController.open(selectedFiles)
         }
+        // Same fallback as directoryDialog: default to the platform's
+        // standard videos folder when there's no remembered folder yet.
         Component.onCompleted: {
-            if (Settings.rememberLastDir
-                    && Settings.lastOpenFolder.toString() !== "")
-                currentFolder = Settings.lastOpenFolder
+            currentFolder = (Settings.rememberLastDir
+                              && Settings.lastOpenFolder.toString() !== "")
+                    ? Settings.lastOpenFolder
+                    : Platform.StandardPaths.writableLocation(
+                          Platform.StandardPaths.MoviesLocation)
         }
     }
 
     FolderDialog {
         id: directoryDialog
         options: Settings.useNativeFileDialog ? 0 : FolderDialog.DontUseNativeDialog
-        onAccepted: playerController.openDirectory(
+        onAccepted: {
+            if (Settings.rememberLastDir)
+                Settings.lastOpenFolder = selectedFolder
+            playerController.openDirectory(
                         selectedFolder, Settings.addDirectoriesRecursively)
+        }
+        // Reuse the remembered last-opened folder if there is one (same as
+        // the other Open dialogs); otherwise default to the platform's
+        // standard videos folder rather than whatever the OS's own
+        // no-hint default happens to be.
+        Component.onCompleted: {
+            currentFolder = (Settings.rememberLastDir
+                              && Settings.lastOpenFolder.toString() !== "")
+                    ? Settings.lastOpenFolder
+                    : Platform.StandardPaths.writableLocation(
+                          Platform.StandardPaths.MoviesLocation)
+        }
     }
 
     FolderDialog {
@@ -1252,10 +1250,13 @@ ApplicationWindow {
                 Settings.lastOpenFolder = currentFolder
             playerController.open([selectedFile])
         }
+        // Same fallback as directoryDialog/fileDialog.
         Component.onCompleted: {
-            if (Settings.rememberLastDir
-                    && Settings.lastOpenFolder.toString() !== "")
-                currentFolder = Settings.lastOpenFolder
+            currentFolder = (Settings.rememberLastDir
+                              && Settings.lastOpenFolder.toString() !== "")
+                    ? Settings.lastOpenFolder
+                    : Platform.StandardPaths.writableLocation(
+                          Platform.StandardPaths.MoviesLocation)
         }
     }
 

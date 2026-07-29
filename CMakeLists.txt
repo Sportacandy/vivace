@@ -31,6 +31,7 @@ qt_add_qml_module(vivace
         qml/Main.qml
         qml/Theme.qml
         qml/ToolbarItems.js
+        qml/GeometryUtils.js
         qml/ToolbarEditor.qml
         qml/MainMenuBar.qml
         qml/MainToolBar.qml

@@ -30,6 +30,15 @@ each get their own entry instead.
   Cancel (matching Windows convention), and its toolbar has a visible gap
   between the Save and Remove buttons' help marks so the two aren't
   mistaken for one control.
+- Open ▸ File / Directory / Playlist now default to your Videos folder the
+  very first time (before any folder has been remembered), instead of an
+  arbitrary OS-chosen location; Open ▸ Directory also now remembers its
+  own last-used folder like the other Open dialogs already did.
+- The separate Playlist window (Preferences ▸ Playlist ▸ Playlist style =
+  "Separate window") now remembers its position and size across restarts,
+  with the same off-screen safety check as the main window: the remembered
+  size is always restored, but the position falls back to a safe default
+  if it no longer lands on a currently connected screen.
 
 ### Added
 - A **Save ▾** button in the YouTube cache window (alongside the existing

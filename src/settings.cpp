@@ -41,6 +41,7 @@ constexpr auto seekWheelStep = "playback/seekWheelStep";
 constexpr auto audioDeviceDelays = "playback/audioDeviceDelays";
 constexpr auto rememberGeometry = "ui/rememberGeometry";
 constexpr auto windowGeometry = "ui/windowGeometry";
+constexpr auto playlistWindowGeometry = "ui/playlistWindowGeometry";
 constexpr auto restorePlaylist = "playlist/restoreOnStartup";
 constexpr auto playOnLoadPlaylist = "playlist/playOnLoad";
 constexpr auto ignorePlaybackErrors = "playlist/ignoreErrors";
@@ -212,6 +213,8 @@ Settings::Settings(QObject *parent)
               qBound(1, m_store.value(Keys::seekWheelStep, 10).toInt(), 600)),
       m_rememberGeometry(m_store.value(Keys::rememberGeometry, true).toBool()),
       m_windowGeometry(m_store.value(Keys::windowGeometry).toRect()),
+      m_playlistWindowGeometry(
+              m_store.value(Keys::playlistWindowGeometry).toRect()),
       m_restorePlaylist(m_store.value(Keys::restorePlaylist, false).toBool()),
       m_playOnLoadPlaylist(
               m_store.value(Keys::playOnLoadPlaylist, true).toBool()),
@@ -966,6 +969,15 @@ void Settings::setWindowGeometry(const QRect &geometry)
     m_windowGeometry = geometry;
     m_store.setValue(Keys::windowGeometry, geometry);
     emit windowGeometryChanged();
+}
+
+void Settings::setPlaylistWindowGeometry(const QRect &geometry)
+{
+    if (geometry == m_playlistWindowGeometry)
+        return;
+    m_playlistWindowGeometry = geometry;
+    m_store.setValue(Keys::playlistWindowGeometry, geometry);
+    emit playlistWindowGeometryChanged();
 }
 
 void Settings::setRestorePlaylist(bool restore)
