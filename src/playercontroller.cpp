@@ -693,6 +693,7 @@ void PlayerController::open(const QList<QUrl> &urls)
                             dir.absoluteFilePath(name)), QString() });
                 m_player->stop();
                 m_playlist->clear();
+                detachCurrentPlaylistFile();
                 m_playlist->add(entries);
                 // add() may reorder (auto sort), so locate the opened file.
                 const QUrl openedUrl =
@@ -746,6 +747,7 @@ void PlayerController::openStream(const QUrl &mediaUrl, const QString &title)
 
     m_player->stop();
     m_playlist->clear();
+    detachCurrentPlaylistFile();
     m_playlist->add({ { mediaUrl, title } });
     playAt(0);
 }
@@ -918,6 +920,7 @@ bool PlayerController::openDvd(const QUrl &folder)
     saveCurrentPosition();
     m_player->stop();
     m_playlist->clear();
+    detachCurrentPlaylistFile();
 
     if (m_dvdDevice)
         m_dvdDevice->deleteLater();
@@ -979,6 +982,7 @@ bool PlayerController::applyDvdTitle(const DvdIfo::Title &title,
     saveCurrentPosition();
     m_player->stop();
     m_playlist->clear();
+    detachCurrentPlaylistFile();
 
     if (m_dvdDevice)
         m_dvdDevice->deleteLater();
@@ -1222,6 +1226,7 @@ bool PlayerController::playMenuPgc(int vts, int pgcNumber, bool runPre, int dept
     saveCurrentPosition();
     m_player->stop();
     m_playlist->clear();
+    detachCurrentPlaylistFile();
     if (m_dvdDevice)
         m_dvdDevice->deleteLater();
     m_dvdDevice = device;
@@ -1798,6 +1803,7 @@ void PlayerController::openDirectory(const QUrl &directory, bool recursive)
 
     m_player->stop();
     m_playlist->clear();
+    detachCurrentPlaylistFile();
     m_playlist->add(entries);
     playIndex(0, /*resume=*/true); // opening a folder resumes its first file
 }
@@ -2810,6 +2816,14 @@ void PlayerController::selectPreferredTracks()
                                                m_preferredSubtitleLanguages);
         if (index >= 0)
             m_player->setActiveSubtitleTrack(index);
+    }
+}
+
+void PlayerController::detachCurrentPlaylistFile()
+{
+    if (!m_currentPlaylistFile.isEmpty()) {
+        m_currentPlaylistFile = QUrl();
+        emit currentPlaylistFileChanged();
     }
 }
 

@@ -39,6 +39,15 @@ each get their own entry instead.
   with the same off-screen safety check as the main window: the remembered
   size is always restored, but the position falls back to a safe default
   if it no longer lands on a currently connected screen.
+- The Playlist panel/window's header now shows the loaded playlist file's
+  name (e.g. "Playlist: MyList (12)") instead of the generic "Playlist
+  (12)" whenever the in-memory playlist corresponds to a saved `.m3u`/
+  `.m3u8` file; it falls back to the generic label once plain media (a
+  folder, a DVD, a single file/stream) replaces it. Fixed several places
+  that could leave a stale playlist-file association behind after such a
+  replacement — Open ▸ Directory, DVD title/menu playback, opening a
+  single stream, and the "auto-add files from the same folder" case — so
+  the header no longer keeps showing a previously loaded playlist's name.
 
 ### Added
 - A **Save ▾** button in the YouTube cache window (alongside the existing

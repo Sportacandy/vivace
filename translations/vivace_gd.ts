@@ -1886,257 +1886,257 @@
         <translation>Dàil A/V: %1 ms</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="962"/>
+        <location filename="../src/playercontroller.cpp" line="965"/>
         <source>DVD title %1 could not be assembled</source>
         <translation>Cha b&apos; urrainn tiotal DVD %1 a chur ri chèile</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="968"/>
+        <location filename="../src/playercontroller.cpp" line="971"/>
         <source>DVD title %1 could not be opened</source>
         <translation>Cha b&apos; urrainn tiotal DVD %1 fhosgladh</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1030"/>
+        <location filename="../src/playercontroller.cpp" line="1034"/>
         <source>Title %1 (%2)</source>
         <translation>Tiotal %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1046"/>
+        <location filename="../src/playercontroller.cpp" line="1050"/>
         <source>Chapter %1 (%2)</source>
         <translation>Caibideil %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1668"/>
+        <location filename="../src/playercontroller.cpp" line="1673"/>
         <source>Could not open the stream</source>
         <translation>Cha b&apos; urrainn an sruth fhosgladh</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1727"/>
+        <location filename="../src/playercontroller.cpp" line="1732"/>
         <source>System default</source>
         <translation>Bunaiteach an t-siostaim</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1891"/>
+        <location filename="../src/playercontroller.cpp" line="1897"/>
         <source>A marker set to %1</source>
         <translation>Comharra A air a shuidheachadh gu %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1902"/>
+        <location filename="../src/playercontroller.cpp" line="1908"/>
         <source>B marker set to %1</source>
         <translation>Comharra B air a shuidheachadh gu %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1912"/>
+        <location filename="../src/playercontroller.cpp" line="1918"/>
         <source>A-B markers cleared</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2026"/>
+        <location filename="../src/playercontroller.cpp" line="2032"/>
         <source>Could not load subtitles from %1</source>
         <translation>Cha b&apos; urrainn fo-thiotalan a luchdadh o %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2038"/>
+        <location filename="../src/playercontroller.cpp" line="2044"/>
         <source>Subtitles loaded: %1</source>
         <translation>Fo-thiotalan air an luchdadh: %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2049"/>
+        <location filename="../src/playercontroller.cpp" line="2055"/>
         <source>Subtitles unloaded</source>
         <translation>Fo-thiotalan air an di-luchdadh</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2059"/>
+        <location filename="../src/playercontroller.cpp" line="2065"/>
         <source>Subtitle delay: %1 ms</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2178"/>
+        <location filename="../src/playercontroller.cpp" line="2184"/>
         <source>General</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2181"/>
+        <location filename="../src/playercontroller.cpp" line="2187"/>
         <source>File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2184"/>
+        <location filename="../src/playercontroller.cpp" line="2190"/>
         <source>Size</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2184"/>
+        <location filename="../src/playercontroller.cpp" line="2190"/>
         <source>%1 KB (%2 MB)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2188"/>
-        <location filename="../src/playercontroller.cpp" line="2214"/>
+        <location filename="../src/playercontroller.cpp" line="2194"/>
+        <location filename="../src/playercontroller.cpp" line="2220"/>
         <source>URL</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2191"/>
+        <location filename="../src/playercontroller.cpp" line="2197"/>
         <source>Length</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2192"/>
+        <location filename="../src/playercontroller.cpp" line="2198"/>
         <source>Demuxer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2197"/>
-        <location filename="../src/playercontroller.cpp" line="2247"/>
-        <location filename="../src/playercontroller.cpp" line="2266"/>
-        <location filename="../src/playercontroller.cpp" line="2275"/>
+        <location filename="../src/playercontroller.cpp" line="2203"/>
+        <location filename="../src/playercontroller.cpp" line="2253"/>
+        <location filename="../src/playercontroller.cpp" line="2272"/>
+        <location filename="../src/playercontroller.cpp" line="2281"/>
         <source>Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2198"/>
+        <location filename="../src/playercontroller.cpp" line="2204"/>
         <source>Artist</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2200"/>
+        <location filename="../src/playercontroller.cpp" line="2206"/>
         <source>Album artist</source>
         <translation>Neach-ealain an albaim</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2202"/>
+        <location filename="../src/playercontroller.cpp" line="2208"/>
         <source>Author</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2203"/>
+        <location filename="../src/playercontroller.cpp" line="2209"/>
         <source>Composer</source>
         <translation>Sgrìobhadair-ciùil</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2204"/>
+        <location filename="../src/playercontroller.cpp" line="2210"/>
         <source>Album</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2205"/>
+        <location filename="../src/playercontroller.cpp" line="2211"/>
         <source>Genre</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2206"/>
+        <location filename="../src/playercontroller.cpp" line="2212"/>
         <source>Date</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2207"/>
+        <location filename="../src/playercontroller.cpp" line="2213"/>
         <source>Track</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2208"/>
+        <location filename="../src/playercontroller.cpp" line="2214"/>
         <source>Copyright</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2209"/>
+        <location filename="../src/playercontroller.cpp" line="2215"/>
         <source>Comment</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2210"/>
+        <location filename="../src/playercontroller.cpp" line="2216"/>
         <source>Description</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2212"/>
+        <location filename="../src/playercontroller.cpp" line="2218"/>
         <source>Publisher</source>
         <translation>Foillsichear</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2213"/>
-        <location filename="../src/playercontroller.cpp" line="2247"/>
-        <location filename="../src/playercontroller.cpp" line="2266"/>
-        <location filename="../src/playercontroller.cpp" line="2275"/>
+        <location filename="../src/playercontroller.cpp" line="2219"/>
+        <location filename="../src/playercontroller.cpp" line="2253"/>
+        <location filename="../src/playercontroller.cpp" line="2272"/>
+        <location filename="../src/playercontroller.cpp" line="2281"/>
         <source>Language</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2216"/>
+        <location filename="../src/playercontroller.cpp" line="2222"/>
         <source>Clip info</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2220"/>
+        <location filename="../src/playercontroller.cpp" line="2226"/>
         <source>Initial Video Stream</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2223"/>
+        <location filename="../src/playercontroller.cpp" line="2229"/>
         <source>Resolution</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2226"/>
+        <location filename="../src/playercontroller.cpp" line="2232"/>
         <source>Aspect ratio</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2230"/>
-        <location filename="../src/playercontroller.cpp" line="2255"/>
+        <location filename="../src/playercontroller.cpp" line="2236"/>
+        <location filename="../src/playercontroller.cpp" line="2261"/>
         <source>Format</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2233"/>
-        <location filename="../src/playercontroller.cpp" line="2258"/>
+        <location filename="../src/playercontroller.cpp" line="2239"/>
+        <location filename="../src/playercontroller.cpp" line="2264"/>
         <source>Bitrate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2233"/>
-        <location filename="../src/playercontroller.cpp" line="2258"/>
+        <location filename="../src/playercontroller.cpp" line="2239"/>
+        <location filename="../src/playercontroller.cpp" line="2264"/>
         <source>%1 kbps</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2236"/>
+        <location filename="../src/playercontroller.cpp" line="2242"/>
         <source>Frames per second</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2239"/>
+        <location filename="../src/playercontroller.cpp" line="2245"/>
         <source>HDR</source>
         <translation>HDR</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2239"/>
+        <location filename="../src/playercontroller.cpp" line="2245"/>
         <source>yes</source>
         <translation>tha</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2246"/>
+        <location filename="../src/playercontroller.cpp" line="2252"/>
         <source>Video Streams</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2254"/>
+        <location filename="../src/playercontroller.cpp" line="2260"/>
         <source>Initial Audio Stream</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2265"/>
+        <location filename="../src/playercontroller.cpp" line="2271"/>
         <source>Audio Streams</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2274"/>
+        <location filename="../src/playercontroller.cpp" line="2280"/>
         <source>Subtitles</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2523"/>
+        <location filename="../src/playercontroller.cpp" line="2529"/>
         <source>Chapter %1</source>
         <translation>Caibideil %1</translation>
     </message>
@@ -2144,133 +2144,138 @@
 <context>
     <name>PlaylistEditor</name>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="68"/>
+        <location filename="../qml/PlaylistEditor.qml" line="75"/>
         <source>Playlist (%1)</source>
         <translation>Liosta-cluich (%1)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="80"/>
+        <location filename="../qml/PlaylistEditor.qml" line="81"/>
+        <source>Playlist: %1 (%2)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PlaylistEditor.qml" line="94"/>
         <source>Search…</source>
         <translation>Lorg…</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="94"/>
+        <location filename="../qml/PlaylistEditor.qml" line="108"/>
         <source>Clear</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="98"/>
+        <location filename="../qml/PlaylistEditor.qml" line="112"/>
         <source>Hides entries whose name does not match; it does not remove them from the playlist.</source>
         <translation>Falaichidh e innteartan far nach eil an t-ainm a&apos; freagairt; cha toir e air falbh iad on liosta-chluich.</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="183"/>
+        <location filename="../qml/PlaylistEditor.qml" line="197"/>
         <source>Playlist is empty</source>
         <translation>Tha an liosta-chluich falamh</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="195"/>
+        <location filename="../qml/PlaylistEditor.qml" line="209"/>
         <source>Load playlist…</source>
         <translation>Luchdaich liosta-chluich…</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="200"/>
+        <location filename="../qml/PlaylistEditor.qml" line="214"/>
         <source>Save playlist…</source>
         <translation>Sàbhail an liosta-chluich…</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="209"/>
+        <location filename="../qml/PlaylistEditor.qml" line="223"/>
         <source>Add files…</source>
         <translation>Cuir faidhlichean ris…</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="214"/>
+        <location filename="../qml/PlaylistEditor.qml" line="228"/>
         <source>Add URL…</source>
         <translation>Cuir URL ris…</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="222"/>
+        <location filename="../qml/PlaylistEditor.qml" line="236"/>
         <source>Remove selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="228"/>
+        <location filename="../qml/PlaylistEditor.qml" line="242"/>
         <source>Remove all</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="237"/>
+        <location filename="../qml/PlaylistEditor.qml" line="251"/>
         <source>Play selected</source>
         <translation>Cluich na chaidh a thaghadh</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="243"/>
+        <location filename="../qml/PlaylistEditor.qml" line="257"/>
         <source>Previous</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="249"/>
+        <location filename="../qml/PlaylistEditor.qml" line="263"/>
         <source>Next</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="258"/>
+        <location filename="../qml/PlaylistEditor.qml" line="272"/>
         <source>Repeat playlist</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="265"/>
+        <location filename="../qml/PlaylistEditor.qml" line="279"/>
         <source>Shuffle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="275"/>
+        <location filename="../qml/PlaylistEditor.qml" line="289"/>
         <source>Move up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="285"/>
+        <location filename="../qml/PlaylistEditor.qml" line="299"/>
         <source>Move down</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="301"/>
+        <location filename="../qml/PlaylistEditor.qml" line="315"/>
         <source>Media files (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="302"/>
-        <location filename="../qml/PlaylistEditor.qml" line="317"/>
+        <location filename="../qml/PlaylistEditor.qml" line="316"/>
+        <location filename="../qml/PlaylistEditor.qml" line="331"/>
         <source>All files (*)</source>
         <translation>Na h-uile faidhle (*)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="317"/>
+        <location filename="../qml/PlaylistEditor.qml" line="331"/>
         <source>Playlists (*.m3u *.m3u8)</source>
         <translation>Liostaichean-cluich (*.m3u *.m3u8)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="328"/>
+        <location filename="../qml/PlaylistEditor.qml" line="342"/>
         <source>Playlists (*.m3u8 *.m3u)</source>
         <translation>Liostaichean-cluich (*.m3u8 *.m3u)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="334"/>
+        <location filename="../qml/PlaylistEditor.qml" line="348"/>
         <source>Add URL</source>
         <translation>Cuir URL ris</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="375"/>
+        <location filename="../qml/PlaylistEditor.qml" line="389"/>
         <source>https://…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="385"/>
+        <location filename="../qml/PlaylistEditor.qml" line="399"/>
         <source>OK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="390"/>
+        <location filename="../qml/PlaylistEditor.qml" line="404"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>

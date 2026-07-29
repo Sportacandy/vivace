@@ -1881,257 +1881,257 @@
         <translation>音视频延迟：%1 毫秒</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="962"/>
+        <location filename="../src/playercontroller.cpp" line="965"/>
         <source>DVD title %1 could not be assembled</source>
         <translation>无法组合 DVD 标题 %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="968"/>
+        <location filename="../src/playercontroller.cpp" line="971"/>
         <source>DVD title %1 could not be opened</source>
         <translation>无法打开 DVD 标题 %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1030"/>
+        <location filename="../src/playercontroller.cpp" line="1034"/>
         <source>Title %1 (%2)</source>
         <translation>标题 %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1046"/>
+        <location filename="../src/playercontroller.cpp" line="1050"/>
         <source>Chapter %1 (%2)</source>
         <translation>章节 %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1668"/>
+        <location filename="../src/playercontroller.cpp" line="1673"/>
         <source>Could not open the stream</source>
         <translation>无法打开流</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1727"/>
+        <location filename="../src/playercontroller.cpp" line="1732"/>
         <source>System default</source>
         <translation>系统默认</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1891"/>
+        <location filename="../src/playercontroller.cpp" line="1897"/>
         <source>A marker set to %1</source>
         <translation>A 标记已设置为 %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1902"/>
+        <location filename="../src/playercontroller.cpp" line="1908"/>
         <source>B marker set to %1</source>
         <translation>B 标记已设置为 %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1912"/>
+        <location filename="../src/playercontroller.cpp" line="1918"/>
         <source>A-B markers cleared</source>
         <translation>A-B 标记已清除</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2026"/>
+        <location filename="../src/playercontroller.cpp" line="2032"/>
         <source>Could not load subtitles from %1</source>
         <translation>无法从 %1 加载字幕</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2038"/>
+        <location filename="../src/playercontroller.cpp" line="2044"/>
         <source>Subtitles loaded: %1</source>
         <translation>字幕已加载：%1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2049"/>
+        <location filename="../src/playercontroller.cpp" line="2055"/>
         <source>Subtitles unloaded</source>
         <translation>字幕已卸载</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2059"/>
+        <location filename="../src/playercontroller.cpp" line="2065"/>
         <source>Subtitle delay: %1 ms</source>
         <translation>字幕延迟: %1毫秒</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2178"/>
+        <location filename="../src/playercontroller.cpp" line="2184"/>
         <source>General</source>
         <translation>常规</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2181"/>
+        <location filename="../src/playercontroller.cpp" line="2187"/>
         <source>File</source>
         <translation>文件</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2184"/>
+        <location filename="../src/playercontroller.cpp" line="2190"/>
         <source>Size</source>
         <translation>大小</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2184"/>
+        <location filename="../src/playercontroller.cpp" line="2190"/>
         <source>%1 KB (%2 MB)</source>
         <translation>%1 KB (%2 MB)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2188"/>
-        <location filename="../src/playercontroller.cpp" line="2214"/>
+        <location filename="../src/playercontroller.cpp" line="2194"/>
+        <location filename="../src/playercontroller.cpp" line="2220"/>
         <source>URL</source>
         <translation>URL</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2191"/>
+        <location filename="../src/playercontroller.cpp" line="2197"/>
         <source>Length</source>
         <translation>时长</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2192"/>
+        <location filename="../src/playercontroller.cpp" line="2198"/>
         <source>Demuxer</source>
         <translation>解复用器</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2197"/>
-        <location filename="../src/playercontroller.cpp" line="2247"/>
-        <location filename="../src/playercontroller.cpp" line="2266"/>
-        <location filename="../src/playercontroller.cpp" line="2275"/>
+        <location filename="../src/playercontroller.cpp" line="2203"/>
+        <location filename="../src/playercontroller.cpp" line="2253"/>
+        <location filename="../src/playercontroller.cpp" line="2272"/>
+        <location filename="../src/playercontroller.cpp" line="2281"/>
         <source>Name</source>
         <translation>名称</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2198"/>
+        <location filename="../src/playercontroller.cpp" line="2204"/>
         <source>Artist</source>
         <translation>艺术家</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2200"/>
+        <location filename="../src/playercontroller.cpp" line="2206"/>
         <source>Album artist</source>
         <translation>专辑艺术家</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2202"/>
+        <location filename="../src/playercontroller.cpp" line="2208"/>
         <source>Author</source>
         <translation>作者</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2203"/>
+        <location filename="../src/playercontroller.cpp" line="2209"/>
         <source>Composer</source>
         <translation>作曲家</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2204"/>
+        <location filename="../src/playercontroller.cpp" line="2210"/>
         <source>Album</source>
         <translation>专辑</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2205"/>
+        <location filename="../src/playercontroller.cpp" line="2211"/>
         <source>Genre</source>
         <translation>流派</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2206"/>
+        <location filename="../src/playercontroller.cpp" line="2212"/>
         <source>Date</source>
         <translation>日期</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2207"/>
+        <location filename="../src/playercontroller.cpp" line="2213"/>
         <source>Track</source>
         <translation>轨道</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2208"/>
+        <location filename="../src/playercontroller.cpp" line="2214"/>
         <source>Copyright</source>
         <translation>版权</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2209"/>
+        <location filename="../src/playercontroller.cpp" line="2215"/>
         <source>Comment</source>
         <translation>注释</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2210"/>
+        <location filename="../src/playercontroller.cpp" line="2216"/>
         <source>Description</source>
         <translation>描述</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2212"/>
+        <location filename="../src/playercontroller.cpp" line="2218"/>
         <source>Publisher</source>
         <translation>发行者</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2213"/>
-        <location filename="../src/playercontroller.cpp" line="2247"/>
-        <location filename="../src/playercontroller.cpp" line="2266"/>
-        <location filename="../src/playercontroller.cpp" line="2275"/>
+        <location filename="../src/playercontroller.cpp" line="2219"/>
+        <location filename="../src/playercontroller.cpp" line="2253"/>
+        <location filename="../src/playercontroller.cpp" line="2272"/>
+        <location filename="../src/playercontroller.cpp" line="2281"/>
         <source>Language</source>
         <translation>语言</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2216"/>
+        <location filename="../src/playercontroller.cpp" line="2222"/>
         <source>Clip info</source>
         <translation>剪辑信息</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2220"/>
+        <location filename="../src/playercontroller.cpp" line="2226"/>
         <source>Initial Video Stream</source>
         <translation>初始视频流</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2223"/>
+        <location filename="../src/playercontroller.cpp" line="2229"/>
         <source>Resolution</source>
         <translation>分辨率</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2226"/>
+        <location filename="../src/playercontroller.cpp" line="2232"/>
         <source>Aspect ratio</source>
         <translation>长宽比</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2230"/>
-        <location filename="../src/playercontroller.cpp" line="2255"/>
+        <location filename="../src/playercontroller.cpp" line="2236"/>
+        <location filename="../src/playercontroller.cpp" line="2261"/>
         <source>Format</source>
         <translation>格式</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2233"/>
-        <location filename="../src/playercontroller.cpp" line="2258"/>
+        <location filename="../src/playercontroller.cpp" line="2239"/>
+        <location filename="../src/playercontroller.cpp" line="2264"/>
         <source>Bitrate</source>
         <translation>比特率</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2233"/>
-        <location filename="../src/playercontroller.cpp" line="2258"/>
+        <location filename="../src/playercontroller.cpp" line="2239"/>
+        <location filename="../src/playercontroller.cpp" line="2264"/>
         <source>%1 kbps</source>
         <translation>%1kbps</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2236"/>
+        <location filename="../src/playercontroller.cpp" line="2242"/>
         <source>Frames per second</source>
         <translation>每秒帧数</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2239"/>
+        <location filename="../src/playercontroller.cpp" line="2245"/>
         <source>HDR</source>
         <translation>HDR</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2239"/>
+        <location filename="../src/playercontroller.cpp" line="2245"/>
         <source>yes</source>
         <translation>是</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2246"/>
+        <location filename="../src/playercontroller.cpp" line="2252"/>
         <source>Video Streams</source>
         <translation>视频流</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2254"/>
+        <location filename="../src/playercontroller.cpp" line="2260"/>
         <source>Initial Audio Stream</source>
         <translation>初始音频流</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2265"/>
+        <location filename="../src/playercontroller.cpp" line="2271"/>
         <source>Audio Streams</source>
         <translation>音频流</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2274"/>
+        <location filename="../src/playercontroller.cpp" line="2280"/>
         <source>Subtitles</source>
         <translation>字幕</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2523"/>
+        <location filename="../src/playercontroller.cpp" line="2529"/>
         <source>Chapter %1</source>
         <translation>章节 %1</translation>
     </message>
@@ -2139,133 +2139,138 @@
 <context>
     <name>PlaylistEditor</name>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="68"/>
+        <location filename="../qml/PlaylistEditor.qml" line="75"/>
         <source>Playlist (%1)</source>
         <translation>播放列表 (%1)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="80"/>
+        <location filename="../qml/PlaylistEditor.qml" line="81"/>
+        <source>Playlist: %1 (%2)</source>
+            <translation>播放列表：%1 (%2)</translation>
+    </message>
+    <message>
+        <location filename="../qml/PlaylistEditor.qml" line="94"/>
         <source>Search…</source>
         <translation>搜索…</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="94"/>
+        <location filename="../qml/PlaylistEditor.qml" line="108"/>
         <source>Clear</source>
         <translation>清除</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="98"/>
+        <location filename="../qml/PlaylistEditor.qml" line="112"/>
         <source>Hides entries whose name does not match; it does not remove them from the playlist.</source>
         <translation>隐藏名称不匹配的条目；不会将它们从播放列表中移除。</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="183"/>
+        <location filename="../qml/PlaylistEditor.qml" line="197"/>
         <source>Playlist is empty</source>
         <translation>播放列表为空</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="195"/>
+        <location filename="../qml/PlaylistEditor.qml" line="209"/>
         <source>Load playlist…</source>
         <translation>加载播放列表…</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="200"/>
+        <location filename="../qml/PlaylistEditor.qml" line="214"/>
         <source>Save playlist…</source>
         <translation>保存播放列表…</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="209"/>
+        <location filename="../qml/PlaylistEditor.qml" line="223"/>
         <source>Add files…</source>
         <translation>添加文件…</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="214"/>
+        <location filename="../qml/PlaylistEditor.qml" line="228"/>
         <source>Add URL…</source>
         <translation>添加 URL…</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="222"/>
+        <location filename="../qml/PlaylistEditor.qml" line="236"/>
         <source>Remove selected</source>
         <translation>删除选定(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="228"/>
+        <location filename="../qml/PlaylistEditor.qml" line="242"/>
         <source>Remove all</source>
         <translation>删除全部(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="237"/>
+        <location filename="../qml/PlaylistEditor.qml" line="251"/>
         <source>Play selected</source>
         <translation>播放所选</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="243"/>
+        <location filename="../qml/PlaylistEditor.qml" line="257"/>
         <source>Previous</source>
         <translation>上一个(&amp;V)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="249"/>
+        <location filename="../qml/PlaylistEditor.qml" line="263"/>
         <source>Next</source>
         <translation>下一个(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="258"/>
+        <location filename="../qml/PlaylistEditor.qml" line="272"/>
         <source>Repeat playlist</source>
         <translation>重复播放列表</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="265"/>
+        <location filename="../qml/PlaylistEditor.qml" line="279"/>
         <source>Shuffle</source>
         <translation>乱序(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="275"/>
+        <location filename="../qml/PlaylistEditor.qml" line="289"/>
         <source>Move up</source>
         <translation>向上移动(&amp;U)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="285"/>
+        <location filename="../qml/PlaylistEditor.qml" line="299"/>
         <source>Move down</source>
         <translation>向下移动(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="301"/>
+        <location filename="../qml/PlaylistEditor.qml" line="315"/>
         <source>Media files (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="302"/>
-        <location filename="../qml/PlaylistEditor.qml" line="317"/>
+        <location filename="../qml/PlaylistEditor.qml" line="316"/>
+        <location filename="../qml/PlaylistEditor.qml" line="331"/>
         <source>All files (*)</source>
         <translation>所有文件 (*)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="317"/>
+        <location filename="../qml/PlaylistEditor.qml" line="331"/>
         <source>Playlists (*.m3u *.m3u8)</source>
         <translation>播放列表 (*.m3u *.m3u8)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="328"/>
+        <location filename="../qml/PlaylistEditor.qml" line="342"/>
         <source>Playlists (*.m3u8 *.m3u)</source>
         <translation>播放列表 (*.m3u8 *.m3u)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="334"/>
+        <location filename="../qml/PlaylistEditor.qml" line="348"/>
         <source>Add URL</source>
         <translation>添加 URL</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="375"/>
+        <location filename="../qml/PlaylistEditor.qml" line="389"/>
         <source>https://…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="385"/>
+        <location filename="../qml/PlaylistEditor.qml" line="399"/>
         <source>OK</source>
         <translation>确定(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="390"/>
+        <location filename="../qml/PlaylistEditor.qml" line="404"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
@@ -3330,7 +3335,7 @@
     <message>
         <location filename="../qml/PrefNetworkPage.qml" line="209"/>
         <source>Use managed yt-dlp</source>
-            <translation>使用受管理的 yt-dlp</translation>
+        <translation>使用受管理的 yt-dlp</translation>
     </message>
     <message>
         <location filename="../qml/PrefNetworkPage.qml" line="213"/>
@@ -3340,7 +3345,7 @@
     <message>
         <location filename="../qml/PrefNetworkPage.qml" line="221"/>
         <source>Install / Update yt-dlp…</source>
-            <translation>安装／更新 yt-dlp…</translation>
+        <translation>安装／更新 yt-dlp…</translation>
     </message>
     <message>
         <location filename="../qml/PrefNetworkPage.qml" line="230"/>
@@ -3360,7 +3365,7 @@
     <message>
         <location filename="../qml/PrefNetworkPage.qml" line="243"/>
         <source>Update yt-dlp automatically:</source>
-            <translation>自动更新 yt-dlp：</translation>
+        <translation>自动更新 yt-dlp：</translation>
     </message>
     <message>
         <location filename="../qml/PrefNetworkPage.qml" line="244"/>
@@ -3370,22 +3375,22 @@
     <message>
         <location filename="../qml/PrefNetworkPage.qml" line="258"/>
         <source>Never</source>
-            <translation>从不</translation>
+        <translation>从不</translation>
     </message>
     <message>
         <location filename="../qml/PrefNetworkPage.qml" line="259"/>
         <source>Every time yt-dlp runs</source>
-            <translation>每次运行 yt-dlp 时</translation>
+        <translation>每次运行 yt-dlp 时</translation>
     </message>
     <message>
         <location filename="../qml/PrefNetworkPage.qml" line="260"/>
         <source>Once a day</source>
-            <translation>每天一次</translation>
+        <translation>每天一次</translation>
     </message>
     <message>
         <location filename="../qml/PrefNetworkPage.qml" line="261"/>
         <source>Once a week</source>
-            <translation>每周一次</translation>
+        <translation>每周一次</translation>
     </message>
     <message>
         <location filename="../qml/PrefNetworkPage.qml" line="268"/>

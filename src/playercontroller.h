@@ -524,6 +524,12 @@ private:
     void teardownHttpTsSource();
     HttpTsSource *m_httpTsSource = nullptr;
     void saveCurrentPosition();
+    // Detaches the in-memory playlist from any backing .m3u/.m3u8 file
+    // (clears currentPlaylistFile if set). Called whenever the whole
+    // playlist is replaced by something not loaded from a playlist file
+    // (a folder, a DVD, a single stream, ...) -- see currentPlaylistFile's
+    // doc comment for why this must hold.
+    void detachCurrentPlaylistFile();
     void selectPreferredTracks();
     void restoreTrackSelections();
     int pickNextIndex(); // advances the shuffle cursor when shuffling

@@ -65,7 +65,21 @@ Item {
         spacing: 8
 
         Label {
-            text: qsTr("Playlist (%1)").arg(editor.controller.playlist.count)
+            // Named after the backing .m3u/.m3u8 file (without extension)
+            // when the in-memory playlist corresponds to one; otherwise the
+            // generic "Playlist" label.
+            text: {
+                const url = editor.controller.currentPlaylistFile
+                const count = editor.controller.playlist.count
+                if (!url || url.toString() === "")
+                    return qsTr("Playlist (%1)").arg(count)
+                const path = UiHelpers.toLocalPath(url)
+                const sep = Math.max(path.lastIndexOf('/'), path.lastIndexOf('\\'))
+                const base = path.substring(sep + 1)
+                const dot = base.lastIndexOf('.')
+                const baseName = dot > 0 ? base.substring(0, dot) : base
+                return qsTr("Playlist: %1 (%2)").arg(baseName).arg(count)
+            }
             color: "white"
             font.bold: true
         }
