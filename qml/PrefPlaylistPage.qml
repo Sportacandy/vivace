@@ -22,8 +22,9 @@ ColumnLayout {
         + "whether to show each item's title instead of its file name, and "
         + "whether the playlist is a docked panel or a separate window.</p>"
         + "<p><b>Misc</b> tab — auto-sort the list, case-sensitive search, "
-        + "save a copy of the playlist on exit, and remember the playlist "
-        + "between sessions.</p>")
+        + "save a copy of the playlist on exit, remember the playlist "
+        + "between sessions, and the maximum number of generated row "
+        + "thumbnails to keep cached.</p>")
 
     TabBar {
         id: tabs
@@ -232,6 +233,27 @@ ColumnLayout {
                 HelpMark {
                     text: qsTr("Restore the playlist you had open the last time "
                                + "Vivace was closed.")
+                }
+                Item { Layout.fillWidth: true }
+            }
+            RowLayout {
+                spacing: 8
+                Label { text: qsTr("Maximum cached thumbnails:") }
+                SpinBox {
+                    id: thumbnailCacheMaxSpin
+                    editable: true
+                    from: 100
+                    to: 200000
+                    stepSize: 100
+                    value: Settings.playlistThumbnailCacheMaxEntries
+                    onValueModified: Settings.playlistThumbnailCacheMaxEntries = value
+                }
+                HelpMark {
+                    text: qsTr("Row thumbnails generated for playlist entries without "
+                               + "one are kept in a cache, oldest-shown evicted first "
+                               + "once this many are stored. Does not include sibling "
+                               + "\".jpg\" files next to your media, which are never "
+                               + "managed or removed by Vivace.")
                 }
                 Item { Layout.fillWidth: true }
             }

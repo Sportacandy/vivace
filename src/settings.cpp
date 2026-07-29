@@ -50,6 +50,8 @@ constexpr auto displayTitleName = "playlist/displayTitleName";
 constexpr auto playlistAutoSort = "playlist/autoSort";
 constexpr auto caseSensitiveSearch = "playlist/caseSensitiveSearch";
 constexpr auto autosavePlaylistOnExit = "playlist/autosaveOnExit";
+constexpr auto playlistThumbnailSize = "playlist/thumbnailSize";
+constexpr auto playlistThumbnailCacheMaxEntries = "playlist/thumbnailCacheMaxEntries";
 constexpr auto screenshotFolder = "screenshots/folder";
 constexpr auto screenshotFormat = "screenshots/format";
 constexpr auto opensubtitlesApiKey = "opensubtitles/apiKey";
@@ -230,6 +232,11 @@ Settings::Settings(QObject *parent)
               m_store.value(Keys::caseSensitiveSearch, false).toBool()),
       m_autosavePlaylistOnExit(
               m_store.value(Keys::autosavePlaylistOnExit, false).toBool()),
+      m_playlistThumbnailSize(
+              qBound(0, m_store.value(Keys::playlistThumbnailSize, 0).toInt(), 2)),
+      m_playlistThumbnailCacheMaxEntries(
+              qBound(100, m_store.value(Keys::playlistThumbnailCacheMaxEntries, 20000).toInt(),
+                     200000)),
       m_screenshotFolder(m_store.value(Keys::screenshotFolder,
                                        defaultScreenshotFolder()).toString()),
       m_opensubtitlesApiKey(
@@ -1060,6 +1067,26 @@ void Settings::setAutosavePlaylistOnExit(bool autosave)
     m_autosavePlaylistOnExit = autosave;
     m_store.setValue(Keys::autosavePlaylistOnExit, autosave);
     emit autosavePlaylistOnExitChanged();
+}
+
+void Settings::setPlaylistThumbnailSize(int size)
+{
+    size = qBound(0, size, 2);
+    if (size == m_playlistThumbnailSize)
+        return;
+    m_playlistThumbnailSize = size;
+    m_store.setValue(Keys::playlistThumbnailSize, size);
+    emit playlistThumbnailSizeChanged();
+}
+
+void Settings::setPlaylistThumbnailCacheMaxEntries(int maxEntries)
+{
+    maxEntries = qBound(100, maxEntries, 200000);
+    if (maxEntries == m_playlistThumbnailCacheMaxEntries)
+        return;
+    m_playlistThumbnailCacheMaxEntries = maxEntries;
+    m_store.setValue(Keys::playlistThumbnailCacheMaxEntries, maxEntries);
+    emit playlistThumbnailCacheMaxEntriesChanged();
 }
 
 void Settings::setScreenshotFolder(const QString &folder)

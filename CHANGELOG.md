@@ -50,6 +50,18 @@ each get their own entry instead.
   the header no longer keeps showing a previously loaded playlist's name.
 
 ### Added
+- Playlist row thumbnails: each entry shows a thumbnail — a sibling
+  "`<name>.jpg`" next to the media file if one exists, otherwise a frame
+  grabbed automatically in the background and cached (as a small SQLite
+  database, not one file per thumbnail) for reuse. A button at the top
+  right of the playlist switches the row/thumbnail size (Small/Medium/
+  Large); at Small and Medium, the selected row and its nearest neighbours
+  grow toward a larger preview, tapering back down further away — a
+  Dock-style "wavy" effect. Thumbnails for a newly loaded playlist generate
+  in playlist order (top to bottom) rather than in whatever order rows
+  happen to become visible. The generated-thumbnail cache size is
+  configurable at Preferences ▸ Playlist ▸ Misc ▸ Maximum cached
+  thumbnails (default 20,000).
 - A **Save ▾** button in the YouTube cache window (alongside the existing
   Remove button), letting you keep a downloaded video permanently instead
   of leaving it to the cache's size-limited rotation: save it to a plain

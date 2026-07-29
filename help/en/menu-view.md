@@ -6,8 +6,18 @@ The **View** menu shows information and secondary panels.
   general info, demuxer, and the video/audio codecs (with the formats Vivace's
   backend supports highlighted). It is informational only.
 - **Playlist** (`F9`) — show or hide the playlist. Depending on
-  *Preferences ▸ Interface*, it appears as a docked panel or a separate window.
+  *Preferences ▸ Playlist*, it appears as a docked panel or a separate window.
   See [Open](menu-open.md) for loading playlists.
+  - Each row shows a thumbnail — a sibling image file next to the media (a
+    "<name>.jpg" already sitting beside it) if one exists, otherwise a frame
+    grabbed automatically in the background. The button at the top right of
+    the playlist switches the row/thumbnail size (**Small**/**Medium**/
+    **Large**); at Small and Medium, the selected row (and the couple of
+    rows next to it) grows to show a bigger preview, tapering back down
+    towards its neighbours. Generated thumbnails are cached (a
+    least-recently-shown one is dropped once the cache is full); the cache
+    size is configurable at *Preferences ▸ Playlist ▸ Misc ▸ Maximum
+    cached thumbnails*.
 - **OSD** — the on-screen display shown over the video:
   - the level of detail (subtitles only; volume + seek; volume + seek + timer)
     is being expanded; OSD duration and font size are in

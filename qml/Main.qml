@@ -130,6 +130,15 @@ ApplicationWindow {
     function togglePlaylist() {
         if (Settings.playlistAsWindow) {
             playlistWindow.visible = !playlistWindow.visible
+            if (playlistWindow.visible) {
+                // Without this, the OS can leave the main window "active"
+                // even though the Playlist window is what's visually shown,
+                // so this window's own Qt.WindowShortcut-scoped shortcuts
+                // (e.g. volume Up/Down) keep firing instead of the
+                // Playlist's Up/Down list navigation.
+                playlistWindow.raise()
+                playlistWindow.requestActivate()
+            }
         } else if (playlistPanel.opened) {
             playlistPanel.close()
         } else {
@@ -145,6 +154,8 @@ ApplicationWindow {
             if (Settings.playlistAsWindow && playlistPanel.opened) {
                 playlistPanel.close()
                 playlistWindow.visible = true
+                playlistWindow.raise()
+                playlistWindow.requestActivate()
             } else if (!Settings.playlistAsWindow && playlistWindow.visible) {
                 playlistWindow.visible = false
                 playlistPanel.open()
@@ -1296,6 +1307,19 @@ ApplicationWindow {
             root.downloadStatus = ""
             root.showOsd(qsTr("YouTube: %1").arg(message), root.osdErrorDurationMs)
         }
+    }
+
+    // Playlist row thumbnails reuse the same ffmpeg location as YouTube
+    // download mode (the app's one "where's ffmpeg" setting).
+    Binding {
+        target: PlaylistThumbnailProvider
+        property: "ffmpegLocation"
+        value: Settings.youtubeFfmpegLocation
+    }
+    Binding {
+        target: PlaylistThumbnailProvider
+        property: "maxCacheEntries"
+        value: Settings.playlistThumbnailCacheMaxEntries
     }
 
     // Optional external downloader for HD YouTube: runs the user's tool to

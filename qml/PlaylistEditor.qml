@@ -33,6 +33,68 @@ Item {
                 : t.toLowerCase().indexOf(editor.searchText.toLowerCase()) >= 0
     }
 
+    // Row/thumbnail size (Preferences-free, toggled from this toolbar):
+    // 0 = small (default), 1 = medium, 2 = large. Text stays the same size
+    // regardless; only the row height and the thumbnail grow.
+    readonly property var rowHeights: [28, 48, 72]
+    readonly property int rowHeight: rowHeights[Settings.playlistThumbnailSize]
+    readonly property int thumbHeight: rowHeight - 6
+
+    // In "small" mode the inline thumbnail is tiny, so the SELECTED row
+    // alone grows tall enough for a real thumbnail (rather than popping up
+    // a separate preview window) -- other rows stay at the small height.
+    readonly property int expandedRowHeight: 120
+    readonly property int expandedThumbHeight: expandedRowHeight - 6
+
+    // macOS Dock-style "wavy" magnification: rather than only the exact
+    // selected row jumping to the expanded size, the 2 rows on either side
+    // taper toward it too (1 away = 66% of the way there, 2 away = 33%),
+    // so the growth reads as a smooth wave through the list instead of a
+    // single row abruptly popping.
+    function waveFactor(distance) {
+        switch (distance) {
+        case 0: return 1.0
+        case 1: return 0.4
+        case 2: return 0.2
+        default: return 0.0
+        }
+    }
+
+    // Safety net: a selection made via keyboard/toolbar navigation could
+    // land on an index whose delegate was never instantiated (scrolled
+    // past without being drawn, so it never went through prefetchThumbnails
+    // below) or whose request raced ahead of the bulk prefetch.
+    onSelectedIndexChanged: {
+        if (editor.selectedIndex >= 0)
+            PlaylistThumbnailProvider.requestThumbnail(
+                    editor.controller.playlist.urlAt(editor.selectedIndex))
+    }
+
+    // Requests thumbnails for every entry in playlist ORDER (index 0
+    // first), in one uninterrupted pass, so generation happens top-to-
+    // bottom -- the order the user actually looks at the list -- rather
+    // than whatever order the ListView happens to instantiate row
+    // delegates in. That order depends on viewport/cache-buffer/layout
+    // details the view doesn't guarantee to be sequential, and was
+    // observed (user report, a 70-entry playlist) to start generating
+    // thumbnails from around entry 35 while the top of the list -- what
+    // the user is actually looking at -- stayed blank for minutes.
+    // PlaylistThumbnailProvider dedupes already-queued/resolved/in-flight
+    // paths, so calling this repeatedly (every time the playlist grows) is
+    // cheap; requests already sitting in its FIFO queue keep their place.
+    function prefetchThumbnails() {
+        const list = editor.controller.playlist
+        for (let i = 0; i < list.count; ++i)
+            PlaylistThumbnailProvider.requestThumbnail(list.urlAt(i))
+    }
+
+    Component.onCompleted: editor.prefetchThumbnails()
+
+    Connections {
+        target: editor.controller.playlist
+        function onCountChanged() { editor.prefetchThumbnails() }
+    }
+
     // Uniform toolbar row height so separators line up with the buttons.
     readonly property int toolbarRowHeight: 30
 
@@ -64,24 +126,63 @@ Item {
         anchors.margins: 8
         spacing: 8
 
-        Label {
-            // Named after the backing .m3u/.m3u8 file (without extension)
-            // when the in-memory playlist corresponds to one; otherwise the
-            // generic "Playlist" label.
-            text: {
-                const url = editor.controller.currentPlaylistFile
-                const count = editor.controller.playlist.count
-                if (!url || url.toString() === "")
-                    return qsTr("Playlist (%1)").arg(count)
-                const path = UiHelpers.toLocalPath(url)
-                const sep = Math.max(path.lastIndexOf('/'), path.lastIndexOf('\\'))
-                const base = path.substring(sep + 1)
-                const dot = base.lastIndexOf('.')
-                const baseName = dot > 0 ? base.substring(0, dot) : base
-                return qsTr("Playlist: %1 (%2)").arg(baseName).arg(count)
+        RowLayout {
+            Layout.fillWidth: true
+            spacing: 4
+
+            Label {
+                Layout.fillWidth: true
+                // Named after the backing .m3u/.m3u8 file (without
+                // extension) when the in-memory playlist corresponds to
+                // one; otherwise the generic "Playlist" label.
+                text: {
+                    const url = editor.controller.currentPlaylistFile
+                    const count = editor.controller.playlist.count
+                    if (!url || url.toString() === "")
+                        return qsTr("Playlist (%1)").arg(count)
+                    const path = UiHelpers.toLocalPath(url)
+                    const sep = Math.max(path.lastIndexOf('/'), path.lastIndexOf('\\'))
+                    const base = path.substring(sep + 1)
+                    const dot = base.lastIndexOf('.')
+                    const baseName = dot > 0 ? base.substring(0, dot) : base
+                    return qsTr("Playlist: %1 (%2)").arg(baseName).arg(count)
+                }
+                elide: Text.ElideRight
+                color: "white"
+                font.bold: true
             }
-            color: "white"
-            font.bold: true
+
+            // Row/thumbnail size selector, top-right corner as requested.
+            ToolButton {
+                icon.source: Theme.icon("video_size")
+                icon.color: "transparent"
+                ToolTip.text: qsTr("Row/thumbnail size")
+                ToolTip.visible: hovered
+                ToolTip.delay: 700
+                onClicked: rowSizeMenu.popup()
+
+                Menu {
+                    id: rowSizeMenu
+                    MenuItem {
+                        text: qsTr("Small")
+                        checkable: true
+                        checked: Settings.playlistThumbnailSize === 0
+                        onTriggered: Settings.playlistThumbnailSize = 0
+                    }
+                    MenuItem {
+                        text: qsTr("Medium")
+                        checkable: true
+                        checked: Settings.playlistThumbnailSize === 1
+                        onTriggered: Settings.playlistThumbnailSize = 1
+                    }
+                    MenuItem {
+                        text: qsTr("Large")
+                        checkable: true
+                        checked: Settings.playlistThumbnailSize === 2
+                        onTriggered: Settings.playlistThumbnailSize = 2
+                    }
+                }
+            }
         }
 
         // Search box: filters the visible rows by name.
@@ -130,16 +231,70 @@ Item {
                 required property int index
                 required property string title
                 required property string duration
+                required property url url
 
                 readonly property bool isPlaying:
                     index === editor.controller.playlist.currentIndex
                 readonly property bool matches: editor.matchesSearch(title)
 
+                // Rows near the selection grow toward a real-sized
+                // thumbnail instead of the row's normal inline one, in
+                // every size mode -- including "large", whose own inline
+                // thumbnail is still smaller than the expanded size.
+                readonly property real waveFactor:
+                    listView.currentIndex >= 0
+                        ? editor.waveFactor(Math.abs(entry.index - listView.currentIndex))
+                        : 0.0
+                readonly property real thumbSize:
+                    editor.thumbHeight
+                        + entry.waveFactor * (editor.expandedThumbHeight - editor.thumbHeight)
+
+                // Resolved once at creation (a sibling .jpg or a previously
+                // generated cache entry, if either already exists); updated
+                // live by the Connections below once a background
+                // generation (requested in bulk, in playlist order, by
+                // editor.prefetchThumbnails()) finishes. Deliberately does
+                // NOT also call requestThumbnail() here: doing so raced
+                // against the ordered bulk prefetch (whichever rows the
+                // ListView happened to instantiate first jumped the queue),
+                // which is exactly the bug prefetchThumbnails() exists to
+                // avoid.
+                property string thumbnailSrc:
+                        PlaylistThumbnailProvider.thumbnailFor(entry.url)
+
                 width: ListView.view.width
-                height: matches ? 28 : 0
+                height: matches
+                        ? (editor.rowHeight
+                           + entry.waveFactor * (editor.expandedRowHeight - editor.rowHeight))
+                        : 0
+                Behavior on height { NumberAnimation { duration: 120 } }
                 visible: matches
                 clip: true
                 color: ListView.isCurrentItem ? "#3d5a78" : "transparent"
+
+                Connections {
+                    target: PlaylistThumbnailProvider
+                    function onThumbnailReady(mediaUrl, thumbnailUrl) {
+                        // Compare decoded local paths, NOT raw URL strings:
+                        // entry.url (parsed from an .m3u8 by PlaylistParser)
+                        // and mediaUrl (built in C++ via
+                        // QUrl::fromLocalFile()) can percent-encode the same
+                        // path differently for non-ASCII/space filenames --
+                        // observed directly on a real playlist with CJK/
+                        // emoji titles, where a raw-string compare never
+                        // matched for ANY of them, so the live update never
+                        // fired (only a fresh delegate's synchronous cache
+                        // check -- e.g. after scrolling -- ever picked the
+                        // thumbnail up). QML's "url" type has no callable
+                        // .toLocalFile() (a plain C++ QUrl method, not
+                        // exposed to JS -- confirmed by a TypeError at
+                        // runtime); UiHelpers.toLocalPath() is this
+                        // project's established C++-side equivalent,
+                        // already used elsewhere in this file.
+                        if (UiHelpers.toLocalPath(mediaUrl) === UiHelpers.toLocalPath(entry.url))
+                            entry.thumbnailSrc = thumbnailUrl
+                    }
+                }
 
                 RowLayout {
                     anchors.fill: parent
@@ -147,6 +302,24 @@ Item {
                     anchors.rightMargin: 6
                     spacing: 8
 
+                    Rectangle {
+                        Layout.preferredWidth: entry.thumbSize * 16 / 9
+                        Layout.preferredHeight: entry.thumbSize
+                        Behavior on Layout.preferredWidth { NumberAnimation { duration: 120 } }
+                        Behavior on Layout.preferredHeight { NumberAnimation { duration: 120 } }
+                        Layout.alignment: Qt.AlignVCenter
+                        color: "#1a1a1a"
+                        radius: 2
+                        clip: true
+                        Image {
+                            anchors.fill: parent
+                            source: entry.thumbnailSrc
+                            visible: entry.thumbnailSrc !== ""
+                            fillMode: Image.PreserveAspectCrop
+                            asynchronous: true
+                            cache: false
+                        }
+                    }
                     Label {
                         Layout.fillWidth: true
                         text: entry.title

@@ -50,7 +50,7 @@ public:
     bool autoSort() const { return m_autoSort; }
     void setAutoSort(bool autoSort);
 
-    QUrl urlAt(int index) const;
+    Q_INVOKABLE QUrl urlAt(int index) const;
     int nextIndex() const;
     int previousIndex() const;
 

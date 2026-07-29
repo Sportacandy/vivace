@@ -64,6 +64,12 @@ Window {
             y = transientParent.y + (transientParent.height - height) / 2
         }
         visible = true
+        // Without this, the OS can leave the main window "active" even
+        // though this dialog is what's visually shown, so the main
+        // window's own Qt.WindowShortcut-scoped shortcuts (e.g. volume
+        // Up/Down) keep firing instead of reaching this dialog.
+        raise()
+        requestActivate()
     }
 
     function accept() { reverting = false; close() }        // OK: keep changes

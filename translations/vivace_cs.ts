@@ -766,284 +766,284 @@
 <context>
     <name>Main</name>
     <message>
-        <location filename="../qml/Main.qml" line="388"/>
+        <location filename="../qml/Main.qml" line="399"/>
         <source>TV editor</source>
         <translation>Editor TV</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="388"/>
+        <location filename="../qml/Main.qml" line="399"/>
         <source>TV channels</source>
         <translation>TV kanály</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="391"/>
+        <location filename="../qml/Main.qml" line="402"/>
         <source>Radio editor</source>
         <translation>Editor rádia</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="391"/>
+        <location filename="../qml/Main.qml" line="402"/>
         <source>Radio channels</source>
         <translation>Rádiové stanice</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="394"/>
-        <location filename="../qml/Main.qml" line="437"/>
+        <location filename="../qml/Main.qml" line="405"/>
+        <location filename="../qml/Main.qml" line="448"/>
         <source>Favorite editor</source>
         <translation>Editor oblíbených</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="394"/>
-        <location filename="../qml/Main.qml" line="437"/>
+        <location filename="../qml/Main.qml" line="405"/>
+        <location filename="../qml/Main.qml" line="448"/>
         <source>Favorite list</source>
         <translation>Seznam oblíbených</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="398"/>
+        <location filename="../qml/Main.qml" line="409"/>
         <source>Bookmark added</source>
         <translation>Záložka přidána</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="413"/>
+        <location filename="../qml/Main.qml" line="424"/>
         <source>Edit main toolbar</source>
         <translation>Upravit hlavní liš&amp;tu</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="416"/>
+        <location filename="../qml/Main.qml" line="427"/>
         <source>Edit control bar</source>
         <translation>Upravit ovládací &amp;panel</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="444"/>
+        <location filename="../qml/Main.qml" line="455"/>
         <source>Screenshot saved as %1</source>
         <translation>Snímek obrazovky uložen jako %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="445"/>
+        <location filename="../qml/Main.qml" line="456"/>
         <source>Could not take the screenshot</source>
         <translation>Nelze pořídit snímek obrazovky</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="558"/>
+        <location filename="../qml/Main.qml" line="569"/>
         <source>Drop media files here, or press Ctrl+O</source>
         <translation>Přetáhněte sem soubory médií nebo stiskněte Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="634"/>
+        <location filename="../qml/Main.qml" line="645"/>
         <source>Downloading video…</source>
         <translation>Stahování videa…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="641"/>
+        <location filename="../qml/Main.qml" line="652"/>
         <source>This can take a while — the external tool is downloading and merging HD video and audio.</source>
         <translation>Může to chvíli trvat — externí nástroj stahuje a spojuje HD video a zvuk.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="655"/>
-        <location filename="../qml/Main.qml" line="1557"/>
+        <location filename="../qml/Main.qml" line="666"/>
+        <location filename="../qml/Main.qml" line="1581"/>
         <source>Cancel</source>
         <translation>Storno</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="728"/>
+        <location filename="../qml/Main.qml" line="739"/>
         <source>Loading…</source>
         <translation>Načítání…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="729"/>
+        <location filename="../qml/Main.qml" line="740"/>
         <source>Connecting…</source>
         <translation>Připojování...</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="730"/>
+        <location filename="../qml/Main.qml" line="741"/>
         <source>Buffering… %1%</source>
         <translation>Ukládání do vyrovnávací paměti… %1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="738"/>
+        <location filename="../qml/Main.qml" line="749"/>
         <source>Live streams can take several seconds to start.</source>
         <translation>Živé přenosy se mohou spouštět několik sekund.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="773"/>
+        <location filename="../qml/Main.qml" line="784"/>
         <source>Volume: %1%</source>
         <translation>Hlasitost: %1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="776"/>
+        <location filename="../qml/Main.qml" line="787"/>
         <source>Mute</source>
         <translation>Ztlumit</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="776"/>
+        <location filename="../qml/Main.qml" line="787"/>
         <source>Mute off</source>
         <translation>Ztlumení vypnuto</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="779"/>
+        <location filename="../qml/Main.qml" line="790"/>
         <source>Speed: %1x</source>
         <translation>Rychlost: %1x</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1186"/>
+        <location filename="../qml/Main.qml" line="1197"/>
         <source>Media files (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1187"/>
-        <location filename="../qml/Main.qml" line="1245"/>
-        <location filename="../qml/Main.qml" line="1493"/>
+        <location filename="../qml/Main.qml" line="1198"/>
+        <location filename="../qml/Main.qml" line="1256"/>
+        <location filename="../qml/Main.qml" line="1517"/>
         <source>All files (*)</source>
         <translation>Všechny soubory (*)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1229"/>
+        <location filename="../qml/Main.qml" line="1240"/>
         <source>Select the DVD drive or a folder containing VIDEO_TS</source>
         <translation>Vyberte jednotku DVD nebo složku obsahující VIDEO_TS</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1233"/>
+        <location filename="../qml/Main.qml" line="1244"/>
         <source>No DVD video found in %1</source>
         <translation>V %1 nebylo nalezeno žádné DVD video</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1244"/>
+        <location filename="../qml/Main.qml" line="1255"/>
         <source>Playlists (*.m3u *.m3u8)</source>
         <translation>Seznamy stop (*.m3u *.m3u8)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1287"/>
+        <location filename="../qml/Main.qml" line="1298"/>
         <source>Playing stream</source>
         <translation>Přehrávání streamu</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1293"/>
-        <location filename="../qml/Main.qml" line="1313"/>
+        <location filename="../qml/Main.qml" line="1304"/>
+        <location filename="../qml/Main.qml" line="1337"/>
         <source>Playing downloaded video</source>
         <translation>Přehrávání staženého videa</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1297"/>
+        <location filename="../qml/Main.qml" line="1308"/>
         <source>YouTube: %1</source>
         <translation>YouTube: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1317"/>
+        <location filename="../qml/Main.qml" line="1341"/>
         <source>Download failed: %1</source>
         <translation>Stahování se nezdařilo: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1414"/>
+        <location filename="../qml/Main.qml" line="1438"/>
         <source>Saved %1 file(s); %2 failed.</source>
         <translation>Uloženo souborů: %1; neúspěšných: %2.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1418"/>
+        <location filename="../qml/Main.qml" line="1442"/>
         <source>Saved %1 file(s).</source>
         <translation>Uloženo souborů: %1.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1431"/>
+        <location filename="../qml/Main.qml" line="1455"/>
         <source>Could not read the shortcut file.</source>
         <translation>Nelze přečíst soubor zástupce.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1446"/>
+        <location filename="../qml/Main.qml" line="1470"/>
         <source>Starting download…</source>
         <translation>Zahájení stahování…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1447"/>
+        <location filename="../qml/Main.qml" line="1471"/>
         <source>Downloading video (this can take a while)…</source>
         <translation>Stahování videa (může to chvíli trvat)…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1451"/>
+        <location filename="../qml/Main.qml" line="1475"/>
         <source>Resolving with yt-dlp…</source>
         <translation>Zpracování pomocí yt-dlp…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1488"/>
+        <location filename="../qml/Main.qml" line="1512"/>
         <source>Load subtitle file</source>
         <translation>Načíst soubor titulků</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1492"/>
+        <location filename="../qml/Main.qml" line="1516"/>
         <source>Subtitle files (*.srt *.vtt *.ass *.ssa)</source>
         <translation>Soubory titulků (*.srt *.vtt *.ass *.ssa)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1500"/>
+        <location filename="../qml/Main.qml" line="1524"/>
         <source>Subtitle delay</source>
         <translation>Zpoždění titulků</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1534"/>
+        <location filename="../qml/Main.qml" line="1558"/>
         <source>Delay:</source>
         <translation>Zpoždění:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1540"/>
-        <location filename="../qml/Main.qml" line="1612"/>
+        <location filename="../qml/Main.qml" line="1564"/>
+        <location filename="../qml/Main.qml" line="1636"/>
         <source>ms</source>
         <translation>ms</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1550"/>
+        <location filename="../qml/Main.qml" line="1574"/>
         <source>OK</source>
         <translation>&amp;OK</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1569"/>
+        <location filename="../qml/Main.qml" line="1593"/>
         <source>Audio delay — Vivace</source>
         <translation>Zpoždění zvuku — Vivace</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1600"/>
+        <location filename="../qml/Main.qml" line="1624"/>
         <source>No delay for this file (use the global delay only)</source>
         <translation>Žádné zpoždění pro tento soubor (použít pouze globální zpoždění)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1605"/>
+        <location filename="../qml/Main.qml" line="1629"/>
         <source>This file&apos;s delay:</source>
         <translation>Zpoždění tohoto souboru:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1620"/>
+        <location filename="../qml/Main.qml" line="1644"/>
         <source>The delay applied to this file is this value plus the global delay for the current audio device (%1 ms), set in Preferences &gt; General &gt; Audio. Negative values delay the video to match audio that arrives late (e.g. Bluetooth headphones).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1633"/>
+        <location filename="../qml/Main.qml" line="1657"/>
         <source>&amp;Apply</source>
         <translation>&amp;Použít</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1642"/>
+        <location filename="../qml/Main.qml" line="1666"/>
         <source>&amp;Close</source>
         <translation>&amp;Zavřít</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1739"/>
+        <location filename="../qml/Main.qml" line="1763"/>
         <source>Hide window</source>
         <translation>Skrýt okno</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1739"/>
+        <location filename="../qml/Main.qml" line="1763"/>
         <source>Show window</source>
         <translation>Zobrazit okno</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1744"/>
+        <location filename="../qml/Main.qml" line="1768"/>
         <source>Play / Pause</source>
         <translation>Spustit / Pozastavit</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1748"/>
+        <location filename="../qml/Main.qml" line="1772"/>
         <source>Stop</source>
         <translation>Zastaveno</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1753"/>
+        <location filename="../qml/Main.qml" line="1777"/>
         <source>Quit</source>
         <translation>&amp;Konec</translation>
     </message>
@@ -2145,138 +2145,158 @@
 <context>
     <name>PlaylistEditor</name>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="75"/>
+        <location filename="../qml/PlaylistEditor.qml" line="142"/>
         <source>Playlist (%1)</source>
         <translation>Seznam stop (%1)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="81"/>
+        <location filename="../qml/PlaylistEditor.qml" line="148"/>
         <source>Playlist: %1 (%2)</source>
-            <translation>Seznam stop: %1 (%2)</translation>
+        <translation>Seznam stop: %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="94"/>
+        <location filename="../qml/PlaylistEditor.qml" line="159"/>
+        <source>Row/thumbnail size</source>
+        <translation>Velikost řádku/náhledu</translation>
+    </message>
+    <message>
+        <location filename="../qml/PlaylistEditor.qml" line="167"/>
+        <source>Small</source>
+        <translation>Malé</translation>
+    </message>
+    <message>
+        <location filename="../qml/PlaylistEditor.qml" line="173"/>
+        <source>Medium</source>
+        <translation>Střední</translation>
+    </message>
+    <message>
+        <location filename="../qml/PlaylistEditor.qml" line="179"/>
+        <source>Large</source>
+        <translation>Velké</translation>
+    </message>
+    <message>
+        <location filename="../qml/PlaylistEditor.qml" line="195"/>
         <source>Search…</source>
         <translation>Hledat…</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="108"/>
+        <location filename="../qml/PlaylistEditor.qml" line="209"/>
         <source>Clear</source>
         <translation>Smazat</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="112"/>
+        <location filename="../qml/PlaylistEditor.qml" line="213"/>
         <source>Hides entries whose name does not match; it does not remove them from the playlist.</source>
         <translation>Skryje položky, jejichž název neodpovídá; neodebere je ze seznamu stop.</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="197"/>
+        <location filename="../qml/PlaylistEditor.qml" line="370"/>
         <source>Playlist is empty</source>
         <translation>Seznam stop je prázdný</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="209"/>
+        <location filename="../qml/PlaylistEditor.qml" line="382"/>
         <source>Load playlist…</source>
         <translation>Načíst seznam stop…</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="214"/>
+        <location filename="../qml/PlaylistEditor.qml" line="387"/>
         <source>Save playlist…</source>
         <translation>Uložit seznam stop…</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="223"/>
+        <location filename="../qml/PlaylistEditor.qml" line="396"/>
         <source>Add files…</source>
         <translation>Přidat soubory…</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="228"/>
+        <location filename="../qml/PlaylistEditor.qml" line="401"/>
         <source>Add URL…</source>
         <translation>Přidat URL…</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="236"/>
+        <location filename="../qml/PlaylistEditor.qml" line="409"/>
         <source>Remove selected</source>
         <translation>Odebrat o&amp;značené</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="242"/>
+        <location filename="../qml/PlaylistEditor.qml" line="415"/>
         <source>Remove all</source>
         <translation>Odebrat &amp;vše</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="251"/>
+        <location filename="../qml/PlaylistEditor.qml" line="424"/>
         <source>Play selected</source>
         <translation>Přehrát vybrané</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="257"/>
+        <location filename="../qml/PlaylistEditor.qml" line="430"/>
         <source>Previous</source>
         <translation>Před&amp;chozí</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="263"/>
+        <location filename="../qml/PlaylistEditor.qml" line="436"/>
         <source>Next</source>
         <translation>&amp;Další</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="272"/>
+        <location filename="../qml/PlaylistEditor.qml" line="445"/>
         <source>Repeat playlist</source>
         <translation>Zopakovat playlist</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="279"/>
+        <location filename="../qml/PlaylistEditor.qml" line="452"/>
         <source>Shuffle</source>
         <translation>Ná&amp;hodně</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="289"/>
+        <location filename="../qml/PlaylistEditor.qml" line="462"/>
         <source>Move up</source>
         <translation>Posunout &amp;nahoru</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="299"/>
+        <location filename="../qml/PlaylistEditor.qml" line="472"/>
         <source>Move down</source>
         <translation>Posunout &amp;dolů</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="315"/>
+        <location filename="../qml/PlaylistEditor.qml" line="488"/>
         <source>Media files (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="316"/>
-        <location filename="../qml/PlaylistEditor.qml" line="331"/>
+        <location filename="../qml/PlaylistEditor.qml" line="489"/>
+        <location filename="../qml/PlaylistEditor.qml" line="504"/>
         <source>All files (*)</source>
         <translation>Všechny soubory (*)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="331"/>
+        <location filename="../qml/PlaylistEditor.qml" line="504"/>
         <source>Playlists (*.m3u *.m3u8)</source>
         <translation>Seznamy stop (*.m3u *.m3u8)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="342"/>
+        <location filename="../qml/PlaylistEditor.qml" line="515"/>
         <source>Playlists (*.m3u8 *.m3u)</source>
         <translation>Seznamy stop (*.m3u8 *.m3u)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="348"/>
+        <location filename="../qml/PlaylistEditor.qml" line="521"/>
         <source>Add URL</source>
         <translation>Přidat URL</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="389"/>
+        <location filename="../qml/PlaylistEditor.qml" line="562"/>
         <source>https://…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="399"/>
+        <location filename="../qml/PlaylistEditor.qml" line="572"/>
         <source>OK</source>
         <translation>&amp;OK</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="404"/>
+        <location filename="../qml/PlaylistEditor.qml" line="577"/>
         <source>Cancel</source>
         <translation>Storno</translation>
     </message>
@@ -3653,149 +3673,164 @@
 <context>
     <name>PrefPlaylistPage</name>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="31"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="15"/>
+        <source>&lt;h1&gt;Playlist&lt;/h1&gt;&lt;p&gt;&lt;b&gt;Playlist&lt;/b&gt; tab — playback options (play files from start, start playing after loading a playlist, play the next file automatically, ignore playback errors, repeat, shuffle); how opening one file adds its folder siblings (the &quot;Add files from folder&quot; mode: none, video, audio, both or consecutive; recursive folders); whether to show each item&apos;s title instead of its file name, and whether the playlist is a docked panel or a separate window.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Misc&lt;/b&gt; tab — auto-sort the list, case-sensitive search, save a copy of the playlist on exit, remember the playlist between sessions, and the maximum number of generated row thumbnails to keep cached.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefPlaylistPage.qml" line="32"/>
         <source>Playlist</source>
         <translation>Playlist</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="32"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="33"/>
         <source>Misc</source>
         <translation>Různé</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="51"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="52"/>
         <source>Playback</source>
         <translation>Přehrávání</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="60"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="61"/>
         <source>Play files from start</source>
         <translation>Přehrát soubory od začátku</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="65"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="66"/>
         <source>Always begin at the beginning, ignoring any remembered resume position for the file.</source>
         <translation>Vždy začít od začátku a ignorovat případnou zapamatovanou pozici obnovení souboru.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="71"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="72"/>
         <source>Start playback after loading a playlist</source>
         <translation>Zahájit přehrávání po načteční playlistu</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="76"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="77"/>
         <source>Play next file automatically</source>
         <translation>Přehrát další soubor automaticky</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="83"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="84"/>
         <source>Ignore playback errors</source>
         <translation>Ignorovat chyby přehrávání</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="88"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="89"/>
         <source>When a file fails to play, skip on to the next item instead of stopping the playlist.</source>
         <translation>Když se soubor nepodaří přehrát, přeskočit na další položku místo zastavení seznamu stop.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="94"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="95"/>
         <source>Repeat playlist</source>
         <translation>Zopakovat playlist</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="99"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="100"/>
         <source>Shuffle</source>
         <translation>Ná&amp;hodně</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="108"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="109"/>
         <source>Adding files</source>
         <translation>Přidání souborů</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="118"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="119"/>
         <source>Add files to the playlist automatically</source>
         <translation>Přidat soubory do playlistu automaticky</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="123"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="124"/>
         <source>When you open a single file, also add the other media files from its folder to the playlist.</source>
         <translation>Při otevření jednoho souboru přidat do seznamu stop i ostatní soubory médií z jeho složky.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="132"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="133"/>
         <source>Add files from folder:</source>
         <translation>Přidat soubory ze &amp;složky:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="134"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="135"/>
         <source>Which sibling files to add: none, only video, only audio, both, or just the files consecutive to the opened one (matching its name pattern).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="143"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="144"/>
         <source>None</source>
         <translation>Vypnuto</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="144"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="145"/>
         <source>Video files</source>
         <translation>Video soubory</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="145"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="146"/>
         <source>Audio files</source>
         <translation>Zvukové soubory</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="146"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="147"/>
         <source>Video and audio files</source>
         <translation>Video a zvukové soubory</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="147"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="148"/>
         <source>Consecutive files</source>
         <translation>Sekvence souborů</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="154"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="155"/>
         <source>Add files in directories recursively</source>
         <translation>Přidá soubory v adresářích rekurzivně</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="161"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="162"/>
         <source>Get info automatically about files added (slow)</source>
         <translation>Automaticky dodat &amp;informace o souborech (pomalé)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="170"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="171"/>
         <source>Display title name instead of filename</source>
         <translation>Zobrazte název titulu místo názvu souboru</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="175"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="176"/>
         <source>Show each entry&apos;s stored title (from the playlist or media metadata) rather than its file name.</source>
         <translation>Zobrazovat uložený název každé položky (ze seznamu stop nebo metadat) místo názvu souboru.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="185"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="186"/>
         <source>Playlist style:</source>
         <translation>Styl seznamu stop:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="188"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="189"/>
         <source>Docked panel</source>
         <translation>Ukotvený panel</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="188"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="189"/>
         <source>Separate window</source>
         <translation>Samostatné okno</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="233"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="234"/>
         <source>Restore the playlist you had open the last time Vivace was closed.</source>
         <translation>Obnoví seznam skladeb, který byl otevřený při posledním ukončení Vivace.</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefPlaylistPage.qml" line="241"/>
+        <source>Maximum cached thumbnails:</source>
+        <translation>Maximální počet uložených náhledů:</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefPlaylistPage.qml" line="252"/>
+        <source>Row thumbnails generated for playlist entries without one are kept in a cache, oldest-shown evicted first once this many are stored. Does not include sibling &quot;.jpg&quot; files next to your media, which are never managed or removed by Vivace.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Restore\ the\ playlist\ you\ had\ open\ the\ last\ time\ Vivace\ was\ closed\.</source>
@@ -3806,32 +3841,27 @@
         <translation type="vanished">Relace</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="228"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="229"/>
         <source>Remember the playlist between sessions</source>
         <translation>Zapamatovat seznam stop mezi relacemi</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="205"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="206"/>
         <source>Auto sort</source>
         <translation>Třídit automaticky</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="15"/>
-        <source>&lt;h1&gt;Playlist&lt;/h1&gt;&lt;p&gt;&lt;b&gt;Playlist&lt;/b&gt; tab — playback options (play files from start, start playing after loading a playlist, play the next file automatically, ignore playback errors, repeat, shuffle); how opening one file adds its folder siblings (the &quot;Add files from folder&quot; mode: none, video, audio, both or consecutive; recursive folders); whether to show each item&apos;s title instead of its file name, and whether the playlist is a docked panel or a separate window.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Misc&lt;/b&gt; tab — auto-sort the list, case-sensitive search, save a copy of the playlist on exit, and remember the playlist between sessions.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="210"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="211"/>
         <source>Keep the playlist sorted by name as items are added, rather than in the order they were added.</source>
         <translation>Udržovat seznam stop seřazený podle názvu při přidávání položek místo pořadí přidání.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="216"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="217"/>
         <source>Case sensitive search</source>
         <translation>Vyhledávání s velkými a malými písmeny</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="221"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="222"/>
         <source>Save a copy of the playlist on exit</source>
         <translation>Uložit kopii playlistu při ukončení</translation>
     </message>
@@ -4018,92 +4048,92 @@
         <translation>Nastavení</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="79"/>
+        <location filename="../qml/PreferencesDialog.qml" line="85"/>
         <source>&lt;h1&gt;Help&lt;/h1&gt;&lt;p&gt;No help is available for this section.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="118"/>
+        <location filename="../qml/PreferencesDialog.qml" line="124"/>
         <source>General</source>
         <translation>Všeobecné</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="119"/>
+        <location filename="../qml/PreferencesDialog.qml" line="125"/>
         <source>Drives</source>
         <translation>Mechaniky</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="120"/>
+        <location filename="../qml/PreferencesDialog.qml" line="126"/>
         <source>Subtitles</source>
         <translation>Titulky</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="121"/>
+        <location filename="../qml/PreferencesDialog.qml" line="127"/>
         <source>Interface</source>
         <translation>Rozhraní</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="122"/>
+        <location filename="../qml/PreferencesDialog.qml" line="128"/>
         <source>Keyboard and mouse</source>
         <translation>Klávesnice a myš</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="123"/>
+        <location filename="../qml/PreferencesDialog.qml" line="129"/>
         <source>Playlist</source>
         <translation>Playlist</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="124"/>
+        <location filename="../qml/PreferencesDialog.qml" line="130"/>
         <source>TV and radio</source>
         <translation>TV a rádio</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="125"/>
+        <location filename="../qml/PreferencesDialog.qml" line="131"/>
         <source>File types</source>
         <translation>Typy souborů</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="126"/>
+        <location filename="../qml/PreferencesDialog.qml" line="132"/>
         <source>Updates</source>
         <translation>Aktualizace</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="127"/>
+        <location filename="../qml/PreferencesDialog.qml" line="133"/>
         <source>Network</source>
         <translation>Síť</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="128"/>
+        <location filename="../qml/PreferencesDialog.qml" line="134"/>
         <source>Advanced</source>
         <translation>Pokročilé</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="176"/>
+        <location filename="../qml/PreferencesDialog.qml" line="182"/>
         <source>&amp;Help</source>
         <translation>&amp;Nápověda</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="181"/>
+        <location filename="../qml/PreferencesDialog.qml" line="187"/>
         <source>OK</source>
         <translation>&amp;OK</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="185"/>
+        <location filename="../qml/PreferencesDialog.qml" line="191"/>
         <source>Apply</source>
         <translation>Použít</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="191"/>
+        <location filename="../qml/PreferencesDialog.qml" line="197"/>
         <source>Cancel</source>
         <translation>Storno</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="200"/>
+        <location filename="../qml/PreferencesDialog.qml" line="206"/>
         <source>Vivace — Help</source>
         <translation>Vivace — Nápověda</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="248"/>
+        <location filename="../qml/PreferencesDialog.qml" line="254"/>
         <source>Close</source>
         <translation>Zavřít</translation>
     </message>

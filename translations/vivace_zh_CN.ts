@@ -766,284 +766,284 @@
 <context>
     <name>Main</name>
     <message>
-        <location filename="../qml/Main.qml" line="388"/>
+        <location filename="../qml/Main.qml" line="399"/>
         <source>TV editor</source>
         <translation>电视编辑器</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="388"/>
+        <location filename="../qml/Main.qml" line="399"/>
         <source>TV channels</source>
         <translation>电视频道</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="391"/>
+        <location filename="../qml/Main.qml" line="402"/>
         <source>Radio editor</source>
         <translation>广播编辑器</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="391"/>
+        <location filename="../qml/Main.qml" line="402"/>
         <source>Radio channels</source>
         <translation>广播电台</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="394"/>
-        <location filename="../qml/Main.qml" line="437"/>
+        <location filename="../qml/Main.qml" line="405"/>
+        <location filename="../qml/Main.qml" line="448"/>
         <source>Favorite editor</source>
         <translation>收藏夹编辑器</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="394"/>
-        <location filename="../qml/Main.qml" line="437"/>
+        <location filename="../qml/Main.qml" line="405"/>
+        <location filename="../qml/Main.qml" line="448"/>
         <source>Favorite list</source>
         <translation>收藏夹列表</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="398"/>
+        <location filename="../qml/Main.qml" line="409"/>
         <source>Bookmark added</source>
         <translation>已添加书签</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="413"/>
+        <location filename="../qml/Main.qml" line="424"/>
         <source>Edit main toolbar</source>
         <translation>编辑主工具栏(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="416"/>
+        <location filename="../qml/Main.qml" line="427"/>
         <source>Edit control bar</source>
         <translation>编辑控制条(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="444"/>
+        <location filename="../qml/Main.qml" line="455"/>
         <source>Screenshot saved as %1</source>
         <translation>截图已保存为 %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="445"/>
+        <location filename="../qml/Main.qml" line="456"/>
         <source>Could not take the screenshot</source>
         <translation>无法截取屏幕截图</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="558"/>
+        <location filename="../qml/Main.qml" line="569"/>
         <source>Drop media files here, or press Ctrl+O</source>
         <translation>将媒体文件拖放到此处，或按 Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="634"/>
+        <location filename="../qml/Main.qml" line="645"/>
         <source>Downloading video…</source>
         <translation>正在下载视频…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="641"/>
+        <location filename="../qml/Main.qml" line="652"/>
         <source>This can take a while — the external tool is downloading and merging HD video and audio.</source>
         <translation>这可能需要一些时间 — 外部工具正在下载并合并高清视频和音频。</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="655"/>
-        <location filename="../qml/Main.qml" line="1557"/>
+        <location filename="../qml/Main.qml" line="666"/>
+        <location filename="../qml/Main.qml" line="1581"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="728"/>
+        <location filename="../qml/Main.qml" line="739"/>
         <source>Loading…</source>
         <translation>正在加载…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="729"/>
+        <location filename="../qml/Main.qml" line="740"/>
         <source>Connecting…</source>
         <translation>连接中...</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="730"/>
+        <location filename="../qml/Main.qml" line="741"/>
         <source>Buffering… %1%</source>
         <translation>正在缓冲… %1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="738"/>
+        <location filename="../qml/Main.qml" line="749"/>
         <source>Live streams can take several seconds to start.</source>
         <translation>直播流可能需要几秒钟才能开始。</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="773"/>
+        <location filename="../qml/Main.qml" line="784"/>
         <source>Volume: %1%</source>
         <translation>音量：%1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="776"/>
+        <location filename="../qml/Main.qml" line="787"/>
         <source>Mute</source>
         <translation>静音</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="776"/>
+        <location filename="../qml/Main.qml" line="787"/>
         <source>Mute off</source>
         <translation>已取消静音</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="779"/>
+        <location filename="../qml/Main.qml" line="790"/>
         <source>Speed: %1x</source>
         <translation>速度：%1x</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1186"/>
+        <location filename="../qml/Main.qml" line="1197"/>
         <source>Media files (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1187"/>
-        <location filename="../qml/Main.qml" line="1245"/>
-        <location filename="../qml/Main.qml" line="1493"/>
+        <location filename="../qml/Main.qml" line="1198"/>
+        <location filename="../qml/Main.qml" line="1256"/>
+        <location filename="../qml/Main.qml" line="1517"/>
         <source>All files (*)</source>
         <translation>所有文件 (*)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1229"/>
+        <location filename="../qml/Main.qml" line="1240"/>
         <source>Select the DVD drive or a folder containing VIDEO_TS</source>
         <translation>选择 DVD 驱动器或包含 VIDEO_TS 的文件夹</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1233"/>
+        <location filename="../qml/Main.qml" line="1244"/>
         <source>No DVD video found in %1</source>
         <translation>在 %1 中未找到 DVD 视频</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1244"/>
+        <location filename="../qml/Main.qml" line="1255"/>
         <source>Playlists (*.m3u *.m3u8)</source>
         <translation>播放列表 (*.m3u *.m3u8)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1287"/>
+        <location filename="../qml/Main.qml" line="1298"/>
         <source>Playing stream</source>
         <translation>正在播放流</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1293"/>
-        <location filename="../qml/Main.qml" line="1313"/>
+        <location filename="../qml/Main.qml" line="1304"/>
+        <location filename="../qml/Main.qml" line="1337"/>
         <source>Playing downloaded video</source>
         <translation>正在播放已下载的视频</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1297"/>
+        <location filename="../qml/Main.qml" line="1308"/>
         <source>YouTube: %1</source>
         <translation>YouTube：%1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1317"/>
+        <location filename="../qml/Main.qml" line="1341"/>
         <source>Download failed: %1</source>
         <translation>下载失败：%1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1414"/>
+        <location filename="../qml/Main.qml" line="1438"/>
         <source>Saved %1 file(s); %2 failed.</source>
         <translation>已保存 %1 个文件；%2 个失败。</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1418"/>
+        <location filename="../qml/Main.qml" line="1442"/>
         <source>Saved %1 file(s).</source>
         <translation>已保存 %1 个文件。</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1431"/>
+        <location filename="../qml/Main.qml" line="1455"/>
         <source>Could not read the shortcut file.</source>
         <translation>无法读取快捷方式文件。</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1446"/>
+        <location filename="../qml/Main.qml" line="1470"/>
         <source>Starting download…</source>
         <translation>正在开始下载…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1447"/>
+        <location filename="../qml/Main.qml" line="1471"/>
         <source>Downloading video (this can take a while)…</source>
         <translation>正在下载视频（这可能需要一些时间）…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1451"/>
+        <location filename="../qml/Main.qml" line="1475"/>
         <source>Resolving with yt-dlp…</source>
         <translation>正在使用 yt-dlp 解析…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1488"/>
+        <location filename="../qml/Main.qml" line="1512"/>
         <source>Load subtitle file</source>
         <translation>加载字幕文件</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1492"/>
+        <location filename="../qml/Main.qml" line="1516"/>
         <source>Subtitle files (*.srt *.vtt *.ass *.ssa)</source>
         <translation>字幕文件 (*.srt *.vtt *.ass *.ssa)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1500"/>
+        <location filename="../qml/Main.qml" line="1524"/>
         <source>Subtitle delay</source>
         <translation>字幕延迟</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1534"/>
+        <location filename="../qml/Main.qml" line="1558"/>
         <source>Delay:</source>
         <translation>延迟：</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1540"/>
-        <location filename="../qml/Main.qml" line="1612"/>
+        <location filename="../qml/Main.qml" line="1564"/>
+        <location filename="../qml/Main.qml" line="1636"/>
         <source>ms</source>
         <translation>毫秒</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1550"/>
+        <location filename="../qml/Main.qml" line="1574"/>
         <source>OK</source>
         <translation>确定(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1569"/>
+        <location filename="../qml/Main.qml" line="1593"/>
         <source>Audio delay — Vivace</source>
         <translation>音频延迟 — Vivace</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1600"/>
+        <location filename="../qml/Main.qml" line="1624"/>
         <source>No delay for this file (use the global delay only)</source>
         <translation>此文件无延迟（仅使用全局延迟）</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1605"/>
+        <location filename="../qml/Main.qml" line="1629"/>
         <source>This file&apos;s delay:</source>
         <translation>此文件的延迟：</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1620"/>
+        <location filename="../qml/Main.qml" line="1644"/>
         <source>The delay applied to this file is this value plus the global delay for the current audio device (%1 ms), set in Preferences &gt; General &gt; Audio. Negative values delay the video to match audio that arrives late (e.g. Bluetooth headphones).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1633"/>
+        <location filename="../qml/Main.qml" line="1657"/>
         <source>&amp;Apply</source>
         <translation>应用(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1642"/>
+        <location filename="../qml/Main.qml" line="1666"/>
         <source>&amp;Close</source>
         <translation>关闭(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1739"/>
+        <location filename="../qml/Main.qml" line="1763"/>
         <source>Hide window</source>
         <translation>隐藏窗口</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1739"/>
+        <location filename="../qml/Main.qml" line="1763"/>
         <source>Show window</source>
         <translation>显示窗口</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1744"/>
+        <location filename="../qml/Main.qml" line="1768"/>
         <source>Play / Pause</source>
         <translation>播放/暂停</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1748"/>
+        <location filename="../qml/Main.qml" line="1772"/>
         <source>Stop</source>
         <translation>停止</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1753"/>
+        <location filename="../qml/Main.qml" line="1777"/>
         <source>Quit</source>
         <translation>退出(&amp;Q)</translation>
     </message>
@@ -2139,138 +2139,158 @@
 <context>
     <name>PlaylistEditor</name>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="75"/>
+        <location filename="../qml/PlaylistEditor.qml" line="142"/>
         <source>Playlist (%1)</source>
         <translation>播放列表 (%1)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="81"/>
+        <location filename="../qml/PlaylistEditor.qml" line="148"/>
         <source>Playlist: %1 (%2)</source>
-            <translation>播放列表：%1 (%2)</translation>
+        <translation>播放列表：%1 (%2)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="94"/>
+        <location filename="../qml/PlaylistEditor.qml" line="159"/>
+        <source>Row/thumbnail size</source>
+        <translation>行/缩略图大小</translation>
+    </message>
+    <message>
+        <location filename="../qml/PlaylistEditor.qml" line="167"/>
+        <source>Small</source>
+        <translation>小</translation>
+    </message>
+    <message>
+        <location filename="../qml/PlaylistEditor.qml" line="173"/>
+        <source>Medium</source>
+        <translation>中</translation>
+    </message>
+    <message>
+        <location filename="../qml/PlaylistEditor.qml" line="179"/>
+        <source>Large</source>
+        <translation>大</translation>
+    </message>
+    <message>
+        <location filename="../qml/PlaylistEditor.qml" line="195"/>
         <source>Search…</source>
         <translation>搜索…</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="108"/>
+        <location filename="../qml/PlaylistEditor.qml" line="209"/>
         <source>Clear</source>
         <translation>清除</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="112"/>
+        <location filename="../qml/PlaylistEditor.qml" line="213"/>
         <source>Hides entries whose name does not match; it does not remove them from the playlist.</source>
         <translation>隐藏名称不匹配的条目；不会将它们从播放列表中移除。</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="197"/>
+        <location filename="../qml/PlaylistEditor.qml" line="370"/>
         <source>Playlist is empty</source>
         <translation>播放列表为空</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="209"/>
+        <location filename="../qml/PlaylistEditor.qml" line="382"/>
         <source>Load playlist…</source>
         <translation>加载播放列表…</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="214"/>
+        <location filename="../qml/PlaylistEditor.qml" line="387"/>
         <source>Save playlist…</source>
         <translation>保存播放列表…</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="223"/>
+        <location filename="../qml/PlaylistEditor.qml" line="396"/>
         <source>Add files…</source>
         <translation>添加文件…</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="228"/>
+        <location filename="../qml/PlaylistEditor.qml" line="401"/>
         <source>Add URL…</source>
         <translation>添加 URL…</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="236"/>
+        <location filename="../qml/PlaylistEditor.qml" line="409"/>
         <source>Remove selected</source>
         <translation>删除选定(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="242"/>
+        <location filename="../qml/PlaylistEditor.qml" line="415"/>
         <source>Remove all</source>
         <translation>删除全部(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="251"/>
+        <location filename="../qml/PlaylistEditor.qml" line="424"/>
         <source>Play selected</source>
         <translation>播放所选</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="257"/>
+        <location filename="../qml/PlaylistEditor.qml" line="430"/>
         <source>Previous</source>
         <translation>上一个(&amp;V)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="263"/>
+        <location filename="../qml/PlaylistEditor.qml" line="436"/>
         <source>Next</source>
         <translation>下一个(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="272"/>
+        <location filename="../qml/PlaylistEditor.qml" line="445"/>
         <source>Repeat playlist</source>
         <translation>重复播放列表</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="279"/>
+        <location filename="../qml/PlaylistEditor.qml" line="452"/>
         <source>Shuffle</source>
         <translation>乱序(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="289"/>
+        <location filename="../qml/PlaylistEditor.qml" line="462"/>
         <source>Move up</source>
         <translation>向上移动(&amp;U)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="299"/>
+        <location filename="../qml/PlaylistEditor.qml" line="472"/>
         <source>Move down</source>
         <translation>向下移动(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="315"/>
+        <location filename="../qml/PlaylistEditor.qml" line="488"/>
         <source>Media files (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="316"/>
-        <location filename="../qml/PlaylistEditor.qml" line="331"/>
+        <location filename="../qml/PlaylistEditor.qml" line="489"/>
+        <location filename="../qml/PlaylistEditor.qml" line="504"/>
         <source>All files (*)</source>
         <translation>所有文件 (*)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="331"/>
+        <location filename="../qml/PlaylistEditor.qml" line="504"/>
         <source>Playlists (*.m3u *.m3u8)</source>
         <translation>播放列表 (*.m3u *.m3u8)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="342"/>
+        <location filename="../qml/PlaylistEditor.qml" line="515"/>
         <source>Playlists (*.m3u8 *.m3u)</source>
         <translation>播放列表 (*.m3u8 *.m3u)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="348"/>
+        <location filename="../qml/PlaylistEditor.qml" line="521"/>
         <source>Add URL</source>
         <translation>添加 URL</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="389"/>
+        <location filename="../qml/PlaylistEditor.qml" line="562"/>
         <source>https://…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="399"/>
+        <location filename="../qml/PlaylistEditor.qml" line="572"/>
         <source>OK</source>
         <translation>确定(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="404"/>
+        <location filename="../qml/PlaylistEditor.qml" line="577"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
@@ -3647,149 +3667,164 @@
 <context>
     <name>PrefPlaylistPage</name>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="31"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="15"/>
+        <source>&lt;h1&gt;Playlist&lt;/h1&gt;&lt;p&gt;&lt;b&gt;Playlist&lt;/b&gt; tab — playback options (play files from start, start playing after loading a playlist, play the next file automatically, ignore playback errors, repeat, shuffle); how opening one file adds its folder siblings (the &quot;Add files from folder&quot; mode: none, video, audio, both or consecutive; recursive folders); whether to show each item&apos;s title instead of its file name, and whether the playlist is a docked panel or a separate window.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Misc&lt;/b&gt; tab — auto-sort the list, case-sensitive search, save a copy of the playlist on exit, remember the playlist between sessions, and the maximum number of generated row thumbnails to keep cached.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefPlaylistPage.qml" line="32"/>
         <source>Playlist</source>
         <translation>播放列表</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="32"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="33"/>
         <source>Misc</source>
         <translation>杂项</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="51"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="52"/>
         <source>Playback</source>
         <translation>播放</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="60"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="61"/>
         <source>Play files from start</source>
         <translation>从开头播放文件</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="65"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="66"/>
         <source>Always begin at the beginning, ignoring any remembered resume position for the file.</source>
         <translation>始终从头开始，忽略文件的任何已记住的续播位置。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="71"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="72"/>
         <source>Start playback after loading a playlist</source>
         <translation>导入列表后开始播放</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="76"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="77"/>
         <source>Play next file automatically</source>
         <translation>自动播放下一个文件</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="83"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="84"/>
         <source>Ignore playback errors</source>
         <translation>忽略播放错误</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="88"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="89"/>
         <source>When a file fails to play, skip on to the next item instead of stopping the playlist.</source>
         <translation>当某个文件播放失败时，跳到下一项而不是停止播放列表。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="94"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="95"/>
         <source>Repeat playlist</source>
         <translation>重复播放列表</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="99"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="100"/>
         <source>Shuffle</source>
         <translation>乱序(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="108"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="109"/>
         <source>Adding files</source>
         <translation>添加文件</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="118"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="119"/>
         <source>Add files to the playlist automatically</source>
         <translation>自动添加文件到播放列表</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="123"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="124"/>
         <source>When you open a single file, also add the other media files from its folder to the playlist.</source>
         <translation>打开单个文件时，也将其文件夹中的其他媒体文件添加到播放列表。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="132"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="133"/>
         <source>Add files from folder:</source>
         <translation>从文件夹添加文件(&amp;F):</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="134"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="135"/>
         <source>Which sibling files to add: none, only video, only audio, both, or just the files consecutive to the opened one (matching its name pattern).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="143"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="144"/>
         <source>None</source>
         <translation>无</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="144"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="145"/>
         <source>Video files</source>
         <translation>视频文件</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="145"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="146"/>
         <source>Audio files</source>
         <translation>音频</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="146"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="147"/>
         <source>Video and audio files</source>
         <translation>视频和音频文件</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="147"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="148"/>
         <source>Consecutive files</source>
         <translation>连续的文件</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="154"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="155"/>
         <source>Add files in directories recursively</source>
         <translation>添加子目录中的文件</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="161"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="162"/>
         <source>Get info automatically about files added (slow)</source>
         <translation>自动获取新增文件的信息(较慢)(&amp;I)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="170"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="171"/>
         <source>Display title name instead of filename</source>
         <translation>显示标题名而非文件名</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="175"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="176"/>
         <source>Show each entry&apos;s stored title (from the playlist or media metadata) rather than its file name.</source>
         <translation>显示每个条目存储的标题（来自播放列表或媒体元数据）而非其文件名。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="185"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="186"/>
         <source>Playlist style:</source>
         <translation>播放列表样式：</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="188"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="189"/>
         <source>Docked panel</source>
         <translation>停靠面板</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="188"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="189"/>
         <source>Separate window</source>
         <translation>单独窗口</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="233"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="234"/>
         <source>Restore the playlist you had open the last time Vivace was closed.</source>
         <translation>恢复上次关闭 Vivace 时打开的播放列表。</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefPlaylistPage.qml" line="241"/>
+        <source>Maximum cached thumbnails:</source>
+        <translation>缓存缩略图的最大数量：</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefPlaylistPage.qml" line="252"/>
+        <source>Row thumbnails generated for playlist entries without one are kept in a cache, oldest-shown evicted first once this many are stored. Does not include sibling &quot;.jpg&quot; files next to your media, which are never managed or removed by Vivace.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Restore\ the\ playlist\ you\ had\ open\ the\ last\ time\ Vivace\ was\ closed\.</source>
@@ -3800,32 +3835,27 @@
         <translation type="vanished">会话</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="228"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="229"/>
         <source>Remember the playlist between sessions</source>
         <translation>在各会话之间记住播放列表</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="205"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="206"/>
         <source>Auto sort</source>
         <translation>自动排序</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="15"/>
-        <source>&lt;h1&gt;Playlist&lt;/h1&gt;&lt;p&gt;&lt;b&gt;Playlist&lt;/b&gt; tab — playback options (play files from start, start playing after loading a playlist, play the next file automatically, ignore playback errors, repeat, shuffle); how opening one file adds its folder siblings (the &quot;Add files from folder&quot; mode: none, video, audio, both or consecutive; recursive folders); whether to show each item&apos;s title instead of its file name, and whether the playlist is a docked panel or a separate window.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Misc&lt;/b&gt; tab — auto-sort the list, case-sensitive search, save a copy of the playlist on exit, and remember the playlist between sessions.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="210"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="211"/>
         <source>Keep the playlist sorted by name as items are added, rather than in the order they were added.</source>
         <translation>在添加项目时保持播放列表按名称排序，而不是按添加顺序。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="216"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="217"/>
         <source>Case sensitive search</source>
         <translation>搜索区分大小写</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="221"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="222"/>
         <source>Save a copy of the playlist on exit</source>
         <translation>退出时保存播放列表的副本</translation>
     </message>
@@ -4012,92 +4042,92 @@
         <translation>首选项</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="79"/>
+        <location filename="../qml/PreferencesDialog.qml" line="85"/>
         <source>&lt;h1&gt;Help&lt;/h1&gt;&lt;p&gt;No help is available for this section.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="118"/>
+        <location filename="../qml/PreferencesDialog.qml" line="124"/>
         <source>General</source>
         <translation>常规</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="119"/>
+        <location filename="../qml/PreferencesDialog.qml" line="125"/>
         <source>Drives</source>
         <translation>驱动器</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="120"/>
+        <location filename="../qml/PreferencesDialog.qml" line="126"/>
         <source>Subtitles</source>
         <translation>字幕</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="121"/>
+        <location filename="../qml/PreferencesDialog.qml" line="127"/>
         <source>Interface</source>
         <translation>界面</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="122"/>
+        <location filename="../qml/PreferencesDialog.qml" line="128"/>
         <source>Keyboard and mouse</source>
         <translation>键盘和鼠标</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="123"/>
+        <location filename="../qml/PreferencesDialog.qml" line="129"/>
         <source>Playlist</source>
         <translation>播放列表</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="124"/>
+        <location filename="../qml/PreferencesDialog.qml" line="130"/>
         <source>TV and radio</source>
         <translation>电视和广播</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="125"/>
+        <location filename="../qml/PreferencesDialog.qml" line="131"/>
         <source>File types</source>
         <translation>文件类型</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="126"/>
+        <location filename="../qml/PreferencesDialog.qml" line="132"/>
         <source>Updates</source>
         <translation>更新</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="127"/>
+        <location filename="../qml/PreferencesDialog.qml" line="133"/>
         <source>Network</source>
         <translation>网络</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="128"/>
+        <location filename="../qml/PreferencesDialog.qml" line="134"/>
         <source>Advanced</source>
         <translation>高级</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="176"/>
+        <location filename="../qml/PreferencesDialog.qml" line="182"/>
         <source>&amp;Help</source>
         <translation>帮助(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="181"/>
+        <location filename="../qml/PreferencesDialog.qml" line="187"/>
         <source>OK</source>
         <translation>确定(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="185"/>
+        <location filename="../qml/PreferencesDialog.qml" line="191"/>
         <source>Apply</source>
         <translation>应用</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="191"/>
+        <location filename="../qml/PreferencesDialog.qml" line="197"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="200"/>
+        <location filename="../qml/PreferencesDialog.qml" line="206"/>
         <source>Vivace — Help</source>
         <translation>Vivace — 帮助</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="248"/>
+        <location filename="../qml/PreferencesDialog.qml" line="254"/>
         <source>Close</source>
         <translation>关闭</translation>
     </message>

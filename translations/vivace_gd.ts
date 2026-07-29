@@ -766,284 +766,284 @@
 <context>
     <name>Main</name>
     <message>
-        <location filename="../qml/Main.qml" line="388"/>
+        <location filename="../qml/Main.qml" line="399"/>
         <source>TV editor</source>
         <translation>Deasaiche Tbh</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="388"/>
+        <location filename="../qml/Main.qml" line="399"/>
         <source>TV channels</source>
         <translation>Seanailean Tbh</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="391"/>
+        <location filename="../qml/Main.qml" line="402"/>
         <source>Radio editor</source>
         <translation>Deasaiche rèidio</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="391"/>
+        <location filename="../qml/Main.qml" line="402"/>
         <source>Radio channels</source>
         <translation>Stèiseanan rèidio</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="394"/>
-        <location filename="../qml/Main.qml" line="437"/>
+        <location filename="../qml/Main.qml" line="405"/>
+        <location filename="../qml/Main.qml" line="448"/>
         <source>Favorite editor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="394"/>
-        <location filename="../qml/Main.qml" line="437"/>
+        <location filename="../qml/Main.qml" line="405"/>
+        <location filename="../qml/Main.qml" line="448"/>
         <source>Favorite list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="398"/>
+        <location filename="../qml/Main.qml" line="409"/>
         <source>Bookmark added</source>
         <translation>Chaidh comharra-lìn a chur ris</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="413"/>
+        <location filename="../qml/Main.qml" line="424"/>
         <source>Edit main toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="416"/>
+        <location filename="../qml/Main.qml" line="427"/>
         <source>Edit control bar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="444"/>
+        <location filename="../qml/Main.qml" line="455"/>
         <source>Screenshot saved as %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="445"/>
+        <location filename="../qml/Main.qml" line="456"/>
         <source>Could not take the screenshot</source>
         <translation>Cha b&apos; urrainn an glacadh-sgrìn a thogail</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="558"/>
+        <location filename="../qml/Main.qml" line="569"/>
         <source>Drop media files here, or press Ctrl+O</source>
         <translation>Leig às faidhlichean mheadhanan an seo, no brùth Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="634"/>
+        <location filename="../qml/Main.qml" line="645"/>
         <source>Downloading video…</source>
         <translation>A&apos; luchdachadh a-nuas bhidio…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="641"/>
+        <location filename="../qml/Main.qml" line="652"/>
         <source>This can take a while — the external tool is downloading and merging HD video and audio.</source>
         <translation>Faodaidh seo greis a thoirt — tha an t-inneal taobh a-muigh a&apos; luchdachadh a-nuas is a&apos; cur còmhla bhidio is fuaim HD.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="655"/>
-        <location filename="../qml/Main.qml" line="1557"/>
+        <location filename="../qml/Main.qml" line="666"/>
+        <location filename="../qml/Main.qml" line="1581"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="728"/>
+        <location filename="../qml/Main.qml" line="739"/>
         <source>Loading…</source>
         <translation>A&apos; luchdadh…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="729"/>
+        <location filename="../qml/Main.qml" line="740"/>
         <source>Connecting…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="730"/>
+        <location filename="../qml/Main.qml" line="741"/>
         <source>Buffering… %1%</source>
         <translation>A&apos; bufaireadh… %1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="738"/>
+        <location filename="../qml/Main.qml" line="749"/>
         <source>Live streams can take several seconds to start.</source>
         <translation>Faodaidh sruthan beò grunn dhiogan a thoirt gus tòiseachadh.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="773"/>
+        <location filename="../qml/Main.qml" line="784"/>
         <source>Volume: %1%</source>
         <translation>Àirde na fuaime: %1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="776"/>
+        <location filename="../qml/Main.qml" line="787"/>
         <source>Mute</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="776"/>
+        <location filename="../qml/Main.qml" line="787"/>
         <source>Mute off</source>
         <translation>Mùchadh dheth</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="779"/>
+        <location filename="../qml/Main.qml" line="790"/>
         <source>Speed: %1x</source>
         <translation>Astar: %1x</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1186"/>
+        <location filename="../qml/Main.qml" line="1197"/>
         <source>Media files (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1187"/>
-        <location filename="../qml/Main.qml" line="1245"/>
-        <location filename="../qml/Main.qml" line="1493"/>
+        <location filename="../qml/Main.qml" line="1198"/>
+        <location filename="../qml/Main.qml" line="1256"/>
+        <location filename="../qml/Main.qml" line="1517"/>
         <source>All files (*)</source>
         <translation>Na h-uile faidhle (*)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1229"/>
+        <location filename="../qml/Main.qml" line="1240"/>
         <source>Select the DVD drive or a folder containing VIDEO_TS</source>
         <translation>Tagh an draibh DVD no pasgan anns a bheil VIDEO_TS</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1233"/>
+        <location filename="../qml/Main.qml" line="1244"/>
         <source>No DVD video found in %1</source>
         <translation>Cha deach bhidio DVD a lorg ann an %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1244"/>
+        <location filename="../qml/Main.qml" line="1255"/>
         <source>Playlists (*.m3u *.m3u8)</source>
         <translation>Liostaichean-cluich (*.m3u *.m3u8)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1287"/>
+        <location filename="../qml/Main.qml" line="1298"/>
         <source>Playing stream</source>
         <translation>A&apos; cluich sruth</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1293"/>
-        <location filename="../qml/Main.qml" line="1313"/>
+        <location filename="../qml/Main.qml" line="1304"/>
+        <location filename="../qml/Main.qml" line="1337"/>
         <source>Playing downloaded video</source>
         <translation>A&apos; cluich bhidio a chaidh a luchdachadh a-nuas</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1297"/>
+        <location filename="../qml/Main.qml" line="1308"/>
         <source>YouTube: %1</source>
         <translation>YouTube: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1317"/>
+        <location filename="../qml/Main.qml" line="1341"/>
         <source>Download failed: %1</source>
         <translation>Dh&apos;fhàillig an luchdadh a-nuas: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1414"/>
+        <location filename="../qml/Main.qml" line="1438"/>
         <source>Saved %1 file(s); %2 failed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1418"/>
+        <location filename="../qml/Main.qml" line="1442"/>
         <source>Saved %1 file(s).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1431"/>
+        <location filename="../qml/Main.qml" line="1455"/>
         <source>Could not read the shortcut file.</source>
         <translation>Cha b&apos; urrainn am faidhle ath-ghoirid a leughadh.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1446"/>
+        <location filename="../qml/Main.qml" line="1470"/>
         <source>Starting download…</source>
         <translation>A&apos; tòiseachadh an luchdaidh a-nuas…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1447"/>
+        <location filename="../qml/Main.qml" line="1471"/>
         <source>Downloading video (this can take a while)…</source>
         <translation>A&apos; luchdachadh a-nuas bhidio (faodaidh seo greis a thoirt)…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1451"/>
+        <location filename="../qml/Main.qml" line="1475"/>
         <source>Resolving with yt-dlp…</source>
         <translation>A&apos; fuasgladh le yt-dlp…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1488"/>
+        <location filename="../qml/Main.qml" line="1512"/>
         <source>Load subtitle file</source>
         <translation>Luchdaich faidhle fho-thiotalan</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1492"/>
+        <location filename="../qml/Main.qml" line="1516"/>
         <source>Subtitle files (*.srt *.vtt *.ass *.ssa)</source>
         <translation>Faidhlichean fho-thiotalan (*.srt *.vtt *.ass *.ssa)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1500"/>
+        <location filename="../qml/Main.qml" line="1524"/>
         <source>Subtitle delay</source>
         <translation>Dàil fho-thiotalan</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1534"/>
+        <location filename="../qml/Main.qml" line="1558"/>
         <source>Delay:</source>
         <translation>Dàil:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1540"/>
-        <location filename="../qml/Main.qml" line="1612"/>
+        <location filename="../qml/Main.qml" line="1564"/>
+        <location filename="../qml/Main.qml" line="1636"/>
         <source>ms</source>
         <translation>ms</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1550"/>
+        <location filename="../qml/Main.qml" line="1574"/>
         <source>OK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1569"/>
+        <location filename="../qml/Main.qml" line="1593"/>
         <source>Audio delay — Vivace</source>
         <translation>Dàil fuaime — Vivace</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1600"/>
+        <location filename="../qml/Main.qml" line="1624"/>
         <source>No delay for this file (use the global delay only)</source>
         <translation>Gun dàil airson an fhaidhle seo (cleachd an dàil choitcheann a-mhàin)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1605"/>
+        <location filename="../qml/Main.qml" line="1629"/>
         <source>This file&apos;s delay:</source>
         <translation>Dàil an fhaidhle seo:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1620"/>
+        <location filename="../qml/Main.qml" line="1644"/>
         <source>The delay applied to this file is this value plus the global delay for the current audio device (%1 ms), set in Preferences &gt; General &gt; Audio. Negative values delay the video to match audio that arrives late (e.g. Bluetooth headphones).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1633"/>
+        <location filename="../qml/Main.qml" line="1657"/>
         <source>&amp;Apply</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1642"/>
+        <location filename="../qml/Main.qml" line="1666"/>
         <source>&amp;Close</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1739"/>
+        <location filename="../qml/Main.qml" line="1763"/>
         <source>Hide window</source>
         <translation>Falaich an uinneag</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1739"/>
+        <location filename="../qml/Main.qml" line="1763"/>
         <source>Show window</source>
         <translation>Seall an uinneag</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1744"/>
+        <location filename="../qml/Main.qml" line="1768"/>
         <source>Play / Pause</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1748"/>
+        <location filename="../qml/Main.qml" line="1772"/>
         <source>Stop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1753"/>
+        <location filename="../qml/Main.qml" line="1777"/>
         <source>Quit</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2144,138 +2144,158 @@
 <context>
     <name>PlaylistEditor</name>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="75"/>
+        <location filename="../qml/PlaylistEditor.qml" line="142"/>
         <source>Playlist (%1)</source>
         <translation>Liosta-cluich (%1)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="81"/>
+        <location filename="../qml/PlaylistEditor.qml" line="148"/>
         <source>Playlist: %1 (%2)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="94"/>
+        <location filename="../qml/PlaylistEditor.qml" line="159"/>
+        <source>Row/thumbnail size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PlaylistEditor.qml" line="167"/>
+        <source>Small</source>
+        <translation type="unfinished">Beag</translation>
+    </message>
+    <message>
+        <location filename="../qml/PlaylistEditor.qml" line="173"/>
+        <source>Medium</source>
+        <translation type="unfinished">Meadhanach</translation>
+    </message>
+    <message>
+        <location filename="../qml/PlaylistEditor.qml" line="179"/>
+        <source>Large</source>
+        <translation type="unfinished">Mòr</translation>
+    </message>
+    <message>
+        <location filename="../qml/PlaylistEditor.qml" line="195"/>
         <source>Search…</source>
         <translation>Lorg…</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="108"/>
+        <location filename="../qml/PlaylistEditor.qml" line="209"/>
         <source>Clear</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="112"/>
+        <location filename="../qml/PlaylistEditor.qml" line="213"/>
         <source>Hides entries whose name does not match; it does not remove them from the playlist.</source>
         <translation>Falaichidh e innteartan far nach eil an t-ainm a&apos; freagairt; cha toir e air falbh iad on liosta-chluich.</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="197"/>
+        <location filename="../qml/PlaylistEditor.qml" line="370"/>
         <source>Playlist is empty</source>
         <translation>Tha an liosta-chluich falamh</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="209"/>
+        <location filename="../qml/PlaylistEditor.qml" line="382"/>
         <source>Load playlist…</source>
         <translation>Luchdaich liosta-chluich…</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="214"/>
+        <location filename="../qml/PlaylistEditor.qml" line="387"/>
         <source>Save playlist…</source>
         <translation>Sàbhail an liosta-chluich…</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="223"/>
+        <location filename="../qml/PlaylistEditor.qml" line="396"/>
         <source>Add files…</source>
         <translation>Cuir faidhlichean ris…</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="228"/>
+        <location filename="../qml/PlaylistEditor.qml" line="401"/>
         <source>Add URL…</source>
         <translation>Cuir URL ris…</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="236"/>
+        <location filename="../qml/PlaylistEditor.qml" line="409"/>
         <source>Remove selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="242"/>
+        <location filename="../qml/PlaylistEditor.qml" line="415"/>
         <source>Remove all</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="251"/>
+        <location filename="../qml/PlaylistEditor.qml" line="424"/>
         <source>Play selected</source>
         <translation>Cluich na chaidh a thaghadh</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="257"/>
+        <location filename="../qml/PlaylistEditor.qml" line="430"/>
         <source>Previous</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="263"/>
+        <location filename="../qml/PlaylistEditor.qml" line="436"/>
         <source>Next</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="272"/>
+        <location filename="../qml/PlaylistEditor.qml" line="445"/>
         <source>Repeat playlist</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="279"/>
+        <location filename="../qml/PlaylistEditor.qml" line="452"/>
         <source>Shuffle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="289"/>
+        <location filename="../qml/PlaylistEditor.qml" line="462"/>
         <source>Move up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="299"/>
+        <location filename="../qml/PlaylistEditor.qml" line="472"/>
         <source>Move down</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="315"/>
+        <location filename="../qml/PlaylistEditor.qml" line="488"/>
         <source>Media files (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="316"/>
-        <location filename="../qml/PlaylistEditor.qml" line="331"/>
+        <location filename="../qml/PlaylistEditor.qml" line="489"/>
+        <location filename="../qml/PlaylistEditor.qml" line="504"/>
         <source>All files (*)</source>
         <translation>Na h-uile faidhle (*)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="331"/>
+        <location filename="../qml/PlaylistEditor.qml" line="504"/>
         <source>Playlists (*.m3u *.m3u8)</source>
         <translation>Liostaichean-cluich (*.m3u *.m3u8)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="342"/>
+        <location filename="../qml/PlaylistEditor.qml" line="515"/>
         <source>Playlists (*.m3u8 *.m3u)</source>
         <translation>Liostaichean-cluich (*.m3u8 *.m3u)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="348"/>
+        <location filename="../qml/PlaylistEditor.qml" line="521"/>
         <source>Add URL</source>
         <translation>Cuir URL ris</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="389"/>
+        <location filename="../qml/PlaylistEditor.qml" line="562"/>
         <source>https://…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="399"/>
+        <location filename="../qml/PlaylistEditor.qml" line="572"/>
         <source>OK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="404"/>
+        <location filename="../qml/PlaylistEditor.qml" line="577"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3648,148 +3668,163 @@
 <context>
     <name>PrefPlaylistPage</name>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="31"/>
-        <source>Playlist</source>
+        <location filename="../qml/PrefPlaylistPage.qml" line="15"/>
+        <source>&lt;h1&gt;Playlist&lt;/h1&gt;&lt;p&gt;&lt;b&gt;Playlist&lt;/b&gt; tab — playback options (play files from start, start playing after loading a playlist, play the next file automatically, ignore playback errors, repeat, shuffle); how opening one file adds its folder siblings (the &quot;Add files from folder&quot; mode: none, video, audio, both or consecutive; recursive folders); whether to show each item&apos;s title instead of its file name, and whether the playlist is a docked panel or a separate window.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Misc&lt;/b&gt; tab — auto-sort the list, case-sensitive search, save a copy of the playlist on exit, remember the playlist between sessions, and the maximum number of generated row thumbnails to keep cached.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/PrefPlaylistPage.qml" line="32"/>
+        <source>Playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefPlaylistPage.qml" line="33"/>
         <source>Misc</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="51"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="52"/>
         <source>Playback</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="60"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="61"/>
         <source>Play files from start</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="65"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="66"/>
         <source>Always begin at the beginning, ignoring any remembered resume position for the file.</source>
         <translation>Tòisich an-còmhnaidh aig an toiseach, a&apos; seachnadh ionad ath-thòiseachaidh sam bith a chaidh a chuimhneachadh airson an fhaidhle.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="71"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="72"/>
         <source>Start playback after loading a playlist</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="76"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="77"/>
         <source>Play next file automatically</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="83"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="84"/>
         <source>Ignore playback errors</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="88"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="89"/>
         <source>When a file fails to play, skip on to the next item instead of stopping the playlist.</source>
         <translation>Nuair a dh&apos;fhàilligeas faidhle a chluich, gearr air adhart dhan ath nì seach an liosta-chluich a stad.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="94"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="95"/>
         <source>Repeat playlist</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="99"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="100"/>
         <source>Shuffle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="108"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="109"/>
         <source>Adding files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="118"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="119"/>
         <source>Add files to the playlist automatically</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="123"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="124"/>
         <source>When you open a single file, also add the other media files from its folder to the playlist.</source>
         <translation>Nuair a dh&apos;fhosglas tu aon fhaidhle, cuir cuideachd na faidhlichean mheadhanan eile on phasgan aige ris an liosta-chluich.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="132"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="133"/>
         <source>Add files from folder:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="134"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="135"/>
         <source>Which sibling files to add: none, only video, only audio, both, or just the files consecutive to the opened one (matching its name pattern).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="143"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="144"/>
         <source>None</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="144"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="145"/>
         <source>Video files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="145"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="146"/>
         <source>Audio files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="146"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="147"/>
         <source>Video and audio files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="147"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="148"/>
         <source>Consecutive files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="154"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="155"/>
         <source>Add files in directories recursively</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="161"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="162"/>
         <source>Get info automatically about files added (slow)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="170"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="171"/>
         <source>Display title name instead of filename</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="175"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="176"/>
         <source>Show each entry&apos;s stored title (from the playlist or media metadata) rather than its file name.</source>
         <translation>Seall tiotal stòraichte gach innteirt (on liosta-chluich no meata-dàta nam meadhanan) seach ainm an fhaidhle aige.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="185"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="186"/>
         <source>Playlist style:</source>
         <translation>Stoidhle liosta-chluich:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="188"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="189"/>
         <source>Docked panel</source>
         <translation>Panail docte</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="188"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="189"/>
         <source>Separate window</source>
         <translation>Uinneag fa leth</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="233"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="234"/>
         <source>Restore the playlist you had open the last time Vivace was closed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefPlaylistPage.qml" line="241"/>
+        <source>Maximum cached thumbnails:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefPlaylistPage.qml" line="252"/>
+        <source>Row thumbnails generated for playlist entries without one are kept in a cache, oldest-shown evicted first once this many are stored. Does not include sibling &quot;.jpg&quot; files next to your media, which are never managed or removed by Vivace.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3797,32 +3832,27 @@
         <translation type="vanished">Seiseanan</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="228"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="229"/>
         <source>Remember the playlist between sessions</source>
         <translation>Cuimhnich an liosta-chluich eadar seiseanan</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="205"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="206"/>
         <source>Auto sort</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="15"/>
-        <source>&lt;h1&gt;Playlist&lt;/h1&gt;&lt;p&gt;&lt;b&gt;Playlist&lt;/b&gt; tab — playback options (play files from start, start playing after loading a playlist, play the next file automatically, ignore playback errors, repeat, shuffle); how opening one file adds its folder siblings (the &quot;Add files from folder&quot; mode: none, video, audio, both or consecutive; recursive folders); whether to show each item&apos;s title instead of its file name, and whether the playlist is a docked panel or a separate window.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Misc&lt;/b&gt; tab — auto-sort the list, case-sensitive search, save a copy of the playlist on exit, and remember the playlist between sessions.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="210"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="211"/>
         <source>Keep the playlist sorted by name as items are added, rather than in the order they were added.</source>
         <translation>Cùm an liosta-chluich air a sheòrsachadh a rèir ainm mar a chuirear nithean ris, seach san òrdugh san deach an cur ris.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="216"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="217"/>
         <source>Case sensitive search</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="221"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="222"/>
         <source>Save a copy of the playlist on exit</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4009,92 +4039,92 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="79"/>
+        <location filename="../qml/PreferencesDialog.qml" line="85"/>
         <source>&lt;h1&gt;Help&lt;/h1&gt;&lt;p&gt;No help is available for this section.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="118"/>
+        <location filename="../qml/PreferencesDialog.qml" line="124"/>
         <source>General</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="119"/>
+        <location filename="../qml/PreferencesDialog.qml" line="125"/>
         <source>Drives</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="120"/>
+        <location filename="../qml/PreferencesDialog.qml" line="126"/>
         <source>Subtitles</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="121"/>
+        <location filename="../qml/PreferencesDialog.qml" line="127"/>
         <source>Interface</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="122"/>
+        <location filename="../qml/PreferencesDialog.qml" line="128"/>
         <source>Keyboard and mouse</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="123"/>
+        <location filename="../qml/PreferencesDialog.qml" line="129"/>
         <source>Playlist</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="124"/>
+        <location filename="../qml/PreferencesDialog.qml" line="130"/>
         <source>TV and radio</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="125"/>
+        <location filename="../qml/PreferencesDialog.qml" line="131"/>
         <source>File types</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="126"/>
+        <location filename="../qml/PreferencesDialog.qml" line="132"/>
         <source>Updates</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="127"/>
+        <location filename="../qml/PreferencesDialog.qml" line="133"/>
         <source>Network</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="128"/>
+        <location filename="../qml/PreferencesDialog.qml" line="134"/>
         <source>Advanced</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="176"/>
+        <location filename="../qml/PreferencesDialog.qml" line="182"/>
         <source>&amp;Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="181"/>
+        <location filename="../qml/PreferencesDialog.qml" line="187"/>
         <source>OK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="185"/>
+        <location filename="../qml/PreferencesDialog.qml" line="191"/>
         <source>Apply</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="191"/>
+        <location filename="../qml/PreferencesDialog.qml" line="197"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="200"/>
+        <location filename="../qml/PreferencesDialog.qml" line="206"/>
         <source>Vivace — Help</source>
         <translation>Vivace — Cobhair</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="248"/>
+        <location filename="../qml/PreferencesDialog.qml" line="254"/>
         <source>Close</source>
         <translation type="unfinished"></translation>
     </message>

@@ -98,6 +98,19 @@ class Settings : public QObject
                WRITE setCaseSensitiveSearch NOTIFY caseSensitiveSearchChanged)
     Q_PROPERTY(bool autosavePlaylistOnExit READ autosavePlaylistOnExit
                WRITE setAutosavePlaylistOnExit NOTIFY autosavePlaylistOnExitChanged)
+    // Playlist row/thumbnail size: 0 = small (default), 1 = medium, 2 = large.
+    // Text stays the same size regardless; only the row height and the
+    // thumbnail grow. See PlaylistThumbnailProvider for how thumbnails
+    // themselves are sourced/generated.
+    Q_PROPERTY(int playlistThumbnailSize READ playlistThumbnailSize
+               WRITE setPlaylistThumbnailSize NOTIFY playlistThumbnailSizeChanged)
+    // Cap on how many generated thumbnails PlaylistThumbnailProvider's LRU
+    // cache keeps (least-recently-shown evicted beyond this); sibling .jpg
+    // files next to media are unaffected, only generated ones are counted.
+    Q_PROPERTY(int playlistThumbnailCacheMaxEntries
+                       READ playlistThumbnailCacheMaxEntries
+                       WRITE setPlaylistThumbnailCacheMaxEntries
+                       NOTIFY playlistThumbnailCacheMaxEntriesChanged)
     Q_PROPERTY(QString screenshotFolder READ screenshotFolder
                WRITE setScreenshotFolder NOTIFY screenshotFolderChanged)
     Q_PROPERTY(QString opensubtitlesApiKey READ opensubtitlesApiKey
@@ -462,6 +475,12 @@ public:
     bool autosavePlaylistOnExit() const { return m_autosavePlaylistOnExit; }
     void setAutosavePlaylistOnExit(bool autosave);
 
+    int playlistThumbnailSize() const { return m_playlistThumbnailSize; }
+    void setPlaylistThumbnailSize(int size);
+
+    int playlistThumbnailCacheMaxEntries() const { return m_playlistThumbnailCacheMaxEntries; }
+    void setPlaylistThumbnailCacheMaxEntries(int maxEntries);
+
     QString screenshotFolder() const { return m_screenshotFolder; }
 
     QString opensubtitlesApiKey() const { return m_opensubtitlesApiKey; }
@@ -787,6 +806,8 @@ signals:
     void playlistAutoSortChanged();
     void caseSensitiveSearchChanged();
     void autosavePlaylistOnExitChanged();
+    void playlistThumbnailSizeChanged();
+    void playlistThumbnailCacheMaxEntriesChanged();
     void screenshotFolderChanged();
     void opensubtitlesChanged();
     void proxyChanged();
@@ -895,6 +916,8 @@ private:
     bool m_playlistAutoSort;
     bool m_caseSensitiveSearch;
     bool m_autosavePlaylistOnExit;
+    int m_playlistThumbnailSize;
+    int m_playlistThumbnailCacheMaxEntries;
     QString m_screenshotFolder;
     bool m_proxyEnabled;
     int m_proxyType;

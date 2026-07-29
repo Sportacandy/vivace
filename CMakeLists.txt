@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.24)
 
 project(vivace VERSION 0.1.2 LANGUAGES CXX)
 
-find_package(Qt6 6.11 REQUIRED COMPONENTS Quick QuickControls2 Multimedia LabsPlatform Network ShaderTools DBus LinguistTools)
+find_package(Qt6 6.11 REQUIRED COMPONENTS Quick QuickControls2 Multimedia LabsPlatform Network ShaderTools DBus LinguistTools Sql)
 qt_standard_project_setup(REQUIRES 6.11)
 
 qt_add_executable(vivace
@@ -96,6 +96,7 @@ qt_add_qml_module(vivace
         src/shortcuts.h src/shortcuts.cpp
         src/updatechecker.h src/updatechecker.cpp
         src/youtuberesolver.h src/youtuberesolver.cpp
+        src/playlistthumbnailprovider.h src/playlistthumbnailprovider.cpp
         src/externaldownloader.h src/externaldownloader.cpp
         src/settings.h src/settings.cpp
         src/securestore.h src/securestore.cpp
@@ -265,6 +266,10 @@ target_link_libraries(vivace PRIVATE
     # all platforms so the MPRIS2 code compiles everywhere (it is only
     # instantiated on Linux); restrict to LINUX before packaging if desired.
     Qt6::DBus
+    # SQLite-backed LRU index for PlaylistThumbnailProvider's generated
+    # thumbnail cache (playlistthumbnailprovider.cpp). The QSQLITE driver
+    # ships with Qt itself, no extra vendoring needed.
+    Qt6::Sql
 )
 
 # macOS: screensaver inhibition uses an IOKit power-management assertion.
