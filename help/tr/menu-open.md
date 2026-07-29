@@ -16,7 +16,15 @@
   - **Blu-ray**, **Ses CD'si** — henüz desteklenmiyor.
 - **URL…** (`Ctrl+U`) — bir ağ akışı oynatır. YouTube desteği etkinken
   (*Tercihler ▸ Ağ*), YouTube bağlantıları da burada işlenir.
-- **YouTube önbelleği…** — Vivace'nin indirdiği videolara göz atın (indir ve oynat modunda).
+- **YouTube önbelleği…** — Vivace'nin indirdiği videolara göz atın (indir ve oynat
+  modunda). Videoları köşelerindeki onay kutusuyla işaretleyin, ardından
+  önbellekten kaldırın veya kalıcı olarak saklamak için **Kaydet ▾** seçeneğini
+  kullanın: normal bir klasöre, yeni bir çalma listesi dosyasına, mevcut bir
+  listeye eklenerek ya da doğrudan Vivace'de o an yüklü olan çalma listesine
+  eklenerek. Her seçenek önce bir hedef klasör ve dosyaların önbellekten
+  taşınıp taşınmayacağını ya da orada bir kopyanın bırakılıp bırakılmayacağını
+  sorar — önbelleğin boyutu sınırlıdır, bu yüzden yalnızca orada referans
+  verilen bir video zamanla silinebilir.
 - **TV** / **Radyo** — kanal listeleriniz (varsa SMPlayer'dan içe aktarılır).
 - **Çık** (`Ctrl+Q`) — Vivace'yi kapatır.
 

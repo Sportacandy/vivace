@@ -17,7 +17,15 @@ A **Megnyitás** menüvel tölthet be médiát a Vivace-be.
   - **Blu-ray**, **Hang-CD** — még nem támogatott.
 - **URL…** (`Ctrl+U`) — hálózati adatfolyam lejátszása. Bekapcsolt YouTube-
   támogatással (*Beállítások ▸ Hálózat*) a YouTube-hivatkozásokat is itt kezeli.
-- **YouTube-gyorsítótár…** — a Vivace által letöltött videók böngészése (letöltés és lejátszás módban).
+- **YouTube-gyorsítótár…** — a Vivace által letöltött videók böngészése (letöltés
+  és lejátszás módban). Jelölje ki a videókat a sarkukban lévő jelölőnégyzettel,
+  majd távolítsa el őket a gyorsítótárból, vagy használja a **Mentés ▾** gombot
+  a végleges megőrzéshez: egy sima mappába, egy új lejátszásilista-fájlba, egy
+  meglévőhöz hozzáadva, vagy közvetlenül a Vivace-ban éppen betöltött
+  lejátszási listához hozzáadva. Minden lehetőség először egy célmappát kér,
+  és hogy a fájlokat ki kell-e mozgatni a gyorsítótárból, vagy ott hagyjon-e
+  egy másolatot — a gyorsítótár mérete korlátozott, így egy csak ott
+  hivatkozott videó idővel törlődhet.
 - **TV** / **Rádió** — csatornalistái (SMPlayerből importálva, ha vannak).
 - **Kilépés** (`Ctrl+Q`) — a Vivace bezárása.
 

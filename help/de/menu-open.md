@@ -20,7 +20,14 @@
   YouTube-Unterstützung (*Einstellungen ▸ Netzwerk*) werden auch YouTube-Links
   hier verarbeitet.
 - **YouTube-Cache…** — von Vivace heruntergeladene Videos durchsuchen (im Modus
-  „Herunterladen und abspielen“).
+  „Herunterladen und abspielen“). Markieren Sie Videos über das Kontrollkästchen
+  in ihrer Ecke und entfernen Sie sie entweder aus dem Cache oder verwenden Sie
+  **Speichern ▾**, um sie dauerhaft zu sichern: in einen normalen Ordner, in eine
+  neue Wiedergabelistendatei, angehängt an eine bestehende, oder direkt zur
+  aktuell in Vivace geladenen Wiedergabeliste hinzugefügt. Jede Option fragt
+  zuerst nach einem Zielordner und ob die Dateien aus dem Cache verschoben oder
+  dort zusätzlich kopiert bleiben sollen — der Cache hat eine begrenzte Größe,
+  sodass ein nur dort referenziertes Video später verdrängt werden kann.
 - **TV** / **Radio** — Ihre Senderlisten (aus SMPlayer importiert, falls vorhanden).
 - **Beenden** (`Strg+Q`) — Vivace schließen.
 

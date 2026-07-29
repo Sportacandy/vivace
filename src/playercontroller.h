@@ -12,6 +12,7 @@
 #include <QMediaPlayer>
 #include <QObject>
 #include <QTimer>
+#include <QVariant>
 #include <QVideoFrame>
 #include <QtQml/qqmlregistration.h>
 
@@ -80,6 +81,16 @@ class PlayerController : public QObject
     // A friendly title for the current media (e.g. a resolved stream's video
     // title); empty for ordinary files, whose title is derived from the URL.
     Q_PROPERTY(QString mediaTitle READ mediaTitle NOTIFY mediaTitleChanged)
+    // The .m3u/.m3u8 file the in-memory playlist currently corresponds to,
+    // if any -- set when a playlist file is loaded (open()) or saved
+    // (savePlaylist()/addToPlaylistFile()); empty once plain media (not a
+    // playlist file) is opened, since the in-memory list is then no longer
+    // tied to any one file. Lets "Add to an existing playlist" (the YouTube
+    // cache Save menu) tell whether the file the user picked is the one
+    // currently shown in the Playlist panel, so it can update it live
+    // instead of only writing to disk.
+    Q_PROPERTY(QUrl currentPlaylistFile READ currentPlaylistFile
+               NOTIFY currentPlaylistFileChanged)
     Q_PROPERTY(QObject *videoOutput READ videoOutput WRITE setVideoOutput
                NOTIFY videoOutputChanged)
     // A/V sync offset, in ms. The delay actually applied to the current file is
@@ -240,6 +251,7 @@ public:
     bool seekPreviewAvailable() const { return m_seekPreviewAvailable; }
     qint64 smoothPosition() const { return m_smoothPosition; }
     QString mediaTitle() const { return m_mediaTitle; }
+    QUrl currentPlaylistFile() const { return m_currentPlaylistFile; }
     Q_INVOKABLE void setPreviewVideoOutput(QObject *item);
     Q_INVOKABLE void requestSeekPreview(qint64 ms);
 
@@ -432,6 +444,24 @@ public:
     Q_INVOKABLE void seekRelative(qint64 deltaMs);
     Q_INVOKABLE void frameStep(int frames);
     Q_INVOKABLE bool savePlaylist(const QUrl &file);
+    // Appends newEntries ({title, fileUrl} maps -- the shape YoutubeResolver::
+    // copyOrMoveToFolder() returns per relocated file) to playlistFile and
+    // re-saves it; createNew starts from an empty list instead of loading
+    // playlistFile's existing content first (overwrite rather than append).
+    // If playlistFile equals currentPlaylistFile(), the new entries are also
+    // enqueued into the live in-memory playlist. Returns false if the file
+    // can't be written.
+    Q_INVOKABLE bool addToPlaylistFile(const QUrl &playlistFile,
+                                       const QVariantList &newEntries,
+                                       bool createNew);
+    // Appends newEntries ({title, fileUrl} maps) straight to the live
+    // playlist -- no playlist FILE to pick -- and, if the playlist is
+    // already backed by a file (currentPlaylistFile() non-empty), re-saves
+    // that file so the addition isn't lost on exit. The YouTube cache Save
+    // menu's "Add to current playlist" option; the caller is expected to
+    // have already relocated the file(s) out of the cache (a limited-size
+    // rotation) before calling this, same as the other playlist options.
+    Q_INVOKABLE bool addToCurrentPlaylist(const QVariantList &newEntries);
 
 signals:
     void videoOutputChanged();
@@ -439,6 +469,7 @@ signals:
     void seekPreviewAvailableChanged();
     void smoothPositionChanged();
     void mediaTitleChanged();
+    void currentPlaylistFileChanged();
     void audioDelayChanged();
     void trackLabelsChanged();
     void activeTracksChanged();
@@ -556,6 +587,7 @@ private:
     bool m_seekPreviewAvailable = false;
     qint64 m_previewPendingMs = -1;
     QString m_mediaTitle;
+    QUrl m_currentPlaylistFile;
     QString m_pendingStreamTitle; // title to adopt on the next source change
 
     // Resume guard: the Qt FFmpeg backend can spuriously rewind to the start on

@@ -23,6 +23,7 @@
 #include <QObject>
 #include <QProcess>
 #include <QString>
+#include <QStringList>
 #include <QUrl>
 #include <QVariant>
 #include <QtQml/qqmlregistration.h>
@@ -103,6 +104,18 @@ public:
     // Delete a cached video (and its thumbnail) by its file:// URL.
     Q_INVOKABLE void removeCacheEntry(const QUrl &fileUrl);
 
+    // Copies (or, if moveFiles, moves) each cached video in fileUrls -- plus
+    // its sibling thumbnail, if any -- into destFolder, renaming on a name
+    // collision (Explorer-style " (2)", " (3)", ...). Returns one map per
+    // input in the same shape cacheEntries() uses ({title, id, fileUrl} for
+    // the NEW location) plus {ok, error}, so a caller can build playlist
+    // entries from the successful ones and report the rest. Used by the
+    // YouTube cache browser's Save menu (Preferences has no bearing here --
+    // this always operates on real cache-dir files regardless of mode).
+    Q_INVOKABLE QVariantList copyOrMoveToFolder(const QStringList &fileUrls,
+                                                const QUrl &destFolder,
+                                                bool moveFiles);
+
     bool busy() const { return m_busy; }
     bool downloading() const { return m_downloading; }
     bool installing() const { return m_installing; }
@@ -179,6 +192,9 @@ private:
     void removeCacheFilesForId(const QString &id) const; // clean partials
     QList<QFileInfo> finalCacheFiles() const;    // the cached videos (not parts)
     void deleteVideoAndThumbnail(const QString &videoPath) const;
+    // destPath if free, else "<base> (2)<ext>", "<base> (3)<ext>", ... --
+    // the first that doesn't already exist (Explorer's collision naming).
+    static QString uniqueDestPath(const QString &destPath);
     void updateCacheCount();                     // recount + emit
     // Ensure a cache thumbnail exists: keep yt-dlp's downloaded poster if it is
     // usable, else grab a video frame at the offset as a fallback.

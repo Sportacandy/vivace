@@ -16,7 +16,15 @@ Menuen **Åbn** er, hvordan du indlæser medier i Vivace.
   - **Blu-ray**, **Lyd-cd** — endnu ikke understøttet.
 - **URL…** (`Ctrl+U`) — afspil en netværksstream. Med YouTube-understøttelse slået
   til (*Indstillinger ▸ Netværk*) håndteres YouTube-links også her.
-- **YouTube-cache…** — gennemse videoer, Vivace har hentet (i tilstanden hent og afspil).
+- **YouTube-cache…** — gennemse videoer, Vivace har hentet (i tilstanden hent og
+  afspil). Markér videoer med afkrydsningsfeltet i hjørnet, og fjern dem
+  derefter fra cachen, eller brug **Gem ▾** til at beholde dem permanent: til
+  en almindelig mappe, til en ny afspilningslistefil, tilføjet til en
+  eksisterende, eller tilføjet direkte til den afspilningsliste, der aktuelt
+  er indlæst i Vivace. Hver mulighed spørger først om en destinationsmappe,
+  og om filerne skal flyttes ud af cachen, eller om en kopi skal blive der —
+  cachen har en begrænset størrelse, så en video, der kun refereres der, kan
+  til sidst blive fjernet.
 - **Tv** / **Radio** — dine kanallister (importeret fra SMPlayer, hvis de findes).
 - **Afslut** (`Ctrl+Q`) — luk Vivace.
 

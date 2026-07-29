@@ -1360,6 +1360,58 @@ ApplicationWindow {
                 youtubeResolver.removeCacheEntry(fileUrls[i])
             cacheBrowser.reload()
         }
+        onSaveRequested: (fileUrls, destFolder, moveFiles, playlistAction, playlistFile) => {
+            // A move needs the same release-before-relocate as delete (an
+            // open/playing file can't be renamed out from under the player,
+            // at least on Windows); a copy just reads the file, so it's left
+            // alone even if it's the one currently playing.
+            if (moveFiles) {
+                const current = playerController.player.source.toString()
+                for (let i = 0; i < fileUrls.length; i++)
+                    if (fileUrls[i] === current) {
+                        playerController.closeSource()
+                        break
+                    }
+            }
+
+            // Every option relocates the file(s) out of (or copies them from)
+            // the cache -- including "current playlist" -- since the cache is
+            // a limited-size rotation and a file left referenced only in
+            // place could later be evicted out from under the playlist.
+            const results = youtubeResolver.copyOrMoveToFolder(fileUrls, destFolder, moveFiles)
+            const okEntries = []
+            let failCount = 0
+            for (let i = 0; i < results.length; i++) {
+                if (results[i].ok)
+                    okEntries.push({ title: results[i].title, fileUrl: results[i].fileUrl })
+                else
+                    failCount++
+            }
+
+            if (okEntries.length > 0) {
+                switch (playlistAction) {
+                case "new":
+                    playerController.addToPlaylistFile(playlistFile, okEntries, true)
+                    break
+                case "existing":
+                    playerController.addToPlaylistFile(playlistFile, okEntries, false)
+                    break
+                case "current":
+                    playerController.addToCurrentPlaylist(okEntries)
+                    break
+                }
+            }
+
+            if (moveFiles)
+                cacheBrowser.reload()
+
+            if (failCount > 0)
+                root.showOsd(qsTr("Saved %1 file(s); %2 failed.")
+                             .arg(okEntries.length).arg(failCount),
+                             root.osdErrorDurationMs)
+            else
+                root.showOsd(qsTr("Saved %1 file(s).").arg(okEntries.length))
+        }
     }
 
     // Route an opened URL: a Windows ".url" internet shortcut is first expanded

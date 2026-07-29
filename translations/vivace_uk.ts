@@ -160,107 +160,202 @@
 <context>
     <name>CacheBrowserDialog</name>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="28"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="41"/>
         <source>YouTube cache</source>
         <translation>Кеш YouTube</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="110"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="141"/>
         <source>Remove from cache</source>
         <translation>Видалити з кешу</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="111"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="142"/>
         <source>Are you sure you want to remove %1 selected cache file(s)?</source>
         <translation>Видалити вибрані файли кешу (%1)?</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="127"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="150"/>
+        <source>Select a folder to save the selected videos to</source>
+        <translation>Виберіть папку для збереження вибраних відео</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="163"/>
+        <source>Move or copy?</source>
+        <translation>Перемістити чи скопіювати?</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="195"/>
+        <source>Move the selected files out of the cache, or keep a copy in the cache and copy them to the destination?</source>
+        <translation>Перемістити вибрані файли з кешу, чи залишити копію в кеші й скопіювати їх у місце призначення?</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="198"/>
+        <source>Copy (keep them in the cache too)</source>
+        <translation>Скопіювати (залишити також у кеші)</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="203"/>
+        <source>Move (remove them from the cache)</source>
+        <translation>Перемістити (вилучити їх із кешу)</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="214"/>
+        <source>OK</source>
+        <translation type="unfinished">&amp;OK</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="245"/>
+        <source>Cancel</source>
+        <translation type="unfinished">Скасувати</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="254"/>
+        <source>Name the new playlist</source>
+        <translation>Назвіть новий список відтворення</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="257"/>
+        <source>Playlists (*.m3u8 *.m3u)</source>
+        <translation type="unfinished">Списки відтворення (*.m3u8 *.m3u)</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="267"/>
+        <source>Select an existing playlist</source>
+        <translation>Виберіть наявний список відтворення</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="269"/>
+        <source>Playlists (*.m3u *.m3u8)</source>
+        <translation type="unfinished">Списки відтворення (*.m3u *.m3u8)</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="269"/>
+        <source>All files (*)</source>
+        <translation type="unfinished">Усі файли (*)</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="287"/>
         <source>Filter:</source>
         <translation>Фільтр:</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="131"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="291"/>
         <source>type to narrow the list</source>
         <translation>введіть текст, щоб звузити список</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="134"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="294"/>
         <source>Sort:</source>
         <translation>Сортування:</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="137"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="297"/>
         <source>Date</source>
         <translation>Дата</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="137"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="297"/>
         <source>Title</source>
         <translation>&amp;Заголовок</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="143"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="303"/>
         <source>Descending</source>
         <translation>За спаданням</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="143"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="303"/>
         <source>Ascending</source>
         <translation>За зростанням</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="149"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="309"/>
         <source>Size:</source>
         <translation>&amp;Розмір:</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="152"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="312"/>
         <source>Small</source>
         <translation>Малий</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="152"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="312"/>
         <source>Medium</source>
         <translation>Середній</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="152"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="312"/>
         <source>Large</source>
         <translation>Великий</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="167"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="321"/>
+        <source>Save ▾</source>
+        <translation>Зберегти ▾</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="327"/>
+        <source>Save the checked videos to a folder or a playlist</source>
+        <translation>Зберегти позначені відео в папку або плейлист</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="333"/>
+        <source>Save to selected folder…</source>
+        <translation>Зберегти у вибрану папку…</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="337"/>
+        <source>Create a new playlist…</source>
+        <translation>Створити новий список відтворення…</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="341"/>
+        <source>Add to an existing playlist…</source>
+        <translation>Додати до наявного списку відтворення…</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="345"/>
+        <source>Add to current playlist</source>
+        <translation>Додати до поточного списку відтворення</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="350"/>
+        <source>Tick videos with the checkbox in their corner, then pick where to save them: a plain folder, a new playlist file, an existing one, or the currently loaded playlist. Every option asks for a destination folder and whether to move the files out of the cache or keep a copy there -- the cache is a limited-size rotation, so a file left only there can eventually be evicted.</source>
+        <translation>Позначте відео прапорцем у кутку, а потім виберіть, куди їх зберегти: звичайну папку, новий файл списку відтворення, наявний файл, або завантажений зараз список відтворення. Кожен варіант запитує цільову папку та чи перемістити файли з кешу, чи залишити там копію -- кеш має обмежений розмір, тому файл, залишений лише там, з часом може бути витіснений.</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="370"/>
         <source>Remove the checked videos from the cache</source>
         <translation>Видалити позначені відео з кешу</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="171"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="374"/>
         <source>Tick videos with the checkbox in their corner, then use this button to remove them from the cache (you&apos;ll be asked to confirm).</source>
-        <translation type="unfinished"></translation>
+        <translation>Позначте відео прапорцем у кутку, а потім скористайтеся цією кнопкою, щоб вилучити їх із кешу (вас попросять підтвердити).</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="185"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="388"/>
         <source>The cache is empty.</source>
         <translation>Кеш порожній.</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="186"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="389"/>
         <source>No videos match the filter.</source>
         <translation>Жодне відео не відповідає фільтру.</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="300"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="503"/>
         <source>%1 selected of %2</source>
         <translation>Вибрано %1 з %2</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="301"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="504"/>
         <source>%1 video(s)</source>
         <translation>Відео: %1</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="305"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="508"/>
         <source>Close</source>
         <translation>Закрити</translation>
     </message>
@@ -671,274 +766,284 @@
 <context>
     <name>Main</name>
     <message>
-        <location filename="../qml/Main.qml" line="377"/>
+        <location filename="../qml/Main.qml" line="409"/>
         <source>TV editor</source>
         <translation>Редактор ТБ</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="377"/>
+        <location filename="../qml/Main.qml" line="409"/>
         <source>TV channels</source>
         <translation>Телеканали</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="380"/>
+        <location filename="../qml/Main.qml" line="412"/>
         <source>Radio editor</source>
         <translation>Редактор радіо</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="380"/>
+        <location filename="../qml/Main.qml" line="412"/>
         <source>Radio channels</source>
         <translation>Радіостанції</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="383"/>
-        <location filename="../qml/Main.qml" line="427"/>
+        <location filename="../qml/Main.qml" line="415"/>
+        <location filename="../qml/Main.qml" line="459"/>
         <source>Favorite editor</source>
         <translation>Редагувач улюблених</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="383"/>
-        <location filename="../qml/Main.qml" line="427"/>
+        <location filename="../qml/Main.qml" line="415"/>
+        <location filename="../qml/Main.qml" line="459"/>
         <source>Favorite list</source>
         <translation>Перелік улюблених</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="387"/>
+        <location filename="../qml/Main.qml" line="419"/>
         <source>Bookmark added</source>
         <translation>Закладку додано</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="402"/>
+        <location filename="../qml/Main.qml" line="434"/>
         <source>Edit main toolbar</source>
         <translation>&amp;Змінити головну панель</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="405"/>
+        <location filename="../qml/Main.qml" line="437"/>
         <source>Edit control bar</source>
         <translation>Змінити панель &amp;керування</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="434"/>
+        <location filename="../qml/Main.qml" line="466"/>
         <source>Screenshot saved as %1</source>
         <translation>Зняток збережено як %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="435"/>
+        <location filename="../qml/Main.qml" line="467"/>
         <source>Could not take the screenshot</source>
         <translation>Не вдалося зробити знімок екрана</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="548"/>
+        <location filename="../qml/Main.qml" line="580"/>
         <source>Drop media files here, or press Ctrl+O</source>
         <translation>Перетягніть медіафайли сюди або натисніть Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="624"/>
+        <location filename="../qml/Main.qml" line="656"/>
         <source>Downloading video…</source>
         <translation>Завантаження відео…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="631"/>
+        <location filename="../qml/Main.qml" line="663"/>
         <source>This can take a while — the external tool is downloading and merging HD video and audio.</source>
         <translation>Це може зайняти деякий час — зовнішній інструмент завантажує та об&apos;єднує HD-відео й звук.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="645"/>
-        <location filename="../qml/Main.qml" line="1468"/>
+        <location filename="../qml/Main.qml" line="677"/>
+        <location filename="../qml/Main.qml" line="1552"/>
         <source>Cancel</source>
         <translation>Скасувати</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="718"/>
+        <location filename="../qml/Main.qml" line="750"/>
         <source>Loading…</source>
         <translation>Завантаження…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="719"/>
+        <location filename="../qml/Main.qml" line="751"/>
         <source>Connecting…</source>
         <translation>З&apos;єднання...</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="720"/>
+        <location filename="../qml/Main.qml" line="752"/>
         <source>Buffering… %1%</source>
         <translation>Буферизація… %1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="728"/>
+        <location filename="../qml/Main.qml" line="760"/>
         <source>Live streams can take several seconds to start.</source>
         <translation>Прямі трансляції можуть запускатися кілька секунд.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="763"/>
+        <location filename="../qml/Main.qml" line="795"/>
         <source>Volume: %1%</source>
         <translation>Гучність: %1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="766"/>
+        <location filename="../qml/Main.qml" line="798"/>
         <source>Mute</source>
         <translation>Вимкнути звук</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="766"/>
+        <location filename="../qml/Main.qml" line="798"/>
         <source>Mute off</source>
         <translation>Звук увімкнено</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="769"/>
+        <location filename="../qml/Main.qml" line="801"/>
         <source>Speed: %1x</source>
         <translation>Швидкість: %1x</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1176"/>
+        <location filename="../qml/Main.qml" line="1208"/>
         <source>Media files (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1177"/>
-        <location filename="../qml/Main.qml" line="1216"/>
-        <location filename="../qml/Main.qml" line="1404"/>
+        <location filename="../qml/Main.qml" line="1209"/>
+        <location filename="../qml/Main.qml" line="1248"/>
+        <location filename="../qml/Main.qml" line="1488"/>
         <source>All files (*)</source>
         <translation>Усі файли (*)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1200"/>
+        <location filename="../qml/Main.qml" line="1232"/>
         <source>Select the DVD drive or a folder containing VIDEO_TS</source>
         <translation>Виберіть привід DVD або теку з VIDEO_TS</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1204"/>
+        <location filename="../qml/Main.qml" line="1236"/>
         <source>No DVD video found in %1</source>
         <translation>Відео DVD не знайдено в %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1215"/>
+        <location filename="../qml/Main.qml" line="1247"/>
         <source>Playlists (*.m3u *.m3u8)</source>
         <translation>Списки відтворення (*.m3u *.m3u8)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1250"/>
+        <location filename="../qml/Main.qml" line="1282"/>
         <source>Playing stream</source>
         <translation>Відтворення потоку</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1256"/>
-        <location filename="../qml/Main.qml" line="1276"/>
+        <location filename="../qml/Main.qml" line="1288"/>
+        <location filename="../qml/Main.qml" line="1308"/>
         <source>Playing downloaded video</source>
         <translation>Відтворення завантаженого відео</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1260"/>
+        <location filename="../qml/Main.qml" line="1292"/>
         <source>YouTube: %1</source>
         <translation>YouTube: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1280"/>
+        <location filename="../qml/Main.qml" line="1312"/>
         <source>Download failed: %1</source>
         <translation>Не вдалося завантажити: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1342"/>
+        <location filename="../qml/Main.qml" line="1409"/>
+        <source>Saved %1 file(s); %2 failed.</source>
+        <translation>Збережено файлів: %1; помилок: %2.</translation>
+    </message>
+    <message>
+        <location filename="../qml/Main.qml" line="1413"/>
+        <source>Saved %1 file(s).</source>
+        <translation>Збережено файлів: %1.</translation>
+    </message>
+    <message>
+        <location filename="../qml/Main.qml" line="1426"/>
         <source>Could not read the shortcut file.</source>
         <translation>Не вдалося прочитати файл ярлика.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1357"/>
+        <location filename="../qml/Main.qml" line="1441"/>
         <source>Starting download…</source>
         <translation>Початок завантаження…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1358"/>
+        <location filename="../qml/Main.qml" line="1442"/>
         <source>Downloading video (this can take a while)…</source>
         <translation>Завантаження відео (це може зайняти деякий час)…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1362"/>
+        <location filename="../qml/Main.qml" line="1446"/>
         <source>Resolving with yt-dlp…</source>
         <translation>Обробка через yt-dlp…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1399"/>
+        <location filename="../qml/Main.qml" line="1483"/>
         <source>Load subtitle file</source>
         <translation>Завантажити файл субтитрів</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1403"/>
+        <location filename="../qml/Main.qml" line="1487"/>
         <source>Subtitle files (*.srt *.vtt *.ass *.ssa)</source>
         <translation>Файли субтитрів (*.srt *.vtt *.ass *.ssa)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1411"/>
+        <location filename="../qml/Main.qml" line="1495"/>
         <source>Subtitle delay</source>
         <translation>Затримка субтитрів</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1445"/>
+        <location filename="../qml/Main.qml" line="1529"/>
         <source>Delay:</source>
         <translation>Затримка:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1451"/>
-        <location filename="../qml/Main.qml" line="1523"/>
+        <location filename="../qml/Main.qml" line="1535"/>
+        <location filename="../qml/Main.qml" line="1607"/>
         <source>ms</source>
         <translation>мс</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1461"/>
+        <location filename="../qml/Main.qml" line="1545"/>
         <source>OK</source>
         <translation>&amp;OK</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1480"/>
+        <location filename="../qml/Main.qml" line="1564"/>
         <source>Audio delay — Vivace</source>
         <translation>Затримка звуку — Vivace</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1511"/>
+        <location filename="../qml/Main.qml" line="1595"/>
         <source>No delay for this file (use the global delay only)</source>
         <translation>Без затримки для цього файлу (використовувати лише глобальну затримку)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1516"/>
+        <location filename="../qml/Main.qml" line="1600"/>
         <source>This file&apos;s delay:</source>
         <translation>Затримка цього файлу:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1531"/>
+        <location filename="../qml/Main.qml" line="1615"/>
         <source>The delay applied to this file is this value plus the global delay for the current audio device (%1 ms), set in Preferences &gt; General &gt; Audio. Negative values delay the video to match audio that arrives late (e.g. Bluetooth headphones).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1544"/>
+        <location filename="../qml/Main.qml" line="1628"/>
         <source>&amp;Apply</source>
         <translation>&amp;Застосувати</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1553"/>
+        <location filename="../qml/Main.qml" line="1637"/>
         <source>&amp;Close</source>
         <translation>&amp;Закрити</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1649"/>
+        <location filename="../qml/Main.qml" line="1733"/>
         <source>Hide window</source>
         <translation>Сховати вікно</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1649"/>
+        <location filename="../qml/Main.qml" line="1733"/>
         <source>Show window</source>
         <translation>Показати вікно</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1654"/>
+        <location filename="../qml/Main.qml" line="1738"/>
         <source>Play / Pause</source>
         <translation>Відтворити / Призупинити</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1658"/>
+        <location filename="../qml/Main.qml" line="1742"/>
         <source>Stop</source>
         <translation>Зупинено</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1663"/>
+        <location filename="../qml/Main.qml" line="1747"/>
         <source>Quit</source>
         <translation>&amp;Вийти</translation>
     </message>
@@ -1783,257 +1888,257 @@
         <translation>Затримка А/В: %1 мс</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="953"/>
+        <location filename="../src/playercontroller.cpp" line="962"/>
         <source>DVD title %1 could not be assembled</source>
         <translation>Не вдалося зібрати заголовок DVD %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="959"/>
+        <location filename="../src/playercontroller.cpp" line="968"/>
         <source>DVD title %1 could not be opened</source>
         <translation>Не вдалося відкрити заголовок DVD %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1021"/>
+        <location filename="../src/playercontroller.cpp" line="1030"/>
         <source>Title %1 (%2)</source>
         <translation>Заголовок %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1037"/>
+        <location filename="../src/playercontroller.cpp" line="1046"/>
         <source>Chapter %1 (%2)</source>
         <translation>Розділ %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1659"/>
+        <location filename="../src/playercontroller.cpp" line="1668"/>
         <source>Could not open the stream</source>
         <translation>Не вдалося відкрити потік</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1718"/>
+        <location filename="../src/playercontroller.cpp" line="1727"/>
         <source>System default</source>
         <translation>Як у системі</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1882"/>
+        <location filename="../src/playercontroller.cpp" line="1891"/>
         <source>A marker set to %1</source>
         <translation>Мітку A встановлено на %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1893"/>
+        <location filename="../src/playercontroller.cpp" line="1902"/>
         <source>B marker set to %1</source>
         <translation>Мітку B встановлено на %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1903"/>
+        <location filename="../src/playercontroller.cpp" line="1912"/>
         <source>A-B markers cleared</source>
         <translation>Позначки А-Б вилучено</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2017"/>
+        <location filename="../src/playercontroller.cpp" line="2026"/>
         <source>Could not load subtitles from %1</source>
         <translation>Не вдалося завантажити субтитри з %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2029"/>
+        <location filename="../src/playercontroller.cpp" line="2038"/>
         <source>Subtitles loaded: %1</source>
         <translation>Субтитри завантажено: %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2040"/>
+        <location filename="../src/playercontroller.cpp" line="2049"/>
         <source>Subtitles unloaded</source>
         <translation>Субтитри вивантажено</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2050"/>
+        <location filename="../src/playercontroller.cpp" line="2059"/>
         <source>Subtitle delay: %1 ms</source>
         <translation>Затримка субтитрів: %1 мс</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2169"/>
+        <location filename="../src/playercontroller.cpp" line="2178"/>
         <source>General</source>
         <translation>Загальні</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2172"/>
+        <location filename="../src/playercontroller.cpp" line="2181"/>
         <source>File</source>
         <translation>Файл</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2175"/>
+        <location filename="../src/playercontroller.cpp" line="2184"/>
         <source>Size</source>
         <translation>Розмір</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2175"/>
+        <location filename="../src/playercontroller.cpp" line="2184"/>
         <source>%1 KB (%2 MB)</source>
         <translation>%1 кбайт (%2 Мбайт)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2179"/>
-        <location filename="../src/playercontroller.cpp" line="2205"/>
+        <location filename="../src/playercontroller.cpp" line="2188"/>
+        <location filename="../src/playercontroller.cpp" line="2214"/>
         <source>URL</source>
         <translation>URL-адреса</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2182"/>
+        <location filename="../src/playercontroller.cpp" line="2191"/>
         <source>Length</source>
         <translation>Тривалість</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2183"/>
+        <location filename="../src/playercontroller.cpp" line="2192"/>
         <source>Demuxer</source>
         <translation>Демультиплексор</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2188"/>
-        <location filename="../src/playercontroller.cpp" line="2238"/>
-        <location filename="../src/playercontroller.cpp" line="2257"/>
+        <location filename="../src/playercontroller.cpp" line="2197"/>
+        <location filename="../src/playercontroller.cpp" line="2247"/>
         <location filename="../src/playercontroller.cpp" line="2266"/>
+        <location filename="../src/playercontroller.cpp" line="2275"/>
         <source>Name</source>
         <translation>Назва</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2189"/>
+        <location filename="../src/playercontroller.cpp" line="2198"/>
         <source>Artist</source>
         <translation>Виконавець</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2191"/>
+        <location filename="../src/playercontroller.cpp" line="2200"/>
         <source>Album artist</source>
         <translation>Виконавець альбому</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2193"/>
+        <location filename="../src/playercontroller.cpp" line="2202"/>
         <source>Author</source>
         <translation>Автор</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2194"/>
+        <location filename="../src/playercontroller.cpp" line="2203"/>
         <source>Composer</source>
         <translation>Композитор</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2195"/>
+        <location filename="../src/playercontroller.cpp" line="2204"/>
         <source>Album</source>
         <translation>Альбом</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2196"/>
+        <location filename="../src/playercontroller.cpp" line="2205"/>
         <source>Genre</source>
         <translation>Жанр</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2197"/>
+        <location filename="../src/playercontroller.cpp" line="2206"/>
         <source>Date</source>
         <translation>Дата</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2198"/>
+        <location filename="../src/playercontroller.cpp" line="2207"/>
         <source>Track</source>
         <translation>Доріжка</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2199"/>
+        <location filename="../src/playercontroller.cpp" line="2208"/>
         <source>Copyright</source>
         <translation>Авторське право</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2200"/>
+        <location filename="../src/playercontroller.cpp" line="2209"/>
         <source>Comment</source>
         <translation>Нотатка</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2201"/>
+        <location filename="../src/playercontroller.cpp" line="2210"/>
         <source>Description</source>
         <translation>Опис</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2203"/>
+        <location filename="../src/playercontroller.cpp" line="2212"/>
         <source>Publisher</source>
         <translation>Видавець</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2204"/>
-        <location filename="../src/playercontroller.cpp" line="2238"/>
-        <location filename="../src/playercontroller.cpp" line="2257"/>
+        <location filename="../src/playercontroller.cpp" line="2213"/>
+        <location filename="../src/playercontroller.cpp" line="2247"/>
         <location filename="../src/playercontroller.cpp" line="2266"/>
+        <location filename="../src/playercontroller.cpp" line="2275"/>
         <source>Language</source>
         <translation>Мова</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2207"/>
+        <location filename="../src/playercontroller.cpp" line="2216"/>
         <source>Clip info</source>
         <translation>Відомості про кліп</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2211"/>
+        <location filename="../src/playercontroller.cpp" line="2220"/>
         <source>Initial Video Stream</source>
         <translation>Первинний відеопотік</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2214"/>
+        <location filename="../src/playercontroller.cpp" line="2223"/>
         <source>Resolution</source>
         <translation>Роздільність</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2217"/>
+        <location filename="../src/playercontroller.cpp" line="2226"/>
         <source>Aspect ratio</source>
         <translation>Співвідношення сторін</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2221"/>
-        <location filename="../src/playercontroller.cpp" line="2246"/>
+        <location filename="../src/playercontroller.cpp" line="2230"/>
+        <location filename="../src/playercontroller.cpp" line="2255"/>
         <source>Format</source>
         <translation>Формат</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2224"/>
-        <location filename="../src/playercontroller.cpp" line="2249"/>
+        <location filename="../src/playercontroller.cpp" line="2233"/>
+        <location filename="../src/playercontroller.cpp" line="2258"/>
         <source>Bitrate</source>
         <translation>Швидкість потоку</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2224"/>
-        <location filename="../src/playercontroller.cpp" line="2249"/>
+        <location filename="../src/playercontroller.cpp" line="2233"/>
+        <location filename="../src/playercontroller.cpp" line="2258"/>
         <source>%1 kbps</source>
         <translation>%1 кбіт/с</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2227"/>
+        <location filename="../src/playercontroller.cpp" line="2236"/>
         <source>Frames per second</source>
         <translation>Кадрів на секунду</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2230"/>
+        <location filename="../src/playercontroller.cpp" line="2239"/>
         <source>HDR</source>
         <translation>HDR</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2230"/>
+        <location filename="../src/playercontroller.cpp" line="2239"/>
         <source>yes</source>
         <translation>так</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2237"/>
+        <location filename="../src/playercontroller.cpp" line="2246"/>
         <source>Video Streams</source>
         <translation>Відеопотоки</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2245"/>
+        <location filename="../src/playercontroller.cpp" line="2254"/>
         <source>Initial Audio Stream</source>
         <translation>Початковий звуковий потік</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2256"/>
+        <location filename="../src/playercontroller.cpp" line="2265"/>
         <source>Audio Streams</source>
         <translation>Звукові потоки</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2265"/>
+        <location filename="../src/playercontroller.cpp" line="2274"/>
         <source>Subtitles</source>
         <translation>Субтитри</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2454"/>
+        <location filename="../src/playercontroller.cpp" line="2523"/>
         <source>Chapter %1</source>
         <translation>Розділ %1</translation>
     </message>
@@ -4499,16 +4604,36 @@
         <translation>yt-dlp не створив файл (код виходу %1). Якщо це відео в HD, перевірте шляхи до ffmpeg і Deno.</translation>
     </message>
     <message>
+        <location filename="../src/youtuberesolver.cpp" line="656"/>
+        <source>Could not create the destination folder</source>
+        <translation>Не вдалося створити цільову папку</translation>
+    </message>
+    <message>
+        <location filename="../src/youtuberesolver.cpp" line="672"/>
+        <source>File no longer exists</source>
+        <translation>Файл більше не існує</translation>
+    </message>
+    <message>
+        <location filename="../src/youtuberesolver.cpp" line="694"/>
+        <source>Could not move the file</source>
+        <translation>Не вдалося перемістити файл</translation>
+    </message>
+    <message>
+        <location filename="../src/youtuberesolver.cpp" line="695"/>
+        <source>Could not copy the file</source>
+        <translation>Не вдалося скопіювати файл</translation>
+    </message>
+    <message>
         <source>yt-dlp produced no file (exit code %1). If this is an HD video, check the ffmpeg location.</source>
         <translation type="vanished">yt-dlp не створив файл (код виходу %1). Якщо це HD-відео, перевірте розташування ffmpeg.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="710"/>
+        <location filename="../src/youtuberesolver.cpp" line="815"/>
         <source>Could not write %1.</source>
         <translation>Не вдалося записати %1.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="716"/>
+        <location filename="../src/youtuberesolver.cpp" line="821"/>
         <source>Could not save %1.</source>
         <translation>Не вдалося зберегти %1.</translation>
     </message>

@@ -19,7 +19,14 @@ O menu **Abrir** é como você carrega mídia no Vivace.
 - **URL…** (`Ctrl+U`) — reproduzir uma transmissão de rede. Com o suporte ao
   YouTube ativado (*Preferências ▸ Rede*), links do YouTube também são tratados aqui.
 - **Cache do YouTube…** — navegar pelos vídeos que o Vivace baixou (no modo de
-  baixar e reproduzir).
+  baixar e reproduzir). Marque vídeos pela caixa de seleção no canto e depois
+  remova-os do cache ou use **Salvar ▾** para guardá-los permanentemente: em
+  uma pasta comum, em um novo arquivo de lista de reprodução, adicionados a
+  uma existente, ou adicionados diretamente à lista de reprodução atualmente
+  carregada no Vivace. Cada opção pergunta primeiro uma pasta de destino e se
+  os arquivos devem ser movidos para fora do cache ou se deve ficar uma cópia
+  lá — o cache tem tamanho limitado, então um vídeo referenciado só ali pode
+  acabar sendo removido.
 - **TV** / **Rádio** — suas listas de canais (importadas do SMPlayer, se houver).
 - **Sair** (`Ctrl+Q`) — fechar o Vivace.
 

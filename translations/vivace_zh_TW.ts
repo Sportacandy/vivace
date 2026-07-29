@@ -160,107 +160,202 @@
 <context>
     <name>CacheBrowserDialog</name>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="28"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="41"/>
         <source>YouTube cache</source>
         <translation>YouTube 快取</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="110"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="141"/>
         <source>Remove from cache</source>
         <translation>從快取移除</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="111"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="142"/>
         <source>Are you sure you want to remove %1 selected cache file(s)?</source>
         <translation>確定要移除選取的 %1 個快取檔案嗎？</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="127"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="150"/>
+        <source>Select a folder to save the selected videos to</source>
+        <translation>選擇要儲存所選影片的資料夾</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="163"/>
+        <source>Move or copy?</source>
+        <translation>移動還是複製？</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="195"/>
+        <source>Move the selected files out of the cache, or keep a copy in the cache and copy them to the destination?</source>
+        <translation>將所選檔案從快取移出，還是在快取中保留一份副本並將它們複製到目的地？</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="198"/>
+        <source>Copy (keep them in the cache too)</source>
+        <translation>複製（同時保留在快取中）</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="203"/>
+        <source>Move (remove them from the cache)</source>
+        <translation>移動（從快取中移除）</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="214"/>
+        <source>OK</source>
+        <translation type="unfinished">確定(&amp;O)</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="245"/>
+        <source>Cancel</source>
+        <translation type="unfinished">取消</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="254"/>
+        <source>Name the new playlist</source>
+        <translation>為新播放清單命名</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="257"/>
+        <source>Playlists (*.m3u8 *.m3u)</source>
+        <translation type="unfinished">播放清單 (*.m3u8 *.m3u)</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="267"/>
+        <source>Select an existing playlist</source>
+        <translation>選擇現有的播放清單</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="269"/>
+        <source>Playlists (*.m3u *.m3u8)</source>
+        <translation type="unfinished">播放清單 (*.m3u *.m3u8)</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="269"/>
+        <source>All files (*)</source>
+        <translation type="unfinished">所有檔案 (*)</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="287"/>
         <source>Filter:</source>
         <translation>篩選：</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="131"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="291"/>
         <source>type to narrow the list</source>
         <translation>輸入以縮小清單範圍</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="134"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="294"/>
         <source>Sort:</source>
         <translation>排序：</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="137"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="297"/>
         <source>Date</source>
         <translation>日期</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="137"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="297"/>
         <source>Title</source>
         <translation>標題(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="143"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="303"/>
         <source>Descending</source>
         <translation>遞減</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="143"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="303"/>
         <source>Ascending</source>
         <translation>遞增</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="149"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="309"/>
         <source>Size:</source>
         <translation>大小(&amp;Z)：</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="152"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="312"/>
         <source>Small</source>
         <translation>小</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="152"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="312"/>
         <source>Medium</source>
         <translation>中</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="152"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="312"/>
         <source>Large</source>
         <translation>大</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="167"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="321"/>
+        <source>Save ▾</source>
+        <translation>儲存 ▾</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="327"/>
+        <source>Save the checked videos to a folder or a playlist</source>
+        <translation>將勾選的影片儲存到資料夾或播放清單</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="333"/>
+        <source>Save to selected folder…</source>
+        <translation>儲存到選定的資料夾…</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="337"/>
+        <source>Create a new playlist…</source>
+        <translation>建立新的播放清單…</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="341"/>
+        <source>Add to an existing playlist…</source>
+        <translation>加入現有的播放清單…</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="345"/>
+        <source>Add to current playlist</source>
+        <translation>加入目前的播放清單</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="350"/>
+        <source>Tick videos with the checkbox in their corner, then pick where to save them: a plain folder, a new playlist file, an existing one, or the currently loaded playlist. Every option asks for a destination folder and whether to move the files out of the cache or keep a copy there -- the cache is a limited-size rotation, so a file left only there can eventually be evicted.</source>
+        <translation>用影片角落的核取方塊勾選影片，然後選擇儲存位置：一般資料夾、新的播放清單檔案、現有的播放清單，或目前載入的播放清單。每個選項都會詢問目的資料夾，以及要將檔案從快取移出還是在那裡保留一份副本——快取大小有限，僅留在那裡的檔案日後可能會被清除。</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="370"/>
         <source>Remove the checked videos from the cache</source>
         <translation>從快取移除勾選的影片</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="171"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="374"/>
         <source>Tick videos with the checkbox in their corner, then use this button to remove them from the cache (you&apos;ll be asked to confirm).</source>
-        <translation type="unfinished"></translation>
+        <translation>用影片角落的核取方塊勾選影片，然後使用此按鈕將其從快取中移除（系統會要求你確認）。</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="185"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="388"/>
         <source>The cache is empty.</source>
         <translation>快取是空的。</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="186"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="389"/>
         <source>No videos match the filter.</source>
         <translation>沒有影片符合篩選條件。</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="300"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="503"/>
         <source>%1 selected of %2</source>
         <translation>已選取 %1 / %2</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="301"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="504"/>
         <source>%1 video(s)</source>
         <translation>%1 部影片</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="305"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="508"/>
         <source>Close</source>
         <translation>關閉</translation>
     </message>
@@ -671,274 +766,284 @@
 <context>
     <name>Main</name>
     <message>
-        <location filename="../qml/Main.qml" line="377"/>
+        <location filename="../qml/Main.qml" line="409"/>
         <source>TV editor</source>
         <translation>電視編輯器</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="377"/>
+        <location filename="../qml/Main.qml" line="409"/>
         <source>TV channels</source>
         <translation>電視頻道</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="380"/>
+        <location filename="../qml/Main.qml" line="412"/>
         <source>Radio editor</source>
         <translation>廣播編輯器</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="380"/>
+        <location filename="../qml/Main.qml" line="412"/>
         <source>Radio channels</source>
         <translation>廣播電台</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="383"/>
-        <location filename="../qml/Main.qml" line="427"/>
+        <location filename="../qml/Main.qml" line="415"/>
+        <location filename="../qml/Main.qml" line="459"/>
         <source>Favorite editor</source>
         <translation>收藏編輯器</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="383"/>
-        <location filename="../qml/Main.qml" line="427"/>
+        <location filename="../qml/Main.qml" line="415"/>
+        <location filename="../qml/Main.qml" line="459"/>
         <source>Favorite list</source>
         <translation>收藏清單</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="387"/>
+        <location filename="../qml/Main.qml" line="419"/>
         <source>Bookmark added</source>
         <translation>已新增書籤</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="402"/>
+        <location filename="../qml/Main.qml" line="434"/>
         <source>Edit main toolbar</source>
         <translation>編輯主工具列(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="405"/>
+        <location filename="../qml/Main.qml" line="437"/>
         <source>Edit control bar</source>
         <translation>編輯控制列(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="434"/>
+        <location filename="../qml/Main.qml" line="466"/>
         <source>Screenshot saved as %1</source>
         <translation>螢幕截圖已儲存於 %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="435"/>
+        <location filename="../qml/Main.qml" line="467"/>
         <source>Could not take the screenshot</source>
         <translation>無法擷取螢幕截圖</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="548"/>
+        <location filename="../qml/Main.qml" line="580"/>
         <source>Drop media files here, or press Ctrl+O</source>
         <translation>將媒體檔案拖放到此處，或按 Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="624"/>
+        <location filename="../qml/Main.qml" line="656"/>
         <source>Downloading video…</source>
         <translation>正在下載影片…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="631"/>
+        <location filename="../qml/Main.qml" line="663"/>
         <source>This can take a while — the external tool is downloading and merging HD video and audio.</source>
         <translation>這可能需要一些時間 — 外部工具正在下載並合併高畫質視訊和音訊。</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="645"/>
-        <location filename="../qml/Main.qml" line="1468"/>
+        <location filename="../qml/Main.qml" line="677"/>
+        <location filename="../qml/Main.qml" line="1552"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="718"/>
+        <location filename="../qml/Main.qml" line="750"/>
         <source>Loading…</source>
         <translation>正在載入…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="719"/>
+        <location filename="../qml/Main.qml" line="751"/>
         <source>Connecting…</source>
         <translation>正在連線……</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="720"/>
+        <location filename="../qml/Main.qml" line="752"/>
         <source>Buffering… %1%</source>
         <translation>正在緩衝… %1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="728"/>
+        <location filename="../qml/Main.qml" line="760"/>
         <source>Live streams can take several seconds to start.</source>
         <translation>直播串流可能需要幾秒鐘才能開始。</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="763"/>
+        <location filename="../qml/Main.qml" line="795"/>
         <source>Volume: %1%</source>
         <translation>音量：%1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="766"/>
+        <location filename="../qml/Main.qml" line="798"/>
         <source>Mute</source>
         <translation>靜音</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="766"/>
+        <location filename="../qml/Main.qml" line="798"/>
         <source>Mute off</source>
         <translation>已取消靜音</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="769"/>
+        <location filename="../qml/Main.qml" line="801"/>
         <source>Speed: %1x</source>
         <translation>速度：%1x</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1176"/>
+        <location filename="../qml/Main.qml" line="1208"/>
         <source>Media files (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1177"/>
-        <location filename="../qml/Main.qml" line="1216"/>
-        <location filename="../qml/Main.qml" line="1404"/>
+        <location filename="../qml/Main.qml" line="1209"/>
+        <location filename="../qml/Main.qml" line="1248"/>
+        <location filename="../qml/Main.qml" line="1488"/>
         <source>All files (*)</source>
         <translation>所有檔案 (*)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1200"/>
+        <location filename="../qml/Main.qml" line="1232"/>
         <source>Select the DVD drive or a folder containing VIDEO_TS</source>
         <translation>選取 DVD 光碟機或包含 VIDEO_TS 的資料夾</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1204"/>
+        <location filename="../qml/Main.qml" line="1236"/>
         <source>No DVD video found in %1</source>
         <translation>在 %1 中找不到 DVD 視訊</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1215"/>
+        <location filename="../qml/Main.qml" line="1247"/>
         <source>Playlists (*.m3u *.m3u8)</source>
         <translation>播放清單 (*.m3u *.m3u8)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1250"/>
+        <location filename="../qml/Main.qml" line="1282"/>
         <source>Playing stream</source>
         <translation>正在播放串流</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1256"/>
-        <location filename="../qml/Main.qml" line="1276"/>
+        <location filename="../qml/Main.qml" line="1288"/>
+        <location filename="../qml/Main.qml" line="1308"/>
         <source>Playing downloaded video</source>
         <translation>正在播放已下載的影片</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1260"/>
+        <location filename="../qml/Main.qml" line="1292"/>
         <source>YouTube: %1</source>
         <translation>YouTube：%1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1280"/>
+        <location filename="../qml/Main.qml" line="1312"/>
         <source>Download failed: %1</source>
         <translation>下載失敗：%1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1342"/>
+        <location filename="../qml/Main.qml" line="1409"/>
+        <source>Saved %1 file(s); %2 failed.</source>
+        <translation>已儲存 %1 個檔案；%2 個失敗。</translation>
+    </message>
+    <message>
+        <location filename="../qml/Main.qml" line="1413"/>
+        <source>Saved %1 file(s).</source>
+        <translation>已儲存 %1 個檔案。</translation>
+    </message>
+    <message>
+        <location filename="../qml/Main.qml" line="1426"/>
         <source>Could not read the shortcut file.</source>
         <translation>無法讀取捷徑檔案。</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1357"/>
+        <location filename="../qml/Main.qml" line="1441"/>
         <source>Starting download…</source>
         <translation>正在開始下載…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1358"/>
+        <location filename="../qml/Main.qml" line="1442"/>
         <source>Downloading video (this can take a while)…</source>
         <translation>正在下載影片（這可能需要一些時間）…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1362"/>
+        <location filename="../qml/Main.qml" line="1446"/>
         <source>Resolving with yt-dlp…</source>
         <translation>正在使用 yt-dlp 解析…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1399"/>
+        <location filename="../qml/Main.qml" line="1483"/>
         <source>Load subtitle file</source>
         <translation>載入字幕檔案</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1403"/>
+        <location filename="../qml/Main.qml" line="1487"/>
         <source>Subtitle files (*.srt *.vtt *.ass *.ssa)</source>
         <translation>字幕檔案 (*.srt *.vtt *.ass *.ssa)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1411"/>
+        <location filename="../qml/Main.qml" line="1495"/>
         <source>Subtitle delay</source>
         <translation>字幕延遲</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1445"/>
+        <location filename="../qml/Main.qml" line="1529"/>
         <source>Delay:</source>
         <translation>延遲：</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1451"/>
-        <location filename="../qml/Main.qml" line="1523"/>
+        <location filename="../qml/Main.qml" line="1535"/>
+        <location filename="../qml/Main.qml" line="1607"/>
         <source>ms</source>
         <translation>毫秒</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1461"/>
+        <location filename="../qml/Main.qml" line="1545"/>
         <source>OK</source>
         <translation>確定(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1480"/>
+        <location filename="../qml/Main.qml" line="1564"/>
         <source>Audio delay — Vivace</source>
         <translation>音訊延遲 — Vivace</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1511"/>
+        <location filename="../qml/Main.qml" line="1595"/>
         <source>No delay for this file (use the global delay only)</source>
         <translation>此檔案無延遲（僅使用全域延遲）</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1516"/>
+        <location filename="../qml/Main.qml" line="1600"/>
         <source>This file&apos;s delay:</source>
         <translation>此檔案的延遲：</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1531"/>
+        <location filename="../qml/Main.qml" line="1615"/>
         <source>The delay applied to this file is this value plus the global delay for the current audio device (%1 ms), set in Preferences &gt; General &gt; Audio. Negative values delay the video to match audio that arrives late (e.g. Bluetooth headphones).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1544"/>
+        <location filename="../qml/Main.qml" line="1628"/>
         <source>&amp;Apply</source>
         <translation>套用(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1553"/>
+        <location filename="../qml/Main.qml" line="1637"/>
         <source>&amp;Close</source>
         <translation>關閉 (&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1649"/>
+        <location filename="../qml/Main.qml" line="1733"/>
         <source>Hide window</source>
         <translation>隱藏視窗</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1649"/>
+        <location filename="../qml/Main.qml" line="1733"/>
         <source>Show window</source>
         <translation>顯示視窗</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1654"/>
+        <location filename="../qml/Main.qml" line="1738"/>
         <source>Play / Pause</source>
         <translation>播放 / 暫停</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1658"/>
+        <location filename="../qml/Main.qml" line="1742"/>
         <source>Stop</source>
         <translation>停止</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1663"/>
+        <location filename="../qml/Main.qml" line="1747"/>
         <source>Quit</source>
         <translation>結束(&amp;Q)</translation>
     </message>
@@ -1777,257 +1882,257 @@
         <translation>音視訊延遲：%1 毫秒</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="953"/>
+        <location filename="../src/playercontroller.cpp" line="962"/>
         <source>DVD title %1 could not be assembled</source>
         <translation>無法組合 DVD 標題 %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="959"/>
+        <location filename="../src/playercontroller.cpp" line="968"/>
         <source>DVD title %1 could not be opened</source>
         <translation>無法開啟 DVD 標題 %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1021"/>
+        <location filename="../src/playercontroller.cpp" line="1030"/>
         <source>Title %1 (%2)</source>
         <translation>標題 %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1037"/>
+        <location filename="../src/playercontroller.cpp" line="1046"/>
         <source>Chapter %1 (%2)</source>
         <translation>章節 %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1659"/>
+        <location filename="../src/playercontroller.cpp" line="1668"/>
         <source>Could not open the stream</source>
         <translation>無法開啟串流</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1718"/>
+        <location filename="../src/playercontroller.cpp" line="1727"/>
         <source>System default</source>
         <translation>系統預設</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1882"/>
+        <location filename="../src/playercontroller.cpp" line="1891"/>
         <source>A marker set to %1</source>
         <translation>A 標記已設定為 %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1893"/>
+        <location filename="../src/playercontroller.cpp" line="1902"/>
         <source>B marker set to %1</source>
         <translation>B 標記已設定為 %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1903"/>
+        <location filename="../src/playercontroller.cpp" line="1912"/>
         <source>A-B markers cleared</source>
         <translation>A-B 標記清除</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2017"/>
+        <location filename="../src/playercontroller.cpp" line="2026"/>
         <source>Could not load subtitles from %1</source>
         <translation>無法從 %1 載入字幕</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2029"/>
+        <location filename="../src/playercontroller.cpp" line="2038"/>
         <source>Subtitles loaded: %1</source>
         <translation>字幕已載入：%1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2040"/>
+        <location filename="../src/playercontroller.cpp" line="2049"/>
         <source>Subtitles unloaded</source>
         <translation>字幕已卸載</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2050"/>
+        <location filename="../src/playercontroller.cpp" line="2059"/>
         <source>Subtitle delay: %1 ms</source>
         <translation>字幕延遲：%1 毫秒</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2169"/>
+        <location filename="../src/playercontroller.cpp" line="2178"/>
         <source>General</source>
         <translation>一般</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2172"/>
+        <location filename="../src/playercontroller.cpp" line="2181"/>
         <source>File</source>
         <translation>檔案</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2175"/>
+        <location filename="../src/playercontroller.cpp" line="2184"/>
         <source>Size</source>
         <translation>大小</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2175"/>
+        <location filename="../src/playercontroller.cpp" line="2184"/>
         <source>%1 KB (%2 MB)</source>
         <translation>%1 KB (%2 MB)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2179"/>
-        <location filename="../src/playercontroller.cpp" line="2205"/>
+        <location filename="../src/playercontroller.cpp" line="2188"/>
+        <location filename="../src/playercontroller.cpp" line="2214"/>
         <source>URL</source>
         <translation>網址</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2182"/>
+        <location filename="../src/playercontroller.cpp" line="2191"/>
         <source>Length</source>
         <translation>長度</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2183"/>
+        <location filename="../src/playercontroller.cpp" line="2192"/>
         <source>Demuxer</source>
         <translation>分離器</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2188"/>
-        <location filename="../src/playercontroller.cpp" line="2238"/>
-        <location filename="../src/playercontroller.cpp" line="2257"/>
+        <location filename="../src/playercontroller.cpp" line="2197"/>
+        <location filename="../src/playercontroller.cpp" line="2247"/>
         <location filename="../src/playercontroller.cpp" line="2266"/>
+        <location filename="../src/playercontroller.cpp" line="2275"/>
         <source>Name</source>
         <translation>名稱</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2189"/>
+        <location filename="../src/playercontroller.cpp" line="2198"/>
         <source>Artist</source>
         <translation>演出者名稱</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2191"/>
+        <location filename="../src/playercontroller.cpp" line="2200"/>
         <source>Album artist</source>
         <translation>專輯演出者</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2193"/>
+        <location filename="../src/playercontroller.cpp" line="2202"/>
         <source>Author</source>
         <translation>作者</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2194"/>
+        <location filename="../src/playercontroller.cpp" line="2203"/>
         <source>Composer</source>
         <translation>作曲家</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2195"/>
+        <location filename="../src/playercontroller.cpp" line="2204"/>
         <source>Album</source>
         <translation>專輯</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2196"/>
+        <location filename="../src/playercontroller.cpp" line="2205"/>
         <source>Genre</source>
         <translation>流派</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2197"/>
+        <location filename="../src/playercontroller.cpp" line="2206"/>
         <source>Date</source>
         <translation>日期</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2198"/>
+        <location filename="../src/playercontroller.cpp" line="2207"/>
         <source>Track</source>
         <translation>影音軌</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2199"/>
+        <location filename="../src/playercontroller.cpp" line="2208"/>
         <source>Copyright</source>
         <translation>版權</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2200"/>
+        <location filename="../src/playercontroller.cpp" line="2209"/>
         <source>Comment</source>
         <translation>註解</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2201"/>
+        <location filename="../src/playercontroller.cpp" line="2210"/>
         <source>Description</source>
         <translation>描述</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2203"/>
+        <location filename="../src/playercontroller.cpp" line="2212"/>
         <source>Publisher</source>
         <translation>發行者</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2204"/>
-        <location filename="../src/playercontroller.cpp" line="2238"/>
-        <location filename="../src/playercontroller.cpp" line="2257"/>
+        <location filename="../src/playercontroller.cpp" line="2213"/>
+        <location filename="../src/playercontroller.cpp" line="2247"/>
         <location filename="../src/playercontroller.cpp" line="2266"/>
+        <location filename="../src/playercontroller.cpp" line="2275"/>
         <source>Language</source>
         <translation>語言</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2207"/>
+        <location filename="../src/playercontroller.cpp" line="2216"/>
         <source>Clip info</source>
         <translation>素材資訊</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2211"/>
+        <location filename="../src/playercontroller.cpp" line="2220"/>
         <source>Initial Video Stream</source>
         <translation>初始視訊串流</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2214"/>
+        <location filename="../src/playercontroller.cpp" line="2223"/>
         <source>Resolution</source>
         <translation>解析度</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2217"/>
+        <location filename="../src/playercontroller.cpp" line="2226"/>
         <source>Aspect ratio</source>
         <translation>外觀比例</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2221"/>
-        <location filename="../src/playercontroller.cpp" line="2246"/>
+        <location filename="../src/playercontroller.cpp" line="2230"/>
+        <location filename="../src/playercontroller.cpp" line="2255"/>
         <source>Format</source>
         <translation>格式</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2224"/>
-        <location filename="../src/playercontroller.cpp" line="2249"/>
+        <location filename="../src/playercontroller.cpp" line="2233"/>
+        <location filename="../src/playercontroller.cpp" line="2258"/>
         <source>Bitrate</source>
         <translation>位元率</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2224"/>
-        <location filename="../src/playercontroller.cpp" line="2249"/>
+        <location filename="../src/playercontroller.cpp" line="2233"/>
+        <location filename="../src/playercontroller.cpp" line="2258"/>
         <source>%1 kbps</source>
         <translation>%1 kbps</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2227"/>
+        <location filename="../src/playercontroller.cpp" line="2236"/>
         <source>Frames per second</source>
         <translation>幀/秒</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2230"/>
+        <location filename="../src/playercontroller.cpp" line="2239"/>
         <source>HDR</source>
         <translation>HDR</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2230"/>
+        <location filename="../src/playercontroller.cpp" line="2239"/>
         <source>yes</source>
         <translation>是</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2237"/>
+        <location filename="../src/playercontroller.cpp" line="2246"/>
         <source>Video Streams</source>
         <translation>視訊串流</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2245"/>
+        <location filename="../src/playercontroller.cpp" line="2254"/>
         <source>Initial Audio Stream</source>
         <translation>初始化音訊串流</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2256"/>
+        <location filename="../src/playercontroller.cpp" line="2265"/>
         <source>Audio Streams</source>
         <translation>音訊串流</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2265"/>
+        <location filename="../src/playercontroller.cpp" line="2274"/>
         <source>Subtitles</source>
         <translation>字幕</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2454"/>
+        <location filename="../src/playercontroller.cpp" line="2523"/>
         <source>Chapter %1</source>
         <translation>章節 %1</translation>
     </message>
@@ -4493,16 +4598,36 @@
         <translation>yt-dlp 未產生任何檔案（結束代碼 %1）。如果這是高畫質影片，請檢查 ffmpeg 和 Deno 的路徑。</translation>
     </message>
     <message>
+        <location filename="../src/youtuberesolver.cpp" line="656"/>
+        <source>Could not create the destination folder</source>
+        <translation>無法建立目的資料夾</translation>
+    </message>
+    <message>
+        <location filename="../src/youtuberesolver.cpp" line="672"/>
+        <source>File no longer exists</source>
+        <translation>檔案已不存在</translation>
+    </message>
+    <message>
+        <location filename="../src/youtuberesolver.cpp" line="694"/>
+        <source>Could not move the file</source>
+        <translation>無法移動檔案</translation>
+    </message>
+    <message>
+        <location filename="../src/youtuberesolver.cpp" line="695"/>
+        <source>Could not copy the file</source>
+        <translation>無法複製檔案</translation>
+    </message>
+    <message>
         <source>yt-dlp produced no file (exit code %1). If this is an HD video, check the ffmpeg location.</source>
         <translation type="vanished">yt-dlp 未產生檔案（結束代碼 %1）。如果這是高畫質影片，請檢查 ffmpeg 位置。</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="710"/>
+        <location filename="../src/youtuberesolver.cpp" line="815"/>
         <source>Could not write %1.</source>
         <translation>無法寫入 %1。</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="716"/>
+        <location filename="../src/youtuberesolver.cpp" line="821"/>
         <source>Could not save %1.</source>
         <translation>無法儲存 %1。</translation>
     </message>

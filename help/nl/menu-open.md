@@ -18,7 +18,14 @@ Via het menu **Openen** laadt u media in Vivace.
 - **URL…** (`Ctrl+U`) — een netwerkstream afspelen. Met YouTube-ondersteuning
   ingeschakeld (*Voorkeuren ▸ Netwerk*) worden ook YouTube-koppelingen hier verwerkt.
 - **YouTube-cache…** — door video's bladeren die Vivace heeft gedownload (in de
-  modus downloaden-en-afspelen).
+  modus downloaden-en-afspelen). Vink video's aan met het selectievakje in de
+  hoek en verwijder ze dan uit de cache, of gebruik **Opslaan ▾** om ze
+  permanent te bewaren: naar een gewone map, naar een nieuw afspeellijstbestand,
+  toegevoegd aan een bestaande, of rechtstreeks toegevoegd aan de momenteel in
+  Vivace geladen afspeellijst. Elke optie vraagt eerst om een doelmap en of de
+  bestanden uit de cache moeten worden verplaatst of dat er een kopie moet
+  achterblijven — de cache heeft een beperkte omvang, dus een video die alleen
+  daar wordt aangehouden kan later worden verwijderd.
 - **Tv** / **Radio** — uw zenderlijsten (geïmporteerd uit SMPlayer indien aanwezig).
 - **Afsluiten** (`Ctrl+Q`) — Vivace sluiten.
 

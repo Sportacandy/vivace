@@ -18,7 +18,13 @@ Menu **Otwórz** służy do wczytywania multimediów do Vivace.
 - **URL…** (`Ctrl+U`) — odtwórz strumień sieciowy. Przy włączonej obsłudze
   YouTube (*Ustawienia ▸ Sieć*) łącza YouTube są również obsługiwane tutaj.
 - **Pamięć podręczna YouTube…** — przeglądaj filmy pobrane przez Vivace (w trybie
-  pobierz i odtwórz).
+  pobierz i odtwórz). Zaznacz filmy polem wyboru w rogu, a następnie usuń je z
+  pamięci podręcznej albo użyj **Zapisz ▾**, aby zachować je na stałe: do
+  zwykłego folderu, do nowego pliku listy odtwarzania, dodane do istniejącej
+  listy, albo dodane wprost do listy odtwarzania aktualnie wczytanej w Vivace.
+  Każda opcja najpierw pyta o folder docelowy i czy przenieść pliki z pamięci
+  podręcznej, czy zostawić tam kopię — pamięć podręczna ma ograniczony rozmiar,
+  więc film przechowywany tylko tam może zostać z czasem usunięty.
 - **TV** / **Radio** — twoje listy kanałów (zaimportowane z SMPlayer, jeśli są).
 - **Zakończ** (`Ctrl+Q`) — zamknij Vivace.
 

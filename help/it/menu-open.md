@@ -18,7 +18,14 @@ Il menu **Apri** serve a caricare i contenuti multimediali in Vivace.
 - **URL…** (`Ctrl+U`) — riprodurre un flusso di rete. Con il supporto YouTube
   attivo (*Preferenze ▸ Rete*), anche i collegamenti YouTube vengono gestiti qui.
 - **Cache YouTube…** — sfogliare i video scaricati da Vivace (con la modalità
-  scarica e riproduci).
+  scarica e riproduci). Seleziona i video con la casella nel loro angolo, poi
+  rimuovili dalla cache oppure usa **Salva ▾** per conservarli in modo
+  permanente: in una cartella qualsiasi, in un nuovo file playlist, aggiunti a
+  una playlist esistente, oppure aggiunti direttamente alla playlist
+  attualmente caricata in Vivace. Ogni opzione chiede prima una cartella di
+  destinazione e se spostare i file fuori dalla cache o lasciarne una copia —
+  la cache ha una dimensione limitata, quindi un video referenziato solo lì
+  potrebbe essere eliminato in seguito.
 - **TV** / **Radio** — i vostri elenchi di canali (importati da SMPlayer se presenti).
 - **Esci** (`Ctrl+Q`) — chiudere Vivace.
 

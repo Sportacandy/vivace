@@ -17,7 +17,15 @@ Ponuka **Otvoriť** slúži na načítanie médií do Vivace.
   - **Blu-ray**, **Zvukové CD** — zatiaľ nepodporované.
 - **URL…** (`Ctrl+U`) — prehrať sieťový stream. So zapnutou podporou YouTube
   (*Nastavenia ▸ Sieť*) sa tu spracujú aj odkazy YouTube.
-- **Vyrovnávacia pamäť YouTube…** — prehľadávať videá stiahnuté Vivace (v režime stiahnuť a prehrať).
+- **Vyrovnávacia pamäť YouTube…** — prehľadávať videá stiahnuté Vivace (v režime
+  stiahnuť a prehrať). Zaškrtnite videá políčkom v rohu a potom ich buď
+  odstráňte z vyrovnávacej pamäte, alebo použite **Uložiť ▾** na ich trvalé
+  uloženie: do bežného priečinka, do nového súboru zoznamu skladieb, pridané
+  do existujúceho, alebo pridané priamo do zoznamu skladieb aktuálne
+  načítaného vo Vivace. Každá možnosť sa najprv opýta na cieľový priečinok a
+  či súbory presunúť z vyrovnávacej pamäte, alebo tam ponechať kópiu —
+  vyrovnávacia pamäť má obmedzenú veľkosť, takže video odkazované len tam
+  môže byť neskôr odstránené.
 - **TV** / **Rádio** — vaše zoznamy kanálov (importované z SMPlayer, ak existujú).
 - **Ukončiť** (`Ctrl+Q`) — zavrieť Vivace.
 

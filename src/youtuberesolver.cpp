@@ -624,6 +624,111 @@ void YoutubeResolver::removeCacheEntry(const QUrl &fileUrl)
     updateCacheCount();
 }
 
+QString YoutubeResolver::uniqueDestPath(const QString &destPath)
+{
+    if (!QFileInfo::exists(destPath))
+        return destPath;
+    const QFileInfo fi(destPath);
+    const QString dir = fi.absolutePath();
+    const QString base = fi.completeBaseName();
+    const QString suffix = fi.suffix();
+    for (int n = 2; n < 1000; ++n) {
+        const QString candidate = suffix.isEmpty()
+                ? QStringLiteral("%1/%2 (%3)").arg(dir, base).arg(n)
+                : QStringLiteral("%1/%2 (%3).%4").arg(dir, base).arg(n).arg(suffix);
+        if (!QFileInfo::exists(candidate))
+            return candidate;
+    }
+    return destPath; // pathological case; caller's copy/move will just fail
+}
+
+QVariantList YoutubeResolver::copyOrMoveToFolder(const QStringList &fileUrls,
+                                                  const QUrl &destFolder,
+                                                  bool moveFiles)
+{
+    QVariantList out;
+    const QString destDir = destFolder.toLocalFile();
+    if (destDir.isEmpty() || !QDir().mkpath(destDir)) {
+        for (const QString &fileUrlStr : fileUrls)
+            out.append(QVariantMap{
+                { QStringLiteral("fileUrl"), fileUrlStr },
+                { QStringLiteral("ok"), false },
+                { QStringLiteral("error"), tr("Could not create the destination folder") }
+            });
+        return out;
+    }
+
+    static const QRegularExpression nameRe(
+            QStringLiteral("^(.*) \\[([^\\]]+)\\]$"));
+    bool anyMoved = false;
+
+    for (const QString &fileUrlStr : fileUrls) {
+        const QString srcPath = QUrl(fileUrlStr).toLocalFile();
+        const QFileInfo srcInfo(srcPath);
+        if (srcPath.isEmpty() || !srcInfo.exists()) {
+            out.append(QVariantMap{
+                { QStringLiteral("fileUrl"), fileUrlStr },
+                { QStringLiteral("ok"), false },
+                { QStringLiteral("error"), tr("File no longer exists") }
+            });
+            continue;
+        }
+
+        QString title = srcInfo.completeBaseName();
+        QString id;
+        const QRegularExpressionMatch m = nameRe.match(title);
+        if (m.hasMatch()) {
+            title = m.captured(1);
+            id = m.captured(2);
+        }
+
+        const QString destPath = uniqueDestPath(
+                destDir + QLatin1Char('/') + srcInfo.fileName());
+        const bool ok = moveFiles ? QFile::rename(srcPath, destPath)
+                                  : QFile::copy(srcPath, destPath);
+        if (!ok) {
+            out.append(QVariantMap{
+                { QStringLiteral("fileUrl"), fileUrlStr },
+                { QStringLiteral("ok"), false },
+                { QStringLiteral("error"), moveFiles
+                          ? tr("Could not move the file")
+                          : tr("Could not copy the file") }
+            });
+            continue;
+        }
+        if (moveFiles)
+            anyMoved = true;
+
+        // Sibling thumbnail: best effort, not fatal if missing or it fails.
+        const QString srcThumbBase =
+                srcInfo.absolutePath() + QLatin1Char('/') + srcInfo.completeBaseName();
+        const QFileInfo destInfo(destPath);
+        const QString destThumbBase =
+                destInfo.absolutePath() + QLatin1Char('/') + destInfo.completeBaseName();
+        for (const QString &ext : { QStringLiteral(".jpg"), QStringLiteral(".webp") }) {
+            if (QFileInfo::exists(srcThumbBase + ext)) {
+                const QString destThumbPath = uniqueDestPath(destThumbBase + ext);
+                if (moveFiles)
+                    QFile::rename(srcThumbBase + ext, destThumbPath);
+                else
+                    QFile::copy(srcThumbBase + ext, destThumbPath);
+                break;
+            }
+        }
+
+        out.append(QVariantMap{
+            { QStringLiteral("title"), title },
+            { QStringLiteral("id"), id },
+            { QStringLiteral("fileUrl"), QUrl::fromLocalFile(destPath).toString() },
+            { QStringLiteral("ok"), true }
+        });
+    }
+
+    if (anyMoved)
+        updateCacheCount();
+    return out;
+}
+
 void YoutubeResolver::removeCacheFilesForId(const QString &id) const
 {
     QDir dir(m_cacheDir);

@@ -160,107 +160,202 @@
 <context>
     <name>CacheBrowserDialog</name>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="28"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="41"/>
         <source>YouTube cache</source>
         <translation>Pamięć podręczna YouTube</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="110"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="141"/>
         <source>Remove from cache</source>
         <translation>Usuń z pamięci podręcznej</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="111"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="142"/>
         <source>Are you sure you want to remove %1 selected cache file(s)?</source>
         <translation>Czy na pewno usunąć wybrane pliki pamięci podręcznej (%1)?</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="127"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="150"/>
+        <source>Select a folder to save the selected videos to</source>
+        <translation>Wybierz folder, w którym zapisać zaznaczone filmy</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="163"/>
+        <source>Move or copy?</source>
+        <translation>Przenieść czy skopiować?</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="195"/>
+        <source>Move the selected files out of the cache, or keep a copy in the cache and copy them to the destination?</source>
+        <translation>Przenieść zaznaczone pliki poza pamięć podręczną, czy zachować kopię w pamięci podręcznej i skopiować je do miejsca docelowego?</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="198"/>
+        <source>Copy (keep them in the cache too)</source>
+        <translation>Skopiuj (zachowaj też w pamięci podręcznej)</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="203"/>
+        <source>Move (remove them from the cache)</source>
+        <translation>Przenieś (usuń je z pamięci podręcznej)</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="214"/>
+        <source>OK</source>
+        <translation type="unfinished">&amp;OK</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="245"/>
+        <source>Cancel</source>
+        <translation type="unfinished">Anuluj</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="254"/>
+        <source>Name the new playlist</source>
+        <translation>Nadaj nazwę nowej liście odtwarzania</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="257"/>
+        <source>Playlists (*.m3u8 *.m3u)</source>
+        <translation type="unfinished">Listy odtwarzania (*.m3u8 *.m3u)</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="267"/>
+        <source>Select an existing playlist</source>
+        <translation>Wybierz istniejącą listę odtwarzania</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="269"/>
+        <source>Playlists (*.m3u *.m3u8)</source>
+        <translation type="unfinished">Listy odtwarzania (*.m3u *.m3u8)</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="269"/>
+        <source>All files (*)</source>
+        <translation type="unfinished">Wszystkie pliki (*)</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="287"/>
         <source>Filter:</source>
         <translation>Filtr:</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="131"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="291"/>
         <source>type to narrow the list</source>
         <translation>wpisz, aby zawęzić listę</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="134"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="294"/>
         <source>Sort:</source>
         <translation>Sortowanie:</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="137"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="297"/>
         <source>Date</source>
         <translation>Data</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="137"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="297"/>
         <source>Title</source>
         <translation>&amp;Tytuł</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="143"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="303"/>
         <source>Descending</source>
         <translation>Malejąco</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="143"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="303"/>
         <source>Ascending</source>
         <translation>Rosnąco</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="149"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="309"/>
         <source>Size:</source>
         <translation>Ro&amp;zmiar:</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="152"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="312"/>
         <source>Small</source>
         <translation>Mały</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="152"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="312"/>
         <source>Medium</source>
         <translation>Średni</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="152"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="312"/>
         <source>Large</source>
         <translation>Duży</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="167"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="321"/>
+        <source>Save ▾</source>
+        <translation>Zapisz ▾</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="327"/>
+        <source>Save the checked videos to a folder or a playlist</source>
+        <translation>Zapisz zaznaczone filmy do folderu lub listy odtwarzania</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="333"/>
+        <source>Save to selected folder…</source>
+        <translation>Zapisz do wybranego folderu…</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="337"/>
+        <source>Create a new playlist…</source>
+        <translation>Utwórz nową listę odtwarzania…</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="341"/>
+        <source>Add to an existing playlist…</source>
+        <translation>Dodaj do istniejącej listy odtwarzania…</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="345"/>
+        <source>Add to current playlist</source>
+        <translation>Dodaj do bieżącej listy odtwarzania</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="350"/>
+        <source>Tick videos with the checkbox in their corner, then pick where to save them: a plain folder, a new playlist file, an existing one, or the currently loaded playlist. Every option asks for a destination folder and whether to move the files out of the cache or keep a copy there -- the cache is a limited-size rotation, so a file left only there can eventually be evicted.</source>
+        <translation>Zaznacz filmy polem wyboru w rogu, a następnie wybierz, gdzie je zapisać: zwykły folder, nowy plik listy odtwarzania, istniejący plik lub aktualnie wczytaną listę odtwarzania. Każda opcja pyta o folder docelowy i czy przenieść pliki z pamięci podręcznej, czy zostawić tam kopię -- pamięć podręczna ma ograniczony rozmiar, więc plik pozostawiony tylko tam może zostać z czasem usunięty.</translation>
+    </message>
+    <message>
+        <location filename="../qml/CacheBrowserDialog.qml" line="370"/>
         <source>Remove the checked videos from the cache</source>
         <translation>Usuń zaznaczone filmy z pamięci podręcznej</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="171"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="374"/>
         <source>Tick videos with the checkbox in their corner, then use this button to remove them from the cache (you&apos;ll be asked to confirm).</source>
-        <translation type="unfinished"></translation>
+        <translation>Zaznacz filmy polem wyboru w rogu, a następnie użyj tego przycisku, aby usunąć je z pamięci podręcznej (zostaniesz poproszony o potwierdzenie).</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="185"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="388"/>
         <source>The cache is empty.</source>
         <translation>Pamięć podręczna jest pusta.</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="186"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="389"/>
         <source>No videos match the filter.</source>
         <translation>Żaden film nie pasuje do filtra.</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="300"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="503"/>
         <source>%1 selected of %2</source>
         <translation>Zaznaczono %1 z %2</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="301"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="504"/>
         <source>%1 video(s)</source>
         <translation>Filmy: %1</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="305"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="508"/>
         <source>Close</source>
         <translation>Zamknij</translation>
     </message>
@@ -671,274 +766,284 @@
 <context>
     <name>Main</name>
     <message>
-        <location filename="../qml/Main.qml" line="377"/>
+        <location filename="../qml/Main.qml" line="409"/>
         <source>TV editor</source>
         <translation>Edytor TV</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="377"/>
+        <location filename="../qml/Main.qml" line="409"/>
         <source>TV channels</source>
         <translation>Kanały TV</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="380"/>
+        <location filename="../qml/Main.qml" line="412"/>
         <source>Radio editor</source>
         <translation>Edytor radia</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="380"/>
+        <location filename="../qml/Main.qml" line="412"/>
         <source>Radio channels</source>
         <translation>Stacje radiowe</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="383"/>
-        <location filename="../qml/Main.qml" line="427"/>
+        <location filename="../qml/Main.qml" line="415"/>
+        <location filename="../qml/Main.qml" line="459"/>
         <source>Favorite editor</source>
         <translation>Ulubiony edytor</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="383"/>
-        <location filename="../qml/Main.qml" line="427"/>
+        <location filename="../qml/Main.qml" line="415"/>
+        <location filename="../qml/Main.qml" line="459"/>
         <source>Favorite list</source>
         <translation>Lista ulubionych</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="387"/>
+        <location filename="../qml/Main.qml" line="419"/>
         <source>Bookmark added</source>
         <translation>Dodano zakładkę</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="402"/>
+        <location filename="../qml/Main.qml" line="434"/>
         <source>Edit main toolbar</source>
         <translation>Edy&amp;tuj główny pasek narzędzi</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="405"/>
+        <location filename="../qml/Main.qml" line="437"/>
         <source>Edit control bar</source>
         <translation>Edy&amp;cja paska kontroli</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="434"/>
+        <location filename="../qml/Main.qml" line="466"/>
         <source>Screenshot saved as %1</source>
         <translation>Zrzut ekranu zapisano jako %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="435"/>
+        <location filename="../qml/Main.qml" line="467"/>
         <source>Could not take the screenshot</source>
         <translation>Nie można wykonać zrzutu ekranu</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="548"/>
+        <location filename="../qml/Main.qml" line="580"/>
         <source>Drop media files here, or press Ctrl+O</source>
         <translation>Upuść tu pliki multimedialne lub naciśnij Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="624"/>
+        <location filename="../qml/Main.qml" line="656"/>
         <source>Downloading video…</source>
         <translation>Pobieranie filmu…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="631"/>
+        <location filename="../qml/Main.qml" line="663"/>
         <source>This can take a while — the external tool is downloading and merging HD video and audio.</source>
         <translation>To może chwilę potrwać — narzędzie zewnętrzne pobiera i łączy obraz i dźwięk HD.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="645"/>
-        <location filename="../qml/Main.qml" line="1468"/>
+        <location filename="../qml/Main.qml" line="677"/>
+        <location filename="../qml/Main.qml" line="1552"/>
         <source>Cancel</source>
         <translation>Anuluj</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="718"/>
+        <location filename="../qml/Main.qml" line="750"/>
         <source>Loading…</source>
         <translation>Wczytywanie…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="719"/>
+        <location filename="../qml/Main.qml" line="751"/>
         <source>Connecting…</source>
         <translation>Łączenie...</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="720"/>
+        <location filename="../qml/Main.qml" line="752"/>
         <source>Buffering… %1%</source>
         <translation>Buforowanie… %1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="728"/>
+        <location filename="../qml/Main.qml" line="760"/>
         <source>Live streams can take several seconds to start.</source>
         <translation>Transmisje na żywo mogą uruchamiać się kilka sekund.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="763"/>
+        <location filename="../qml/Main.qml" line="795"/>
         <source>Volume: %1%</source>
         <translation>Głośność: %1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="766"/>
+        <location filename="../qml/Main.qml" line="798"/>
         <source>Mute</source>
         <translation>Wycisz</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="766"/>
+        <location filename="../qml/Main.qml" line="798"/>
         <source>Mute off</source>
         <translation>Wyciszenie wyłączone</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="769"/>
+        <location filename="../qml/Main.qml" line="801"/>
         <source>Speed: %1x</source>
         <translation>Prędkość: %1x</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1176"/>
+        <location filename="../qml/Main.qml" line="1208"/>
         <source>Media files (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1177"/>
-        <location filename="../qml/Main.qml" line="1216"/>
-        <location filename="../qml/Main.qml" line="1404"/>
+        <location filename="../qml/Main.qml" line="1209"/>
+        <location filename="../qml/Main.qml" line="1248"/>
+        <location filename="../qml/Main.qml" line="1488"/>
         <source>All files (*)</source>
         <translation>Wszystkie pliki (*)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1200"/>
+        <location filename="../qml/Main.qml" line="1232"/>
         <source>Select the DVD drive or a folder containing VIDEO_TS</source>
         <translation>Wybierz napęd DVD lub folder zawierający VIDEO_TS</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1204"/>
+        <location filename="../qml/Main.qml" line="1236"/>
         <source>No DVD video found in %1</source>
         <translation>Nie znaleziono wideo DVD w %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1215"/>
+        <location filename="../qml/Main.qml" line="1247"/>
         <source>Playlists (*.m3u *.m3u8)</source>
         <translation>Listy odtwarzania (*.m3u *.m3u8)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1250"/>
+        <location filename="../qml/Main.qml" line="1282"/>
         <source>Playing stream</source>
         <translation>Odtwarzanie strumienia</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1256"/>
-        <location filename="../qml/Main.qml" line="1276"/>
+        <location filename="../qml/Main.qml" line="1288"/>
+        <location filename="../qml/Main.qml" line="1308"/>
         <source>Playing downloaded video</source>
         <translation>Odtwarzanie pobranego filmu</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1260"/>
+        <location filename="../qml/Main.qml" line="1292"/>
         <source>YouTube: %1</source>
         <translation>YouTube: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1280"/>
+        <location filename="../qml/Main.qml" line="1312"/>
         <source>Download failed: %1</source>
         <translation>Pobieranie nie powiodło się: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1342"/>
+        <location filename="../qml/Main.qml" line="1409"/>
+        <source>Saved %1 file(s); %2 failed.</source>
+        <translation>Zapisano %1 plik(ów); %2 nieudanych.</translation>
+    </message>
+    <message>
+        <location filename="../qml/Main.qml" line="1413"/>
+        <source>Saved %1 file(s).</source>
+        <translation>Zapisano %1 plik(ów).</translation>
+    </message>
+    <message>
+        <location filename="../qml/Main.qml" line="1426"/>
         <source>Could not read the shortcut file.</source>
         <translation>Nie można odczytać pliku skrótu.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1357"/>
+        <location filename="../qml/Main.qml" line="1441"/>
         <source>Starting download…</source>
         <translation>Rozpoczynanie pobierania…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1358"/>
+        <location filename="../qml/Main.qml" line="1442"/>
         <source>Downloading video (this can take a while)…</source>
         <translation>Pobieranie filmu (to może chwilę potrwać)…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1362"/>
+        <location filename="../qml/Main.qml" line="1446"/>
         <source>Resolving with yt-dlp…</source>
         <translation>Rozwiązywanie za pomocą yt-dlp…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1399"/>
+        <location filename="../qml/Main.qml" line="1483"/>
         <source>Load subtitle file</source>
         <translation>Wczytaj plik napisów</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1403"/>
+        <location filename="../qml/Main.qml" line="1487"/>
         <source>Subtitle files (*.srt *.vtt *.ass *.ssa)</source>
         <translation>Pliki napisów (*.srt *.vtt *.ass *.ssa)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1411"/>
+        <location filename="../qml/Main.qml" line="1495"/>
         <source>Subtitle delay</source>
         <translation>Opóźnienie napisów</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1445"/>
+        <location filename="../qml/Main.qml" line="1529"/>
         <source>Delay:</source>
         <translation>Opóźnienie:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1451"/>
-        <location filename="../qml/Main.qml" line="1523"/>
+        <location filename="../qml/Main.qml" line="1535"/>
+        <location filename="../qml/Main.qml" line="1607"/>
         <source>ms</source>
         <translation>ms</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1461"/>
+        <location filename="../qml/Main.qml" line="1545"/>
         <source>OK</source>
         <translation>&amp;OK</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1480"/>
+        <location filename="../qml/Main.qml" line="1564"/>
         <source>Audio delay — Vivace</source>
         <translation>Opóźnienie dźwięku — Vivace</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1511"/>
+        <location filename="../qml/Main.qml" line="1595"/>
         <source>No delay for this file (use the global delay only)</source>
         <translation>Bez opóźnienia dla tego pliku (użyj tylko opóźnienia globalnego)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1516"/>
+        <location filename="../qml/Main.qml" line="1600"/>
         <source>This file&apos;s delay:</source>
         <translation>Opóźnienie tego pliku:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1531"/>
+        <location filename="../qml/Main.qml" line="1615"/>
         <source>The delay applied to this file is this value plus the global delay for the current audio device (%1 ms), set in Preferences &gt; General &gt; Audio. Negative values delay the video to match audio that arrives late (e.g. Bluetooth headphones).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1544"/>
+        <location filename="../qml/Main.qml" line="1628"/>
         <source>&amp;Apply</source>
         <translation>Z&amp;atwierdź</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1553"/>
+        <location filename="../qml/Main.qml" line="1637"/>
         <source>&amp;Close</source>
         <translation>Zamknij (&amp;c)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1649"/>
+        <location filename="../qml/Main.qml" line="1733"/>
         <source>Hide window</source>
         <translation>Ukryj okno</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1649"/>
+        <location filename="../qml/Main.qml" line="1733"/>
         <source>Show window</source>
         <translation>Pokaż okno</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1654"/>
+        <location filename="../qml/Main.qml" line="1738"/>
         <source>Play / Pause</source>
         <translation>Odtwarzaj / Pauza</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1658"/>
+        <location filename="../qml/Main.qml" line="1742"/>
         <source>Stop</source>
         <translation>Stop</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1663"/>
+        <location filename="../qml/Main.qml" line="1747"/>
         <source>Quit</source>
         <translation>Wyjdź (&amp;Q)</translation>
     </message>
@@ -1783,257 +1888,257 @@
         <translation>Opóźnienie A/V: %1 ms</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="953"/>
+        <location filename="../src/playercontroller.cpp" line="962"/>
         <source>DVD title %1 could not be assembled</source>
         <translation>Nie można złożyć tytułu DVD %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="959"/>
+        <location filename="../src/playercontroller.cpp" line="968"/>
         <source>DVD title %1 could not be opened</source>
         <translation>Nie można otworzyć tytułu DVD %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1021"/>
+        <location filename="../src/playercontroller.cpp" line="1030"/>
         <source>Title %1 (%2)</source>
         <translation>Tytuł %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1037"/>
+        <location filename="../src/playercontroller.cpp" line="1046"/>
         <source>Chapter %1 (%2)</source>
         <translation>Rozdział %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1659"/>
+        <location filename="../src/playercontroller.cpp" line="1668"/>
         <source>Could not open the stream</source>
         <translation>Nie można otworzyć strumienia</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1718"/>
+        <location filename="../src/playercontroller.cpp" line="1727"/>
         <source>System default</source>
         <translation>Domyślne systemu</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1882"/>
+        <location filename="../src/playercontroller.cpp" line="1891"/>
         <source>A marker set to %1</source>
         <translation>Znacznik A ustawiony na %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1893"/>
+        <location filename="../src/playercontroller.cpp" line="1902"/>
         <source>B marker set to %1</source>
         <translation>Znacznik B ustawiony na %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1903"/>
+        <location filename="../src/playercontroller.cpp" line="1912"/>
         <source>A-B markers cleared</source>
         <translation>Markery A-B wyczyszczone</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2017"/>
+        <location filename="../src/playercontroller.cpp" line="2026"/>
         <source>Could not load subtitles from %1</source>
         <translation>Nie można wczytać napisów z %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2029"/>
+        <location filename="../src/playercontroller.cpp" line="2038"/>
         <source>Subtitles loaded: %1</source>
         <translation>Wczytano napisy: %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2040"/>
+        <location filename="../src/playercontroller.cpp" line="2049"/>
         <source>Subtitles unloaded</source>
         <translation>Usunięto napisy</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2050"/>
+        <location filename="../src/playercontroller.cpp" line="2059"/>
         <source>Subtitle delay: %1 ms</source>
         <translation>Opóźnienie napisów: %1 ms</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2169"/>
+        <location filename="../src/playercontroller.cpp" line="2178"/>
         <source>General</source>
         <translation>Ogólne</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2172"/>
+        <location filename="../src/playercontroller.cpp" line="2181"/>
         <source>File</source>
         <translation>Plik</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2175"/>
+        <location filename="../src/playercontroller.cpp" line="2184"/>
         <source>Size</source>
         <translation>Rozmiar</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2175"/>
+        <location filename="../src/playercontroller.cpp" line="2184"/>
         <source>%1 KB (%2 MB)</source>
         <translation>%1 KB (%2 MB)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2179"/>
-        <location filename="../src/playercontroller.cpp" line="2205"/>
+        <location filename="../src/playercontroller.cpp" line="2188"/>
+        <location filename="../src/playercontroller.cpp" line="2214"/>
         <source>URL</source>
         <translation>URL</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2182"/>
+        <location filename="../src/playercontroller.cpp" line="2191"/>
         <source>Length</source>
         <translation>Długość</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2183"/>
+        <location filename="../src/playercontroller.cpp" line="2192"/>
         <source>Demuxer</source>
         <translation>Demukser</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2188"/>
-        <location filename="../src/playercontroller.cpp" line="2238"/>
-        <location filename="../src/playercontroller.cpp" line="2257"/>
+        <location filename="../src/playercontroller.cpp" line="2197"/>
+        <location filename="../src/playercontroller.cpp" line="2247"/>
         <location filename="../src/playercontroller.cpp" line="2266"/>
+        <location filename="../src/playercontroller.cpp" line="2275"/>
         <source>Name</source>
         <translation>Nazwa</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2189"/>
+        <location filename="../src/playercontroller.cpp" line="2198"/>
         <source>Artist</source>
         <translation>Artysta</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2191"/>
+        <location filename="../src/playercontroller.cpp" line="2200"/>
         <source>Album artist</source>
         <translation>Wykonawca albumu</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2193"/>
+        <location filename="../src/playercontroller.cpp" line="2202"/>
         <source>Author</source>
         <translation>Autor</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2194"/>
+        <location filename="../src/playercontroller.cpp" line="2203"/>
         <source>Composer</source>
         <translation>Kompozytor</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2195"/>
+        <location filename="../src/playercontroller.cpp" line="2204"/>
         <source>Album</source>
         <translation>Album</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2196"/>
+        <location filename="../src/playercontroller.cpp" line="2205"/>
         <source>Genre</source>
         <translation>Gatunek</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2197"/>
+        <location filename="../src/playercontroller.cpp" line="2206"/>
         <source>Date</source>
         <translation>Data</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2198"/>
+        <location filename="../src/playercontroller.cpp" line="2207"/>
         <source>Track</source>
         <translation>Ścieżka</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2199"/>
+        <location filename="../src/playercontroller.cpp" line="2208"/>
         <source>Copyright</source>
         <translation>Prawa autorskie</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2200"/>
+        <location filename="../src/playercontroller.cpp" line="2209"/>
         <source>Comment</source>
         <translation>Komentarz</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2201"/>
+        <location filename="../src/playercontroller.cpp" line="2210"/>
         <source>Description</source>
         <translation>Opis</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2203"/>
+        <location filename="../src/playercontroller.cpp" line="2212"/>
         <source>Publisher</source>
         <translation>Wydawca</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2204"/>
-        <location filename="../src/playercontroller.cpp" line="2238"/>
-        <location filename="../src/playercontroller.cpp" line="2257"/>
+        <location filename="../src/playercontroller.cpp" line="2213"/>
+        <location filename="../src/playercontroller.cpp" line="2247"/>
         <location filename="../src/playercontroller.cpp" line="2266"/>
+        <location filename="../src/playercontroller.cpp" line="2275"/>
         <source>Language</source>
         <translation>Język</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2207"/>
+        <location filename="../src/playercontroller.cpp" line="2216"/>
         <source>Clip info</source>
         <translation>Info o klipie</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2211"/>
+        <location filename="../src/playercontroller.cpp" line="2220"/>
         <source>Initial Video Stream</source>
         <translation>Początkowy strumień wideo</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2214"/>
+        <location filename="../src/playercontroller.cpp" line="2223"/>
         <source>Resolution</source>
         <translation>Rozdzielczość</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2217"/>
+        <location filename="../src/playercontroller.cpp" line="2226"/>
         <source>Aspect ratio</source>
         <translation>Współczynnik proporcji</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2221"/>
-        <location filename="../src/playercontroller.cpp" line="2246"/>
+        <location filename="../src/playercontroller.cpp" line="2230"/>
+        <location filename="../src/playercontroller.cpp" line="2255"/>
         <source>Format</source>
         <translation>Format</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2224"/>
-        <location filename="../src/playercontroller.cpp" line="2249"/>
+        <location filename="../src/playercontroller.cpp" line="2233"/>
+        <location filename="../src/playercontroller.cpp" line="2258"/>
         <source>Bitrate</source>
         <translation>Szybkość transmisji</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2224"/>
-        <location filename="../src/playercontroller.cpp" line="2249"/>
+        <location filename="../src/playercontroller.cpp" line="2233"/>
+        <location filename="../src/playercontroller.cpp" line="2258"/>
         <source>%1 kbps</source>
         <translation>%1 kbps</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2227"/>
+        <location filename="../src/playercontroller.cpp" line="2236"/>
         <source>Frames per second</source>
         <translation>Ramek na sekundę</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2230"/>
+        <location filename="../src/playercontroller.cpp" line="2239"/>
         <source>HDR</source>
         <translation>HDR</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2230"/>
+        <location filename="../src/playercontroller.cpp" line="2239"/>
         <source>yes</source>
         <translation>tak</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2237"/>
+        <location filename="../src/playercontroller.cpp" line="2246"/>
         <source>Video Streams</source>
         <translation>Strumienie wideo</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2245"/>
+        <location filename="../src/playercontroller.cpp" line="2254"/>
         <source>Initial Audio Stream</source>
         <translation>Początkowy strumień dźwięku</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2256"/>
+        <location filename="../src/playercontroller.cpp" line="2265"/>
         <source>Audio Streams</source>
         <translation>Strumienie dźwięku</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2265"/>
+        <location filename="../src/playercontroller.cpp" line="2274"/>
         <source>Subtitles</source>
         <translation>Napisy</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2454"/>
+        <location filename="../src/playercontroller.cpp" line="2523"/>
         <source>Chapter %1</source>
         <translation>Rozdział %1</translation>
     </message>
@@ -4499,16 +4604,36 @@
         <translation>yt-dlp nie utworzył pliku (kod wyjścia %1). Jeśli to wideo w jakości HD, sprawdź ścieżki do ffmpeg i Deno.</translation>
     </message>
     <message>
+        <location filename="../src/youtuberesolver.cpp" line="656"/>
+        <source>Could not create the destination folder</source>
+        <translation>Nie udało się utworzyć folderu docelowego</translation>
+    </message>
+    <message>
+        <location filename="../src/youtuberesolver.cpp" line="672"/>
+        <source>File no longer exists</source>
+        <translation>Plik już nie istnieje</translation>
+    </message>
+    <message>
+        <location filename="../src/youtuberesolver.cpp" line="694"/>
+        <source>Could not move the file</source>
+        <translation>Nie udało się przenieść pliku</translation>
+    </message>
+    <message>
+        <location filename="../src/youtuberesolver.cpp" line="695"/>
+        <source>Could not copy the file</source>
+        <translation>Nie udało się skopiować pliku</translation>
+    </message>
+    <message>
         <source>yt-dlp produced no file (exit code %1). If this is an HD video, check the ffmpeg location.</source>
         <translation type="vanished">yt-dlp nie utworzył pliku (kod wyjścia %1). Jeśli to film HD, sprawdź lokalizację ffmpeg.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="710"/>
+        <location filename="../src/youtuberesolver.cpp" line="815"/>
         <source>Could not write %1.</source>
         <translation>Nie można zapisać %1.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="716"/>
+        <location filename="../src/youtuberesolver.cpp" line="821"/>
         <source>Could not save %1.</source>
         <translation>Nie można zapisać %1.</translation>
     </message>

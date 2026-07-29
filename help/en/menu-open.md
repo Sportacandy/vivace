@@ -17,7 +17,14 @@ The **Open** menu is how you load media into Vivace.
 - **URL…** (`Ctrl+U`) — play a network stream. With YouTube support enabled
   (*Preferences ▸ Network*), YouTube links are handled here too.
 - **YouTube cache…** — browse videos Vivace downloaded (when using the
-  download-and-play YouTube mode).
+  download-and-play YouTube mode). Tick videos with the checkbox in their
+  corner, then either remove them from the cache, or use **Save ▾** to keep
+  them somewhere permanent: to a plain folder, into a new playlist file,
+  appended to an existing one, or added straight to the playlist currently
+  loaded in Vivace. Every option first asks for a destination folder and
+  whether to move the files out of the cache or leave a copy there — the
+  cache is a size-limited rotation, so a video left referenced only inside
+  it can eventually be evicted to make room for newer downloads.
 - **TV** / **Radio** — your channel lists (imported from SMPlayer if present).
 - **Quit** (`Ctrl+Q`) — close Vivace.
 

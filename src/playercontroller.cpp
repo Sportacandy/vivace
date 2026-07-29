@@ -716,6 +716,15 @@ void PlayerController::open(const QList<QUrl> &urls)
     if (entries.isEmpty())
         return;
 
+    // The in-memory playlist is "backed by" a file only right after loading
+    // that file; opening plain media detaches it (see currentPlaylistFile's
+    // doc comment in the header).
+    const QUrl newCurrentPlaylistFile = openedPlaylist ? urls.first() : QUrl();
+    if (newCurrentPlaylistFile != m_currentPlaylistFile) {
+        m_currentPlaylistFile = newCurrentPlaylistFile;
+        emit currentPlaylistFileChanged();
+    }
+
     m_player->stop();
     m_playlist->clear();
     m_playlist->add(entries);
@@ -2273,7 +2282,67 @@ QString PlayerController::mediaInfoHtml() const
 
 bool PlayerController::savePlaylist(const QUrl &file)
 {
-    return PlaylistParser::save(file, m_playlist->entries());
+    if (!PlaylistParser::save(file, m_playlist->entries()))
+        return false;
+    if (m_currentPlaylistFile != file) {
+        m_currentPlaylistFile = file;
+        emit currentPlaylistFileChanged();
+    }
+    return true;
+}
+
+bool PlayerController::addToPlaylistFile(const QUrl &playlistFile,
+                                          const QVariantList &newEntries,
+                                          bool createNew)
+{
+    if (!playlistFile.isLocalFile() || newEntries.isEmpty())
+        return false;
+
+    QList<PlaylistEntry> entries =
+            createNew ? QList<PlaylistEntry>() : PlaylistParser::load(playlistFile);
+
+    QList<PlaylistEntry> added;
+    added.reserve(newEntries.size());
+    for (const QVariant &v : newEntries) {
+        const QVariantMap m = v.toMap();
+        added.append({ QUrl(m.value(QStringLiteral("fileUrl")).toString()),
+                        m.value(QStringLiteral("title")).toString() });
+    }
+    entries += added;
+
+    if (!PlaylistParser::save(playlistFile, entries))
+        return false;
+
+    // If this file is the one currently shown in the Playlist panel, keep it
+    // in sync live instead of requiring the user to reload it by hand.
+    if (m_currentPlaylistFile == playlistFile)
+        m_playlist->add(added);
+
+    if (m_currentPlaylistFile != playlistFile) {
+        m_currentPlaylistFile = playlistFile;
+        emit currentPlaylistFileChanged();
+    }
+    return true;
+}
+
+bool PlayerController::addToCurrentPlaylist(const QVariantList &newEntries)
+{
+    if (newEntries.isEmpty())
+        return false;
+
+    QList<PlaylistEntry> added;
+    added.reserve(newEntries.size());
+    for (const QVariant &v : newEntries) {
+        const QVariantMap m = v.toMap();
+        added.append({ QUrl(m.value(QStringLiteral("fileUrl")).toString()),
+                        m.value(QStringLiteral("title")).toString() });
+    }
+    m_playlist->add(added);
+
+    if (!m_currentPlaylistFile.isEmpty())
+        PlaylistParser::save(m_currentPlaylistFile, m_playlist->entries());
+
+    return true;
 }
 
 void PlayerController::fillShuffleOrder()

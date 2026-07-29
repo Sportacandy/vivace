@@ -19,7 +19,15 @@ Le menu **Ouvrir** vous permet de charger des médias dans Vivace.
 - **URL…** (`Ctrl+U`) — lire un flux réseau. Avec la prise en charge de YouTube
   activée (*Préférences ▸ Réseau*), les liens YouTube sont aussi gérés ici.
 - **Cache YouTube…** — parcourir les vidéos que Vivace a téléchargées (en mode
-  téléchargement puis lecture).
+  téléchargement puis lecture). Cochez des vidéos dans leur coin, puis
+  supprimez-les du cache ou utilisez **Enregistrer ▾** pour les conserver
+  durablement : dans un dossier ordinaire, dans un nouveau fichier de liste de
+  lecture, ajoutées à une liste existante, ou ajoutées directement à la liste
+  de lecture actuellement chargée dans Vivace. Chaque option demande d'abord un
+  dossier de destination et si les fichiers doivent être déplacés hors du cache
+  ou copiés en y laissant l'original — le cache a une taille limitée, un
+  fichier qui n'y est référencé qu'à cet endroit peut donc finir par être
+  évincé.
 - **TV** / **Radio** — vos listes de chaînes (importées de SMPlayer le cas échéant).
 - **Quitter** (`Ctrl+Q`) — fermer Vivace.
 

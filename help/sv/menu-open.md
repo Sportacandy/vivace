@@ -16,7 +16,14 @@ Menyn **Öppna** är hur du laddar media i Vivace.
   - **Blu-ray**, **Ljud-cd** — stöds ännu inte.
 - **URL…** (`Ctrl+U`) — spela upp en nätverksström. Med YouTube-stöd aktiverat
   (*Inställningar ▸ Nätverk*) hanteras även YouTube-länkar här.
-- **YouTube-cache…** — bläddra bland videor som Vivace laddat ner (i läget ladda ner och spela upp).
+- **YouTube-cache…** — bläddra bland videor som Vivace laddat ner (i läget ladda
+  ner och spela upp). Markera videor med kryssrutan i hörnet och ta antingen
+  bort dem från cachen eller använd **Spara ▾** för att behålla dem permanent:
+  till en vanlig mapp, till en ny spellistefil, tillagda i en befintlig, eller
+  tillagda direkt till spellistan som för närvarande är inläst i Vivace.
+  Varje alternativ frågar först om en målmapp och om filerna ska flyttas ut
+  ur cachen eller om en kopia ska lämnas kvar där — cachen har en begränsad
+  storlek, så en video som bara refereras där kan så småningom rensas bort.
 - **Tv** / **Radio** — dina kanallistor (importerade från SMPlayer om de finns).
 - **Avsluta** (`Ctrl+Q`) — stäng Vivace.
 

@@ -17,7 +17,15 @@
   - **Blu-ray**, **Ääni-CD** — ei vielä tuettu.
 - **URL…** (`Ctrl+U`) — toista verkkosuoratoisto. Kun YouTube-tuki on käytössä
   (*Asetukset ▸ Verkko*), YouTube-linkit käsitellään myös täällä.
-- **YouTube-välimuisti…** — selaa Vivacen lataamia videoita (lataa ja toista -tilassa).
+- **YouTube-välimuisti…** — selaa Vivacen lataamia videoita (lataa ja toista
+  -tilassa). Merkitse videoita kulman valintaruudulla ja joko poista ne
+  välimuistista tai käytä **Tallenna ▾** -painiketta säilyttääksesi ne
+  pysyvästi: tavalliseen kansioon, uuteen soittolistatiedostoon, lisättynä
+  olemassa olevaan, tai lisättynä suoraan Vivaceen parhaillaan ladattuun
+  soittolistaan. Jokainen vaihtoehto kysyy ensin kohdekansiota ja siirretäänkö
+  tiedostot pois välimuistista vai jätetäänkö niistä kopio sinne —
+  välimuistin koko on rajallinen, joten pelkästään siellä viitattu video
+  voidaan lopulta poistaa.
 - **TV** / **Radio** — kanavaluettelosi (tuotu SMPlayerista, jos on).
 - **Lopeta** (`Ctrl+Q`) — sulje Vivace.
 

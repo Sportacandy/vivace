@@ -26,6 +26,22 @@ each get their own entry instead.
   the main window impossible to find. The remembered position is now only
   restored when it still lands on a currently connected screen; the
   remembered size is kept either way.
+- The YouTube cache window's "Move or copy?" dialog now shows OK before
+  Cancel (matching Windows convention), and its toolbar has a visible gap
+  between the Save and Remove buttons' help marks so the two aren't
+  mistaken for one control.
+
+### Added
+- A **Save ▾** button in the YouTube cache window (alongside the existing
+  Remove button), letting you keep a downloaded video permanently instead
+  of leaving it to the cache's size-limited rotation: save it to a plain
+  folder, a new playlist file, an existing playlist, or straight into the
+  playlist currently loaded in Vivace. Every option relocates the file (and
+  its thumbnail) out of the cache — or copies it, your choice — since a
+  video left referenced only inside the cache can eventually be evicted.
+  Adding to the currently loaded playlist updates it live, including in a
+  separate (modeless) Playlist window, and auto-saves it if it's backed by
+  a file.
 
 ## [0.1.2] — 2026-07-28
 

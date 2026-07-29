@@ -17,7 +17,15 @@ El menú **Obre** és com carregueu mitjans al Vivace.
   - **Blu-ray**, **CD d'àudio** — encara no compatibles.
 - **URL…** (`Ctrl+U`) — reproduir un flux de xarxa. Amb la compatibilitat amb
   YouTube activada (*Preferències ▸ Xarxa*), els enllaços de YouTube també es gestionen aquí.
-- **Memòria cau de YouTube…** — explorar els vídeos que el Vivace ha baixat (en mode baixa i reprodueix).
+- **Memòria cau de YouTube…** — explorar els vídeos que el Vivace ha baixat (en
+  mode baixa i reprodueix). Marqueu vídeos amb la casella de la cantonada i
+  després elimineu-los de la memòria cau o useu **Desa ▾** per conservar-los
+  de manera permanent: en una carpeta normal, en un nou fitxer de llista de
+  reproducció, afegits a una d'existent, o afegits directament a la llista de
+  reproducció carregada actualment al Vivace. Cada opció demana primer una
+  carpeta de destinació i si cal moure els fitxers fora de la memòria cau o
+  deixar-hi una còpia — la memòria cau té una mida limitada, així que un
+  vídeo referenciat només allà pot acabar eliminant-se.
 - **TV** / **Ràdio** — les vostres llistes de canals (importades del SMPlayer si n'hi ha).
 - **Surt** (`Ctrl+Q`) — tancar el Vivace.
 
