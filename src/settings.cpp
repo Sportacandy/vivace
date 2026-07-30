@@ -52,6 +52,8 @@ constexpr auto caseSensitiveSearch = "playlist/caseSensitiveSearch";
 constexpr auto autosavePlaylistOnExit = "playlist/autosaveOnExit";
 constexpr auto playlistThumbnailSize = "playlist/thumbnailSize";
 constexpr auto playlistThumbnailCacheMaxEntries = "playlist/thumbnailCacheMaxEntries";
+constexpr auto playlistNowPlayingWaveMode = "playlist/nowPlayingWaveMode";
+constexpr auto playlistSelectionWaveMode = "playlist/selectionWaveMode";
 constexpr auto screenshotFolder = "screenshots/folder";
 constexpr auto screenshotFormat = "screenshots/format";
 constexpr auto opensubtitlesApiKey = "opensubtitles/apiKey";
@@ -237,6 +239,10 @@ Settings::Settings(QObject *parent)
       m_playlistThumbnailCacheMaxEntries(
               qBound(100, m_store.value(Keys::playlistThumbnailCacheMaxEntries, 20000).toInt(),
                      200000)),
+      m_playlistNowPlayingWaveMode(
+              qBound(0, m_store.value(Keys::playlistNowPlayingWaveMode, 2).toInt(), 2)),
+      m_playlistSelectionWaveMode(
+              qBound(0, m_store.value(Keys::playlistSelectionWaveMode, 2).toInt(), 2)),
       m_screenshotFolder(m_store.value(Keys::screenshotFolder,
                                        defaultScreenshotFolder()).toString()),
       m_opensubtitlesApiKey(
@@ -1087,6 +1093,26 @@ void Settings::setPlaylistThumbnailCacheMaxEntries(int maxEntries)
     m_playlistThumbnailCacheMaxEntries = maxEntries;
     m_store.setValue(Keys::playlistThumbnailCacheMaxEntries, maxEntries);
     emit playlistThumbnailCacheMaxEntriesChanged();
+}
+
+void Settings::setPlaylistNowPlayingWaveMode(int mode)
+{
+    mode = qBound(0, mode, 2);
+    if (mode == m_playlistNowPlayingWaveMode)
+        return;
+    m_playlistNowPlayingWaveMode = mode;
+    m_store.setValue(Keys::playlistNowPlayingWaveMode, mode);
+    emit playlistNowPlayingWaveModeChanged();
+}
+
+void Settings::setPlaylistSelectionWaveMode(int mode)
+{
+    mode = qBound(0, mode, 2);
+    if (mode == m_playlistSelectionWaveMode)
+        return;
+    m_playlistSelectionWaveMode = mode;
+    m_store.setValue(Keys::playlistSelectionWaveMode, mode);
+    emit playlistSelectionWaveModeChanged();
 }
 
 void Settings::setScreenshotFolder(const QString &folder)

@@ -111,6 +111,23 @@ class Settings : public QObject
                        READ playlistThumbnailCacheMaxEntries
                        WRITE setPlaylistThumbnailCacheMaxEntries
                        NOTIFY playlistThumbnailCacheMaxEntriesChanged)
+    // How the wavy row-magnification effect treats the now-playing row
+    // (independently of, and combined with via Math.max(), the selection
+    // cursor's own effect below):
+    // 0 = no enlargement; 1 = enlarge only the now-playing row itself,
+    // neighbours unaffected; 2 = enlarge it AND taper its neighbours the
+    // same wavy way.
+    Q_PROPERTY(int playlistNowPlayingWaveMode
+                       READ playlistNowPlayingWaveMode
+                       WRITE setPlaylistNowPlayingWaveMode
+                       NOTIFY playlistNowPlayingWaveModeChanged)
+    // Same idea, for the user's selection cursor (the clicked/keyboard-
+    // navigated row) instead of the now-playing row. Independent settings:
+    // either, both, or neither can taper neighbours.
+    Q_PROPERTY(int playlistSelectionWaveMode
+                       READ playlistSelectionWaveMode
+                       WRITE setPlaylistSelectionWaveMode
+                       NOTIFY playlistSelectionWaveModeChanged)
     Q_PROPERTY(QString screenshotFolder READ screenshotFolder
                WRITE setScreenshotFolder NOTIFY screenshotFolderChanged)
     Q_PROPERTY(QString opensubtitlesApiKey READ opensubtitlesApiKey
@@ -481,6 +498,12 @@ public:
     int playlistThumbnailCacheMaxEntries() const { return m_playlistThumbnailCacheMaxEntries; }
     void setPlaylistThumbnailCacheMaxEntries(int maxEntries);
 
+    int playlistNowPlayingWaveMode() const { return m_playlistNowPlayingWaveMode; }
+    void setPlaylistNowPlayingWaveMode(int mode);
+
+    int playlistSelectionWaveMode() const { return m_playlistSelectionWaveMode; }
+    void setPlaylistSelectionWaveMode(int mode);
+
     QString screenshotFolder() const { return m_screenshotFolder; }
 
     QString opensubtitlesApiKey() const { return m_opensubtitlesApiKey; }
@@ -808,6 +831,8 @@ signals:
     void autosavePlaylistOnExitChanged();
     void playlistThumbnailSizeChanged();
     void playlistThumbnailCacheMaxEntriesChanged();
+    void playlistNowPlayingWaveModeChanged();
+    void playlistSelectionWaveModeChanged();
     void screenshotFolderChanged();
     void opensubtitlesChanged();
     void proxyChanged();
@@ -918,6 +943,8 @@ private:
     bool m_autosavePlaylistOnExit;
     int m_playlistThumbnailSize;
     int m_playlistThumbnailCacheMaxEntries;
+    int m_playlistNowPlayingWaveMode;
+    int m_playlistSelectionWaveMode;
     QString m_screenshotFolder;
     bool m_proxyEnabled;
     int m_proxyType;

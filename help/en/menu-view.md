@@ -12,9 +12,12 @@ The **View** menu shows information and secondary panels.
     "<name>.jpg" already sitting beside it) if one exists, otherwise a frame
     grabbed automatically in the background. The button at the top right of
     the playlist switches the row/thumbnail size (**Small**/**Medium**/
-    **Large**); at Small and Medium, the selected row (and the couple of
-    rows next to it) grows to show a bigger preview, tapering back down
-    towards its neighbours. Generated thumbnails are cached (a
+    **Large**); at Small and Medium, the selected row and the now-playing
+    row each grow to show a bigger preview. *Preferences ▸ Playlist ▸ Misc*
+    has an independent setting for each of the two ("Selected item
+    thumbnail" / "Now-playing thumbnail"): no enlargement, enlarge just
+    that one row, or also taper the couple of rows next to it toward the
+    same size (the default for both). Generated thumbnails are cached (a
     least-recently-shown one is dropped once the cache is full); the cache
     size is configurable at *Preferences ▸ Playlist ▸ Misc ▸ Maximum
     cached thumbnails*.

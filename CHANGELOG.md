@@ -55,13 +55,15 @@ each get their own entry instead.
   grabbed automatically in the background and cached (as a small SQLite
   database, not one file per thumbnail) for reuse. A button at the top
   right of the playlist switches the row/thumbnail size (Small/Medium/
-  Large); at Small and Medium, the selected row and its nearest neighbours
-  grow toward a larger preview, tapering back down further away — a
-  Dock-style "wavy" effect. Thumbnails for a newly loaded playlist generate
-  in playlist order (top to bottom) rather than in whatever order rows
-  happen to become visible. The generated-thumbnail cache size is
-  configurable at Preferences ▸ Playlist ▸ Misc ▸ Maximum cached
-  thumbnails (default 20,000).
+  Large); at Small and Medium, the selected row and the now-playing row
+  each grow toward a larger preview — independently configurable at
+  Preferences ▸ Playlist ▸ Misc, per row, to no enlargement, enlarge just
+  that one row, or also taper its nearest neighbours toward it, Dock-style
+  "wavy" style (the default for both). Thumbnails for a newly loaded
+  playlist generate in playlist order (top to bottom) rather than in
+  whatever order rows happen to become visible. The generated-thumbnail
+  cache size is also configurable there (Maximum cached thumbnails,
+  default 20,000).
 - A **Save ▾** button in the YouTube cache window (alongside the existing
   Remove button), letting you keep a downloaded video permanently instead
   of leaving it to the cache's size-limited rotation: save it to a plain

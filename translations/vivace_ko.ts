@@ -2139,158 +2139,158 @@
 <context>
     <name>PlaylistEditor</name>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="142"/>
+        <location filename="../qml/PlaylistEditor.qml" line="160"/>
         <source>Playlist (%1)</source>
         <translation>재생 목록 (%1)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="148"/>
+        <location filename="../qml/PlaylistEditor.qml" line="166"/>
         <source>Playlist: %1 (%2)</source>
         <translation>재생 목록: %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="159"/>
+        <location filename="../qml/PlaylistEditor.qml" line="177"/>
         <source>Row/thumbnail size</source>
         <translation>행/썸네일 크기</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="167"/>
+        <location filename="../qml/PlaylistEditor.qml" line="185"/>
         <source>Small</source>
         <translation>작게</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="173"/>
+        <location filename="../qml/PlaylistEditor.qml" line="191"/>
         <source>Medium</source>
         <translation>보통</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="179"/>
+        <location filename="../qml/PlaylistEditor.qml" line="197"/>
         <source>Large</source>
         <translation>크게</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="195"/>
+        <location filename="../qml/PlaylistEditor.qml" line="213"/>
         <source>Search…</source>
         <translation>검색…</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="209"/>
+        <location filename="../qml/PlaylistEditor.qml" line="227"/>
         <source>Clear</source>
         <translation>지우기</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="213"/>
+        <location filename="../qml/PlaylistEditor.qml" line="231"/>
         <source>Hides entries whose name does not match; it does not remove them from the playlist.</source>
         <translation>이름이 일치하지 않는 항목을 숨깁니다. 재생 목록에서 제거하지는 않습니다.</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="370"/>
+        <location filename="../qml/PlaylistEditor.qml" line="408"/>
         <source>Playlist is empty</source>
         <translation>재생 목록이 비어 있습니다</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="382"/>
+        <location filename="../qml/PlaylistEditor.qml" line="420"/>
         <source>Load playlist…</source>
         <translation>재생 목록 열기…</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="387"/>
+        <location filename="../qml/PlaylistEditor.qml" line="425"/>
         <source>Save playlist…</source>
         <translation>재생 목록 저장…</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="396"/>
+        <location filename="../qml/PlaylistEditor.qml" line="434"/>
         <source>Add files…</source>
         <translation>파일 추가…</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="401"/>
+        <location filename="../qml/PlaylistEditor.qml" line="439"/>
         <source>Add URL…</source>
         <translation>URL 추가…</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="409"/>
+        <location filename="../qml/PlaylistEditor.qml" line="447"/>
         <source>Remove selected</source>
         <translation>선택항목 삭제하기</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="415"/>
+        <location filename="../qml/PlaylistEditor.qml" line="453"/>
         <source>Remove all</source>
         <translation>모두 제거하기</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="424"/>
+        <location filename="../qml/PlaylistEditor.qml" line="462"/>
         <source>Play selected</source>
         <translation>선택 항목 재생</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="430"/>
+        <location filename="../qml/PlaylistEditor.qml" line="468"/>
         <source>Previous</source>
         <translation>이전(&amp;V)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="436"/>
+        <location filename="../qml/PlaylistEditor.qml" line="474"/>
         <source>Next</source>
         <translation>다음(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="445"/>
+        <location filename="../qml/PlaylistEditor.qml" line="483"/>
         <source>Repeat playlist</source>
         <translation>재생 목록 반복</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="452"/>
+        <location filename="../qml/PlaylistEditor.qml" line="490"/>
         <source>Shuffle</source>
         <translation>순서 섞기</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="462"/>
+        <location filename="../qml/PlaylistEditor.qml" line="500"/>
         <source>Move up</source>
         <translation>위로 이동(&amp;U)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="472"/>
+        <location filename="../qml/PlaylistEditor.qml" line="510"/>
         <source>Move down</source>
         <translation>아래로 이동(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="488"/>
+        <location filename="../qml/PlaylistEditor.qml" line="526"/>
         <source>Media files (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="489"/>
-        <location filename="../qml/PlaylistEditor.qml" line="504"/>
+        <location filename="../qml/PlaylistEditor.qml" line="527"/>
+        <location filename="../qml/PlaylistEditor.qml" line="542"/>
         <source>All files (*)</source>
         <translation>모든 파일 (*)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="504"/>
+        <location filename="../qml/PlaylistEditor.qml" line="542"/>
         <source>Playlists (*.m3u *.m3u8)</source>
         <translation>재생 목록 (*.m3u *.m3u8)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="515"/>
+        <location filename="../qml/PlaylistEditor.qml" line="553"/>
         <source>Playlists (*.m3u8 *.m3u)</source>
         <translation>재생 목록 (*.m3u8 *.m3u)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="521"/>
+        <location filename="../qml/PlaylistEditor.qml" line="559"/>
         <source>Add URL</source>
         <translation>URL 추가</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="562"/>
+        <location filename="../qml/PlaylistEditor.qml" line="600"/>
         <source>https://…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="572"/>
+        <location filename="../qml/PlaylistEditor.qml" line="610"/>
         <source>OK</source>
         <translation>확인(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="577"/>
+        <location filename="../qml/PlaylistEditor.qml" line="615"/>
         <source>Cancel</source>
         <translation>취소</translation>
     </message>
@@ -3667,164 +3667,205 @@
 <context>
     <name>PrefPlaylistPage</name>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="15"/>
-        <source>&lt;h1&gt;Playlist&lt;/h1&gt;&lt;p&gt;&lt;b&gt;Playlist&lt;/b&gt; tab — playback options (play files from start, start playing after loading a playlist, play the next file automatically, ignore playback errors, repeat, shuffle); how opening one file adds its folder siblings (the &quot;Add files from folder&quot; mode: none, video, audio, both or consecutive; recursive folders); whether to show each item&apos;s title instead of its file name, and whether the playlist is a docked panel or a separate window.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Misc&lt;/b&gt; tab — auto-sort the list, case-sensitive search, save a copy of the playlist on exit, remember the playlist between sessions, and the maximum number of generated row thumbnails to keep cached.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="32"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="33"/>
         <source>Playlist</source>
         <translation>재생 목록</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="33"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="34"/>
         <source>Misc</source>
         <translation>기타</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="52"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="53"/>
         <source>Playback</source>
         <translation>재생</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="61"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="62"/>
         <source>Play files from start</source>
         <translation>처음부터 파일 재생하기</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="66"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="67"/>
         <source>Always begin at the beginning, ignoring any remembered resume position for the file.</source>
         <translation>파일의 기억된 재개 위치를 무시하고 항상 처음부터 시작합니다.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="72"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="73"/>
         <source>Start playback after loading a playlist</source>
         <translation>재생목록을 불러온 후 재생을 시작하기</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="77"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="78"/>
         <source>Play next file automatically</source>
         <translation>다음 파일 자동으로 재생하기</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="84"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="85"/>
         <source>Ignore playback errors</source>
         <translation>재생 오류 무시하기</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="89"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="90"/>
         <source>When a file fails to play, skip on to the next item instead of stopping the playlist.</source>
         <translation>파일 재생에 실패하면 재생 목록을 중지하는 대신 다음 항목으로 건너뜁니다.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="95"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="96"/>
         <source>Repeat playlist</source>
         <translation>재생 목록 반복</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="100"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="101"/>
         <source>Shuffle</source>
         <translation>순서 섞기</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="109"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="110"/>
         <source>Adding files</source>
         <translation>파일 추가</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="119"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="120"/>
         <source>Add files to the playlist automatically</source>
         <translation>파일을 재생목록에 자동으로 추가하기</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="124"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="125"/>
         <source>When you open a single file, also add the other media files from its folder to the playlist.</source>
         <translation>단일 파일을 열 때 해당 폴더의 다른 미디어 파일도 재생 목록에 추가합니다.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="133"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="134"/>
         <source>Add files from folder:</source>
         <translation>폴더에서 파일 추가하기:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="135"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="136"/>
         <source>Which sibling files to add: none, only video, only audio, both, or just the files consecutive to the opened one (matching its name pattern).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="144"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="145"/>
         <source>None</source>
         <translation>없음</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="145"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="146"/>
         <source>Video files</source>
         <translation>비디오 파일</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="146"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="147"/>
         <source>Audio files</source>
         <translation>오디오 파일</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="147"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="148"/>
         <source>Video and audio files</source>
         <translation>비디오와 오디오 파일</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="148"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="149"/>
         <source>Consecutive files</source>
         <translation>비슷한 이름의 파일</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="155"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="156"/>
         <source>Add files in directories recursively</source>
         <translation>하위 폴더의 파일 추가하기</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="162"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="163"/>
         <source>Get info automatically about files added (slow)</source>
         <translation>추가한 파일의 정보를 자동으로 가져오기 (느림)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="171"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="172"/>
         <source>Display title name instead of filename</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="176"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="177"/>
         <source>Show each entry&apos;s stored title (from the playlist or media metadata) rather than its file name.</source>
         <translation>각 항목의 파일 이름 대신 저장된 제목(재생 목록 또는 미디어 메타데이터에서)을 표시합니다.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="186"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="187"/>
         <source>Playlist style:</source>
         <translation>재생 목록 스타일:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="189"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="190"/>
         <source>Docked panel</source>
         <translation>고정된 패널</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="189"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="190"/>
         <source>Separate window</source>
         <translation>별도 창</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="234"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="235"/>
         <source>Restore the playlist you had open the last time Vivace was closed.</source>
         <translation>Vivace를 마지막으로 종료했을 때 열려 있던 재생 목록을 복원합니다.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="241"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="242"/>
         <source>Maximum cached thumbnails:</source>
         <translation>캐시된 썸네일 최대 개수:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="252"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="253"/>
         <source>Row thumbnails generated for playlist entries without one are kept in a cache, oldest-shown evicted first once this many are stored. Does not include sibling &quot;.jpg&quot; files next to your media, which are never managed or removed by Vivace.</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefPlaylistPage.qml" line="263"/>
+        <source>Now-playing thumbnail:</source>
+        <translation>재생 중 항목 썸네일:</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefPlaylistPage.qml" line="268"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="289"/>
+        <source>No enlargement</source>
+        <translation>확대 안 함</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefPlaylistPage.qml" line="269"/>
+        <source>Enlarge only the now-playing row</source>
+        <translation>재생 중 항목의 행만 확대</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefPlaylistPage.qml" line="270"/>
+        <source>Enlarge the now-playing row and its neighbors</source>
+        <translation>재생 중 항목의 행과 인접한 행 확대</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefPlaylistPage.qml" line="276"/>
+        <source>How the now-playing row&apos;s thumbnail enlarges in the playlist, independently of the selected row&apos;s own setting below.</source>
+        <translation>재생 목록에서 재생 중인 행의 썸네일이 어떻게 확대되는지 설정합니다. 아래의 선택한 항목 설정과는 독립적입니다.</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefPlaylistPage.qml" line="284"/>
+        <source>Selected item thumbnail:</source>
+        <translation>선택한 항목 썸네일:</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefPlaylistPage.qml" line="290"/>
+        <source>Enlarge only the selected row</source>
+        <translation>선택한 행만 확대</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefPlaylistPage.qml" line="291"/>
+        <source>Enlarge the selected row and its neighbors</source>
+        <translation>선택한 행과 인접한 행 확대</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefPlaylistPage.qml" line="297"/>
+        <source>How the thumbnail of whichever row you click or navigate to enlarges in the playlist, independently of the now-playing row&apos;s own setting above.</source>
+        <translation>재생 목록에서 클릭하거나 이동한 행의 썸네일이 어떻게 확대되는지 설정합니다. 위의 재생 중 항목 설정과는 독립적입니다.</translation>
     </message>
     <message>
         <source>Restore\ the\ playlist\ you\ had\ open\ the\ last\ time\ Vivace\ was\ closed\.</source>
@@ -3835,27 +3876,32 @@
         <translation type="vanished">세션</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="229"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="230"/>
         <source>Remember the playlist between sessions</source>
         <translation>세션 간 재생 목록 기억</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="206"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="207"/>
         <source>Auto sort</source>
         <translation>자동 정렬</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="211"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="15"/>
+        <source>&lt;h1&gt;Playlist&lt;/h1&gt;&lt;p&gt;&lt;b&gt;Playlist&lt;/b&gt; tab — playback options (play files from start, start playing after loading a playlist, play the next file automatically, ignore playback errors, repeat, shuffle); how opening one file adds its folder siblings (the &quot;Add files from folder&quot; mode: none, video, audio, both or consecutive; recursive folders); whether to show each item&apos;s title instead of its file name, and whether the playlist is a docked panel or a separate window.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Misc&lt;/b&gt; tab — auto-sort the list, case-sensitive search, save a copy of the playlist on exit, remember the playlist between sessions, the maximum number of generated row thumbnails to keep cached, and how the now-playing and selected rows&apos; thumbnails each enlarge.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefPlaylistPage.qml" line="212"/>
         <source>Keep the playlist sorted by name as items are added, rather than in the order they were added.</source>
         <translation>항목이 추가될 때 추가된 순서가 아니라 이름순으로 재생 목록을 정렬된 상태로 유지합니다.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="217"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="218"/>
         <source>Case sensitive search</source>
         <translation>대소문자 구별 검색</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="222"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="223"/>
         <source>Save a copy of the playlist on exit</source>
         <translation>종료시 재생목록의 사본 저장하기</translation>
     </message>

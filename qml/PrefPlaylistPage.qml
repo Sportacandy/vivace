@@ -23,8 +23,9 @@ ColumnLayout {
         + "whether the playlist is a docked panel or a separate window.</p>"
         + "<p><b>Misc</b> tab — auto-sort the list, case-sensitive search, "
         + "save a copy of the playlist on exit, remember the playlist "
-        + "between sessions, and the maximum number of generated row "
-        + "thumbnails to keep cached.</p>")
+        + "between sessions, the maximum number of generated row "
+        + "thumbnails to keep cached, and how the now-playing and "
+        + "selected rows' thumbnails each enlarge.</p>")
 
     TabBar {
         id: tabs
@@ -254,6 +255,48 @@ ColumnLayout {
                                + "once this many are stored. Does not include sibling "
                                + "\".jpg\" files next to your media, which are never "
                                + "managed or removed by Vivace.")
+                }
+                Item { Layout.fillWidth: true }
+            }
+            RowLayout {
+                spacing: 8
+                Label { text: qsTr("Now-playing thumbnail:") }
+                ComboBox {
+                    implicitWidth: 320
+                    // 0 = off / 1 = solo / 2 = wavy (matches Settings.playlistNowPlayingWaveMode)
+                    model: [
+                        qsTr("No enlargement"),
+                        qsTr("Enlarge only the now-playing row"),
+                        qsTr("Enlarge the now-playing row and its neighbors")
+                    ]
+                    currentIndex: Settings.playlistNowPlayingWaveMode
+                    onActivated: Settings.playlistNowPlayingWaveMode = currentIndex
+                }
+                HelpMark {
+                    text: qsTr("How the now-playing row's thumbnail enlarges in the "
+                               + "playlist, independently of the selected row's own "
+                               + "setting below.")
+                }
+                Item { Layout.fillWidth: true }
+            }
+            RowLayout {
+                spacing: 8
+                Label { text: qsTr("Selected item thumbnail:") }
+                ComboBox {
+                    implicitWidth: 320
+                    // 0 = off / 1 = solo / 2 = wavy (matches Settings.playlistSelectionWaveMode)
+                    model: [
+                        qsTr("No enlargement"),
+                        qsTr("Enlarge only the selected row"),
+                        qsTr("Enlarge the selected row and its neighbors")
+                    ]
+                    currentIndex: Settings.playlistSelectionWaveMode
+                    onActivated: Settings.playlistSelectionWaveMode = currentIndex
+                }
+                HelpMark {
+                    text: qsTr("How the thumbnail of whichever row you click or "
+                               + "navigate to enlarges in the playlist, independently "
+                               + "of the now-playing row's own setting above.")
                 }
                 Item { Layout.fillWidth: true }
             }

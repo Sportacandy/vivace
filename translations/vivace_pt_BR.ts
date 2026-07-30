@@ -2142,158 +2142,158 @@
 <context>
     <name>PlaylistEditor</name>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="142"/>
+        <location filename="../qml/PlaylistEditor.qml" line="160"/>
         <source>Playlist (%1)</source>
         <translation>Lista de reprodução (%1)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="148"/>
+        <location filename="../qml/PlaylistEditor.qml" line="166"/>
         <source>Playlist: %1 (%2)</source>
         <translation>Lista de reprodução: %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="159"/>
+        <location filename="../qml/PlaylistEditor.qml" line="177"/>
         <source>Row/thumbnail size</source>
         <translation>Tamanho da linha/miniatura</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="167"/>
+        <location filename="../qml/PlaylistEditor.qml" line="185"/>
         <source>Small</source>
         <translation>Pequeno</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="173"/>
+        <location filename="../qml/PlaylistEditor.qml" line="191"/>
         <source>Medium</source>
         <translation>Médio</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="179"/>
+        <location filename="../qml/PlaylistEditor.qml" line="197"/>
         <source>Large</source>
         <translation>Grande</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="195"/>
+        <location filename="../qml/PlaylistEditor.qml" line="213"/>
         <source>Search…</source>
         <translation>Buscar…</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="209"/>
+        <location filename="../qml/PlaylistEditor.qml" line="227"/>
         <source>Clear</source>
         <translation>Limpar</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="213"/>
+        <location filename="../qml/PlaylistEditor.qml" line="231"/>
         <source>Hides entries whose name does not match; it does not remove them from the playlist.</source>
         <translation>Oculta as entradas cujo nome não corresponde; não as remove da lista de reprodução.</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="370"/>
+        <location filename="../qml/PlaylistEditor.qml" line="408"/>
         <source>Playlist is empty</source>
         <translation>A lista de reprodução está vazia</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="382"/>
+        <location filename="../qml/PlaylistEditor.qml" line="420"/>
         <source>Load playlist…</source>
         <translation>Carregar lista de reprodução…</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="387"/>
+        <location filename="../qml/PlaylistEditor.qml" line="425"/>
         <source>Save playlist…</source>
         <translation>Salvar lista de reprodução…</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="396"/>
+        <location filename="../qml/PlaylistEditor.qml" line="434"/>
         <source>Add files…</source>
         <translation>Adicionar arquivos…</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="401"/>
+        <location filename="../qml/PlaylistEditor.qml" line="439"/>
         <source>Add URL…</source>
         <translation>Adicionar URL…</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="409"/>
+        <location filename="../qml/PlaylistEditor.qml" line="447"/>
         <source>Remove selected</source>
         <translation>Remover &amp;seleção</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="415"/>
+        <location filename="../qml/PlaylistEditor.qml" line="453"/>
         <source>Remove all</source>
         <translation>Remover &amp;tudo</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="424"/>
+        <location filename="../qml/PlaylistEditor.qml" line="462"/>
         <source>Play selected</source>
         <translation>Reproduzir selecionados</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="430"/>
+        <location filename="../qml/PlaylistEditor.qml" line="468"/>
         <source>Previous</source>
         <translation>&amp;Anterior</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="436"/>
+        <location filename="../qml/PlaylistEditor.qml" line="474"/>
         <source>Next</source>
         <translation>&amp;Seguinte</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="445"/>
+        <location filename="../qml/PlaylistEditor.qml" line="483"/>
         <source>Repeat playlist</source>
         <translation>Repetir lista de reprodução</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="452"/>
+        <location filename="../qml/PlaylistEditor.qml" line="490"/>
         <source>Shuffle</source>
         <translation>A&amp;leatório</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="462"/>
+        <location filename="../qml/PlaylistEditor.qml" line="500"/>
         <source>Move up</source>
         <translation>Mover para &amp;cima</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="472"/>
+        <location filename="../qml/PlaylistEditor.qml" line="510"/>
         <source>Move down</source>
         <translation>Mover para &amp;baixo</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="488"/>
+        <location filename="../qml/PlaylistEditor.qml" line="526"/>
         <source>Media files (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="489"/>
-        <location filename="../qml/PlaylistEditor.qml" line="504"/>
+        <location filename="../qml/PlaylistEditor.qml" line="527"/>
+        <location filename="../qml/PlaylistEditor.qml" line="542"/>
         <source>All files (*)</source>
         <translation>Todos os arquivos (*)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="504"/>
+        <location filename="../qml/PlaylistEditor.qml" line="542"/>
         <source>Playlists (*.m3u *.m3u8)</source>
         <translation>Listas de reprodução (*.m3u *.m3u8)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="515"/>
+        <location filename="../qml/PlaylistEditor.qml" line="553"/>
         <source>Playlists (*.m3u8 *.m3u)</source>
         <translation>Listas de reprodução (*.m3u8 *.m3u)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="521"/>
+        <location filename="../qml/PlaylistEditor.qml" line="559"/>
         <source>Add URL</source>
         <translation>Adicionar URL</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="562"/>
+        <location filename="../qml/PlaylistEditor.qml" line="600"/>
         <source>https://…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="572"/>
+        <location filename="../qml/PlaylistEditor.qml" line="610"/>
         <source>OK</source>
         <translation>&amp;OK</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="577"/>
+        <location filename="../qml/PlaylistEditor.qml" line="615"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
@@ -3670,164 +3670,205 @@
 <context>
     <name>PrefPlaylistPage</name>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="15"/>
-        <source>&lt;h1&gt;Playlist&lt;/h1&gt;&lt;p&gt;&lt;b&gt;Playlist&lt;/b&gt; tab — playback options (play files from start, start playing after loading a playlist, play the next file automatically, ignore playback errors, repeat, shuffle); how opening one file adds its folder siblings (the &quot;Add files from folder&quot; mode: none, video, audio, both or consecutive; recursive folders); whether to show each item&apos;s title instead of its file name, and whether the playlist is a docked panel or a separate window.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Misc&lt;/b&gt; tab — auto-sort the list, case-sensitive search, save a copy of the playlist on exit, remember the playlist between sessions, and the maximum number of generated row thumbnails to keep cached.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="32"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="33"/>
         <source>Playlist</source>
         <translation>Lista de reprodução</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="33"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="34"/>
         <source>Misc</source>
         <translation>Miscelânea</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="52"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="53"/>
         <source>Playback</source>
         <translation>Reprodução</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="61"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="62"/>
         <source>Play files from start</source>
         <translation>Reproduzir desde o início</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="66"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="67"/>
         <source>Always begin at the beginning, ignoring any remembered resume position for the file.</source>
         <translation>Sempre começar do início, ignorando qualquer posição de retomada memorizada para o arquivo.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="72"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="73"/>
         <source>Start playback after loading a playlist</source>
         <translation>Começar a tocar após carregar uma lista de reprodução</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="77"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="78"/>
         <source>Play next file automatically</source>
         <translation>Reproduzir automaticamente o próximo arquivo</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="84"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="85"/>
         <source>Ignore playback errors</source>
         <translation>Ignorar erros de reprodução</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="89"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="90"/>
         <source>When a file fails to play, skip on to the next item instead of stopping the playlist.</source>
         <translation>Quando um arquivo não puder ser reproduzido, pular para o próximo item em vez de parar a lista de reprodução.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="95"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="96"/>
         <source>Repeat playlist</source>
         <translation>Repetir lista de reprodução</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="100"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="101"/>
         <source>Shuffle</source>
         <translation>A&amp;leatório</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="109"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="110"/>
         <source>Adding files</source>
         <translation>Adicionando arquivos</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="119"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="120"/>
         <source>Add files to the playlist automatically</source>
         <translation>Adicionar arquivos à lista de reprodução automaticamente</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="124"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="125"/>
         <source>When you open a single file, also add the other media files from its folder to the playlist.</source>
         <translation>Ao abrir um único arquivo, adicionar também à lista os outros arquivos de mídia da pasta dele.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="133"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="134"/>
         <source>Add files from folder:</source>
         <translation>Adicionar arquivos da &amp;pasta:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="135"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="136"/>
         <source>Which sibling files to add: none, only video, only audio, both, or just the files consecutive to the opened one (matching its name pattern).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="144"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="145"/>
         <source>None</source>
         <translation>Nenhum</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="145"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="146"/>
         <source>Video files</source>
         <translation>Arquivos de vídeo</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="146"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="147"/>
         <source>Audio files</source>
         <translation>Arquivos de áudio</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="147"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="148"/>
         <source>Video and audio files</source>
         <translation>Arquivos de vídeo e áudio</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="148"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="149"/>
         <source>Consecutive files</source>
         <translation>Arquivos consecutivos</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="155"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="156"/>
         <source>Add files in directories recursively</source>
         <translation>Adicionar recursivamente os arquivos dos pastas </translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="162"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="163"/>
         <source>Get info automatically about files added (slow)</source>
         <translation>Obter automat&amp;icamente as informações dos arquivos adicionados (lento)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="171"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="172"/>
         <source>Display title name instead of filename</source>
         <translation>Exibir o nome do título ao invés do nome do arquivo</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="176"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="177"/>
         <source>Show each entry&apos;s stored title (from the playlist or media metadata) rather than its file name.</source>
         <translation>Mostrar o título armazenado de cada entrada (da lista ou dos metadados) em vez do nome do arquivo.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="186"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="187"/>
         <source>Playlist style:</source>
         <translation>Estilo da lista de reprodução:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="189"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="190"/>
         <source>Docked panel</source>
         <translation>Painel encaixado</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="189"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="190"/>
         <source>Separate window</source>
         <translation>Janela separada</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="234"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="235"/>
         <source>Restore the playlist you had open the last time Vivace was closed.</source>
         <translation>Restaura a lista de reprodução que estava aberta da última vez que o Vivace foi fechado.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="241"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="242"/>
         <source>Maximum cached thumbnails:</source>
         <translation>Número máximo de miniaturas em cache:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="252"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="253"/>
         <source>Row thumbnails generated for playlist entries without one are kept in a cache, oldest-shown evicted first once this many are stored. Does not include sibling &quot;.jpg&quot; files next to your media, which are never managed or removed by Vivace.</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefPlaylistPage.qml" line="263"/>
+        <source>Now-playing thumbnail:</source>
+        <translation>Miniatura do item em reprodução:</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefPlaylistPage.qml" line="268"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="289"/>
+        <source>No enlargement</source>
+        <translation>Sem ampliação</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefPlaylistPage.qml" line="269"/>
+        <source>Enlarge only the now-playing row</source>
+        <translation>Ampliar apenas a linha do item em reprodução</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefPlaylistPage.qml" line="270"/>
+        <source>Enlarge the now-playing row and its neighbors</source>
+        <translation>Ampliar a linha do item em reprodução e suas vizinhas</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefPlaylistPage.qml" line="276"/>
+        <source>How the now-playing row&apos;s thumbnail enlarges in the playlist, independently of the selected row&apos;s own setting below.</source>
+        <translation>Como a miniatura da linha em reprodução é ampliada na lista de reprodução, independentemente da configuração da linha selecionada abaixo.</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefPlaylistPage.qml" line="284"/>
+        <source>Selected item thumbnail:</source>
+        <translation>Miniatura do item selecionado:</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefPlaylistPage.qml" line="290"/>
+        <source>Enlarge only the selected row</source>
+        <translation>Ampliar apenas a linha selecionada</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefPlaylistPage.qml" line="291"/>
+        <source>Enlarge the selected row and its neighbors</source>
+        <translation>Ampliar a linha selecionada e suas vizinhas</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefPlaylistPage.qml" line="297"/>
+        <source>How the thumbnail of whichever row you click or navigate to enlarges in the playlist, independently of the now-playing row&apos;s own setting above.</source>
+        <translation>Como a miniatura da linha em que você clica ou navega é ampliada na lista de reprodução, independentemente da configuração do item em reprodução acima.</translation>
     </message>
     <message>
         <source>Restore\ the\ playlist\ you\ had\ open\ the\ last\ time\ Vivace\ was\ closed\.</source>
@@ -3838,27 +3879,32 @@
         <translation type="vanished">Sessões</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="229"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="230"/>
         <source>Remember the playlist between sessions</source>
         <translation>Lembrar a lista de reprodução entre as sessões</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="206"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="207"/>
         <source>Auto sort</source>
         <translation>Ordenação automática</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="211"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="15"/>
+        <source>&lt;h1&gt;Playlist&lt;/h1&gt;&lt;p&gt;&lt;b&gt;Playlist&lt;/b&gt; tab — playback options (play files from start, start playing after loading a playlist, play the next file automatically, ignore playback errors, repeat, shuffle); how opening one file adds its folder siblings (the &quot;Add files from folder&quot; mode: none, video, audio, both or consecutive; recursive folders); whether to show each item&apos;s title instead of its file name, and whether the playlist is a docked panel or a separate window.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Misc&lt;/b&gt; tab — auto-sort the list, case-sensitive search, save a copy of the playlist on exit, remember the playlist between sessions, the maximum number of generated row thumbnails to keep cached, and how the now-playing and selected rows&apos; thumbnails each enlarge.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefPlaylistPage.qml" line="212"/>
         <source>Keep the playlist sorted by name as items are added, rather than in the order they were added.</source>
         <translation>Manter a lista ordenada por nome à medida que os itens são adicionados, em vez da ordem de adição.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="217"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="218"/>
         <source>Case sensitive search</source>
         <translation>Diferenciação de maiúsculas e minúsculas na busca</translation>
     </message>
     <message>
-        <location filename="../qml/PrefPlaylistPage.qml" line="222"/>
+        <location filename="../qml/PrefPlaylistPage.qml" line="223"/>
         <source>Save a copy of the playlist on exit</source>
         <translation>Salvar uma cópia da lista de reprodução ao sair.</translation>
     </message>

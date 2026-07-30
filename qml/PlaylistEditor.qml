@@ -60,6 +60,19 @@ Item {
         }
     }
 
+    // Shared by the selection cursor and the now-playing row (each has its
+    // own independent Settings.playlist{Selection,NowPlaying}WaveMode):
+    // 0 = no enlargement at all; 1 = enlarge only the exact row itself,
+    // neighbours untouched; 2 = tapers neighbours the wavy way too
+    // (waveFactor(distance)).
+    function modedWaveFactor(mode, distance, isExactRow) {
+        if (mode === 2)
+            return editor.waveFactor(distance)
+        if (mode === 1)
+            return isExactRow ? 1.0 : 0.0
+        return 0.0
+    }
+
     // Safety net: a selection made via keyboard/toolbar navigation could
     // land on an index whose delegate was never instantiated (scrolled
     // past without being drawn, so it never went through prefetchThumbnails
@@ -248,10 +261,27 @@ Item {
                 // thumbnail instead of the row's normal inline one, in
                 // every size mode -- including "large", whose own inline
                 // thumbnail is still smaller than the expanded size.
-                readonly property real waveFactor:
+                // Settings.playlistSelectionWaveMode picks no enlargement,
+                // solo, or wavy-neighbours (see modedWaveFactor) --
+                // independent of, and combined with via Math.max() below,
+                // the now-playing row's own setting.
+                readonly property real selectionWaveFactor:
                     listView.currentIndex >= 0
-                        ? editor.waveFactor(Math.abs(entry.index - listView.currentIndex))
+                        ? editor.modedWaveFactor(Settings.playlistSelectionWaveMode,
+                                Math.abs(entry.index - listView.currentIndex),
+                                entry.index === listView.currentIndex)
                         : 0.0
+                // Same idea for the now-playing row, via
+                // Settings.playlistNowPlayingWaveMode.
+                readonly property real playingWaveFactor: {
+                    const playingIndex = editor.controller.playlist.currentIndex
+                    return playingIndex >= 0
+                            ? editor.modedWaveFactor(Settings.playlistNowPlayingWaveMode,
+                                    Math.abs(entry.index - playingIndex), entry.isPlaying)
+                            : 0.0
+                }
+                readonly property real waveFactor:
+                    Math.max(entry.selectionWaveFactor, entry.playingWaveFactor)
                 readonly property real thumbSize:
                     editor.thumbHeight
                         + entry.waveFactor * (editor.expandedThumbHeight - editor.thumbHeight)
@@ -349,6 +379,7 @@ Item {
                     // Index being dragged (-1 = not dragging).
                     property int dragIndex: -1
                     onPressed: {
+                        listView.forceActiveFocus()
                         listView.currentIndex = entry.index
                         dragIndex = entry.index
                     }
