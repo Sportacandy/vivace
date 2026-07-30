@@ -16,6 +16,11 @@ aktuális időtartamukkal megjelenítve. A lépésméreteket a *Beállítások �
 Tekerés* alatt állíthatja be. Tekerhet a `←` / `→`, a tekerőcsúszka vagy a videó
 feletti egérgörgő segítségével is.
 
+Ha az egérmutatót a tekerőcsúszka fölé viszi (egér) — vagy megnyomja és
+húzza azt (érintés, ahol nincs hover) —, a csúszka fölött megjelenik az
+adott időpont képkockájának kis előnézete. Csak fájlok lejátszásakor
+(lemezeknél vagy streameknél nem).
+
 ## Sebesség
 
 - **Normál sebesség** (`Backspace`), **Sebesség felezése**, **Sebesség kétszerezése**.

@@ -16,6 +16,11 @@ Sono disponibili tre passi di ricerca in entrambe le direzioni (**Indietro** /
 *Preferenze ▸ Interfaccia ▸ Ricerca*. Potete anche cercare con `←` / `→`, il
 cursore di ricerca o la rotellina del mouse sul video.
 
+Passando il puntatore sul cursore di ricerca (mouse) — oppure premendolo e
+trascinandolo (tocco, dove non esiste l'hover) — viene mostrata sopra il
+cursore una piccola anteprima del fotogramma in quel momento. Solo durante
+la riproduzione di file (non per dischi o flussi).
+
 ## Velocità
 
 - **Velocità normale** (`Backspace`), **Dimezza velocità**, **Raddoppia velocità**.

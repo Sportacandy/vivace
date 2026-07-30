@@ -16,6 +16,11 @@ prikazana s trenutačnim trajanjem. Prilagodite veličine koraka u
 *Postavke ▸ Sučelje ▸ Premotavanje*. Možete premotavati i tipkama `←` / `→`,
 klizačem za premotavanje ili kotačićem miša iznad videozapisa.
 
+Lebdenje pokazivača miša iznad klizača za premotavanje (miš) — ili pritisak i
+povlačenje (dodir, gdje ne postoji lebdenje) — prikazuje mali pregled sličice
+u tom trenutku iznad klizača. Samo pri reprodukciji datoteka (ne za diskove
+ili streamove).
+
 ## Brzina
 
 - **Normalna brzina** (`Backspace`), **Prepolovi brzinu**, **Udvostruči brzinu**.

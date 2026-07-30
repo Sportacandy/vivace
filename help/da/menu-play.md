@@ -15,6 +15,11 @@ Der tilbydes tre søgetrin i begge retninger (**Tilbage** / **Frem**), vist med
 deres aktuelle varighed. Justér trinstørrelserne i *Indstillinger ▸ Grænseflade ▸
 Søgning*. Du kan også søge med `←` / `→`, søgeskyderen eller musehjulet over videoen.
 
+Hvis du holder musemarkøren over søgeskyderen (mus) — eller trykker på og
+trækker i den (berøring, hvor der ikke findes hover) — vises en lille
+forhåndsvisning af billedet på det tidspunkt over skyderen. Kun ved
+filafspilning (ikke ved diske eller streams).
+
 ## Hastighed
 
 - **Normal hastighed** (`Tilbagetast`), **Halvér hastighed**, **Fordobl hastighed**.

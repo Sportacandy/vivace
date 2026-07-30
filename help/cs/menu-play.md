@@ -16,6 +16,11 @@ zobrazené s jejich aktuální délkou. Velikosti kroků upravte v
 *Předvolby ▸ Rozhraní ▸ Převíjení*. Převíjet můžete i klávesami `←` / `→`,
 posuvníkem převíjení nebo kolečkem myši nad videem.
 
+Najetí ukazatelem myši na posuvník převíjení (myš) — nebo jeho stisknutí a
+tažení (dotyk, kde neexistuje najetí) — zobrazí nad posuvníkem malý náhled
+snímku v daném čase. Pouze při přehrávání souborů (ne u disků nebo datových
+proudů).
+
 ## Rychlost
 
 - **Normální rychlost** (`Backspace`), **Poloviční rychlost**, **Dvojnásobná rychlost**.

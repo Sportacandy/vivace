@@ -191,40 +191,68 @@ Pane {
             when: !pressed
         }
 
-        // Seek preview thumbnail: on hover, a hidden second player grabs the
-        // frame at the cursor time and shows it in a small popup above the
-        // groove. File playback only (no DVD / streams).
+        // Seek preview thumbnail: shown on hover OR while pressed/dragging,
+        // a hidden second player grabs the frame at the target time and
+        // shows it in a small popup above the groove. File playback only
+        // (no DVD / streams).
+        //
+        // Touch has no hover concept at all (a finger press never fires
+        // HoverHandler), so "hover-only" left tablet users with no way to
+        // ever see this. Extending it to "hovered || pressed" is not a full
+        // fix -- it still means look-ahead and commit share the same
+        // gesture, so the slider handle (and this popup) sit right under
+        // the finger doing the dragging -- but it at least makes the
+        // preview reachable on a tablet, which hover alone never was.
         readonly property bool previewEnabled:
             !dvd && controlBar.controller.seekPreviewAvailable
+        readonly property bool previewActive: seekHover.hovered || seekSlider.pressed
         HoverHandler {
             id: seekHover
             enabled: seekSlider.previewEnabled
         }
-        // Cursor x within the groove and the time it maps to.
+        // Cursor x within the groove and the time it maps to (mouse hover).
         readonly property real hoverX: seekHover.point.position.x
         readonly property real hoverTime:
             to > from ? Math.max(from, Math.min(to,
                 from + hoverX / width * (to - from))) : 0
 
-        // Throttle preview requests so dragging the cursor doesn't flood the
-        // hidden player with seeks.
+        // While pressed (mouse-drag or touch), HoverHandler's own point
+        // does not reliably keep updating -- it is a hover-only mechanism,
+        // and a touch press never enters hover in the first place. The
+        // Slider's own value/visualPosition, though, are already updated
+        // live by its native drag handling for either input, and are what
+        // the preview should reflect anyway (the exact target the handle
+        // itself is about to seek to, not a separately-computed pixel
+        // mapping) -- so use those directly whenever pressed.
+        readonly property real previewTime: pressed ? value : hoverTime
+        readonly property real previewX: pressed ? visualPosition * width : hoverX
+
+        // Poll for preview updates at a steady cadence while active, rather
+        // than debouncing on every value change: a "restart on change" timer
+        // never elapses during a continuous drag, since almost every pixel
+        // of motion restarts the countdown before it can fire -- the
+        // thumbnail would freeze at the first frame and never advance for
+        // as long as the drag kept going. A repeating timer instead throttles
+        // to at most one request per interval without ever fully starving.
         Timer {
             id: previewThrottle
             interval: 60
+            repeat: true
+            running: seekSlider.previewActive && seekSlider.previewEnabled
             onTriggered: controlBar.controller.requestSeekPreview(
-                             seekSlider.hoverTime)
+                             seekSlider.previewTime)
         }
-        onHoverTimeChanged: if (seekHover.hovered) previewThrottle.restart()
         onPreviewEnabledChanged: if (!previewEnabled) previewPopup.close()
 
         Popup {
             id: previewPopup
-            visible: seekHover.hovered && seekSlider.previewEnabled
+            visible: seekSlider.previewActive && seekSlider.previewEnabled
             closePolicy: Popup.NoAutoClose
             padding: 3
-            // Center the popup over the cursor, clamped to the slider width.
+            // Center the popup over the cursor/finger, clamped to the
+            // slider width.
             x: Math.max(0, Math.min(seekSlider.width - width,
-                                    seekSlider.hoverX - width / 2))
+                                    seekSlider.previewX - width / 2))
             y: -height - 6
             background: Rectangle {
                 color: "#101010"
@@ -233,7 +261,7 @@ Pane {
             }
             onOpenedChanged: if (opened) {
                 controlBar.controller.setPreviewVideoOutput(previewVideo)
-                controlBar.controller.requestSeekPreview(seekSlider.hoverTime)
+                controlBar.controller.requestSeekPreview(seekSlider.previewTime)
             }
             contentItem: Column {
                 spacing: 2
@@ -245,7 +273,7 @@ Pane {
                 }
                 Text {
                     anchors.horizontalCenter: parent.horizontalCenter
-                    text: controlBar.formatTime(seekSlider.hoverTime)
+                    text: controlBar.formatTime(seekSlider.previewTime)
                     color: "#ffffff"
                     font.pixelSize: 12
                 }

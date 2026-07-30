@@ -16,6 +16,11 @@ wyświetlane z bieżącym czasem trwania. Dostosuj wielkości skoków w
 *Ustawienia ▸ Interfejs ▸ Przewijanie*. Można też przewijać klawiszami `←` /
 `→`, suwakiem przewijania lub kółkiem myszy nad wideo.
 
+Najechanie kursorem myszy na suwak przewijania (mysz) — lub naciśnięcie go i
+przeciągnięcie (dotyk, gdzie nie ma najeżdżania) — pokazuje nad suwakiem
+mały podgląd klatki z danego momentu. Tylko podczas odtwarzania plików (nie
+dotyczy płyt ani strumieni).
+
 ## Prędkość
 
 - **Normalna prędkość** (`Backspace`), **Zmniejsz o połowę**, **Podwój prędkość**.

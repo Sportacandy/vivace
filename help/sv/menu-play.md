@@ -15,6 +15,11 @@ Tre spolningssteg erbjuds i båda riktningarna (**Bakåt** / **Framåt**), visad
 med sin aktuella längd. Justera stegstorlekarna i *Inställningar ▸ Gränssnitt ▸
 Spolning*. Du kan även spola med `←` / `→`, spolningsreglaget eller mushjulet över videon.
 
+Att hålla muspekaren över spolningsreglaget (mus) — eller trycka på och dra
+det (beröring, där det inte finns någon hover) — visar en liten
+förhandsgranskning av bildrutan vid den tidpunkten ovanför reglaget. Endast
+vid filuppspelning (inte vid skivor eller strömmar).
+
 ## Hastighet
 
 - **Normal hastighet** (`Backsteg`), **Halvera hastighet**, **Dubbla hastighet**.

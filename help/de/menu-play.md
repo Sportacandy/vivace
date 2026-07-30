@@ -16,6 +16,11 @@ mit ihrer aktuellen Dauer angezeigt. Passen Sie die Sprungweiten unter
 *Einstellungen ▸ Oberfläche ▸ Suchen* an. Sie können auch mit `←` / `→`, dem
 Suchregler oder dem Mausrad über dem Video suchen.
 
+Wenn Sie mit der Maus über den Suchregler fahren (Maus) — oder ihn per
+Berührung gedrückt halten und ziehen (Touch, wo es kein Hover gibt) — wird
+über dem Regler eine kleine Vorschau des Bildes zu diesem Zeitpunkt
+angezeigt. Nur bei der Wiedergabe von Dateien (nicht bei Discs oder Streams).
+
 ## Geschwindigkeit
 
 - **Normale Geschwindigkeit** (`Rücktaste`), **Geschwindigkeit halbieren**,

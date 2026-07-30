@@ -421,51 +421,51 @@
 <context>
     <name>ControlBar</name>
     <message>
-        <location filename="../qml/ControlBar.qml" line="376"/>
-        <location filename="../qml/ControlBar.qml" line="382"/>
-        <location filename="../qml/ControlBar.qml" line="388"/>
+        <location filename="../qml/ControlBar.qml" line="404"/>
+        <location filename="../qml/ControlBar.qml" line="410"/>
+        <location filename="../qml/ControlBar.qml" line="416"/>
         <source>Rewind %1 s</source>
         <translation>%1 s zurück</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="394"/>
-        <location filename="../qml/ControlBar.qml" line="400"/>
-        <location filename="../qml/ControlBar.qml" line="406"/>
+        <location filename="../qml/ControlBar.qml" line="422"/>
+        <location filename="../qml/ControlBar.qml" line="428"/>
+        <location filename="../qml/ControlBar.qml" line="434"/>
         <source>Forward %1 s</source>
         <translation>%1 s vor</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="463"/>
+        <location filename="../qml/ControlBar.qml" line="491"/>
         <source>Error: %1</source>
         <translation>Fehler: %1</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="466"/>
+        <location filename="../qml/ControlBar.qml" line="494"/>
         <source>Playing %1</source>
         <translation>Wiedergabe von %1</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="471"/>
+        <location filename="../qml/ControlBar.qml" line="499"/>
         <source>Paused</source>
         <translation>Angehalten</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="473"/>
+        <location filename="../qml/ControlBar.qml" line="501"/>
         <source>Stopped</source>
         <translation>Gestoppt</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="518"/>
+        <location filename="../qml/ControlBar.qml" line="546"/>
         <source>V: %1 kbps</source>
         <translation>V: %1 kbps</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="519"/>
+        <location filename="../qml/ControlBar.qml" line="547"/>
         <source>A: %1 kbps</source>
         <translation>A: %1 kbps</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="531"/>
+        <location filename="../qml/ControlBar.qml" line="559"/>
         <source>Frame: %1</source>
         <translation>Bild: %1</translation>
     </message>

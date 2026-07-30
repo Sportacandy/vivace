@@ -12,6 +12,10 @@ each get their own entry instead.
 ## [Unreleased]
 
 ### Fixed
+- The seek slider's hover preview thumbnail was unreachable on a tablet,
+  since touch has no hover phase at all — it now also shows while
+  pressing/dragging the slider (touch or mouse), reflecting the exact
+  position the handle is being dragged to.
 - Error-type OSD messages (playback errors, YouTube/download failures, a
   folder with no DVD video, an unreadable shortcut file) now stay on
   screen for a fixed 20 seconds, instead of the user's regular (often much

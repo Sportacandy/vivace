@@ -16,6 +16,11 @@ Er zijn drie zoekstapgroottes in beide richtingen (**Terugspoelen** /
 *Voorkeuren ▸ Interface ▸ Zoeken*. U kunt ook zoeken met `←` / `→`, de
 zoekschuif of het muiswiel over de video.
 
+Als u met de muis over de zoekschuif zweeft (muis) — of erop drukt en sleept
+(aanraking, waar geen hover bestaat) — wordt boven de schuif een kleine
+voorvertoning van het beeld op dat moment getoond. Alleen bij het afspelen
+van bestanden (niet bij schijven of streams).
+
 ## Snelheid
 
 - **Normale snelheid** (`Backspace`), **Snelheid halveren**, **Snelheid verdubbelen**.

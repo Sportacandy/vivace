@@ -15,6 +15,11 @@ S'ofereixen tres mides de salt en ambdós sentits (**Enrere** / **Endavant**),
 mostrades amb la seva durada actual. Ajusteu les mides a *Preferències ▸
 Interfície ▸ Cerca*. També podeu cercar amb `←` / `→`, la barra de cerca o la roda del ratolí sobre el vídeo.
 
+En passar el punter per sobre de la barra de cerca (ratolí) — o prement-hi i
+arrossegant (tàctil, on no hi ha «hover») — es mostra una petita
+previsualització del fotograma d'aquell moment sobre la barra. Només en la
+reproducció de fitxers (no en discos ni fluxos).
+
 ## Velocitat
 
 - **Velocitat normal** (`Retrocés`), **Meitat de velocitat**, **Doble velocitat**.

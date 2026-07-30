@@ -16,6 +16,11 @@ Trois pas de navigation sont proposés dans les deux sens (**Reculer** /
 *Préférences ▸ Interface ▸ Navigation*. Vous pouvez aussi naviguer avec `←` /
 `→`, le curseur de navigation ou la molette de la souris sur la vidéo.
 
+Survoler le curseur de navigation (souris) — ou appuyer dessus et le faire
+glisser (tactile, où il n'y a pas de survol) — affiche un petit aperçu de
+l'image à cet instant au-dessus du curseur. Uniquement pendant la lecture de
+fichiers (pas pour les disques ni les flux).
+
 ## Vitesse
 
 - **Vitesse normale** (`Retour arrière`), **Vitesse de moitié**, **Vitesse double**.

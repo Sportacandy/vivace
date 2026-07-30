@@ -16,6 +16,11 @@ s ich aktuálnou dĺžkou. Veľkosti krokov upravte v
 *Nastavenia ▸ Rozhranie ▸ Prevíjanie*. Prevíjať môžete aj klávesmi `←` / `→`,
 posuvníkom prevíjania alebo kolieskom myši nad videom.
 
+Umiestnenie kurzora myši nad posuvník prevíjania (myš) — alebo jeho
+stlačenie a ťahanie (dotyk, kde neexistuje umiestnenie kurzora) — zobrazí
+nad posuvníkom malý náhľad snímky v danom čase. Iba pri prehrávaní súborov
+(nie pri diskoch alebo streamoch).
+
 ## Rýchlosť
 
 - **Normálna rýchlosť** (`Backspace`), **Polovičná rýchlosť**, **Dvojnásobná rýchlosť**.

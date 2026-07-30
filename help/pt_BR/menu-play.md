@@ -16,6 +16,11 @@ Três tamanhos de salto são oferecidos em ambas as direções (**Retroceder** /
 *Preferências ▸ Interface ▸ Busca*. Você também pode buscar com `←` / `→`, a
 barra de busca ou a roda do mouse sobre o vídeo.
 
+Passar o cursor do mouse sobre a barra de busca (mouse) — ou pressioná-la e
+arrastá-la (toque, onde não há hover) — mostra uma pequena prévia do quadro
+daquele momento acima da barra. Somente durante a reprodução de arquivos
+(não em discos ou transmissões).
+
 ## Velocidade
 
 - **Velocidade normal** (`Backspace`), **Metade da velocidade**, **Velocidade dupla**.

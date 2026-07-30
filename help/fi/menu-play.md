@@ -16,6 +16,11 @@ näytettyinä nykyisellä kestollaan. Säädä askelten kokoja kohdassa
 *Asetukset ▸ Käyttöliittymä ▸ Kelaus*. Voit kelata myös näppäimillä `←` / `→`,
 kelausliukusäätimellä tai hiiren rullalla videon päällä.
 
+Kun viet hiiren osoittimen kelausliukusäätimen päälle (hiiri) — tai painat ja
+vedät sitä (kosketus, jossa ei ole hover-tilaa) — liukusäätimen yläpuolelle
+tulee pieni esikatselu kyseisen hetken kuvasta. Vain tiedostojen toistossa
+(ei levyillä tai suoratoistoissa).
+
 ## Nopeus
 
 - **Normaali nopeus** (`Askelpalautin`), **Puolita nopeus**, **Kaksinkertaista nopeus**.

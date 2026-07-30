@@ -16,6 +16,10 @@ shown with their current durations. Adjust the step sizes in
 *Preferences ▸ Interface ▸ Seeking*. You can also seek with `←` / `→`, the seek
 slider, or the mouse wheel over the video.
 
+Hovering the seek slider (mouse) — or pressing and dragging it (touch, where
+there is no hover) — shows a small preview of the frame at that time above
+the slider. File playback only (not discs or streams).
+
 ## Speed
 
 - **Normal speed** (`Backspace`), **Halve speed**, **Double speed**.

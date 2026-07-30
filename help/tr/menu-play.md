@@ -15,6 +15,11 @@ Her iki yönde de üç sarma adımı sunulur (**Geri sar** / **İleri sar**), ge
 süreleriyle gösterilir. Adım boyutlarını *Tercihler ▸ Arayüz ▸ Sarma* bölümünde
 ayarlayın. `←` / `→`, sarma kaydırıcısı veya video üzerindeki fare tekerleğiyle de sarabilirsiniz.
 
+Fare imlecini sarma kaydırıcısının üzerine getirmek (fare) — veya üzerine
+basıp sürüklemek (dokunma, burada hover özelliği yoktur) — kaydırıcının
+üzerinde o andaki karenin küçük bir önizlemesini gösterir. Yalnızca dosya
+oynatımında (disklerde veya yayınlarda değil).
+
 ## Hız
 
 - **Normal hız** (`Backspace`), **Hızı yarıya indir**, **Hızı ikiye katla**.

@@ -16,6 +16,12 @@ Se ofrecen tres tamaños de salto en ambos sentidos (**Retroceder** /
 *Preferencias ▸ Interfaz ▸ Búsqueda*. También puede buscar con `←` / `→`, la
 barra de búsqueda o la rueda del ratón sobre el vídeo.
 
+Al pasar el cursor sobre la barra de búsqueda (ratón) —o al pulsarla y
+arrastrarla (táctil, donde no existe el desplazamiento sobre el elemento)—
+se muestra una pequeña vista previa del fotograma de ese momento encima de
+la barra. Solo durante la reproducción de archivos (no en discos ni
+transmisiones).
+
 ## Velocidad
 
 - **Velocidad normal** (`Retroceso`), **Mitad de velocidad**, **Doble velocidad**.
