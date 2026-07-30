@@ -1788,11 +1788,13 @@ ApplicationWindow {
     }
     Shortcut {
         sequence: Shortcuts.sequences["volume_up"]
+        enabled: !playlistPanel.visible && root.activeFocusItem !== null // Null means Playlist window, or other window like Preferences is active
         onActivated: Settings.volume =
                          Math.min(1, Settings.volume + Settings.volumeStep / 100)
     }
     Shortcut {
         sequence: Shortcuts.sequences["volume_down"]
+        enabled: !playlistPanel.visible && root.activeFocusItem !== null // Null means Playlist window, or other window like Preferences is active
         onActivated: Settings.volume =
                          Math.max(0, Settings.volume - Settings.volumeStep / 100)
     }

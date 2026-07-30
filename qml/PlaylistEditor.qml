@@ -90,6 +90,11 @@ Item {
 
     Component.onCompleted: editor.prefetchThumbnails()
 
+    onVisibleChanged: {
+        if (editor.visible)
+            listView.forceActiveFocus()
+    }
+
     Connections {
         target: editor.controller.playlist
         function onCountChanged() { editor.prefetchThumbnails() }
@@ -219,6 +224,8 @@ Item {
             id: listView
             Layout.fillWidth: true
             Layout.fillHeight: true
+            activeFocusOnTab: true
+            focus: true
             clip: true
             currentIndex: -1
             model: editor.controller.playlist

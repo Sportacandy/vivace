@@ -39,9 +39,9 @@ Window {
         const candidates = []
         if (full) {
             candidates.push(full)
-            const short = full.substring(0, 2)
-            if (short !== full)
-                candidates.push(short)
+            const shortStr = full.substring(0, 2)
+            if (shortStr !== full)
+                candidates.push(shortStr)
         }
         for (var i = 0; i < candidates.length; ++i) {
             const c = candidates[i]
