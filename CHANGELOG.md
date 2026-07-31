@@ -12,6 +12,12 @@ each get their own entry instead.
 ## [Unreleased]
 
 ### Fixed
+- The Favorites/Radio cascading submenus (`Open ▸ Favorites`, `Open ▸ Radio`)
+  could take an ever-growing amount of time to open, then stop opening at
+  all, after repeatedly opening/canceling any file dialog while a video
+  played — caused by the menu's dynamically-created items being left
+  eligible for JavaScript garbage collection despite still being part of
+  the menu.
 - The seek slider's hover preview thumbnail was unreachable on a tablet,
   since touch has no hover phase at all — it now also shows while
   pressing/dragging the slider (touch or mouse), reflecting the exact

@@ -28,6 +28,23 @@ AppMenu {
     // FavoritesMenu referencing its own type as static recursion.
     property var submenuComponent: null
 
+    // Items/submenus below are created with createObject(null, ...) --
+    // parentless, because parenting them to this Menu directly triggers
+    // "not placed in graphics scene" -- so addItem()/addMenu() are relied on
+    // to adopt them. A parentless createObject() result gets JavaScript
+    // ownership (Qt's default), and that adoption does not reliably flip it
+    // to CppOwnership, so without this array the JS garbage collector
+    // remained free to reclaim an item at any time, independent of it still
+    // being part of the visible menu -- given enough GC pressure (which
+    // video playback and repeated dialog churn both supply). This was the
+    // root cause of a defect where a cascading submenu built entirely from
+    // addItem() rows (e.g. Favorites/Radio's flat lists) took an
+    // ever-growing amount of time to open, then stopped opening at all.
+    // Keeping a plain JS reference to every created item/menu here, for the
+    // lifetime of this FavoritesMenu, keeps them permanently reachable so
+    // the GC can never collect one out from under the menu.
+    property var _keepAlive: []
+
     function childPath(index) {
         return path === "" ? String(index) : path + "/" + index
     }
@@ -35,20 +52,30 @@ AppMenu {
     function rebuild() {
         while (count > 0)
             takeItem(0)
+        _keepAlive = []
 
-        if (!submenuComponent)
-            submenuComponent = Qt.createComponent("FavoritesMenu.qml")
+        // Explicitly synchronous: Qt.createComponent()'s mode argument
+        // defaults to Asynchronous for a URL that isn't already compiled/
+        // cached, so without forcing PreferSynchronous this could hand back
+        // a component that's still Loading, and createObject() on a
+        // not-yet-Ready component silently returns null.
+        if (!submenuComponent) {
+            submenuComponent = Qt.createComponent("FavoritesMenu.qml",
+                                                   Component.PreferSynchronous)
+        }
 
         // Fixed actions first (SMPlayer order): Edit / Add current media stay
         // reachable at the top however long the list grows.
         if (showActions) {
-            addItem(editComponent.createObject(null))
-            addItem(addCurrentComponent.createObject(null))
-            addItem(separatorComponent.createObject(null))
+            const editItem = editComponent.createObject(null)
+            const addCurrentItem = addCurrentComponent.createObject(null)
+            const sepItem = separatorComponent.createObject(null)
+            _keepAlive.push(editItem, addCurrentItem, sepItem)
+            addItem(editItem)
+            addItem(addCurrentItem)
+            addItem(sepItem)
         }
 
-        // createObject(null): addItem/addMenu adopt the object; passing the
-        // Menu as parent instead triggers "not placed in graphics scene".
         const rows = model.items(path)
         for (let i = 0; i < rows.length; ++i) {
             if (rows[i].isSubmenu) {
@@ -57,15 +84,20 @@ AppMenu {
                                 model: model, itemIcon: itemIcon,
                                 path: childPath(i),
                                 "icon.source": Theme.icon("open_favorites") })
+                _keepAlive.push(menu)
                 addMenu(menu)
             } else {
                 const item = itemComponent.createObject(
                         null, { text: rows[i].name, entryIndex: i })
+                _keepAlive.push(item)
                 addItem(item)
             }
         }
-        if (rows.length === 0)
-            addItem(emptyComponent.createObject(null))
+        if (rows.length === 0) {
+            const empty = emptyComponent.createObject(null)
+            _keepAlive.push(empty)
+            addItem(empty)
+        }
     }
 
     Component.onCompleted: rebuild()

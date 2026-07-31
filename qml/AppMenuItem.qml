@@ -8,6 +8,7 @@
 
 import QtQuick
 import QtQuick.Controls
+import QtQuick.Controls.impl
 import QtQuick.Layouts
 
 MenuItem {
@@ -23,6 +24,39 @@ MenuItem {
         implicitHeight: 32
         radius: 4
         color: menuItem.highlighted ? "#cce8ff" : "transparent"
+    }
+
+    // Our own cascading-submenu arrow, replacing the Fusion style's stock
+    // one (qtbase's Fusion/MenuItem.qml: `arrow: ColorImage { x: control.
+    // mirrored ? control.padding : control.width - width - control.padding
+    // ... } }`). That exact expression was flagged by Qt's own binding-loop
+    // detector ("Binding loop detected for property x" / "Property depends
+    // on itself!") during investigation of a defect where a cascading
+    // submenu built entirely from addItem() rows (no addMenu()-created
+    // child, e.g. Favorites/Radio's flat lists) could take an ever-growing
+    // amount of time to open, or eventually stop opening at all (2026-07-31).
+    // The actual root cause turned out to be the lifetime of the dynamically
+    // created menu items, not this binding itself (see FavoritesMenu.qml's
+    // _keepAlive) -- but the stock arrow's control.mirrored/control.width-
+    // dependent binding still intermittently logs the same errors on its
+    // own, so it's replaced here too, out of caution, with a version that
+    // never references control.mirrored at all (always treated as false).
+    arrow: Item {
+        width: 20
+        height: 20
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.right: parent.right
+        anchors.rightMargin: menuItem.padding
+        visible: menuItem.subMenu
+
+        ColorImage {
+            anchors.fill: parent
+            source: "qrc:/qt-project.org/imports/QtQuick/Controls/Fusion/images/arrow.png"
+            rotation: -90
+            fillMode: Image.Pad
+            color: menuItem.down || menuItem.hovered || menuItem.highlighted
+                   ? "#1a1a1a" : "#505050"
+        }
     }
 
     // Use the RowLayout directly as the contentItem so the Control reads its
