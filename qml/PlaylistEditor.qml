@@ -522,6 +522,7 @@ Item {
     FileDialog {
         id: addFilesDialog
         fileMode: FileDialog.OpenFiles
+        options: Settings.useNativeFileDialog ? 0 : FileDialog.DontUseNativeDialog
         nameFilters: [
             qsTr("Media files (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)"),
             qsTr("All files (*)")
@@ -539,6 +540,7 @@ Item {
     FileDialog {
         id: loadPlaylistDialog
         fileMode: FileDialog.OpenFile
+        options: Settings.useNativeFileDialog ? 0 : FileDialog.DontUseNativeDialog
         nameFilters: [qsTr("Playlists (*.m3u *.m3u8)"), qsTr("All files (*)")]
         onAccepted: {
             Settings.lastOpenFolder = currentFolder
@@ -549,6 +551,7 @@ Item {
     FileDialog {
         id: savePlaylistDialog
         fileMode: FileDialog.SaveFile
+        options: Settings.useNativeFileDialog ? 0 : FileDialog.DontUseNativeDialog
         defaultSuffix: "m3u8"
         nameFilters: [qsTr("Playlists (*.m3u8 *.m3u)")]
         onAccepted: editor.controller.savePlaylist(selectedFile)
