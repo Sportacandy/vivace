@@ -29,6 +29,31 @@ QUrl entryUrl(const QString &line, const QDir &baseDir)
     return QUrl::fromLocalFile(QDir::cleanPath(baseDir.absoluteFilePath(path)));
 }
 
+// Same folder as the playlist being saved: write just the filename, so the
+// playlist stays valid if the folder (playlist + media together) is moved
+// or copied elsewhere, with no absolute path to go stale. canonicalPath()
+// (not absolutePath()) drives the comparison so it isn't fooled by case
+// differences (harmless on a case-insensitive filesystem, but on a
+// case-sensitive one a false "same folder" match would write a filename
+// that resolves to the wrong place on load) or a relative/symlinked
+// argument; it falls back to absolutePath() when the entry doesn't exist
+// on disk (a dangling playlist entry) since canonicalPath() then returns
+// empty.
+QString entryLine(const QUrl &url, const QString &playlistDir)
+{
+    if (!url.isLocalFile())
+        return url.toString();
+
+    const QFileInfo entryInfo(url.toLocalFile());
+    QString entryDir = entryInfo.canonicalPath();
+    if (entryDir.isEmpty())
+        entryDir = entryInfo.absolutePath();
+
+    if (!playlistDir.isEmpty() && entryDir == playlistDir)
+        return entryInfo.fileName();
+    return QDir::toNativeSeparators(entryInfo.absoluteFilePath());
+}
+
 QList<PlaylistEntry> loadM3u(const QString &filePath, bool utf8)
 {
     QFile file(filePath);
@@ -102,16 +127,18 @@ bool save(const QUrl &url, const QList<PlaylistEntry> &entries)
                       != QLatin1String("m3u");
     stream.setEncoding(utf8 ? QStringConverter::Utf8 : QStringConverter::System);
 
+    const QFileInfo playlistInfo(file.fileName());
+    QString playlistDir = playlistInfo.canonicalPath();
+    if (playlistDir.isEmpty())
+        playlistDir = playlistInfo.absolutePath();
+
     stream << "#EXTM3U\n";
     for (const PlaylistEntry &entry : entries) {
         if (!entry.title.isEmpty() || entry.durationMs > 0) {
             const qint64 secs = entry.durationMs > 0 ? entry.durationMs / 1000 : -1;
             stream << "#EXTINF:" << secs << "," << entry.title << "\n";
         }
-        stream << (entry.url.isLocalFile()
-                           ? QDir::toNativeSeparators(entry.url.toLocalFile())
-                           : entry.url.toString())
-               << "\n";
+        stream << entryLine(entry.url, playlistDir) << "\n";
     }
     return stream.status() == QTextStream::Ok;
 }

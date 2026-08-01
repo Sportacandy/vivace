@@ -11,6 +11,13 @@ each get their own entry instead.
 
 ## [Unreleased]
 
+### Changed
+- Saving a playlist now writes just the filename (instead of a full path)
+  for any entry that lives in the same folder as the playlist file itself,
+  so moving or copying a playlist together with its media to another
+  folder, drive, or computer no longer breaks it. Entries in a different
+  folder still store their full path as before.
+
 ### Fixed
 - The Favorites/Radio cascading submenus (`Open ▸ Favorites`, `Open ▸ Radio`)
   could take an ever-growing amount of time to open, then stop opening at
