@@ -27,6 +27,35 @@ A **Beállítások** menü tartalmazza a beállításokat és a felület konfigu
 
 **Tipp:** az általános elrendezést (Basic / Mini / MPC) a *Beállítások ▸ Felület* alatt választhatja ki.
 
+## A yt-dlp telepítése és frissítése
+
+A *Beállítások ▸ Hálózat ▸ YouTube* lapon található a **Felügyelt yt-dlp
+használata** jelölőnégyzet, amely meghatározza, hogyan szerzi be és
+tartja karban a Vivace a YouTube-linkek lejátszásához használt `yt-dlp`
+programot:
+
+- **Bekapcsolva** (alapértelmezett) — a Vivace képes telepíteni a
+  `yt-dlp`-t, és naprakészen tartani. A **yt-dlp útvonala:** mező a
+  Vivace saját másolatára van rögzítve, és nem szerkeszthető közvetlenül;
+  a legújabb hivatalos kiadás lekéréséhez használd a **yt-dlp
+  telepítése/frissítése…** gombot (a jelölőnégyzet mellett). A **yt-dlp
+  automatikus frissítése:** beállítás is elérhetővé válik, amellyel a
+  Vivace saját maga elvégezheti ezt a frissítést: **Soha**, **Minden
+  yt-dlp-futtatáskor**, **Naponta egyszer** vagy **Hetente egyszer**. Az
+  automatikus frissítés közvetlenül azelőtt fut le, hogy egy YouTube-URL
+  ténylegesen feloldásra vagy letöltésre kerülne, így az első lejátszás
+  azután, hogy a frissítés esedékessé válik, kicsit tovább tart; ha maga
+  a frissítés meghiúsul (pl. nincs hálózati kapcsolat), a Vivace csendben
+  a már telepített verzióval folytatja, ahelyett hogy blokkolná a
+  lejátszást.
+- **Kikapcsolva** — a magad kezelte yt-dlp-hez (pl. `pip`-pel vagy az
+  operációs rendszer csomagkezelőjével telepítve). A **yt-dlp útvonala:**
+  mező szerkeszthetővé válik, hogy arra a másolatra tudj mutatni, a
+  **yt-dlp automatikus frissítése** pedig letiltásra kerül — a Vivace
+  soha nem telepít vagy frissít olyan yt-dlp-t, amelyet nem ő kezel. A
+  **yt-dlp telepítése/frissítése…** gomb szintén le van tiltva ebben a
+  módban.
+
 ## Cookie-k exportálása YouTube-letöltésekhez
 
 A **Sütifájl:** mező (*Beállítások ▸ Hálózat ▸ YouTube*) lehetővé teszi,
@@ -71,3 +100,52 @@ sütiket egy böngésző profiljából.
 - A sütik lejárnak. Ha a korábban működő letöltések hibázni kezdenek,
   vagy alacsonyabb minőségű/nyilvános eredményre esnek vissza, exportálj
   egy friss `cookies.txt` fájlt.
+
+## Deno telepítése YouTube-letöltésekhez
+
+Maga a yt-dlp — nem csak a Vivace — egy külön, külső JavaScript
+futtatókörnyezetet használ azoknak a kihívásoknak a megoldására, amelyeket
+a YouTube állít, mielőtt kiadná egy videó valódi letöltési URL-jét. A
+yt-dlp saját dokumentációja szerint a futtatókörnyezet nélküli futtatás
+„elavult”, de nem hiúsul meg teljesen: a formátumok elérhetősége
+egyszerűen csökken, és ez **különösen súlyos egy bejelentkezett (süti
+alapú) kérés esetén** — pontosan az ilyen típusú kérést használja a
+**Letöltés és lejátszás** mód a HD-, csak tagoknak elérhető és
+korhatáros videók feloldásához. A **Streamelés** mód soha nem küld
+sütiket (lásd a fenti „Cookie-k exportálása YouTube-letöltésekhez”
+szakaszt), így ez nem a súlyos eset, és a legtöbb esetben Deno nélkül is
+jól működik. Ezért található a **Deno útvonala:** mező a *Beállítások ▸
+Hálózat ▸ YouTube ▸ Letöltés és lejátszás* alatt, nem pedig egy általános
+YouTube-beállításként. A yt-dlp több JS futtatókörnyezetet is támogat; a
+Deno az, amelyet alapértelmezés szerint keres.
+
+**A Deno telepítése:**
+
+1. Kövesd az operációs rendszeredhez tartozó hivatalos telepítési
+   útmutatót a [docs.deno.com](https://docs.deno.com/runtime/getting_started/installation/)
+   oldalon (egy telepítőszkript, vagy egy csomagkezelő, például
+   winget/scoop/Homebrew/apt, a platformtól függően).
+2. Győződj meg róla, hogy a `deno` végrehajtható fájl bekerül a
+   rendszer PATH változójába — a fenti telepítők ezt általában
+   automatikusan elvégzik. Windows alatt ügyelj arra, hogy a `deno`-t
+   szerezd be, ne a `denort`-ot (egy másik, kapcsolódó, de itt nem
+   működő program).
+3. Ha inkább nem szeretnéd módosítani a PATH-ot, hagyd változatlanul,
+   és illeszd be helyette a teljes útvonalát a **Deno útvonala:**
+   mezőbe (*Beállítások ▸ Hálózat ▸ YouTube ▸ Letöltés és lejátszás*).
+4. Telepítés után indítsd újra a Vivace-ot (vagy egyszerűen próbáld
+   újra a letöltést).
+
+**Ne feledd:**
+
+- Ez a **yt-dlp**, nem közvetlenül a Vivace függősége — a Vivace csak
+  külső folyamatként futtatja a yt-dlp-t, és soha nem hívja meg magát a
+  Denót.
+- A yt-dlp-nek egy kellően friss Deno-verzióra van szüksége (a jelen
+  írás idején 2.3.0 vagy újabb). Ha a letöltések a telepítés után is
+  csökkentett minőséget mutatnak, vagy formátumhibát adnak, ellenőrizd a
+  `deno --version` kimenetét, és frissítsd, ha régebbi.
+- Ez a követelmény a YouTube/yt-dlp oldalán történt változásokból ered,
+  nem a Vivace-ból — ugyanez a **Deno útvonala:** mező pontosan ezért
+  létezik, és nincs szükség további beállításra, ha maga a Deno
+  telepítve van és elérhető.

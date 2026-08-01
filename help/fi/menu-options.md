@@ -25,6 +25,33 @@
 
 **Vihje:** yleisasettelu (Basic / Mini / MPC) valitaan kohdassa *Asetukset ▸ Käyttöliittymä*.
 
+## yt-dlp:n asentaminen ja päivittäminen
+
+Kohdassa *Asetukset ▸ Verkko ▸ YouTube* on valintaruutu **Käytä hallittua
+yt-dlp:tä**, joka määrittää, miten Vivace hankkii ja ylläpitää
+YouTube-linkkien toistamiseen käyttämäänsä `yt-dlp`-ohjelmaa:
+
+- **Käytössä** (oletus) — Vivace voi asentaa `yt-dlp`:n puolestasi ja
+  pitää sen ajan tasalla. Kenttä **yt-dlp-polku:** on kiinnitetty
+  Vivacen omaan kopioon eikä sitä voi muokata suoraan; käytä painiketta
+  **Asenna/päivitä yt-dlp…** (valintaruudun vieressä), kun haluat hakea
+  uusimman virallisen julkaisun. Asetus **Päivitä yt-dlp
+  automaattisesti:** tulee myös käyttöön, jolloin Vivace voi hoitaa
+  tämän päivityksen itse: **Ei koskaan**, **Aina kun yt-dlp
+  suoritetaan**, **Kerran päivässä** tai **Kerran viikossa**.
+  Automaattinen päivitys suoritetaan juuri ennen kuin YouTube-URL
+  todella ratkaistaan tai ladataan, joten ensimmäinen toisto sen jälkeen,
+  kun päivitys erääntyy, kestää hieman kauemmin; jos itse päivitys
+  epäonnistuu (esim. ei verkkoyhteyttä), Vivace jatkaa hiljaisesti jo
+  asennetulla versiolla sen sijaan, että se estäisi toiston.
+- **Ei käytössä** — itse hallitsemaasi yt-dlp:hen (esim. asennettu
+  `pip`:llä tai käyttöjärjestelmän pakettienhallinnalla). Kenttä
+  **yt-dlp-polku:** muuttuu muokattavaksi, jotta voit osoittaa sen
+  kyseiseen kopioon, ja **Päivitä yt-dlp automaattisesti** poistetaan
+  käytöstä — Vivace ei koskaan asenna tai päivitä yt-dlp:tä, jota se ei
+  hallitse. Myös painike **Asenna/päivitä yt-dlp…** on poissa käytöstä
+  tässä tilassa.
+
 ## Evästeiden vieminen YouTube-latauksia varten
 
 Kenttä **Evästetiedosto:** (*Asetukset ▸ Verkko ▸ YouTube*) antaa
@@ -66,3 +93,51 @@ Netscape-evästemuodossa (sama muoto, jota yt-dlpin oma valitsin
 - Evästeet vanhenevat. Jos aiemmin toimineet lataukset alkavat
   epäonnistua tai palata alempilaatuiseen/julkiseen tulokseen, vie uusi
   `cookies.txt`.
+
+## Denon asentaminen YouTube-latauksia varten
+
+yt-dlp itse — ei vain Vivace — käyttää erillistä, ulkoista
+JavaScript-ajoympäristöä ratkaistakseen haasteet, joita YouTube asettaa
+ennen videon todellisen latausosoitteen luovuttamista. yt-dlpin oman
+dokumentaation mukaan ajaminen ilman sitä on "vanhentunutta" (deprecated),
+mutta ei suoranaisesti epäonnistu: muotojen saatavuus vain vähenee, ja
+**merkittävästi kirjautuneen (evästepohjaisen) pyynnön kohdalla** — juuri
+sellaisen pyynnön, jonka **Lataa ja toista** -tila tekee avatakseen
+HD-, jäsen- ja ikärajoitetut videot. **Suoratoisto**-tila ei koskaan
+lähetä evästeitä (katso yllä oleva "Evästeiden vieminen YouTube-latauksia
+varten"), joten se ei ole tämä vakavampi tapaus, ja se toimii useimmiten
+hyvin ilman Denoa. Tästä syystä kenttä **Deno-polku:** sijaitsee kohdassa
+*Asetukset ▸ Verkko ▸ YouTube ▸ Lataa ja toista* eikä yleisenä
+YouTube-asetuksena. yt-dlp tukee useita JS-ajoympäristöjä; Deno on se,
+jota se etsii oletusarvoisesti.
+
+**Denon asentaminen:**
+
+1. Seuraa virallisia asennusohjeita osoitteessa
+   [docs.deno.com](https://docs.deno.com/runtime/getting_started/installation/)
+   käyttöjärjestelmällesi (asennusskripti tai pakettienhallinta, kuten
+   winget/scoop/Homebrew/apt, alustasta riippuen).
+2. Varmista, että `deno`-suoritettava tiedosto päätyy järjestelmän
+   PATH-muuttujaan — yllä mainitut asennusohjelmat tekevät tämän
+   yleensä puolestasi. Varmista Windowsissa, että saat `deno`-tiedoston
+   etkä `denort`-tiedostoa (eri, siihen liittyvä ohjelma, joka ei toimi
+   tässä).
+3. Jos et halua muokata PATH-muuttujaa, jätä se ennalleen ja liitä sen
+   sijaan koko polku kenttään **Deno-polku:** (*Asetukset ▸ Verkko ▸
+   YouTube ▸ Lataa ja toista*).
+4. Käynnistä Vivace uudelleen (tai yritä vain lataamista uudelleen)
+   asennuksen jälkeen.
+
+**Muista:**
+
+- Tämä on **yt-dlp:n**, ei suoraan Vivacen, riippuvuus — Vivace vain
+  suorittaa yt-dlp:tä ulkoisena prosessina eikä koskaan kutsu Denoa
+  itse.
+- yt-dlp vaatii kohtuullisen tuoreen Deno-version (2.3.0 tai uudemman
+  tätä kirjoitettaessa). Jos lataukset yhä näyttävät heikentynyttä
+  laatua/muotovirheitä asennuksen jälkeen, tarkista `deno --version` ja
+  päivitä se, jos se on vanhempi.
+- Tämä vaatimus johtuu muutoksista YouTuben/yt-dlpin puolella, ei
+  Vivacesta — sama kenttä **Deno-polku:** on olemassa juuri tästä
+  syystä eikä vaadi enää lisäasetuksia, kun Deno itse on asennettu ja
+  tavoitettavissa.

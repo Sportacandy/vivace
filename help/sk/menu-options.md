@@ -25,6 +25,33 @@ Ponuka **Možnosti** obsahuje nastavenia a konfiguráciu rozhrania.
 
 **Tip:** celkové rozloženie (Basic / Mini / MPC) sa volí v *Nastavenia ▸ Rozhranie*.
 
+## Inštalácia a aktualizácia yt-dlp
+
+*Nastavenia ▸ Sieť ▸ YouTube* obsahuje začiarkavacie políčko **Používať
+spravovaný yt-dlp**, ktoré určuje, ako Vivace získava a udržiava program
+`yt-dlp`, ktorý používa na prehrávanie odkazov YouTube:
+
+- **Zapnuté** (predvolené) — Vivace vám dokáže `yt-dlp` nainštalovať a
+  udržiavať ho aktuálny. Pole **Cesta k yt-dlp:** je pevne nastavené na
+  vlastnú kópiu Vivace a nedá sa upravovať priamo; kedykoľvek chcete
+  stiahnuť najnovšie oficiálne vydanie, použite tlačidlo **Nainštalovať /
+  aktualizovať yt-dlp…** (vedľa začiarkavacieho políčka). Sprístupní sa aj
+  nastavenie **Automaticky aktualizovať yt-dlp:**, ktoré necháva Vivace
+  vykonávať túto aktualizáciu samostatne — **Nikdy**, **Pri každom
+  spustení yt-dlp**, alebo **Raz denne** či **Raz týždenne**. Automatická
+  aktualizácia prebieha tesne predtým, než sa adresa URL z YouTube
+  skutočne rozpozná alebo stiahne, takže prvé prehratie po tom, čo je na
+  rade, trvá o niečo dlhšie; ak samotná aktualizácia zlyhá (napríklad pri
+  výpadku siete), Vivace ticho pokračuje s už nainštalovanou verziou
+  namiesto toho, aby prehrávanie zablokovala.
+- **Vypnuté** — pre yt-dlp, ktorý si spravujete sami (napríklad
+  nainštalovaný cez `pip` alebo správcu balíkov vášho operačného systému).
+  Pole **Cesta k yt-dlp:** sa stane upraviteľným, takže ho môžete
+  nasmerovať na túto kópiu, a **Automaticky aktualizovať yt-dlp** je
+  zablokované — Vivace nikdy neinštaluje ani neaktualizuje yt-dlp, ktorý
+  nespravuje. V tomto režime je zablokované aj tlačidlo **Nainštalovať /
+  aktualizovať yt-dlp…**.
+
 ## Export cookies pre sťahovanie z YouTube
 
 Pole **Súbor cookies:** (*Nastavenia ▸ Sieť ▸ YouTube*) umožňuje režimom
@@ -65,3 +92,49 @@ prehliadača.
 - Platnosť cookies vyprší. Ak sťahovanie, ktoré predtým fungovalo, začne
   zlyhávať alebo sa vracia k výsledku nižšej kvality/verejnému výsledku,
   exportujte nový súbor `cookies.txt`.
+
+## Inštalácia Deno pre sťahovanie z YouTube
+
+Samotný yt-dlp — nielen Vivace — používa samostatné externé prostredie
+JavaScript na vyriešenie výziev, ktoré YouTube kladie predtým, než vydá
+skutočnú adresu URL na stiahnutie videa. Podľa vlastnej dokumentácie
+yt-dlp je spustenie bez neho „zastarané“ (deprecated), no priamo
+nezlyhá: dostupnosť formátov sa jednoducho zníži, a to **výrazne pri
+prihlásenej (cookie) požiadavke** — presne o taký typ požiadavky ide v
+režime **Stiahnuť a prehrať**, ktorý odomyká HD, videá iba pre členov a
+videá s vekovým obmedzením. Režim **Streamovanie** nikdy neposiela
+cookies (pozri „Export cookies pre sťahovanie z YouTube“ vyššie), takže
+nejde o tento závažný prípad a bez Deno funguje vo väčšine prípadov
+bez problémov. Preto sa pole **Cesta k Deno:** nachádza v *Nastavenia ▸
+Sieť ▸ YouTube ▸ Stiahnuť a prehrať*, nie ako všeobecné nastavenie
+YouTube. yt-dlp podporuje viacero JS prostredí; Deno je to, ktoré
+vyhľadáva predvolene.
+
+**Ako nainštalovať Deno:**
+
+1. Postupujte podľa oficiálnych inštalačných pokynov na stránke
+   [docs.deno.com](https://docs.deno.com/runtime/getting_started/installation/)
+   pre váš operačný systém (inštalačný skript, alebo správca balíkov ako
+   winget/scoop/Homebrew/apt, podľa platformy).
+2. Uistite sa, že spustiteľný súbor `deno` skončí v systémovej premennej
+   PATH — vyššie uvedené inštalátory to zvyčajne urobia za vás. Vo
+   Windows dbajte na to, aby ste získali `deno`, nie `denort` (iný,
+   príbuzný spustiteľný súbor, ktorý tu nebude fungovať).
+3. Ak radšej nechcete upravovať PATH, ponechajte ho tak, ako je, a
+   namiesto toho vložte jeho úplnú cestu do poľa **Cesta k Deno:**
+   (*Nastavenia ▸ Sieť ▸ YouTube ▸ Stiahnuť a prehrať*).
+4. Po inštalácii reštartujte Vivace (alebo jednoducho skúste sťahovanie
+   znova).
+
+**Majte na pamäti:**
+
+- Ide o závislosť nástroja **yt-dlp**, nie priamo Vivace — Vivace vždy
+  iba spúšťa yt-dlp ako externý proces a samotné Deno nikdy nevolá.
+- yt-dlp vyžaduje primerane novú verziu Deno (v čase písania tohto textu
+  2.3.0 alebo novšiu). Ak sa aj po inštalácii pri sťahovaní stále
+  zobrazujú chyby zníženej kvality/formátu, skontrolujte `deno --version`
+  a v prípade staršej verzie ju aktualizujte.
+- Táto požiadavka vyplýva zo zmien na strane YouTube/yt-dlp, nie od
+  Vivace — presne z tohto dôvodu existuje pole **Cesta k Deno:**, ktoré
+  po nainštalovaní a sprístupnení samotného Deno už nevyžaduje žiadnu
+  ďalšiu konfiguráciu.

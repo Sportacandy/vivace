@@ -65,6 +65,15 @@ each get their own entry instead.
   replacement — Open ▸ Directory, DVD title/menu playback, opening a
   single stream, and the "auto-add files from the same folder" case — so
   the header no longer keeps showing a previously loaded playlist's name.
+- The in-app Help window (`F1`) was missing entire sections in every
+  translated language except English and (partially) Japanese: the
+  "Installing and updating yt-dlp" and "Installing Deno" sections on the
+  Options help page, and a description of playlist row thumbnails on the
+  View help page. Added the missing content, translated, to all 22
+  previously-covered languages, and filled the one gap that remained in
+  Japanese. Also fixed a pre-existing typo in the Ukrainian translation of
+  the Preferences "Misc" tab label (a Cyrillic "и" where Ukrainian "і" was
+  meant), found while cross-checking the new content against it.
 
 ### Added
 - Playlist row thumbnails: each entry shows a thumbnail — a sibling

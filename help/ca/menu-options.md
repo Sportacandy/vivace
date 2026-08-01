@@ -28,6 +28,35 @@ El menú **Opcions** conté les preferències i la configuració de la interfíc
 
 **Consell:** la disposició general (Basic / Mini / MPC) es tria a *Preferències ▸ Interfície*.
 
+## Instal·lar i actualitzar yt-dlp
+
+*Preferències ▸ Xarxa ▸ YouTube* té la casella de selecció **Utilitza
+yt-dlp gestionat**, que controla com el Vivace obté i manté el programa
+`yt-dlp` que fa servir per reproduir enllaços de YouTube:
+
+- **Activat** (per defecte) — el Vivace pot instal·lar `yt-dlp` per tu i
+  mantenir-lo actualitzat. El camp **Camí de yt-dlp:** queda fixat a la
+  còpia pròpia del Vivace i no es pot editar directament; utilitza el
+  botó **Instal·la / actualitza yt-dlp…** (al costat de la casella de
+  selecció) sempre que vulguis obtenir l'última versió oficial. També
+  esdevé disponible la configuració **Actualitza yt-dlp
+  automàticament:**, que permet que el Vivace faci aquesta actualització
+  pel seu compte: **Mai**, **Cada vegada que s'executa yt-dlp**, **Un cop
+  al dia** o **Un cop a la setmana**. Una actualització automàtica
+  s'executa just abans que una URL de YouTube es resolgui o es baixi
+  realment, de manera que la primera reproducció després que
+  l'actualització esdevingui pendent triga una mica més; si
+  l'actualització en si falla (p. ex. sense connexió de xarxa), el
+  Vivace continua silenciosament amb la versió que ja hi ha instal·lada
+  en lloc de bloquejar la reproducció.
+- **Desactivat** — per a un yt-dlp que gestiones tu mateix (p. ex.
+  instal·lat via `pip` o el gestor de paquets del teu sistema operatiu).
+  El camp **Camí de yt-dlp:** esdevé editable perquè el puguis apuntar
+  cap a aquella còpia, i **Actualitza yt-dlp automàticament** es
+  desactiva — el Vivace mai no instal·la ni actualitza un yt-dlp que no
+  gestiona. El botó **Instal·la / actualitza yt-dlp…** també queda
+  desactivat en aquest mode.
+
 ## Exportar galetes per a les baixades de YouTube
 
 El camp **Fitxer de galetes:** (*Preferències ▸ Xarxa ▸ YouTube*) permet
@@ -73,3 +102,51 @@ del perfil d'un navegador.
 - Les galetes caduquen. Si les baixades que abans funcionaven comencen a
   fallar, o donen com a resultat una versió de qualitat
   inferior/pública, exporta un `cookies.txt` nou.
+
+## Instal·lar Deno per a les baixades de YouTube
+
+El mateix yt-dlp — no només el Vivace — utilitza un entorn d'execució
+JavaScript extern i separat per resoldre els reptes que planteja YouTube
+abans de facilitar l'URL de baixada real d'un vídeo. Segons la mateixa
+documentació de yt-dlp, executar-lo sense aquest entorn està "obsolet"
+(deprecated), però no falla directament: la disponibilitat de formats
+simplement es redueix, i **de manera severa per a una sol·licitud amb
+sessió iniciada (basada en galetes)** — exactament el tipus de
+sol·licitud que fa el mode **Baixa i reprodueix** per desbloquejar
+vídeos en HD, exclusius per a membres i amb restricció d'edat. El mode
+**Transmissió** mai no envia galetes (vegeu «Exportar galetes per a les
+baixades de YouTube» més amunt), de manera que no és el cas sever, i
+funciona bé sense Deno en la majoria dels casos. Per això el camp
+**Camí de Deno:** es troba a *Preferències ▸ Xarxa ▸ YouTube ▸ Baixa i
+reprodueix*, i no com a configuració general de YouTube. El yt-dlp
+admet diversos entorns d'execució JS; Deno és el que cerca per defecte.
+
+**Per instal·lar Deno:**
+
+1. Segueix les instruccions oficials d'instal·lació a
+   [docs.deno.com](https://docs.deno.com/runtime/getting_started/installation/)
+   per al teu sistema operatiu (un script d'instal·lació, o un gestor
+   de paquets com winget/scoop/Homebrew/apt, segons la plataforma).
+2. Assegura't que l'executable `deno` acabi al PATH del sistema — els
+   instal·ladors anteriors normalment ho fan per tu. A Windows, assegura't
+   d'obtenir `deno`, no `denort` (un executable diferent, relacionat,
+   que no funcionarà aquí).
+3. Si prefereixes no modificar el PATH, deixa'l tal com està i, en
+   comptes d'això, enganxa el seu camí complet a **Camí de Deno:**
+   (*Preferències ▸ Xarxa ▸ YouTube ▸ Baixa i reprodueix*).
+4. Reinicia el Vivace (o simplement torna a provar una baixada) després
+   d'instal·lar-lo.
+
+**Tingues en compte:**
+
+- Aquesta és una dependència de **yt-dlp**, no del Vivace directament —
+  el Vivace només executa yt-dlp com a procés extern i mai no invoca
+  Deno directament.
+- El yt-dlp requereix una versió de Deno raonablement recent (2.3.0 o
+  posterior en el moment d'escriure això). Si les baixades encara
+  mostren errors de qualitat/format reduïts després d'instal·lar-lo,
+  comprova `deno --version` i actualitza'l si és més antic.
+- Aquest requisit prové de canvis al costat de YouTube/yt-dlp, no del
+  Vivace — el mateix camp **Camí de Deno:** existeix exactament per
+  aquest motiu i no necessita cap configuració addicional un cop Deno
+  mateix està instal·lat i és accessible.

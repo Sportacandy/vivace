@@ -26,6 +26,32 @@ Izbornik **Opcije** sadrži postavke i konfiguraciju sučelja.
 
 **Savjet:** ukupni raspored (Basic / Mini / MPC) bira se u *Postavke ▸ Sučelje*.
 
+## Instalacija i ažuriranje yt-dlp-a
+
+*Postavke ▸ Mreža ▸ YouTube* ima potvrdni okvir **Koristi upravljani yt-dlp** koji
+određuje kako Vivace nabavlja i održava program `yt-dlp` koji koristi za
+reprodukciju YouTube poveznica:
+
+- **Uključeno** (zadano) — Vivace može instalirati `yt-dlp` umjesto vas i
+  održavati ga ažurnim. Polje **Putanja yt-dlp:** fiksirano je na vlastitu
+  kopiju Vivacea i ne može se izravno uređivati; koristite gumb
+  **Instaliraj / ažuriraj yt-dlp…** (pored potvrdnog okvira) kad god želite
+  dohvatiti najnovije službeno izdanje. Postaje dostupna i postavka
+  **Automatski ažuriraj yt-dlp:**, koja omogućuje Vivaceu da samostalno
+  pokreće ovo ažuriranje — **Nikada**, prije **Svaki put kad se yt-dlp
+  pokrene**, ili jednom **dnevno**/**tjedno**. Automatsko ažuriranje
+  pokreće se neposredno prije nego što se YouTube URL zapravo razriješi ili
+  preuzme, pa prva reprodukcija nakon što ažuriranje dospije potraje malo
+  dulje; ako samo ažuriranje ne uspije (npr. nema mreže), Vivace tiho
+  nastavlja s verzijom koja je već instalirana, umjesto da blokira
+  reprodukciju.
+- **Isključeno** — za yt-dlp kojim upravljate sami (npr. instaliran putem
+  `pip`-a ili upravitelja paketima vašeg operacijskog sustava). Polje
+  **Putanja yt-dlp:** postaje uredivo kako biste ga mogli usmjeriti na tu
+  kopiju, a **Automatski ažuriraj yt-dlp** je onemogućeno — Vivace nikada
+  ne instalira niti ažurira yt-dlp kojim ne upravlja. Gumb **Instaliraj /
+  ažuriraj yt-dlp…** također je onemogućen u ovom načinu rada.
+
 ## Izvoz kolačića za YouTube preuzimanja
 
 Polje **Datoteka kolačića:** (*Postavke ▸ Mreža ▸ YouTube*) omogućuje da
@@ -67,3 +93,48 @@ ne čita kolačiće izravno iz profila preglednika.
 - Kolačići istječu. Ako preuzimanja koja su prije radila počnu ne
   uspijevati ili se vrate na rezultat niže kvalitete/javni rezultat,
   izvezite novu datoteku `cookies.txt`.
+
+## Instalacija Deno-a za YouTube preuzimanja
+
+Sam yt-dlp — ne samo Vivace — koristi zaseban vanjski JavaScript izvršni
+sustav za rješavanje izazova koje YouTube postavlja prije nego što otkrije
+stvarni URL za preuzimanje videozapisa. Prema vlastitoj dokumentaciji
+yt-dlp-a, pokretanje bez njega je "zastarjelo", no ne dovodi izravno do
+neuspjeha: dostupnost formata jednostavno je smanjena, i to **znatno za
+prijavljeni (kolačić) zahtjev** — upravo onu vrstu zahtjeva koju način rada
+**Preuzmi i reproduciraj** upućuje kako bi otključao HD, sadržaj samo za
+članove i videozapise s dobnim ograničenjem. Način **streaminga** nikada ne
+šalje kolačiće (pogledajte "Izvoz kolačića za YouTube preuzimanja" iznad),
+pa to nije ozbiljan slučaj i u većini slučajeva funkcionira dobro i bez
+Dena. Zato se polje **Putanja do Deno-a:** nalazi pod *Postavke ▸ Mreža ▸
+YouTube ▸ Preuzmi i reproduciraj*, a ne kao opća YouTube postavka. yt-dlp
+podržava nekoliko JS izvršnih sustava; Deno je onaj koji po zadanom traži.
+
+**Instalacija Dena:**
+
+1. Slijedite službene upute za instalaciju na
+   [docs.deno.com](https://docs.deno.com/runtime/getting_started/installation/)
+   za svoj operacijski sustav (instalacijska skripta ili upravitelj
+   paketima poput winget/scoop/Homebrew/apt, ovisno o platformi).
+2. Provjerite da se izvršna datoteka `deno` nalazi na sistemskoj PATH
+   varijabli — gornji instalacijski programi to obično učine umjesto vas.
+   Na Windowsima svakako preuzmite `deno`, a ne `denort` (drugu, povezanu
+   izvršnu datoteku koja ovdje ne funkcionira).
+3. Ako radije ne biste mijenjali PATH, ostavite ga kakav jest i umjesto
+   toga zalijepite punu putanju u polje **Putanja do Deno-a:** (*Postavke ▸
+   Mreža ▸ YouTube ▸ Preuzmi i reproduciraj*).
+4. Ponovno pokrenite Vivace (ili samo pokušajte preuzimanje ponovno) nakon
+   instalacije.
+
+**Zapamtite:**
+
+- Ovo je ovisnost o **yt-dlp-u**, a ne izravno o Vivaceu — Vivace uvijek
+  pokreće yt-dlp samo kao vanjski proces i nikada sam ne poziva Deno.
+- yt-dlp zahtijeva razmjerno noviju verziju Dena (2.3.0 ili noviju u
+  trenutku pisanja). Ako preuzimanja i nakon instalacije i dalje pokazuju
+  smanjenu kvalitetu/greške formata, provjerite `deno --version` i
+  ažurirajte ga ako je stariji.
+- Ovaj zahtjev proizlazi iz promjena na strani YouTubea/yt-dlp-a, a ne
+  Vivacea — isto polje **Putanja do Deno-a:** postoji upravo iz tog
+  razloga i ne zahtijeva daljnju konfiguraciju nakon što je sam Deno
+  instaliran i dostupan.

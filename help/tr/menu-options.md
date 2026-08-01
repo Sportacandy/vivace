@@ -26,6 +26,31 @@
 
 **İpucu:** genel düzen (Basic / Mini / MPC) *Tercihler ▸ Arayüz* bölümünde seçilir.
 
+## yt-dlp'yi kurma ve güncelleme
+
+*Tercihler ▸ Ağ ▸ YouTube*'da, Vivace'nin YouTube bağlantılarını oynatmak
+için kullandığı `yt-dlp` programını nasıl edindiğini ve güncel tuttuğunu
+denetleyen bir **Yönetilen yt-dlp kullan** onay kutusu vardır:
+
+- **Açık** (varsayılan) — Vivace `yt-dlp`'yi sizin için kurabilir ve güncel
+  tutabilir. **yt-dlp yolu:** alanı Vivace'nin kendi kopyasına sabitlenir ve
+  doğrudan düzenlenemez; en son resmi sürümü almak istediğinizde onay
+  kutusunun yanındaki **yt-dlp'yi kur / güncelle…** düğmesini kullanın.
+  **yt-dlp'yi otomatik güncelle:** ayarı da kullanılabilir hale gelir ve
+  Vivace'nin bu güncellemeyi kendi başına çalıştırmasını sağlar —
+  **Asla**, **yt-dlp her çalıştığında**, **Günde bir kez** veya **Haftada
+  bir kez**. Otomatik güncelleme, bir YouTube URL'si gerçekten çözülmeden
+  veya indirilmeden hemen önce çalışır, bu yüzden güncelleme zamanı
+  geldikten sonraki ilk oynatma biraz daha uzun sürer; güncellemenin
+  kendisi başarısız olursa (örn. ağ yoksa), Vivace oynatmayı engellemeden
+  sessizce zaten kurulu olan sürümle devam eder.
+- **Kapalı** — kendi yönettiğiniz bir yt-dlp için (örn. `pip` veya işletim
+  sisteminizin paket yöneticisiyle kurulmuş). **yt-dlp yolu:** alanı
+  düzenlenebilir hale gelir, böylece o kopyayı gösterebilirsiniz ve
+  **yt-dlp'yi otomatik güncelle** devre dışı bırakılır — Vivace, kendisinin
+  yönetmediği bir yt-dlp'yi asla kurmaz veya güncellemez. **yt-dlp'yi kur /
+  güncelle…** düğmesi de bu modda devre dışıdır.
+
 ## YouTube indirmeleri için çerezleri dışa aktarma
 
 **Çerez dosyası:** alanı (*Tercihler ▸ Ağ ▸ YouTube*), **İndir ve oynat** ve
@@ -65,3 +90,52 @@ dosyası bekler; Vivace çerezleri doğrudan bir tarayıcı profilinden okumaz.
 - Çerezlerin süresi dolar. Daha önce çalışan indirmeler başarısız olmaya
   başlarsa veya daha düşük kaliteli/herkese açık bir sonuca geri düşerse,
   yeni bir `cookies.txt` dışa aktarın.
+
+## YouTube indirmeleri için Deno kurulumu
+
+Yalnızca Vivace değil, yt-dlp'nin kendisi de, YouTube'un bir videonun
+gerçek indirme URL'sini vermeden önce sunduğu zorlukları çözmek için ayrı
+bir harici JavaScript çalışma zamanı kullanır. yt-dlp'nin kendi
+belgelerine göre, bir çalışma zamanı olmadan çalıştırmak "kullanımdan
+kaldırılmış" sayılır ama tamamen başarısız olmaz: yalnızca kullanılabilir
+biçim sayısı azalır ve bu azalma **oturum açmış (çerez) bir istek için
+ciddi biçimde** gerçekleşir — tam olarak **İndir ve oynat** modunun HD,
+yalnızca üyelere özel ve yaş sınırlı videoların kilidini açmak için
+yaptığı istek türü budur. **Akış (streaming)** modu asla çerez göndermez
+(yukarıdaki "YouTube indirmeleri için çerezleri dışa aktarma" bölümüne
+bakın), bu yüzden ciddi durum bu değildir ve çoğu durumda Deno olmadan da
+iyi çalışır. **Deno yolu:** alanının genel bir YouTube ayarı olarak değil
+de *Tercihler ▸ Ağ ▸ YouTube ▸ İndir ve oynat* altında bulunmasının
+nedeni budur. yt-dlp birden fazla JS çalışma zamanını destekler; Deno
+varsayılan olarak aradığı çalışma zamanıdır.
+
+**Deno'yu kurmak için:**
+
+1. İşletim sisteminize uygun olarak
+   [docs.deno.com](https://docs.deno.com/runtime/getting_started/installation/)
+   adresindeki resmi kurulum talimatlarını izleyin (platforma bağlı olarak
+   bir kurulum betiği veya winget/scoop/Homebrew/apt gibi bir paket
+   yöneticisi).
+2. `deno` çalıştırılabilir dosyasının sistem PATH'inize eklendiğinden emin
+   olun — yukarıdaki kurulum programları genellikle bunu sizin için
+   yapar. Windows'ta `denort`'u (burada işe yaramayan, farklı ama ilgili
+   bir çalıştırılabilir dosya) değil, `deno`'yu aldığınızdan emin olun.
+3. PATH'i değiştirmek istemiyorsanız, olduğu gibi bırakın ve bunun yerine
+   tam yolunu **Deno yolu:** alanına yapıştırın (*Tercihler ▸ Ağ ▸
+   YouTube ▸ İndir ve oynat*).
+4. Kurulumdan sonra Vivace'yi yeniden başlatın (veya sadece bir indirmeyi
+   yeniden deneyin).
+
+**Aklınızda bulunsun:**
+
+- Bu, Vivace'nin değil **yt-dlp**'nin bir bağımlılığıdır — Vivace, yt-dlp'yi
+  yalnızca harici bir işlem olarak çalıştırır ve Deno'yu asla kendisi
+  çağırmaz.
+- yt-dlp, makul ölçüde güncel bir Deno sürümü gerektirir (bu yazının
+  yazıldığı sırada 2.3.0 veya üzeri). Kurulumdan sonra indirmeler hâlâ
+  düşük kalite/biçim hataları gösteriyorsa, `deno --version`'ı kontrol
+  edin ve eskiyse güncelleyin.
+- Bu gereklilik Vivace'den değil, YouTube'un/yt-dlp'nin tarafındaki
+  değişikliklerden kaynaklanır — tam da bu nedenle **Deno yolu:** alanı
+  vardır ve Deno'nun kendisi kurulup erişilebilir olduğunda başka bir
+  yapılandırmaya gerek kalmaz.

@@ -3680,7 +3680,7 @@
     <message>
         <location filename="../qml/PrefPlaylistPage.qml" line="34"/>
         <source>Misc</source>
-        <translation>Инше</translation>
+        <translation>Інше</translation>
     </message>
     <message>
         <location filename="../qml/PrefPlaylistPage.qml" line="53"/>

@@ -27,6 +27,35 @@ Das Menü **Optionen** enthält Einstellungen und die Oberflächenkonfiguration.
 **Tipp:** Das Gesamtlayout (Basic / Mini / MPC) wählen Sie unter
 *Einstellungen ▸ Oberfläche*.
 
+## Installation und Aktualisierung von yt-dlp
+
+*Einstellungen ▸ Netzwerk ▸ YouTube* enthält das Kontrollkästchen
+**Verwaltetes yt-dlp verwenden**, das steuert, wie Vivace das Programm
+`yt-dlp` bezieht und aktuell hält, das zum Abspielen von YouTube-Links
+verwendet wird:
+
+- **Aktiviert** (Standard) — Vivace kann `yt-dlp` für Sie installieren und
+  aktuell halten. Das Feld **yt-dlp-Pfad:** ist fest auf Vivaces eigene Kopie
+  gesetzt und kann nicht direkt bearbeitet werden; verwenden Sie die
+  Schaltfläche **yt-dlp installieren/aktualisieren…** (neben dem
+  Kontrollkästchen), wann immer Sie die neueste offizielle Version abrufen
+  möchten. Die Einstellung **yt-dlp automatisch aktualisieren:** wird
+  ebenfalls verfügbar und lässt Vivace diese Aktualisierung selbstständig
+  durchführen — **Niemals**, davor **Bei jeder Ausführung von yt-dlp**, oder
+  einmal **täglich**/**wöchentlich**. Eine automatische Aktualisierung läuft
+  unmittelbar bevor eine YouTube-URL tatsächlich aufgelöst oder
+  heruntergeladen wird, sodass die erste Wiedergabe, nachdem sie fällig
+  wird, etwas länger dauert; schlägt die Aktualisierung selbst fehl (z. B.
+  keine Netzwerkverbindung), fährt Vivace stillschweigend mit der bereits
+  installierten Version fort, statt die Wiedergabe zu blockieren.
+- **Deaktiviert** — für ein yt-dlp, das Sie selbst verwalten (z. B.
+  installiert über `pip` oder den Paketmanager Ihres Betriebssystems). Das
+  Feld **yt-dlp-Pfad:** wird bearbeitbar, sodass Sie es auf diese Kopie
+  verweisen lassen können, und **yt-dlp automatisch aktualisieren** ist
+  deaktiviert — Vivace installiert oder aktualisiert nie ein yt-dlp, das es
+  nicht selbst verwaltet. Auch die Schaltfläche **yt-dlp
+  installieren/aktualisieren…** ist in diesem Modus deaktiviert.
+
 ## Cookies für YouTube-Downloads exportieren
 
 Das Feld **Cookie-Datei:** (*Einstellungen ▸ Netzwerk ▸ YouTube*) lässt die
@@ -69,3 +98,54 @@ Cookies nicht direkt aus dem Profil eines Browsers.
 - Cookies laufen ab. Wenn zuvor funktionierende Downloads plötzlich
   fehlschlagen oder auf ein Ergebnis mit geringerer Qualität bzw. eine
   öffentliche Version zurückfallen, exportieren Sie eine neue `cookies.txt`.
+
+## Installation von Deno für YouTube-Downloads
+
+yt-dlp selbst — nicht nur Vivace — verwendet eine separate externe
+JavaScript-Laufzeitumgebung, um die Herausforderungen zu lösen, die YouTube
+stellt, bevor es die tatsächliche Download-URL eines Videos herausgibt. Laut
+yt-dlps eigener Dokumentation ist der Betrieb ohne eine solche
+Laufzeitumgebung „veraltet“, schlägt aber nicht grundsätzlich fehl: Die
+Formatverfügbarkeit ist lediglich verringert, und zwar **stark bei einer
+angemeldeten (Cookie-)Anfrage** — genau die Art von Anfrage, die der Modus
+**Herunterladen und abspielen** stellt, um HD-, mitgliederexklusive und
+altersbeschränkte Videos freizuschalten. Der **Streaming**-Modus sendet nie
+Cookies (siehe „Cookies für YouTube-Downloads exportieren“ oben), daher ist
+er nicht der kritische Fall und funktioniert in den meisten Fällen auch ohne
+Deno einwandfrei. Deshalb befindet sich das Feld **Deno-Pfad:** unter
+*Einstellungen ▸ Netzwerk ▸ YouTube ▸ Herunterladen und abspielen* und nicht
+als allgemeine YouTube-Einstellung. yt-dlp unterstützt mehrere
+JavaScript-Laufzeitumgebungen; Deno ist diejenige, nach der standardmäßig
+gesucht wird.
+
+**So installieren Sie Deno:**
+
+1. Folgen Sie den offiziellen Installationsanweisungen unter
+   [docs.deno.com](https://docs.deno.com/runtime/getting_started/installation/)
+   für Ihr Betriebssystem (ein Installationsskript oder ein Paketmanager wie
+   winget/scoop/Homebrew/apt, je nach Plattform).
+2. Stellen Sie sicher, dass die ausführbare Datei `deno` letztlich in Ihrem
+   System-PATH liegt — die oben genannten Installationsprogramme erledigen
+   das normalerweise für Sie. Achten Sie unter Windows darauf, `deno` zu
+   erhalten, nicht `denort` (eine andere, verwandte ausführbare Datei, die
+   hier nicht funktioniert).
+3. Wenn Sie PATH lieber nicht ändern möchten, lassen Sie es unverändert und
+   fügen Sie stattdessen den vollständigen Pfad in **Deno-Pfad:** ein
+   (*Einstellungen ▸ Netzwerk ▸ YouTube ▸ Herunterladen und abspielen*).
+4. Starten Sie Vivace nach der Installation neu (oder versuchen Sie einfach
+   einen Download erneut).
+
+**Zu beachten:**
+
+- Dies ist eine Abhängigkeit von **yt-dlp**, nicht von Vivace direkt — Vivace
+  führt yt-dlp lediglich als externen Prozess aus und ruft Deno selbst nie
+  auf.
+- yt-dlp benötigt eine einigermaßen aktuelle Deno-Version (zum Zeitpunkt der
+  Erstellung dieses Textes 2.3.0 oder neuer). Wenn Downloads nach der
+  Installation weiterhin eine verringerte Qualität zeigen oder Formatfehler
+  auftreten, prüfen Sie `deno --version` und aktualisieren Sie Deno, falls es
+  älter ist.
+- Diese Anforderung ergibt sich aus Änderungen auf Seiten von YouTube/yt-dlp,
+  nicht von Vivace — genau aus diesem Grund existiert das Feld
+  **Deno-Pfad:** und benötigt keine weitere Konfiguration, sobald Deno
+  selbst installiert und erreichbar ist.
