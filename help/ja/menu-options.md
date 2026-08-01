@@ -96,6 +96,47 @@
   画質が低い/非会員向けの結果にフォールバックし始めた場合は、新しい
   `cookies.txt` を書き出し直してください。
 
+## YouTubeダウンロード用のffmpegのインストール
+
+**ダウンロードして再生** モードでは、yt-dlp がダウンロードした別々の映像
+ストリームと音声ストリームを1つの再生可能なファイルに結合するために
+`ffmpeg` が必要です — YouTube では HD が単一の結合済みストリームとして
+提供されることはほとんどなく、映像トラックと音声トラックが別々にダウン
+ロードされてから結合されます。**ffmpeg の場所:** フィールド（*設定 ▸
+ネットワーク ▸ YouTube ▸ ダウンロードして再生*）は、yt-dlp にその場所を
+伝えます。空欄のままにすると、代わりにシステムの PATH にある `ffmpeg` が
+使われます。
+
+**ffmpeg のインストール方法:**
+
+1. **Windows** — 最も簡単なのはパッケージマネージャーを使う方法です:
+   `winget install ffmpeg`（または `scoop install ffmpeg` /
+   `choco install ffmpeg`）。あるいは、[gyan.dev](https://www.gyan.dev/ffmpeg/builds/)
+   や [BtbN/FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds) から
+   ビルド済みアーカイブをダウンロードして、どこかに展開してください。
+2. **macOS** — `brew install ffmpeg`（Homebrew）。
+3. **Linux** — お使いのディストリビューションのパッケージマネージャーで
+   インストールします。例: `sudo apt install ffmpeg`（Debian/Ubuntu）、
+   `sudo dnf install ffmpeg`（Fedora）、`sudo pacman -S ffmpeg`（Arch）。
+4. ffmpeg をシステムの PATH に追加した場合は、**ffmpeg の場所:** を空欄の
+   ままにしてください。そうでない場合は、`ffmpeg` の実行ファイルそのもの
+   ではなく、それが入っている *フォルダー* のパスをそのフィールドに
+   貼り付けてください。
+5. インストール後は Vivace を再起動してください（またはダウンロードを
+   やり直すだけでも構いません）。
+
+**注意事項:**
+
+- これは下記の Deno と同様、**yt-dlp** の依存関係です — Vivace は常にこれを
+  外部プロセスとして実行するだけです。
+- **ストリーミング** モードは、すでに結合済みの単一ストリームを再生する
+  ため、ffmpeg を必要としません。必要になるのは **ダウンロードして再生**
+  モードだけです。このモードは映像と音声を別々に取得し、ローカルで結合
+  するためです。
+- ダウンロードが結合関連のエラーで失敗する場合は、まず ffmpeg の場所を
+  確認してください — Deno が未インストールまたは古い場合を除けば、最も
+  よくある原因です。
+
 ## YouTubeダウンロード用のDenoのインストール
 
 Vivace だけでなく yt-dlp 自体も、YouTube が動画の実際のダウンロード URL を

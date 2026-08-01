@@ -99,6 +99,49 @@ Cookies nicht direkt aus dem Profil eines Browsers.
   fehlschlagen oder auf ein Ergebnis mit geringerer Qualität bzw. eine
   öffentliche Version zurückfallen, exportieren Sie eine neue `cookies.txt`.
 
+## Installation von ffmpeg für YouTube-Downloads
+
+Der Modus **Herunterladen und abspielen** benötigt `ffmpeg`, um die
+separaten Video- und Audio-Streams, die yt-dlp herunterlädt, zu einer
+abspielbaren Datei zusammenzuführen — YouTube bietet HD selten als
+einzelnen kombinierten Stream an, sodass eine Videospur und eine Audiospur
+getrennt heruntergeladen und anschließend zusammengeführt werden. Das Feld
+**ffmpeg-Speicherort:** (*Einstellungen ▸ Netzwerk ▸ YouTube ▸
+Herunterladen und abspielen*) teilt yt-dlp mit, wo es zu finden ist; lassen
+Sie es leer, um stattdessen `ffmpeg` aus dem PATH Ihres Systems zu
+verwenden.
+
+**So installieren Sie ffmpeg:**
+
+1. **Windows** — die einfachste Möglichkeit ist ein Paketmanager:
+   `winget install ffmpeg` (oder `scoop install ffmpeg` / `choco install
+   ffmpeg`). Alternativ können Sie ein vorkompiliertes Archiv von
+   [gyan.dev](https://www.gyan.dev/ffmpeg/builds/) oder
+   [BtbN/FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds) herunterladen
+   und irgendwo entpacken.
+2. **macOS** — `brew install ffmpeg` (Homebrew).
+3. **Linux** — installieren Sie es über den Paketmanager Ihrer
+   Distribution, z. B. `sudo apt install ffmpeg` (Debian/Ubuntu), `sudo dnf
+   install ffmpeg` (Fedora) oder `sudo pacman -S ffmpeg` (Arch).
+4. Wenn Sie ffmpeg zum PATH Ihres Systems hinzugefügt haben, lassen Sie
+   **ffmpeg-Speicherort:** leer. Andernfalls fügen Sie den Pfad zu dem
+   *Ordner*, der die ausführbare Datei `ffmpeg` enthält (nicht die
+   ausführbare Datei selbst), in dieses Feld ein.
+5. Starten Sie Vivace nach der Installation neu (oder versuchen Sie einfach
+   einen Download erneut).
+
+**Zu beachten:**
+
+- Dies ist eine Abhängigkeit von **yt-dlp**, wie Deno weiter unten — Vivace
+  führt es lediglich als externen Prozess aus.
+- Der **Streaming**-Modus benötigt nie ffmpeg, da er einen einzelnen bereits
+  kombinierten Stream abspielt; nur **Herunterladen und abspielen**
+  benötigt es, weil dieser Modus Video und Audio getrennt abruft und lokal
+  zusammenführt.
+- Wenn ein Download mit einem Fehler bei der Zusammenführung fehlschlägt,
+  prüfen Sie zuerst den ffmpeg-Speicherort — das ist neben einem fehlenden
+  oder veralteten Deno die häufigste Ursache.
+
 ## Installation von Deno für YouTube-Downloads
 
 yt-dlp selbst — nicht nur Vivace — verwendet eine separate externe

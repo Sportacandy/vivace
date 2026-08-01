@@ -92,6 +92,46 @@ cookies direkt från en webbläsares profil.
   misslyckas, eller faller tillbaka till ett resultat med lägre
   kvalitet/allmän tillgång, exportera en ny `cookies.txt`.
 
+## Installera ffmpeg för YouTube-nedladdningar
+
+Läget **Ladda ner och spela upp** behöver `ffmpeg` för att slå ihop de
+separata video- och ljudströmmarna som yt-dlp laddar ner till en enda
+spelbar fil — YouTube erbjuder sällan HD som en enda kombinerad ström, så
+ett videospår och ett ljudspår laddas ner separat och slås sedan ihop.
+Fältet **ffmpeg-plats:** (*Inställningar ▸ Nätverk ▸ YouTube ▸ Ladda ner
+och spela upp*) talar om för yt-dlp var det ska hitta programmet; lämna
+fältet tomt för att i stället använda `ffmpeg` från systemets PATH.
+
+**Så installerar du ffmpeg:**
+
+1. **Windows** — det enklaste alternativet är en pakethanterare:
+   `winget install ffmpeg` (eller `scoop install ffmpeg` / `choco install
+   ffmpeg`). Alternativt kan du hämta ett färdigbyggt arkiv från
+   [gyan.dev](https://www.gyan.dev/ffmpeg/builds/) eller
+   [BtbN/FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds) och packa
+   upp det någonstans.
+2. **macOS** — `brew install ffmpeg` (Homebrew).
+3. **Linux** — installera det via din distributions pakethanterare, t.ex.
+   `sudo apt install ffmpeg` (Debian/Ubuntu), `sudo dnf install ffmpeg`
+   (Fedora) eller `sudo pacman -S ffmpeg` (Arch).
+4. Om du har lagt till ffmpeg i systemets PATH, lämna **ffmpeg-plats:**
+   tomt. Annars, klistra in sökvägen till *mappen* som innehåller
+   programmet `ffmpeg` (inte själva programmet) i det fältet.
+5. Starta om Vivace (eller försök bara igen med en nedladdning) efter
+   installationen.
+
+**Tänk på:**
+
+- Det här är ett beroende till **yt-dlp**, precis som Deno nedan —
+  Vivace kör bara programmet som en extern process.
+- Läget **Strömning** behöver aldrig ffmpeg, eftersom det spelar upp en
+  redan kombinerad ström; bara **Ladda ner och spela upp** gör det,
+  eftersom det läget hämtar video och ljud separat och slår ihop dem
+  lokalt.
+- Om en nedladdning misslyckas med ett sammanslagningsrelaterat fel, kontrollera
+  ffmpeg-platsen först — det är den vanligaste orsaken, förutom en
+  saknad eller föråldrad Deno-installation.
+
 ## Installera Deno för YouTube-nedladdningar
 
 yt-dlp självt — inte bara Vivace — använder en separat, extern

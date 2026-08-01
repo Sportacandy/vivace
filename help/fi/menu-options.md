@@ -94,6 +94,46 @@ Netscape-evästemuodossa (sama muoto, jota yt-dlpin oma valitsin
   epäonnistua tai palata alempilaatuiseen/julkiseen tulokseen, vie uusi
   `cookies.txt`.
 
+## ffmpegin asentaminen YouTube-latauksia varten
+
+**Lataa ja toista** -tila tarvitsee ohjelman `ffmpeg` yhdistääkseen
+yt-dlpin lataamat erilliset video- ja äänivirrat yhdeksi toistettavaksi
+tiedostoksi — YouTube tarjoaa HD:n harvoin yhtenä yhdistettynä virtana,
+joten videoraita ja ääniraita ladataan erikseen ja yhdistetään sitten.
+Kenttä **ffmpegin sijainti:** (*Asetukset ▸ Verkko ▸ YouTube ▸ Lataa ja
+toista*) kertoo yt-dlpille, mistä se löytää ohjelman; jätä kenttä
+tyhjäksi, jos haluat käyttää järjestelmän PATH-muuttujasta löytyvää
+`ffmpeg`-ohjelmaa sen sijaan.
+
+**ffmpegin asentaminen:**
+
+1. **Windows** — helpoin tapa on pakettienhallinta: `winget install
+   ffmpeg` (tai `scoop install ffmpeg` / `choco install ffmpeg`).
+   Vaihtoehtoisesti voit ladata valmiiksi käännetyn paketin osoitteesta
+   [gyan.dev](https://www.gyan.dev/ffmpeg/builds/) tai
+   [BtbN/FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds) ja purkaa
+   sen johonkin.
+2. **macOS** — `brew install ffmpeg` (Homebrew).
+3. **Linux** — asenna se jakelusi pakettienhallinnasta, esim. `sudo apt
+   install ffmpeg` (Debian/Ubuntu), `sudo dnf install ffmpeg` (Fedora) tai
+   `sudo pacman -S ffmpeg` (Arch).
+4. Jos lisäsit ffmpegin järjestelmän PATH-muuttujaan, jätä
+   **ffmpegin sijainti:** tyhjäksi. Muussa tapauksessa liitä kenttään
+   polku *kansioon*, joka sisältää `ffmpeg`-ohjelman (ei itse ohjelmaa).
+5. Käynnistä Vivace uudelleen (tai yritä vain ladata uudelleen)
+   asennuksen jälkeen.
+
+**Muista:**
+
+- Tämä on **yt-dlp:n**, ei Vivacen, riippuvuus, aivan kuten alla oleva
+  Deno — Vivace vain suorittaa sitä ulkoisena prosessina.
+- **Suoratoisto**-tila ei koskaan tarvitse ffmpegiä, koska se toistaa jo
+  yhdistetyn virran; vain **Lataa ja toista** tarvitsee, koska se tila
+  hakee videon ja äänen erikseen ja yhdistää ne paikallisesti.
+- Jos lataus epäonnistuu yhdistämiseen liittyvään virheeseen, tarkista
+  ensin ffmpegin sijainti — se on yleisin syy puuttuvan tai vanhentuneen
+  Denon ohella.
+
 ## Denon asentaminen YouTube-latauksia varten
 
 yt-dlp itse — ei vain Vivace — käyttää erillistä, ulkoista

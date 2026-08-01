@@ -87,6 +87,46 @@
   낮은 화질/공개 버전 결과로 대체된다면, 새 `cookies.txt` 를 다시
   내보내세요.
 
+## YouTube 다운로드용 ffmpeg 설치
+
+**다운로드 후 재생** 모드는 yt-dlp가 다운로드한 별도의 동영상 스트림과
+오디오 스트림을 하나의 재생 가능한 파일로 병합하기 위해 `ffmpeg` 가
+필요합니다 — YouTube는 HD를 단일 결합 스트림으로 제공하는 경우가 드물어,
+동영상 트랙과 오디오 트랙이 각각 다운로드된 다음 병합됩니다.
+**ffmpeg 위치:** 필드(*환경 설정 ▸ 네트워크 ▸ YouTube ▸ 다운로드 후
+재생*)는 yt-dlp에 그 위치를 알려줍니다. 비워두면 대신 시스템 PATH에 있는
+`ffmpeg` 를 사용합니다.
+
+**ffmpeg 설치 방법:**
+
+1. **Windows** — 가장 쉬운 방법은 패키지 관리자를 사용하는 것입니다:
+   `winget install ffmpeg`(또는 `scoop install ffmpeg` /
+   `choco install ffmpeg`). 또는 [gyan.dev](https://www.gyan.dev/ffmpeg/builds/)
+   나 [BtbN/FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds) 에서
+   미리 빌드된 압축 파일을 다운로드해 원하는 위치에 압축을 풀어도
+   됩니다.
+2. **macOS** — `brew install ffmpeg`(Homebrew).
+3. **Linux** — 배포판의 패키지 관리자로 설치하세요. 예:
+   `sudo apt install ffmpeg`(Debian/Ubuntu), `sudo dnf install ffmpeg`
+   (Fedora), 또는 `sudo pacman -S ffmpeg`(Arch).
+4. ffmpeg를 시스템 PATH에 추가했다면 **ffmpeg 위치:** 를 비워두세요.
+   그렇지 않다면 `ffmpeg` 실행 파일 자체가 아니라, 그 실행 파일이 들어
+   있는 *폴더* 의 경로를 해당 필드에 붙여넣으세요.
+5. 설치 후 Vivace를 재시작하세요(또는 그냥 다운로드를 다시 시도해도
+   됩니다).
+
+**참고 사항:**
+
+- 이것은 아래의 Deno와 마찬가지로 **yt-dlp** 의 의존성입니다 — Vivace는
+  이를 외부 프로세스로 실행할 뿐입니다.
+- **스트리밍** 모드는 이미 결합된 단일 스트림을 재생하므로 ffmpeg가
+  전혀 필요하지 않습니다. ffmpeg가 필요한 것은 **다운로드 후 재생**
+  뿐이며, 이 모드는 동영상과 오디오를 각각 가져와 로컬에서 병합하기
+  때문입니다.
+- 다운로드가 병합 관련 오류로 실패한다면 먼저 ffmpeg 위치를
+  확인하세요 — Deno가 없거나 오래된 경우를 제외하면 가장 흔한
+  원인입니다.
+
 ## YouTube 다운로드용 Deno 설치
 
 Vivace뿐 아니라 yt-dlp 자체도, YouTube가 동영상의 실제 다운로드 URL을

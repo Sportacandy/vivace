@@ -103,6 +103,48 @@ del perfil d'un navegador.
   fallar, o donen com a resultat una versió de qualitat
   inferior/pública, exporta un `cookies.txt` nou.
 
+## Instal·lar ffmpeg per a les baixades de YouTube
+
+El mode **Baixa i reprodueix** necessita el `ffmpeg` per combinar els
+fluxos de vídeo i àudio separats que baixa el yt-dlp en un únic fitxer
+reproduïble — el YouTube rarament ofereix l'HD com un únic flux combinat,
+de manera que una pista de vídeo i una pista d'àudio es baixen per
+separat i després es combinen. El camp **Ubicació de ffmpeg:**
+(*Preferències ▸ Xarxa ▸ YouTube ▸ Baixa i reprodueix*) indica al yt-dlp
+on trobar-lo; deixa'l buit per utilitzar en el seu lloc el `ffmpeg` del
+PATH del sistema.
+
+**Per instal·lar ffmpeg:**
+
+1. **Windows** — l'opció més senzilla és un gestor de paquets:
+   `winget install ffmpeg` (o `scoop install ffmpeg` / `choco install
+   ffmpeg`). També pots baixar un arxiu precompilat des de
+   [gyan.dev](https://www.gyan.dev/ffmpeg/builds/) o
+   [BtbN/FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds) i
+   descomprimir-lo en algun lloc.
+2. **macOS** — `brew install ffmpeg` (Homebrew).
+3. **Linux** — instal·la'l des del gestor de paquets de la teva
+   distribució, p. ex. `sudo apt install ffmpeg` (Debian/Ubuntu), `sudo
+   dnf install ffmpeg` (Fedora) o `sudo pacman -S ffmpeg` (Arch).
+4. Si has afegit el ffmpeg al PATH del sistema, deixa buit el camp
+   **Ubicació de ffmpeg:**. En cas contrari, enganxa en aquest camp el
+   camí a la *carpeta* que conté l'executable `ffmpeg` (no l'executable
+   mateix).
+5. Reinicia el Vivace (o simplement torna a provar una baixada) després
+   d'instal·lar-lo.
+
+**Tingues en compte:**
+
+- Aquesta és una dependència del **yt-dlp**, igual que el Deno de més
+  avall — el Vivace només l'executa com a procés extern.
+- El mode **Reproducció en flux** mai no necessita el ffmpeg, ja que
+  reprodueix un flux ja combinat; només el mode **Baixa i reprodueix**
+  el necessita, perquè aquest mode baixa el vídeo i l'àudio per separat
+  i els combina localment.
+- Si una baixada falla amb un error relacionat amb la combinació, comprova
+  primer la ubicació del ffmpeg — és la causa més habitual, a banda d'un
+  Deno absent o desactualitzat.
+
 ## Instal·lar Deno per a les baixades de YouTube
 
 El mateix yt-dlp — no només el Vivace — utilitza un entorn d'execució
@@ -114,7 +156,7 @@ simplement es redueix, i **de manera severa per a una sol·licitud amb
 sessió iniciada (basada en galetes)** — exactament el tipus de
 sol·licitud que fa el mode **Baixa i reprodueix** per desbloquejar
 vídeos en HD, exclusius per a membres i amb restricció d'edat. El mode
-**Transmissió** mai no envia galetes (vegeu «Exportar galetes per a les
+**Reproducció en flux** mai no envia galetes (vegeu «Exportar galetes per a les
 baixades de YouTube» més amunt), de manera que no és el cas sever, i
 funciona bé sense Deno en la majoria dels casos. Per això el camp
 **Camí de Deno:** es troba a *Preferències ▸ Xarxa ▸ YouTube ▸ Baixa i

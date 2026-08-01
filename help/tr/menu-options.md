@@ -91,6 +91,46 @@ dosyası bekler; Vivace çerezleri doğrudan bir tarayıcı profilinden okumaz.
   başlarsa veya daha düşük kaliteli/herkese açık bir sonuca geri düşerse,
   yeni bir `cookies.txt` dışa aktarın.
 
+## YouTube indirmeleri için ffmpeg kurulumu
+
+**İndir ve oynat** modu, yt-dlp'nin indirdiği ayrı video ve ses akışlarını
+tek bir oynatılabilir dosyada birleştirmek için `ffmpeg`'e ihtiyaç duyar —
+YouTube, HD'yi tek bir birleşik akış olarak nadiren sunar, bu yüzden bir
+video parçası ve bir ses parçası ayrı ayrı indirilip sonra birleştirilir.
+**ffmpeg konumu:** alanı (*Tercihler ▸ Ağ ▸ YouTube ▸ İndir ve oynat*)
+yt-dlp'ye onu nerede bulacağını söyler; bunun yerine sistem PATH'inizdeki
+`ffmpeg`'i kullanmak için boş bırakın.
+
+**ffmpeg'i kurmak için:**
+
+1. **Windows** — en kolay yöntem bir paket yöneticisi kullanmaktır:
+   `winget install ffmpeg` (veya `scoop install ffmpeg` /
+   `choco install ffmpeg`). Alternatif olarak,
+   [gyan.dev](https://www.gyan.dev/ffmpeg/builds/) veya
+   [BtbN/FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds) adresinden
+   önceden derlenmiş bir arşiv indirip bir yere açabilirsiniz.
+2. **macOS** — `brew install ffmpeg` (Homebrew).
+3. **Linux** — dağıtımınızın paket yöneticisinden kurun, örneğin
+   `sudo apt install ffmpeg` (Debian/Ubuntu), `sudo dnf install ffmpeg`
+   (Fedora) veya `sudo pacman -S ffmpeg` (Arch).
+4. ffmpeg'i sistem PATH'inize eklediyseniz **ffmpeg konumu:** alanını boş
+   bırakın. Aksi hâlde, `ffmpeg` çalıştırılabilir dosyasının kendisini
+   değil, onu içeren *klasörün* yolunu bu alana yapıştırın.
+5. Kurulumdan sonra Vivace'yi yeniden başlatın (veya sadece bir indirmeyi
+   yeniden deneyin).
+
+**Aklınızda bulunsun:**
+
+- Bu, aşağıdaki Deno gibi, **yt-dlp**'nin bir bağımlılığıdır — Vivace onu
+  yalnızca harici bir işlem olarak çalıştırır.
+- **Akış (streaming)** modu, zaten birleştirilmiş tek bir akışı oynattığı
+  için ffmpeg'e hiç ihtiyaç duymaz; yalnızca **İndir ve oynat** ihtiyaç
+  duyar, çünkü bu mod videoyu ve sesi ayrı ayrı alıp yerel olarak
+  birleştirir.
+- Bir indirme birleştirmeyle ilgili bir hatayla başarısız olursa, önce
+  ffmpeg konumunu kontrol edin — eksik veya güncel olmayan bir Deno'nun
+  ardından en yaygın nedendir.
+
 ## YouTube indirmeleri için Deno kurulumu
 
 Yalnızca Vivace değil, yt-dlp'nin kendisi de, YouTube'un bir videonun

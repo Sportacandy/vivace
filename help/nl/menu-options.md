@@ -94,6 +94,46 @@ profiel van een browser.
   of terugvallen op een resultaat van lagere kwaliteit/openbaar resultaat,
   exporteert u een nieuw `cookies.txt`-bestand.
 
+## ffmpeg installeren voor YouTube-downloads
+
+**Downloaden en afspelen** heeft `ffmpeg` nodig om de aparte video- en
+audiostromen die yt-dlp downloadt samen te voegen tot één afspeelbaar
+bestand — YouTube biedt HD zelden als één gecombineerde stream aan, dus een
+videospoor en een audiospoor worden apart gedownload en vervolgens
+samengevoegd. Het veld **ffmpeg-locatie:** (*Voorkeuren ▸ Netwerk ▸ YouTube ▸
+Downloaden en afspelen*) vertelt yt-dlp waar het dit kan vinden; laat het leeg
+om in plaats daarvan `ffmpeg` van het PATH van uw systeem te gebruiken.
+
+**Zo installeert u ffmpeg:**
+
+1. **Windows** — de eenvoudigste optie is een pakketbeheerder:
+   `winget install ffmpeg` (of `scoop install ffmpeg` / `choco install
+   ffmpeg`). U kunt ook een kant-en-klaar archief downloaden van
+   [gyan.dev](https://www.gyan.dev/ffmpeg/builds/) of
+   [BtbN/FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds) en dit ergens
+   uitpakken.
+2. **macOS** — `brew install ffmpeg` (Homebrew).
+3. **Linux** — installeer het via de pakketbeheerder van uw distributie,
+   bijv. `sudo apt install ffmpeg` (Debian/Ubuntu), `sudo dnf install ffmpeg`
+   (Fedora), of `sudo pacman -S ffmpeg` (Arch).
+4. Als u ffmpeg aan het PATH van uw systeem hebt toegevoegd, laat u
+   **ffmpeg-locatie:** leeg. Plak anders het pad naar de *map* met het
+   uitvoerbare bestand `ffmpeg` (niet het uitvoerbare bestand zelf) in dat
+   veld.
+5. Start Vivace opnieuw (of probeer gewoon opnieuw een download) na de
+   installatie.
+
+**Houd er rekening mee:**
+
+- Dit is een afhankelijkheid van **yt-dlp**, net als Deno hieronder — Vivace
+  voert het altijd uit als een extern proces.
+- **Streaming**-modus heeft nooit ffmpeg nodig, omdat deze een reeds
+  gecombineerde stream afspeelt; alleen **Downloaden en afspelen** wel, omdat
+  die modus video en audio apart ophaalt en ze lokaal samenvoegt.
+- Als een download mislukt met een foutmelding over samenvoegen, controleer
+  dan eerst de ffmpeg-locatie — dat is de meest voorkomende oorzaak, naast
+  een ontbrekende of verouderde Deno.
+
 ## Deno installeren voor YouTube-downloads
 
 yt-dlp zelf — niet alleen Vivace — gebruikt een aparte, externe

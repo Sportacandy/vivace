@@ -104,6 +104,48 @@ navigateur.
   auparavant échouent, ou reviennent à un résultat public ou de moindre
   qualité, exportez un nouveau `cookies.txt`.
 
+## Installation de ffmpeg pour les téléchargements YouTube
+
+Le mode **Télécharger et lire** a besoin de `ffmpeg` pour fusionner les
+flux vidéo et audio séparés que yt-dlp télécharge en un seul fichier
+lisible — YouTube propose rarement la HD sous la forme d'un flux combiné
+unique, si bien qu'une piste vidéo et une piste audio sont téléchargées
+séparément puis fusionnées. Le champ **Emplacement de ffmpeg :**
+(*Préférences ▸ Réseau ▸ YouTube ▸ Télécharger et lire*) indique à yt-dlp
+où le trouver ; laissez-le vide pour utiliser à la place le `ffmpeg` du
+PATH de votre système.
+
+**Pour installer ffmpeg :**
+
+1. **Windows** — l'option la plus simple est un gestionnaire de paquets :
+   `winget install ffmpeg` (ou `scoop install ffmpeg` / `choco install
+   ffmpeg`). Vous pouvez aussi télécharger une archive précompilée depuis
+   [gyan.dev](https://www.gyan.dev/ffmpeg/builds/) ou
+   [BtbN/FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds) et la
+   décompresser quelque part.
+2. **macOS** — `brew install ffmpeg` (Homebrew).
+3. **Linux** — installez-le depuis le gestionnaire de paquets de votre
+   distribution, par exemple `sudo apt install ffmpeg` (Debian/Ubuntu),
+   `sudo dnf install ffmpeg` (Fedora), ou `sudo pacman -S ffmpeg` (Arch).
+4. Si vous avez ajouté ffmpeg au PATH de votre système, laissez
+   **Emplacement de ffmpeg :** vide. Sinon, collez dans ce champ le
+   chemin du *dossier* contenant l'exécutable `ffmpeg` (pas l'exécutable
+   lui-même).
+5. Redémarrez Vivace (ou retentez simplement un téléchargement) après
+   l'installation.
+
+**À garder à l'esprit :**
+
+- Il s'agit d'une dépendance de **yt-dlp**, comme Deno ci-dessous — Vivace
+  se contente de l'exécuter en tant que processus externe.
+- Le mode **Diffusion en continu** n'a jamais besoin de ffmpeg, puisqu'il
+  lit un flux déjà combiné unique ; seul **Télécharger et lire** en a
+  besoin, car ce mode récupère la vidéo et l'audio séparément puis les
+  fusionne localement.
+- Si un téléchargement échoue avec une erreur liée à la fusion, vérifiez
+  d'abord l'emplacement de ffmpeg — c'est la cause la plus fréquente, à
+  part un Deno manquant ou obsolète.
+
 ## Installation de Deno pour les téléchargements YouTube
 
 yt-dlp lui-même — pas seulement Vivace — utilise un moteur d'exécution

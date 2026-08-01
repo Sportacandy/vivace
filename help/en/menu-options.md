@@ -86,6 +86,42 @@ cookies directly out of a browser's profile.
 - Cookies expire. If downloads that previously worked start failing, or fall
   back to a lower-quality/public result, export a fresh `cookies.txt`.
 
+## Installing ffmpeg for YouTube downloads
+
+**Download & play** mode needs `ffmpeg` to merge the separate video and audio
+streams yt-dlp downloads into one playable file — YouTube rarely offers HD as
+a single combined stream, so a video track and an audio track are downloaded
+separately and then merged. The **ffmpeg location:** field (*Preferences ▸
+Network ▸ YouTube ▸ Download & play*) tells yt-dlp where to find it; leave it
+empty to use `ffmpeg` from your system PATH instead.
+
+**To install ffmpeg:**
+
+1. **Windows** — the easiest option is a package manager:
+   `winget install ffmpeg` (or `scoop install ffmpeg` / `choco install
+   ffmpeg`). Alternatively, download a prebuilt archive from
+   [gyan.dev](https://www.gyan.dev/ffmpeg/builds/) or
+   [BtbN/FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds) and unzip it
+   somewhere.
+2. **macOS** — `brew install ffmpeg` (Homebrew).
+3. **Linux** — install it from your distribution's package manager, e.g.
+   `sudo apt install ffmpeg` (Debian/Ubuntu), `sudo dnf install ffmpeg`
+   (Fedora), or `sudo pacman -S ffmpeg` (Arch).
+4. If you added ffmpeg to your system PATH, leave **ffmpeg location:** empty.
+   Otherwise, paste the path to the *folder* containing the `ffmpeg`
+   executable (not the executable itself) into that field.
+5. Restart Vivace (or just retry a download) after installing.
+
+**Keep in mind:**
+
+- This is a dependency of **yt-dlp**, like Deno below — Vivace only ever runs
+  it as an external process.
+- **Streaming** mode never needs ffmpeg, since it plays a single
+  already-combined stream; only **Download & play** does, because that mode
+  fetches separate video and audio and merges them locally.
+- If a download fails with a merge-related error, check the ffmpeg location
+  first — it's the most common cause, besides a missing or outdated Deno.
+
 ## Installing Deno for YouTube downloads
 
 yt-dlp itself — not just Vivace — uses a separate external JavaScript

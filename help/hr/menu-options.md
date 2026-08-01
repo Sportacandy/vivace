@@ -94,6 +94,47 @@ ne čita kolačiće izravno iz profila preglednika.
   uspijevati ili se vrate na rezultat niže kvalitete/javni rezultat,
   izvezite novu datoteku `cookies.txt`.
 
+## Instalacija ffmpeg-a za YouTube preuzimanja
+
+Način rada **Preuzmi i reproduciraj** zahtijeva `ffmpeg` za spajanje
+zasebnih video i audio zapisa koje yt-dlp preuzima u jednu datoteku
+spremnu za reprodukciju — YouTube rijetko nudi HD kao jedan spojeni
+zapis, pa se video zapis i audio zapis preuzimaju odvojeno, a zatim
+spajaju. Polje **Lokacija ffmpeg:** (*Postavke ▸ Mreža ▸ YouTube ▸
+Preuzmi i reproduciraj*) govori yt-dlp-u gdje ga pronaći; ostavite
+prazno da se koristi `ffmpeg` sa sistemske PATH varijable.
+
+**Instalacija ffmpeg-a:**
+
+1. **Windows** — najjednostavnija je opcija upravitelj paketima:
+   `winget install ffmpeg` (ili `scoop install ffmpeg` /
+   `choco install ffmpeg`). Alternativno, preuzmite gotovu arhivu s
+   [gyan.dev](https://www.gyan.dev/ffmpeg/builds/) ili
+   [BtbN/FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds) i
+   raspakirajte je negdje.
+2. **macOS** — `brew install ffmpeg` (Homebrew).
+3. **Linux** — instalirajte ga putem upravitelja paketima svoje
+   distribucije, npr. `sudo apt install ffmpeg` (Debian/Ubuntu),
+   `sudo dnf install ffmpeg` (Fedora), ili `sudo pacman -S ffmpeg`
+   (Arch).
+4. Ako ste dodali ffmpeg u sistemsku PATH varijablu, ostavite
+   **Lokacija ffmpeg:** prazno. U suprotnom, zalijepite putanju do
+   *mape* koja sadrži izvršnu datoteku `ffmpeg` (ne samu izvršnu
+   datoteku) u to polje.
+5. Ponovno pokrenite Vivace (ili samo pokušajte preuzimanje ponovno)
+   nakon instalacije.
+
+**Zapamtite:**
+
+- Ovo je ovisnost o **yt-dlp-u**, poput Dena ispod — Vivace ga uvijek
+  pokreće samo kao vanjski proces.
+- Način **strujanja** nikada ne zahtijeva ffmpeg, jer reproducira jedan
+  već spojeni zapis; potreban je samo za **Preuzmi i reproduciraj**,
+  jer taj način dohvaća video i audio odvojeno i spaja ih lokalno.
+- Ako preuzimanje ne uspije uz grešku povezanu sa spajanjem, prvo
+  provjerite lokaciju ffmpeg-a — to je najčešći uzrok, osim
+  nedostajućeg ili zastarjelog Dena.
+
 ## Instalacija Deno-a za YouTube preuzimanja
 
 Sam yt-dlp — ne samo Vivace — koristi zaseban vanjski JavaScript izvršni

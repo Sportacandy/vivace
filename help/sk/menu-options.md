@@ -93,6 +93,46 @@ prehliadača.
   zlyhávať alebo sa vracia k výsledku nižšej kvality/verejnému výsledku,
   exportujte nový súbor `cookies.txt`.
 
+## Inštalácia ffmpeg pre sťahovanie z YouTube
+
+Režim **Stiahnuť a prehrať** potrebuje `ffmpeg` na zlúčenie oddelených
+video- a audio streamov, ktoré sťahuje yt-dlp, do jedného prehrateľného
+súboru — YouTube len zriedka ponúka HD ako jeden spojený stream, takže sa
+video stopa a audio stopa sťahujú samostatne a potom sa zlúčia. Pole
+**Umiestnenie ffmpeg:** (*Nastavenia ▸ Sieť ▸ YouTube ▸ Stiahnuť a
+prehrať*) hovorí yt-dlp, kde ho nájsť; ponechajte ho prázdne, ak chcete
+namiesto toho použiť `ffmpeg` zo systémovej premennej PATH.
+
+**Ako nainštalovať ffmpeg:**
+
+1. **Windows** — najjednoduchšou možnosťou je správca balíkov:
+   `winget install ffmpeg` (alebo `scoop install ffmpeg` / `choco install
+   ffmpeg`). Prípadne si stiahnite predpripravený archív z
+   [gyan.dev](https://www.gyan.dev/ffmpeg/builds/) alebo
+   [BtbN/FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds) a niekam ho
+   rozbaľte.
+2. **macOS** — `brew install ffmpeg` (Homebrew).
+3. **Linux** — nainštalujte ho zo správcu balíkov svojej distribúcie, napr.
+   `sudo apt install ffmpeg` (Debian/Ubuntu), `sudo dnf install ffmpeg`
+   (Fedora) alebo `sudo pacman -S ffmpeg` (Arch).
+4. Ak ste ffmpeg pridali do systémovej premennej PATH, ponechajte pole
+   **Umiestnenie ffmpeg:** prázdne. Inak do tohto poľa vložte cestu k
+   *priečinku* obsahujúcemu spustiteľný súbor `ffmpeg` (nie samotný
+   spustiteľný súbor).
+5. Po inštalácii reštartujte Vivace (alebo jednoducho skúste sťahovanie
+   znova).
+
+**Majte na pamäti:**
+
+- Ide o závislosť nástroja **yt-dlp**, rovnako ako Deno nižšie — Vivace ho
+  vždy iba spúšťa ako externý proces.
+- Režim **Streamovanie** nikdy nepotrebuje ffmpeg, pretože prehráva jeden už
+  spojený stream; potrebuje ho iba **Stiahnuť a prehrať**, pretože tento
+  režim sťahuje video a audio samostatne a zlučuje ich lokálne.
+- Ak sťahovanie zlyhá s chybou súvisiacou so zlučovaním, skontrolujte
+  najprv umiestnenie ffmpeg — to je najčastejšia príčina, hneď po
+  chýbajúcom alebo zastaranom Deno.
+
 ## Inštalácia Deno pre sťahovanie z YouTube
 
 Samotný yt-dlp — nielen Vivace — používa samostatné externé prostredie

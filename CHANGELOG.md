@@ -74,6 +74,15 @@ each get their own entry instead.
   Japanese. Also fixed a pre-existing typo in the Ukrainian translation of
   the Preferences "Misc" tab label (a Cyrillic "и" where Ukrainian "і" was
   meant), found while cross-checking the new content against it.
+- The Options help page never explained what the **ffmpeg location:**
+  field (*Preferences ▸ Network ▸ YouTube ▸ Download & play*) is for or
+  how to install ffmpeg itself, even though it's required to merge HD
+  video and audio downloads. Added a new "Installing ffmpeg" section,
+  covering Windows/macOS/Linux install options, to every translated
+  language. Also fixed two pre-existing terminology mismatches found
+  along the way, where the Hungarian and Catalan translations of
+  "Streaming" mode in that page's Deno section used words that don't
+  match what the Preferences dialog itself actually says.
 
 ### Added
 - Playlist row thumbnails: each entry shows a thumbnail — a sibling

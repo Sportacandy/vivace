@@ -96,6 +96,46 @@ odczytuje plików cookie bezpośrednio z profilu przeglądarki.
   się nie powodzić lub zwraca wynik o niższej jakości/publiczny, wyeksportuj
   nowy plik `cookies.txt`.
 
+## Instalowanie ffmpeg do pobierania z YouTube
+
+Tryb **Pobierz i odtwórz** potrzebuje `ffmpeg`, aby połączyć osobne strumienie
+wideo i audio pobierane przez yt-dlp w jeden odtwarzalny plik — YouTube
+rzadko oferuje HD jako jeden połączony strumień, więc ścieżka wideo i ścieżka
+audio są pobierane osobno, a następnie łączone. Pole **Lokalizacja ffmpeg:**
+(*Ustawienia ▸ Sieć ▸ YouTube ▸ Pobierz i odtwórz*) informuje yt-dlp, gdzie
+go znaleźć; pozostaw je puste, aby zamiast tego użyć `ffmpeg` z systemowej
+zmiennej PATH.
+
+**Aby zainstalować ffmpeg:**
+
+1. **Windows** — najprostszą opcją jest menedżer pakietów:
+   `winget install ffmpeg` (albo `scoop install ffmpeg` / `choco install
+   ffmpeg`). Można też pobrać gotowe archiwum z
+   [gyan.dev](https://www.gyan.dev/ffmpeg/builds/) lub
+   [BtbN/FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds) i rozpakować
+   je gdzieś.
+2. **macOS** — `brew install ffmpeg` (Homebrew).
+3. **Linux** — zainstaluj go z menedżera pakietów swojej dystrybucji, np.
+   `sudo apt install ffmpeg` (Debian/Ubuntu), `sudo dnf install ffmpeg`
+   (Fedora) lub `sudo pacman -S ffmpeg` (Arch).
+4. Jeśli dodałeś ffmpeg do systemowej zmiennej PATH, zostaw pole
+   **Lokalizacja ffmpeg:** puste. W przeciwnym razie wklej do tego pola
+   ścieżkę do *folderu* zawierającego plik wykonywalny `ffmpeg` (nie sam
+   plik wykonywalny).
+5. Uruchom Vivace ponownie (albo po prostu spróbuj ponownie pobrać film) po
+   zainstalowaniu.
+
+**Warto pamiętać:**
+
+- To zależność samego **yt-dlp**, podobnie jak Deno poniżej — Vivace zawsze
+  uruchamia go jako proces zewnętrzny.
+- Tryb **Strumieniowanie** nigdy nie potrzebuje ffmpeg, ponieważ odtwarza
+  pojedynczy, już połączony strumień; potrzebuje go tylko tryb **Pobierz i
+  odtwórz**, ponieważ pobiera on wideo i audio osobno i łączy je lokalnie.
+- Jeśli pobieranie kończy się błędem związanym z łączeniem, sprawdź najpierw
+  lokalizację ffmpeg — to najczęstsza przyczyna, obok brakującego lub
+  nieaktualnego Deno.
+
 ## Instalowanie Deno do pobierania z YouTube
 
 Samo yt-dlp — nie tylko Vivace — korzysta z osobnego, zewnętrznego środowiska

@@ -93,13 +93,55 @@ sütiket egy böngésző profiljából.
   privát helyen, és ne oszd meg senkivel.
 - A sütiket csak a **letöltési** útvonal használja (Letöltés és
   lejátszás / külső eszköz). A Vivace szándékosan soha nem küld sütiket
-  **streamelési** módban — egy bejelentkezett stream URL úgy kötődik
+  **Adatfolyam** módban — egy bejelentkezett stream URL úgy kötődik
   ahhoz a munkamenethez, hogy a Vivace egyszerű videólejátszója nem
   tudja megnyitni, így a streamelés névtelen marad még akkor is, ha be
   van állítva egy sütifájl.
 - A sütik lejárnak. Ha a korábban működő letöltések hibázni kezdenek,
   vagy alacsonyabb minőségű/nyilvános eredményre esnek vissza, exportálj
   egy friss `cookies.txt` fájlt.
+
+## ffmpeg telepítése YouTube-letöltésekhez
+
+A **Letöltés és lejátszás** módhoz szükség van az `ffmpeg` programra,
+hogy összefésülje a yt-dlp által letöltött külön videó- és
+hangfolyamokat egyetlen lejátszható fájllá — a YouTube ritkán kínálja a
+HD-t egyetlen kombinált folyamként, ezért egy videosáv és egy hangsáv
+külön kerül letöltésre, majd összefésülésre. A **ffmpeg helye:** mező
+(*Beállítások ▸ Hálózat ▸ YouTube ▸ Letöltés és lejátszás*) megmondja a
+yt-dlp-nek, hol találja meg a programot; hagyd üresen, ha inkább a
+rendszer PATH változójában található `ffmpeg`-et szeretnéd használni.
+
+**A ffmpeg telepítése:**
+
+1. **Windows** — a legegyszerűbb megoldás egy csomagkezelő:
+   `winget install ffmpeg` (vagy `scoop install ffmpeg` / `choco install
+   ffmpeg`). Alternatívaként letölthetsz egy előre elkészített
+   archívumot innen: [gyan.dev](https://www.gyan.dev/ffmpeg/builds/)
+   vagy [BtbN/FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds), és
+   kicsomagolhatod valahová.
+2. **macOS** — `brew install ffmpeg` (Homebrew).
+3. **Linux** — telepítsd a disztribúciód csomagkezelőjéből, pl. `sudo
+   apt install ffmpeg` (Debian/Ubuntu), `sudo dnf install ffmpeg`
+   (Fedora) vagy `sudo pacman -S ffmpeg` (Arch).
+4. Ha hozzáadtad az ffmpeget a rendszer PATH-jához, hagyd üresen a
+   **ffmpeg helye:** mezőt. Ellenkező esetben illeszd be a mezőbe a
+   `ffmpeg` végrehajtható fájlt tartalmazó *mappa* elérési útját (ne
+   magát a végrehajtható fájlt).
+5. Telepítés után indítsd újra a Vivace-ot (vagy egyszerűen próbáld újra
+   a letöltést).
+
+**Ne feledd:**
+
+- Ez a **yt-dlp** függősége, akárcsak az alább következő Deno — a
+  Vivace csak külső folyamatként futtatja.
+- Az **Adatfolyam** mód soha nem igényel ffmpeget, mivel egy már
+  összefésült folyamot játszik le; csak a **Letöltés és lejátszás** mód
+  igényli, mert ez a mód külön tölti le a videót és a hangot, majd
+  helyben fésüli össze őket.
+- Ha egy letöltés összefésüléssel kapcsolatos hibával meghiúsul, először
+  ellenőrizd az ffmpeg helyét — ez a leggyakoribb ok, a hiányzó vagy
+  elavult Deno mellett.
 
 ## Deno telepítése YouTube-letöltésekhez
 
@@ -111,7 +153,7 @@ yt-dlp saját dokumentációja szerint a futtatókörnyezet nélküli futtatás
 egyszerűen csökken, és ez **különösen súlyos egy bejelentkezett (süti
 alapú) kérés esetén** — pontosan az ilyen típusú kérést használja a
 **Letöltés és lejátszás** mód a HD-, csak tagoknak elérhető és
-korhatáros videók feloldásához. A **Streamelés** mód soha nem küld
+korhatáros videók feloldásához. Az **Adatfolyam** mód soha nem küld
 sütiket (lásd a fenti „Cookie-k exportálása YouTube-letöltésekhez”
 szakaszt), így ez nem a súlyos eset, és a legtöbb esetben Deno nélkül is
 jól működik. Ezért található a **Deno útvonala:** mező a *Beállítások ▸

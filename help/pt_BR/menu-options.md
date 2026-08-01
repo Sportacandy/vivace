@@ -96,6 +96,46 @@ yt-dlp lê); o Vivace não lê cookies diretamente do perfil de um navegador.
   falhar, ou caírem para um resultado público/de qualidade inferior,
   exporte um novo `cookies.txt`.
 
+## Instalando o ffmpeg para downloads do YouTube
+
+O modo **Baixar e reproduzir** precisa do `ffmpeg` para combinar os fluxos
+separados de vídeo e áudio que o yt-dlp baixa em um único arquivo
+reproduzível — o YouTube raramente oferece HD como um único fluxo
+combinado, então uma faixa de vídeo e uma faixa de áudio são baixadas
+separadamente e depois combinadas. O campo **Local do ffmpeg:**
+(*Preferências ▸ Rede ▸ YouTube ▸ Baixar e reproduzir*) informa ao yt-dlp
+onde encontrá-lo; deixe-o em branco para usar o `ffmpeg` do PATH do seu
+sistema.
+
+**Para instalar o ffmpeg:**
+
+1. **Windows** — a opção mais fácil é um gerenciador de pacotes:
+   `winget install ffmpeg` (ou `scoop install ffmpeg` / `choco install
+   ffmpeg`). Como alternativa, baixe um pacote pré-compilado em
+   [gyan.dev](https://www.gyan.dev/ffmpeg/builds/) ou
+   [BtbN/FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds) e
+   descompacte-o em algum lugar.
+2. **macOS** — `brew install ffmpeg` (Homebrew).
+3. **Linux** — instale-o pelo gerenciador de pacotes da sua distribuição,
+   por exemplo `sudo apt install ffmpeg` (Debian/Ubuntu), `sudo dnf
+   install ffmpeg` (Fedora), ou `sudo pacman -S ffmpeg` (Arch).
+4. Se você adicionou o ffmpeg ao PATH do sistema, deixe **Local do
+   ffmpeg:** em branco. Caso contrário, cole nesse campo o caminho da
+   *pasta* que contém o executável `ffmpeg` (não o executável em si).
+5. Reinicie o Vivace (ou apenas tente o download de novo) depois de
+   instalar.
+
+**Vale lembrar:**
+
+- Essa é uma dependência do **yt-dlp**, assim como o Deno logo abaixo — o
+  Vivace apenas o executa como um processo externo.
+- O modo **Transmissão** nunca precisa do ffmpeg, já que reproduz um único
+  fluxo já combinado; só o **Baixar e reproduzir** precisa, porque esse
+  modo busca vídeo e áudio separadamente e os combina localmente.
+- Se um download falhar com um erro relacionado à combinação, verifique
+  primeiro o local do ffmpeg — essa é a causa mais comum, além de um Deno
+  ausente ou desatualizado.
+
 ## Instalando o Deno para downloads do YouTube
 
 O próprio yt-dlp — não apenas o Vivace — usa um ambiente de execução

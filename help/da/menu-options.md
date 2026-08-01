@@ -94,6 +94,48 @@ cookies direkte fra en browserprofil.
   fejle eller falder tilbage til et resultat af lavere kvalitet/et
   offentligt resultat, så eksportér en ny `cookies.txt`.
 
+## Installation af ffmpeg til YouTube-downloads
+
+Tilstanden **Download og afspil** har brug for `ffmpeg` til at flette de
+separate video- og lydstrømme, som yt-dlp downloader, sammen til én
+afspilbar fil — YouTube tilbyder sjældent HD som en enkelt kombineret
+strøm, så et videospor og et lydspor downloades separat og flettes
+derefter sammen. Feltet **ffmpeg-placering:** (*Indstillinger ▸ Netværk ▸
+YouTube ▸ Download og afspil*) fortæller yt-dlp, hvor det skal finde
+programmet; lad feltet stå tomt for i stedet at bruge `ffmpeg` fra
+systemets PATH.
+
+**Sådan installerer du ffmpeg:**
+
+1. **Windows** — den nemmeste mulighed er en pakkehåndtering:
+   `winget install ffmpeg` (eller `scoop install ffmpeg` / `choco install
+   ffmpeg`). Alternativt kan du downloade et prækompileret arkiv fra
+   [gyan.dev](https://www.gyan.dev/ffmpeg/builds/) eller
+   [BtbN/FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds) og pakke
+   det ud et sted.
+2. **macOS** — `brew install ffmpeg` (Homebrew).
+3. **Linux** — installer det via din distributions pakkehåndtering, f.eks.
+   `sudo apt install ffmpeg` (Debian/Ubuntu), `sudo dnf install ffmpeg`
+   (Fedora) eller `sudo pacman -S ffmpeg` (Arch).
+4. Hvis du har føjet ffmpeg til systemets PATH, så lad
+   **ffmpeg-placering:** stå tomt. Ellers skal du indsætte stien til den
+   *mappe*, der indeholder programmet `ffmpeg` (ikke selve programmet), i
+   det felt.
+5. Genstart Vivace (eller prøv blot en download igen) efter
+   installationen.
+
+**Husk:**
+
+- Dette er en afhængighed for **yt-dlp**, ligesom Deno nedenfor — Vivace
+  kører kun programmet som en ekstern proces.
+- Tilstanden **Streaming** har aldrig brug for ffmpeg, da den afspiller
+  en allerede kombineret strøm; det gør kun **Download og afspil**,
+  fordi den tilstand henter video og lyd separat og fletter dem sammen
+  lokalt.
+- Hvis en download fejler med en flettningsrelateret fejl, så tjek
+  ffmpeg-placeringen først — det er den mest almindelige årsag, ud over
+  en manglende eller forældet Deno.
+
 ## Installation af Deno til YouTube-downloads
 
 yt-dlp selv — ikke kun Vivace — bruger en separat, ekstern

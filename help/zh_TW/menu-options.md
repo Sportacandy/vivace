@@ -75,6 +75,40 @@
 - Cookie 有效期有限。若先前能正常下載的內容開始失敗，或退回為畫質較低／
   公開版本的結果，請重新匯出新的 `cookies.txt`。
 
+## 安裝 YouTube 下載所需的 ffmpeg
+
+**下載並播放** 模式需要 `ffmpeg` 才能將 yt-dlp 下載的個別影片串流與音訊
+串流合併成一個可播放的檔案 —— YouTube 很少以單一合併串流提供 HD，因此
+影片軌與音訊軌會分別下載，然後再合併。**ffmpeg 位置：** 欄位（*偏好設定
+▸ 網路 ▸ YouTube ▸ 下載並播放*）會告訴 yt-dlp 去哪裡找到它；留空則改用
+系統 PATH 中的 `ffmpeg`。
+
+**安裝方式：**
+
+1. **Windows** —— 最簡單的方法是使用套件管理員：`winget install ffmpeg`
+   （或 `scoop install ffmpeg` / `choco install ffmpeg`）。或者，從
+   [gyan.dev](https://www.gyan.dev/ffmpeg/builds/) 或
+   [BtbN/FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds) 下載預先
+   建置好的壓縮檔，並解壓縮到任意位置。
+2. **macOS** —— `brew install ffmpeg`（Homebrew）。
+3. **Linux** —— 透過您所用發行版的套件管理員安裝，例如
+   `sudo apt install ffmpeg`（Debian/Ubuntu）、`sudo dnf install ffmpeg`
+   （Fedora），或 `sudo pacman -S ffmpeg`（Arch）。
+4. 若您已將 ffmpeg 加入系統 PATH，請將 **ffmpeg 位置：** 留空。否則，
+   請將包含 `ffmpeg` 執行檔的 *資料夾* 路徑（而非執行檔本身）貼到該
+   欄位中。
+5. 安裝完成後重新啟動 Vivace（或者只需重試一次下載即可）。
+
+**請注意：**
+
+- 這和下方的 Deno 一樣，都是 **yt-dlp** 的相依性 —— Vivace 只會將其
+  當作外部行程執行。
+- **串流播放** 模式從不需要 ffmpeg，因為它播放的是單一的已合併串流；只有
+  **下載並播放** 需要，因為該模式會分別取得影片與音訊，並在本機進行
+  合併。
+- 若下載因合併相關錯誤而失敗，請先檢查 ffmpeg 的位置 —— 除了 Deno
+  缺失或過舊之外，這是最常見的原因。
+
 ## 安裝 YouTube 下載所需的 Deno
 
 不僅是 Vivace，yt-dlp 本身也會使用一個獨立的外部 JavaScript 執行環境，
