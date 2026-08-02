@@ -732,22 +732,16 @@ void YoutubeResolver::removeCacheEntry(const QUrl &fileUrl)
     updateCacheCount();
 }
 
-QString YoutubeResolver::uniqueDestPath(const QString &destPath)
+void YoutubeResolver::clearDestForOverwrite(const QString &destPath)
 {
-    if (!QFileInfo::exists(destPath))
-        return destPath;
-    const QFileInfo fi(destPath);
-    const QString dir = fi.absolutePath();
-    const QString base = fi.completeBaseName();
-    const QString suffix = fi.suffix();
-    for (int n = 2; n < 1000; ++n) {
-        const QString candidate = suffix.isEmpty()
-                ? QStringLiteral("%1/%2 (%3)").arg(dir, base).arg(n)
-                : QStringLiteral("%1/%2 (%3).%4").arg(dir, base).arg(n).arg(suffix);
-        if (!QFileInfo::exists(candidate))
-            return candidate;
+    // Mirrors deleteVideoAndThumbnail()'s retry: a destination file can be
+    // momentarily locked (e.g. it's the file Vivace is currently playing),
+    // so retry briefly rather than failing the overwrite outright.
+    for (int i = 0; i < 10 && QFileInfo::exists(destPath); ++i) {
+        if (QFile::remove(destPath))
+            break;
+        QThread::msleep(80);
     }
-    return destPath; // pathological case; caller's copy/move will just fail
 }
 
 QVariantList YoutubeResolver::copyOrMoveToFolder(const QStringList &fileUrls,
@@ -790,8 +784,8 @@ QVariantList YoutubeResolver::copyOrMoveToFolder(const QStringList &fileUrls,
             id = m.captured(2);
         }
 
-        const QString destPath = uniqueDestPath(
-                destDir + QLatin1Char('/') + srcInfo.fileName());
+        const QString destPath = destDir + QLatin1Char('/') + srcInfo.fileName();
+        clearDestForOverwrite(destPath);
         const bool ok = moveFiles ? QFile::rename(srcPath, destPath)
                                   : QFile::copy(srcPath, destPath);
         if (!ok) {
@@ -815,7 +809,8 @@ QVariantList YoutubeResolver::copyOrMoveToFolder(const QStringList &fileUrls,
                 destInfo.absolutePath() + QLatin1Char('/') + destInfo.completeBaseName();
         for (const QString &ext : { QStringLiteral(".jpg"), QStringLiteral(".webp") }) {
             if (QFileInfo::exists(srcThumbBase + ext)) {
-                const QString destThumbPath = uniqueDestPath(destThumbBase + ext);
+                const QString destThumbPath = destThumbBase + ext;
+                clearDestForOverwrite(destThumbPath);
                 if (moveFiles)
                     QFile::rename(srcThumbBase + ext, destThumbPath);
                 else

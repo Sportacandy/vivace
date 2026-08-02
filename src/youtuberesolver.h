@@ -229,9 +229,13 @@ private:
     void removeCacheFilesForId(const QString &id) const; // clean partials
     QList<QFileInfo> finalCacheFiles() const;    // the cached videos (not parts)
     void deleteVideoAndThumbnail(const QString &videoPath) const;
-    // destPath if free, else "<base> (2)<ext>", "<base> (3)<ext>", ... --
-    // the first that doesn't already exist (Explorer's collision naming).
-    static QString uniqueDestPath(const QString &destPath);
+    // Removes destPath if it already exists (retrying briefly in case it is
+    // momentarily locked), so a save/move to that exact path always
+    // overwrites rather than falling back to Explorer-style "<base> (2)"
+    // collision naming -- for a YouTube cache save, the user picked that
+    // exact destination on purpose (e.g. re-saving the same video), so a
+    // silently-renamed duplicate would be surprising, not helpful.
+    static void clearDestForOverwrite(const QString &destPath);
     void updateCacheCount();                     // recount + emit
     // Ensure a cache thumbnail exists: keep yt-dlp's downloaded poster if it is
     // usable, else grab a video frame at the offset as a fallback.

@@ -53,6 +53,28 @@ void dvdLog(const QString &message)
         file.write(message.toUtf8() + '\n');
 }
 
+// Same on-disk file? Used to skip adding a playlist entry that's already
+// there (e.g. saving a YouTube-cache video to a folder it was already saved
+// to before). canonicalFilePath() (not a plain URL/string compare) so a
+// relative or differently-cased path resolves to the same real file;
+// falls back to absoluteFilePath() for a dangling entry (canonicalFilePath()
+// returns empty when the file doesn't exist), matching the same fallback
+// PlaylistParser::save()'s entryLine() uses.
+bool sameLocalFile(const QUrl &a, const QUrl &b)
+{
+    if (!a.isLocalFile() || !b.isLocalFile())
+        return a == b;
+    const QFileInfo fa(a.toLocalFile());
+    const QFileInfo fb(b.toLocalFile());
+    QString pa = fa.canonicalFilePath();
+    if (pa.isEmpty())
+        pa = fa.absoluteFilePath();
+    QString pb = fb.canonicalFilePath();
+    if (pb.isEmpty())
+        pb = fb.absoluteFilePath();
+    return pa == pb;
+}
+
 // previous() restarts the current file beyond this position instead of
 // jumping to the previous playlist entry (matches common player behavior).
 constexpr qint64 restartThresholdMs = 3000;
@@ -2307,22 +2329,34 @@ bool PlayerController::addToPlaylistFile(const QUrl &playlistFile,
     QList<PlaylistEntry> entries =
             createNew ? QList<PlaylistEntry>() : PlaylistParser::load(playlistFile);
 
+    // Skip an entry already in the playlist (by real file identity, not just
+    // URL string) -- otherwise re-saving a video into a playlist it's
+    // already part of (e.g. after overwriting it in the same folder) would
+    // add a duplicate row instead of a no-op.
     QList<PlaylistEntry> added;
     added.reserve(newEntries.size());
     for (const QVariant &v : newEntries) {
         const QVariantMap m = v.toMap();
-        added.append({ QUrl(m.value(QStringLiteral("fileUrl")).toString()),
-                        m.value(QStringLiteral("title")).toString() });
+        const QUrl url(m.value(QStringLiteral("fileUrl")).toString());
+        const bool alreadyPresent =
+                std::any_of(entries.cbegin(), entries.cend(),
+                            [&](const PlaylistEntry &e) { return sameLocalFile(e.url, url); })
+                || std::any_of(added.cbegin(), added.cend(),
+                                [&](const PlaylistEntry &e) { return sameLocalFile(e.url, url); });
+        if (!alreadyPresent)
+            added.append({ url, m.value(QStringLiteral("title")).toString() });
     }
-    entries += added;
 
-    if (!PlaylistParser::save(playlistFile, entries))
-        return false;
+    if (!added.isEmpty()) {
+        entries += added;
+        if (!PlaylistParser::save(playlistFile, entries))
+            return false;
 
-    // If this file is the one currently shown in the Playlist panel, keep it
-    // in sync live instead of requiring the user to reload it by hand.
-    if (m_currentPlaylistFile == playlistFile)
-        m_playlist->add(added);
+        // If this file is the one currently shown in the Playlist panel, keep
+        // it in sync live instead of requiring the user to reload it by hand.
+        if (m_currentPlaylistFile == playlistFile)
+            m_playlist->add(added);
+    }
 
     if (m_currentPlaylistFile != playlistFile) {
         m_currentPlaylistFile = playlistFile;
@@ -2336,13 +2370,25 @@ bool PlayerController::addToCurrentPlaylist(const QVariantList &newEntries)
     if (newEntries.isEmpty())
         return false;
 
+    // Same de-duplication as addToPlaylistFile(): don't add an entry that's
+    // already in the current playlist by real file identity.
+    const QList<PlaylistEntry> existing = m_playlist->entries();
     QList<PlaylistEntry> added;
     added.reserve(newEntries.size());
     for (const QVariant &v : newEntries) {
         const QVariantMap m = v.toMap();
-        added.append({ QUrl(m.value(QStringLiteral("fileUrl")).toString()),
-                        m.value(QStringLiteral("title")).toString() });
+        const QUrl url(m.value(QStringLiteral("fileUrl")).toString());
+        const bool alreadyPresent =
+                std::any_of(existing.cbegin(), existing.cend(),
+                            [&](const PlaylistEntry &e) { return sameLocalFile(e.url, url); })
+                || std::any_of(added.cbegin(), added.cend(),
+                                [&](const PlaylistEntry &e) { return sameLocalFile(e.url, url); });
+        if (!alreadyPresent)
+            added.append({ url, m.value(QStringLiteral("title")).toString() });
     }
+    if (added.isEmpty())
+        return true;
+
     m_playlist->add(added);
 
     if (!m_currentPlaylistFile.isEmpty())

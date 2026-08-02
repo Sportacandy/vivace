@@ -19,6 +19,15 @@ each get their own entry instead.
   folder still store their full path as before.
 
 ### Fixed
+- Saving/moving a cached YouTube video to a folder now overwrites a
+  same-named file already there, instead of adding an Explorer-style
+  " (2)" suffix — for a re-save of the same video, an accumulating pile of
+  numbered duplicates wasn't the intended behavior.
+- "Add to an existing playlist" / "Add to current playlist" (YouTube cache
+  Save) no longer add a duplicate row when the video is already in that
+  playlist and already sitting at the destination folder — matching a
+  file already there is now recognized as "already added", not just
+  "already overwritten".
 - The Favorites/Radio cascading submenus (`Open ▸ Favorites`, `Open ▸ Radio`)
   could take an ever-growing amount of time to open, then stop opening at
   all, after repeatedly opening/canceling any file dialog while a video
