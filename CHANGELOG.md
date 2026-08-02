@@ -19,6 +19,14 @@ each get their own entry instead.
   folder still store their full path as before.
 
 ### Fixed
+- The WSOLA/phase-vocoder pitch-compensation patch (`patches/
+  qtmultimedia-wsola-pitch-compensation.patch`) failed to build Qt
+  Multimedia's FFmpeg plugin on Linux, since the vendored SoundTouch
+  library's exception-based error handling conflicted with the plugin
+  module's `-fno-exceptions` policy there. SoundTouch's sources now
+  auto-detect whether exceptions are enabled and fall back to its own
+  assert-based mode when they aren't, fixing the Linux build (Windows
+  is unaffected) — see "Audio speed/pitch compensation" in README.md.
 - Saving/moving a cached YouTube video to a folder now overwrites a
   same-named file already there, instead of adding an Explorer-style
   " (2)" suffix — for a re-save of the same video, an accumulating pile of

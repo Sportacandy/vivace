@@ -999,7 +999,7 @@ new file mode 100644
 index 000000000..41304c589
 --- /dev/null
 +++ b/src/3rdparty/soundtouch/include/STTypes.h
-@@ -0,0 +1,192 @@
+@@ -0,0 +1,204 @@
 +////////////////////////////////////////////////////////////////////////////////
 +///
 +/// Common type definitions for SoundTouch audio processing library.
@@ -1173,6 +1173,18 @@ index 000000000..41304c589
 +
 +// define ST_NO_EXCEPTION_HANDLING switch to disable throwing std exceptions:
 +// #define ST_NO_EXCEPTION_HANDLING    1
++//
++// Auto-detect too: these sources are compiled directly into Qt Multimedia's
++// FFmpeg plugin module, which some toolchains/platforms build with C++
++// exceptions disabled project-wide (e.g. -fno-exceptions on Linux/GCC) --
++// under that flag, throw/try are a hard compile error, not just unsafe, so
++// fall back to the assert-based path automatically instead of requiring
++// every embedder to remember to set this by hand. __cpp_exceptions is the
++// standard SD-6 feature-test macro for "are exceptions enabled here",
++// defined consistently by GCC, Clang and MSVC alike.
++#if !defined(ST_NO_EXCEPTION_HANDLING) && !defined(__cpp_exceptions)
++    #define ST_NO_EXCEPTION_HANDLING 1
++#endif
 +#ifdef ST_NO_EXCEPTION_HANDLING
 +    // Exceptions disabled. Throw asserts instead if enabled.
 +    #include <assert.h>

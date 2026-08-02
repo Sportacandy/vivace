@@ -133,6 +133,14 @@ direction), rebuild `qtmultimedia`, and rebuild Vivace against that Qt.
 (This patch is independent of the AV1 one above and can be applied to the
 same checkout either alongside it or on its own.)
 
+The vendored SoundTouch sources build on any platform/toolchain: they
+auto-detect (via the standard `__cpp_exceptions` feature-test macro)
+whether the surrounding build has C++ exceptions enabled, and fall back to
+SoundTouch's own built-in `ST_NO_EXCEPTION_HANDLING` mode when it doesn't —
+needed on Linux/GCC, where Qt Multimedia's FFmpeg plugin module is built
+with `-fno-exceptions`, which would otherwise fail to compile SoundTouch's
+normal `throw`-based error path.
+
 ## Building
 
 ```
