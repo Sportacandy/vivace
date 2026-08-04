@@ -48,11 +48,11 @@ rolling nightly build from `main`.
 
 ## AV1 support
 
-**Windows** prebuilt releases and the [nightly build](https://github.com/Sportacandy/vivace/releases/tag/nightly)
+**Windows and Linux** prebuilt releases and the [nightly build](https://github.com/Sportacandy/vivace/releases/tag/nightly)
 play AV1 video: CI swaps in a patched Qt Multimedia FFmpeg plugin plus a
 `libdav1d`-enabled FFmpeg build right after installing Qt. This same swap
 also carries the improved audio speed/pitch compensation described below,
-since both fixes now ship in one combined bundle. **Linux and macOS**
+since both fixes now ship in one combined bundle per platform. **macOS**
 prebuilt releases, and Vivace built normally against a stock Qt on any
 platform, get **neither**: AV1 files show "Unsupported media, a codec is
 missing" and play audio only, and speed control falls back to Qt's stock
@@ -78,7 +78,17 @@ compensation fix below) and copy its files into your own Qt 6.11.1
 overwriting the existing files. No rebuild needed; just rebuild Vivace
 itself against that same Qt install afterward.
 
-To build it yourself from scratch (any platform, including Linux/macOS),
+**Linux quick path**: same idea, with the prebuilt, patched
+[`libffmpegmediaplugin.so` + dav1d-enabled FFmpeg bundle](https://github.com/Sportacandy/vivace/releases/tag/qt-patched-prebuilt-linux64)
+(the same one CI uses, also combining both fixes) — copy
+`libffmpegmediaplugin.so` into your Qt 6.11.1 `gcc_64` install's
+`plugins/multimedia/`, and the rest (`libavcodec.so.61`,
+`libavformat.so.61`, `libavutil.so.59`, `libswresample.so.5`,
+`libswscale.so.8`) into `lib/`, overwriting the existing files. Built and
+verified on Ubuntu 26; other distros with a compatible glibc should work
+but are untested.
+
+To build it yourself from scratch (any platform, including macOS),
 you need a **custom-built Qt**:
 
 1. Build (or download a prebuilt) FFmpeg with `libdav1d` enabled — e.g.
@@ -107,12 +117,14 @@ faster or slower than 1x ("pitch compensation" in Preferences). With a
 speed, which sounds clean when slowing down but produces audible vibrato/
 echo when speeding up (e.g. 2x) on speech-heavy content.
 
-**Windows** prebuilt releases and the nightly build get the fix below via
-the same combined [prebuilt bundle](https://github.com/Sportacandy/vivace/releases/tag/qt-patched-prebuilt-win64)
-described in "AV1 support" above. **Linux and macOS** prebuilt releases,
-and Vivace built normally against a stock Qt on any platform, use Qt's
-stock behavior — there is no artifact-free option without a custom Qt
-build, for the same reason as AV1: the fix requires source changes to
+**Windows and Linux** prebuilt releases and the nightly build get the fix
+below via the same combined prebuilt bundles
+([Windows](https://github.com/Sportacandy/vivace/releases/tag/qt-patched-prebuilt-win64),
+[Linux](https://github.com/Sportacandy/vivace/releases/tag/qt-patched-prebuilt-linux64))
+described in "AV1 support" above. **macOS** prebuilt releases, and Vivace
+built normally against a stock Qt on any platform, use Qt's stock
+behavior — there is no artifact-free option without a custom Qt build,
+for the same reason as AV1: the fix requires source changes to
 `qtmultimedia` itself, not just Vivace.
 
 Investigation found the phase vocoder and the alternative WSOLA (time-

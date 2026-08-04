@@ -102,6 +102,12 @@ each get their own entry instead.
   match what the Preferences dialog itself actually says.
 
 ### Added
+- Linux prebuilt releases and the nightly build now get AV1 video
+  playback and the improved (WSOLA/phase-vocoder) speed/pitch
+  compensation, matching Windows — CI swaps in a patched, prebuilt Qt
+  Multimedia FFmpeg plugin for Linux the same way it already did for
+  Windows. See "AV1 support" and "Audio speed/pitch compensation" in
+  README.md; macOS still uses stock Qt behavior for both.
 - Playlist row thumbnails: each entry shows a thumbnail — a sibling
   "`<name>.jpg`" next to the media file if one exists, otherwise a frame
   grabbed automatically in the background and cached (as a small SQLite
