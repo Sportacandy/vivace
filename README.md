@@ -17,12 +17,14 @@ is also published from the tip of `main` between tagged releases. See
 
 ## Status
 
-**v0.1.2** — adds a configurable Deno path for full-quality YouTube
-downloads, fixes long OSD messages overflowing the window instead of
-wrapping, fixes tall Preferences pages that were easy to scroll past
-unnoticed, and fixes the last video frame staying on screen after playback
-ended with a negative A/V delay set. Vivace is a working daily-driver media
-player:
+**v0.2.0** — adds playlist row thumbnails, a way to permanently save
+YouTube-cached videos (to a folder or a playlist), automated yt-dlp setup
+and updates, and Linux parity with Windows for AV1 playback and improved
+speed/pitch compensation; fixes several playlist and keyboard-focus rough
+edges (Enter now plays the selected row, dropping a file no longer leaves
+keyboard focus stuck on Explorer, and playlists move with their media
+using relative paths when they share a folder). Vivace is a working
+daily-driver media player:
 playback (mkv/mp4/mpeg2, seeking, embedded + external subtitles, audio/subtitle
 track switching, speed control with pitch compensation), a full SMPlayer-style
 menu layout (Open/Play/Video/Audio/Subtitles/Browse/View/Options/Help),

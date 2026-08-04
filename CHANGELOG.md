@@ -11,6 +11,8 @@ each get their own entry instead.
 
 ## [Unreleased]
 
+## [0.2.0] — 2026-08-04
+
 ### Changed
 - Saving a playlist now writes just the filename (instead of a full path)
   for any entry that lives in the same folder as the playlist file itself,
