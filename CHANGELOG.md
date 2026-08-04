@@ -19,6 +19,10 @@ each get their own entry instead.
   folder still store their full path as before.
 
 ### Fixed
+- Dropping a file onto the main window from Explorer left keyboard focus
+  on Explorer instead of Vivace, so the natural next move — a volume or
+  speed shortcut — didn't reach the app. Vivace now claims keyboard focus
+  right after a drop.
 - Pressing Enter/Return in the playlist now plays the selected row —
   previously only Up/Down moved the selection, with no way to confirm it
   from the keyboard.

@@ -1186,7 +1186,18 @@ ApplicationWindow {
         id: dropOpenTimer
         interval: 150
         property var pendingUrls: []
-        onTriggered: root.openDroppedUrls(pendingUrls)
+        onTriggered: {
+            // Windows' drag-and-drop leaves OS keyboard focus on the drag
+            // SOURCE (e.g. Explorer) even though this window accepted the
+            // drop -- so without this, the user's very next keypress (e.g.
+            // volume/speed shortcuts, the common next move right after
+            // dropping a file) goes to Explorer instead of Vivace. Requested
+            // here (not inside DropArea.onDropped) for the same reason the
+            // actual open is deferred to this Timer: doing it synchronously
+            // inside Windows' OLE drag-and-drop nested modal loop is unsafe.
+            root.requestActivate()
+            root.openDroppedUrls(pendingUrls)
+        }
     }
 
     FileDialog {
