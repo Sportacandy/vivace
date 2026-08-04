@@ -19,6 +19,9 @@ each get their own entry instead.
   folder still store their full path as before.
 
 ### Fixed
+- Pressing Enter/Return in the playlist now plays the selected row —
+  previously only Up/Down moved the selection, with no way to confirm it
+  from the keyboard.
 - The WSOLA/phase-vocoder pitch-compensation patch (`patches/
   qtmultimedia-wsola-pitch-compensation.patch`) failed to build Qt
   Multimedia's FFmpeg plugin on Linux, since the vendored SoundTouch

@@ -243,6 +243,15 @@ Item {
             currentIndex: -1
             model: editor.controller.playlist
 
+            // Up/Down chooses a row (see the playlist Up/Down-vs-volume
+            // fix); Enter/Return then plays it -- the natural next step
+            // after arrowing to a track, matching how most players and
+            // Explorer-style lists treat "select then confirm".
+            Keys.onReturnPressed: if (listView.currentIndex >= 0)
+                                       editor.controller.playAt(listView.currentIndex)
+            Keys.onEnterPressed: if (listView.currentIndex >= 0)
+                                      editor.controller.playAt(listView.currentIndex)
+
             ScrollBar.vertical: ScrollBar {}
 
             delegate: Rectangle {
