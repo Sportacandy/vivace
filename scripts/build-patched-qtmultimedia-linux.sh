@@ -86,7 +86,21 @@ cmake -S "$WORK/qtmultimedia" -B "$WORK/build" \
     -DFFMPEG_DIR="$WORK/ffmpeg" \
     -DQT_DEPLOY_FFMPEG=TRUE \
     -DCMAKE_BUILD_TYPE=Release
-cmake --build "$WORK/build" --parallel
+# Retry once on failure: on a from-scratch build, Ninja doesn't yet know a
+# given .cpp depends on a generated header (like
+# QtMultimedia/private/qtmultimedia-config_p.h) until it has compiled that
+# .cpp once and discovered the dependency via the compiler's own depfile --
+# so some parallel compiles that happen to be scheduled before the
+# header-generating step finishes can fail on a first pass, even though
+# that step itself succeeds moments later (confirmed on the Windows side of
+# this same build, 2026-08-06). A second invocation is a plain incremental
+# Ninja build: everything already built is skipped, and the previously-
+# missing generated file now exists on disk, so the previously-failed files
+# succeed.
+if ! cmake --build "$WORK/build" --parallel; then
+    echo "First build pass failed (likely a generated-header race on a from-scratch Ninja build); retrying once..."
+    cmake --build "$WORK/build" --parallel
+fi
 cmake --install "$WORK/build"
 
 echo "== Deploying dav1d FFmpeg runtime libraries into $QTDIR/lib =="

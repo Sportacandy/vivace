@@ -152,8 +152,22 @@ try {
         "-DCMAKE_BUILD_TYPE=Release"
     if ($LASTEXITCODE -ne 0) { throw "cmake configure failed" }
 
+    # Retry once on failure: on a from-scratch build, Ninja doesn't yet know
+    # a given .cpp depends on a generated header (like
+    # QtMultimedia/private/qtmultimedia-config_p.h) until it has compiled
+    # that .cpp once and discovered the dependency via the compiler's own
+    # depfile -- so some parallel compiles that happen to be scheduled
+    # before the header-generating step finishes can fail on a first pass,
+    # even though that step itself succeeds moments later. A second
+    # invocation is a plain incremental Ninja build: everything already
+    # built is skipped, and the previously-missing generated file now
+    # exists on disk, so the previously-failed files succeed.
     cmake --build $build --parallel
-    if ($LASTEXITCODE -ne 0) { throw "cmake --build failed" }
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "First build pass failed (likely a generated-header race on a from-scratch Ninja build); retrying once..."
+        cmake --build $build --parallel
+        if ($LASTEXITCODE -ne 0) { throw "cmake --build failed (twice)" }
+    }
 
     cmake --install $build
     if ($LASTEXITCODE -ne 0) { throw "cmake --install failed" }
