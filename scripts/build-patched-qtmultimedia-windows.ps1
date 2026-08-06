@@ -101,9 +101,50 @@ try {
         $env:PATH = "$env:PATH;C:\ProgramData\chocolatey\bin"
     }
 
+    # Ninja (unlike the VS generator, which resolves cl.exe through MSBuild's
+    # own toolset settings regardless of PATH) just runs CMake's generic
+    # compiler search across PATH -- and this runner also has MinGW's g++ on
+    # PATH, which CMake picked up instead of MSVC, producing an install built
+    # with GCC-style flags it doesn't understand (-Zc:..., -bigobj, ...)
+    # against an MSVC-built Qt kit. MS C++ (cl.exe) must be the actual
+    # compiler used here regardless of what else is on PATH, since the
+    # installed Qt kit (win64_msvc2022_64) is itself MSVC-built and the
+    # whole point of this script is ABI consistency with it. Locate the
+    # Visual Studio C++ toolset via vswhere and import vcvarsall's
+    # environment (PATH prepended with cl.exe's directory, INCLUDE/LIB set)
+    # into this process, so CMake's compiler search finds cl.exe first.
+    $vswhere = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe"
+    if (-not (Test-Path $vswhere)) {
+        throw "vswhere.exe not found at $vswhere -- cannot locate the MSVC C++ toolset"
+    }
+    $vsInstallPath = & $vswhere -latest -prerelease -products * `
+        -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 `
+        -property installationPath
+    if (-not $vsInstallPath) {
+        throw "vswhere found no Visual Studio install with the MSVC C++ toolset"
+    }
+    $vcvarsall = Join-Path $vsInstallPath "VC\Auxiliary\Build\vcvarsall.bat"
+    if (-not (Test-Path $vcvarsall)) {
+        throw "vcvarsall.bat not found under $vsInstallPath"
+    }
+    Write-Host "Importing MSVC x64 environment from $vcvarsall"
+    $vcvarsOutput = cmd /c "`"$vcvarsall`" x64 && set"
+    foreach ($line in $vcvarsOutput) {
+        if ($line -match "^([^=]+)=(.*)$") {
+            [System.Environment]::SetEnvironmentVariable($Matches[1], $Matches[2], "Process")
+        }
+    }
+    $cl = Get-Command cl.exe -ErrorAction SilentlyContinue
+    if (-not $cl) {
+        throw "cl.exe still not found on PATH after importing the MSVC environment"
+    }
+    Write-Host "Using MSVC compiler: $($cl.Source)"
+
     $build = Join-Path $work "build"
     cmake -S $qtmmSrc -B $build `
         -G Ninja `
+        "-DCMAKE_C_COMPILER=cl.exe" `
+        "-DCMAKE_CXX_COMPILER=cl.exe" `
         "-DCMAKE_PREFIX_PATH=$QtDir" `
         "-DCMAKE_INSTALL_PREFIX=$QtDir" `
         "-DFFMPEG_DIR=$ffmpegRoot" `
