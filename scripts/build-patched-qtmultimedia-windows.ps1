@@ -24,7 +24,7 @@
 #             win64_msvc2022_64 kit that already has the qtmultimedia
 #             module installed -- this REBUILDS qtmultimedia in place, it
 #             does not add the module from nothing, and needs the kit's
-#             dev tools (qt-configure-module.bat, private headers) present.
+#             dev tools (CMake package config, private headers) present.
 #   RepoRoot: the Vivace checkout containing patches\*.patch (defaults to
 #             this script's own parent directory's parent, i.e. the repo
 #             this script lives in).
@@ -36,9 +36,8 @@ param(
 
 $ErrorActionPreference = "Stop"
 
-$qtConfigureModule = Join-Path $QtDir "bin\qt-configure-module.bat"
-if (-not (Test-Path $qtConfigureModule)) {
-    throw "qt-configure-module.bat not found under $QtDir\bin -- is this a Qt install with qtbase dev tools?"
+if (-not (Test-Path (Join-Path $QtDir "lib\cmake\Qt6"))) {
+    throw "$QtDir\lib\cmake\Qt6 not found -- is this a Qt install with dev tools?"
 }
 
 $patchFiles = Get-ChildItem (Join-Path $RepoRoot "patches\qtmultimedia-*.patch")
@@ -75,24 +74,32 @@ try {
     }
 
     Write-Host "== Configuring + building qtmultimedia against $QtDir =="
+    # Plain cmake against CMAKE_PREFIX_PATH, not qt-configure-module: the
+    # latter is a convenience wrapper (qtbase's QtProcessConfigureArgs.cmake)
+    # with its OWN argument parser that only forwards raw -D... flags to
+    # the real cmake invocation after a literal "--" separator -- confirmed
+    # by reading that script directly after CI hit "Unknown command line
+    # option '-DFFMPEG_DIR=...'" (2026-08-06). Configuring qtmultimedia as
+    # a plain standalone CMake project (find_package(Qt6 ...) resolves it
+    # via CMAKE_PREFIX_PATH, same as any other out-of-tree Qt module build)
+    # skips that wrapper and its parsing quirks entirely -- -D flags are
+    # always unambiguous on a real cmake command line. No -G is passed, so
+    # CMake picks its default generator (the installed Visual Studio, a
+    # multi-config generator -- hence --config Release below rather than
+    # -DCMAKE_BUILD_TYPE, which multi-config generators ignore).
     $build = Join-Path $work "build"
-    New-Item -ItemType Directory -Path $build | Out-Null
-    Push-Location $build
-    try {
-        & $qtConfigureModule $qtmmSrc `
-            "-DFFMPEG_DIR=$ffmpegRoot" `
-            "-DQT_DEPLOY_FFMPEG=TRUE" `
-            "-DCMAKE_BUILD_TYPE=Release"
-        if ($LASTEXITCODE -ne 0) { throw "qt-configure-module failed" }
+    cmake -S $qtmmSrc -B $build `
+        "-DCMAKE_PREFIX_PATH=$QtDir" `
+        "-DCMAKE_INSTALL_PREFIX=$QtDir" `
+        "-DFFMPEG_DIR=$ffmpegRoot" `
+        "-DQT_DEPLOY_FFMPEG=TRUE"
+    if ($LASTEXITCODE -ne 0) { throw "cmake configure failed" }
 
-        cmake --build . --config Release --parallel
-        if ($LASTEXITCODE -ne 0) { throw "cmake --build failed" }
+    cmake --build $build --config Release --parallel
+    if ($LASTEXITCODE -ne 0) { throw "cmake --build failed" }
 
-        cmake --install . --config Release
-        if ($LASTEXITCODE -ne 0) { throw "cmake --install failed" }
-    } finally {
-        Pop-Location
-    }
+    cmake --install $build --config Release
+    if ($LASTEXITCODE -ne 0) { throw "cmake --install failed" }
 
     Write-Host "== Deploying dav1d FFmpeg runtime DLLs into $QtDir\bin =="
     foreach ($dll in "avcodec-61.dll", "avformat-61.dll", "avutil-59.dll", "swresample-5.dll", "swscale-8.dll") {
