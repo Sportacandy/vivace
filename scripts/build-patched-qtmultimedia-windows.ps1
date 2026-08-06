@@ -179,6 +179,16 @@ try {
     if ($LASTEXITCODE -ne 0) { throw "git clone of Vulkan-Headers failed" }
     $vulkanIncludeFlag = "-I$(Join-Path $vulkanHeaders 'include')"
 
+    # qffmpegwindowcapture_uwp.cpp (Windows/UWP-only, via C++/WinRT) pulls in
+    # <experimental/coroutine>, which this runner's MSVC STL now hard-errors
+    # on: "error C2338: ... The /await compiler option,
+    # <experimental/coroutine> ... are deprecated ... and will be REMOVED
+    # SOON ... You can define
+    # _SILENCE_EXPERIMENTAL_COROUTINE_DEPRECATION_WARNINGS to suppress this
+    # error for now." That's Microsoft's own documented escape hatch for
+    # exactly this situation, not a workaround we invented.
+    $cxxExtraFlags = "$vulkanIncludeFlag /D_SILENCE_EXPERIMENTAL_COROUTINE_DEPRECATION_WARNINGS"
+
     $build = Join-Path $work "build"
     $cmakeConfigureArgs = @(
         "-S", $qtmmSrc, "-B", $build,
@@ -186,7 +196,7 @@ try {
         "-DCMAKE_C_COMPILER=cl.exe",
         "-DCMAKE_CXX_COMPILER=cl.exe",
         "-DCMAKE_C_FLAGS=$vulkanIncludeFlag",
-        "-DCMAKE_CXX_FLAGS=$vulkanIncludeFlag",
+        "-DCMAKE_CXX_FLAGS=$cxxExtraFlags",
         "-DCMAKE_PREFIX_PATH=$QtDir",
         "-DCMAKE_INSTALL_PREFIX=$QtDir",
         "-DFFMPEG_DIR=$ffmpegRoot",
