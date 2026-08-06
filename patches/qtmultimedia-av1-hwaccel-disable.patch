@@ -42,7 +42,7 @@ index b297d16aa..249353373 100644
 @@ -191,6 +191,15 @@ bool isCodecValid(const Codec &codec, const std::vector<AVHWDeviceType> &availab
      if (codec.type() != AVMEDIA_TYPE_VIDEO)
          return true;
-
+ 
 +    // AV1 hardware-accelerated decode (e.g. D3D11VA) has been observed to hang and leak
 +    // memory rather than fail cleanly on some GPU/driver combinations, while software
 +    // decode via libdav1d works correctly. Force AV1 decoding through libdav1d only by

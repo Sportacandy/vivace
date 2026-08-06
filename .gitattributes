@@ -1,0 +1,9 @@
+# Patch files must check out byte-for-byte identical to what's committed:
+# git apply is sensitive to exact line endings, and a plain checkout on a
+# machine/runner with core.autocrlf=true (e.g. GitHub's windows-latest
+# runners) converts LF -> CRLF for anything git considers "text", which
+# corrupts the diff (confirmed 2026-08-06: reproduced GitHub Actions'
+# "error: corrupt patch at line 45" locally just by CRLF-converting the
+# committed patch and nothing else). Marking these -text disables that
+# conversion entirely for these paths, in both directions.
+patches/*.patch -text
