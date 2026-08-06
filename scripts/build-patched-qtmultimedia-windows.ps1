@@ -83,22 +83,38 @@ try {
     # a plain standalone CMake project (find_package(Qt6 ...) resolves it
     # via CMAKE_PREFIX_PATH, same as any other out-of-tree Qt module build)
     # skips that wrapper and its parsing quirks entirely -- -D flags are
-    # always unambiguous on a real cmake command line. No -G is passed, so
-    # CMake picks its default generator (the installed Visual Studio, a
-    # multi-config generator -- hence --config Release below rather than
-    # -DCMAKE_BUILD_TYPE, which multi-config generators ignore).
+    # always unambiguous on a real cmake command line.
+    #
+    # -G Ninja (not the CMake default, the installed Visual Studio's
+    # generator): Qt's own QtBuildHelpers.cmake explicitly warns "The
+    # officially supported CMake generator for building Qt is Ninja /
+    # Ninja Multi-Config" -- confirmed the hard way when the VS generator
+    # set up RelWithDebInfo/Debug configurations (Qt's own default, not
+    # Release), so `cmake --build . --config Release` failed with MSB8013
+    # ("doesn't contain the Configuration and Platform combination of
+    # Release|x64"). Ninja is a single-config generator, so
+    # -DCMAKE_BUILD_TYPE=Release is used instead of --config.
+    if (-not (Get-Command ninja.exe -ErrorAction SilentlyContinue)) {
+        Write-Host "Ninja not found on PATH -- installing via choco"
+        choco install ninja -y --no-progress | Out-Null
+        if ($LASTEXITCODE -ne 0) { throw "choco install ninja failed" }
+        $env:PATH = "$env:PATH;C:\ProgramData\chocolatey\bin"
+    }
+
     $build = Join-Path $work "build"
     cmake -S $qtmmSrc -B $build `
+        -G Ninja `
         "-DCMAKE_PREFIX_PATH=$QtDir" `
         "-DCMAKE_INSTALL_PREFIX=$QtDir" `
         "-DFFMPEG_DIR=$ffmpegRoot" `
-        "-DQT_DEPLOY_FFMPEG=TRUE"
+        "-DQT_DEPLOY_FFMPEG=TRUE" `
+        "-DCMAKE_BUILD_TYPE=Release"
     if ($LASTEXITCODE -ne 0) { throw "cmake configure failed" }
 
-    cmake --build $build --config Release --parallel
+    cmake --build $build --parallel
     if ($LASTEXITCODE -ne 0) { throw "cmake --build failed" }
 
-    cmake --install $build --config Release
+    cmake --install $build
     if ($LASTEXITCODE -ne 0) { throw "cmake --install failed" }
 
     Write-Host "== Deploying dav1d FFmpeg runtime DLLs into $QtDir\bin =="
