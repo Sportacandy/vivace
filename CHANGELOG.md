@@ -11,6 +11,25 @@ each get their own entry instead.
 
 ## [Unreleased]
 
+### Fixed
+- Selecting certain embedded subtitle tracks (image-based formats like
+  DVD subtitles, PGS, or DVB — anything that isn't text) could crash
+  Vivace outright, on every platform. The bug is in Qt Multimedia's
+  FFmpeg plugin itself (a missing null check before reading subtitle
+  text that image-based tracks never populate). Fixing it — and making
+  those bitmap subtitles actually display, which Qt Multimedia's public
+  API had no way to do at all before — requires a custom-built Qt; see
+  "Bitmap-based embedded subtitle tracks (crash, and missing display)"
+  in README.md.
+- Both bitmap *and* embedded text subtitles could silently fail to
+  display at all — with no crash or error, just nothing shown — whenever
+  a **negative** audio delay was configured (*Preferences ▸ Audio ▸
+  Global audio delay*, or a per-file delay), since Vivace's delay-
+  compensation routing re-dispatches frames through a second `QVideoSink`
+  and a bug in Qt Multimedia wiped out any subtitle already attached to
+  the frame during that re-dispatch. Same custom-built-Qt fix as above
+  (same patch file).
+
 ## [0.2.0] — 2026-08-04
 
 ### Changed

@@ -72,23 +72,27 @@ To get AV1 support elsewhere (Linux/macOS, or a Vivace you build yourself):
 
 **Windows quick path**: download the prebuilt, patched
 [`ffmpegmediaplugin.dll` + dav1d-enabled FFmpeg bundle](https://github.com/Sportacandy/vivace/releases/tag/qt-patched-prebuilt-win64)
-(the same one CI uses — it includes both the AV1 fix and the speed/pitch
-compensation fix below) and copy its files into your own Qt 6.11.1
-`msvc2022_64` installation — `ffmpegmediaplugin.dll` into
-`plugins/multimedia/`, the rest (`avcodec-61.dll`, `avformat-61.dll`,
-`avutil-59.dll`, `swresample-5.dll`, `swscale-8.dll`) into `bin/`,
-overwriting the existing files. No rebuild needed; just rebuild Vivace
-itself against that same Qt install afterward.
+(the same one CI uses — it includes the AV1 fix, the speed/pitch
+compensation fix below, and the bitmap-subtitle fix further down) and copy
+its files into your own Qt 6.11.1 `msvc2022_64` installation —
+`ffmpegmediaplugin.dll` into `plugins/multimedia/`, the rest
+(`avcodec-61.dll`, `avformat-61.dll`, `avutil-59.dll`, `swresample-5.dll`,
+`swscale-8.dll`, `Qt6Multimedia.dll`, `Qt6MultimediaQuick.dll`) into
+`bin/`, overwriting the existing files. No rebuild needed; just rebuild
+Vivace itself against that same Qt install afterward.
 
 **Linux quick path**: same idea, with the prebuilt, patched
 [`libffmpegmediaplugin.so` + dav1d-enabled FFmpeg bundle](https://github.com/Sportacandy/vivace/releases/tag/qt-patched-prebuilt-linux64)
-(the same one CI uses, also combining both fixes) — copy
+(the same one CI uses, also combining all three fixes) — copy
 `libffmpegmediaplugin.so` into your Qt 6.11.1 `gcc_64` install's
 `plugins/multimedia/`, and the rest (`libavcodec.so.61`,
 `libavformat.so.61`, `libavutil.so.59`, `libswresample.so.5`,
-`libswscale.so.8`) into `lib/`, overwriting the existing files. Built and
-verified on Ubuntu 26; other distros with a compatible glibc should work
-but are untested.
+`libswscale.so.8`, and the `libQt6Multimedia.so*`/
+`libQt6MultimediaQuick.so*` symlink families) into `lib/`, overwriting the
+existing files — use `cp -P` (or equivalent) for the two Qt module
+families so their `.so` → `.so.6` → `.so.6.11.1` symlink chain survives
+the copy instead of being flattened. Built and verified on Ubuntu 26;
+other distros with a compatible glibc should work but are untested.
 
 To build it yourself from scratch (any platform, including macOS),
 you need a **custom-built Qt**:
@@ -154,6 +158,63 @@ SoundTouch's own built-in `ST_NO_EXCEPTION_HANDLING` mode when it doesn't —
 needed on Linux/GCC, where Qt Multimedia's FFmpeg plugin module is built
 with `-fno-exceptions`, which would otherwise fail to compile SoundTouch's
 normal `throw`-based error path.
+
+## Bitmap-based embedded subtitle tracks (crash, and missing display)
+
+Selecting certain embedded subtitle tracks from *Subtitles ▸ Track* can
+crash Vivace outright, and even once that's fixed, Qt Multimedia has no
+way to actually *show* that kind of subtitle. This affects **every**
+build — Windows, Linux, macOS, custom or official — because the bug and
+the missing feature are both inside Qt Multimedia's FFmpeg plugin itself,
+not Vivace: some subtitle formats (DVD subtitles, PGS, DVB — anything
+*image*-based rather than text) don't carry any text data, only an
+already-decoded bitmap. Qt's subtitle decoder dereferences a null pointer
+instead of checking for this before reading it (the crash), and even past
+that, Qt's `QVideoSink`/`QVideoFrame` subtitle pipeline only ever carries
+*text* — there was no API to deliver a bitmap image at all. There is no
+way for Vivace to detect or avoid this ahead of time, since Qt's public
+API doesn't expose a subtitle track's underlying codec.
+
+This same patch also fixes a second, independent bug that affects **plain
+text subtitles too** (embedded `mov_text`/SRT-style tracks, not just
+bitmap ones): if you have a **negative** audio delay configured for your
+output device (*Preferences ▸ Audio ▸ Global audio delay*, or a per-file
+delay under *Audio ▸ Set delay…* — used e.g. to compensate for late
+Bluetooth audio), Vivace routes video frames through an internal delay
+buffer before displaying them, and a bug in Qt Multimedia's own
+`QPlatformVideoSink` caused that re-routing to silently wipe out any
+subtitle (bitmap *or* text) already attached to the frame. With no
+negative delay configured, this never showed up — which is why it went
+unnoticed until the bitmap-subtitle investigation below turned it up.
+
+To fix all of this — the crash, the missing bitmap display, and the
+delayed-audio subtitle-dropping bug — apply
+[`patches/qtmultimedia-subtitle-bitmap.patch`](patches/qtmultimedia-subtitle-bitmap.patch)
+to your `qtmultimedia` source checkout, rebuild `qtmultimedia`, and
+rebuild Vivace against that Qt (or use the **Windows quick path**/**Linux
+quick path** prebuilt bundles under "AV1 support" above — they now
+include this fix too, alongside AV1 and speed/pitch compensation, in the
+same single download). It extends Qt's existing subtitle pipeline
+(decoder → renderer → sink → video frame → Qt Quick scene graph) with a
+parallel bitmap-image path alongside the existing text path, so a bitmap
+subtitle is decoded into an image, carried through the same frames as the
+text subtitle would be, and composited onto the video the same way Qt
+already composites text subtitles — no Vivace-side code is needed or
+included. Independent of the AV1 and speed/pitch-compensation patches
+above — apply any combination of these to the same checkout.
+
+Without this patch, avoid selecting a subtitle track that turns out to be
+image-based; Vivace has no way to warn you before you select it, since it
+can't see the codec either. And if you rely on a negative audio delay,
+text subtitles will silently not appear either, on any platform.
+
+**Verified working end to end on both Windows and Linux** (2026-08-06):
+selecting a bitmap-type subtitle track no longer crashes Vivace, and the
+subtitle actually renders — correctly positioned, updates line to line as
+playback continues, and stays correctly scaled after resizing/maximizing
+the window mid-playback — in all four combinations of {bitmap, text
+(`mov_text`)} × {no delay configured, a negative per-device delay
+configured}.
 
 ## Building
 

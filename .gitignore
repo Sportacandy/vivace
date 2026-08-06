@@ -14,6 +14,10 @@ packaging/windows/config/vivace.ico
 packaging/windows/config/vivace.png
 VivaceSetup*
 
+# scripts/zip-patched-mmplugin.bat and scripts/zip-patched-mmplugin-linux.sh output.
+qt-patched-prebuilt-win64.zip
+qt-patched-prebuilt-linux64.tar.gz
+
 # Re-include the packaging build scripts: a global core.excludesFile pattern
 # ("*build*") otherwise ignores them for their "build" filename.
 !packaging/*/build_installer.*
