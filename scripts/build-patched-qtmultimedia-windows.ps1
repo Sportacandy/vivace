@@ -150,6 +150,20 @@ try {
     }
     Write-Host "Using MSVC compiler: $($cl.Source)"
 
+    # -DFEATURE_vulkan=OFF: without it, qvideowindow.cpp fails with
+    # "'QRhiVulkanInitParams': undeclared identifier". Root cause (read
+    # qtbase's own src/gui/rhi/qrhi_platform.h directly): that struct is
+    # declared in the ALREADY-INSTALLED QtGui headers only under
+    # `#if QT_CONFIG(vulkan) && __has_include(<vulkan/vulkan.h>)` --
+    # __has_include is evaluated fresh, right now, against this runner's
+    # own include path, and this runner has no Vulkan SDK installed, so it
+    # fails and the struct is never declared. But qtmultimedia's own,
+    # separately-evaluated QT_CONFIG(vulkan) apparently still comes back
+    # ON (inherited from QtGui's baked-in flag from whatever machine built
+    # the official Qt release, which DID have the SDK), so qvideowindow.cpp
+    # tries to reference a type that was never declared for THIS build.
+    # Forcing the feature off for our own qtmultimedia build resolves the
+    # mismatch; Vivace doesn't use this optional Vulkan RHI init path.
     $build = Join-Path $work "build"
     $cmakeConfigureArgs = @(
         "-S", $qtmmSrc, "-B", $build,
@@ -161,7 +175,8 @@ try {
         "-DFFMPEG_DIR=$ffmpegRoot",
         "-DQT_DEPLOY_FFMPEG=TRUE",
         "-DCMAKE_BUILD_TYPE=Release",
-        "-DQT_SYNC_HEADERS_AT_CONFIGURE_TIME=ON"
+        "-DQT_SYNC_HEADERS_AT_CONFIGURE_TIME=ON",
+        "-DFEATURE_vulkan=OFF"
     )
     cmake @cmakeConfigureArgs
     if ($LASTEXITCODE -ne 0) { throw "cmake configure failed" }
