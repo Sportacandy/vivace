@@ -8,6 +8,27 @@
 #
 # Run this after building qtmultimedia with the patches applied and
 # installing it over the gcc_64 kit (or pass that install's root as $1).
+# IMPORTANT (2026-08-06): build qtmultimedia against the *exact* official
+# aqtinstall-fetched Qt 6.11.1 linux_gcc_64 kit that release.yml/
+# nightly.yml install (same version/arch, same aqtinstall fork/commit
+# pinned there) -- not a separately-built full custom Qt tree. Qt6Gui/
+# Qt6Quick/Qt6QuickTemplates2/etc. are NOT swapped by this script or by
+# CI (only Multimedia/MultimediaQuick/the plugin/FFmpeg are), so the
+# patched Multimedia/MultimediaQuick must already be ABI-compatible with
+# whatever official Gui/Quick/QuickTemplates2/... is already installed
+# on the target machine. A same-day attempt to instead bundle just
+# libQt6Gui.so*/libQt6Quick.so* alongside the patched Multimedia
+# (reasoning: QRhi/QVideoTextureHelper/etc. are private, unstable APIs
+# Multimedia calls into Gui/Quick) was tried and made things WORSE on a
+# real Ubuntu 24.04 test: the target's still-official
+# libQt6QuickTemplates2.so.6 (unswapped) then failed to find a private
+# virtual-thunk symbol in the newly-swapped-in libQt6Quick.so, and the
+# app wouldn't even start (a plain "symbol lookup error", not a runtime
+# crash). Swapping part of the Gui/Quick/Declarative stack just moves the
+# private-ABI mismatch to a different pair of modules -- the only
+# structurally sound fix is building Multimedia against the SAME Gui/
+# Quick/QuickTemplates2/... binaries it will actually run against, not
+# bundling a partial, inconsistent subset of them.
 #
 # Windows equivalent: scripts/zip-patched-mmplugin.bat (same file set,
 # .zip instead of .tar.gz).
@@ -61,6 +82,9 @@ done
 # family of symlinks (libQt6Multimedia.so -> .so.6 -> .so.6.11.1, ...) --
 # grabbing the whole family keeps that symlink structure intact instead
 # of guessing which single name the CI Qt tree's loader actually wants.
+# Deliberately NOT joined by libQt6Gui.so*/libQt6Quick.so* -- see the
+# 2026-08-06 note at the top of this file for why a same-day attempt to
+# do that made things worse, not better.
 shopt -s nullglob
 QT_MODULE_FILES=("$QTDIR"/lib/libQt6Multimedia.so* "$QTDIR"/lib/libQt6MultimediaQuick.so*)
 shopt -u nullglob

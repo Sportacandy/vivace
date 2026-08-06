@@ -70,50 +70,28 @@ stability risk across the huge range of real-world hardware.
 
 To get AV1 support elsewhere (Linux/macOS, or a Vivace you build yourself):
 
-**Windows quick path**: download the prebuilt, patched
-[`ffmpegmediaplugin.dll` + dav1d-enabled FFmpeg bundle](https://github.com/Sportacandy/vivace/releases/tag/qt-patched-prebuilt-win64)
-(the same one CI uses — it includes the AV1 fix, the speed/pitch
-compensation fix below, and the bitmap-subtitle fix further down) and copy
-its files into your own Qt 6.11.1 `msvc2022_64` installation —
-`ffmpegmediaplugin.dll` into `plugins/multimedia/`, the rest
-(`avcodec-61.dll`, `avformat-61.dll`, `avutil-59.dll`, `swresample-5.dll`,
-`swscale-8.dll`, `Qt6Multimedia.dll`, `Qt6MultimediaQuick.dll`) into
-`bin/`, overwriting the existing files. No rebuild needed; just rebuild
-Vivace itself against that same Qt install afterward.
+**Windows/Linux quick path**: run
+[`scripts/build-patched-qtmultimedia-windows.ps1`](scripts/build-patched-qtmultimedia-windows.ps1) /
+[`scripts/build-patched-qtmultimedia-linux.sh`](scripts/build-patched-qtmultimedia-linux.sh)
+against your own Qt 6.11.1 install (`msvc2022_64` / `gcc_64`) — the same
+scripts CI itself now uses. Each one downloads a dav1d-enabled FFmpeg,
+clones `qtmultimedia` at the matching tag, applies all three patches
+(AV1, speed/pitch compensation, bitmap subtitles), and builds + installs
+it *against that exact Qt kit*, then deploys the matching FFmpeg runtime
+libraries alongside it. Building against the same kit you'll actually run
+is deliberate, not incidental: `Qt6Multimedia`/`Qt6MultimediaQuick` call
+into `Qt6Gui`/`Qt6Quick` through Qt's *private* (no ABI-stability
+guarantee) API, and an earlier prebuilt-binary-asset approach (built on
+one machine, copied onto another) hit exactly that — a private struct
+layout drift that a mere version-number match couldn't catch, crashing
+some video with no code-level bug on either side. Building against your
+own installed kit removes that risk entirely, since there's only ever one
+build involved. No separate rebuild step needed afterward; just rebuild
+Vivace itself against that same Qt install once the script finishes.
 
-**Linux quick path**: same idea, with the prebuilt, patched
-[`libffmpegmediaplugin.so` + dav1d-enabled FFmpeg bundle](https://github.com/Sportacandy/vivace/releases/tag/qt-patched-prebuilt-linux64)
-(the same one CI uses, also combining all three fixes) — copy
-`libffmpegmediaplugin.so` into your Qt 6.11.1 `gcc_64` install's
-`plugins/multimedia/`, and the rest (`libavcodec.so.61`,
-`libavformat.so.61`, `libavutil.so.59`, `libswresample.so.5`,
-`libswscale.so.8`, and the `libQt6Multimedia.so*`/
-`libQt6MultimediaQuick.so*` symlink families) into `lib/`, overwriting the
-existing files — use `cp -P` (or equivalent) for the two Qt module
-families so their `.so` → `.so.6` → `.so.6.11.1` symlink chain survives
-the copy instead of being flattened. Built and verified on Ubuntu 26;
-other distros with a compatible glibc should work but are untested.
-
-To build it yourself from scratch (any platform, including macOS),
-you need a **custom-built Qt**:
-
-1. Build (or download a prebuilt) FFmpeg with `libdav1d` enabled — e.g.
-   [BtbN/FFmpeg-Builds](https://github.com/BtbN/FFmpeg-Builds)' `n7.1` line
-   (`*-gpl-shared-7.1.*`), which conveniently matches the soname versions of
-   Qt's own officially bundled FFmpeg.
-2. Apply [`patches/qtmultimedia-av1-hwaccel-disable.patch`](patches/qtmultimedia-av1-hwaccel-disable.patch)
-   to your `qtmultimedia` source checkout — this forces AV1 decoding through
-   the software `libdav1d` decoder specifically, since Qt's *hardware*-
-   accelerated AV1 path is the actual source of the hang/leak, not AV1
-   decoding itself.
-3. Configure Qt with `-DFFMPEG_DIR=<path to your dav1d-enabled FFmpeg>
-   -DQT_DEPLOY_FFMPEG=TRUE` and rebuild (`qtmultimedia` alone is enough if
-   you don't want to rebuild all of Qt).
-4. Build Vivace against that custom Qt as usual.
-
-(Optionally also apply the speed/pitch compensation patch from the next
-section to the same `qtmultimedia` checkout before rebuilding — both
-patches touch different files and apply independently.)
+(There are also older `qt-patched-prebuilt-win64`/`qt-patched-prebuilt-linux64`
+GitHub releases from before this switch — CI no longer produces or relies
+on them, so treat them as unmaintained; prefer the scripts above.)
 
 ## Audio speed/pitch compensation
 
@@ -124,14 +102,12 @@ speed, which sounds clean when slowing down but produces audible vibrato/
 echo when speeding up (e.g. 2x) on speech-heavy content.
 
 **Windows and Linux** prebuilt releases and the nightly build get the fix
-below via the same combined prebuilt bundles
-([Windows](https://github.com/Sportacandy/vivace/releases/tag/qt-patched-prebuilt-win64),
-[Linux](https://github.com/Sportacandy/vivace/releases/tag/qt-patched-prebuilt-linux64))
-described in "AV1 support" above. **macOS** prebuilt releases, and Vivace
-built normally against a stock Qt on any platform, use Qt's stock
-behavior — there is no artifact-free option without a custom Qt build,
-for the same reason as AV1: the fix requires source changes to
-`qtmultimedia` itself, not just Vivace.
+below via the same CI-built `qtmultimedia` described in "AV1 support"
+above. **macOS** prebuilt releases, and Vivace built normally against a
+stock Qt on any platform, use Qt's stock behavior — there is no
+artifact-free option without a custom Qt build, for the same reason as
+AV1: the fix requires source changes to `qtmultimedia` itself, not just
+Vivace.
 
 Investigation found the phase vocoder and the alternative WSOLA (time-
 domain) approach have exactly opposite strengths: the phase vocoder holds
@@ -143,7 +119,9 @@ in the direction it's strong: WSOLA (via the vendored
 [SoundTouch](https://codeberg.org/soundtouch/soundtouch) library) above 1x,
 Qt's original phase vocoder below 1x.
 
-To build this yourself, apply
+The `build-patched-qtmultimedia-*` scripts under "AV1 support" above apply
+this patch too (along with the other two), so that's the simplest way to
+get it. To apply just this one patch by hand instead: apply
 [`patches/qtmultimedia-wsola-pitch-compensation.patch`](patches/qtmultimedia-wsola-pitch-compensation.patch)
 to your `qtmultimedia` source checkout (vendors SoundTouch alongside Qt's
 existing Signalsmith Stretch phase vocoder, then picks per playback
@@ -191,10 +169,10 @@ To fix all of this — the crash, the missing bitmap display, and the
 delayed-audio subtitle-dropping bug — apply
 [`patches/qtmultimedia-subtitle-bitmap.patch`](patches/qtmultimedia-subtitle-bitmap.patch)
 to your `qtmultimedia` source checkout, rebuild `qtmultimedia`, and
-rebuild Vivace against that Qt (or use the **Windows quick path**/**Linux
-quick path** prebuilt bundles under "AV1 support" above — they now
-include this fix too, alongside AV1 and speed/pitch compensation, in the
-same single download). It extends Qt's existing subtitle pipeline
+rebuild Vivace against that Qt (or use the **Windows/Linux quick path**
+scripts under "AV1 support" above — they apply this fix too, alongside
+AV1 and speed/pitch compensation, in the same run). It extends Qt's
+existing subtitle pipeline
 (decoder → renderer → sink → video frame → Qt Quick scene graph) with a
 parallel bitmap-image path alongside the existing text path, so a bitmap
 subtitle is decoded into an image, carried through the same frames as the

@@ -28,15 +28,14 @@ jobs:
           # release (3.3.0) predates Qt 6.11's repository restructuring.
           aqtsource: 'git+https://github.com/miurahr/aqtinstall.git@8c3695d4a4e1ceabf6a74dc6c79681656dc6b74b'
 
-      - name: Swap in the patched qtmultimedia (AV1 + Speed Control + bitmap subtitles, prebuilt)
+      - name: Build the patched qtmultimedia (AV1 + Speed Control + bitmap subtitles) from source
+        # Builds against THIS job's own just-installed official Qt kit,
+        # rather than swapping in a binary built on a different machine --
+        # see scripts/build-patched-qtmultimedia-linux.sh's header comment
+        # for why (found the hard way on Linux; applied here too so
+        # Windows CI doesn't rely on the same kind of luck).
         shell: pwsh
-        run: |
-          Invoke-WebRequest -Uri "https://github.com/Sportacandy/vivace/releases/download/qt-patched-prebuilt-win64/qt-patched-prebuilt-win64.zip" -OutFile qt-av1-prebuilt.zip
-          Expand-Archive -Path qt-av1-prebuilt.zip -DestinationPath qt-av1-prebuilt
-          Copy-Item qt-av1-prebuilt\ffmpegmediaplugin.dll "$env:QT_ROOT_DIR\plugins\multimedia\ffmpegmediaplugin.dll" -Force
-          foreach ($dll in "avcodec-61.dll","avformat-61.dll","avutil-59.dll","swresample-5.dll","swscale-8.dll","Qt6Multimedia.dll","Qt6MultimediaQuick.dll") {
-            Copy-Item "qt-av1-prebuilt\$dll" "$env:QT_ROOT_DIR\bin\$dll" -Force
-          }
+        run: scripts\build-patched-qtmultimedia-windows.ps1 -QtDir "$env:QT_ROOT_DIR"
 
       - name: Install NSIS
         shell: pwsh
@@ -80,7 +79,7 @@ jobs:
       - name: Install Linux system dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y libgl1-mesa-dev libxkbcommon-dev patchelf
+          sudo apt-get install -y libgl1-mesa-dev libxkbcommon-dev patchelf ninja-build
 
       - name: Install Qt
         uses: jurplel/install-qt-action@v4
@@ -90,16 +89,16 @@ jobs:
           modules: 'qtmultimedia qtshadertools'
           aqtsource: 'git+https://github.com/miurahr/aqtinstall.git@8c3695d4a4e1ceabf6a74dc6c79681656dc6b74b'
 
-      - name: Swap in the patched qtmultimedia (AV1 + Speed Control + bitmap subtitles, prebuilt)
+      - name: Build the patched qtmultimedia (AV1 + Speed Control + bitmap subtitles) from source
+        # Builds against THIS job's own just-installed official Qt kit,
+        # rather than swapping in a binary built on a different machine --
+        # see scripts/build-patched-qtmultimedia-linux.sh for why (a
+        # 2026-08-06 private-ABI mismatch, found the hard way on a real
+        # Ubuntu 24.04 install, is what a prebuilt-asset swap can't rule
+        # out no matter how carefully it's built).
         run: |
-          curl -L -o qt-patched.tar.gz "https://github.com/Sportacandy/vivace/releases/download/qt-patched-prebuilt-linux64/qt-patched-prebuilt-linux64.tar.gz"
-          mkdir qt-patched
-          tar -xzf qt-patched.tar.gz -C qt-patched
-          cp qt-patched/libffmpegmediaplugin.so "$QT_ROOT_DIR/plugins/multimedia/libffmpegmediaplugin.so"
-          for so in libavcodec.so.61 libavformat.so.61 libavutil.so.59 libswresample.so.5 libswscale.so.8; do
-            cp "qt-patched/$so" "$QT_ROOT_DIR/lib/$so"
-          done
-          cp -P qt-patched/libQt6Multimedia*.so* "$QT_ROOT_DIR/lib/"
+          chmod +x scripts/build-patched-qtmultimedia-linux.sh
+          scripts/build-patched-qtmultimedia-linux.sh "$QT_ROOT_DIR"
 
       - name: Build tarball
         run: |
