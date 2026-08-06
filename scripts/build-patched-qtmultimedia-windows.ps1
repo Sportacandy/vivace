@@ -150,33 +150,49 @@ try {
     }
     Write-Host "Using MSVC compiler: $($cl.Source)"
 
-    # -DFEATURE_vulkan=OFF: without it, qvideowindow.cpp fails with
-    # "'QRhiVulkanInitParams': undeclared identifier". Root cause (read
-    # qtbase's own src/gui/rhi/qrhi_platform.h directly): that struct is
-    # declared in the ALREADY-INSTALLED QtGui headers only under
-    # `#if QT_CONFIG(vulkan) && __has_include(<vulkan/vulkan.h>)` --
-    # __has_include is evaluated fresh, right now, against this runner's
-    # own include path, and this runner has no Vulkan SDK installed, so it
-    # fails and the struct is never declared. But qtmultimedia's own,
-    # separately-evaluated QT_CONFIG(vulkan) apparently still comes back
-    # ON (inherited from QtGui's baked-in flag from whatever machine built
-    # the official Qt release, which DID have the SDK), so qvideowindow.cpp
-    # tries to reference a type that was never declared for THIS build.
-    # Forcing the feature off for our own qtmultimedia build resolves the
-    # mismatch; Vivace doesn't use this optional Vulkan RHI init path.
+    # qvideowindow.cpp fails with "'QRhiVulkanInitParams': undeclared
+    # identifier" without a real fix here. Root cause (read qtbase's own
+    # src/gui/rhi/qrhi_platform.h directly): that struct is declared in the
+    # ALREADY-INSTALLED QtGui headers only under
+    # `#if QT_CONFIG(vulkan) && __has_include(<vulkan/vulkan.h>)`.
+    # QT_CONFIG(vulkan) here is QtGui's own value, permanently baked into
+    # its installed config header at official-Qt-release build time (not
+    # something qtmultimedia can toggle -- confirmed: qtmultimedia has no
+    # "vulkan" feature of its own at all, grep of its configure.cmake finds
+    # nothing, so an earlier -DFEATURE_vulkan=OFF attempt was silently
+    # ignored by CMake, "Manually-specified variables were not used by the
+    # project"). __has_include IS evaluated fresh, right now, against this
+    # build's own include path, and this runner has no Vulkan SDK
+    # installed, so it fails and the struct is never declared -- yet
+    # qvideowindow.cpp still tries to reference it, since ITS OWN
+    # QT_CONFIG(vulkan) check (the same baked-in QtGui value) says vulkan
+    # is available. Since Vivace doesn't use this optional Vulkan RHI init
+    # path and we never need it to actually run, just satisfying the
+    # compiler is enough: clone the tiny, header-only KhronosGroup/
+    # Vulkan-Headers repo and add its include dir to every C/C++ compile
+    # via CMAKE_CXX_FLAGS/CMAKE_C_FLAGS, so __has_include finally succeeds
+    # and the struct gets declared like it would on a machine with the
+    # real SDK.
+    Write-Host "== Cloning Vulkan-Headers (compiler needs vulkan/vulkan.h to exist, never used at runtime) =="
+    $vulkanHeaders = Join-Path $work "Vulkan-Headers"
+    git clone --depth 1 https://github.com/KhronosGroup/Vulkan-Headers.git $vulkanHeaders
+    if ($LASTEXITCODE -ne 0) { throw "git clone of Vulkan-Headers failed" }
+    $vulkanIncludeFlag = "-I$(Join-Path $vulkanHeaders 'include')"
+
     $build = Join-Path $work "build"
     $cmakeConfigureArgs = @(
         "-S", $qtmmSrc, "-B", $build,
         "-G", "Ninja",
         "-DCMAKE_C_COMPILER=cl.exe",
         "-DCMAKE_CXX_COMPILER=cl.exe",
+        "-DCMAKE_C_FLAGS=$vulkanIncludeFlag",
+        "-DCMAKE_CXX_FLAGS=$vulkanIncludeFlag",
         "-DCMAKE_PREFIX_PATH=$QtDir",
         "-DCMAKE_INSTALL_PREFIX=$QtDir",
         "-DFFMPEG_DIR=$ffmpegRoot",
         "-DQT_DEPLOY_FFMPEG=TRUE",
         "-DCMAKE_BUILD_TYPE=Release",
-        "-DQT_SYNC_HEADERS_AT_CONFIGURE_TIME=ON",
-        "-DFEATURE_vulkan=OFF"
+        "-DQT_SYNC_HEADERS_AT_CONFIGURE_TIME=ON"
     )
     cmake @cmakeConfigureArgs
     if ($LASTEXITCODE -ne 0) { throw "cmake configure failed" }
