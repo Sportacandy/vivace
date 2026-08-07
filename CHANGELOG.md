@@ -42,6 +42,11 @@ each get their own entry instead.
   now, and the menus stay where macOS users expect them, at the top of the
   screen. Playback itself was never affected: the tracks were read correctly
   all along, they just never reached the menu.
+- **macOS:** the installed app identified itself to the system as
+  `com.yourcompany.vivace`, a placeholder CMake/Qt bakes into `Info.plist`
+  when a bundle doesn't name itself. It now uses `org.vivaceplayer.vivace`,
+  matching the ID the macOS installer already used. Vivace's own settings
+  were never stored under the placeholder and carry over untouched.
 
 ## [0.2.0] — 2026-08-04
 

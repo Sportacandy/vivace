@@ -193,6 +193,12 @@ endif()
 set_target_properties(vivace PROPERTIES
     WIN32_EXECUTABLE TRUE
     MACOSX_BUNDLE TRUE
+    # Without this, Qt's bundle finalization bakes its own
+    # "com.yourcompany.vivace" placeholder into Info.plist's CFBundleIdentifier
+    # -- which is what macOS (not Vivace's QSettings, which keys off
+    # setOrganizationName/setApplicationName) uses to identify the app. Match
+    # the ID packaging/macos/build_installer.sh already uses for the installer.
+    MACOSX_BUNDLE_GUI_IDENTIFIER "org.vivaceplayer.vivace"
 )
 
 # Windows: embed the brand icon into the executable. The RC references
