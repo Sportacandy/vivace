@@ -42,6 +42,12 @@ each get their own entry instead.
   now, and the menus stay where macOS users expect them, at the top of the
   screen. Playback itself was never affected: the tracks were read correctly
   all along, they just never reached the menu.
+- **macOS:** Vivace showed up in Finder with the generic "unknown application"
+  icon instead of its own, even though the icon looked right in the Dock once
+  the app was running. The app bundle never carried an `.icns` file or named
+  one in its `Info.plist`, which is where Finder looks; the icon Vivace sets at
+  startup only reaches the running app. The bundle now carries a proper icon,
+  generated during the build from the same artwork the other platforms use.
 - **macOS:** the installed app identified itself to the system as
   `com.yourcompany.vivace`, a placeholder CMake/Qt bakes into `Info.plist`
   when a bundle doesn't name itself. It now uses `org.vivaceplayer.vivace`,

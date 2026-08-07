@@ -209,6 +209,53 @@ if(WIN32)
     target_sources(vivace PRIVATE icons/vivace.rc)
 endif()
 
+# macOS: the same for the app bundle. Finder takes an app's icon from
+# Info.plist's CFBundleIconFile and a matching .icns in Contents/Resources,
+# both of which are build-time -- QGuiApplication::setWindowIcon() in main.cpp
+# only covers the running app's Dock icon, so without this Finder fell back to
+# the generic "unknown application" icon while the app itself looked right once
+# launched. The .icns is generated from the same icons/app_*.png set every
+# other platform uses (iconutil and sips ship with macOS), rather than
+# committing a second copy of the artwork that could drift out of sync.
+#
+# app_256.png is the largest source there is, so the iconset stops at the
+# 256x256 (and 128x128@2x) slots; macOS scales that up for the 512/1024 views
+# it uses in Get Info and large-icon mode. Add icon_512x512{,@2x}.png here if
+# higher-resolution artwork ever appears.
+if(APPLE)
+    set(vivace_iconset "${CMAKE_CURRENT_BINARY_DIR}/vivace.iconset")
+    set(vivace_icns "${CMAKE_CURRENT_BINARY_DIR}/vivace.icns")
+    set(vivace_icns_sources
+        icons/app_16.png icons/app_32.png icons/app_64.png
+        icons/app_128.png icons/app_256.png)
+    add_custom_command(
+        OUTPUT ${vivace_icns}
+        COMMAND ${CMAKE_COMMAND} -E make_directory ${vivace_iconset}
+        COMMAND ${CMAKE_COMMAND} -E copy
+                ${CMAKE_CURRENT_SOURCE_DIR}/icons/app_16.png  ${vivace_iconset}/icon_16x16.png
+        COMMAND ${CMAKE_COMMAND} -E copy
+                ${CMAKE_CURRENT_SOURCE_DIR}/icons/app_32.png  ${vivace_iconset}/icon_16x16@2x.png
+        COMMAND ${CMAKE_COMMAND} -E copy
+                ${CMAKE_CURRENT_SOURCE_DIR}/icons/app_32.png  ${vivace_iconset}/icon_32x32.png
+        COMMAND ${CMAKE_COMMAND} -E copy
+                ${CMAKE_CURRENT_SOURCE_DIR}/icons/app_64.png  ${vivace_iconset}/icon_32x32@2x.png
+        COMMAND ${CMAKE_COMMAND} -E copy
+                ${CMAKE_CURRENT_SOURCE_DIR}/icons/app_128.png ${vivace_iconset}/icon_128x128.png
+        COMMAND ${CMAKE_COMMAND} -E copy
+                ${CMAKE_CURRENT_SOURCE_DIR}/icons/app_256.png ${vivace_iconset}/icon_128x128@2x.png
+        COMMAND ${CMAKE_COMMAND} -E copy
+                ${CMAKE_CURRENT_SOURCE_DIR}/icons/app_256.png ${vivace_iconset}/icon_256x256.png
+        COMMAND iconutil -c icns -o ${vivace_icns} ${vivace_iconset}
+        DEPENDS ${vivace_icns_sources}
+        COMMENT "Generating vivace.icns for the app bundle"
+        VERBATIM)
+    target_sources(vivace PRIVATE ${vivace_icns})
+    set_source_files_properties(${vivace_icns} PROPERTIES
+        MACOSX_PACKAGE_LOCATION Resources
+        GENERATED TRUE)
+    set_target_properties(vivace PROPERTIES MACOSX_BUNDLE_ICON_FILE vivace.icns)
+endif()
+
 # Compile the video-equalizer shader to .qsb and embed it under the module
 # prefix, so ShaderEffect can load it at qrc:/qt/qml/Vivace/shaders/*.qsb.
 qt_add_shaders(vivace "vivace_shaders"
