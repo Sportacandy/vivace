@@ -130,13 +130,18 @@ jobs:
           arch: 'clang_64'
           modules: 'qtmultimedia qtshadertools'
 
-      - name: Swap in an AV1-capable FFmpeg (official Qt's bundle lacks libdav1d)
+      - name: Build the patched qtmultimedia (AV1 + Speed Control + bitmap subtitles) from source
+        # Builds against THIS job's own just-installed official Qt kit,
+        # rather than the old approach of merely swapping in an AV1-capable
+        # FFmpeg with none of the three patches actually applied (macOS was
+        # the one platform left on that older, weaker approach -- see
+        # scripts/build-patched-qtmultimedia-macos.sh's header comment).
+        # UNVERIFIED as of 2026-08-07 -- no macOS machine available during
+        # development; expect possible follow-up fixes once this actually
+        # runs.
         run: |
-          brew install ffmpeg@7
-          FFMPEG7=$(brew --prefix ffmpeg@7)
-          for dylib in libavcodec.61.dylib libavformat.61.dylib libavutil.59.dylib libswresample.5.dylib libswscale.8.dylib; do
-            cp "$FFMPEG7/lib/$dylib" "$QT_ROOT_DIR/lib/$dylib"
-          done
+          chmod +x scripts/build-patched-qtmultimedia-macos.sh
+          scripts/build-patched-qtmultimedia-macos.sh "$QT_ROOT_DIR"
 
       - name: Build dmg
         run: |
