@@ -73,6 +73,64 @@ FFMPEG7="$(brew --prefix ffmpeg@7)"
 echo "== Cloning qtmultimedia v6.11.1 =="
 git clone --branch v6.11.1 --depth 1 https://github.com/qt/qtmultimedia.git "$WORK/qtmultimedia"
 
+# Remove the sse2/ssse3/avx2 SIMD source blocks from src/multimedia's own
+# CMakeLists.txt. Root cause (read the real qtbase/qtmultimedia source
+# directly): qtbase's cmake/QtCompilerOptimization.cmake sets
+# QT_CFLAGS_SSE2/QT_CFLAGS_SSSE3 to "-msse2"/"-mssse3" UNCONDITIONALLY for
+# any Clang/GCC build, with no architecture check at all -- and
+# qt_internal_add_simd_part()'s only architecture-awareness
+# (EXCLUDE_OSX_ARCHITECTURES, used here for the avx2 part but not sse2/
+# ssse3) works by wrapping the flag as "-Xarch_<arch> -mXXX" so it only
+# applies to the intended slice of a multi-arch ("fat"/universal) build --
+# which is exactly how Qt's own official universal (arm64+x86_64) macOS Qt
+# ships without ever hitting this, since Clang tolerates an
+# architecture-mismatched -m flag across a genuine multi-"-arch" invocation.
+# Our build is genuinely single-arch (this runner's native arm64 only, no
+# universal FFmpeg available via Homebrew to make a real universal build
+# feasible), and for a single "-arch arm64" invocation Clang correctly
+# hard-errors instead: "unsupported option '-msse2' for target
+# arm64-apple-darwin...". These three files are pure x86 SIMD performance
+# optimizations for a portable pixel-conversion path that already compiles
+# and works fine without them (qvideoframeconversionhelper.cpp) -- and
+# would never execute on arm64 even in Qt's own official build -- so
+# removing them changes nothing observable, on this architecture.
+echo "== Removing x86-only SIMD source blocks (sse2/ssse3/avx2) for this arm64-only build =="
+python3 - "$WORK/qtmultimedia/src/multimedia/CMakeLists.txt" <<'PYEOF'
+import sys
+
+path = sys.argv[1]
+with open(path, "r", encoding="utf-8") as f:
+    content = f.read()
+
+old = """qt_internal_add_simd_part(Multimedia SIMD sse2
+    SOURCES
+        video/qvideoframeconversionhelper_sse2.cpp
+)
+
+qt_internal_add_simd_part(Multimedia SIMD ssse3
+    SOURCES
+        video/qvideoframeconversionhelper_ssse3.cpp
+)
+
+qt_internal_add_simd_part(Multimedia SIMD arch_haswell
+    SOURCES
+        video/qvideoframeconversionhelper_avx2.cpp
+    EXCLUDE_OSX_ARCHITECTURES
+        arm64
+)
+"""
+
+count = content.count(old)
+print(f"occurrences: {count}")
+if count != 1:
+    sys.exit("expected exactly 1 occurrence of the SIMD block in src/multimedia/CMakeLists.txt")
+
+content = content.replace(old, "")
+with open(path, "w", encoding="utf-8") as f:
+    f.write(content)
+print("done")
+PYEOF
+
 echo "== Applying patches =="
 for p in "${PATCH_FILES[@]}"; do
     echo "  $(basename "$p")"
