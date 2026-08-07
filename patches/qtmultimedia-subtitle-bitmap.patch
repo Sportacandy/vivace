@@ -230,9 +230,9 @@ diff --git a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegframe_p.h b/src
 +             TrackDuration duration, const PlaybackEngineObjectID &sourceID,
 +             const QImage &image = {}, const QRect &imageRect = {},
 +             const QSize &imageCodedSize = {})
-+            : loopOffset(offset), text(text), startTime(pts), duration(duration),
-+              sourceID(sourceID), image(image), imageRect(imageRect),
-+              imageCodedSize(imageCodedSize)
++            : loopOffset(offset), text(text), image(image), imageRect(imageRect),
++              imageCodedSize(imageCodedSize), startTime(pts), duration(duration),
++              sourceID(sourceID)
          {
          }
  
