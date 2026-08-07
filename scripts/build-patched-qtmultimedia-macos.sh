@@ -158,6 +158,31 @@ echo "== Cloning Vulkan-Headers (compiler needs vulkan/vulkan.h to exist, never 
 git clone --depth 1 https://github.com/KhronosGroup/Vulkan-Headers.git "$WORK/Vulkan-Headers"
 VULKAN_INCLUDE_FLAG="-I$WORK/Vulkan-Headers/include"
 
+# Use $QTDIR/bin/qt-cmake, not plain cmake, for the CONFIGURE step. qt-cmake
+# (read its real source, qtbase's bin/qt-cmake.in) is nothing but a thin
+# wrapper that exports CMAKE_TOOLCHAIN_FILE=.../lib/cmake/Qt6/qt.toolchain.cmake
+# before exec'ing the real cmake -- and that generated toolchain file (see
+# qtbase's cmake/QtToolchainHelpers.cmake, the code that writes it at Qt's
+# own build time) bakes in CMAKE_OSX_DEPLOYMENT_TARGET/CMAKE_OSX_SYSROOT/
+# CMAKE_OSX_ARCHITECTURES from whatever this exact Qt kit was itself built
+# with. This matters concretely: without it, a plain `cmake -S/-B` on this
+# runner (Xcode 26 / macOS 26 "Tahoe" SDK) leaves CMAKE_OSX_DEPLOYMENT_TARGET
+# unset, so Clang defaults the minimum deployment target to the SDK version
+# itself (26.0) -- which turns any API Apple has since removed from a mere
+# deprecation warning into a hard "unavailable" compile error. Hit exactly
+# this on qtmultimedia's own (unpatched, upstream) darwin/qcgwindowcapture.mm:
+# "'CGWindowListCreateImage' is unavailable: obsoleted in macOS 15.0". Using
+# qt-cmake's toolchain file restores the real (much older) deployment target
+# the official Qt kit itself targets, where this API is merely deprecated
+# (covered by the existing -Wno-error=deprecated-declarations) rather than
+# gone. CMAKE_PREFIX_PATH is kept too -- the toolchain file doesn't set it,
+# and find_package(Qt6 ...) still needs it.
+QT_CMAKE="$QTDIR/bin/qt-cmake"
+if [ ! -x "$QT_CMAKE" ]; then
+    echo "ERROR: $QT_CMAKE not found or not executable -- expected a qt-cmake wrapper next to this kit's other dev tools" >&2
+    exit 1
+fi
+
 CMAKE_CONFIGURE_ARGS=(
     -S "$WORK/qtmultimedia" -B "$WORK/build"
     -G Ninja
@@ -170,7 +195,7 @@ CMAKE_CONFIGURE_ARGS=(
     -DCMAKE_BUILD_TYPE=Release
     -DQT_SYNC_HEADERS_AT_CONFIGURE_TIME=ON
 )
-cmake "${CMAKE_CONFIGURE_ARGS[@]}"
+"$QT_CMAKE" "${CMAKE_CONFIGURE_ARGS[@]}"
 
 # Configure TWICE (identical args, same build dir): a generated private
 # config header like QtMultimedia/private/qtmultimedia-config_p.h is
@@ -181,7 +206,7 @@ cmake "${CMAKE_CONFIGURE_ARGS[@]}"
 # CI, 2026-08-06 -- see that script's comment for the full explanation. A
 # second, separate cmake invocation against the SAME build dir starts with
 # the first one's generate-phase output already on disk.
-cmake "${CMAKE_CONFIGURE_ARGS[@]}"
+"$QT_CMAKE" "${CMAKE_CONFIGURE_ARGS[@]}"
 
 # Retry once on failure anyway, as a harmless safety net for a genuine
 # from-scratch Ninja scheduling race (some parallel compiles can be
