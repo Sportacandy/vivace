@@ -143,6 +143,13 @@ if(WIN32)
 elseif(APPLE)
     target_sources(vivace PRIVATE ${vivace_qtkeychain_dir}/keychain_apple.mm)
     target_link_libraries(vivace PRIVATE "-framework Foundation" "-framework Security")
+    # UiHelpers::syncNativeMenu() drives the NSMenu that Qt Quick Controls
+    # builds for the menu bar on macOS; there is no public API for it. See the
+    # comment on the declaration in src/uihelpers.h. macOS-only, so no other
+    # platform picks up a dependency on Qt's private headers.
+    find_package(Qt6 REQUIRED COMPONENTS QuickPrivate QuickTemplates2Private)
+    target_link_libraries(vivace PRIVATE
+        Qt6::QuickPrivate Qt6::QuickTemplates2Private)
 elseif(UNIX)
     # Linux: KWallet via D-Bus (Qt6::DBus, already linked below) + optional
     # libsecret (GNOME Keyring/Secret Service) loaded dynamically at runtime

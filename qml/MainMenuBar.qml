@@ -127,11 +127,16 @@ MenuBar {
                 onObjectAdded: (index, object) => recentMenu.insertItem(index, object)
                 onObjectRemoved: (index, object) => recentMenu.removeItem(object)
             }
-            AppMenuItem {
-                text: qsTr("(empty)")
-                enabled: false
-                visible: bar.controller.recents.count === 0
-                height: visible ? implicitHeight : 0
+            // Added and removed rather than shown and hidden: the macOS menu
+            // bar is a real NSMenu, and Qt has no way to hide an item in one,
+            // so a `visible: false` placeholder would sit there in plain sight
+            // next to the real entries. FavoritesMenu.qml's own "(empty)" row
+            // works the same way.
+            Instantiator {
+                model: bar.controller.recents.count === 0 ? 1 : 0
+                delegate: AppMenuItem { text: qsTr("(empty)"); enabled: false }
+                onObjectAdded: (index, object) => recentMenu.insertItem(0, object)
+                onObjectRemoved: (index, object) => recentMenu.removeItem(object)
             }
             MenuSeparator {}
             AppMenuItem {
@@ -416,11 +421,13 @@ MenuBar {
             title: qsTr("&Track")
             icon.source: Theme.icon("video_track")
 
-            AppMenuItem {
-                text: qsTr("<empty>")
-                enabled: false
-                visible: bar.controller.videoTrackLabels.length === 0
-                height: visible ? implicitHeight : 0
+            // See the "(empty)" placeholder under Recent files for why this is
+            // added/removed instead of shown/hidden.
+            Instantiator {
+                model: bar.controller.videoTrackLabels.length === 0 ? 1 : 0
+                delegate: AppMenuItem { text: qsTr("<empty>"); enabled: false }
+                onObjectAdded: (index, object) => videoTrackMenu.insertItem(0, object)
+                onObjectRemoved: (index, object) => videoTrackMenu.removeItem(object)
             }
             Instantiator {
                 model: bar.controller.videoTrackLabels
@@ -607,11 +614,13 @@ MenuBar {
             title: qsTr("&Track")
             icon.source: Theme.icon("audio_track")
 
-            AppMenuItem {
-                text: qsTr("<empty>")
-                enabled: false
-                visible: bar.controller.audioTrackLabels.length === 0
-                height: visible ? implicitHeight : 0
+            // See the "(empty)" placeholder under Recent files for why this is
+            // added/removed instead of shown/hidden.
+            Instantiator {
+                model: bar.controller.audioTrackLabels.length === 0 ? 1 : 0
+                delegate: AppMenuItem { text: qsTr("<empty>"); enabled: false }
+                onObjectAdded: (index, object) => audioTrackMenu.insertItem(0, object)
+                onObjectRemoved: (index, object) => audioTrackMenu.removeItem(object)
             }
             Instantiator {
                 model: bar.controller.audioTrackLabels
@@ -772,11 +781,13 @@ MenuBar {
                 onObjectAdded: (index, object) => titlesMenu.insertItem(index, object)
                 onObjectRemoved: (index, object) => titlesMenu.removeItem(object)
             }
-            AppMenuItem {
-                text: qsTr("<empty>")
-                enabled: false
-                visible: bar.controller.dvdTitles.length === 0
-                height: visible ? implicitHeight : 0
+            // See the "(empty)" placeholder under Recent files for why this is
+            // added/removed instead of shown/hidden.
+            Instantiator {
+                model: bar.controller.dvdTitles.length === 0 ? 1 : 0
+                delegate: AppMenuItem { text: qsTr("<empty>"); enabled: false }
+                onObjectAdded: (index, object) => titlesMenu.insertItem(0, object)
+                onObjectRemoved: (index, object) => titlesMenu.removeItem(object)
             }
         }
         AppMenu {
@@ -795,11 +806,13 @@ MenuBar {
                 onObjectAdded: (index, object) => chaptersMenu.insertItem(index, object)
                 onObjectRemoved: (index, object) => chaptersMenu.removeItem(object)
             }
-            AppMenuItem {
-                text: qsTr("<empty>")
-                enabled: false
-                visible: bar.controller.chapters.length === 0
-                height: visible ? implicitHeight : 0
+            // See the "(empty)" placeholder under Recent files for why this is
+            // added/removed instead of shown/hidden.
+            Instantiator {
+                model: bar.controller.chapters.length === 0 ? 1 : 0
+                delegate: AppMenuItem { text: qsTr("<empty>"); enabled: false }
+                onObjectAdded: (index, object) => chaptersMenu.insertItem(0, object)
+                onObjectRemoved: (index, object) => chaptersMenu.removeItem(object)
             }
         }
         AppMenu {

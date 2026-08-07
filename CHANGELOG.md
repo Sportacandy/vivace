@@ -29,6 +29,19 @@ each get their own entry instead.
   and a bug in Qt Multimedia wiped out any subtitle already attached to
   the frame during that re-dispatch. Same custom-built-Qt fix as above
   (same patch file).
+- **macOS:** every menu Vivace fills in while running came up empty —
+  *Video/Audio/Subtitles ▸ Track* showed only their `<empty>` placeholder
+  (even for the video track that was visibly playing), and *Open ▸ Recent
+  files*, *Open ▸ Favorites/TV/Radio*, *Browse ▸ Titles* and *Browse ▸
+  Chapters* were blank the same way. Since Qt 6.8, Qt Quick Controls builds
+  the menu bar as a real macOS menu, and Qt only carries a menu item's text
+  across when the menu is first created — never for items added afterwards,
+  which is how all of those menus are filled in. They reached macOS with no
+  text at all and drew as blank rows. Qt also can't hide an item in a native
+  menu, so the placeholder stayed on screen next to them. Both are handled
+  now, and the menus stay where macOS users expect them, at the top of the
+  screen. Playback itself was never affected: the tracks were read correctly
+  all along, they just never reached the menu.
 
 ## [0.2.0] — 2026-08-04
 

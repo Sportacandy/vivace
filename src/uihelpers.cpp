@@ -28,6 +28,17 @@
 #endif
 #endif
 
+#ifdef Q_OS_MACOS
+// Private Qt API, for syncNativeMenu() below. There is no public way to reach
+// the QPlatformMenuItem behind a Quick Controls MenuItem, and no public signal
+// that makes Qt sync one: QQuickMenuPrivate::syncWithNativeMenu() is the exact
+// call Qt makes itself when a menu is first turned native. Safe here because
+// Vivace builds and ships against one pinned Qt (the frameworks are deployed
+// into the bundle), so this never meets a Qt it wasn't compiled against.
+#include <QtQuickTemplates2/private/qquickmenu_p.h>
+#include <QtQuickTemplates2/private/qquickmenu_p_p.h>
+#endif
+
 namespace {
 
 // Alphabetical {name, description, value} rows from a list of enums.
@@ -296,6 +307,25 @@ void ensureProgId(QSettings &reg)
 }
 } // namespace
 #endif
+
+void UiHelpers::syncNativeMenu([[maybe_unused]] QObject *menu) const
+{
+#ifdef Q_OS_MACOS
+    auto *quickMenu = qobject_cast<QQuickMenu *>(menu);
+    if (!quickMenu)
+        return;
+    auto *menuPrivate = QQuickMenuPrivate::get(quickMenu);
+    // Null until this menu is actually backed by an NSMenu — it isn't while
+    // the menu bar is still being built, and never for a Menu used on its own
+    // (a context menu), which Qt keeps as ordinary Quick items.
+    if (!menuPrivate->maybeNativeHandle())
+        return;
+
+    // Fills in text, enabled, checkable/checked, icon and shortcut for every
+    // item, including the ones inserted after the menu went native.
+    menuPrivate->syncWithNativeMenu();
+#endif
+}
 
 bool UiHelpers::fileAssociationsSupported() const
 {

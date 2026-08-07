@@ -71,6 +71,24 @@ public:
     Q_INVOKABLE QVariantList supportedVideoCodecs() const;
     Q_INVOKABLE QVariantList supportedAudioCodecs() const;
 
+    // macOS: push a Menu's items into the NSMenu Qt Quick Controls built for
+    // it. Since Qt 6.8 a MenuBar (and everything under it) is a real NSMenu on
+    // macOS, but Qt only copies an item's text/state across in
+    // QQuickNativeMenuItem::sync(), which it calls for the items a menu was
+    // declared with -- never for ones handed to insertItem()/addItem()
+    // afterwards. Those reach macOS with no text at all and draw as blank
+    // rows, which silently emptied every menu Vivace fills in at runtime
+    // (the Track pickers, Recent files, Favorites/TV/Radio, titles, chapters).
+    // A no-op off macOS and on menus that aren't native. Call it after
+    // changing a menu's contents; AppMenu.qml does that for every menu in the
+    // app, so individual menus don't have to.
+    //
+    // Note this only covers text and state. Qt cannot hide an item in a native
+    // menu at all, so a menu row that comes and goes has to be added and
+    // removed rather than bound to `visible` -- see the "(empty)" placeholders
+    // in MainMenuBar.qml.
+    Q_INVOKABLE void syncNativeMenu(QObject *menu) const;
+
     // Windows file associations (user-scope, HKCU\Software\Classes; no admin).
     // Whether associations can be managed on this platform at all.
     Q_INVOKABLE bool fileAssociationsSupported() const;
