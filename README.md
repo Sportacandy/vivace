@@ -89,10 +89,6 @@ own installed kit removes that risk entirely, since there's only ever one
 build involved. No separate rebuild step needed afterward; just rebuild
 Vivace itself against that same Qt install once the script finishes.
 
-(There are also older `qt-patched-prebuilt-win64`/`qt-patched-prebuilt-linux64`
-GitHub releases from before this switch — CI no longer produces or relies
-on them, so treat them as unmaintained; prefer the scripts above.)
-
 ## Audio speed/pitch compensation
 
 Vivace's speed control (`Play > Speed`) can preserve pitch when playing
