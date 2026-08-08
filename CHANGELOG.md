@@ -11,6 +11,8 @@ each get their own entry instead.
 
 ## [Unreleased]
 
+## [0.3.0] — 2026-08-08
+
 ### Fixed
 - After reopening a file whose audio/subtitle track choice was
   remembered (or that has a language preference set in Preferences),
