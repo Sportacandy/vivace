@@ -12,6 +12,16 @@ each get their own entry instead.
 ## [Unreleased]
 
 ### Fixed
+- After reopening a file whose audio/subtitle track choice was
+  remembered (or that has a language preference set in Preferences),
+  playback correctly resumed the right track — but the *Audio ▸ Track*/
+  *Subtitles ▸ Track* menus kept showing "Off"/the default track
+  checked instead of the actual one. Qt Multimedia doesn't announce a
+  track change unless the track *list* itself changes, only when a
+  track is picked directly through the menu; the code path that
+  restores a remembered or preferred track was setting it a level
+  too low to trigger that announcement. The menus now correctly
+  reflect the track that's actually playing.
 - Selecting certain embedded subtitle tracks (image-based formats like
   DVD subtitles, PGS, or DVB — anything that isn't text) could crash
   Vivace outright, on every platform. The bug is in Qt Multimedia's

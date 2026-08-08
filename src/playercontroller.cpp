@@ -2059,9 +2059,14 @@ bool PlayerController::loadSubtitles(const QUrl &url)
     }
     m_externalSubs = std::move(cues);
     m_subtitleDelayMs = 0;
-    // Avoid double subtitles: turn off any embedded subtitle track.
+    // Avoid double subtitles: turn off any embedded subtitle track. Via this
+    // class's own setActiveSubtitleTrack(), not m_player's directly -- see
+    // the comment in restoreTrackSelections() for why (the FFmpeg backend
+    // doesn't announce a track *set*, only the list changing, so going
+    // straight to m_player would leave the Subtitles > Track menu's "Off"
+    // item unchecked after this call).
     if (m_player->activeSubtitleTrack() >= 0)
-        m_player->setActiveSubtitleTrack(-1);
+        setActiveSubtitleTrack(-1);
     emit externalSubtitlesChanged();
     emit subtitleDelayChanged();
     updateSubtitle(m_player->position());
@@ -2849,32 +2854,46 @@ void PlayerController::restoreTrackSelections()
 
     const QUrl url = m_player->source();
     const int audio = m_fileSettings->audioTrack(url);
+    // setActiveAudioTrack()/setActiveSubtitleTrack() here (unqualified, this
+    // class's own wrapper -- see their declaration in playercontroller.h)
+    // NOT m_player->setActiveAudioTrack()/setActiveSubtitleTrack() directly:
+    // the FFmpeg backend doesn't emit activeTracksChanged when a track is
+    // merely *set* (only when the list itself changes), so going straight to
+    // m_player leaves PlayerController's own activeAudioTrack/
+    // activeSubtitleTrack properties stale -- the restored track plays
+    // correctly (m_player's own state is right), but the Track menus'
+    // checked items don't move to reflect it, since nothing tells QML to
+    // re-read them. This exact bug was already fixed once for direct user
+    // track selection (menu clicks); this function bypassed that fix by
+    // calling m_player directly instead of going through it.
     if (audio >= 0 && audio < m_player->audioTracks().size())
-        m_player->setActiveAudioTrack(audio);
+        setActiveAudioTrack(audio);
 
     const int subtitle = m_fileSettings->subtitleTrack(url);
     if (subtitle != FileSettings::notStored
         && subtitle >= -1 && subtitle < m_player->subtitleTracks().size()) {
-        m_player->setActiveSubtitleTrack(subtitle);
+        setActiveSubtitleTrack(subtitle);
     }
 }
 
 void PlayerController::selectPreferredTracks()
 {
+    // See restoreTrackSelections() above for why these call this class's own
+    // setActiveAudioTrack()/setActiveSubtitleTrack() rather than m_player's.
     if (!m_preferredAudioLanguages.trimmed().isEmpty()) {
         const int index = findTrackByLanguages(m_player->audioTracks(),
                                                m_preferredAudioLanguages);
         if (index >= 0)
-            m_player->setActiveAudioTrack(index);
+            setActiveAudioTrack(index);
     }
 
     if (!m_subtitlesByDefault) {
-        m_player->setActiveSubtitleTrack(-1);
+        setActiveSubtitleTrack(-1);
     } else if (!m_preferredSubtitleLanguages.trimmed().isEmpty()) {
         const int index = findTrackByLanguages(m_player->subtitleTracks(),
                                                m_preferredSubtitleLanguages);
         if (index >= 0)
-            m_player->setActiveSubtitleTrack(index);
+            setActiveSubtitleTrack(index);
     }
 }
 
