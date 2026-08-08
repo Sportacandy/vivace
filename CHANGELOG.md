@@ -53,6 +53,9 @@ each get their own entry instead.
   when a bundle doesn't name itself. It now uses `org.vivaceplayer.vivace`,
   matching the ID the macOS installer already used. Vivace's own settings
   were never stored under the placeholder and carry over untouched.
+- **macOS:** the system menu read "About vivace"/"Hide vivace"/"Quit vivace"
+  (lowercase), inconsistent with the app's own "Vivace" display name
+  elsewhere. Finder's name for the app is unaffected.
 
 ## [0.2.0] — 2026-08-04
 

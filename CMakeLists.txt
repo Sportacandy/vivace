@@ -199,6 +199,13 @@ set_target_properties(vivace PROPERTIES
     # setOrganizationName/setApplicationName) uses to identify the app. Match
     # the ID packaging/macos/build_installer.sh already uses for the installer.
     MACOSX_BUNDLE_GUI_IDENTIFIER "org.vivaceplayer.vivace"
+    # Info.plist's CFBundleName otherwise defaults to the lowercase target
+    # name, so macOS's system menu read "About vivace"/"Hide vivace"/
+    # "Quit vivace" instead of "Vivace" (main.cpp's own
+    # setApplicationDisplayName("Vivace") only affects the running app, not
+    # what the OS reads from the bundle before/around that). Only changes the
+    # menu-bar/Get Info name; the file in Finder stays vivace.app.
+    MACOSX_BUNDLE_BUNDLE_NAME "Vivace"
 )
 
 # Windows: embed the brand icon into the executable. The RC references
