@@ -56,6 +56,33 @@ each get their own entry instead.
 - **macOS:** the system menu read "About vivace"/"Hide vivace"/"Quit vivace"
   (lowercase), inconsistent with the app's own "Vivace" display name
   elsewhere. Finder's name for the app is unaffected.
+- The menu bar's text could go nearly invisible on a system set to Dark
+  mode (Windows/Linux; macOS's menu bar is a native `NSMenu` and was
+  already unaffected, see the "Video/Audio/Subtitles ▸ Track" entry
+  above). Its text color was fixed dark, which stopped matching the
+  background once Qt's Fusion style started following the OS color
+  scheme. It now follows the same live palette Fusion itself uses,
+  so it stays correct in both light and dark. The menu/list selection
+  highlight is also now a darker, less glaring color in Dark mode
+  instead of reusing the same bright light-blue fill both modes had
+  before. Toolbar, control bar and the playlist panel already have
+  their own fixed-dark look independent of the system theme and were
+  unaffected.
+- Several dialogs (Bookmarks, Favorites editor, Media info, Enter URL,
+  Toolbar editor, Find subtitles) and the Keyboard and mouse shortcuts
+  page kept a fixed light-gray/white look regardless of Dark mode, so
+  their list rows, table headers and (in Keyboard and mouse
+  specifically) alternating row stripes could render bright and
+  washed-out against the rest of a dark-themed window. All now follow
+  the same live palette as the rest of the app. Error-message text
+  (e.g. a failed Cast server, a missing OpenSubtitles API key) also
+  switches to a brighter red in Dark mode, since the original dark red
+  had poor contrast against a dark background.
+- The always-visible scrollbar on *Preferences ▸ Keyboard and mouse*
+  had a hard-to-see handle in Dark mode. It uses Qt's own default
+  scrollbar look, which fades in briefly almost everywhere else in the
+  app, so the low contrast was never noticeable elsewhere; here it's
+  permanently on. It now gets its own lighter handle color in Dark mode.
 
 ## [0.2.0] — 2026-08-04
 

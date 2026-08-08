@@ -28,7 +28,7 @@ Window {
     height: 420
     minimumWidth: 360
     minimumHeight: 280
-    color: "#f0f0f0"
+    color: palette.window
 
     function open() {
         const src = controller.bookmarks.entries()
@@ -100,8 +100,8 @@ Window {
         Rectangle {
             Layout.fillWidth: true
             Layout.fillHeight: true
-            color: "white"
-            border.color: "#a0a0a0"
+            color: palette.base
+            border.color: palette.mid
 
             ColumnLayout {
                 anchors.fill: parent
@@ -113,7 +113,7 @@ Window {
                     height: 26
                     Rectangle {
                         width: 110; height: parent.height
-                        color: "#e0e0e0"; border.color: "#c0c0c0"
+                        color: palette.button; border.color: palette.mid
                         Label {
                             anchors.left: parent.left
                             anchors.leftMargin: 6
@@ -129,7 +129,7 @@ Window {
                     }
                     Rectangle {
                         width: parent.width - 110; height: parent.height
-                        color: "#e0e0e0"; border.color: "#c0c0c0"
+                        color: palette.button; border.color: palette.mid
                         Label {
                             anchors.left: parent.left
                             anchors.leftMargin: 6
@@ -155,8 +155,8 @@ Window {
                         required property var modelData
                         width: ListView.view.width
                         height: 30
-                        color: ListView.isCurrentItem ? "#cce8ff"
-                               : index % 2 ? "#ffffff" : "#f6f6f6"
+                        color: ListView.isCurrentItem ? Theme.highlight
+                               : index % 2 ? row.palette.base : row.palette.alternateBase
 
                         MouseArea {
                             anchors.fill: parent

@@ -24,7 +24,7 @@ Window {
     minimumWidth: 420
     minimumHeight: 150
     maximumHeight: 200
-    color: "#f0f0f0"
+    color: palette.window
 
     function open() {
         urlField.clear()

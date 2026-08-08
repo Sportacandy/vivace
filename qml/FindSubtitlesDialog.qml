@@ -97,7 +97,7 @@ Window {
             Layout.fillWidth: true
             visible: !osc.configured
             wrapMode: Text.WordWrap
-            color: "#b00020"
+            color: Theme.dark ? "#ff6b6b" : "#b00020"
             text: qsTr("Set your OpenSubtitles API key in Preferences > Network "
                        + "to search. Create a free key at opensubtitles.com "
                        + "(a login there also raises the download limit).")
@@ -119,7 +119,7 @@ Window {
                 header: Rectangle {
                     width: resultsView.width
                     height: 24
-                    color: "#e0e0e0"
+                    color: palette.button
                     z: 2
                     RowLayout {
                         anchors.fill: parent

@@ -70,6 +70,27 @@ ColumnLayout {
                 ScrollBar.vertical: ScrollBar {
                     id: vbar
                     policy: ScrollBar.AlwaysOn
+
+                    // Fusion's own stock handle (qtdeclarative's fusion/
+                    // ScrollBar.qml) fills with palette.mid (or palette.dark
+                    // while pressed) at 0.75 opacity -- fine when a scrollbar
+                    // only flashes in on hover/scroll, but this is the one
+                    // ScrollBar in the app forced AlwaysOn, so the low
+                    // contrast is visible constantly rather than briefly.
+                    // palette.mid in Fusion's dark palette reads too close
+                    // to the surrounding dark page for a good-contrast
+                    // permanent handle (user feedback, 2026-08-08); give it
+                    // its own lighter gray in Dark mode instead, keeping
+                    // Fusion's own colors in Light mode since only Dark was
+                    // reported as hard to see.
+                    contentItem: Rectangle {
+                        implicitWidth: vbar.interactive ? 6 : 2
+                        implicitHeight: implicitWidth
+                        radius: width / 2
+                        color: Theme.dark
+                               ? (vbar.pressed ? "#c0c0c0" : "#8a8a8a")
+                               : (vbar.pressed ? vbar.palette.dark : vbar.palette.mid)
+                    }
                 }
 
                 delegate: Rectangle {
@@ -79,7 +100,14 @@ ColumnLayout {
                     // top of the row text (it defaults to an overlay).
                     width: ListView.view.width - vbar.width
                     height: 34
-                    color: index % 2 ? "transparent" : "#f4f4f4"
+                    // "#f4f4f4" was unconditional -- barely-off-white in
+                    // Light mode (intentional, a subtle stripe against the
+                    // window background), but a bright, near-invisible-text
+                    // block once the surrounding page went dark (Theme.dark).
+                    // A correspondingly subtle *lighter-than-the-background*
+                    // dark-mode stripe keeps the same "barely different"
+                    // effect instead of a jarring bright row.
+                    color: index % 2 ? "transparent" : (Theme.dark ? "#3a3a3a" : "#f4f4f4")
 
                     RowLayout {
                         anchors.fill: parent
@@ -245,7 +273,7 @@ ColumnLayout {
             Label {
                 Layout.fillWidth: true
                 wrapMode: Text.WordWrap
-                color: "#b00000"
+                color: Theme.dark ? "#ff6b6b" : "#b00000"
                 visible: captureWindow.conflictId !== ""
                 text: qsTr("Already used by “%1”. Assigning will clear it there.")
                       .arg(Shortcuts.label(captureWindow.conflictId))

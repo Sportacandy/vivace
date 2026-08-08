@@ -26,7 +26,7 @@ Window {
     height: 600
     minimumWidth: 480
     minimumHeight: 360
-    color: "#f0f0f0"
+    color: palette.window
 
     function open() {
         if (transientParent) {
@@ -90,7 +90,7 @@ Window {
 
                 width: ListView.view.width
                 height: rowLayout.implicitHeight + 4
-                color: isCurrent ? "#cce8ff"
+                color: isCurrent ? Theme.highlight
                                  : index % 2 ? "transparent" : "#00000010"
 
                 RowLayout {
@@ -143,11 +143,16 @@ Window {
                 readOnly: true
                 textFormat: TextEdit.RichText
                 wrapMode: TextEdit.Wrap
-                color: "black"
+                // Applies to any part of the HTML that doesn't set its own
+                // color (e.g. the "No media loaded" placeholder, and the
+                // <h2> section headers) -- the per-row table backgrounds
+                // set their own bgcolor, already made light/dark-aware in
+                // PlayerController::mediaInfoHtml() itself.
+                color: palette.text
                 text: infoDialog.controller.mediaInfoHtml !== ""
                       ? infoDialog.controller.mediaInfoHtml
                       : "<i>" + qsTr("No media loaded") + "</i>"
-                background: Rectangle { color: "white" }
+                background: Rectangle { color: palette.base }
             }
         }
 

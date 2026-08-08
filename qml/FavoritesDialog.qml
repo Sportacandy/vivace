@@ -29,7 +29,7 @@ Window {
     height: 520
     minimumWidth: 480
     minimumHeight: 380
-    color: "#f0f0f0"
+    color: palette.window
 
     function openFor(titleText, captionText, iconSource, model) {
         title = titleText
@@ -166,7 +166,7 @@ Window {
                         Label {
                             text: crumb.modelData.label
                             font.bold: crumb.last
-                            color: crumb.last ? "#1a1a1a" : "#1e6fd0"
+                            color: crumb.last ? palette.text : "#1e6fd0"
                             anchors.verticalCenter: parent.verticalCenter
                             MouseArea {
                                 anchors.fill: parent
@@ -197,8 +197,8 @@ Window {
         Rectangle {
             Layout.fillWidth: true
             Layout.fillHeight: true
-            color: "white"
-            border.color: "#a0a0a0"
+            color: palette.base
+            border.color: palette.mid
 
             ColumnLayout {
                 anchors.fill: parent
@@ -210,18 +210,18 @@ Window {
                     Layout.fillWidth: true
                     height: 26
                     Rectangle {
-                        width: 40; height: parent.height; color: "#e0e0e0"
-                        border.color: "#c0c0c0"
+                        width: 40; height: parent.height; color: palette.button
+                        border.color: palette.mid
                     }
                     Rectangle {
                         width: dialog.width * 0.35; height: parent.height
-                        color: "#e0e0e0"; border.color: "#c0c0c0"
+                        color: palette.button; border.color: palette.mid
                         Label { anchors.centerIn: parent; text: qsTr("Name") }
                     }
                     Rectangle {
                         width: parent.width - 40 - dialog.width * 0.35
-                        height: parent.height; color: "#e0e0e0"
-                        border.color: "#c0c0c0"
+                        height: parent.height; color: palette.button
+                        border.color: palette.mid
                         Label {
                             anchors.left: parent.left
                             anchors.leftMargin: 6
@@ -248,8 +248,8 @@ Window {
                         required property var modelData
                         width: ListView.view.width
                         height: 30
-                        color: ListView.isCurrentItem ? "#cce8ff"
-                               : index % 2 ? "#ffffff" : "#f6f6f6"
+                        color: ListView.isCurrentItem ? Theme.highlight
+                               : index % 2 ? row.palette.base : row.palette.alternateBase
 
                         MouseArea {
                             anchors.fill: parent

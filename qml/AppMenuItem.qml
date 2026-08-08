@@ -17,13 +17,15 @@ MenuItem {
     icon.width: 16
     icon.height: 16
 
-    // Windows-menu hover look, as in SMPlayer: light blue fill, text stays
-    // dark (styles switching to white-on-light-gray are unreadable). No fixed
+    // Windows-menu hover look, as in SMPlayer: a light (or, in Dark mode, a
+    // deliberately darker teal -- see Theme.highlight) fill; text uses
+    // palette.text below rather than a fixed color, so it's always dark on
+    // the light fill and always light on the dark one. No fixed
     // implicitWidth so each menu sizes to its own widest item (content-fit).
     background: Rectangle {
         implicitHeight: 32
         radius: 4
-        color: menuItem.highlighted ? "#cce8ff" : "transparent"
+        color: menuItem.highlighted ? Theme.highlight : "transparent"
     }
 
     // Our own cascading-submenu arrow, replacing the Fusion style's stock
@@ -54,8 +56,12 @@ MenuItem {
             source: "qrc:/qt-project.org/imports/QtQuick/Controls/Fusion/images/arrow.png"
             rotation: -90
             fillMode: Image.Pad
-            color: menuItem.down || menuItem.hovered || menuItem.highlighted
-                   ? "#1a1a1a" : "#505050"
+            // Theme.highlight now adapts to light/dark itself (see
+            // background above), so the arrow no longer needs a separate
+            // "always dark on the highlight" branch -- palette.text is
+            // already dark on the light fill and light on the dark fill,
+            // in every state.
+            color: menuItem.palette.text
         }
     }
 
@@ -96,7 +102,13 @@ MenuItem {
             text: UiHelpers.mnemonicLabel(menuItem.text)
             textFormat: Text.StyledText
             verticalAlignment: Text.AlignVCenter
-            color: menuItem.enabled ? "#1a1a1a" : "#9d9d9d"
+            // palette.text (not a fixed color) so this follows Fusion's own
+            // light/dark palette instead of going near-invisible in Dark
+            // mode; dimmed via opacity when disabled, matching the icon
+            // Image's own convention just above, rather than a second fixed
+            // gray that would need its own light/dark pair.
+            color: menuItem.palette.text
+            opacity: menuItem.enabled ? 1.0 : 0.4
             Layout.preferredWidth: labelMetrics.advanceWidth + 2
 
             TextMetrics {
@@ -121,7 +133,12 @@ MenuItem {
                   ? UiHelpers.shortcutText(menuItem.action.shortcut) : ""
             visible: text !== ""
             verticalAlignment: Text.AlignVCenter
-            color: menuItem.enabled ? "#505050" : "#9d9d9d"
+            // Same palette-based approach as mainLabel above; dimmed further
+            // even when enabled (0.65 vs. mainLabel's 1.0) to keep the hint
+            // visually secondary to the label, as the old #505050-vs-#1a1a1a
+            // pairing did.
+            color: menuItem.palette.text
+            opacity: menuItem.enabled ? 0.65 : 0.4
         }
     }
 }

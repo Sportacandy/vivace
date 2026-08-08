@@ -27,9 +27,11 @@
 #include "httptssource.h"
 #include "livestreamdevice.h"
 #include <QRegularExpression>
+#include <QGuiApplication>
 #include <QSize>
 #include <QSettings>
 #include <QStandardPaths>
+#include <QStyleHints>
 #include <QTimer>
 #include <QVideoFrame>
 #include <QVideoSink>
@@ -2154,10 +2156,21 @@ QString PlayerController::mediaInfoHtml() const
         return QStringLiteral("<h2>%1</h2><table width=\"100%\">").arg(text);
     };
     const auto closePar = []() { return QStringLiteral("</table>"); };
-    const auto openItem = [&row]() {
+    // QML's RichText TextArea inherits its own color/background for any
+    // HTML that doesn't set one explicitly, but bgcolor here is set on every
+    // row, so it needs its own light/dark pair -- "lavender"/"powderblue"
+    // stayed correct-looking in Light mode, but not in Dark (see
+    // MediaInfoDialog.qml's TextArea, whose own color/background switched
+    // to palette.text/palette.base -- text there would otherwise go light
+    // on these still-light rows).
+    const bool dark = QGuiApplication::styleHints()->colorScheme()
+                       == Qt::ColorScheme::Dark;
+    const auto openItem = [&row, dark]() {
         return QStringLiteral("<tr bgcolor=\"%1\">")
-                .arg(row++ % 2 ? QStringLiteral("lavender")
-                               : QStringLiteral("powderblue"));
+                .arg(dark ? (row++ % 2 ? QStringLiteral("#3a3a4a")
+                                       : QStringLiteral("#2a3a42"))
+                          : (row++ % 2 ? QStringLiteral("lavender")
+                                       : QStringLiteral("powderblue")));
     };
     const auto addItem = [&](const QString &tag, const QString &value) {
         if (value.isEmpty())

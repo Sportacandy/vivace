@@ -31,7 +31,7 @@ Window {
     height: 460
     minimumWidth: 520
     minimumHeight: 360
-    color: "#f0f0f0"
+    color: palette.window
 
     function openFor(titleText, targetKey, currentItems, defaults, iconSize) {
         title = titleText

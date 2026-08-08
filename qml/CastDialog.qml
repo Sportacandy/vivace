@@ -78,7 +78,7 @@ Window {
             visible: dialog.server && dialog.server.lastError !== ""
             Layout.fillWidth: true
             wrapMode: Text.WordWrap
-            color: "#b00000"
+            color: Theme.dark ? "#ff6b6b" : "#b00000"
             text: dialog.server
                   ? qsTr("Could not start the server: %1").arg(dialog.server.lastError)
                   : ""

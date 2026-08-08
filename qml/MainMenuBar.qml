@@ -84,19 +84,29 @@ MenuBar {
     }
 
     // Render the mnemonic underline on the top-level titles too; hover uses
-    // the same Windows-like light blue fill with dark text as AppMenuItem.
+    // the same Windows-like light blue fill as AppMenuItem (Theme.highlight,
+    // which itself adapts to light/dark -- see Theme.qml).
     delegate: MenuBarItem {
         id: barItem
         background: Rectangle {
             radius: 4
-            color: barItem.highlighted ? "#cce8ff" : "transparent"
+            color: barItem.highlighted ? Theme.highlight : "transparent"
         }
         contentItem: Label {
             text: UiHelpers.mnemonicLabel(barItem.text)
             textFormat: Text.StyledText
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
-            color: "#1a1a1a"
+            // palette.text in every state, not a fixed color: it's already
+            // dark on Theme.highlight's light fill and light on its dark
+            // fill, and also correct on the menu bar's own (theme-following)
+            // background when not highlighted. A fixed dark color here was
+            // unconditional and went near-invisible in Dark mode (Qt 6.8+
+            // makes Fusion's own palette follow the OS scheme) -- this was
+            // the actual reported "empty-looking" menu bar bug on macOS
+            // before the menu bar there became native; still applies to
+            // Windows/Linux, where it stays a Quick menu.
+            color: barItem.palette.text
         }
     }
 
