@@ -92,11 +92,14 @@ jobs:
         with:
           version: '6.11.1'
           arch: 'linux_gcc_64'
-          # qtwayland: bundles Qt's own Wayland platform plugin into the
-          # tarball, so Vivace works on a Wayland-only session out of the
-          # box instead of requiring the user to install qt6-wayland
-          # system-wide (see README.md's Requirements section).
-          modules: 'qtmultimedia qtshadertools qtwayland'
+          # The Wayland client platform plugin already ships inside this
+          # base linux_gcc_64 package (no separate "qtwayland" add-on
+          # module exists in Qt's online repo -- qtwaylandcompositor is
+          # compositor-only). It needs libwayland-dev's runtime libs
+          # (installed above) to be present for CMake's Linux deploy
+          # step to resolve its dependencies and actually bundle it --
+          # see README.md's Requirements section.
+          modules: 'qtmultimedia qtshadertools'
           aqtsource: 'git+https://github.com/miurahr/aqtinstall.git@8c3695d4a4e1ceabf6a74dc6c79681656dc6b74b'
 
       - name: Build the patched qtmultimedia (AV1 + Speed Control + bitmap subtitles) from source
