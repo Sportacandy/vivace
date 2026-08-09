@@ -162,9 +162,12 @@ jobs:
           chmod +x packaging/linux/build_installer.sh
           QT_DIR="$QT_ROOT_DIR" packaging/linux/build_installer.sh --tarball
 
-      - name: Upload to release
+      - name: Update nightly release
         uses: softprops/action-gh-release@v2
         with:
+          tag_name: nightly
+          prerelease: true
+          make_latest: false
           files: Vivace-linux-aarch64.tar.gz
 
   build-and-release-macos:
