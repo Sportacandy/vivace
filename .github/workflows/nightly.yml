@@ -206,7 +206,8 @@ jobs:
             libxcb-randr0-dev libxcb-render-util0-dev libxcb-shape0-dev libxcb-shm0-dev \
             libxcb-sync-dev libxcb-util-dev libxcb-xfixes0-dev libxcb-xkb-dev \
             libxcb1-dev libxext-dev libxfixes-dev libxi-dev \
-            libxkbcommon-dev libxkbcommon-x11-dev libxrender-dev libatspi2.0-dev
+            libxkbcommon-dev libxkbcommon-x11-dev libxrender-dev libatspi2.0-dev \
+            libpulse-dev
 
       - name: Checkout
         uses: actions/checkout@v4
