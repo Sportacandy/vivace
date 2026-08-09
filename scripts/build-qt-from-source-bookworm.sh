@@ -68,6 +68,18 @@ for module in "${MODULES[@]}"; do
     if [ "$module" != "qtbase" ]; then
         CMAKE_ARGS+=(-DCMAKE_PREFIX_PATH="$PREFIX")
     fi
+    if [ "$module" = "qttools" ]; then
+        # qttools' src/assistant/CMakeLists.txt unconditionally add_subdirectory()s
+        # qlitehtml/src whenever FEATURE_assistant is on and Qt::Sql/Qt::PrintSupport
+        # exist (both true here, since qtbase above builds with its own defaults) --
+        # confirmed by reading that file at the v6.11.1 tag directly. qlitehtml is a
+        # separate git submodule the plain `git clone --depth 1` above never fetches,
+        # so it fails with "qlitehtml not found." Vivace doesn't ship or need the
+        # standalone Assistant help-browser app (only lrelease/lupdate from qttools),
+        # so disabling the feature is simpler than teaching the clone step about a
+        # submodule for a tool that's never used.
+        CMAKE_ARGS+=(-DFEATURE_assistant=OFF)
+    fi
     cmake "${CMAKE_ARGS[@]}"
     cmake --build "$WORK/build-$module" --parallel
     cmake --install "$WORK/build-$module"
