@@ -11,6 +11,14 @@ each get their own entry instead.
 
 ## [Unreleased]
 
+### Documentation
+- Documented that the Linux `.tar.gz` may need `libxcb-cursor0` (a
+  well-known Qt 6.5+ packaging gotcha — the xcb platform plugin loads it
+  at runtime rather than linking it, so it can't be bundled
+  automatically) and, on a Wayland session, `qt6-wayland` (the CI build
+  doesn't currently bundle Qt's own Wayland platform plugin) already
+  installed on the system to start at all.
+
 ## [0.3.0] — 2026-08-08
 
 ### Fixed
