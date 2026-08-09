@@ -54,8 +54,17 @@ WORK="$(mktemp -d)"
 trap 'rm -rf "$WORK"' EXIT
 
 echo "== Downloading dav1d-enabled FFmpeg (BtbN n7.1, matches Qt's own FFmpeg soname family) =="
+# BtbN publishes separate x86_64 ("linux64") and arm64 ("linuxarm64")
+# archives, built from the same n7.1 tag -- soname versions (avcodec.so.61
+# etc.) come from the FFmpeg source version, not the architecture, so both
+# match Qt's own FFmpeg regardless of which one this script downloads.
+case "$(uname -m)" in
+    x86_64)  FFMPEG_ARCH="linux64" ;;
+    aarch64) FFMPEG_ARCH="linuxarm64" ;;
+    *) echo "ERROR: unsupported architecture $(uname -m)" >&2; exit 1 ;;
+esac
 curl -L -o "$WORK/ffmpeg.tar.xz" \
-    "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n7.1-latest-linux64-gpl-shared-7.1.tar.xz"
+    "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n7.1-latest-${FFMPEG_ARCH}-gpl-shared-7.1.tar.xz"
 mkdir "$WORK/ffmpeg"
 tar -xJf "$WORK/ffmpeg.tar.xz" -C "$WORK/ffmpeg" --strip-components=1
 

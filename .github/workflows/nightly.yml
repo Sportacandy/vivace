@@ -120,6 +120,53 @@ jobs:
           make_latest: false
           files: Vivace-linux-x86_64.tar.gz
 
+  build-and-release-linux-arm64:
+    needs: build-and-release
+    runs-on: ubuntu-24.04-arm
+    # NEW (2026-08-10), for Raspberry Pi OS (64-bit) users. Free GitHub-hosted
+    # arm64 Ubuntu runners for public repos went GA 2025-08-07, and Qt DOES
+    # ship an official prebuilt linux_gcc_arm64 desktop kit including
+    # qtmultimedia (verified directly against download.qt.io's package
+    # listing -- not assumed). Otherwise mirrors build-and-release-linux
+    # exactly; both scripts/build-patched-qtmultimedia-linux.sh and
+    # packaging/linux/build_installer.sh detect `uname -m` themselves to
+    # pick the right BtbN FFmpeg archive / output tarball name, so no
+    # arch-specific script variant was needed. UNVERIFIED as of this
+    # writing -- this is this project's first build on this arch/runner
+    # combination, so expect possible follow-up fixes once it actually runs
+    # (same caveat the macOS job's own first-run comment carried).
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Linux system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libgl1-mesa-dev libxkbcommon-dev patchelf ninja-build libx11-dev libxext-dev libxrandr-dev libwayland-dev
+
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: '6.11.1'
+          arch: 'linux_gcc_arm64'
+          modules: 'qtmultimedia qtshadertools'
+          aqtsource: 'git+https://github.com/miurahr/aqtinstall.git@8c3695d4a4e1ceabf6a74dc6c79681656dc6b74b'
+
+      - name: Build the patched qtmultimedia (AV1 + Speed Control + bitmap subtitles) from source
+        run: |
+          chmod +x scripts/build-patched-qtmultimedia-linux.sh
+          scripts/build-patched-qtmultimedia-linux.sh "$QT_ROOT_DIR"
+
+      - name: Build tarball
+        run: |
+          chmod +x packaging/linux/build_installer.sh
+          QT_DIR="$QT_ROOT_DIR" packaging/linux/build_installer.sh --tarball
+
+      - name: Upload to release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: Vivace-linux-aarch64.tar.gz
+
   build-and-release-macos:
     needs: build-and-release
     runs-on: macos-latest

@@ -50,7 +50,7 @@ cp "$root/icons/app_256.png" "$data/vivace.png"      # placeholder until brand i
 
 if [ "$MODE" = "tarball" ]; then
     echo "== tar czf =="
-    out="$root/Vivace-linux-x86_64.tar.gz"
+    out="$root/Vivace-linux-$(uname -m).tar.gz"
     tar czf "$out" -C "$pkg" --transform 's/^data/vivace/' data
     echo "Archive: $out"
     exit 0

@@ -62,8 +62,9 @@ QT_DIR=~/Qt/6.11.1/macos packaging/macos/build_installer.sh
 QT_DIR=~/Qt/6.11.1/macos packaging/macos/build_installer.sh --dmg
 ```
 
-Each produces `VivaceSetup-*` / `Vivace-linux-x86_64.tar.gz` / `Vivace-macos.dmg`
-at the repo root.
+Each produces `VivaceSetup-*` / `Vivace-linux-$(uname -m).tar.gz` (`x86_64`
+or `aarch64`, matching the build machine) / `Vivace-macos.dmg` at the repo
+root.
 
 ## Installed layout
 

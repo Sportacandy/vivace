@@ -43,8 +43,9 @@ after installing). UI translated into 24 languages, partial coverage
 elsewhere.
 
 Prebuilt packages: see [Releases](https://github.com/Sportacandy/vivace/releases) —
-a Windows NSIS installer, a Linux `.tar.gz`, and a macOS `.dmg`, plus a
-rolling nightly build from `main`.
+a Windows NSIS installer, a Linux `.tar.gz` (x86_64 and arm64 — the
+latter for Raspberry Pi OS 64-bit and other arm64 desktop Linux), and a
+macOS `.dmg`, plus a rolling nightly build from `main`.
 
 ## Requirements
 
@@ -54,31 +55,22 @@ To build from source:
 - CMake 3.24+
 - A C++17 compiler (developed with MSVC 2022 on Windows)
 
-To run the prebuilt **Linux** `.tar.gz`, two system packages may be
-needed, or Vivace exits immediately with:
+To run the prebuilt **Linux** `.tar.gz`, `libxcb-cursor0` (some
+distributions call it `xcb-cursor0`) may need to be installed, or Vivace
+exits immediately with:
 
 ```
-qt.qpa.plugin: Could not find the Qt platform plugin "wayland" in ""
 qt.qpa.plugin: From 6.5.0, xcb-cursor0 or libxcb-cursor0 is needed to load the Qt xcb platform plugin.
 qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.
 ```
 
-- `libxcb-cursor0` (some distributions call it `xcb-cursor0`) — a
-  well-known Qt 6.5+ packaging gotcha, not a Vivace-specific bug: the xcb
-  platform plugin loads it at runtime rather than linking it directly, so
-  it can't be detected or bundled by the dependency-scanning deploy step
-  the Linux package is built with (there is no `linuxdeployqt` for Qt 6 —
-  see `packaging/linux/build_installer.sh`).
-- On a **Wayland** session (the default on many current distributions,
-  including Ubuntu), also `qt6-wayland` (Debian/Ubuntu) or your
-  distribution's Qt6 Wayland platform integration package. The bundled
-  Qt kit's Wayland platform plugin isn't currently built by CI, so
-  Vivace falls back to xcb/XWayland, which doesn't work on every system
-  — installing `qt6-wayland` supplies a system-wide copy of that plugin
-  for Vivace to load instead.
-
-Both are one-time system installs (`sudo apt install libxcb-cursor0
-qt6-wayland` on Debian/Ubuntu, or the equivalent packages elsewhere).
+This is a well-known Qt 6.5+ packaging gotcha, not a Vivace-specific bug:
+the xcb platform plugin loads it at runtime rather than linking it
+directly, so it can't be detected or bundled by the dependency-scanning
+deploy step the Linux package is built with (there is no `linuxdeployqt`
+for Qt 6 — see `packaging/linux/build_installer.sh`). It's a one-time
+system install (`sudo apt install libxcb-cursor0` on Debian/Ubuntu, or
+the equivalent package elsewhere).
 
 ## AV1 support
 
@@ -286,7 +278,8 @@ QT_DIR=~/Qt/6.11.1/macos packaging/macos/build_installer.sh --dmg
 `-NsisDir`, `-IfwDir` (and `IFW_DIR` on Unix) are auto-detected if omitted. Each
 script configures a Release build, deploys the Qt runtime + QML + plugins +
 FFmpeg into the installer's staging dir, and writes `VivaceSetup-*` /
-`Vivace-linux-x86_64.tar.gz` / `Vivace-macos.dmg` to the repo root. See
+`Vivace-linux-$(uname -m).tar.gz` (`x86_64` or `aarch64`, matching the
+machine it's built on) / `Vivace-macos.dmg` to the repo root. See
 [`packaging/README.md`](packaging/README.md) for the full details and follow-ups.
 
 Keys: `Space` play/pause · `←/→` seek ±5 s · `↑/↓` volume · `M` mute · `F` fullscreen ·

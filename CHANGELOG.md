@@ -11,13 +11,24 @@ each get their own entry instead.
 
 ## [Unreleased]
 
+### Added
+- A Linux `.tar.gz` build for arm64 (e.g. Raspberry Pi OS 64-bit),
+  alongside the existing x86_64 build.
+
+### Fixed
+- The Linux `.tar.gz` didn't bundle Qt's own Wayland platform plugin, so
+  on a Wayland session (the default on many current distributions) it
+  fell back to xcb/XWayland — which doesn't work on every system — and
+  needed the `qt6-wayland` system package installed separately just to
+  start. CI now ensures the plugin's own runtime libraries are present
+  at build time, so the deploy step picks it up automatically; no
+  separate system package is needed for this anymore.
+
 ### Documentation
-- Documented that the Linux `.tar.gz` may need `libxcb-cursor0` (a
-  well-known Qt 6.5+ packaging gotcha — the xcb platform plugin loads it
-  at runtime rather than linking it, so it can't be bundled
-  automatically) and, on a Wayland session, `qt6-wayland` (the CI build
-  doesn't currently bundle Qt's own Wayland platform plugin) already
-  installed on the system to start at all.
+- Documented that the Linux `.tar.gz` may still need `libxcb-cursor0`
+  installed (a well-known Qt 6.5+ packaging gotcha — the xcb platform
+  plugin loads it at runtime rather than linking it, so it can't be
+  bundled automatically).
 
 ## [0.3.0] — 2026-08-08
 
