@@ -170,6 +170,87 @@ jobs:
         with:
           files: Vivace-linux-aarch64.tar.gz
 
+  build-and-release-linux-arm64-bookworm:
+    needs: build-and-release
+    runs-on: ubuntu-24.04-arm
+    # NEW (2026-08-10): a SECOND arm64 Linux build, specifically for
+    # Raspberry Pi OS (Debian 12 "bookworm", glibc 2.36). Qt's official
+    # linux_gcc_arm64 kit (used by build-and-release-linux-arm64 above)
+    # needs glibc 2.39+ (confirmed against https://doc.qt.io/qt-6/
+    # linux-building.html -- Qt's own ARM64 reference platform is a
+    # Raspberry Pi 5 running UBUNTU 24.04, not Raspberry Pi OS), which real
+    # Raspberry Pi OS doesn't have until it moves to a Debian 13 "trixie"
+    # base. Building the whole Qt SDK from source INSIDE a debian:bookworm
+    # container (native on this arm64 host, no QEMU) produces binaries that
+    # only need glibc 2.36, which Raspberry Pi OS already has. Debian's apt
+    # only carries Qt 6.4.2 (too old for this project's qtmultimedia patches,
+    # which are diffs against v6.11.1 and reference 6.11-specific internals),
+    # so this builds qtbase/qtshadertools/qtdeclarative/qttools from source
+    # too, not just qtmultimedia -- see scripts/build-qt-from-source-
+    # bookworm.sh's own header comment for why it's plain `cmake`, not Qt's
+    # `configure` wrapper. UNVERIFIED as of this writing -- first build on
+    # this exact combination (container job + from-source Qt SDK); expect
+    # possible follow-up fixes.
+    container:
+      image: debian:bookworm
+    steps:
+      - name: Install build dependencies
+        run: |
+          apt-get update
+          apt-get install -y --no-install-recommends build-essential cmake ninja-build git \
+            curl ca-certificates perl python3 \
+            pkg-config patchelf libssl-dev libgl1-mesa-dev \
+            libglu1-mesa-dev libwayland-dev libfontconfig1-dev libfreetype-dev \
+            libgtk-3-dev libx11-dev libx11-xcb-dev libxcb-cursor-dev \
+            libxcb-glx0-dev libxcb-icccm4-dev libxcb-image0-dev libxcb-keysyms1-dev \
+            libxcb-randr0-dev libxcb-render-util0-dev libxcb-shape0-dev libxcb-shm0-dev \
+            libxcb-sync-dev libxcb-util-dev libxcb-xfixes0-dev libxcb-xkb-dev \
+            libxcb1-dev libxext-dev libxfixes-dev libxi-dev \
+            libxkbcommon-dev libxkbcommon-x11-dev libxrender-dev libatspi2.0-dev
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Caches the ENTIRE built SDK (qtbase+qtshadertools+qtdeclarative+
+      # qttools, then qtmultimedia rebuilt in place on top of it) as one
+      # atomic unit -- safe here in a way swapping in a separately-built
+      # qtmultimedia was NOT (see the 2026-08-06 "Ubuntu 24 crashes" /
+      # private-ABI-mismatch entries in CLAUDE.md): everything below is
+      # built together, from the same source, in the same container, on
+      # every cache MISS, so a cache HIT is byte-identical to what a fresh
+      # build would have produced, never a mix of old+new pieces. The key
+      # hashes the patch files and both build scripts, so any change to
+      # either automatically invalidates the cache and forces a rebuild.
+      - name: Cache built Qt SDK (bookworm)
+        id: qt-cache
+        uses: actions/cache@v4
+        with:
+          path: /opt/qt6
+          key: qt6-bookworm-arm64-${{ hashFiles('patches/qtmultimedia-*.patch', 'scripts/build-qt-from-source-bookworm.sh', 'scripts/build-patched-qtmultimedia-linux.sh') }}
+
+      - name: Build Qt 6.11.1 base SDK from source (qtbase + qtshadertools + qtdeclarative + qttools)
+        if: steps.qt-cache.outputs.cache-hit != 'true'
+        run: |
+          chmod +x scripts/build-qt-from-source-bookworm.sh
+          scripts/build-qt-from-source-bookworm.sh /opt/qt6
+
+      - name: Build the patched qtmultimedia (AV1 + Speed Control + bitmap subtitles) from source
+        if: steps.qt-cache.outputs.cache-hit != 'true'
+        run: |
+          chmod +x scripts/build-patched-qtmultimedia-linux.sh
+          scripts/build-patched-qtmultimedia-linux.sh /opt/qt6
+
+      - name: Build tarball
+        run: |
+          chmod +x packaging/linux/build_installer.sh
+          QT_DIR=/opt/qt6 packaging/linux/build_installer.sh --tarball
+          mv Vivace-linux-aarch64.tar.gz Vivace-linux-aarch64-bookworm.tar.gz
+
+      - name: Upload to release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: Vivace-linux-aarch64-bookworm.tar.gz
+
   build-and-release-macos:
     needs: build-and-release
     runs-on: macos-latest

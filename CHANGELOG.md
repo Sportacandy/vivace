@@ -12,8 +12,14 @@ each get their own entry instead.
 ## [Unreleased]
 
 ### Added
-- A Linux `.tar.gz` build for arm64 (e.g. Raspberry Pi OS 64-bit),
-  alongside the existing x86_64 build.
+- A Linux `.tar.gz` build for arm64 desktop Linux, alongside the existing
+  x86_64 build.
+- A second, separate arm64 build, `Vivace-linux-aarch64-bookworm.tar.gz`,
+  specifically for Raspberry Pi OS: Qt's official prebuilt arm64 binaries
+  need glibc 2.39+, but Raspberry Pi OS is still commonly based on
+  Debian 12 "bookworm" (glibc 2.36), so this build compiles the entire
+  Qt SDK from source inside a Debian 12 container instead. See README's
+  "Which Linux arm64 build do I want?" for which one to use.
 
 ### Fixed
 - The Linux `.tar.gz` didn't bundle Qt's own Wayland platform plugin, so

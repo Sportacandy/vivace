@@ -43,8 +43,9 @@ after installing). UI translated into 24 languages, partial coverage
 elsewhere.
 
 Prebuilt packages: see [Releases](https://github.com/Sportacandy/vivace/releases) —
-a Windows NSIS installer, a Linux `.tar.gz` (x86_64 and arm64 — the
-latter for Raspberry Pi OS 64-bit and other arm64 desktop Linux), and a
+a Windows NSIS installer, a Linux `.tar.gz` (x86_64; arm64 for other arm64
+desktop Linux; and a separate `-bookworm` arm64 build specifically for
+Raspberry Pi OS — see "Which Linux arm64 build do I want?" below), and a
 macOS `.dmg`, plus a rolling nightly build from `main`.
 
 ## Requirements
@@ -71,6 +72,25 @@ deploy step the Linux package is built with (there is no `linuxdeployqt`
 for Qt 6 — see `packaging/linux/build_installer.sh`). It's a one-time
 system install (`sudo apt install libxcb-cursor0` on Debian/Ubuntu, or
 the equivalent package elsewhere).
+
+### Which Linux arm64 build do I want?
+
+There are **two** arm64 `.tar.gz` builds, because Qt's official prebuilt
+arm64 binaries need glibc 2.39+ (confirmed against
+[Qt's own docs](https://doc.qt.io/qt-6/linux-building.html); Qt's ARM64
+reference platform is a Raspberry Pi 5 running *Ubuntu*, not Raspberry Pi
+OS), while Raspberry Pi OS — still commonly based on Debian 12 "bookworm"
+(glibc 2.36) as of this writing — doesn't meet that floor:
+
+- **`Vivace-linux-aarch64.tar.gz`** — built against Qt's official prebuilt
+  kit. Use this on arm64 desktop Linux with glibc 2.39+ (e.g. Ubuntu 24.04
+  on Arm, or Raspberry Pi OS once it moves to a Debian 13 "trixie" base).
+- **`Vivace-linux-aarch64-bookworm.tar.gz`** — the entire Qt SDK is built
+  from source inside a Debian 12 "bookworm" container instead, so it only
+  needs glibc 2.36. **Use this on Raspberry Pi OS today.**
+
+Not sure which glibc you have? Run `ldd --version`. If it reports 2.39 or
+higher, either build works; below that, use the `-bookworm` one.
 
 ## AV1 support
 
