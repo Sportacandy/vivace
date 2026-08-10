@@ -17,17 +17,14 @@ is also published from the tip of `main` between tagged releases. See
 
 ## Status
 
-**v0.3.0** — macOS gets full parity with Windows/Linux: native menus
-(Track, Recent files, Favorites/TV/Radio, DVD Titles, Chapters) that were
-rendering blank now fill in correctly, the app carries its own icon and
-identifies itself properly instead of a generic placeholder, and the
-system menu bar reads "Vivace" instead of "vivace". The whole UI now
-follows the system's light/dark color scheme (menu bar, list/table
-dialogs, and the Keyboard-and-mouse shortcuts page). Fixed a bug where
-reopening a file could leave the Audio/Subtitles Track menu showing the
-wrong checkmark even though the right track was actually playing, and
-fixed a crash (plus, on a custom-built Qt, actual on-screen display) for
-image-based embedded subtitle tracks like DVD/PGS/DVB subs. Vivace is a
+**v0.3.1** — arm64 desktop Linux gets its own `.tar.gz` alongside x86_64,
+plus a separate build specifically for Raspberry Pi OS (still commonly on
+a glibc too old for Qt's official arm64 kit) that compiles the whole Qt
+SDK from source instead — including a real playback fix along the way,
+since the Bookworm container had no PulseAudio/PipeWire package installed
+and so never built Qt Multimedia's FFmpeg backend at all. Every Linux
+`.tar.gz` can now also be added to your application menu and pinned to
+your taskbar/dock with one script run after extracting. Vivace is a
 working daily-driver media player:
 playback (mkv/mp4/mpeg2, seeking, embedded + external subtitles, audio/subtitle
 track switching, speed control with pitch compensation), a full SMPlayer-style

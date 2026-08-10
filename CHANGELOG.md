@@ -11,6 +11,8 @@ each get their own entry instead.
 
 ## [Unreleased]
 
+## [0.3.1] — 2026-08-10
+
 ### Added
 - A Linux `.tar.gz` build for arm64 desktop Linux, alongside the existing
   x86_64 build.
@@ -20,6 +22,10 @@ each get their own entry instead.
   Debian 12 "bookworm" (glibc 2.36), so this build compiles the entire
   Qt SDK from source inside a Debian 12 container instead. See README's
   "Which Linux arm64 build do I want?" for which one to use.
+- A desktop menu entry for the `.tar.gz` releases: run
+  `share/applications/install-desktop-entry.sh` once after extracting to
+  add Vivace to your application menu and make it pinnable to your
+  taskbar/dock.
 
 ### Fixed
 - The Linux `.tar.gz` didn't bundle Qt's own Wayland platform plugin, so
@@ -29,6 +35,11 @@ each get their own entry instead.
   start. CI now ensures the plugin's own runtime libraries are present
   at build time, so the deploy step picks it up automatically; no
   separate system package is needed for this anymore.
+- The Raspberry Pi OS Bookworm build started but couldn't play any media
+  at all, with no error shown: its container image had no PulseAudio,
+  PipeWire, or ALSA development package installed, so Qt Multimedia's
+  FFmpeg backend — which requires PulseAudio or PipeWire on Linux — was
+  never built in the first place.
 
 ### Documentation
 - Documented that the Linux `.tar.gz` may still need `libxcb-cursor0`

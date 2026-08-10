@@ -29,7 +29,7 @@ Unicode true
 !define PROGID       "Vivace.MediaFile"
 
 !ifndef VERSION
-  !define VERSION "0.3.0"
+  !define VERSION "0.3.1"
 !endif
 !ifndef DEPLOY
   !define DEPLOY "..\packages\org.vivaceplayer.vivace\data"
