@@ -227,7 +227,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: /opt/qt6
-          key: qt6-bookworm-arm64-${{ hashFiles('patches/qtmultimedia-*.patch', 'scripts/build-qt-from-source-bookworm.sh', 'scripts/build-patched-qtmultimedia-linux.sh') }}
+          key: qt6-bookworm-arm64-${{ hashFiles('patches/qtmultimedia-*.patch', 'scripts/build-qt-from-source-bookworm.sh', 'scripts/build-patched-qtmultimedia-linux.sh', '.github/workflows/nightly.yml') }}
 
       - name: Build Qt 6.11.1 base SDK from source (qtbase + qtshadertools + qtdeclarative + qttools)
         if: steps.qt-cache.outputs.cache-hit != 'true'
