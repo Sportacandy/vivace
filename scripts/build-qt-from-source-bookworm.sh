@@ -81,7 +81,15 @@ for module in "${MODULES[@]}"; do
         CMAKE_ARGS+=(-DFEATURE_assistant=OFF)
     fi
     cmake "${CMAKE_ARGS[@]}"
-    cmake --build "$WORK/build-$module" --parallel
+    # An uncapped --parallel (one job per detected core) OOM-killed the whole hosted
+    # runner building qtdeclarative from scratch (2026-08-10: job died silently after
+    # 73 minutes, "runner lost communication with the server" -- GitHub's own signature
+    # for a process that starved the box of CPU/memory, confirmed via `gh run view`'s
+    # ANNOTATIONS; no log exists because a killed runner never finishes uploading one).
+    # qtdeclarative's QML compiler sources are known to be memory-heavy per translation
+    # unit; capping concurrency trades some wall-clock time (acceptable for a nightly
+    # build) for a much lower peak-memory ceiling.
+    cmake --build "$WORK/build-$module" --parallel 2
     cmake --install "$WORK/build-$module"
 
     rm -rf "$WORK/$module" "$WORK/build-$module"
