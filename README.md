@@ -73,6 +73,13 @@ for Qt 6 — see `packaging/linux/build_installer.sh`). It's a one-time
 system install (`sudo apt install libxcb-cursor0` on Debian/Ubuntu, or
 the equivalent package elsewhere).
 
+To add Vivace to your application menu and make it pinnable to your
+taskbar/dock, run `share/applications/install-desktop-entry.sh` once from
+inside the extracted directory. A plain `.tar.gz` has no install step to
+fill in the real path ahead of time, so this resolves it and writes a
+`vivace.desktop` to `~/.local/share/applications/` — safe to re-run any
+time, including after moving the extracted directory.
+
 ### Which Linux arm64 build do I want?
 
 There are **two** arm64 `.tar.gz` builds, because Qt's official prebuilt

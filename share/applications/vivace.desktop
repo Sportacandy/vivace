@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Vivace
+GenericName=Media Player
+Comment=A fast, pure-Qt media player
+Exec=__INSTALL_DIR__/bin/vivace %U
+Icon=__INSTALL_DIR__/vivace.png
+Terminal=false
+StartupNotify=true
+StartupWMClass=vivace
+Categories=AudioVideo;Video;Player;
+MimeType=video/mp4;video/x-matroska;video/x-msvideo;video/quicktime;video/webm;video/x-ms-wmv;video/mp2t;video/x-flv;video/ogg;audio/mpeg;audio/mp4;audio/flac;audio/ogg;audio/x-opus+ogg;audio/x-wav;audio/x-ms-wma;audio/x-mpegurl;application/vnd.apple.mpegurl;

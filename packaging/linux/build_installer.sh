@@ -49,6 +49,12 @@ cmake --install "$build" --prefix "$data"
 cp "$root/icons/app_256.png" "$data/vivace.png"      # placeholder until brand icon
 
 if [ "$MODE" = "tarball" ]; then
+    echo "== Desktop entry (tarball-only -- IFW installs one dynamically via installscript.qs) =="
+    mkdir -p "$data/share/applications"
+    cp "$root/share/applications/vivace.desktop" "$data/share/applications/vivace.desktop"
+    cp "$root/share/applications/install-desktop-entry.sh" "$data/share/applications/install-desktop-entry.sh"
+    chmod +x "$data/share/applications/install-desktop-entry.sh"
+
     echo "== tar czf =="
     out="$root/Vivace-linux-$(uname -m).tar.gz"
     tar czf "$out" -C "$pkg" --transform 's/^data/vivace/' data
