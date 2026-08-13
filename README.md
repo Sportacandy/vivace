@@ -17,15 +17,13 @@ is also published from the tip of `main` between tagged releases. See
 
 ## Status
 
-**v0.3.1** — arm64 desktop Linux gets its own `.tar.gz` alongside x86_64,
-plus a separate build specifically for Raspberry Pi OS (still commonly on
-a glibc too old for Qt's official arm64 kit) that compiles the whole Qt
-SDK from source instead — including a real playback fix along the way,
-since the Bookworm container had no PulseAudio/PipeWire package installed
-and so never built Qt Multimedia's FFmpeg backend at all. Every Linux
-`.tar.gz` can now also be added to your application menu and pinned to
-your taskbar/dock with one script run after extracting. Vivace is a
-working daily-driver media player:
+**v0.3.2** — small bug-fix release: the Cancel button on the YouTube
+"Download & play" progress overlay didn't respond to clicks (an invisible
+layer over the video was swallowing them) and, separately, cancelling a
+download showed a confusing error message even though the cancel itself
+worked; Help ▸ About Vivace's Links section and the installer configs
+pointed at an invalid GitHub URL. Vivace is a working daily-driver media
+player:
 playback (mkv/mp4/mpeg2, seeking, embedded + external subtitles, audio/subtitle
 track switching, speed control with pitch compensation), a full SMPlayer-style
 menu layout (Open/Play/Video/Audio/Subtitles/Browse/View/Options/Help),

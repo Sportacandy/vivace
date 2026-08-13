@@ -11,6 +11,18 @@ each get their own entry instead.
 
 ## [Unreleased]
 
+## [0.3.2] — 2026-08-10
+
+### Fixed
+- Help ▸ About Vivace's Links section, and all three installer configs,
+  pointed at an invalid GitHub URL (`github.com/vivace-player`, not a
+  real user/org) instead of the actual repo.
+- The YouTube "Download & play" progress overlay's Cancel button didn't
+  respond to clicks — an invisible click-catching layer over the video
+  sat on top of it and swallowed the click before it reached the button.
+- Cancelling a YouTube download showed a confusing "did not finish
+  normally" error message even though the cancel itself worked correctly.
+
 ## [0.3.1] — 2026-08-10
 
 ### Added
@@ -35,6 +47,9 @@ each get their own entry instead.
   start. CI now ensures the plugin's own runtime libraries are present
   at build time, so the deploy step picks it up automatically; no
   separate system package is needed for this anymore.
+- Help ▸ Check for update always reported `0.1.2` as the latest available
+  version, regardless of what was actually installed — the version
+  manifest it checks against hadn't been bumped since that release.
 - The Raspberry Pi OS Bookworm build started but couldn't play any media
   at all, with no error shown: its container image had no PulseAudio,
   PipeWire, or ALSA development package installed, so Qt Multimedia's
