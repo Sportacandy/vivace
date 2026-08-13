@@ -628,6 +628,11 @@ ApplicationWindow {
     // Busy overlay shown while the external HD downloader is running (it can
     // take minutes — the tool downloads and merges separate video+audio streams).
     Rectangle {
+        // z: 20 matches fullscreenTopChrome/fullscreenControls below -- without it,
+        // this sits at the same default z as videoMouse (a full-area MouseArea
+        // declared later in this file), which stacks on top and swallows every
+        // click meant for the Cancel button underneath, including its own.
+        z: 20
         visible: externalDownloader.busy || youtubeResolver.downloading
         anchors.centerIn: parent
         width: Math.min(parent.width * 0.8, 640)

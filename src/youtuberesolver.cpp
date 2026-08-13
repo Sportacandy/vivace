@@ -17,6 +17,7 @@
 #include <QNetworkRequest>
 #include <QRegularExpression>
 #include <QSaveFile>
+#include <QSignalBlocker>
 #include <QStandardPaths>
 #include <QThread>
 #include <QUrl>
@@ -403,6 +404,16 @@ void YoutubeResolver::cancel()
         m_updateProcess = nullptr;
     }
     if (m_process->state() != QProcess::NotRunning) {
+        // m_process is long-lived (reused for every resolve()/download()), so
+        // it can't be disconnect()ed permanently the way m_updateProcess is
+        // above -- but without SOME guard, killing it here re-enters
+        // onFinished() synchronously from inside waitForFinished() (Qt emits
+        // the signal before returning), which ran with m_op still at its old
+        // value and emitted a confusing "did not finish normally" failed()
+        // toast on every deliberate, successful cancel. QSignalBlocker only
+        // suppresses emission for this scope, leaving the connections intact
+        // for the next operation.
+        const QSignalBlocker blocker(m_process);
         m_process->kill();
         m_process->waitForFinished(1000);
     }
