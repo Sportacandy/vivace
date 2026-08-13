@@ -8,7 +8,7 @@
     <Version>0.3.1</Version>
     <Title>Vivace Media Player</Title>
     <Publisher>Vivace</Publisher>
-    <ProductUrl>https://github.com/vivace-player</ProductUrl>
+    <ProductUrl>https://github.com/Sportacandy/vivace</ProductUrl>
     <TargetDir>@ApplicationsDir@/Vivace</TargetDir>
     <RunProgram>@TargetDir@/vivace.app/Contents/MacOS/vivace</RunProgram>
     <RunProgramDescription>Launch Vivace</RunProgramDescription>

@@ -138,8 +138,8 @@ Window {
                           + "<br><br>"
                           + "<b>" + qsTr("Links:") + "</b><br>"
                           + qsTr("Project home:") + " "
-                          + "<a href=\"https://github.com/vivace-player\">"
-                          + "github.com/vivace-player</a>"
+                          + "<a href=\"https://github.com/Sportacandy/vivace\">"
+                          + "github.com/Sportacandy/vivace</a>"
                 }
             }
 

@@ -6,7 +6,7 @@
     <Version>0.3.1</Version>
     <Title>Vivace Media Player</Title>
     <Publisher>Vivace</Publisher>
-    <ProductUrl>https://github.com/vivace-player</ProductUrl>
+    <ProductUrl>https://github.com/Sportacandy/vivace</ProductUrl>
     <TargetDir>@HomeDir@/Vivace</TargetDir>
     <!-- Qt CMake deploy uses the standard layout: exe in bin/, Qt libs in lib/,
          with plugins/ qml/ alongside. -->
