@@ -35,6 +35,13 @@ struct Subpicture {
 Subpicture decodeSubpicture(const QString &vobPath, qint64 firstSector,
                             qint64 lastSector);
 
+// Decode an already-assembled, size-trimmed SPU unit's raw bytes (the same
+// format decodeSubpicture() extracts internally via assembleSpu() -- exposed
+// so real movie-subtitle playback, which demuxes many time-stamped SPU units
+// instead of one still frame, can reuse the same RLE decode). Invalid/empty
+// on a malformed unit.
+Subpicture decodeSpuBytes(const QByteArray &spu);
+
 // Compose the subpicture to an ARGB image using the PGC palette. Inside
 // `selectRect` the indices are remapped by `selectColorContrast` (a BTN_COLIT
 // entry: nibbles [Ci3 Ci2 Ci1 Ci0 A3 A2 A1 A0]); elsewhere the base

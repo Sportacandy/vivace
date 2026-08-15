@@ -135,7 +135,11 @@ int rgbFromYCrCb(quint32 v)
 Subpicture decodeSubpicture(const QString &vobPath, qint64 firstSector,
                             qint64 lastSector)
 {
-    const QByteArray spu = assembleSpu(vobPath, firstSector, lastSector);
+    return decodeSpuBytes(assembleSpu(vobPath, firstSector, lastSector));
+}
+
+Subpicture decodeSpuBytes(const QByteArray &spu)
+{
     Subpicture out;
     if (spu.size() < 4)
         return out;

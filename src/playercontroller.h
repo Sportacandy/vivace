@@ -24,6 +24,7 @@ class QVideoSink;
 #include "dvdmenuparser.h"
 #include "dvdpciparser.h"
 #include "dvdspu.h"
+#include "dvdsubtitletrack.h"
 #include "dvdvm.h"
 #include "favoritesmodel.h"
 #include "playlistmodel.h"
@@ -186,6 +187,21 @@ class PlayerController : public QObject
     // data URL (empty when the menu has no subpicture); "" -> QML draws its own.
     Q_PROPERTY(QString dvdMenuHighlightUrl READ dvdMenuHighlightUrl
                NOTIFY dvdMenuChanged)
+    // Real movie subtitles, demuxed/decoded directly from the IFO-declared
+    // subpicture stream table instead of relying on FFmpeg's own (unreliable
+    // for DVD subpicture) track detection -- see dvdsubtitletrack.h. Labels
+    // rebuild whenever the current title changes; -1 = off.
+    Q_PROPERTY(QStringList dvdSubtitleTrackLabels READ dvdSubtitleTrackLabels
+               NOTIFY dvdPlaybackChanged)
+    Q_PROPERTY(int activeDvdSubtitleTrack READ activeDvdSubtitleTrack
+               WRITE setActiveDvdSubtitleTrack NOTIFY activeDvdSubtitleTrackChanged)
+    // The decoded subtitle bitmap active at the current playback position, as
+    // a PNG data URL (same technique as dvdMenuHighlightUrl); empty when no
+    // track is selected or nothing is showing right now.
+    Q_PROPERTY(QString dvdSubtitleImageUrl READ dvdSubtitleImageUrl
+               NOTIFY dvdSubtitleImageChanged)
+    Q_PROPERTY(bool dvdSubtitleLoading READ dvdSubtitleLoading
+               NOTIFY dvdSubtitleLoadingChanged)
     Q_PROPERTY(QVariantList audioDevices READ audioDevices NOTIFY audioDevicesChanged)
     Q_PROPERTY(QString audioDeviceId READ audioDeviceId WRITE setAudioDeviceId
                NOTIFY audioDeviceIdChanged)
@@ -380,6 +396,11 @@ public:
     int dvdMenuSpaceWidth() const { return m_menuSpaceW; }
     int dvdMenuSpaceHeight() const { return m_menuSpaceH; }
     QString dvdMenuHighlightUrl() const;
+    QStringList dvdSubtitleTrackLabels() const;
+    int activeDvdSubtitleTrack() const { return m_dvdActiveSubtitleTrack; }
+    void setActiveDvdSubtitleTrack(int index);
+    QString dvdSubtitleImageUrl() const { return m_dvdSubtitleImageUrl; }
+    bool dvdSubtitleLoading() const { return m_dvdSubtitleBuildInFlight; }
     Q_INVOKABLE void dvdMenuActivate(int buttonNumber);  // 1-based
     Q_INVOKABLE void dvdMenuActivateSelected();
     Q_INVOKABLE void dvdMenuMove(const QString &direction); // up/down/left/right
@@ -497,6 +518,9 @@ signals:
     void dvdPlaybackChanged();
     void dvdMenuChanged();
     void dvdMenusEnabledChanged();
+    void activeDvdSubtitleTrackChanged();
+    void dvdSubtitleImageChanged();
+    void dvdSubtitleLoadingChanged();
     void dvdUseFirstPlayChanged();
     void chaptersChanged();
     void mediaInfoChanged();
@@ -666,6 +690,7 @@ private:
     QList<DvdIfo::Title> m_dvdTitles;
     int m_dvdCurrentTitle = -1;
     qint64 m_dvdPositionOffsetMs = 0;
+    int m_dvdRunStartCell = -1; // first cell of the current timeline run
     int m_dvdRunEndCell = -1; // first cell after the current timeline run
     // DVD menu state (experimental).
     DvdMenu::Structure m_menus;
@@ -683,6 +708,18 @@ private:
     int m_menuSelected = 0; // 1-based highlighted button (0 = none)
     int m_menuSpaceW = 720; // button coordinate space (menu video resolution)
     int m_menuSpaceH = 480;
+
+    // Real movie subtitles (see dvdsubtitletrack.h) -- declared streams for
+    // the current title, which one (if any) is selected, its lazily-built
+    // event index, and the live rendered-image state a timer refreshes.
+    QList<DvdIfo::SubtitleStream> m_dvdSubtitleStreams;
+    int m_dvdActiveSubtitleTrack = -1; // -1 = off
+    DvdSubtitle::Track m_dvdSubtitleTrack;
+    bool m_dvdSubtitleBuildInFlight = false;
+    int m_dvdSubtitleBuildGeneration = 0; // guards a stale async build result
+    QString m_dvdSubtitleImageUrl;
+    void startDvdSubtitleTrackBuild(int streamIndex);
+    void updateDvdSubtitleImage();
 };
 
 #endif // PLAYERCONTROLLER_H

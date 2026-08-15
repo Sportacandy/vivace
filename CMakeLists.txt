@@ -81,6 +81,7 @@ qt_add_qml_module(vivace
         src/dvdmenuparser.h src/dvdmenuparser.cpp
         src/dvdpciparser.h src/dvdpciparser.cpp
         src/dvdspu.h src/dvdspu.cpp
+        src/dvdsubtitletrack.h src/dvdsubtitletrack.cpp
         src/dvdvm.h src/dvdvm.cpp
         src/filesettings.h src/filesettings.cpp
         src/bookmarks.h src/bookmarks.cpp

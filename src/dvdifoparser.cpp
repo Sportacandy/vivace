@@ -77,6 +77,47 @@ QByteArray readIfo(const QDir &dir, const QString &name)
     return file.readAll();
 }
 
+// A language code is two ASCII letters when set; some rips leave it as
+// 0x00 0x00 or spaces for an unused slot -- treat anything else as "unset"
+// rather than surfacing garbage as a language name.
+QString langCode(const QByteArray &data, qint64 offset)
+{
+    const quint8 a = u8(data, offset);
+    const quint8 b = u8(data, offset + 1);
+    if (a >= 'a' && a <= 'z' && b >= 'a' && b <= 'z')
+        return QString(QLatin1Char(char(a))) + QLatin1Char(char(b));
+    return {};
+}
+
+// VTSI_MAT's audio/subtitle attribute tables (offsets per the DVD-Video
+// spec as commonly documented, dvd.sourceforge.net "DVD-Video Information"
+// -- verified directly against a real disc's IFO bytes, not just the docs):
+// audio count at 0x202 (2 bytes), 8-byte entries from 0x204, language at
+// entry+2; subtitle count at 0x254 (2 bytes), 6-byte entries from 0x256,
+// language at entry+2.
+void parseStreamTables(const QByteArray &vts, QList<AudioStream> &audio,
+                       QList<SubtitleStream> &subtitle)
+{
+    const int audioCount = qBound(0, int(be16(vts, 0x202)), 8);
+    for (int i = 0; i < audioCount; ++i) {
+        const qint64 entry = 0x204 + qint64(i) * 8;
+        AudioStream a;
+        a.id = i;
+        a.codingMode = (u8(vts, entry) >> 5) & 0x7;
+        a.language = langCode(vts, entry + 2);
+        audio.append(a);
+    }
+
+    const int subpCount = qBound(0, int(be16(vts, 0x254)), 32);
+    for (int i = 0; i < subpCount; ++i) {
+        const qint64 entry = 0x256 + qint64(i) * 6;
+        SubtitleStream s;
+        s.id = i;
+        s.language = langCode(vts, entry + 2);
+        subtitle.append(s);
+    }
+}
+
 } // namespace
 
 QList<Title> titles(const QString &videoTsDir)
@@ -136,6 +177,11 @@ QList<Title> titles(const QString &videoTsDir)
         title.vtsNumber = vtsNumber;
         title.vtsTitleNumber = vtsTitleNumber;
         title.durationMs = bcdTimeMs(be32(vts, pgc + 4));
+        parseStreamTables(vts, title.audioStreams, title.subtitleStreams);
+        // Highlight/subtitle palette: 16 entries of (reserved, Y, Cr, Cb) at
+        // PGC + 0xA4 (same pgc_t layout dvdmenuparser.cpp uses for menus).
+        for (int p = 0; p < 16; ++p)
+            title.palette[p] = be32(vts, pgc + 0xA4 + qint64(p) * 4) & 0xFFFFFF;
 
         // PGC offsets: 0xE4 commands, 0xE6 program map,
         // 0xE8 cell playback info table, 0xEA cell position info table.

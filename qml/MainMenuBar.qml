@@ -696,30 +696,52 @@ MenuBar {
             title: qsTr("&Track")
             icon.source: Theme.icon("sub")
 
+            // DVD titles: subtitle tracks come from the disc's own IFO-declared
+            // subpicture table and a Vivace-side decoder (dvdSubtitleTrackLabels/
+            // activeDvdSubtitleTrack), not FFmpeg's generic track model -- see
+            // PlayerController's DVD subtitle handling for why.
             AppMenuItem {
                 text: qsTr("&Off")
                 checkable: true
-                checked: bar.controller.activeSubtitleTrack === -1
-                enabled: bar.controller.subtitleTrackLabels.length > 0
+                checked: bar.controller.dvdPlayback
+                        ? bar.controller.activeDvdSubtitleTrack === -1
+                        : bar.controller.activeSubtitleTrack === -1
+                enabled: (bar.controller.dvdPlayback
+                          ? bar.controller.dvdSubtitleTrackLabels
+                          : bar.controller.subtitleTrackLabels).length > 0
                 // Re-establish the binding the checkable toggle breaks, so the
                 // items stay mutually exclusive (now that the controller emits
                 // activeTracksChanged, the re-bound expression re-evaluates).
                 onTriggered: {
-                    bar.controller.activeSubtitleTrack = -1
-                    checked = Qt.binding(() => bar.controller.activeSubtitleTrack === -1)
+                    if (bar.controller.dvdPlayback) {
+                        bar.controller.activeDvdSubtitleTrack = -1
+                        checked = Qt.binding(() => bar.controller.activeDvdSubtitleTrack === -1)
+                    } else {
+                        bar.controller.activeSubtitleTrack = -1
+                        checked = Qt.binding(() => bar.controller.activeSubtitleTrack === -1)
+                    }
                 }
             }
             Instantiator {
-                model: bar.controller.subtitleTrackLabels
+                model: bar.controller.dvdPlayback
+                        ? bar.controller.dvdSubtitleTrackLabels
+                        : bar.controller.subtitleTrackLabels
                 delegate: AppMenuItem {
                     required property int index
                     required property string modelData
                     text: modelData
                     checkable: true
-                    checked: bar.controller.activeSubtitleTrack === index
+                    checked: bar.controller.dvdPlayback
+                            ? bar.controller.activeDvdSubtitleTrack === index
+                            : bar.controller.activeSubtitleTrack === index
                     onTriggered: {
-                        bar.controller.activeSubtitleTrack = index
-                        checked = Qt.binding(() => bar.controller.activeSubtitleTrack === index)
+                        if (bar.controller.dvdPlayback) {
+                            bar.controller.activeDvdSubtitleTrack = index
+                            checked = Qt.binding(() => bar.controller.activeDvdSubtitleTrack === index)
+                        } else {
+                            bar.controller.activeSubtitleTrack = index
+                            checked = Qt.binding(() => bar.controller.activeSubtitleTrack === index)
+                        }
                     }
                 }
                 onObjectAdded: (index, object) => subtitleTrackMenu.insertItem(index + 1, object)

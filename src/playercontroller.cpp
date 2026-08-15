@@ -22,6 +22,7 @@
 #include <QLocale>
 #include <QMediaMetaData>
 #include <QPlaybackOptions>
+#include <QPointer>
 #include <QRandomGenerator>
 
 #include "httptssource.h"
@@ -32,6 +33,7 @@
 #include <QSettings>
 #include <QStandardPaths>
 #include <QStyleHints>
+#include <QThreadPool>
 #include <QTimer>
 #include <QVideoFrame>
 #include <QVideoSink>
@@ -138,6 +140,34 @@ int findTrackByLanguages(const QList<QMediaMetaData> &tracks,
                 continue;
             if (lang == wanted || lang == wantedName)
                 return int(i);
+        }
+    }
+    return -1;
+}
+
+// Same matching as findTrackByLanguages() above, against the IFO-declared
+// DVD subtitle stream table instead of FFmpeg's (for DVD subpicture tracks,
+// unreliable -- see dvdsubtitletrack.h) QMediaMetaData track list.
+int findDvdSubtitleTrackByLanguages(const QList<DvdIfo::SubtitleStream> &streams,
+                                    const QString &languagesCsv)
+{
+    static const QRegularExpression separators(
+            QStringLiteral("[,;\\s]+"));
+    const QStringList tokens = languagesCsv.split(separators, Qt::SkipEmptyParts);
+
+    for (const QString &token : tokens) {
+        const QString wanted = token.toLower();
+        QString wantedName;
+        const QLocale locale(token);
+        if (locale.language() != QLocale::C)
+            wantedName = QLocale::languageToString(locale.language()).toLower();
+
+        for (int i = 0; i < streams.size(); ++i) {
+            const QString lang = streams.at(i).language.toLower();
+            if (lang.isEmpty())
+                continue;
+            if (lang == wanted || lang == wantedName)
+                return i;
         }
     }
     return -1;
@@ -381,6 +411,7 @@ PlayerController::PlayerController(QObject *parent)
             emit smoothPositionChanged();
         }
         updateSubtitle(pos); // keep the external-subtitle overlay in sync
+        updateDvdSubtitleImage(); // keep the DVD subtitle overlay in sync
     });
 
     // Arm the resume guard when resuming from pause (skip DVD and A-B looping,
@@ -885,10 +916,22 @@ bool PlayerController::openDvd(const QUrl &folder)
         }
     }
 
+    dvdLog(QStringLiteral("openDvd: titles=%1 hasMenus=%2 useFirstPlay=%3 "
+                          "hasFirstPlay=%4 menusEnabled=%5")
+                   .arg(titles.size()).arg(m_menus.hasMenus())
+                   .arg(m_dvdUseFirstPlay).arg(m_menus.hasFirstPlay())
+                   .arg(m_dvdMenusEnabled));
+
     if (!titles.isEmpty()) {
         // Debug aids: VIVACE_DVD_TITLE forces a title number,
         // VIVACE_DVD_CHAPTER additionally starts at a chapter (1-based),
         // VIVACE_DVD_SEEK seeks to a title-global time (ms) after load.
+        // VIVACE_DVD_AUTOSELECT=N auto-activates menu button N (or the disc's
+        // own default selection if N<=0) a few seconds after any interactive
+        // menu appears, to script past disc menus headlessly (see
+        // playMenuPgc()). VIVACE_DVD_FORCE_SUB_LANG overrides which language
+        // the preferred-subtitle match looks for (see applyDvdTitle()),
+        // without needing to change Settings.
         const qint64 debugSeek = qgetenv("VIVACE_DVD_SEEK").toLongLong();
         if (debugSeek > 0) {
             QTimer::singleShot(2500, this,
@@ -950,6 +993,7 @@ bool PlayerController::openDvd(const QUrl &folder)
         m_dvdDevice->deleteLater();
     m_dvdDevice = device;
     m_dvdCurrentTitle = -1;
+    m_dvdRunStartCell = -1;
     m_dvdRunEndCell = -1;
     emit dvdPlaybackChanged();
 
@@ -1000,7 +1044,11 @@ bool PlayerController::applyDvdTitle(const DvdIfo::Title &title,
     qInfo() << "dvd: playing title" << title.titleNumber << "cells"
             << fromCellIndex << "to" << runEnd - 1 << "sector" << startSector
             << "stream size" << device->size();
+    dvdLog(QStringLiteral("applyDvdTitle: title=%1 vts=%2 cells=%3..%4")
+                   .arg(title.titleNumber).arg(title.vtsNumber)
+                   .arg(fromCellIndex).arg(runEnd - 1));
 
+    m_dvdRunStartCell = fromCellIndex;
     m_dvdRunEndCell = runEnd;
     m_player->setLoops(QMediaPlayer::Once); // titles play once (menus loop)
     saveCurrentPosition();
@@ -1013,6 +1061,25 @@ bool PlayerController::applyDvdTitle(const DvdIfo::Title &title,
     m_dvdDevice = device;
     m_dvdCurrentTitle = title.titleNumber;
     m_dvdPositionOffsetMs = positionOffsetMs;
+    m_dvdSubtitleStreams = title.subtitleStreams;
+    setActiveDvdSubtitleTrack(-1); // off unless a preferred-language match is found below
+    // VIVACE_DVD_FORCE_SUB_LANG overrides which language to look for (not
+    // whether subtitles-by-default is on at all) -- lets a test run exercise
+    // the matching logic without touching Settings; see the debug-aids note
+    // above openDvd().
+    QString prefSubLangs = m_preferredSubtitleLanguages;
+    if (qEnvironmentVariableIsSet("VIVACE_DVD_FORCE_SUB_LANG"))
+        prefSubLangs = QString::fromLocal8Bit(qgetenv("VIVACE_DVD_FORCE_SUB_LANG"));
+    if (m_subtitlesByDefault && !prefSubLangs.trimmed().isEmpty()) {
+        const int index = findDvdSubtitleTrackByLanguages(
+                m_dvdSubtitleStreams, prefSubLangs);
+        dvdLog(QStringLiteral("dvd subtitle: preferred='%1' matchedIndex=%2 "
+                              "declared=%3")
+                       .arg(prefSubLangs).arg(index)
+                       .arg(m_dvdSubtitleStreams.size()));
+        if (index >= 0)
+            setActiveDvdSubtitleTrack(index);
+    }
     // Bookmarks are per-title; the key stays stable across in-title seeks.
     m_bookmarks->setCurrentKey(QStringLiteral("dvd:%1#title=%2")
                                        .arg(m_dvdDir)
@@ -1049,6 +1116,9 @@ const DvdIfo::Title *PlayerController::currentDvdTitle() const
 QVariantList PlayerController::dvdTitles() const
 {
     QVariantList rows;
+    dvdLog(QStringLiteral("dvdTitles: device=%1 m_dvdTitles.size=%2 currentTitle=%3")
+                   .arg(m_dvdDevice != nullptr).arg(m_dvdTitles.size())
+                   .arg(m_dvdCurrentTitle));
     if (!m_dvdDevice)
         return rows;
     for (const DvdIfo::Title &title : m_dvdTitles) {
@@ -1149,6 +1219,8 @@ bool PlayerController::runFirstPlay()
         return false;
     m_vm.reset();
     const DvdVm::Action a = m_vm.run(m_menus.firstPlay.preCommands);
+    dvdLog(QStringLiteral("runFirstPlay: actionKind=%1 data1=%2")
+                   .arg(int(a.kind)).arg(a.data1));
     if (a.kind != DvdVm::Action::None && a.kind != DvdVm::Action::Nop)
         return performNavAction(a, 0, 0); // First-Play lives in the VMGM domain
     // A commands-only First-Play that didn't branch, or a video-logo First-Play
@@ -1175,7 +1247,11 @@ bool PlayerController::enterDefaultMenu()
         if (!dom)
             continue;
         const int p = dom->entryPgc(c.menuId);
-        if (p && menuPgcHasButtons(dom, p))
+        const bool hasBtns = p && menuPgcHasButtons(dom, p);
+        dvdLog(QStringLiteral("enterDefaultMenu: cand vts=%1 menuId=%2 pgc=%3 "
+                              "hasButtons=%4")
+                       .arg(c.vts).arg(c.menuId).arg(p).arg(hasBtns));
+        if (hasBtns)
             return playMenuPgc(c.vts, p, true, 0);
     }
 
@@ -1255,6 +1331,7 @@ bool PlayerController::playMenuPgc(int vts, int pgcNumber, bool runPre, int dept
         m_dvdDevice->deleteLater();
     m_dvdDevice = device;
     m_dvdCurrentTitle = -1;
+    m_dvdRunStartCell = -1;
     m_dvdRunEndCell = -1;
     m_dvdPositionOffsetMs = 0;
     m_menuVts = vts;
@@ -1299,6 +1376,17 @@ bool PlayerController::playMenuPgc(int vts, int pgcNumber, bool runPre, int dept
     m_player->setSourceDevice(device, hint);
     m_pendingAutoPlay = true;
     m_player->play();
+
+    // Debug aid (see the VIVACE_DVD_TITLE family above openDvd()):
+    // VIVACE_DVD_AUTOSELECT=N auto-activates button N (or the default
+    // selection if N<=0) a few seconds after any interactive menu appears,
+    // to script past disc menus headlessly.
+    if (m_menuHasButtons && qEnvironmentVariableIsSet("VIVACE_DVD_AUTOSELECT")) {
+        int btn = qgetenv("VIVACE_DVD_AUTOSELECT").toInt();
+        if (btn <= 0)
+            btn = m_menuSelected;
+        QTimer::singleShot(4000, this, [this, btn]() { dvdMenuActivate(btn); });
+    }
     return true;
 }
 
@@ -1347,6 +1435,7 @@ bool PlayerController::performNavAction(const DvdVm::Action &a, int currentVts,
 
 bool PlayerController::playGlobalTitle(int titleNumber)
 {
+    dvdLog(QStringLiteral("playGlobalTitle: titleNumber=%1").arg(titleNumber));
     for (const DvdIfo::Title &t : m_dvdTitles) {
         if (t.titleNumber == titleNumber) {
             leaveMenu();
@@ -1432,6 +1521,170 @@ QString PlayerController::dvdMenuHighlightUrl() const
     m_menuHighlightSel = m_menuSelected;
     m_menuHighlightCache = url;
     return url;
+}
+
+// ---- Real DVD movie subtitles (see dvdsubtitletrack.h) ----------------------
+
+QStringList PlayerController::dvdSubtitleTrackLabels() const
+{
+    QStringList labels;
+    for (const DvdIfo::SubtitleStream &s : m_dvdSubtitleStreams) {
+        QString label = tr("Track %1").arg(s.id + 1);
+        if (!s.language.isEmpty()) {
+            const QString native = QLocale(s.language).nativeLanguageName();
+            label = native.isEmpty() ? s.language.toUpper() : native;
+        }
+        labels << label;
+    }
+    return labels;
+}
+
+void PlayerController::setActiveDvdSubtitleTrack(int index)
+{
+    if (index == m_dvdActiveSubtitleTrack)
+        return;
+    m_dvdActiveSubtitleTrack = index;
+    emit activeDvdSubtitleTrackChanged();
+    m_dvdSubtitleTrack = {};
+    m_dvdSubtitleImageUrl.clear();
+    emit dvdSubtitleImageChanged();
+    if (index >= 0 && index < m_dvdSubtitleStreams.size())
+        startDvdSubtitleTrackBuild(index);
+}
+
+void PlayerController::startDvdSubtitleTrackBuild(int streamIndex)
+{
+    if (!m_dvdDevice || m_dvdCurrentTitle < 0)
+        return;
+    const DvdIfo::Title *title = currentDvdTitle();
+    if (!title)
+        return;
+
+    // The specific cell run actually being played (see applyDvdTitle()'s own
+    // single-timeline slicing, and m_dvdRunStartCell/m_dvdRunEndCell) -- not
+    // necessarily the whole title -- and its ms-since-run-start timings, both
+    // needed for DvdSubtitle::Track::build() to interpolate event timing
+    // consistently with QMediaPlayer::position().
+    if (m_dvdRunStartCell < 0 || m_dvdRunEndCell <= m_dvdRunStartCell)
+        return;
+    const QList<DvdIfo::Cell> cells = title->cells.mid(
+            m_dvdRunStartCell, m_dvdRunEndCell - m_dvdRunStartCell);
+    QList<qint64> cellStartsMs = title->cellStartsMs.mid(
+            m_dvdRunStartCell, m_dvdRunEndCell - m_dvdRunStartCell);
+    const qint64 base = cellStartsMs.isEmpty() ? 0 : cellStartsMs.first();
+    for (qint64 &ms : cellStartsMs)
+        ms -= base;
+    const qint64 runDurationMs = title->durationMs - base;
+    const QString videoTsDir = m_dvdDir;
+    const int vtsNumber = title->vtsNumber;
+    const int timeMapUnitSec = title->timeMapUnitSec;
+    const QList<quint32> timeMapSectors = title->timeMapSectors;
+
+    const int generation = ++m_dvdSubtitleBuildGeneration;
+    m_dvdSubtitleBuildInFlight = true;
+    emit dvdSubtitleLoadingChanged();
+
+    QPointer<PlayerController> self(this);
+    QThreadPool::globalInstance()->start(
+            [self, generation, videoTsDir, vtsNumber, cells, cellStartsMs,
+             runDurationMs, streamIndex, timeMapUnitSec, timeMapSectors,
+             base]() {
+        DvdSubtitle::Track track = DvdSubtitle::Track::build(
+                videoTsDir, vtsNumber, cells, cellStartsMs, runDurationMs,
+                streamIndex, timeMapUnitSec, timeMapSectors, base);
+        QMetaObject::invokeMethod(qApp, [self, generation, track]() mutable {
+            if (!self || generation != self->m_dvdSubtitleBuildGeneration)
+                return; // title/track changed while this was building
+            dvdLog(QStringLiteral("dvd subtitle: track built, events=%1")
+                           .arg(track.eventCount()));
+            // TEMP DIAGNOSTIC (2026-08-15): dump every event's start/stop/size
+            // so a "only the first line ever shows" report can be checked
+            // against the raw build data directly, not just live playback.
+            {
+                const QList<DvdSubtitle::Event> &evs = track.events();
+                for (int i = 0; i < evs.size(); ++i) {
+                    dvdLog(QStringLiteral("  event[%1] start=%2 stop=%3 "
+                                          "spuBytes=%4")
+                                   .arg(i).arg(evs.at(i).startMs)
+                                   .arg(evs.at(i).stopMs)
+                                   .arg(evs.at(i).spu.size()));
+                }
+            }
+            self->m_dvdSubtitleTrack = std::move(track);
+            self->m_dvdSubtitleBuildInFlight = false;
+            emit self->dvdSubtitleLoadingChanged();
+            self->updateDvdSubtitleImage();
+        }, Qt::QueuedConnection);
+    });
+}
+
+void PlayerController::updateDvdSubtitleImage()
+{
+    if (m_dvdActiveSubtitleTrack < 0 || m_dvdSubtitleTrack.isEmpty()) {
+        if (!m_dvdSubtitleImageUrl.isEmpty()) {
+            m_dvdSubtitleImageUrl.clear();
+            emit dvdSubtitleImageChanged();
+        }
+        return;
+    }
+    const DvdIfo::Title *title = currentDvdTitle();
+    // m_dvdSubtitleTrack's event times are "ms since the run's TRUE start"
+    // (title->cellStartsMs.at(m_dvdRunStartCell), the cell's own un-truncated
+    // start -- see DvdSubtitle::Track::build()'s own doc comment). The raw
+    // player position is NOT that: it resets near 0 for whatever device is
+    // currently open, and m_dvdPositionOffsetMs converts it to true
+    // title-global time (the same "position + offset" convention already
+    // used for the seek bar/status display and relative seeks elsewhere in
+    // this file) -- but title-global time still needs the run's own true
+    // start subtracted back out to land in the Track's coordinate system.
+    // For every path that ISN'T a mid-cell time-map seek,
+    // m_dvdPositionOffsetMs already equals runBaseMs, so this reduces to
+    // plain m_player->position() (today's unchanged behavior); a mid-cell
+    // seek is the one case where they differ, and that mismatch was
+    // silently discarding every subtitle lookup after such a seek (2026-08-15
+    // bug report: subtitles stopped appearing at all once real seeking was
+    // exercised, only working via uninterrupted playback from the very
+    // start of a run).
+    qint64 runBaseMs = 0;
+    if (title && m_dvdRunStartCell >= 0
+        && m_dvdRunStartCell < title->cellStartsMs.size())
+        runBaseMs = title->cellStartsMs.at(m_dvdRunStartCell);
+    const qint64 pos = m_player->position() + m_dvdPositionOffsetMs - runBaseMs;
+    const int prevIndex = m_dvdSubtitleTrack.lastResolvedIndex();
+    const DvdMenu::Subpicture sp = m_dvdSubtitleTrack.activeAt(pos);
+    const int newIndex = m_dvdSubtitleTrack.lastResolvedIndex();
+    // TEMP DIAGNOSTIC (2026-08-15, tracking down "only the first subtitle
+    // line ever displays" report): log every time the resolved event index
+    // changes, so we can see whether activeAt() ever advances past event 0
+    // during a real continuous playthrough, and if it does, whether decode/
+    // render is what silently fails from then on.
+    if (newIndex != prevIndex) {
+        dvdLog(QStringLiteral("dvd subtitle: index %1 -> %2 at pos=%3 "
+                              "spValid=%4 spSize=%5x%6")
+                       .arg(prevIndex).arg(newIndex).arg(pos)
+                       .arg(sp.isValid()).arg(sp.width).arg(sp.height));
+    }
+    QString url;
+    if (sp.isValid() && title) {
+        const QImage img = DvdMenu::renderHighlight(sp, title->palette,
+                                                    QRect(), 0);
+        if (!img.isNull()) {
+            QByteArray png;
+            QBuffer buf(&png);
+            buf.open(QIODevice::WriteOnly);
+            img.save(&buf, "PNG");
+            url = QStringLiteral("data:image/png;base64,")
+                    + QString::fromLatin1(png.toBase64());
+        } else if (newIndex != prevIndex) {
+            dvdLog(QStringLiteral("dvd subtitle: index %1 decoded but "
+                                  "renderHighlight returned a null image "
+                                  "(all-transparent?)").arg(newIndex));
+        }
+    }
+    if (url != m_dvdSubtitleImageUrl) {
+        m_dvdSubtitleImageUrl = url;
+        emit dvdSubtitleImageChanged();
+    }
 }
 
 void PlayerController::dvdMenuActivate(int buttonNumber)

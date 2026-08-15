@@ -1162,6 +1162,48 @@ ApplicationWindow {
         Keys.onEnterPressed: playerController.dvdMenuActivateSelected()
     }
 
+    // Real DVD movie subtitles (see PlayerController's dvdSubtitleImageUrl):
+    // the disc's own decoded subpicture bitmap, positioned over the video the
+    // same way dvdMenuOverlay maps the menu's coordinate space -- but shown
+    // at normal opacity (a real subtitle, not a translucent button highlight)
+    // and only outside menu navigation.
+    Item {
+        id: dvdSubtitleOverlay
+        anchors.fill: videoArea
+        visible: playerController.dvdPlayback && !playerController.dvdInMenu
+                && playerController.dvdSubtitleImageUrl !== ""
+
+        readonly property rect content: {
+            var c = videoOutput.contentRect
+            return (c.width > 0 && c.height > 0) ? c
+                                                 : Qt.rect(0, 0, width, height)
+        }
+
+        Image {
+            // NOT "anchors.fill: dvdSubtitleOverlay.content" -- content is a
+            // plain `rect` property, not an Item, and anchors.fill requires
+            // an Item; that assignment silently fails (a QML runtime warning,
+            // "Unable to assign QRectF to QQuickItem*", not a build error),
+            // leaving this Image at its unmanaged default geometry: unscaled,
+            // native 720x480 pixel size, positioned at the video area's own
+            // top-left corner. That happened to look roughly right in
+            // windowed mode purely by coincidence (the window's video area
+            // was itself close to 720x480 in scale), but was badly wrong in
+            // fullscreen, where the much larger real content rect made the
+            // unscaled image sit far too high and far too small (2026-08-15
+            // bug report). Bind the geometry directly instead, same as
+            // dvdMenuOverlay's own (already-correct) Image above.
+            x: dvdSubtitleOverlay.content.x
+            y: dvdSubtitleOverlay.content.y
+            width: dvdSubtitleOverlay.content.width
+            height: dvdSubtitleOverlay.content.height
+            source: playerController.dvdSubtitleImageUrl
+            fillMode: Image.Stretch
+            smooth: true
+            cache: false
+        }
+    }
+
     DropArea {
         anchors.fill: parent
         onDropped: drop => {
