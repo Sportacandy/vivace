@@ -1294,9 +1294,25 @@ ApplicationWindow {
             // wall-clock time to finish unwinding before the media backend is
             // touched.
             var urls = []
-            for (var i = 0; i < drop.urls.length; i++)
+            var isDir = false
+            for (var i = 0; i < drop.urls.length; i++) {
                 urls.push(drop.urls[i].toString())
+                if (UiHelpers.isLocalDirectory(drop.urls[i]))
+                    isDir = true
+            }
             dropOpenTimer.pendingUrls = urls
+            // A dropped FOLDER (a DVD disc, or a plain media folder) does
+            // substantially more FFmpeg-backend work to open than a single
+            // file -- parsing IFOs, constructing a device, and (for a DVD)
+            // potentially a SECOND device open later for its menu -- so the
+            // fixed 150ms margin above, empirically enough for an ordinary
+            // file, was not always enough headroom: a real disc reproduced
+            // its DVD menu rendering only the button-highlight overlay (a
+            // plain QML Image, unrelated to the video pipeline) with the
+            // actual video frame missing specifically when opened via
+            // drag-and-drop, but not via Open > Disc > DVD... (which never
+            // goes through this deferred-timer/OLE-loop path at all).
+            dropOpenTimer.interval = isDir ? 500 : 150
             dropOpenTimer.restart()
         }
     }

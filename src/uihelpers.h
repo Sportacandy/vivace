@@ -33,6 +33,13 @@ public:
     // file:///C:/x -> C:\x (for showing folder-dialog results in the UI).
     Q_INVOKABLE QString toLocalPath(const QUrl &url) const;
 
+    // Whether a dropped/opened URL is a local directory -- opening one (a
+    // DVD disc folder, or a plain media folder) does substantially more
+    // FFmpeg-backend work than a single file, so a drag-and-drop needs a
+    // longer safety margin before touching the backend (see Main.qml's
+    // DropArea/dropOpenTimer).
+    Q_INVOKABLE bool isLocalDirectory(const QUrl &url) const;
+
     // Hide/show the pointer immediately via the application override cursor
     // (a stationary MouseArea.cursorShape won't re-apply). The caller scopes
     // it to the video so the menu bar and dialogs are never affected.

@@ -137,6 +137,11 @@ QString UiHelpers::toLocalPath(const QUrl &url) const
                              : url.toString();
 }
 
+bool UiHelpers::isLocalDirectory(const QUrl &url) const
+{
+    return url.isLocalFile() && QFileInfo(url.toLocalFile()).isDir();
+}
+
 void UiHelpers::setCursorHidden(bool hidden)
 {
     // Hide/show the pointer at once via the application override cursor. A

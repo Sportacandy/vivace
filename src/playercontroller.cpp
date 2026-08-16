@@ -836,6 +836,19 @@ void PlayerController::open(const QList<QUrl> &urls)
     if (urls.isEmpty())
         return;
 
+    // Clear any stale DVD menu overlay state up front, unconditionally, no
+    // matter what kind of new open this turns out to be (another DVD, a
+    // plain file, a directory, ...). Found necessary 2026-08-16: dropping a
+    // SECOND DVD while a FIRST disc's menu was showing left its buttons/
+    // highlight active on top of the newly-opened disc's video, since
+    // openDvd() itself never reset this state. Rather than track down and
+    // patch every individual code path that can end up playing something
+    // new (openDvd(), playIndex(), ...) and risk missing one -- exactly the
+    // class of mistake that caused this bug in the first place -- clear it
+    // once, here, at the single top-level entry point every kind of "open"
+    // funnels through. leaveMenu() is a safe no-op when no menu is active.
+    leaveMenu();
+
     // A dropped/opened folder is either a DVD (VIDEO_TS) or a media folder.
     if (urls.size() == 1 && urls.first().isLocalFile()
         && QFileInfo(urls.first().toLocalFile()).isDir()) {
@@ -984,12 +997,7 @@ void PlayerController::playIndex(int index, bool resume)
         m_dvdDevice = nullptr;
         m_dvdCurrentTitle = -1;
         m_player->setLoops(QMediaPlayer::Once);
-        if (m_menuVts >= 0) {
-            m_menuVts = -1;
-            m_menuButtons = {};
-            m_menuSelected = 0;
-            emit dvdMenuChanged();
-        }
+        leaveMenu(); // was a partial, hand-duplicated reset here; see its own doc comment
         m_menus = {};
         emit dvdPlaybackChanged();
     }
@@ -3377,6 +3385,14 @@ QUrl PlayerController::closeSource()
     saveCurrentPosition();
     m_player->stop();
     m_player->setSource(QUrl()); // release the file handle
+    // dvdInMenu (and therefore Main.qml's dvdMenuOverlay visibility) derives
+    // from m_menuVts, not from the player's own source/state -- without
+    // this, stopping playback while a DVD menu was showing left the button-
+    // highlight overlay visible over the now-blank video, since nothing
+    // else clears DVD menu state on a plain stop/close. A no-op for
+    // ordinary (non-DVD) sources, since leaveMenu() itself early-returns
+    // when m_menuVts is already < 0.
+    leaveMenu();
     return was;
 }
 
