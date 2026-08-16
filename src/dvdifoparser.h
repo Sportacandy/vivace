@@ -91,6 +91,19 @@ struct Title {
     // decoded subtitle subpictures, which are colour-index bitmaps until
     // mapped through this table.
     quint32 palette[16] = { 0 };
+
+    // This title's PGC's own post-commands (each 8 bytes, same command
+    // table layout dvdmenuparser.cpp already reads for menu PGCs) -- run
+    // through the DVD VM when the title naturally finishes playing (its
+    // last cell/run ends), instead of always just stopping. Needed for
+    // discs where a short mandatory clip (an anti-piracy warning, a studio
+    // logo, ...) is itself an ordinary TITLE (not a menu PGC) whose own
+    // post-commands are what actually chains onward into the disc's real
+    // menu system or the main feature -- found 2026-08-16 on a disc (Cars)
+    // whose interactive main menu is reachable only after such a chain of
+    // plain, non-menu titles. Most titles have none (empty), in which case
+    // playback simply stops at the end exactly as before.
+    QList<QByteArray> postCommands;
 };
 
 // Empty when the folder has no parseable IFO structure.

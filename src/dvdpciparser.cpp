@@ -110,9 +110,11 @@ ButtonSet parseButtons(const QString &vobPath, qint64 firstSector,
         // NAV packs are pack-headed (00 00 01 BA).
         if (!sector.startsWith(QByteArrayLiteral("\x00\x00\x01\xBA")))
             continue;
-        const ButtonSet set = parsePci(sector);
-        if (set.isValid())
+        ButtonSet set = parsePci(sector);
+        if (set.isValid()) {
+            set.foundSector = s;
             return set;
+        }
     }
     return {};
 }

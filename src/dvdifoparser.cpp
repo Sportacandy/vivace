@@ -183,6 +183,22 @@ QList<Title> titles(const QString &videoTsDir)
         for (int p = 0; p < 16; ++p)
             title.palette[p] = be32(vts, pgc + 0xA4 + qint64(p) * 4) & 0xFFFFFF;
 
+        // Command table (PGC + 0xE4): pre/post/cell command counts, then
+        // 8-byte VM commands each -- same layout dvdmenuparser.cpp already
+        // reads for menu PGCs. Only post-commands are needed here (see
+        // Title::postCommands' own doc comment).
+        if (be16(vts, pgc + 0xE4) != 0) {
+            const qint64 cmdTable = pgc + be16(vts, pgc + 0xE4);
+            const int nPre = be16(vts, cmdTable);
+            const int nPost = be16(vts, cmdTable + 2);
+            qint64 cmdPos = cmdTable + 8 + qint64(nPre) * 8;
+            for (int c = 0; c < nPost && c < 128; ++c, cmdPos += 8) {
+                if (cmdPos + 8 > vts.size())
+                    break;
+                title.postCommands.append(vts.mid(cmdPos, 8));
+            }
+        }
+
         // PGC offsets: 0xE4 commands, 0xE6 program map,
         // 0xE8 cell playback info table, 0xEA cell position info table.
         const int cellCount = u8(vts, pgc + 3);

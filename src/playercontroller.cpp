@@ -1029,6 +1029,31 @@ bool PlayerController::openDvd(const QUrl &folder)
     m_dvdDir = videoTs;
     m_dvdTitles = titles;
     m_menus = DvdMenu::parse(videoTs);
+    // TEMP DIAGNOSTIC (2026-08-16, CARS menu investigation): dump every
+    // parsed menu PGC's raw structure so the disc's real navigation graph
+    // can be inspected directly, without reimplementing IFO parsing
+    // externally. Gated so it never runs in normal use.
+    if (qEnvironmentVariableIsSet("VIVACE_DVD_DUMP_MENUS")) {
+        auto dumpDomain = [](const QString &label, const DvdMenu::Domain &dom) {
+            if (!dom.isValid()) {
+                dvdLog(QStringLiteral("dumpMenus: %1 INVALID").arg(label));
+                return;
+            }
+            for (int i = 0; i < dom.pgcs.size(); ++i) {
+                const DvdMenu::Pgc &p = dom.pgcs.at(i);
+                dvdLog(QStringLiteral("dumpMenus: %1 pgc=%2 menuId=%3 entry=%4 "
+                                      "cells=%5 pre=%6 post=%7 cellCmds=%8 "
+                                      "stillTime(last)=%9")
+                               .arg(label).arg(i + 1).arg(p.menuId).arg(p.entry)
+                               .arg(p.cells.size()).arg(p.preCommands.size())
+                               .arg(p.postCommands.size()).arg(p.cellCommands.size())
+                               .arg(p.cells.isEmpty() ? -1 : p.cells.last().stillTime));
+            }
+        };
+        dumpDomain(QStringLiteral("vmgm"), m_menus.vmgm);
+        for (auto it = m_menus.vtsm.constBegin(); it != m_menus.vtsm.constEnd(); ++it)
+            dumpDomain(QStringLiteral("vtsm%1").arg(it.key()), it.value());
+    }
     m_vm.reset();
     m_dvdAudioChosenByUser = false;
     m_dvdSubtitleChosenByUser = false;
@@ -1444,6 +1469,121 @@ bool PlayerController::menuPgcHasButtons(const DvdMenu::Domain *dom,
                                  pgc.cells.last().lastSector).isValid();
 }
 
+std::optional<bool> PlayerController::probeFollowAction(const DvdVm::Action &a,
+                                                         int vts,
+                                                         DvdVm::Machine &vm,
+                                                         int depth) const
+{
+    using K = DvdVm::Action::Kind;
+    switch (a.kind) {
+    case K::LinkPgcn:
+        return probeMenuLeadsToButtonsRec(vts, a.data1, vm, depth + 1);
+    case K::JumpSsVtsm: {
+        const DvdMenu::Domain *dom = menuDomain(a.data1);
+        const int p = dom ? dom->entryPgc(a.data3) : 0;
+        if (!p)
+            return false;
+        return probeMenuLeadsToButtonsRec(a.data1, p, vm, depth + 1);
+    }
+    case K::JumpSsVmgmMenu: {
+        const int p = m_menus.vmgm.entryPgc(a.data1);
+        if (!p)
+            return false;
+        return probeMenuLeadsToButtonsRec(0, p, vm, depth + 1);
+    }
+    case K::JumpSsVmgmPgc:
+        return probeMenuLeadsToButtonsRec(0, a.data1, vm, depth + 1);
+    case K::CallSsVtsm: {
+        const DvdMenu::Domain *dom = menuDomain(vts);
+        const int p = dom ? dom->entryPgc(a.data1) : 0;
+        if (!p)
+            return false;
+        return probeMenuLeadsToButtonsRec(vts, p, vm, depth + 1);
+    }
+    case K::CallSsVmgmMenu: {
+        const int p = m_menus.vmgm.entryPgc(a.data1);
+        if (!p)
+            return false;
+        return probeMenuLeadsToButtonsRec(0, p, vm, depth + 1);
+    }
+    case K::JumpTt:
+    case K::JumpVtsTt:
+    case K::JumpVtsPtt:
+    case K::Exit:
+    case K::JumpSsFp:
+        // A jump straight to real title content (or an exit/first-play
+        // loop-back) -- definitively NOT an interactive menu reached via
+        // this candidate, regardless of how many buttonless redirector
+        // PGCs led here.
+        return false;
+    case K::None:
+    case K::Nop:
+    default:
+        // The command block completed without linking anywhere -- the
+        // caller falls through to checking THIS pgc's own cells.
+        return std::nullopt;
+    }
+}
+
+bool PlayerController::probeMenuLeadsToButtonsRec(int vts, int pgcNumber,
+                                                  DvdVm::Machine &vm,
+                                                  int depth) const
+{
+    if (depth > 12)
+        return false;
+    const DvdMenu::Domain *dom = menuDomain(vts);
+    if (!dom || pgcNumber < 1 || pgcNumber > dom->pgcs.size())
+        return false;
+    const DvdMenu::Pgc &pgc = dom->pgcs.at(pgcNumber - 1);
+    const bool trace = qEnvironmentVariableIsSet("VIVACE_DVD_DUMP_MENUS");
+
+    if (!pgc.preCommands.isEmpty()) {
+        const DvdVm::Action a = vm.run(pgc.preCommands);
+        if (trace) {
+            dvdLog(QStringLiteral("probeTrace: depth=%1 vts=%2 pgc=%3 PRE "
+                                  "actionKind=%4 data1=%5 data2=%6 data3=%7")
+                           .arg(depth).arg(vts).arg(pgcNumber).arg(int(a.kind))
+                           .arg(a.data1).arg(a.data2).arg(a.data3));
+        }
+        if (auto resolved = probeFollowAction(a, vts, vm, depth))
+            return *resolved;
+        // std::nullopt: fell through -- check this pgc's own cells below.
+    }
+    if (menuPgcHasButtons(dom, pgcNumber))
+        return true;
+    // No buttons of its own. If this is a non-interactive PGC that plays
+    // through and auto-advances (its last cell's still_time is 0, i.e. it
+    // does NOT freeze waiting for input) and it has post-commands, follow
+    // those too -- exactly the "intro plays, then post-commands redirect"
+    // chain a real disc uses, which real playback would eventually reach
+    // on its own; simulating it here lets a single buttonless intro that
+    // chains into the real menu still count as "this candidate works".
+    const bool waitsForInput = !pgc.cells.isEmpty() && pgc.cells.last().stillTime != 0;
+    if (!waitsForInput && !pgc.postCommands.isEmpty()) {
+        const DvdVm::Action a = vm.run(pgc.postCommands);
+        if (trace) {
+            dvdLog(QStringLiteral("probeTrace: depth=%1 vts=%2 pgc=%3 POST "
+                                  "actionKind=%4 data1=%5 data2=%6 data3=%7")
+                           .arg(depth).arg(vts).arg(pgcNumber).arg(int(a.kind))
+                           .arg(a.data1).arg(a.data2).arg(a.data3));
+        }
+        if (auto resolved = probeFollowAction(a, vts, vm, depth))
+            return *resolved;
+    }
+    if (trace) {
+        dvdLog(QStringLiteral("probeTrace: depth=%1 vts=%2 pgc=%3 DEAD END "
+                              "(no buttons, no further redirect)")
+                       .arg(depth).arg(vts).arg(pgcNumber));
+    }
+    return false;
+}
+
+bool PlayerController::probeMenuLeadsToButtons(int vts, int pgcNumber) const
+{
+    DvdVm::Machine scratchVm; // independent of the real m_vm -- no side effects
+    return probeMenuLeadsToButtonsRec(vts, pgcNumber, scratchVm, 0);
+}
+
 bool PlayerController::runFirstPlay()
 {
     if (!m_menus.hasFirstPlay())
@@ -1466,7 +1606,14 @@ bool PlayerController::enterDefaultMenu()
     // real interactive menu. Discs vary in where that lives (a movie disc's
     // main menu is usually the VMGM title/root menu; an episode disc often
     // uses the VTSM root menu, with the VMGM title menu being a buttonless
-    // intro). Probing the PCI for buttons picks the right one regardless.
+    // intro). Probing (via probeMenuLeadsToButtons(), which simulates the
+    // entry PGC's own pre/post-command redirect chain through a scratch VM
+    // -- NOT just checking whether the entry PGC's own cells directly
+    // contain a NAV pack with buttons) picks the right one regardless of
+    // how many buttonless decision-tree/redirector PGCs sit in between.
+    // Needed 2026-08-16 for a disc (Pixar's Cars) whose real interactive
+    // menu pages are reached only after a ~20-instruction, buttonless
+    // decision-tree PGC that the shallow check could never see past.
     const int fv = firstVtsWithTitle();
     struct Cand { int vts; int menuId; };
     QList<Cand> cands { { 0, 2 }, { 0, 3 }, { fv, 3 }, { fv, 2 } };
@@ -1478,7 +1625,7 @@ bool PlayerController::enterDefaultMenu()
         if (!dom)
             continue;
         const int p = dom->entryPgc(c.menuId);
-        const bool hasBtns = p && menuPgcHasButtons(dom, p);
+        const bool hasBtns = p && probeMenuLeadsToButtons(c.vts, p);
         dvdLog(QStringLiteral("enterDefaultMenu: cand vts=%1 menuId=%2 pgc=%3 "
                               "hasButtons=%4")
                        .arg(c.vts).arg(c.menuId).arg(p).arg(hasBtns));
@@ -1640,13 +1787,30 @@ bool PlayerController::playMenuPgc(int vts, int pgcNumber, bool runPre, int dept
     if (sel < 1 || sel > m_menuButtons.buttons.size())
         sel = m_menuButtons.buttons.isEmpty() ? 0 : 1;
     m_menuSelected = sel;
-    // The frozen cell's own start time, relative to THIS device's timeline
-    // (which begins at `start`, not necessarily the PGC's cell 0) -- the sum
-    // of every played cell's duration before it.
+    // Delay showing buttons/highlight until playback actually reaches the
+    // CELL whose own NAV pack they were read from -- not just "the frozen
+    // last cell" (freezesAtEnd's own case: since buttonScanFirst there is
+    // ALREADY playCells.last(), the found sector necessarily falls in that
+    // same last cell, so this reduces to the previous behaviour exactly)
+    // or unconditionally "from the very start" otherwise. Needed
+    // 2026-08-16 (Cars, "特典メニュー"/Bonus-menu submenu): a real disc's
+    // multi-cell menu PGC can have NEITHER a per-cell freeze marker NOR
+    // buttons in its very first cell -- only a LATER cell carries the
+    // real, static button-bearing NAV pack, while the earlier cells play
+    // a buttonless-LOOKING (but NAV-pack-bearing, hence previously found
+    // immediately) entry animation. Showing the buttons/highlight from
+    // cell 0 in that case rendered empty highlight rectangles over the
+    // animation from the very first frame, well before the disc's own
+    // intended reveal point.
     qint64 revealMs = 0;
-    if (freezesAtEnd) {
-        for (int i = 0; i < playCells.size() - 1; ++i)
-            revealMs += playCells.at(i).durationMs;
+    const qint64 foundSector = m_menuButtons.foundSector >= 0
+            ? m_menuButtons.foundSector : m_menuSpu.foundSector;
+    if (foundSector >= 0) {
+        for (const DvdIfo::Cell &c : playCells) {
+            if (foundSector >= c.firstSector && foundSector <= c.lastSector)
+                break;
+            revealMs += c.durationMs;
+        }
     }
     m_menuButtonsRevealMs = revealMs;
     m_menuButtonsRevealed = m_menuButtonsRevealMs <= 0; // 0 = already revealed
@@ -1706,6 +1870,18 @@ bool PlayerController::runPgcPostCommands(int vts, int pgcNumber, int depth)
     }
     // Nothing to chain to — don't dead-end: play the main title.
     return dvdPlayMainTitle();
+}
+
+bool PlayerController::runTitlePostCommands(const DvdIfo::Title &title)
+{
+    const DvdVm::Action a = m_vm.run(title.postCommands);
+    dvdLog(QStringLiteral("runTitlePostCommands: title=%1 actionKind=%2 "
+                          "data1=%3 data2=%4 data3=%5")
+                   .arg(title.titleNumber).arg(int(a.kind)).arg(a.data1)
+                   .arg(a.data2).arg(a.data3));
+    if (a.kind == DvdVm::Action::None || a.kind == DvdVm::Action::Nop)
+        return false; // nothing to chain to -- caller keeps its own "stop" path
+    return performNavAction(a, title.vtsNumber, 0, 0);
 }
 
 bool PlayerController::performNavAction(const DvdVm::Action &a, int currentVts,
@@ -3545,6 +3721,14 @@ void PlayerController::handleMediaStatus(QMediaPlayer::MediaStatus status)
                 && m_dvdRunEndCell < title->cells.size()) {
                 applyDvdTitle(*title, m_dvdRunEndCell,
                               title->cellStartsMs.at(m_dvdRunEndCell));
+            } else if (title && !title->postCommands.isEmpty()
+                       && runTitlePostCommands(*title)) {
+                // Handled below -- the title's own post-commands chained
+                // onward (e.g. into the disc's real menu, or another short
+                // mandatory title) instead of just stopping. See
+                // runTitlePostCommands()'s own doc comment for why this
+                // exists at all: most titles have no post-commands and hit
+                // the plain stop path below exactly as before.
             } else {
                 releaseSourceDeferred();
                 emit playbackFinished();

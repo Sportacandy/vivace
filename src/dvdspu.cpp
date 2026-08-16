@@ -21,9 +21,12 @@ quint16 be16(const QByteArray &d, qint64 o)
 
 // Assemble the subpicture unit: concatenate the private_stream_1 substream
 // 0x20 payloads across the menu cell's NAV-packed sectors until the SPU's
-// declared size (its first 2 bytes) is reached.
+// declared size (its first 2 bytes) is reached. `outFoundSector` (optional),
+// if given, receives the absolute sector of the FIRST payload byte -- i.e.
+// where this subpicture unit actually begins -- so a caller can work out
+// which cell it belongs to (see ButtonSet::foundSector's identical purpose).
 QByteArray assembleSpu(const QString &vobPath, qint64 firstSector,
-                       qint64 lastSector)
+                       qint64 lastSector, qint64 *outFoundSector = nullptr)
 {
     QFile file(vobPath);
     if (!file.open(QIODevice::ReadOnly) || !file.seek(firstSector * sectorSize))
@@ -31,6 +34,7 @@ QByteArray assembleSpu(const QString &vobPath, qint64 firstSector,
 
     QByteArray spu;
     int declared = -1;
+    qint64 foundSector = -1;
     for (qint64 s = firstSector; s <= lastSector; ++s) {
         const QByteArray sector = file.read(sectorSize);
         if (sector.size() < sectorSize)
@@ -46,6 +50,8 @@ QByteArray assembleSpu(const QString &vobPath, qint64 firstSector,
             const int payloadEnd = j + 6 + pesLen;
             if (payloadStart < payloadEnd && payloadEnd <= sector.size()
                 && quint8(sector.at(payloadStart)) == 0x20) { // subpicture
+                if (spu.isEmpty())
+                    foundSector = s;
                 spu.append(sector.constData() + payloadStart + 1,
                            payloadEnd - payloadStart - 1);
                 if (declared < 0 && spu.size() >= 2)
@@ -56,8 +62,11 @@ QByteArray assembleSpu(const QString &vobPath, qint64 firstSector,
         if (declared > 0 && spu.size() >= declared)
             break;
     }
-    if (declared > 0 && spu.size() >= declared)
+    if (declared > 0 && spu.size() >= declared) {
+        if (outFoundSector)
+            *outFoundSector = foundSector;
         return spu.left(declared);
+    }
     return {};
 }
 
@@ -135,7 +144,11 @@ int rgbFromYCrCb(quint32 v)
 Subpicture decodeSubpicture(const QString &vobPath, qint64 firstSector,
                             qint64 lastSector)
 {
-    return decodeSpuBytes(assembleSpu(vobPath, firstSector, lastSector));
+    qint64 foundSector = -1;
+    Subpicture out = decodeSpuBytes(
+            assembleSpu(vobPath, firstSector, lastSector, &foundSector));
+    out.foundSector = foundSector;
+    return out;
 }
 
 Subpicture decodeSpuBytes(const QByteArray &spu)

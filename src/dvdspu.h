@@ -27,6 +27,10 @@ struct Subpicture {
     QByteArray pixels;          // width*height, each byte a colour index 0-3
     int baseColor[4] = { 0, 1, 2, 3 }; // SPU index -> PGC palette entry
     int baseAlpha[4] = { 0, 0, 0, 0 }; // SPU index -> alpha 0-15
+    // Absolute sector of the NAV pack this SPU unit was actually read from
+    // (-1 if invalid/not found/not applicable) -- same purpose as
+    // ButtonSet::foundSector.
+    qint64 foundSector = -1;
     bool isValid() const { return width > 0 && height > 0
                                   && pixels.size() == qsizetype(width) * height; }
 };

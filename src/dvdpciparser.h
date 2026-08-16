@@ -31,6 +31,13 @@ struct Button {
 struct ButtonSet {
     QList<Button> buttons;
     int startButton = 1; // fosl_btnn (1-based)
+    // Absolute sector of the NAV pack this button set was actually read
+    // from (-1 if invalid/not found) -- lets a caller work out which CELL
+    // within a multi-cell scan range the buttons really belong to, e.g. to
+    // delay showing them until playback actually reaches that cell rather
+    // than the scan's own starting point (see PlayerController::
+    // playMenuPgc()'s revealMs computation).
+    qint64 foundSector = -1;
     // BTN_COLIT: three colour-contrast sets; [set][0] = select, [1] = action.
     // Each is nibbles [Ci3 Ci2 Ci1 Ci0 A3 A2 A1 A0].
     quint32 selectColor[3] = { 0, 0, 0 };

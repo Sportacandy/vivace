@@ -16,6 +16,8 @@
 #include <QVideoFrame>
 #include <QtQml/qqmlregistration.h>
 
+#include <optional>
+
 class QVideoSink;
 
 #include "bookmarks.h"
@@ -594,6 +596,33 @@ private:
     // DVD menu navigation (experimental "menu-lite").
     const DvdMenu::Domain *menuDomain(int vts) const;
     bool menuPgcHasButtons(const DvdMenu::Domain *dom, int pgcNumber) const;
+    // Does entering this candidate PGC EVENTUALLY reach a button-bearing
+    // menu, by actually simulating its pre-commands (and, if it's a
+    // non-interactive auto-advancing PGC, its post-commands too) through a
+    // throwaway VM -- rather than only checking whether the entry PGC's
+    // OWN cells happen to contain a NAV pack with buttons. Found necessary
+    // 2026-08-16 (CARS disc): a real disc's "root menu" entry PGC can be a
+    // pure decision-tree redirector (dozens of pre-commands, its own cell
+    // buttonless or a placeholder) that only reaches the real, visible,
+    // button-bearing menu pages several LinkPgcn/JumpSS hops later --
+    // menuPgcHasButtons() alone can never see past that, since it never
+    // runs any commands at all. Uses a SCRATCH DvdVm::Machine (not m_vm),
+    // so probing has zero effect on real navigation state; once a
+    // candidate probes true, the caller re-enters it for real via the
+    // ordinary playMenuPgc(..., runPre=true) path, which naturally replays
+    // the exact same chain (with real side effects this time) and arrives
+    // at the same destination.
+    bool probeMenuLeadsToButtons(int vts, int pgcNumber) const;
+    bool probeMenuLeadsToButtonsRec(int vts, int pgcNumber, DvdVm::Machine &vm,
+                                    int depth) const;
+    // Dispatches a probed Action read-only, mirroring performNavAction()'s
+    // shape: std::nullopt means "the command block fell through with no
+    // link" (caller should check the CURRENT pgc's own cells next);
+    // otherwise the boolean is the final, resolved verdict for this whole
+    // candidate (true = found a button-bearing menu downstream; false = a
+    // dead end, most importantly a jump straight to real title content).
+    std::optional<bool> probeFollowAction(const DvdVm::Action &a, int vts,
+                                          DvdVm::Machine &vm, int depth) const;
     bool runFirstPlay(); // execute the disc's First-Play PGC via the VM
     bool enterDefaultMenu();
     bool enterMenu(int vts, int menuId, int depth);
@@ -627,6 +656,16 @@ private:
     // e.g. a "Play Feature" button on a menu that's otherwise just an
     // intro clip with a skip button -- see the 2026-08-15 fix notes).
     bool runPgcPostCommands(int vts, int pgcNumber, int depth);
+    // Runs a plain (non-menu) TITLE's own post-commands through the VM when
+    // it naturally finishes playing, and follows the resulting action --
+    // e.g. a title that's really just a mandatory warning/logo clip whose
+    // post-commands chain onward into the disc's real menu system or the
+    // main feature, rather than the title simply ending playback. Returns
+    // false (do nothing) when there's no actionable command (None/Nop, or
+    // the title has no post-commands at all), leaving the caller's own
+    // ordinary "reached the end" handling in place. See DvdIfo::Title::
+    // postCommands' own doc comment for the real disc this was needed for.
+    bool runTitlePostCommands(const DvdIfo::Title &title);
     bool playGlobalTitle(int titleNumber);
     bool playVtsTitle(int vts, int vtsTitleNumber, int part);
     void leaveMenu(); // clear menu state before playing a title
