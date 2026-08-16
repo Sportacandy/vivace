@@ -32,6 +32,26 @@ struct Pgc {
     QList<QByteArray> postCommands;
     QList<QByteArray> cellCommands;
     quint32 palette[16] = { 0 }; // highlight palette (YCrCb), for subpictures
+    // still_time (PGC + 0xA2, per the DVD-Video spec): 0 = never freeze on
+    // the last frame, run post-commands the instant the cells finish
+    // playing; 1-254 = hold the last frame that many seconds then run
+    // post-commands; 0xFF = hold forever until the user picks a button.
+    // This is the disc's own authoritative signal for "is this PGC a
+    // one-shot clip that should advance on its own" vs "a real menu that
+    // waits for input" -- NOT whether it happens to declare any buttons
+    // (an intro/logo animation can have a single dummy button just so a
+    // remote's ENTER can skip it, without being a real interactive menu).
+    int stillTime = 0;
+    // Program map (PGC + 0xE6): 1-based program N's entry cell, 0-based
+    // (programEntryCells[N-1] = the cell index program N starts at).
+    // A DVD "program" groups one or more consecutive cells; on a real
+    // disc a multi-page menu (see DvdIfo::Cell::stillTime's own doc
+    // comment) typically has ONE PROGRAM PER PAGE, each starting at its
+    // own cell, and a button's LinkPgn(N) command jumps straight to
+    // program N's entry cell rather than playing through earlier pages
+    // first (found 2026-08-15: a 4-cell, 4-program chapter-index PGC
+    // whose "1-6/7-12/13-18/19-21" buttons are LinkPgn(1..4)).
+    QList<int> programEntryCells;
 };
 
 struct Domain {

@@ -33,6 +33,27 @@ quint32 be32(const QByteArray &d, qint64 o)
     return (o < 0 || o + 4 > d.size()) ? 0 : qFromBigEndian<quint32>(d.constData() + o);
 }
 
+int fromBcd(quint8 value)
+{
+    return (value >> 4) * 10 + (value & 0x0F);
+}
+
+// Cell playback time: BCD hh:mm:ss:ff with the frame rate in the top two
+// bits of the frame byte (01 = 25 fps, 11 = 30 fps) -- same encoding
+// dvdifoparser.cpp already trusts for title cell/PGC durations.
+qint64 bcdTimeMs(quint32 time)
+{
+    const quint8 hours = quint8(time >> 24);
+    const quint8 minutes = quint8(time >> 16);
+    const quint8 seconds = quint8(time >> 8);
+    const quint8 frameByte = quint8(time);
+    const int rateBits = frameByte >> 6;
+    const qreal fps = rateBits == 1 ? 25.0 : 29.97;
+    const int frames = fromBcd(frameByte & 0x3F);
+    return qint64(fromBcd(hours)) * 3600000 + qint64(fromBcd(minutes)) * 60000
+            + qint64(fromBcd(seconds)) * 1000 + qint64(frames * 1000.0 / fps);
+}
+
 QByteArray readIfo(const QDir &dir, const QString &name)
 {
     QFile file(dir.filePath(name));
@@ -74,6 +95,7 @@ Pgc parsePgc(const QByteArray &ifo, qint64 pgc, int menuId, bool entry)
     const int cellCount = u8(ifo, pgc + 3);
     const qint64 cmdTable = pgc + be16(ifo, pgc + 0xE4);
     const qint64 cellTable = pgc + be16(ifo, pgc + 0xE8);
+    out.stillTime = u8(ifo, pgc + 0xA2);
 
     // Highlight palette: 16 entries of (reserved, Y, Cr, Cb) at PGC + 0xA4.
     for (int i = 0; i < 16; ++i)
@@ -93,13 +115,39 @@ Pgc parsePgc(const QByteArray &ifo, qint64 pgc, int menuId, bool entry)
             out.cellCommands.append(command(ifo, p));
     }
 
+    // originalToFiltered[c] maps a 0-based ORIGINAL cell index (as numbered
+    // on the disc, before angle-block filtering) to its index in the final
+    // `out.cells` list, or -1 if that cell was filtered out (a non-first
+    // angle block, lastSector < firstSector).
+    QList<int> originalToFiltered(cellCount, -1);
     for (int c = 0; c < cellCount; ++c) {
         const qint64 cell = cellTable + qint64(c) * 24;
         DvdIfo::Cell range;
         range.firstSector = be32(ifo, cell + 0x08);
         range.lastSector = be32(ifo, cell + 0x14);
-        if (range.lastSector >= range.firstSector)
+        range.stillTime = u8(ifo, cell + 0x02);
+        range.durationMs = bcdTimeMs(be32(ifo, cell + 0x04));
+        if (range.lastSector >= range.firstSector) {
+            originalToFiltered[c] = out.cells.size();
             out.cells.append(range);
+        }
+    }
+
+    // Program map (PGC + 2 = program count, PGC + 0xE6 = map offset): each
+    // of the `programCount` entries is the 1-based ORIGINAL cell number
+    // where that program starts -- translate to the filtered `out.cells`
+    // index a LinkPgn(N) command can actually use.
+    const int programCount = u8(ifo, pgc + 2);
+    const qint64 programMapOff = be16(ifo, pgc + 0xE6);
+    if (programMapOff != 0) {
+        const qint64 programMap = pgc + programMapOff;
+        for (int p = 0; p < programCount && p < 128; ++p) {
+            const int entryCellOriginal = u8(ifo, programMap + p); // 1-based
+            int idx = 0;
+            if (entryCellOriginal >= 1 && entryCellOriginal <= cellCount)
+                idx = qMax(0, originalToFiltered[entryCellOriginal - 1]);
+            out.programEntryCells.append(idx);
+        }
     }
     return out;
 }

@@ -577,8 +577,36 @@ private:
     bool runFirstPlay(); // execute the disc's First-Play PGC via the VM
     bool enterDefaultMenu();
     bool enterMenu(int vts, int menuId, int depth);
-    bool playMenuPgc(int vts, int pgcNumber, bool runPre, int depth);
-    bool performNavAction(const DvdVm::Action &action, int currentVts, int depth);
+    // startCell (0-based, into the PGC's filtered cell list) is where
+    // playback/button-scanning begins -- normally 0 (the PGC's own start),
+    // but a LinkPgn(N) command jumps straight into the middle of a
+    // multi-page PGC at program N's own entry cell (see
+    // DvdMenu::Pgc::programEntryCells's own doc comment).
+    bool playMenuPgc(int vts, int pgcNumber, bool runPre, int depth,
+                     int startCell = 0);
+    // currentPgc is the 1-based PGC number whose command block actually
+    // produced `action` (0 if none, e.g. the VMGI First-Play block) -- NOT
+    // necessarily m_menuPgc, which only reflects the last FULLY ENTERED/
+    // displayed menu. A PGC's own pre/post-commands can resolve to a
+    // "current PGC"-relative action (LinkPgn/LinkTailPgc/LinkCn) before
+    // that PGC is ever fully entered (e.g. while still evaluating another
+    // PGC's pre-commands after a redirect), so the action must be resolved
+    // against the PGC that was ACTUALLY just evaluated, or it silently
+    // resolves against whatever menu happened to be showing before --
+    // found 2026-08-15 on a real disc: PGC5's own pre-commands (re-run on
+    // every entry) decode to LinkPgn(2), and resolving that against the
+    // stale m_menuPgc (still 8, the chapter submenu we'd just left) sent
+    // the user right back into the chapter submenu instead of the root menu.
+    bool performNavAction(const DvdVm::Action &action, int currentVts,
+                         int currentPgc, int depth);
+    // Runs `pgcNumber`'s own post-commands and resolves the result (falling
+    // back to dvdPlayMainTitle() if there's nothing to chain to) -- shared
+    // by the EndOfMedia handler's own "one-shot PGC naturally finished"
+    // path and performNavAction()'s LinkTailPgc case (a button whose own
+    // command explicitly asks to jump straight to this PGC's tail/end,
+    // e.g. a "Play Feature" button on a menu that's otherwise just an
+    // intro clip with a skip button -- see the 2026-08-15 fix notes).
+    bool runPgcPostCommands(int vts, int pgcNumber, int depth);
     bool playGlobalTitle(int titleNumber);
     bool playVtsTitle(int vts, int vtsTitleNumber, int part);
     void leaveMenu(); // clear menu state before playing a title
@@ -704,7 +732,57 @@ private:
     mutable int m_menuHighlightSel = -2;  // selection the cache was built for
     bool m_dvdMenusEnabled = true;  // show disc menus (bound to Settings)
     bool m_dvdUseFirstPlay = false; // run First-Play on open (bound to Settings)
-    bool m_menuHasButtons = false;  // current menu is interactive (loops) vs intro
+    // Set only when a REAL menu-button interaction (via dvdMenuActivate(),
+    // not an automatic precommand/postcommand chain the disc runs on its
+    // own) actually EXECUTED a System-Set of sprm[1]/[2]
+    // (DvdVm::Machine::touchedSprm1/2 -- execution, not a before/after
+    // value comparison; see that field's own doc comment for why a value
+    // diff misses a "choose the same value the disc already had" click)
+    // -- distinguishes an explicit user audio/subtitle choice from a
+    // disc's own internal VTS-menu-domain "entry" PGC (commands-only, no
+    // cells, never shown to the user) initializing these same registers
+    // to its own built-in defaults on first opening the disc. Found
+    // 2026-08-16 on a real disc: such a PGC unconditionally zeroed both
+    // sprm[1] and sprm[2] before ever linking into the real, visible root
+    // menu -- reading sprm[1]/[2] without this guard would silently
+    // override Settings' preferred-subtitle-language default on EVERY
+    // playback of this disc, even when the user never touched its
+    // audio/subtitle menu at all. Reset alongside m_vm.reset() in
+    // openDvd() (a fresh disc-open session starts with no real user
+    // choice yet).
+    bool m_dvdAudioChosenByUser = false;
+    bool m_dvdSubtitleChosenByUser = false;
+    bool m_menuHasButtons = false;  // current menu PGC declares any clickable buttons
+    // Whether the current menu PGC's LAST cell has a nonzero still_time
+    // (DvdIfo::Cell::stillTime, PER-CELL -- a different field from the
+    // whole-PGC still_time at PGC + 0xA2, which two real discs proved does
+    // NOT distinguish "one-shot logo/intro" from "genuine wait-for-input
+    // menu": both had PGC-level still_time == 0). When true, the disc
+    // itself says to freeze on this cell's last frame and hold there --
+    // Vivace approximates this by simply not auto-advancing at
+    // EndOfMedia, leaving the last frame on screen (see the EndOfMedia
+    // handler and playMenuPgc()'s setLoops() call).
+    bool m_menuFreezeAtEnd = false;
+    // Whether the current menu PGC must NOT auto-advance on its own at
+    // all -- covers m_menuFreezeAtEnd (see above) plus a fallback for a
+    // menu with buttons and no post-commands to fall through to (nothing
+    // else to do but wait, even absent an explicit still-cell). Gates
+    // both the QML menu-idle-timeout timer and the debug
+    // VIVACE_DVD_AUTOSELECT hook.
+    bool m_menuWaitsForInput = false;
+    // ms (relative to the CURRENT playback run's own start -- see
+    // playMenuPgc()'s `startCell` parameter, not necessarily the whole
+    // PGC's cell 0) at which its buttons actually become valid -- 0 shows
+    // them immediately (a single-cell run, or one that isn't freezing at
+    // its end). Only meaningful when
+    // m_menuFreezeAtEnd is true: a transition cell (e.g. a brief logo
+    // animation) playing before the real, frozen menu cell has its OWN
+    // (irrelevant, possibly dummy) button layout, which must not be shown
+    // as if it belonged to the content currently on screen. See
+    // dvdMenuButtons()/dvdMenuHighlightUrl() and the positionChanged
+    // handler that re-emits dvdMenuChanged() once this is crossed.
+    qint64 m_menuButtonsRevealMs = 0;
+    bool m_menuButtonsRevealed = false; // one-shot latch, see positionChanged
     int m_menuSelected = 0; // 1-based highlighted button (0 = none)
     int m_menuSpaceW = 720; // button coordinate space (menu video resolution)
     int m_menuSpaceH = 480;

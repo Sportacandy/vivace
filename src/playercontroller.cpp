@@ -412,6 +412,21 @@ PlayerController::PlayerController(QObject *parent)
         }
         updateSubtitle(pos); // keep the external-subtitle overlay in sync
         updateDvdSubtitleImage(); // keep the DVD subtitle overlay in sync
+
+        // A transition cell's own (irrelevant) buttons are hidden until
+        // playback reaches the real, frozen menu cell -- see
+        // m_menuButtonsRevealMs's own doc comment. Re-query
+        // dvdMenuButtons()/dvdMenuHighlightUrl() (plain getters, only
+        // re-evaluated by QML when dvdMenuChanged fires) the one time
+        // this is crossed.
+        if (m_menuVts >= 0 && !m_menuButtonsRevealed
+            && pos >= m_menuButtonsRevealMs) {
+            m_menuButtonsRevealed = true;
+            dvdLog(QStringLiteral("dvd menu: buttons revealed at pos=%1 "
+                                  "(threshold=%2)")
+                           .arg(pos).arg(m_menuButtonsRevealMs));
+            emit dvdMenuChanged();
+        }
     });
 
     // Arm the resume guard when resuming from pause (skip DVD and A-B looping,
@@ -901,6 +916,8 @@ bool PlayerController::openDvd(const QUrl &folder)
     m_dvdTitles = titles;
     m_menus = DvdMenu::parse(videoTs);
     m_vm.reset();
+    m_dvdAudioChosenByUser = false;
+    m_dvdSubtitleChosenByUser = false;
 
     for (const DvdIfo::Title &title : titles) {
         qInfo().nospace() << "dvd: title " << title.titleNumber << " vts "
@@ -1080,6 +1097,43 @@ bool PlayerController::applyDvdTitle(const DvdIfo::Title &title,
         if (index >= 0)
             setActiveDvdSubtitleTrack(index);
     }
+    // The disc's OWN subtitle menu (Subtitles ▸ ... reachable from the DVD's
+    // root menu, e.g. "字幕") works by having its buttons set SPRM2 (the
+    // VM's subpicture-stream register) via a System-Set command, then link
+    // back into the title -- confirmed by decoding a real disc's menu-PGC
+    // command bytes with a from-scratch VM simulation (2026-08-16): the
+    // button DOES correctly update m_vm.sprm[2], but nothing previously
+    // read it back out and applied it to actual playback, so choosing a
+    // subtitle from the disc's own menu silently did nothing.
+    // SPRM2's real DVD-Video encoding (confirmed empirically against this
+    // disc's own button commands, NOT a plain 0-based index as first
+    // assumed): bit 6 (0x40) is a "subtitle stream selected" flag, bits 0-5
+    // are the 0-based stream index -- a real "日本語"/"英語" button wrote
+    // 0x40/0x41 (ON, stream 0/1), while "字幕なし" (no subtitle) wrote a
+    // clean 0 (bit 6 clear, no index).
+    // Gated on m_dvdSubtitleChosenByUser (see its own doc comment): this
+    // same disc has a commands-only, never-shown "VTS menu entry" PGC that
+    // ALSO unconditionally zeros sprm[2] (matching the disc-authored
+    // "explicit off" pattern byte-for-byte) before ever linking into the
+    // real, visible root menu -- so a bit/value check on sprm[2] alone
+    // cannot tell "the disc's own built-in default" apart from "the user
+    // really chose this in the subtitle menu". Without this gate, EVERY
+    // playback of this disc would have silently overridden the language-
+    // preference default above with the disc's built-in "no subtitle",
+    // even when the user never opened the subtitle menu at all (caught
+    // during this fix's own verification, not reported by the user --
+    // see the 2026-08-16 fix notes). Once the user HAS made a real choice,
+    // it overrides the language-preference default (last write wins,
+    // matching real DVD player behavior).
+    if (m_dvdSubtitleChosenByUser) {
+        if (m_vm.sprm[2] & 0x40) {
+            const int idx = int(m_vm.sprm[2] & 0x3F);
+            if (idx < title.subtitleStreams.size())
+                setActiveDvdSubtitleTrack(idx);
+        } else if (m_vm.sprm[2] == 0) {
+            setActiveDvdSubtitleTrack(-1);
+        }
+    }
     // Bookmarks are per-title; the key stays stable across in-title seeks.
     m_bookmarks->setCurrentKey(QStringLiteral("dvd:%1#title=%2")
                                        .arg(m_dvdDir)
@@ -1222,7 +1276,7 @@ bool PlayerController::runFirstPlay()
     dvdLog(QStringLiteral("runFirstPlay: actionKind=%1 data1=%2")
                    .arg(int(a.kind)).arg(a.data1));
     if (a.kind != DvdVm::Action::None && a.kind != DvdVm::Action::Nop)
-        return performNavAction(a, 0, 0); // First-Play lives in the VMGM domain
+        return performNavAction(a, 0, 0, 0); // First-Play lives in the VMGM domain, no current PGC
     // A commands-only First-Play that didn't branch, or a video-logo First-Play
     // (its own cells) — the latter is not played in menu-lite; fall back to the
     // menu so the disc is still usable.
@@ -1289,7 +1343,8 @@ bool PlayerController::enterMenu(int vts, int menuId, int depth)
     return playMenuPgc(vts, p, true, depth);
 }
 
-bool PlayerController::playMenuPgc(int vts, int pgcNumber, bool runPre, int depth)
+bool PlayerController::playMenuPgc(int vts, int pgcNumber, bool runPre, int depth,
+                                   int startCell)
 {
     if (depth > 12) {
         qWarning() << "dvd menu: redirect loop, aborting";
@@ -1301,22 +1356,44 @@ bool PlayerController::playMenuPgc(int vts, int pgcNumber, bool runPre, int dept
     const DvdMenu::Pgc &pgc = dom->pgcs.at(pgcNumber - 1);
 
     // Pre-commands may redirect (e.g. an intro menu that jumps to the root).
-    if (runPre && !pgc.preCommands.isEmpty()) {
+    // Only run them from the PGC's own natural start -- a LinkPgn jump into
+    // the middle of a multi-page PGC must not re-run them.
+    if (runPre && startCell == 0 && !pgc.preCommands.isEmpty()) {
         const DvdVm::Action a = m_vm.run(pgc.preCommands);
         if (a.kind != DvdVm::Action::None && a.kind != DvdVm::Action::Nop)
-            return performNavAction(a, vts, depth + 1);
+            return performNavAction(a, vts, pgcNumber, depth + 1);
     }
     if (pgc.cells.isEmpty()) {
         if (!pgc.postCommands.isEmpty()) {
             const DvdVm::Action a = m_vm.run(pgc.postCommands);
             if (a.kind != DvdVm::Action::None && a.kind != DvdVm::Action::Nop)
-                return performNavAction(a, vts, depth + 1);
+                return performNavAction(a, vts, pgcNumber, depth + 1);
         }
         return false;
     }
 
+    // A multi-cell PGC can have SEVERAL cells each independently marked
+    // still_time != 0, not just its true last cell -- found 2026-08-15 on a
+    // 4-cell chapter-index PGC where every cell is its own "page" (a
+    // LinkPgn(N) button jumps straight to page N's own entry cell, which is
+    // ITSELF a still cell). So freeze at the FIRST still cell reached from
+    // `startCell`, not unconditionally at the PGC's true last cell -- else
+    // every page would visibly play through to the end before freezing,
+    // and jumping into page 2 would incorrectly re-play page 1's cells too.
+    const int start = qBound(0, startCell, pgc.cells.size() - 1);
+    int freezeIdx = -1;
+    for (int i = start; i < pgc.cells.size(); ++i) {
+        if (pgc.cells.at(i).stillTime != 0) {
+            freezeIdx = i;
+            break;
+        }
+    }
+    const int endIdx = freezeIdx >= 0 ? freezeIdx : pgc.cells.size() - 1;
+    const QList<DvdIfo::Cell> playCells = pgc.cells.mid(start, endIdx - start + 1);
+    const bool freezesAtEnd = freezeIdx >= 0;
+
     DvdTitleDevice *device =
-            DvdTitleDevice::createFromMenuCells(dom->vobPath, pgc.cells, this);
+            DvdTitleDevice::createFromMenuCells(dom->vobPath, playCells, this);
     if (!device || !device->open(QIODevice::ReadOnly)) {
         delete device;
         qWarning() << "dvd menu: cannot open menu VOB" << dom->vobPath;
@@ -1337,30 +1414,76 @@ bool PlayerController::playMenuPgc(int vts, int pgcNumber, bool runPre, int dept
     m_menuVts = vts;
     m_menuPgc = pgcNumber;
 
-    // Clickable buttons from the first NAV pack in the PGC's cells.
+    // A multi-cell PGC can (and, on a real disc, does) have a completely
+    // DIFFERENT button/highlight layout per cell -- e.g. a brief
+    // transition/logo cell with one dummy button, then the real static menu
+    // cell with several real ones. parseButtons()/decodeSubpicture() return
+    // the FIRST valid NAV pack they find scanning forward, so scanning the
+    // WHOLE run would silently return the transition cell's (wrong) layout
+    // whenever it has ANY valid NAV pack of its own -- confirmed against a
+    // real disc (2026-08-15): scanning the whole PGC found the transition
+    // cell's single dummy button (empty command) while the frozen cell
+    // actually has 4 real, correctly-positioned buttons with real commands.
+    // When this run freezes on its last cell (freezesAtEnd, computed
+    // above), that's the cell the user is actually looking at and can
+    // click, so parse buttons/highlight from JUST that cell's own sector
+    // range.
+    const DvdIfo::Cell &buttonScanFirst =
+            freezesAtEnd ? playCells.last() : playCells.first();
+    const DvdIfo::Cell &buttonScanLast = playCells.last();
+
+    // Clickable buttons from the first NAV pack in the relevant cell range.
     m_menuButtons = DvdMenu::parseButtons(dom->vobPath,
-                                          pgc.cells.first().firstSector,
-                                          pgc.cells.last().lastSector);
+                                          buttonScanFirst.firstSector,
+                                          buttonScanLast.lastSector);
 
     // The disc's own subpicture highlight (button outlines) + palette.
     m_menuSpu = DvdMenu::decodeSubpicture(dom->vobPath,
-                                          pgc.cells.first().firstSector,
-                                          pgc.cells.last().lastSector);
+                                          buttonScanFirst.firstSector,
+                                          buttonScanLast.lastSector);
     memcpy(m_menuPalette, pgc.palette, sizeof(m_menuPalette));
     m_menuHighlightSel = -2; // invalidate the rendered-highlight cache
     m_menuHasButtons = !m_menuButtons.buttons.isEmpty();
+    // Per-cell still_time on the frozen cell (see DvdIfo::Cell::stillTime's
+    // own doc comment) is the disc's authoritative "freeze and wait here"
+    // signal -- verified against real discs: a one-shot logo/intro WITH a
+    // dummy button and real post-commands, and genuine multi-choice menus
+    // (including ones where EVERY cell is independently still, one per
+    // page), all had PGC-level still_time == 0, but each still-required
+    // cell carries still_time == 0xFF on the per-cell field. Fall back to
+    // "has a button and nowhere else to go" only if there's no explicit
+    // still-cell at all, for discs that rely purely on repeated playback
+    // instead.
+    m_menuFreezeAtEnd = freezesAtEnd;
+    m_menuWaitsForInput = m_menuFreezeAtEnd
+            || (m_menuHasButtons && pgc.postCommands.isEmpty());
     int sel = m_vm.sprm[8] >> 10; // SPRM8 = highlighted button * 1024
     if (sel < 1 || sel > m_menuButtons.buttons.size())
         sel = m_menuButtons.startButton;
     if (sel < 1 || sel > m_menuButtons.buttons.size())
         sel = m_menuButtons.buttons.isEmpty() ? 0 : 1;
     m_menuSelected = sel;
+    // The frozen cell's own start time, relative to THIS device's timeline
+    // (which begins at `start`, not necessarily the PGC's cell 0) -- the sum
+    // of every played cell's duration before it.
+    qint64 revealMs = 0;
+    if (freezesAtEnd) {
+        for (int i = 0; i < playCells.size() - 1; ++i)
+            revealMs += playCells.at(i).durationMs;
+    }
+    m_menuButtonsRevealMs = revealMs;
+    m_menuButtonsRevealed = m_menuButtonsRevealMs <= 0; // 0 = already revealed
 
     qInfo().nospace() << "dvd menu: showing vts " << vts << " pgc " << pgcNumber
                       << " (" << m_menuButtons.buttons.size() << " buttons)";
-    dvdLog(QStringLiteral("playMenuPgc vts=%1 pgc=%2 buttons=%3 hasButtons=%4 sel=%5")
-                   .arg(vts).arg(pgcNumber).arg(m_menuButtons.buttons.size())
-                   .arg(m_menuHasButtons).arg(m_menuSelected));
+    dvdLog(QStringLiteral("playMenuPgc vts=%1 pgc=%2 startCell=%3 playCells=%4 "
+                          "buttons=%5 hasButtons=%6 freezeCellStillTime=%7 "
+                          "freezeAtEnd=%8 waitsForInput=%9 revealMs=%10 sel=%11")
+                   .arg(vts).arg(pgcNumber).arg(start).arg(playCells.size())
+                   .arg(m_menuButtons.buttons.size()).arg(m_menuHasButtons)
+                   .arg(buttonScanFirst.stillTime)
+                   .arg(m_menuFreezeAtEnd).arg(m_menuWaitsForInput)
+                   .arg(m_menuButtonsRevealMs).arg(m_menuSelected));
 
     emit dvdPlaybackChanged();
     emit dvdMenuChanged();
@@ -1369,10 +1492,14 @@ bool PlayerController::playMenuPgc(int vts, int pgcNumber, bool runPre, int dept
     hint.setQuery(QStringLiteral("menu=%1:%2").arg(vts).arg(pgcNumber));
     m_fileSettings->remove(hint);
     m_pendingStreamTitle = dvdDiscName();
-    // Interactive menus (with buttons) loop until the user chooses; a buttonless
-    // menu (an intro / transition) plays once, then its post-commands run.
-    m_player->setLoops(m_menuHasButtons ? QMediaPlayer::Infinite
-                                        : QMediaPlayer::Once);
+    // Native looping is only appropriate for the "no explicit still-cell,
+    // just keep replaying while waiting" fallback -- when the disc marks
+    // an explicit freeze (m_menuFreezeAtEnd), we want QMediaPlayer to
+    // reach a genuine, one-time EndOfMedia so the EndOfMedia handler can
+    // leave it frozen there, not silently restart the clip from position 0.
+    m_player->setLoops((m_menuWaitsForInput && !m_menuFreezeAtEnd)
+                               ? QMediaPlayer::Infinite
+                               : QMediaPlayer::Once);
     m_player->setSourceDevice(device, hint);
     m_pendingAutoPlay = true;
     m_player->play();
@@ -1381,7 +1508,8 @@ bool PlayerController::playMenuPgc(int vts, int pgcNumber, bool runPre, int dept
     // VIVACE_DVD_AUTOSELECT=N auto-activates button N (or the default
     // selection if N<=0) a few seconds after any interactive menu appears,
     // to script past disc menus headlessly.
-    if (m_menuHasButtons && qEnvironmentVariableIsSet("VIVACE_DVD_AUTOSELECT")) {
+    if (m_menuHasButtons && m_menuWaitsForInput
+        && qEnvironmentVariableIsSet("VIVACE_DVD_AUTOSELECT")) {
         int btn = qgetenv("VIVACE_DVD_AUTOSELECT").toInt();
         if (btn <= 0)
             btn = m_menuSelected;
@@ -1390,13 +1518,55 @@ bool PlayerController::playMenuPgc(int vts, int pgcNumber, bool runPre, int dept
     return true;
 }
 
+bool PlayerController::runPgcPostCommands(int vts, int pgcNumber, int depth)
+{
+    const DvdMenu::Domain *dom = menuDomain(vts);
+    if (dom && pgcNumber >= 1 && pgcNumber <= dom->pgcs.size()) {
+        const DvdVm::Action a =
+                m_vm.run(dom->pgcs.at(pgcNumber - 1).postCommands);
+        if (a.kind != DvdVm::Action::None && a.kind != DvdVm::Action::Nop)
+            return performNavAction(a, vts, pgcNumber, depth + 1);
+    }
+    // Nothing to chain to — don't dead-end: play the main title.
+    return dvdPlayMainTitle();
+}
+
 bool PlayerController::performNavAction(const DvdVm::Action &a, int currentVts,
-                                        int depth)
+                                        int currentPgc, int depth)
 {
     using K = DvdVm::Action::Kind;
     switch (a.kind) {
     case K::LinkPgcn:
         return playMenuPgc(currentVts, a.data1, true, depth + 1);
+    case K::LinkPgn: {
+        // "Link to program N (current PGC)" -- jumps straight to program
+        // N's own entry cell within the PGC whose command block actually
+        // produced this action (currentPgc -- NOT m_menuPgc, which can be
+        // stale: see currentPgc's own doc comment in the header for the
+        // real disc bug this distinction fixes). Found on a real disc's
+        // chapter-index submenu, where each "page" of chapter buttons is
+        // its own program/cell and a range button like "7-12" is
+        // LinkPgn(2).
+        int startCellIdx = 0;
+        const DvdMenu::Domain *dom = menuDomain(currentVts);
+        if (dom && currentPgc >= 1 && currentPgc <= dom->pgcs.size()) {
+            const DvdMenu::Pgc &curPgc = dom->pgcs.at(currentPgc - 1);
+            if (a.data1 >= 1 && a.data1 <= curPgc.programEntryCells.size())
+                startCellIdx = curPgc.programEntryCells.at(a.data1 - 1);
+        }
+        return playMenuPgc(currentVts, currentPgc, false, depth + 1, startCellIdx);
+    }
+    case K::LinkTailPgc:
+        // "Link to this PGC's own tail" -- per real disc behavior (a
+        // button named like "Play Feature" on a menu whose only other
+        // content is a skippable intro clip), this means run the PGC
+        // whose command block produced this action (currentPgc, same
+        // staleness reasoning as LinkPgn above) own post-commands right
+        // now, exactly as if its cells had just finished playing
+        // naturally. NOT "replay this menu from the start" (the old
+        // default-case fallback, which just re-triggered the intro
+        // animation the button was meant to skip past).
+        return runPgcPostCommands(currentVts, currentPgc, depth);
     case K::JumpTt:
         return playGlobalTitle(a.data1);
     case K::JumpVtsTt:
@@ -1424,12 +1594,14 @@ bool PlayerController::performNavAction(const DvdVm::Action &a, int currentVts,
         m_player->stop();
         emit playbackFinished();
         return true;
-    default:
+    default: {
         // Relative links (top/next/prev PGC/cell/pg) — replay the current menu
         // as a best-effort for menu-lite.
+        const int pgc = currentPgc >= 1 ? currentPgc : m_menuPgc;
         if (m_menuVts >= 0)
-            return playMenuPgc(m_menuVts, m_menuPgc, false, depth + 1);
+            return playMenuPgc(m_menuVts, pgc, false, depth + 1);
         return false;
+    }
     }
 }
 
@@ -1477,6 +1649,12 @@ void PlayerController::leaveMenu()
 
 QVariantList PlayerController::dvdMenuButtons() const
 {
+    // Don't show a cell's buttons before playback has actually reached
+    // that cell -- see m_menuButtonsRevealMs's own doc comment (a
+    // transition/logo cell playing before the real, frozen menu cell has
+    // its own, irrelevant button layout).
+    if (m_player->position() < m_menuButtonsRevealMs)
+        return {};
     QVariantList rows;
     for (int i = 0; i < m_menuButtons.buttons.size(); ++i) {
         const DvdMenu::Button &b = m_menuButtons.buttons.at(i);
@@ -1497,6 +1675,10 @@ QVariantList PlayerController::dvdMenuButtons() const
 QString PlayerController::dvdMenuHighlightUrl() const
 {
     if (m_menuVts < 0 || !m_menuSpu.isValid())
+        return {};
+    // See dvdMenuButtons()'s identical guard: don't show the highlight
+    // overlay before playback reaches the cell it actually belongs to.
+    if (m_player->position() < m_menuButtonsRevealMs)
         return {};
     if (m_menuHighlightSel == m_menuSelected)
         return m_menuHighlightCache; // unchanged since last render
@@ -1696,6 +1878,19 @@ void PlayerController::dvdMenuActivate(int buttonNumber)
     m_vm.sprm[8] = quint16(buttonNumber << 10);
     const DvdMenu::Button &button = m_menuButtons.buttons.at(buttonNumber - 1);
     const int vts = m_menuVts;
+    // Clear before running ANYTHING this click triggers (the button's own
+    // command below, and whatever performNavAction()/runPgcPostCommands()
+    // recursively runs afterward) -- see m_dvdAudioChosenByUser's own doc
+    // comment for why a real button click, not an automatic disc-internal
+    // command chain, is what should mark these as a genuine user choice.
+    // A before/after VALUE comparison was tried first and doesn't work: a
+    // disc's "no subtitle" button can write the very same value (0) an
+    // earlier, unrelated command chain already left in sprm[2], so the
+    // click's real System-Set instruction still EXECUTES but produces no
+    // detectable value change -- touchedSprm1/2 (see their own doc
+    // comment) track the execution itself, not the resulting value.
+    m_vm.touchedSprm1 = false;
+    m_vm.touchedSprm2 = false;
     const DvdVm::Action a = m_vm.run({ button.command });
     dvdLog(QStringLiteral("activate btn=%1 auto=%2 cmd=%3 -> actionKind=%4 data1=%5")
                    .arg(buttonNumber).arg(button.autoAction)
@@ -1709,9 +1904,17 @@ void PlayerController::dvdMenuActivate(int buttonNumber)
     // skipped the disc's preview state and diverged from other players.)
     if (a.kind == DvdVm::Action::None || a.kind == DvdVm::Action::Nop) {
         emit dvdMenuChanged(); // highlight only
+        if (m_vm.touchedSprm1)
+            m_dvdAudioChosenByUser = true;
+        if (m_vm.touchedSprm2)
+            m_dvdSubtitleChosenByUser = true;
         return;
     }
-    performNavAction(a, vts, 0);
+    performNavAction(a, vts, m_menuPgc, 0);
+    if (m_vm.touchedSprm1)
+        m_dvdAudioChosenByUser = true;
+    if (m_vm.touchedSprm2)
+        m_dvdSubtitleChosenByUser = true;
 }
 
 void PlayerController::dvdMenuActivateSelected()
@@ -2987,6 +3190,28 @@ void PlayerController::handleMediaStatus(QMediaPlayer::MediaStatus status)
         // their hint URL is no good as a recents entry or resume key.
         if (m_player->sourceDevice()) {
             selectPreferredTracks();
+            // The disc's own audio menu (e.g. "音声") sets m_vm.sprm[1] (the
+            // VM's audio-stream register) via a button's System-Set command
+            // -- same mechanism/bug as the subtitle case in applyDvdTitle(),
+            // see its own comment. Only meaningful once we're actually
+            // playing a TITLE (m_dvdCurrentTitle > 0), not a menu PGC (which
+            // also loads via a device source and would reach this same
+            // branch) -- menus have no real "audio track" of their own to
+            // apply this to. Gated on m_dvdAudioChosenByUser (see its own
+            // doc comment): this disc's commands-only "VTS menu entry" PGC
+            // also unconditionally sets sprm[1]=0 before ever showing a real
+            // menu, so a plain bounds check alone would silently override
+            // the language-preference default on EVERY playback, same
+            // class of bug as the subtitle case. Overriding AFTER
+            // selectPreferredTracks() so a real disc-menu choice wins over
+            // the language-preference default.
+            if (m_dvdCurrentTitle > 0 && m_dvdAudioChosenByUser) {
+                const DvdIfo::Title *title = currentDvdTitle();
+                if (title && m_vm.sprm[1] >= 0
+                    && m_vm.sprm[1] < title->audioStreams.size()) {
+                    setActiveAudioTrack(m_vm.sprm[1]);
+                }
+            }
             return;
         }
 
@@ -3052,27 +3277,39 @@ void PlayerController::handleMediaStatus(QMediaPlayer::MediaStatus status)
     if (status == QMediaPlayer::EndOfMedia) {
         // DVD menu end-of-cell.
         if (m_menuVts >= 0) {
-            if (m_menuHasButtons) {
-                // Interactive menu: loop the clip (belt-and-suspenders — setLoops
-                // Infinite normally handles it) while waiting for a choice.
+            if (m_menuFreezeAtEnd) {
+                // The disc's own per-cell still_time says to freeze right
+                // here and wait (see m_menuFreezeAtEnd's doc comment) —
+                // don't restart the clip, don't run post-commands. A
+                // natural EndOfMedia leaves QMediaPlayer in StoppedState,
+                // which clears the video frame to black (confirmed via
+                // screenshot) rather than holding the last picture — so
+                // explicitly re-seek just before the true end and pause
+                // there, which forces a fresh decode/render at that
+                // position and keeps a visible frame on screen. The
+                // button stays clickable and the QML menu-idle timer
+                // (Settings.dvdMenuTimeout) is what eventually moves on if
+                // the user does nothing.
+                const qint64 dur = m_player->duration();
+                if (dur > 0)
+                    m_player->setPosition(qMax<qint64>(0, dur - 40));
+                m_player->pause();
+                return;
+            }
+            if (m_menuWaitsForInput) {
+                // No explicit still-cell, but there's a button and nothing
+                // else to fall through to: loop the clip (belt-and-
+                // suspenders — setLoops Infinite normally handles it)
+                // while waiting for a choice.
                 m_player->setPosition(0);
                 m_player->play();
                 return;
             }
-            // Buttonless intro / transition menu: run its post-commands to move
-            // on (e.g. the title-menu intro that JumpTT's into the movie).
-            const DvdMenu::Domain *dom = menuDomain(m_menuVts);
-            if (dom && m_menuPgc >= 1 && m_menuPgc <= dom->pgcs.size()) {
-                const DvdVm::Action a =
-                        m_vm.run(dom->pgcs.at(m_menuPgc - 1).postCommands);
-                if (a.kind != DvdVm::Action::None
-                    && a.kind != DvdVm::Action::Nop) {
-                    performNavAction(a, m_menuVts, 0);
-                    return;
-                }
-            }
-            // Nothing to chain to — don't dead-end: play the main title.
-            dvdPlayMainTitle();
+            // Neither case applies: a one-shot intro/transition PGC
+            // (regardless of whether it happens to declare a button) --
+            // run its post-commands to move on (e.g. the title-menu intro
+            // that JumpTT's into the movie).
+            runPgcPostCommands(m_menuVts, m_menuPgc, 0);
             return;
         }
         // DVD: continue with the next timeline run of the title.

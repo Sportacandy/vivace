@@ -68,6 +68,21 @@ public:
     quint16 gprm[16];
     quint16 sprm[24];
 
+    // Set by a System-Set instruction (systemSet()'s case 1) actually
+    // WRITING sprm[1]/sprm[2] -- true on execution, independent of whether
+    // the new value differs from the old one. A caller who needs to know
+    // "did a specific run() actually assign to this register" (e.g. to
+    // distinguish an explicit user menu choice from some other command
+    // chain that happens to write the same value) should clear these
+    // before calling run() and check them after -- NOT compare sprm[]
+    // before/after, which misses the case where the newly-chosen value
+    // happens to equal the old one (found 2026-08-16: a disc's "no
+    // subtitle" button writes 0, which can coincide with an unrelated
+    // command chain's own earlier write of 0, making a before/after value
+    // diff silently miss the real button click).
+    bool touchedSprm1 = false;
+    bool touchedSprm2 = false;
+
 private:
     struct Cmd {
         quint64 instruction = 0;

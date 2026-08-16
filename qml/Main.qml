@@ -1100,12 +1100,41 @@ ApplicationWindow {
         // label rendered in the video beneath — a partial opacity keeps the
         // label/thumbnail readable through the highlight colour (the disc's
         // shape + colour are preserved).
+        //
+        // Sized from the image's OWN decoded pixel size (sourceSize), scaled
+        // by the same sx/sy the button rects use -- NOT unconditionally
+        // stretched to fill the whole content rect. A disc's subpicture
+        // display area (SET_DAREA) commonly stops short of the full
+        // 720x480 menu space -- no need to encode rows below the lowest
+        // button -- so the decoded image can genuinely be smaller (e.g.
+        // 720x428, found on a real disc's chapter submenu, its declared
+        // area ending exactly at its lowest button's bottom edge).
+        // Unconditionally stretching a shorter image to fill the full
+        // content rect distorts its internal vertical proportions, so a
+        // button's own highlight pixels (correctly positioned within the
+        // image itself, confirmed by saving it to disk and inspecting it
+        // directly) land tens of pixels below that button's own true
+        // screen position once stretched -- exactly matching a real
+        // report of a range-selector button's highlight appearing
+        // "20-40px too low" while other buttons on the same page (whose
+        // own highlight pixels happen to reduce to a null image, falling
+        // back to the plain drawn Rectangle border below -- see its own
+        // "hasSpu" gate -- which is positioned independently of this
+        // Image and unaffected) looked correctly placed. Falls back to
+        // the full content size before the image has actually decoded
+        // (sourceSize briefly (0,0)), matching the original behavior for
+        // that instant.
         Image {
+            id: spuImage
             visible: dvdMenuOverlay.hasSpu
             x: dvdMenuOverlay.content.x
             y: dvdMenuOverlay.content.y
-            width: dvdMenuOverlay.content.width
-            height: dvdMenuOverlay.content.height
+            width: spuImage.sourceSize.width > 0
+                   ? spuImage.sourceSize.width * dvdMenuOverlay.sx
+                   : dvdMenuOverlay.content.width
+            height: spuImage.sourceSize.height > 0
+                    ? spuImage.sourceSize.height * dvdMenuOverlay.sy
+                    : dvdMenuOverlay.content.height
             source: dvdMenuOverlay.spuUrl
             fillMode: Image.Stretch
             opacity: 0.5

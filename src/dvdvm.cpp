@@ -271,8 +271,13 @@ bool Machine::systemSet(const Cmd &c, int cond, Action &out)
         for (int i = 1; i <= 3; ++i) {
             if (bits(c, 63 - ((2 + i) * 8), 1)) {
                 const quint16 data = regOrData2(c, bits(c, 60, 1), 47 - (i * 8));
-                if (cond)
+                if (cond) {
                     sprm[i] = data;
+                    if (i == 1)
+                        touchedSprm1 = true;
+                    else if (i == 2)
+                        touchedSprm2 = true;
+                }
             }
         }
         break;

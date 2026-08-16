@@ -20,6 +20,25 @@ namespace DvdIfo {
 struct Cell {
     qint64 firstSector = 0;
     qint64 lastSector = 0; // inclusive, 2048-byte sectors in the VOB domain
+    // cell_playback_t's own still_time (offset +0x02 within the 24-byte
+    // cell entry -- a SEPARATE field from the whole-PGC still_time at
+    // PGC + 0xA2): 0 = play straight through into the next cell/PGC end;
+    // 1-254 = hold this cell's last frame that many seconds; 0xFF = hold
+    // forever until the user acts. Verified against two real discs
+    // (2026-08-15): this per-cell field, not the PGC-level one, is what
+    // actually distinguishes "plays once then auto-advances" from "must
+    // wait for the user" -- a real interactive multi-button menu and a
+    // skippable logo-animation-with-a-dummy-button can both have PGC-level
+    // still_time == 0, but the menu's own cell has still_time == 0xFF.
+    int stillTime = 0;
+    // This cell's own playback duration (BCD hh:mm:ss:ff at cell + 0x04,
+    // same encoding as PGC/title durations elsewhere in this project).
+    // Only populated by dvdmenuparser.cpp so far (menu cells can need to
+    // freeze partway through a multi-cell PGC -- see the 2026-08-15 fix
+    // notes on why a single whole-PGC "last cell" assumption isn't
+    // enough); title cells still get their timing from
+    // DvdIfo::Title::cellStartsMs instead.
+    qint64 durationMs = 0;
 };
 
 // VTSI_MAT's subtitle (subpicture) stream attribute table: declared once per
