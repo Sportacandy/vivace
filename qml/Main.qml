@@ -1222,10 +1222,31 @@ ApplicationWindow {
             // unscaled image sit far too high and far too small (2026-08-15
             // bug report). Bind the geometry directly instead, same as
             // dvdMenuOverlay's own (already-correct) Image above.
+            //
+            // Sized from the image's OWN decoded pixel size (sourceSize)
+            // scaled against the standard 720x480 DVD coordinate space --
+            // NOT unconditionally stretched to fill the whole content rect.
+            // A subtitle bitmap's own display area (SET_DAREA) is commonly
+            // smaller than the full frame (no need to encode rows/columns
+            // outside where the subtitle text actually sits); unconditional
+            // stretching distorts its internal proportions, mispositioning
+            // and mis-sizing the rendered text -- same bug, same fix, as
+            // dvdMenuOverlay's own highlight Image above (2026-08-16, found
+            // on a disc whose subtitle bitmaps are narrower/shorter than
+            // 720x480, unlike other tested discs' apparently-full-frame
+            // ones). Falls back to the full content size before the image
+            // has actually decoded (sourceSize briefly (0,0)).
+            id: dvdSubtitleImage
             x: dvdSubtitleOverlay.content.x
             y: dvdSubtitleOverlay.content.y
-            width: dvdSubtitleOverlay.content.width
-            height: dvdSubtitleOverlay.content.height
+            width: dvdSubtitleImage.sourceSize.width > 0
+                   ? dvdSubtitleImage.sourceSize.width
+                             * (dvdSubtitleOverlay.content.width / 720)
+                   : dvdSubtitleOverlay.content.width
+            height: dvdSubtitleImage.sourceSize.height > 0
+                    ? dvdSubtitleImage.sourceSize.height
+                              * (dvdSubtitleOverlay.content.height / 480)
+                    : dvdSubtitleOverlay.content.height
             source: playerController.dvdSubtitleImageUrl
             fillMode: Image.Stretch
             smooth: true

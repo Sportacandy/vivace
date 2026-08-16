@@ -712,6 +712,46 @@ QStringList PlayerController::audioTrackLabels() const
     return trackLabels(m_player->audioTracks());
 }
 
+QStringList PlayerController::dvdAudioTrackLabels() const
+{
+    QStringList labels;
+    // While just the disc's own menu is showing (no title loaded yet,
+    // m_dvdCurrentTitle <= 0), m_player->audioTracks() reflects whatever
+    // the MENU's own device happens to carry (often none), not the
+    // eventual title's -- showing IFO-declared labels directly here is
+    // the only way Audio > Track has anything to show before the user
+    // ever presses the disc's own "play" button (found 2026-08-16, "Bug
+    // 7": the menu was empty the whole time the disc's own menu was up).
+    if (m_dvdCurrentTitle <= 0) {
+        for (const DvdIfo::AudioStream &s : m_dvdAudioStreams) {
+            QString label = tr("Track %1").arg(s.id + 1);
+            if (!s.language.isEmpty()) {
+                const QString native = QLocale(s.language).nativeLanguageName();
+                label = native.isEmpty() ? s.language.toUpper() : native;
+            }
+            labels << label;
+        }
+        return labels;
+    }
+    // Once a real title is loaded, cap to what FFmpeg actually finds
+    // multiplexed (m_dvdAudioStreams' own doc comment: a disc can declare
+    // more audio streams than it actually records), so the menu doesn't
+    // offer entries that silently do nothing.
+    const QList<QMediaMetaData> tracks = m_player->audioTracks();
+    labels.reserve(tracks.size());
+    for (int i = 0; i < tracks.size(); ++i) {
+        QString label = tr("Track %1").arg(i + 1);
+        if (i < m_dvdAudioStreams.size()
+            && !m_dvdAudioStreams.at(i).language.isEmpty()) {
+            const QString lang = m_dvdAudioStreams.at(i).language;
+            const QString native = QLocale(lang).nativeLanguageName();
+            label = native.isEmpty() ? lang.toUpper() : native;
+        }
+        labels << label;
+    }
+    return labels;
+}
+
 QStringList PlayerController::subtitleTrackLabels() const
 {
     return trackLabels(m_player->subtitleTracks());
@@ -918,6 +958,26 @@ bool PlayerController::openDvd(const QUrl &folder)
     m_vm.reset();
     m_dvdAudioChosenByUser = false;
     m_dvdSubtitleChosenByUser = false;
+    // Audio/Subtitle > Track menus otherwise show nothing at all until a
+    // title is actually playing (m_dvdAudioStreams/m_dvdSubtitleStreams are
+    // normally only populated by applyDvdTitle()) -- but a DVD's declared
+    // streams are a per-VTS IFO fact, known as soon as the disc is parsed,
+    // well before the user ever leaves the root menu (found 2026-08-16: the
+    // menus were genuinely empty while just the disc menu was showing).
+    // Pre-populate from the same "main" (longest) title dvdPlayMainTitle()
+    // would eventually pick, so the track labels/languages are already
+    // there to look at -- and, for the (usual) single-VTS-disc case,
+    // exactly right regardless of which title actually ends up playing.
+    if (!titles.isEmpty()) {
+        const auto main = std::max_element(
+                titles.constBegin(), titles.constEnd(),
+                [](const DvdIfo::Title &a, const DvdIfo::Title &b) {
+                    return a.durationMs < b.durationMs;
+                });
+        m_dvdAudioStreams = main->audioStreams;
+        m_dvdSubtitleStreams = main->subtitleStreams;
+        emit trackLabelsChanged();
+    }
 
     for (const DvdIfo::Title &title : titles) {
         qInfo().nospace() << "dvd: title " << title.titleNumber << " vts "
@@ -1026,6 +1086,16 @@ bool PlayerController::applyDvdTitle(const DvdIfo::Title &title,
                                      qint64 positionOffsetMs,
                                      qint64 startSector)
 {
+    // Captured before anything below changes: whether this rebuild is for
+    // the SAME title (a seek, run-boundary auto-advance, or chapter jump
+    // within it -- all of which call this function again) rather than a
+    // genuinely new one, and the audio track actually active a moment ago
+    // -- see m_dvdPendingAudioTrackRestore's own doc comment for why this
+    // needs to survive past this function returning.
+    const bool sameTitle = m_dvdCurrentTitle == title.titleNumber;
+    const int previousAudioTrack = m_player->activeAudioTrack();
+    const int previousSubtitleTrack = m_dvdActiveSubtitleTrack;
+
     // The stream may only span one timestamp timeline: cells flagged as
     // starting a new one (STC discontinuity / VOB unit change) stall the
     // decoder clock if concatenated. Ends of runs auto-advance instead.
@@ -1078,60 +1148,87 @@ bool PlayerController::applyDvdTitle(const DvdIfo::Title &title,
     m_dvdDevice = device;
     m_dvdCurrentTitle = title.titleNumber;
     m_dvdPositionOffsetMs = positionOffsetMs;
+    m_dvdAudioStreams = title.audioStreams;
     m_dvdSubtitleStreams = title.subtitleStreams;
-    setActiveDvdSubtitleTrack(-1); // off unless a preferred-language match is found below
-    // VIVACE_DVD_FORCE_SUB_LANG overrides which language to look for (not
-    // whether subtitles-by-default is on at all) -- lets a test run exercise
-    // the matching logic without touching Settings; see the debug-aids note
-    // above openDvd().
-    QString prefSubLangs = m_preferredSubtitleLanguages;
-    if (qEnvironmentVariableIsSet("VIVACE_DVD_FORCE_SUB_LANG"))
-        prefSubLangs = QString::fromLocal8Bit(qgetenv("VIVACE_DVD_FORCE_SUB_LANG"));
-    if (m_subtitlesByDefault && !prefSubLangs.trimmed().isEmpty()) {
-        const int index = findDvdSubtitleTrackByLanguages(
-                m_dvdSubtitleStreams, prefSubLangs);
-        dvdLog(QStringLiteral("dvd subtitle: preferred='%1' matchedIndex=%2 "
-                              "declared=%3")
-                       .arg(prefSubLangs).arg(index)
-                       .arg(m_dvdSubtitleStreams.size()));
-        if (index >= 0)
-            setActiveDvdSubtitleTrack(index);
-    }
-    // The disc's OWN subtitle menu (Subtitles ▸ ... reachable from the DVD's
-    // root menu, e.g. "字幕") works by having its buttons set SPRM2 (the
-    // VM's subpicture-stream register) via a System-Set command, then link
-    // back into the title -- confirmed by decoding a real disc's menu-PGC
-    // command bytes with a from-scratch VM simulation (2026-08-16): the
-    // button DOES correctly update m_vm.sprm[2], but nothing previously
-    // read it back out and applied it to actual playback, so choosing a
-    // subtitle from the disc's own menu silently did nothing.
-    // SPRM2's real DVD-Video encoding (confirmed empirically against this
-    // disc's own button commands, NOT a plain 0-based index as first
-    // assumed): bit 6 (0x40) is a "subtitle stream selected" flag, bits 0-5
-    // are the 0-based stream index -- a real "日本語"/"英語" button wrote
-    // 0x40/0x41 (ON, stream 0/1), while "字幕なし" (no subtitle) wrote a
-    // clean 0 (bit 6 clear, no index).
-    // Gated on m_dvdSubtitleChosenByUser (see its own doc comment): this
-    // same disc has a commands-only, never-shown "VTS menu entry" PGC that
-    // ALSO unconditionally zeros sprm[2] (matching the disc-authored
-    // "explicit off" pattern byte-for-byte) before ever linking into the
-    // real, visible root menu -- so a bit/value check on sprm[2] alone
-    // cannot tell "the disc's own built-in default" apart from "the user
-    // really chose this in the subtitle menu". Without this gate, EVERY
-    // playback of this disc would have silently overridden the language-
-    // preference default above with the disc's built-in "no subtitle",
-    // even when the user never opened the subtitle menu at all (caught
-    // during this fix's own verification, not reported by the user --
-    // see the 2026-08-16 fix notes). Once the user HAS made a real choice,
-    // it overrides the language-preference default (last write wins,
-    // matching real DVD player behavior).
-    if (m_dvdSubtitleChosenByUser) {
-        if (m_vm.sprm[2] & 0x40) {
-            const int idx = int(m_vm.sprm[2] & 0x3F);
-            if (idx < title.subtitleStreams.size())
-                setActiveDvdSubtitleTrack(idx);
-        } else if (m_vm.sprm[2] == 0) {
-            setActiveDvdSubtitleTrack(-1);
+    // A same-title rebuild (seek / run-boundary advance / chapter jump
+    // within this title) must PRESERVE whatever subtitle track is already
+    // active -- including an explicit Subtitles > Track pick that has
+    // nothing to do with either the language-preference default or the
+    // disc's own on-screen subtitle menu -- rather than resetting to off
+    // and recomputing from scratch every time (found 2026-08-16: dragging
+    // the seek bar was silently turning a chosen subtitle back off). Still
+    // needs a fresh build though: the subtitle event index is scoped to
+    // the CURRENT RUN's own cells (see startDvdSubtitleTrackBuild()'s own
+    // doc comment), which just changed.
+    if (sameTitle && previousSubtitleTrack >= 0
+        && previousSubtitleTrack < m_dvdSubtitleStreams.size()) {
+        m_dvdSubtitleTrack = {};
+        m_dvdSubtitleImageUrl.clear();
+        emit dvdSubtitleImageChanged();
+        startDvdSubtitleTrackBuild(previousSubtitleTrack);
+    } else {
+        setActiveDvdSubtitleTrack(-1); // off unless a preferred-language match is found below
+        // VIVACE_DVD_FORCE_SUB_LANG overrides which language to look for (not
+        // whether subtitles-by-default is on at all) -- lets a test run exercise
+        // the matching logic without touching Settings; see the debug-aids note
+        // above openDvd().
+        QString prefSubLangs = m_preferredSubtitleLanguages;
+        if (qEnvironmentVariableIsSet("VIVACE_DVD_FORCE_SUB_LANG"))
+            prefSubLangs = QString::fromLocal8Bit(qgetenv("VIVACE_DVD_FORCE_SUB_LANG"));
+        if (m_subtitlesByDefault && !prefSubLangs.trimmed().isEmpty()) {
+            const int index = findDvdSubtitleTrackByLanguages(
+                    m_dvdSubtitleStreams, prefSubLangs);
+            dvdLog(QStringLiteral("dvd subtitle: preferred='%1' matchedIndex=%2 "
+                                  "declared=%3")
+                           .arg(prefSubLangs).arg(index)
+                           .arg(m_dvdSubtitleStreams.size()));
+            if (index >= 0)
+                setActiveDvdSubtitleTrack(index);
+        }
+        // The disc's OWN subtitle menu (Subtitles ▸ ... reachable from the
+        // DVD's root menu, e.g. "字幕") works by having its buttons set
+        // SPRM2 (the VM's subpicture-stream register) via a System-Set
+        // command, then link back into the title -- confirmed by decoding
+        // a real disc's menu-PGC command bytes with a from-scratch VM
+        // simulation (2026-08-16): the button DOES correctly update
+        // m_vm.sprm[2], but nothing previously read it back out and
+        // applied it to actual playback, so choosing a subtitle from the
+        // disc's own menu silently did nothing.
+        // SPRM2's real DVD-Video encoding (confirmed empirically against
+        // this disc's own button commands, NOT a plain 0-based index as
+        // first assumed): bit 6 (0x40) is a "subtitle stream selected"
+        // flag, bits 0-5 are the 0-based stream index -- a real "日本語"/
+        // "英語" button wrote 0x40/0x41 (ON, stream 0/1), while "字幕なし"
+        // (no subtitle) wrote a clean 0 (bit 6 clear, no index).
+        // Gated on m_dvdSubtitleChosenByUser (see its own doc comment):
+        // this same disc has a commands-only, never-shown "VTS menu
+        // entry" PGC that ALSO unconditionally zeros sprm[2] (matching
+        // the disc-authored "explicit off" pattern byte-for-byte) before
+        // ever linking into the real, visible root menu -- so a bit/value
+        // check on sprm[2] alone cannot tell "the disc's own built-in
+        // default" apart from "the user really chose this in the
+        // subtitle menu". Without this gate, EVERY playback of this disc
+        // would have silently overridden the language-preference default
+        // above with the disc's built-in "no subtitle", even when the
+        // user never opened the subtitle menu at all (caught during this
+        // fix's own verification, not reported by the user -- see the
+        // 2026-08-16 fix notes). Once the user HAS made a real choice, it
+        // overrides the language-preference default (last write wins,
+        // matching real DVD player behavior). Deliberately INSIDE this
+        // "fresh title" branch, not applied unconditionally on every
+        // rebuild: sprm[2] doesn't change on its own between rebuilds, so
+        // re-applying it on a same-title seek could resurrect a stale
+        // disc-menu choice over a since-changed explicit Subtitles > Track
+        // pick (which the branch above already restores correctly without
+        // needing this at all).
+        if (m_dvdSubtitleChosenByUser) {
+            if (m_vm.sprm[2] & 0x40) {
+                const int idx = int(m_vm.sprm[2] & 0x3F);
+                if (idx < title.subtitleStreams.size())
+                    setActiveDvdSubtitleTrack(idx);
+            } else if (m_vm.sprm[2] == 0) {
+                setActiveDvdSubtitleTrack(-1);
+            }
         }
     }
     // Bookmarks are per-title; the key stays stable across in-title seeks.
@@ -1152,6 +1249,12 @@ bool PlayerController::applyDvdTitle(const DvdIfo::Title &title,
 
     // Show the disc/folder name in the window title, not the raw hint URL.
     m_pendingStreamTitle = dvdDiscName();
+    // Read by handleMediaStatus()'s LoadedMedia handler once this new
+    // source finishes loading -- see m_dvdPendingAudioTrackRestore's own
+    // doc comment. Only meaningful for a same-title rebuild; a fresh title
+    // still gets the ordinary preferred-audio-language default there.
+    m_dvdPendingAudioTrackRestore =
+            (sameTitle && previousAudioTrack >= 0) ? previousAudioTrack : -1;
     m_player->setSourceDevice(device, hint);
     m_pendingAutoPlay = true;
     m_player->play();
@@ -3189,6 +3292,23 @@ void PlayerController::handleMediaStatus(QMediaPlayer::MediaStatus status)
         // Device-based sources (DVD titles) get track preferences only:
         // their hint URL is no good as a recents entry or resume key.
         if (m_player->sourceDevice()) {
+            // A same-title rebuild (seek / run-boundary advance / chapter
+            // jump within it) must PRESERVE whichever audio track was
+            // actually playing a moment ago -- including an explicit
+            // Audio > Track pick that has nothing to do with the
+            // language-preference default or the disc's own on-screen
+            // audio menu -- rather than recomputing a default from
+            // scratch on every rebuild (found 2026-08-16: dragging the
+            // seek bar was silently resetting the audio track, same root
+            // cause as the subtitle case in applyDvdTitle() -- a fresh
+            // QMediaPlayer source load does not preserve the previously
+            // active track index on its own). See
+            // m_dvdPendingAudioTrackRestore's own doc comment.
+            if (m_dvdPendingAudioTrackRestore >= 0) {
+                setActiveAudioTrack(m_dvdPendingAudioTrackRestore);
+                m_dvdPendingAudioTrackRestore = -1;
+                return;
+            }
             selectPreferredTracks();
             // The disc's own audio menu (e.g. "音声") sets m_vm.sprm[1] (the
             // VM's audio-stream register) via a button's System-Set command
@@ -3204,7 +3324,10 @@ void PlayerController::handleMediaStatus(QMediaPlayer::MediaStatus status)
             // the language-preference default on EVERY playback, same
             // class of bug as the subtitle case. Overriding AFTER
             // selectPreferredTracks() so a real disc-menu choice wins over
-            // the language-preference default.
+            // the language-preference default. (Only reached for a fresh
+            // title -- the same-title case above already returned -- so
+            // this can't resurrect a stale sprm[1] over a since-changed
+            // explicit Audio > Track pick either.)
             if (m_dvdCurrentTitle > 0 && m_dvdAudioChosenByUser) {
                 const DvdIfo::Title *title = currentDvdTitle();
                 if (title && m_vm.sprm[1] >= 0

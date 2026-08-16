@@ -625,15 +625,23 @@ MenuBar {
             icon.source: Theme.icon("audio_track")
 
             // See the "(empty)" placeholder under Recent files for why this is
-            // added/removed instead of shown/hidden.
+            // added/removed instead of shown/hidden. DVD titles label each
+            // entry with the disc's own IFO-declared language (dvdAudioTrackLabels)
+            // instead of a generic "Track N" (dvdSubtitleTrackLabels does the
+            // same for Subtitles > Track) -- selection itself is unchanged,
+            // still the plain activeAudioTrack/FFmpeg track index.
             Instantiator {
-                model: bar.controller.audioTrackLabels.length === 0 ? 1 : 0
+                model: (bar.controller.dvdPlayback
+                        ? bar.controller.dvdAudioTrackLabels
+                        : bar.controller.audioTrackLabels).length === 0 ? 1 : 0
                 delegate: AppMenuItem { text: qsTr("<empty>"); enabled: false }
                 onObjectAdded: (index, object) => audioTrackMenu.insertItem(0, object)
                 onObjectRemoved: (index, object) => audioTrackMenu.removeItem(object)
             }
             Instantiator {
-                model: bar.controller.audioTrackLabels
+                model: bar.controller.dvdPlayback
+                       ? bar.controller.dvdAudioTrackLabels
+                       : bar.controller.audioTrackLabels
                 delegate: AppMenuItem {
                     required property int index
                     required property string modelData

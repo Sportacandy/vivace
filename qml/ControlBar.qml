@@ -148,7 +148,11 @@ Pane {
     }
 
     // The seek slider, shared by the inline (Basic/Mini) placement and the
-    // Mpc full-width row. Hides for IFO-less DVDs (no meaningful duration).
+    // Mpc full-width row. Stays visible (disabled) for IFO-less DVDs and
+    // DVD menus (no meaningful duration) rather than disappearing --
+    // hiding it entirely collapses its Layout.fillWidth space and shifts
+    // every sibling control in the row (found 2026-08-16: the whole
+    // control bar visibly re-flows the instant a DVD menu appears).
     component SeekSlider: WinSlider {
         id: seekSlider
         readonly property bool dvd: controlBar.controller.dvdPlayback
@@ -158,13 +162,13 @@ Pane {
         // A seek deferred to release: always for DVD (rebuilds the stream),
         // and for files when "seek when released" is chosen.
         property real pendingSeek: -1
-        visible: !dvd || controlBar.controller.dvdTitleDurationMs > 0
         from: 0
         to: Math.max(1, dvd ? controlBar.controller.dvdTitleDurationMs
                             : controlBar.player.duration)
         tickValues: controlBar.controller.chapters
                         .map(c => c.startMs).filter(ms => ms > 0)
         enabled: controlBar.player.seekable
+                 && (!dvd || controlBar.controller.dvdTitleDurationMs > 0)
         onMoved: {
             if (!dvd && Settings.seekOnDrag)
                 controlBar.player.position = value
@@ -450,10 +454,16 @@ Pane {
 
             SeekSlider {
                 // Inline (Basic/Mini): shown only when the layout lists it
-                // and it is not on the Mpc dedicated row.
+                // and it is not on the Mpc dedicated row. Deliberately NOT
+                // additionally gated on "!dvd || dvdTitleDurationMs > 0"
+                // (removed 2026-08-16) -- that duplicated the exact same
+                // condition the component's own default `visible` used to
+                // have (see SeekSlider's own comment), and overriding it
+                // here is what kept the slider disappearing during a DVD
+                // menu even after that fix, since THIS binding wins for
+                // every instance built from this object literal.
                 visible: !controlBar.seekOnOwnRow
                          && controlBar.col("seekslider") >= 0
-                         && (!dvd || controlBar.controller.dvdTitleDurationMs > 0)
                 Layout.row: 0
                 Layout.column: controlBar.col("seekslider")
                 Layout.fillWidth: true

@@ -215,6 +215,15 @@ class PlayerController : public QObject
                NOTIFY trackLabelsChanged)
     Q_PROPERTY(QStringList audioTrackLabels READ audioTrackLabels
                NOTIFY trackLabelsChanged)
+    // Audio > Track labelled with the DVD's own IFO-declared language per
+    // real, selectable FFmpeg audio track (same idea as dvdSubtitleTrackLabels,
+    // but positional against m_player->audioTracks() rather than a separate
+    // Vivace-side decoder -- audio selection still goes through the ordinary
+    // FFmpeg track mechanism unchanged, only the label text differs from
+    // plain audioTrackLabels()). Falls back to "Track N" per entry that has
+    // no corresponding declared stream or language.
+    Q_PROPERTY(QStringList dvdAudioTrackLabels READ dvdAudioTrackLabels
+               NOTIFY trackLabelsChanged)
     Q_PROPERTY(QStringList subtitleTrackLabels READ subtitleTrackLabels
                NOTIFY trackLabelsChanged)
 
@@ -419,6 +428,7 @@ public:
 
     QStringList videoTrackLabels() const;
     QStringList audioTrackLabels() const;
+    QStringList dvdAudioTrackLabels() const;
     QStringList subtitleTrackLabels() const;
 
     // QMediaPlayer's FFmpeg backend does not emit activeTracksChanged when the
@@ -787,6 +797,32 @@ private:
     int m_menuSpaceW = 720; // button coordinate space (menu video resolution)
     int m_menuSpaceH = 480;
 
+    // IFO-declared audio streams for the current title -- used only to give
+    // Audio > Track menu entries a real language label (audioTrackLabels()),
+    // since the raw MPEG-PS stream FFmpeg demuxes carries no language
+    // metadata of its own for DVD titles (unlike the subtitle case below,
+    // this doesn't change which/how many tracks are selectable -- that
+    // still goes through m_player->audioTracks()/setActiveAudioTrack()
+    // untouched, since a DVD's own declared audio-stream count doesn't
+    // always match how many FFmpeg actually finds multiplexed in the VOB;
+    // see the 2026-08-16 fix notes).
+    QList<DvdIfo::AudioStream> m_dvdAudioStreams;
+    // Set by applyDvdTitle() when the rebuild it just started is for the
+    // SAME title (a seek, run-boundary auto-advance, or chapter jump within
+    // it, all of which go through applyDvdTitle() again) rather than a
+    // genuinely new title -- handleMediaStatus()'s LoadedMedia handler
+    // reads this once, right after the resulting source finishes loading,
+    // to decide whether to recompute the preferred-audio-language default
+    // (a fresh title) or just restore whatever audio track was actually
+    // active a moment ago (same title -- a fresh QMediaPlayer source load
+    // does not on its own preserve the previously active track index, and
+    // recomputing the language default every time silently overrode an
+    // explicit Audio > Track choice on every seek; found 2026-08-16,
+    // same underlying cause as m_dvdSubtitleChosenByUser's own preserved-
+    // choice handling in applyDvdTitle(), just needed for audio too since
+    // that goes through the ordinary selectPreferredTracks() path instead).
+    // -1 = nothing to restore (this rebuild IS a fresh title).
+    int m_dvdPendingAudioTrackRestore = -1;
     // Real movie subtitles (see dvdsubtitletrack.h) -- declared streams for
     // the current title, which one (if any) is selected, its lazily-built
     // event index, and the live rendered-image state a timer refreshes.
