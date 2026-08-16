@@ -46,12 +46,41 @@ if [ ! -d "$QTDIR/lib/cmake/Qt6" ]; then
 fi
 
 shopt -s nullglob
-PATCH_FILES=("$REPO_ROOT"/patches/qtmultimedia-*.patch)
+ALL_PATCH_FILES=("$REPO_ROOT"/patches/qtmultimedia-*.patch)
 shopt -u nullglob
-if [ "${#PATCH_FILES[@]}" -eq 0 ]; then
+if [ "${#ALL_PATCH_FILES[@]}" -eq 0 ]; then
     echo "ERROR: no patches/qtmultimedia-*.patch found under $REPO_ROOT" >&2
     exit 1
 fi
+
+# qtmultimedia-deinterlace.patch links FFmpeg::avfilter, which -- unlike
+# avcodec/avformat/avutil/swresample/swscale, already used by the other
+# three patches -- Homebrew's ffmpeg@7 does NOT ship as a universal
+# (x86_64 + arm64) dylib on an Apple Silicon runner (confirmed via a real
+# CI failure, 2026-08-16: `ld: warning: ignoring file '.../libavfilter.dylib':
+# found architecture 'arm64', required architecture 'x86_64'`, then
+# "Undefined symbols for architecture x86_64" for every avfilter_*/
+# av_buffersrc_*/av_buffersink_* symbol -- while the other five FFmpeg
+# libraries from the SAME `brew install ffmpeg@7` linked cleanly for both
+# architectures). Root cause not fully chased down (most likely: libavfilter
+# alone pulls in some optional dependency Homebrew doesn't build universal
+# for this formula), but the practical effect is that this script's
+# universal-binary build genuinely cannot link the deinterlace patch's
+# avfilter graph on this runner today. Skip it here rather than leaving
+# macOS CI broken -- matches README.md's existing "Deinterlacing... not
+# yet available on macOS" framing, now made permanent/explicit instead of
+# "not yet wired up". Building a universal FFmpeg from source (like the
+# BtbN-prebuilt approach Windows/Linux already use) would be the real fix
+# if macOS deinterlace support is ever wanted, but that's a substantially
+# bigger undertaking than this script's existing Homebrew-based approach.
+PATCH_FILES=()
+for p in "${ALL_PATCH_FILES[@]}"; do
+    if [ "$(basename "$p")" = "qtmultimedia-deinterlace.patch" ]; then
+        echo "== Skipping $(basename "$p") on macOS: Homebrew's ffmpeg@7 has no universal (x86_64+arm64) libavfilter on this runner =="
+        continue
+    fi
+    PATCH_FILES+=("$p")
+done
 
 if ! command -v ninja >/dev/null 2>&1; then
     echo "== Ninja not found -- installing via brew =="

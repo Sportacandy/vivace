@@ -121,9 +121,9 @@ To get AV1 support elsewhere (Linux/macOS, or a Vivace you build yourself):
 [`scripts/build-patched-qtmultimedia-linux.sh`](scripts/build-patched-qtmultimedia-linux.sh)
 against your own Qt 6.11.1 install (`msvc2022_64` / `gcc_64`) — the same
 scripts CI itself now uses. Each one downloads a dav1d-enabled FFmpeg,
-clones `qtmultimedia` at the matching tag, applies all three patches
-(AV1, speed/pitch compensation, bitmap subtitles), and builds + installs
-it *against that exact Qt kit*, then deploys the matching FFmpeg runtime
+clones `qtmultimedia` at the matching tag, applies all four patches
+(AV1, speed/pitch compensation, bitmap subtitles, deinterlacing), and
+builds + installs it *against that exact Qt kit*, then deploys the matching FFmpeg runtime
 libraries alongside it. Building against the same kit you'll actually run
 is deliberate, not incidental: `Qt6Multimedia`/`Qt6MultimediaQuick` call
 into `Qt6Gui`/`Qt6Quick` through Qt's *private* (no ABI-stability
@@ -244,11 +244,33 @@ Multimedia has no filter-graph stage and no interlace awareness at all,
 so with a **stock Qt**, Yadif/Bwdif have no effect (the menu is present
 everywhere, but does nothing without the patch).
 
-Not yet included in the CI-built bundle described in "AV1 support" above
-(as of this writing) — apply
+**Windows and Linux** prebuilt releases and the nightly build get this
+via the same CI-built `qtmultimedia` described in "AV1 support" above
+(both scripts apply all four patches, including this one). **macOS**
+prebuilt releases do **not** — CI's `scripts/build-patched-qtmultimedia-macos.sh`
+deliberately *skips* this one patch, since it's the only one of the four
+that links `FFmpeg::avfilter`, and Homebrew's `ffmpeg@7` on the Apple
+Silicon CI runner ships `libavfilter.dylib` as an **arm64-only** binary
+(confirmed via a real CI failure, 2026-08-16: `ld: warning: ignoring
+file '.../libavfilter.dylib': found architecture 'arm64', required
+architecture 'x86_64'`, then undefined `avfilter_*`/`av_buffersrc_*`/
+`av_buffersink_*` symbols for the x86_64 half of the universal binary)
+— while the other five FFmpeg libraries used by the other three patches
+(avcodec/avformat/avutil/swresample/swscale) genuinely are universal
+from the same Homebrew formula. Root cause not fully chased down (most
+likely libavfilter alone pulls in an optional dependency Homebrew
+doesn't build universal), but the practical effect is that this
+script's Homebrew-based approach cannot link the deinterlace patch on
+macOS today. A real fix would mean building a universal FFmpeg from
+source for macOS (like the BtbN-prebuilt approach Windows/Linux already
+use) instead of relying on Homebrew — not done, since it's a
+substantially bigger undertaking than this feature otherwise needed.
+If you build Vivace yourself on macOS and want Deinterlace anyway, apply
 [`patches/qtmultimedia-deinterlace.patch`](patches/qtmultimedia-deinterlace.patch)
-to your `qtmultimedia` source checkout by hand, rebuild `qtmultimedia`, and
-rebuild Vivace against that Qt. It splices a small FFmpeg `avfilter` graph
+to your `qtmultimedia` source checkout by hand against a `libavfilter`
+that actually has both architectures (or a single-arch, non-universal
+build), rebuild `qtmultimedia`, and rebuild Vivace against that Qt. It
+splices a small FFmpeg `avfilter` graph
 (`buffer → yadif|bwdif → buffersink`) into the FFmpeg plugin's
 `VideoRenderer`, the one place a decoded frame is converted for display —
 gated by an environment variable Vivace's own `PlayerController` sets
