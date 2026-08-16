@@ -262,9 +262,9 @@ index 01dfcfe0a..5a9f55671 100644
 +             TrackDuration duration, const PlaybackEngineObjectID &sourceID,
 +             const QImage &image = {}, const QRect &imageRect = {},
 +             const QSize &imageCodedSize = {})
-+            : loopOffset(offset), text(text), startTime(pts), duration(duration),
-+              sourceID(sourceID), image(image), imageRect(imageRect),
-+              imageCodedSize(imageCodedSize)
++            : loopOffset(offset), text(text), image(image), imageRect(imageRect),
++              imageCodedSize(imageCodedSize), startTime(pts), duration(duration),
++              sourceID(sourceID)
          {
          }
  
