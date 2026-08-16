@@ -421,51 +421,51 @@
 <context>
     <name>ControlBar</name>
     <message>
-        <location filename="../qml/ControlBar.qml" line="376"/>
-        <location filename="../qml/ControlBar.qml" line="382"/>
-        <location filename="../qml/ControlBar.qml" line="388"/>
+        <location filename="../qml/ControlBar.qml" line="408"/>
+        <location filename="../qml/ControlBar.qml" line="414"/>
+        <location filename="../qml/ControlBar.qml" line="420"/>
         <source>Rewind %1 s</source>
         <translation>عقب بردن %1 ثانیه</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="394"/>
-        <location filename="../qml/ControlBar.qml" line="400"/>
-        <location filename="../qml/ControlBar.qml" line="406"/>
+        <location filename="../qml/ControlBar.qml" line="426"/>
+        <location filename="../qml/ControlBar.qml" line="432"/>
+        <location filename="../qml/ControlBar.qml" line="438"/>
         <source>Forward %1 s</source>
         <translation>جلو بردن %1 ثانیه</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="463"/>
+        <location filename="../qml/ControlBar.qml" line="501"/>
         <source>Error: %1</source>
         <translation>خطا: %1</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="466"/>
+        <location filename="../qml/ControlBar.qml" line="504"/>
         <source>Playing %1</source>
         <translation>در حال پخش %1</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="471"/>
+        <location filename="../qml/ControlBar.qml" line="509"/>
         <source>Paused</source>
         <translation>متوقف‌شده</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="473"/>
+        <location filename="../qml/ControlBar.qml" line="511"/>
         <source>Stopped</source>
         <translation>متوقف شد</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="518"/>
+        <location filename="../qml/ControlBar.qml" line="556"/>
         <source>V: %1 kbps</source>
         <translation>و: %1 kbps</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="519"/>
+        <location filename="../qml/ControlBar.qml" line="557"/>
         <source>A: %1 kbps</source>
         <translation>ص: %1 kbps</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="531"/>
+        <location filename="../qml/ControlBar.qml" line="569"/>
         <source>Frame: %1</source>
         <translation>فریم: %1</translation>
     </message>
@@ -589,17 +589,17 @@
 <context>
     <name>FavoritesMenu</name>
     <message>
-        <location filename="../qml/FavoritesMenu.qml" line="90"/>
+        <location filename="../qml/FavoritesMenu.qml" line="122"/>
         <source>(empty)</source>
         <translation>(خالی)</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesMenu.qml" line="100"/>
+        <location filename="../qml/FavoritesMenu.qml" line="132"/>
         <source>&amp;Edit…</source>
         <translation>&amp;ویرایش</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesMenu.qml" line="107"/>
+        <location filename="../qml/FavoritesMenu.qml" line="139"/>
         <source>&amp;Add current media</source>
         <translation>&amp;افزودن رسانه جاری</translation>
     </message>
@@ -766,284 +766,284 @@
 <context>
     <name>Main</name>
     <message>
-        <location filename="../qml/Main.qml" line="399"/>
+        <location filename="../qml/Main.qml" line="404"/>
         <source>TV editor</source>
         <translation>ویرایشگر تلویزیون</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="399"/>
+        <location filename="../qml/Main.qml" line="404"/>
         <source>TV channels</source>
         <translation>کانال‌های تلویزیون</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="402"/>
+        <location filename="../qml/Main.qml" line="407"/>
         <source>Radio editor</source>
         <translation>ویرایشگر رادیو</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="402"/>
+        <location filename="../qml/Main.qml" line="407"/>
         <source>Radio channels</source>
         <translation>ایستگاه‌های رادیو</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="405"/>
-        <location filename="../qml/Main.qml" line="448"/>
+        <location filename="../qml/Main.qml" line="410"/>
+        <location filename="../qml/Main.qml" line="453"/>
         <source>Favorite editor</source>
         <translation>ویرایشگر موارد دلخواه</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="405"/>
-        <location filename="../qml/Main.qml" line="448"/>
+        <location filename="../qml/Main.qml" line="410"/>
+        <location filename="../qml/Main.qml" line="453"/>
         <source>Favorite list</source>
         <translation>لیست موارد دلخواه</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="409"/>
+        <location filename="../qml/Main.qml" line="414"/>
         <source>Bookmark added</source>
         <translation>نشانک افزوده شد</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="424"/>
+        <location filename="../qml/Main.qml" line="429"/>
         <source>Edit main toolbar</source>
         <translation>ویرایش نوار ابزار &amp;اصلی</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="427"/>
+        <location filename="../qml/Main.qml" line="432"/>
         <source>Edit control bar</source>
         <translation>ویرایش نوار &amp;کنترل</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="455"/>
+        <location filename="../qml/Main.qml" line="460"/>
         <source>Screenshot saved as %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="456"/>
+        <location filename="../qml/Main.qml" line="461"/>
         <source>Could not take the screenshot</source>
         <translation>امکان گرفتن نماگرفت نبود</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="569"/>
+        <location filename="../qml/Main.qml" line="574"/>
         <source>Drop media files here, or press Ctrl+O</source>
         <translation>پرونده‌های رسانه‌ای را اینجا رها کنید، یا Ctrl+O را فشار دهید</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="645"/>
+        <location filename="../qml/Main.qml" line="655"/>
         <source>Downloading video…</source>
         <translation>در حال بارگیری ویدیو…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="652"/>
+        <location filename="../qml/Main.qml" line="662"/>
         <source>This can take a while — the external tool is downloading and merging HD video and audio.</source>
         <translation>این ممکن است کمی طول بکشد — ابزار خارجی در حال بارگیری و ادغام ویدیو و صدای HD است.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="666"/>
-        <location filename="../qml/Main.qml" line="1581"/>
+        <location filename="../qml/Main.qml" line="676"/>
+        <location filename="../qml/Main.qml" line="1694"/>
         <source>Cancel</source>
         <translation>انصراف</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="739"/>
+        <location filename="../qml/Main.qml" line="749"/>
         <source>Loading…</source>
         <translation>در حال بارگذاری…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="740"/>
+        <location filename="../qml/Main.qml" line="750"/>
         <source>Connecting…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="741"/>
+        <location filename="../qml/Main.qml" line="751"/>
         <source>Buffering… %1%</source>
         <translation>در حال بافر کردن… %1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="749"/>
+        <location filename="../qml/Main.qml" line="759"/>
         <source>Live streams can take several seconds to start.</source>
         <translation>پخش‌های زنده ممکن است چند ثانیه طول بکشند تا شروع شوند.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="784"/>
+        <location filename="../qml/Main.qml" line="794"/>
         <source>Volume: %1%</source>
         <translation>بلندی صدا: %1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="787"/>
+        <location filename="../qml/Main.qml" line="797"/>
         <source>Mute</source>
         <translation>بی صدا</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="787"/>
+        <location filename="../qml/Main.qml" line="797"/>
         <source>Mute off</source>
         <translation>بی‌صدا خاموش</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="790"/>
+        <location filename="../qml/Main.qml" line="800"/>
         <source>Speed: %1x</source>
         <translation>سرعت: %1x</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1197"/>
+        <location filename="../qml/Main.qml" line="1310"/>
         <source>Media files (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1198"/>
-        <location filename="../qml/Main.qml" line="1256"/>
-        <location filename="../qml/Main.qml" line="1517"/>
+        <location filename="../qml/Main.qml" line="1311"/>
+        <location filename="../qml/Main.qml" line="1369"/>
+        <location filename="../qml/Main.qml" line="1630"/>
         <source>All files (*)</source>
         <translation>همه پرونده‌ها (*)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1240"/>
+        <location filename="../qml/Main.qml" line="1353"/>
         <source>Select the DVD drive or a folder containing VIDEO_TS</source>
         <translation>درایو DVD یا پوشه‌ای حاوی VIDEO_TS را انتخاب کنید</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1244"/>
+        <location filename="../qml/Main.qml" line="1357"/>
         <source>No DVD video found in %1</source>
         <translation>هیچ ویدیوی DVD در %1 یافت نشد</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1255"/>
+        <location filename="../qml/Main.qml" line="1368"/>
         <source>Playlists (*.m3u *.m3u8)</source>
         <translation>فهرست‌های پخش (*.m3u *.m3u8)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1298"/>
+        <location filename="../qml/Main.qml" line="1411"/>
         <source>Playing stream</source>
         <translation>در حال پخش جریان</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1304"/>
-        <location filename="../qml/Main.qml" line="1337"/>
+        <location filename="../qml/Main.qml" line="1417"/>
+        <location filename="../qml/Main.qml" line="1450"/>
         <source>Playing downloaded video</source>
         <translation>در حال پخش ویدیوی بارگیری‌شده</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1308"/>
+        <location filename="../qml/Main.qml" line="1421"/>
         <source>YouTube: %1</source>
         <translation>YouTube: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1341"/>
+        <location filename="../qml/Main.qml" line="1454"/>
         <source>Download failed: %1</source>
         <translation>بارگیری ناموفق بود: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1438"/>
+        <location filename="../qml/Main.qml" line="1551"/>
         <source>Saved %1 file(s); %2 failed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1442"/>
+        <location filename="../qml/Main.qml" line="1555"/>
         <source>Saved %1 file(s).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1455"/>
+        <location filename="../qml/Main.qml" line="1568"/>
         <source>Could not read the shortcut file.</source>
         <translation>امکان خواندن پرونده میان‌بر نبود.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1470"/>
+        <location filename="../qml/Main.qml" line="1583"/>
         <source>Starting download…</source>
         <translation>در حال آغاز بارگیری…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1471"/>
+        <location filename="../qml/Main.qml" line="1584"/>
         <source>Downloading video (this can take a while)…</source>
         <translation>در حال بارگیری ویدیو (این ممکن است کمی طول بکشد)…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1475"/>
+        <location filename="../qml/Main.qml" line="1588"/>
         <source>Resolving with yt-dlp…</source>
         <translation>در حال تحلیل با yt-dlp…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1512"/>
+        <location filename="../qml/Main.qml" line="1625"/>
         <source>Load subtitle file</source>
         <translation>بارکردن پرونده زیرنویس</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1516"/>
+        <location filename="../qml/Main.qml" line="1629"/>
         <source>Subtitle files (*.srt *.vtt *.ass *.ssa)</source>
         <translation>پرونده‌های زیرنویس (*.srt *.vtt *.ass *.ssa)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1524"/>
+        <location filename="../qml/Main.qml" line="1637"/>
         <source>Subtitle delay</source>
         <translation>تأخیر زیرنویس</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1558"/>
+        <location filename="../qml/Main.qml" line="1671"/>
         <source>Delay:</source>
         <translation>تأخیر:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1564"/>
-        <location filename="../qml/Main.qml" line="1636"/>
+        <location filename="../qml/Main.qml" line="1677"/>
+        <location filename="../qml/Main.qml" line="1749"/>
         <source>ms</source>
         <translation>میلی‌ثانیه</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1574"/>
+        <location filename="../qml/Main.qml" line="1687"/>
         <source>OK</source>
         <translation>تایید</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1593"/>
+        <location filename="../qml/Main.qml" line="1706"/>
         <source>Audio delay — Vivace</source>
         <translation>تأخیر صدا — Vivace</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1624"/>
+        <location filename="../qml/Main.qml" line="1737"/>
         <source>No delay for this file (use the global delay only)</source>
         <translation>بدون تأخیر برای این پرونده (فقط استفاده از تأخیر سراسری)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1629"/>
+        <location filename="../qml/Main.qml" line="1742"/>
         <source>This file&apos;s delay:</source>
         <translation>تأخیر این پرونده:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1644"/>
+        <location filename="../qml/Main.qml" line="1757"/>
         <source>The delay applied to this file is this value plus the global delay for the current audio device (%1 ms), set in Preferences &gt; General &gt; Audio. Negative values delay the video to match audio that arrives late (e.g. Bluetooth headphones).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1657"/>
+        <location filename="../qml/Main.qml" line="1770"/>
         <source>&amp;Apply</source>
         <translation>&amp;اعمال</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1666"/>
+        <location filename="../qml/Main.qml" line="1779"/>
         <source>&amp;Close</source>
         <translation>&amp;بستن</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1763"/>
+        <location filename="../qml/Main.qml" line="1876"/>
         <source>Hide window</source>
         <translation>پنهان کردن پنجره</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1763"/>
+        <location filename="../qml/Main.qml" line="1876"/>
         <source>Show window</source>
         <translation>نمایش پنجره</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1768"/>
+        <location filename="../qml/Main.qml" line="1881"/>
         <source>Play / Pause</source>
         <translation>پخش/مکث</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1772"/>
+        <location filename="../qml/Main.qml" line="1885"/>
         <source>Stop</source>
         <translation>توقف</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1777"/>
+        <location filename="../qml/Main.qml" line="1890"/>
         <source>Quit</source>
         <translation>&amp;خروج</translation>
     </message>
@@ -1070,631 +1070,631 @@
         </translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="105"/>
+        <location filename="../qml/MainMenuBar.qml" line="115"/>
         <source>&amp;Open</source>
         <translation>&amp;بازکردن</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="108"/>
+        <location filename="../qml/MainMenuBar.qml" line="118"/>
         <source>&amp;File…</source>
         <translation>&amp;فایل...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="115"/>
+        <location filename="../qml/MainMenuBar.qml" line="125"/>
         <source>&amp;Recent files</source>
         <translation>&amp;فایل های اخیر</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="131"/>
+        <location filename="../qml/MainMenuBar.qml" line="147"/>
         <source>(empty)</source>
         <translation>(خالی)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="138"/>
+        <location filename="../qml/MainMenuBar.qml" line="153"/>
         <source>&amp;Clear</source>
         <translation>&amp;تمیزکردن</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="144"/>
+        <location filename="../qml/MainMenuBar.qml" line="159"/>
         <source>F&amp;avorites</source>
         <translation>موارد &amp;دلخواه</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="153"/>
+        <location filename="../qml/MainMenuBar.qml" line="168"/>
         <source>&amp;Directory…</source>
         <translation>&amp;دایرکتوری</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="158"/>
+        <location filename="../qml/MainMenuBar.qml" line="173"/>
         <source>&amp;Playlist…</source>
         <translation>&amp;لیست پخش...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="163"/>
+        <location filename="../qml/MainMenuBar.qml" line="178"/>
         <source>D&amp;isc</source>
         <translation>&amp;دیسک</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="167"/>
+        <location filename="../qml/MainMenuBar.qml" line="182"/>
         <source>&amp;DVD from drive or folder…</source>
         <translation>‏DVD از درایو یا پوشه (&amp;D)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="172"/>
+        <location filename="../qml/MainMenuBar.qml" line="187"/>
         <source>&amp;Blu-ray</source>
         <translation>‏Blu-ray‏ (&amp;B)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="176"/>
+        <location filename="../qml/MainMenuBar.qml" line="191"/>
         <source>&amp;Audio CD</source>
         <translation>لوح &amp;صوتی</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="181"/>
+        <location filename="../qml/MainMenuBar.qml" line="196"/>
         <source>&amp;URL…</source>
         <translation>&amp;URL...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="187"/>
+        <location filename="../qml/MainMenuBar.qml" line="202"/>
         <source>YouTube &amp;cache…</source>
         <translation>حافظه پنهان YouTube (&amp;C)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="195"/>
+        <location filename="../qml/MainMenuBar.qml" line="210"/>
         <source>&amp;TV</source>
         <translation>&amp;تلویزیون</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="205"/>
+        <location filename="../qml/MainMenuBar.qml" line="220"/>
         <source>Radi&amp;o</source>
         <translation>&amp;رادیو</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="216"/>
+        <location filename="../qml/MainMenuBar.qml" line="231"/>
         <source>&amp;Quit</source>
         <translation>&amp;خروج</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="226"/>
+        <location filename="../qml/MainMenuBar.qml" line="241"/>
         <source>&amp;Play</source>
         <translation>&amp;بخش </translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="229"/>
+        <location filename="../qml/MainMenuBar.qml" line="244"/>
         <source>P&amp;lay</source>
         <translation>&amp;بخش </translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="236"/>
+        <location filename="../qml/MainMenuBar.qml" line="251"/>
         <source>&amp;Pause</source>
         <translation>&amp;مکٍث</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="242"/>
+        <location filename="../qml/MainMenuBar.qml" line="257"/>
         <source>&amp;Stop</source>
         <translation>&amp;توقف</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="248"/>
+        <location filename="../qml/MainMenuBar.qml" line="263"/>
         <source>Frame &amp;step</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="254"/>
+        <location filename="../qml/MainMenuBar.qml" line="269"/>
         <source>Fra&amp;me back step</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="261"/>
+        <location filename="../qml/MainMenuBar.qml" line="276"/>
         <source>&amp;Rewind %1</source>
         <translation>عقب بردن %1 (&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="268"/>
+        <location filename="../qml/MainMenuBar.qml" line="283"/>
         <source>&amp;Forward %1</source>
         <translation>جلو بردن %1 (&amp;F)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="275"/>
-        <location filename="../qml/MainMenuBar.qml" line="289"/>
+        <location filename="../qml/MainMenuBar.qml" line="290"/>
+        <location filename="../qml/MainMenuBar.qml" line="304"/>
         <source>Rewind %1</source>
         <translation>عقب بردن %1</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="282"/>
-        <location filename="../qml/MainMenuBar.qml" line="296"/>
+        <location filename="../qml/MainMenuBar.qml" line="297"/>
+        <location filename="../qml/MainMenuBar.qml" line="311"/>
         <source>Forward %1</source>
         <translation>جلو بردن %1</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="304"/>
+        <location filename="../qml/MainMenuBar.qml" line="319"/>
         <source>Sp&amp;eed</source>
         <translation>سر&amp;عت</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="308"/>
+        <location filename="../qml/MainMenuBar.qml" line="323"/>
         <source>&amp;Normal speed</source>
         <translation>&amp;سرعت متعادل</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="314"/>
+        <location filename="../qml/MainMenuBar.qml" line="329"/>
         <source>&amp;Halve speed</source>
         <translation>نصف کردن سرعت (&amp;H)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="319"/>
+        <location filename="../qml/MainMenuBar.qml" line="334"/>
         <source>&amp;Double speed</source>
         <translation>&amp;سرعت دو برابر</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="325"/>
+        <location filename="../qml/MainMenuBar.qml" line="340"/>
         <source>Speed &amp;-10%</source>
         <translation>سرعت &amp;-10%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="330"/>
+        <location filename="../qml/MainMenuBar.qml" line="345"/>
         <source>Speed &amp;+10%</source>
         <translation>سرعت &amp;+10%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="335"/>
+        <location filename="../qml/MainMenuBar.qml" line="350"/>
         <source>Speed -4%</source>
         <translation>سرعت -&amp;4%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="336"/>
+        <location filename="../qml/MainMenuBar.qml" line="351"/>
         <source>Speed +4%</source>
         <translation>&amp;سرعت +4%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="338"/>
+        <location filename="../qml/MainMenuBar.qml" line="353"/>
         <source>Speed -1%</source>
         <translation>سرعت -&amp;1%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="339"/>
+        <location filename="../qml/MainMenuBar.qml" line="354"/>
         <source>Speed +1%</source>
         <translation>سر&amp;عت +1%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="342"/>
+        <location filename="../qml/MainMenuBar.qml" line="357"/>
         <source>Pi&amp;tch compensation</source>
         <translation>جبران زیر و بمی صدا (&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="351"/>
+        <location filename="../qml/MainMenuBar.qml" line="366"/>
         <source>&amp;A-B section</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="355"/>
+        <location filename="../qml/MainMenuBar.qml" line="370"/>
         <source>Set &amp;A marker</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="361"/>
+        <location filename="../qml/MainMenuBar.qml" line="376"/>
         <source>Set &amp;B marker</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="367"/>
+        <location filename="../qml/MainMenuBar.qml" line="382"/>
         <source>&amp;Clear A-B markers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="375"/>
+        <location filename="../qml/MainMenuBar.qml" line="390"/>
         <source>&amp;Repeat</source>
         <translation>&amp;تکرار</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="381"/>
+        <location filename="../qml/MainMenuBar.qml" line="396"/>
         <source>&amp;Jump to…</source>
         <translation>&amp;پرش به...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="384"/>
+        <location filename="../qml/MainMenuBar.qml" line="399"/>
         <source>Pre&amp;vious</source>
         <translation>قب&amp;لی</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="391"/>
+        <location filename="../qml/MainMenuBar.qml" line="406"/>
         <source>&amp;Next</source>
         <translation>&amp;بعدی</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="400"/>
+        <location filename="../qml/MainMenuBar.qml" line="415"/>
         <source>Ca&amp;st</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="404"/>
+        <location filename="../qml/MainMenuBar.qml" line="419"/>
         <source>&amp;Smartphone/tablet…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="412"/>
+        <location filename="../qml/MainMenuBar.qml" line="427"/>
         <source>&amp;Video</source>
         <translation>&amp;ویدئو</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="416"/>
-        <location filename="../qml/MainMenuBar.qml" line="607"/>
-        <location filename="../qml/MainMenuBar.qml" line="677"/>
+        <location filename="../qml/MainMenuBar.qml" line="431"/>
+        <location filename="../qml/MainMenuBar.qml" line="624"/>
+        <location filename="../qml/MainMenuBar.qml" line="704"/>
         <source>&amp;Track</source>
         <translation>تراک</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="420"/>
-        <location filename="../qml/MainMenuBar.qml" line="611"/>
-        <location filename="../qml/MainMenuBar.qml" line="776"/>
-        <location filename="../qml/MainMenuBar.qml" line="799"/>
+        <location filename="../qml/MainMenuBar.qml" line="438"/>
+        <location filename="../qml/MainMenuBar.qml" line="637"/>
+        <location filename="../qml/MainMenuBar.qml" line="828"/>
+        <location filename="../qml/MainMenuBar.qml" line="853"/>
         <source>&lt;empty&gt;</source>
         <translation>&lt;خالی&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="443"/>
+        <location filename="../qml/MainMenuBar.qml" line="460"/>
         <source>&amp;Fullscreen</source>
         <translation>&amp;تمام صفحه</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="451"/>
+        <location filename="../qml/MainMenuBar.qml" line="468"/>
         <source>Si&amp;ze</source>
         <translation>اندا&amp;زه</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="454"/>
+        <location filename="../qml/MainMenuBar.qml" line="471"/>
         <source>50%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="455"/>
+        <location filename="../qml/MainMenuBar.qml" line="472"/>
         <source>100%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="456"/>
+        <location filename="../qml/MainMenuBar.qml" line="473"/>
         <source>200%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="459"/>
+        <location filename="../qml/MainMenuBar.qml" line="476"/>
         <source>&amp;Zoom and pan</source>
         <translation>بزرگ‌نمایی و جابجایی (&amp;Z)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="463"/>
+        <location filename="../qml/MainMenuBar.qml" line="480"/>
         <source>&amp;Reset</source>
         <translation>&amp;تنظیم مجدد</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="468"/>
+        <location filename="../qml/MainMenuBar.qml" line="485"/>
         <source>Zoom &amp;-</source>
         <translation>زوم &amp;-</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="473"/>
+        <location filename="../qml/MainMenuBar.qml" line="490"/>
         <source>Zoom &amp;+</source>
         <translation>زوم &amp;+</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="479"/>
+        <location filename="../qml/MainMenuBar.qml" line="496"/>
         <source>Move &amp;left</source>
         <translation>حرکت به &amp;چپ</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="484"/>
+        <location filename="../qml/MainMenuBar.qml" line="501"/>
         <source>Move &amp;right</source>
         <translation>حرکت به &amp;راست</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="489"/>
+        <location filename="../qml/MainMenuBar.qml" line="506"/>
         <source>Move &amp;up</source>
         <translation>جابحایی به &amp;بالا</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="494"/>
+        <location filename="../qml/MainMenuBar.qml" line="511"/>
         <source>Move &amp;down</source>
         <translation>جابحایی به &amp;پایین</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="501"/>
+        <location filename="../qml/MainMenuBar.qml" line="518"/>
         <source>&amp;Aspect ratio</source>
         <translation>&amp;نسبت ابعاد</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="523"/>
+        <location filename="../qml/MainMenuBar.qml" line="540"/>
         <source>&amp;Rotate</source>
         <translation>&amp;چرخش</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="527"/>
+        <location filename="../qml/MainMenuBar.qml" line="544"/>
         <source>&amp;None</source>
         <translation>&amp;هیچ</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="536"/>
+        <location filename="../qml/MainMenuBar.qml" line="553"/>
         <source>&amp;Rotate by 90° clockwise</source>
         <translation>چرخش ۹۰ درجه در جهت عقربه‌های ساعت (&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="545"/>
+        <location filename="../qml/MainMenuBar.qml" line="562"/>
         <source>Rotate by 90° &amp;counterclockwise</source>
         <translation>چرخش ۹۰ درجه خلاف جهت عقربه‌های ساعت (&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="554"/>
+        <location filename="../qml/MainMenuBar.qml" line="571"/>
         <source>Rotate by &amp;180°</source>
         <translation>چرخش ۱۸۰ درجه (&amp;1)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="564"/>
+        <location filename="../qml/MainMenuBar.qml" line="581"/>
         <source>Fli&amp;p image</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="575"/>
+        <location filename="../qml/MainMenuBar.qml" line="592"/>
         <source>Mirr&amp;or image</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="587"/>
+        <location filename="../qml/MainMenuBar.qml" line="604"/>
         <source>E&amp;qualizer…</source>
         <translation>اکولایزر (&amp;Q)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="593"/>
+        <location filename="../qml/MainMenuBar.qml" line="610"/>
         <source>&amp;Screenshot</source>
         <translation>&amp;نماگرفت
 &amp;اسکرین شات</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="603"/>
+        <location filename="../qml/MainMenuBar.qml" line="620"/>
         <source>&amp;Audio</source>
         <translation>&amp;صوت</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="635"/>
+        <location filename="../qml/MainMenuBar.qml" line="662"/>
         <source>&amp;Mute</source>
         <translation>توقف</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="644"/>
+        <location filename="../qml/MainMenuBar.qml" line="671"/>
         <source>Volume &amp;-</source>
         <translation>ولوم&amp;-</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="650"/>
+        <location filename="../qml/MainMenuBar.qml" line="677"/>
         <source>Volume &amp;+</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="658"/>
-        <location filename="../qml/MainMenuBar.qml" line="729"/>
+        <location filename="../qml/MainMenuBar.qml" line="685"/>
+        <location filename="../qml/MainMenuBar.qml" line="778"/>
         <source>Delay &amp;-</source>
         <translation>تاخیر&amp;-</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="662"/>
+        <location filename="../qml/MainMenuBar.qml" line="689"/>
         <source>D&amp;elay +</source>
         <translation>تا&amp;خیر+</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="666"/>
+        <location filename="../qml/MainMenuBar.qml" line="693"/>
         <source>Set dela&amp;y…</source>
         <translation>تنظیم تا&amp;خیر</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="673"/>
+        <location filename="../qml/MainMenuBar.qml" line="700"/>
         <source>&amp;Subtitles</source>
         <translation>&amp;زیرنویس</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="681"/>
+        <location filename="../qml/MainMenuBar.qml" line="712"/>
         <source>&amp;Off</source>
         <translation>&amp;خاموش</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="712"/>
+        <location filename="../qml/MainMenuBar.qml" line="761"/>
         <source>&amp;Load subtitles…</source>
         <translation>بارکردن زیرنویس‌ها (&amp;L)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="718"/>
+        <location filename="../qml/MainMenuBar.qml" line="767"/>
         <source>&amp;Find subtitles at OpenSubtitles…</source>
         <translation>یافتن زیرنویس در OpenSubtitles (&amp;F)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="723"/>
+        <location filename="../qml/MainMenuBar.qml" line="772"/>
         <source>U&amp;nload subtitles</source>
         <translation>برداشتن زیرنویس‌ها (&amp;N)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="734"/>
+        <location filename="../qml/MainMenuBar.qml" line="783"/>
         <source>Delay &amp;+</source>
         <translation>تاخیر&amp;+</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="739"/>
+        <location filename="../qml/MainMenuBar.qml" line="788"/>
         <source>Se&amp;t delay…</source>
         <translation>تن&amp;ظیم تاخیر</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="747"/>
+        <location filename="../qml/MainMenuBar.qml" line="796"/>
         <source>&amp;Browse</source>
         <translation>&amp;مرورگر</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="750"/>
+        <location filename="../qml/MainMenuBar.qml" line="799"/>
         <source>&amp;DVD menu</source>
         <translation>&amp;فهرست DVD</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="759"/>
+        <location filename="../qml/MainMenuBar.qml" line="808"/>
         <source>&amp;Title</source>
         <translation>&amp;عنوان</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="784"/>
+        <location filename="../qml/MainMenuBar.qml" line="835"/>
         <source>&amp;Chapters</source>
         <translation>فصل‌ها (&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="807"/>
+        <location filename="../qml/MainMenuBar.qml" line="860"/>
         <source>&amp;Bookmarks</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="817"/>
+        <location filename="../qml/MainMenuBar.qml" line="870"/>
         <source>&amp;Add new bookmark</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="824"/>
+        <location filename="../qml/MainMenuBar.qml" line="877"/>
         <source>&amp;Edit bookmarks…</source>
         <translation>ویرایش نشانک‌ها (&amp;E)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="848"/>
+        <location filename="../qml/MainMenuBar.qml" line="901"/>
         <source>Vie&amp;w</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="851"/>
+        <location filename="../qml/MainMenuBar.qml" line="904"/>
         <source>&amp;Information and properties…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="858"/>
+        <location filename="../qml/MainMenuBar.qml" line="911"/>
         <source>&amp;Playlist</source>
         <translation>&amp;لیست پخش</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="866"/>
+        <location filename="../qml/MainMenuBar.qml" line="919"/>
         <source>&amp;OSD</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="868"/>
+        <location filename="../qml/MainMenuBar.qml" line="921"/>
         <source>Subtitles only</source>
         <translation>فقط &amp;زیرنویس</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="869"/>
+        <location filename="../qml/MainMenuBar.qml" line="922"/>
         <source>Volume + seek</source>
         <translation>بلندی صدا + پیمایش</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="870"/>
+        <location filename="../qml/MainMenuBar.qml" line="923"/>
         <source>Volume + seek + timer</source>
         <translation>بلندی صدا + پیمایش + زمان</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="876"/>
+        <location filename="../qml/MainMenuBar.qml" line="929"/>
         <source>Op&amp;tions</source>
         <translation>&amp;گزينه ها</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="879"/>
+        <location filename="../qml/MainMenuBar.qml" line="932"/>
         <source>&amp;Preferences…</source>
         <translation>ترجیحات (&amp;P)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="886"/>
+        <location filename="../qml/MainMenuBar.qml" line="939"/>
         <source>S&amp;how icon in system tray</source>
         <translation>&amp;نمایش آیکون در system tray</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="892"/>
+        <location filename="../qml/MainMenuBar.qml" line="945"/>
         <source>&amp;Toolbars</source>
         <translation>&amp;نوار ابزار</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="895"/>
+        <location filename="../qml/MainMenuBar.qml" line="948"/>
         <source>&amp;Toolbar</source>
         <translation>نوار ابزار (&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="901"/>
+        <location filename="../qml/MainMenuBar.qml" line="954"/>
         <source>&amp;Control bar</source>
         <translation>نوار کنترل</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="908"/>
+        <location filename="../qml/MainMenuBar.qml" line="961"/>
         <source>Edit main &amp;toolbar…</source>
         <translation>ویرایش نوار ابزار اصلی (&amp;T)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="912"/>
+        <location filename="../qml/MainMenuBar.qml" line="965"/>
         <source>Edit control &amp;bar…</source>
         <translation>ویرایش نوار کنترل (&amp;B)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="917"/>
+        <location filename="../qml/MainMenuBar.qml" line="970"/>
         <source>&amp;Status bar</source>
         <translation>نوار وضعیت (&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="920"/>
+        <location filename="../qml/MainMenuBar.qml" line="973"/>
         <source>&amp;Show status bar</source>
         <translation>نمایش نوار وضعیت (&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="927"/>
+        <location filename="../qml/MainMenuBar.qml" line="980"/>
         <source>&amp;Video info</source>
         <translation>اطلاعات&amp;تصویر</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="934"/>
+        <location filename="../qml/MainMenuBar.qml" line="987"/>
         <source>&amp;Audio info</source>
         <translation>اطلاعات صدا (&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="941"/>
+        <location filename="../qml/MainMenuBar.qml" line="994"/>
         <source>F&amp;ormat info</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="948"/>
+        <location filename="../qml/MainMenuBar.qml" line="1001"/>
         <source>&amp;Bitrate info</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="955"/>
+        <location filename="../qml/MainMenuBar.qml" line="1008"/>
         <source>&amp;Frame counter</source>
         <translation>شمارنده &amp;فریم</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="963"/>
+        <location filename="../qml/MainMenuBar.qml" line="1016"/>
         <source>Display &amp;total time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="969"/>
+        <location filename="../qml/MainMenuBar.qml" line="1022"/>
         <source>Display &amp;remaining time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="976"/>
+        <location filename="../qml/MainMenuBar.qml" line="1029"/>
         <source>Show the current time with &amp;milliseconds</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="986"/>
+        <location filename="../qml/MainMenuBar.qml" line="1039"/>
         <source>&amp;Help</source>
         <translation>&amp;کمک</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="989"/>
+        <location filename="../qml/MainMenuBar.qml" line="1042"/>
         <source>&amp;Contents</source>
         <translation>فهرست مطالب (&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="996"/>
+        <location filename="../qml/MainMenuBar.qml" line="1049"/>
         <source>&amp;Check for updates</source>
         <translation>بررسی برای &amp;بروزرسانی</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1002"/>
+        <location filename="../qml/MainMenuBar.qml" line="1055"/>
         <source>&amp;About Vivace</source>
         <translation>درباره Vivace (&amp;A)</translation>
     </message>
@@ -1750,12 +1750,12 @@
         <translation>کدک ص&amp;وتی</translation>
     </message>
     <message>
-        <location filename="../qml/MediaInfoDialog.qml" line="149"/>
+        <location filename="../qml/MediaInfoDialog.qml" line="154"/>
         <source>No media loaded</source>
         <translation>هیچ رسانه‌ای بارگذاری نشده است</translation>
     </message>
     <message>
-        <location filename="../qml/MediaInfoDialog.qml" line="177"/>
+        <location filename="../qml/MediaInfoDialog.qml" line="182"/>
         <source>Close</source>
         <translation>بستن</translation>
     </message>
@@ -1868,267 +1868,270 @@
 <context>
     <name>PlayerController</name>
     <message>
-        <location filename="../src/playercontroller.cpp" line="81"/>
+        <location filename="../src/playercontroller.cpp" line="181"/>
+        <location filename="../src/playercontroller.cpp" line="801"/>
+        <location filename="../src/playercontroller.cpp" line="817"/>
+        <location filename="../src/playercontroller.cpp" line="1891"/>
         <source>Track %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="575"/>
+        <location filename="../src/playercontroller.cpp" line="719"/>
         <source>A/V delay: %1 ms</source>
         <translation>تأخیر صدا/تصویر: %1 میلی‌ثانیه</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="965"/>
+        <location filename="../src/playercontroller.cpp" line="1194"/>
         <source>DVD title %1 could not be assembled</source>
         <translation>امکان مونتاژ عنوان DVD شماره %1 نبود</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="971"/>
+        <location filename="../src/playercontroller.cpp" line="1200"/>
         <source>DVD title %1 could not be opened</source>
         <translation>امکان بازکردن عنوان DVD شماره %1 نبود</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1034"/>
+        <location filename="../src/playercontroller.cpp" line="1359"/>
         <source>Title %1 (%2)</source>
         <translation>عنوان %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1050"/>
+        <location filename="../src/playercontroller.cpp" line="1375"/>
         <source>Chapter %1 (%2)</source>
         <translation>فصل %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1673"/>
+        <location filename="../src/playercontroller.cpp" line="2359"/>
         <source>Could not open the stream</source>
         <translation>امکان بازکردن جریان نبود</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1732"/>
+        <location filename="../src/playercontroller.cpp" line="2418"/>
         <source>System default</source>
         <translation>پیش‌فرض سیستم</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1897"/>
+        <location filename="../src/playercontroller.cpp" line="2583"/>
         <source>A marker set to %1</source>
         <translation>نشانگر A روی %1 تنظیم شد</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1908"/>
+        <location filename="../src/playercontroller.cpp" line="2594"/>
         <source>B marker set to %1</source>
         <translation>نشانگر B روی %1 تنظیم شد</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1918"/>
+        <location filename="../src/playercontroller.cpp" line="2604"/>
         <source>A-B markers cleared</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2032"/>
+        <location filename="../src/playercontroller.cpp" line="2718"/>
         <source>Could not load subtitles from %1</source>
         <translation>امکان بارکردن زیرنویس از %1 نبود</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2044"/>
+        <location filename="../src/playercontroller.cpp" line="2735"/>
         <source>Subtitles loaded: %1</source>
         <translation>زیرنویس‌ها بارگذاری شد: %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2055"/>
+        <location filename="../src/playercontroller.cpp" line="2746"/>
         <source>Subtitles unloaded</source>
         <translation>زیرنویس‌ها برداشته شد</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2065"/>
+        <location filename="../src/playercontroller.cpp" line="2756"/>
         <source>Subtitle delay: %1 ms</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2184"/>
+        <location filename="../src/playercontroller.cpp" line="2886"/>
         <source>General</source>
         <translation>عمومی</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2187"/>
+        <location filename="../src/playercontroller.cpp" line="2889"/>
         <source>File</source>
         <translation>فایل</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2190"/>
+        <location filename="../src/playercontroller.cpp" line="2892"/>
         <source>Size</source>
         <translation>اندازه</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2190"/>
+        <location filename="../src/playercontroller.cpp" line="2892"/>
         <source>%1 KB (%2 MB)</source>
         <translation>%1 KB (%2 MB)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2194"/>
-        <location filename="../src/playercontroller.cpp" line="2220"/>
+        <location filename="../src/playercontroller.cpp" line="2896"/>
+        <location filename="../src/playercontroller.cpp" line="2922"/>
         <source>URL</source>
         <translation>URL</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2197"/>
+        <location filename="../src/playercontroller.cpp" line="2899"/>
         <source>Length</source>
         <translation>طول</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2198"/>
+        <location filename="../src/playercontroller.cpp" line="2900"/>
         <source>Demuxer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2203"/>
-        <location filename="../src/playercontroller.cpp" line="2253"/>
-        <location filename="../src/playercontroller.cpp" line="2272"/>
-        <location filename="../src/playercontroller.cpp" line="2281"/>
+        <location filename="../src/playercontroller.cpp" line="2905"/>
+        <location filename="../src/playercontroller.cpp" line="2955"/>
+        <location filename="../src/playercontroller.cpp" line="2974"/>
+        <location filename="../src/playercontroller.cpp" line="2983"/>
         <source>Name</source>
         <translation>اسم</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2204"/>
+        <location filename="../src/playercontroller.cpp" line="2906"/>
         <source>Artist</source>
         <translation>هنرمند</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2206"/>
+        <location filename="../src/playercontroller.cpp" line="2908"/>
         <source>Album artist</source>
         <translation>هنرمند آلبوم</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2208"/>
+        <location filename="../src/playercontroller.cpp" line="2910"/>
         <source>Author</source>
         <translation>نویسنده</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2209"/>
+        <location filename="../src/playercontroller.cpp" line="2911"/>
         <source>Composer</source>
         <translation>آهنگساز</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2210"/>
+        <location filename="../src/playercontroller.cpp" line="2912"/>
         <source>Album</source>
         <translation>آلبوم</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2211"/>
+        <location filename="../src/playercontroller.cpp" line="2913"/>
         <source>Genre</source>
         <translation>سبک</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2212"/>
+        <location filename="../src/playercontroller.cpp" line="2914"/>
         <source>Date</source>
         <translation>تاریخ</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2213"/>
+        <location filename="../src/playercontroller.cpp" line="2915"/>
         <source>Track</source>
         <translation>تراک</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2214"/>
+        <location filename="../src/playercontroller.cpp" line="2916"/>
         <source>Copyright</source>
         <translation>حق کپی رایت</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2215"/>
+        <location filename="../src/playercontroller.cpp" line="2917"/>
         <source>Comment</source>
         <translation>توضیح</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2216"/>
+        <location filename="../src/playercontroller.cpp" line="2918"/>
         <source>Description</source>
         <translation>توضیحات</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2218"/>
+        <location filename="../src/playercontroller.cpp" line="2920"/>
         <source>Publisher</source>
         <translation>ناشر</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2219"/>
-        <location filename="../src/playercontroller.cpp" line="2253"/>
-        <location filename="../src/playercontroller.cpp" line="2272"/>
-        <location filename="../src/playercontroller.cpp" line="2281"/>
+        <location filename="../src/playercontroller.cpp" line="2921"/>
+        <location filename="../src/playercontroller.cpp" line="2955"/>
+        <location filename="../src/playercontroller.cpp" line="2974"/>
+        <location filename="../src/playercontroller.cpp" line="2983"/>
         <source>Language</source>
         <translation>زبان</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2222"/>
+        <location filename="../src/playercontroller.cpp" line="2924"/>
         <source>Clip info</source>
         <translation>اطلاعات کلیپ</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2226"/>
+        <location filename="../src/playercontroller.cpp" line="2928"/>
         <source>Initial Video Stream</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2229"/>
+        <location filename="../src/playercontroller.cpp" line="2931"/>
         <source>Resolution</source>
         <translation>وضوح</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2232"/>
+        <location filename="../src/playercontroller.cpp" line="2934"/>
         <source>Aspect ratio</source>
         <translation>نسبت ابعاد</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2236"/>
-        <location filename="../src/playercontroller.cpp" line="2261"/>
+        <location filename="../src/playercontroller.cpp" line="2938"/>
+        <location filename="../src/playercontroller.cpp" line="2963"/>
         <source>Format</source>
         <translation>قالب</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2239"/>
-        <location filename="../src/playercontroller.cpp" line="2264"/>
+        <location filename="../src/playercontroller.cpp" line="2941"/>
+        <location filename="../src/playercontroller.cpp" line="2966"/>
         <source>Bitrate</source>
         <translation>نرخ بیت</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2239"/>
-        <location filename="../src/playercontroller.cpp" line="2264"/>
+        <location filename="../src/playercontroller.cpp" line="2941"/>
+        <location filename="../src/playercontroller.cpp" line="2966"/>
         <source>%1 kbps</source>
         <translation>%1 kbps</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2242"/>
+        <location filename="../src/playercontroller.cpp" line="2944"/>
         <source>Frames per second</source>
         <translation>فریم بر ثانیه</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2245"/>
+        <location filename="../src/playercontroller.cpp" line="2947"/>
         <source>HDR</source>
         <translation>HDR</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2245"/>
+        <location filename="../src/playercontroller.cpp" line="2947"/>
         <source>yes</source>
         <translation>بله</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2252"/>
+        <location filename="../src/playercontroller.cpp" line="2954"/>
         <source>Video Streams</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2260"/>
+        <location filename="../src/playercontroller.cpp" line="2962"/>
         <source>Initial Audio Stream</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2271"/>
+        <location filename="../src/playercontroller.cpp" line="2973"/>
         <source>Audio Streams</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2280"/>
+        <location filename="../src/playercontroller.cpp" line="2982"/>
         <source>Subtitles</source>
         <translation>زیرنویس</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2529"/>
+        <location filename="../src/playercontroller.cpp" line="3255"/>
         <source>Chapter %1</source>
         <translation>فصل %1</translation>
     </message>
@@ -2181,113 +2184,113 @@
         <translation>ورودی‌هایی را که نامشان مطابقت ندارد پنهان می‌کند؛ آنها را از فهرست پخش حذف نمی‌کند.</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="408"/>
+        <location filename="../qml/PlaylistEditor.qml" line="417"/>
         <source>Playlist is empty</source>
         <translation>فهرست پخش خالی است</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="420"/>
+        <location filename="../qml/PlaylistEditor.qml" line="429"/>
         <source>Load playlist…</source>
         <translation>بارکردن فهرست پخش…</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="425"/>
+        <location filename="../qml/PlaylistEditor.qml" line="434"/>
         <source>Save playlist…</source>
         <translation>ذخیره فهرست پخش…</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="434"/>
+        <location filename="../qml/PlaylistEditor.qml" line="443"/>
         <source>Add files…</source>
         <translation>افزودن پرونده‌ها…</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="439"/>
+        <location filename="../qml/PlaylistEditor.qml" line="448"/>
         <source>Add URL…</source>
         <translation>افزودن URL…</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="447"/>
+        <location filename="../qml/PlaylistEditor.qml" line="456"/>
         <source>Remove selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="453"/>
+        <location filename="../qml/PlaylistEditor.qml" line="462"/>
         <source>Remove all</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="462"/>
+        <location filename="../qml/PlaylistEditor.qml" line="471"/>
         <source>Play selected</source>
         <translation>پخش موارد انتخاب‌شده</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="468"/>
+        <location filename="../qml/PlaylistEditor.qml" line="477"/>
         <source>Previous</source>
         <translation>قب&amp;لی</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="474"/>
+        <location filename="../qml/PlaylistEditor.qml" line="483"/>
         <source>Next</source>
         <translation>&amp;بعدی</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="483"/>
+        <location filename="../qml/PlaylistEditor.qml" line="492"/>
         <source>Repeat playlist</source>
         <translation>تکرار لیست پخش</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="490"/>
+        <location filename="../qml/PlaylistEditor.qml" line="499"/>
         <source>Shuffle</source>
         <translation>ت&amp;صادفی</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="500"/>
+        <location filename="../qml/PlaylistEditor.qml" line="509"/>
         <source>Move up</source>
         <translation>جابحایی به &amp;بالا</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="510"/>
+        <location filename="../qml/PlaylistEditor.qml" line="519"/>
         <source>Move down</source>
         <translation>جابحایی به &amp;پایین</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="526"/>
+        <location filename="../qml/PlaylistEditor.qml" line="536"/>
         <source>Media files (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="527"/>
-        <location filename="../qml/PlaylistEditor.qml" line="542"/>
+        <location filename="../qml/PlaylistEditor.qml" line="537"/>
+        <location filename="../qml/PlaylistEditor.qml" line="553"/>
         <source>All files (*)</source>
         <translation>همه پرونده‌ها (*)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="542"/>
+        <location filename="../qml/PlaylistEditor.qml" line="553"/>
         <source>Playlists (*.m3u *.m3u8)</source>
         <translation>فهرست‌های پخش (*.m3u *.m3u8)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="553"/>
+        <location filename="../qml/PlaylistEditor.qml" line="565"/>
         <source>Playlists (*.m3u8 *.m3u)</source>
         <translation>فهرست‌های پخش (*.m3u8 *.m3u)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="559"/>
+        <location filename="../qml/PlaylistEditor.qml" line="571"/>
         <source>Add URL</source>
         <translation>افزودن URL</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="600"/>
+        <location filename="../qml/PlaylistEditor.qml" line="612"/>
         <source>https://…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="610"/>
+        <location filename="../qml/PlaylistEditor.qml" line="622"/>
         <source>OK</source>
         <translation>تایید</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="615"/>
+        <location filename="../qml/PlaylistEditor.qml" line="627"/>
         <source>Cancel</source>
         <translation>انصراف</translation>
     </message>
@@ -2744,119 +2747,119 @@
         <translation>بازنشانی همه</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="103"/>
+        <location filename="../qml/PrefInputPage.qml" line="131"/>
         <source>(none)</source>
         <translation>(هیچ)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="111"/>
+        <location filename="../qml/PrefInputPage.qml" line="139"/>
         <source>Reset to default</source>
         <translation>بازنشانی به پیش‌فرض</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="123"/>
+        <location filename="../qml/PrefInputPage.qml" line="151"/>
         <source>Mouse</source>
         <translation>موشواره</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="131"/>
+        <location filename="../qml/PrefInputPage.qml" line="159"/>
         <source>Left click function:</source>
         <translation>عملکرد کلیک چپ:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="134"/>
-        <location filename="../qml/PrefInputPage.qml" line="144"/>
-        <location filename="../qml/PrefInputPage.qml" line="153"/>
-        <location filename="../qml/PrefInputPage.qml" line="166"/>
+        <location filename="../qml/PrefInputPage.qml" line="162"/>
+        <location filename="../qml/PrefInputPage.qml" line="172"/>
+        <location filename="../qml/PrefInputPage.qml" line="181"/>
+        <location filename="../qml/PrefInputPage.qml" line="194"/>
         <source>No function</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="134"/>
-        <location filename="../qml/PrefInputPage.qml" line="143"/>
-        <location filename="../qml/PrefInputPage.qml" line="152"/>
+        <location filename="../qml/PrefInputPage.qml" line="162"/>
+        <location filename="../qml/PrefInputPage.qml" line="171"/>
+        <location filename="../qml/PrefInputPage.qml" line="180"/>
         <source>Play / Pause</source>
         <translation>پخش/مکث</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="135"/>
-        <location filename="../qml/PrefInputPage.qml" line="143"/>
-        <location filename="../qml/PrefInputPage.qml" line="153"/>
+        <location filename="../qml/PrefInputPage.qml" line="163"/>
+        <location filename="../qml/PrefInputPage.qml" line="171"/>
+        <location filename="../qml/PrefInputPage.qml" line="181"/>
         <source>Toggle fullscreen</source>
         <translation>تغییر حالت تمام‌صفحه</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="140"/>
+        <location filename="../qml/PrefInputPage.qml" line="168"/>
         <source>Double click function:</source>
         <translation>عملکرد دوبار کلیک:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="149"/>
+        <location filename="../qml/PrefInputPage.qml" line="177"/>
         <source>Middle click function:</source>
         <translation>عملکرد کلیک وسط:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="152"/>
+        <location filename="../qml/PrefInputPage.qml" line="180"/>
         <source>Mute</source>
         <translation>بی صدا</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="160"/>
+        <location filename="../qml/PrefInputPage.qml" line="188"/>
         <source>Wheel function:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="161"/>
+        <location filename="../qml/PrefInputPage.qml" line="189"/>
         <source>Chooses what turning the mouse wheel over the video does: seek through the file or change the volume.</source>
         <translation>انتخاب می‌کند که چرخاندن چرخ ماوس روی ویدیو چه کاری انجام دهد: پیمایش در پرونده یا تغییر بلندی صدا.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="165"/>
+        <location filename="../qml/PrefInputPage.qml" line="193"/>
         <source>Media seeking</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="165"/>
+        <location filename="../qml/PrefInputPage.qml" line="193"/>
         <source>Volume control</source>
         <translation>&amp;کنترل صدا</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="182"/>
+        <location filename="../qml/PrefInputPage.qml" line="210"/>
         <source>Set shortcut</source>
         <translation>تنظیم میان‌بر</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="235"/>
+        <location filename="../qml/PrefInputPage.qml" line="263"/>
         <source>Press the new shortcut for “%1”.</source>
         <translation>میان‌بر جدید را برای «%1» فشار دهید.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="243"/>
+        <location filename="../qml/PrefInputPage.qml" line="271"/>
         <source>…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="250"/>
+        <location filename="../qml/PrefInputPage.qml" line="278"/>
         <source>Already used by “%1”. Assigning will clear it there.</source>
         <translation>پیش‌تر توسط «%1» استفاده شده است. تخصیص، آن را از آنجا پاک می‌کند.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="259"/>
+        <location filename="../qml/PrefInputPage.qml" line="287"/>
         <source>Clear</source>
         <translation>&amp;تمیزکردن</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="260"/>
+        <location filename="../qml/PrefInputPage.qml" line="288"/>
         <source>Leave this action without a shortcut</source>
         <translation>این کنش را بدون میان‌بر رها کنید</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="269"/>
+        <location filename="../qml/PrefInputPage.qml" line="297"/>
         <source>Assign</source>
         <translation>تخصیص</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="280"/>
+        <location filename="../qml/PrefInputPage.qml" line="308"/>
         <source>Cancel</source>
         <translation>انصراف</translation>
     </message>
@@ -3907,81 +3910,96 @@
     <name>PrefSubtitlesPage</name>
     <message>
         <location filename="../qml/PrefSubtitlesPage.qml" line="17"/>
-        <source>&lt;h1&gt;Subtitles&lt;/h1&gt;&lt;p&gt;Autoload picks up a subtitle file sitting next to the video. The font, size and vertical position apply to the external subtitle renderer (SRT/VTT/basic ASS) planned for a later phase.&lt;/p&gt;&lt;p&gt;Subtitles embedded in the media are drawn by the playback backend and cannot be restyled here.&lt;/p&gt;</source>
+        <source>&lt;h1&gt;Subtitles&lt;/h1&gt;&lt;p&gt;Autoload picks up a subtitle file sitting next to the video. The font, size and vertical position apply to the external subtitle renderer (SRT/VTT/basic ASS) planned for a later phase.&lt;/p&gt;&lt;p&gt;Subtitles embedded in the media are drawn by the playback backend and cannot be restyled here.&lt;/p&gt;&lt;p&gt;Bitmap-based subtitles (DVD subpicture, PGS or DVB tracks) are rendered as images rather than text -- whether they come from a DVD disc&apos;s own menu system or an embedded subtitle track in an ordinary video file -- so a slight smoothing blur can be applied (or turned off) to soften their low-resolution edges.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="27"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="32"/>
         <source>Autoload</source>
         <translation>بارگذاری خودکار</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="36"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="41"/>
         <source>Autoload subtitle files next to the video</source>
         <translation>بارکردن خودکار پرونده‌های زیرنویس کنار ویدیو</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="41"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="46"/>
         <source>On opening a video, load a subtitle file (SRT/VTT/basic ASS) sharing its name in the same folder.</source>
         <translation>هنگام بازکردن ویدیو، یک پرونده زیرنویس (SRT/VTT/ASS ساده) با همان نام در همان پوشه بارگذاری کن.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="49"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="54"/>
         <source>Autoload rule:</source>
         <translation>قاعده بارگذاری خودکار:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="52"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="57"/>
         <source>Same name as the video</source>
         <translation>همان نام ویدیو</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="60"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="65"/>
         <source>Font and position</source>
         <translation>قلم و موقعیت</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="68"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="73"/>
         <source>Font:</source>
         <translation>قلم:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="71"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="76"/>
         <source>Default application font</source>
         <translation>قلم پیش‌فرض برنامه</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="77"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="82"/>
         <source>Size:</source>
         <translation>اندا&amp;زه:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="83"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="88"/>
         <source>px</source>
         <translation>پیکسل</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="85"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="90"/>
         <source>Vertical position:</source>
         <translation>موقعیت عمودی:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="91"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="96"/>
         <source>% from the top</source>
         <translation>٪ از بالا</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="98"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="103"/>
         <source>Encoding:</source>
         <translation>رمزگذاری:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="99"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="104"/>
         <source>UTF-8 (autodetected)</source>
         <translation>UTF-8 (تشخیص خودکار)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="106"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="109"/>
+        <source>Bitmap subtitles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="121"/>
+        <source>Bitmap-based subtitle images (DVD subpicture, PGS or DVB tracks) are low-resolution and can look jagged once scaled up to a modern window size -- whether they come from a DVD disc&apos;s own menu system or an embedded subtitle track in an ordinary video file. This softens the edges with a slight blur. 0 turns it off (the raw bitmap); higher values blur more.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="114"/>
+        <source>Smoothing:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="138"/>
         <source>Font, size and position apply to Vivace&apos;s external subtitle renderer (SRT/VTT/basic ASS), loaded via Subtitles ▸ Load subtitles… or autoloaded next to the video. Subtitles embedded in the media are rendered by the playback backend and cannot be styled.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4680,62 +4698,62 @@
 <context>
     <name>YoutubeResolver</name>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="320"/>
+        <location filename="../src/youtuberesolver.cpp" line="321"/>
         <source>Could not create the download cache folder.</source>
         <translation>امکان ایجاد پوشه حافظه پنهان بارگیری نبود.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="334"/>
+        <location filename="../src/youtuberesolver.cpp" line="335"/>
         <source>Could not determine the video id to download.</source>
         <translation>امکان تعیین شناسه ویدیوی موردنظر برای بارگیری نبود.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="440"/>
+        <location filename="../src/youtuberesolver.cpp" line="451"/>
         <source>Could not run yt-dlp (&quot;%1&quot;). Check the path in Preferences &gt; Network.</source>
         <translation>امکان اجرای yt-dlp نبود (&quot;%1&quot;). مسیر را در ترجیحات &gt; شبکه بررسی کنید.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="462"/>
+        <location filename="../src/youtuberesolver.cpp" line="473"/>
         <source>yt-dlp did not finish normally.</source>
         <translation>yt-dlp به‌طور عادی پایان نیافت.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="469"/>
+        <location filename="../src/youtuberesolver.cpp" line="480"/>
         <source>yt-dlp exited with code %1.</source>
         <translation>yt-dlp با کد %1 خارج شد.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="484"/>
+        <location filename="../src/youtuberesolver.cpp" line="495"/>
         <source>yt-dlp returned no playable stream.</source>
         <translation>yt-dlp هیچ جریان قابل پخشی برنگرداند.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="506"/>
+        <location filename="../src/youtuberesolver.cpp" line="517"/>
         <source>The download did not finish normally.</source>
         <translation>بارگیری به‌طور عادی پایان نیافت.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="509"/>
+        <location filename="../src/youtuberesolver.cpp" line="520"/>
         <source>yt-dlp produced no file (exit code %1). If this is an HD video, check the ffmpeg and Deno paths.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="764"/>
+        <location filename="../src/youtuberesolver.cpp" line="769"/>
         <source>Could not create the destination folder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="780"/>
+        <location filename="../src/youtuberesolver.cpp" line="785"/>
         <source>File no longer exists</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="802"/>
+        <location filename="../src/youtuberesolver.cpp" line="807"/>
         <source>Could not move the file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="803"/>
+        <location filename="../src/youtuberesolver.cpp" line="808"/>
         <source>Could not copy the file</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4744,12 +4762,12 @@
         <translation type="vanished">yt-dlp هیچ پرونده‌ای تولید نکرد (کد خروج %1). اگر این یک ویدیوی HD است، موقعیت ffmpeg را بررسی کنید.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="923"/>
+        <location filename="../src/youtuberesolver.cpp" line="929"/>
         <source>Could not write %1.</source>
         <translation>امکان نوشتن %1 نبود.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="929"/>
+        <location filename="../src/youtuberesolver.cpp" line="935"/>
         <source>Could not save %1.</source>
         <translation>امکان ذخیره %1 نبود.</translation>
     </message>

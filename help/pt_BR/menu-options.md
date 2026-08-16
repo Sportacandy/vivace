@@ -185,3 +185,28 @@ ele procura por padrão.
   — o mesmo campo **Caminho do Deno:** existe exatamente por esse motivo e
   não precisa de nenhuma configuração adicional depois que o próprio Deno
   estiver instalado e acessível.
+
+## Suavização de legendas em bitmap
+
+*Preferências ▸ Legendas ▸ Legendas em bitmap* tem uma configuração
+**Suavização:** (0–3, padrão 1) para legendas exibidas como imagens em
+vez de texto: faixas de subimagem de DVD, PGS e DVB. Isso abrange tanto
+as legendas próprias de um disco DVD real quanto uma faixa de legenda
+incorporada do mesmo tipo em um arquivo de vídeo comum (por exemplo, um
+arquivo .mp4 com uma faixa no codec `dvd_subtitle`). Esses formatos são
+imagens bitmap pré-renderizadas, gravadas na resolução nativa em
+definição padrão (SD) quando a fonte foi criada — suas bordas podem
+parecer serrilhadas ao serem ampliadas para o tamanho de uma janela
+moderna. O Vivace pode aplicar um leve desfoque para suavizar essas
+bordas:
+
+- **0** — desativado; mostra o bitmap de legenda original exatamente
+  como foi criado.
+- **1** (padrão) — suaviza as bordas mais ásperas mantendo o texto com
+  um brilho praticamente total.
+- **2** / **3** — desfoque progressivamente maior.
+
+Essa configuração afeta apenas as legendas em bitmap — não tem nenhum
+efeito sobre o renderizador de legendas externo próprio do Vivace
+(SRT/VTT/ASS) nem sobre faixas de legenda de texto comuns, que usam
+caminhos de renderização diferentes.

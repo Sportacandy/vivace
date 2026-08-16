@@ -179,3 +179,27 @@ podržava nekoliko JS izvršnih sustava; Deno je onaj koji po zadanom traži.
   Vivacea — isto polje **Putanja do Deno-a:** postoji upravo iz tog
   razloga i ne zahtijeva daljnju konfiguraciju nakon što je sam Deno
   instaliran i dostupan.
+
+## Zaglađivanje bitmap titlova
+
+*Postavke ▸ Titlovi ▸ Bitmap titlovi* ima postavku **Zaglađivanje:**
+(0–3, zadano 1) za titlove koji se prikazuju kao slike, a ne kao tekst
+-- zapisi DVD podslike, PGS i DVB. To obuhvaća i vlastite titlove
+pravog DVD diska i ugrađeni zapis titlova iste vrste u običnoj video
+datoteci (npr. .mp4 datoteci sa zapisom u kodeku `dvd_subtitle`). Ovi
+formati su unaprijed prikazane bitmap slike, snimljene u izvornoj
+standardnoj razlučivosti (SD) prilikom izrade izvora -- njihovi rubovi
+mogu izgledati nazubljeno kada se povećaju na veličinu suvremenog
+prozora. Vivace može primijeniti blago zamućenje kako bi zagladio te
+rubove:
+
+- **0** — isključeno; prikazuje izvornu bitmap sliku titlova točno
+  onako kako je izrađena.
+- **1** (zadano) — zaglađuje najgrublje rubove uz zadržavanje gotovo
+  potpune svjetline teksta.
+- **2** / **3** — postupno jače zamućenje.
+
+Ova postavka utječe samo na bitmap titlove — nema nikakav učinak na
+Vivaceov vlastiti vanjski prikazivač titlova (SRT/VTT/ASS) niti na
+obične tekstualne staze titlova, koje obje koriste drugačije putanje
+prikazivanja.

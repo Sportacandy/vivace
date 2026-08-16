@@ -177,3 +177,27 @@ som det letar efter som standard.
   från Vivace — samma fält **Deno-sökväg:** finns av just den
   anledningen och behöver ingen ytterligare konfiguration när Deno väl är
   installerat och nåbart.
+
+## Utjämning av bitmapundertexter
+
+*Inställningar ▸ Undertexter ▸ Bitmapundertexter* har en inställning
+**Utjämning:** (0–3, standardvärde 1) för undertexter som återges som
+bilder i stället för text -- dvd-underbild-, PGS- och DVB-spår. Detta
+gäller både en riktig dvd-skivas egna undertexter och ett inbäddat
+undertextspår av samma typ i en vanlig videofil (t.ex. en .mp4-fil med
+ett spår i `dvd_subtitle`-kodeken). Dessa format är förrenderade
+bitmappsbilder, inbrända i den ursprungliga standardupplösningen (SD)
+när källan skapades -- kanterna kan se taggiga ut när de skalas upp
+till en modern fönsterstorlek. Vivace kan använda en lätt oskärpa för
+att mjuka upp dessa kanter:
+
+- **0** — av; visar den ursprungliga undertextbitmappen exakt som den
+  skapades.
+- **1** (standard) — mjukar upp de grövsta kanterna samtidigt som
+  texten behåller i stort sett full ljusstyrka.
+- **2** / **3** — gradvis kraftigare oskärpa.
+
+Den här inställningen påverkar bara bitmapundertexter — den påverkar
+inte Vivaces egen externa undertextrenderare (SRT/VTT/ASS) eller
+vanliga textbaserade undertextspår, vilka båda använder andra
+renderingsvägar.

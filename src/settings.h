@@ -313,6 +313,8 @@ class Settings : public QObject
                NOTIFY subFontSizeChanged)
     Q_PROPERTY(int subPosition READ subPosition WRITE setSubPosition
                NOTIFY subPositionChanged)
+    Q_PROPERTY(int dvdSubtitleSmoothing READ dvdSubtitleSmoothing
+               WRITE setDvdSubtitleSmoothing NOTIFY dvdSubtitleSmoothingChanged)
     Q_PROPERTY(bool playFilesFromStart READ playFilesFromStart
                WRITE setPlayFilesFromStart NOTIFY playFilesFromStartChanged)
     Q_PROPERTY(QString uiFontFamily READ uiFontFamily WRITE setUiFontFamily
@@ -692,6 +694,15 @@ public:
     int subPosition() const { return m_subPosition; }
     void setSubPosition(int percentFromTop);
 
+    // DVD subpicture (bitmap) subtitles only -- see PlayerController's
+    // softenSubtitleEdges(): 0 = off (the raw disc bitmap, jagged at
+    // native SD resolution once scaled up), 1-3 = increasing blur radius,
+    // matching mpv's own --sub-gauss=<0..3> option for the identical
+    // image-subtitle complaint. Read fresh by PlayerController on every
+    // subtitle image update, so it applies live like the rest of Settings.
+    int dvdSubtitleSmoothing() const { return m_dvdSubtitleSmoothing; }
+    void setDvdSubtitleSmoothing(int radius);
+
     bool playFilesFromStart() const { return m_playFilesFromStart; }
     void setPlayFilesFromStart(bool fromStart);
 
@@ -875,6 +886,7 @@ signals:
     void subFontFamilyChanged();
     void subFontSizeChanged();
     void subPositionChanged();
+    void dvdSubtitleSmoothingChanged();
     void playFilesFromStartChanged();
     void uiFontFamilyChanged();
     void uiFontSizeChanged();
@@ -1013,6 +1025,7 @@ private:
     QString m_subFontFamily;
     int m_subFontSize;
     int m_subPosition;
+    int m_dvdSubtitleSmoothing;
     bool m_playFilesFromStart;
     QString m_uiFontFamily;
     int m_uiFontSize;

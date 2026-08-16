@@ -185,3 +185,28 @@ entornos de JavaScript; Deno es el que busca de forma predeterminada.
   Vivace — el mismo campo **Ruta de Deno:** existe precisamente por este
   motivo y no necesita más configuración una vez que el propio Deno está
   instalado y accesible.
+
+## Suavizado de subtítulos de mapa de bits
+
+*Preferencias ▸ Subtítulos ▸ Subtítulos de mapa de bits* incluye un
+ajuste **Suavizado:** (0–3, valor predeterminado 1) para los subtítulos
+que se representan como imágenes en lugar de texto: pistas de subimagen
+de DVD, PGS y DVB. Esto abarca tanto los subtítulos propios de un disco
+DVD real como una pista de subtítulos incrustada del mismo tipo en un
+archivo de vídeo normal (por ejemplo, un archivo .mp4 con una pista de
+códec `dvd_subtitle`). Estos formatos son imágenes de mapa de bits
+prerrenderizadas, grabadas a la resolución nativa de definición
+estándar (SD) al crear la fuente — sus bordes pueden verse dentados al
+ampliarse al tamaño de una ventana moderna. Vivace puede aplicar un
+ligero desenfoque para suavizar esos bordes:
+
+- **0** — desactivado; muestra el mapa de bits de subtítulos original
+  tal cual se creó.
+- **1** (valor predeterminado) — suaviza los bordes más pronunciados
+  manteniendo el texto con un brillo prácticamente completo.
+- **2** / **3** — desenfoque progresivamente mayor.
+
+Este ajuste solo afecta a los subtítulos de mapa de bits — no tiene
+ningún efecto en el renderizador de subtítulos externo propio de Vivace
+(SRT/VTT/ASS) ni en las pistas de subtítulos de texto normales, que
+usan rutas de renderizado distintas.

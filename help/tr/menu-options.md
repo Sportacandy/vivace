@@ -179,3 +179,27 @@ varsayılan olarak aradığı çalışma zamanıdır.
   değişikliklerden kaynaklanır — tam da bu nedenle **Deno yolu:** alanı
   vardır ve Deno'nun kendisi kurulup erişilebilir olduğunda başka bir
   yapılandırmaya gerek kalmaz.
+
+## Bit eşlemli altyazı yumuşatma
+
+*Tercihler ▸ Altyazılar ▸ Bit eşlemli altyazılar*'da, metin yerine
+görüntü olarak işlenen altyazılar için bir **Yumuşatma:** ayarı (0–3,
+varsayılan 1) bulunur — DVD alt resmi, PGS ve DVB parçaları. Bu, hem
+gerçek bir DVD diskin kendi altyazılarını hem de sıradan bir video
+dosyasındaki (ör. `dvd_subtitle` codec'li bir parçaya sahip bir .mp4
+dosyası) aynı türden gömülü bir altyazı parçasını kapsar. Bu biçimler,
+kaynak oluşturulurken yerel standart tanım (SD) çözünürlüğünde önceden
+oluşturulmuş bit eşlemi görüntülerdir — modern bir pencere boyutuna
+büyütüldüğünde kenarları pürüzlü görünebilir. Vivace, bu kenarları
+yumuşatmak için hafif bir bulanıklık uygulayabilir:
+
+- **0** — kapalı; orijinal altyazı bit eşlemini tam olarak
+  oluşturulduğu gibi gösterir.
+- **1** (varsayılan) — metnin parlaklığını neredeyse tam korurken en
+  pürüzlü kenarları yumuşatır.
+- **2** / **3** — giderek daha fazla bulanıklaştırır.
+
+Bu ayar yalnızca bit eşlemli altyazıları etkiler — Vivace'nin kendi
+harici altyazı işleyicisini (SRT/VTT/ASS) veya sıradan metin tabanlı
+altyazı parçalarını etkilemez; bunların ikisi de farklı işleme yolları
+kullanır.

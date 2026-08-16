@@ -7,6 +7,7 @@
 
 #include <algorithm>
 #include <chrono>
+#include <cstdlib>
 #include <numeric>
 #include <utility>
 
@@ -55,6 +56,79 @@ void dvdLog(const QString &message)
     QFile file(QDir::temp().filePath(QStringLiteral("vivace_dvd.log")));
     if (file.open(QIODevice::Append | QIODevice::Text))
         file.write(message.toUtf8() + '\n');
+}
+
+// Soften a decoded DVD subpicture bitmap's visibly coarse antialiasing
+// steps (2026-08-16 user report: "very jaggy glyph"). A DVD subtitle is a
+// paletted bitmap authored at native SD resolution (no vector/text data
+// survives in the stream at all, so there's no higher-quality source to
+// fall back to) that Vivace then scales up to whatever size the video is
+// displayed at -- the antialiasing baked in at authoring time only has a
+// couple of native pixels to blend an edge over, which reads as "blocky"
+// once magnified. This is the exact same complaint mpv addresses with its
+// own `--sub-gauss` option for image (DVD/PGS) subtitles, via a Gaussian
+// blur on the decoded bitmap -- not dithering (dithering fixes color-
+// banding in gradients, not edge aliasing) and not a "vector font" (there
+// is no vector glyph data to recover from a paletted bitmap). A two-pass
+// (horizontal then vertical) TRIANGULAR (tent) blur approximates a
+// Gaussian; done on premultiplied alpha so the blur doesn't smear black
+// into the surrounding transparent area.
+//
+// NOT a uniform box average (the first version of this fix, briefly):
+// a box blur weights every tap equally, so even the CENTER pixel gets
+// diluted by 1/(2*radius+1) -- fine for a true wide-open edge, but a DVD
+// glyph's strokes at native resolution are often only a few pixels wide,
+// so a uniform box blur eroded brightness across the whole stroke, not
+// just its edges (2026-08-16 user report: "subtitle text after blur seems
+// less bright"). A triangular kernel (weight = radius+1-|d|, i.e. [1,2,1]
+// for radius 1) gives the center tap much more weight than its neighbours,
+// so a fully-opaque interior pixel stays close to fully opaque while the
+// actual transition pixels at an edge still get meaningfully softened.
+QImage softenSubtitleEdges(const QImage &src, int radius)
+{
+    if (radius <= 0 || src.isNull())
+        return src;
+    const QImage premult = src.convertToFormat(QImage::Format_ARGB32_Premultiplied);
+    const int w = premult.width();
+    const int h = premult.height();
+    QImage pass1(w, h, QImage::Format_ARGB32_Premultiplied);
+    for (int y = 0; y < h; ++y) {
+        const QRgb *srcLine = reinterpret_cast<const QRgb *>(premult.constScanLine(y));
+        QRgb *dstLine = reinterpret_cast<QRgb *>(pass1.scanLine(y));
+        for (int x = 0; x < w; ++x) {
+            int sa = 0, sr = 0, sg = 0, sb = 0, weightSum = 0;
+            for (int d = -radius; d <= radius; ++d) {
+                const int sx = x + d;
+                if (sx < 0 || sx >= w)
+                    continue;
+                const int weight = radius + 1 - std::abs(d);
+                const QRgb p = srcLine[sx];
+                sa += qAlpha(p) * weight; sr += qRed(p) * weight;
+                sg += qGreen(p) * weight; sb += qBlue(p) * weight;
+                weightSum += weight;
+            }
+            dstLine[x] = qRgba(sr / weightSum, sg / weightSum, sb / weightSum, sa / weightSum);
+        }
+    }
+    QImage pass2(w, h, QImage::Format_ARGB32_Premultiplied);
+    for (int y = 0; y < h; ++y) {
+        QRgb *dstLine = reinterpret_cast<QRgb *>(pass2.scanLine(y));
+        for (int x = 0; x < w; ++x) {
+            int sa = 0, sr = 0, sg = 0, sb = 0, weightSum = 0;
+            for (int d = -radius; d <= radius; ++d) {
+                const int sy = y + d;
+                if (sy < 0 || sy >= h)
+                    continue;
+                const int weight = radius + 1 - std::abs(d);
+                const QRgb p = reinterpret_cast<const QRgb *>(pass1.constScanLine(sy))[x];
+                sa += qAlpha(p) * weight; sr += qRed(p) * weight;
+                sg += qGreen(p) * weight; sb += qBlue(p) * weight;
+                weightSum += weight;
+            }
+            dstLine[x] = qRgba(sr / weightSum, sg / weightSum, sb / weightSum, sa / weightSum);
+        }
+    }
+    return pass2.convertToFormat(QImage::Format_ARGB32);
 }
 
 // Same on-disk file? Used to skip adding a playlist entry that's already
@@ -1951,8 +2025,15 @@ void PlayerController::updateDvdSubtitleImage()
     }
     QString url;
     if (sp.isValid() && title) {
-        const QImage img = DvdMenu::renderHighlight(sp, title->palette,
-                                                    QRect(), 0);
+        QImage img = DvdMenu::renderHighlight(sp, title->palette,
+                                              QRect(), 0);
+        // Only for real subtitles, not the SEPARATE dvdMenuHighlightUrl()
+        // call site (renderHighlight is shared by both, but a blurred
+        // button highlight would look less crisp for an interactive
+        // element, and the menu highlight was never the subject of the
+        // "jaggy glyph" report). User-configurable (0 = off) per the
+        // 2026-08-16 follow-up request -- not everyone wants this.
+        img = softenSubtitleEdges(img, m_dvdSubtitleSmoothing);
         if (!img.isNull()) {
             QByteArray png;
             QBuffer buf(&png);
@@ -2131,6 +2212,28 @@ void PlayerController::setSubtitlesByDefault(bool enabled)
         return;
     m_subtitlesByDefault = enabled;
     emit subtitlesByDefaultChanged();
+}
+
+void PlayerController::setDvdSubtitleSmoothing(int radius)
+{
+    radius = qBound(0, radius, 3);
+    if (radius == m_dvdSubtitleSmoothing)
+        return;
+    m_dvdSubtitleSmoothing = radius;
+    // Mirrors the same value into the environment so the CUSTOM PATCHED
+    // Qt Multimedia's own bitmap-subtitle decode path
+    // (qffmpegstreamdecoder.cpp's vivaceSoftenBitmapSubtitle(), added by
+    // patches/qtmultimedia-subtitle-bitmap.patch) can honor the same
+    // Preferences setting -- that code renders embedded dvd_subtitle-codec
+    // tracks in ordinary media files (as opposed to this class's own
+    // DVD-disc-specific rendering, softenSubtitleEdges() below), lives
+    // entirely inside qtmultimedia, and has no way to call back into this
+    // class or read Settings directly. Read fresh via
+    // qEnvironmentVariableIntValue() on every decode there rather than
+    // cached, so this takes effect immediately with no restart, exactly
+    // like the DVD-disc case below.
+    qputenv("VIVACE_SUBTITLE_BITMAP_SMOOTHING", QByteArray::number(radius));
+    emit dvdSubtitleSmoothingChanged();
 }
 
 void PlayerController::setSessionPlaylistEnabled(bool enabled)

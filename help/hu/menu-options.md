@@ -191,3 +191,27 @@ Deno az, amelyet alapértelmezés szerint keres.
   nem a Vivace-ból — ugyanez a **Deno útvonala:** mező pontosan ezért
   létezik, és nincs szükség további beállításra, ha maga a Deno
   telepítve van és elérhető.
+
+## Bittérkép-feliratok simítása
+
+A *Beállítások ▸ Feliratok ▸ Bittérkép-feliratok* lapon található egy
+**Simítás:** beállítás (0–3, alapértelmezett érték 1) a szöveg helyett
+képként megjelenő feliratokhoz -- DVD-részkép-, PGS- és DVB-sávok. Ez
+kiterjed mind egy valódi DVD-lemez saját feliratára, mind egy ugyanilyen
+típusú, közönséges videofájlba ágyazott feliratsávra (pl. egy .mp4
+fájlra `dvd_subtitle` kodekű sávval). Ezek a formátumok előre renderelt
+bittérkép-képek, amelyeket a forrás készítésekor natív, normál
+felbontásban (SD) égettek bele -- széleik foltosnak tűnhetnek, ha modern
+ablakmérethez nagyítják őket. A Vivace enyhe elmosással simíthatja ezeket
+az éleket:
+
+- **0** — kikapcsolva; az eredeti feliratbittérképet pontosan úgy
+  jeleníti meg, ahogyan készült.
+- **1** (alapértelmezett) — a legdurvább éleket simítja, miközben a
+  szöveg fényereje gyakorlatilag teljes marad.
+- **2** / **3** — fokozatosan erősebb elmosás.
+
+Ez a beállítás csak a bittérkép-feliratokra van hatással — nincs
+hatással a Vivace saját külső feliratrenderelőjére (SRT/VTT/ASS), sem a
+közönséges szöveges feliratsávokra, amelyek mindkettő más renderelési
+útvonalat használnak.

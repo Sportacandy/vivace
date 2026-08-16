@@ -181,3 +181,28 @@ jota se etsii oletusarvoisesti.
   Vivacesta — sama kenttä **Deno-polku:** on olemassa juuri tästä
   syystä eikä vaadi enää lisäasetuksia, kun Deno itse on asennettu ja
   tavoitettavissa.
+
+## Bittikarttatekstitysten pehmennys
+
+*Asetukset ▸ Tekstitykset ▸ Bittikarttatekstitykset* sisältää
+asetuksen **Pehmennys:** (0–3, oletusarvo 1) tekstitykselle, joka
+näytetään kuvina eikä tekstinä -- DVD-alikuva-, PGS- ja DVB-raidat.
+Tämä koskee sekä oikean DVD-levyn omaa tekstitystä että samantyyppistä
+upotettua tekstitysraitaa tavallisessa videotiedostossa (esim. .mp4-
+tiedostossa, jossa on `dvd_subtitle`-koodekin raita). Nämä formaatit
+ovat valmiiksi renderöityjä bittikarttakuvia, jotka on poltettu
+alkuperäisessä vakiotarkkuudessa (SD) lähteen valmistuksen yhteydessä
+-- niiden reunat voivat näyttää rosoisilta, kun ne suurennetaan
+nykyaikaisen ikkunan kokoon. Vivace voi pehmentää näitä reunoja
+kevyellä sumennuksella:
+
+- **0** — pois käytöstä; näyttää alkuperäisen tekstitysbittikartan
+  täsmälleen sellaisena kuin se on luotu.
+- **1** (oletus) — pehmentää karkeimmat reunat säilyttäen tekstin
+  lähes täyden kirkkauden.
+- **2** / **3** — asteittain voimakkaampi sumennus.
+
+Tämä asetus vaikuttaa vain bittikarttatekstityksiin — sillä ei ole
+vaikutusta Vivacen omaan ulkoiseen tekstitysrenderöijään (SRT/VTT/ASS)
+eikä tavallisiin tekstipohjaisiin tekstitysraitoihin, jotka molemmat
+käyttävät eri renderöintipolkuja.

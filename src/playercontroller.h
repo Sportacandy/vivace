@@ -131,6 +131,13 @@ class PlayerController : public QObject
                WRITE setPreferredSubtitleLanguages NOTIFY preferredSubtitleLanguagesChanged)
     Q_PROPERTY(bool subtitlesByDefault READ subtitlesByDefault
                WRITE setSubtitlesByDefault NOTIFY subtitlesByDefaultChanged)
+    // Mirrors Settings.dvdSubtitleSmoothing (0 = off, 1-3 = increasing blur
+    // radius) -- one-way bound from QML like the other DVD-subtitle
+    // preferences above, and read directly by updateDvdSubtitleImage() on
+    // every subtitle image rebuild, so changing it in Preferences takes
+    // effect on the very next subtitle event with no rebuild needed.
+    Q_PROPERTY(int dvdSubtitleSmoothing READ dvdSubtitleSmoothing
+               WRITE setDvdSubtitleSmoothing NOTIFY dvdSubtitleSmoothingChanged)
     Q_PROPERTY(bool sessionPlaylistEnabled READ sessionPlaylistEnabled
                WRITE setSessionPlaylistEnabled NOTIFY sessionPlaylistEnabledChanged)
     Q_PROPERTY(bool autosavePlaylistOnExit READ autosavePlaylistOnExit
@@ -318,6 +325,8 @@ public:
     void setPreferredSubtitleLanguages(const QString &languages);
     bool subtitlesByDefault() const { return m_subtitlesByDefault; }
     void setSubtitlesByDefault(bool enabled);
+    int dvdSubtitleSmoothing() const { return m_dvdSubtitleSmoothing; }
+    void setDvdSubtitleSmoothing(int radius);
     bool sessionPlaylistEnabled() const { return m_sessionPlaylistEnabled; }
     void setSessionPlaylistEnabled(bool enabled);
     bool autosavePlaylistOnExit() const { return m_autosavePlaylistOnExit; }
@@ -511,6 +520,7 @@ signals:
     void preferredAudioLanguagesChanged();
     void preferredSubtitleLanguagesChanged();
     void subtitlesByDefaultChanged();
+    void dvdSubtitleSmoothingChanged();
     void sessionPlaylistEnabledChanged();
     void autosavePlaylistOnExitChanged();
     void autoAddFolderFilesChanged();
@@ -709,6 +719,14 @@ private:
     QString m_preferredAudioLanguages;
     QString m_preferredSubtitleLanguages;
     bool m_subtitlesByDefault = true;
+    // Sentinel, not the real default (see Settings::m_dvdSubtitleSmoothing
+    // for the actual default of 1) -- deliberately a value the Settings
+    // Binding in Main.qml can never apply unchanged to, so the very FIRST
+    // Binding application at startup always falls through
+    // setDvdSubtitleSmoothing()'s "did this actually change" guard and
+    // sets the VIVACE_SUBTITLE_BITMAP_SMOOTHING env var at least once, even
+    // when the user's persisted preference happens to equal 1.
+    int m_dvdSubtitleSmoothing = -1;
     bool m_sessionPlaylistEnabled = false;
     bool m_autosavePlaylistOnExit = false;
     bool m_autoAddFolderFiles = false;

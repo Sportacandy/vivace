@@ -421,51 +421,51 @@
 <context>
     <name>ControlBar</name>
     <message>
-        <location filename="../qml/ControlBar.qml" line="376"/>
-        <location filename="../qml/ControlBar.qml" line="382"/>
-        <location filename="../qml/ControlBar.qml" line="388"/>
+        <location filename="../qml/ControlBar.qml" line="408"/>
+        <location filename="../qml/ControlBar.qml" line="414"/>
+        <location filename="../qml/ControlBar.qml" line="420"/>
         <source>Rewind %1 s</source>
         <translation>后退 %1 秒</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="394"/>
-        <location filename="../qml/ControlBar.qml" line="400"/>
-        <location filename="../qml/ControlBar.qml" line="406"/>
+        <location filename="../qml/ControlBar.qml" line="426"/>
+        <location filename="../qml/ControlBar.qml" line="432"/>
+        <location filename="../qml/ControlBar.qml" line="438"/>
         <source>Forward %1 s</source>
         <translation>前进 %1 秒</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="463"/>
+        <location filename="../qml/ControlBar.qml" line="501"/>
         <source>Error: %1</source>
         <translation>错误：%1</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="466"/>
+        <location filename="../qml/ControlBar.qml" line="504"/>
         <source>Playing %1</source>
         <translation>正在播放 %1</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="471"/>
+        <location filename="../qml/ControlBar.qml" line="509"/>
         <source>Paused</source>
         <translation>已暂停</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="473"/>
+        <location filename="../qml/ControlBar.qml" line="511"/>
         <source>Stopped</source>
         <translation>已停止</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="518"/>
+        <location filename="../qml/ControlBar.qml" line="556"/>
         <source>V: %1 kbps</source>
         <translation>视频：%1 kbps</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="519"/>
+        <location filename="../qml/ControlBar.qml" line="557"/>
         <source>A: %1 kbps</source>
         <translation>音频：%1 kbps</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="531"/>
+        <location filename="../qml/ControlBar.qml" line="569"/>
         <source>Frame: %1</source>
         <translation>帧：%1</translation>
     </message>
@@ -589,17 +589,17 @@
 <context>
     <name>FavoritesMenu</name>
     <message>
-        <location filename="../qml/FavoritesMenu.qml" line="90"/>
+        <location filename="../qml/FavoritesMenu.qml" line="122"/>
         <source>(empty)</source>
         <translation>（空）</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesMenu.qml" line="100"/>
+        <location filename="../qml/FavoritesMenu.qml" line="132"/>
         <source>&amp;Edit…</source>
         <translation>编辑(&amp;E)...</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesMenu.qml" line="107"/>
+        <location filename="../qml/FavoritesMenu.qml" line="139"/>
         <source>&amp;Add current media</source>
         <translation>添加当前媒体(&amp;A)</translation>
     </message>
@@ -766,284 +766,284 @@
 <context>
     <name>Main</name>
     <message>
-        <location filename="../qml/Main.qml" line="399"/>
+        <location filename="../qml/Main.qml" line="404"/>
         <source>TV editor</source>
         <translation>电视编辑器</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="399"/>
+        <location filename="../qml/Main.qml" line="404"/>
         <source>TV channels</source>
         <translation>电视频道</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="402"/>
+        <location filename="../qml/Main.qml" line="407"/>
         <source>Radio editor</source>
         <translation>广播编辑器</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="402"/>
+        <location filename="../qml/Main.qml" line="407"/>
         <source>Radio channels</source>
         <translation>广播电台</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="405"/>
-        <location filename="../qml/Main.qml" line="448"/>
+        <location filename="../qml/Main.qml" line="410"/>
+        <location filename="../qml/Main.qml" line="453"/>
         <source>Favorite editor</source>
         <translation>收藏夹编辑器</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="405"/>
-        <location filename="../qml/Main.qml" line="448"/>
+        <location filename="../qml/Main.qml" line="410"/>
+        <location filename="../qml/Main.qml" line="453"/>
         <source>Favorite list</source>
         <translation>收藏夹列表</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="409"/>
+        <location filename="../qml/Main.qml" line="414"/>
         <source>Bookmark added</source>
         <translation>已添加书签</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="424"/>
+        <location filename="../qml/Main.qml" line="429"/>
         <source>Edit main toolbar</source>
         <translation>编辑主工具栏(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="427"/>
+        <location filename="../qml/Main.qml" line="432"/>
         <source>Edit control bar</source>
         <translation>编辑控制条(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="455"/>
+        <location filename="../qml/Main.qml" line="460"/>
         <source>Screenshot saved as %1</source>
         <translation>截图已保存为 %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="456"/>
+        <location filename="../qml/Main.qml" line="461"/>
         <source>Could not take the screenshot</source>
         <translation>无法截取屏幕截图</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="569"/>
+        <location filename="../qml/Main.qml" line="574"/>
         <source>Drop media files here, or press Ctrl+O</source>
         <translation>将媒体文件拖放到此处，或按 Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="645"/>
+        <location filename="../qml/Main.qml" line="655"/>
         <source>Downloading video…</source>
         <translation>正在下载视频…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="652"/>
+        <location filename="../qml/Main.qml" line="662"/>
         <source>This can take a while — the external tool is downloading and merging HD video and audio.</source>
         <translation>这可能需要一些时间 — 外部工具正在下载并合并高清视频和音频。</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="666"/>
-        <location filename="../qml/Main.qml" line="1581"/>
+        <location filename="../qml/Main.qml" line="676"/>
+        <location filename="../qml/Main.qml" line="1694"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="739"/>
+        <location filename="../qml/Main.qml" line="749"/>
         <source>Loading…</source>
         <translation>正在加载…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="740"/>
+        <location filename="../qml/Main.qml" line="750"/>
         <source>Connecting…</source>
         <translation>连接中...</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="741"/>
+        <location filename="../qml/Main.qml" line="751"/>
         <source>Buffering… %1%</source>
         <translation>正在缓冲… %1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="749"/>
+        <location filename="../qml/Main.qml" line="759"/>
         <source>Live streams can take several seconds to start.</source>
         <translation>直播流可能需要几秒钟才能开始。</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="784"/>
+        <location filename="../qml/Main.qml" line="794"/>
         <source>Volume: %1%</source>
         <translation>音量：%1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="787"/>
+        <location filename="../qml/Main.qml" line="797"/>
         <source>Mute</source>
         <translation>静音</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="787"/>
+        <location filename="../qml/Main.qml" line="797"/>
         <source>Mute off</source>
         <translation>已取消静音</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="790"/>
+        <location filename="../qml/Main.qml" line="800"/>
         <source>Speed: %1x</source>
         <translation>速度：%1x</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1197"/>
+        <location filename="../qml/Main.qml" line="1310"/>
         <source>Media files (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1198"/>
-        <location filename="../qml/Main.qml" line="1256"/>
-        <location filename="../qml/Main.qml" line="1517"/>
+        <location filename="../qml/Main.qml" line="1311"/>
+        <location filename="../qml/Main.qml" line="1369"/>
+        <location filename="../qml/Main.qml" line="1630"/>
         <source>All files (*)</source>
         <translation>所有文件 (*)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1240"/>
+        <location filename="../qml/Main.qml" line="1353"/>
         <source>Select the DVD drive or a folder containing VIDEO_TS</source>
         <translation>选择 DVD 驱动器或包含 VIDEO_TS 的文件夹</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1244"/>
+        <location filename="../qml/Main.qml" line="1357"/>
         <source>No DVD video found in %1</source>
         <translation>在 %1 中未找到 DVD 视频</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1255"/>
+        <location filename="../qml/Main.qml" line="1368"/>
         <source>Playlists (*.m3u *.m3u8)</source>
         <translation>播放列表 (*.m3u *.m3u8)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1298"/>
+        <location filename="../qml/Main.qml" line="1411"/>
         <source>Playing stream</source>
         <translation>正在播放流</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1304"/>
-        <location filename="../qml/Main.qml" line="1337"/>
+        <location filename="../qml/Main.qml" line="1417"/>
+        <location filename="../qml/Main.qml" line="1450"/>
         <source>Playing downloaded video</source>
         <translation>正在播放已下载的视频</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1308"/>
+        <location filename="../qml/Main.qml" line="1421"/>
         <source>YouTube: %1</source>
         <translation>YouTube：%1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1341"/>
+        <location filename="../qml/Main.qml" line="1454"/>
         <source>Download failed: %1</source>
         <translation>下载失败：%1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1438"/>
+        <location filename="../qml/Main.qml" line="1551"/>
         <source>Saved %1 file(s); %2 failed.</source>
         <translation>已保存 %1 个文件；%2 个失败。</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1442"/>
+        <location filename="../qml/Main.qml" line="1555"/>
         <source>Saved %1 file(s).</source>
         <translation>已保存 %1 个文件。</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1455"/>
+        <location filename="../qml/Main.qml" line="1568"/>
         <source>Could not read the shortcut file.</source>
         <translation>无法读取快捷方式文件。</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1470"/>
+        <location filename="../qml/Main.qml" line="1583"/>
         <source>Starting download…</source>
         <translation>正在开始下载…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1471"/>
+        <location filename="../qml/Main.qml" line="1584"/>
         <source>Downloading video (this can take a while)…</source>
         <translation>正在下载视频（这可能需要一些时间）…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1475"/>
+        <location filename="../qml/Main.qml" line="1588"/>
         <source>Resolving with yt-dlp…</source>
         <translation>正在使用 yt-dlp 解析…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1512"/>
+        <location filename="../qml/Main.qml" line="1625"/>
         <source>Load subtitle file</source>
         <translation>加载字幕文件</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1516"/>
+        <location filename="../qml/Main.qml" line="1629"/>
         <source>Subtitle files (*.srt *.vtt *.ass *.ssa)</source>
         <translation>字幕文件 (*.srt *.vtt *.ass *.ssa)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1524"/>
+        <location filename="../qml/Main.qml" line="1637"/>
         <source>Subtitle delay</source>
         <translation>字幕延迟</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1558"/>
+        <location filename="../qml/Main.qml" line="1671"/>
         <source>Delay:</source>
         <translation>延迟：</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1564"/>
-        <location filename="../qml/Main.qml" line="1636"/>
+        <location filename="../qml/Main.qml" line="1677"/>
+        <location filename="../qml/Main.qml" line="1749"/>
         <source>ms</source>
         <translation>毫秒</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1574"/>
+        <location filename="../qml/Main.qml" line="1687"/>
         <source>OK</source>
         <translation>确定(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1593"/>
+        <location filename="../qml/Main.qml" line="1706"/>
         <source>Audio delay — Vivace</source>
         <translation>音频延迟 — Vivace</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1624"/>
+        <location filename="../qml/Main.qml" line="1737"/>
         <source>No delay for this file (use the global delay only)</source>
         <translation>此文件无延迟（仅使用全局延迟）</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1629"/>
+        <location filename="../qml/Main.qml" line="1742"/>
         <source>This file&apos;s delay:</source>
         <translation>此文件的延迟：</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1644"/>
+        <location filename="../qml/Main.qml" line="1757"/>
         <source>The delay applied to this file is this value plus the global delay for the current audio device (%1 ms), set in Preferences &gt; General &gt; Audio. Negative values delay the video to match audio that arrives late (e.g. Bluetooth headphones).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1657"/>
+        <location filename="../qml/Main.qml" line="1770"/>
         <source>&amp;Apply</source>
         <translation>应用(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1666"/>
+        <location filename="../qml/Main.qml" line="1779"/>
         <source>&amp;Close</source>
         <translation>关闭(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1763"/>
+        <location filename="../qml/Main.qml" line="1876"/>
         <source>Hide window</source>
         <translation>隐藏窗口</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1763"/>
+        <location filename="../qml/Main.qml" line="1876"/>
         <source>Show window</source>
         <translation>显示窗口</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1768"/>
+        <location filename="../qml/Main.qml" line="1881"/>
         <source>Play / Pause</source>
         <translation>播放/暂停</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1772"/>
+        <location filename="../qml/Main.qml" line="1885"/>
         <source>Stop</source>
         <translation>停止</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1777"/>
+        <location filename="../qml/Main.qml" line="1890"/>
         <source>Quit</source>
         <translation>退出(&amp;Q)</translation>
     </message>
@@ -1070,625 +1070,625 @@
         </translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="105"/>
+        <location filename="../qml/MainMenuBar.qml" line="115"/>
         <source>&amp;Open</source>
         <translation>打开(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="108"/>
+        <location filename="../qml/MainMenuBar.qml" line="118"/>
         <source>&amp;File…</source>
         <translation>文件(&amp;F)...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="115"/>
+        <location filename="../qml/MainMenuBar.qml" line="125"/>
         <source>&amp;Recent files</source>
         <translation>最近的文件(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="131"/>
+        <location filename="../qml/MainMenuBar.qml" line="147"/>
         <source>(empty)</source>
         <translation>（空）</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="138"/>
+        <location filename="../qml/MainMenuBar.qml" line="153"/>
         <source>&amp;Clear</source>
         <translation>清除(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="144"/>
+        <location filename="../qml/MainMenuBar.qml" line="159"/>
         <source>F&amp;avorites</source>
         <translation>收藏夹(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="153"/>
+        <location filename="../qml/MainMenuBar.qml" line="168"/>
         <source>&amp;Directory…</source>
         <translation>目录(&amp;I)...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="158"/>
+        <location filename="../qml/MainMenuBar.qml" line="173"/>
         <source>&amp;Playlist…</source>
         <translation>播放列表(&amp;P)...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="163"/>
+        <location filename="../qml/MainMenuBar.qml" line="178"/>
         <source>D&amp;isc</source>
         <translation>光盘(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="167"/>
+        <location filename="../qml/MainMenuBar.qml" line="182"/>
         <source>&amp;DVD from drive or folder…</source>
         <translation>从驱动器或文件夹打开 DVD(&amp;D)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="172"/>
+        <location filename="../qml/MainMenuBar.qml" line="187"/>
         <source>&amp;Blu-ray</source>
         <translation>蓝光(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="176"/>
+        <location filename="../qml/MainMenuBar.qml" line="191"/>
         <source>&amp;Audio CD</source>
         <translation>音频 CD(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="181"/>
+        <location filename="../qml/MainMenuBar.qml" line="196"/>
         <source>&amp;URL…</source>
         <translation>URL(&amp;U)...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="187"/>
+        <location filename="../qml/MainMenuBar.qml" line="202"/>
         <source>YouTube &amp;cache…</source>
         <translation>YouTube 缓存(&amp;C)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="195"/>
+        <location filename="../qml/MainMenuBar.qml" line="210"/>
         <source>&amp;TV</source>
         <translation>电视(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="205"/>
+        <location filename="../qml/MainMenuBar.qml" line="220"/>
         <source>Radi&amp;o</source>
         <translation>广播(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="216"/>
+        <location filename="../qml/MainMenuBar.qml" line="231"/>
         <source>&amp;Quit</source>
         <translation>退出(&amp;Q)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="226"/>
+        <location filename="../qml/MainMenuBar.qml" line="241"/>
         <source>&amp;Play</source>
         <translation>播放(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="229"/>
+        <location filename="../qml/MainMenuBar.qml" line="244"/>
         <source>P&amp;lay</source>
         <translation>播放(&amp;L)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="236"/>
+        <location filename="../qml/MainMenuBar.qml" line="251"/>
         <source>&amp;Pause</source>
         <translation>暂停(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="242"/>
+        <location filename="../qml/MainMenuBar.qml" line="257"/>
         <source>&amp;Stop</source>
         <translation>停止(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="248"/>
+        <location filename="../qml/MainMenuBar.qml" line="263"/>
         <source>Frame &amp;step</source>
         <translation>逐帧步进(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="254"/>
+        <location filename="../qml/MainMenuBar.qml" line="269"/>
         <source>Fra&amp;me back step</source>
         <translation>逐帧步退(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="261"/>
+        <location filename="../qml/MainMenuBar.qml" line="276"/>
         <source>&amp;Rewind %1</source>
         <translation>后退 %1(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="268"/>
+        <location filename="../qml/MainMenuBar.qml" line="283"/>
         <source>&amp;Forward %1</source>
         <translation>前进 %1(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="275"/>
-        <location filename="../qml/MainMenuBar.qml" line="289"/>
+        <location filename="../qml/MainMenuBar.qml" line="290"/>
+        <location filename="../qml/MainMenuBar.qml" line="304"/>
         <source>Rewind %1</source>
         <translation>后退 %1</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="282"/>
-        <location filename="../qml/MainMenuBar.qml" line="296"/>
+        <location filename="../qml/MainMenuBar.qml" line="297"/>
+        <location filename="../qml/MainMenuBar.qml" line="311"/>
         <source>Forward %1</source>
         <translation>前进 %1</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="304"/>
+        <location filename="../qml/MainMenuBar.qml" line="319"/>
         <source>Sp&amp;eed</source>
         <translation>速度(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="308"/>
+        <location filename="../qml/MainMenuBar.qml" line="323"/>
         <source>&amp;Normal speed</source>
         <translation>正常速度(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="314"/>
+        <location filename="../qml/MainMenuBar.qml" line="329"/>
         <source>&amp;Halve speed</source>
         <translation>速度减半(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="319"/>
+        <location filename="../qml/MainMenuBar.qml" line="334"/>
         <source>&amp;Double speed</source>
         <translation>双倍速度(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="325"/>
+        <location filename="../qml/MainMenuBar.qml" line="340"/>
         <source>Speed &amp;-10%</source>
         <translation>速度&amp;-10%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="330"/>
+        <location filename="../qml/MainMenuBar.qml" line="345"/>
         <source>Speed &amp;+10%</source>
         <translation>速度&amp;+10%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="335"/>
+        <location filename="../qml/MainMenuBar.qml" line="350"/>
         <source>Speed -4%</source>
         <translation>速度-4%(&amp;4)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="336"/>
+        <location filename="../qml/MainMenuBar.qml" line="351"/>
         <source>Speed +4%</source>
         <translation>速度+4%(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="338"/>
+        <location filename="../qml/MainMenuBar.qml" line="353"/>
         <source>Speed -1%</source>
         <translation>速度-1%(&amp;1)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="339"/>
+        <location filename="../qml/MainMenuBar.qml" line="354"/>
         <source>Speed +1%</source>
         <translation>速度+1%(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="342"/>
+        <location filename="../qml/MainMenuBar.qml" line="357"/>
         <source>Pi&amp;tch compensation</source>
         <translation>音高补偿(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="351"/>
+        <location filename="../qml/MainMenuBar.qml" line="366"/>
         <source>&amp;A-B section</source>
         <translation>&amp;A-B 区间</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="355"/>
+        <location filename="../qml/MainMenuBar.qml" line="370"/>
         <source>Set &amp;A marker</source>
         <translation>设置 &amp;A 标记</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="361"/>
+        <location filename="../qml/MainMenuBar.qml" line="376"/>
         <source>Set &amp;B marker</source>
         <translation>设置 &amp;B 标记</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="367"/>
+        <location filename="../qml/MainMenuBar.qml" line="382"/>
         <source>&amp;Clear A-B markers</source>
         <translation>清除 A-B 标记(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="375"/>
+        <location filename="../qml/MainMenuBar.qml" line="390"/>
         <source>&amp;Repeat</source>
         <translation>重复(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="381"/>
+        <location filename="../qml/MainMenuBar.qml" line="396"/>
         <source>&amp;Jump to…</source>
         <translation>跳转到(&amp;J)...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="384"/>
+        <location filename="../qml/MainMenuBar.qml" line="399"/>
         <source>Pre&amp;vious</source>
         <translation>上一个(&amp;V)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="391"/>
+        <location filename="../qml/MainMenuBar.qml" line="406"/>
         <source>&amp;Next</source>
         <translation>下一个(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="400"/>
+        <location filename="../qml/MainMenuBar.qml" line="415"/>
         <source>Ca&amp;st</source>
         <translation>投射到(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="404"/>
+        <location filename="../qml/MainMenuBar.qml" line="419"/>
         <source>&amp;Smartphone/tablet…</source>
         <translation>智能手机/平板电脑(&amp;S)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="412"/>
+        <location filename="../qml/MainMenuBar.qml" line="427"/>
         <source>&amp;Video</source>
         <translation>视频(&amp;V)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="416"/>
-        <location filename="../qml/MainMenuBar.qml" line="607"/>
-        <location filename="../qml/MainMenuBar.qml" line="677"/>
+        <location filename="../qml/MainMenuBar.qml" line="431"/>
+        <location filename="../qml/MainMenuBar.qml" line="624"/>
+        <location filename="../qml/MainMenuBar.qml" line="704"/>
         <source>&amp;Track</source>
         <translation>视轨(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="420"/>
-        <location filename="../qml/MainMenuBar.qml" line="611"/>
-        <location filename="../qml/MainMenuBar.qml" line="776"/>
-        <location filename="../qml/MainMenuBar.qml" line="799"/>
+        <location filename="../qml/MainMenuBar.qml" line="438"/>
+        <location filename="../qml/MainMenuBar.qml" line="637"/>
+        <location filename="../qml/MainMenuBar.qml" line="828"/>
+        <location filename="../qml/MainMenuBar.qml" line="853"/>
         <source>&lt;empty&gt;</source>
         <translation>&lt;空&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="443"/>
+        <location filename="../qml/MainMenuBar.qml" line="460"/>
         <source>&amp;Fullscreen</source>
         <translation>全屏(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="451"/>
+        <location filename="../qml/MainMenuBar.qml" line="468"/>
         <source>Si&amp;ze</source>
         <translation>大小(&amp;Z)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="454"/>
+        <location filename="../qml/MainMenuBar.qml" line="471"/>
         <source>50%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="455"/>
+        <location filename="../qml/MainMenuBar.qml" line="472"/>
         <source>100%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="456"/>
+        <location filename="../qml/MainMenuBar.qml" line="473"/>
         <source>200%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="459"/>
+        <location filename="../qml/MainMenuBar.qml" line="476"/>
         <source>&amp;Zoom and pan</source>
         <translation>缩放和平移(&amp;Z)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="463"/>
+        <location filename="../qml/MainMenuBar.qml" line="480"/>
         <source>&amp;Reset</source>
         <translation>重置(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="468"/>
+        <location filename="../qml/MainMenuBar.qml" line="485"/>
         <source>Zoom &amp;-</source>
         <translation>缩放 &amp;-</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="473"/>
+        <location filename="../qml/MainMenuBar.qml" line="490"/>
         <source>Zoom &amp;+</source>
         <translation>缩放 &amp;+</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="479"/>
+        <location filename="../qml/MainMenuBar.qml" line="496"/>
         <source>Move &amp;left</source>
         <translation>向左移动(&amp;L)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="484"/>
+        <location filename="../qml/MainMenuBar.qml" line="501"/>
         <source>Move &amp;right</source>
         <translation>向右移动(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="489"/>
+        <location filename="../qml/MainMenuBar.qml" line="506"/>
         <source>Move &amp;up</source>
         <translation>向上移动(&amp;U)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="494"/>
+        <location filename="../qml/MainMenuBar.qml" line="511"/>
         <source>Move &amp;down</source>
         <translation>向下移动(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="501"/>
+        <location filename="../qml/MainMenuBar.qml" line="518"/>
         <source>&amp;Aspect ratio</source>
         <translation>宽高比(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="523"/>
+        <location filename="../qml/MainMenuBar.qml" line="540"/>
         <source>&amp;Rotate</source>
         <translation>旋转(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="527"/>
+        <location filename="../qml/MainMenuBar.qml" line="544"/>
         <source>&amp;None</source>
         <translation>无(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="536"/>
+        <location filename="../qml/MainMenuBar.qml" line="553"/>
         <source>&amp;Rotate by 90° clockwise</source>
         <translation>顺时针旋转 90°(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="545"/>
+        <location filename="../qml/MainMenuBar.qml" line="562"/>
         <source>Rotate by 90° &amp;counterclockwise</source>
         <translation>逆时针旋转 90°(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="554"/>
+        <location filename="../qml/MainMenuBar.qml" line="571"/>
         <source>Rotate by &amp;180°</source>
         <translation>旋转 180°(&amp;1)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="564"/>
+        <location filename="../qml/MainMenuBar.qml" line="581"/>
         <source>Fli&amp;p image</source>
         <translation>翻转图像(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="575"/>
+        <location filename="../qml/MainMenuBar.qml" line="592"/>
         <source>Mirr&amp;or image</source>
         <translation>镜像图像(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="587"/>
+        <location filename="../qml/MainMenuBar.qml" line="604"/>
         <source>E&amp;qualizer…</source>
         <translation>均衡器(&amp;Q)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="593"/>
+        <location filename="../qml/MainMenuBar.qml" line="610"/>
         <source>&amp;Screenshot</source>
         <translation>屏幕截图(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="603"/>
+        <location filename="../qml/MainMenuBar.qml" line="620"/>
         <source>&amp;Audio</source>
         <translation>音频(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="635"/>
+        <location filename="../qml/MainMenuBar.qml" line="662"/>
         <source>&amp;Mute</source>
         <translation>静音(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="644"/>
+        <location filename="../qml/MainMenuBar.qml" line="671"/>
         <source>Volume &amp;-</source>
         <translation>音量 &amp;-</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="650"/>
+        <location filename="../qml/MainMenuBar.qml" line="677"/>
         <source>Volume &amp;+</source>
         <translation>音量 &amp;+</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="658"/>
-        <location filename="../qml/MainMenuBar.qml" line="729"/>
+        <location filename="../qml/MainMenuBar.qml" line="685"/>
+        <location filename="../qml/MainMenuBar.qml" line="778"/>
         <source>Delay &amp;-</source>
         <translation>延迟 &amp;-</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="662"/>
+        <location filename="../qml/MainMenuBar.qml" line="689"/>
         <source>D&amp;elay +</source>
         <translation>延迟+(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="666"/>
+        <location filename="../qml/MainMenuBar.qml" line="693"/>
         <source>Set dela&amp;y…</source>
         <translation>设置延迟(&amp;Y)...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="673"/>
+        <location filename="../qml/MainMenuBar.qml" line="700"/>
         <source>&amp;Subtitles</source>
         <translation>字幕(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="681"/>
+        <location filename="../qml/MainMenuBar.qml" line="712"/>
         <source>&amp;Off</source>
         <translation>关闭(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="712"/>
+        <location filename="../qml/MainMenuBar.qml" line="761"/>
         <source>&amp;Load subtitles…</source>
         <translation>加载字幕(&amp;L)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="718"/>
+        <location filename="../qml/MainMenuBar.qml" line="767"/>
         <source>&amp;Find subtitles at OpenSubtitles…</source>
         <translation>在 OpenSubtitles 查找字幕(&amp;F)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="723"/>
+        <location filename="../qml/MainMenuBar.qml" line="772"/>
         <source>U&amp;nload subtitles</source>
         <translation>卸载字幕(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="734"/>
+        <location filename="../qml/MainMenuBar.qml" line="783"/>
         <source>Delay &amp;+</source>
         <translation>延迟 &amp;+</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="739"/>
+        <location filename="../qml/MainMenuBar.qml" line="788"/>
         <source>Se&amp;t delay…</source>
         <translation>设置延迟(&amp;T)...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="747"/>
+        <location filename="../qml/MainMenuBar.qml" line="796"/>
         <source>&amp;Browse</source>
         <translation>浏览(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="750"/>
+        <location filename="../qml/MainMenuBar.qml" line="799"/>
         <source>&amp;DVD menu</source>
         <translation>DVD 菜单(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="759"/>
+        <location filename="../qml/MainMenuBar.qml" line="808"/>
         <source>&amp;Title</source>
         <translation>标题(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="784"/>
+        <location filename="../qml/MainMenuBar.qml" line="835"/>
         <source>&amp;Chapters</source>
         <translation>章节(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="807"/>
+        <location filename="../qml/MainMenuBar.qml" line="860"/>
         <source>&amp;Bookmarks</source>
         <translation>书签(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="817"/>
+        <location filename="../qml/MainMenuBar.qml" line="870"/>
         <source>&amp;Add new bookmark</source>
         <translation>添加新书签(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="824"/>
+        <location filename="../qml/MainMenuBar.qml" line="877"/>
         <source>&amp;Edit bookmarks…</source>
         <translation>编辑书签(&amp;E)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="848"/>
+        <location filename="../qml/MainMenuBar.qml" line="901"/>
         <source>Vie&amp;w</source>
         <translation>查看(&amp;W)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="851"/>
+        <location filename="../qml/MainMenuBar.qml" line="904"/>
         <source>&amp;Information and properties…</source>
         <translation>信息和属性(&amp;I)...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="858"/>
+        <location filename="../qml/MainMenuBar.qml" line="911"/>
         <source>&amp;Playlist</source>
         <translation>播放列表(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="866"/>
+        <location filename="../qml/MainMenuBar.qml" line="919"/>
         <source>&amp;OSD</source>
         <translation>屏幕显示(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="868"/>
+        <location filename="../qml/MainMenuBar.qml" line="921"/>
         <source>Subtitles only</source>
         <translation>仅字幕(&amp;Y)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="869"/>
+        <location filename="../qml/MainMenuBar.qml" line="922"/>
         <source>Volume + seek</source>
         <translation>音量 + 定位</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="870"/>
+        <location filename="../qml/MainMenuBar.qml" line="923"/>
         <source>Volume + seek + timer</source>
         <translation>音量 + 定位 + 时间</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="876"/>
+        <location filename="../qml/MainMenuBar.qml" line="929"/>
         <source>Op&amp;tions</source>
         <translation>选项(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="879"/>
+        <location filename="../qml/MainMenuBar.qml" line="932"/>
         <source>&amp;Preferences…</source>
         <translation>首选项(&amp;P)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="886"/>
+        <location filename="../qml/MainMenuBar.qml" line="939"/>
         <source>S&amp;how icon in system tray</source>
         <translation>显示托盘图标(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="892"/>
+        <location filename="../qml/MainMenuBar.qml" line="945"/>
         <source>&amp;Toolbars</source>
         <translation>工具栏(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="895"/>
+        <location filename="../qml/MainMenuBar.qml" line="948"/>
         <source>&amp;Toolbar</source>
         <translation>工具栏(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="901"/>
+        <location filename="../qml/MainMenuBar.qml" line="954"/>
         <source>&amp;Control bar</source>
         <translation>控制条</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="908"/>
+        <location filename="../qml/MainMenuBar.qml" line="961"/>
         <source>Edit main &amp;toolbar…</source>
         <translation>编辑主工具栏(&amp;T)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="912"/>
+        <location filename="../qml/MainMenuBar.qml" line="965"/>
         <source>Edit control &amp;bar…</source>
         <translation>编辑控制栏(&amp;B)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="917"/>
+        <location filename="../qml/MainMenuBar.qml" line="970"/>
         <source>&amp;Status bar</source>
         <translation>状态栏(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="920"/>
+        <location filename="../qml/MainMenuBar.qml" line="973"/>
         <source>&amp;Show status bar</source>
         <translation>显示状态栏(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="927"/>
+        <location filename="../qml/MainMenuBar.qml" line="980"/>
         <source>&amp;Video info</source>
         <translation>视频信息(&amp;V)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="934"/>
+        <location filename="../qml/MainMenuBar.qml" line="987"/>
         <source>&amp;Audio info</source>
         <translation>音频信息(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="941"/>
+        <location filename="../qml/MainMenuBar.qml" line="994"/>
         <source>F&amp;ormat info</source>
         <translation>格式信息(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="948"/>
+        <location filename="../qml/MainMenuBar.qml" line="1001"/>
         <source>&amp;Bitrate info</source>
         <translation>比特率信息(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="955"/>
+        <location filename="../qml/MainMenuBar.qml" line="1008"/>
         <source>&amp;Frame counter</source>
         <translation>帧计数器(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="963"/>
+        <location filename="../qml/MainMenuBar.qml" line="1016"/>
         <source>Display &amp;total time</source>
         <translation>展示 &amp;完整时间</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="969"/>
+        <location filename="../qml/MainMenuBar.qml" line="1022"/>
         <source>Display &amp;remaining time</source>
         <translation>展示 &amp;剩余时间</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="976"/>
+        <location filename="../qml/MainMenuBar.qml" line="1029"/>
         <source>Show the current time with &amp;milliseconds</source>
         <translation>显示当前时间附毫秒(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="986"/>
+        <location filename="../qml/MainMenuBar.qml" line="1039"/>
         <source>&amp;Help</source>
         <translation>帮助(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="989"/>
+        <location filename="../qml/MainMenuBar.qml" line="1042"/>
         <source>&amp;Contents</source>
         <translation>内容(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="996"/>
+        <location filename="../qml/MainMenuBar.qml" line="1049"/>
         <source>&amp;Check for updates</source>
         <translation>检查更新(&amp;U)</translation>
     </message>
@@ -1697,7 +1697,7 @@
         <translation type="vanished">安装/更新 YouTube 支持(&amp;Y)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1002"/>
+        <location filename="../qml/MainMenuBar.qml" line="1055"/>
         <source>&amp;About Vivace</source>
         <translation>关于 Vivace(&amp;A)</translation>
     </message>
@@ -1753,12 +1753,12 @@
         <translation>音频编解码器(&amp;U)</translation>
     </message>
     <message>
-        <location filename="../qml/MediaInfoDialog.qml" line="149"/>
+        <location filename="../qml/MediaInfoDialog.qml" line="154"/>
         <source>No media loaded</source>
         <translation>未加载媒体</translation>
     </message>
     <message>
-        <location filename="../qml/MediaInfoDialog.qml" line="177"/>
+        <location filename="../qml/MediaInfoDialog.qml" line="182"/>
         <source>Close</source>
         <translation>关闭</translation>
     </message>
@@ -1871,267 +1871,270 @@
 <context>
     <name>PlayerController</name>
     <message>
-        <location filename="../src/playercontroller.cpp" line="81"/>
+        <location filename="../src/playercontroller.cpp" line="181"/>
+        <location filename="../src/playercontroller.cpp" line="801"/>
+        <location filename="../src/playercontroller.cpp" line="817"/>
+        <location filename="../src/playercontroller.cpp" line="1891"/>
         <source>Track %1</source>
         <translation>轨道 %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="575"/>
+        <location filename="../src/playercontroller.cpp" line="719"/>
         <source>A/V delay: %1 ms</source>
         <translation>音视频延迟：%1 毫秒</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="965"/>
+        <location filename="../src/playercontroller.cpp" line="1194"/>
         <source>DVD title %1 could not be assembled</source>
         <translation>无法组合 DVD 标题 %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="971"/>
+        <location filename="../src/playercontroller.cpp" line="1200"/>
         <source>DVD title %1 could not be opened</source>
         <translation>无法打开 DVD 标题 %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1034"/>
+        <location filename="../src/playercontroller.cpp" line="1359"/>
         <source>Title %1 (%2)</source>
         <translation>标题 %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1050"/>
+        <location filename="../src/playercontroller.cpp" line="1375"/>
         <source>Chapter %1 (%2)</source>
         <translation>章节 %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1673"/>
+        <location filename="../src/playercontroller.cpp" line="2359"/>
         <source>Could not open the stream</source>
         <translation>无法打开流</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1732"/>
+        <location filename="../src/playercontroller.cpp" line="2418"/>
         <source>System default</source>
         <translation>系统默认</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1897"/>
+        <location filename="../src/playercontroller.cpp" line="2583"/>
         <source>A marker set to %1</source>
         <translation>A 标记已设置为 %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1908"/>
+        <location filename="../src/playercontroller.cpp" line="2594"/>
         <source>B marker set to %1</source>
         <translation>B 标记已设置为 %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1918"/>
+        <location filename="../src/playercontroller.cpp" line="2604"/>
         <source>A-B markers cleared</source>
         <translation>A-B 标记已清除</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2032"/>
+        <location filename="../src/playercontroller.cpp" line="2718"/>
         <source>Could not load subtitles from %1</source>
         <translation>无法从 %1 加载字幕</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2044"/>
+        <location filename="../src/playercontroller.cpp" line="2735"/>
         <source>Subtitles loaded: %1</source>
         <translation>字幕已加载：%1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2055"/>
+        <location filename="../src/playercontroller.cpp" line="2746"/>
         <source>Subtitles unloaded</source>
         <translation>字幕已卸载</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2065"/>
+        <location filename="../src/playercontroller.cpp" line="2756"/>
         <source>Subtitle delay: %1 ms</source>
         <translation>字幕延迟: %1毫秒</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2184"/>
+        <location filename="../src/playercontroller.cpp" line="2886"/>
         <source>General</source>
         <translation>常规</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2187"/>
+        <location filename="../src/playercontroller.cpp" line="2889"/>
         <source>File</source>
         <translation>文件</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2190"/>
+        <location filename="../src/playercontroller.cpp" line="2892"/>
         <source>Size</source>
         <translation>大小</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2190"/>
+        <location filename="../src/playercontroller.cpp" line="2892"/>
         <source>%1 KB (%2 MB)</source>
         <translation>%1 KB (%2 MB)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2194"/>
-        <location filename="../src/playercontroller.cpp" line="2220"/>
+        <location filename="../src/playercontroller.cpp" line="2896"/>
+        <location filename="../src/playercontroller.cpp" line="2922"/>
         <source>URL</source>
         <translation>URL</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2197"/>
+        <location filename="../src/playercontroller.cpp" line="2899"/>
         <source>Length</source>
         <translation>时长</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2198"/>
+        <location filename="../src/playercontroller.cpp" line="2900"/>
         <source>Demuxer</source>
         <translation>解复用器</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2203"/>
-        <location filename="../src/playercontroller.cpp" line="2253"/>
-        <location filename="../src/playercontroller.cpp" line="2272"/>
-        <location filename="../src/playercontroller.cpp" line="2281"/>
+        <location filename="../src/playercontroller.cpp" line="2905"/>
+        <location filename="../src/playercontroller.cpp" line="2955"/>
+        <location filename="../src/playercontroller.cpp" line="2974"/>
+        <location filename="../src/playercontroller.cpp" line="2983"/>
         <source>Name</source>
         <translation>名称</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2204"/>
+        <location filename="../src/playercontroller.cpp" line="2906"/>
         <source>Artist</source>
         <translation>艺术家</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2206"/>
+        <location filename="../src/playercontroller.cpp" line="2908"/>
         <source>Album artist</source>
         <translation>专辑艺术家</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2208"/>
+        <location filename="../src/playercontroller.cpp" line="2910"/>
         <source>Author</source>
         <translation>作者</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2209"/>
+        <location filename="../src/playercontroller.cpp" line="2911"/>
         <source>Composer</source>
         <translation>作曲家</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2210"/>
+        <location filename="../src/playercontroller.cpp" line="2912"/>
         <source>Album</source>
         <translation>专辑</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2211"/>
+        <location filename="../src/playercontroller.cpp" line="2913"/>
         <source>Genre</source>
         <translation>流派</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2212"/>
+        <location filename="../src/playercontroller.cpp" line="2914"/>
         <source>Date</source>
         <translation>日期</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2213"/>
+        <location filename="../src/playercontroller.cpp" line="2915"/>
         <source>Track</source>
         <translation>轨道</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2214"/>
+        <location filename="../src/playercontroller.cpp" line="2916"/>
         <source>Copyright</source>
         <translation>版权</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2215"/>
+        <location filename="../src/playercontroller.cpp" line="2917"/>
         <source>Comment</source>
         <translation>注释</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2216"/>
+        <location filename="../src/playercontroller.cpp" line="2918"/>
         <source>Description</source>
         <translation>描述</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2218"/>
+        <location filename="../src/playercontroller.cpp" line="2920"/>
         <source>Publisher</source>
         <translation>发行者</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2219"/>
-        <location filename="../src/playercontroller.cpp" line="2253"/>
-        <location filename="../src/playercontroller.cpp" line="2272"/>
-        <location filename="../src/playercontroller.cpp" line="2281"/>
+        <location filename="../src/playercontroller.cpp" line="2921"/>
+        <location filename="../src/playercontroller.cpp" line="2955"/>
+        <location filename="../src/playercontroller.cpp" line="2974"/>
+        <location filename="../src/playercontroller.cpp" line="2983"/>
         <source>Language</source>
         <translation>语言</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2222"/>
+        <location filename="../src/playercontroller.cpp" line="2924"/>
         <source>Clip info</source>
         <translation>剪辑信息</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2226"/>
+        <location filename="../src/playercontroller.cpp" line="2928"/>
         <source>Initial Video Stream</source>
         <translation>初始视频流</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2229"/>
+        <location filename="../src/playercontroller.cpp" line="2931"/>
         <source>Resolution</source>
         <translation>分辨率</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2232"/>
+        <location filename="../src/playercontroller.cpp" line="2934"/>
         <source>Aspect ratio</source>
         <translation>长宽比</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2236"/>
-        <location filename="../src/playercontroller.cpp" line="2261"/>
+        <location filename="../src/playercontroller.cpp" line="2938"/>
+        <location filename="../src/playercontroller.cpp" line="2963"/>
         <source>Format</source>
         <translation>格式</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2239"/>
-        <location filename="../src/playercontroller.cpp" line="2264"/>
+        <location filename="../src/playercontroller.cpp" line="2941"/>
+        <location filename="../src/playercontroller.cpp" line="2966"/>
         <source>Bitrate</source>
         <translation>比特率</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2239"/>
-        <location filename="../src/playercontroller.cpp" line="2264"/>
+        <location filename="../src/playercontroller.cpp" line="2941"/>
+        <location filename="../src/playercontroller.cpp" line="2966"/>
         <source>%1 kbps</source>
         <translation>%1kbps</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2242"/>
+        <location filename="../src/playercontroller.cpp" line="2944"/>
         <source>Frames per second</source>
         <translation>每秒帧数</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2245"/>
+        <location filename="../src/playercontroller.cpp" line="2947"/>
         <source>HDR</source>
         <translation>HDR</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2245"/>
+        <location filename="../src/playercontroller.cpp" line="2947"/>
         <source>yes</source>
         <translation>是</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2252"/>
+        <location filename="../src/playercontroller.cpp" line="2954"/>
         <source>Video Streams</source>
         <translation>视频流</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2260"/>
+        <location filename="../src/playercontroller.cpp" line="2962"/>
         <source>Initial Audio Stream</source>
         <translation>初始音频流</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2271"/>
+        <location filename="../src/playercontroller.cpp" line="2973"/>
         <source>Audio Streams</source>
         <translation>音频流</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2280"/>
+        <location filename="../src/playercontroller.cpp" line="2982"/>
         <source>Subtitles</source>
         <translation>字幕</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2529"/>
+        <location filename="../src/playercontroller.cpp" line="3255"/>
         <source>Chapter %1</source>
         <translation>章节 %1</translation>
     </message>
@@ -2184,113 +2187,113 @@
         <translation>隐藏名称不匹配的条目；不会将它们从播放列表中移除。</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="408"/>
+        <location filename="../qml/PlaylistEditor.qml" line="417"/>
         <source>Playlist is empty</source>
         <translation>播放列表为空</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="420"/>
+        <location filename="../qml/PlaylistEditor.qml" line="429"/>
         <source>Load playlist…</source>
         <translation>加载播放列表…</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="425"/>
+        <location filename="../qml/PlaylistEditor.qml" line="434"/>
         <source>Save playlist…</source>
         <translation>保存播放列表…</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="434"/>
+        <location filename="../qml/PlaylistEditor.qml" line="443"/>
         <source>Add files…</source>
         <translation>添加文件…</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="439"/>
+        <location filename="../qml/PlaylistEditor.qml" line="448"/>
         <source>Add URL…</source>
         <translation>添加 URL…</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="447"/>
+        <location filename="../qml/PlaylistEditor.qml" line="456"/>
         <source>Remove selected</source>
         <translation>删除选定(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="453"/>
+        <location filename="../qml/PlaylistEditor.qml" line="462"/>
         <source>Remove all</source>
         <translation>删除全部(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="462"/>
+        <location filename="../qml/PlaylistEditor.qml" line="471"/>
         <source>Play selected</source>
         <translation>播放所选</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="468"/>
+        <location filename="../qml/PlaylistEditor.qml" line="477"/>
         <source>Previous</source>
         <translation>上一个(&amp;V)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="474"/>
+        <location filename="../qml/PlaylistEditor.qml" line="483"/>
         <source>Next</source>
         <translation>下一个(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="483"/>
+        <location filename="../qml/PlaylistEditor.qml" line="492"/>
         <source>Repeat playlist</source>
         <translation>重复播放列表</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="490"/>
+        <location filename="../qml/PlaylistEditor.qml" line="499"/>
         <source>Shuffle</source>
         <translation>乱序(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="500"/>
+        <location filename="../qml/PlaylistEditor.qml" line="509"/>
         <source>Move up</source>
         <translation>向上移动(&amp;U)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="510"/>
+        <location filename="../qml/PlaylistEditor.qml" line="519"/>
         <source>Move down</source>
         <translation>向下移动(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="526"/>
+        <location filename="../qml/PlaylistEditor.qml" line="536"/>
         <source>Media files (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="527"/>
-        <location filename="../qml/PlaylistEditor.qml" line="542"/>
+        <location filename="../qml/PlaylistEditor.qml" line="537"/>
+        <location filename="../qml/PlaylistEditor.qml" line="553"/>
         <source>All files (*)</source>
         <translation>所有文件 (*)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="542"/>
+        <location filename="../qml/PlaylistEditor.qml" line="553"/>
         <source>Playlists (*.m3u *.m3u8)</source>
         <translation>播放列表 (*.m3u *.m3u8)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="553"/>
+        <location filename="../qml/PlaylistEditor.qml" line="565"/>
         <source>Playlists (*.m3u8 *.m3u)</source>
         <translation>播放列表 (*.m3u8 *.m3u)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="559"/>
+        <location filename="../qml/PlaylistEditor.qml" line="571"/>
         <source>Add URL</source>
         <translation>添加 URL</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="600"/>
+        <location filename="../qml/PlaylistEditor.qml" line="612"/>
         <source>https://…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="610"/>
+        <location filename="../qml/PlaylistEditor.qml" line="622"/>
         <source>OK</source>
         <translation>确定(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="615"/>
+        <location filename="../qml/PlaylistEditor.qml" line="627"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
@@ -2747,119 +2750,119 @@
         <translation>全部重置</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="103"/>
+        <location filename="../qml/PrefInputPage.qml" line="131"/>
         <source>(none)</source>
         <translation>（无）</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="111"/>
+        <location filename="../qml/PrefInputPage.qml" line="139"/>
         <source>Reset to default</source>
         <translation>重置为默认</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="123"/>
+        <location filename="../qml/PrefInputPage.qml" line="151"/>
         <source>Mouse</source>
         <translation>鼠标</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="131"/>
+        <location filename="../qml/PrefInputPage.qml" line="159"/>
         <source>Left click function:</source>
         <translation>左键单击功能：</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="134"/>
-        <location filename="../qml/PrefInputPage.qml" line="144"/>
-        <location filename="../qml/PrefInputPage.qml" line="153"/>
-        <location filename="../qml/PrefInputPage.qml" line="166"/>
+        <location filename="../qml/PrefInputPage.qml" line="162"/>
+        <location filename="../qml/PrefInputPage.qml" line="172"/>
+        <location filename="../qml/PrefInputPage.qml" line="181"/>
+        <location filename="../qml/PrefInputPage.qml" line="194"/>
         <source>No function</source>
         <translation>无功能</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="134"/>
-        <location filename="../qml/PrefInputPage.qml" line="143"/>
-        <location filename="../qml/PrefInputPage.qml" line="152"/>
+        <location filename="../qml/PrefInputPage.qml" line="162"/>
+        <location filename="../qml/PrefInputPage.qml" line="171"/>
+        <location filename="../qml/PrefInputPage.qml" line="180"/>
         <source>Play / Pause</source>
         <translation>播放/暂停</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="135"/>
-        <location filename="../qml/PrefInputPage.qml" line="143"/>
-        <location filename="../qml/PrefInputPage.qml" line="153"/>
+        <location filename="../qml/PrefInputPage.qml" line="163"/>
+        <location filename="../qml/PrefInputPage.qml" line="171"/>
+        <location filename="../qml/PrefInputPage.qml" line="181"/>
         <source>Toggle fullscreen</source>
         <translation>切换全屏</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="140"/>
+        <location filename="../qml/PrefInputPage.qml" line="168"/>
         <source>Double click function:</source>
         <translation>双击功能：</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="149"/>
+        <location filename="../qml/PrefInputPage.qml" line="177"/>
         <source>Middle click function:</source>
         <translation>中键单击功能：</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="152"/>
+        <location filename="../qml/PrefInputPage.qml" line="180"/>
         <source>Mute</source>
         <translation>静音</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="160"/>
+        <location filename="../qml/PrefInputPage.qml" line="188"/>
         <source>Wheel function:</source>
         <translation>滚轮功能(&amp;W):</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="161"/>
+        <location filename="../qml/PrefInputPage.qml" line="189"/>
         <source>Chooses what turning the mouse wheel over the video does: seek through the file or change the volume.</source>
         <translation>选择在视频上滚动鼠标滚轮的操作：在文件中定位或更改音量。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="165"/>
+        <location filename="../qml/PrefInputPage.qml" line="193"/>
         <source>Media seeking</source>
         <translation>媒体定位</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="165"/>
+        <location filename="../qml/PrefInputPage.qml" line="193"/>
         <source>Volume control</source>
         <translation>音量控制</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="182"/>
+        <location filename="../qml/PrefInputPage.qml" line="210"/>
         <source>Set shortcut</source>
         <translation>设置快捷键</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="235"/>
+        <location filename="../qml/PrefInputPage.qml" line="263"/>
         <source>Press the new shortcut for “%1”.</source>
         <translation>按下“%1”的新快捷键。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="243"/>
+        <location filename="../qml/PrefInputPage.qml" line="271"/>
         <source>…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="250"/>
+        <location filename="../qml/PrefInputPage.qml" line="278"/>
         <source>Already used by “%1”. Assigning will clear it there.</source>
         <translation>已被“%1”使用。分配后将从那里清除。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="259"/>
+        <location filename="../qml/PrefInputPage.qml" line="287"/>
         <source>Clear</source>
         <translation>清除</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="260"/>
+        <location filename="../qml/PrefInputPage.qml" line="288"/>
         <source>Leave this action without a shortcut</source>
         <translation>让此操作不设快捷键</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="269"/>
+        <location filename="../qml/PrefInputPage.qml" line="297"/>
         <source>Assign</source>
         <translation>分配</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="280"/>
+        <location filename="../qml/PrefInputPage.qml" line="308"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
@@ -3910,81 +3913,104 @@
     <name>PrefSubtitlesPage</name>
     <message>
         <location filename="../qml/PrefSubtitlesPage.qml" line="17"/>
-        <source>&lt;h1&gt;Subtitles&lt;/h1&gt;&lt;p&gt;Autoload picks up a subtitle file sitting next to the video. The font, size and vertical position apply to the external subtitle renderer (SRT/VTT/basic ASS) planned for a later phase.&lt;/p&gt;&lt;p&gt;Subtitles embedded in the media are drawn by the playback backend and cannot be restyled here.&lt;/p&gt;</source>
+        <source>&lt;h1&gt;Subtitles&lt;/h1&gt;&lt;p&gt;Autoload picks up a subtitle file sitting next to the video. The font, size and vertical position apply to the external subtitle renderer (SRT/VTT/basic ASS) planned for a later phase.&lt;/p&gt;&lt;p&gt;Subtitles embedded in the media are drawn by the playback backend and cannot be restyled here.&lt;/p&gt;&lt;p&gt;Bitmap-based subtitles (DVD subpicture, PGS or DVB tracks) are rendered as images rather than text -- whether they come from a DVD disc&apos;s own menu system or an embedded subtitle track in an ordinary video file -- so a slight smoothing blur can be applied (or turned off) to soften their low-resolution edges.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="27"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="32"/>
         <source>Autoload</source>
         <translation>自动加载字幕文件</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="36"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="41"/>
         <source>Autoload subtitle files next to the video</source>
         <translation>自动加载视频旁边的字幕文件</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="41"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="46"/>
         <source>On opening a video, load a subtitle file (SRT/VTT/basic ASS) sharing its name in the same folder.</source>
         <translation>打开视频时，加载同一文件夹中同名的字幕文件（SRT/VTT/基本 ASS）。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="49"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="54"/>
         <source>Autoload rule:</source>
         <translation>自动加载规则：</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="52"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="57"/>
         <source>Same name as the video</source>
         <translation>与视频同名</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="60"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="65"/>
         <source>Font and position</source>
         <translation>字体和位置</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="68"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="73"/>
         <source>Font:</source>
         <translation>字体：</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="71"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="76"/>
         <source>Default application font</source>
         <translation>默认应用程序字体</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="77"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="82"/>
         <source>Size:</source>
         <translation>大小(&amp;Z):</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="83"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="88"/>
         <source>px</source>
         <translation>像素</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="85"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="90"/>
         <source>Vertical position:</source>
         <translation>垂直位置：</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="91"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="96"/>
         <source>% from the top</source>
         <translation>距顶部 %</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="98"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="103"/>
         <source>Encoding:</source>
         <translation>编码：</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="99"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="104"/>
         <source>UTF-8 (autodetected)</source>
         <translation>UTF-8（自动检测）</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="106"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="109"/>
+        <source>Bitmap subtitles</source>
+        <translation>位图字幕</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="121"/>
+        <source>Bitmap-based subtitle images (DVD subpicture, PGS or DVB tracks) are low-resolution and can look jagged once scaled up to a modern window size -- whether they come from a DVD disc&apos;s own menu system or an embedded subtitle track in an ordinary video file. This softens the edges with a slight blur. 0 turns it off (the raw bitmap); higher values blur more.</source>
+        <translation>位图字幕图像（DVD 子图、PGS 或 DVB 轨道）分辨率较低，放大到现代窗口尺寸后可能显得锯齿明显——无论它们来自 DVD 光盘自身的菜单系统，还是嵌入在普通视频文件中的字幕轨道。此选项会用轻微的模糊来柔化边缘。0 表示关闭（显示原始位图）；数值越大模糊程度越强。</translation>
+    </message>
+    <message>
+        <source>DVD subtitles</source>
+        <translation type="vanished">DVD 字幕</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="114"/>
+        <source>Smoothing:</source>
+        <translation>平滑处理：</translation>
+    </message>
+    <message>
+        <source>A disc&apos;s own subtitle images are low-resolution bitmaps that can look jagged once scaled up to a modern window size. This softens the edges with a slight blur. 0 turns it off (the raw disc bitmap); higher values blur more.</source>
+        <translation type="vanished">光盘自带的字幕图像是低分辨率位图，放大到现代窗口尺寸后可能显得锯齿明显。此选项会用轻微的模糊来柔化边缘。0 表示关闭（显示光盘原始位图）；数值越大模糊程度越强。</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="138"/>
         <source>Font, size and position apply to Vivace&apos;s external subtitle renderer (SRT/VTT/basic ASS), loaded via Subtitles ▸ Load subtitles… or autoloaded next to the video. Subtitles embedded in the media are rendered by the playback backend and cannot be styled.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4683,62 +4709,62 @@
 <context>
     <name>YoutubeResolver</name>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="320"/>
+        <location filename="../src/youtuberesolver.cpp" line="321"/>
         <source>Could not create the download cache folder.</source>
         <translation>无法创建下载缓存文件夹。</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="334"/>
+        <location filename="../src/youtuberesolver.cpp" line="335"/>
         <source>Could not determine the video id to download.</source>
         <translation>无法确定要下载的视频 ID。</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="440"/>
+        <location filename="../src/youtuberesolver.cpp" line="451"/>
         <source>Could not run yt-dlp (&quot;%1&quot;). Check the path in Preferences &gt; Network.</source>
         <translation>无法运行 yt-dlp（&quot;%1&quot;）。请在首选项 &gt; 网络中检查路径。</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="462"/>
+        <location filename="../src/youtuberesolver.cpp" line="473"/>
         <source>yt-dlp did not finish normally.</source>
         <translation>yt-dlp 未正常结束。</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="469"/>
+        <location filename="../src/youtuberesolver.cpp" line="480"/>
         <source>yt-dlp exited with code %1.</source>
         <translation>yt-dlp 以代码 %1 退出。</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="484"/>
+        <location filename="../src/youtuberesolver.cpp" line="495"/>
         <source>yt-dlp returned no playable stream.</source>
         <translation>yt-dlp 未返回可播放的流。</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="506"/>
+        <location filename="../src/youtuberesolver.cpp" line="517"/>
         <source>The download did not finish normally.</source>
         <translation>下载未正常完成。</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="509"/>
+        <location filename="../src/youtuberesolver.cpp" line="520"/>
         <source>yt-dlp produced no file (exit code %1). If this is an HD video, check the ffmpeg and Deno paths.</source>
         <translation>yt-dlp 未生成任何文件（退出代码 %1）。如果这是高清视频，请检查 ffmpeg 和 Deno 的路径。</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="764"/>
+        <location filename="../src/youtuberesolver.cpp" line="769"/>
         <source>Could not create the destination folder</source>
         <translation>无法创建目标文件夹</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="780"/>
+        <location filename="../src/youtuberesolver.cpp" line="785"/>
         <source>File no longer exists</source>
         <translation>文件已不存在</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="802"/>
+        <location filename="../src/youtuberesolver.cpp" line="807"/>
         <source>Could not move the file</source>
         <translation>无法移动文件</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="803"/>
+        <location filename="../src/youtuberesolver.cpp" line="808"/>
         <source>Could not copy the file</source>
         <translation>无法复制文件</translation>
     </message>
@@ -4747,12 +4773,12 @@
         <translation type="vanished">yt-dlp 未生成文件（退出代码 %1）。如果这是高清视频，请检查 ffmpeg 位置。</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="923"/>
+        <location filename="../src/youtuberesolver.cpp" line="929"/>
         <source>Could not write %1.</source>
         <translation>无法写入 %1。</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="929"/>
+        <location filename="../src/youtuberesolver.cpp" line="935"/>
         <source>Could not save %1.</source>
         <translation>无法保存 %1。</translation>
     </message>

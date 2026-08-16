@@ -196,3 +196,28 @@ défaut.
   Vivace — le champ **Chemin de Deno :** existe précisément pour cette
   raison et ne nécessite aucune configuration supplémentaire une fois Deno
   lui-même installé et accessible.
+
+## Lissage des sous-titres bitmap
+
+*Préférences ▸ Sous-titres ▸ Sous-titres bitmap* propose un réglage
+**Lissage :** (0–3, valeur par défaut 1) pour les sous-titres rendus
+sous forme d'images plutôt que de texte — pistes de sous-titrage DVD,
+PGS et DVB. Cela couvre à la fois les sous-titres propres à un vrai
+disque DVD et une piste de sous-titres intégrée du même type dans un
+fichier vidéo ordinaire (par exemple un fichier .mp4 avec une piste au
+codec `dvd_subtitle`). Ces formats sont des images bitmap pré-rendues,
+gravées à la résolution native en définition standard (SD) lors de la
+création de la source — leurs contours peuvent paraître crénelés une
+fois agrandis à la taille d'une fenêtre moderne. Vivace peut appliquer
+un léger flou pour adoucir ces contours :
+
+- **0** — désactivé ; affiche le bitmap de sous-titres original tel
+  quel.
+- **1** (valeur par défaut) — adoucit les contours les plus marqués tout
+  en conservant une luminosité quasi intacte du texte.
+- **2** / **3** — flou progressivement plus marqué.
+
+Ce réglage n'affecte que les sous-titres bitmap — il n'a aucun effet
+sur le moteur de rendu externe de sous-titres de Vivace (SRT/VTT/ASS)
+ni sur les pistes de sous-titres textuelles ordinaires, qui empruntent
+toutes deux des chemins de rendu différents.

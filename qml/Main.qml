@@ -285,6 +285,11 @@ ApplicationWindow {
     }
     Binding {
         target: playerController
+        property: "dvdSubtitleSmoothing"
+        value: Settings.dvdSubtitleSmoothing
+    }
+    Binding {
+        target: playerController
         property: "sessionPlaylistEnabled"
         value: Settings.restorePlaylist
     }

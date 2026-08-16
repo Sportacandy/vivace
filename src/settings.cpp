@@ -122,6 +122,7 @@ constexpr auto subtitlesAutoload = "subtitles/autoload";
 constexpr auto subFontFamily = "subtitles/fontFamily";
 constexpr auto subFontSize = "subtitles/fontSize";
 constexpr auto subPosition = "subtitles/position";
+constexpr auto dvdSubtitleSmoothing = "subtitles/dvdSmoothing";
 constexpr auto playFilesFromStart = "playlist/playFromStart";
 constexpr auto uiFontFamily = "ui/fontFamily";
 constexpr auto uiFontSize = "ui/fontSize";
@@ -360,6 +361,8 @@ Settings::Settings(QObject *parent)
       m_subFontFamily(m_store.value(Keys::subFontFamily).toString()),
       m_subFontSize(qBound(10, m_store.value(Keys::subFontSize, 28).toInt(), 80)),
       m_subPosition(qBound(0, m_store.value(Keys::subPosition, 95).toInt(), 100)),
+      m_dvdSubtitleSmoothing(
+              qBound(0, m_store.value(Keys::dvdSubtitleSmoothing, 1).toInt(), 3)),
       m_playFilesFromStart(
               m_store.value(Keys::playFilesFromStart, false).toBool()),
       m_uiFontFamily(m_store.value(Keys::uiFontFamily).toString()),
@@ -1796,6 +1799,16 @@ void Settings::setSubPosition(int percentFromTop)
     m_subPosition = percentFromTop;
     m_store.setValue(Keys::subPosition, percentFromTop);
     emit subPositionChanged();
+}
+
+void Settings::setDvdSubtitleSmoothing(int radius)
+{
+    radius = qBound(0, radius, 3);
+    if (radius == m_dvdSubtitleSmoothing)
+        return;
+    m_dvdSubtitleSmoothing = radius;
+    m_store.setValue(Keys::dvdSubtitleSmoothing, radius);
+    emit dvdSubtitleSmoothingChanged();
 }
 
 void Settings::setPlayFilesFromStart(bool fromStart)

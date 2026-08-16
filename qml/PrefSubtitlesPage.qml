@@ -20,7 +20,12 @@ ColumnLayout {
         + "The font, size and vertical position apply to the external "
         + "subtitle renderer (SRT/VTT/basic ASS) planned for a later phase.</p>"
         + "<p>Subtitles embedded in the media are drawn by the playback "
-        + "backend and cannot be restyled here.</p>")
+        + "backend and cannot be restyled here.</p>"
+        + "<p>Bitmap-based subtitles (DVD subpicture, PGS or DVB tracks) are "
+        + "rendered as images rather than text -- whether they come from a "
+        + "DVD disc's own menu system or an embedded subtitle track in an "
+        + "ordinary video file -- so a slight smoothing blur can be applied "
+        + "(or turned off) to soften their low-resolution edges.</p>")
 
     GroupBox {
         Layout.fillWidth: true
@@ -97,6 +102,33 @@ ColumnLayout {
         enabled: false
         Label { text: qsTr("Encoding:") }
         ComboBox { Layout.fillWidth: true; model: [qsTr("UTF-8 (autodetected)")] }
+    }
+
+    GroupBox {
+        Layout.fillWidth: true
+        title: qsTr("Bitmap subtitles")
+
+        RowLayout {
+            anchors.fill: parent
+            spacing: 8
+            Label { text: qsTr("Smoothing:") }
+            SpinBox {
+                from: 0; to: 3
+                value: Settings.dvdSubtitleSmoothing
+                onValueModified: Settings.dvdSubtitleSmoothing = value
+            }
+            HelpMark {
+                text: qsTr("Bitmap-based subtitle images (DVD subpicture, PGS "
+                           + "or DVB tracks) are low-resolution and can look "
+                           + "jagged once scaled up to a modern window size -- "
+                           + "whether they come from a DVD disc's own menu "
+                           + "system or an embedded subtitle track in an "
+                           + "ordinary video file. This softens the edges "
+                           + "with a slight blur. 0 turns it off (the raw "
+                           + "bitmap); higher values blur more.")
+            }
+            Item { Layout.fillWidth: true }
+        }
     }
 
     Label {

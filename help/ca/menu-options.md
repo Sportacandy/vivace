@@ -192,3 +192,28 @@ admet diversos entorns d'execució JS; Deno és el que cerca per defecte.
   Vivace — el mateix camp **Camí de Deno:** existeix exactament per
   aquest motiu i no necessita cap configuració addicional un cop Deno
   mateix està instal·lat i és accessible.
+
+## Suavitzat dels subtítols de mapa de bits
+
+*Preferències ▸ Subtítols ▸ Subtítols de mapa de bits* té una opció
+**Suavitzat:** (0–3, valor per defecte 1) per als subtítols que es
+representen com a imatges en lloc de text -- pistes de subimatge de
+DVD, PGS i DVB. Això inclou tant els subtítols propis d'un disc DVD
+real com una pista de subtítols incrustada del mateix tipus en un
+fitxer de vídeo normal (per exemple, un fitxer .mp4 amb una pista amb
+còdec `dvd_subtitle`). Aquests formats són imatges de mapa de bits
+prerenderitzades, gravades a la resolució nativa de definició estàndard
+(SD) quan es va crear la font -- les vores poden semblar dentades en
+ampliar-se a la mida d'una finestra moderna. El Vivace pot aplicar un
+lleuger difuminat per suavitzar aquestes vores:
+
+- **0** — desactivat; mostra el mapa de bits de subtítols original tal
+  com es va crear.
+- **1** (valor per defecte) — suavitza les vores més marcades mantenint
+  el text amb una brillantor pràcticament completa.
+- **2** / **3** — difuminat progressivament més intens.
+
+Aquesta opció només afecta els subtítols de mapa de bits — no té cap
+efecte sobre el renderitzador extern de subtítols propi del Vivace
+(SRT/VTT/ASS) ni sobre les pistes de subtítols de text normals, totes
+dues amb camins de renderització diferents.

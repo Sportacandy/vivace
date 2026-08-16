@@ -187,3 +187,29 @@ per impostazione predefinita.
   Vivace — lo stesso campo **Percorso di Deno:** esiste proprio per questo
   motivo e non richiede ulteriore configurazione una volta che Deno stesso
   è installato e raggiungibile.
+
+## Levigatura dei sottotitoli bitmap
+
+*Preferenze ▸ Sottotitoli ▸ Sottotitoli bitmap* include un'impostazione
+**Levigatura:** (0–3, valore predefinito 1) per i sottotitoli
+visualizzati come immagini anziché come testo: tracce di sottotitoli
+DVD, PGS e DVB. Questo copre sia i sottotitoli propri di un vero disco
+DVD sia una traccia di sottotitoli incorporata dello stesso tipo in un
+file video normale (ad esempio un file .mp4 con una traccia con codec
+`dvd_subtitle`). Questi formati sono immagini bitmap pre-renderizzate,
+incise alla risoluzione nativa in definizione standard (SD) al momento
+della creazione della sorgente — i loro bordi possono apparire
+frastagliati una volta ingranditi alla dimensione di una finestra
+moderna. Vivace può applicare una leggera sfocatura per ammorbidire
+questi bordi:
+
+- **0** — disattivato; mostra la bitmap dei sottotitoli originale
+  esattamente come creata.
+- **1** (predefinito) — ammorbidisce i bordi più marcati mantenendo il
+  testo a una luminosità praticamente piena.
+- **2** / **3** — sfocatura progressivamente maggiore.
+
+Questa impostazione riguarda solo i sottotitoli bitmap — non ha alcun
+effetto sul motore di rendering esterno dei sottotitoli di Vivace
+(SRT/VTT/ASS) né sulle normali tracce di sottotitoli testuali, che
+seguono entrambe percorsi di rendering diversi.

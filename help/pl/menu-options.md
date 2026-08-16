@@ -182,3 +182,28 @@ Deno jest tym, którego szuka domyślnie.
 - Ten wymóg wynika ze zmian po stronie YouTube/yt-dlp, a nie Vivace —
   właśnie dlatego istnieje pole **Ścieżka do Deno:** i nie wymaga ono żadnej
   dalszej konfiguracji, gdy tylko Deno jest zainstalowane i osiągalne.
+
+## Wygładzanie napisów bitmapowych
+
+*Ustawienia ▸ Napisy ▸ Napisy bitmapowe* zawiera opcję
+**Wygładzanie:** (0–3, domyślnie 1) dla napisów wyświetlanych jako
+obrazy, a nie tekst — ścieżek podobrazów DVD, PGS i DVB. Obejmuje to
+zarówno własne napisy prawdziwej płyty DVD, jak i osadzoną ścieżkę
+napisów tego samego typu w zwykłym pliku wideo (np. pliku .mp4 ze
+ścieżką w kodeku `dvd_subtitle`). Te formaty to wcześniej
+wyrenderowane obrazy bitmapowe, zapisane w natywnej rozdzielczości
+standardowej (SD) podczas tworzenia źródła — ich krawędzie mogą
+wyglądać na postrzępione po powiększeniu do rozmiaru współczesnego
+okna. Vivace może zastosować lekkie rozmycie, aby wygładzić te
+krawędzie:
+
+- **0** — wyłączone; pokazuje oryginalną bitmapę napisów dokładnie tak,
+  jak została utworzona.
+- **1** (domyślnie) — wygładza najbardziej szorstkie krawędzie,
+  zachowując przy tym niemal pełną jasność tekstu.
+- **2** / **3** — stopniowo silniejsze rozmycie.
+
+Ta opcja dotyczy wyłącznie napisów bitmapowych — nie ma wpływu na
+własny, zewnętrzny mechanizm renderowania napisów Vivace (SRT/VTT/ASS)
+ani na zwykłe tekstowe ścieżki napisów, które korzystają z innych
+ścieżek renderowania.

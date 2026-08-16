@@ -192,3 +192,28 @@ gesucht wird.
   nicht von Vivace — genau aus diesem Grund existiert das Feld
   **Deno-Pfad:** und benötigt keine weitere Konfiguration, sobald Deno
   selbst installiert und erreichbar ist.
+
+## Bitmap-Untertitel-Glättung
+
+*Einstellungen ▸ Untertitel ▸ Bitmap-Untertitel* enthält eine Einstellung
+**Glättung:** (0–3, Standard 1) für Untertitel, die als Bilder statt als
+Text dargestellt werden — DVD-Subpicture-, PGS- und DVB-Spuren. Das gilt
+sowohl für die eigenen Untertitel einer echten DVD-Disc als auch für eine
+eingebettete Untertitelspur derselben Art in einer gewöhnlichen
+Videodatei (z. B. eine .mp4-Datei mit einer Spur im
+`dvd_subtitle`-Codec). Diese Formate sind vorgerenderte Bitmap-Bilder,
+die bei der Erstellung des Quellmaterials in nativer Standardauflösung
+(SD) eingebrannt wurden — ihre Kanten können bei Skalierung auf eine
+moderne Fenstergröße gezackt aussehen. Vivace kann eine leichte
+Unschärfe anwenden, um diese Kanten zu glätten:
+
+- **0** — aus; zeigt die ursprüngliche Untertitel-Bitmap genau so, wie
+  sie erstellt wurde.
+- **1** (Standard) — glättet die gröbsten Kanten, während der Text
+  nahezu volle Helligkeit behält.
+- **2** / **3** — zunehmend stärkere Unschärfe.
+
+Diese Einstellung wirkt sich nur auf bitmap-basierte Untertitel aus —
+sie hat keinen Einfluss auf Vivaces eigenen externen
+Untertitel-Renderer (SRT/VTT/ASS) oder auf gewöhnliche textbasierte
+Untertitelspuren, die beide über andere Rendering-Pfade laufen.

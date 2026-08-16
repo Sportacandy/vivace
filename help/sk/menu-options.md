@@ -178,3 +178,25 @@ vyhľadáva predvolene.
   Vivace — presne z tohto dôvodu existuje pole **Cesta k Deno:**, ktoré
   po nainštalovaní a sprístupnení samotného Deno už nevyžaduje žiadnu
   ďalšiu konfiguráciu.
+
+## Vyhladenie bitmapových titulkov
+
+*Nastavenia ▸ Titulky ▸ Bitmapové titulky* obsahuje voľbu
+**Vyhladenie:** (0–3, predvolená hodnota 1) pre titulky zobrazované ako
+obrázky, nie ako text — stopy podobrazov DVD, PGS a DVB. To zahŕňa tak
+vlastné titulky skutočného disku DVD, ako aj vloženú stopu titulkov
+rovnakého typu v bežnom video súbore (napríklad súbor .mp4 so stopou v
+kodeku `dvd_subtitle`). Tieto formáty sú vopred vykreslené bitmapové
+obrázky vypálené v natívnom rozlíšení štandardnej kvality (SD) pri
+vytváraní zdroja — ich okraje môžu po zväčšení na veľkosť moderného
+okna vyzerať zubato. Vivace dokáže tieto okraje jemne rozostriť:
+
+- **0** — vypnuté; zobrazuje pôvodnú bitmapu titulkov presne tak, ako
+  bola vytvorená.
+- **1** (predvolené) — zjemní najhrubšie okraje a text si pritom
+  zachová takmer plný jas.
+- **2** / **3** — postupne silnejšie rozostrenie.
+
+Táto voľba ovplyvňuje iba bitmapové titulky — nemá žiadny vplyv na
+vlastný externý vykresľovač titulkov Vivace (SRT/VTT/ASS) ani na bežné
+textové stopy titulkov, ktoré používajú iné vykresľovacie cesty.

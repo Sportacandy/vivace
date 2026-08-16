@@ -163,3 +163,24 @@ several JS runtimes; Deno is the one it looks for by default.
   Vivace — the same **Deno path:** field exists for exactly this reason and
   needs no further configuration once Deno itself is installed and
   reachable.
+
+## Bitmap subtitle smoothing
+
+*Preferences ▸ Subtitles ▸ Bitmap subtitles* has a **Smoothing:** setting
+(0–3, default 1) for subtitles that are rendered as images rather than
+text — DVD subpicture, PGS, and DVB tracks. This covers both a real DVD
+disc's own subtitles and an embedded subtitle track of the same kind in
+an ordinary video file (e.g. an .mp4 with a `dvd_subtitle`-codec track).
+These formats are pre-rendered bitmap images baked in at native,
+standard-definition resolution when the source was authored — their
+edges can look jagged once scaled up to a modern window size. Vivace can
+apply a slight blur to soften those edges:
+
+- **0** — off; shows the original subtitle bitmap exactly as authored.
+- **1** (the default) — softens the roughest edges while keeping the text
+  at essentially full brightness.
+- **2** / **3** — progressively more blur.
+
+This setting only affects bitmap-based subtitles — it has no effect on
+Vivace's own external subtitle renderer (SRT/VTT/ASS) or on ordinary
+text-based subtitle tracks, both of which are unrelated rendering paths.

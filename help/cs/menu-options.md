@@ -172,3 +172,26 @@ to, které hledá jako výchozí.
 - Tento požadavek vychází ze změn na straně YouTube/yt-dlp, nikoli z
   Vivace — právě proto existuje pole **Cesta k Deno:** a jakmile je Deno
   nainstalováno a dostupné, není potřeba žádné další nastavení.
+
+## Vyhlazení bitmapových titulků
+
+*Předvolby ▸ Titulky ▸ Bitmapové titulky* obsahuje volbu
+**Vyhlazení:** (0–3, výchozí hodnota 1) pro titulky zobrazované jako
+obrázky, nikoli jako text — stopy podobrazů DVD, PGS a DVB. To zahrnuje
+jak vlastní titulky skutečného disku DVD, tak vloženou stopu titulků
+stejného typu v běžném video souboru (například soubor .mp4 se stopou
+v kodeku `dvd_subtitle`). Tyto formáty jsou předem vykreslené bitmapové
+obrázky vypálené v nativním rozlišení standardní kvality (SD) při
+vytváření zdroje — jejich okraje mohou po zvětšení na velikost
+moderního okna vypadat zubaté. Vivace může tyto okraje jemně
+rozostřit:
+
+- **0** — vypnuto; zobrazuje původní bitmapu titulků přesně tak, jak
+  byla vytvořena.
+- **1** (výchozí) — zjemní nejhrubší okraje a text si přitom zachová
+  téměř plný jas.
+- **2** / **3** — postupně silnější rozostření.
+
+Tato volba ovlivňuje pouze bitmapové titulky — nemá žádný vliv na
+vlastní externí vykreslovač titulků Vivace (SRT/VTT/ASS) ani na běžné
+textové stopy titulků, které používají jiné vykreslovací cesty.

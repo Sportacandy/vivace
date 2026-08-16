@@ -183,3 +183,27 @@ JS-motorer; Deno er den, den leder efter som standard.
   det samme felt, **Deno-sti:**, findes af netop den grund og kræver
   ingen yderligere konfiguration, når Deno selv er installeret og
   tilgængeligt.
+
+## Udjævning af bitmap-undertekster
+
+*Indstillinger ▸ Undertekster ▸ Bitmap-undertekster* har en
+indstilling **Udjævning:** (0–3, standard 1) til undertekster, der
+gengives som billeder i stedet for tekst -- dvd-underbillede-, PGS- og
+DVB-spor. Dette gælder både en rigtig dvd-disks egne undertekster og et
+integreret undertekstspor af samme type i en almindelig videofil (f.eks.
+en .mp4-fil med et spor i `dvd_subtitle`-kodeket). Disse formater er
+forudrenderede bitmap-billeder, der er brændt i den oprindelige
+standardopløsning (SD), da kilden blev fremstillet -- deres kanter kan
+se takkede ud, når de skaleres op til en moderne vinduesstørrelse.
+Vivace kan anvende en let sløring for at udjævne disse kanter:
+
+- **0** — fra; viser den oprindelige undertekst-bitmap præcis som den
+  blev fremstillet.
+- **1** (standard) — udjævner de groveste kanter, mens teksten bevarer
+  stort set fuld lysstyrke.
+- **2** / **3** — gradvist kraftigere sløring.
+
+Denne indstilling påvirker kun bitmap-undertekster — den har ingen
+indflydelse på Vivaces egen eksterne undertekstgengivelse (SRT/VTT/ASS)
+eller på almindelige tekstbaserede undertekstspor, som begge bruger
+andre gengivelsesveje.

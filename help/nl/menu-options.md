@@ -181,3 +181,29 @@ gezocht.
   niet van Vivace — precies om deze reden bestaat het veld
   **Deno-locatie:**, en er is verder geen configuratie nodig zodra Deno zelf
   is geïnstalleerd en bereikbaar is.
+
+## Verzachting van bitmap-ondertiteling
+
+*Voorkeuren ▸ Ondertiteling ▸ Bitmap-ondertiteling* heeft een instelling
+**Verzachting:** (0–3, standaard 1) voor ondertiteling die als
+afbeeldingen in plaats van tekst wordt weergegeven: dvd-subpicture-,
+PGS- en DVB-sporen. Dit geldt zowel voor de eigen ondertiteling van een
+echte dvd als voor een ingesloten ondertitelingsspoor van hetzelfde type
+in een gewoon videobestand (bijvoorbeeld een .mp4-bestand met een spoor
+met de `dvd_subtitle`-codec). Deze formaten zijn vooraf gerenderde
+bitmapafbeeldingen, ingebakken op de originele
+standaarddefinitie(SD)-resolutie toen de bron werd gemaakt — de randen
+kunnen er gekarteld uitzien wanneer ze worden vergroot naar een moderne
+venstergrootte. Vivace kan een lichte vervaging toepassen om die randen
+te verzachten:
+
+- **0** — uit; toont de originele ondertitelingsbitmap precies zoals
+  gemaakt.
+- **1** (standaard) — verzacht de grofste randen terwijl de tekst
+  vrijwel volledig helder blijft.
+- **2** / **3** — geleidelijk meer vervaging.
+
+Deze instelling heeft alleen invloed op bitmap-ondertiteling — ze heeft
+geen effect op Vivace's eigen externe ondertitelingsrenderer
+(SRT/VTT/ASS) of op gewone tekstgebaseerde ondertitelingssporen; beide
+gebruiken een ander renderpad.
