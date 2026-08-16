@@ -2815,6 +2815,30 @@ void PlayerController::setVideoMirror(bool mirror)
     emit videoTransformChanged();
 }
 
+void PlayerController::setDeinterlaceMode(int mode)
+{
+    mode = qBound(0, mode, 2);
+    if (mode == m_deinterlaceMode)
+        return;
+    m_deinterlaceMode = mode;
+    // Mirrors the value into the environment so the CUSTOM PATCHED Qt
+    // Multimedia's VideoRenderer (patches/qtmultimedia-deinterlace.patch,
+    // playbackengine/qffmpegdeinterlacer.cpp) can build/select the right
+    // avfilter graph -- that code lives entirely inside qtmultimedia and has
+    // no reach into this class or Settings, so an env var is the same relay
+    // mechanism already used for VIVACE_SUBTITLE_BITMAP_SMOOTHING above.
+    // Read fresh via qEnvironmentVariableIntValue() on every frame there, so
+    // this takes effect immediately with no restart.
+    qputenv("VIVACE_DEINTERLACE_MODE", QByteArray::number(m_deinterlaceMode));
+    emit deinterlaceModeChanged();
+    // Confirms via OSD that the change took effect immediately (it does --
+    // no reopening the file needed, see the comment above), matching the
+    // same OSD-on-change convention as A/V delay, subtitle delay, etc.
+    static const char *const kModeNames[] = { QT_TR_NOOP("None"), QT_TR_NOOP("Yadif"),
+                                               QT_TR_NOOP("Bwdif") };
+    emit osdMessage(tr("Deinterlace: %1").arg(tr(kModeNames[m_deinterlaceMode])));
+}
+
 void PlayerController::zoomIn()
 {
     m_videoZoom = qMin(m_videoZoom + 0.1, 10.0);

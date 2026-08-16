@@ -190,11 +190,19 @@ ColumnLayout {
                 }
                 RowLayout {
                     spacing: 8
-                    enabled: false
                     Label { text: qsTr("Deinterlace by default:") }
                     ComboBox {
                         Layout.fillWidth: true
-                        model: [qsTr("None (not supported by the backend)")]
+                        model: [qsTr("None"), qsTr("Yadif"), qsTr("Bwdif")]
+                        currentIndex: Settings.deinterlaceMode
+                        onActivated: Settings.deinterlaceMode = currentIndex
+                    }
+                    HelpMark {
+                        text: qsTr("Deinterlacing removes the horizontal "
+                                   + "combing artifacts of interlaced video. "
+                                   + "This sets the default for newly opened "
+                                   + "files; change it per file from Video > "
+                                   + "Deinterlace.")
                     }
                 }
 
@@ -203,7 +211,7 @@ ColumnLayout {
                     wrapMode: Text.WordWrap
                     opacity: 0.7
                     font.pixelSize: 12
-                    text: qsTr("Video equalizer and zoom/aspect controls are planned for Phase 4 (ShaderEffect / item transforms). Deinterlacing and driver selection are not available with Qt Multimedia.")
+                    text: qsTr("Video equalizer and zoom/aspect controls are planned for Phase 4 (ShaderEffect / item transforms). Driver selection is not available with Qt Multimedia.")
                 }
 
                 Item { Layout.fillHeight: true }

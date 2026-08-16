@@ -14,6 +14,10 @@ aktuálny súbor a pri každom novom sa vynulujú.
 - **Pomer strán** — vynútiť pomer zobrazenia (Auto, 4:3, 16:9, …).
 - **Otočiť** — Žiadne, 90° v smere hodín, 90° proti smeru hodín alebo 180°.
 - **Prevrátiť obraz** / **Zrkadliť obraz** — prevrátiť zvisle alebo vodorovne.
+- **Odstrániť prekladanie** — **Žiadne**, **Yadif** alebo **Bwdif**, na
+  odstránenie hrebeňových artefaktov prekladaného videa. Použije sa
+  okamžite, aj počas prehrávania. Predvolený režim pre novo otvorené
+  súbory sa nastavuje v *Nastavenia ▸ Všeobecné ▸ Video*.
 - **Ekvalizér…** (`Ctrl+E`) — jas, kontrast, odtieň, sýtosť a gama.
   *Nastaviť ako predvolené hodnoty* použije vaše nastavenia na budúce súbory.
 - **Snímka obrazovky** (`S`) — uložiť aktuálnu snímku. Priečinok a formát obrázka

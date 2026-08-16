@@ -12,6 +12,10 @@ fitxer actual i es reinicien amb cada nou.
 - **Relació d'aspecte** — forçar un aspecte de visualització (Automàtic, 4:3, 16:9, …).
 - **Gira** — Cap, 90° horari, 90° antihorari o 180°.
 - **Inverteix la imatge** / **Emmiralla la imatge** — invertir en vertical o horitzontal.
+- **Desentrellaça** — **Sense**, **Yadif** o **Bwdif**, per eliminar els
+  artefactes de pinta del vídeo entrellaçat. S'aplica immediatament, fins i
+  tot durant la reproducció. El valor per defecte per als fitxers acabats
+  d'obrir es configura a *Preferències ▸ General ▸ Vídeo*.
 - **Equalitzador…** (`Ctrl+E`) — brillantor, contrast, to, saturació i gamma.
   *Estableix com a valors per defecte* aplica els vostres paràmetres als fitxers futurs.
 - **Captura de pantalla** (`S`) — desar el fotograma actual. La carpeta i el

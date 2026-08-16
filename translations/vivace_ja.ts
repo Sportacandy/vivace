@@ -828,222 +828,222 @@
         <translation>メディアファイルをここにドロップするか、Ctrl+O を押してください</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="655"/>
+        <location filename="../qml/Main.qml" line="661"/>
         <source>Downloading video…</source>
         <translation>動画をダウンロード中…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="662"/>
+        <location filename="../qml/Main.qml" line="668"/>
         <source>This can take a while — the external tool is downloading and merging HD video and audio.</source>
         <translation>外部ツールが HD の映像と音声をダウンロードして結合しています。しばらくかかることがあります。</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="676"/>
-        <location filename="../qml/Main.qml" line="1694"/>
+        <location filename="../qml/Main.qml" line="682"/>
+        <location filename="../qml/Main.qml" line="1711"/>
         <source>Cancel</source>
         <translation>キャンセル</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="749"/>
+        <location filename="../qml/Main.qml" line="755"/>
         <source>Loading…</source>
         <translation>読み込み中…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="750"/>
+        <location filename="../qml/Main.qml" line="756"/>
         <source>Connecting…</source>
         <translation>接続中…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="751"/>
+        <location filename="../qml/Main.qml" line="757"/>
         <source>Buffering… %1%</source>
         <translation>バッファリング中… %1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="759"/>
+        <location filename="../qml/Main.qml" line="765"/>
         <source>Live streams can take several seconds to start.</source>
         <translation>ライブストリームは開始まで数秒かかることがあります。</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="794"/>
+        <location filename="../qml/Main.qml" line="800"/>
         <source>Volume: %1%</source>
         <translation>音量: %1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="797"/>
+        <location filename="../qml/Main.qml" line="803"/>
         <source>Mute</source>
         <translation>ミュート</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="797"/>
+        <location filename="../qml/Main.qml" line="803"/>
         <source>Mute off</source>
         <translation>ミュート解除</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="800"/>
+        <location filename="../qml/Main.qml" line="806"/>
         <source>Speed: %1x</source>
         <translation>速度: %1x</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1310"/>
+        <location filename="../qml/Main.qml" line="1327"/>
         <source>Media files (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</source>
         <translation>メディアファイル (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1311"/>
-        <location filename="../qml/Main.qml" line="1369"/>
-        <location filename="../qml/Main.qml" line="1630"/>
+        <location filename="../qml/Main.qml" line="1328"/>
+        <location filename="../qml/Main.qml" line="1386"/>
+        <location filename="../qml/Main.qml" line="1647"/>
         <source>All files (*)</source>
         <translation>すべてのファイル (*)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1353"/>
+        <location filename="../qml/Main.qml" line="1370"/>
         <source>Select the DVD drive or a folder containing VIDEO_TS</source>
         <translation>DVD ドライブ、または VIDEO_TS を含むフォルダーを選択</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1357"/>
+        <location filename="../qml/Main.qml" line="1374"/>
         <source>No DVD video found in %1</source>
         <translation>%1 に DVD ビデオが見つかりません</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1368"/>
+        <location filename="../qml/Main.qml" line="1385"/>
         <source>Playlists (*.m3u *.m3u8)</source>
         <translation>プレイリスト (*.m3u *.m3u8)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1411"/>
+        <location filename="../qml/Main.qml" line="1428"/>
         <source>Playing stream</source>
         <translation>ストリームを再生中</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1417"/>
-        <location filename="../qml/Main.qml" line="1450"/>
+        <location filename="../qml/Main.qml" line="1434"/>
+        <location filename="../qml/Main.qml" line="1467"/>
         <source>Playing downloaded video</source>
         <translation>ダウンロードした動画を再生中</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1421"/>
+        <location filename="../qml/Main.qml" line="1438"/>
         <source>YouTube: %1</source>
         <translation>YouTube: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1454"/>
+        <location filename="../qml/Main.qml" line="1471"/>
         <source>Download failed: %1</source>
         <translation>ダウンロード失敗: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1551"/>
+        <location filename="../qml/Main.qml" line="1568"/>
         <source>Saved %1 file(s); %2 failed.</source>
         <translation>%1 件のファイルを保存しました（失敗: %2 件）。</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1555"/>
+        <location filename="../qml/Main.qml" line="1572"/>
         <source>Saved %1 file(s).</source>
         <translation>%1 件のファイルを保存しました。</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1568"/>
+        <location filename="../qml/Main.qml" line="1585"/>
         <source>Could not read the shortcut file.</source>
         <translation>ショートカットファイルを読み取れませんでした。</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1583"/>
+        <location filename="../qml/Main.qml" line="1600"/>
         <source>Starting download…</source>
         <translation>ダウンロードを開始しています…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1584"/>
+        <location filename="../qml/Main.qml" line="1601"/>
         <source>Downloading video (this can take a while)…</source>
         <translation>動画をダウンロード中（しばらくかかることがあります）…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1588"/>
+        <location filename="../qml/Main.qml" line="1605"/>
         <source>Resolving with yt-dlp…</source>
         <translation>yt-dlp で解決中…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1625"/>
+        <location filename="../qml/Main.qml" line="1642"/>
         <source>Load subtitle file</source>
         <translation>字幕ファイルを読み込む</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1629"/>
+        <location filename="../qml/Main.qml" line="1646"/>
         <source>Subtitle files (*.srt *.vtt *.ass *.ssa)</source>
         <translation>字幕ファイル (*.srt *.vtt *.ass *.ssa)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1637"/>
+        <location filename="../qml/Main.qml" line="1654"/>
         <source>Subtitle delay</source>
         <translation>字幕の遅延</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1671"/>
+        <location filename="../qml/Main.qml" line="1688"/>
         <source>Delay:</source>
         <translation>遅延:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1677"/>
-        <location filename="../qml/Main.qml" line="1749"/>
+        <location filename="../qml/Main.qml" line="1694"/>
+        <location filename="../qml/Main.qml" line="1766"/>
         <source>ms</source>
         <translation>ミリ秒</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1687"/>
+        <location filename="../qml/Main.qml" line="1704"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1706"/>
+        <location filename="../qml/Main.qml" line="1723"/>
         <source>Audio delay — Vivace</source>
         <translation>音声の遅延 — Vivace</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1737"/>
+        <location filename="../qml/Main.qml" line="1754"/>
         <source>No delay for this file (use the global delay only)</source>
         <translation>このファイルには遅延を設定しない（全体の遅延のみ使用）</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1742"/>
+        <location filename="../qml/Main.qml" line="1759"/>
         <source>This file&apos;s delay:</source>
         <translation>このファイルの遅延:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1757"/>
+        <location filename="../qml/Main.qml" line="1774"/>
         <source>The delay applied to this file is this value plus the global delay for the current audio device (%1 ms), set in Preferences &gt; General &gt; Audio. Negative values delay the video to match audio that arrives late (e.g. Bluetooth headphones).</source>
         <translation>このファイルに適用される遅延は、この値に加えて現在の音声デバイスの全体遅延（%1 ミリ秒、設定 &gt; 一般 &gt; 音声で設定）を足したものです。負の値は、遅れて届く音声（例: Bluetooth ヘッドフォン）に合わせて映像を遅らせます。</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1770"/>
+        <location filename="../qml/Main.qml" line="1787"/>
         <source>&amp;Apply</source>
         <translation>適用(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1779"/>
+        <location filename="../qml/Main.qml" line="1796"/>
         <source>&amp;Close</source>
         <translation>閉じる(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1876"/>
+        <location filename="../qml/Main.qml" line="1893"/>
         <source>Hide window</source>
         <translation>ウィンドウを隠す</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1876"/>
+        <location filename="../qml/Main.qml" line="1893"/>
         <source>Show window</source>
         <translation>ウィンドウを表示</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1881"/>
+        <location filename="../qml/Main.qml" line="1898"/>
         <source>Play / Pause</source>
         <translation>再生 / 一時停止</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1885"/>
+        <location filename="../qml/Main.qml" line="1902"/>
         <source>Stop</source>
         <translation>停止</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1890"/>
+        <location filename="../qml/Main.qml" line="1907"/>
         <source>Quit</source>
         <translation>終了</translation>
     </message>
@@ -1318,16 +1318,16 @@
     </message>
     <message>
         <location filename="../qml/MainMenuBar.qml" line="431"/>
-        <location filename="../qml/MainMenuBar.qml" line="624"/>
-        <location filename="../qml/MainMenuBar.qml" line="704"/>
+        <location filename="../qml/MainMenuBar.qml" line="655"/>
+        <location filename="../qml/MainMenuBar.qml" line="735"/>
         <source>&amp;Track</source>
         <translation>トラック(&amp;T)</translation>
     </message>
     <message>
         <location filename="../qml/MainMenuBar.qml" line="438"/>
-        <location filename="../qml/MainMenuBar.qml" line="637"/>
-        <location filename="../qml/MainMenuBar.qml" line="828"/>
-        <location filename="../qml/MainMenuBar.qml" line="853"/>
+        <location filename="../qml/MainMenuBar.qml" line="668"/>
+        <location filename="../qml/MainMenuBar.qml" line="859"/>
+        <location filename="../qml/MainMenuBar.qml" line="884"/>
         <source>&lt;empty&gt;</source>
         <translation>&lt;なし&gt;</translation>
     </message>
@@ -1408,6 +1408,7 @@
     </message>
     <message>
         <location filename="../qml/MainMenuBar.qml" line="544"/>
+        <location filename="../qml/MainMenuBar.qml" line="606"/>
         <source>&amp;None</source>
         <translation>なし(&amp;N)</translation>
     </message>
@@ -1437,258 +1438,273 @@
         <translation>左右反転(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="604"/>
+        <location filename="../qml/MainMenuBar.qml" line="603"/>
+        <source>&amp;Deinterlace</source>
+        <translation>デインターレース(&amp;D)</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainMenuBar.qml" line="615"/>
+        <source>&amp;Yadif</source>
+        <translation>Yadif(&amp;Y)</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainMenuBar.qml" line="624"/>
+        <source>&amp;Bwdif</source>
+        <translation>Bwdif(&amp;B)</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainMenuBar.qml" line="635"/>
         <source>E&amp;qualizer…</source>
         <translation>イコライザー(&amp;Q)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="610"/>
+        <location filename="../qml/MainMenuBar.qml" line="641"/>
         <source>&amp;Screenshot</source>
         <translation>スクリーンショット(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="620"/>
+        <location filename="../qml/MainMenuBar.qml" line="651"/>
         <source>&amp;Audio</source>
         <translation>音声(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="662"/>
+        <location filename="../qml/MainMenuBar.qml" line="693"/>
         <source>&amp;Mute</source>
         <translation>ミュート(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="671"/>
+        <location filename="../qml/MainMenuBar.qml" line="702"/>
         <source>Volume &amp;-</source>
         <translation>音量 -</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="677"/>
+        <location filename="../qml/MainMenuBar.qml" line="708"/>
         <source>Volume &amp;+</source>
         <translation>音量 +</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="685"/>
-        <location filename="../qml/MainMenuBar.qml" line="778"/>
+        <location filename="../qml/MainMenuBar.qml" line="716"/>
+        <location filename="../qml/MainMenuBar.qml" line="809"/>
         <source>Delay &amp;-</source>
         <translation>遅延 -</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="689"/>
+        <location filename="../qml/MainMenuBar.qml" line="720"/>
         <source>D&amp;elay +</source>
         <translation>遅延 +</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="693"/>
+        <location filename="../qml/MainMenuBar.qml" line="724"/>
         <source>Set dela&amp;y…</source>
         <translation>遅延を設定(&amp;Y)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="700"/>
+        <location filename="../qml/MainMenuBar.qml" line="731"/>
         <source>&amp;Subtitles</source>
         <translation>字幕(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="712"/>
+        <location filename="../qml/MainMenuBar.qml" line="743"/>
         <source>&amp;Off</source>
         <translation>オフ(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="761"/>
+        <location filename="../qml/MainMenuBar.qml" line="792"/>
         <source>&amp;Load subtitles…</source>
         <translation>字幕を読み込む(&amp;L)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="767"/>
+        <location filename="../qml/MainMenuBar.qml" line="798"/>
         <source>&amp;Find subtitles at OpenSubtitles…</source>
         <translation>OpenSubtitles で字幕を検索(&amp;F)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="772"/>
+        <location filename="../qml/MainMenuBar.qml" line="803"/>
         <source>U&amp;nload subtitles</source>
         <translation>字幕を閉じる(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="783"/>
+        <location filename="../qml/MainMenuBar.qml" line="814"/>
         <source>Delay &amp;+</source>
         <translation>遅延 +</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="788"/>
+        <location filename="../qml/MainMenuBar.qml" line="819"/>
         <source>Se&amp;t delay…</source>
         <translation>遅延を設定(&amp;T)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="796"/>
+        <location filename="../qml/MainMenuBar.qml" line="827"/>
         <source>&amp;Browse</source>
         <translation>ブラウズ(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="799"/>
+        <location filename="../qml/MainMenuBar.qml" line="830"/>
         <source>&amp;DVD menu</source>
         <translation>DVD メニュー(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="808"/>
+        <location filename="../qml/MainMenuBar.qml" line="839"/>
         <source>&amp;Title</source>
         <translation>タイトル(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="835"/>
+        <location filename="../qml/MainMenuBar.qml" line="866"/>
         <source>&amp;Chapters</source>
         <translation>チャプター(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="860"/>
+        <location filename="../qml/MainMenuBar.qml" line="891"/>
         <source>&amp;Bookmarks</source>
         <translation>ブックマーク(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="870"/>
+        <location filename="../qml/MainMenuBar.qml" line="901"/>
         <source>&amp;Add new bookmark</source>
         <translation>ブックマークを追加(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="877"/>
+        <location filename="../qml/MainMenuBar.qml" line="908"/>
         <source>&amp;Edit bookmarks…</source>
         <translation>ブックマークを編集(&amp;E)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="901"/>
+        <location filename="../qml/MainMenuBar.qml" line="932"/>
         <source>Vie&amp;w</source>
         <translation>表示(&amp;W)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="904"/>
+        <location filename="../qml/MainMenuBar.qml" line="935"/>
         <source>&amp;Information and properties…</source>
         <translation>情報とプロパティ(&amp;I)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="911"/>
+        <location filename="../qml/MainMenuBar.qml" line="942"/>
         <source>&amp;Playlist</source>
         <translation>プレイリスト(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="919"/>
+        <location filename="../qml/MainMenuBar.qml" line="950"/>
         <source>&amp;OSD</source>
         <translation>OSD(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="921"/>
+        <location filename="../qml/MainMenuBar.qml" line="952"/>
         <source>Subtitles only</source>
         <translation>字幕のみ</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="922"/>
+        <location filename="../qml/MainMenuBar.qml" line="953"/>
         <source>Volume + seek</source>
         <translation>音量 + シーク</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="923"/>
+        <location filename="../qml/MainMenuBar.qml" line="954"/>
         <source>Volume + seek + timer</source>
         <translation>音量 + シーク + タイマー</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="929"/>
+        <location filename="../qml/MainMenuBar.qml" line="960"/>
         <source>Op&amp;tions</source>
         <translation>オプション(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="932"/>
+        <location filename="../qml/MainMenuBar.qml" line="963"/>
         <source>&amp;Preferences…</source>
         <translation>設定(&amp;P)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="939"/>
+        <location filename="../qml/MainMenuBar.qml" line="970"/>
         <source>S&amp;how icon in system tray</source>
         <translation>システムトレイにアイコンを表示(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="945"/>
+        <location filename="../qml/MainMenuBar.qml" line="976"/>
         <source>&amp;Toolbars</source>
         <translation>ツールバー(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="948"/>
+        <location filename="../qml/MainMenuBar.qml" line="979"/>
         <source>&amp;Toolbar</source>
         <translation>ツールバー(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="954"/>
+        <location filename="../qml/MainMenuBar.qml" line="985"/>
         <source>&amp;Control bar</source>
         <translation>コントロールバー(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="961"/>
+        <location filename="../qml/MainMenuBar.qml" line="992"/>
         <source>Edit main &amp;toolbar…</source>
         <translation>メインツールバーを編集(&amp;T)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="965"/>
+        <location filename="../qml/MainMenuBar.qml" line="996"/>
         <source>Edit control &amp;bar…</source>
         <translation>コントロールバーを編集(&amp;B)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="970"/>
+        <location filename="../qml/MainMenuBar.qml" line="1001"/>
         <source>&amp;Status bar</source>
         <translation>ステータスバー(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="973"/>
+        <location filename="../qml/MainMenuBar.qml" line="1004"/>
         <source>&amp;Show status bar</source>
         <translation>ステータスバーを表示(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="980"/>
+        <location filename="../qml/MainMenuBar.qml" line="1011"/>
         <source>&amp;Video info</source>
         <translation>映像情報(&amp;V)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="987"/>
+        <location filename="../qml/MainMenuBar.qml" line="1018"/>
         <source>&amp;Audio info</source>
         <translation>音声情報(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="994"/>
+        <location filename="../qml/MainMenuBar.qml" line="1025"/>
         <source>F&amp;ormat info</source>
         <translation>フォーマット情報(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1001"/>
+        <location filename="../qml/MainMenuBar.qml" line="1032"/>
         <source>&amp;Bitrate info</source>
         <translation>ビットレート情報(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1008"/>
+        <location filename="../qml/MainMenuBar.qml" line="1039"/>
         <source>&amp;Frame counter</source>
         <translation>フレームカウンター(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1016"/>
+        <location filename="../qml/MainMenuBar.qml" line="1047"/>
         <source>Display &amp;total time</source>
         <translation>総時間を表示(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1022"/>
+        <location filename="../qml/MainMenuBar.qml" line="1053"/>
         <source>Display &amp;remaining time</source>
         <translation>残り時間を表示(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1029"/>
+        <location filename="../qml/MainMenuBar.qml" line="1060"/>
         <source>Show the current time with &amp;milliseconds</source>
         <translation>現在位置をミリ秒付きで表示(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1039"/>
+        <location filename="../qml/MainMenuBar.qml" line="1070"/>
         <source>&amp;Help</source>
         <translation>ヘルプ(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1042"/>
+        <location filename="../qml/MainMenuBar.qml" line="1073"/>
         <source>&amp;Contents</source>
         <translation>目次(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1049"/>
+        <location filename="../qml/MainMenuBar.qml" line="1080"/>
         <source>&amp;Check for updates</source>
         <translation>更新を確認(&amp;C)</translation>
     </message>
@@ -1697,7 +1713,7 @@
         <translation type="vanished">YouTube サポートをインストール／更新(&amp;Y)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1055"/>
+        <location filename="../qml/MainMenuBar.qml" line="1086"/>
         <source>&amp;About Vivace</source>
         <translation>Vivace について(&amp;A)</translation>
     </message>
@@ -1874,7 +1890,7 @@
         <location filename="../src/playercontroller.cpp" line="181"/>
         <location filename="../src/playercontroller.cpp" line="801"/>
         <location filename="../src/playercontroller.cpp" line="817"/>
-        <location filename="../src/playercontroller.cpp" line="1891"/>
+        <location filename="../src/playercontroller.cpp" line="2067"/>
         <source>Track %1</source>
         <translation>トラック %1</translation>
     </message>
@@ -1884,257 +1900,277 @@
         <translation>A/V 遅延: %1 ミリ秒</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1194"/>
+        <location filename="../src/playercontroller.cpp" line="1219"/>
         <source>DVD title %1 could not be assembled</source>
         <translation>DVD タイトル %1 を構成できませんでした</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1200"/>
+        <location filename="../src/playercontroller.cpp" line="1225"/>
         <source>DVD title %1 could not be opened</source>
         <translation>DVD タイトル %1 を開けませんでした</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1359"/>
+        <location filename="../src/playercontroller.cpp" line="1384"/>
         <source>Title %1 (%2)</source>
         <translation>タイトル %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1375"/>
+        <location filename="../src/playercontroller.cpp" line="1400"/>
         <source>Chapter %1 (%2)</source>
         <translation>チャプター %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2359"/>
+        <location filename="../src/playercontroller.cpp" line="2535"/>
         <source>Could not open the stream</source>
         <translation>ストリームを開けませんでした</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2418"/>
+        <location filename="../src/playercontroller.cpp" line="2594"/>
         <source>System default</source>
         <translation>システム既定</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2583"/>
+        <location filename="../src/playercontroller.cpp" line="2759"/>
         <source>A marker set to %1</source>
         <translation>A マーカーを %1 に設定</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2594"/>
+        <location filename="../src/playercontroller.cpp" line="2770"/>
         <source>B marker set to %1</source>
         <translation>B マーカーを %1 に設定</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2604"/>
+        <location filename="../src/playercontroller.cpp" line="2780"/>
         <source>A-B markers cleared</source>
         <translation>A-B マーカーをクリアしました</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2718"/>
+        <location filename="../src/playercontroller.cpp" line="2837"/>
+        <source>None</source>
+        <translation>なし</translation>
+    </message>
+    <message>
+        <location filename="../src/playercontroller.cpp" line="2837"/>
+        <source>Yadif</source>
+        <translation>Yadif</translation>
+    </message>
+    <message>
+        <location filename="../src/playercontroller.cpp" line="2838"/>
+        <source>Bwdif</source>
+        <translation>Bwdif</translation>
+    </message>
+    <message>
+        <location filename="../src/playercontroller.cpp" line="2839"/>
+        <source>Deinterlace: %1</source>
+        <translation>デインターレース: %1</translation>
+    </message>
+    <message>
+        <location filename="../src/playercontroller.cpp" line="2918"/>
         <source>Could not load subtitles from %1</source>
         <translation>%1 から字幕を読み込めませんでした</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2735"/>
+        <location filename="../src/playercontroller.cpp" line="2935"/>
         <source>Subtitles loaded: %1</source>
         <translation>字幕を読み込みました: %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2746"/>
+        <location filename="../src/playercontroller.cpp" line="2946"/>
         <source>Subtitles unloaded</source>
         <translation>字幕を閉じました</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2756"/>
+        <location filename="../src/playercontroller.cpp" line="2956"/>
         <source>Subtitle delay: %1 ms</source>
         <translation>字幕の遅延: %1 ミリ秒</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2886"/>
+        <location filename="../src/playercontroller.cpp" line="3086"/>
         <source>General</source>
         <translation>一般</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2889"/>
+        <location filename="../src/playercontroller.cpp" line="3089"/>
         <source>File</source>
         <translation>ファイル</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2892"/>
+        <location filename="../src/playercontroller.cpp" line="3092"/>
         <source>Size</source>
         <translation>サイズ</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2892"/>
+        <location filename="../src/playercontroller.cpp" line="3092"/>
         <source>%1 KB (%2 MB)</source>
         <translation>%1 KB (%2 MB)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2896"/>
-        <location filename="../src/playercontroller.cpp" line="2922"/>
+        <location filename="../src/playercontroller.cpp" line="3096"/>
+        <location filename="../src/playercontroller.cpp" line="3122"/>
         <source>URL</source>
         <translation>URL</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2899"/>
+        <location filename="../src/playercontroller.cpp" line="3099"/>
         <source>Length</source>
         <translation>長さ</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2900"/>
+        <location filename="../src/playercontroller.cpp" line="3100"/>
         <source>Demuxer</source>
         <translation>デマルチプレクサ</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2905"/>
-        <location filename="../src/playercontroller.cpp" line="2955"/>
-        <location filename="../src/playercontroller.cpp" line="2974"/>
-        <location filename="../src/playercontroller.cpp" line="2983"/>
+        <location filename="../src/playercontroller.cpp" line="3105"/>
+        <location filename="../src/playercontroller.cpp" line="3155"/>
+        <location filename="../src/playercontroller.cpp" line="3174"/>
+        <location filename="../src/playercontroller.cpp" line="3183"/>
         <source>Name</source>
         <translation>名前</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2906"/>
+        <location filename="../src/playercontroller.cpp" line="3106"/>
         <source>Artist</source>
         <translation>アーティスト</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2908"/>
+        <location filename="../src/playercontroller.cpp" line="3108"/>
         <source>Album artist</source>
         <translation>アルバムアーティスト</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2910"/>
+        <location filename="../src/playercontroller.cpp" line="3110"/>
         <source>Author</source>
         <translation>作者</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2911"/>
+        <location filename="../src/playercontroller.cpp" line="3111"/>
         <source>Composer</source>
         <translation>作曲者</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2912"/>
+        <location filename="../src/playercontroller.cpp" line="3112"/>
         <source>Album</source>
         <translation>アルバム</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2913"/>
+        <location filename="../src/playercontroller.cpp" line="3113"/>
         <source>Genre</source>
         <translation>ジャンル</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2914"/>
+        <location filename="../src/playercontroller.cpp" line="3114"/>
         <source>Date</source>
         <translation>日付</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2915"/>
+        <location filename="../src/playercontroller.cpp" line="3115"/>
         <source>Track</source>
         <translation>トラック</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2916"/>
+        <location filename="../src/playercontroller.cpp" line="3116"/>
         <source>Copyright</source>
         <translation>著作権</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2917"/>
+        <location filename="../src/playercontroller.cpp" line="3117"/>
         <source>Comment</source>
         <translation>コメント</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2918"/>
+        <location filename="../src/playercontroller.cpp" line="3118"/>
         <source>Description</source>
         <translation>説明</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2920"/>
+        <location filename="../src/playercontroller.cpp" line="3120"/>
         <source>Publisher</source>
         <translation>発行元</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2921"/>
-        <location filename="../src/playercontroller.cpp" line="2955"/>
-        <location filename="../src/playercontroller.cpp" line="2974"/>
-        <location filename="../src/playercontroller.cpp" line="2983"/>
+        <location filename="../src/playercontroller.cpp" line="3121"/>
+        <location filename="../src/playercontroller.cpp" line="3155"/>
+        <location filename="../src/playercontroller.cpp" line="3174"/>
+        <location filename="../src/playercontroller.cpp" line="3183"/>
         <source>Language</source>
         <translation>言語</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2924"/>
+        <location filename="../src/playercontroller.cpp" line="3124"/>
         <source>Clip info</source>
         <translation>クリップ情報</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2928"/>
+        <location filename="../src/playercontroller.cpp" line="3128"/>
         <source>Initial Video Stream</source>
         <translation>最初の映像ストリーム</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2931"/>
+        <location filename="../src/playercontroller.cpp" line="3131"/>
         <source>Resolution</source>
         <translation>解像度</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2934"/>
+        <location filename="../src/playercontroller.cpp" line="3134"/>
         <source>Aspect ratio</source>
         <translation>アスペクト比</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2938"/>
-        <location filename="../src/playercontroller.cpp" line="2963"/>
+        <location filename="../src/playercontroller.cpp" line="3138"/>
+        <location filename="../src/playercontroller.cpp" line="3163"/>
         <source>Format</source>
         <translation>フォーマット</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2941"/>
-        <location filename="../src/playercontroller.cpp" line="2966"/>
+        <location filename="../src/playercontroller.cpp" line="3141"/>
+        <location filename="../src/playercontroller.cpp" line="3166"/>
         <source>Bitrate</source>
         <translation>ビットレート</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2941"/>
-        <location filename="../src/playercontroller.cpp" line="2966"/>
+        <location filename="../src/playercontroller.cpp" line="3141"/>
+        <location filename="../src/playercontroller.cpp" line="3166"/>
         <source>%1 kbps</source>
         <translation>%1 kbps</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2944"/>
+        <location filename="../src/playercontroller.cpp" line="3144"/>
         <source>Frames per second</source>
         <translation>フレーム毎秒</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2947"/>
+        <location filename="../src/playercontroller.cpp" line="3147"/>
         <source>HDR</source>
         <translation>HDR</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2947"/>
+        <location filename="../src/playercontroller.cpp" line="3147"/>
         <source>yes</source>
         <translation>あり</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2954"/>
+        <location filename="../src/playercontroller.cpp" line="3154"/>
         <source>Video Streams</source>
         <translation>映像ストリーム</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2962"/>
+        <location filename="../src/playercontroller.cpp" line="3162"/>
         <source>Initial Audio Stream</source>
         <translation>最初の音声ストリーム</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2973"/>
+        <location filename="../src/playercontroller.cpp" line="3173"/>
         <source>Audio Streams</source>
         <translation>音声ストリーム</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2982"/>
+        <location filename="../src/playercontroller.cpp" line="3182"/>
         <source>Subtitles</source>
         <translation>字幕</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3255"/>
+        <location filename="../src/playercontroller.cpp" line="3455"/>
         <source>Chapter %1</source>
         <translation>チャプター %1</translation>
     </message>
@@ -2589,140 +2625,163 @@
         <translation>ソフトウェアのビデオイコライザーを使用</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="194"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="193"/>
         <source>Deinterlace by default:</source>
         <translation>既定のインターレース解除:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="197"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="196"/>
+        <source>None</source>
+        <translation>なし</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefGeneralPage.qml" line="196"/>
+        <source>Yadif</source>
+        <translation>Yadif</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefGeneralPage.qml" line="196"/>
+        <source>Bwdif</source>
+        <translation>Bwdif</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefGeneralPage.qml" line="201"/>
+        <source>Deinterlacing removes the horizontal combing artifacts of interlaced video. This sets the default for newly opened files; change it per file from Video &gt; Deinterlace.</source>
+        <translation>インターレース解除は、インターレース映像特有の横縦（コーミング）アーティファクトを除去します。ここでの設定は新しく開くファイルの既定値になります。ファイルごとに変更するには「映像 &gt; インターレース解除」を使用してください。</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefGeneralPage.qml" line="214"/>
+        <source>Video equalizer and zoom/aspect controls are planned for Phase 4 (ShaderEffect / item transforms). Driver selection is not available with Qt Multimedia.</source>
+        <translation>ビデオイコライザーとズーム／アスペクト比の操作はフェーズ 4（ShaderEffect／アイテム変換）で予定されています。ドライバー選択は Qt Multimedia では利用できません。</translation>
+    </message>
+    <message>
         <source>None (not supported by the backend)</source>
-        <translation>なし（バックエンド非対応）</translation>
+        <translation type="vanished">なし（バックエンド非対応）</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="206"/>
         <source>Video equalizer and zoom/aspect controls are planned for Phase 4 (ShaderEffect / item transforms). Deinterlacing and driver selection are not available with Qt Multimedia.</source>
-        <translation>ビデオイコライザーとズーム／アスペクト比の操作はフェーズ 4（ShaderEffect／アイテム変換）で予定されています。インターレース解除とドライバー選択は Qt Multimedia では利用できません。</translation>
+        <translation type="vanished">ビデオイコライザーとズーム／アスペクト比の操作はフェーズ 4（ShaderEffect／アイテム変換）で予定されています。インターレース解除とドライバー選択は Qt Multimedia では利用できません。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="224"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="232"/>
         <source>Output device:</source>
         <translation>出力デバイス:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="246"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="254"/>
         <source>Volume</source>
         <translation>音量</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="254"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="262"/>
         <source>Volume step:</source>
         <translation>音量の刻み幅:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="256"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="264"/>
         <source>How much each volume up/down key press or mouse-wheel notch changes the level.</source>
         <translation>音量アップ／ダウンのキーやマウスホイールの 1 段階で音量がどれだけ変化するか。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="264"/>
-        <location filename="../qml/PrefGeneralPage.qml" line="286"/>
-        <location filename="../qml/PrefGeneralPage.qml" line="346"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="272"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="294"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="354"/>
         <source>%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="269"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="277"/>
         <source>Remember volume between sessions</source>
         <translation>セッション間で音量を記憶</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="276"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="284"/>
         <source>Initial volume:</source>
         <translation>起動時の音量:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="278"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="286"/>
         <source>The volume level set at startup when the volume is not remembered between sessions.</source>
         <translation>音量をセッション間で記憶しない場合に、起動時に設定される音量。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="294"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="302"/>
         <source>Synchronization</source>
         <translation>同期</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="302"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="310"/>
         <source>Global audio delay:</source>
         <translation>全体の音声遅延:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="318"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="326"/>
         <source>ms</source>
         <translation>ミリ秒</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="326"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="334"/>
         <source>Delay for the current audio device — “%1” — applied to every file (e.g. to compensate Bluetooth output latency). Remembered per device, so switching devices restores the right value. A negative value holds the video back to match late audio. Each file can add its own delay via Audio &gt; Set delay.</source>
         <translation>現在の音声デバイス「%1」に対する遅延で、すべてのファイルに適用されます（例: Bluetooth 出力の遅延を補正）。デバイスごとに記憶されるため、デバイスを切り替えると適切な値が復元されます。負の値は、遅れて届く音声に合わせて映像を遅らせます。ファイルごとの遅延は 音声 &gt; 遅延を設定 で追加できます。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="340"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="348"/>
         <source>Use software volume control</source>
         <translation>ソフトウェア音量制御を使用</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="344"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="352"/>
         <source>Max. amplification:</source>
         <translation>最大増幅:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="349"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="357"/>
         <source>Volume normalization by default</source>
         <translation>既定で音量を正規化</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="356"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="364"/>
         <source>Amplification above 100% and volume normalization require an audio pipeline filter, which Qt Multimedia does not provide.</source>
         <translation>100% を超える増幅と音量の正規化には音声パイプラインのフィルターが必要ですが、Qt Multimedia は提供していません。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="375"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="383"/>
         <source>Comma-separated language codes or names in order of preference (e.g. &quot;ja, en&quot;).</source>
         <translation>優先順に、言語コードまたは言語名をカンマ区切りで指定します（例: 「ja, en」）。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="380"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="388"/>
         <source>Preferred audio language:</source>
         <translation>優先する音声言語:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="383"/>
-        <location filename="../qml/PrefGeneralPage.qml" line="393"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="391"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="401"/>
         <source>e.g. ja, en</source>
         <translation>例: ja, en</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="390"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="398"/>
         <source>Preferred subtitle language:</source>
         <translation>優先する字幕言語:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="401"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="409"/>
         <source>Show subtitles by default</source>
         <translation>既定で字幕を表示</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="406"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="414"/>
         <source>When a file has embedded subtitles, turn one on automatically (preferring the languages above) instead of starting with subtitles off.</source>
         <translation>ファイルに埋め込み字幕がある場合、字幕オフで始めるのではなく、自動的に 1 つ（上の言語を優先）をオンにします。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="416"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="424"/>
         <source>Preferred audio track number:</source>
         <translation>優先する音声トラック番号:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="422"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="430"/>
         <source>Preferred subtitle track number:</source>
         <translation>優先する字幕トラック番号:</translation>
     </message>

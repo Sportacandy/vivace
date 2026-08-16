@@ -599,6 +599,37 @@ MenuBar {
                 checked = Qt.binding(() => bar.controller.videoMirror)
             }
         }
+        AppMenu {
+            title: qsTr("&Deinterlace")
+            enabled: bar.player.hasVideo
+            AppMenuItem {
+                text: qsTr("&None")
+                checkable: true
+                checked: bar.controller.deinterlaceMode === 0
+                onTriggered: {
+                    bar.controller.deinterlaceMode = 0
+                    checked = Qt.binding(() => bar.controller.deinterlaceMode === 0)
+                }
+            }
+            AppMenuItem {
+                text: qsTr("&Yadif")
+                checkable: true
+                checked: bar.controller.deinterlaceMode === 1
+                onTriggered: {
+                    bar.controller.deinterlaceMode = 1
+                    checked = Qt.binding(() => bar.controller.deinterlaceMode === 1)
+                }
+            }
+            AppMenuItem {
+                text: qsTr("&Bwdif")
+                checkable: true
+                checked: bar.controller.deinterlaceMode === 2
+                onTriggered: {
+                    bar.controller.deinterlaceMode = 2
+                    checked = Qt.binding(() => bar.controller.deinterlaceMode === 2)
+                }
+            }
+        }
         MenuSeparator {}
         Action {
             text: qsTr("E&qualizer…")

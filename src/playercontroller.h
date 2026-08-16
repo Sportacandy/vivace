@@ -122,6 +122,19 @@ class PlayerController : public QObject
                NOTIFY videoTransformChanged)
     Q_PROPERTY(bool videoMirror READ videoMirror WRITE setVideoMirror
                NOTIFY videoTransformChanged)
+    // Deinterlace mode (0 = off, 1 = Yadif, 2 = Bwdif), per-file/session like
+    // the view transforms above -- reset from Settings.deinterlaceMode (the
+    // user's configurable global default, SMPlayer's Preferences > General >
+    // Video "Initial deinterlace") on each genuinely new source, but NOT
+    // itself persisted (mirrors SMPlayer's two-level default+override model,
+    // Preferences::initial_deinterlace seeding MediaSettings::
+    // current_deinterlacer). The setter relays into VIVACE_DEINTERLACE_MODE,
+    // an env var read fresh by the patched qtmultimedia FFmpeg plugin's
+    // VideoRenderer on every frame -- the plugin has no reach into Settings
+    // or any other Qt property, so this is the same env-var-relay pattern
+    // already used for the DVD/embedded bitmap-subtitle smoothing patch.
+    Q_PROPERTY(int deinterlaceMode READ deinterlaceMode WRITE setDeinterlaceMode
+               NOTIFY deinterlaceModeChanged)
     Q_PROPERTY(bool shuffle READ shuffle WRITE setShuffle NOTIFY shuffleChanged)
     Q_PROPERTY(bool repeatAll READ repeatAll WRITE setRepeatAll
                NOTIFY repeatAllChanged)
@@ -309,6 +322,8 @@ public:
     void setVideoFlip(bool flip);
     bool videoMirror() const { return m_videoMirror; }
     void setVideoMirror(bool mirror);
+    int deinterlaceMode() const { return m_deinterlaceMode; }
+    void setDeinterlaceMode(int mode);
     Q_INVOKABLE void zoomIn();               // E: enlarge by one step
     Q_INVOKABLE void zoomOut();              // W: shrink by one step
     Q_INVOKABLE void panBy(int dx, int dy);  // Alt+arrows: move the frame
@@ -508,6 +523,7 @@ public:
 signals:
     void videoOutputChanged();
     void videoTransformChanged();
+    void deinterlaceModeChanged();
     void seekPreviewAvailableChanged();
     void smoothPositionChanged();
     void mediaTitleChanged();
@@ -694,6 +710,7 @@ private:
     int m_videoRotation = 0; // 0/90/180/270, clockwise
     bool m_videoFlip = false;
     bool m_videoMirror = false;
+    int m_deinterlaceMode = 0; // 0 = off, 1 = Yadif, 2 = Bwdif
     // A/V sync: delay the video path by |audioDelay| when audioDelay < 0.
     // Seek-preview: hidden player + its sink; frames relayed to m_previewTarget.
     QMediaPlayer *m_previewPlayer = nullptr;

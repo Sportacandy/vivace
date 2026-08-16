@@ -12,6 +12,10 @@ tiedostoa ja nollataan jokaiselle uudelle.
 - **Kuvasuhde** — pakota näyttösuhde (Auto, 4:3, 16:9, …).
 - **Kierrä** — Ei mitään, 90° myötäpäivään, 90° vastapäivään tai 180°.
 - **Käännä kuva** / **Peilaa kuva** — käännä pysty- tai vaakasuunnassa.
+- **Lomituksen poisto** — **Ei mitään**, **Yadif** tai **Bwdif** lomitetun
+  videon kampamaisten häiriöiden poistamiseksi. Vaikutus tulee voimaan heti,
+  myös toiston aikana. Oletusarvo äskettäin avatuille tiedostoille asetetaan
+  kohdassa *Asetukset ▸ Yleiset ▸ Video*.
 - **Taajuuskorjain…** (`Ctrl+E`) — kirkkaus, kontrasti, sävy, kylläisyys ja gamma.
   *Aseta oletusarvoiksi* soveltaa asetuksesi tuleviin tiedostoihin.
 - **Kuvakaappaus** (`S`) — tallenna nykyinen ruutu. Kansio ja kuvamuoto asetetaan

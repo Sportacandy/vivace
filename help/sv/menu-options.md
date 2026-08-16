@@ -6,6 +6,9 @@ Menyn **Alternativ** innehåller inställningarna och gränssnittskonfiguratione
   Gränssnitt, Undertexter, Tangentbord och mus, Spellista, Enheter, Tv,
   Filtyper, Uppdateringar, Nätverk och Avancerat. Ändringar tillämpas direkt;
   **Avbryt** återställer dem.
+  - **Allmänt ▸ Video** ställer in standardläget för **Deinterlace** (Ingen /
+    Yadif / Bwdif) för nyöppnade filer — ändra det per fil under *Video ▸
+    Deinterlace*.
   - **Nätverk** har flikarna OpenSubtitles, YouTube, Proxy och Casta; **Proxy**
     ställer in en valfri HTTP- eller SOCKS5-proxy som gäller för hela
     programmet (OpenSubtitles-sökning, uppdateringskontroll och — endast för

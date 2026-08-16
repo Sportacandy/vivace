@@ -15,6 +15,10 @@ gelden voor het huidige bestand en worden bij elk nieuw bestand gewist.
 - **Beeldverhouding** — een weergaveverhouding forceren (Automatisch, 4:3, 16:9, …).
 - **Draaien** — Geen, 90° met de klok mee, 90° tegen de klok in, of 180°.
 - **Beeld omkeren** / **Beeld spiegelen** — verticaal of horizontaal omkeren.
+- **Deinterlace** — **Geen**, **Yadif** of **Bwdif**, om de kameffecten van
+  interlaced video te verwijderen. Wordt direct toegepast, ook tijdens het
+  afspelen. De standaardwaarde voor nieuw geopende bestanden wordt
+  ingesteld bij *Voorkeuren ▸ Algemeen ▸ Video*.
 - **Equalizer…** (`Ctrl+E`) — helderheid, contrast, tint, verzadiging en gamma.
   *Als standaardwaarden instellen* past uw instellingen toe op toekomstige bestanden.
 - **Schermafbeelding** (`S`) — het huidige frame opslaan. De map en de

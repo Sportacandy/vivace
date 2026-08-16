@@ -14,6 +14,10 @@ applicano al file corrente e si azzerano a ogni nuovo file.
 - **Rapporto d'aspetto** — forzare un aspetto di visualizzazione (Auto, 4:3, 16:9, …).
 - **Ruota** — Nessuna, 90° in senso orario, 90° in senso antiorario o 180°.
 - **Capovolgi immagine** / **Rifletti immagine** — capovolgere in verticale o orizzontale.
+- **Deinterlaccia** — **Nessuno**, **Yadif** o **Bwdif**, per rimuovere gli
+  artefatti a pettine del video interlacciato. Si applica immediatamente,
+  anche durante la riproduzione. Il valore predefinito per i file aperti di
+  recente si imposta in *Preferenze ▸ Generale ▸ Video*.
 - **Equalizzatore…** (`Ctrl+E`) — luminosità, contrasto, tonalità, saturazione e gamma.
   *Imposta come valori predefiniti* applica le impostazioni ai file futuri.
 - **Schermata** (`S`) — salvare il fotogramma corrente. La cartella e il formato

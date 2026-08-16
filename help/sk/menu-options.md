@@ -5,6 +5,9 @@ Ponuka **Možnosti** obsahuje nastavenia a konfiguráciu rozhrania.
 - **Nastavenia…** (`Ctrl+P`) — hlavné okno nastavení: Všeobecné, Rozhranie,
   Titulky, Klávesnica a myš, Zoznam skladieb, Jednotky, TV, Typy súborov,
   Aktualizácie, Sieť a Pokročilé. Zmeny sa použijú ihneď; **Zrušiť** ich vráti späť.
+  - **Všeobecné ▸ Video** nastavuje predvolený režim **Odstrániť
+    prekladanie** (Žiadne / Yadif / Bwdif) pre novo otvorené súbory —
+    zmeňte ho pre jednotlivý súbor cez *Video ▸ Odstrániť prekladanie*.
   - **Sieť** obsahuje karty OpenSubtitles, YouTube, Proxy a Prenos; **Proxy**
     nastavuje voliteľnú HTTP alebo SOCKS5 proxy platnú pre celú aplikáciu
     (vyhľadávanie OpenSubtitles, kontrolu aktualizácií a — iba pri HTTP —

@@ -6,6 +6,9 @@ Le menu **Options** contient les préférences et la configuration de l'interfac
   Général, Interface, Sous-titres, Clavier et souris, Liste de lecture,
   Lecteurs, TV, Types de fichiers, Mises à jour, Réseau et Avancé. Les
   changements s'appliquent immédiatement ; **Annuler** les rétablit.
+  - **Général ▸ Vidéo** définit le mode **Désentrelacement** par défaut
+    (Aucun / Yadif / Bwdif) pour les nouveaux fichiers ouverts — modifiable
+    par fichier depuis *Vidéo ▸ Désentrelacement*.
   - **Réseau** propose les onglets OpenSubtitles, YouTube, Proxy et Diffusion ;
     **Proxy** configure un proxy HTTP ou SOCKS5 facultatif, appliqué à toute
     l'application (recherche OpenSubtitles, vérification des mises à jour et,

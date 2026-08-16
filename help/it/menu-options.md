@@ -6,6 +6,9 @@ Il menu **Opzioni** contiene le preferenze e la configurazione dell'interfaccia.
   Generale, Interfaccia, Sottotitoli, Tastiera e mouse, Playlist, Unità, TV, Tipi
   di file, Aggiornamenti, Rete e Avanzate. Le modifiche si applicano subito;
   **Annulla** le ripristina.
+  - **Generale ▸ Video** imposta la modalità **Deinterlaccia** predefinita
+    (Nessuno / Yadif / Bwdif) per i file aperti di recente — modificabile
+    per singolo file da *Video ▸ Deinterlaccia*.
   - **Rete** include le schede OpenSubtitles, YouTube, Proxy e Cast; **Proxy**
     configura un proxy HTTP o SOCKS5 facoltativo, applicato a tutta
     l'applicazione (ricerca OpenSubtitles, controllo aggiornamenti e, solo per

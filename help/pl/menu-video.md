@@ -14,6 +14,10 @@ bieżącego pliku i są zerowane przy każdym nowym.
 - **Proporcje obrazu** — wymuś proporcje wyświetlania (Auto, 4:3, 16:9, …).
 - **Obróć** — Brak, 90° w prawo, 90° w lewo lub 180°.
 - **Odwróć obraz** / **Odbij obraz** — odwróć w pionie lub w poziomie.
+- **Usuwanie przeplotu** — **Brak**, **Yadif** lub **Bwdif**, aby usunąć
+  artefakty grzebieniowe przeplotu wideo. Stosowane natychmiast, nawet
+  podczas odtwarzania. Domyślny tryb dla nowo otwieranych plików ustawia
+  się w *Ustawienia ▸ Ogólne ▸ Wideo*.
 - **Korektor…** (`Ctrl+E`) — jasność, kontrast, barwa, nasycenie i gamma.
   *Ustaw jako wartości domyślne* stosuje twoje ustawienia do przyszłych plików.
 - **Zrzut ekranu** (`S`) — zapisz bieżącą klatkę. Folder i format obrazu ustawia

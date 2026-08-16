@@ -15,6 +15,10 @@ fichier en cours et sont réinitialisés pour chaque nouveau.
 - **Rapport d'aspect** — forcer un format d'affichage (Auto, 4:3, 16:9, …).
 - **Rotation** — Aucune, 90° horaire, 90° antihoraire, ou 180°.
 - **Retourner l'image** / **Miroir de l'image** — retourner verticalement ou horizontalement.
+- **Désentrelacement** — **Aucun**, **Yadif** ou **Bwdif**, pour supprimer
+  les artefacts de peignage de la vidéo entrelacée. S'applique
+  immédiatement, même en cours de lecture. La valeur par défaut pour les
+  nouveaux fichiers ouverts se règle dans *Préférences ▸ Général ▸ Vidéo*.
 - **Égaliseur…** (`Ctrl+E`) — luminosité, contraste, teinte, saturation et gamma.
   *Définir comme valeurs par défaut* applique vos réglages aux fichiers futurs.
 - **Capture d'écran** (`S`) — enregistrer l'image actuelle. Le dossier et le

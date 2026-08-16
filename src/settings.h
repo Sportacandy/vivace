@@ -57,6 +57,16 @@ class Settings : public QObject
                NOTIFY closeOnFinishChanged)
     Q_PROPERTY(bool disableScreensaver READ disableScreensaver
                WRITE setDisableScreensaver NOTIFY disableScreensaverChanged)
+    // Default deinterlace mode for newly-opened files (0 = None, 1 = Yadif,
+    // 2 = Bwdif; SMPlayer's own "Initial deinterlace" combo, Preferences >
+    // General > Video). PlayerController.deinterlaceMode is the actual
+    // per-file/session value seeded from this default on each new source,
+    // changeable per file via Video > Deinterlace -- mirroring SMPlayer's
+    // two-level model (Preferences::initial_deinterlace seeding
+    // MediaSettings::current_deinterlacer) without adding a third,
+    // per-file-persistent store of its own.
+    Q_PROPERTY(int deinterlaceMode READ deinterlaceMode WRITE setDeinterlaceMode
+               NOTIFY deinterlaceModeChanged)
     Q_PROPERTY(bool pauseWhenMinimized READ pauseWhenMinimized
                WRITE setPauseWhenMinimized NOTIFY pauseWhenMinimizedChanged)
     Q_PROPERTY(int volumeStep READ volumeStep WRITE setVolumeStep
@@ -435,6 +445,9 @@ public:
 
     bool disableScreensaver() const { return m_disableScreensaver; }
     void setDisableScreensaver(bool disable);
+
+    int deinterlaceMode() const { return m_deinterlaceMode; }
+    void setDeinterlaceMode(int mode);
 
     bool pauseWhenMinimized() const { return m_pauseWhenMinimized; }
     void setPauseWhenMinimized(bool pause);
@@ -822,6 +835,7 @@ signals:
     void subtitlesByDefaultChanged();
     void closeOnFinishChanged();
     void disableScreensaverChanged();
+    void deinterlaceModeChanged();
     void pauseWhenMinimizedChanged();
     void volumeStepChanged();
     void seekShortStepChanged();
@@ -933,6 +947,7 @@ private:
     bool m_subtitlesByDefault;
     bool m_closeOnFinish;
     bool m_disableScreensaver;
+    int m_deinterlaceMode;
     bool m_pauseWhenMinimized;
     int m_volumeStep;
     int m_seekShortStep;

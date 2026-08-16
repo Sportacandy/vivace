@@ -236,6 +236,63 @@ the window mid-playback — in all four combinations of {bitmap, text
 (`mov_text`)} × {no delay configured, a negative per-device delay
 configured}.
 
+## Deinterlacing
+
+`Video ▸ Deinterlace` (None / Yadif / Bwdif) needs the same kind of custom
+`qtmultimedia` build as AV1 and speed/pitch compensation above — Qt
+Multimedia has no filter-graph stage and no interlace awareness at all,
+so with a **stock Qt**, Yadif/Bwdif have no effect (the menu is present
+everywhere, but does nothing without the patch).
+
+Not yet included in the CI-built bundle described in "AV1 support" above
+(as of this writing) — apply
+[`patches/qtmultimedia-deinterlace.patch`](patches/qtmultimedia-deinterlace.patch)
+to your `qtmultimedia` source checkout by hand, rebuild `qtmultimedia`, and
+rebuild Vivace against that Qt. It splices a small FFmpeg `avfilter` graph
+(`buffer → yadif|bwdif → buffersink`) into the FFmpeg plugin's
+`VideoRenderer`, the one place a decoded frame is converted for display —
+gated by an environment variable Vivace's own `PlayerController` sets
+whenever you change the Video ▸ Deinterlace selection, the same mechanism
+already used for the bitmap-subtitle-smoothing patch above. Independent of
+the other three patches; apply any combination to the same checkout.
+
+Deliberately narrower than SMPlayer's own six-mode Deinterlace menu:
+Yadif and Bwdif only, both single-rate ("one output frame per input").
+SMPlayer's other modes (Lowpass5, Linear Blend, Kerndeint) depend on
+`libpostproc`, a separate FFmpeg library Vivace's own code never calls
+into; the "double framerate" (bob) variants of Yadif/Bwdif would need the
+video renderer to emit an extra synthesized frame per input, which Qt
+Multimedia's internal frame-scheduling doesn't support without much
+deeper changes.
+
+**Runtime requirement, easy to miss if you rebuild by hand instead of
+using the `build-patched-qtmultimedia-*` scripts**: even though Vivace's
+own code never calls into `libpostproc`, the FFmpeg `avfilter` library
+*itself* dynamically depends on it (`avfilter-10.dll`/`libavfilter.so.10`
+imports `postproc-58.dll`/`libpostproc.so.58` — confirmed by inspecting
+its import table/`DT_NEEDED` entries directly; none of the *other* FFmpeg
+libraries this project already used have this dependency). Without
+`postproc-58.dll`/`libpostproc.so.58` sitting alongside the other FFmpeg
+runtime libraries, `avfilter-10.dll` fails to load, which cascades to the
+whole `ffmpegmediaplugin.dll`/`libffmpegmediaplugin.so` failing to load —
+Qt Multimedia then silently falls back to a different backend (Windows
+Media Foundation on Windows), breaking playback for **every file**,
+regardless of Deinterlace mode (including `None`) — not a subtle,
+avfilter-specific failure. The `build-patched-qtmultimedia-*` scripts copy
+this file automatically now; if you deploy the FFmpeg runtime libraries by
+hand, make sure to grab it from the same BtbN download as the others.
+
+**Verified working end to end (2026-08-16)**: real rebuild against a live
+Qt 6.11.1 kit, playback confirmed restored after the `postproc-58.dll` fix
+above, and Video ▸ Deinterlace ▸ Yadif confirmed via `vivace.log`
+diagnostics to genuinely construct the avfilter graph and produce filtered
+output frames, then confirmed visually against real DVD content (a 1979
+film transferred via telecine) to show deinterlaced playback as expected.
+Not yet separately confirmed: hardware-decoded (D3D11VA/VAAPI) sources
+specifically (the least-proven code path, since it wasn't exercised by
+the content tested so far) and Bwdif (only Yadif has been visually
+confirmed).
+
 ## Building
 
 ```

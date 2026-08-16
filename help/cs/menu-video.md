@@ -14,6 +14,10 @@ aktuální soubor a u každého nového se vynulují.
 - **Poměr stran** — vynutit poměr zobrazení (Auto, 4:3, 16:9, …).
 - **Otočit** — Žádné, 90° po směru hodin, 90° proti směru hodin nebo 180°.
 - **Převrátit obraz** / **Zrcadlit obraz** — převrátit svisle nebo vodorovně.
+- **Odstranění prokládání** — **Žádné**, **Yadif** nebo **Bwdif** k
+  odstranění hřebenových artefaktů prokládaného videa. Použije se
+  okamžitě, i během přehrávání. Výchozí režim pro nově otevřené soubory
+  se nastavuje v *Předvolby ▸ Obecné ▸ Video*.
 - **Ekvalizér…** (`Ctrl+E`) — jas, kontrast, odstín, sytost a gama.
   *Nastavit jako výchozí hodnoty* použije vaše nastavení na budoucí soubory.
 - **Snímek obrazovky** (`S`) — uložit aktuální snímek. Složka a formát obrázku se

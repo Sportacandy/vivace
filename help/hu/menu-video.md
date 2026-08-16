@@ -12,6 +12,10 @@ fájlra vonatkoznak, és minden újnál visszaállnak.
 - **Képarány** — megjelenítési arány kényszerítése (Automatikus, 4:3, 16:9, …).
 - **Forgatás** — Nincs, 90° az óramutató szerint, 90° az óramutatóval szemben vagy 180°.
 - **Kép tükrözése (függőleges)** / **Kép tükrözése (vízszintes)** — függőleges vagy vízszintes tükrözés.
+- **Deinterlace** — **Nincs**, **Yadif** vagy **Bwdif**, a váltottsoros videó
+  fésűhatásának eltávolítására. Azonnal érvénybe lép, akár lejátszás közben
+  is. Az újonnan megnyitott fájlok alapértelmezését a *Beállítások ▸
+  Általános ▸ Videó* oldalon állíthatja be.
 - **Hangszínszabályzó…** (`Ctrl+E`) — fényerő, kontraszt, árnyalat, telítettség és gamma.
   Az *Alapértelmezett értékként beállítás* a beállításait a jövőbeli fájlokra alkalmazza.
 - **Képernyőkép** (`S`) — az aktuális képkocka mentése. A mappa és a képformátum a

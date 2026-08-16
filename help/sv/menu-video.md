@@ -12,6 +12,10 @@ filen och nollställs för varje ny.
 - **Bildförhållande** — tvinga ett visningsförhållande (Auto, 4:3, 16:9, …).
 - **Rotera** — Inget, 90° medurs, 90° moturs eller 180°.
 - **Vänd bild** / **Spegelvänd bild** — vänd lodrätt eller vågrätt.
+- **Deinterlace** — **Ingen**, **Yadif** eller **Bwdif**, för att ta bort
+  kamartefakterna hos sammanflätad video. Tillämpas omedelbart, även mitt
+  under uppspelningen. Standardvärdet för nyöppnade filer anges i
+  *Inställningar ▸ Allmänt ▸ Video*.
 - **Equalizer…** (`Ctrl+E`) — ljusstyrka, kontrast, nyans, mättnad och gamma.
   *Ange som standardvärden* tillämpar dina inställningar på framtida filer.
 - **Skärmbild** (`S`) — spara den aktuella bildrutan. Mapp och bildformat ställs

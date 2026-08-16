@@ -5,6 +5,9 @@ The **Options** menu holds preferences and interface configuration.
 - **Preferences…** (`Ctrl+P`) — the main settings dialog: General, Interface,
   Subtitles, Keyboard and mouse, Playlist, Drives, TV, File types, Updates,
   Network and Advanced. Changes apply instantly; **Cancel** reverts them.
+  - **General ▸ Video** sets the default **Deinterlace** mode (None / Yadif /
+    Bwdif) for newly opened files — change it per file from *Video ▸
+    Deinterlace*.
   - **Network** has OpenSubtitles, YouTube, Proxy and Cast tabs; **Proxy**
     configures an optional HTTP or SOCKS5 proxy applied application-wide
     (OpenSubtitles search, the update check, and — HTTP only — media

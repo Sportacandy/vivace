@@ -161,7 +161,19 @@ fi
 cmake --install "$WORK/build"
 
 echo "== Deploying dav1d FFmpeg runtime libraries into $QTDIR/lib =="
-for so in libavcodec.so.61 libavformat.so.61 libavutil.so.59 libswresample.so.5 libswscale.so.8; do
+# libavfilter.so.10 (vivace): needed at runtime by the deinterlace patch's
+# yadif/bwdif avfilter graph (playbackengine/qffmpegdeinterlacer.cpp).
+# libpostproc.so.58: NOT something Vivace's own code calls into directly --
+# it's libavfilter.so.10's OWN runtime dependency (confirmed via its ELF
+# DT_NEEDED entries: libavfilter.so.10 needs libpostproc.so.58, which none of
+# the other FFmpeg libraries do). Missing it makes libavfilter.so.10 fail to
+# load, which cascades to libffmpegmediaplugin.so itself failing to load --
+# Qt Multimedia then silently falls back to a different backend, breaking
+# playback for EVERY file regardless of Deinterlace mode, not just an
+# avfilter-specific failure (found the hard way on Windows, 2026-08-16: "any
+# media stops after a couple of frames" even with Deinterlace set to None --
+# the same missing-transitive-dependency bug applies here too).
+for so in libavcodec.so.61 libavformat.so.61 libavutil.so.59 libswresample.so.5 libswscale.so.8 libavfilter.so.10 libpostproc.so.58; do
     cp -P "$WORK/ffmpeg/lib/$so" "$QTDIR/lib/$so"
 done
 

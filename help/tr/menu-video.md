@@ -12,6 +12,10 @@ dosyaya uygulanır ve her yeni dosyada sıfırlanır.
 - **En boy oranı** — bir görüntüleme oranını zorlar (Otomatik, 4:3, 16:9, …).
 - **Döndür** — Yok, saat yönünde 90°, saat yönünün tersine 90° veya 180°.
 - **Görüntüyü çevir** / **Görüntüyü aynala** — dikey veya yatay çevirir.
+- **Görüntü ayrıştırma** — taramalı videonun tarak izi bozulmalarını
+  gidermek için **Hiçbiri**, **Yadif** veya **Bwdif**. Oynatma sırasında
+  bile hemen uygulanır. Yeni açılan dosyalar için varsayılan değer
+  *Tercihler ▸ Genel ▸ Video* bölümünde ayarlanır.
 - **Ekolayzer…** (`Ctrl+E`) — parlaklık, karşıtlık, ton, doygunluk ve gama.
   *Varsayılan değerler olarak ayarla*, ayarlarınızı gelecekteki dosyalara uygular.
 - **Ekran görüntüsü** (`S`) — geçerli kareyi kaydeder. Klasör ve görüntü biçimi

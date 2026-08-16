@@ -5,6 +5,9 @@ Menu **Opcje** zawiera ustawienia i konfigurację interfejsu.
 - **Ustawienia…** (`Ctrl+P`) — główne okno ustawień: Ogólne, Interfejs, Napisy,
   Klawiatura i mysz, Lista odtwarzania, Napędy, TV, Typy plików, Aktualizacje,
   Sieć i Zaawansowane. Zmiany są stosowane natychmiast; **Anuluj** je cofa.
+  - **Ogólne ▸ Wideo** ustawia domyślny tryb **Usuwanie przeplotu** (Brak /
+    Yadif / Bwdif) dla nowo otwieranych plików — zmień go dla pojedynczego
+    pliku w *Wideo ▸ Usuwanie przeplotu*.
   - **Sieć** zawiera karty OpenSubtitles, YouTube, Proxy i Przesyłanie;
     **Proxy** konfiguruje opcjonalny serwer proxy HTTP lub SOCKS5, stosowany
     w całej aplikacji (wyszukiwanie OpenSubtitles, sprawdzanie aktualizacji

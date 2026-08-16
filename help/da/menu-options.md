@@ -6,6 +6,9 @@ Menuen **Indstillinger** indeholder indstillingerne og grænsefladekonfiguration
   Grænseflade, Undertekster, Tastatur og mus, Afspilningsliste, Drev, Tv,
   Filtyper, Opdateringer, Netværk og Avanceret. Ændringer anvendes med det samme;
   **Annuller** fortryder dem.
+  - **Generelt ▸ Video** angiver standardtilstanden for **Deinterlace**
+    (Ingen / Yadif / Bwdif) for nyligt åbnede filer — skift den pr. fil under
+    *Video ▸ Deinterlace*.
   - **Netværk** har fanerne OpenSubtitles, YouTube, Proxy og Udsendelse;
     **Proxy** konfigurerer en valgfri HTTP- eller SOCKS5-proxy, der gælder
     for hele programmet (OpenSubtitles-søgning, opdateringstjek og — kun for

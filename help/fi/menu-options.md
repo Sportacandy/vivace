@@ -5,6 +5,9 @@
 - **Asetukset…** (`Ctrl+P`) — pääasetusikkuna: Yleiset, Käyttöliittymä, Tekstitys,
   Näppäimistö ja hiiri, Soittolista, Asemat, TV, Tiedostotyypit, Päivitykset,
   Verkko ja Lisäasetukset. Muutokset tulevat voimaan heti; **Peruuta** kumoaa ne.
+  - **Yleiset ▸ Video** asettaa oletusarvon kohdalle **Lomituksen poisto**
+    (Ei mitään / Yadif / Bwdif) äskettäin avatuille tiedostoille — muuta sitä
+    tiedostokohtaisesti kohdassa *Video ▸ Lomituksen poisto*.
   - **Verkko** sisältää välilehdet OpenSubtitles, YouTube, Proxy ja Lähetys;
     **Proxy** määrittää valinnaisen HTTP- tai SOCKS5-välityspalvelimen, jota
     käytetään koko sovelluksessa (OpenSubtitles-haku, päivitystarkistus ja —

@@ -16,6 +16,10 @@ die aktuelle Datei und werden für jede neue zurückgesetzt.
 - **Drehen** — Keine, 90° im Uhrzeigersinn, 90° gegen den Uhrzeigersinn oder 180°.
 - **Bild spiegeln (vertikal)** / **Bild spiegeln (horizontal)** — vertikal oder
   horizontal spiegeln.
+- **Zeilenentflechtung** — **-**, **Yadif** oder **Bwdif**, um die
+  Kammartefakte von Interlaced-Video zu entfernen. Wird sofort angewendet,
+  auch mitten in der Wiedergabe. Der Standardwert für neu geöffnete Dateien
+  wird unter *Einstellungen ▸ Allgemein ▸ Video* festgelegt.
 - **Equalizer…** (`Strg+E`) — Helligkeit, Kontrast, Farbton, Sättigung und Gamma.
   *Als Standardwerte festlegen* wendet Ihre Einstellungen auf künftige Dateien an.
 - **Screenshot** (`S`) — das aktuelle Bild speichern. Ordner und Bildformat

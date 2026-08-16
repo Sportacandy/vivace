@@ -244,7 +244,19 @@ try {
     if ($LASTEXITCODE -ne 0) { throw "cmake --install failed" }
 
     Write-Host "== Deploying dav1d FFmpeg runtime DLLs into $QtDir\bin =="
-    foreach ($dll in "avcodec-61.dll", "avformat-61.dll", "avutil-59.dll", "swresample-5.dll", "swscale-8.dll") {
+    # avfilter-10.dll (vivace): needed at runtime by the deinterlace patch's
+    # yadif/bwdif avfilter graph (playbackengine/qffmpegdeinterlacer.cpp).
+    # postproc-58.dll: NOT something Vivace's own code calls into directly --
+    # it's avfilter-10.dll's OWN runtime dependency (confirmed via its PE
+    # import table: avfilter-10.dll imports postproc-58.dll, which none of
+    # the other FFmpeg DLLs do). Missing it makes avfilter-10.dll fail to
+    # load, which cascades to ffmpegmediaplugin.dll itself failing to load --
+    # Qt Multimedia then silently falls back to a different backend (Windows
+    # Media Foundation), breaking playback for EVERY file regardless of
+    # Deinterlace mode, not just an avfilter-specific failure (found the hard
+    # way: 2026-08-16, real report of "any media stops after a couple of
+    # frames" even with Deinterlace set to None).
+    foreach ($dll in "avcodec-61.dll", "avformat-61.dll", "avutil-59.dll", "swresample-5.dll", "swscale-8.dll", "avfilter-10.dll", "postproc-58.dll") {
         Copy-Item (Join-Path $ffmpegRoot "bin\$dll") (Join-Path $QtDir "bin\$dll") -Force
     }
 

@@ -15,6 +15,10 @@ archivo actual y se reinician con cada uno nuevo.
 - **Relación de aspecto** — forzar un aspecto de visualización (Auto, 4:3, 16:9, …).
 - **Girar** — Ninguno, 90° a la derecha, 90° a la izquierda o 180°.
 - **Voltear imagen** / **Reflejar imagen** — voltear en vertical u horizontal.
+- **Desentrelazado** — **Desactivar**, **Yadif** o **Bwdif**, para eliminar
+  los artefactos de peinado del vídeo entrelazado. Se aplica de inmediato,
+  incluso durante la reproducción. El valor predeterminado para los
+  archivos recién abiertos se configura en *Preferencias ▸ General ▸ Vídeo*.
 - **Ecualizador…** (`Ctrl+E`) — brillo, contraste, tono, saturación y gamma.
   *Establecer como valores predeterminados* aplica sus ajustes a los archivos futuros.
 - **Captura de pantalla** (`S`) — guardar el fotograma actual. La carpeta y el

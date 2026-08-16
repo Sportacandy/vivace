@@ -605,6 +605,12 @@ ApplicationWindow {
         anchors.left: parent.left
         anchors.top: parent.top
         anchors.margins: 24
+        // Above fullscreenTopChrome/fullscreenControls (both z: 20) -- in
+        // fullscreen, the floating top chrome (menu+toolbar) occupies the
+        // same top-left corner as the OSD, and without an explicit z here
+        // it rendered UNDER that chrome (z 0 < 20), leaving the OSD almost
+        // entirely hidden behind the toolbar whenever the chrome was shown.
+        z: 30
         width: osdLabel.width + 24
         height: osdLabel.implicitHeight + 12
         radius: 4
@@ -825,8 +831,19 @@ ApplicationWindow {
             // Playback speed is per-file (SMPlayer's mset.speed): each new
             // file starts at normal speed. Skip DVD — its LoadedMedia fires
             // on every chapter rebuild, which would reset speed mid-disc.
-            if (!playerController.dvdPlayback)
+            if (!playerController.dvdPlayback) {
                 Settings.playbackRate = 1.0
+                // Deinterlace mode is likewise per-file (SMPlayer's
+                // MediaSettings::current_deinterlacer), seeded from the
+                // configurable global default (Settings.deinterlaceMode,
+                // Preferences > General > Video) rather than resurfacing
+                // whatever the previous file happened to be set to. Same
+                // DVD skip as speed: a disc's whole title/chapter run
+                // shares one source (interlaced or not), so chapter-to-
+                // chapter LoadedMedia re-fires should not silently revert
+                // a user's Video > Deinterlace choice mid-disc.
+                playerController.deinterlaceMode = Settings.deinterlaceMode
+            }
         }
     }
 

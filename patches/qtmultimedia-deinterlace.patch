@@ -1,0 +1,669 @@
+Qt module:   qtmultimedia
+Base tag:    v6.11.1
+Applies to:  src/multimedia/configure.cmake,
+             src/plugins/multimedia/ffmpeg/CMakeLists.txt,
+             src/plugins/multimedia/ffmpeg/playbackengine/qffmpegdeinterlacer.cpp (new),
+             src/plugins/multimedia/ffmpeg/playbackengine/qffmpegdeinterlacer_p.h (new),
+             src/plugins/multimedia/ffmpeg/playbackengine/qffmpegvideorenderer.cpp,
+             src/plugins/multimedia/ffmpeg/playbackengine/qffmpegvideorenderer_p.h
+
+Adds optional software deinterlacing (yadif/bwdif) for the FFmpeg playback
+path, since Qt Multimedia has neither an avfilter/filter-graph stage nor
+any interlace awareness at all: StreamDecoder::receiveAVFrames()
+(qffmpegstreamdecoder.cpp) hands avcodec_receive_frame()'s raw AVFrame
+straight into a Frame/QVideoFrame, discarding AV_FRAME_FLAG_INTERLACED /
+top_field_first entirely, and no public API (QMediaPlayer, QVideoSink,
+QVideoFrame, QPlaybackOptions) exposes anything deinterlace-related
+either. This is the same class of gap as the AV1-hwaccel and WSOLA
+pitch-compensation patches -- Qt Multimedia gives Vivace nothing to call,
+so the fix has to live inside qtmultimedia itself.
+
+Per this project's working rule ("read the reference implementation
+before implementing a feature"), SMPlayer's own Video > Deinterlace menu
+was read first (src/basegui.cpp, src/mediasettings.h, src/prefgeneral.cpp/
+preftv.cpp): a radio-button submenu with modes None / Lowpass5 / Yadif
+(normal) / Yadif (double framerate) / Linear Blend / Kerndeint, backed by
+a two-level model (Preferences::initial_deinterlace, a global default,
+seeds MediaSettings::current_deinterlacer, a per-file/session value).
+SMPlayer applies these via mplayer -vf-add / mpv's lavfi(); Lowpass5 and
+Linear Blend map to libpostproc's `pp=l5`/`pp=lb`, Kerndeint to its own
+`kerndeint` filter.
+
+Deliberately scoped DOWN from SMPlayer's six modes to two -- Yadif and
+Bwdif only -- for two reasons, not laziness:
+
+  1. Lowpass5/Linear Blend/Kerndeint depend on libpostproc, a separate,
+     older FFmpeg library that may not even be present in the dav1d-
+     enabled BtbN FFmpeg build Vivace's other patches already depend on
+     (see scripts/build-patched-qtmultimedia-{linux,windows}.*) --
+     claiming modes that might silently be unavailable would be the kind
+     of dishonest-scope call this project has avoided elsewhere (e.g. the
+     file-association extension list only advertises formats Vivace can
+     actually play).
+  2. The "double framerate" (bob) variants need the ability to emit an
+     EXTRA, synthesized output frame with its own timestamp per input
+     frame -- but QFFmpeg::Renderer's frame-queueing (qffmpegrenderer_p.h)
+     is a private, one-Frame-in-per-renderInternal()-call contract with no
+     way for a subclass to inject a second frame into the session queue.
+     Supporting bob mode would need much deeper surgery to Renderer's own
+     scheduling, out of scope for this patch. Yadif/Bwdif "mode=send_frame"
+     (one output per input) fits VideoRenderer::renderInternal()'s existing
+     one-in/one-out contract exactly, with no restructuring needed.
+
+Verified all AVOption names/defaults and the shared "1-frame-lookahead
+latency" behaviour directly against FFmpeg's real n7.1 source (not
+recalled from memory): yadif.h (YADIF_MODE_SEND_FRAME=0, YADIF_PARITY_
+AUTO=-1, YADIF_DEINT_ALL=0), yadif_common.c (both the mid-stream and
+end-of-stream frame-emission paths call av_frame_copy_props(), so
+colour-space/HDR/side-data metadata already carries through to the
+deinterlaced output frame with no manual propagation needed), and
+vf_bwdif.c (confirms bwdif shares yadif's exact option names via the same
+yadif_common.c infrastructure, but its own MODE DEFAULT is
+YADIF_MODE_SEND_FIELD=1/"double framerate" -- this patch always passes
+mode=0 explicitly to force the single-rate case regardless of that
+default). The buffer-source args-string format
+("video_size=%1x%2:pix_fmt=%3:time_base=...:pixel_aspect=%4/%5", with
+pix_fmt as a plain integer) and the av_buffersrc_add_frame_flags(...,
+AV_BUFFERSRC_FLAG_KEEP_REF) / av_buffersink_get_frame(...) push/pull calls
+match FFmpeg's own official doc/examples/decode_filter_video.c reference
+example line for line.
+
+Design (all in the new Deinterlacer class, qffmpegdeinterlacer_p.h/.cpp):
+  - A small 3-node avfilter graph (buffer -> yadif|bwdif -> buffersink),
+    rebuilt lazily whenever the input frame's width/height/pixel format
+    changes (or on first use). The buffersink's accepted pix_fmts is
+    constrained to match the input, so the pass-through filter can't
+    trigger an unwanted implicit conversion.
+  - Since this class substitutes its OWN external timing for each frame
+    rather than trusting the filter graph's own pts math, a plain FIFO
+    (QQueue<pair<TrackPosition, TrackDuration>>) pairs "the Nth frame
+    pushed" with "the Nth frame emitted" -- valid because yadif/bwdif in
+    mode=send_frame never reorder frames, only delay them by a fixed,
+    constant one-frame lookahead.
+  - Hardware-decoded frames (inputFrame->hw_frames_ctx set -- the DEFAULT
+    path for exactly the codecs, H.264/MPEG-2, that interlaced content is
+    most likely to use) are downloaded to system memory via
+    av_hwframe_transfer_data() before entering the graph, since yadif/
+    bwdif are software-only filters; skipping this would make
+    deinterlacing silently do nothing (or fail) on the common case.
+  - VideoRenderer::renderInternal() (the sole AVFrame -> QVideoFrame
+    conversion point in the whole FFmpeg plugin) is gated by a
+    VIVACE_DEINTERLACE_MODE environment variable (0 = off, 1 = Yadif,
+    2 = Bwdif), read fresh via qEnvironmentVariableIntValue() on every
+    frame -- the same env-var-relay pattern already used by
+    VIVACE_SUBTITLE_BITMAP_SMOOTHING, since this plugin has no reach into
+    Vivace's own Settings/PlayerController. Vivace's PlayerController::
+    setDeinterlaceMode() calls qputenv() on every change.
+  - A new VideoRenderer::seekInternal() override drops any buffered
+    Deinterlacer state on seek (it refers to pre-seek frames and would
+    otherwise pair stale timing with a post-seek frame); the same reset
+    happens at end-of-stream.
+  - CMakeLists.txt/configure.cmake changes just add AVFILTER to the
+    qt_find_package(FFmpeg ...) component list and link FFmpeg::avfilter
+    into the plugin -- both scripts/build-patched-qtmultimedia-*.* already
+    download a "gpl-shared" BtbN FFmpeg build, which includes libavfilter;
+    they were updated to also copy its runtime library alongside the
+    others.
+
+KNOWN LIMITATION (documented in qffmpegdeinterlacer_p.h): because of the
+one-frame lookahead latency, the very last frame pushed before end of
+stream is never retrieved (nothing pushes a following frame to trigger
+it, and this class does not flush the graph at EOF) -- a single dropped
+frame at the very end of deinterlaced playback. Considered not worth the
+extra complexity of an EOF-flush path for one frame.
+
+BUILD FIX (found via a REAL rebuild attempt, media/qtmm-build-log.txt --
+the first real evidence this patch was ever actually compiled): MSVC
+rejected the original version with C2280 "attempting to reference a
+deleted function" for both `TrackPosition outStartTime;` and
+`TrackDuration outDuration;` in qffmpegvideorenderer.cpp. Root cause,
+confirmed by reading qtaggedtime_p.h directly: `TrackPosition`/
+`TrackDuration` (QTaggedTimePoint/QTaggedDuration<qint64, TrackTimeTag>)
+derive from `BaseTime<...>`, which defines ONLY a constructor taking an
+explicit `ValueType` (qint64) plus a copy constructor -- no default
+(no-argument) constructor at all, so declaring either type with no
+initializer fails to compile. Fixed by seeding both with an explicit `0`
+(`TrackPosition outStartTime(0); TrackDuration outDuration(0);`) --
+`Deinterlacer::process()` overwrites both before they're used whenever it
+returns true, so the seed value itself is never actually read. Checked
+the new qffmpegdeinterlacer.cpp/.h file for the same mistake: no bare
+TrackPosition/TrackDuration is ever default-constructed there (the
+QQueue<pair<...>> member itself doesn't require its value type to be
+default-constructible; every actual TrackPosition/TrackDuration in that
+file is either a copy, an aggregate-initialized pair element, or an
+assignment through a reference parameter -- none of which need a default
+constructor), so no other fix was needed. Re-verified with the SAME
+method as before this fix (git apply --check + git apply + byte-diff, on
+a fresh `git clone --branch v6.11.1`, both alone and stacked with all
+three other patches) after applying this correction.
+
+DIAGNOSTIC LOGGING ADDED 2026-08-16 (after the build/runtime fixes above,
+following a user report that "playbacks seem working, but deinterlacing
+does not seem applied as expected" -- vague enough that it could mean
+either a real wiring bug or simply that the test content wasn't actually
+interlaced, in which case yadif/bwdif applying no VISIBLE change is
+correct, expected behavior, not a bug): `VideoRenderer::renderInternal()`
+now logs, via `qWarning()` (captured by Vivace's own persistent
+`vivace.log`, matching the WSOLA patch's own "pitch compensation using
+..." diagnostic precedent), (1) once per mode (re)construction --
+"vivace: deinterlace enabled, mode=%d (%s)" -- confirming the menu
+selection actually reached this code and which concrete filter
+(yadif/bwdif) it picked, and (2) once per (re)construction, the first
+time the filter graph actually produces an output frame -- "vivace:
+deinterlace producing filtered output frames" -- confirming frames are
+genuinely flowing through the avfilter graph, not silently failing every
+call. A new `VideoRenderer::m_deinterlaceLoggedFirstFrame` member gates
+both messages to fire once per enable, not every frame; reset alongside
+every place `m_deinterlacer` itself is reset/reconstructed (mode off, end
+of stream, seek, mode change) so re-enabling logs again. Purely additive
+diagnostics -- no behavior change to the deinterlacing itself.
+
+VERIFIED: applies cleanly (git apply --check, then git apply, then a
+byte-for-byte diff against the intended edited files -- all identical)
+against a fresh, complete `git clone --branch v6.11.1` of qtmultimedia,
+BOTH alone and stacked together with all three existing patches
+(qtmultimedia-av1-hwaccel-disable.patch, qtmultimedia-wsola-pitch-
+compensation.patch, qtmultimedia-subtitle-bitmap.patch) applied first, in
+that order -- confirming no line-region overlap with any of them. NOT yet
+verified via a full, successful qtmultimedia BUILD in this environment
+(no Qt build toolchain here) -- the one real build attempt so far caught
+and led to the fix above, but did not run to completion, so needs the
+user to rebuild qtmultimedia with this corrected patch applied
+(scripts/build-patched-qtmultimedia-{linux,windows}.* apply every
+patches/qtmultimedia-*.patch automatically) and confirm it builds clean
+through to the end, then that interlaced content (a real interlaced
+source, e.g. some DVD/broadcast-captured MPEG-2 or H.264 material) looks
+visibly smoother with Video > Deinterlace set to Yadif or Bwdif, with no
+regression on ordinary progressive content (mode 0/off) and no crash/hang
+on hardware-decoded (D3D11VA/VAAPI) sources specifically, since the
+hw-download path is the least-proven part of this patch (no hardware
+decoder available to exercise it here).
+
+diff --git a/src/multimedia/configure.cmake b/src/multimedia/configure.cmake
+index 8757b84..be0f105 100644
+--- a/src/multimedia/configure.cmake
++++ b/src/multimedia/configure.cmake
+@@ -70,7 +70,10 @@ if (DEFINED FFMPEG_DIR)
+     set(ffmpeg_required REQUIRED)
+ endif()
+
+-qt_find_package(FFmpeg OPTIONAL_COMPONENTS AVCODEC AVFORMAT AVUTIL SWRESAMPLE SWSCALE PROVIDED_TARGETS FFmpeg::avcodec FFmpeg::avformat FFmpeg::avutil FFmpeg::swresample FFmpeg::swscale MODULE_NAME multimedia QMAKE_LIB ffmpeg ${ffmpeg_required})
++# AVFILTER (vivace): needed for the custom deinterlace patch's yadif/bwdif
++# avfilter graph, spliced into the FFmpeg plugin's VideoRenderer -- see
++# src/plugins/multimedia/ffmpeg/playbackengine/qffmpegdeinterlacer.cpp.
++qt_find_package(FFmpeg OPTIONAL_COMPONENTS AVCODEC AVFORMAT AVUTIL SWRESAMPLE SWSCALE AVFILTER PROVIDED_TARGETS FFmpeg::avcodec FFmpeg::avformat FFmpeg::avutil FFmpeg::swresample FFmpeg::swscale FFmpeg::avfilter MODULE_NAME multimedia QMAKE_LIB ffmpeg ${ffmpeg_required})
+ qt_find_package_extend_sbom(
+     TARGETS
+         FFmpeg::avcodec
+@@ -78,6 +81,7 @@ qt_find_package_extend_sbom(
+         FFmpeg::avutil
+         FFmpeg::swresample
+         FFmpeg::swscale
++        FFmpeg::avfilter
+     USE_ATTRIBUTION_FILES
+     ATTRIBUTION_FILE_DIR_PATHS
+         # Need to pass an absolute path here, otherwise the file will be relative to the root of
+diff --git a/src/plugins/multimedia/ffmpeg/CMakeLists.txt b/src/plugins/multimedia/ffmpeg/CMakeLists.txt
+index 24733b1..22703b7 100644
+--- a/src/plugins/multimedia/ffmpeg/CMakeLists.txt
++++ b/src/plugins/multimedia/ffmpeg/CMakeLists.txt
+@@ -45,6 +45,7 @@ qt_internal_add_module(FFmpegMediaPluginImplPrivate
+         playbackengine/qffmpegaudioframeconverter.cpp playbackengine/qffmpegaudioframeconverter_p.h
+         playbackengine/qffmpegaudiorenderer.cpp playbackengine/qffmpegaudiorenderer_p.h
+         playbackengine/qffmpegvideorenderer.cpp playbackengine/qffmpegvideorenderer_p.h
++        playbackengine/qffmpegdeinterlacer.cpp playbackengine/qffmpegdeinterlacer_p.h
+         playbackengine/qffmpegsubtitlerenderer.cpp playbackengine/qffmpegsubtitlerenderer_p.h
+         playbackengine/qffmpegtime_p.h
+         playbackengine/qffmpegtimecontroller.cpp playbackengine/qffmpegtimecontroller_p.h
+@@ -275,7 +276,10 @@ endif()
+
+
+ # TODO: get libs from FindFFmpeg.cmake
+-set(ffmpeg_libs FFmpeg::avformat FFmpeg::avcodec FFmpeg::swresample FFmpeg::swscale FFmpeg::avutil)
++# FFmpeg::avfilter (vivace): needed for the deinterlace patch's yadif/bwdif
++# avfilter graph (playbackengine/qffmpegdeinterlacer.cpp) -- see configure.cmake
++# for where AVFILTER is added to the qt_find_package(FFmpeg ...) component list.
++set(ffmpeg_libs FFmpeg::avformat FFmpeg::avcodec FFmpeg::swresample FFmpeg::swscale FFmpeg::avutil FFmpeg::avfilter)
+
+ if (QT_DEPLOY_FFMPEG AND NOT BUILD_SHARED_LIBS AND NOT UIKIT)
+     message(FATAL_ERROR "QT_DEPLOY_FFMPEG is not implemented yet for static builds")
+diff --git a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegdeinterlacer.cpp b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegdeinterlacer.cpp
+new file mode 100644
+index 0000000..ff1d14a
+--- /dev/null
++++ b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegdeinterlacer.cpp
+@@ -0,0 +1,174 @@
++/*  Vivace — a fast, pure-Qt media player.
++    Copyright (C) 2026 Hironori Komaba
++    SPDX-License-Identifier: GPL-3.0-or-later
++*/
++
++#include "playbackengine/qffmpegdeinterlacer_p.h"
++
++#include <QtCore/qstring.h>
++
++extern "C" {
++#include <libavfilter/buffersink.h>
++#include <libavfilter/buffersrc.h>
++#include <libavutil/hwcontext.h>
++#include <libavutil/opt.h>
++}
++
++QT_BEGIN_NAMESPACE
++
++namespace QFFmpeg {
++
++Deinterlacer::~Deinterlacer()
++{
++    freeGraph();
++}
++
++void Deinterlacer::freeGraph()
++{
++    if (m_graph)
++        avfilter_graph_free(&m_graph);
++    m_srcCtx = nullptr;
++    m_sinkCtx = nullptr;
++}
++
++bool Deinterlacer::ensureGraph(const AVFrame *swFrame)
++{
++    if (m_graph && m_width == swFrame->width && m_height == swFrame->height
++        && m_pixFmt == swFrame->format)
++        return true;
++
++    freeGraph();
++    m_pending.clear();
++    m_width = swFrame->width;
++    m_height = swFrame->height;
++    m_pixFmt = swFrame->format;
++
++    m_graph = avfilter_graph_alloc();
++    if (!m_graph)
++        return false;
++
++    AVRational sar = swFrame->sample_aspect_ratio;
++    if (sar.num <= 0 || sar.den <= 0)
++        sar = AVRational{ 1, 1 };
++
++    // The declared time_base here is arbitrary and never round-tripped back
++    // out: this class tracks each frame's real Vivace/Qt timing itself (see
++    // m_pending) rather than relying on the filter graph's own pts math, so
++    // any consistent, valid time_base is fine -- yadif/bwdif's temporal
++    // deinterlacing logic operates on the RELATIVE ORDER frames are pushed
++    // in, not on real elapsed time.
++    const QByteArray srcArgs = QStringLiteral("video_size=%1x%2:pix_fmt=%3:time_base=1/1000000:"
++                                               "pixel_aspect=%4/%5")
++                                        .arg(m_width)
++                                        .arg(m_height)
++                                        .arg(m_pixFmt)
++                                        .arg(sar.num)
++                                        .arg(sar.den)
++                                        .toLatin1();
++
++    const AVFilter *bufferFilter = avfilter_get_by_name("buffer");
++    const AVFilter *sinkFilter = avfilter_get_by_name("buffersink");
++    const AVFilter *deintFilter = avfilter_get_by_name(m_mode == Bwdif ? "bwdif" : "yadif");
++    if (!bufferFilter || !sinkFilter || !deintFilter) {
++        freeGraph();
++        return false;
++    }
++
++    if (avfilter_graph_create_filter(&m_srcCtx, bufferFilter, "vivace_deint_in",
++                                      srcArgs.constData(), nullptr, m_graph) < 0) {
++        freeGraph();
++        return false;
++    }
++
++    // mode=0 (send_frame, one output per input) explicitly, since bwdif's
++    // own default is mode=1 (send_field/"double framerate") -- this patch
++    // only supports the single-rate case (see qffmpegdeinterlacer_p.h).
++    // parity=-1 (auto) and deint=0 (deinterlace every frame, not only ones
++    // FFmpeg itself marked interlaced) both already match yadif/bwdif's own
++    // defaults, kept explicit for clarity/future-proofing. Vivace has no
++    // interlace auto-detection of its own (matching SMPlayer's own
++    // always-manual Deinterlace menu) -- deint=0 is what makes "the user
++    // turned this mode on" apply unconditionally.
++    AVFilterContext *deintCtx = nullptr;
++    if (avfilter_graph_create_filter(&deintCtx, deintFilter, "vivace_deint",
++                                      "mode=0:parity=-1:deint=0", nullptr, m_graph) < 0) {
++        freeGraph();
++        return false;
++    }
++
++    if (avfilter_graph_create_filter(&m_sinkCtx, sinkFilter, "vivace_deint_out", nullptr, nullptr,
++                                      m_graph) < 0) {
++        freeGraph();
++        return false;
++    }
++
++    // Constrain the sink to the same pixel format fed in, so yadif/bwdif's
++    // pass-through output can't trigger an implicit, unwanted conversion
++    // node downstream of QFFmpegVideoBuffer's expectations.
++    const enum AVPixelFormat pixFmts[] = { AVPixelFormat(m_pixFmt), AV_PIX_FMT_NONE };
++    av_opt_set_int_list(m_sinkCtx, "pix_fmts", pixFmts, AV_PIX_FMT_NONE, AV_OPT_SEARCH_CHILDREN);
++
++    if (avfilter_link(m_srcCtx, 0, deintCtx, 0) < 0 || avfilter_link(deintCtx, 0, m_sinkCtx, 0) < 0
++        || avfilter_graph_config(m_graph, nullptr) < 0) {
++        freeGraph();
++        return false;
++    }
++
++    return true;
++}
++
++bool Deinterlacer::process(AVFrame *inputFrame, TrackPosition startTime, TrackDuration duration,
++                            AVFrameUPtr &outFrame, TrackPosition &outStartTime,
++                            TrackDuration &outDuration)
++{
++    AVFrameUPtr downloaded;
++    const AVFrame *swFrame = inputFrame;
++    if (inputFrame->hw_frames_ctx) {
++        // yadif/bwdif are software-only filters; a hardware-decoded frame
++        // (VAAPI/D3D11VA/NVDEC/...) must be downloaded to system memory
++        // first -- and hwaccel decode is the DEFAULT path for exactly the
++        // codecs (H.264/MPEG-2) interlaced content is most likely to use,
++        // so skipping this would make deinterlacing silently do nothing (or
++        // fail) on the common case.
++        downloaded = makeAVFrame();
++        if (!downloaded || av_hwframe_transfer_data(downloaded.get(), inputFrame, 0) < 0)
++            return false;
++        av_frame_copy_props(downloaded.get(), inputFrame);
++        swFrame = downloaded.get();
++    }
++
++    if (!ensureGraph(swFrame))
++        return false;
++
++    m_pending.enqueue({ startTime, duration });
++    // av_buffersrc_add_frame_flags with KEEP_REF does not take ownership of
++    // swFrame -- it adds its own reference (or copies), leaving the caller's
++    // frame (inputFrame, or our own locally-owned `downloaded`) untouched.
++    if (av_buffersrc_add_frame_flags(m_srcCtx, const_cast<AVFrame *>(swFrame),
++                                      AV_BUFFERSRC_FLAG_KEEP_REF)
++        < 0) {
++        m_pending.removeLast();
++        return false;
++    }
++
++    AVFrameUPtr filtered = makeAVFrame();
++    if (!filtered || av_buffersink_get_frame(m_sinkCtx, filtered.get()) < 0) {
++        // Most commonly AVERROR(EAGAIN): the filter needs more input before
++        // it can produce output (yadif/bwdif look one frame ahead) -- not an
++        // error, just "nothing to present for this input frame yet".
++        return false;
++    }
++
++    if (m_pending.isEmpty())
++        return false; // defensive; should not happen given the 1:1 push/pop below
++
++    const auto timing = m_pending.dequeue();
++    outStartTime = timing.first;
++    outDuration = timing.second;
++    outFrame = std::move(filtered);
++    return true;
++}
++
++} // namespace QFFmpeg
++
++QT_END_NAMESPACE
+diff --git a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegdeinterlacer_p.h b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegdeinterlacer_p.h
+new file mode 100644
+index 0000000..c887181
+--- /dev/null
++++ b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegdeinterlacer_p.h
+@@ -0,0 +1,108 @@
++/*  Vivace — a fast, pure-Qt media player.
++    Copyright (C) 2026 Hironori Komaba
++    SPDX-License-Identifier: GPL-3.0-or-later
++*/
++
++#ifndef QFFMPEGDEINTERLACER_P_H
++#define QFFMPEGDEINTERLACER_P_H
++
++//
++//  W A R N I N G
++//  -------------
++//
++// This file is not part of the Qt API. It exists purely as an
++// implementation detail. This header file may change from version to
++// version without notice, or even be removed.
++//
++// We mean it.
++//
++
++// Vivace: optional software deinterlacing for the FFmpeg playback path.
++// Qt Multimedia's own decode pipeline has no filter-graph stage at all and
++// no interlace awareness whatsoever (StreamDecoder::receiveAVFrames() hands
++// avcodec_receive_frame()'s raw AVFrame straight to a Frame/QVideoFrame),
++// so this is implemented as a small FFmpeg avfilter graph (yadif or bwdif)
++// spliced into VideoRenderer::renderInternal(), the sole AVFrame -> QVideoFrame
++// conversion point. Gated by the VIVACE_DEINTERLACE_MODE environment
++// variable (0 = off, 1 = yadif, 2 = bwdif), read fresh by the renderer on
++// every frame and set by Vivace's own C++ (PlayerController) whenever the
++// user changes the Video > Deinterlace menu selection -- the same
++// env-var-relay pattern already used for VIVACE_SUBTITLE_BITMAP_SMOOTHING.
++//
++// SCOPE: single-rate only (one output frame per input frame -- yadif/bwdif
++// "mode=send_frame"), NOT the "double framerate"/bob variants. Those need
++// the ability to inject a second, synthesized frame with its own timestamp
++// per input frame, which Renderer's frame-queueing (a private, one-Frame-
++// per-renderInternal()-call contract) does not support without much deeper
++// surgery -- out of scope for this patch.
++
++#include <QtFFmpegMediaPluginImpl/private/qffmpegplaybackutils_p.h>
++#include <QtFFmpegMediaPluginImpl/private/qffmpegtime_p.h>
++#include <QtFFmpegMediaPluginImpl/private/qffmpeg_p.h>
++
++#include <QtCore/qqueue.h>
++
++#include <utility>
++
++extern "C" {
++#include <libavfilter/avfilter.h>
++}
++
++QT_BEGIN_NAMESPACE
++
++namespace QFFmpeg {
++
++class Deinterlacer
++{
++public:
++    enum Mode {
++        Yadif = 1,
++        Bwdif = 2,
++    };
++
++    explicit Deinterlacer(int mode) : m_mode(mode) { }
++    ~Deinterlacer();
++
++    Q_DISABLE_COPY_MOVE(Deinterlacer)
++
++    int mode() const { return m_mode; }
++
++    // Pushes a reference to `inputFrame` (NOT consumed -- the caller keeps
++    // ownership) into the filter graph, tagged with `startTime`/`duration`.
++    // yadif/bwdif have a fixed one-frame lookahead latency (they need the
++    // NEXT frame before they can fully deinterlace the current one), so the
++    // first call after construction (or after a seek resets the graph)
++    // typically returns false -- "nothing to present yet for this input",
++    // not an error. Returns true and fills `outFrame`/`outStartTime`/
++    // `outDuration` once a deinterlaced frame is actually ready; `outFrame`
++    // is always a plain system-memory (non-hardware) frame, since yadif/
++    // bwdif are software-only filters (a hardware-decoded input is
++    // downloaded via av_hwframe_transfer_data() first).
++    //
++    // KNOWN LIMITATION: because of this one-frame latency, the very last
++    // frame pushed before end-of-stream is never retrieved (nothing pushes
++    // a following frame to trigger it, and this class does not flush the
++    // graph at EOF) -- a single dropped frame at the end of deinterlaced
++    // playback, matching the accepted scope of this patch.
++    bool process(AVFrame *inputFrame, TrackPosition startTime, TrackDuration duration,
++                 AVFrameUPtr &outFrame, TrackPosition &outStartTime, TrackDuration &outDuration);
++
++private:
++    bool ensureGraph(const AVFrame *swFrame);
++    void freeGraph();
++
++    int m_mode = Yadif;
++    AVFilterGraph *m_graph = nullptr;
++    AVFilterContext *m_srcCtx = nullptr;
++    AVFilterContext *m_sinkCtx = nullptr;
++    int m_width = 0;
++    int m_height = 0;
++    int m_pixFmt = -1;
++    QQueue<std::pair<TrackPosition, TrackDuration>> m_pending;
++};
++
++} // namespace QFFmpeg
++
++QT_END_NAMESPACE
++
++#endif // QFFMPEGDEINTERLACER_P_H
+diff --git a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegvideorenderer.cpp b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegvideorenderer.cpp
+index 83792ce..e5b1285 100644
+--- a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegvideorenderer.cpp
++++ b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegvideorenderer.cpp
+@@ -6,6 +6,8 @@
+ #include "qvideosink.h"
+ #include "private/qvideoframe_p.h"
+
++#include <QtCore/qglobal.h>
++
+ QT_BEGIN_NAMESPACE
+
+ namespace QFFmpeg {
+@@ -36,6 +38,8 @@ VideoRenderer::RenderingResult VideoRenderer::renderInternal(Frame frame)
+         return {};
+
+     if (!frame.isValid()) {
++        m_deinterlacer.reset(); // vivace: drop any pending filter state at end of stream
++        m_deinterlaceLoggedFirstFrame = false;
+         m_sink->setVideoFrame({});
+         return {};
+     }
+@@ -45,6 +49,64 @@ VideoRenderer::RenderingResult VideoRenderer::renderInternal(Frame frame)
+     const auto codecContext = frame.codecContext();
+     Q_ASSERT(codecContext);
+
++    // Vivace: optional software deinterlacing (yadif/bwdif) via an FFmpeg
++    // avfilter graph -- see qffmpegdeinterlacer_p.h. Gated by an env var
++    // rather than a proper Qt property since this plugin has no reach into
++    // the app's own Settings; PlayerController relays the user's Video >
++    // Deinterlace choice into it with qputenv() on every change.
++    const int deinterlaceMode = qEnvironmentVariableIntValue("VIVACE_DEINTERLACE_MODE");
++    if (deinterlaceMode > 0) {
++        if (!m_deinterlacer || m_deinterlacer->mode() != deinterlaceMode) {
++            m_deinterlacer = std::make_unique<Deinterlacer>(deinterlaceMode);
++            // vivace: one-time-per-(re)construction diagnostic, kept
++            // permanently (matches this project's other qtmultimedia-patch
++            // diagnostics) so a user can confirm via vivace.log that this
++            // path is genuinely active, distinct from "the effect is just
++            // imperceptible on this particular (progressive) source".
++            qWarning("vivace: deinterlace enabled, mode=%d (%s)", deinterlaceMode,
++                     deinterlaceMode == Deinterlacer::Bwdif ? "bwdif" : "yadif");
++            m_deinterlaceLoggedFirstFrame = false;
++        }
++
++        AVFrameUPtr filtered;
++        // TrackPosition/TrackDuration (QTaggedTimePoint/QTaggedDuration,
++        // qtaggedtime_p.h) have no default constructor -- only one taking an
++        // explicit qint64 -- so these must be seeded with a value, not
++        // left bare; process() overwrites both before they're used whenever
++        // it returns true.
++        TrackPosition outStartTime(0);
++        TrackDuration outDuration(0);
++        const bool haveOutput = m_deinterlacer->process(frame.avFrame(), frame.startTime(),
++                                                          frame.duration(), filtered, outStartTime,
++                                                          outDuration);
++        if (!haveOutput)
++            return {}; // filter is still buffering; nothing to present for this input frame yet
++
++        if (!m_deinterlaceLoggedFirstFrame) {
++            m_deinterlaceLoggedFirstFrame = true;
++            qWarning("vivace: deinterlace producing filtered output frames");
++        }
++
++        const auto pixelAspectRatio = codecContext->pixelAspectRatio(filtered.get());
++        auto buffer = std::make_unique<QFFmpegVideoBuffer>(std::move(filtered), pixelAspectRatio);
++        QVideoFrameFormat format(buffer->size(), buffer->pixelFormat());
++        format.setColorSpace(buffer->colorSpace());
++        format.setColorTransfer(buffer->colorTransfer());
++        format.setColorRange(buffer->colorRange());
++        format.setMaxLuminance(buffer->maxNits());
++        format.setRotation(m_transform.rotation);
++        format.setMirrored(m_transform.mirroredHorizontallyAfterRotation);
++        QVideoFrame videoFrame = QVideoFramePrivate::createFrame(std::move(buffer), format);
++        videoFrame.setStartTime(outStartTime.get());
++        videoFrame.setEndTime((outStartTime + outDuration).get());
++        m_sink->setVideoFrame(videoFrame);
++        return {};
++    }
++    if (m_deinterlacer) {
++        m_deinterlacer.reset(); // vivace: mode turned off; drop filter state
++        m_deinterlaceLoggedFirstFrame = false;
++    }
++
+ #ifdef Q_OS_ANDROID
+     // QTBUG-108446
+     // In general case, just creation of frames context is not correct since
+@@ -80,6 +142,16 @@ VideoRenderer::RenderingResult VideoRenderer::renderInternal(Frame frame)
+     return {};
+ }
+
++void VideoRenderer::seekInternal()
++{
++    // vivace: a seek jumps to frames the deinterlace filter's buffered
++    // state (and pending-timing FIFO) knows nothing about -- drop it so the
++    // next renderInternal() call rebuilds a fresh graph instead of pairing
++    // stale timing with a post-seek frame.
++    m_deinterlacer.reset();
++    m_deinterlaceLoggedFirstFrame = false;
++}
++
+ } // namespace QFFmpeg
+
+ QT_END_NAMESPACE
+diff --git a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegvideorenderer_p.h b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegvideorenderer_p.h
+index e9bbb3f..60e76f5 100644
+--- a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegvideorenderer_p.h
++++ b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegvideorenderer_p.h
+@@ -15,10 +15,13 @@
+ //
+
+ #include <QtFFmpegMediaPluginImpl/private/qffmpegrenderer_p.h>
++#include <QtFFmpegMediaPluginImpl/private/qffmpegdeinterlacer_p.h>
+
+ #include <QtMultimedia/private/qvideotransformation_p.h>
+ #include <QtCore/qpointer.h>
+
++#include <memory>
++
+ QT_BEGIN_NAMESPACE
+
+ class QVideoSink;
+@@ -37,9 +40,23 @@ public:
+ protected:
+     RenderingResult renderInternal(Frame frame) override;
+
++    // Vivace: drop any buffered deinterlace-filter state on seek -- it
++    // refers to frames from before the seek and would otherwise present a
++    // stale, mistimed frame right after jumping to the new position.
++    void seekInternal() override;
++
+ private:
+     QPointer<QVideoSink> m_sink;
+     VideoTransformation m_transform;
++    // Vivace: optional software deinterlacing (yadif/bwdif), see
++    // qffmpegdeinterlacer_p.h. Null when off (VIVACE_DEINTERLACE_MODE=0,
++    // the default) or not yet constructed for the current mode.
++    std::unique_ptr<Deinterlacer> m_deinterlacer;
++    // Vivace: gates the one-time-per-(re)construction qWarning()s in
++    // renderInternal() confirming the deinterlace path is genuinely
++    // running -- reset alongside every m_deinterlacer reset/(re)construction
++    // so re-enabling logs again.
++    bool m_deinterlaceLoggedFirstFrame = false;
+ };
+
+ } // namespace QFFmpeg

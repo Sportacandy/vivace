@@ -5,6 +5,9 @@ Izbornik **Opcije** sadrži postavke i konfiguraciju sučelja.
 - **Postavke…** (`Ctrl+P`) — glavni dijalog postavki: Općenito, Sučelje, Titlovi,
   Tipkovnica i miš, Popis za reprodukciju, Pogoni, TV, Vrste datoteka, Ažuriranja,
   Mreža i Napredno. Promjene se primjenjuju odmah; **Odustani** ih vraća.
+  - **Općenito ▸ Slika** postavlja zadani način rada za **Raspletanje**
+    (Bez / Yadif / Bwdif) za novootvorene datoteke — promijenite ga za svaku
+    datoteku u *Slika ▸ Raspletanje*.
   - **Mreža** sadrži kartice OpenSubtitles, YouTube, Proxy i Emitiranje;
     **Proxy** postavlja neobavezni HTTP ili SOCKS5 proxy koji vrijedi za
     cijelu aplikaciju (pretraga OpenSubtitles, provjera ažuriranja i — samo

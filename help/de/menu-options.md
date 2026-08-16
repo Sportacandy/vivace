@@ -6,6 +6,9 @@ Das Menü **Optionen** enthält Einstellungen und die Oberflächenkonfiguration.
   Oberfläche, Untertitel, Tastatur und Maus, Wiedergabeliste, Laufwerke, TV,
   Dateitypen, Updates, Netzwerk und Erweitert. Änderungen werden sofort wirksam;
   **Abbrechen** setzt sie zurück.
+  - **Allgemein ▸ Video** legt den Standard-Modus für **Zeilenentflechtung**
+    (- / Yadif / Bwdif) für neu geöffnete Dateien fest — pro Datei änderbar
+    unter *Video ▸ Zeilenentflechtung*.
   - **Netzwerk** enthält die Reiter OpenSubtitles, YouTube, Proxy und
     Übertragung; **Proxy** richtet einen optionalen HTTP- oder SOCKS5-Proxy
     ein, der anwendungsweit gilt (OpenSubtitles-Suche, Update-Prüfung sowie

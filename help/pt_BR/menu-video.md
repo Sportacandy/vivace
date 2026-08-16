@@ -14,6 +14,10 @@ ao arquivo atual e são reiniciadas a cada novo.
 - **Proporção** — forçar uma proporção de exibição (Automático, 4:3, 16:9, …).
 - **Girar** — Nenhuma, 90° horário, 90° anti-horário ou 180°.
 - **Inverter imagem** / **Espelhar imagem** — inverter na vertical ou horizontal.
+- **Desentrelaçar** — **Nenhum**, **Yadif** ou **Bwdif**, para remover os
+  artefatos de pente do vídeo entrelaçado. Aplica-se imediatamente, mesmo
+  durante a reprodução. O padrão para arquivos recém-abertos é definido em
+  *Preferências ▸ Geral ▸ Vídeo*.
 - **Equalizador…** (`Ctrl+E`) — brilho, contraste, matiz, saturação e gama.
   *Definir como valores padrão* aplica suas configurações a arquivos futuros.
 - **Captura de tela** (`S`) — salvar o quadro atual. A pasta e o formato de

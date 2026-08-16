@@ -32,6 +32,7 @@ constexpr auto preferredSubtitleLanguage = "playback/preferredSubtitleLanguage";
 constexpr auto subtitlesByDefault = "playback/subtitlesByDefault";
 constexpr auto closeOnFinish = "playback/closeOnFinish";
 constexpr auto disableScreensaver = "playback/disableScreensaver";
+constexpr auto deinterlaceMode = "playback/deinterlaceMode";
 constexpr auto pauseWhenMinimized = "playback/pauseWhenMinimized";
 constexpr auto volumeStep = "playback/volumeStep";
 constexpr auto seekShortStep = "playback/seekShortStep";
@@ -210,6 +211,7 @@ Settings::Settings(QObject *parent)
       m_subtitlesByDefault(m_store.value(Keys::subtitlesByDefault, true).toBool()),
       m_closeOnFinish(m_store.value(Keys::closeOnFinish, false).toBool()),
       m_disableScreensaver(m_store.value(Keys::disableScreensaver, true).toBool()),
+      m_deinterlaceMode(qBound(0, m_store.value(Keys::deinterlaceMode, 0).toInt(), 2)),
       m_pauseWhenMinimized(m_store.value(Keys::pauseWhenMinimized, false).toBool()),
       m_volumeStep(qBound(1, m_store.value(Keys::volumeStep, 5).toInt(), 25)),
       m_seekShortStep(qBound(1, m_store.value(Keys::seekShortStep, 10).toInt(), 60)),
@@ -917,6 +919,16 @@ void Settings::setDisableScreensaver(bool disable)
     m_disableScreensaver = disable;
     m_store.setValue(Keys::disableScreensaver, disable);
     emit disableScreensaverChanged();
+}
+
+void Settings::setDeinterlaceMode(int mode)
+{
+    mode = qBound(0, mode, 2);
+    if (mode == m_deinterlaceMode)
+        return;
+    m_deinterlaceMode = mode;
+    m_store.setValue(Keys::deinterlaceMode, mode);
+    emit deinterlaceModeChanged();
 }
 
 void Settings::setPauseWhenMinimized(bool pause)

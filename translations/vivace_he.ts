@@ -828,222 +828,222 @@
         <translation>יש לגרור קובצי מדיה לכאן, או ללחוץ על Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="655"/>
+        <location filename="../qml/Main.qml" line="661"/>
         <source>Downloading video…</source>
         <translation>מוריד סרטון…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="662"/>
+        <location filename="../qml/Main.qml" line="668"/>
         <source>This can take a while — the external tool is downloading and merging HD video and audio.</source>
         <translation>פעולה זו עשויה להימשך זמן מה — הכלי החיצוני מוריד וממזג וידאו ושמע באיכות HD.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="676"/>
-        <location filename="../qml/Main.qml" line="1694"/>
+        <location filename="../qml/Main.qml" line="682"/>
+        <location filename="../qml/Main.qml" line="1711"/>
         <source>Cancel</source>
         <translation>ביטול</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="749"/>
+        <location filename="../qml/Main.qml" line="755"/>
         <source>Loading…</source>
         <translation>טוען…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="750"/>
+        <location filename="../qml/Main.qml" line="756"/>
         <source>Connecting…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="751"/>
+        <location filename="../qml/Main.qml" line="757"/>
         <source>Buffering… %1%</source>
         <translation>מאגר… %1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="759"/>
+        <location filename="../qml/Main.qml" line="765"/>
         <source>Live streams can take several seconds to start.</source>
         <translation>שידורים חיים עשויים להימשך מספר שניות עד שיתחילו.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="794"/>
+        <location filename="../qml/Main.qml" line="800"/>
         <source>Volume: %1%</source>
         <translation>עוצמה: %1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="797"/>
+        <location filename="../qml/Main.qml" line="803"/>
         <source>Mute</source>
         <translation>השתק</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="797"/>
+        <location filename="../qml/Main.qml" line="803"/>
         <source>Mute off</source>
         <translation>השתקה כבויה</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="800"/>
+        <location filename="../qml/Main.qml" line="806"/>
         <source>Speed: %1x</source>
         <translation>מהירות: %1x</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1310"/>
+        <location filename="../qml/Main.qml" line="1327"/>
         <source>Media files (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1311"/>
-        <location filename="../qml/Main.qml" line="1369"/>
-        <location filename="../qml/Main.qml" line="1630"/>
+        <location filename="../qml/Main.qml" line="1328"/>
+        <location filename="../qml/Main.qml" line="1386"/>
+        <location filename="../qml/Main.qml" line="1647"/>
         <source>All files (*)</source>
         <translation>כל הקבצים (*)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1353"/>
+        <location filename="../qml/Main.qml" line="1370"/>
         <source>Select the DVD drive or a folder containing VIDEO_TS</source>
         <translation>יש לבחור את כונן ה-DVD או תיקייה המכילה VIDEO_TS</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1357"/>
+        <location filename="../qml/Main.qml" line="1374"/>
         <source>No DVD video found in %1</source>
         <translation>לא נמצא וידאו DVD ב-%1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1368"/>
+        <location filename="../qml/Main.qml" line="1385"/>
         <source>Playlists (*.m3u *.m3u8)</source>
         <translation>רשימות השמעה (*.m3u *.m3u8)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1411"/>
+        <location filename="../qml/Main.qml" line="1428"/>
         <source>Playing stream</source>
         <translation>מנגן זרם</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1417"/>
-        <location filename="../qml/Main.qml" line="1450"/>
+        <location filename="../qml/Main.qml" line="1434"/>
+        <location filename="../qml/Main.qml" line="1467"/>
         <source>Playing downloaded video</source>
         <translation>מנגן סרטון שהורד</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1421"/>
+        <location filename="../qml/Main.qml" line="1438"/>
         <source>YouTube: %1</source>
         <translation>YouTube: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1454"/>
+        <location filename="../qml/Main.qml" line="1471"/>
         <source>Download failed: %1</source>
         <translation>ההורדה נכשלה: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1551"/>
+        <location filename="../qml/Main.qml" line="1568"/>
         <source>Saved %1 file(s); %2 failed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1555"/>
+        <location filename="../qml/Main.qml" line="1572"/>
         <source>Saved %1 file(s).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1568"/>
+        <location filename="../qml/Main.qml" line="1585"/>
         <source>Could not read the shortcut file.</source>
         <translation>לא ניתן היה לקרוא את קובץ הקיצור.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1583"/>
+        <location filename="../qml/Main.qml" line="1600"/>
         <source>Starting download…</source>
         <translation>מתחיל בהורדה…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1584"/>
+        <location filename="../qml/Main.qml" line="1601"/>
         <source>Downloading video (this can take a while)…</source>
         <translation>מוריד סרטון (פעולה זו עשויה להימשך זמן מה)…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1588"/>
+        <location filename="../qml/Main.qml" line="1605"/>
         <source>Resolving with yt-dlp…</source>
         <translation>מנתח באמצעות yt-dlp…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1625"/>
+        <location filename="../qml/Main.qml" line="1642"/>
         <source>Load subtitle file</source>
         <translation>טעינת קובץ כתוביות</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1629"/>
+        <location filename="../qml/Main.qml" line="1646"/>
         <source>Subtitle files (*.srt *.vtt *.ass *.ssa)</source>
         <translation>קובצי כתוביות (*.srt *.vtt *.ass *.ssa)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1637"/>
+        <location filename="../qml/Main.qml" line="1654"/>
         <source>Subtitle delay</source>
         <translation>השהיית כתוביות</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1671"/>
+        <location filename="../qml/Main.qml" line="1688"/>
         <source>Delay:</source>
         <translation>השהיה:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1677"/>
-        <location filename="../qml/Main.qml" line="1749"/>
+        <location filename="../qml/Main.qml" line="1694"/>
+        <location filename="../qml/Main.qml" line="1766"/>
         <source>ms</source>
         <translation>מ״ש</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1687"/>
+        <location filename="../qml/Main.qml" line="1704"/>
         <source>OK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1706"/>
+        <location filename="../qml/Main.qml" line="1723"/>
         <source>Audio delay — Vivace</source>
         <translation>השהיית שמע — Vivace</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1737"/>
+        <location filename="../qml/Main.qml" line="1754"/>
         <source>No delay for this file (use the global delay only)</source>
         <translation>ללא השהיה לקובץ זה (שימוש בהשהיה הכללית בלבד)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1742"/>
+        <location filename="../qml/Main.qml" line="1759"/>
         <source>This file&apos;s delay:</source>
         <translation>השהיית קובץ זה:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1757"/>
+        <location filename="../qml/Main.qml" line="1774"/>
         <source>The delay applied to this file is this value plus the global delay for the current audio device (%1 ms), set in Preferences &gt; General &gt; Audio. Negative values delay the video to match audio that arrives late (e.g. Bluetooth headphones).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1770"/>
+        <location filename="../qml/Main.qml" line="1787"/>
         <source>&amp;Apply</source>
         <translation>&amp;החל</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1779"/>
+        <location filename="../qml/Main.qml" line="1796"/>
         <source>&amp;Close</source>
         <translation>&amp;סגור</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1876"/>
+        <location filename="../qml/Main.qml" line="1893"/>
         <source>Hide window</source>
         <translation>הסתרת החלון</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1876"/>
+        <location filename="../qml/Main.qml" line="1893"/>
         <source>Show window</source>
         <translation>הצגת החלון</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1881"/>
+        <location filename="../qml/Main.qml" line="1898"/>
         <source>Play / Pause</source>
         <translation>נגן / השהה</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1885"/>
+        <location filename="../qml/Main.qml" line="1902"/>
         <source>Stop</source>
         <translation>הפסק</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1890"/>
+        <location filename="../qml/Main.qml" line="1907"/>
         <source>Quit</source>
         <translation>י&amp;ציאה</translation>
     </message>
@@ -1320,16 +1320,16 @@
     </message>
     <message>
         <location filename="../qml/MainMenuBar.qml" line="431"/>
-        <location filename="../qml/MainMenuBar.qml" line="624"/>
-        <location filename="../qml/MainMenuBar.qml" line="704"/>
+        <location filename="../qml/MainMenuBar.qml" line="655"/>
+        <location filename="../qml/MainMenuBar.qml" line="735"/>
         <source>&amp;Track</source>
         <translation>&amp;רצועה</translation>
     </message>
     <message>
         <location filename="../qml/MainMenuBar.qml" line="438"/>
-        <location filename="../qml/MainMenuBar.qml" line="637"/>
-        <location filename="../qml/MainMenuBar.qml" line="828"/>
-        <location filename="../qml/MainMenuBar.qml" line="853"/>
+        <location filename="../qml/MainMenuBar.qml" line="668"/>
+        <location filename="../qml/MainMenuBar.qml" line="859"/>
+        <location filename="../qml/MainMenuBar.qml" line="884"/>
         <source>&lt;empty&gt;</source>
         <translation>&lt;ריק&gt;</translation>
     </message>
@@ -1410,6 +1410,7 @@
     </message>
     <message>
         <location filename="../qml/MainMenuBar.qml" line="544"/>
+        <location filename="../qml/MainMenuBar.qml" line="606"/>
         <source>&amp;None</source>
         <translation>&amp;כלום</translation>
     </message>
@@ -1439,263 +1440,278 @@
         <translation>&amp;שקף תמונה</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="604"/>
+        <location filename="../qml/MainMenuBar.qml" line="603"/>
+        <source>&amp;Deinterlace</source>
+        <translation>&amp;איין שזירה</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainMenuBar.qml" line="615"/>
+        <source>&amp;Yadif</source>
+        <translation>&amp;Yadif</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainMenuBar.qml" line="624"/>
+        <source>&amp;Bwdif</source>
+        <translation>&amp;Bwdif</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainMenuBar.qml" line="635"/>
         <source>E&amp;qualizer…</source>
         <translation>אקולייזר (&amp;Q)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="610"/>
+        <location filename="../qml/MainMenuBar.qml" line="641"/>
         <source>&amp;Screenshot</source>
         <translation>&amp;תצלום מסך</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="620"/>
+        <location filename="../qml/MainMenuBar.qml" line="651"/>
         <source>&amp;Audio</source>
         <translation>&amp;אודיו</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="662"/>
+        <location filename="../qml/MainMenuBar.qml" line="693"/>
         <source>&amp;Mute</source>
         <translation>הש&amp;תק</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="671"/>
+        <location filename="../qml/MainMenuBar.qml" line="702"/>
         <source>Volume &amp;-</source>
         <translation>עוצמת שמע &amp;-</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="677"/>
+        <location filename="../qml/MainMenuBar.qml" line="708"/>
         <source>Volume &amp;+</source>
         <translation>עוצמת שמע &amp;+</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="685"/>
-        <location filename="../qml/MainMenuBar.qml" line="778"/>
+        <location filename="../qml/MainMenuBar.qml" line="716"/>
+        <location filename="../qml/MainMenuBar.qml" line="809"/>
         <source>Delay &amp;-</source>
         <translation>שיהוי &amp;-</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="689"/>
+        <location filename="../qml/MainMenuBar.qml" line="720"/>
         <source>D&amp;elay +</source>
         <translation>שי&amp;הוי +</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="693"/>
+        <location filename="../qml/MainMenuBar.qml" line="724"/>
         <source>Set dela&amp;y…</source>
         <translation>&amp;קבע שיהוי...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="700"/>
+        <location filename="../qml/MainMenuBar.qml" line="731"/>
         <source>&amp;Subtitles</source>
         <translation>&amp;כתוביות</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="712"/>
+        <location filename="../qml/MainMenuBar.qml" line="743"/>
         <source>&amp;Off</source>
         <translation>&amp;כבוי</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="761"/>
+        <location filename="../qml/MainMenuBar.qml" line="792"/>
         <source>&amp;Load subtitles…</source>
         <translation>טעינת כתוביות (&amp;L)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="767"/>
+        <location filename="../qml/MainMenuBar.qml" line="798"/>
         <source>&amp;Find subtitles at OpenSubtitles…</source>
         <translation>חיפוש כתוביות ב-OpenSubtitles (&amp;F)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="772"/>
+        <location filename="../qml/MainMenuBar.qml" line="803"/>
         <source>U&amp;nload subtitles</source>
         <translation>פריקת כתוביות (&amp;N)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="783"/>
+        <location filename="../qml/MainMenuBar.qml" line="814"/>
         <source>Delay &amp;+</source>
         <translation>שיהוי &amp;+</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="788"/>
+        <location filename="../qml/MainMenuBar.qml" line="819"/>
         <source>Se&amp;t delay…</source>
         <translation>&amp;קבע שיהוי...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="796"/>
+        <location filename="../qml/MainMenuBar.qml" line="827"/>
         <source>&amp;Browse</source>
         <translation>&amp;דפדוף</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="799"/>
+        <location filename="../qml/MainMenuBar.qml" line="830"/>
         <source>&amp;DVD menu</source>
         <translation>DVD &amp;תפריט</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="808"/>
+        <location filename="../qml/MainMenuBar.qml" line="839"/>
         <source>&amp;Title</source>
         <translation>&amp;כותרת</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="835"/>
+        <location filename="../qml/MainMenuBar.qml" line="866"/>
         <source>&amp;Chapters</source>
         <translation>פרקים (&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="860"/>
+        <location filename="../qml/MainMenuBar.qml" line="891"/>
         <source>&amp;Bookmarks</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="870"/>
+        <location filename="../qml/MainMenuBar.qml" line="901"/>
         <source>&amp;Add new bookmark</source>
         <translation>הוסף סימנייה חדשה</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="877"/>
+        <location filename="../qml/MainMenuBar.qml" line="908"/>
         <source>&amp;Edit bookmarks…</source>
         <translation>עריכת סימניות (&amp;E)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="901"/>
+        <location filename="../qml/MainMenuBar.qml" line="932"/>
         <source>Vie&amp;w</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="904"/>
+        <location filename="../qml/MainMenuBar.qml" line="935"/>
         <source>&amp;Information and properties…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="911"/>
+        <location filename="../qml/MainMenuBar.qml" line="942"/>
         <source>&amp;Playlist</source>
         <translation>רשימת &amp;נגינה</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="919"/>
+        <location filename="../qml/MainMenuBar.qml" line="950"/>
         <source>&amp;OSD</source>
         <translation>‏&amp;OSD‏</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="921"/>
+        <location filename="../qml/MainMenuBar.qml" line="952"/>
         <source>Subtitles only</source>
         <translation>כתוביות &amp;בלבד</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="922"/>
+        <location filename="../qml/MainMenuBar.qml" line="953"/>
         <source>Volume + seek</source>
         <translation>עוצמה + דילוג</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="923"/>
+        <location filename="../qml/MainMenuBar.qml" line="954"/>
         <source>Volume + seek + timer</source>
         <translation>עוצמה + דילוג + זמן</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="929"/>
+        <location filename="../qml/MainMenuBar.qml" line="960"/>
         <source>Op&amp;tions</source>
         <translation>אפ&amp;שרויות</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="932"/>
+        <location filename="../qml/MainMenuBar.qml" line="963"/>
         <source>&amp;Preferences…</source>
         <translation>העדפות (&amp;P)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="939"/>
+        <location filename="../qml/MainMenuBar.qml" line="970"/>
         <source>S&amp;how icon in system tray</source>
         <translation>ה&amp;צג סמל במגש מערכת</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="945"/>
+        <location filename="../qml/MainMenuBar.qml" line="976"/>
         <source>&amp;Toolbars</source>
         <translation>&amp;סרגלי כלים</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="948"/>
+        <location filename="../qml/MainMenuBar.qml" line="979"/>
         <source>&amp;Toolbar</source>
         <translation>סרגל כלים (&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="954"/>
+        <location filename="../qml/MainMenuBar.qml" line="985"/>
         <source>&amp;Control bar</source>
         <translation>סרגל בקרה</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="961"/>
+        <location filename="../qml/MainMenuBar.qml" line="992"/>
         <source>Edit main &amp;toolbar…</source>
         <translation>עריכת סרגל הכלים הראשי (&amp;T)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="965"/>
+        <location filename="../qml/MainMenuBar.qml" line="996"/>
         <source>Edit control &amp;bar…</source>
         <translation>עריכת סרגל הבקרה (&amp;B)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="970"/>
+        <location filename="../qml/MainMenuBar.qml" line="1001"/>
         <source>&amp;Status bar</source>
         <translation>שורת מצב (&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="973"/>
+        <location filename="../qml/MainMenuBar.qml" line="1004"/>
         <source>&amp;Show status bar</source>
         <translation>הצגת שורת המצב (&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="980"/>
+        <location filename="../qml/MainMenuBar.qml" line="1011"/>
         <source>&amp;Video info</source>
         <translation>מידע &amp;וידאו</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="987"/>
+        <location filename="../qml/MainMenuBar.qml" line="1018"/>
         <source>&amp;Audio info</source>
         <translation>פרטי שמע (&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="994"/>
+        <location filename="../qml/MainMenuBar.qml" line="1025"/>
         <source>F&amp;ormat info</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1001"/>
+        <location filename="../qml/MainMenuBar.qml" line="1032"/>
         <source>&amp;Bitrate info</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1008"/>
+        <location filename="../qml/MainMenuBar.qml" line="1039"/>
         <source>&amp;Frame counter</source>
         <translation>&amp;מונה מסגרת</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1016"/>
+        <location filename="../qml/MainMenuBar.qml" line="1047"/>
         <source>Display &amp;total time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1022"/>
+        <location filename="../qml/MainMenuBar.qml" line="1053"/>
         <source>Display &amp;remaining time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1029"/>
+        <location filename="../qml/MainMenuBar.qml" line="1060"/>
         <source>Show the current time with &amp;milliseconds</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1039"/>
+        <location filename="../qml/MainMenuBar.qml" line="1070"/>
         <source>&amp;Help</source>
         <translation>&amp;עזרה</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1042"/>
+        <location filename="../qml/MainMenuBar.qml" line="1073"/>
         <source>&amp;Contents</source>
         <translation>תוכן (&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1049"/>
+        <location filename="../qml/MainMenuBar.qml" line="1080"/>
         <source>&amp;Check for updates</source>
         <translation>&amp;בדוק עבור עדכונים</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1055"/>
+        <location filename="../qml/MainMenuBar.qml" line="1086"/>
         <source>&amp;About Vivace</source>
         <translation>אודות Vivace (&amp;A)</translation>
     </message>
@@ -1873,7 +1889,7 @@
         <location filename="../src/playercontroller.cpp" line="181"/>
         <location filename="../src/playercontroller.cpp" line="801"/>
         <location filename="../src/playercontroller.cpp" line="817"/>
-        <location filename="../src/playercontroller.cpp" line="1891"/>
+        <location filename="../src/playercontroller.cpp" line="2067"/>
         <source>Track %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1883,257 +1899,277 @@
         <translation>השהיית שמע/וידאו: %1 מ״ש</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1194"/>
+        <location filename="../src/playercontroller.cpp" line="1219"/>
         <source>DVD title %1 could not be assembled</source>
         <translation>לא ניתן היה להרכיב את כותר ה-DVD %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1200"/>
+        <location filename="../src/playercontroller.cpp" line="1225"/>
         <source>DVD title %1 could not be opened</source>
         <translation>לא ניתן היה לפתוח את כותר ה-DVD %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1359"/>
+        <location filename="../src/playercontroller.cpp" line="1384"/>
         <source>Title %1 (%2)</source>
         <translation>כותר %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1375"/>
+        <location filename="../src/playercontroller.cpp" line="1400"/>
         <source>Chapter %1 (%2)</source>
         <translation>פרק %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2359"/>
+        <location filename="../src/playercontroller.cpp" line="2535"/>
         <source>Could not open the stream</source>
         <translation>לא ניתן היה לפתוח את הזרם</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2418"/>
+        <location filename="../src/playercontroller.cpp" line="2594"/>
         <source>System default</source>
         <translation>ברירת המחדל של המערכת</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2583"/>
+        <location filename="../src/playercontroller.cpp" line="2759"/>
         <source>A marker set to %1</source>
         <translation>סמן A הוגדר ל-%1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2594"/>
+        <location filename="../src/playercontroller.cpp" line="2770"/>
         <source>B marker set to %1</source>
         <translation>סמן B הוגדר ל-%1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2604"/>
+        <location filename="../src/playercontroller.cpp" line="2780"/>
         <source>A-B markers cleared</source>
         <translation>‭ורהוט A-B תודוקנ</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2718"/>
+        <location filename="../src/playercontroller.cpp" line="2837"/>
+        <source>None</source>
+        <translation>כלום</translation>
+    </message>
+    <message>
+        <location filename="../src/playercontroller.cpp" line="2837"/>
+        <source>Yadif</source>
+        <translation>Yadif</translation>
+    </message>
+    <message>
+        <location filename="../src/playercontroller.cpp" line="2838"/>
+        <source>Bwdif</source>
+        <translation>Bwdif</translation>
+    </message>
+    <message>
+        <location filename="../src/playercontroller.cpp" line="2839"/>
+        <source>Deinterlace: %1</source>
+        <translation>איין שזירה: %1</translation>
+    </message>
+    <message>
+        <location filename="../src/playercontroller.cpp" line="2918"/>
         <source>Could not load subtitles from %1</source>
         <translation>לא ניתן היה לטעון כתוביות מ-%1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2735"/>
+        <location filename="../src/playercontroller.cpp" line="2935"/>
         <source>Subtitles loaded: %1</source>
         <translation>כתוביות נטענו: %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2746"/>
+        <location filename="../src/playercontroller.cpp" line="2946"/>
         <source>Subtitles unloaded</source>
         <translation>כתוביות נפרקו</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2756"/>
+        <location filename="../src/playercontroller.cpp" line="2956"/>
         <source>Subtitle delay: %1 ms</source>
         <translation>‭ש&quot;מ %1 :תויבותכ יוהיש</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2886"/>
+        <location filename="../src/playercontroller.cpp" line="3086"/>
         <source>General</source>
         <translation>&lt;center&gt;כללי&lt;/center&gt;</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2889"/>
+        <location filename="../src/playercontroller.cpp" line="3089"/>
         <source>File</source>
         <translation>&lt;p dir=&quot;rtl&quot;&gt;קובץ&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2892"/>
+        <location filename="../src/playercontroller.cpp" line="3092"/>
         <source>Size</source>
         <translation>&lt;p dir=&quot;rtl&quot;&gt;גודל&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2892"/>
+        <location filename="../src/playercontroller.cpp" line="3092"/>
         <source>%1 KB (%2 MB)</source>
         <translation>%1 KB (%2 MB)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2896"/>
-        <location filename="../src/playercontroller.cpp" line="2922"/>
+        <location filename="../src/playercontroller.cpp" line="3096"/>
+        <location filename="../src/playercontroller.cpp" line="3122"/>
         <source>URL</source>
         <translation>&lt;p dir=&quot;rtl&quot;&gt;כתובת&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2899"/>
+        <location filename="../src/playercontroller.cpp" line="3099"/>
         <source>Length</source>
         <translation>&lt;p dir=&quot;rtl&quot;&gt;אורך&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2900"/>
+        <location filename="../src/playercontroller.cpp" line="3100"/>
         <source>Demuxer</source>
         <translation>&lt;p dir=&quot;rtl&quot;&gt;דימקסר&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2905"/>
-        <location filename="../src/playercontroller.cpp" line="2955"/>
-        <location filename="../src/playercontroller.cpp" line="2974"/>
-        <location filename="../src/playercontroller.cpp" line="2983"/>
+        <location filename="../src/playercontroller.cpp" line="3105"/>
+        <location filename="../src/playercontroller.cpp" line="3155"/>
+        <location filename="../src/playercontroller.cpp" line="3174"/>
+        <location filename="../src/playercontroller.cpp" line="3183"/>
         <source>Name</source>
         <translation>שם</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2906"/>
+        <location filename="../src/playercontroller.cpp" line="3106"/>
         <source>Artist</source>
         <translation>&lt;p dir=&quot;rtl&quot;&gt;אמן&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2908"/>
+        <location filename="../src/playercontroller.cpp" line="3108"/>
         <source>Album artist</source>
         <translation>אמן האלבום</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2910"/>
+        <location filename="../src/playercontroller.cpp" line="3110"/>
         <source>Author</source>
         <translation>&lt;p dir=&quot;rtl&quot;&gt;מחבר&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2911"/>
+        <location filename="../src/playercontroller.cpp" line="3111"/>
         <source>Composer</source>
         <translation>מלחין</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2912"/>
+        <location filename="../src/playercontroller.cpp" line="3112"/>
         <source>Album</source>
         <translation>&lt;p dir=&quot;rtl&quot;&gt;אלבום&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2913"/>
+        <location filename="../src/playercontroller.cpp" line="3113"/>
         <source>Genre</source>
         <translation>&lt;p dir=&quot;rtl&quot;&gt;ז&apos;אנר&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2914"/>
+        <location filename="../src/playercontroller.cpp" line="3114"/>
         <source>Date</source>
         <translation>תאריך</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2915"/>
+        <location filename="../src/playercontroller.cpp" line="3115"/>
         <source>Track</source>
         <translation>&lt;p dir=&quot;rtl&quot;&gt;רצועה&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2916"/>
+        <location filename="../src/playercontroller.cpp" line="3116"/>
         <source>Copyright</source>
         <translation>&lt;p dir=&quot;rtl&quot;&gt;זכויות יוצרים&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2917"/>
+        <location filename="../src/playercontroller.cpp" line="3117"/>
         <source>Comment</source>
         <translation>&lt;p dir=&quot;rtl&quot;&gt;הערה&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2918"/>
+        <location filename="../src/playercontroller.cpp" line="3118"/>
         <source>Description</source>
         <translation>תיאור</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2920"/>
+        <location filename="../src/playercontroller.cpp" line="3120"/>
         <source>Publisher</source>
         <translation>מוציא לאור</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2921"/>
-        <location filename="../src/playercontroller.cpp" line="2955"/>
-        <location filename="../src/playercontroller.cpp" line="2974"/>
-        <location filename="../src/playercontroller.cpp" line="2983"/>
+        <location filename="../src/playercontroller.cpp" line="3121"/>
+        <location filename="../src/playercontroller.cpp" line="3155"/>
+        <location filename="../src/playercontroller.cpp" line="3174"/>
+        <location filename="../src/playercontroller.cpp" line="3183"/>
         <source>Language</source>
         <translation>שפה</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2924"/>
+        <location filename="../src/playercontroller.cpp" line="3124"/>
         <source>Clip info</source>
         <translation>&lt;center&gt;מידע קליפ&lt;/center&gt;</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2928"/>
+        <location filename="../src/playercontroller.cpp" line="3128"/>
         <source>Initial Video Stream</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2931"/>
+        <location filename="../src/playercontroller.cpp" line="3131"/>
         <source>Resolution</source>
         <translation>&lt;p dir=&quot;rtl&quot;&gt;רזולוציה&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2934"/>
+        <location filename="../src/playercontroller.cpp" line="3134"/>
         <source>Aspect ratio</source>
         <translation>&lt;p dir=&quot;rtl&quot;&gt;יחס רוחב גובה&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2938"/>
-        <location filename="../src/playercontroller.cpp" line="2963"/>
+        <location filename="../src/playercontroller.cpp" line="3138"/>
+        <location filename="../src/playercontroller.cpp" line="3163"/>
         <source>Format</source>
         <translation>&lt;p dir=&quot;rtl&quot;&gt;פורמט&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2941"/>
-        <location filename="../src/playercontroller.cpp" line="2966"/>
+        <location filename="../src/playercontroller.cpp" line="3141"/>
+        <location filename="../src/playercontroller.cpp" line="3166"/>
         <source>Bitrate</source>
         <translation>&lt;p dir=&quot;rtl&quot;&gt;שיעור סיבית&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2941"/>
-        <location filename="../src/playercontroller.cpp" line="2966"/>
+        <location filename="../src/playercontroller.cpp" line="3141"/>
+        <location filename="../src/playercontroller.cpp" line="3166"/>
         <source>%1 kbps</source>
         <translation>%1 kbps</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2944"/>
+        <location filename="../src/playercontroller.cpp" line="3144"/>
         <source>Frames per second</source>
         <translation>&lt;p dir=&quot;rtl&quot;&gt;מסגרות לכל שניה&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2947"/>
+        <location filename="../src/playercontroller.cpp" line="3147"/>
         <source>HDR</source>
         <translation>HDR</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2947"/>
+        <location filename="../src/playercontroller.cpp" line="3147"/>
         <source>yes</source>
         <translation>כן</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2954"/>
+        <location filename="../src/playercontroller.cpp" line="3154"/>
         <source>Video Streams</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2962"/>
+        <location filename="../src/playercontroller.cpp" line="3162"/>
         <source>Initial Audio Stream</source>
         <translation>&lt;center&gt;זרם אודיו ראשוני&lt;/center&gt;</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2973"/>
+        <location filename="../src/playercontroller.cpp" line="3173"/>
         <source>Audio Streams</source>
         <translation>&lt;center&gt;זרמי אודיו&lt;/center&gt;</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2982"/>
+        <location filename="../src/playercontroller.cpp" line="3182"/>
         <source>Subtitles</source>
         <translation>כתוביות</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3255"/>
+        <location filename="../src/playercontroller.cpp" line="3455"/>
         <source>Chapter %1</source>
         <translation>פרק %1</translation>
     </message>
@@ -2588,140 +2624,159 @@
         <translation>השתמש במאזן וידאו של &amp;תוכנה</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="194"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="193"/>
         <source>Deinterlace by default:</source>
         <translation>ביטול שזירה כברירת מחדל:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="197"/>
-        <source>None (not supported by the backend)</source>
-        <translation>ללא (אינו נתמך על ידי המנוע)</translation>
+        <location filename="../qml/PrefGeneralPage.qml" line="196"/>
+        <source>None</source>
+        <translation>כלום</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="206"/>
-        <source>Video equalizer and zoom/aspect controls are planned for Phase 4 (ShaderEffect / item transforms). Deinterlacing and driver selection are not available with Qt Multimedia.</source>
+        <location filename="../qml/PrefGeneralPage.qml" line="196"/>
+        <source>Yadif</source>
+        <translation>Yadif</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefGeneralPage.qml" line="196"/>
+        <source>Bwdif</source>
+        <translation>Bwdif</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefGeneralPage.qml" line="201"/>
+        <source>Deinterlacing removes the horizontal combing artifacts of interlaced video. This sets the default for newly opened files; change it per file from Video &gt; Deinterlace.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="224"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="214"/>
+        <source>Video equalizer and zoom/aspect controls are planned for Phase 4 (ShaderEffect / item transforms). Driver selection is not available with Qt Multimedia.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>None (not supported by the backend)</source>
+        <translation type="vanished">ללא (אינו נתמך על ידי המנוע)</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefGeneralPage.qml" line="232"/>
         <source>Output device:</source>
         <translation>התקן פלט:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="246"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="254"/>
         <source>Volume</source>
         <translation>עוצמת שמע</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="254"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="262"/>
         <source>Volume step:</source>
         <translation>צעד עוצמה:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="256"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="264"/>
         <source>How much each volume up/down key press or mouse-wheel notch changes the level.</source>
         <translation>בכמה כל לחיצה על מקש הגברה/החלשה או תנועת גלגל עכבר משנה את הרמה.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="264"/>
-        <location filename="../qml/PrefGeneralPage.qml" line="286"/>
-        <location filename="../qml/PrefGeneralPage.qml" line="346"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="272"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="294"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="354"/>
         <source>%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="269"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="277"/>
         <source>Remember volume between sessions</source>
         <translation>זכירת העוצמה בין הפעלות</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="276"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="284"/>
         <source>Initial volume:</source>
         <translation>עוצמה התחלתית:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="278"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="286"/>
         <source>The volume level set at startup when the volume is not remembered between sessions.</source>
         <translation>רמת העוצמה המוגדרת בעת ההפעלה כאשר העוצמה אינה נזכרת בין הפעלות.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="294"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="302"/>
         <source>Synchronization</source>
         <translation>סינכרון</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="302"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="310"/>
         <source>Global audio delay:</source>
         <translation>השהיית שמע כללית:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="318"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="326"/>
         <source>ms</source>
         <translation>מ״ש</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="326"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="334"/>
         <source>Delay for the current audio device — “%1” — applied to every file (e.g. to compensate Bluetooth output latency). Remembered per device, so switching devices restores the right value. A negative value holds the video back to match late audio. Each file can add its own delay via Audio &gt; Set delay.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="340"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="348"/>
         <source>Use software volume control</source>
         <translation>השתמש בבקרת עוצמת שמע של &amp;תוכנה</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="344"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="352"/>
         <source>Max. amplification:</source>
         <translation>הגברה מרבית:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="349"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="357"/>
         <source>Volume normalization by default</source>
         <translation>נורמליזציית עוצמת שמע באופן שגרתי</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="356"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="364"/>
         <source>Amplification above 100% and volume normalization require an audio pipeline filter, which Qt Multimedia does not provide.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="375"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="383"/>
         <source>Comma-separated language codes or names in order of preference (e.g. &quot;ja, en&quot;).</source>
         <translation>קודי או שמות שפה מופרדים בפסיקים לפי סדר העדפה (למשל &quot;ja, en&quot;).</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="380"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="388"/>
         <source>Preferred audio language:</source>
         <translation>שפת שמע מועדפת:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="383"/>
-        <location filename="../qml/PrefGeneralPage.qml" line="393"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="391"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="401"/>
         <source>e.g. ja, en</source>
         <translation>למשל ja, en</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="390"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="398"/>
         <source>Preferred subtitle language:</source>
         <translation>שפת כתוביות מועדפת:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="401"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="409"/>
         <source>Show subtitles by default</source>
         <translation>הצגת כתוביות כברירת מחדל</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="406"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="414"/>
         <source>When a file has embedded subtitles, turn one on automatically (preferring the languages above) instead of starting with subtitles off.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="416"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="424"/>
         <source>Preferred audio track number:</source>
         <translation>מספר רצועת שמע מועדף:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="422"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="430"/>
         <source>Preferred subtitle track number:</source>
         <translation>מספר רצועת כתוביות מועדף:</translation>
     </message>

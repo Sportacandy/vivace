@@ -6,6 +6,9 @@ A **Beállítások** menü tartalmazza a beállításokat és a felület konfigu
   Felület, Felirat, Billentyűzet és egér, Lejátszási lista, Meghajtók, TV,
   Fájltípusok, Frissítések, Hálózat és Speciális. A módosítások azonnal
   érvénybe lépnek; a **Mégse** visszavonja őket.
+  - **Általános ▸ Videó** beállítja a **Deinterlace** alapértelmezett módját
+    (Nincs / Yadif / Bwdif) az újonnan megnyitott fájlokhoz — fájlonként a
+    *Videó ▸ Deinterlace* alatt módosítható.
   - A **Hálózat** oldal az OpenSubtitles, YouTube, Proxy és Átküldés füleket
     tartalmazza; a **Proxy** fül egy opcionális HTTP- vagy SOCKS5-proxyt
     állít be, amely az egész alkalmazásra érvényes (OpenSubtitles-keresés,

@@ -828,222 +828,222 @@
         <translation>Slepp mediefiler her, eller trykk Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="655"/>
+        <location filename="../qml/Main.qml" line="661"/>
         <source>Downloading video…</source>
         <translation>Lastar ned video…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="662"/>
+        <location filename="../qml/Main.qml" line="668"/>
         <source>This can take a while — the external tool is downloading and merging HD video and audio.</source>
         <translation>Dette kan ta ei stund — det eksterne verktøyet lastar ned og slår saman HD-video og -lyd.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="676"/>
-        <location filename="../qml/Main.qml" line="1694"/>
+        <location filename="../qml/Main.qml" line="682"/>
+        <location filename="../qml/Main.qml" line="1711"/>
         <source>Cancel</source>
         <translation>Avbryt</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="749"/>
+        <location filename="../qml/Main.qml" line="755"/>
         <source>Loading…</source>
         <translation>Lastar…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="750"/>
+        <location filename="../qml/Main.qml" line="756"/>
         <source>Connecting…</source>
         <translation>Koplar til…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="751"/>
+        <location filename="../qml/Main.qml" line="757"/>
         <source>Buffering… %1%</source>
         <translation>Bufrar… %1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="759"/>
+        <location filename="../qml/Main.qml" line="765"/>
         <source>Live streams can take several seconds to start.</source>
         <translation>Direktesendingar kan bruka fleire sekund på å starta.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="794"/>
+        <location filename="../qml/Main.qml" line="800"/>
         <source>Volume: %1%</source>
         <translation>Lydstyrke: %1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="797"/>
+        <location filename="../qml/Main.qml" line="803"/>
         <source>Mute</source>
         <translation>Demp</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="797"/>
+        <location filename="../qml/Main.qml" line="803"/>
         <source>Mute off</source>
         <translation>Demping av</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="800"/>
+        <location filename="../qml/Main.qml" line="806"/>
         <source>Speed: %1x</source>
         <translation>Fart: %1x</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1310"/>
+        <location filename="../qml/Main.qml" line="1327"/>
         <source>Media files (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1311"/>
-        <location filename="../qml/Main.qml" line="1369"/>
-        <location filename="../qml/Main.qml" line="1630"/>
+        <location filename="../qml/Main.qml" line="1328"/>
+        <location filename="../qml/Main.qml" line="1386"/>
+        <location filename="../qml/Main.qml" line="1647"/>
         <source>All files (*)</source>
         <translation>Alle filer (*)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1353"/>
+        <location filename="../qml/Main.qml" line="1370"/>
         <source>Select the DVD drive or a folder containing VIDEO_TS</source>
         <translation>Vel DVD-stasjonen eller ei mappe som inneheld VIDEO_TS</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1357"/>
+        <location filename="../qml/Main.qml" line="1374"/>
         <source>No DVD video found in %1</source>
         <translation>Fann ingen DVD-video i %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1368"/>
+        <location filename="../qml/Main.qml" line="1385"/>
         <source>Playlists (*.m3u *.m3u8)</source>
         <translation>Speleliste (*.m3u *.m3u8)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1411"/>
+        <location filename="../qml/Main.qml" line="1428"/>
         <source>Playing stream</source>
         <translation>Spelar av straum</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1417"/>
-        <location filename="../qml/Main.qml" line="1450"/>
+        <location filename="../qml/Main.qml" line="1434"/>
+        <location filename="../qml/Main.qml" line="1467"/>
         <source>Playing downloaded video</source>
         <translation>Spelar av nedlasta video</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1421"/>
+        <location filename="../qml/Main.qml" line="1438"/>
         <source>YouTube: %1</source>
         <translation>YouTube: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1454"/>
+        <location filename="../qml/Main.qml" line="1471"/>
         <source>Download failed: %1</source>
         <translation>Nedlastinga mislukkast: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1551"/>
+        <location filename="../qml/Main.qml" line="1568"/>
         <source>Saved %1 file(s); %2 failed.</source>
         <translation>%1 fil(er) lagra; %2 feila.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1555"/>
+        <location filename="../qml/Main.qml" line="1572"/>
         <source>Saved %1 file(s).</source>
         <translation>%1 fil(er) lagra.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1568"/>
+        <location filename="../qml/Main.qml" line="1585"/>
         <source>Could not read the shortcut file.</source>
         <translation>Klarte ikkje å lesa snarvegsfila.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1583"/>
+        <location filename="../qml/Main.qml" line="1600"/>
         <source>Starting download…</source>
         <translation>Startar nedlasting…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1584"/>
+        <location filename="../qml/Main.qml" line="1601"/>
         <source>Downloading video (this can take a while)…</source>
         <translation>Lastar ned video (dette kan ta ei stund)…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1588"/>
+        <location filename="../qml/Main.qml" line="1605"/>
         <source>Resolving with yt-dlp…</source>
         <translation>Løyser opp med yt-dlp…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1625"/>
+        <location filename="../qml/Main.qml" line="1642"/>
         <source>Load subtitle file</source>
         <translation>Opna undertekstfil</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1629"/>
+        <location filename="../qml/Main.qml" line="1646"/>
         <source>Subtitle files (*.srt *.vtt *.ass *.ssa)</source>
         <translation>Undertekstfiler (*.srt *.vtt *.ass *.ssa)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1637"/>
+        <location filename="../qml/Main.qml" line="1654"/>
         <source>Subtitle delay</source>
         <translation>Undertekstforseinking</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1671"/>
+        <location filename="../qml/Main.qml" line="1688"/>
         <source>Delay:</source>
         <translation>Forseinking:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1677"/>
-        <location filename="../qml/Main.qml" line="1749"/>
+        <location filename="../qml/Main.qml" line="1694"/>
+        <location filename="../qml/Main.qml" line="1766"/>
         <source>ms</source>
         <translation>ms</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1687"/>
+        <location filename="../qml/Main.qml" line="1704"/>
         <source>OK</source>
         <translation>&amp;OK</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1706"/>
+        <location filename="../qml/Main.qml" line="1723"/>
         <source>Audio delay — Vivace</source>
         <translation>Lydforseinking — Vivace</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1737"/>
+        <location filename="../qml/Main.qml" line="1754"/>
         <source>No delay for this file (use the global delay only)</source>
         <translation>Inga forseinking for denne fila (bruk berre den globale forseinkinga)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1742"/>
+        <location filename="../qml/Main.qml" line="1759"/>
         <source>This file&apos;s delay:</source>
         <translation>Forseinkinga til denne fila:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1757"/>
+        <location filename="../qml/Main.qml" line="1774"/>
         <source>The delay applied to this file is this value plus the global delay for the current audio device (%1 ms), set in Preferences &gt; General &gt; Audio. Negative values delay the video to match audio that arrives late (e.g. Bluetooth headphones).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1770"/>
+        <location filename="../qml/Main.qml" line="1787"/>
         <source>&amp;Apply</source>
         <translation>&amp;Bruk</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1779"/>
+        <location filename="../qml/Main.qml" line="1796"/>
         <source>&amp;Close</source>
         <translation>&amp;Lat att</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1876"/>
+        <location filename="../qml/Main.qml" line="1893"/>
         <source>Hide window</source>
         <translation>Gøym vindauge</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1876"/>
+        <location filename="../qml/Main.qml" line="1893"/>
         <source>Show window</source>
         <translation>Vis vindauge</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1881"/>
+        <location filename="../qml/Main.qml" line="1898"/>
         <source>Play / Pause</source>
         <translation>Spel/Pause</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1885"/>
+        <location filename="../qml/Main.qml" line="1902"/>
         <source>Stop</source>
         <translation>Stopp</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1890"/>
+        <location filename="../qml/Main.qml" line="1907"/>
         <source>Quit</source>
         <translation>&amp;Avslutt</translation>
     </message>
@@ -1320,16 +1320,16 @@
     </message>
     <message>
         <location filename="../qml/MainMenuBar.qml" line="431"/>
-        <location filename="../qml/MainMenuBar.qml" line="624"/>
-        <location filename="../qml/MainMenuBar.qml" line="704"/>
+        <location filename="../qml/MainMenuBar.qml" line="655"/>
+        <location filename="../qml/MainMenuBar.qml" line="735"/>
         <source>&amp;Track</source>
         <translation>&amp;Spor</translation>
     </message>
     <message>
         <location filename="../qml/MainMenuBar.qml" line="438"/>
-        <location filename="../qml/MainMenuBar.qml" line="637"/>
-        <location filename="../qml/MainMenuBar.qml" line="828"/>
-        <location filename="../qml/MainMenuBar.qml" line="853"/>
+        <location filename="../qml/MainMenuBar.qml" line="668"/>
+        <location filename="../qml/MainMenuBar.qml" line="859"/>
+        <location filename="../qml/MainMenuBar.qml" line="884"/>
         <source>&lt;empty&gt;</source>
         <translation>&lt;tom&gt;</translation>
     </message>
@@ -1410,6 +1410,7 @@
     </message>
     <message>
         <location filename="../qml/MainMenuBar.qml" line="544"/>
+        <location filename="../qml/MainMenuBar.qml" line="606"/>
         <source>&amp;None</source>
         <translation>&amp;Ingen</translation>
     </message>
@@ -1439,258 +1440,273 @@
         <translation>Spege&amp;lvend biletet</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="604"/>
+        <location filename="../qml/MainMenuBar.qml" line="603"/>
+        <source>&amp;Deinterlace</source>
+        <translation>&amp;Avfletting</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainMenuBar.qml" line="615"/>
+        <source>&amp;Yadif</source>
+        <translation>&amp;Yadif</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainMenuBar.qml" line="624"/>
+        <source>&amp;Bwdif</source>
+        <translation>&amp;Bwdif</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainMenuBar.qml" line="635"/>
         <source>E&amp;qualizer…</source>
         <translation>E&amp;qualizer…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="610"/>
+        <location filename="../qml/MainMenuBar.qml" line="641"/>
         <source>&amp;Screenshot</source>
         <translation>&amp;Skjermbilete</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="620"/>
+        <location filename="../qml/MainMenuBar.qml" line="651"/>
         <source>&amp;Audio</source>
         <translation>&amp;Lyd</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="662"/>
+        <location filename="../qml/MainMenuBar.qml" line="693"/>
         <source>&amp;Mute</source>
         <translation>&amp;Demp</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="671"/>
+        <location filename="../qml/MainMenuBar.qml" line="702"/>
         <source>Volume &amp;-</source>
         <translation>Lydstyrke &amp;-</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="677"/>
+        <location filename="../qml/MainMenuBar.qml" line="708"/>
         <source>Volume &amp;+</source>
         <translation>Lydstyrke &amp;+</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="685"/>
-        <location filename="../qml/MainMenuBar.qml" line="778"/>
+        <location filename="../qml/MainMenuBar.qml" line="716"/>
+        <location filename="../qml/MainMenuBar.qml" line="809"/>
         <source>Delay &amp;-</source>
         <translation>Forseinking &amp;-</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="689"/>
+        <location filename="../qml/MainMenuBar.qml" line="720"/>
         <source>D&amp;elay +</source>
         <translation>F&amp;rseinking +</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="693"/>
+        <location filename="../qml/MainMenuBar.qml" line="724"/>
         <source>Set dela&amp;y…</source>
         <translation>Set fors&amp;einking...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="700"/>
+        <location filename="../qml/MainMenuBar.qml" line="731"/>
         <source>&amp;Subtitles</source>
         <translation>&amp;Undertekstar</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="712"/>
+        <location filename="../qml/MainMenuBar.qml" line="743"/>
         <source>&amp;Off</source>
         <translation>&amp;Av</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="761"/>
+        <location filename="../qml/MainMenuBar.qml" line="792"/>
         <source>&amp;Load subtitles…</source>
         <translation>&amp;Opna undertekstar…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="767"/>
+        <location filename="../qml/MainMenuBar.qml" line="798"/>
         <source>&amp;Find subtitles at OpenSubtitles…</source>
         <translation>&amp;Finn undertekstar på OpenSubtitles…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="772"/>
+        <location filename="../qml/MainMenuBar.qml" line="803"/>
         <source>U&amp;nload subtitles</source>
         <translation>&amp;Fjern undertekstar</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="783"/>
+        <location filename="../qml/MainMenuBar.qml" line="814"/>
         <source>Delay &amp;+</source>
         <translation>Forseinking &amp;+</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="788"/>
+        <location filename="../qml/MainMenuBar.qml" line="819"/>
         <source>Se&amp;t delay…</source>
         <translation>V&amp;el forseinking...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="796"/>
+        <location filename="../qml/MainMenuBar.qml" line="827"/>
         <source>&amp;Browse</source>
         <translation>&amp;Bla gjennom</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="799"/>
+        <location filename="../qml/MainMenuBar.qml" line="830"/>
         <source>&amp;DVD menu</source>
         <translation>DVD &amp;meny</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="808"/>
+        <location filename="../qml/MainMenuBar.qml" line="839"/>
         <source>&amp;Title</source>
         <translation>&amp;Tittel</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="835"/>
+        <location filename="../qml/MainMenuBar.qml" line="866"/>
         <source>&amp;Chapters</source>
         <translation>&amp;Kapittel</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="860"/>
+        <location filename="../qml/MainMenuBar.qml" line="891"/>
         <source>&amp;Bookmarks</source>
         <translation>&amp;Bokmerke</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="870"/>
+        <location filename="../qml/MainMenuBar.qml" line="901"/>
         <source>&amp;Add new bookmark</source>
         <translation>&amp;Legg til nytt bokmerke</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="877"/>
+        <location filename="../qml/MainMenuBar.qml" line="908"/>
         <source>&amp;Edit bookmarks…</source>
         <translation>&amp;Rediger bokmerke…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="901"/>
+        <location filename="../qml/MainMenuBar.qml" line="932"/>
         <source>Vie&amp;w</source>
         <translation>V&amp;is</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="904"/>
+        <location filename="../qml/MainMenuBar.qml" line="935"/>
         <source>&amp;Information and properties…</source>
         <translation>&amp;Informasjon og eigenskapar</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="911"/>
+        <location filename="../qml/MainMenuBar.qml" line="942"/>
         <source>&amp;Playlist</source>
         <translation>&amp;Speleliste</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="919"/>
+        <location filename="../qml/MainMenuBar.qml" line="950"/>
         <source>&amp;OSD</source>
         <translation>&amp;Skjermmeldingar</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="921"/>
+        <location filename="../qml/MainMenuBar.qml" line="952"/>
         <source>Subtitles only</source>
         <translation>Berr&amp;e undertekstar</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="922"/>
+        <location filename="../qml/MainMenuBar.qml" line="953"/>
         <source>Volume + seek</source>
         <translation>Lydstyrke + søk</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="923"/>
+        <location filename="../qml/MainMenuBar.qml" line="954"/>
         <source>Volume + seek + timer</source>
         <translation>Lydstyrke + søk + tid</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="929"/>
+        <location filename="../qml/MainMenuBar.qml" line="960"/>
         <source>Op&amp;tions</source>
         <translation>Al&amp;ternativ</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="932"/>
+        <location filename="../qml/MainMenuBar.qml" line="963"/>
         <source>&amp;Preferences…</source>
         <translation>&amp;Innstillingar…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="939"/>
+        <location filename="../qml/MainMenuBar.qml" line="970"/>
         <source>S&amp;how icon in system tray</source>
         <translation>V&amp;is ikon i systemkorga</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="945"/>
+        <location filename="../qml/MainMenuBar.qml" line="976"/>
         <source>&amp;Toolbars</source>
         <translation>&amp;Verktøylinjer</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="948"/>
+        <location filename="../qml/MainMenuBar.qml" line="979"/>
         <source>&amp;Toolbar</source>
         <translation>&amp;Verktøylinje</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="954"/>
+        <location filename="../qml/MainMenuBar.qml" line="985"/>
         <source>&amp;Control bar</source>
         <translation>Kontrolline</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="961"/>
+        <location filename="../qml/MainMenuBar.qml" line="992"/>
         <source>Edit main &amp;toolbar…</source>
         <translation>Rediger hovud&amp;verktøylinja…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="965"/>
+        <location filename="../qml/MainMenuBar.qml" line="996"/>
         <source>Edit control &amp;bar…</source>
         <translation>Rediger kontroll&amp;linja…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="970"/>
+        <location filename="../qml/MainMenuBar.qml" line="1001"/>
         <source>&amp;Status bar</source>
         <translation>&amp;Statuslinje</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="973"/>
+        <location filename="../qml/MainMenuBar.qml" line="1004"/>
         <source>&amp;Show status bar</source>
         <translation>&amp;Vis statuslinje</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="980"/>
+        <location filename="../qml/MainMenuBar.qml" line="1011"/>
         <source>&amp;Video info</source>
         <translation>&amp;Videoinfo</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="987"/>
+        <location filename="../qml/MainMenuBar.qml" line="1018"/>
         <source>&amp;Audio info</source>
         <translation>&amp;Lydinfo</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="994"/>
+        <location filename="../qml/MainMenuBar.qml" line="1025"/>
         <source>F&amp;ormat info</source>
         <translation>F&amp;ormatinfo</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1001"/>
+        <location filename="../qml/MainMenuBar.qml" line="1032"/>
         <source>&amp;Bitrate info</source>
         <translation>&amp;Bitfrekvens-informasjon</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1008"/>
+        <location filename="../qml/MainMenuBar.qml" line="1039"/>
         <source>&amp;Frame counter</source>
         <translation>&amp;Ruteteljar</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1016"/>
+        <location filename="../qml/MainMenuBar.qml" line="1047"/>
         <source>Display &amp;total time</source>
         <translation>Vis &amp;total tid</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1022"/>
+        <location filename="../qml/MainMenuBar.qml" line="1053"/>
         <source>Display &amp;remaining time</source>
         <translation>Vis &amp;attståande tid</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1029"/>
+        <location filename="../qml/MainMenuBar.qml" line="1060"/>
         <source>Show the current time with &amp;milliseconds</source>
         <translation>&amp;Syn gjeldande tid med millisekund</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1039"/>
+        <location filename="../qml/MainMenuBar.qml" line="1070"/>
         <source>&amp;Help</source>
         <translation>&amp;Hjelp</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1042"/>
+        <location filename="../qml/MainMenuBar.qml" line="1073"/>
         <source>&amp;Contents</source>
         <translation>&amp;Innhald</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1049"/>
+        <location filename="../qml/MainMenuBar.qml" line="1080"/>
         <source>&amp;Check for updates</source>
         <translation>Sjå etter &amp;oppdateringar</translation>
     </message>
@@ -1699,7 +1715,7 @@
         <translation type="vanished">Installer / Oppdater &amp;YouTube-støtte</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1055"/>
+        <location filename="../qml/MainMenuBar.qml" line="1086"/>
         <source>&amp;About Vivace</source>
         <translation>&amp;Om Vivace</translation>
     </message>
@@ -1877,7 +1893,7 @@
         <location filename="../src/playercontroller.cpp" line="181"/>
         <location filename="../src/playercontroller.cpp" line="801"/>
         <location filename="../src/playercontroller.cpp" line="817"/>
-        <location filename="../src/playercontroller.cpp" line="1891"/>
+        <location filename="../src/playercontroller.cpp" line="2067"/>
         <source>Track %1</source>
         <translation>Spor %1</translation>
     </message>
@@ -1887,257 +1903,277 @@
         <translation>A/V-forseinking: %1 ms</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1194"/>
+        <location filename="../src/playercontroller.cpp" line="1219"/>
         <source>DVD title %1 could not be assembled</source>
         <translation>DVD-tittel %1 kunne ikkje setjast saman</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1200"/>
+        <location filename="../src/playercontroller.cpp" line="1225"/>
         <source>DVD title %1 could not be opened</source>
         <translation>DVD-tittel %1 kunne ikkje opnast</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1359"/>
+        <location filename="../src/playercontroller.cpp" line="1384"/>
         <source>Title %1 (%2)</source>
         <translation>Tittel %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1375"/>
+        <location filename="../src/playercontroller.cpp" line="1400"/>
         <source>Chapter %1 (%2)</source>
         <translation>Kapittel %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2359"/>
+        <location filename="../src/playercontroller.cpp" line="2535"/>
         <source>Could not open the stream</source>
         <translation>Klarte ikkje å opna straumen</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2418"/>
+        <location filename="../src/playercontroller.cpp" line="2594"/>
         <source>System default</source>
         <translation>Systemstandard</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2583"/>
+        <location filename="../src/playercontroller.cpp" line="2759"/>
         <source>A marker set to %1</source>
         <translation>A-markør sett til %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2594"/>
+        <location filename="../src/playercontroller.cpp" line="2770"/>
         <source>B marker set to %1</source>
         <translation>B-markør sett til %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2604"/>
+        <location filename="../src/playercontroller.cpp" line="2780"/>
         <source>A-B markers cleared</source>
         <translation>A -&gt; B-punkta fjerna</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2718"/>
+        <location filename="../src/playercontroller.cpp" line="2837"/>
+        <source>None</source>
+        <translation>Ingen</translation>
+    </message>
+    <message>
+        <location filename="../src/playercontroller.cpp" line="2837"/>
+        <source>Yadif</source>
+        <translation>Yadif</translation>
+    </message>
+    <message>
+        <location filename="../src/playercontroller.cpp" line="2838"/>
+        <source>Bwdif</source>
+        <translation>Bwdif</translation>
+    </message>
+    <message>
+        <location filename="../src/playercontroller.cpp" line="2839"/>
+        <source>Deinterlace: %1</source>
+        <translation>Avfletting: %1</translation>
+    </message>
+    <message>
+        <location filename="../src/playercontroller.cpp" line="2918"/>
         <source>Could not load subtitles from %1</source>
         <translation>Klarte ikkje å lasta undertekstar frå %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2735"/>
+        <location filename="../src/playercontroller.cpp" line="2935"/>
         <source>Subtitles loaded: %1</source>
         <translation>Undertekstar lasta: %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2746"/>
+        <location filename="../src/playercontroller.cpp" line="2946"/>
         <source>Subtitles unloaded</source>
         <translation>Undertekstar fjerna</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2756"/>
+        <location filename="../src/playercontroller.cpp" line="2956"/>
         <source>Subtitle delay: %1 ms</source>
         <translation>Undertekstforseinking: %1 ms</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2886"/>
+        <location filename="../src/playercontroller.cpp" line="3086"/>
         <source>General</source>
         <translation>Generelt</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2889"/>
+        <location filename="../src/playercontroller.cpp" line="3089"/>
         <source>File</source>
         <translation>Fil</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2892"/>
+        <location filename="../src/playercontroller.cpp" line="3092"/>
         <source>Size</source>
         <translation>Storleik</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2892"/>
+        <location filename="../src/playercontroller.cpp" line="3092"/>
         <source>%1 KB (%2 MB)</source>
         <translation>%1 kB (%2 MB)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2896"/>
-        <location filename="../src/playercontroller.cpp" line="2922"/>
+        <location filename="../src/playercontroller.cpp" line="3096"/>
+        <location filename="../src/playercontroller.cpp" line="3122"/>
         <source>URL</source>
         <translation>Nettadresse</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2899"/>
+        <location filename="../src/playercontroller.cpp" line="3099"/>
         <source>Length</source>
         <translation>Lengde</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2900"/>
+        <location filename="../src/playercontroller.cpp" line="3100"/>
         <source>Demuxer</source>
         <translation>Splittar</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2905"/>
-        <location filename="../src/playercontroller.cpp" line="2955"/>
-        <location filename="../src/playercontroller.cpp" line="2974"/>
-        <location filename="../src/playercontroller.cpp" line="2983"/>
+        <location filename="../src/playercontroller.cpp" line="3105"/>
+        <location filename="../src/playercontroller.cpp" line="3155"/>
+        <location filename="../src/playercontroller.cpp" line="3174"/>
+        <location filename="../src/playercontroller.cpp" line="3183"/>
         <source>Name</source>
         <translation>Namn</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2906"/>
+        <location filename="../src/playercontroller.cpp" line="3106"/>
         <source>Artist</source>
         <translation>Artist</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2908"/>
+        <location filename="../src/playercontroller.cpp" line="3108"/>
         <source>Album artist</source>
         <translation>Albumartist</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2910"/>
+        <location filename="../src/playercontroller.cpp" line="3110"/>
         <source>Author</source>
         <translation>Forfattar</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2911"/>
+        <location filename="../src/playercontroller.cpp" line="3111"/>
         <source>Composer</source>
         <translation>Komponist</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2912"/>
+        <location filename="../src/playercontroller.cpp" line="3112"/>
         <source>Album</source>
         <translation>Album</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2913"/>
+        <location filename="../src/playercontroller.cpp" line="3113"/>
         <source>Genre</source>
         <translation>Sjanger</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2914"/>
+        <location filename="../src/playercontroller.cpp" line="3114"/>
         <source>Date</source>
         <translation>Dato</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2915"/>
+        <location filename="../src/playercontroller.cpp" line="3115"/>
         <source>Track</source>
         <translation>Spor</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2916"/>
+        <location filename="../src/playercontroller.cpp" line="3116"/>
         <source>Copyright</source>
         <translation>Opphavsrett</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2917"/>
+        <location filename="../src/playercontroller.cpp" line="3117"/>
         <source>Comment</source>
         <translation>Kommentar</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2918"/>
+        <location filename="../src/playercontroller.cpp" line="3118"/>
         <source>Description</source>
         <translation>Skildring</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2920"/>
+        <location filename="../src/playercontroller.cpp" line="3120"/>
         <source>Publisher</source>
         <translation>Utgjevar</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2921"/>
-        <location filename="../src/playercontroller.cpp" line="2955"/>
-        <location filename="../src/playercontroller.cpp" line="2974"/>
-        <location filename="../src/playercontroller.cpp" line="2983"/>
+        <location filename="../src/playercontroller.cpp" line="3121"/>
+        <location filename="../src/playercontroller.cpp" line="3155"/>
+        <location filename="../src/playercontroller.cpp" line="3174"/>
+        <location filename="../src/playercontroller.cpp" line="3183"/>
         <source>Language</source>
         <translation>Språk</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2924"/>
+        <location filename="../src/playercontroller.cpp" line="3124"/>
         <source>Clip info</source>
         <translation>Klippinfo</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2928"/>
+        <location filename="../src/playercontroller.cpp" line="3128"/>
         <source>Initial Video Stream</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2931"/>
+        <location filename="../src/playercontroller.cpp" line="3131"/>
         <source>Resolution</source>
         <translation>Oppløysing</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2934"/>
+        <location filename="../src/playercontroller.cpp" line="3134"/>
         <source>Aspect ratio</source>
         <translation>Bildeformat</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2938"/>
-        <location filename="../src/playercontroller.cpp" line="2963"/>
+        <location filename="../src/playercontroller.cpp" line="3138"/>
+        <location filename="../src/playercontroller.cpp" line="3163"/>
         <source>Format</source>
         <translation>Format</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2941"/>
-        <location filename="../src/playercontroller.cpp" line="2966"/>
+        <location filename="../src/playercontroller.cpp" line="3141"/>
+        <location filename="../src/playercontroller.cpp" line="3166"/>
         <source>Bitrate</source>
         <translation>Bitfrekvens</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2941"/>
-        <location filename="../src/playercontroller.cpp" line="2966"/>
+        <location filename="../src/playercontroller.cpp" line="3141"/>
+        <location filename="../src/playercontroller.cpp" line="3166"/>
         <source>%1 kbps</source>
         <translation>%1 kbps</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2944"/>
+        <location filename="../src/playercontroller.cpp" line="3144"/>
         <source>Frames per second</source>
         <translation>Bilete pr. sekund</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2947"/>
+        <location filename="../src/playercontroller.cpp" line="3147"/>
         <source>HDR</source>
         <translation>HDR</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2947"/>
+        <location filename="../src/playercontroller.cpp" line="3147"/>
         <source>yes</source>
         <translation>ja</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2954"/>
+        <location filename="../src/playercontroller.cpp" line="3154"/>
         <source>Video Streams</source>
         <translation>Videostraumar</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2962"/>
+        <location filename="../src/playercontroller.cpp" line="3162"/>
         <source>Initial Audio Stream</source>
         <translation>Opphavleg lydstraum</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2973"/>
+        <location filename="../src/playercontroller.cpp" line="3173"/>
         <source>Audio Streams</source>
         <translation>Lydstraumar</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2982"/>
+        <location filename="../src/playercontroller.cpp" line="3182"/>
         <source>Subtitles</source>
         <translation>Undertekstar</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3255"/>
+        <location filename="../src/playercontroller.cpp" line="3455"/>
         <source>Chapter %1</source>
         <translation>Kapittel %1</translation>
     </message>
@@ -2592,140 +2628,159 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="194"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="193"/>
         <source>Deinterlace by default:</source>
         <translation>Avflett som standard:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="197"/>
-        <source>None (not supported by the backend)</source>
-        <translation>Ingen (ikkje støtta av motoren)</translation>
+        <location filename="../qml/PrefGeneralPage.qml" line="196"/>
+        <source>None</source>
+        <translation>Ingen</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="206"/>
-        <source>Video equalizer and zoom/aspect controls are planned for Phase 4 (ShaderEffect / item transforms). Deinterlacing and driver selection are not available with Qt Multimedia.</source>
+        <location filename="../qml/PrefGeneralPage.qml" line="196"/>
+        <source>Yadif</source>
+        <translation>Yadif</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefGeneralPage.qml" line="196"/>
+        <source>Bwdif</source>
+        <translation>Bwdif</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefGeneralPage.qml" line="201"/>
+        <source>Deinterlacing removes the horizontal combing artifacts of interlaced video. This sets the default for newly opened files; change it per file from Video &gt; Deinterlace.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="224"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="214"/>
+        <source>Video equalizer and zoom/aspect controls are planned for Phase 4 (ShaderEffect / item transforms). Driver selection is not available with Qt Multimedia.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>None (not supported by the backend)</source>
+        <translation type="vanished">Ingen (ikkje støtta av motoren)</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefGeneralPage.qml" line="232"/>
         <source>Output device:</source>
         <translation>Uteining:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="246"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="254"/>
         <source>Volume</source>
         <translation>Lydstyrke</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="254"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="262"/>
         <source>Volume step:</source>
         <translation>Lydstyrkesteg:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="256"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="264"/>
         <source>How much each volume up/down key press or mouse-wheel notch changes the level.</source>
         <translation>Kor mykje kvart tastetrykk for lydstyrke opp/ned eller kvart hakk på musehjulet endrar nivået.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="264"/>
-        <location filename="../qml/PrefGeneralPage.qml" line="286"/>
-        <location filename="../qml/PrefGeneralPage.qml" line="346"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="272"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="294"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="354"/>
         <source>%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="269"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="277"/>
         <source>Remember volume between sessions</source>
         <translation>Hugs lydstyrken mellom øktene</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="276"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="284"/>
         <source>Initial volume:</source>
         <translation>Startlydstyrke:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="278"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="286"/>
         <source>The volume level set at startup when the volume is not remembered between sessions.</source>
         <translation>Lydstyrkenivået som vert sett ved oppstart når lydstyrken ikkje vert hugsa mellom øktene.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="294"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="302"/>
         <source>Synchronization</source>
         <translation>Synkronisering</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="302"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="310"/>
         <source>Global audio delay:</source>
         <translation>Global lydforseinking:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="318"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="326"/>
         <source>ms</source>
         <translation>ms</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="326"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="334"/>
         <source>Delay for the current audio device — “%1” — applied to every file (e.g. to compensate Bluetooth output latency). Remembered per device, so switching devices restores the right value. A negative value holds the video back to match late audio. Each file can add its own delay via Audio &gt; Set delay.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="340"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="348"/>
         <source>Use software volume control</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="344"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="352"/>
         <source>Max. amplification:</source>
         <translation>Maks. forsterking:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="349"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="357"/>
         <source>Volume normalization by default</source>
         <translation>Lydstyrke &amp;normalisering som standard</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="356"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="364"/>
         <source>Amplification above 100% and volume normalization require an audio pipeline filter, which Qt Multimedia does not provide.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="375"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="383"/>
         <source>Comma-separated language codes or names in order of preference (e.g. &quot;ja, en&quot;).</source>
         <translation>Kommadelte språkkodar eller -namn i føretrekt rekkjefølgje (t.d. &quot;ja, en&quot;).</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="380"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="388"/>
         <source>Preferred audio language:</source>
         <translation>Føretrekt lydspråk:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="383"/>
-        <location filename="../qml/PrefGeneralPage.qml" line="393"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="391"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="401"/>
         <source>e.g. ja, en</source>
         <translation>t.d. ja, en</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="390"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="398"/>
         <source>Preferred subtitle language:</source>
         <translation>Føretrekt undertekstspråk:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="401"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="409"/>
         <source>Show subtitles by default</source>
         <translation>Vis undertekstar som standard</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="406"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="414"/>
         <source>When a file has embedded subtitles, turn one on automatically (preferring the languages above) instead of starting with subtitles off.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="416"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="424"/>
         <source>Preferred audio track number:</source>
         <translation>Føretrekt lydspornummer:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="422"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="430"/>
         <source>Preferred subtitle track number:</source>
         <translation>Føretrekt undertekstspornummer:</translation>
     </message>

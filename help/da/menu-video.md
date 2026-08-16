@@ -12,6 +12,10 @@ aktuelle fil og nulstilles for hver ny.
 - **Billedforhold** — gennemtving et visningsforhold (Auto, 4:3, 16:9, …).
 - **Rotér** — Ingen, 90° med uret, 90° mod uret eller 180°.
 - **Vend billede** / **Spejlvend billede** — vend lodret eller vandret.
+- **Deinterlace** — **Ingen**, **Yadif** eller **Bwdif**, for at fjerne
+  kamningsartefakterne i sammenflettet video. Anvendes med det samme, også
+  midt i afspilningen. Standarden for nyligt åbnede filer angives i
+  *Indstillinger ▸ Generelt ▸ Video*.
 - **Equalizer…** (`Ctrl+E`) — lysstyrke, kontrast, farvetone, mætning og gamma.
   *Angiv som standardværdier* anvender dine indstillinger på fremtidige filer.
 - **Skærmbillede** (`S`) — gem det aktuelle billede. Mappe og billedformat

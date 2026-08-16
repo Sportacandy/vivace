@@ -6,6 +6,9 @@ Het menu **Opties** bevat de voorkeuren en de interfaceconfiguratie.
   Algemeen, Interface, Ondertitels, Toetsenbord en muis, Afspeellijst, Stations,
   Tv, Bestandstypen, Updates, Netwerk en Geavanceerd. Wijzigingen worden direct
   toegepast; **Annuleren** draait ze terug.
+  - **Algemeen ▸ Video** stelt de standaardmodus voor **Deinterlace** in
+    (Geen / Yadif / Bwdif) voor nieuw geopende bestanden — wijzig dit per
+    bestand via *Video ▸ Deinterlace*.
   - **Netwerk** heeft de tabbladen OpenSubtitles, YouTube, Proxy en Casten;
     **Proxy** stelt een optionele HTTP- of SOCKS5-proxy in die
     applicatiebreed geldt (OpenSubtitles-zoekopdrachten, de update-controle

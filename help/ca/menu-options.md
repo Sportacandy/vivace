@@ -6,6 +6,9 @@ El menú **Opcions** conté les preferències i la configuració de la interfíc
   Interfície, Subtítols, Teclat i ratolí, Llista de reproducció, Unitats, TV,
   Tipus de fitxer, Actualitzacions, Xarxa i Avançat. Els canvis s'apliquen a
   l'instant; **Cancel·la** els reverteix.
+  - **General ▸ Vídeo** estableix el mode per defecte de **Desentrellaça**
+    (Sense / Yadif / Bwdif) per als fitxers acabats d'obrir — canvia'l per
+    fitxer des de *Vídeo ▸ Desentrellaça*.
   - **Xarxa** té les pestanyes OpenSubtitles, YouTube, Proxy i Transmissió;
     **Proxy** configura un servidor intermediari HTTP o SOCKS5 opcional,
     aplicat a tota l'aplicació (cerca a OpenSubtitles, comprovació

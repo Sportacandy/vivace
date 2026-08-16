@@ -5,6 +5,9 @@
 - **Tercihler…** (`Ctrl+P`) — ana ayarlar iletişim kutusu: Genel, Arayüz, Altyazı,
   Klavye ve fare, Oynatma listesi, Sürücüler, TV, Dosya türleri, Güncellemeler, Ağ
   ve Gelişmiş. Değişiklikler hemen uygulanır; **İptal** onları geri alır.
+  - **Genel ▸ Video** yeni açılan dosyalar için varsayılan **Görüntü
+    ayrıştırma** kipini (Hiçbiri / Yadif / Bwdif) ayarlar — dosya başına
+    değiştirmek için *Video ▸ Görüntü ayrıştırma* bölümünü kullanın.
   - **Ağ** sekmesinde OpenSubtitles, YouTube, Vekil Sunucu ve Yayınlama
     sekmeleri bulunur; **Vekil Sunucu** sekmesi, uygulama genelinde geçerli
     isteğe bağlı bir HTTP veya SOCKS5 vekil sunucusu ayarlar (OpenSubtitles

@@ -11,6 +11,11 @@ each get their own entry instead.
 
 ## [Unreleased]
 
+### Added
+- Video ▸ Deinterlace (None / Yadif / Bwdif), with a configurable default
+  in Preferences ▸ General ▸ Video. Requires a custom-built Qt Multimedia
+  (see README.md's "Deinterlacing" section) — no effect with a stock Qt.
+
 ## [0.3.2] — 2026-08-10
 
 ### Fixed

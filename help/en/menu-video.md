@@ -14,6 +14,10 @@ the current file and reset for each new one.
 - **Aspect ratio** — force a display aspect (Auto, 4:3, 16:9, …).
 - **Rotate** — None, 90° clockwise, 90° counterclockwise, or 180°.
 - **Flip image** / **Mirror image** — flip vertically or horizontally.
+- **Deinterlace** — **None**, **Yadif**, or **Bwdif**, to remove the
+  combing artifacts of interlaced video. Applies immediately, even mid-
+  playback. The default for newly opened files is set in
+  *Preferences ▸ General ▸ Video*.
 - **Equalizer…** (`Ctrl+E`) — brightness, contrast, hue, saturation and gamma.
   *Set as default values* applies your settings to future files.
 - **Screenshot** (`S`) — save the current frame. The folder and image format
