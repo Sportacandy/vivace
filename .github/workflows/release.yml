@@ -29,6 +29,17 @@ jobs:
           # release (3.3.0) predates Qt 6.11's repository restructuring.
           aqtsource: 'git+https://github.com/miurahr/aqtinstall.git@8c3695d4a4e1ceabf6a74dc6c79681656dc6b74b'        
 
+      - name: Install Meson/Ninja (needed to build libbluray from source for Blu-ray Disc playback)
+        shell: pwsh
+        run: |
+          for ($i = 1; $i -le 3; $i++) {
+            choco install meson ninja -y
+            if ($LASTEXITCODE -eq 0) { break }
+            Write-Host "choco install meson/ninja failed (attempt $i), retrying in 30s..."
+            Start-Sleep -Seconds 30
+            if ($i -eq 3) { exit 1 }
+          }
+
       - name: Build the patched qtmultimedia (AV1 + Speed Control + bitmap subtitles) from source
         # Builds against THIS job's own just-installed official Qt kit,
         # rather than swapping in a binary built on a different machine --
@@ -85,7 +96,7 @@ jobs:
       - name: Install Linux system dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y libgl1-mesa-dev libxkbcommon-dev patchelf ninja-build libx11-dev libxext-dev libxrandr-dev libwayland-dev
+          sudo apt-get install -y libgl1-mesa-dev libxkbcommon-dev patchelf ninja-build meson libx11-dev libxext-dev libxrandr-dev libwayland-dev
 
       - name: Install Qt
         uses: jurplel/install-qt-action@v4
@@ -145,7 +156,7 @@ jobs:
       - name: Install Linux system dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y libgl1-mesa-dev libxkbcommon-dev patchelf ninja-build libx11-dev libxext-dev libxrandr-dev libwayland-dev
+          sudo apt-get install -y libgl1-mesa-dev libxkbcommon-dev patchelf ninja-build meson libx11-dev libxext-dev libxrandr-dev libwayland-dev
 
       - name: Install Qt
         uses: jurplel/install-qt-action@v4
@@ -199,7 +210,7 @@ jobs:
           apt-get update
           apt-get install -y --no-install-recommends build-essential cmake ninja-build git \
             curl ca-certificates perl python3 \
-            pkg-config patchelf libssl-dev libgl1-mesa-dev \
+            pkg-config patchelf libssl-dev libgl1-mesa-dev meson \
             libglu1-mesa-dev libwayland-dev libfontconfig1-dev libfreetype-dev \
             libgtk-3-dev libx11-dev libx11-xcb-dev libxcb-cursor-dev \
             libxcb-glx0-dev libxcb-icccm4-dev libxcb-image0-dev libxcb-keysyms1-dev \
@@ -265,6 +276,9 @@ jobs:
           version: '6.11.1'
           arch: 'clang_64'
           modules: 'qtmultimedia qtshadertools'
+
+      - name: Install Meson/Ninja (needed to build libbluray from source for Blu-ray Disc playback)
+        run: brew install meson ninja
 
       - name: Build the patched qtmultimedia (AV1 + Speed Control + bitmap subtitles) from source
         # Builds against THIS job's own just-installed official Qt kit,

@@ -28,7 +28,8 @@ playback (mkv/mp4/mpeg2, seeking, embedded + external subtitles, audio/subtitle
 track switching, speed control with pitch compensation), a full SMPlayer-style
 menu layout (Open/Play/Video/Audio/Subtitles/Browse/View/Options/Help),
 playlists, favorites, bookmarks, a video equalizer, screenshots, unencrypted
-DVD playback (including interactive menus), optional YouTube playback/download
+DVD playback (including interactive menus), basic unencrypted Blu-ray playback
+(see "Blu-ray Disc playback" below), optional YouTube playback/download
 (via yt-dlp), OpenSubtitles search, casting to a phone/tablet over an embedded
 web server, OS media integration (Windows SMTC, Linux MPRIS2), credentials
 stored securely via the OS keychain, and Windows/Linux/macOS installers (the
@@ -314,6 +315,168 @@ Not yet separately confirmed: hardware-decoded (D3D11VA/VAAPI) sources
 specifically (the least-proven code path, since it wasn't exercised by
 the content tested so far) and Bwdif (only Yadif has been visually
 confirmed).
+
+## Blu-ray Disc playback
+
+Basic/primitive Blu-ray Disc playback: Open ▸ Disc ▸ Blu-ray (a folder/
+drive containing `BDMV/`), title/chapter browsing via Browse ▸ Title/
+Chapters. **No on-disc HDMV/BD-J menu navigation** — this mirrors DVD
+support's own very first milestone ("simple play"), not the fuller
+menu-lite work DVD later grew; a commercial, AACS-encrypted disc will fail
+to open unless [libbluray](https://code.videolan.org/videolan/libbluray)
+(the library this feature links, LGPL-2.1-or-later) finds a usable key
+(`KEYDB.cfg`) — the same "unencrypted discs only" starting point DVD
+support began with.
+
+Unlike DVD (Vivace hand-rolls its own IFO/VOB parser, consulting
+libdvdread's source only as reference material), this feature **links
+libbluray directly** — BD-ROM's on-disc format (MPLS playlists, CLPI clip
+info, MovieObject, optional AACS/BD+ crypto) is dramatically more involved
+than DVD's compact IFO layout, and no vendored reference source is
+available to reimplement it against from scratch; libbluray is the same
+actively-maintained library every other open-source BD player (VLC, mpv,
+Kodi, HandBrake) already relies on.
+
+**Build dependency, built from source automatically (2026-08-17, replacing
+an earlier Windows-only MSYS2 approach):** `VIVACE_ENABLE_BLURAY` (CMake
+option, default ON) builds [libbluray](https://code.videolan.org/videolan/libbluray)
+1.5.0 **from source** as part of Vivace's own build, via CMake's
+`ExternalProject_Add` — no system package, no prebuilt binary, no manual
+setup step. libbluray's real (since 1.4.0) build system is
+[Meson](https://mesonbuild.com/) only (no CMake, no autotools), so this
+requires `meson`, `ninja`, and `git` to be on `PATH` at configure time;
+if any are missing, the feature just compiles out gracefully (Open ▸
+Disc ▸ Blu-ray does nothing useful, no build failure — a `message(STATUS
+...)` explains which tool is missing). The optional BD-J/font/XML
+features (`fontconfig`, `freetype`, `libxml2`, `bdj_jar`) are explicitly
+disabled at configure time (`-Dfontconfig=disabled` etc.) — this
+project's basic/primitive playback support has no on-disc HDMV/BD-J menu
+navigation to begin with, so none of that dependency chain is needed, and
+skipping it means the **whole build has zero extra runtime DLLs/shared
+libraries to deploy**: libbluray links in as a plain static library
+(`--default_library=static`), so there's no `libbluray-3.dll`/
+`libbluray.so`, no MSYS2, and no separate runtime-dependency-closure copy
+step at all (unlike this project's own FFmpeg/libx264 note above, which
+genuinely does need one).
+
+Verified end to end on Windows: Meson auto-detects `cl.exe`/`link.exe`/
+`lib.exe` with zero extra configuration when run inside CMake's own
+Visual-Studio-generator build (which already sets up the correct MSVC
+toolset environment for any custom build step), producing a genuine
+native MSVC-linkable static archive with no MinGW involved anywhere.
+Launching the built `vivace.exe` with *only* Qt's own `bin` on `PATH` (no
+MSYS2, nothing else) confirmed real Blu-ray playback still works — proof
+the static link genuinely has nothing left to deploy. One known, harmless
+cosmetic side effect: libbluray is always built as a Release configuration
+regardless of which config Vivace itself builds as (building it twice —
+once per CRT variant — isn't worth doubling this dependency's build time
+for every developer/CI run), which produces a real but inert MSVC
+`LNK4098` linker warning when Vivace builds as Debug; see the comment
+above the `ExternalProject_Add` call in `CMakeLists.txt` for the full
+reasoning and the exact fix if this ever needs to be taken seriously (it
+would, if Vivace's own code ever called one of the two libbluray
+functions that hand back memory the caller must `free()`).
+
+The Linux/macOS build path uses the identical Meson recipe (genuinely
+cross-platform by design) but is **unverified in this project — no such
+machine was available to test on**; the small platform-specific system
+libraries linked alongside libbluray (`CMAKE_DL_LIBS` on Linux;
+`CoreFoundation`/`DiskArbitration` frameworks on macOS) were derived by
+reading libbluray's own `meson.build` directly, not confirmed by an
+actual build.
+
+**CI**: all three GitHub Actions workflows (`build.yml`/`release.yml`/
+`nightly.yml`) install `meson` (Chocolatey on Windows, `apt` on Linux,
+Homebrew on macOS) alongside `ninja` where it wasn't already present —
+without this, `VIVACE_ENABLE_BLURAY`'s own graceful-degradation design
+means CI-built binaries would silently ship with Blu-ray support
+compiled out rather than failing the build.
+
+**Verified working end to end (2026-08-17)** against a real, complete,
+unencrypted Blu-ray disc image (8 playlists, 11 clips): title/chapter
+enumeration matched a standalone libbluray test program exactly (8 titles
+after dedup, correct durations, the ~86-minute main feature correctly
+picked as default); real video+audio played continuously via Open ▸ Disc ▸
+Blu-ray; the ordinary seek bar (no special DVD-style position-offset
+machinery needed — Blu-ray's M2TS titles don't have DVD's older MPEG-PS
+per-run PTS-restart problem) tracked position/duration correctly
+throughout; Browse ▸ Title showed all 8 titles with exactly the expected
+durations; Browse ▸ Chapters showed all 19 real chapters, and clicking a
+later chapter correctly seeked and rendered the right scene immediately.
+Non-ASCII paths (a real Japanese disc folder name) opened correctly once
+routed through libbluray with a UTF-8-encoded path. Not yet tested: an
+AACS-encrypted commercial disc (no key/keydb available in this
+environment), and the Linux/macOS build path (no such machine available).
+
+**Re-verified against the from-source (`ExternalProject_Add`/Meson) build**
+specifically, not just the original MSYS2-based one: launched with only
+Qt's own `bin` on `PATH` (no MSYS2 anywhere), real playback confirmed via
+screenshot, Browse ▸ Title and Browse ▸ Chapters both rendered correctly
+against the real disc, and the user confirmed interactively that both
+title seeking and chapter seeking work correctly against this build.
+
+**Audio/subtitle track labels and selection (2026-08-17):** Audio ▸ Track
+and Subtitles ▸ Track now show the disc's own declared language (e.g.
+"日本語"/"American English") instead of a generic "Track 1"/"Track 2" —
+libbluray declares this per stream, but Qt Multimedia's own generic track
+metadata carries none of it for these BD-sourced MPEG-TS streams.
+Selecting a track updates correctly (confirmed: the checkmark moves and
+persists) — but **selecting a Blu-ray subtitle (PG/PGS) track has no
+visible effect: no subtitle text or bitmap ever appears on screen**, even
+though this is stable (does not crash). The underlying cause is a real Qt
+Multimedia bug (FFmpeg's PGS decoder never reports an explicit per-event
+display duration, and the code that would otherwise show the subtitle
+discards every such event outright) — a fix was attempted and caused a
+worse regression (a real crash), so it was reverted; the "doesn't render"
+behavior is the safer, currently-shipping state. See
+`patches/qtmultimedia-subtitle-bitmap.patch`'s own "INVESTIGATED 2026-08-17,
+NOT FIXED" section if you want to pick this back up. DVD and embedded-file
+bitmap subtitles are unaffected.
+
+**Phantom "Track 2" audio entry fixed (2026-08-17):** a real disc's own
+declared audio-stream count (from libbluray's CLPI/STN table) can be
+*smaller* than what Qt's FFmpeg-based demuxer finds physically present in
+the raw M2TS mux — one real disc showed a genuine, correctly-labelled
+"日本語" audio track plus a spurious, undeclared second stream (FFmpeg
+identified it as MP3, with no duration ever established — consistent
+with a leftover authoring-tool artifact, not a real user-selectable
+track). Audio ▸ Track and Subtitles ▸ Track are now capped to the
+*smaller* of the disc's declared count and Qt's detected count, so an
+undeclared stream like this can no longer appear as a selectable option
+at all — matching how a real BD player behaves (it only ever offers what
+the disc's own STN table declares). The same cap applies to the
+Information/properties dialog's Audio/Subtitles Streams tables, which
+previously listed Qt's raw (uncapped) track count independently of the
+Track menus. For the disc tested, there was no evidence of a genuinely
+separate "forced" subtitle stream beyond the 2 real PGS tracks already
+shown — libbluray's public API doesn't expose a per-stream "forced" flag
+even if the disc's own STN table sets one.
+
+The Information dialog's Language column is filled in for Blu-ray AND DVD
+audio/subtitle streams (the disc's own declared native language name, e.g.
+"日本語"), matching the Track menus — previously always blank for both,
+since neither Qt's FFmpeg backend (Blu-ray) nor Vivace's own IFO parsing
+path was ever wired into this specific dialog. The same native-name
+display now also applies to an ordinary file's own embedded language tag
+(previously the plain, untranslated English name Qt reports by default) —
+native language names ("日本語", not "Japanese" and not a UI-language-
+translated name) is the deliberate, consistent choice across every source,
+matching how language pickers in Windows/Android work: recognizable even
+to a user who can't read Vivace's own current interface language.
+Also fixed for Blu-ray specifically: General ▸ Size previously always
+read "0 KB (0 MB)" (the source is a synthetic device-backed URL pointing
+at the disc's folder, not a real file) — now shows the real title size via
+libbluray's own `bd_get_title_size()` (DVD had the identical bug, fixed
+the same day using its own device's `size()`); and "Initial Audio Stream"
+previously always showed "Format: Unspecified" for BD-native audio codecs
+Qt's own metadata API has no name for (the whole DTS family, TrueHD) — now
+shows the real codec (e.g. "DTS-HD Master Audio") via libbluray's own
+declared stream type.
+Note: the Information dialog's default window height doesn't always
+reserve enough room to show every section for a richer source (a Blu-ray
+title tends to have more sections than a plain file) — its content is
+scrollable, but the ScrollView's scrollbar auto-hides, so resize the
+window taller or scroll down if a section seems to be missing.
 
 ## Building
 

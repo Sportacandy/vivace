@@ -238,8 +238,563 @@ other change to this patch; needs the user to rebuild qtmultimedia and
 Vivace and confirm the bitmap subtitle in the reported .mp4 file now
 looks smoother with Smoothing > 0 and unchanged at Smoothing = 0.
 
+
+INVESTIGATED 2026-08-17, NOT FIXED (real Blu-ray disc testing, PGS
+subtitle tracks): selecting a Blu-ray subtitle track (hdmv_pgs_subtitle
+codec) via Subtitles > Track correctly updates the active-track
+selection/checkmark (confirmed: Vivace's own selection UI and
+activeSubtitleTrack mechanism work correctly for Blu-ray, same as any
+ordinary file), but never produces a visible subtitle at all, even at
+real, confirmed subtitle-packet timestamps (verified directly via
+ffprobe against the real disc's raw .m2ts -- genuine PGS packets with
+non-trivial rect data exist at ~9s/~32s/~40s and beyond).
+
+Root cause identified: this function's `if (end <= start) { ...; return;
+}` check rejects every real PGS subtitle event unconditionally, because
+FFmpeg's own hdmv_pgs_subtitle decoder leaves AVSubtitle::
+end_display_time at 0 (PGS doesn't encode an explicit per-event
+duration; it relies on a LATER, separate empty "clear" segment instead)
+-- so subtitle.pts's start/end always collapse to the same value and the
+bitmap-decode loop just below this check (added by the base version of
+this patch) is never reached for Blu-ray content at all.
+
+A fix was attempted: give a zero/negative-duration event with real rect
+content (num_rects > 0) a several-second fallback duration instead of
+discarding it, so it can reach the existing bitmap-decode loop. This
+DID let the code reach that loop for the first time ever with real PGS
+data -- but it also produced a real, reproducible crash on the exact
+same real disc used to test it: a Debug CRT heap-validation failure
+(_CrtIsValidHeapPointer, debug_heap.cpp:904), confirmed via cdb attached
+to the running process. Investigation notes, so a future attempt
+doesn't have to re-derive them:
+  - The crash is NOT the `avsubtitle_free()` call an earlier version of
+    this attempt also added in the num_rects==0 branch -- removing that
+    call alone did not stop the crash on a retest against the same disc.
+  - The crash correlates with a `QObject: Cannot create children for a
+    parent that is in a different thread` warning naming Vivace's own
+    PlayerController as the parent, appearing (per vivace.log) only
+    once this fix lets a real PGS Frame flow through -- never in any
+    earlier, successful Blu-ray session (checked directly: earlier
+    preserved vivace.log captures from before this fix have zero
+    occurrences of this warning or of any heap-corruption message).
+  - The bitmap-decode loop itself (qsgvideonode_p.cpp's
+    updateSubtitleImage(), reviewed directly) doesn't obviously explain
+    the warning -- QSGImageNode/QSGTransformNode/QSGTexture are QSGNode-
+    derived, not QObject-derived, so they shouldn't be able to trigger a
+    QObject cross-thread-parenting warning by themselves. The actual
+    trigger (something that constructs a real QObject parented to
+    PlayerController from Qt Multimedia's own worker thread, apparently
+    only once a subtitle-track StreamDecoder/Renderer actually processes
+    a real Frame rather than always hitting an early return) was not
+    pinned down further -- live debugging in this environment proved
+    unreliable past this point (a Retry-button click meant to let cdb
+    catch a real breakpoint blocked indefinitely via SendMessage rather
+    than resolving).
+  - FFmpeg's real pgssubdec.c source (fetched directly, n7.1 tag) was
+    checked and RULED OUT two specific hypotheses: the palette buffer is
+    always allocated at the full AVPALETTE_SIZE (256 entries) regardless
+    of the real color count, same as DVD's decoder, so an out-of-bounds
+    palette read isn't the cause; linesize[0] is set equal to the
+    rect's own width with no padding, so an out-of-bounds bitmap-row
+    read isn't the cause either.
+
+Given the crash is worse than the original "silently doesn't render"
+symptom, the fix attempt was REVERTED -- this function is back to its
+original, base-patch behavior (unconditionally rejecting any
+zero/negative-duration subtitle event). Blu-ray subtitle track selection
+itself works correctly and is safe to use (confirmed no crash with a
+real subtitle track selected and real content played through it); the
+actual bitmap/text never appears on screen for Blu-ray (PGS) content
+specifically. DVD/embedded-file bitmap subtitles are unaffected --
+they don't hit this same codec-specific quirk and were not touched by
+either the attempted fix or this revert.
+diff --git a/src/multimedia/platform/qplatformvideosink.cpp b/src/multimedia/platform/qplatformvideosink.cpp
+index cc01257..d3780cf 100644
+--- a/src/multimedia/platform/qplatformvideosink.cpp
++++ b/src/multimedia/platform/qplatformvideosink.cpp
+@@ -36,7 +36,24 @@ void QPlatformVideoSink::setVideoFrame(const QVideoFrame &frame)
+         if (frame == m_currentVideoFrame)
+             return;
+         m_currentVideoFrame = frame;
+-        m_currentVideoFrame.setSubtitleText(m_subtitleText);
++        // Stamp this sink's own subtitle state onto the frame -- but only when
++        // this sink actually has one, or the frame does not already carry one
++        // from an upstream sink. QVideoFrame is explicitly shared and
++        // setSubtitleText()/setSubtitleImage() write straight through d
++        // without detaching, so an unconditional stamp here silently ERASES a
++        // subtitle that another QVideoSink already put on this very frame.
++        // That is exactly what happens when an application re-dispatches
++        // frames from an intercept sink into the sink that is actually on
++        // screen (e.g. to present video a few ms late for A/V-sync offset):
++        // the second setVideoFrame() call overwrites the first sink's
++        // subtitle with its own -- empty -- state, and the subtitle never
++        // reaches QSGVideoNode. Affects text subtitles the same way; the
++        // bitmap path just inherited it.
++        if (!m_subtitleText.isEmpty() || frame.subtitleText().isEmpty())
++            m_currentVideoFrame.setSubtitleText(m_subtitleText);
++        if (!m_subtitleImage.isNull() || frame.subtitleImage().isNull())
++            m_currentVideoFrame.setSubtitleImage(m_subtitleImage, m_subtitleImageRect,
++                                                  m_subtitleImageCodedSize);
+         const QSize size = qRotatedFramePresentationSize(frame);
+         if (size != m_nativeSize) {
+             m_nativeSize = size;
+@@ -76,6 +93,39 @@ QString QPlatformVideoSink::subtitleText() const
+     return m_subtitleText;
+ }
+ 
++void QPlatformVideoSink::setSubtitleImage(const QImage &image, const QRect &rect,
++                                           const QSize &codedSize)
++{
++    {
++        QMutexLocker locker(&m_mutex);
++        if (m_subtitleImage.cacheKey() == image.cacheKey() && m_subtitleImageRect == rect
++            && m_subtitleImageCodedSize == codedSize)
++            return;
++        m_subtitleImage = image;
++        m_subtitleImageRect = rect;
++        m_subtitleImageCodedSize = codedSize;
++    }
++    emit m_sink->subtitleImageChanged(image, rect, codedSize);
++}
++
++QImage QPlatformVideoSink::subtitleImage() const
++{
++    QMutexLocker locker(&m_mutex);
++    return m_subtitleImage;
++}
++
++QRect QPlatformVideoSink::subtitleImageRect() const
++{
++    QMutexLocker locker(&m_mutex);
++    return m_subtitleImageRect;
++}
++
++QSize QPlatformVideoSink::subtitleImageCodedSize() const
++{
++    QMutexLocker locker(&m_mutex);
++    return m_subtitleImageCodedSize;
++}
++
+ QT_END_NAMESPACE
+ 
+ #include "moc_qplatformvideosink_p.cpp"
+diff --git a/src/multimedia/platform/qplatformvideosink_p.h b/src/multimedia/platform/qplatformvideosink_p.h
+index 333cca4..612c50c 100644
+--- a/src/multimedia/platform/qplatformvideosink_p.h
++++ b/src/multimedia/platform/qplatformvideosink_p.h
+@@ -21,6 +21,7 @@
+ #include <QtCore/qsize.h>
+ #include <QtCore/qmutex.h>
+ #include <QtGui/qwindowdefs.h>
++#include <QtGui/qimage.h>
+ #include <qvideosink.h>
+ #include <qvideoframe.h>
+ #include <qdebug.h>
+@@ -64,6 +65,12 @@ public:
+ 
+     QString subtitleText() const;
+ 
++    void setSubtitleImage(const QImage &image, const QRect &rect, const QSize &codedSize);
++
++    QImage subtitleImage() const;
++    QRect subtitleImageRect() const;
++    QSize subtitleImageCodedSize() const;
++
+ protected:
+     explicit QPlatformVideoSink(QVideoSink *parent);
+ 
+@@ -77,6 +84,9 @@ private:
+     mutable QMutex m_mutex; // Protects all members below
+     QSize m_nativeSize;
+     QString m_subtitleText;
++    QImage m_subtitleImage;
++    QRect m_subtitleImageRect;
++    QSize m_subtitleImageCodedSize;
+     QVideoFrame m_currentVideoFrame;
+ };
+ 
+diff --git a/src/multimedia/video/qvideoframe.cpp b/src/multimedia/video/qvideoframe.cpp
+index 85c758b..5f85a51 100644
+--- a/src/multimedia/video/qvideoframe.cpp
++++ b/src/multimedia/video/qvideoframe.cpp
+@@ -883,6 +883,51 @@ void QVideoFrame::setSubtitleText(const QString &text)
+     d->subtitleText = text;
+ }
+ 
++/*!
++    Returns the bitmap-type embedded subtitle (DVD/PGS/DVB) that should be
++    rendered together with this video frame, or a null QImage if the
++    current subtitle is text-based or absent.
++*/
++QImage QVideoFrame::subtitleImage() const
++{
++    return d ? d->subtitleImage : QImage();
++}
++
++/*!
++    Returns the placement of subtitleImage(), in the subtitle codec's own
++    coded-frame coordinate space (not necessarily this video frame's own
++    display size -- callers must scale accordingly, using
++    subtitleImageCodedSize() as that coordinate space's extent).
++*/
++QRect QVideoFrame::subtitleImageRect() const
++{
++    return d ? d->subtitleImageRect : QRect();
++}
++
++/*!
++    Returns the extent of the coordinate space subtitleImageRect() is
++    expressed in (the subtitle decoder's own coded-frame size), or an
++    invalid QSize if there is no bitmap-type subtitle.
++*/
++QSize QVideoFrame::subtitleImageCodedSize() const
++{
++    return d ? d->subtitleImageCodedSize : QSize();
++}
++
++/*!
++    Sets the bitmap-type embedded subtitle that should be rendered together
++    with this video frame to \a image, placed at \a rect within a
++    coded-frame extent of \a codedSize.
++*/
++void QVideoFrame::setSubtitleImage(const QImage &image, const QRect &rect, const QSize &codedSize)
++{
++    if (!d)
++        return;
++    d->subtitleImage = image;
++    d->subtitleImageRect = rect;
++    d->subtitleImageCodedSize = codedSize;
++}
++
+ /*!
+     Uses a QPainter, \a{painter}, to render this QVideoFrame to \a rect.
+     The PaintOptions \a options can be used to specify a background color and
+diff --git a/src/multimedia/video/qvideoframe.h b/src/multimedia/video/qvideoframe.h
+index 069d1d8..eb9afa2 100644
+--- a/src/multimedia/video/qvideoframe.h
++++ b/src/multimedia/video/qvideoframe.h
+@@ -9,6 +9,7 @@
+ #include <QtMultimedia/qvideoframeformat.h>
+ 
+ #include <QtCore/qmetatype.h>
++#include <QtCore/qrect.h>
+ #include <QtCore/qshareddata.h>
+ #include <QtGui/qimage.h>
+ 
+@@ -135,6 +136,15 @@ public:
+     QString subtitleText() const;
+     void setSubtitleText(const QString &text);
+ 
++    // Bitmap-type embedded subtitle (DVD/PGS/DVB), alongside the text
++    // mechanism above. rect is in the subtitle codec's own coded-frame
++    // coordinate space (whose extent is codedSize), not this frame's
++    // display size -- scale rect by (displaySize / codedSize) to place it.
++    QImage subtitleImage() const;
++    QRect subtitleImageRect() const;
++    QSize subtitleImageCodedSize() const;
++    void setSubtitleImage(const QImage &image, const QRect &rect, const QSize &codedSize);
++
+     void paint(QPainter *painter, const QRectF &rect, const PaintOptions &options);
+ 
+ #if QT_DEPRECATED_SINCE(6, 8)
+diff --git a/src/multimedia/video/qvideoframe_p.h b/src/multimedia/video/qvideoframe_p.h
+index ed05beb..f201b29 100644
+--- a/src/multimedia/video/qvideoframe_p.h
++++ b/src/multimedia/video/qvideoframe_p.h
+@@ -20,6 +20,8 @@
+ #include "private/qvideotransformation_p.h"
+ 
+ #include <qmutex.h>
++#include <qrect.h>
++#include <qsize.h>
+ 
+ QT_BEGIN_NAMESPACE
+ 
+@@ -88,6 +90,12 @@ public:
+     int mappedCount = 0;
+     QMutex mapMutex;
+     QString subtitleText;
++    // Bitmap-type embedded subtitles (DVD/PGS/DVB) -- subtitleImageRect is
++    // in the subtitle codec's own coded-frame coordinate space, not this
++    // video frame's display size; consumers must scale accordingly.
++    QImage subtitleImage;
++    QRect subtitleImageRect;
++    QSize subtitleImageCodedSize;
+     QImage image;
+     QMutex imageMutex;
+     VideoTransformation presentationTransformation;
+diff --git a/src/multimedia/video/qvideosink.cpp b/src/multimedia/video/qvideosink.cpp
+index 2d35c33..9af871a 100644
+--- a/src/multimedia/video/qvideosink.cpp
++++ b/src/multimedia/video/qvideosink.cpp
+@@ -167,6 +167,44 @@ void QVideoSink::setSubtitleText(const QString &subtitle)
+         d->videoSink->setSubtitleText(subtitle);
+ }
+ 
++/*!
++    Returns the current bitmap-type subtitle image, or a null QImage if the
++    current subtitle (if any) is text-based.
++*/
++QImage QVideoSink::subtitleImage() const
++{
++    return d->videoSink ? d->videoSink->subtitleImage() : QImage{};
++}
++
++/*!
++    Returns the placement rect of the current bitmap-type subtitle image, in
++    the subtitle codec's own coded-frame coordinate space (whose extent is
++    subtitleImageCodedSize()).
++*/
++QRect QVideoSink::subtitleImageRect() const
++{
++    return d->videoSink ? d->videoSink->subtitleImageRect() : QRect{};
++}
++
++/*!
++    Returns the extent of the coordinate space subtitleImageRect() is
++    expressed in.
++*/
++QSize QVideoSink::subtitleImageCodedSize() const
++{
++    return d->videoSink ? d->videoSink->subtitleImageCodedSize() : QSize{};
++}
++
++/*!
++    Sets the current bitmap-type subtitle \a image and its placement \a rect
++    within a coded-frame extent of \a codedSize.
++*/
++void QVideoSink::setSubtitleImage(const QImage &image, const QRect &rect, const QSize &codedSize)
++{
++    if (d->videoSink)
++        d->videoSink->setSubtitleImage(image, rect, codedSize);
++}
++
+ /*!
+     \property QVideoSink::videoSize
+ 
+diff --git a/src/multimedia/video/qvideosink.h b/src/multimedia/video/qvideosink.h
+index 06cd163..19d57fd 100644
+--- a/src/multimedia/video/qvideosink.h
++++ b/src/multimedia/video/qvideosink.h
+@@ -6,7 +6,10 @@
+ 
+ #include <QtMultimedia/qtmultimediaglobal.h>
+ #include <QtCore/qobject.h>
++#include <QtCore/qrect.h>
++#include <QtCore/qsize.h>
+ #include <QtGui/qwindowdefs.h>
++#include <QtGui/qimage.h>
+ 
+ QT_BEGIN_NAMESPACE
+ 
+@@ -35,6 +38,14 @@ public:
+     QString subtitleText() const;
+     void setSubtitleText(const QString &subtitle);
+ 
++    // Bitmap-type embedded subtitle (DVD/PGS/DVB), alongside the text
++    // mechanism above. rect is in the subtitle codec's own coded-frame
++    // coordinate space, whose extent is codedSize.
++    QImage subtitleImage() const;
++    QRect subtitleImageRect() const;
++    QSize subtitleImageCodedSize() const;
++    void setSubtitleImage(const QImage &image, const QRect &rect, const QSize &codedSize);
++
+     void setVideoFrame(const QVideoFrame &frame);
+     QVideoFrame videoFrame() const;
+ 
+@@ -42,6 +53,8 @@ public:
+ Q_SIGNALS:
+     void videoFrameChanged(const QVideoFrame &frame) QT6_ONLY(const);
+     void subtitleTextChanged(const QString &subtitleText) QT6_ONLY(const);
++    void subtitleImageChanged(const QImage &image, const QRect &rect,
++                               const QSize &codedSize) QT6_ONLY(const);
+     void videoSizeChanged();
+ 
+ private:
+diff --git a/src/multimediaquick/qsgvideonode_p.cpp b/src/multimediaquick/qsgvideonode_p.cpp
+index 0c190ba..d39f9b4 100644
+--- a/src/multimediaquick/qsgvideonode_p.cpp
++++ b/src/multimediaquick/qsgvideonode_p.cpp
+@@ -3,6 +3,7 @@
+ 
+ #include "qsgvideonode_p.h"
+ #include <QtQuick/qsgmaterial.h>
++#include <QtQuick/qsgimagenode.h>
+ #include "qsgvideotexture_p.h"
+ #include <QtMultimedia/private/qvideotexturehelper_p.h>
+ #include <private/qsginternaltextnode_p.h>
+@@ -263,6 +264,7 @@ QSGVideoNode::QSGVideoNode(QQuickVideoOutput *parent, const QVideoFrameFormat &v
+ QSGVideoNode::~QSGVideoNode()
+ {
+     delete m_subtitleTextNode;
++    delete m_subtitleImageTransformNode; // cascades to delete m_subtitleImageNode too
+ }
+ 
+ void QSGVideoNode::setCurrentFrame(const QVideoFrame &frame)
+@@ -270,6 +272,7 @@ void QSGVideoNode::setCurrentFrame(const QVideoFrame &frame)
+     texturePool()->setCurrentFrame(frame);
+     markDirty(DirtyMaterial);
+     updateSubtitle(frame);
++    updateSubtitleImage(frame);
+ }
+ 
+ void QSGVideoNode::setSurfaceFormat(const QRhiSwapChain::Format surfaceFormat)
+@@ -312,14 +315,70 @@ void QSGVideoNode::updateSubtitle(const QVideoFrame &frame)
+     setSubtitleGeometry();
+ }
+ 
+-void QSGVideoNode::setSubtitleGeometry()
++void QSGVideoNode::updateSubtitleImage(const QVideoFrame &frame)
+ {
+-    if (!m_subtitleTextNode)
++    QSize subtitleFrameSize = m_rect.size().toSize();
++    if (subtitleFrameSize.isEmpty())
+         return;
+ 
+-    if (m_material)
+-        updateSubtitle(texturePool()->currentFrame());
++    subtitleFrameSize = qRotatedFrameSize(subtitleFrameSize, m_videoOutputTransformation.rotation);
++
++    const QImage image = frame.subtitleImage();
++    const QRect imageRect = frame.subtitleImageRect();
++    const QSize codedSize = frame.subtitleImageCodedSize();
++
++    // imageRect/codedSize are in the subtitle codec's own coded-frame
++    // coordinate space (e.g. the DVD VOB's video resolution), not this
++    // node's display rect -- scale into subtitleFrameSize (the same local,
++    // pre-rotation space the text subtitle layout above uses) before
++    // placing the image node. Without codedSize (e.g. a hypothetical
++    // future producer that already delivers a display-sized image),
++    // fall back to placing the image at its own native size, unscaled.
++    QRectF placementRect;
++    if (!image.isNull()) {
++        if (codedSize.width() > 0 && codedSize.height() > 0) {
++            const qreal scaleX = qreal(subtitleFrameSize.width()) / codedSize.width();
++            const qreal scaleY = qreal(subtitleFrameSize.height()) / codedSize.height();
++            placementRect = QRectF(imageRect.x() * scaleX, imageRect.y() * scaleY,
++                                    imageRect.width() * scaleX, imageRect.height() * scaleY);
++        } else {
++            placementRect = QRectF(QPointF(0, 0), QSizeF(image.size()));
++        }
++    }
++
++    const bool unchanged = !image.isNull() && m_subtitleImageNode
++            && image.cacheKey() == m_subtitleImageCacheKey
++            && placementRect == m_subtitleImageNode->rect();
++    if (unchanged)
++        return;
++
++    delete m_subtitleImageTransformNode; // cascades to delete m_subtitleImageNode too
++    m_subtitleImageTransformNode = nullptr;
++    m_subtitleImageNode = nullptr;
++    m_subtitleImageCacheKey = -1;
++    if (image.isNull())
++        return;
++
++    QQuickItemPrivate *parent_d = QQuickItemPrivate::get(m_parent);
+ 
++    // QSGImageNode (unlike QSGInternalTextNode, which is-a QSGTransformNode)
++    // has no setMatrix() of its own -- wrap it in a plain QSGTransformNode
++    // so setSubtitleGeometry() below can position/rotate it the same way it
++    // positions the text node.
++    m_subtitleImageNode = parent_d->sceneGraphContext()->createImageNode();
++    m_subtitleImageNode->setOwnsTexture(true);
++    m_subtitleImageNode->setTexture(parent_d->sceneGraphRenderContext()->createTexture(image));
++    m_subtitleImageNode->setRect(placementRect);
++    m_subtitleImageCacheKey = image.cacheKey();
++
++    m_subtitleImageTransformNode = new QSGTransformNode;
++    m_subtitleImageTransformNode->appendChildNode(m_subtitleImageNode);
++    appendChildNode(m_subtitleImageTransformNode);
++    setSubtitleGeometry();
++}
++
++QMatrix4x4 QSGVideoNode::subtitleTransform() const
++{
+     float rotate = -1.f * qToUnderlying(m_videoOutputTransformation.rotation);
+     float yTranslate = 0;
+     float xTranslate = 0;
+@@ -338,9 +397,27 @@ void QSGVideoNode::setSubtitleGeometry()
+     // TODO: Investigate if we should we mirror subtitles
+     // if (m_videoOutputTransformation.mirroredHorizontallyAfterRotation)
+     //    transform.scale(-1.f, 1.f);
++    return transform;
++}
++
++void QSGVideoNode::setSubtitleGeometry()
++{
++    if (!m_subtitleTextNode && !m_subtitleImageTransformNode)
++        return;
+ 
+-    m_subtitleTextNode->setMatrix(transform);
+-    m_subtitleTextNode->markDirty(DirtyGeometry);
++    if (m_material) {
++        updateSubtitle(texturePool()->currentFrame());
++        updateSubtitleImage(texturePool()->currentFrame());
++    }
++
++    const QMatrix4x4 transform = subtitleTransform();
++
++    if (m_subtitleTextNode) {
++        m_subtitleTextNode->setMatrix(transform);
++        m_subtitleTextNode->markDirty(DirtyGeometry);
++    }
++    if (m_subtitleImageTransformNode)
++        m_subtitleImageTransformNode->setMatrix(transform); // already marks itself dirty
+ }
+ 
+ /* Update the vertices and texture coordinates.*/
+diff --git a/src/multimediaquick/qsgvideonode_p.h b/src/multimediaquick/qsgvideonode_p.h
+index 917e988..67bf4ed 100644
+--- a/src/multimediaquick/qsgvideonode_p.h
++++ b/src/multimediaquick/qsgvideonode_p.h
+@@ -23,12 +23,15 @@
+ #include <QtMultimedia/qvideoframe.h>
+ #include <QtMultimedia/qvideoframeformat.h>
+ #include <QtGui/qopenglfunctions.h>
++#include <QtGui/qmatrix4x4.h>
+ 
+ QT_BEGIN_NAMESPACE
+ 
+ class QSGVideoMaterial;
+ class QQuickVideoOutput;
+ class QSGInternalTextNode;
++class QSGImageNode;
++class QSGTexture;
+ 
+ class QVideoFrameTexturePool;
+ using QVideoFrameTexturePoolPtr = std::shared_ptr<QVideoFrameTexturePool>;
+@@ -52,7 +55,9 @@ public:
+ 
+ private:
+     void updateSubtitle(const QVideoFrame &frame);
++    void updateSubtitleImage(const QVideoFrame &frame);
+     void setSubtitleGeometry();
++    QMatrix4x4 subtitleTransform() const;
+ 
+     QQuickVideoOutput *m_parent = nullptr;
+     QRectF m_rect;
+@@ -65,6 +70,18 @@ private:
+ 
+     QVideoTextureHelper::SubtitleLayout m_subtitleLayout;
+     QSGInternalTextNode *m_subtitleTextNode = nullptr;
++
++    // Bitmap-type embedded subtitle (DVD/PGS/DVB), composited alongside the
++    // text subtitle node above -- a frame carries at most one of the two
++    // (see QVideoFrame::subtitleText()/subtitleImage()). Unlike
++    // QSGInternalTextNode (which is-a QSGTransformNode, so it can be
++    // positioned via setMatrix() directly), QSGImageNode is just a plain
++    // QSGGeometryNode with no matrix of its own -- it needs a
++    // QSGTransformNode wrapped around it for the same placement mechanism
++    // to apply.
++    QSGImageNode *m_subtitleImageNode = nullptr;
++    QSGTransformNode *m_subtitleImageTransformNode = nullptr;
++    qint64 m_subtitleImageCacheKey = -1;
+ };
+ 
+ QT_END_NAMESPACE
 diff --git a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegframe_p.h b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegframe_p.h
-index 01dfcfe0a..5a9f55671 100644
+index 01dfcfe..7406a4a 100644
 --- a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegframe_p.h
 +++ b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegframe_p.h
 @@ -21,7 +21,10 @@
@@ -311,7 +866,7 @@ index 01dfcfe0a..5a9f55671 100644
      const LoopOffset &loopOffset() const { return data().loopOffset; };
      TrackPosition absolutePts() const
 diff --git a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegstreamdecoder.cpp b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegstreamdecoder.cpp
-index 8f9b20323..4db38e4f7 100644
+index 8f9b203..055939b 100644
 --- a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegstreamdecoder.cpp
 +++ b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegstreamdecoder.cpp
 @@ -4,6 +4,8 @@
@@ -396,7 +951,30 @@ index 8f9b20323..4db38e4f7 100644
  StreamDecoder::StreamDecoder(const PlaybackEngineObjectID &id, const CodecContext &codecContext,
                               TrackPosition absSeekPos)
      : PlaybackEngineObject(id),
-@@ -234,14 +302,54 @@ void StreamDecoder::decodeSubtitle(const Packet &packet)
+@@ -228,20 +296,77 @@ void StreamDecoder::decodeSubtitle(const Packet &packet)
+         end = TrackPosition(*pts + qint64(subtitle.end_display_time) * 1000);
+     }
+ 
++    // NOTE (2026-08-17): real Blu-ray (PGS/hdmv_pgs_subtitle) content
++    // reaches this rejection unconditionally, since FFmpeg's PGS decoder
++    // leaves end_display_time at 0 (PGS relies on a later, separate
++    // "clear" segment instead of an explicit per-event duration) -- so a
++    // Blu-ray subtitle track never visibly renders even once correctly
++    // selected. A fix was attempted (accept a zero-duration event with
++    // real rect content, using a fallback duration instead of discarding
++    // it) but caused a real, reproducible crash on the real disc used to
++    // test it (a Debug CRT heap-validation failure,
++    // _CrtIsValidHeapPointer, debug_heap.cpp:904 -- confirmed via cdb, but
++    // the exact root cause inside the (already-patched) rendering pipeline
++    // wasn't pinned down before deciding a crash was worse than "the
++    // subtitle silently doesn't show," so the attempt was reverted here).
++    // Left as a known, documented gap rather than shipping something that
++    // crashes -- see CLAUDE.md's Blu-ray section for the full
++    // investigation and what was ruled out, so a future attempt doesn't
++    // have to re-derive it.
+     if (end <= start) {
+         qWarning() << "Invalid subtitle time";
+         return;
      }
      //        qCDebug(qLcDecoder) << "    got subtitle (" << start << "--" << end << "):";
      QString text;
@@ -452,7 +1030,7 @@ index 8f9b20323..4db38e4f7 100644
              const char *ass = r->ass;
              int nCommas = 0;
              while (*ass) {
-@@ -253,6 +361,11 @@ void StreamDecoder::decodeSubtitle(const Packet &packet)
+@@ -253,6 +378,11 @@ void StreamDecoder::decodeSubtitle(const Packet &packet)
              }
              text += QString::fromUtf8(ass);
          }
@@ -464,7 +1042,7 @@ index 8f9b20323..4db38e4f7 100644
      }
      text.replace(QLatin1String("\\N"), QLatin1String("\n"));
      text.replace(QLatin1String("\\n"), QLatin1String("\n"));
-@@ -260,7 +373,8 @@ void StreamDecoder::decodeSubtitle(const Packet &packet)
+@@ -260,7 +390,8 @@ void StreamDecoder::decodeSubtitle(const Packet &packet)
      if (text.endsWith(QLatin1Char('\n')))
          text.chop(1);
  
@@ -475,6 +1053,7 @@ index 8f9b20323..4db38e4f7 100644
      // TODO: maybe optimize
      onFrameFound({ m_sessionCtx.offset, QString(), end, TrackDuration(0), id() });
 diff --git a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegsubtitlerenderer.cpp b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegsubtitlerenderer.cpp
+index 5c5926e..6835986 100644
 --- a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegsubtitlerenderer.cpp
 +++ b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegsubtitlerenderer.cpp
 @@ -5,6 +5,7 @@
@@ -485,7 +1064,7 @@ diff --git a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegsubtitlerendere
  
  QT_BEGIN_NAMESPACE
  
-@@ -22,24 +23,35 @@
+@@ -22,24 +23,35 @@ void SubtitleRenderer::setOutput(QVideoSink *sink, bool cleanPrevSink)
          if (!prev)
              return;
  
@@ -525,479 +1104,3 @@ diff --git a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegsubtitlerendere
  
      return {};
  }
-diff --git a/src/multimedia/video/qvideoframe_p.h b/src/multimedia/video/qvideoframe_p.h
---- a/src/multimedia/video/qvideoframe_p.h
-+++ b/src/multimedia/video/qvideoframe_p.h
-@@ -20,6 +20,8 @@
- #include "private/qvideotransformation_p.h"
- 
- #include <qmutex.h>
-+#include <qrect.h>
-+#include <qsize.h>
- 
- QT_BEGIN_NAMESPACE
- 
-@@ -88,6 +90,12 @@
-     int mappedCount = 0;
-     QMutex mapMutex;
-     QString subtitleText;
-+    // Bitmap-type embedded subtitles (DVD/PGS/DVB) -- subtitleImageRect is
-+    // in the subtitle codec's own coded-frame coordinate space, not this
-+    // video frame's display size; consumers must scale accordingly.
-+    QImage subtitleImage;
-+    QRect subtitleImageRect;
-+    QSize subtitleImageCodedSize;
-     QImage image;
-     QMutex imageMutex;
-     VideoTransformation presentationTransformation;
-diff --git a/src/multimedia/video/qvideoframe.h b/src/multimedia/video/qvideoframe.h
---- a/src/multimedia/video/qvideoframe.h
-+++ b/src/multimedia/video/qvideoframe.h
-@@ -9,6 +9,7 @@
- #include <QtMultimedia/qvideoframeformat.h>
- 
- #include <QtCore/qmetatype.h>
-+#include <QtCore/qrect.h>
- #include <QtCore/qshareddata.h>
- #include <QtGui/qimage.h>
- 
-@@ -135,6 +136,15 @@
-     QString subtitleText() const;
-     void setSubtitleText(const QString &text);
- 
-+    // Bitmap-type embedded subtitle (DVD/PGS/DVB), alongside the text
-+    // mechanism above. rect is in the subtitle codec's own coded-frame
-+    // coordinate space (whose extent is codedSize), not this frame's
-+    // display size -- scale rect by (displaySize / codedSize) to place it.
-+    QImage subtitleImage() const;
-+    QRect subtitleImageRect() const;
-+    QSize subtitleImageCodedSize() const;
-+    void setSubtitleImage(const QImage &image, const QRect &rect, const QSize &codedSize);
-+
-     void paint(QPainter *painter, const QRectF &rect, const PaintOptions &options);
- 
- #if QT_DEPRECATED_SINCE(6, 8)
-diff --git a/src/multimedia/video/qvideoframe.cpp b/src/multimedia/video/qvideoframe.cpp
---- a/src/multimedia/video/qvideoframe.cpp
-+++ b/src/multimedia/video/qvideoframe.cpp
-@@ -883,6 +883,51 @@
-     d->subtitleText = text;
- }
- 
-+/*!
-+    Returns the bitmap-type embedded subtitle (DVD/PGS/DVB) that should be
-+    rendered together with this video frame, or a null QImage if the
-+    current subtitle is text-based or absent.
-+*/
-+QImage QVideoFrame::subtitleImage() const
-+{
-+    return d ? d->subtitleImage : QImage();
-+}
-+
-+/*!
-+    Returns the placement of subtitleImage(), in the subtitle codec's own
-+    coded-frame coordinate space (not necessarily this video frame's own
-+    display size -- callers must scale accordingly, using
-+    subtitleImageCodedSize() as that coordinate space's extent).
-+*/
-+QRect QVideoFrame::subtitleImageRect() const
-+{
-+    return d ? d->subtitleImageRect : QRect();
-+}
-+
-+/*!
-+    Returns the extent of the coordinate space subtitleImageRect() is
-+    expressed in (the subtitle decoder's own coded-frame size), or an
-+    invalid QSize if there is no bitmap-type subtitle.
-+*/
-+QSize QVideoFrame::subtitleImageCodedSize() const
-+{
-+    return d ? d->subtitleImageCodedSize : QSize();
-+}
-+
-+/*!
-+    Sets the bitmap-type embedded subtitle that should be rendered together
-+    with this video frame to \a image, placed at \a rect within a
-+    coded-frame extent of \a codedSize.
-+*/
-+void QVideoFrame::setSubtitleImage(const QImage &image, const QRect &rect, const QSize &codedSize)
-+{
-+    if (!d)
-+        return;
-+    d->subtitleImage = image;
-+    d->subtitleImageRect = rect;
-+    d->subtitleImageCodedSize = codedSize;
-+}
-+
- /*!
-     Uses a QPainter, \a{painter}, to render this QVideoFrame to \a rect.
-     The PaintOptions \a options can be used to specify a background color and
-diff --git a/src/multimedia/platform/qplatformvideosink_p.h b/src/multimedia/platform/qplatformvideosink_p.h
---- a/src/multimedia/platform/qplatformvideosink_p.h
-+++ b/src/multimedia/platform/qplatformvideosink_p.h
-@@ -21,6 +21,7 @@
- #include <QtCore/qsize.h>
- #include <QtCore/qmutex.h>
- #include <QtGui/qwindowdefs.h>
-+#include <QtGui/qimage.h>
- #include <qvideosink.h>
- #include <qvideoframe.h>
- #include <qdebug.h>
-@@ -64,6 +65,12 @@
- 
-     QString subtitleText() const;
- 
-+    void setSubtitleImage(const QImage &image, const QRect &rect, const QSize &codedSize);
-+
-+    QImage subtitleImage() const;
-+    QRect subtitleImageRect() const;
-+    QSize subtitleImageCodedSize() const;
-+
- protected:
-     explicit QPlatformVideoSink(QVideoSink *parent);
- 
-@@ -77,6 +84,9 @@
-     mutable QMutex m_mutex; // Protects all members below
-     QSize m_nativeSize;
-     QString m_subtitleText;
-+    QImage m_subtitleImage;
-+    QRect m_subtitleImageRect;
-+    QSize m_subtitleImageCodedSize;
-     QVideoFrame m_currentVideoFrame;
- };
- 
-diff --git a/src/multimedia/platform/qplatformvideosink.cpp b/src/multimedia/platform/qplatformvideosink.cpp
---- a/src/multimedia/platform/qplatformvideosink.cpp
-+++ b/src/multimedia/platform/qplatformvideosink.cpp
-@@ -36,7 +36,24 @@
-         if (frame == m_currentVideoFrame)
-             return;
-         m_currentVideoFrame = frame;
--        m_currentVideoFrame.setSubtitleText(m_subtitleText);
-+        // Stamp this sink's own subtitle state onto the frame -- but only when
-+        // this sink actually has one, or the frame does not already carry one
-+        // from an upstream sink. QVideoFrame is explicitly shared and
-+        // setSubtitleText()/setSubtitleImage() write straight through d
-+        // without detaching, so an unconditional stamp here silently ERASES a
-+        // subtitle that another QVideoSink already put on this very frame.
-+        // That is exactly what happens when an application re-dispatches
-+        // frames from an intercept sink into the sink that is actually on
-+        // screen (e.g. to present video a few ms late for A/V-sync offset):
-+        // the second setVideoFrame() call overwrites the first sink's
-+        // subtitle with its own -- empty -- state, and the subtitle never
-+        // reaches QSGVideoNode. Affects text subtitles the same way; the
-+        // bitmap path just inherited it.
-+        if (!m_subtitleText.isEmpty() || frame.subtitleText().isEmpty())
-+            m_currentVideoFrame.setSubtitleText(m_subtitleText);
-+        if (!m_subtitleImage.isNull() || frame.subtitleImage().isNull())
-+            m_currentVideoFrame.setSubtitleImage(m_subtitleImage, m_subtitleImageRect,
-+                                                  m_subtitleImageCodedSize);
-         const QSize size = qRotatedFramePresentationSize(frame);
-         if (size != m_nativeSize) {
-             m_nativeSize = size;
-@@ -76,6 +93,39 @@
-     return m_subtitleText;
- }
- 
-+void QPlatformVideoSink::setSubtitleImage(const QImage &image, const QRect &rect,
-+                                           const QSize &codedSize)
-+{
-+    {
-+        QMutexLocker locker(&m_mutex);
-+        if (m_subtitleImage.cacheKey() == image.cacheKey() && m_subtitleImageRect == rect
-+            && m_subtitleImageCodedSize == codedSize)
-+            return;
-+        m_subtitleImage = image;
-+        m_subtitleImageRect = rect;
-+        m_subtitleImageCodedSize = codedSize;
-+    }
-+    emit m_sink->subtitleImageChanged(image, rect, codedSize);
-+}
-+
-+QImage QPlatformVideoSink::subtitleImage() const
-+{
-+    QMutexLocker locker(&m_mutex);
-+    return m_subtitleImage;
-+}
-+
-+QRect QPlatformVideoSink::subtitleImageRect() const
-+{
-+    QMutexLocker locker(&m_mutex);
-+    return m_subtitleImageRect;
-+}
-+
-+QSize QPlatformVideoSink::subtitleImageCodedSize() const
-+{
-+    QMutexLocker locker(&m_mutex);
-+    return m_subtitleImageCodedSize;
-+}
-+
- QT_END_NAMESPACE
- 
- #include "moc_qplatformvideosink_p.cpp"
-diff --git a/src/multimedia/video/qvideosink.h b/src/multimedia/video/qvideosink.h
---- a/src/multimedia/video/qvideosink.h
-+++ b/src/multimedia/video/qvideosink.h
-@@ -6,7 +6,10 @@
- 
- #include <QtMultimedia/qtmultimediaglobal.h>
- #include <QtCore/qobject.h>
-+#include <QtCore/qrect.h>
-+#include <QtCore/qsize.h>
- #include <QtGui/qwindowdefs.h>
-+#include <QtGui/qimage.h>
- 
- QT_BEGIN_NAMESPACE
- 
-@@ -35,6 +38,14 @@
-     QString subtitleText() const;
-     void setSubtitleText(const QString &subtitle);
- 
-+    // Bitmap-type embedded subtitle (DVD/PGS/DVB), alongside the text
-+    // mechanism above. rect is in the subtitle codec's own coded-frame
-+    // coordinate space, whose extent is codedSize.
-+    QImage subtitleImage() const;
-+    QRect subtitleImageRect() const;
-+    QSize subtitleImageCodedSize() const;
-+    void setSubtitleImage(const QImage &image, const QRect &rect, const QSize &codedSize);
-+
-     void setVideoFrame(const QVideoFrame &frame);
-     QVideoFrame videoFrame() const;
- 
-@@ -42,6 +53,8 @@
- Q_SIGNALS:
-     void videoFrameChanged(const QVideoFrame &frame) QT6_ONLY(const);
-     void subtitleTextChanged(const QString &subtitleText) QT6_ONLY(const);
-+    void subtitleImageChanged(const QImage &image, const QRect &rect,
-+                               const QSize &codedSize) QT6_ONLY(const);
-     void videoSizeChanged();
- 
- private:
-diff --git a/src/multimedia/video/qvideosink.cpp b/src/multimedia/video/qvideosink.cpp
---- a/src/multimedia/video/qvideosink.cpp
-+++ b/src/multimedia/video/qvideosink.cpp
-@@ -167,6 +167,44 @@
-         d->videoSink->setSubtitleText(subtitle);
- }
- 
-+/*!
-+    Returns the current bitmap-type subtitle image, or a null QImage if the
-+    current subtitle (if any) is text-based.
-+*/
-+QImage QVideoSink::subtitleImage() const
-+{
-+    return d->videoSink ? d->videoSink->subtitleImage() : QImage{};
-+}
-+
-+/*!
-+    Returns the placement rect of the current bitmap-type subtitle image, in
-+    the subtitle codec's own coded-frame coordinate space (whose extent is
-+    subtitleImageCodedSize()).
-+*/
-+QRect QVideoSink::subtitleImageRect() const
-+{
-+    return d->videoSink ? d->videoSink->subtitleImageRect() : QRect{};
-+}
-+
-+/*!
-+    Returns the extent of the coordinate space subtitleImageRect() is
-+    expressed in.
-+*/
-+QSize QVideoSink::subtitleImageCodedSize() const
-+{
-+    return d->videoSink ? d->videoSink->subtitleImageCodedSize() : QSize{};
-+}
-+
-+/*!
-+    Sets the current bitmap-type subtitle \a image and its placement \a rect
-+    within a coded-frame extent of \a codedSize.
-+*/
-+void QVideoSink::setSubtitleImage(const QImage &image, const QRect &rect, const QSize &codedSize)
-+{
-+    if (d->videoSink)
-+        d->videoSink->setSubtitleImage(image, rect, codedSize);
-+}
-+
- /*!
-     \property QVideoSink::videoSize
- 
-diff --git a/src/multimediaquick/qsgvideonode_p.h b/src/multimediaquick/qsgvideonode_p.h
---- a/src/multimediaquick/qsgvideonode_p.h
-+++ b/src/multimediaquick/qsgvideonode_p.h
-@@ -23,12 +23,15 @@
- #include <QtMultimedia/qvideoframe.h>
- #include <QtMultimedia/qvideoframeformat.h>
- #include <QtGui/qopenglfunctions.h>
-+#include <QtGui/qmatrix4x4.h>
- 
- QT_BEGIN_NAMESPACE
- 
- class QSGVideoMaterial;
- class QQuickVideoOutput;
- class QSGInternalTextNode;
-+class QSGImageNode;
-+class QSGTexture;
- 
- class QVideoFrameTexturePool;
- using QVideoFrameTexturePoolPtr = std::shared_ptr<QVideoFrameTexturePool>;
-@@ -52,7 +55,9 @@
- 
- private:
-     void updateSubtitle(const QVideoFrame &frame);
-+    void updateSubtitleImage(const QVideoFrame &frame);
-     void setSubtitleGeometry();
-+    QMatrix4x4 subtitleTransform() const;
- 
-     QQuickVideoOutput *m_parent = nullptr;
-     QRectF m_rect;
-@@ -65,6 +70,18 @@
- 
-     QVideoTextureHelper::SubtitleLayout m_subtitleLayout;
-     QSGInternalTextNode *m_subtitleTextNode = nullptr;
-+
-+    // Bitmap-type embedded subtitle (DVD/PGS/DVB), composited alongside the
-+    // text subtitle node above -- a frame carries at most one of the two
-+    // (see QVideoFrame::subtitleText()/subtitleImage()). Unlike
-+    // QSGInternalTextNode (which is-a QSGTransformNode, so it can be
-+    // positioned via setMatrix() directly), QSGImageNode is just a plain
-+    // QSGGeometryNode with no matrix of its own -- it needs a
-+    // QSGTransformNode wrapped around it for the same placement mechanism
-+    // to apply.
-+    QSGImageNode *m_subtitleImageNode = nullptr;
-+    QSGTransformNode *m_subtitleImageTransformNode = nullptr;
-+    qint64 m_subtitleImageCacheKey = -1;
- };
- 
- QT_END_NAMESPACE
-diff --git a/src/multimediaquick/qsgvideonode_p.cpp b/src/multimediaquick/qsgvideonode_p.cpp
---- a/src/multimediaquick/qsgvideonode_p.cpp
-+++ b/src/multimediaquick/qsgvideonode_p.cpp
-@@ -3,6 +3,7 @@
- 
- #include "qsgvideonode_p.h"
- #include <QtQuick/qsgmaterial.h>
-+#include <QtQuick/qsgimagenode.h>
- #include "qsgvideotexture_p.h"
- #include <QtMultimedia/private/qvideotexturehelper_p.h>
- #include <private/qsginternaltextnode_p.h>
-@@ -263,6 +264,7 @@
- QSGVideoNode::~QSGVideoNode()
- {
-     delete m_subtitleTextNode;
-+    delete m_subtitleImageTransformNode; // cascades to delete m_subtitleImageNode too
- }
- 
- void QSGVideoNode::setCurrentFrame(const QVideoFrame &frame)
-@@ -270,6 +272,7 @@
-     texturePool()->setCurrentFrame(frame);
-     markDirty(DirtyMaterial);
-     updateSubtitle(frame);
-+    updateSubtitleImage(frame);
- }
- 
- void QSGVideoNode::setSurfaceFormat(const QRhiSwapChain::Format surfaceFormat)
-@@ -312,14 +315,70 @@
-     setSubtitleGeometry();
- }
- 
--void QSGVideoNode::setSubtitleGeometry()
-+void QSGVideoNode::updateSubtitleImage(const QVideoFrame &frame)
- {
--    if (!m_subtitleTextNode)
-+    QSize subtitleFrameSize = m_rect.size().toSize();
-+    if (subtitleFrameSize.isEmpty())
-         return;
- 
--    if (m_material)
--        updateSubtitle(texturePool()->currentFrame());
-+    subtitleFrameSize = qRotatedFrameSize(subtitleFrameSize, m_videoOutputTransformation.rotation);
-+
-+    const QImage image = frame.subtitleImage();
-+    const QRect imageRect = frame.subtitleImageRect();
-+    const QSize codedSize = frame.subtitleImageCodedSize();
-+
-+    // imageRect/codedSize are in the subtitle codec's own coded-frame
-+    // coordinate space (e.g. the DVD VOB's video resolution), not this
-+    // node's display rect -- scale into subtitleFrameSize (the same local,
-+    // pre-rotation space the text subtitle layout above uses) before
-+    // placing the image node. Without codedSize (e.g. a hypothetical
-+    // future producer that already delivers a display-sized image),
-+    // fall back to placing the image at its own native size, unscaled.
-+    QRectF placementRect;
-+    if (!image.isNull()) {
-+        if (codedSize.width() > 0 && codedSize.height() > 0) {
-+            const qreal scaleX = qreal(subtitleFrameSize.width()) / codedSize.width();
-+            const qreal scaleY = qreal(subtitleFrameSize.height()) / codedSize.height();
-+            placementRect = QRectF(imageRect.x() * scaleX, imageRect.y() * scaleY,
-+                                    imageRect.width() * scaleX, imageRect.height() * scaleY);
-+        } else {
-+            placementRect = QRectF(QPointF(0, 0), QSizeF(image.size()));
-+        }
-+    }
-+
-+    const bool unchanged = !image.isNull() && m_subtitleImageNode
-+            && image.cacheKey() == m_subtitleImageCacheKey
-+            && placementRect == m_subtitleImageNode->rect();
-+    if (unchanged)
-+        return;
-+
-+    delete m_subtitleImageTransformNode; // cascades to delete m_subtitleImageNode too
-+    m_subtitleImageTransformNode = nullptr;
-+    m_subtitleImageNode = nullptr;
-+    m_subtitleImageCacheKey = -1;
-+    if (image.isNull())
-+        return;
-+
-+    QQuickItemPrivate *parent_d = QQuickItemPrivate::get(m_parent);
- 
-+    // QSGImageNode (unlike QSGInternalTextNode, which is-a QSGTransformNode)
-+    // has no setMatrix() of its own -- wrap it in a plain QSGTransformNode
-+    // so setSubtitleGeometry() below can position/rotate it the same way it
-+    // positions the text node.
-+    m_subtitleImageNode = parent_d->sceneGraphContext()->createImageNode();
-+    m_subtitleImageNode->setOwnsTexture(true);
-+    m_subtitleImageNode->setTexture(parent_d->sceneGraphRenderContext()->createTexture(image));
-+    m_subtitleImageNode->setRect(placementRect);
-+    m_subtitleImageCacheKey = image.cacheKey();
-+
-+    m_subtitleImageTransformNode = new QSGTransformNode;
-+    m_subtitleImageTransformNode->appendChildNode(m_subtitleImageNode);
-+    appendChildNode(m_subtitleImageTransformNode);
-+    setSubtitleGeometry();
-+}
-+
-+QMatrix4x4 QSGVideoNode::subtitleTransform() const
-+{
-     float rotate = -1.f * qToUnderlying(m_videoOutputTransformation.rotation);
-     float yTranslate = 0;
-     float xTranslate = 0;
-@@ -338,9 +397,27 @@
-     // TODO: Investigate if we should we mirror subtitles
-     // if (m_videoOutputTransformation.mirroredHorizontallyAfterRotation)
-     //    transform.scale(-1.f, 1.f);
-+    return transform;
-+}
-+
-+void QSGVideoNode::setSubtitleGeometry()
-+{
-+    if (!m_subtitleTextNode && !m_subtitleImageTransformNode)
-+        return;
- 
--    m_subtitleTextNode->setMatrix(transform);
--    m_subtitleTextNode->markDirty(DirtyGeometry);
-+    if (m_material) {
-+        updateSubtitle(texturePool()->currentFrame());
-+        updateSubtitleImage(texturePool()->currentFrame());
-+    }
-+
-+    const QMatrix4x4 transform = subtitleTransform();
-+
-+    if (m_subtitleTextNode) {
-+        m_subtitleTextNode->setMatrix(transform);
-+        m_subtitleTextNode->markDirty(DirtyGeometry);
-+    }
-+    if (m_subtitleImageTransformNode)
-+        m_subtitleImageTransformNode->setMatrix(transform); // already marks itself dirty
- }
- 
- /* Update the vertices and texture coordinates.*/

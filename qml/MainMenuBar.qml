@@ -27,6 +27,7 @@ MenuBar {
     signal openDirectoryRequested()
     signal openPlaylistRequested()
     signal openDvdRequested()
+    signal openBlurayRequested()
     signal openUrlRequested()
     signal youtubeCacheRequested()
     signal editTvChannelsRequested()
@@ -183,9 +184,10 @@ MenuBar {
                 icon.source: Theme.icon("dvd")
                 onTriggered: bar.openDvdRequested()
             }
-            AppMenuItem {
-                text: qsTr("&Blu-ray")
-                enabled: false
+            Action {
+                text: qsTr("&Blu-ray from drive or folder…")
+                icon.source: Theme.icon("dvd")
+                onTriggered: bar.openBlurayRequested()
             }
             AppMenuItem {
                 text: qsTr("&Audio CD")
@@ -656,14 +658,18 @@ MenuBar {
             icon.source: Theme.icon("audio_track")
 
             // See the "(empty)" placeholder under Recent files for why this is
-            // added/removed instead of shown/hidden. DVD titles label each
-            // entry with the disc's own IFO-declared language (dvdAudioTrackLabels)
-            // instead of a generic "Track N" (dvdSubtitleTrackLabels does the
-            // same for Subtitles > Track) -- selection itself is unchanged,
-            // still the plain activeAudioTrack/FFmpeg track index.
+            // added/removed instead of shown/hidden. DVD/Blu-ray titles label
+            // each entry with the disc's own declared language
+            // (dvdAudioTrackLabels/blurayAudioTrackLabels) instead of a
+            // generic "Track N" (dvdSubtitleTrackLabels/
+            // bluraySubtitleTrackLabels do the same for Subtitles > Track) --
+            // selection itself is unchanged, still the plain
+            // activeAudioTrack/FFmpeg track index.
             Instantiator {
                 model: (bar.controller.dvdPlayback
                         ? bar.controller.dvdAudioTrackLabels
+                        : bar.controller.blurayPlayback
+                        ? bar.controller.blurayAudioTrackLabels
                         : bar.controller.audioTrackLabels).length === 0 ? 1 : 0
                 delegate: AppMenuItem { text: qsTr("<empty>"); enabled: false }
                 onObjectAdded: (index, object) => audioTrackMenu.insertItem(0, object)
@@ -672,6 +678,8 @@ MenuBar {
             Instantiator {
                 model: bar.controller.dvdPlayback
                        ? bar.controller.dvdAudioTrackLabels
+                       : bar.controller.blurayPlayback
+                       ? bar.controller.blurayAudioTrackLabels
                        : bar.controller.audioTrackLabels
                 delegate: AppMenuItem {
                     required property int index
@@ -738,16 +746,22 @@ MenuBar {
             // DVD titles: subtitle tracks come from the disc's own IFO-declared
             // subpicture table and a Vivace-side decoder (dvdSubtitleTrackLabels/
             // activeDvdSubtitleTrack), not FFmpeg's generic track model -- see
-            // PlayerController's DVD subtitle handling for why.
+            // PlayerController's DVD subtitle handling for why. Blu-ray titles
+            // use the SAME generic FFmpeg track model as a plain file
+            // (activeSubtitleTrack) -- only the LABEL text differs
+            // (bluraySubtitleTrackLabels, libbluray's own declared language).
+            readonly property var subtitleLabels: bar.controller.dvdPlayback
+                    ? bar.controller.dvdSubtitleTrackLabels
+                    : bar.controller.blurayPlayback
+                    ? bar.controller.bluraySubtitleTrackLabels
+                    : bar.controller.subtitleTrackLabels
             AppMenuItem {
                 text: qsTr("&Off")
                 checkable: true
                 checked: bar.controller.dvdPlayback
                         ? bar.controller.activeDvdSubtitleTrack === -1
                         : bar.controller.activeSubtitleTrack === -1
-                enabled: (bar.controller.dvdPlayback
-                          ? bar.controller.dvdSubtitleTrackLabels
-                          : bar.controller.subtitleTrackLabels).length > 0
+                enabled: subtitleTrackMenu.subtitleLabels.length > 0
                 // Re-establish the binding the checkable toggle breaks, so the
                 // items stay mutually exclusive (now that the controller emits
                 // activeTracksChanged, the re-bound expression re-evaluates).
@@ -762,9 +776,7 @@ MenuBar {
                 }
             }
             Instantiator {
-                model: bar.controller.dvdPlayback
-                        ? bar.controller.dvdSubtitleTrackLabels
-                        : bar.controller.subtitleTrackLabels
+                model: subtitleTrackMenu.subtitleLabels
                 delegate: AppMenuItem {
                     required property int index
                     required property string modelData
@@ -839,15 +851,26 @@ MenuBar {
             title: qsTr("&Title")
             icon.source: Theme.icon("title")
 
+            // DVD titles are keyed by the disc's own title number; Blu-ray
+            // titles (basic/primitive playback, no on-disc menus) by a plain
+            // list index (blurayplayer.h) -- the two are never both active
+            // at once (a folder can't be both a DVD and a BD disc), so this
+            // just picks whichever is currently playing.
             Instantiator {
-                model: bar.controller.dvdTitles
+                model: bar.controller.dvdPlayback ? bar.controller.dvdTitles
+                     : bar.controller.blurayPlayback ? bar.controller.blurayTitles
+                     : []
                 delegate: AppMenuItem {
                     required property int index
                     required property var modelData
                     text: modelData.label
                     checkable: true
-                    checked: modelData.number === bar.controller.dvdCurrentTitle
-                    onTriggered: bar.controller.playDvdTitle(modelData.number)
+                    checked: bar.controller.dvdPlayback
+                             ? modelData.number === bar.controller.dvdCurrentTitle
+                             : modelData.index === bar.controller.blurayCurrentTitle
+                    onTriggered: bar.controller.dvdPlayback
+                                 ? bar.controller.playDvdTitle(modelData.number)
+                                 : bar.controller.playBlurayTitle(modelData.index)
                 }
                 onObjectAdded: (index, object) => titlesMenu.insertItem(index, object)
                 onObjectRemoved: (index, object) => titlesMenu.removeItem(object)
@@ -855,7 +878,8 @@ MenuBar {
             // See the "(empty)" placeholder under Recent files for why this is
             // added/removed instead of shown/hidden.
             Instantiator {
-                model: bar.controller.dvdTitles.length === 0 ? 1 : 0
+                model: (bar.controller.dvdTitles.length === 0
+                        && bar.controller.blurayTitles.length === 0) ? 1 : 0
                 delegate: AppMenuItem { text: qsTr("<empty>"); enabled: false }
                 onObjectAdded: (index, object) => titlesMenu.insertItem(0, object)
                 onObjectRemoved: (index, object) => titlesMenu.removeItem(object)

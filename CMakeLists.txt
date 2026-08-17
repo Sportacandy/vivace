@@ -404,6 +404,179 @@ if(WIN32)
     endif()
 endif()
 
+# Optional Blu-ray Disc playback via libbluray (LGPL-2.1-or-later,
+# https://code.videolan.org/videolan/libbluray) -- parses BD-ROM disc
+# structure (index.bdmv/MovieObject.bdmv/.mpls playlists, optionally AACS-
+# decrypting) and demuxes the selected title's M2TS stream, handling
+# multi-clip stitching internally. Unlike DVD (where Vivace hand-rolls its
+# own IFO/VOB parser, consulting libdvdread's ifo_read.c only as reference
+# material), Blu-ray's on-disc format is dramatically more involved (MPLS/
+# CLPI/MovieObject, plus optional AACS/BD+ crypto) and no vendored reference
+# source is available locally to reimplement it from scratch against --
+# libbluray is the same actively-maintained library every other open-source
+# BD player (VLC, mpv, Kodi, HandBrake) already links against, so Vivace
+# links it too rather than reinventing BD-ROM navigation. src/blurayplayer.*
+# is a thin QIODevice wrapper around its public bd_*() API; it always
+# compiles, but is a no-op (returns empty/false everywhere) when libbluray
+# isn't available, gated by the VIVACE_HAVE_BLURAY compile definition below.
+#
+# BUILT FROM SOURCE, uniformly on every platform, via ExternalProject_Add --
+# this replaced an earlier Windows-only approach (MSYS2's prebuilt package +
+# a hand-generated MSVC import library bridging a MinGW-built DLL) once it
+# became clear that approach couldn't extend to Linux/macOS at all, and
+# separately dragged in a 17-DLL runtime dependency closure (BD-J font
+# rendering via freetype/fontconfig, metadata parsing via libxml2 -- none of
+# which src/blurayplayer.cpp's basic/primitive playback support even uses).
+#
+# libbluray's own build system is Meson (as of 1.4.0; there is no CMake or
+# autotools support upstream) -- confirmed to build cleanly and NATIVELY
+# with MSVC (no MinGW bridging needed at all) by fetching the real 1.5.0
+# source and building it directly: `meson setup --backend ninja
+# -Dfontconfig=disabled -Dfreetype=disabled -Dlibxml2=disabled
+# -Dbdj_jar=disabled -Denable_tools=false -Ddefault_library=static` inside
+# an MSVC developer environment auto-detects cl.exe/link.exe/lib.exe with
+# zero extra configuration, and the resulting static libbluray.a links
+# into a real MSVC executable with no other runtime dependency at all
+# (verified: a standalone test program linked this way opened the real
+# disc used throughout this project's Blu-ray testing and produced
+# identical results to the earlier MSYS2-based build). Disabling those
+# four options removes BD-J entirely (no on-disc Java menus -- matching
+# this project's own explicit "no on-disc HDMV/BD-J menu support" scope
+# decision) and the whole font/XML dependency chain along with it, so the
+# ONLY extra system libraries needed are small, always-present platform
+# ones (see VIVACE_LIBBLURAY_SYSTEM_LIBS below), not a large closure of
+# third-party DLLs to hunt down and deploy.
+#
+# CMake's own Visual Studio generator runs custom build steps (including
+# ExternalProject_Add's) through MSBuild, which already has the correct
+# INCLUDE/LIB/PATH for the active MSVC toolset -- the same environment
+# meson's own compiler auto-detection was verified against above -- so no
+# extra environment plumbing is done here for the Windows/MSVC case. A
+# Ninja-generator build invoked from a plain (non-Developer-Prompt) shell
+# would need the same vcvars environment CMake's own compiler detection
+# already requires in that scenario, so this isn't a new constraint.
+#
+# ONLY VERIFIED ON WINDOWS so far (this project's only available dev
+# machine); Linux/macOS use the identical Meson recipe (Meson and its
+# `-Dxxx=disabled` options are genuinely cross-platform, and this project's
+# Qt-Multimedia-patch build scripts already establish the same
+# build-from-source-not-a-system-package convention for other
+# dependencies), but the exact system libraries libbluray needs per
+# platform (VIVACE_LIBBLURAY_SYSTEM_LIBS below) are reasoned from reading
+# libbluray's own meson.build directly (its explicit `if host_machine.
+# system() == 'darwin'` block, etc.), not confirmed by an actual Linux/
+# macOS build in this environment.
+# Always built as a Release configuration (Meson --buildtype release, MSVC
+# /MD) regardless of which config Vivace itself is being built as -- a
+# multi-config generator (Visual Studio) doesn't know which config will
+# actually be built at CMake CONFIGURE time, and building libbluray twice
+# (once per CRT variant) would double this dependency's build time for
+# every developer/CI run. This produces a real MSVC LNK4098 warning
+# ("defaultlib 'MSVCRT' conflicts") when Vivace itself is built as Debug
+# (/MDd) -- confirmed harmless for how Vivace actually calls libbluray
+# today: grepping bluray.h directly shows only bd_get_meta_file() and
+# bd_read_file() return memory the CALLER must free() (a real cross-CRT
+# hazard if the allocator and the free() call come from different CRT
+# instances) -- and src/blurayplayer.cpp calls neither. If a future
+# feature ever does call one of those two functions, this becomes a real
+# bug that needs the full fix (building libbluray per-config, selected via
+# a $<CONFIG:...> generator expression in the target_link_libraries call
+# below), not just a warning to tolerate.
+option(VIVACE_ENABLE_BLURAY "Enable Blu-ray Disc playback (needs meson, ninja, and git at configure time)" ON)
+set(VIVACE_HAVE_BLURAY FALSE)
+if(VIVACE_ENABLE_BLURAY)
+    find_program(VIVACE_MESON_EXECUTABLE NAMES meson)
+    find_program(VIVACE_NINJA_EXECUTABLE NAMES ninja)
+    find_package(Git QUIET)
+
+    if(VIVACE_MESON_EXECUTABLE AND VIVACE_NINJA_EXECUTABLE AND Git_FOUND)
+        set(VIVACE_HAVE_BLURAY TRUE)
+
+        set(VIVACE_LIBBLURAY_GIT_TAG "1.5.0" CACHE STRING
+            "libbluray git tag to build (pinned to the latest tagged release)")
+        set(VIVACE_LIBBLURAY_PREFIX "${CMAKE_BINARY_DIR}/bluray-prefix")
+        set(VIVACE_LIBBLURAY_SRC "${VIVACE_LIBBLURAY_PREFIX}/src/bluray_ext")
+        set(VIVACE_LIBBLURAY_BUILD "${VIVACE_LIBBLURAY_PREFIX}/build")
+        set(VIVACE_LIBBLURAY_INSTALL "${VIVACE_LIBBLURAY_PREFIX}/install")
+        # Meson names a default_library=static target libFOO.a on every
+        # platform (confirmed on Windows/MSVC directly -- a real COFF
+        # archive despite the Unix-style ".a" name; the same Unix naming
+        # convention applies natively on Linux/macOS).
+        set(VIVACE_LIBBLURAY_LIBRARY_FILE
+            "${VIVACE_LIBBLURAY_INSTALL}/lib/libbluray.a")
+
+        include(ExternalProject)
+        ExternalProject_Add(bluray_ext
+            GIT_REPOSITORY "https://code.videolan.org/videolan/libbluray.git"
+            GIT_TAG "${VIVACE_LIBBLURAY_GIT_TAG}"
+            GIT_SUBMODULES_RECURSE TRUE
+            PREFIX "${VIVACE_LIBBLURAY_PREFIX}"
+            SOURCE_DIR "${VIVACE_LIBBLURAY_SRC}"
+            CONFIGURE_COMMAND "${VIVACE_MESON_EXECUTABLE}" setup
+                "${VIVACE_LIBBLURAY_BUILD}" "${VIVACE_LIBBLURAY_SRC}"
+                --backend ninja
+                --buildtype release
+                --prefix "${VIVACE_LIBBLURAY_INSTALL}"
+                -Ddefault_library=static
+                -Denable_tools=false
+                -Dbdj_jar=disabled
+                -Dfontconfig=disabled
+                -Dfreetype=disabled
+                -Dlibxml2=disabled
+            BUILD_COMMAND "${VIVACE_NINJA_EXECUTABLE}" -C "${VIVACE_LIBBLURAY_BUILD}"
+            INSTALL_COMMAND "${VIVACE_NINJA_EXECUTABLE}" -C "${VIVACE_LIBBLURAY_BUILD}" install
+            BUILD_BYPRODUCTS "${VIVACE_LIBBLURAY_LIBRARY_FILE}"
+            USES_TERMINAL_CONFIGURE TRUE
+            USES_TERMINAL_BUILD TRUE
+            USES_TERMINAL_INSTALL TRUE
+        )
+        message(STATUS "Blu-ray Disc playback: ENABLED (building libbluray "
+                        "${VIVACE_LIBBLURAY_GIT_TAG} from source via Meson)")
+    else()
+        set(_vivace_bluray_missing "")
+        if(NOT VIVACE_MESON_EXECUTABLE)
+            list(APPEND _vivace_bluray_missing "meson")
+        endif()
+        if(NOT VIVACE_NINJA_EXECUTABLE)
+            list(APPEND _vivace_bluray_missing "ninja")
+        endif()
+        if(NOT Git_FOUND)
+            list(APPEND _vivace_bluray_missing "git")
+        endif()
+        message(STATUS "Blu-ray Disc playback: DISABLED (missing build tool(s): "
+                        "${_vivace_bluray_missing} -- install them and reconfigure, "
+                        "or set VIVACE_ENABLE_BLURAY=OFF to silence this message)")
+    endif()
+endif()
+
+target_sources(vivace PRIVATE src/blurayplayer.h src/blurayplayer.cpp)
+if(VIVACE_HAVE_BLURAY)
+    add_dependencies(vivace bluray_ext)
+    target_compile_definitions(vivace PRIVATE VIVACE_HAVE_BLURAY=1)
+    target_include_directories(vivace PRIVATE "${VIVACE_LIBBLURAY_INSTALL}/include")
+    target_link_libraries(vivace PRIVATE "${VIVACE_LIBBLURAY_LIBRARY_FILE}")
+
+    # Small, always-present platform libraries libbluray's own code calls
+    # into directly -- NOT a third-party dependency closure to deploy at
+    # runtime, just system libraries every install of the OS already has.
+    # Windows: VERIFIED by a real link (Advapi32 for the registry lookup /
+    # Shell32 for the special-folder lookup libbluray's BD-J JVM-search
+    # code (file_dirs_win32.c/bdj.c) still references even with
+    # -Dbdj_jar=disabled -- that flag only skips building the JAR itself,
+    # not this small amount of always-compiled calling code). Linux/macOS:
+    # reasoned from reading libbluray's own meson.build directly (its
+    # explicit `if host_machine.system() == 'darwin'` dependency block),
+    # NOT independently verified against a real build on either platform.
+    if(WIN32)
+        set(VIVACE_LIBBLURAY_SYSTEM_LIBS Advapi32 Shell32)
+    elseif(APPLE)
+        set(VIVACE_LIBBLURAY_SYSTEM_LIBS "-framework CoreFoundation" "-framework DiskArbitration")
+    else()
+        set(VIVACE_LIBBLURAY_SYSTEM_LIBS ${CMAKE_DL_LIBS})
+    endif()
+    target_link_libraries(vivace PRIVATE ${VIVACE_LIBBLURAY_SYSTEM_LIBS})
+endif()
+
 install(TARGETS vivace
     BUNDLE DESTINATION .
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}

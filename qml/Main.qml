@@ -397,6 +397,7 @@ ApplicationWindow {
         onOpenDirectoryRequested: directoryDialog.open()
         onOpenPlaylistRequested: playlistDialog.open()
         onOpenDvdRequested: dvdDialog.open()
+        onOpenBlurayRequested: blurayDialog.open()
         onOpenUrlRequested: openUrlDialog.open()
         onYoutubeCacheRequested: cacheBrowser.openDialog()
         onCastRequested: castDialog.open()
@@ -1393,6 +1394,18 @@ ApplicationWindow {
         }
     }
 
+    FolderDialog {
+        id: blurayDialog
+        title: qsTr("Select the Blu-ray drive or a folder containing BDMV")
+        options: Settings.useNativeFileDialog ? 0 : FolderDialog.DontUseNativeDialog
+        onAccepted: {
+            if (!playerController.openBluray(selectedFolder))
+                root.showOsd(qsTr("No Blu-ray video found in %1")
+                             .arg(UiHelpers.toLocalPath(selectedFolder)),
+                             root.osdErrorDurationMs)
+        }
+    }
+
     FileDialog {
         id: playlistDialog
         fileMode: FileDialog.OpenFile
@@ -2014,7 +2027,8 @@ ApplicationWindow {
 
         Component.onCompleted: {
             const mm = ["openFileRequested", "openDirectoryRequested",
-                "openPlaylistRequested", "openDvdRequested", "openUrlRequested",
+                "openPlaylistRequested", "openDvdRequested", "openBlurayRequested",
+                "openUrlRequested",
                 "youtubeCacheRequested", "editTvChannelsRequested",
                 "editRadioChannelsRequested", "editFavoritesRequested",
                 "addBookmarkRequested", "editBookmarksRequested",

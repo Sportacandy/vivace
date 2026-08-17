@@ -15,6 +15,17 @@ each get their own entry instead.
 - Video ▸ Deinterlace (None / Yadif / Bwdif), with a configurable default
   in Preferences ▸ General ▸ Video. Requires a custom-built Qt Multimedia
   (see README.md's "Deinterlacing" section) — no effect with a stock Qt.
+- Basic Blu-ray Disc playback: Open ▸ Disc ▸ Blu-ray, title/chapter
+  browsing (Browse ▸ Title/Chapters), Audio/Subtitles ▸ Track labelled
+  with the disc's own declared language, via libbluray. No on-disc menu
+  navigation, and AACS-encrypted commercial discs need a usable key
+  libbluray can find — see README.md's "Blu-ray Disc playback" section.
+  libbluray is built from source automatically as part of the build
+  (needs `meson`/`ninja`/`git` at configure time; optional, compiles out
+  gracefully otherwise) — no system package or manual setup needed.
+  Known limitation: selecting a Blu-ray subtitle track doesn't display
+  any text/bitmap (a real Qt Multimedia bug, not yet fixed — see
+  README.md for details); track selection itself works and is stable.
 
 ## [0.3.2] — 2026-08-10
 

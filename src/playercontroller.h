@@ -20,6 +20,7 @@
 
 class QVideoSink;
 
+#include "blurayplayer.h"
 #include "bookmarks.h"
 #include "chapterparser.h"
 #include "dvdifoparser.h"
@@ -181,6 +182,13 @@ class PlayerController : public QObject
     Q_PROPERTY(int currentFileFormat READ currentFileFormat NOTIFY mediaInfoChanged)
     Q_PROPERTY(int currentVideoCodec READ currentVideoCodec NOTIFY mediaInfoChanged)
     Q_PROPERTY(int currentAudioCodec READ currentAudioCodec NOTIFY mediaInfoChanged)
+    // Basic/primitive Blu-ray Disc playback (see blurayplayer.h): title
+    // enumeration + playback via libbluray, no on-disc HDMV/BD-J menu
+    // navigation (unlike the DVD support's menu-lite). Chapters reuse the
+    // unified `chapters` property below, same as DVD.
+    Q_PROPERTY(bool blurayPlayback READ blurayPlayback NOTIFY blurayPlaybackChanged)
+    Q_PROPERTY(QVariantList blurayTitles READ blurayTitles NOTIFY blurayPlaybackChanged)
+    Q_PROPERTY(int blurayCurrentTitle READ blurayCurrentTitle NOTIFY blurayPlaybackChanged)
     Q_PROPERTY(bool dvdPlayback READ dvdPlayback NOTIFY dvdPlaybackChanged)
     Q_PROPERTY(QVariantList dvdTitles READ dvdTitles NOTIFY dvdPlaybackChanged)
     Q_PROPERTY(int dvdCurrentTitle READ dvdCurrentTitle NOTIFY dvdPlaybackChanged)
@@ -245,6 +253,18 @@ class PlayerController : public QObject
     // plain audioTrackLabels()). Falls back to "Track N" per entry that has
     // no corresponding declared stream or language.
     Q_PROPERTY(QStringList dvdAudioTrackLabels READ dvdAudioTrackLabels
+               NOTIFY trackLabelsChanged)
+    // Same idea as dvdAudioTrackLabels()/dvdSubtitleTrackLabels(), but
+    // sourced from libbluray's own declared per-stream language
+    // (BlurayDisc::Title::audioLanguages/subtitleLanguages) instead of DVD's
+    // IFO tables -- Qt Multimedia's generic track metadata carries no
+    // language for these BD-sourced MPEG-TS streams (confirmed empirically:
+    // QMediaMetaData::Language was empty for every track on a real disc).
+    // Selection itself is unchanged, still the plain activeAudioTrack/
+    // activeSubtitleTrack FFmpeg track index.
+    Q_PROPERTY(QStringList blurayAudioTrackLabels READ blurayAudioTrackLabels
+               NOTIFY trackLabelsChanged)
+    Q_PROPERTY(QStringList bluraySubtitleTrackLabels READ bluraySubtitleTrackLabels
                NOTIFY trackLabelsChanged)
     Q_PROPERTY(QStringList subtitleTrackLabels READ subtitleTrackLabels
                NOTIFY trackLabelsChanged)
@@ -394,6 +414,18 @@ public:
     // containing VIDEO_TS). Returns false when no title set is found.
     Q_INVOKABLE bool openDvd(const QUrl &folder);
 
+    // Opens a Blu-ray Disc folder (or drive/image root containing BDMV/) and
+    // plays its main title. Returns false when no libbluray-openable BD
+    // structure is found (including a build without libbluray, or an
+    // AACS-encrypted disc libbluray can't decrypt).
+    Q_INVOKABLE bool openBluray(const QUrl &folder);
+    bool blurayPlayback() const { return m_blurayDisc != nullptr; }
+    QVariantList blurayTitles() const;
+    int blurayCurrentTitle() const { return m_blurayCurrentTitleIndex; }
+    // Plays titleListIndex (an index into blurayTitles(), not a raw
+    // libbluray title number).
+    Q_INVOKABLE void playBlurayTitle(int titleListIndex);
+
     bool dvdPlayback() const { return m_dvdDevice != nullptr; }
     QVariantList dvdTitles() const;
     int dvdCurrentTitle() const { return m_dvdCurrentTitle; }
@@ -455,6 +487,8 @@ public:
     QStringList videoTrackLabels() const;
     QStringList audioTrackLabels() const;
     QStringList dvdAudioTrackLabels() const;
+    QStringList blurayAudioTrackLabels() const;
+    QStringList bluraySubtitleTrackLabels() const;
     QStringList subtitleTrackLabels() const;
 
     // QMediaPlayer's FFmpeg backend does not emit activeTracksChanged when the
@@ -554,6 +588,7 @@ signals:
     void audioDeviceIdChanged();
     void currentAudioDeviceChanged();
     void dvdPlaybackChanged();
+    void blurayPlaybackChanged();
     void dvdMenuChanged();
     void dvdMenusEnabledChanged();
     void activeDvdSubtitleTrackChanged();
@@ -691,6 +726,27 @@ private:
     int currentDvdChapterIndex() const;
     // Index of the file chapter containing position ms (-1 if none/before first).
     int fileChapterIndexAt(qint64 ms) const;
+    // Blu-ray equivalents of dvdChapters()/currentDvdChapterIndex() — chapters
+    // of the currently selected title (blurayplayer.h), mirroring the file-
+    // chapters shape ({label, startMs}) rather than DVD's own separate model,
+    // since a BD title's chapters need no per-run-rebuild handling (libbluray
+    // presents one continuous stream per title, unlike DVD's PS timeline
+    // restarts) — plain time-based seeks (m_player->setPosition()) suffice.
+    QVariantList blurayChapters() const;
+    int blurayChapterIndexAt(qint64 ms) const;
+    // Shared by blurayAudioTrackLabels()/bluraySubtitleTrackLabels() (the
+    // Audio/Subtitles > Track menus) AND mediaInfoHtml() (the Information
+    // dialog's Audio/Subtitles Streams tables) -- how many of Qt's own
+    // detected tracks should ever be surfaced anywhere in the UI: the
+    // SMALLER of what the disc's own libbluray-declared stream table lists
+    // and what Qt's FFmpeg backend actually found multiplexed. See
+    // blurayAudioTrackLabels()'s own doc comment for why this can be
+    // smaller than Qt's count (an undeclared stream physically present in
+    // the raw mux that a real BD player would never expose). Returns -1
+    // when not currently playing a Blu-ray title (caller falls back to the
+    // plain FFmpeg-only count in that case).
+    int blurayVisibleAudioTrackCount() const;
+    int blurayVisibleSubtitleTrackCount() const;
 
     QMediaPlayer *m_player = nullptr;
     QAudioOutput *m_audioOutput = nullptr;
@@ -799,6 +855,17 @@ private:
     QMediaDevices *m_mediaDevices = nullptr;
     DvdTitleDevice *m_dvdDevice = nullptr;
     QString m_dvdDir;
+    // Basic/primitive Blu-ray Disc playback (see blurayplayer.h). m_blurayDisc
+    // owns the open BLURAY handle + title/chapter list for as long as any
+    // title is being browsed/played (persists across Stop, like m_dvdDevice's
+    // own DVD-title-list lifetime — only replaced by a genuinely new open());
+    // m_blurayDevice is the QIODevice for whichever title is currently
+    // selected, parented to `this` so Qt's normal parent-child cleanup
+    // handles its deletion (matching m_dvdDevice's own convention).
+    BlurayDisc *m_blurayDisc = nullptr;
+    QIODevice *m_blurayDevice = nullptr;
+    QString m_blurayDir;
+    int m_blurayCurrentTitleIndex = -1;
     QList<DvdIfo::Title> m_dvdTitles;
     int m_dvdCurrentTitle = -1;
     qint64 m_dvdPositionOffsetMs = 0;

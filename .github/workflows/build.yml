@@ -31,7 +31,22 @@ jobs:
         if: runner.os == 'Linux'
         run: |
           sudo apt-get update
-          sudo apt-get install -y libgl1-mesa-dev libxkbcommon-dev patchelf
+          sudo apt-get install -y libgl1-mesa-dev libxkbcommon-dev patchelf meson ninja-build
+
+      - name: Install Meson/Ninja (Windows/macOS; needed to build libbluray from source for Blu-ray Disc playback)
+        if: runner.os != 'Linux'
+        shell: bash
+        run: |
+          if [ "$RUNNER_OS" = "Windows" ]; then
+            for i in 1 2 3; do
+              choco install meson ninja -y && exit 0
+              echo "choco install meson/ninja failed (attempt $i), retrying in 30s..."
+              sleep 30
+            done
+            exit 1
+          else
+            brew install meson ninja
+          fi
 
       - name: Install Qt
         uses: jurplel/install-qt-action@v4
