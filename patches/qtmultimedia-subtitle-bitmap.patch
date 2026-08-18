@@ -3,6 +3,9 @@ Base tag:    v6.11.1
 Applies to:  src/plugins/multimedia/ffmpeg/playbackengine/qffmpegframe_p.h,
              src/plugins/multimedia/ffmpeg/playbackengine/qffmpegstreamdecoder.cpp,
              src/plugins/multimedia/ffmpeg/playbackengine/qffmpegsubtitlerenderer.cpp,
+             src/plugins/multimedia/ffmpeg/playbackengine/qffmpegsubtitlerenderer_p.h,
+             src/plugins/multimedia/ffmpeg/playbackengine/qffmpegcodeccontext.cpp,
+             src/plugins/multimedia/ffmpeg/playbackengine/qffmpegcodeccontext_p.h,
              src/multimedia/video/qvideoframe_p.h,
              src/multimedia/video/qvideoframe.h,
              src/multimedia/video/qvideoframe.cpp,
@@ -308,6 +311,316 @@ actual bitmap/text never appears on screen for Blu-ray (PGS) content
 specifically. DVD/embedded-file bitmap subtitles are unaffected --
 they don't hit this same codec-specific quirk and were not touched by
 either the attempted fix or this revert.
+
+CORRECTION 2026-08-17 (real evidence, not memory): the "Root cause
+identified" paragraph above is WRONG about *why* `end <= start` fires.
+Re-fetched the real n7.1 `libavcodec/pgssubdec.c` directly and read
+`display_end_segment()`: it does NOT leave `end_display_time` at 0 --
+it explicitly sets `sub->end_display_time = UINT32_MAX`, with its own
+comment: "There is no explicit end time for PGS subtitles. The end
+time is defined by the start of the next sub which may contain no
+objects (i.e. clears the previous sub)." Traced this into
+`decodeSubtitle()`'s arithmetic (`TrackPosition(*pts +
+qint64(subtitle.end_display_time) * 1000)`, and `TrackPosition`'s own
+`BaseTime` wrapper, `qtaggedtime_p.h`) and confirmed no overflow/
+narrowing happens anywhere in that chain -- a `UINT32_MAX`
+end_display_time genuinely produces an `end` about 49.7 days after
+`start`, which should make `end <= start` FALSE, not true. Also
+checked FFmpeg's own generic `avcodec_decode_subtitle2()` wrapper
+(`libavcodec/decode.c`): it only overrides `end_display_time` from the
+packet's own duration `if (!sub->end_display_time)` -- a no-op here,
+since `UINT32_MAX` is non-zero/truthy.
+So the ACTUAL trigger must be the *other* branch of `decodeSubtitle()`'s
+if/else -- `subtitle.pts == AV_NOPTS_VALUE`, which uses
+`packet.avPacket()->duration` instead (very plausibly 0 for a real BD
+PGS elementary stream muxed over MPEG-TS/PES, which has no equivalent
+per-packet "declared duration" field the way some container formats
+do). A temporary diagnostic (two `qWarning()` calls, right where
+`start`/`end` are computed) was added to nail this down with real
+evidence before attempting another fix -- CONFIRMED below.
+
+CONFIRMED FIXED 2026-08-17 (real diagnostic evidence from the user's own
+rebuild against the same real disc, subtitle track selected): the
+hypothesis above was exactly right. Every real vivace.log line showed
+`subtitle.pts=-9223372036854775808` (`AV_NOPTS_VALUE`) with the
+underlying packet's own `pts` perfectly valid, and
+`packet.duration=0` -- confirming `decodeSubtitle()` was permanently
+stuck in the `AV_NOPTS_VALUE` branch, where a Blu-ray PGS elementary
+stream's always-zero packet duration collapses `end` to exactly
+`start` every single time, regardless of the `end_display_time`
+convention corrected above (that branch of the if/else is simply never
+reached).
+
+Traced *why* `subtitle.pts` never gets populated from the packet's own
+valid `pts`: FFmpeg's generic `avcodec_decode_subtitle2()` wrapper
+(`libavcodec/decode.c`, fetched directly) only rescales
+`avpkt->pts` into `sub->pts` `if (avctx->pkt_timebase.num &&
+avpkt->pts != AV_NOPTS_VALUE)` -- i.e. it requires the codec context's
+own `pkt_timebase` to be set first. Read
+`qffmpegcodeccontext.cpp`'s `CodecContext::create()` (the only place
+Qt Multimedia builds an `AVCodecContext`) end to end and confirmed
+`pkt_timebase` is never set anywhere for ANY stream type --
+`avcodec_parameters_to_context()` doesn't set it either (checked
+directly: it only copies codec parameters -- dimensions, sample rate,
+extradata, etc. -- never timebase-related fields). So
+`avctx->pkt_timebase.num` was always 0, the rescale was always
+skipped, and `subtitle.pts` stayed `AV_NOPTS_VALUE` forever, for every
+subtitle stream this backend has ever decoded (not Blu-ray-specific in
+principle, just never exposed before because it happens to line up
+with `packet.avPacket()->duration` also being 0 specifically for PGS
+over MPEG-TS/PES -- other embedded-subtitle formats/containers used
+elsewhere in Vivace evidently carry a usable packet duration and so
+never hit this gap).
+
+Fix (`qffmpegcodeccontext.cpp`, `CodecContext::create()`): right after
+`avcodec_parameters_to_context()` succeeds, for a subtitle-type codec
+context only (`context->codec_type == AVMEDIA_TYPE_SUBTITLE` --
+scoped deliberately narrow, since audio/video already get correct
+timing through other means in this codebase and don't need this),
+set `context->pkt_timebase = stream->time_base;`. This lets
+`avcodec_decode_subtitle2()` correctly rescale the packet's own valid
+`pts` into `subtitle.pts`, which sends `decodeSubtitle()` down the
+`else` branch instead -- using PGS's own real `UINT32_MAX`
+`end_display_time` convention (see the CORRECTION above), so `end`
+becomes about 49.7 days after `start` and the `end <= start` rejection
+no longer fires for real content. This also correctly handles PGS's
+later, empty "clear" segments (`num_rects == 0`): they reach the exact
+same `else` branch and the same huge `end_display_time`, so they pass
+this check too and fall through to `onFrameFound()` (called
+unconditionally regardless of `num_rects`) with empty text and a null
+image at their own correct, disc-authored time -- exactly what should
+happen to clear the previous subtitle when the disc says to, with no
+guessed fallback duration needed (unlike the earlier, reverted,
+crash-causing attempt above, which tried to paper over the symptom
+with a guessed several-second duration instead of fixing the actual
+cause).
+
+Verified this fix cannot introduce a new stall/scheduling bug from
+such a huge duration: read `qffmpegrenderer.cpp`'s `Renderer::render()`/
+`nextTimePoint()` and `qffmpegrenderer_p.h`'s `RenderingResult`
+directly -- subtitle-frame scheduling is governed by the NEXT queued
+frame's own `absolutePts()`, not by waiting out the CURRENT frame's
+`duration`, and `SubtitleRenderer::renderInternal()` always returns a
+`done=true` result, so each subtitle `Frame` (real or "clear") is
+displayed then immediately dequeued regardless of how large its own
+`duration` is. The only other place `end`/`absoluteEnd()` is consulted
+is a staleness check in `Renderer::render()`
+(`frame.absoluteEnd() < seekPosition()`), which simply becomes inert
+(never true) for such a huge value -- harmless, not a correctness
+issue, since staleness detection is not meaningful for a "this event
+runs until further notice" PGS convention anyway.
+
+The temporary `SUBTITLE DIAG`/`SUBTITLE DIAG2` `qWarning()` calls have
+been removed from `qffmpegstreamdecoder.cpp` now that the cause is
+confirmed rather than hypothesized.
+
+VERIFIED WORKING END TO END 2026-08-17 (real interactive playback against
+the real disc, subtitle track selected, rebuilt Vivace against the
+rebuilt/reinstalled qtmultimedia): a real PGS bitmap subtitle rendered
+correctly on screen for the first time ever -- a disc-authored English
+translation of an on-screen Japanese credit line ("Producer / Toru
+Hara"), correctly positioned near the bottom of the frame, tracking
+forward as playback continued.
+
+SECOND BUG found immediately by this same real-disc test, fixed the same
+day (a genuinely different problem from the pkt_timebase one above, only
+exposed once real PGS subtitle data started flowing through this
+function for the first time): taking `end_display_time`'s UINT32_MAX
+literally produced a duration of ~49.71 days, which caused a real,
+complete PLAYBACK STALL a couple of real subtitle events into the film
+-- video and audio both froze entirely, CPU usage dropped to idle, and
+it never recovered. Root cause, strongly suspected (not fully traced
+through every layer, but the numeric coincidence is compelling): 49.71
+days is suspiciously almost exactly double the ~24.85-day ceiling of a
+signed 32-bit millisecond timer interval, and this huge duration flows
+straight into the renderer's own step-scheduling timer
+(PlaybackEngineObject::scheduleNextStep() -> QChronoTimer) as well as
+into Renderer::doNextStep()'s own m_sessionCtx.seekPos/lastFrameEnd
+bookkeeping. FIX: added a second, independent cap right after computing
+`start`/`end` in decodeSubtitle() -- clamp the effective duration to 60
+seconds when it exceeds that, before the existing `end <= start`
+rejection check ever runs. A bounded placeholder here is safe by
+construction: the disc's own actual next event (new content, or a real
+clear segment) always arrives with its own correct timestamp and
+supersedes whatever is currently showing regardless of this value, so
+the only possible downside is an early clear by a few seconds if the
+true on-disc gap is longer than the cap -- never a stability or
+correctness issue.
+
+THIS FIX WAS REBUILT AND RE-TESTED, AND FOUND STILL BROKEN -- superseded
+by PART 3 below, kept here for the historical record. The 60-second cap
+did stop the outright infinite stall, but the user's own precise,
+real-time observation of the rebuilt result (much more reliable than
+this session's own coarse ~15-30s-interval screenshot sampling, which
+initially and WRONGLY reported this as fully working) showed it was
+still badly broken: the first subtitle event stayed on screen far too
+long, most of chapter 1's real subtitle events were skipped/never shown
+at all, the timing drifted increasingly late (by ~30 seconds within the
+first few minutes), and -- critically -- video and audio both froze for
+a few real seconds at EVERY subtitle transition.
+
+PART 3 (real fix): root cause was that Part 2's long-duration content
+frame, plus Qt's own synthetic "clear at end" frame right behind it in
+the queue, PERMANENTLY BLOCKED every real, chronologically sooner
+subtitle event that arrived later in decode order -- this Renderer's
+frame queue is strict FIFO (Renderer::doNextStep() always operates on
+frames.front()), so nothing behind that 60-second-out pair could render
+until that slot was finally reached, and the pattern then repeated,
+compounding the lag indefinitely. The periodic video/audio freezes at
+each transition are very likely this same queue's bounded capacity
+backing up and applying backpressure to the shared demuxer, blocking it
+from advancing ANY stream (video/audio included) until this queue drains
+a slot.
+
+The actual fix has nothing to do with capping a duration at all: Qt's
+subtitle sink state (QPlatformVideoSink::m_subtitleText/m_subtitleImage,
+stamped onto every video frame by setVideoFrame()) is STICKY -- it
+persists unchanged on screen until something calls
+setSubtitleText()/setSubtitleImage() again, independent of any Frame's
+own `duration`. So decodeSubtitle() now detects FFmpeg's own
+end_display_time == UINT32_MAX sentinel PRECISELY (a new
+`hasUnboundedDuration` bool, computed right where `end` itself is
+computed, rather than inferring "too long" after the fact from an
+arbitrary threshold the way Part 2 did) and, for that case only, gives
+the frame a MINIMAL scheduling duration (`end = start +
+TrackDuration(1)`, i.e. 1 microsecond -- just enough to satisfy the
+existing `end <= start` rejection check while rendering essentially
+instantly and never blocking the queue or polluting
+Renderer::m_sessionCtx.seekPos/lastFrameEnd with a huge value) AND skips
+emitting the redundant synthetic "clear at end" frame for this case
+(emitting it would immediately re-clear the subtitle it just showed,
+since `end` is now only 1us after `start`). The disc's own actual next
+event -- new real content, or a genuine clear segment (num_rects == 0,
+which also carries this same UINT32_MAX sentinel and produces an
+empty-text/null-image Frame through this identical code path) -- arrives
+later, in its own correct chronological position in the same queue, and
+is what visually updates or clears the sticky sink state at the correct
+disc-authored time. Nothing spans the gap artificially any more, so
+nothing sits in the queue blocking later, sooner-arriving real events.
+
+PARTIALLY VERIFIED 2026-08-17 (real rebuild, real disc, dense sampling
+this time -- 20 screenshots at a fixed 6-second cadence over ~2 minutes
+with the real vivace.exe process's own CPU time polled and logged at
+every checkpoint, after the earlier sparse ~15-30s screenshot sampling
+had produced a false "all clear" for Part 2): every one of the 20
+position readouts advanced by ~6 real seconds with zero gaps and zero
+repeated/stuck frames; CPU time climbed continuously at every checkpoint
+(never flatlined, ruling out even a brief stall in any sampled window).
+Three real dialogue/subtitle transitions fell within the sampled frames,
+all APPEARING correct at this sampling density: a line appearing in sync
+with a driving scene, correctly clearing on the next silent scenic shot,
+and another line appearing in sync with a character's on-screen
+introduction over a minute later -- no held-over stale text, no skipped
+events, no gross (Part-2-scale) drift.
+
+STILL NOT FULLY CORRECT after Part 3 -- the user's own real-time viewing
+caught something a 6-second screenshot cadence could never catch: an
+apparent GROWING subtitle-vs-audio delay, negligible at first,
+accumulating to roughly a full second by about 1.5-2 minutes into using
+the track. Before attempting a third blind fix, checked directly via
+`ffprobe` against the real disc's own 00001.m2ts (a growing delay is the
+classic signature of a wrong clock RATE): the PGS subtitle stream's
+declared time_base is exactly 1/90000, IDENTICAL to video and audio --
+ruling out a timebase-mismatch explanation for Part 1's pkt_timebase fix.
+Added two TEMPORARY diagnostics (since removed, see PART 4 below):
+decodeSubtitle() logging the computed `start` position per real content
+event, and SubtitleRenderer::renderInternal() logging
+Renderer::frameDelay(frame) -- an existing protected helper,
+`now() - timeController.timeFromPosition(frame.absolutePts())` -- at the
+moment each frame actually renders.
+
+The resulting vivace.log evidence changed the diagnosis entirely: render
+delay was consistently sub-2-milliseconds for EVERY event (0.13ms to
+1.7ms, no growth at all) -- the renderer schedules essentially perfectly
+against its own `start` value. The user then corrected their own earlier
+report after watching more carefully: the real delay is a roughly
+CONSTANT 0.5-1.5 SECONDS, present identically from the very FIRST
+subtitle event (not growing) -- the "growing" appearance in the original
+report was an artifact of imprecise perception, not a real trend.
+
+PART 4, THE REAL FIX: a constant offset, with the renderer itself
+confirmed near-perfectly on schedule, points squarely at the computed
+`start`/`end` values themselves being offset from the true "position 0"
+of the media -- and qffmpegtime_p.h has an EXPLICIT comment confirming
+exactly this: "AVContextPosition ... position in the AVFormatContext, in
+'1sec / AV_TIME_BASE' units ... The position is shifted on
+AVFormatContext::start_time from TrackTime." FFmpeg's own
+avcodec_decode_subtitle2() rescales `subtitle.pts` from
+`avctx->pkt_timebase` to `AV_TIME_BASE_Q` (confirmed via real n7.1
+source, libavcodec/decode.c) -- landing it in the AVFormatContext's raw
+microsecond domain (AVContextPosition), NOT yet shifted to TrackPosition
+convention. QFFmpeg::toTrackPosition() (used correctly elsewhere in this
+same function, in the AV_NOPTS_VALUE branch, via
+CodecContext::toTrackPosition()) applies exactly this shift for ordinary
+video/audio stream positions -- but the `else` branch (subtitle.pts
+valid, the one PGS/Blu-ray actually takes) computed `start`/`end`
+directly from the raw rescaled value with NO such shift, a genuine,
+pre-existing Qt Multimedia gap in this one branch. This only matters for
+a container whose AVFormatContext::start_time is a real, nonzero value
+large enough to notice -- routine for a BDAV .m2ts clip's own
+PCR-derived base (not something broken about the disc), while most other
+subtitle formats/containers this same branch also serves have
+start_time == 0 and never exposed the gap.
+FIX: `CodecContext` (qffmpegcodeccontext_p.h, a NEW file for this patch)
+gained a `formatContext()` accessor (matching the existing `stream()`
+accessor's style exactly). `decodeSubtitle()`'s `else` branch now
+subtracts `toTrackDuration(contextStartOffset(m_codecContext.
+formatContext()))` -- the exact same helper `toTrackPosition()` itself
+uses internally -- from both `start` and `end`. Both temporary
+diagnostics were removed once this root cause was confirmed via direct
+source reading (qffmpegtime_p.h's own comment), not re-guessed.
+Confirmed `qffmpegcodeccontext_p.h` isn't touched by any of the other
+three qtmultimedia patches.
+Part 4's Vivace-side companion fix (a new PlayerController::
+m_deviceTrackSetupSource guard for the seek-reset regression, see Vivace's
+own CLAUDE.md) VERIFIED end to end: selecting a subtitle track, then
+seeking to a completely different scene, correctly leaves the track
+selection (checkmark) intact instead of silently reverting to a default.
+
+PART 5, a second real bug found by the user during that same seek test:
+"You seeked slider when subtitle 'Written and Directed by / Hayao
+Miyazaki' is shown. The text ... should be erased on seekbar's slider
+movement, but it's kept showing (maybe) forever." Root cause: QVideoSink's
+subtitle state (m_subtitleText/m_subtitleImage) is STICKY -- it only
+changes when a subtitle Frame actually renders and calls
+setSubtitleText()/setSubtitleImage() again. Renderer::seek() replaces
+m_sessionCtx wholesale (discarding any frames still queued from before
+the seek, confirmed by reading its real implementation), but nothing
+told the SINK ITSELF that whatever it was last displaying is now stale --
+so old text/image just sits there until some LATER real subtitle event
+happens to arrive and overwrite it, which may not happen for a long time
+(or ever, e.g. seeking into the final subtitle-free stretch of a film).
+FIX: SubtitleRenderer (qffmpegsubtitlerenderer.cpp/_p.h, the header a NEW
+file for this patch -- confirmed its one apparent match in
+qtmultimedia-deinterlace.patch is a false positive, a filename mentioned
+in an unrelated CMakeLists.txt source list, not a real diff hunk) now
+overrides seekInternal() (Renderer's own empty-by-default seek hook,
+called right after the frame queue is reset) to clear the sink -- mirrors
+the exact same clear this class's own destructor already performs when
+tearing down entirely. If a real subtitle event covers the new seek
+position, decodeSubtitle()'s normal flow re-populates the sink correctly
+once that frame is decoded and rendered, same as any ordinary seek.
+
+Rebuilt and tested. PART 5 (seek-clear) CONFIRMED WORKING -- user's own
+direct test: "Stale subtitle cleaning works well as expected." PART 4
+(the constant-offset timing fix) was not reliably verified by this
+session's own automated screenshot testing (real dialogue events have
+wider/less sharply-bounded display windows than assumed, BD launch
+overhead is inconsistent run to run, and the main seek bar is far too
+coarse -- ~8 seconds per pixel on an 86-minute title -- for a 2-second
+discriminating window), but the USER then confirmed it directly: "Part4
+is also confirmed working well."
+
+ALL FIVE PARTS OF THIS BLU-RAY PGS SUBTITLE FEATURE ARE NOW CONFIRMED
+WORKING END TO END against real disc playback: Part 1 (pkt_timebase),
+Part 3 (sticky-sink minimal-duration handling), Part 4 (the
+AVFormatContext::start_time shift), and Part 5 (seekInternal() sink
+clear) -- plus the independent Vivace-side m_deviceTrackSetupSource fix
+for the seek-triggered track-selection reset regression (see Vivace's
+own CLAUDE.md). Two intermediate fix attempts were tried and reverted/
+superseded along the way (the original crash-fix's own guessed-duration
+attempt, and Part 2's flat 60-second cap) before arriving at each real
+root cause.
 diff --git a/src/multimedia/platform/qplatformvideosink.cpp b/src/multimedia/platform/qplatformvideosink.cpp
 index cc01257..d3780cf 100644
 --- a/src/multimedia/platform/qplatformvideosink.cpp
@@ -793,6 +1106,50 @@ index 917e988..67bf4ed 100644
  };
  
  QT_END_NAMESPACE
+diff --git a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegcodeccontext.cpp b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegcodeccontext.cpp
+index 040666a..9f462bd 100644
+--- a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegcodeccontext.cpp
++++ b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegcodeccontext.cpp
+@@ -112,6 +112,27 @@ q23::expected<CodecContext, QString> CodecContext::create(AVStream *stream,
+             QStringLiteral("Failed to set FFmpeg codec parameters: %1").arg(err2str(ret))
+         };
+ 
++    // VIVACE FIX 2026-08-17: avcodec_parameters_to_context() does not set
++    // pkt_timebase -- confirmed by reading it directly, it only copies
++    // codec parameters (dimensions, sample rate, extradata, ...), never
++    // AVCodecContext::pkt_timebase. Without it, FFmpeg's generic
++    // avcodec_decode_subtitle2() wrapper (libavcodec/decode.c) silently
++    // skips populating AVSubtitle::pts from the packet's own valid pts
++    // (its rescale is gated on `avctx->pkt_timebase.num`, which stays 0
++    // forever otherwise) -- confirmed with a real diagnostic against a
++    // real Blu-ray (PGS/hdmv_pgs_subtitle) disc: subtitle.pts arrived as
++    // AV_NOPTS_VALUE on every single real subtitle event even though the
++    // underlying packet's own pts was perfectly valid, which sent
++    // decodeSubtitle() down its "packet duration" fallback path instead
++    // -- and MPEG-TS/PES (what Blu-ray muxes PGS over) has no equivalent
++    // per-packet declared duration, so that fallback always computed a
++    // zero-length event and got rejected as "Invalid subtitle time".
++    // Scoped to subtitle streams only (not audio/video, which already
++    // get correct timing through other means in this codebase and don't
++    // need this) to keep this fix's surface area minimal.
++    if (context->codec_type == AVMEDIA_TYPE_SUBTITLE)
++        context->pkt_timebase = stream->time_base;
++
+     // ### This still gives errors about wrong HW formats (as we accept all of them)
+     // But it would be good to get so we can filter out pixel format we don't support natively
+     context->get_format = QFFmpeg::getFormat;
+diff --git a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegcodeccontext_p.h b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegcodeccontext_p.h
+index 7dd45f6..4817e93 100644
+--- a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegcodeccontext_p.h
++++ b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegcodeccontext_p.h
+@@ -49,6 +49,7 @@ public:
+ 
+     AVCodecContext *context() const { return d->context.get(); }
+     AVStream *stream() const { return d->stream; }
++    AVFormatContext *formatContext() const { return d->formatContext; }
+     uint streamIndex() const { return d->stream->index; }
+     HWAccel *hwAccel() const { return d->hwAccel.get(); }
+     TrackDuration toTrackDuration(AVStreamDuration duration) const
 diff --git a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegframe_p.h b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegframe_p.h
 index 01dfcfe..7406a4a 100644
 --- a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegframe_p.h
@@ -866,19 +1223,20 @@ index 01dfcfe..7406a4a 100644
      const LoopOffset &loopOffset() const { return data().loopOffset; };
      TrackPosition absolutePts() const
 diff --git a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegstreamdecoder.cpp b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegstreamdecoder.cpp
-index 8f9b203..055939b 100644
+index 8f9b203..3426cc0 100644
 --- a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegstreamdecoder.cpp
 +++ b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegstreamdecoder.cpp
-@@ -4,6 +4,8 @@
+@@ -4,6 +4,9 @@
  #include "playbackengine/qffmpegstreamdecoder_p.h"
  #include "playbackengine/qffmpegmediadataholder_p.h"
  #include <qloggingcategory.h>
 +#include <QtGui/qimage.h>
 +#include <QtCore/qglobal.h>
++#include <limits>
  
  QT_BEGIN_NAMESPACE
  
-@@ -11,6 +13,72 @@ Q_STATIC_LOGGING_CATEGORY(qLcStreamDecoder, "qt.multimedia.ffmpeg.streamdecoder"
+@@ -11,6 +14,72 @@ Q_STATIC_LOGGING_CATEGORY(qLcStreamDecoder, "qt.multimedia.ffmpeg.streamdecoder"
  
  namespace QFFmpeg {
  
@@ -951,31 +1309,149 @@ index 8f9b203..055939b 100644
  StreamDecoder::StreamDecoder(const PlaybackEngineObjectID &id, const CodecContext &codecContext,
                               TrackPosition absSeekPos)
      : PlaybackEngineObject(id),
-@@ -228,20 +296,77 @@ void StreamDecoder::decodeSubtitle(const Packet &packet)
-         end = TrackPosition(*pts + qint64(subtitle.end_display_time) * 1000);
+@@ -219,29 +288,193 @@ void StreamDecoder::decodeSubtitle(const Packet &packet)
+     // apparently the timestamps in the AVSubtitle structure are not always filled in
+     // if they are missing, use the packets pts and duration values instead
+     TrackPosition start = 0, end = 0;
++    bool hasUnboundedDuration = false;
+     if (subtitle.pts == AV_NOPTS_VALUE) {
+         start = m_codecContext.toTrackPosition(AVStreamPosition(packet.avPacket()->pts));
+         end = start + m_codecContext.toTrackDuration(AVStreamDuration(packet.avPacket()->duration));
+     } else {
+         auto pts = timeStampUs(subtitle.pts, AVRational{ 1, AV_TIME_BASE });
+-        start = TrackPosition(*pts + qint64(subtitle.start_display_time) * 1000);
+-        end = TrackPosition(*pts + qint64(subtitle.end_display_time) * 1000);
++        // VIVACE FIX 2026-08-17, PART 4 (real Blu-ray disc testing, found
++        // via the user's own precise real-time viewing after Part 3:
++        // every subtitle event -- including the very FIRST one -- lagged
++        // its corresponding voice by a CONSTANT ~0.5-1.5s, present from
++        // the start rather than growing; the earlier "growing delay"
++        // diagnosis for this same disc was based on too-sparse screenshot
++        // sampling and was wrong, confirmed here by the
++        // `SUBTITLE RENDER DIAG` diagnostic showing the renderer already
++        // schedules each frame within ~1-2ms of its own intended
++        // `absolutePts` -- i.e. once `start`/`end` are computed
++        // correctly, this delay disappears entirely; it was never a
++        // scheduling bug). Root cause: `subtitle.pts`, after FFmpeg's own
++        // internal rescale (see qffmpegcodeccontext.cpp's pkt_timebase
++        // fix), is in `AVFormatContext`'s own raw microsecond domain
++        // (AVContextPosition) -- NOT yet shifted to TrackPosition's
++        // "zero = start of media" convention. That shift (subtracting
++        // AVFormatContext::start_time) is exactly what
++        // QFFmpeg::toTrackPosition() applies for ordinary video/audio
++        // stream positions (qffmpegtime_p.h's own comment: "The position
++        // is shifted on AVFormatContext::start_time from TrackTime"), but
++        // this `else` branch computed `start`/`end` directly from the raw
++        // rescaled value with no such shift -- a real, pre-existing Qt
++        // Multimedia gap in this exact branch, never exposed before
++        // because it only matters for a container whose start_time is a
++        // real nonzero value large enough to notice, which a BDAV .m2ts
++        // clip's own PCR-derived base routinely is (not something broken
++        // about the disc) while most other subtitle formats/containers
++        // this branch also serves have start_time == 0. Fixed by
++        // subtracting `contextStartOffset(m_codecContext.formatContext())`
++        // (the exact same helper toTrackPosition() itself uses
++        // internally) from both `start` and `end`.
++        const TrackDuration contextOffset =
++                toTrackDuration(contextStartOffset(m_codecContext.formatContext()));
++        start = TrackPosition(*pts + qint64(subtitle.start_display_time) * 1000) - contextOffset;
++        // VIVACE FIX 2026-08-17, PART 3 (real Blu-ray disc testing found
++        // Part 2's fixed-cap approach below was itself broken -- see that
++        // comment for why -- this replaces it): detect FFmpeg's own
++        // end_display_time == UINT32_MAX sentinel PRECISELY here, before
++        // any arithmetic, rather than inferring "too long" after the
++        // fact from an arbitrary threshold.
++        hasUnboundedDuration =
++                subtitle.end_display_time == std::numeric_limits<quint32>::max();
++        end = TrackPosition(*pts + qint64(subtitle.end_display_time) * 1000) - contextOffset;
      }
  
-+    // NOTE (2026-08-17): real Blu-ray (PGS/hdmv_pgs_subtitle) content
-+    // reaches this rejection unconditionally, since FFmpeg's PGS decoder
-+    // leaves end_display_time at 0 (PGS relies on a later, separate
-+    // "clear" segment instead of an explicit per-event duration) -- so a
-+    // Blu-ray subtitle track never visibly renders even once correctly
-+    // selected. A fix was attempted (accept a zero-duration event with
-+    // real rect content, using a fallback duration instead of discarding
-+    // it) but caused a real, reproducible crash on the real disc used to
-+    // test it (a Debug CRT heap-validation failure,
-+    // _CrtIsValidHeapPointer, debug_heap.cpp:904 -- confirmed via cdb, but
-+    // the exact root cause inside the (already-patched) rendering pipeline
-+    // wasn't pinned down before deciding a crash was worse than "the
-+    // subtitle silently doesn't show," so the attempt was reverted here).
-+    // Left as a known, documented gap rather than shipping something that
-+    // crashes -- see CLAUDE.md's Blu-ray section for the full
-+    // investigation and what was ruled out, so a future attempt doesn't
-+    // have to re-derive it.
++    // VIVACE FIX 2026-08-17 (real Blu-ray disc testing, PGS subtitle
++    // tracks -- see qffmpegcodeccontext.cpp's own comment for the actual
++    // root cause and fix): this rejection used to fire unconditionally
++    // for Blu-ray/PGS content. Confirmed with a real diagnostic against a
++    // real disc that `subtitle.pts` was always AV_NOPTS_VALUE (even
++    // though the underlying packet's own pts was perfectly valid),
++    // sending this function down the AV_NOPTS_VALUE branch above, where
++    // `packet.avPacket()->duration` is always 0 for a Blu-ray PGS stream
++    // (MPEG-TS/PES has no equivalent per-packet declared duration) --
++    // collapsing end to exactly start every time. The real cause was
++    // qffmpegcodeccontext.cpp never setting AVCodecContext::pkt_timebase
++    // on the subtitle decoder context, which is what FFmpeg's generic
++    // avcodec_decode_subtitle2() wrapper needs before it will populate
++    // AVSubtitle::pts from the packet at all -- fixed there instead of
++    // here, which lets this function correctly take the `else` branch
++    // above using PGS's own real timing model (FFmpeg's pgssubdec.c sets
++    // end_display_time to UINT32_MAX for every real event --
++    // intentionally huge, "the end time is defined by the start of the
++    // next sub" per its own comment -- so `end` becomes far larger than
++    // `start` and this check no longer rejects it). This also correctly
++    // handles PGS's later empty "clear" segments (num_rects == 0): they
++    // reach the same `else` branch and the same huge end_display_time,
++    // so they pass this check too and fall through to emit a real,
++    // empty-text/null-image Frame via onFrameFound() below (unconditional
++    // regardless of num_rects) at their own correct disc-authored time --
++    // which is exactly what should happen to clear the previous subtitle
++    // when the disc says to, rather than needing a guessed fallback
++    // duration (the earlier fix attempt here, reverted after it crashed
++    // on the same disc, tried exactly that guessed-duration approach
++    // instead of fixing the real cause -- see CLAUDE.md's Blu-ray section
++    // for that investigation's full history).
      if (end <= start) {
          qWarning() << "Invalid subtitle time";
          return;
      }
++
++    // VIVACE FIX 2026-08-17, PART 2 -- SUPERSEDED, kept only for the
++    // historical record (see CLAUDE.md's Blu-ray section): an earlier
++    // attempt here simply CLAMPED `end` to a 60-second cap when it was
++    // too far from `start`. That stopped the outright stall, but real
++    // interactive playback then showed a much worse problem: subtitle
++    // events were displayed far too long, most of a chapter's worth of
++    // real events were skipped/shown late, timing drifted further and
++    // further behind (by ~30s within the first few minutes), and video/
++    // audio froze for a few seconds at EVERY subtitle transition. Root
++    // cause: this Renderer's frame queue is strict FIFO, processed in
++    // enqueue (= demux/decode arrival) order via doNextStep()'s
++    // frames.front() -- so a long-duration content frame, plus Qt's own
++    // synthetic "clear at end" frame right behind it (both scheduled at
++    // start+60s), permanently blocks every REAL, chronologically SOONER
++    // event that arrives later in decode order but sits stuck behind
++    // them in the queue, unable to render until the 60s slot is finally
++    // reached -- and once it degrades this way, the fixed 60s window is
++    // hit again and again, cumulatively compounding the lag. The video/
++    // audio stalls at each transition are very likely the underlying
++    // demuxer's bounded-queue backpressure (this queue backs up and
++    // blocks the shared demux loop from advancing any other stream in
++    // the meantime, resolving briefly whenever this queue's backlog
++    // finally drains a slot).
++    //
++    // VIVACE FIX 2026-08-17, PART 3 (replaces Part 2 above): the real
++    // problem isn't "the duration is too big" -- it's using a SCHEDULED
++    // duration at all to represent "hold until further notice". Qt's own
++    // subtitle sink state (QPlatformVideoSink::m_subtitleText/
++    // m_subtitleImage, stamped onto every video frame by setVideoFrame())
++    // is STICKY: it persists on screen unchanged until something calls
++    // setSubtitleText()/setSubtitleImage() again, completely independent
++    // of any Frame's own `duration`. So the correct fix is to give a
++    // PGS-sentinel ("unbounded") event a MINIMAL, near-instant scheduling
++    // duration -- just enough to satisfy `end > start` and to render
++    // promptly without blocking the queue or polluting
++    // Renderer::m_sessionCtx.seekPos/lastFrameEnd with a huge value --
++    // and to SKIP the redundant synthetic "clear at end" frame Qt's own
++    // code emits below for this case (emitting it would use this same
++    // near-instant `end`, clearing the subtitle almost immediately after
++    // showing it). The disc's own actual NEXT event (new real content, or
++    // a genuine clear segment with num_rects == 0 -- which ALSO carries
++    // this same UINT32_MAX sentinel and produces an empty-text/null-image
++    // Frame through this exact code path) arrives later, in its own
++    // correct chronological position in the SAME queue, and is what
++    // visually updates -- or clears -- the sticky sink state at the
++    // correct disc-authored time. Nothing here spans the gap artificially
++    // any more, so nothing sits in the queue blocking later, sooner-
++    // arriving real events.
++    if (hasUnboundedDuration)
++        end = start + TrackDuration(1);
      //        qCDebug(qLcDecoder) << "    got subtitle (" << start << "--" << end << "):";
      QString text;
 +    QImage image;
@@ -1030,7 +1506,7 @@ index 8f9b203..055939b 100644
              const char *ass = r->ass;
              int nCommas = 0;
              while (*ass) {
-@@ -253,6 +378,11 @@ void StreamDecoder::decodeSubtitle(const Packet &packet)
+@@ -253,6 +486,11 @@ void StreamDecoder::decodeSubtitle(const Packet &packet)
              }
              text += QString::fromUtf8(ass);
          }
@@ -1042,18 +1518,35 @@ index 8f9b203..055939b 100644
      }
      text.replace(QLatin1String("\\N"), QLatin1String("\n"));
      text.replace(QLatin1String("\\n"), QLatin1String("\n"));
-@@ -260,7 +390,8 @@ void StreamDecoder::decodeSubtitle(const Packet &packet)
+@@ -260,10 +498,22 @@ void StreamDecoder::decodeSubtitle(const Packet &packet)
      if (text.endsWith(QLatin1Char('\n')))
          text.chop(1);
  
 -    onFrameFound({ m_sessionCtx.offset, text, start, end - start, id() });
+-
+-    // TODO: maybe optimize
+-    onFrameFound({ m_sessionCtx.offset, QString(), end, TrackDuration(0), id() });
 +    onFrameFound({ m_sessionCtx.offset, text, start, end - start, id(), image, imageRect,
 +                   imageCodedSize });
++
++    // VIVACE FIX 2026-08-17, PART 3 (see the comment above `end =
++    // start + TrackDuration(1)`): this redundant, Qt-original synthetic
++    // "clear at end" frame exists for formats with a real, meaningfully
++    // bounded end_display_time (a defensive belt-and-braces clear in case
++    // nothing else updates the sink before then). For the PGS-sentinel
++    // "unbounded" case `end` is now deliberately just 1us past `start`,
++    // so emitting this second frame would clear the subtitle almost
++    // immediately after showing it -- skip it; the disc's own real next
++    // event is what should update/clear the sticky sink state instead.
++    if (!hasUnboundedDuration) {
++        // TODO: maybe optimize
++        onFrameFound({ m_sessionCtx.offset, QString(), end, TrackDuration(0), id() });
++    }
+ }
+ } // namespace QFFmpeg
  
-     // TODO: maybe optimize
-     onFrameFound({ m_sessionCtx.offset, QString(), end, TrackDuration(0), id() });
 diff --git a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegsubtitlerenderer.cpp b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegsubtitlerenderer.cpp
-index 5c5926e..6835986 100644
+index 5c5926e..8239c0e 100644
 --- a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegsubtitlerenderer.cpp
 +++ b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegsubtitlerenderer.cpp
 @@ -5,6 +5,7 @@
@@ -1064,7 +1557,7 @@ index 5c5926e..6835986 100644
  
  QT_BEGIN_NAMESPACE
  
-@@ -22,24 +23,35 @@ void SubtitleRenderer::setOutput(QVideoSink *sink, bool cleanPrevSink)
+@@ -22,24 +23,63 @@ void SubtitleRenderer::setOutput(QVideoSink *sink, bool cleanPrevSink)
          if (!prev)
              return;
  
@@ -1090,6 +1583,34 @@ index 5c5926e..6835986 100644
          m_sink->setSubtitleText({});
 +        m_sink->setSubtitleImage({}, {}, {});
 +    }
++}
++
++void SubtitleRenderer::seekInternal()
++{
++    // VIVACE FIX 2026-08-17 (real Blu-ray disc testing, found via the
++    // user's own interactive seeking): a subtitle shown right before a
++    // seek stayed on screen -- possibly forever -- after seeking to a
++    // point with no subtitle activity nearby. Root cause: QVideoSink's
++    // subtitle state (m_subtitleText/m_subtitleImage) is STICKY -- it
++    // only changes when a subtitle Frame actually renders and calls
++    // setSubtitleText()/setSubtitleImage() again. Renderer::seek()
++    // replaces m_sessionCtx wholesale (discarding any frames still
++    // queued from before the seek), but nothing told the SINK itself
++    // that whatever it was last displaying is now stale -- so the old
++    // text/image just sits there until some LATER real subtitle event
++    // happens to arrive and overwrite it, which may not happen for a
++    // long time (or ever, e.g. a seek into the final subtitle-free
++    // stretch of a file). Fixed by clearing the sink here, in
++    // seekInternal() (Renderer's own seek() hook, called right after the
++    // frame queue is reset) -- mirrors the exact same clear this class's
++    // own destructor already does when tearing down entirely. If a real
++    // subtitle event covers the new seek position, decodeSubtitle()'s
++    // normal flow re-populates the sink correctly once that frame is
++    // decoded and rendered, same as it would for any ordinary seek.
++    if (m_sink) {
++        m_sink->setSubtitleText({});
++        m_sink->setSubtitleImage({}, {}, {});
++    }
  }
  
  Renderer::RenderingResult SubtitleRenderer::renderInternal(Frame frame)
@@ -1104,3 +1625,15 @@ index 5c5926e..6835986 100644
  
      return {};
  }
+diff --git a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegsubtitlerenderer_p.h b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegsubtitlerenderer_p.h
+index e615722..773c681 100644
+--- a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegsubtitlerenderer_p.h
++++ b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegsubtitlerenderer_p.h
+@@ -36,6 +36,7 @@ public:
+ 
+ protected:
+     RenderingResult renderInternal(Frame frame) override;
++    void seekInternal() override;
+ 
+ private:
+     QPointer<QVideoSink> m_sink;

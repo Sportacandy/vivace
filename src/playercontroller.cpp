@@ -306,6 +306,47 @@ int findDvdSubtitleTrackByLanguages(const QList<DvdIfo::SubtitleStream> &streams
     return -1;
 }
 
+// Same matching intent as findTrackByLanguages()/findDvdSubtitleTrackByLanguages()
+// above, but for a plain list of raw declared language codes (Blu-ray's own
+// BlurayDisc::Title::audioLanguages/subtitleLanguages) -- these are ISO 639-2
+// alpha-3 codes straight from the disc (e.g. "jpn", "eng", per the BD-ROM
+// spec's own BLURAY_STREAM_INFO::lang), which never matches the OTHER two
+// functions' plain string comparisons: a user preference of "ja"/"en" (the
+// common ISO 639-1 alpha-2 form, and what DVD's own IFO-declared language
+// codes happen to already be, which is why the DVD matcher above gets away
+// with simple string equality) is a different STRING from "jpn"/"eng" even
+// though it means the same language. Found 2026-08-17 against a real
+// Blu-ray disc: with preferred languages "ja, en", the disc's own declared
+// "jpn"/"eng" audio tracks never matched either token or its QLocale-derived
+// English name, so selectPreferredTracks() silently left FFmpeg's own
+// track-0 default (whichever the demuxer happened to enumerate first) active
+// instead of the user's actual preference. Fixed by resolving BOTH sides
+// through QLocale::language() (which accepts alpha-2 *and* alpha-3 forms)
+// and comparing the resulting QLocale::Language enum value instead of raw
+// strings -- unifies "ja" and "jpn" (both resolve to QLocale::Japanese)
+// without needing to know which alpha-length either side happens to use.
+int findTrackByLanguageCodes(const QList<QString> &declaredCodes, const QString &languagesCsv)
+{
+    static const QRegularExpression separators(
+            QStringLiteral("[,;\\s]+"));
+    const QStringList tokens = languagesCsv.split(separators, Qt::SkipEmptyParts);
+
+    for (const QString &token : tokens) {
+        const QLocale::Language wanted = QLocale(token).language();
+        if (wanted == QLocale::AnyLanguage || wanted == QLocale::C)
+            continue;
+
+        for (int i = 0; i < declaredCodes.size(); ++i) {
+            const QString &code = declaredCodes.at(i);
+            if (code.isEmpty())
+                continue;
+            if (QLocale(code).language() == wanted)
+                return i;
+        }
+    }
+    return -1;
+}
+
 // Media file extensions, matching the Open dialog's filter.
 const QStringList &videoExtensions()
 {
@@ -1060,6 +1101,13 @@ void PlayerController::playIndex(int index, bool resume)
             m_shufflePos = pos;
     }
 
+    // Stop BEFORE detaching any live Blu-ray disc below -- see openBluray()'s
+    // identical fix/comment (2026-08-18): deleting a BlurayDisc while its
+    // device is still being actively read by the backend's decode thread
+    // is a real use-after-free crash, not just a DVD/BD open->open case.
+    if (m_blurayDisc)
+        m_player->stop();
+
     // Detach any DVD device before switching (setSource/setSourceDevice below
     // replaces the source anyway, but clean up our device object + state).
     if (m_dvdDevice) {
@@ -1103,6 +1151,27 @@ bool PlayerController::openDvd(const QUrl &folder)
 {
     if (!folder.isLocalFile())
         return false;
+
+    // Detach any live Blu-ray disc first -- openBluray() already does the
+    // symmetric cleanup for a live DVD device; openDvd() never had the
+    // reverse (found 2026-08-18 alongside the openBluray()/playIndex()
+    // use-after-free fix): opening a DVD while a Blu-ray was playing left
+    // the OLD BlurayDisc/its native handle allocated and blurayPlayback()
+    // incorrectly still reporting true, even once the DVD below actually
+    // took over playback. stop() first for the same reason openBluray()
+    // needs it -- the old device may still be getting read by the backend's
+    // decode thread when the disc (and its native handle) is deleted.
+    if (m_blurayDisc) {
+        m_player->stop();
+        if (m_blurayDevice) {
+            m_blurayDevice->deleteLater();
+            m_blurayDevice = nullptr;
+        }
+        delete m_blurayDisc;
+        m_blurayDisc = nullptr;
+        m_blurayCurrentTitleIndex = -1;
+        emit blurayPlaybackChanged();
+    }
 
     QDir dir(folder.toLocalFile());
     if (dir.dirName().compare(QStringLiteral("VIDEO_TS"), Qt::CaseInsensitive) != 0
@@ -1298,6 +1367,18 @@ bool PlayerController::openBluray(const QUrl &folder)
         return false;
     }
 
+    // Stop playback BEFORE tearing down any old Blu-ray disc below --
+    // m_blurayDevice (if any) is still being actively read by the FFmpeg
+    // backend's own decode pipeline via bd_read()/bd_seek() on the OLD
+    // BlurayDisc's native BLURAY* handle; deleting that disc while a read
+    // is in flight is a real, reproducible use-after-free crash (found
+    // 2026-08-18: drag & drop a second Blu-ray disc while a first is
+    // actively playing). stop() halts that pipeline first, matching the
+    // same "stop, then tear down/swap the device" order already used
+    // everywhere else a live disc device is replaced (applyDvdTitle(),
+    // playBlurayTitle()).
+    m_player->stop();
+
     // Detach any DVD state first (a folder can't be both, but keep the
     // invariant that only one disc type is "active" at a time).
     if (m_dvdDevice) {
@@ -1329,6 +1410,11 @@ void PlayerController::playBlurayTitle(int titleListIndex)
         emit errorMessage(tr("This Blu-ray title could not be selected."));
         return;
     }
+
+    // ONE device for the WHOLE title -- see BlurayTitleDevice's own doc
+    // comment. No per-clip rebuild, no EndOfMedia auto-advance, no gap:
+    // this is now exactly the same "open one device, play it" shape as an
+    // ordinary local file or a single-clip title always was.
     QIODevice *device = m_blurayDisc->createDevice(this);
     if (!device) {
         emit errorMessage(tr("This Blu-ray title could not be opened."));
@@ -1351,9 +1437,9 @@ void PlayerController::playBlurayTitle(int titleListIndex)
     m_blurayCurrentTitleIndex = titleListIndex;
     emit blurayPlaybackChanged();
 
-    // A unique hint URL per title -- QMediaPlayer ignores a setSourceDevice()
-    // call whose hint URL is unchanged from the previous one (same reason DVD
-    // titles/cells each get their own hint URL).
+    // A unique hint URL per title -- QMediaPlayer ignores a
+    // setSourceDevice() call whose hint URL is unchanged from the previous
+    // one (same reason DVD titles/cells each get their own hint URL).
     QUrl hint = QUrl::fromLocalFile(m_blurayDir);
     hint.setQuery(QStringLiteral("bdTitle=%1").arg(titleListIndex));
     m_pendingStreamTitle = QDir(m_blurayDir).dirName();
@@ -1377,6 +1463,34 @@ QVariantList PlayerController::blurayTitles() const
         };
     }
     return rows;
+}
+
+qint64 PlayerController::blurayTitleDurationMs() const
+{
+    if (!m_blurayDisc || m_blurayCurrentTitleIndex < 0)
+        return 0;
+    const auto &titles = m_blurayDisc->titles();
+    if (m_blurayCurrentTitleIndex >= titles.size())
+        return 0;
+    return titles.at(m_blurayCurrentTitleIndex).durationMs;
+}
+
+void PlayerController::seekBluray(qint64 titleMs)
+{
+    if (!m_blurayDisc || m_blurayCurrentTitleIndex < 0)
+        return;
+    const auto &titles = m_blurayDisc->titles();
+    if (m_blurayCurrentTitleIndex >= titles.size())
+        return;
+    titleMs = qBound<qint64>(0, titleMs, titles.at(m_blurayCurrentTitleIndex).durationMs);
+    // A plain time-based seek: BlurayTitleDevice now presents the WHOLE
+    // title as one continuously, correctly timestamped stream (see its own
+    // doc comment), so FFmpeg's own generic seek (its usual byte-position
+    // search against PCR, exactly what it already does for an ordinary
+    // local MPEG-TS file) resolves this correctly with no help needed from
+    // libbluray's own bd_seek_time()/CLPI entry-point map.
+    m_player->setPosition(titleMs);
+    emit seeked(titleMs);
 }
 
 QVariantList PlayerController::blurayChapters() const
@@ -3035,10 +3149,15 @@ void PlayerController::addBookmark(const QString &name)
 {
     if (!m_bookmarks->hasKey())
         return;
-    // DVDs bookmark title-global time; regular media use the raw position.
-    const qint64 time = m_dvdDevice
-            ? m_player->position() + m_dvdPositionOffsetMs
-            : m_player->position();
+    // DVD bookmarks title-global time (m_player->position() alone is only
+    // ever relative to whichever timeline run is currently open, see
+    // applyDvdTitle()'s own doc comment); Blu-ray and regular media use the
+    // raw position directly -- a Blu-ray title is served as one gapless,
+    // continuously timestamped device (see BlurayTitleDevice), so
+    // m_player->position() is already title-global.
+    qint64 time = m_player->position();
+    if (m_dvdDevice)
+        time += m_dvdPositionOffsetMs;
     m_bookmarks->add(time, name);
 }
 
@@ -3048,6 +3167,10 @@ void PlayerController::goToBookmark(qint64 timeMs)
         return;
     if (m_dvdDevice) {
         seekDvd(timeMs);
+        return;
+    }
+    if (m_blurayDevice) {
+        seekBluray(timeMs);
         return;
     }
     if (!m_player->isSeekable())
@@ -3431,8 +3554,15 @@ QString PlayerController::mediaInfoHtml() const
     } else {
         s += addItem(tr("URL"), url.toDisplayString());
     }
-    if (m_player->duration() > 0)
-        s += addItem(tr("Length"), formatDuration(m_player->duration()));
+    // Blu-ray: prefer libbluray's own exact declared title duration over
+    // FFmpeg's re-derived estimate (m_player->duration()) -- both should
+    // now agree, since BlurayTitleDevice presents one gapless,
+    // continuously timestamped stream, but the disc's own metadata needs
+    // no estimation at all.
+    const qint64 lengthMs = (m_blurayDisc && m_blurayCurrentTitleIndex >= 0)
+            ? blurayTitleDurationMs() : m_player->duration();
+    if (lengthMs > 0)
+        s += addItem(tr("Length"), formatDuration(lengthMs));
     s += addItem(tr("Demuxer"), md.stringValue(QMediaMetaData::FileFormat));
     s += closePar();
 
@@ -3811,6 +3941,10 @@ void PlayerController::seekRelative(qint64 deltaMs)
         seekDvd(m_player->position() + m_dvdPositionOffsetMs + deltaMs);
         return;
     }
+    // Blu-ray needs no special case here: a title is served as one
+    // gapless, continuously timestamped device (see BlurayTitleDevice),
+    // so m_player->position()/duration() are already title-global, exactly
+    // like an ordinary file.
 
     const qint64 target = qBound<qint64>(0, m_player->position() + deltaMs,
                                          m_player->duration());
@@ -3898,9 +4032,7 @@ void PlayerController::playChapter(int index)
         const auto &chapters = titles.at(m_blurayCurrentTitleIndex).chapters;
         if (index < 0 || index >= chapters.size())
             return;
-        const qint64 target = chapters.at(index).startMs;
-        m_player->setPosition(target);
-        emit seeked(target);
+        seekBluray(chapters.at(index).startMs); // title-global, matches BD chapter times directly
         return;
     }
     if (index < 0 || index >= m_chapters.size())
@@ -3917,6 +4049,8 @@ void PlayerController::nextChapter()
         return;
     }
     if (m_blurayDevice) {
+        // m_player->position() is already title-global -- see
+        // BlurayTitleDevice's own doc comment.
         const int current = blurayChapterIndexAt(m_player->position());
         const auto &titles = m_blurayDisc ? m_blurayDisc->titles() : QList<BlurayDisc::Title>();
         const int count = (m_blurayCurrentTitleIndex >= 0 && m_blurayCurrentTitleIndex < titles.size())
@@ -3943,6 +4077,8 @@ void PlayerController::previousChapter()
         if (m_blurayCurrentTitleIndex < 0 || m_blurayCurrentTitleIndex >= titles.size())
             return;
         const auto &chapters = titles.at(m_blurayCurrentTitleIndex).chapters;
+        // m_player->position() is already title-global -- see
+        // BlurayTitleDevice's own doc comment.
         const qint64 pos = m_player->position();
         const int current = blurayChapterIndexAt(pos);
         if (current < 0) {
@@ -4066,8 +4202,22 @@ void PlayerController::handleMediaStatus(QMediaPlayer::MediaStatus status)
             if (m_dvdPendingAudioTrackRestore >= 0) {
                 setActiveAudioTrack(m_dvdPendingAudioTrackRestore);
                 m_dvdPendingAudioTrackRestore = -1;
+                // Keep m_deviceTrackSetupSource current even on this path,
+                // so a later spurious re-fire for THIS rebuild's hint URL
+                // is still recognized as "already handled" rather than
+                // comparing against a stale URL from several rebuilds ago.
+                m_deviceTrackSetupSource = m_player->source();
                 return;
             }
+            // See m_deviceTrackSetupSource's own doc comment: a device
+            // source whose hint URL hasn't actually changed since the
+            // last time we ran this setup is a SPURIOUS LoadedMedia
+            // re-fire (Qt's FFmpeg backend does this on every
+            // m_player->setPosition() seek) -- not a genuine new title,
+            // so don't silently reset track selection back to defaults.
+            if (m_player->source() == m_deviceTrackSetupSource)
+                return;
+            m_deviceTrackSetupSource = m_player->source();
             selectPreferredTracks();
             // The disc's own audio menu (e.g. "音声") sets m_vm.sprm[1] (the
             // VM's audio-stream register) via a button's System-Set command
@@ -4215,6 +4365,13 @@ void PlayerController::handleMediaStatus(QMediaPlayer::MediaStatus status)
             }
             return;
         }
+        // Blu-ray needs no special case here any more: a title is served
+        // as one gapless device covering its whole span (see
+        // BlurayTitleDevice), so a real EndOfMedia now genuinely means the
+        // title finished -- falls straight through to the same generic
+        // "nothing queued, stop" handling below as an ordinary file
+        // (m_playlist stays empty during BD playback, so pickNextIndex()
+        // correctly finds nothing to advance to).
 
         m_fileSettings->remove(m_player->source()); // watched to the end
         const int index = m_autoPlayNext ? pickNextIndex() : -1;
@@ -4258,11 +4415,40 @@ void PlayerController::restoreTrackSelections()
 
 void PlayerController::selectPreferredTracks()
 {
+    // Blu-ray needs its OWN matcher against the disc's declared stream
+    // table (BlurayDisc::Title::audioLanguages/subtitleLanguages) instead
+    // of the generic findTrackByLanguages() below -- found 2026-08-17
+    // (user report: preferred "ja, en" left the disc's first/American-
+    // English audio track active instead of Japanese). Root cause:
+    // findTrackByLanguages() matches against
+    // QMediaMetaData::Language, which Qt's FFmpeg backend never
+    // populates for BD-sourced streams (confirmed empty on every real
+    // disc checked so far in this project) -- so it could never match
+    // ANY preference for Blu-ray, silently leaving whichever track
+    // FFmpeg happened to enumerate first. See
+    // findTrackByLanguageCodes()'s own doc comment for why even the
+    // disc's declared codes need alpha-2/alpha-3 normalization the DVD
+    // equivalent doesn't. The visible-count cap mirrors
+    // blurayVisibleAudioTrackCount()/blurayVisibleSubtitleTrackCount()'s
+    // own "disc can declare fewer than FFmpeg demuxes" reasoning -- a
+    // match against a declared-but-not-actually-multiplexed stream must
+    // not be applied.
+    const bool isBluray = blurayPlayback() && m_blurayCurrentTitleIndex >= 0
+            && m_blurayCurrentTitleIndex < m_blurayDisc->titles().size();
+
     // See restoreTrackSelections() above for why these call this class's own
     // setActiveAudioTrack()/setActiveSubtitleTrack() rather than m_player's.
     if (!m_preferredAudioLanguages.trimmed().isEmpty()) {
-        const int index = findTrackByLanguages(m_player->audioTracks(),
-                                               m_preferredAudioLanguages);
+        int index = -1;
+        if (isBluray) {
+            index = findTrackByLanguageCodes(
+                    m_blurayDisc->titles().at(m_blurayCurrentTitleIndex).audioLanguages,
+                    m_preferredAudioLanguages);
+            if (index >= blurayVisibleAudioTrackCount())
+                index = -1;
+        } else {
+            index = findTrackByLanguages(m_player->audioTracks(), m_preferredAudioLanguages);
+        }
         if (index >= 0)
             setActiveAudioTrack(index);
     }
@@ -4270,8 +4456,16 @@ void PlayerController::selectPreferredTracks()
     if (!m_subtitlesByDefault) {
         setActiveSubtitleTrack(-1);
     } else if (!m_preferredSubtitleLanguages.trimmed().isEmpty()) {
-        const int index = findTrackByLanguages(m_player->subtitleTracks(),
-                                               m_preferredSubtitleLanguages);
+        int index = -1;
+        if (isBluray) {
+            index = findTrackByLanguageCodes(
+                    m_blurayDisc->titles().at(m_blurayCurrentTitleIndex).subtitleLanguages,
+                    m_preferredSubtitleLanguages);
+            if (index >= blurayVisibleSubtitleTrackCount())
+                index = -1;
+        } else {
+            index = findTrackByLanguages(m_player->subtitleTracks(), m_preferredSubtitleLanguages);
+        }
         if (index >= 0)
             setActiveSubtitleTrack(index);
     }

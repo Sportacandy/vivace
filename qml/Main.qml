@@ -1007,8 +1007,15 @@ ApplicationWindow {
         property real gesturePendingMs: 0
 
         function seekEnabled() {
+            // Blu-ray excluded for the same reason DVD already is: this
+            // gesture seeks via a plain player.position assignment, which
+            // is only ever relative to whichever ONE clip/cell is
+            // currently open for a disc (see BlurayDisc::ClipRun's own
+            // doc comment) -- not wired to seekDvd()/seekBluray() here,
+            // matching DVD's own existing precedent of leaving gesture-
+            // seek as a file-only feature.
             return Settings.gestureSeek && playerController.player.seekable
-                   && !playerController.dvdPlayback
+                   && !playerController.dvdPlayback && !playerController.blurayPlayback
         }
 
         onPressed: mouse => {

@@ -189,6 +189,15 @@ class PlayerController : public QObject
     Q_PROPERTY(bool blurayPlayback READ blurayPlayback NOTIFY blurayPlaybackChanged)
     Q_PROPERTY(QVariantList blurayTitles READ blurayTitles NOTIFY blurayPlaybackChanged)
     Q_PROPERTY(int blurayCurrentTitle READ blurayCurrentTitle NOTIFY blurayPlaybackChanged)
+    // Real total title duration/position-offset, from libbluray's own
+    // BLURAY_TITLE_INFO -- NOT player.duration()/player.position(), which
+    // only ever reflect whichever ONE clip (see BlurayDisc::ClipRun) is
+    // currently open. Same two-property pattern as DVD's own
+    // dvdTitleDurationMs/dvdPositionOffsetMs below, for the same reason.
+    Q_PROPERTY(qint64 blurayTitleDurationMs READ blurayTitleDurationMs
+               NOTIFY blurayPlaybackChanged)
+    Q_PROPERTY(qint64 blurayPositionOffsetMs READ blurayPositionOffsetMs
+               NOTIFY blurayPlaybackChanged)
     Q_PROPERTY(bool dvdPlayback READ dvdPlayback NOTIFY dvdPlaybackChanged)
     Q_PROPERTY(QVariantList dvdTitles READ dvdTitles NOTIFY dvdPlaybackChanged)
     Q_PROPERTY(int dvdCurrentTitle READ dvdCurrentTitle NOTIFY dvdPlaybackChanged)
@@ -422,9 +431,24 @@ public:
     bool blurayPlayback() const { return m_blurayDisc != nullptr; }
     QVariantList blurayTitles() const;
     int blurayCurrentTitle() const { return m_blurayCurrentTitleIndex; }
+    // The disc's own declared title duration (libbluray's exact metadata,
+    // not an FFmpeg estimate). Position needs no equivalent offset property
+    // any more -- see BlurayTitleDevice's own doc comment: the whole title
+    // is served as ONE gapless, continuously-timestamped device, so
+    // m_player->position()/duration() are directly meaningful, exactly
+    // like an ordinary file. blurayPositionOffsetMs() is kept (always 0)
+    // purely so existing QML bindings (ControlBar.qml) that add it to
+    // player.position keep working unchanged.
+    qint64 blurayTitleDurationMs() const;
+    qint64 blurayPositionOffsetMs() const { return 0; }
     // Plays titleListIndex (an index into blurayTitles(), not a raw
     // libbluray title number).
     Q_INVOKABLE void playBlurayTitle(int titleListIndex);
+    // Seeks to a title-global time. Trivial now that a title is one
+    // gapless device (see BlurayTitleDevice) -- kept as its own method,
+    // rather than having QML call player.position directly, only to match
+    // dvdPlayback's parallel API shape and avoid a QML diff.
+    Q_INVOKABLE void seekBluray(qint64 titleMs);
 
     bool dvdPlayback() const { return m_dvdDevice != nullptr; }
     QVariantList dvdTitles() const;
@@ -964,6 +988,24 @@ private:
     // that goes through the ordinary selectPreferredTracks() path instead).
     // -1 = nothing to restore (this rebuild IS a fresh title).
     int m_dvdPendingAudioTrackRestore = -1;
+    // Which device-source hint URL (DVD or Blu-ray) the LoadedMedia
+    // handler last ran full track-selection setup for (selectPreferredTracks()
+    // / the DVD-menu SPRM overrides). Qt's FFmpeg backend re-emits
+    // LoadedMedia on every m_player->setPosition() seek, even though
+    // nothing about the source actually changed -- DVD's own per-run/
+    // per-cell rebuilds always assign the CURRENT title/run a genuinely
+    // new hint URL (see applyDvdTitle()), so this comparison naturally
+    // treats those as real "new title" events and is a no-op for DVD.
+    // Blu-ray, though, never rebuilds its device or hint URL for an
+    // ordinary time-seek (playBlurayTitle() -- the only place that calls
+    // setSourceDevice() for BD -- runs once per title, not per seek), so
+    // without this guard every seek's spurious LoadedMedia re-fire
+    // silently reran selectPreferredTracks() and reset the audio/
+    // subtitle track back to the language-preference default (found
+    // 2026-08-17, a real regression: BD has no equivalent of
+    // m_dvdPendingAudioTrackRestore's own DVD-only same-title
+    // preservation). Empty = nothing set up yet.
+    QUrl m_deviceTrackSetupSource;
     // Real movie subtitles (see dvdsubtitletrack.h) -- declared streams for
     // the current title, which one (if any) is selected, its lazily-built
     // event index, and the live rendered-image state a timer refreshes.

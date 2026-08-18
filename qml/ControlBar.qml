@@ -156,21 +156,29 @@ Pane {
     component SeekSlider: WinSlider {
         id: seekSlider
         readonly property bool dvd: controlBar.controller.dvdPlayback
+        // Same treatment as dvd throughout this component -- a Blu-ray
+        // seek also rebuilds the stream (see BlurayDisc::ClipRun's own
+        // doc comment for why: whichever ONE clip is currently open may
+        // not be the one the target time falls into).
+        readonly property bool bluray: controlBar.controller.blurayPlayback
+        readonly property bool disc: dvd || bluray
         // Show the A-B repeat region (file playback only).
-        abStart: dvd ? -1 : controlBar.controller.abMarkerA
-        abEnd: dvd ? -1 : controlBar.controller.abMarkerB
-        // A seek deferred to release: always for DVD (rebuilds the stream),
-        // and for files when "seek when released" is chosen.
+        abStart: disc ? -1 : controlBar.controller.abMarkerA
+        abEnd: disc ? -1 : controlBar.controller.abMarkerB
+        // A seek deferred to release: always for a disc (rebuilds the
+        // stream), and for files when "seek when released" is chosen.
         property real pendingSeek: -1
         from: 0
         to: Math.max(1, dvd ? controlBar.controller.dvdTitleDurationMs
-                            : controlBar.player.duration)
+                     : bluray ? controlBar.controller.blurayTitleDurationMs
+                     : controlBar.player.duration)
         tickValues: controlBar.controller.chapters
                         .map(c => c.startMs).filter(ms => ms > 0)
         enabled: controlBar.player.seekable
                  && (!dvd || controlBar.controller.dvdTitleDurationMs > 0)
+                 && (!bluray || controlBar.controller.blurayTitleDurationMs > 0)
         onMoved: {
-            if (!dvd && Settings.seekOnDrag)
+            if (!disc && Settings.seekOnDrag)
                 controlBar.player.position = value
             else
                 pendingSeek = value
@@ -181,6 +189,8 @@ Pane {
             } else if (pendingSeek >= 0) {
                 if (dvd)
                     controlBar.controller.seekDvd(pendingSeek)
+                else if (bluray)
+                    controlBar.controller.seekBluray(pendingSeek)
                 else
                     controlBar.player.position = pendingSeek
                 pendingSeek = -1
@@ -189,9 +199,11 @@ Pane {
         Binding on value {
             // smoothPosition == player.position except it hides the one-frame
             // backward blip the resume guard corrects (no slider flash on
-            // play-after-pause). For DVD it just mirrors player.position.
+            // play-after-pause). For DVD/Blu-ray it adds that disc type's
+            // own title-global offset.
             value: controlBar.controller.smoothPosition
-                   + (dvd ? controlBar.controller.dvdPositionOffsetMs : 0)
+                   + (dvd ? controlBar.controller.dvdPositionOffsetMs
+                      : bluray ? controlBar.controller.blurayPositionOffsetMs : 0)
             when: !pressed
         }
 
@@ -579,19 +591,29 @@ Pane {
             }
 
             Label {
-                // DVD titles: total from the IFO structure (the demuxer's
-                // own duration estimate is meaningless across VOB cells).
+                // DVD/Blu-ray titles: total from the disc's own declared
+                // structure (the demuxer's own duration estimate is
+                // meaningless across VOB cells / BD clips -- see
+                // BlurayDisc::ClipRun's own doc comment for the BD case).
                 text: {
-                    if (!controlBar.controller.dvdPlayback)
-                        return controlBar.timeDisplay(controlBar.controller.smoothPosition,
-                                                      controlBar.player.duration)
-                    // Chapter jumps restart the stream; the offset keeps
-                    // the displayed time global to the title.
-                    const pos = controlBar.controller.smoothPosition
-                                + controlBar.controller.dvdPositionOffsetMs
-                    const total = controlBar.controller.dvdTitleDurationMs
-                    return total > 0 ? controlBar.timeDisplay(pos, total)
-                                     : controlBar.formatTime(pos)
+                    if (controlBar.controller.dvdPlayback) {
+                        // Chapter jumps restart the stream; the offset keeps
+                        // the displayed time global to the title.
+                        const pos = controlBar.controller.smoothPosition
+                                    + controlBar.controller.dvdPositionOffsetMs
+                        const total = controlBar.controller.dvdTitleDurationMs
+                        return total > 0 ? controlBar.timeDisplay(pos, total)
+                                         : controlBar.formatTime(pos)
+                    }
+                    if (controlBar.controller.blurayPlayback) {
+                        const pos = controlBar.controller.smoothPosition
+                                    + controlBar.controller.blurayPositionOffsetMs
+                        const total = controlBar.controller.blurayTitleDurationMs
+                        return total > 0 ? controlBar.timeDisplay(pos, total)
+                                         : controlBar.formatTime(pos)
+                    }
+                    return controlBar.timeDisplay(controlBar.controller.smoothPosition,
+                                                  controlBar.player.duration)
                 }
                 font.pixelSize: 12
                 color: controlBar.statusColor
