@@ -402,6 +402,51 @@ if(WIN32)
                         "avcodec-60.dll will fail to load and Vivace will silently fall back to the Windows "
                         "Media Foundation backend. Set VIVACE_FFMPEG_BIN_DIR to the FFmpeg build's bin directory.")
     endif()
+
+    # avfilter-10.dll / postproc-58.dll: the SAME class of gap as libx264-164.dll
+    # above, for the SAME reason (windeployqt's FFmpeg deployment doesn't pick
+    # them up), just for two DIFFERENT, NEWER files -- the deinterlace patch's
+    # own avfilter graph (playbackengine/qffmpegdeinterlacer.cpp) links
+    # FFmpeg::avfilter directly into ffmpegmediaplugin.dll, and avfilter itself
+    # needs postproc. Root-caused 2026-08-18 (real user report: "almost all MP4
+    # media aborts playback... Media session serious error", the EXACT libx264
+    # symptom text above, but for a nightly/release install this time, not a
+    # local dev build) -- confirmed directly on a real installed nightly build:
+    # avcodec-61.dll/avformat-61.dll/avutil-59.dll/swresample-5.dll/swscale-8.dll
+    # (ffmpegmediaplugin.dll's own long-standing DIRECT imports, present since
+    # well before the deinterlace patch) were all correctly deployed by
+    # windeployqt, but avfilter-10.dll/postproc-58.dll (added only recently,
+    # once the deinterlace patch started linking FFmpeg::avfilter) were BOTH
+    # completely missing from the installed bin/ -- windeployqt's dependency
+    # scan evidently doesn't generalize to every new FFmpeg-adjacent DLL name on
+    # its own, matching this file's own libx264 precedent exactly.
+    # scripts/build-patched-qtmultimedia-windows.ps1 already deploys both files
+    # into the Qt kit's OWN bin/ as part of building the patched qtmultimedia,
+    # so that's searched too, alongside VIVACE_FFMPEG_BIN_DIR/FFMPEG_DIR.
+    foreach(_vivace_extra_ffmpeg_dll avfilter-10.dll postproc-58.dll)
+        string(MAKE_C_IDENTIFIER "VIVACE_${_vivace_extra_ffmpeg_dll}" _vivace_extra_ffmpeg_dll_var)
+        find_file(${_vivace_extra_ffmpeg_dll_var}
+            NAMES "${_vivace_extra_ffmpeg_dll}"
+            HINTS "${VIVACE_FFMPEG_BIN_DIR}" ${CMAKE_PREFIX_PATH}
+            PATHS "$ENV{FFMPEG_DIR}/bin" "$ENV{QT_ROOT_DIR}/bin"
+            PATH_SUFFIXES bin
+        )
+        if(${_vivace_extra_ffmpeg_dll_var})
+            install(FILES "${${_vivace_extra_ffmpeg_dll_var}}" DESTINATION ${CMAKE_INSTALL_BINDIR})
+            add_custom_command(TARGET vivace POST_BUILD
+                COMMAND ${CMAKE_COMMAND} -E copy_if_different
+                        "${${_vivace_extra_ffmpeg_dll_var}}" "$<TARGET_FILE_DIR:vivace>"
+                COMMENT "Copying ${_vivace_extra_ffmpeg_dll} (deinterlace's avfilter dependency, absent from Qt's own windeployqt bundle)"
+            )
+        else()
+            message(WARNING "${_vivace_extra_ffmpeg_dll} not found (looked in VIVACE_FFMPEG_BIN_DIR="
+                            "${VIVACE_FFMPEG_BIN_DIR}, CMAKE_PREFIX_PATH, FFMPEG_DIR, QT_ROOT_DIR) -- "
+                            "ffmpegmediaplugin.dll will fail to load and Vivace will silently fall back to the "
+                            "Windows Media Foundation backend. Set VIVACE_FFMPEG_BIN_DIR to the FFmpeg build's "
+                            "bin directory (the same one scripts/build-patched-qtmultimedia-windows.ps1 deploys "
+                            "this file into).")
+        endif()
+    endforeach()
 endif()
 
 # Optional Blu-ray Disc playback via libbluray (LGPL-2.1-or-later,
