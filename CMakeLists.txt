@@ -521,6 +521,27 @@ if(VIVACE_ENABLE_BLURAY)
         # layout on every platform.
         set(VIVACE_LIBBLURAY_LIBRARY_FILE
             "${VIVACE_LIBBLURAY_INSTALL}/lib/libbluray.a")
+        # libbluray's own meson.build declares its libudfread dependency
+        # (contrib/libudfread, a git submodule built as an internal Meson
+        # subproject) via plain `dependencies:`, not `link_whole:` -- so
+        # Meson does NOT merge udfread's object files into libbluray.a;
+        # it stays a genuinely SEPARATE static archive that any final
+        # consumer must link too. It's also never installed to the
+        # prefix (confirmed empirically: install/lib/ only ever contains
+        # libbluray.a + libbluray.pc, and libbluray.pc's own "Libs:" field
+        # doesn't mention udfread at all) -- so it has to be referenced
+        # from the BUILD tree, not VIVACE_LIBBLURAY_INSTALL. Root-caused
+        # 2026-08-18 (real CI failure, macOS only): Apple's `ld` refused
+        # to link with "Undefined symbols ... _udfread_open, ... referenced
+        # from libbluray.a[..](libbluray_disc_udf_fs.c.o)" -- Windows and
+        # Linux builds hadn't shown this (most likely because whatever
+        # code path bd_open() takes for those targets never pulls
+        # libbluray_disc_udf_fs.c.o's object into the link at all, so its
+        # unresolved references are simply never noticed there), but the
+        # missing dependency was real on every platform regardless -- only
+        # macOS's stricter linker behavior exposed it first.
+        set(VIVACE_LIBUDFREAD_LIBRARY_FILE
+            "${VIVACE_LIBBLURAY_BUILD}/contrib/libudfread/src/libudfread.a")
 
         include(ExternalProject)
         ExternalProject_Add(bluray_ext
@@ -543,7 +564,7 @@ if(VIVACE_ENABLE_BLURAY)
                 -Dlibxml2=disabled
             BUILD_COMMAND "${VIVACE_NINJA_EXECUTABLE}" -C "${VIVACE_LIBBLURAY_BUILD}"
             INSTALL_COMMAND "${VIVACE_NINJA_EXECUTABLE}" -C "${VIVACE_LIBBLURAY_BUILD}" install
-            BUILD_BYPRODUCTS "${VIVACE_LIBBLURAY_LIBRARY_FILE}"
+            BUILD_BYPRODUCTS "${VIVACE_LIBBLURAY_LIBRARY_FILE}" "${VIVACE_LIBUDFREAD_LIBRARY_FILE}"
             USES_TERMINAL_CONFIGURE TRUE
             USES_TERMINAL_BUILD TRUE
             USES_TERMINAL_INSTALL TRUE
@@ -582,9 +603,21 @@ if(VIVACE_HAVE_BLURAY)
         IMPORTED_LOCATION "${VIVACE_LIBBLURAY_LIBRARY_FILE}")
     add_dependencies(bluray_imported bluray_ext)
 
+    # libbluray.a's own libudfread dependency isn't merged into it or
+    # installed (see VIVACE_LIBUDFREAD_LIBRARY_FILE's own comment above) --
+    # link it explicitly too, same IMPORTED-target shape, from the build
+    # tree rather than the install prefix.
+    add_library(udfread_imported STATIC IMPORTED GLOBAL)
+    set_target_properties(udfread_imported PROPERTIES
+        IMPORTED_LOCATION "${VIVACE_LIBUDFREAD_LIBRARY_FILE}")
+    add_dependencies(udfread_imported bluray_ext)
+
     target_compile_definitions(vivace PRIVATE VIVACE_HAVE_BLURAY=1)
     target_include_directories(vivace PRIVATE "${VIVACE_LIBBLURAY_INSTALL}/include")
-    target_link_libraries(vivace PRIVATE bluray_imported)
+    # udfread_imported must come AFTER bluray_imported: static-linker
+    # order matters when one archive's undefined symbols are resolved by
+    # a later one on the command line (ld/GNU ld both link left-to-right).
+    target_link_libraries(vivace PRIVATE bluray_imported udfread_imported)
 
     # Small, always-present platform libraries libbluray's own code calls
     # into directly -- NOT a third-party dependency closure to deploy at
