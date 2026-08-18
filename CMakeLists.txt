@@ -502,6 +502,23 @@ if(VIVACE_ENABLE_BLURAY)
         # platform (confirmed on Windows/MSVC directly -- a real COFF
         # archive despite the Unix-style ".a" name; the same Unix naming
         # convention applies natively on Linux/macOS).
+        #
+        # This path assumes plain "lib/" -- NOT guaranteed without the
+        # explicit -Dlibdir=lib passed to `meson setup` below. Root-caused
+        # 2026-08-18 (real CI failure, Ubuntu only: gmake "No rule to make
+        # target '.../lib/libbluray.a', needed by 'vivace'"): Meson
+        # auto-detects a Debian/Ubuntu MULTIARCH libdir convention
+        # (e.g. "lib/x86_64-linux-gnu") by default on those distros, so an
+        # un-pinned `meson setup` installs the static library to a
+        # different path than this variable (and BUILD_BYPRODUCTS below)
+        # assume -- CMake's Makefiles generator then has no rule at all
+        # for the (never-produced) plain "lib/libbluray.a" path it was
+        # told to expect, and errors out exactly like this the moment
+        # vivace's link step is reached. macOS/Windows builds were
+        # unaffected (Homebrew/MSVC meson installs both default to plain
+        # "lib", no multiarch triplet), which is why only the Linux job
+        # failed. Fix: -Dlibdir=lib forces the same plain, predictable
+        # layout on every platform.
         set(VIVACE_LIBBLURAY_LIBRARY_FILE
             "${VIVACE_LIBBLURAY_INSTALL}/lib/libbluray.a")
 
@@ -517,6 +534,7 @@ if(VIVACE_ENABLE_BLURAY)
                 --backend ninja
                 --buildtype release
                 --prefix "${VIVACE_LIBBLURAY_INSTALL}"
+                -Dlibdir=lib
                 -Ddefault_library=static
                 -Denable_tools=false
                 -Dbdj_jar=disabled
@@ -551,10 +569,22 @@ endif()
 
 target_sources(vivace PRIVATE src/blurayplayer.h src/blurayplayer.cpp)
 if(VIVACE_HAVE_BLURAY)
-    add_dependencies(vivace bluray_ext)
+    # IMPORTED target instead of linking VIVACE_LIBBLURAY_LIBRARY_FILE's raw
+    # path directly: CMake's idiomatic pattern for "link a prebuilt file
+    # produced by an external step". Doesn't by itself fix the 2026-08-18
+    # "No rule to make target" bug above (that was a wrong PATH -- Meson's
+    # own multiarch libdir default -- not a missing target/ordering
+    # mechanism; add_dependencies(vivace bluray_ext) was already correctly
+    # ordering things the whole time), but it's a cleaner, more robust shape
+    # than a bare path string in target_link_libraries.
+    add_library(bluray_imported STATIC IMPORTED GLOBAL)
+    set_target_properties(bluray_imported PROPERTIES
+        IMPORTED_LOCATION "${VIVACE_LIBBLURAY_LIBRARY_FILE}")
+    add_dependencies(bluray_imported bluray_ext)
+
     target_compile_definitions(vivace PRIVATE VIVACE_HAVE_BLURAY=1)
     target_include_directories(vivace PRIVATE "${VIVACE_LIBBLURAY_INSTALL}/include")
-    target_link_libraries(vivace PRIVATE "${VIVACE_LIBBLURAY_LIBRARY_FILE}")
+    target_link_libraries(vivace PRIVATE bluray_imported)
 
     # Small, always-present platform libraries libbluray's own code calls
     # into directly -- NOT a third-party dependency closure to deploy at
