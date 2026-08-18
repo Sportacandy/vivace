@@ -562,6 +562,24 @@ if(VIVACE_ENABLE_BLURAY)
                 -Dfontconfig=disabled
                 -Dfreetype=disabled
                 -Dlibxml2=disabled
+                # Forces Meson to ALWAYS build the vendored contrib/libudfread
+                # submodule rather than using a system-found one, regardless
+                # of what's pre-installed on a given machine. Root-caused
+                # 2026-08-18 (real CI failure, macOS only): Homebrew's ffmpeg@7
+                # (already installed for the qtmultimedia patches) pulls in
+                # libudfread as a transitive dependency, so Meson found it
+                # via pkg-config ("Run-time dependency libudfread found: YES",
+                # "External libudfread: true") and never built the internal
+                # subproject at all -- meaning VIVACE_LIBUDFREAD_LIBRARY_FILE's
+                # build-tree path genuinely never got created there ("no such
+                # file or directory"), even though the SAME path was verified
+                # to exist correctly on Windows (no system libudfread there).
+                # Rather than teach CMake to conditionally link a system
+                # library that could be shared, static, or absent depending
+                # on the machine, force the SAME internal-subproject build on
+                # every platform, matching the fixed build-tree path this
+                # project's CMakeLists.txt already assumes.
+                -Dforce_fallback_for=libudfread
             BUILD_COMMAND "${VIVACE_NINJA_EXECUTABLE}" -C "${VIVACE_LIBBLURAY_BUILD}"
             INSTALL_COMMAND "${VIVACE_NINJA_EXECUTABLE}" -C "${VIVACE_LIBBLURAY_BUILD}" install
             BUILD_BYPRODUCTS "${VIVACE_LIBBLURAY_LIBRARY_FILE}" "${VIVACE_LIBUDFREAD_LIBRARY_FILE}"
