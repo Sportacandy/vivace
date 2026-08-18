@@ -53,18 +53,46 @@ fi
 WORK="$(mktemp -d)"
 trap 'rm -rf "$WORK"' EXIT
 
-echo "== Downloading dav1d-enabled FFmpeg (BtbN n7.1, matches Qt's own FFmpeg soname family) =="
+echo "== Downloading dav1d-enabled FFmpeg (BtbN, newest release still publishing an n7.1.x line) =="
 # BtbN publishes separate x86_64 ("linux64") and arm64 ("linuxarm64")
-# archives, built from the same n7.1 tag -- soname versions (avcodec.so.61
-# etc.) come from the FFmpeg source version, not the architecture, so both
-# match Qt's own FFmpeg regardless of which one this script downloads.
+# archives; soname versions (avcodec.so.61 etc.) come from the FFmpeg
+# source version, not the architecture, so both match Qt's own FFmpeg
+# regardless of which one this script downloads.
 case "$(uname -m)" in
     x86_64)  FFMPEG_ARCH="linux64" ;;
     aarch64) FFMPEG_ARCH="linuxarm64" ;;
     *) echo "ERROR: unsupported architecture $(uname -m)" >&2; exit 1 ;;
 esac
-curl -L -o "$WORK/ffmpeg.tar.xz" \
-    "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n7.1-latest-${FFMPEG_ARCH}-gpl-shared-7.1.tar.xz"
+# BtbN's rolling "latest" release tag has its own asset list PRUNED as
+# newer FFmpeg lines are cut -- the n7.1 line vanished from "latest"
+# entirely within about a day of being observed there (2026-08-18),
+# breaking a previously hardcoded exact URL to it
+# (.../releases/download/latest/ffmpeg-n7.1-latest-${FFMPEG_ARCH}-gpl-shared-7.1.tar.xz).
+# Rather than hardcode one specific dated release (which would eventually
+# be pruned/rotated out of "latest"'s asset list the same way, needing
+# another manual bump), search BtbN's actual release history for the
+# NEWEST release that still publishes an n7.1.x line for this arch, and
+# use whatever exact filename that release has. Deliberately does NOT
+# just grab the newest AVAILABLE FFmpeg line unconditionally (e.g. n9.0
+# as of this writing) -- a multi-major-version FFmpeg jump is a real risk
+# of its own (API/ABI drift qtmultimedia's four patches were never built
+# or tested against), a materially different and larger risk than a
+# stale download URL. Uses only curl/grep/sed (no jq/python/node) since
+# this script also runs inside a bare debian:bookworm container that may
+# not have them.
+FFMPEG_DOWNLOAD_URL="$(curl -fsSL ${GITHUB_TOKEN:+-H "Authorization: Bearer $GITHUB_TOKEN"} \
+        -H "User-Agent: vivace-ci" \
+        "https://api.github.com/repos/BtbN/FFmpeg-Builds/releases?per_page=30" \
+    | grep -o '"browser_download_url": *"[^"]*"' \
+    | sed -E 's/^"browser_download_url": *"//; s/"$//' \
+    | grep -E "/ffmpeg-n7\.[0-9]+\.[0-9]+-[^/\"]*-${FFMPEG_ARCH}-gpl-shared-[0-9.]+\.tar\.xz" \
+    | head -1)"
+if [ -z "$FFMPEG_DOWNLOAD_URL" ]; then
+    echo "ERROR: could not find an n7.1.x gpl-shared FFmpeg build for ${FFMPEG_ARCH} in BtbN/FFmpeg-Builds's recent releases" >&2
+    exit 1
+fi
+echo "Using $FFMPEG_DOWNLOAD_URL"
+curl -L -o "$WORK/ffmpeg.tar.xz" "$FFMPEG_DOWNLOAD_URL"
 mkdir "$WORK/ffmpeg"
 tar -xJf "$WORK/ffmpeg.tar.xz" -C "$WORK/ffmpeg" --strip-components=1
 

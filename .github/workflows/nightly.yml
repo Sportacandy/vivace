@@ -46,6 +46,15 @@ jobs:
         # for why (found the hard way on Linux; applied here too so
         # Windows CI doesn't rely on the same kind of luck).
         shell: pwsh
+        env:
+          # Authenticates the script's BtbN/FFmpeg-Builds release-list API
+          # call (finding the newest release still publishing an n7.1.x
+          # FFmpeg line, since "latest"'s own asset list gets pruned over
+          # time -- see the script's own comment) so it uses the 5000/hr
+          # authenticated rate limit instead of the 60/hr unauthenticated
+          # one, which shared GitHub-hosted-runner egress IPs can bump
+          # into purely from other jobs' unrelated traffic.
+          GITHUB_TOKEN: ${{ github.token }}
         run: scripts\build-patched-qtmultimedia-windows.ps1 -QtDir "$env:QT_ROOT_DIR"
 
       - name: Install NSIS
@@ -114,6 +123,9 @@ jobs:
         # 2026-08-06 private-ABI mismatch, found the hard way on a real
         # Ubuntu 24.04 install, is what a prebuilt-asset swap can't rule
         # out no matter how carefully it's built).
+        env:
+          # See the Windows job's identical env block above for why.
+          GITHUB_TOKEN: ${{ github.token }}
         run: |
           chmod +x scripts/build-patched-qtmultimedia-linux.sh
           scripts/build-patched-qtmultimedia-linux.sh "$QT_ROOT_DIR"
@@ -164,6 +176,9 @@ jobs:
           aqtsource: 'git+https://github.com/miurahr/aqtinstall.git@8c3695d4a4e1ceabf6a74dc6c79681656dc6b74b'
 
       - name: Build the patched qtmultimedia (AV1 + Speed Control + bitmap subtitles) from source
+        env:
+          # See the Windows job's identical env block above for why.
+          GITHUB_TOKEN: ${{ github.token }}
         run: |
           chmod +x scripts/build-patched-qtmultimedia-linux.sh
           scripts/build-patched-qtmultimedia-linux.sh "$QT_ROOT_DIR"
@@ -248,6 +263,9 @@ jobs:
 
       - name: Build the patched qtmultimedia (AV1 + Speed Control + bitmap subtitles) from source
         if: steps.qt-cache.outputs.cache-hit != 'true'
+        env:
+          # See the Windows job's identical env block above for why.
+          GITHUB_TOKEN: ${{ github.token }}
         run: |
           chmod +x scripts/build-patched-qtmultimedia-linux.sh
           scripts/build-patched-qtmultimedia-linux.sh /opt/qt6

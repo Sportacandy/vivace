@@ -59,13 +59,38 @@ $work = Join-Path $tempRoot "vqtmm-$shortId"
 New-Item -ItemType Directory -Path $work | Out-Null
 
 try {
-    Write-Host "== Downloading dav1d-enabled FFmpeg (BtbN n7.1) =="
+    Write-Host "== Downloading dav1d-enabled FFmpeg (BtbN, newest release still publishing an n7.1.x line) =="
+    # BtbN's rolling "latest" release tag has its own asset list PRUNED as
+    # newer FFmpeg lines are cut -- the n7.1 line vanished from "latest"
+    # entirely within about a day of being observed there (2026-08-18),
+    # breaking a previously hardcoded exact URL to it
+    # (.../releases/download/latest/ffmpeg-n7.1-latest-win64-gpl-shared-7.1.zip).
+    # Rather than hardcode one specific dated release (which would
+    # eventually be pruned/rotated out of "latest"'s asset list the same
+    # way, needing another manual bump), search BtbN's actual release
+    # history for the NEWEST release that still publishes an n7.1.x line
+    # for win64, and use whatever exact filename that release has.
+    # Deliberately does NOT just grab the newest AVAILABLE FFmpeg line
+    # unconditionally (e.g. n9.0 as of this writing) -- a multi-major-
+    # version FFmpeg jump is a real risk of its own (API/ABI drift
+    # qtmultimedia's four patches were never built or tested against),
+    # a materially different and larger risk than a stale download URL.
+    $headers = @{ "User-Agent" = "vivace-ci" }
+    if ($env:GITHUB_TOKEN) { $headers["Authorization"] = "Bearer $($env:GITHUB_TOKEN)" }
+    $releases = Invoke-RestMethod -Uri "https://api.github.com/repos/BtbN/FFmpeg-Builds/releases?per_page=30" -Headers $headers
+    $asset = $releases | ForEach-Object { $_.assets } |
+        Where-Object { $_.name -match '^ffmpeg-n7\.[0-9]+\.[0-9]+-.*-win64-gpl-shared-[0-9.]+\.zip$' } |
+        Select-Object -First 1
+    if (-not $asset) {
+        throw "Could not find an n7.1.x gpl-shared win64 FFmpeg build in BtbN/FFmpeg-Builds's recent releases"
+    }
+    Write-Host "Using $($asset.name)"
     $ffmpegZip = Join-Path $work "ffmpeg.zip"
-    Invoke-WebRequest -Uri "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-n7.1-latest-win64-gpl-shared-7.1.zip" -OutFile $ffmpegZip
+    Invoke-WebRequest -Uri $asset.browser_download_url -OutFile $ffmpegZip -Headers $headers
     $ffmpegExtract = Join-Path $work "ffmpeg"
     Expand-Archive -Path $ffmpegZip -DestinationPath $ffmpegExtract
     # BtbN's zip extracts one level deep, e.g.
-    # ffmpeg\ffmpeg-n7.1-latest-win64-gpl-shared-7.1\{bin,include,lib}.
+    # ffmpeg\ffmpeg-n7.1.5-16-g9a4bb2c579-win64-gpl-shared-7.1\{bin,include,lib}.
     $ffmpegRoot = (Get-ChildItem -Path $ffmpegExtract -Directory | Select-Object -First 1).FullName
     if (-not $ffmpegRoot) {
         throw "Could not locate the extracted FFmpeg root under $ffmpegExtract"
