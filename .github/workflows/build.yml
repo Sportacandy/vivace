@@ -70,4 +70,19 @@ jobs:
         run: cmake -B build -DCMAKE_PREFIX_PATH="$QT_ROOT_DIR"
 
       - name: Build
-        run: cmake --build build --config Release --parallel
+        # Capped, not the plain unbounded --parallel this used before: a real
+        # CI run (2026-08-17) showed the Linux job silently killed mid-build
+        # (gmake "Error 2" with NO compiler/linker diagnostic anywhere in the
+        # log -- the signature of an OOM kill, not a real code error) shortly
+        # after several object files started compiling in parallel, not long
+        # after libbluray's from-source build was added to this same job.
+        # GitHub's standard Linux runner has 4 vCPUs/16GB RAM; several of
+        # Vivace's own translation units (Qt's AOT-compiled QML files, the
+        # newer Blu-ray sources) are heavy enough that 4-way parallelism can
+        # exceed that comfortably. --parallel 2 halves peak memory at the
+        # cost of some wall-clock time -- the same trade-off already applied
+        # to the arm64/Bookworm from-source Qt build job for the identical
+        # reason (see release.yml/nightly.yml). Windows/macOS didn't fail in
+        # that run, but capping them too keeps this one shared step simple
+        # and is a small, safe cost.
+        run: cmake --build build --config Release --parallel 2

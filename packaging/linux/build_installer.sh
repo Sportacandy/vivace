@@ -24,7 +24,7 @@
 #   * Qt Installer Framework (binarycreator) via the Qt Maintenance Tool --
 #     only needed without --tarball.
 #
-# Env overrides: QT_DIR, IFW_DIR.
+# Env overrides: QT_DIR, IFW_DIR, BUILD_JOBS.
 set -euo pipefail
 
 MODE="ifw"
@@ -32,6 +32,15 @@ MODE="ifw"
 
 QT_DIR="${QT_DIR:-$HOME/Qt/6.11.1/gcc_64}"
 IFW_DIR="${IFW_DIR:-}"
+# Capped, not a plain nproc: GitHub's standard Linux runner (4 vCPU/16GB) hit
+# a silent OOM kill (gmake "Error 2", no compiler/linker diagnostic at all)
+# building Vivace's own object files at full parallelism in build.yml's
+# separate, non-packaging build job (2026-08-17, after libbluray's
+# from-source build was added there) -- this script runs the identical
+# compile step on the identical runner class for release/nightly, so it's
+# equally exposed even though it hadn't failed yet. Override with a higher
+# value for a real workstation build.
+BUILD_JOBS="${BUILD_JOBS:-2}"
 
 here="$(cd "$(dirname "$0")" && pwd)"
 root="$(cd "$here/../.." && pwd)"
@@ -41,7 +50,7 @@ data="$pkg/data"
 
 echo "== Configure + build (Release) =="
 cmake -S "$root" -B "$build" -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="$QT_DIR"
-cmake --build "$build" -j"$(nproc)"
+cmake --build "$build" -j"$BUILD_JOBS"
 
 echo "== Deploy (cmake --install; no linuxdeployqt) =="
 rm -rf "$data"
