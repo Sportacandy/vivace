@@ -30,6 +30,8 @@ constexpr auto networkTimeout = "network/timeout";
 constexpr auto preferredAudioLanguage = "playback/preferredAudioLanguage";
 constexpr auto preferredSubtitleLanguage = "playback/preferredSubtitleLanguage";
 constexpr auto subtitlesByDefault = "playback/subtitlesByDefault";
+constexpr auto subtitlesHideWhenAudioLanguageMatches =
+        "playback/subtitlesHideWhenAudioLanguageMatches";
 constexpr auto closeOnFinish = "playback/closeOnFinish";
 constexpr auto disableScreensaver = "playback/disableScreensaver";
 constexpr auto deinterlaceMode = "playback/deinterlaceMode";
@@ -209,6 +211,8 @@ Settings::Settings(QObject *parent)
       m_preferredSubtitleLanguage(
               m_store.value(Keys::preferredSubtitleLanguage).toString()),
       m_subtitlesByDefault(m_store.value(Keys::subtitlesByDefault, true).toBool()),
+      m_subtitlesHideWhenAudioLanguageMatches(
+              m_store.value(Keys::subtitlesHideWhenAudioLanguageMatches, false).toBool()),
       m_closeOnFinish(m_store.value(Keys::closeOnFinish, false).toBool()),
       m_disableScreensaver(m_store.value(Keys::disableScreensaver, true).toBool()),
       m_deinterlaceMode(qBound(0, m_store.value(Keys::deinterlaceMode, 0).toInt(), 2)),
@@ -901,6 +905,15 @@ void Settings::setSubtitlesByDefault(bool enabled)
     m_subtitlesByDefault = enabled;
     m_store.setValue(Keys::subtitlesByDefault, enabled);
     emit subtitlesByDefaultChanged();
+}
+
+void Settings::setSubtitlesHideWhenAudioLanguageMatches(bool enabled)
+{
+    if (enabled == m_subtitlesHideWhenAudioLanguageMatches)
+        return;
+    m_subtitlesHideWhenAudioLanguageMatches = enabled;
+    m_store.setValue(Keys::subtitlesHideWhenAudioLanguageMatches, enabled);
+    emit subtitlesHideWhenAudioLanguageMatchesChanged();
 }
 
 void Settings::setCloseOnFinish(bool close)

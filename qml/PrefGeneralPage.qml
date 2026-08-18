@@ -417,6 +417,23 @@ ColumnLayout {
                     }
                     Item { Layout.fillWidth: true }
                 }
+                RowLayout {
+                    spacing: 6
+                    Layout.leftMargin: 20
+                    CheckBox {
+                        text: qsTr("...but not if the audio is already in a preferred language")
+                        enabled: Settings.subtitlesByDefault
+                        checked: Settings.subtitlesHideWhenAudioLanguageMatches
+                        onToggled: Settings.subtitlesHideWhenAudioLanguageMatches = checked
+                    }
+                    HelpMark {
+                        text: qsTr("Skip the automatic subtitle above when its language "
+                                   + "matches the audio track that actually got selected -- "
+                                   + "if you already understand the audio, a subtitle in the "
+                                   + "same language is usually redundant.")
+                    }
+                    Item { Layout.fillWidth: true }
+                }
 
                 RowLayout {
                     spacing: 8

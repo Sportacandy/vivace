@@ -285,6 +285,11 @@ ApplicationWindow {
     }
     Binding {
         target: playerController
+        property: "subtitlesHideWhenAudioLanguageMatches"
+        value: Settings.subtitlesHideWhenAudioLanguageMatches
+    }
+    Binding {
+        target: playerController
         property: "dvdSubtitleSmoothing"
         value: Settings.dvdSubtitleSmoothing
     }

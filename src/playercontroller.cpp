@@ -347,6 +347,20 @@ int findTrackByLanguageCodes(const QList<QString> &declaredCodes, const QString 
     return -1;
 }
 
+// Whether two language codes/names (alpha-2, alpha-3, or a QLocale-
+// recognized name -- any mix) denote the same real language, via the same
+// QLocale::Language normalization findTrackByLanguageCodes() above already
+// relies on. Empty/unrecognized input never "matches" anything.
+bool sameLanguage(const QString &a, const QString &b)
+{
+    if (a.isEmpty() || b.isEmpty())
+        return false;
+    const QLocale::Language la = QLocale(a).language();
+    if (la == QLocale::AnyLanguage || la == QLocale::C)
+        return false;
+    return la == QLocale(b).language();
+}
+
 // Media file extensions, matching the Open dialog's filter.
 const QStringList &videoExtensions()
 {
@@ -1697,8 +1711,30 @@ bool PlayerController::applyDvdTitle(const DvdIfo::Title &title,
         if (qEnvironmentVariableIsSet("VIVACE_DVD_FORCE_SUB_LANG"))
             prefSubLangs = QString::fromLocal8Bit(qgetenv("VIVACE_DVD_FORCE_SUB_LANG"));
         if (m_subtitlesByDefault && !prefSubLangs.trimmed().isEmpty()) {
-            const int index = findDvdSubtitleTrackByLanguages(
+            int index = findDvdSubtitleTrackByLanguages(
                     m_dvdSubtitleStreams, prefSubLangs);
+            // Skip a subtitle that would just repeat the audio language the
+            // viewer already understands -- see
+            // Settings.subtitlesHideWhenAudioLanguageMatches's own doc
+            // comment. Predicts which audio language will end up selected
+            // (rather than reading m_player->activeAudioTrack() back, which
+            // isn't reliable here: this runs synchronously during title
+            // setup, before the device's own audio-track selection -- see
+            // selectPreferredTracks() -- has run for THIS fresh title) using
+            // the exact same declared-stream-table matcher audio selection
+            // itself relies on, so "predicted" and "actual" always agree.
+            if (index >= 0 && m_subtitlesHideWhenAudioLanguageMatches) {
+                QStringList dvdAudioLangs;
+                for (const DvdIfo::AudioStream &a : m_dvdAudioStreams)
+                    dvdAudioLangs.append(a.language);
+                int predictedAudio = -1;
+                if (!m_preferredAudioLanguages.trimmed().isEmpty())
+                    predictedAudio = findTrackByLanguageCodes(dvdAudioLangs, m_preferredAudioLanguages);
+                const QString predictedAudioLanguage =
+                        dvdAudioLangs.value(predictedAudio >= 0 ? predictedAudio : 0);
+                if (sameLanguage(m_dvdSubtitleStreams.value(index).language, predictedAudioLanguage))
+                    index = -1;
+            }
             dvdLog(QStringLiteral("dvd subtitle: preferred='%1' matchedIndex=%2 "
                                   "declared=%3")
                            .arg(prefSubLangs).arg(index)
@@ -2810,6 +2846,14 @@ void PlayerController::setSubtitlesByDefault(bool enabled)
         return;
     m_subtitlesByDefault = enabled;
     emit subtitlesByDefaultChanged();
+}
+
+void PlayerController::setSubtitlesHideWhenAudioLanguageMatches(bool enabled)
+{
+    if (enabled == m_subtitlesHideWhenAudioLanguageMatches)
+        return;
+    m_subtitlesHideWhenAudioLanguageMatches = enabled;
+    emit subtitlesHideWhenAudioLanguageMatchesChanged();
 }
 
 void PlayerController::setDvdSubtitleSmoothing(int radius)
@@ -4436,35 +4480,67 @@ void PlayerController::selectPreferredTracks()
     const bool isBluray = blurayPlayback() && m_blurayCurrentTitleIndex >= 0
             && m_blurayCurrentTitleIndex < m_blurayDisc->titles().size();
 
+    // The language of whichever audio track actually ends up active --
+    // whether from an explicit preference match below or (no preference
+    // set, or no match found) just track 0, the real eventual default in
+    // either case. Captured for subtitlesHideWhenAudioLanguageMatches
+    // below, so the check reflects reality regardless of WHY that
+    // language was selected.
+    QString selectedAudioLanguage;
+
     // See restoreTrackSelections() above for why these call this class's own
     // setActiveAudioTrack()/setActiveSubtitleTrack() rather than m_player's.
-    if (!m_preferredAudioLanguages.trimmed().isEmpty()) {
+    if (isBluray) {
+        const auto &audioLangs =
+                m_blurayDisc->titles().at(m_blurayCurrentTitleIndex).audioLanguages;
         int index = -1;
-        if (isBluray) {
-            index = findTrackByLanguageCodes(
-                    m_blurayDisc->titles().at(m_blurayCurrentTitleIndex).audioLanguages,
-                    m_preferredAudioLanguages);
+        if (!m_preferredAudioLanguages.trimmed().isEmpty()) {
+            index = findTrackByLanguageCodes(audioLangs, m_preferredAudioLanguages);
             if (index >= blurayVisibleAudioTrackCount())
                 index = -1;
-        } else {
-            index = findTrackByLanguages(m_player->audioTracks(), m_preferredAudioLanguages);
         }
         if (index >= 0)
             setActiveAudioTrack(index);
+        selectedAudioLanguage = audioLangs.value(index >= 0 ? index : 0);
+    } else {
+        int index = -1;
+        if (!m_preferredAudioLanguages.trimmed().isEmpty())
+            index = findTrackByLanguages(m_player->audioTracks(), m_preferredAudioLanguages);
+        if (index >= 0)
+            setActiveAudioTrack(index);
+        const auto audioTracks = m_player->audioTracks();
+        const int activeIndex = index >= 0 ? index : 0;
+        if (activeIndex < audioTracks.size())
+            selectedAudioLanguage =
+                    audioTracks.at(activeIndex).stringValue(QMediaMetaData::Language);
     }
 
     if (!m_subtitlesByDefault) {
         setActiveSubtitleTrack(-1);
     } else if (!m_preferredSubtitleLanguages.trimmed().isEmpty()) {
         int index = -1;
+        QString candidateLanguage;
         if (isBluray) {
-            index = findTrackByLanguageCodes(
-                    m_blurayDisc->titles().at(m_blurayCurrentTitleIndex).subtitleLanguages,
-                    m_preferredSubtitleLanguages);
+            const auto &subLangs =
+                    m_blurayDisc->titles().at(m_blurayCurrentTitleIndex).subtitleLanguages;
+            index = findTrackByLanguageCodes(subLangs, m_preferredSubtitleLanguages);
             if (index >= blurayVisibleSubtitleTrackCount())
                 index = -1;
+            if (index >= 0)
+                candidateLanguage = subLangs.value(index);
         } else {
-            index = findTrackByLanguages(m_player->subtitleTracks(), m_preferredSubtitleLanguages);
+            const auto subtitleTracks = m_player->subtitleTracks();
+            index = findTrackByLanguages(subtitleTracks, m_preferredSubtitleLanguages);
+            if (index >= 0 && index < subtitleTracks.size())
+                candidateLanguage =
+                        subtitleTracks.at(index).stringValue(QMediaMetaData::Language);
+        }
+        // Skip a subtitle that's just going to repeat the audio language
+        // the viewer can already understand -- see
+        // Settings.subtitlesHideWhenAudioLanguageMatches's own doc comment.
+        if (index >= 0 && m_subtitlesHideWhenAudioLanguageMatches
+            && sameLanguage(candidateLanguage, selectedAudioLanguage)) {
+            index = -1;
         }
         if (index >= 0)
             setActiveSubtitleTrack(index);

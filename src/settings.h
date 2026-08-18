@@ -53,6 +53,18 @@ class Settings : public QObject
                WRITE setPreferredSubtitleLanguage NOTIFY preferredSubtitleLanguageChanged)
     Q_PROPERTY(bool subtitlesByDefault READ subtitlesByDefault
                WRITE setSubtitlesByDefault NOTIFY subtitlesByDefaultChanged)
+    // When on, a subtitle track that would otherwise be selected by
+    // "Show subtitles by default" is skipped if its language matches the
+    // audio track that actually got selected -- a fluent speaker of the
+    // audio's language usually doesn't want a same-language subtitle too.
+    // Compared against whichever audio track ACTUALLY ends up active (not
+    // just the first preferred-audio-language token), so it also applies
+    // sensibly when the top audio preference wasn't available and a
+    // fallback language was selected instead.
+    Q_PROPERTY(bool subtitlesHideWhenAudioLanguageMatches
+               READ subtitlesHideWhenAudioLanguageMatches
+               WRITE setSubtitlesHideWhenAudioLanguageMatches
+               NOTIFY subtitlesHideWhenAudioLanguageMatchesChanged)
     Q_PROPERTY(bool closeOnFinish READ closeOnFinish WRITE setCloseOnFinish
                NOTIFY closeOnFinishChanged)
     Q_PROPERTY(bool disableScreensaver READ disableScreensaver
@@ -439,6 +451,10 @@ public:
 
     bool subtitlesByDefault() const { return m_subtitlesByDefault; }
     void setSubtitlesByDefault(bool enabled);
+
+    bool subtitlesHideWhenAudioLanguageMatches() const
+    { return m_subtitlesHideWhenAudioLanguageMatches; }
+    void setSubtitlesHideWhenAudioLanguageMatches(bool enabled);
 
     bool closeOnFinish() const { return m_closeOnFinish; }
     void setCloseOnFinish(bool close);
@@ -833,6 +849,7 @@ signals:
     void preferredAudioLanguageChanged();
     void preferredSubtitleLanguageChanged();
     void subtitlesByDefaultChanged();
+    void subtitlesHideWhenAudioLanguageMatchesChanged();
     void closeOnFinishChanged();
     void disableScreensaverChanged();
     void deinterlaceModeChanged();
@@ -945,6 +962,7 @@ private:
     QString m_preferredAudioLanguage;
     QString m_preferredSubtitleLanguage;
     bool m_subtitlesByDefault;
+    bool m_subtitlesHideWhenAudioLanguageMatches;
     bool m_closeOnFinish;
     bool m_disableScreensaver;
     int m_deinterlaceMode;

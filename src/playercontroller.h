@@ -147,6 +147,13 @@ class PlayerController : public QObject
                WRITE setPreferredSubtitleLanguages NOTIFY preferredSubtitleLanguagesChanged)
     Q_PROPERTY(bool subtitlesByDefault READ subtitlesByDefault
                WRITE setSubtitlesByDefault NOTIFY subtitlesByDefaultChanged)
+    // Mirrors Settings.subtitlesHideWhenAudioLanguageMatches -- read by
+    // selectPreferredTracks()/applyDvdTitle() when deciding whether to
+    // apply the language-preference default subtitle selection.
+    Q_PROPERTY(bool subtitlesHideWhenAudioLanguageMatches
+               READ subtitlesHideWhenAudioLanguageMatches
+               WRITE setSubtitlesHideWhenAudioLanguageMatches
+               NOTIFY subtitlesHideWhenAudioLanguageMatchesChanged)
     // Mirrors Settings.dvdSubtitleSmoothing (0 = off, 1-3 = increasing blur
     // radius) -- one-way bound from QML like the other DVD-subtitle
     // preferences above, and read directly by updateDvdSubtitleImage() on
@@ -371,6 +378,9 @@ public:
     void setPreferredSubtitleLanguages(const QString &languages);
     bool subtitlesByDefault() const { return m_subtitlesByDefault; }
     void setSubtitlesByDefault(bool enabled);
+    bool subtitlesHideWhenAudioLanguageMatches() const
+    { return m_subtitlesHideWhenAudioLanguageMatches; }
+    void setSubtitlesHideWhenAudioLanguageMatches(bool enabled);
     int dvdSubtitleSmoothing() const { return m_dvdSubtitleSmoothing; }
     void setDvdSubtitleSmoothing(int radius);
     bool sessionPlaylistEnabled() const { return m_sessionPlaylistEnabled; }
@@ -596,6 +606,7 @@ signals:
     void preferredAudioLanguagesChanged();
     void preferredSubtitleLanguagesChanged();
     void subtitlesByDefaultChanged();
+    void subtitlesHideWhenAudioLanguageMatchesChanged();
     void dvdSubtitleSmoothingChanged();
     void sessionPlaylistEnabledChanged();
     void autosavePlaylistOnExitChanged();
@@ -855,6 +866,7 @@ private:
     QString m_preferredAudioLanguages;
     QString m_preferredSubtitleLanguages;
     bool m_subtitlesByDefault = true;
+    bool m_subtitlesHideWhenAudioLanguageMatches = false;
     // Sentinel, not the real default (see Settings::m_dvdSubtitleSmoothing
     // for the actual default of 1) -- deliberately a value the Settings
     // Binding in Main.qml can never apply unchanged to, so the very FIRST
