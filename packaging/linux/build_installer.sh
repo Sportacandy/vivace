@@ -49,8 +49,16 @@ pkg="$here/packages/org.vivaceplayer.vivace"
 data="$pkg/data"
 
 echo "== Configure + build (Release) =="
-cmake -S "$root" -B "$build" -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="$QT_DIR"
-cmake --build "$build" -j"$BUILD_JOBS"
+# -G Ninja, not the default "Unix Makefiles" -- see packaging/macos/
+# build_installer.sh's identical comment for why (a real CI "No rule to
+# make target ... libudfread.a" failure on macOS with no obvious wrong-
+# path explanation, strongly suggesting the Makefiles generator's
+# BUILD_BYPRODUCTS handling for ExternalProject_Add-produced files is
+# unreliable in general -- switching to Ninja, already a required tool
+# here for libbluray's own build, sidesteps the whole class rather than
+# waiting to see if this exact class of bug also hits Linux).
+cmake -S "$root" -B "$build" -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="$QT_DIR"
+cmake --build "$build" --parallel "$BUILD_JOBS"
 
 echo "== Deploy (cmake --install; no linuxdeployqt) =="
 rm -rf "$data"

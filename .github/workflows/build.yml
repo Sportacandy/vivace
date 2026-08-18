@@ -67,7 +67,11 @@ jobs:
 
       - name: Configure (Linux/macOS)
         if: runner.os != 'Windows'
-        run: cmake -B build -DCMAKE_PREFIX_PATH="$QT_ROOT_DIR"
+        # -G Ninja, not the default "Unix Makefiles" -- see
+        # packaging/macos/build_installer.sh's comment for why (a real CI
+        # "No rule to make target ... libudfread.a" failure with the
+        # Makefiles generator, unrelated to a wrong path).
+        run: cmake -B build -G Ninja -DCMAKE_PREFIX_PATH="$QT_ROOT_DIR"
 
       - name: Build
         # Capped, not the plain unbounded --parallel this used before: a real

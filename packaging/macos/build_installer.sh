@@ -33,8 +33,26 @@ pkg="$here/packages/org.vivaceplayer.vivace"
 data="$pkg/data"
 
 echo "== Configure + build (Release) =="
-cmake -S "$root" -B "$build" -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="$QT_DIR"
-cmake --build "$build" -j"$(sysctl -n hw.ncpu)"
+# -G Ninja, not the default "Unix Makefiles": a real CI failure
+# (2026-08-18) showed `make` erroring "No rule to make target
+# 'bluray-prefix/build/contrib/libudfread/src/libudfread.a', needed by
+# 'vivace.app/...'" -- a BUILD_BYPRODUCTS file from the libbluray
+# ExternalProject_Add step that CMake's Makefiles generator failed to
+# wire a working rule for, even though the path itself is correct
+# (verified against a real local build tree). This is the SAME class of
+# "No rule to make target" failure already hit once before for
+# libbluray.a itself on Linux (that one traced to a genuinely wrong
+# path, Meson's Debian multiarch libdir default -- fixed with
+# -Dlibdir=lib) -- but this new one has no such path explanation, since
+# Meson's subproject build-tree layout doesn't vary by platform. Ninja
+# is CMake's own reference generator for BUILD_BYPRODUCTS + ExternalProject
+# (its docs specifically call out Ninja needing exact byproduct
+# declarations to work at all, implying more rigorous handling than the
+# Makefiles generator gets) and is already a required tool here anyway
+# (libbluray's own Meson build uses --backend ninja), so this costs
+# nothing new to install.
+cmake -S "$root" -B "$build" -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="$QT_DIR"
+cmake --build "$build" --parallel "$(sysctl -n hw.ncpu)"
 
 echo "== Deploy (cmake --install -> macdeployqt) =="
 rm -rf "$data"
