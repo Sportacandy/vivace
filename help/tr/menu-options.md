@@ -8,6 +8,14 @@
   - **Genel ▸ Video** yeni açılan dosyalar için varsayılan **Görüntü
     ayrıştırma** kipini (Hiçbiri / Yadif / Bwdif) ayarlar — dosya başına
     değiştirmek için *Video ▸ Görüntü ayrıştırma* bölümünü kullanın.
+  - **Genel ▸ Tercih edilen ses ve altyazılar** Vivace'nin bir dosyanın
+    gömülü parçaları arasından otomatik olarak seçtiği dilleri ayarlar.
+    **Altyazıları varsayılan olarak göster** kullanılabilir olduğunda
+    otomatik olarak bir altyazı açar; alt seçeneği olan **...ancak ses
+    zaten tercih edilen bir dildeyse hariç**, dili gerçekten seçilen ses
+    parçasıyla eşleştiğinde bu otomatik altyazıyı atlar — sesi zaten
+    anlıyorsanız ve aynı dildeki bir altyazının dikkatinizi dağıtmasını
+    istemiyorsanız kullanışlıdır.
   - **Ağ** sekmesinde OpenSubtitles, YouTube, Vekil Sunucu ve Yayınlama
     sekmeleri bulunur; **Vekil Sunucu** sekmesi, uygulama genelinde geçerli
     isteğe bağlı bir HTTP veya SOCKS5 vekil sunucusu ayarlar (OpenSubtitles

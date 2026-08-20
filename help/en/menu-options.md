@@ -8,6 +8,13 @@ The **Options** menu holds preferences and interface configuration.
   - **General ▸ Video** sets the default **Deinterlace** mode (None / Yadif /
     Bwdif) for newly opened files — change it per file from *Video ▸
     Deinterlace*.
+  - **General ▸ Preferred audio and subtitles** sets the languages Vivace
+    auto-selects among a file's embedded tracks. **Show subtitles by
+    default** turns one on automatically when available; its sub-option
+    **…but not if the audio is already in a preferred language** skips that
+    automatic subtitle when its language matches the audio track that
+    actually got selected — useful if you already understand the audio and
+    don't want a same-language subtitle competing for attention.
   - **Network** has OpenSubtitles, YouTube, Proxy and Cast tabs; **Proxy**
     configures an optional HTTP or SOCKS5 proxy applied application-wide
     (OpenSubtitles search, the update check, and — HTTP only — media

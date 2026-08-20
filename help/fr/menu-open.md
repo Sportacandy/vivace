@@ -15,7 +15,8 @@ Le menu **Ouvrir** vous permet de charger des médias dans Vivace.
 - **Disque**
   - **DVD depuis un lecteur ou un dossier…** — lire un DVD-Vidéo non chiffré, y
     compris ses menus. Voir [Naviguer](menu-browse.md) pour les titres et chapitres.
-  - **Blu-ray**, **CD audio** — pas encore pris en charge.
+  - **Blu-ray depuis un lecteur ou un dossier…** — lecture basique d'un disque Blu-ray non chiffré : choisissez son titre principal depuis *Naviguer ▸ Titre* et ses chapitres depuis *Naviguer ▸ Chapitres*. Les menus du disque ne sont pas pris en charge.
+  - **CD audio** — pas encore pris en charge.
 - **URL…** (`Ctrl+U`) — lire un flux réseau. Avec la prise en charge de YouTube
   activée (*Préférences ▸ Réseau*), les liens YouTube sont aussi gérés ici.
 - **Cache YouTube…** — parcourir les vidéos que Vivace a téléchargées (en mode

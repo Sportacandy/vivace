@@ -13,7 +13,8 @@ Menyn **Öppna** är hur du laddar media i Vivace.
 - **Skiva**
   - **Dvd från enhet eller mapp…** — spela upp en okrypterad dvd-video, inklusive
     dess menyer. Se [Bläddra](menu-browse.md) för titlar och kapitel.
-  - **Blu-ray**, **Ljud-cd** — stöds ännu inte.
+  - **Blu-ray från enhet eller mapp…** — grundläggande uppspelning av en okrypterad Blu-ray-skiva: välj dess huvudtitel från *Bläddra ▸ Titel* och dess kapitel från *Bläddra ▸ Kapitel*. Skivmenyer stöds inte.
+  - **Ljud-cd** — stöds ännu inte.
 - **URL…** (`Ctrl+U`) — spela upp en nätverksström. Med YouTube-stöd aktiverat
   (*Inställningar ▸ Nätverk*) hanteras även YouTube-länkar här.
 - **YouTube-cache…** — bläddra bland videor som Vivace laddat ner (i läget ladda

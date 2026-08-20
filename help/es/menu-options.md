@@ -9,6 +9,14 @@ El menú **Opciones** contiene las preferencias y la configuración de la interf
   - **General ▸ Vídeo** establece el modo **Desentrelazado** predeterminado
     (Desactivar / Yadif / Bwdif) para los archivos recién abiertos —
     cámbielo por archivo desde *Vídeo ▸ Desentrelazado*.
+  - **General ▸ Audio y subtítulos preferidos** establece los idiomas
+    entre los que Vivace elige automáticamente las pistas incrustadas de un
+    archivo. **Mostrar subtítulos de forma predeterminada** activa uno
+    automáticamente cuando está disponible; su subopción **...pero no si el
+    audio ya está en un idioma preferido** omite ese subtítulo automático
+    cuando su idioma coincide con la pista de audio realmente seleccionada
+    — útil si ya entiendes el audio y no quieres que un subtítulo en el
+    mismo idioma te distraiga.
   - **Red** tiene las pestañas OpenSubtitles, YouTube, Proxy y Transmisión;
     **Proxy** configura un proxy HTTP o SOCKS5 opcional aplicado a toda la
     aplicación (búsqueda en OpenSubtitles, la comprobación de actualizaciones

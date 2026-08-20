@@ -8,6 +8,14 @@ Menu **Opcje** zawiera ustawienia i konfigurację interfejsu.
   - **Ogólne ▸ Wideo** ustawia domyślny tryb **Usuwanie przeplotu** (Brak /
     Yadif / Bwdif) dla nowo otwieranych plików — zmień go dla pojedynczego
     pliku w *Wideo ▸ Usuwanie przeplotu*.
+  - **Ogólne ▸ Preferowana ścieżka dźwiękowa i napisy** ustawia języki,
+    spośród których Vivace automatycznie wybiera wśród osadzonych ścieżek
+    pliku. **Domyślnie pokazuj napisy** automatycznie włącza napisy, jeśli
+    są dostępne; jego podopcja **...ale nie wtedy, gdy dźwięk jest już w
+    preferowanym języku** pomija te automatyczne napisy, gdy ich język
+    zgadza się z faktycznie wybraną ścieżką dźwiękową — przydatne, jeśli
+    już rozumiesz dźwięk i nie chcesz, aby napisy w tym samym języku
+    rozpraszały uwagę.
   - **Sieć** zawiera karty OpenSubtitles, YouTube, Proxy i Przesyłanie;
     **Proxy** konfiguruje opcjonalny serwer proxy HTTP lub SOCKS5, stosowany
     w całej aplikacji (wyszukiwanie OpenSubtitles, sprawdzanie aktualizacji

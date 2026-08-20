@@ -14,7 +14,8 @@ A **Megnyitás** menüvel tölthet be médiát a Vivace-be.
 - **Lemez**
   - **DVD meghajtóról vagy mappából…** — titkosítatlan DVD-Video lejátszása,
     beleértve a menüit. Lásd [Tallózás](menu-browse.md) a címekhez és fejezetekhez.
-  - **Blu-ray**, **Hang-CD** — még nem támogatott.
+  - **Blu-ray meghajtóról vagy mappából…** — egy titkosítatlan Blu-ray lemez alapszintű lejátszása: válassza ki a fő címét a *Tallózás ▸ Cím* menüből, fejezeteit pedig a *Tallózás ▸ Fejezetek* menüből. A lemezmenük nem támogatottak.
+  - **Hang-CD** — még nem támogatott.
 - **URL…** (`Ctrl+U`) — hálózati adatfolyam lejátszása. Bekapcsolt YouTube-
   támogatással (*Beállítások ▸ Hálózat*) a YouTube-hivatkozásokat is itt kezeli.
 - **YouTube-gyorsítótár…** — a Vivace által letöltött videók böngészése (letöltés

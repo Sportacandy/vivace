@@ -9,6 +9,14 @@ Het menu **Opties** bevat de voorkeuren en de interfaceconfiguratie.
   - **Algemeen ▸ Video** stelt de standaardmodus voor **Deinterlace** in
     (Geen / Yadif / Bwdif) voor nieuw geopende bestanden — wijzig dit per
     bestand via *Video ▸ Deinterlace*.
+  - **Algemeen ▸ Audio- en ondertiteling-voorkeuren** stelt de talen in
+    waaruit Vivace automatisch kiest tussen de ingesloten sporen van een
+    bestand. **Ondertitels standaard tonen** schakelt er automatisch een
+    in wanneer beschikbaar; de suboptie **...maar niet als de audio al in
+    een voorkeurstaal is** slaat die automatische ondertiteling over als
+    de taal overeenkomt met het daadwerkelijk geselecteerde audiospoor —
+    handig als u het audio al begrijpt en geen afleidende ondertiteling in
+    dezelfde taal wilt.
   - **Netwerk** heeft de tabbladen OpenSubtitles, YouTube, Proxy en Casten;
     **Proxy** stelt een optionele HTTP- of SOCKS5-proxy in die
     applicatiebreed geldt (OpenSubtitles-zoekopdrachten, de update-controle

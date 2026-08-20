@@ -14,7 +14,8 @@ Menu **Otwórz** służy do wczytywania multimediów do Vivace.
 - **Płyta**
   - **DVD z napędu lub folderu…** — odtwórz niezaszyfrowane DVD-Video, w tym jego
     menu. Zobacz [Przeglądaj](menu-browse.md) dla tytułów i rozdziałów.
-  - **Blu-ray**, **Płyta audio CD** — jeszcze nieobsługiwane.
+  - **Blu-ray z napędu lub folderu…** — podstawowe odtwarzanie niezaszyfrowanej płyty Blu-ray: wybierz jej główny tytuł w *Przeglądaj ▸ Tytuł* i rozdziały w *Przeglądaj ▸ Rozdziały*. Menu płyty nie jest obsługiwane.
+  - **Płyta audio CD** — jeszcze nieobsługiwana.
 - **URL…** (`Ctrl+U`) — odtwórz strumień sieciowy. Przy włączonej obsłudze
   YouTube (*Ustawienia ▸ Sieć*) łącza YouTube są również obsługiwane tutaj.
 - **Pamięć podręczna YouTube…** — przeglądaj filmy pobrane przez Vivace (w trybie

@@ -421,51 +421,51 @@
 <context>
     <name>ControlBar</name>
     <message>
-        <location filename="../qml/ControlBar.qml" line="408"/>
-        <location filename="../qml/ControlBar.qml" line="414"/>
         <location filename="../qml/ControlBar.qml" line="420"/>
+        <location filename="../qml/ControlBar.qml" line="426"/>
+        <location filename="../qml/ControlBar.qml" line="432"/>
         <source>Rewind %1 s</source>
         <translation>Назад с %1 с</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="426"/>
-        <location filename="../qml/ControlBar.qml" line="432"/>
         <location filename="../qml/ControlBar.qml" line="438"/>
+        <location filename="../qml/ControlBar.qml" line="444"/>
+        <location filename="../qml/ControlBar.qml" line="450"/>
         <source>Forward %1 s</source>
         <translation>Напред с %1 с</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="501"/>
+        <location filename="../qml/ControlBar.qml" line="513"/>
         <source>Error: %1</source>
         <translation>Грешка: %1</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="504"/>
+        <location filename="../qml/ControlBar.qml" line="516"/>
         <source>Playing %1</source>
         <translation>Възпроизвежда се %1</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="509"/>
+        <location filename="../qml/ControlBar.qml" line="521"/>
         <source>Paused</source>
         <translation>На пауза</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="511"/>
+        <location filename="../qml/ControlBar.qml" line="523"/>
         <source>Stopped</source>
         <translation>Спряно</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="556"/>
+        <location filename="../qml/ControlBar.qml" line="568"/>
         <source>V: %1 kbps</source>
         <translation>В: %1 kbps</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="557"/>
+        <location filename="../qml/ControlBar.qml" line="569"/>
         <source>A: %1 kbps</source>
         <translation>А: %1 kbps</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="569"/>
+        <location filename="../qml/ControlBar.qml" line="581"/>
         <source>Frame: %1</source>
         <translation>Кадър: %1</translation>
     </message>
@@ -766,284 +766,294 @@
 <context>
     <name>Main</name>
     <message>
-        <location filename="../qml/Main.qml" line="404"/>
+        <location filename="../qml/Main.qml" line="410"/>
         <source>TV editor</source>
         <translation>Редактор на ТВ</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="404"/>
+        <location filename="../qml/Main.qml" line="410"/>
         <source>TV channels</source>
         <translation>ТВ канали</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="407"/>
+        <location filename="../qml/Main.qml" line="413"/>
         <source>Radio editor</source>
         <translation>Редактор на радио</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="407"/>
+        <location filename="../qml/Main.qml" line="413"/>
         <source>Radio channels</source>
         <translation>Радиостанции</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="410"/>
-        <location filename="../qml/Main.qml" line="453"/>
+        <location filename="../qml/Main.qml" line="416"/>
+        <location filename="../qml/Main.qml" line="459"/>
         <source>Favorite editor</source>
         <translation>Редактор на „Любими“</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="410"/>
-        <location filename="../qml/Main.qml" line="453"/>
+        <location filename="../qml/Main.qml" line="416"/>
+        <location filename="../qml/Main.qml" line="459"/>
         <source>Favorite list</source>
         <translation>Списък с „Любими“</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="414"/>
+        <location filename="../qml/Main.qml" line="420"/>
         <source>Bookmark added</source>
         <translation>Отметката е добавена</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="429"/>
+        <location filename="../qml/Main.qml" line="435"/>
         <source>Edit main toolbar</source>
         <translation>Редакт. на основна &amp;лента</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="432"/>
+        <location filename="../qml/Main.qml" line="438"/>
         <source>Edit control bar</source>
         <translation>Редакт. на &amp;контролна лента</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="460"/>
+        <location filename="../qml/Main.qml" line="466"/>
         <source>Screenshot saved as %1</source>
         <translation>Екранната снимка е запазена като %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="461"/>
+        <location filename="../qml/Main.qml" line="467"/>
         <source>Could not take the screenshot</source>
         <translation>Екранната снимка не може да се направи</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="574"/>
+        <location filename="../qml/Main.qml" line="580"/>
         <source>Drop media files here, or press Ctrl+O</source>
         <translation>Пуснете медийни файлове тук или натиснете Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="661"/>
+        <location filename="../qml/Main.qml" line="667"/>
         <source>Downloading video…</source>
         <translation>Изтегляне на видео…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="668"/>
+        <location filename="../qml/Main.qml" line="674"/>
         <source>This can take a while — the external tool is downloading and merging HD video and audio.</source>
         <translation>Това може да отнеме известно време — външният инструмент изтегля и обединява HD видео и звук.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="682"/>
-        <location filename="../qml/Main.qml" line="1711"/>
+        <location filename="../qml/Main.qml" line="688"/>
+        <location filename="../qml/Main.qml" line="1752"/>
         <source>Cancel</source>
         <translation>Отказ</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="755"/>
+        <location filename="../qml/Main.qml" line="761"/>
         <source>Loading…</source>
         <translation>Зареждане…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="756"/>
+        <location filename="../qml/Main.qml" line="762"/>
         <source>Connecting…</source>
         <translation>Свързване...</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="757"/>
+        <location filename="../qml/Main.qml" line="763"/>
         <source>Buffering… %1%</source>
         <translation>Буфериране… %1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="765"/>
+        <location filename="../qml/Main.qml" line="771"/>
         <source>Live streams can take several seconds to start.</source>
         <translation>Живите потоци може да се стартират за няколко секунди.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="800"/>
+        <location filename="../qml/Main.qml" line="806"/>
         <source>Volume: %1%</source>
         <translation>Сила на звука: %1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="803"/>
+        <location filename="../qml/Main.qml" line="809"/>
         <source>Mute</source>
         <translation>Заглушаване</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="803"/>
+        <location filename="../qml/Main.qml" line="809"/>
         <source>Mute off</source>
         <translation>Заглушаването е изключено</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="806"/>
+        <location filename="../qml/Main.qml" line="812"/>
         <source>Speed: %1x</source>
         <translation>Скорост: %1x</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1327"/>
+        <location filename="../qml/Main.qml" line="1356"/>
         <source>Media files (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1328"/>
-        <location filename="../qml/Main.qml" line="1386"/>
-        <location filename="../qml/Main.qml" line="1647"/>
+        <location filename="../qml/Main.qml" line="1357"/>
+        <location filename="../qml/Main.qml" line="1427"/>
+        <location filename="../qml/Main.qml" line="1688"/>
         <source>All files (*)</source>
         <translation>Всички файлове (*)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1370"/>
+        <location filename="../qml/Main.qml" line="1399"/>
         <source>Select the DVD drive or a folder containing VIDEO_TS</source>
         <translation>Изберете DVD устройство или папка, съдържаща VIDEO_TS</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1374"/>
+        <location filename="../qml/Main.qml" line="1403"/>
         <source>No DVD video found in %1</source>
         <translation>Не е намерено DVD видео в %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1385"/>
+        <location filename="../qml/Main.qml" line="1411"/>
+        <source>Select the Blu-ray drive or a folder containing BDMV</source>
+        <translation>Изберете Blu-ray устройство или папка, съдържаща BDMV</translation>
+    </message>
+    <message>
+        <location filename="../qml/Main.qml" line="1415"/>
+        <source>No Blu-ray video found in %1</source>
+        <translation>Не е намерено Blu-ray видео в %1</translation>
+    </message>
+    <message>
+        <location filename="../qml/Main.qml" line="1426"/>
         <source>Playlists (*.m3u *.m3u8)</source>
         <translation>Списъци за изпълнение (*.m3u *.m3u8)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1428"/>
+        <location filename="../qml/Main.qml" line="1469"/>
         <source>Playing stream</source>
         <translation>Възпроизвеждане на поток</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1434"/>
-        <location filename="../qml/Main.qml" line="1467"/>
+        <location filename="../qml/Main.qml" line="1475"/>
+        <location filename="../qml/Main.qml" line="1508"/>
         <source>Playing downloaded video</source>
         <translation>Възпроизвеждане на изтеглено видео</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1438"/>
+        <location filename="../qml/Main.qml" line="1479"/>
         <source>YouTube: %1</source>
         <translation>YouTube: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1471"/>
+        <location filename="../qml/Main.qml" line="1512"/>
         <source>Download failed: %1</source>
         <translation>Изтеглянето е неуспешно: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1568"/>
+        <location filename="../qml/Main.qml" line="1609"/>
         <source>Saved %1 file(s); %2 failed.</source>
         <translation>Запазени %1 файл(а); неуспешни: %2.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1572"/>
+        <location filename="../qml/Main.qml" line="1613"/>
         <source>Saved %1 file(s).</source>
         <translation>Запазени %1 файл(а).</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1585"/>
+        <location filename="../qml/Main.qml" line="1626"/>
         <source>Could not read the shortcut file.</source>
         <translation>Файлът с пряк път не може да се прочете.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1600"/>
+        <location filename="../qml/Main.qml" line="1641"/>
         <source>Starting download…</source>
         <translation>Стартиране на изтеглянето…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1601"/>
+        <location filename="../qml/Main.qml" line="1642"/>
         <source>Downloading video (this can take a while)…</source>
         <translation>Изтегляне на видео (това може да отнеме известно време)…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1605"/>
+        <location filename="../qml/Main.qml" line="1646"/>
         <source>Resolving with yt-dlp…</source>
         <translation>Обработка с yt-dlp…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1642"/>
+        <location filename="../qml/Main.qml" line="1683"/>
         <source>Load subtitle file</source>
         <translation>Зареждане на файл със субтитри</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1646"/>
+        <location filename="../qml/Main.qml" line="1687"/>
         <source>Subtitle files (*.srt *.vtt *.ass *.ssa)</source>
         <translation>Файлове със субтитри (*.srt *.vtt *.ass *.ssa)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1654"/>
+        <location filename="../qml/Main.qml" line="1695"/>
         <source>Subtitle delay</source>
         <translation>Забавяне на субтитрите</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1688"/>
+        <location filename="../qml/Main.qml" line="1729"/>
         <source>Delay:</source>
         <translation>Забавяне:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1694"/>
-        <location filename="../qml/Main.qml" line="1766"/>
+        <location filename="../qml/Main.qml" line="1735"/>
+        <location filename="../qml/Main.qml" line="1807"/>
         <source>ms</source>
         <translation>мс</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1704"/>
+        <location filename="../qml/Main.qml" line="1745"/>
         <source>OK</source>
         <translation>&amp;ОК</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1723"/>
+        <location filename="../qml/Main.qml" line="1764"/>
         <source>Audio delay — Vivace</source>
         <translation>Забавяне на звука — Vivace</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1754"/>
+        <location filename="../qml/Main.qml" line="1795"/>
         <source>No delay for this file (use the global delay only)</source>
         <translation>Без забавяне за този файл (използване само на глобалното забавяне)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1759"/>
+        <location filename="../qml/Main.qml" line="1800"/>
         <source>This file&apos;s delay:</source>
         <translation>Забавяне на този файл:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1774"/>
+        <location filename="../qml/Main.qml" line="1815"/>
         <source>The delay applied to this file is this value plus the global delay for the current audio device (%1 ms), set in Preferences &gt; General &gt; Audio. Negative values delay the video to match audio that arrives late (e.g. Bluetooth headphones).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1787"/>
+        <location filename="../qml/Main.qml" line="1828"/>
         <source>&amp;Apply</source>
         <translation>&amp;Приложи</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1796"/>
+        <location filename="../qml/Main.qml" line="1837"/>
         <source>&amp;Close</source>
         <translation>&amp;Затваряне</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1893"/>
+        <location filename="../qml/Main.qml" line="1934"/>
         <source>Hide window</source>
         <translation>Скриване на прозореца</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1893"/>
+        <location filename="../qml/Main.qml" line="1934"/>
         <source>Show window</source>
         <translation>Показване на прозореца</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1898"/>
+        <location filename="../qml/Main.qml" line="1939"/>
         <source>Play / Pause</source>
         <translation>Възпроизвеждане/Пауза</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1902"/>
+        <location filename="../qml/Main.qml" line="1943"/>
         <source>Stop</source>
         <translation>Спиране</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1907"/>
+        <location filename="../qml/Main.qml" line="1948"/>
         <source>Quit</source>
         <translation>&amp;Изход</translation>
     </message>
@@ -1051,12 +1061,12 @@
 <context>
     <name>MainMenuBar</name>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="62"/>
+        <location filename="../qml/MainMenuBar.qml" line="63"/>
         <source>&amp;Auto</source>
         <translation>&amp;Автоматично</translation>
     </message>
     <message numerus="yes">
-        <location filename="../qml/MainMenuBar.qml" line="82"/>
+        <location filename="../qml/MainMenuBar.qml" line="83"/>
         <source>%n minute(s)</source>
         <translation type="unfinished">
             <numerusform></numerusform>
@@ -1064,7 +1074,7 @@
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../qml/MainMenuBar.qml" line="83"/>
+        <location filename="../qml/MainMenuBar.qml" line="84"/>
         <source>%n second(s)</source>
         <translation type="unfinished">
             <numerusform></numerusform>
@@ -1072,646 +1082,650 @@
         </translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="115"/>
+        <location filename="../qml/MainMenuBar.qml" line="116"/>
         <source>&amp;Open</source>
         <translation>&amp;Отваряне</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="118"/>
+        <location filename="../qml/MainMenuBar.qml" line="119"/>
         <source>&amp;File…</source>
         <translation>&amp;Файл...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="125"/>
+        <location filename="../qml/MainMenuBar.qml" line="126"/>
         <source>&amp;Recent files</source>
         <translation>&amp;Последни файлове</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="147"/>
+        <location filename="../qml/MainMenuBar.qml" line="148"/>
         <source>(empty)</source>
         <translation>(празно)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="153"/>
+        <location filename="../qml/MainMenuBar.qml" line="154"/>
         <source>&amp;Clear</source>
         <translation>&amp;Изчистване</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="159"/>
+        <location filename="../qml/MainMenuBar.qml" line="160"/>
         <source>F&amp;avorites</source>
         <translation>Л&amp;юбими</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="168"/>
+        <location filename="../qml/MainMenuBar.qml" line="169"/>
         <source>&amp;Directory…</source>
         <translation>Д&amp;иректория...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="173"/>
+        <location filename="../qml/MainMenuBar.qml" line="174"/>
         <source>&amp;Playlist…</source>
         <translation>&amp;Списък за изпълнение...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="178"/>
+        <location filename="../qml/MainMenuBar.qml" line="179"/>
         <source>D&amp;isc</source>
         <translation>&amp;Диск</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="182"/>
+        <location filename="../qml/MainMenuBar.qml" line="183"/>
         <source>&amp;DVD from drive or folder…</source>
         <translation>&amp;DVD от устройство или папка…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="187"/>
         <source>&amp;Blu-ray</source>
-        <translation>&amp;Blu-ray</translation>
+        <translation type="vanished">&amp;Blu-ray</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="191"/>
+        <location filename="../qml/MainMenuBar.qml" line="188"/>
+        <source>&amp;Blu-ray from drive or folder…</source>
+        <translation>&amp;Blu-ray от устройство или папка…</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainMenuBar.qml" line="193"/>
         <source>&amp;Audio CD</source>
         <translation>&amp;Аудио CD</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="196"/>
+        <location filename="../qml/MainMenuBar.qml" line="198"/>
         <source>&amp;URL…</source>
         <translation>&amp;Интернет адрес...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="202"/>
+        <location filename="../qml/MainMenuBar.qml" line="204"/>
         <source>YouTube &amp;cache…</source>
         <translation>&amp;Кеш на YouTube…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="210"/>
+        <location filename="../qml/MainMenuBar.qml" line="212"/>
         <source>&amp;TV</source>
         <translation>&amp;Телевизия</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="220"/>
+        <location filename="../qml/MainMenuBar.qml" line="222"/>
         <source>Radi&amp;o</source>
         <translation>Ради&amp;о</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="231"/>
+        <location filename="../qml/MainMenuBar.qml" line="233"/>
         <source>&amp;Quit</source>
         <translation>&amp;Изход</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="241"/>
+        <location filename="../qml/MainMenuBar.qml" line="243"/>
         <source>&amp;Play</source>
         <translation>&amp;Възпроизвеждане</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="244"/>
+        <location filename="../qml/MainMenuBar.qml" line="246"/>
         <source>P&amp;lay</source>
         <translation>В&amp;ъзпроизвеждане</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="251"/>
+        <location filename="../qml/MainMenuBar.qml" line="253"/>
         <source>&amp;Pause</source>
         <translation>&amp;Пауза</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="257"/>
+        <location filename="../qml/MainMenuBar.qml" line="259"/>
         <source>&amp;Stop</source>
         <translation>&amp;Спиране</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="263"/>
+        <location filename="../qml/MainMenuBar.qml" line="265"/>
         <source>Frame &amp;step</source>
         <translation>&amp;Стъпка на кадри</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="269"/>
+        <location filename="../qml/MainMenuBar.qml" line="271"/>
         <source>Fra&amp;me back step</source>
         <translation>Ка&amp;дър назад</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="276"/>
+        <location filename="../qml/MainMenuBar.qml" line="278"/>
         <source>&amp;Rewind %1</source>
         <translation>&amp;Назад %1</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="283"/>
+        <location filename="../qml/MainMenuBar.qml" line="285"/>
         <source>&amp;Forward %1</source>
         <translation>На&amp;пред %1</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="290"/>
-        <location filename="../qml/MainMenuBar.qml" line="304"/>
+        <location filename="../qml/MainMenuBar.qml" line="292"/>
+        <location filename="../qml/MainMenuBar.qml" line="306"/>
         <source>Rewind %1</source>
         <translation>Назад %1</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="297"/>
-        <location filename="../qml/MainMenuBar.qml" line="311"/>
+        <location filename="../qml/MainMenuBar.qml" line="299"/>
+        <location filename="../qml/MainMenuBar.qml" line="313"/>
         <source>Forward %1</source>
         <translation>Напред %1</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="319"/>
+        <location filename="../qml/MainMenuBar.qml" line="321"/>
         <source>Sp&amp;eed</source>
         <translation>С&amp;корост</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="323"/>
+        <location filename="../qml/MainMenuBar.qml" line="325"/>
         <source>&amp;Normal speed</source>
         <translation>&amp;Нормална скорост</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="329"/>
+        <location filename="../qml/MainMenuBar.qml" line="331"/>
         <source>&amp;Halve speed</source>
         <translation>&amp;Наполовина скорост</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="334"/>
+        <location filename="../qml/MainMenuBar.qml" line="336"/>
         <source>&amp;Double speed</source>
         <translation>&amp;Двойна скорост</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="340"/>
+        <location filename="../qml/MainMenuBar.qml" line="342"/>
         <source>Speed &amp;-10%</source>
         <translation>Скорост &amp;-10%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="345"/>
+        <location filename="../qml/MainMenuBar.qml" line="347"/>
         <source>Speed &amp;+10%</source>
         <translation>Скорост &amp;+10%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="350"/>
+        <location filename="../qml/MainMenuBar.qml" line="352"/>
         <source>Speed -4%</source>
         <translation>Скорост -&amp;4%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="351"/>
+        <location filename="../qml/MainMenuBar.qml" line="353"/>
         <source>Speed +4%</source>
         <translation>&amp;Скорост +4%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="353"/>
+        <location filename="../qml/MainMenuBar.qml" line="355"/>
         <source>Speed -1%</source>
         <translation>Скорост -&amp;1%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="354"/>
+        <location filename="../qml/MainMenuBar.qml" line="356"/>
         <source>Speed +1%</source>
         <translation>С&amp;корост +1%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="357"/>
+        <location filename="../qml/MainMenuBar.qml" line="359"/>
         <source>Pi&amp;tch compensation</source>
         <translation>Компенсация на &amp;височината на тона</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="366"/>
+        <location filename="../qml/MainMenuBar.qml" line="368"/>
         <source>&amp;A-B section</source>
         <translation>&amp;А-Б откъс</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="370"/>
+        <location filename="../qml/MainMenuBar.qml" line="372"/>
         <source>Set &amp;A marker</source>
         <translation>Задаване на зона &amp;A</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="376"/>
+        <location filename="../qml/MainMenuBar.qml" line="378"/>
         <source>Set &amp;B marker</source>
         <translation>Задаване на зона &amp;Б</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="382"/>
+        <location filename="../qml/MainMenuBar.qml" line="384"/>
         <source>&amp;Clear A-B markers</source>
         <translation>&amp;Изчистване на зони А-Б</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="390"/>
+        <location filename="../qml/MainMenuBar.qml" line="392"/>
         <source>&amp;Repeat</source>
         <translation>&amp;Повторение</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="396"/>
+        <location filename="../qml/MainMenuBar.qml" line="398"/>
         <source>&amp;Jump to…</source>
         <translation>&amp;Прескачане до...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="399"/>
+        <location filename="../qml/MainMenuBar.qml" line="401"/>
         <source>Pre&amp;vious</source>
         <translation>Пре&amp;дишен</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="406"/>
+        <location filename="../qml/MainMenuBar.qml" line="408"/>
         <source>&amp;Next</source>
         <translation>&amp;Следващ</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="415"/>
+        <location filename="../qml/MainMenuBar.qml" line="417"/>
         <source>Ca&amp;st</source>
         <translation>&amp;Предаване към</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="419"/>
+        <location filename="../qml/MainMenuBar.qml" line="421"/>
         <source>&amp;Smartphone/tablet…</source>
         <translation>&amp;Смартфон/таблет…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="427"/>
+        <location filename="../qml/MainMenuBar.qml" line="429"/>
         <source>&amp;Video</source>
         <translation>&amp;Видео</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="431"/>
-        <location filename="../qml/MainMenuBar.qml" line="655"/>
-        <location filename="../qml/MainMenuBar.qml" line="735"/>
+        <location filename="../qml/MainMenuBar.qml" line="433"/>
+        <location filename="../qml/MainMenuBar.qml" line="657"/>
+        <location filename="../qml/MainMenuBar.qml" line="743"/>
         <source>&amp;Track</source>
         <translation>&amp;Пътечка</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="438"/>
-        <location filename="../qml/MainMenuBar.qml" line="668"/>
-        <location filename="../qml/MainMenuBar.qml" line="859"/>
-        <location filename="../qml/MainMenuBar.qml" line="884"/>
+        <location filename="../qml/MainMenuBar.qml" line="440"/>
+        <location filename="../qml/MainMenuBar.qml" line="674"/>
+        <location filename="../qml/MainMenuBar.qml" line="883"/>
+        <location filename="../qml/MainMenuBar.qml" line="908"/>
         <source>&lt;empty&gt;</source>
         <translation>&lt;празно&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="460"/>
+        <location filename="../qml/MainMenuBar.qml" line="462"/>
         <source>&amp;Fullscreen</source>
         <translation>&amp;На цял екран</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="468"/>
+        <location filename="../qml/MainMenuBar.qml" line="470"/>
         <source>Si&amp;ze</source>
         <translation>Ра&amp;змер</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="471"/>
+        <location filename="../qml/MainMenuBar.qml" line="473"/>
         <source>50%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="472"/>
+        <location filename="../qml/MainMenuBar.qml" line="474"/>
         <source>100%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="473"/>
+        <location filename="../qml/MainMenuBar.qml" line="475"/>
         <source>200%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="476"/>
+        <location filename="../qml/MainMenuBar.qml" line="478"/>
         <source>&amp;Zoom and pan</source>
         <translation>&amp;Мащаб и преместване</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="480"/>
+        <location filename="../qml/MainMenuBar.qml" line="482"/>
         <source>&amp;Reset</source>
         <translation>&amp;Възстановяване</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="485"/>
+        <location filename="../qml/MainMenuBar.qml" line="487"/>
         <source>Zoom &amp;-</source>
         <translation>Намаляване &amp;-</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="490"/>
+        <location filename="../qml/MainMenuBar.qml" line="492"/>
         <source>Zoom &amp;+</source>
         <translation>Увеличаване &amp;+</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="496"/>
+        <location filename="../qml/MainMenuBar.qml" line="498"/>
         <source>Move &amp;left</source>
         <translation>Преместване &amp;наляво</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="501"/>
+        <location filename="../qml/MainMenuBar.qml" line="503"/>
         <source>Move &amp;right</source>
         <translation>Преместване &amp;надясно</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="506"/>
+        <location filename="../qml/MainMenuBar.qml" line="508"/>
         <source>Move &amp;up</source>
         <translation>Преместване &amp;нагоре</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="511"/>
+        <location filename="../qml/MainMenuBar.qml" line="513"/>
         <source>Move &amp;down</source>
         <translation>Преместване &amp;надолу</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="518"/>
+        <location filename="../qml/MainMenuBar.qml" line="520"/>
         <source>&amp;Aspect ratio</source>
         <translation>&amp;Съотношение</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="540"/>
+        <location filename="../qml/MainMenuBar.qml" line="542"/>
         <source>&amp;Rotate</source>
         <translation>&amp;Завъртане</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="544"/>
-        <location filename="../qml/MainMenuBar.qml" line="606"/>
+        <location filename="../qml/MainMenuBar.qml" line="546"/>
+        <location filename="../qml/MainMenuBar.qml" line="608"/>
         <source>&amp;None</source>
         <translation>&amp;Без</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="553"/>
+        <location filename="../qml/MainMenuBar.qml" line="555"/>
         <source>&amp;Rotate by 90° clockwise</source>
         <translation>&amp;Завъртане на 90° по часовниковата стрелка</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="562"/>
+        <location filename="../qml/MainMenuBar.qml" line="564"/>
         <source>Rotate by 90° &amp;counterclockwise</source>
         <translation>Завъртане на 90° &amp;обратно на часовниковата стрелка</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="571"/>
+        <location filename="../qml/MainMenuBar.qml" line="573"/>
         <source>Rotate by &amp;180°</source>
         <translation>Завъртане на &amp;180°</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="581"/>
+        <location filename="../qml/MainMenuBar.qml" line="583"/>
         <source>Fli&amp;p image</source>
         <translation>Зав&amp;ъртане на картина</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="592"/>
+        <location filename="../qml/MainMenuBar.qml" line="594"/>
         <source>Mirr&amp;or image</source>
         <translation>Огле&amp;дална картина</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="603"/>
+        <location filename="../qml/MainMenuBar.qml" line="605"/>
         <source>&amp;Deinterlace</source>
         <translation>&amp;Компенсиране</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="615"/>
+        <location filename="../qml/MainMenuBar.qml" line="617"/>
         <source>&amp;Yadif</source>
         <translation>&amp;Yadif</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="624"/>
+        <location filename="../qml/MainMenuBar.qml" line="626"/>
         <source>&amp;Bwdif</source>
         <translation>&amp;Bwdif</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="635"/>
+        <location filename="../qml/MainMenuBar.qml" line="637"/>
         <source>E&amp;qualizer…</source>
         <translation>&amp;Еквалайзер…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="641"/>
+        <location filename="../qml/MainMenuBar.qml" line="643"/>
         <source>&amp;Screenshot</source>
         <translation>&amp;Снимка на екрана</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="651"/>
+        <location filename="../qml/MainMenuBar.qml" line="653"/>
         <source>&amp;Audio</source>
         <translation>&amp;Звук</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="693"/>
+        <location filename="../qml/MainMenuBar.qml" line="701"/>
         <source>&amp;Mute</source>
         <translation>&amp;Заглушаване</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="702"/>
+        <location filename="../qml/MainMenuBar.qml" line="710"/>
         <source>Volume &amp;-</source>
         <translation>Сила на звука &amp;-</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="708"/>
+        <location filename="../qml/MainMenuBar.qml" line="716"/>
         <source>Volume &amp;+</source>
         <translation>Сила на звука &amp;+</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="716"/>
-        <location filename="../qml/MainMenuBar.qml" line="809"/>
+        <location filename="../qml/MainMenuBar.qml" line="724"/>
+        <location filename="../qml/MainMenuBar.qml" line="821"/>
         <source>Delay &amp;-</source>
         <translation>Забавяне &amp;-</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="720"/>
+        <location filename="../qml/MainMenuBar.qml" line="728"/>
         <source>D&amp;elay +</source>
         <translation>За&amp;бавяне +</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="724"/>
+        <location filename="../qml/MainMenuBar.qml" line="732"/>
         <source>Set dela&amp;y…</source>
         <translation>Задайте забав&amp;яне...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="731"/>
+        <location filename="../qml/MainMenuBar.qml" line="739"/>
         <source>&amp;Subtitles</source>
         <translation>&amp;Субтитри</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="743"/>
+        <location filename="../qml/MainMenuBar.qml" line="759"/>
         <source>&amp;Off</source>
         <translation>&amp;Изключване</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="792"/>
+        <location filename="../qml/MainMenuBar.qml" line="804"/>
         <source>&amp;Load subtitles…</source>
         <translation>&amp;Зареждане на субтитри…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="798"/>
+        <location filename="../qml/MainMenuBar.qml" line="810"/>
         <source>&amp;Find subtitles at OpenSubtitles…</source>
         <translation>&amp;Търсене на субтитри в OpenSubtitles…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="803"/>
+        <location filename="../qml/MainMenuBar.qml" line="815"/>
         <source>U&amp;nload subtitles</source>
         <translation>&amp;Премахване на субтитри</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="814"/>
+        <location filename="../qml/MainMenuBar.qml" line="826"/>
         <source>Delay &amp;+</source>
         <translation>Забавяне &amp;+</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="819"/>
+        <location filename="../qml/MainMenuBar.qml" line="831"/>
         <source>Se&amp;t delay…</source>
         <translation>За&amp;дайте забавяне...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="827"/>
+        <location filename="../qml/MainMenuBar.qml" line="839"/>
         <source>&amp;Browse</source>
         <translation>&amp;Преглед</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="830"/>
+        <location filename="../qml/MainMenuBar.qml" line="842"/>
         <source>&amp;DVD menu</source>
         <translation>DVD &amp;меню</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="839"/>
+        <location filename="../qml/MainMenuBar.qml" line="851"/>
         <source>&amp;Title</source>
         <translation>&amp;Заглавие</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="866"/>
+        <location filename="../qml/MainMenuBar.qml" line="890"/>
         <source>&amp;Chapters</source>
         <translation>&amp;Глави</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="891"/>
+        <location filename="../qml/MainMenuBar.qml" line="915"/>
         <source>&amp;Bookmarks</source>
         <translation>&amp;Отметки</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="901"/>
+        <location filename="../qml/MainMenuBar.qml" line="925"/>
         <source>&amp;Add new bookmark</source>
         <translation>&amp;Добави нова отметка</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="908"/>
+        <location filename="../qml/MainMenuBar.qml" line="932"/>
         <source>&amp;Edit bookmarks…</source>
         <translation>&amp;Редактиране на отметки…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="932"/>
+        <location filename="../qml/MainMenuBar.qml" line="956"/>
         <source>Vie&amp;w</source>
         <translation>&amp;Изглед</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="935"/>
+        <location filename="../qml/MainMenuBar.qml" line="959"/>
         <source>&amp;Information and properties…</source>
         <translation>&amp;Информация и предпочитания</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="942"/>
+        <location filename="../qml/MainMenuBar.qml" line="966"/>
         <source>&amp;Playlist</source>
         <translation>&amp;Списък за изпълнение</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="950"/>
+        <location filename="../qml/MainMenuBar.qml" line="974"/>
         <source>&amp;OSD</source>
         <translation>&amp;Екранно известие</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="952"/>
+        <location filename="../qml/MainMenuBar.qml" line="976"/>
         <source>Subtitles only</source>
         <translation>Сам&amp;о субтитри</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="953"/>
+        <location filename="../qml/MainMenuBar.qml" line="977"/>
         <source>Volume + seek</source>
         <translation>Звук + превъртане</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="954"/>
+        <location filename="../qml/MainMenuBar.qml" line="978"/>
         <source>Volume + seek + timer</source>
         <translation>Звук + превъртане + време</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="960"/>
+        <location filename="../qml/MainMenuBar.qml" line="984"/>
         <source>Op&amp;tions</source>
         <translation>Оп&amp;ции</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="963"/>
+        <location filename="../qml/MainMenuBar.qml" line="987"/>
         <source>&amp;Preferences…</source>
         <translation>&amp;Настройки…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="970"/>
+        <location filename="../qml/MainMenuBar.qml" line="994"/>
         <source>S&amp;how icon in system tray</source>
         <translation>&amp;Показване на икона в системния панел</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="976"/>
+        <location filename="../qml/MainMenuBar.qml" line="1000"/>
         <source>&amp;Toolbars</source>
         <translation>&amp;Ленти</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="979"/>
+        <location filename="../qml/MainMenuBar.qml" line="1003"/>
         <source>&amp;Toolbar</source>
         <translation>&amp;Лента с инструменти</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="985"/>
+        <location filename="../qml/MainMenuBar.qml" line="1009"/>
         <source>&amp;Control bar</source>
         <translation>Контролна лента</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="992"/>
+        <location filename="../qml/MainMenuBar.qml" line="1016"/>
         <source>Edit main &amp;toolbar…</source>
         <translation>Редактиране на главната &amp;лента с инструменти…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="996"/>
+        <location filename="../qml/MainMenuBar.qml" line="1020"/>
         <source>Edit control &amp;bar…</source>
         <translation>Редактиране на лентата за &amp;управление…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1001"/>
+        <location filename="../qml/MainMenuBar.qml" line="1025"/>
         <source>&amp;Status bar</source>
         <translation>Лента за &amp;състояние</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1004"/>
+        <location filename="../qml/MainMenuBar.qml" line="1028"/>
         <source>&amp;Show status bar</source>
         <translation>&amp;Показване на лентата за състояние</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1011"/>
+        <location filename="../qml/MainMenuBar.qml" line="1035"/>
         <source>&amp;Video info</source>
         <translation>&amp;Видео информация</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1018"/>
+        <location filename="../qml/MainMenuBar.qml" line="1042"/>
         <source>&amp;Audio info</source>
         <translation>Информация за &amp;звука</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1025"/>
+        <location filename="../qml/MainMenuBar.qml" line="1049"/>
         <source>F&amp;ormat info</source>
         <translation>Информация за &amp;формат</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1032"/>
+        <location filename="../qml/MainMenuBar.qml" line="1056"/>
         <source>&amp;Bitrate info</source>
         <translation>&amp;Побитова информация</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1039"/>
+        <location filename="../qml/MainMenuBar.qml" line="1063"/>
         <source>&amp;Frame counter</source>
         <translation>Брояч на &amp;кадри</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1047"/>
+        <location filename="../qml/MainMenuBar.qml" line="1071"/>
         <source>Display &amp;total time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1053"/>
+        <location filename="../qml/MainMenuBar.qml" line="1077"/>
         <source>Display &amp;remaining time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1060"/>
+        <location filename="../qml/MainMenuBar.qml" line="1084"/>
         <source>Show the current time with &amp;milliseconds</source>
         <translation>&amp;Показвай текущото време в милисекунди</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1070"/>
+        <location filename="../qml/MainMenuBar.qml" line="1094"/>
         <source>&amp;Help</source>
         <translation>&amp;Помощ</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1073"/>
+        <location filename="../qml/MainMenuBar.qml" line="1097"/>
         <source>&amp;Contents</source>
         <translation>&amp;Съдържание</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1080"/>
+        <location filename="../qml/MainMenuBar.qml" line="1104"/>
         <source>&amp;Check for updates</source>
         <translation>Проверка за &amp;обновления</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1086"/>
+        <location filename="../qml/MainMenuBar.qml" line="1110"/>
         <source>&amp;About Vivace</source>
         <translation>&amp;Относно Vivace</translation>
     </message>
@@ -1887,289 +1901,363 @@
     <name>PlayerController</name>
     <message>
         <location filename="../src/playercontroller.cpp" line="181"/>
-        <location filename="../src/playercontroller.cpp" line="801"/>
-        <location filename="../src/playercontroller.cpp" line="817"/>
-        <location filename="../src/playercontroller.cpp" line="2067"/>
+        <location filename="../src/playercontroller.cpp" line="925"/>
+        <location filename="../src/playercontroller.cpp" line="941"/>
+        <location filename="../src/playercontroller.cpp" line="1598"/>
+        <location filename="../src/playercontroller.cpp" line="1614"/>
+        <location filename="../src/playercontroller.cpp" line="2525"/>
         <source>Track %1</source>
         <translation>Пътечка %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="719"/>
+        <location filename="../src/playercontroller.cpp" line="843"/>
         <source>A/V delay: %1 ms</source>
         <translation>Забавяне А/В: %1 мс</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1219"/>
+        <location filename="../src/playercontroller.cpp" line="1655"/>
         <source>DVD title %1 could not be assembled</source>
         <translation>Заглавие %1 на DVD не може да се сглоби</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1225"/>
+        <location filename="../src/playercontroller.cpp" line="1661"/>
         <source>DVD title %1 could not be opened</source>
         <translation>Заглавие %1 на DVD не може да се отвори</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1384"/>
+        <location filename="../src/playercontroller.cpp" line="1475"/>
+        <location filename="../src/playercontroller.cpp" line="1842"/>
         <source>Title %1 (%2)</source>
         <translation>Заглавие %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1400"/>
+        <location filename="../src/playercontroller.cpp" line="237"/>
+        <source>MPEG-1 Audio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/playercontroller.cpp" line="238"/>
+        <source>MPEG-2 Audio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/playercontroller.cpp" line="239"/>
+        <source>LPCM</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/playercontroller.cpp" line="240"/>
+        <source>AC-3 (Dolby Digital)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/playercontroller.cpp" line="242"/>
+        <source>Dolby TrueHD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/playercontroller.cpp" line="243"/>
+        <source>AC-3 Plus (Dolby Digital Plus)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/playercontroller.cpp" line="244"/>
+        <source>DTS-HD High Resolution Audio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/playercontroller.cpp" line="245"/>
+        <source>DTS-HD Master Audio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/playercontroller.cpp" line="246"/>
+        <source>AC-3 Plus (secondary)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/playercontroller.cpp" line="247"/>
+        <source>DTS-HD (secondary)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/playercontroller.cpp" line="1372"/>
+        <source>Could not open the Blu-ray disc (it may be encrypted, or use an unsupported format).</source>
+        <translation>Дискът Blu-ray не можа да бъде отворен (може да е криптиран или да използва неподдържан формат).</translation>
+    </message>
+    <message>
+        <location filename="../src/playercontroller.cpp" line="1379"/>
+        <source>No playable titles were found on this Blu-ray disc.</source>
+        <translation>На този диск Blu-ray не бяха намерени възпроизводими заглавия.</translation>
+    </message>
+    <message>
+        <location filename="../src/playercontroller.cpp" line="1424"/>
+        <source>This Blu-ray title could not be selected.</source>
+        <translation>Това заглавие на Blu-ray не можа да бъде избрано.</translation>
+    </message>
+    <message>
+        <location filename="../src/playercontroller.cpp" line="1434"/>
+        <location filename="../src/playercontroller.cpp" line="1438"/>
+        <source>This Blu-ray title could not be opened.</source>
+        <translation>Това заглавие на Blu-ray не можа да бъде отворено.</translation>
+    </message>
+    <message>
+        <location filename="../src/playercontroller.cpp" line="1858"/>
         <source>Chapter %1 (%2)</source>
         <translation>Глава %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2535"/>
+        <location filename="../src/playercontroller.cpp" line="3001"/>
         <source>Could not open the stream</source>
         <translation>Потокът не може да се отвори</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2594"/>
+        <location filename="../src/playercontroller.cpp" line="3060"/>
         <source>System default</source>
         <translation>По подразбиране за системата</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2759"/>
+        <location filename="../src/playercontroller.cpp" line="3234"/>
         <source>A marker set to %1</source>
         <translation>Маркер A зададен на %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2770"/>
+        <location filename="../src/playercontroller.cpp" line="3245"/>
         <source>B marker set to %1</source>
         <translation>Маркер B зададен на %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2780"/>
+        <location filename="../src/playercontroller.cpp" line="3255"/>
         <source>A-B markers cleared</source>
         <translation>Позициите А и Б са изчистени</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2837"/>
+        <location filename="../src/playercontroller.cpp" line="3312"/>
         <source>None</source>
         <translation>Без</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2837"/>
+        <location filename="../src/playercontroller.cpp" line="3312"/>
         <source>Yadif</source>
         <translation>Yadif</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2838"/>
+        <location filename="../src/playercontroller.cpp" line="3313"/>
         <source>Bwdif</source>
         <translation>Bwdif</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2839"/>
+        <location filename="../src/playercontroller.cpp" line="3314"/>
         <source>Deinterlace: %1</source>
         <translation>Компенсиране: %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2918"/>
+        <location filename="../src/playercontroller.cpp" line="3393"/>
         <source>Could not load subtitles from %1</source>
         <translation>Субтитрите не могат да се заредят от %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2935"/>
+        <location filename="../src/playercontroller.cpp" line="3410"/>
         <source>Subtitles loaded: %1</source>
         <translation>Субтитрите са заредени: %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2946"/>
+        <location filename="../src/playercontroller.cpp" line="3421"/>
         <source>Subtitles unloaded</source>
         <translation>Субтитрите са премахнати</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="2956"/>
+        <location filename="../src/playercontroller.cpp" line="3431"/>
         <source>Subtitle delay: %1 ms</source>
         <translation>Забавяне на субтитрите: %1 мс</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3086"/>
+        <location filename="../src/playercontroller.cpp" line="3576"/>
         <source>General</source>
         <translation>Общи</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3089"/>
+        <location filename="../src/playercontroller.cpp" line="3579"/>
         <source>File</source>
         <translation>Файл</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3092"/>
+        <location filename="../src/playercontroller.cpp" line="3594"/>
         <source>Size</source>
         <translation>Размер</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3092"/>
+        <location filename="../src/playercontroller.cpp" line="3594"/>
         <source>%1 KB (%2 MB)</source>
         <translation>%1 КБ (%2 МБ)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3096"/>
-        <location filename="../src/playercontroller.cpp" line="3122"/>
+        <location filename="../src/playercontroller.cpp" line="3599"/>
+        <location filename="../src/playercontroller.cpp" line="3633"/>
         <source>URL</source>
         <translation>Интернет адрес</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3099"/>
+        <location filename="../src/playercontroller.cpp" line="3609"/>
         <source>Length</source>
         <translation>Времетраене</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3100"/>
+        <location filename="../src/playercontroller.cpp" line="3610"/>
         <source>Demuxer</source>
         <translation>Демултиплексор</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3105"/>
-        <location filename="../src/playercontroller.cpp" line="3155"/>
-        <location filename="../src/playercontroller.cpp" line="3174"/>
-        <location filename="../src/playercontroller.cpp" line="3183"/>
+        <location filename="../src/playercontroller.cpp" line="3615"/>
+        <location filename="../src/playercontroller.cpp" line="3666"/>
+        <location filename="../src/playercontroller.cpp" line="3729"/>
+        <location filename="../src/playercontroller.cpp" line="3759"/>
         <source>Name</source>
         <translation>Име</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3106"/>
+        <location filename="../src/playercontroller.cpp" line="3616"/>
         <source>Artist</source>
         <translation>Изпълнител</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3108"/>
+        <location filename="../src/playercontroller.cpp" line="3618"/>
         <source>Album artist</source>
         <translation>Изпълнител на албума</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3110"/>
+        <location filename="../src/playercontroller.cpp" line="3620"/>
         <source>Author</source>
         <translation>Автор</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3111"/>
+        <location filename="../src/playercontroller.cpp" line="3621"/>
         <source>Composer</source>
         <translation>Композитор</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3112"/>
+        <location filename="../src/playercontroller.cpp" line="3622"/>
         <source>Album</source>
         <translation>Албум</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3113"/>
+        <location filename="../src/playercontroller.cpp" line="3623"/>
         <source>Genre</source>
         <translation>Жанр</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3114"/>
+        <location filename="../src/playercontroller.cpp" line="3624"/>
         <source>Date</source>
         <translation>Дата</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3115"/>
+        <location filename="../src/playercontroller.cpp" line="3625"/>
         <source>Track</source>
         <translation>Пътечка</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3116"/>
+        <location filename="../src/playercontroller.cpp" line="3626"/>
         <source>Copyright</source>
         <translation>Авторско право</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3117"/>
+        <location filename="../src/playercontroller.cpp" line="3627"/>
         <source>Comment</source>
         <translation>Коментар</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3118"/>
+        <location filename="../src/playercontroller.cpp" line="3628"/>
         <source>Description</source>
         <translation>Описание</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3120"/>
+        <location filename="../src/playercontroller.cpp" line="3630"/>
         <source>Publisher</source>
         <translation>Издател</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3121"/>
-        <location filename="../src/playercontroller.cpp" line="3155"/>
-        <location filename="../src/playercontroller.cpp" line="3174"/>
-        <location filename="../src/playercontroller.cpp" line="3183"/>
+        <location filename="../src/playercontroller.cpp" line="3631"/>
+        <location filename="../src/playercontroller.cpp" line="3666"/>
+        <location filename="../src/playercontroller.cpp" line="3729"/>
+        <location filename="../src/playercontroller.cpp" line="3759"/>
         <source>Language</source>
         <translation>Език</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3124"/>
+        <location filename="../src/playercontroller.cpp" line="3635"/>
         <source>Clip info</source>
         <translation>Информация за клипа</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3128"/>
+        <location filename="../src/playercontroller.cpp" line="3639"/>
         <source>Initial Video Stream</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3131"/>
+        <location filename="../src/playercontroller.cpp" line="3642"/>
         <source>Resolution</source>
         <translation>Резолюция</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3134"/>
+        <location filename="../src/playercontroller.cpp" line="3645"/>
         <source>Aspect ratio</source>
         <translation>Съотношение</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3138"/>
-        <location filename="../src/playercontroller.cpp" line="3163"/>
+        <location filename="../src/playercontroller.cpp" line="3649"/>
+        <location filename="../src/playercontroller.cpp" line="3689"/>
         <source>Format</source>
         <translation>Формат</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3141"/>
-        <location filename="../src/playercontroller.cpp" line="3166"/>
+        <location filename="../src/playercontroller.cpp" line="3652"/>
+        <location filename="../src/playercontroller.cpp" line="3692"/>
         <source>Bitrate</source>
         <translation>Побитова скорост</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3141"/>
-        <location filename="../src/playercontroller.cpp" line="3166"/>
+        <location filename="../src/playercontroller.cpp" line="3652"/>
+        <location filename="../src/playercontroller.cpp" line="3692"/>
         <source>%1 kbps</source>
         <translation>%1 кбвс</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3144"/>
+        <location filename="../src/playercontroller.cpp" line="3655"/>
         <source>Frames per second</source>
         <translation>Кадри в секунда</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3147"/>
+        <location filename="../src/playercontroller.cpp" line="3658"/>
         <source>HDR</source>
         <translation>HDR</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3147"/>
+        <location filename="../src/playercontroller.cpp" line="3658"/>
         <source>yes</source>
         <translation>да</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3154"/>
+        <location filename="../src/playercontroller.cpp" line="3665"/>
         <source>Video Streams</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3162"/>
+        <location filename="../src/playercontroller.cpp" line="3673"/>
         <source>Initial Audio Stream</source>
         <translation>Първоначален звуков поток</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3173"/>
+        <location filename="../src/playercontroller.cpp" line="3728"/>
         <source>Audio Streams</source>
         <translation>Звукови потоци</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3182"/>
+        <location filename="../src/playercontroller.cpp" line="3758"/>
         <source>Subtitles</source>
         <translation>Субтитри</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3455"/>
+        <location filename="../src/playercontroller.cpp" line="4045"/>
         <source>Chapter %1</source>
         <translation>Глава %1</translation>
     </message>
@@ -2407,68 +2495,68 @@
 <context>
     <name>PrefDrivesPage</name>
     <message>
-        <location filename="../qml/PrefDrivesPage.qml" line="18"/>
-        <source>&lt;h1&gt;Drives&lt;/h1&gt;&lt;p&gt;Vivace plays unencrypted DVD-Video. Open a disc or a VIDEO_TS folder with Open ▸ Disc ▸ DVD… — the title list and chapters are read from the disc&apos;s IFO structure, so there is no drive to preselect.&lt;/p&gt;&lt;p&gt;&lt;b&gt;DVD menus (experimental):&lt;/b&gt; when enabled, opening a disc shows its menu — buttons are clickable and can be navigated with the arrow keys (Enter selects). Use Browse ▸ DVD menu to return to it. If the menu is left idle for the timeout below, playback of the main title starts automatically (set 0 to keep the menu open). Subpicture highlight graphics and the First-Play sequence are not fully emulated.&lt;/p&gt;&lt;p&gt;CSS-encrypted discs and Blu-ray are not supported. Audio CD playback is being considered for a later phase.&lt;/p&gt;</source>
+        <location filename="../qml/PrefDrivesPage.qml" line="20"/>
+        <source>&lt;h1&gt;Drives&lt;/h1&gt;&lt;p&gt;Vivace plays unencrypted DVD-Video. Open a disc or a VIDEO_TS folder with Open ▸ Disc ▸ DVD… — the title list and chapters are read from the disc&apos;s IFO structure, so there is no drive to preselect.&lt;/p&gt;&lt;p&gt;&lt;b&gt;DVD menus (experimental):&lt;/b&gt; when enabled, opening a disc shows its menu — buttons are clickable and can be navigated with the arrow keys (Enter selects). Use Browse ▸ DVD menu to return to it. If the menu is left idle for the timeout below, playback of the main title starts automatically (set 0 to keep the menu open). Subpicture highlight graphics and the First-Play sequence are not fully emulated.&lt;/p&gt;&lt;p&gt;CSS-encrypted discs are not supported. Blu-ray Disc playback is also available (Open ▸ Disc ▸ Blu-ray) — basic title/chapter playback only, with no on-disc menus and no Preferences of its own. Audio CD playback is being considered for a later phase.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefDrivesPage.qml" line="36"/>
+        <location filename="../qml/PrefDrivesPage.qml" line="40"/>
         <source>DVD</source>
         <translation>DVD</translation>
     </message>
     <message>
-        <location filename="../qml/PrefDrivesPage.qml" line="45"/>
+        <location filename="../qml/PrefDrivesPage.qml" line="49"/>
         <source>Vivace plays unencrypted DVD-Video. Use Open ▸ Disc ▸ DVD… (or drop a disc/VIDEO_TS folder) — the title list and chapters are read from the disc structure. There is no drive to preselect here.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefDrivesPage.qml" line="49"/>
+        <location filename="../qml/PrefDrivesPage.qml" line="53"/>
         <source>Show DVD menus (experimental)</source>
         <translation>Показване на DVD менюта (експериментално)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefDrivesPage.qml" line="58"/>
+        <location filename="../qml/PrefDrivesPage.qml" line="62"/>
         <source>Play the First-Play sequence (intro / warnings)</source>
         <translation>Възпроизвеждане на началната последователност (интро / предупреждения)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefDrivesPage.qml" line="63"/>
+        <location filename="../qml/PrefDrivesPage.qml" line="67"/>
         <source>Run the disc&apos;s on-insert sequence (studio logos, warnings or an intro that may lead to a menu or auto-play), as a set-top player does. Off: go straight to the disc&apos;s interactive menu.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefDrivesPage.qml" line="73"/>
+        <location filename="../qml/PrefDrivesPage.qml" line="77"/>
         <source>Return to playback after menu inactivity:</source>
         <translation>Връщане към възпроизвеждане след бездействие в менюто:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefDrivesPage.qml" line="80"/>
-        <location filename="../qml/PrefDrivesPage.qml" line="82"/>
+        <location filename="../qml/PrefDrivesPage.qml" line="84"/>
+        <location filename="../qml/PrefDrivesPage.qml" line="86"/>
         <source>Never</source>
         <translation>Никога</translation>
     </message>
     <message>
-        <location filename="../qml/PrefDrivesPage.qml" line="81"/>
+        <location filename="../qml/PrefDrivesPage.qml" line="85"/>
         <source>%1 s</source>
         <translation>%1 с</translation>
     </message>
     <message>
-        <location filename="../qml/PrefDrivesPage.qml" line="86"/>
+        <location filename="../qml/PrefDrivesPage.qml" line="90"/>
         <source>Seconds a DVD menu may sit idle before Vivace plays the main title. Any menu activity resets the timer; 0 keeps the menu open indefinitely.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefDrivesPage.qml" line="97"/>
-        <source>Experimental: menu buttons are clickable and arrow-key navigable, but subpicture highlight graphics and the First-Play sequence are not fully emulated. CSS-encrypted discs (libdvdcss) and Blu-ray are not supported.</source>
+        <location filename="../qml/PrefDrivesPage.qml" line="101"/>
+        <source>Experimental: menu buttons are clickable and arrow-key navigable, but subpicture highlight graphics and the First-Play sequence are not fully emulated. CSS-encrypted discs (libdvdcss) are not supported. (Blu-ray Disc playback is supported separately via Open ▸ Disc ▸ Blu-ray, but has no on-disc menus and no settings here.)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefDrivesPage.qml" line="104"/>
+        <location filename="../qml/PrefDrivesPage.qml" line="108"/>
         <source>Audio CD</source>
         <translation>&amp;Аудио CD</translation>
     </message>
     <message>
-        <location filename="../qml/PrefDrivesPage.qml" line="110"/>
+        <location filename="../qml/PrefDrivesPage.qml" line="114"/>
         <source>Audio CD playback (libcdio) is being considered for a later phase.</source>
         <translation>Възпроизвеждането на аудио CD (libcdio) се обмисля за по-късен етап.</translation>
     </message>
@@ -2510,146 +2598,146 @@
     <name>PrefGeneralPage</name>
     <message>
         <location filename="../qml/PrefGeneralPage.qml" line="20"/>
-        <source>&lt;h1&gt;General&lt;/h1&gt;&lt;p&gt;Core playback options, grouped into tabs.&lt;/p&gt;&lt;p&gt;&lt;b&gt;General&lt;/b&gt; — remember playback position and per-file track choices, and where screenshots are saved (folder and image format).&lt;/p&gt;&lt;p&gt;&lt;b&gt;Video&lt;/b&gt; — the video output; the FFmpeg backend decodes in software (there are no mplayer/mpv video filters).&lt;/p&gt;&lt;p&gt;&lt;b&gt;Audio&lt;/b&gt; — the output device (from the system&apos;s devices), the startup/remembered volume and the volume step.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Preferred audio and subtitles&lt;/b&gt; — the languages Vivace auto-selects among a file&apos;s embedded tracks, and whether subtitles are shown by default.&lt;/p&gt;</source>
+        <source>&lt;h1&gt;General&lt;/h1&gt;&lt;p&gt;Core playback options, grouped into tabs.&lt;/p&gt;&lt;p&gt;&lt;b&gt;General&lt;/b&gt; — remember playback position and per-file track choices, and where screenshots are saved (folder and image format).&lt;/p&gt;&lt;p&gt;&lt;b&gt;Video&lt;/b&gt; — the video output; the FFmpeg backend decodes in software (there are no mplayer/mpv video filters).&lt;/p&gt;&lt;p&gt;&lt;b&gt;Audio&lt;/b&gt; — the output device (from the system&apos;s devices), the startup/remembered volume and the volume step.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Preferred audio and subtitles&lt;/b&gt; — the languages Vivace auto-selects among a file&apos;s embedded tracks, and whether subtitles are shown by default — optionally skipped when the selected audio is already in a preferred language.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="38"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="39"/>
         <source>General</source>
         <translation>Общи</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="39"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="40"/>
         <source>Video</source>
         <translation>Видео</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="40"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="41"/>
         <source>Audio</source>
         <translation>Звук</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="41"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="42"/>
         <source>Preferred audio and subtitles</source>
         <translation>Предпочитан звук и субтитри</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="60"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="61"/>
         <source>Multimedia engine:</source>
         <translation>Мултимедиен &amp;двигател:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="65"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="66"/>
         <source>Qt Multimedia (FFmpeg)</source>
         <translation>Qt Multimedia (FFmpeg)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="71"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="72"/>
         <source>Media settings</source>
         <translation>Настройки на медия</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="80"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="81"/>
         <source>Remember settings for all files (audio and subtitle tracks)</source>
         <translation>Запомняне на настройките за всички файлове (пътечки за звук и субтитри)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="85"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="86"/>
         <source>Store each file&apos;s chosen audio and subtitle track, and restore them the next time that file is opened.</source>
         <translation>Запазва избраната за всеки файл пътечка за звук и субтитри и ги възстановява при следващото отваряне на файла.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="92"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="93"/>
         <source>Remember time position of files</source>
         <translation>Запомняне на позицията във времето на файловете</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="97"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="98"/>
         <source>Close the main window when the playlist finishes</source>
         <translation>Затваряне на главния прозорец при завършване на списъка за изпълнение</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="102"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="103"/>
         <source>Pause when the window is minimized</source>
         <translation>Пауза при минимизиране на прозореца</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="109"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="110"/>
         <source>Disable screensaver while playing video</source>
         <translation>Изключване на скрийнсейвъра при възпроизвеждане на видео</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="114"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="115"/>
         <source>Keep the screen awake only while a video is actually playing; audio-only playback and paused/stopped states are unaffected.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="125"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="126"/>
         <source>Screenshots</source>
         <translation>Снимки на екрана</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="133"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="134"/>
         <source>Folder:</source>
         <translation>&amp;Папка:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="140"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="141"/>
         <source>Browse…</source>
         <translation>Преглед…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="146"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="147"/>
         <source>Image format:</source>
         <translation>Формат на изображението:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="173"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="174"/>
         <source>Output driver:</source>
         <translation>Изхо&amp;ден драйвър:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="177"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="178"/>
         <source>Auto (Qt RHI)</source>
         <translation>Автоматично (Qt RHI)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="182"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="183"/>
         <source>Start videos in fullscreen</source>
         <translation>Започване на видеоклипове на цял екран</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="188"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="189"/>
         <source>Use software video equalizer</source>
         <translation>Използвай с&amp;офтуерен видео изравнител</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="193"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="194"/>
         <source>Deinterlace by default:</source>
         <translation>Деинтерлейс по подразбиране:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="196"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="197"/>
         <source>None</source>
         <translation>Без</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="196"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="197"/>
         <source>Yadif</source>
         <translation>Yadif</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="196"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="197"/>
         <source>Bwdif</source>
         <translation>Bwdif</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="201"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="202"/>
         <source>Deinterlacing removes the horizontal combing artifacts of interlaced video. This sets the default for newly opened files; change it per file from Video &gt; Deinterlace.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="214"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="215"/>
         <source>Video equalizer and zoom/aspect controls are planned for Phase 4 (ShaderEffect / item transforms). Driver selection is not available with Qt Multimedia.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2658,125 +2746,135 @@
         <translation type="vanished">Няма (не се поддържа от ядрото)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="232"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="233"/>
         <source>Output device:</source>
         <translation>Изходно устройство:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="254"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="255"/>
         <source>Volume</source>
         <translation>Сила на звука</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="262"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="263"/>
         <source>Volume step:</source>
         <translation>Стъпка на звука:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="264"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="265"/>
         <source>How much each volume up/down key press or mouse-wheel notch changes the level.</source>
         <translation>Колко променя нивото всяко натискане на клавиша за увеличаване/намаляване на звука или всяко завъртане на колелцето на мишката.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="272"/>
-        <location filename="../qml/PrefGeneralPage.qml" line="294"/>
-        <location filename="../qml/PrefGeneralPage.qml" line="354"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="273"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="295"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="355"/>
         <source>%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="277"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="278"/>
         <source>Remember volume between sessions</source>
         <translation>Запомняне на силата на звука между сесиите</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="284"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="285"/>
         <source>Initial volume:</source>
         <translation>Начална сила на звука:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="286"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="287"/>
         <source>The volume level set at startup when the volume is not remembered between sessions.</source>
         <translation>Нивото на звука, зададено при стартиране, когато звукът не се запомня между сесиите.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="302"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="303"/>
         <source>Synchronization</source>
         <translation>Синхронизация</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="310"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="311"/>
         <source>Global audio delay:</source>
         <translation>Глобално забавяне на звука:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="326"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="327"/>
         <source>ms</source>
         <translation>мс</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="334"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="335"/>
         <source>Delay for the current audio device — “%1” — applied to every file (e.g. to compensate Bluetooth output latency). Remembered per device, so switching devices restores the right value. A negative value holds the video back to match late audio. Each file can add its own delay via Audio &gt; Set delay.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="348"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="349"/>
         <source>Use software volume control</source>
         <translation>Използвай прог&amp;рамно управление на звука</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="352"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="353"/>
         <source>Max. amplification:</source>
         <translation>Макс. усилване:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="357"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="358"/>
         <source>Volume normalization by default</source>
         <translation>Стандартно нормализиране на звука</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="364"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="365"/>
         <source>Amplification above 100% and volume normalization require an audio pipeline filter, which Qt Multimedia does not provide.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="383"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="384"/>
         <source>Comma-separated language codes or names in order of preference (e.g. &quot;ja, en&quot;).</source>
         <translation>Кодове или имена на езици, разделени със запетаи, по ред на предпочитание (напр. &quot;ja, en&quot;).</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="388"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="389"/>
         <source>Preferred audio language:</source>
         <translation>Предпочитан език на звука:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="391"/>
-        <location filename="../qml/PrefGeneralPage.qml" line="401"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="392"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="402"/>
         <source>e.g. ja, en</source>
         <translation>напр. ja, en</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="398"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="399"/>
         <source>Preferred subtitle language:</source>
         <translation>Предпочитан език на субтитрите:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="409"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="410"/>
         <source>Show subtitles by default</source>
         <translation>Показване на субтитри по подразбиране</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="414"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="415"/>
         <source>When a file has embedded subtitles, turn one on automatically (preferring the languages above) instead of starting with subtitles off.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="424"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="425"/>
+        <source>...but not if the audio is already in a preferred language</source>
+        <translation>...но не и ако звукът вече е на предпочитан език</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefGeneralPage.qml" line="431"/>
+        <source>Skip the automatic subtitle above when its language matches the audio track that actually got selected -- if you already understand the audio, a subtitle in the same language is usually redundant.</source>
+        <translation>Пропуснете автоматичните субтитри по-горе, ако езикът им съвпада с избраната аудио писта -- ако вече разбирате звука, субтитри на същия език обикновено са излишни.</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefGeneralPage.qml" line="442"/>
         <source>Preferred audio track number:</source>
         <translation>Предпочитан номер на аудио пътечка:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="430"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="448"/>
         <source>Preferred subtitle track number:</source>
         <translation>Предпочитан номер на пътечка със субтитри:</translation>
     </message>
@@ -4256,6 +4354,14 @@
         <location filename="../qml/PreferencesDialog.qml" line="254"/>
         <source>Close</source>
         <translation>Затваряне</translation>
+    </message>
+</context>
+<context>
+    <name>QObject</name>
+    <message>
+        <location filename="../src/blurayplayer.cpp" line="74"/>
+        <source>Chapter %1</source>
+        <translation type="unfinished">Глава %1</translation>
     </message>
 </context>
 <context>

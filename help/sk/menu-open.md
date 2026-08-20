@@ -14,7 +14,8 @@ Ponuka **Otvoriť** slúži na načítanie médií do Vivace.
 - **Disk**
   - **DVD z jednotky alebo priečinka…** — prehrať nešifrované DVD-Video vrátane
     jeho ponúk. Pozri [Prehľadávať](menu-browse.md) pre tituly a kapitoly.
-  - **Blu-ray**, **Zvukové CD** — zatiaľ nepodporované.
+  - **Blu-ray z jednotky alebo priečinka…** — základné prehrávanie nezašifrovaného disku Blu-ray: vyberte jeho hlavný titul v *Prehľadávať ▸ Titul* a jeho kapitoly v *Prehľadávať ▸ Kapitoly*. Ponuky na disku nie sú podporované.
+  - **Zvukové CD** — zatiaľ nepodporované.
 - **URL…** (`Ctrl+U`) — prehrať sieťový stream. So zapnutou podporou YouTube
   (*Nastavenia ▸ Sieť*) sa tu spracujú aj odkazy YouTube.
 - **Vyrovnávacia pamäť YouTube…** — prehľadávať videá stiahnuté Vivace (v režime

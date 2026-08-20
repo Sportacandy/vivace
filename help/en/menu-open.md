@@ -13,7 +13,10 @@ The **Open** menu is how you load media into Vivace.
 - **Disc**
   - **DVD from drive or folder…** — play an unencrypted DVD-Video, including
     its menus. See [Browse](menu-browse.md) for titles and chapters.
-  - **Blu-ray**, **Audio CD** — not yet supported.
+  - **Blu-ray from drive or folder…** — basic playback of an unencrypted
+    Blu-ray disc: pick its main title from *Browse ▸ Title* and its chapters
+    from *Browse ▸ Chapters*. On-disc menus aren't supported.
+  - **Audio CD** — not yet supported.
 - **URL…** (`Ctrl+U`) — play a network stream. With YouTube support enabled
   (*Preferences ▸ Network*), YouTube links are handled here too.
 - **YouTube cache…** — browse videos Vivace downloaded (when using the

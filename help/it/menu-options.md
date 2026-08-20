@@ -9,6 +9,14 @@ Il menu **Opzioni** contiene le preferenze e la configurazione dell'interfaccia.
   - **Generale ▸ Video** imposta la modalità **Deinterlaccia** predefinita
     (Nessuno / Yadif / Bwdif) per i file aperti di recente — modificabile
     per singolo file da *Video ▸ Deinterlaccia*.
+  - **Generale ▸ Audio e sottotitoli preferiti** imposta le lingue tra
+    cui Vivace sceglie automaticamente tra le tracce incorporate di un
+    file. **Mostra i sottotitoli per impostazione predefinita** attiva
+    automaticamente un sottotitolo quando disponibile; la sua
+    sotto-opzione **...ma non se l'audio è già in una lingua preferita**
+    salta questo sottotitolo automatico quando la sua lingua corrisponde
+    alla traccia audio effettivamente selezionata — utile se capisci già
+    l'audio e non vuoi che un sottotitolo nella stessa lingua distragga.
   - **Rete** include le schede OpenSubtitles, YouTube, Proxy e Cast; **Proxy**
     configura un proxy HTTP o SOCKS5 facoltativo, applicato a tutta
     l'applicazione (ricerca OpenSubtitles, controllo aggiornamenti e, solo per

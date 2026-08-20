@@ -15,7 +15,8 @@ El menú **Abrir** es la forma de cargar medios en Vivace.
 - **Disco**
   - **DVD desde unidad o carpeta…** — reproducir un DVD-Vídeo sin cifrar,
     incluidos sus menús. Consulte [Explorar](menu-browse.md) para títulos y capítulos.
-  - **Blu-ray**, **CD de audio** — aún no compatibles.
+  - **Blu-ray desde unidad o carpeta…** — reproducción básica de un disco Blu-ray sin cifrar: elija su título principal desde *Explorar ▸ Título* y sus capítulos desde *Explorar ▸ Capítulos*. Los menús del disco no son compatibles.
+  - **CD de audio** — aún no compatible.
 - **URL…** (`Ctrl+U`) — reproducir una emisión de red. Con la compatibilidad con
   YouTube activada (*Preferencias ▸ Red*), los enlaces de YouTube también se
   gestionan aquí.

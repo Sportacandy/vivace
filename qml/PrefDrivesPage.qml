@@ -4,8 +4,10 @@
 
     Preferences > Drives. Vivace plays unencrypted DVD-Video (its own IFO
     parser + a QIODevice into QMediaPlayer); there is no persistent device
-    to configure — a disc or VIDEO_TS folder is chosen when opening. Menus,
-    CSS decryption and Blu-ray are not supported.
+    to configure — a disc or VIDEO_TS folder is chosen when opening. DVD
+    menus are experimental; CSS decryption is not supported. Basic Blu-ray
+    Disc playback (Open ▸ Disc ▸ Blu-ray — title/chapter playback only, no
+    on-disc menus) is also available but has no Preferences of its own.
 */
 
 import QtQuick
@@ -28,8 +30,10 @@ ColumnLayout {
         + "title starts automatically (set 0 to keep the menu open). Subpicture "
         + "highlight graphics and the First-Play sequence are not fully "
         + "emulated.</p>"
-        + "<p>CSS-encrypted discs and Blu-ray are not supported. Audio CD "
-        + "playback is being considered for a later phase.</p>")
+        + "<p>CSS-encrypted discs are not supported. Blu-ray Disc playback is "
+        + "also available (Open ▸ Disc ▸ Blu-ray) — basic title/chapter "
+        + "playback only, with no on-disc menus and no Preferences of its "
+        + "own. Audio CD playback is being considered for a later phase.</p>")
 
     GroupBox {
         Layout.fillWidth: true
@@ -94,7 +98,7 @@ ColumnLayout {
                 wrapMode: Text.WordWrap
                 opacity: 0.7
                 font.pixelSize: 12
-                text: qsTr("Experimental: menu buttons are clickable and arrow-key navigable, but subpicture highlight graphics and the First-Play sequence are not fully emulated. CSS-encrypted discs (libdvdcss) and Blu-ray are not supported.")
+                text: qsTr("Experimental: menu buttons are clickable and arrow-key navigable, but subpicture highlight graphics and the First-Play sequence are not fully emulated. CSS-encrypted discs (libdvdcss) are not supported. (Blu-ray Disc playback is supported separately via Open ▸ Disc ▸ Blu-ray, but has no on-disc menus and no settings here.)")
             }
         }
     }

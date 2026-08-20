@@ -15,7 +15,8 @@
   - **DVD von Laufwerk oder Ordner…** — eine unverschlüsselte DVD-Video
     einschließlich ihrer Menüs abspielen. Siehe [Navigation](menu-browse.md) für
     Titel und Kapitel.
-  - **Blu-ray**, **Audio-CD** — noch nicht unterstützt.
+  - **Blu-ray von Laufwerk oder Ordner…** — grundlegende Wiedergabe einer unverschlüsselten Blu-ray-Disc: den Haupttitel unter *Navigation ▸ Titel* und die Kapitel unter *Navigation ▸ Kapitel* auswählen. Disc-Menüs werden nicht unterstützt.
+  - **Audio-CD** — noch nicht unterstützt.
 - **URL…** (`Strg+U`) — einen Netzwerkstream abspielen. Mit aktivierter
   YouTube-Unterstützung (*Einstellungen ▸ Netzwerk*) werden auch YouTube-Links
   hier verarbeitet.

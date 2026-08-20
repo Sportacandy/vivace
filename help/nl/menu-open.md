@@ -14,7 +14,8 @@ Via het menu **Openen** laadt u media in Vivace.
 - **Schijf**
   - **Dvd van station of map…** — een niet-versleutelde dvd-video afspelen,
     inclusief de menu's. Zie [Bladeren](menu-browse.md) voor titels en hoofdstukken.
-  - **Blu-ray**, **Audio-cd** — nog niet ondersteund.
+  - **Blu-ray van station of map…** — basisweergave van een niet-versleutelde Blu-ray-schijf: kies de hoofdtitel via *Bladeren ▸ Titel* en de hoofdstukken via *Bladeren ▸ Hoofdstukken*. Schijfmenu's worden niet ondersteund.
+  - **Audio-cd** — nog niet ondersteund.
 - **URL…** (`Ctrl+U`) — een netwerkstream afspelen. Met YouTube-ondersteuning
   ingeschakeld (*Voorkeuren ▸ Netwerk*) worden ook YouTube-koppelingen hier verwerkt.
 - **YouTube-cache…** — door video's bladeren die Vivace heeft gedownload (in de

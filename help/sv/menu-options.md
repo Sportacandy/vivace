@@ -9,6 +9,14 @@ Menyn **Alternativ** innehåller inställningarna och gränssnittskonfiguratione
   - **Allmänt ▸ Video** ställer in standardläget för **Deinterlace** (Ingen /
     Yadif / Bwdif) för nyöppnade filer — ändra det per fil under *Video ▸
     Deinterlace*.
+  - **Allmänt ▸ Standardspråk - tal och undertexter** anger de språk som
+    Vivace automatiskt väljer bland en fils inbäddade spår. **Visa
+    undertexter som standard** slår automatiskt på en undertext när en är
+    tillgänglig; dess underalternativ **...men inte om ljudet redan är på
+    ett önskat språk** hoppar över den automatiska undertexten när dess
+    språk matchar det ljudspår som faktiskt valdes — användbart om du
+    redan förstår ljudet och inte vill att en undertext på samma språk ska
+    distrahera.
   - **Nätverk** har flikarna OpenSubtitles, YouTube, Proxy och Casta; **Proxy**
     ställer in en valfri HTTP- eller SOCKS5-proxy som gäller för hela
     programmet (OpenSubtitles-sökning, uppdateringskontroll och — endast för

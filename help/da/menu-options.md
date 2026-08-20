@@ -9,6 +9,14 @@ Menuen **Indstillinger** indeholder indstillingerne og grænsefladekonfiguration
   - **Generelt ▸ Video** angiver standardtilstanden for **Deinterlace**
     (Ingen / Yadif / Bwdif) for nyligt åbnede filer — skift den pr. fil under
     *Video ▸ Deinterlace*.
+  - **Generelt ▸ Foretrukket lyd og undertekster** angiver de sprog,
+    Vivace vælger automatisk blandt en fils indlejrede spor. **Vis
+    undertekster som standard** slår automatisk en undertekst til, når en
+    er tilgængelig; underindstillingen **...men ikke hvis lyden allerede er
+    på et foretrukket sprog** springer denne automatiske undertekst over,
+    når dens sprog matcher det lydspor, der faktisk blev valgt — nyttigt,
+    hvis du allerede forstår lyden og ikke ønsker en undertekst på samme
+    sprog, der distraherer.
   - **Netværk** har fanerne OpenSubtitles, YouTube, Proxy og Udsendelse;
     **Proxy** konfigurerer en valgfri HTTP- eller SOCKS5-proxy, der gælder
     for hele programmet (OpenSubtitles-søgning, opdateringstjek og — kun for

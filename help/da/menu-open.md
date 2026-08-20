@@ -13,7 +13,8 @@ Menuen **Åbn** er, hvordan du indlæser medier i Vivace.
 - **Disk**
   - **Dvd fra drev eller mappe…** — afspil en ukrypteret dvd-video, inklusive
     dens menuer. Se [Gennemse](menu-browse.md) for titler og kapitler.
-  - **Blu-ray**, **Lyd-cd** — endnu ikke understøttet.
+  - **Blu-ray fra drev eller mappe…** — grundlæggende afspilning af en ukrypteret Blu-ray-disk: vælg dens hovedtitel fra *Gennemse ▸ Titel* og dens kapitler fra *Gennemse ▸ Kapitler*. Diskens menuer understøttes ikke.
+  - **Lyd-cd** — endnu ikke understøttet.
 - **URL…** (`Ctrl+U`) — afspil en netværksstream. Med YouTube-understøttelse slået
   til (*Indstillinger ▸ Netværk*) håndteres YouTube-links også her.
 - **YouTube-cache…** — gennemse videoer, Vivace har hentet (i tilstanden hent og

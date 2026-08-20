@@ -15,7 +15,8 @@ O menu **Abrir** é como você carrega mídia no Vivace.
 - **Disco**
   - **DVD de unidade ou pasta…** — reproduzir um DVD-Vídeo não criptografado,
     incluindo seus menus. Veja [Navegar](menu-browse.md) para títulos e capítulos.
-  - **Blu-ray**, **CD de áudio** — ainda não suportados.
+  - **Blu-ray de unidade ou pasta…** — reprodução básica de um disco Blu-ray não criptografado: escolha seu título principal em *Navegar ▸ Título* e seus capítulos em *Navegar ▸ Capítulos*. Os menus do disco não são suportados.
+  - **CD de áudio** — ainda não suportado.
 - **URL…** (`Ctrl+U`) — reproduzir uma transmissão de rede. Com o suporte ao
   YouTube ativado (*Preferências ▸ Rede*), links do YouTube também são tratados aqui.
 - **Cache do YouTube…** — navegar pelos vídeos que o Vivace baixou (no modo de

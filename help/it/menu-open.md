@@ -14,7 +14,8 @@ Il menu **Apri** serve a caricare i contenuti multimediali in Vivace.
 - **Disco**
   - **DVD da unità o cartella…** — riprodurre un DVD-Video non cifrato, inclusi i
     suoi menu. Vedi [Sfoglia](menu-browse.md) per titoli e capitoli.
-  - **Blu-ray**, **CD audio** — non ancora supportati.
+  - **Blu-ray da unità o cartella…** — riproduzione di base di un disco Blu-ray non crittografato: scegli il titolo principale da *Sfoglia ▸ Titolo* e i capitoli da *Sfoglia ▸ Capitoli*. I menu del disco non sono supportati.
+  - **CD audio** — non ancora supportato.
 - **URL…** (`Ctrl+U`) — riprodurre un flusso di rete. Con il supporto YouTube
   attivo (*Preferenze ▸ Rete*), anche i collegamenti YouTube vengono gestiti qui.
 - **Cache YouTube…** — sfogliare i video scaricati da Vivace (con la modalità

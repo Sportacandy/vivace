@@ -8,6 +8,14 @@
   - **Yleiset ▸ Video** asettaa oletusarvon kohdalle **Lomituksen poisto**
     (Ei mitään / Yadif / Bwdif) äskettäin avatuille tiedostoille — muuta sitä
     tiedostokohtaisesti kohdassa *Video ▸ Lomituksen poisto*.
+  - **Yleiset ▸ Haluttu ääni ja tekstitys** asettaa kielet, joiden
+    joukosta Vivace valitsee automaattisesti tiedoston sisäänrakennetuista
+    raidoista. **Näytä tekstitykset oletuksena** ottaa tekstityksen
+    automaattisesti käyttöön, kun sellainen on saatavilla; sen alavalinta
+    **...mutta ei, jos ääni on jo suositellulla kielellä** ohittaa tämän
+    automaattisen tekstityksen, kun sen kieli vastaa todellisuudessa
+    valittua ääniraitaa — hyödyllinen, jos ymmärrät äänen jo etkä halua
+    samankielisen tekstityksen häiritsevän.
   - **Verkko** sisältää välilehdet OpenSubtitles, YouTube, Proxy ja Lähetys;
     **Proxy** määrittää valinnaisen HTTP- tai SOCKS5-välityspalvelimen, jota
     käytetään koko sovelluksessa (OpenSubtitles-haku, päivitystarkistus ja —

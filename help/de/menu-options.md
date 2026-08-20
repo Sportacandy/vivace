@@ -9,6 +9,15 @@ Das Menü **Optionen** enthält Einstellungen und die Oberflächenkonfiguration.
   - **Allgemein ▸ Video** legt den Standard-Modus für **Zeilenentflechtung**
     (- / Yadif / Bwdif) für neu geöffnete Dateien fest — pro Datei änderbar
     unter *Video ▸ Zeilenentflechtung*.
+  - **Allgemein ▸ Bevorzugter Ton und Untertitel** legt die Sprachen fest,
+    unter denen Vivace automatisch aus den eingebetteten Spuren einer Datei
+    auswählt. **Untertitel standardmäßig anzeigen** schaltet automatisch
+    einen Untertitel ein, wenn verfügbar; die Unteroption **...aber nicht,
+    wenn die Audiospur bereits in einer bevorzugten Sprache ist**
+    überspringt diesen automatischen Untertitel, wenn seine Sprache mit der
+    tatsächlich ausgewählten Audiospur übereinstimmt — nützlich, wenn Sie
+    die Audiospur bereits verstehen und keinen ablenkenden Untertitel in
+    derselben Sprache möchten.
   - **Netzwerk** enthält die Reiter OpenSubtitles, YouTube, Proxy und
     Übertragung; **Proxy** richtet einen optionalen HTTP- oder SOCKS5-Proxy
     ein, der anwendungsweit gilt (OpenSubtitles-Suche, Update-Prüfung sowie

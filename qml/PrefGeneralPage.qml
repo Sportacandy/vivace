@@ -28,7 +28,8 @@ ColumnLayout {
         + "startup/remembered volume and the volume step.</p>"
         + "<p><b>Preferred audio and subtitles</b> — the languages Vivace "
         + "auto-selects among a file's embedded tracks, and whether subtitles "
-        + "are shown by default.</p>")
+        + "are shown by default — optionally skipped when the selected audio "
+        + "is already in a preferred language.</p>")
 
     spacing: 8
 

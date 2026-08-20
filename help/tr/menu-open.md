@@ -13,7 +13,8 @@
 - **Disk**
   - **Sürücüden veya klasörden DVD…** — menüleri dahil şifresiz bir DVD-Video
     oynatır. Başlıklar ve bölümler için [Gözat](menu-browse.md) bölümüne bakın.
-  - **Blu-ray**, **Ses CD'si** — henüz desteklenmiyor.
+  - **Sürücü veya klasörden Blu-ray…** — şifrelenmemiş bir Blu-ray diskinin temel oynatımı: ana başlığını *Gözat ▸ Başlık* bölümünden, bölümlerini ise *Gözat ▸ Bölümler* bölümünden seçin. Disk menüleri desteklenmez.
+  - **Ses CD'si** — henüz desteklenmiyor.
 - **URL…** (`Ctrl+U`) — bir ağ akışı oynatır. YouTube desteği etkinken
   (*Tercihler ▸ Ağ*), YouTube bağlantıları da burada işlenir.
 - **YouTube önbelleği…** — Vivace'nin indirdiği videolara göz atın (indir ve oynat

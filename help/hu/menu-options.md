@@ -9,6 +9,14 @@ A **Beállítások** menü tartalmazza a beállításokat és a felület konfigu
   - **Általános ▸ Videó** beállítja a **Deinterlace** alapértelmezett módját
     (Nincs / Yadif / Bwdif) az újonnan megnyitott fájlokhoz — fájlonként a
     *Videó ▸ Deinterlace* alatt módosítható.
+  - **Általános ▸ Preferált hang és feliratok** beállítja azokat a
+    nyelveket, amelyek közül Vivace automatikusan választ a fájl beágyazott
+    sávjai közül. **Feliratok megjelenítése alapértelmezés szerint**
+    automatikusan bekapcsol egy feliratot, ha elérhető; ennek alopciója,
+    **...de ne akkor, ha a hang már egy preferált nyelven van**, kihagyja
+    ezt az automatikus feliratot, ha annak nyelve megegyezik a ténylegesen
+    kiválasztott hangsávval — hasznos, ha már érti a hangot, és nem
+    szeretné, hogy egy azonos nyelvű felirat elvonja a figyelmét.
   - A **Hálózat** oldal az OpenSubtitles, YouTube, Proxy és Átküldés füleket
     tartalmazza; a **Proxy** fül egy opcionális HTTP- vagy SOCKS5-proxyt
     állít be, amely az egész alkalmazásra érvényes (OpenSubtitles-keresés,

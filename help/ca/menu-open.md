@@ -14,7 +14,8 @@ El menú **Obre** és com carregueu mitjans al Vivace.
 - **Disc**
   - **DVD des d'una unitat o carpeta…** — reproduir un DVD-Vídeo sense xifrar,
     inclosos els seus menús. Vegeu [Explora](menu-browse.md) per a títols i capítols.
-  - **Blu-ray**, **CD d'àudio** — encara no compatibles.
+  - **Blu-ray des d'una unitat o carpeta…** — reproducció bàsica d'un disc Blu-ray no xifrat: trieu el seu títol principal des de *Explora ▸ Títol* i els seus capítols des de *Explora ▸ Capítols*. Els menús del disc no són compatibles.
+  - **CD d'àudio** — encara no compatible.
 - **URL…** (`Ctrl+U`) — reproduir un flux de xarxa. Amb la compatibilitat amb
   YouTube activada (*Preferències ▸ Xarxa*), els enllaços de YouTube també es gestionen aquí.
 - **Memòria cau de YouTube…** — explorar els vídeos que el Vivace ha baixat (en

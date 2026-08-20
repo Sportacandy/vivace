@@ -8,6 +8,13 @@ Izbornik **Opcije** sadrži postavke i konfiguraciju sučelja.
   - **Općenito ▸ Slika** postavlja zadani način rada za **Raspletanje**
     (Bez / Yadif / Bwdif) za novootvorene datoteke — promijenite ga za svaku
     datoteku u *Slika ▸ Raspletanje*.
+  - **Općenito ▸ Željeni zvučni zapisi i podnaslovi** postavlja jezike
+    među kojima Vivace automatski bira ugrađene zapise datoteke. **Prikaži
+    titlove prema zadanom** automatski uključuje podnaslov kada je
+    dostupan; njegova podopcija **...ali ne ako je zvuk već na željenom
+    jeziku** preskače taj automatski podnaslov kada se njegov jezik
+    podudara sa stvarno odabranom audio zapisom — korisno ako već
+    razumijete zvuk i ne želite da vas ometa podnaslov na istom jeziku.
   - **Mreža** sadrži kartice OpenSubtitles, YouTube, Proxy i Emitiranje;
     **Proxy** postavlja neobavezni HTTP ili SOCKS5 proxy koji vrijedi za
     cijelu aplikaciju (pretraga OpenSubtitles, provjera ažuriranja i — samo

@@ -14,7 +14,8 @@ Izbornik **Otvori** služi za učitavanje medija u Vivace.
 - **Disk**
   - **DVD s pogona ili iz mape…** — reprodukcija nešifriranog DVD-Videa, uključujući
     njegove izbornike. Pogledajte [Pregledaj](menu-browse.md) za naslove i poglavlja.
-  - **Blu-ray**, **Audio CD** — još nije podržano.
+  - **Blu-ray s pogona ili mape…** — osnovna reprodukcija nekriptiranog Blu-ray diska: odaberite njegov glavni naslov iz *Pregledaj ▸ Naslov* i njegova poglavlja iz *Pregledaj ▸ Poglavlja*. Izbornici na disku nisu podržani.
+  - **Audio CD** — još nije podržano.
 - **URL…** (`Ctrl+U`) — reprodukcija mrežnog streama. S uključenom podrškom za
   YouTube (*Postavke ▸ Mreža*), i YouTube poveznice obrađuju se ovdje.
 - **YouTube predmemorija…** — pregledavanje videozapisa koje je Vivace preuzeo (u

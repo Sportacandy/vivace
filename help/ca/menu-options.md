@@ -9,6 +9,14 @@ El menú **Opcions** conté les preferències i la configuració de la interfíc
   - **General ▸ Vídeo** estableix el mode per defecte de **Desentrellaça**
     (Sense / Yadif / Bwdif) per als fitxers acabats d'obrir — canvia'l per
     fitxer des de *Vídeo ▸ Desentrellaça*.
+  - **General ▸ Idioma preferit per a l'àudio i els subtítols** estableix
+    els idiomes que Vivace selecciona automàticament entre les pistes
+    incrustades d'un fitxer. **Mostra els subtítols per defecte** n'activa
+    un automàticament quan n'hi ha disponible; la seva subopció **...però
+    no si l'àudio ja és en un idioma preferit** omet aquest subtítol
+    automàtic quan el seu idioma coincideix amb la pista d'àudio realment
+    seleccionada — útil si ja enteneu l'àudio i no voleu que un subtítol en
+    el mateix idioma distregui l'atenció.
   - **Xarxa** té les pestanyes OpenSubtitles, YouTube, Proxy i Transmissió;
     **Proxy** configura un servidor intermediari HTTP o SOCKS5 opcional,
     aplicat a tota l'aplicació (cerca a OpenSubtitles, comprovació

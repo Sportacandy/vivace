@@ -9,6 +9,13 @@ O menu **Opções** contém as preferências e a configuração da interface.
   - **Geral ▸ Vídeo** define o modo **Desentrelaçar** padrão (Nenhum / Yadif
     / Bwdif) para arquivos recém-abertos — altere por arquivo em *Vídeo ▸
     Desentrelaçar*.
+  - **Geral ▸ Áudio e legendas preferidas** define os idiomas entre os
+    quais o Vivace escolhe automaticamente as faixas incorporadas de um
+    arquivo. **Mostrar legendas por padrão** ativa uma automaticamente
+    quando disponível; sua subopção **...mas não se o áudio já estiver em
+    um idioma preferido** ignora essa legenda automática quando seu idioma
+    corresponder à faixa de áudio realmente selecionada — útil se você já
+    entende o áudio e não quer uma legenda no mesmo idioma distraindo.
   - **Rede** tem as abas OpenSubtitles, YouTube, Proxy e Transmissão; **Proxy**
     configura um proxy HTTP ou SOCKS5 opcional, aplicado a todo o aplicativo
     (busca no OpenSubtitles, verificação de atualizações e, somente com HTTP,

@@ -8,6 +8,13 @@ Ponuka **Možnosti** obsahuje nastavenia a konfiguráciu rozhrania.
   - **Všeobecné ▸ Video** nastavuje predvolený režim **Odstrániť
     prekladanie** (Žiadne / Yadif / Bwdif) pre novo otvorené súbory —
     zmeňte ho pre jednotlivý súbor cez *Video ▸ Odstrániť prekladanie*.
+  - **Všeobecné ▸ Preferovaný zvuk a titulky** nastavuje jazyky, medzi
+    ktorými Vivace automaticky vyberá vstavané stopy súboru. **Predvolene
+    zobrazovať titulky** automaticky zapne titulky, ak sú k dispozícii;
+    jeho podvoľba **...ale nie ak je zvuk už v preferovanom jazyku**
+    preskočí tieto automatické titulky, ak sa ich jazyk zhoduje so
+    skutočne vybranou zvukovou stopou — užitočné, ak zvuku už rozumiete a
+    nechcete, aby titulky v rovnakom jazyku odvádzali pozornosť.
   - **Sieť** obsahuje karty OpenSubtitles, YouTube, Proxy a Prenos; **Proxy**
     nastavuje voliteľnú HTTP alebo SOCKS5 proxy platnú pre celú aplikáciu
     (vyhľadávanie OpenSubtitles, kontrolu aktualizácií a — iba pri HTTP —

@@ -14,7 +14,8 @@
 - **Levy**
   - **DVD asemasta tai kansiosta…** — toista salaamaton DVD-Video valikkoineen.
     Katso [Selaa](menu-browse.md) nimikkeitä ja lukuja varten.
-  - **Blu-ray**, **Ääni-CD** — ei vielä tuettu.
+  - **Blu-ray asemasta tai kansiosta…** — salaamattoman Blu-ray-levyn perustoisto: valitse sen pääotsikko kohdasta *Selaa ▸ Nimike* ja luvut kohdasta *Selaa ▸ Luvut*. Levyn valikkoja ei tueta.
+  - **Ääni-CD** — ei vielä tuettu.
 - **URL…** (`Ctrl+U`) — toista verkkosuoratoisto. Kun YouTube-tuki on käytössä
   (*Asetukset ▸ Verkko*), YouTube-linkit käsitellään myös täällä.
 - **YouTube-välimuisti…** — selaa Vivacen lataamia videoita (lataa ja toista
