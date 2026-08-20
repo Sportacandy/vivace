@@ -17,18 +17,20 @@ is also published from the tip of `main` between tagged releases. See
 
 ## Status
 
-**v0.3.2** — small bug-fix release: the Cancel button on the YouTube
-"Download & play" progress overlay didn't respond to clicks (an invisible
-layer over the video was swallowing them) and, separately, cancelling a
-download showed a confusing error message even though the cancel itself
-worked; Help ▸ About Vivace's Links section and the installer configs
-pointed at an invalid GitHub URL. Vivace is a working daily-driver media
-player:
+**v0.4.0** — adds Video ▸ Deinterlace (None/Yadif/Bwdif) and matures Blu-ray
+Disc playback (added in v0.3.2's development): multi-clip titles now play
+back gaplessly, and selecting a Blu-ray subtitle (PG/PGS) track correctly
+renders on screen (both need the custom-built Qt Multimedia described
+below — see "Blu-ray Disc playback"). Also adds a Preferences option to
+skip an automatic subtitle when the audio track actually selected is
+already in a preferred language, configurable edge smoothing for bitmap
+subtitles, and a round of DVD on-screen-menu and subtitle-timing fixes.
+Vivace is a working daily-driver media player:
 playback (mkv/mp4/mpeg2, seeking, embedded + external subtitles, audio/subtitle
 track switching, speed control with pitch compensation), a full SMPlayer-style
 menu layout (Open/Play/Video/Audio/Subtitles/Browse/View/Options/Help),
 playlists, favorites, bookmarks, a video equalizer, screenshots, unencrypted
-DVD playback (including interactive menus), basic unencrypted Blu-ray playback
+DVD playback (including interactive menus), unencrypted Blu-ray playback
 (see "Blu-ray Disc playback" below), optional YouTube playback/download
 (via yt-dlp), OpenSubtitles search, casting to a phone/tablet over an embedded
 web server, OS media integration (Windows SMTC, Linux MPRIS2), credentials
@@ -421,17 +423,22 @@ and Subtitles ▸ Track now show the disc's own declared language (e.g.
 libbluray declares this per stream, but Qt Multimedia's own generic track
 metadata carries none of it for these BD-sourced MPEG-TS streams.
 Selecting a track updates correctly (confirmed: the checkmark moves and
-persists) — but **selecting a Blu-ray subtitle (PG/PGS) track has no
-visible effect: no subtitle text or bitmap ever appears on screen**, even
-though this is stable (does not crash). The underlying cause is a real Qt
-Multimedia bug (FFmpeg's PGS decoder never reports an explicit per-event
-display duration, and the code that would otherwise show the subtitle
-discards every such event outright) — a fix was attempted and caused a
-worse regression (a real crash), so it was reverted; the "doesn't render"
-behavior is the safer, currently-shipping state. See
-`patches/qtmultimedia-subtitle-bitmap.patch`'s own "INVESTIGATED 2026-08-17,
-NOT FIXED" section if you want to pick this back up. DVD and embedded-file
-bitmap subtitles are unaffected.
+persists), and **selecting a Blu-ray subtitle (PG/PGS) track now correctly
+renders on screen** (fixed 2026-08-17, requires the custom-built Qt
+Multimedia below — a stock Qt still won't show it). The underlying issue
+was a real Qt Multimedia bug: FFmpeg's PGS decoder never reports an
+explicit per-event display duration, so the generic subtitle-rejection
+check discarded every real PGS event outright. An early fix attempt
+(giving such an event a guessed fallback duration) let real data through
+for the first time but caused a real crash; the actual fix instead
+recognizes FFmpeg's own "display until further notice" sentinel value and
+schedules those frames correctly against Qt's sticky subtitle-sink state,
+plus two follow-on fixes for a playback stall and for a container-time-
+offset that made subtitles drift out of sync with the audio on some
+discs. See `patches/qtmultimedia-subtitle-bitmap.patch`'s own "PART 1"
+through "PART 5" sections for the full investigation if you want the
+details. DVD and embedded-file bitmap subtitles were unaffected by this
+bug either way.
 
 **Phantom "Track 2" audio entry fixed (2026-08-17):** a real disc's own
 declared audio-stream count (from libbluray's CLPI/STN table) can be

@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.24)
 
-project(vivace VERSION 0.3.2 LANGUAGES CXX)
+project(vivace VERSION 0.4.0 LANGUAGES CXX)
 
 find_package(Qt6 6.11 REQUIRED COMPONENTS Quick QuickControls2 Multimedia LabsPlatform Network ShaderTools DBus LinguistTools Sql)
 qt_standard_project_setup(REQUIRES 6.11)

@@ -11,21 +11,45 @@ each get their own entry instead.
 
 ## [Unreleased]
 
+## [0.4.0] — 2026-08-20
+
 ### Added
 - Video ▸ Deinterlace (None / Yadif / Bwdif), with a configurable default
   in Preferences ▸ General ▸ Video. Requires a custom-built Qt Multimedia
   (see README.md's "Deinterlacing" section) — no effect with a stock Qt.
 - Basic Blu-ray Disc playback: Open ▸ Disc ▸ Blu-ray, title/chapter
   browsing (Browse ▸ Title/Chapters), Audio/Subtitles ▸ Track labelled
-  with the disc's own declared language, via libbluray. No on-disc menu
-  navigation, and AACS-encrypted commercial discs need a usable key
-  libbluray can find — see README.md's "Blu-ray Disc playback" section.
-  libbluray is built from source automatically as part of the build
-  (needs `meson`/`ninja`/`git` at configure time; optional, compiles out
-  gracefully otherwise) — no system package or manual setup needed.
-  Known limitation: selecting a Blu-ray subtitle track doesn't display
-  any text/bitmap (a real Qt Multimedia bug, not yet fixed — see
-  README.md for details); track selection itself works and is stable.
+  with the disc's own declared language, via libbluray. Multi-clip
+  titles now play back gaplessly, with no stutter or rebuild at clip
+  boundaries. Selecting a Blu-ray subtitle (PG/PGS) track now correctly
+  renders on screen (requires the custom-built Qt Multimedia mentioned
+  above). No on-disc menu navigation, and AACS-encrypted commercial
+  discs need a usable key libbluray can find — see README.md's
+  "Blu-ray Disc playback" section. libbluray is built from source
+  automatically as part of the build (needs `meson`/`ninja`/`git` at
+  configure time; optional, compiles out gracefully otherwise) — no
+  system package or manual setup needed.
+- Preferences ▸ General ▸ Preferred audio and subtitles: an option to
+  skip the automatically-shown subtitle when the audio track that
+  actually got selected is already in a preferred language.
+- Configurable edge smoothing for bitmap subtitles (DVD discs and
+  embedded tracks), Preferences ▸ Subtitles.
+
+### Fixed
+- Several DVD on-screen menu bugs: menus unreachable behind
+  title-chained decision trees on some discs, a chapter-submenu
+  carousel that replayed earlier pages instead of jumping directly to
+  the selected one, dead audio/subtitle-selection buttons on some
+  menus, and mispositioned highlight rectangles on some menu pages.
+- DVD subtitle position and timing after seeking, on discs with an
+  uneven (VBR) bitrate, and in fullscreen.
+- The DVD menu's button-highlight overlay could get stuck on screen
+  after a drag-and-drop open, clicking Stop, or opening a new file or
+  disc while a menu was showing.
+- A Blu-ray disc could show a phantom extra audio track that doesn't
+  actually exist on the disc; audio/subtitle track selection wasn't
+  remembered across a seek; track labels didn't show the disc's own
+  declared language.
 
 ## [0.3.2] — 2026-08-10
 
