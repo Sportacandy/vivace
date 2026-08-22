@@ -2048,6 +2048,11 @@
         <translation>Bwdif</translation>
     </message>
     <message>
+        <location filename="../src/playercontroller.cpp" line="3313"/>
+        <source>Auto</source>
+        <translation>Automatikus</translation>
+    </message>
+    <message>
         <location filename="../src/playercontroller.cpp" line="3314"/>
         <source>Deinterlace: %1</source>
         <translation>Deinterlace: %1</translation>
@@ -2733,12 +2738,17 @@
         <translation>Bwdif</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="202"/>
-        <source>Deinterlacing removes the horizontal combing artifacts of interlaced video. This sets the default for newly opened files; change it per file from Video &gt; Deinterlace.</source>
-        <translation type="unfinished"></translation>
+        <location filename="../qml/PrefGeneralPage.qml" line="197"/>
+        <source>Auto</source>
+        <translation>Automatikus</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="215"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="202"/>
+        <source>Deinterlacing removes the horizontal combing artifacts of interlaced video. This sets the default for newly opened files; change it per file from Video &gt; Deinterlace. &quot;Auto&quot; uses Bwdif but only on frames the file itself marks as interlaced, leaving progressive frames untouched; it is not offered on the per-file Video &gt; Deinterlace menu, since it only makes sense as a default.</source>
+        <translation>A váltottsorosság megszüntetése eltávolítja a váltottsoros videó vízszintes fésűartefaktjait. Ez állítja be az újonnan megnyitott fájlok alapértelmezését; fájlonként a Videó &gt; Deinterlace menüben módosíthatja. Az &quot;Automatikus&quot; a Bwdif eljárást használja, de csak azokon a képkockákon, amelyeket a fájl maga jelöl váltottsorosként, a progresszív képkockákat érintetlenül hagyva; ez nem érhető el a fájlonkénti Videó &gt; Deinterlace menüben, mivel csak alapértelmezésként van értelme.</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefGeneralPage.qml" line="221"/>
         <source>Video equalizer and zoom/aspect controls are planned for Phase 4 (ShaderEffect / item transforms). Driver selection is not available with Qt Multimedia.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2747,135 +2757,135 @@
         <translation type="vanished">Nincs (a háttérmotor nem támogatja)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="233"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="239"/>
         <source>Output device:</source>
         <translation>Kimeneti eszköz:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="255"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="261"/>
         <source>Volume</source>
         <translation>Hangerő</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="263"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="269"/>
         <source>Volume step:</source>
         <translation>Hangerőlépés:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="265"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="271"/>
         <source>How much each volume up/down key press or mouse-wheel notch changes the level.</source>
         <translation>Mennyivel változtatja a szintet a hangerő fel/le billentyű minden egyes lenyomása vagy az egérgörgő minden egyes kattanása.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="273"/>
-        <location filename="../qml/PrefGeneralPage.qml" line="295"/>
-        <location filename="../qml/PrefGeneralPage.qml" line="355"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="279"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="301"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="361"/>
         <source>%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="278"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="284"/>
         <source>Remember volume between sessions</source>
         <translation>Hangerő megjegyzése munkamenetek között</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="285"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="291"/>
         <source>Initial volume:</source>
         <translation>Kezdeti hangerő:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="287"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="293"/>
         <source>The volume level set at startup when the volume is not remembered between sessions.</source>
         <translation>Az indításkor beállított hangerőszint, amikor a hangerő nem marad meg a munkamenetek között.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="303"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="309"/>
         <source>Synchronization</source>
         <translation>Szinkronizáció</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="311"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="317"/>
         <source>Global audio delay:</source>
         <translation>Globális hangkésleltetés:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="327"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="333"/>
         <source>ms</source>
         <translation>ms</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="335"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="341"/>
         <source>Delay for the current audio device — “%1” — applied to every file (e.g. to compensate Bluetooth output latency). Remembered per device, so switching devices restores the right value. A negative value holds the video back to match late audio. Each file can add its own delay via Audio &gt; Set delay.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="349"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="355"/>
         <source>Use software volume control</source>
         <translation>Sz&amp;oftveres hangerőszabályzó használata</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="353"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="359"/>
         <source>Max. amplification:</source>
         <translation>Max. erősítés:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="358"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="364"/>
         <source>Volume normalization by default</source>
         <translation>Hangerő normalizálás alapból</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="365"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="371"/>
         <source>Amplification above 100% and volume normalization require an audio pipeline filter, which Qt Multimedia does not provide.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="384"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="390"/>
         <source>Comma-separated language codes or names in order of preference (e.g. &quot;ja, en&quot;).</source>
         <translation>Vesszővel elválasztott nyelvi kódok vagy nevek fontossági sorrendben (pl. &quot;ja, en&quot;).</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="389"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="395"/>
         <source>Preferred audio language:</source>
         <translation>Előnyben részesített hangnyelv:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="392"/>
-        <location filename="../qml/PrefGeneralPage.qml" line="402"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="398"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="408"/>
         <source>e.g. ja, en</source>
         <translation>pl. ja, en</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="399"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="405"/>
         <source>Preferred subtitle language:</source>
         <translation>Előnyben részesített feliratnyelv:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="410"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="416"/>
         <source>Show subtitles by default</source>
         <translation>Feliratok megjelenítése alapértelmezés szerint</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="415"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="421"/>
         <source>When a file has embedded subtitles, turn one on automatically (preferring the languages above) instead of starting with subtitles off.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="425"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="431"/>
         <source>...but not if the audio is already in a preferred language</source>
         <translation>...de ne akkor, ha a hang már egy preferált nyelven van</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="431"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="437"/>
         <source>Skip the automatic subtitle above when its language matches the audio track that actually got selected -- if you already understand the audio, a subtitle in the same language is usually redundant.</source>
         <translation>A fenti automatikus felirat kihagyása, ha annak nyelve megegyezik a ténylegesen kiválasztott hangsávval -- ha már érti a hangot, az ugyanolyan nyelvű felirat általában felesleges.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="442"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="448"/>
         <source>Preferred audio track number:</source>
         <translation>Előnyben részesített hangsáv száma:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="448"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="454"/>
         <source>Preferred subtitle track number:</source>
         <translation>Előnyben részesített feliratsáv száma:</translation>
     </message>

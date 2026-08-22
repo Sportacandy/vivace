@@ -7,8 +7,12 @@ Il menu **Opzioni** contiene le preferenze e la configurazione dell'interfaccia.
   di file, Aggiornamenti, Rete e Avanzate. Le modifiche si applicano subito;
   **Annulla** le ripristina.
   - **Generale ▸ Video** imposta la modalità **Deinterlaccia** predefinita
-    (Nessuno / Yadif / Bwdif) per i file aperti di recente — modificabile
-    per singolo file da *Video ▸ Deinterlaccia*.
+    (Nessuno / Yadif / Bwdif / Automatico) per i file aperti di recente —
+    modificabile per singolo file da *Video ▸ Deinterlaccia* (solo Nessuno/
+    Yadif/Bwdif; Automatico non è disponibile lì, poiché ha senso solo
+    come valore predefinito). **Automatico** usa Bwdif, ma solo sui
+    fotogrammi che il file stesso contrassegna come interlacciati,
+    lasciando invariati i fotogrammi progressivi.
   - **Generale ▸ Audio e sottotitoli preferiti** imposta le lingue tra
     cui Vivace sceglie automaticamente tra le tracce incorporate di un
     file. **Mostra i sottotitoli per impostazione predefinita** attiva

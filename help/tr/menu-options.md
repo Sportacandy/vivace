@@ -6,8 +6,12 @@
   Klavye ve fare, Oynatma listesi, Sürücüler, TV, Dosya türleri, Güncellemeler, Ağ
   ve Gelişmiş. Değişiklikler hemen uygulanır; **İptal** onları geri alır.
   - **Genel ▸ Video** yeni açılan dosyalar için varsayılan **Görüntü
-    ayrıştırma** kipini (Hiçbiri / Yadif / Bwdif) ayarlar — dosya başına
-    değiştirmek için *Video ▸ Görüntü ayrıştırma* bölümünü kullanın.
+    ayrıştırma** kipini (Hiçbiri / Yadif / Bwdif / Otomatik) ayarlar — dosya
+    başına değiştirmek için *Video ▸ Görüntü ayrıştırma* bölümünü kullanın
+    (yalnızca Hiçbiri/Yadif/Bwdif sunulur; Otomatik yalnızca varsayılan
+    değer olarak anlam kazandığından burada sunulmaz). **Otomatik**, Bwdif'i
+    yalnızca dosyanın kendisinin taramalı olarak işaretlediği karelerde
+    kullanır; aşamalı taramalı kareler değişmeden bırakılır.
   - **Genel ▸ Tercih edilen ses ve altyazılar** Vivace'nin bir dosyanın
     gömülü parçaları arasından otomatik olarak seçtiği dilleri ayarlar.
     **Altyazıları varsayılan olarak göster** kullanılabilir olduğunda

@@ -7,8 +7,11 @@ O menu **Opções** contém as preferências e a configuração da interface.
   Tipos de arquivo, Atualizações, Rede e Avançado. As mudanças se aplicam na
   hora; **Cancelar** as reverte.
   - **Geral ▸ Vídeo** define o modo **Desentrelaçar** padrão (Nenhum / Yadif
-    / Bwdif) para arquivos recém-abertos — altere por arquivo em *Vídeo ▸
-    Desentrelaçar*.
+    / Bwdif / Automático) para arquivos recém-abertos — altere por arquivo
+    em *Vídeo ▸ Desentrelaçar* (apenas Nenhum/Yadif/Bwdif; o Automático não
+    é oferecido ali, já que só faz sentido como padrão). **Automático** usa
+    Bwdif, mas somente nos quadros que o próprio arquivo marca como
+    entrelaçados, deixando os quadros progressivos inalterados.
   - **Geral ▸ Áudio e legendas preferidas** define os idiomas entre os
     quais o Vivace escolhe automaticamente as faixas incorporadas de um
     arquivo. **Mostrar legendas por padrão** ativa uma automaticamente

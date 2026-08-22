@@ -2051,6 +2051,11 @@
         <translation>Bwdif</translation>
     </message>
     <message>
+        <location filename="../src/playercontroller.cpp" line="3313"/>
+        <source>Auto</source>
+        <translation>Automatisch</translation>
+    </message>
+    <message>
         <location filename="../src/playercontroller.cpp" line="3314"/>
         <source>Deinterlace: %1</source>
         <translation>Zeilenentflechtung: %1</translation>
@@ -2736,12 +2741,17 @@
         <translation>Bwdif</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="202"/>
-        <source>Deinterlacing removes the horizontal combing artifacts of interlaced video. This sets the default for newly opened files; change it per file from Video &gt; Deinterlace.</source>
-        <translation type="unfinished"></translation>
+        <location filename="../qml/PrefGeneralPage.qml" line="197"/>
+        <source>Auto</source>
+        <translation>Automatisch</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="215"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="202"/>
+        <source>Deinterlacing removes the horizontal combing artifacts of interlaced video. This sets the default for newly opened files; change it per file from Video &gt; Deinterlace. &quot;Auto&quot; uses Bwdif but only on frames the file itself marks as interlaced, leaving progressive frames untouched; it is not offered on the per-file Video &gt; Deinterlace menu, since it only makes sense as a default.</source>
+        <translation>Die Zeilenentflechtung entfernt die horizontalen Kammartefakte von Zeilensprungvideos. Dies legt die Standardeinstellung für neu geöffnete Dateien fest; sie kann pro Datei über Video &gt; Zeilenentflechtung geändert werden. „Automatisch“ verwendet Bwdif, aber nur für Einzelbilder, die die Datei selbst als Zeilensprung markiert; progressive Einzelbilder bleiben unverändert. Diese Option steht im dateibezogenen Menü Video &gt; Zeilenentflechtung nicht zur Verfügung, da sie nur als Standardeinstellung sinnvoll ist.</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefGeneralPage.qml" line="221"/>
         <source>Video equalizer and zoom/aspect controls are planned for Phase 4 (ShaderEffect / item transforms). Driver selection is not available with Qt Multimedia.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2750,135 +2760,135 @@
         <translation type="vanished">Keine (vom Backend nicht unterstützt)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="233"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="239"/>
         <source>Output device:</source>
         <translation>Ausgabegerät:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="255"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="261"/>
         <source>Volume</source>
         <translation>Lautstärke</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="263"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="269"/>
         <source>Volume step:</source>
         <translation>Lautstärkeschritt:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="265"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="271"/>
         <source>How much each volume up/down key press or mouse-wheel notch changes the level.</source>
         <translation>Um wie viel jeder Tastendruck für lauter/leiser oder jede Mausrad-Raste den Pegel ändert.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="273"/>
-        <location filename="../qml/PrefGeneralPage.qml" line="295"/>
-        <location filename="../qml/PrefGeneralPage.qml" line="355"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="279"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="301"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="361"/>
         <source>%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="278"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="284"/>
         <source>Remember volume between sessions</source>
         <translation>Lautstärke zwischen den Sitzungen merken</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="285"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="291"/>
         <source>Initial volume:</source>
         <translation>Anfangslautstärke:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="287"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="293"/>
         <source>The volume level set at startup when the volume is not remembered between sessions.</source>
         <translation>Die beim Start eingestellte Lautstärke, wenn die Lautstärke nicht zwischen den Sitzungen gemerkt wird.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="303"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="309"/>
         <source>Synchronization</source>
         <translation>Synchronisation</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="311"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="317"/>
         <source>Global audio delay:</source>
         <translation>Globale Audioverzögerung:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="327"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="333"/>
         <source>ms</source>
         <translation>ms</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="335"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="341"/>
         <source>Delay for the current audio device — “%1” — applied to every file (e.g. to compensate Bluetooth output latency). Remembered per device, so switching devices restores the right value. A negative value holds the video back to match late audio. Each file can add its own delay via Audio &gt; Set delay.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="349"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="355"/>
         <source>Use software volume control</source>
         <translation>&amp;Anwendungslautstärkeregelung verwenden</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="353"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="359"/>
         <source>Max. amplification:</source>
         <translation>Max. Verstärkung:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="358"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="364"/>
         <source>Volume normalization by default</source>
         <translation>Lautstärke immer normalisieren</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="365"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="371"/>
         <source>Amplification above 100% and volume normalization require an audio pipeline filter, which Qt Multimedia does not provide.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="384"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="390"/>
         <source>Comma-separated language codes or names in order of preference (e.g. &quot;ja, en&quot;).</source>
         <translation>Durch Kommas getrennte Sprachcodes oder -namen in bevorzugter Reihenfolge (z. B. &quot;ja, en&quot;).</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="389"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="395"/>
         <source>Preferred audio language:</source>
         <translation>Bevorzugte Audiosprache:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="392"/>
-        <location filename="../qml/PrefGeneralPage.qml" line="402"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="398"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="408"/>
         <source>e.g. ja, en</source>
         <translation>z. B. ja, en</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="399"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="405"/>
         <source>Preferred subtitle language:</source>
         <translation>Bevorzugte Untertitelsprache:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="410"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="416"/>
         <source>Show subtitles by default</source>
         <translation>Untertitel standardmäßig anzeigen</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="415"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="421"/>
         <source>When a file has embedded subtitles, turn one on automatically (preferring the languages above) instead of starting with subtitles off.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="425"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="431"/>
         <source>...but not if the audio is already in a preferred language</source>
         <translation>...aber nicht, wenn die Audiospur bereits in einer bevorzugten Sprache ist</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="431"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="437"/>
         <source>Skip the automatic subtitle above when its language matches the audio track that actually got selected -- if you already understand the audio, a subtitle in the same language is usually redundant.</source>
         <translation>Den automatischen Untertitel oben überspringen, wenn seine Sprache mit der tatsächlich ausgewählten Audiospur übereinstimmt -- wenn Sie die Audiospur bereits verstehen, ist ein Untertitel in derselben Sprache meist überflüssig.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="442"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="448"/>
         <source>Preferred audio track number:</source>
         <translation>Bevorzugte Audiospurnummer:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="448"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="454"/>
         <source>Preferred subtitle track number:</source>
         <translation>Bevorzugte Untertitelspurnummer:</translation>
     </message>

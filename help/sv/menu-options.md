@@ -7,8 +7,11 @@ Menyn **Alternativ** innehåller inställningarna och gränssnittskonfiguratione
   Filtyper, Uppdateringar, Nätverk och Avancerat. Ändringar tillämpas direkt;
   **Avbryt** återställer dem.
   - **Allmänt ▸ Video** ställer in standardläget för **Deinterlace** (Ingen /
-    Yadif / Bwdif) för nyöppnade filer — ändra det per fil under *Video ▸
-    Deinterlace*.
+    Yadif / Bwdif / Automatisk) för nyöppnade filer — ändra det per fil under
+    *Video ▸ Deinterlace* (endast Ingen/Yadif/Bwdif; Automatisk erbjuds inte
+    där, eftersom det bara är meningsfullt som standardval). **Automatisk**
+    använder Bwdif men bara på bildrutor som filen själv märker som flätade,
+    och lämnar progressiva bildrutor orörda.
   - **Allmänt ▸ Standardspråk - tal och undertexter** anger de språk som
     Vivace automatiskt väljer bland en fils inbäddade spår. **Visa
     undertexter som standard** slår automatiskt på en undertext när en är

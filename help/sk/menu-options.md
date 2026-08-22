@@ -6,8 +6,12 @@ Ponuka **Možnosti** obsahuje nastavenia a konfiguráciu rozhrania.
   Titulky, Klávesnica a myš, Zoznam skladieb, Jednotky, TV, Typy súborov,
   Aktualizácie, Sieť a Pokročilé. Zmeny sa použijú ihneď; **Zrušiť** ich vráti späť.
   - **Všeobecné ▸ Video** nastavuje predvolený režim **Odstrániť
-    prekladanie** (Žiadne / Yadif / Bwdif) pre novo otvorené súbory —
-    zmeňte ho pre jednotlivý súbor cez *Video ▸ Odstrániť prekladanie*.
+    prekladanie** (Žiadne / Yadif / Bwdif / Automatické) pre novo otvorené
+    súbory — zmeňte ho pre jednotlivý súbor cez *Video ▸ Odstrániť
+    prekladanie* (len Žiadne/Yadif/Bwdif; režim Automatické tam nie je
+    ponúkaný, pretože má zmysel len ako predvolená hodnota). Režim
+    **Automatické** používa Bwdif, ale len na snímkoch, ktoré súbor sám
+    označuje ako prekladané, a progresívne snímky ponecháva bez zmeny.
   - **Všeobecné ▸ Preferovaný zvuk a titulky** nastavuje jazyky, medzi
     ktorými Vivace automaticky vyberá vstavané stopy súboru. **Predvolene
     zobrazovať titulky** automaticky zapne titulky, ak sú k dispozícii;

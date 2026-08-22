@@ -123,17 +123,32 @@ class PlayerController : public QObject
                NOTIFY videoTransformChanged)
     Q_PROPERTY(bool videoMirror READ videoMirror WRITE setVideoMirror
                NOTIFY videoTransformChanged)
-    // Deinterlace mode (0 = off, 1 = Yadif, 2 = Bwdif), per-file/session like
-    // the view transforms above -- reset from Settings.deinterlaceMode (the
+    // Deinterlace mode (0 = Auto/Bwdif on decoder-flagged interlaced frames
+    // only, 1 = Yadif, 2 = Bwdif, 3 = None/off), per-file/session like the
+    // view transforms above -- reset from Settings.deinterlaceMode (the
     // user's configurable global default, SMPlayer's Preferences > General >
-    // Video "Initial deinterlace") on each genuinely new source, but NOT
-    // itself persisted (mirrors SMPlayer's two-level default+override model,
-    // Preferences::initial_deinterlace seeding MediaSettings::
-    // current_deinterlacer). The setter relays into VIVACE_DEINTERLACE_MODE,
-    // an env var read fresh by the patched qtmultimedia FFmpeg plugin's
-    // VideoRenderer on every frame -- the plugin has no reach into Settings
-    // or any other Qt property, so this is the same env-var-relay pattern
-    // already used for the DVD/embedded bitmap-subtitle smoothing patch.
+    // Video "Initial deinterlace", extended with a Vivace-only Auto choice)
+    // on each genuinely new source, but NOT itself persisted (mirrors
+    // SMPlayer's two-level default+override model, Preferences::
+    // initial_deinterlace seeding MediaSettings::current_deinterlacer). Auto
+    // is deliberately not one of the choices on the per-file Video >
+    // Deinterlace menu (see MainMenuBar.qml) -- only None/Yadif/Bwdif are;
+    // a file whose value is inherited as Auto (0) just shows no radio item
+    // checked there, which is harmless.
+    // NOTE (2026-08-22, user directive): None and Auto's VALUES were
+    // deliberately swapped from the original 0=None/3=Auto numbering to
+    // 0=Auto/3=None, making Auto the default (0 is both the compiled-in
+    // default here and in Settings, and also what an unset
+    // VIVACE_DEINTERLACE_MODE env var reads as) -- an accepted, one-time
+    // compatibility break: a value a user had previously persisted for one
+    // of these two modes is now interpreted as the other. See
+    // patches/qtmultimedia-deinterlace.patch's own qffmpegdeinterlacer_p.h
+    // file comment for the patch-side half of this swap. The setter relays
+    // into VIVACE_DEINTERLACE_MODE, an env var read fresh by the patched
+    // qtmultimedia FFmpeg plugin's VideoRenderer on every frame -- the
+    // plugin has no reach into Settings or any other Qt property, so this
+    // is the same env-var-relay pattern already used for the DVD/embedded
+    // bitmap-subtitle smoothing patch.
     Q_PROPERTY(int deinterlaceMode READ deinterlaceMode WRITE setDeinterlaceMode
                NOTIFY deinterlaceModeChanged)
     Q_PROPERTY(bool shuffle READ shuffle WRITE setShuffle NOTIFY shuffleChanged)
@@ -801,7 +816,7 @@ private:
     int m_videoRotation = 0; // 0/90/180/270, clockwise
     bool m_videoFlip = false;
     bool m_videoMirror = false;
-    int m_deinterlaceMode = 0; // 0 = off, 1 = Yadif, 2 = Bwdif
+    int m_deinterlaceMode = 0; // 0 = Auto (default), 1 = Yadif, 2 = Bwdif, 3 = None (off)
     // A/V sync: delay the video path by |audioDelay| when audioDelay < 0.
     // Seek-preview: hidden player + its sink; frames relayed to m_previewTarget.
     QMediaPlayer *m_previewPlayer = nullptr;

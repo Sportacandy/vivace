@@ -7,8 +7,12 @@ Het menu **Opties** bevat de voorkeuren en de interfaceconfiguratie.
   Tv, Bestandstypen, Updates, Netwerk en Geavanceerd. Wijzigingen worden direct
   toegepast; **Annuleren** draait ze terug.
   - **Algemeen ▸ Video** stelt de standaardmodus voor **Deinterlace** in
-    (Geen / Yadif / Bwdif) voor nieuw geopende bestanden — wijzig dit per
-    bestand via *Video ▸ Deinterlace*.
+    (Geen / Yadif / Bwdif / Automatisch) voor nieuw geopende bestanden —
+    wijzig dit per bestand via *Video ▸ Deinterlace* (alleen Geen/Yadif/
+    Bwdif; Automatisch wordt daar niet aangeboden, omdat het alleen als
+    standaardwaarde zin heeft). **Automatisch** gebruikt Bwdif, maar
+    alleen op frames die het bestand zelf als interlaced markeert;
+    progressieve frames blijven ongewijzigd.
   - **Algemeen ▸ Audio- en ondertiteling-voorkeuren** stelt de talen in
     waaruit Vivace automatisch kiest tussen de ingesloten sporen van een
     bestand. **Ondertitels standaard tonen** schakelt er automatisch een

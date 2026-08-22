@@ -7,8 +7,12 @@ El menú **Opcions** conté les preferències i la configuració de la interfíc
   Tipus de fitxer, Actualitzacions, Xarxa i Avançat. Els canvis s'apliquen a
   l'instant; **Cancel·la** els reverteix.
   - **General ▸ Vídeo** estableix el mode per defecte de **Desentrellaça**
-    (Sense / Yadif / Bwdif) per als fitxers acabats d'obrir — canvia'l per
-    fitxer des de *Vídeo ▸ Desentrellaça*.
+    (Sense / Yadif / Bwdif / Automàtic) per als fitxers acabats d'obrir —
+    canvia'l per fitxer des de *Vídeo ▸ Desentrellaça* (només
+    Sense/Yadif/Bwdif; l'opció Automàtic no s'hi ofereix, ja que només té
+    sentit com a valor per defecte). **Automàtic** utilitza Bwdif però només
+    en els fotogrames que el mateix fitxer marca com a entrellaçats, deixant
+    intactes els fotogrames progressius.
   - **General ▸ Idioma preferit per a l'àudio i els subtítols** estableix
     els idiomes que Vivace selecciona automàticament entre les pistes
     incrustades d'un fitxer. **Mostra els subtítols per defecte** n'activa

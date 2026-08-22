@@ -2048,6 +2048,11 @@
         <translation>Bwdif</translation>
     </message>
     <message>
+        <location filename="../src/playercontroller.cpp" line="3313"/>
+        <source>Auto</source>
+        <translation>自動</translation>
+    </message>
+    <message>
         <location filename="../src/playercontroller.cpp" line="3314"/>
         <source>Deinterlace: %1</source>
         <translation>去交錯：%1</translation>
@@ -2733,12 +2738,17 @@
         <translation>Bwdif</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="202"/>
-        <source>Deinterlacing removes the horizontal combing artifacts of interlaced video. This sets the default for newly opened files; change it per file from Video &gt; Deinterlace.</source>
-        <translation type="unfinished"></translation>
+        <location filename="../qml/PrefGeneralPage.qml" line="197"/>
+        <source>Auto</source>
+        <translation>自動</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="215"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="202"/>
+        <source>Deinterlacing removes the horizontal combing artifacts of interlaced video. This sets the default for newly opened files; change it per file from Video &gt; Deinterlace. &quot;Auto&quot; uses Bwdif but only on frames the file itself marks as interlaced, leaving progressive frames untouched; it is not offered on the per-file Video &gt; Deinterlace menu, since it only makes sense as a default.</source>
+        <translation>去交錯可去除隔行掃描視訊的水平梳齒狀偽影。此設定為新開啟檔案的預設值；可在 視訊 &gt; 去交錯 選單中針對個別檔案變更。&quot;自動&quot;僅對檔案本身標記為隔行的畫面使用 Bwdif，逐行畫面則保持不變；由於此選項只有作為預設值才有意義，因此不會出現在針對個別檔案的 視訊 &gt; 去交錯 選單中。</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefGeneralPage.qml" line="221"/>
         <source>Video equalizer and zoom/aspect controls are planned for Phase 4 (ShaderEffect / item transforms). Driver selection is not available with Qt Multimedia.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2747,135 +2757,135 @@
         <translation type="vanished">無（後端不支援）</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="233"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="239"/>
         <source>Output device:</source>
         <translation>輸出裝置：</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="255"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="261"/>
         <source>Volume</source>
         <translation>音量</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="263"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="269"/>
         <source>Volume step:</source>
         <translation>音量級距：</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="265"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="271"/>
         <source>How much each volume up/down key press or mouse-wheel notch changes the level.</source>
         <translation>每次按音量增大/減小鍵或每格滑鼠滾輪改變音量的幅度。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="273"/>
-        <location filename="../qml/PrefGeneralPage.qml" line="295"/>
-        <location filename="../qml/PrefGeneralPage.qml" line="355"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="279"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="301"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="361"/>
         <source>%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="278"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="284"/>
         <source>Remember volume between sessions</source>
         <translation>在各工作階段之間記住音量</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="285"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="291"/>
         <source>Initial volume:</source>
         <translation>初始音量：</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="287"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="293"/>
         <source>The volume level set at startup when the volume is not remembered between sessions.</source>
         <translation>當音量不在各工作階段之間記住時，啟動時設定的音量等級。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="303"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="309"/>
         <source>Synchronization</source>
         <translation>同步</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="311"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="317"/>
         <source>Global audio delay:</source>
         <translation>全域音訊延遲：</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="327"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="333"/>
         <source>ms</source>
         <translation>毫秒</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="335"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="341"/>
         <source>Delay for the current audio device — “%1” — applied to every file (e.g. to compensate Bluetooth output latency). Remembered per device, so switching devices restores the right value. A negative value holds the video back to match late audio. Each file can add its own delay via Audio &gt; Set delay.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="349"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="355"/>
         <source>Use software volume control</source>
         <translation>使用軟體音量控制(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="353"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="359"/>
         <source>Max. amplification:</source>
         <translation>最大放大：</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="358"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="364"/>
         <source>Volume normalization by default</source>
         <translation>預設音量標準化</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="365"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="371"/>
         <source>Amplification above 100% and volume normalization require an audio pipeline filter, which Qt Multimedia does not provide.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="384"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="390"/>
         <source>Comma-separated language codes or names in order of preference (e.g. &quot;ja, en&quot;).</source>
         <translation>依偏好順序以逗號分隔的語言代碼或名稱（例如 &quot;ja, en&quot;）。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="389"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="395"/>
         <source>Preferred audio language:</source>
         <translation>偏好音訊語言：</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="392"/>
-        <location filename="../qml/PrefGeneralPage.qml" line="402"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="398"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="408"/>
         <source>e.g. ja, en</source>
         <translation>例如 ja, en</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="399"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="405"/>
         <source>Preferred subtitle language:</source>
         <translation>偏好字幕語言：</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="410"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="416"/>
         <source>Show subtitles by default</source>
         <translation>預設顯示字幕</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="415"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="421"/>
         <source>When a file has embedded subtitles, turn one on automatically (preferring the languages above) instead of starting with subtitles off.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="425"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="431"/>
         <source>...but not if the audio is already in a preferred language</source>
         <translation>...但若音訊已經是慣用語言則除外</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="431"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="437"/>
         <source>Skip the automatic subtitle above when its language matches the audio track that actually got selected -- if you already understand the audio, a subtitle in the same language is usually redundant.</source>
         <translation>當上方的自動字幕語言與實際選取的音軌語言相符時略過它——如果您已經聽得懂音訊，相同語言的字幕通常是多餘的。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="442"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="448"/>
         <source>Preferred audio track number:</source>
         <translation>偏好音軌編號：</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="448"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="454"/>
         <source>Preferred subtitle track number:</source>
         <translation>偏好字幕音軌編號：</translation>
     </message>

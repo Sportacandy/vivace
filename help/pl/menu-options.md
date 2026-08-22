@@ -6,8 +6,12 @@ Menu **Opcje** zawiera ustawienia i konfigurację interfejsu.
   Klawiatura i mysz, Lista odtwarzania, Napędy, TV, Typy plików, Aktualizacje,
   Sieć i Zaawansowane. Zmiany są stosowane natychmiast; **Anuluj** je cofa.
   - **Ogólne ▸ Wideo** ustawia domyślny tryb **Usuwanie przeplotu** (Brak /
-    Yadif / Bwdif) dla nowo otwieranych plików — zmień go dla pojedynczego
-    pliku w *Wideo ▸ Usuwanie przeplotu*.
+    Yadif / Bwdif / Automatyczny) dla nowo otwieranych plików — zmień go
+    dla pojedynczego pliku w *Wideo ▸ Usuwanie przeplotu* (tylko Brak/
+    Yadif/Bwdif; tryb Automatyczny nie jest tam dostępny, bo ma sens tylko
+    jako wartość domyślna). Tryb **Automatyczny** używa Bwdif, ale tylko
+    dla klatek oznaczonych przez sam plik jako z przeplotem, pozostawiając
+    klatki progresywne bez zmian.
   - **Ogólne ▸ Preferowana ścieżka dźwiękowa i napisy** ustawia języki,
     spośród których Vivace automatycznie wybiera wśród osadzonych ścieżek
     pliku. **Domyślnie pokazuj napisy** automatycznie włącza napisy, jeśli

@@ -7,8 +7,12 @@ A **Beállítások** menü tartalmazza a beállításokat és a felület konfigu
   Fájltípusok, Frissítések, Hálózat és Speciális. A módosítások azonnal
   érvénybe lépnek; a **Mégse** visszavonja őket.
   - **Általános ▸ Videó** beállítja a **Deinterlace** alapértelmezett módját
-    (Nincs / Yadif / Bwdif) az újonnan megnyitott fájlokhoz — fájlonként a
-    *Videó ▸ Deinterlace* alatt módosítható.
+    (Nincs / Yadif / Bwdif / Automatikus) az újonnan megnyitott fájlokhoz —
+    fájlonként a *Videó ▸ Deinterlace* alatt módosítható (csak
+    Nincs/Yadif/Bwdif; az Automatikus itt nem elérhető, mivel csak
+    alapértelmezettként van értelme). Az **Automatikus** a Bwdifet használja,
+    de csak azokon a képkockákon, amelyeket a fájl maga jelöl
+    váltottsorosként, a progresszív képkockákat érintetlenül hagyva.
   - **Általános ▸ Preferált hang és feliratok** beállítja azokat a
     nyelveket, amelyek közül Vivace automatikusan választ a fájl beágyazott
     sávjai közül. **Feliratok megjelenítése alapértelmezés szerint**

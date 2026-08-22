@@ -2048,6 +2048,11 @@
         <translation>Bwdif</translation>
     </message>
     <message>
+        <location filename="../src/playercontroller.cpp" line="3313"/>
+        <source>Auto</source>
+        <translation>自動</translation>
+    </message>
+    <message>
         <location filename="../src/playercontroller.cpp" line="3314"/>
         <source>Deinterlace: %1</source>
         <translation>デインターレース: %1</translation>
@@ -2745,12 +2750,21 @@
         <translation>Bwdif</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="202"/>
-        <source>Deinterlacing removes the horizontal combing artifacts of interlaced video. This sets the default for newly opened files; change it per file from Video &gt; Deinterlace.</source>
-        <translation>インターレース解除は、インターレース映像特有の横縦（コーミング）アーティファクトを除去します。ここでの設定は新しく開くファイルの既定値になります。ファイルごとに変更するには「映像 &gt; インターレース解除」を使用してください。</translation>
+        <location filename="../qml/PrefGeneralPage.qml" line="197"/>
+        <source>Auto</source>
+        <translation>自動</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="215"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="202"/>
+        <source>Deinterlacing removes the horizontal combing artifacts of interlaced video. This sets the default for newly opened files; change it per file from Video &gt; Deinterlace. &quot;Auto&quot; uses Bwdif but only on frames the file itself marks as interlaced, leaving progressive frames untouched; it is not offered on the per-file Video &gt; Deinterlace menu, since it only makes sense as a default.</source>
+        <translation>インターレース解除は、インターレース映像特有の横縦（コーミング）アーティファクトを除去します。ここでの設定は新しく開くファイルの既定値になります。ファイルごとに変更するには「映像 &gt; インターレース解除」を使用してください。「自動」は Bwdif を使用しますが、ファイル自体がインターレースとしてマークしているフレームにのみ適用され、プログレッシブフレームはそのまま保持されます。既定値としてのみ意味を持つため、ファイルごとの「映像 &gt; インターレース解除」メニューには表示されません。</translation>
+    </message>
+    <message>
+        <source>Deinterlacing removes the horizontal combing artifacts of interlaced video. This sets the default for newly opened files; change it per file from Video &gt; Deinterlace.</source>
+        <translation type="vanished">インターレース解除は、インターレース映像特有の横縦（コーミング）アーティファクトを除去します。ここでの設定は新しく開くファイルの既定値になります。ファイルごとに変更するには「映像 &gt; インターレース解除」を使用してください。</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefGeneralPage.qml" line="221"/>
         <source>Video equalizer and zoom/aspect controls are planned for Phase 4 (ShaderEffect / item transforms). Driver selection is not available with Qt Multimedia.</source>
         <translation>ビデオイコライザーとズーム／アスペクト比の操作はフェーズ 4（ShaderEffect／アイテム変換）で予定されています。ドライバー選択は Qt Multimedia では利用できません。</translation>
     </message>
@@ -2763,135 +2777,135 @@
         <translation type="vanished">ビデオイコライザーとズーム／アスペクト比の操作はフェーズ 4（ShaderEffect／アイテム変換）で予定されています。インターレース解除とドライバー選択は Qt Multimedia では利用できません。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="233"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="239"/>
         <source>Output device:</source>
         <translation>出力デバイス:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="255"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="261"/>
         <source>Volume</source>
         <translation>音量</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="263"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="269"/>
         <source>Volume step:</source>
         <translation>音量の刻み幅:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="265"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="271"/>
         <source>How much each volume up/down key press or mouse-wheel notch changes the level.</source>
         <translation>音量アップ／ダウンのキーやマウスホイールの 1 段階で音量がどれだけ変化するか。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="273"/>
-        <location filename="../qml/PrefGeneralPage.qml" line="295"/>
-        <location filename="../qml/PrefGeneralPage.qml" line="355"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="279"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="301"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="361"/>
         <source>%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="278"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="284"/>
         <source>Remember volume between sessions</source>
         <translation>セッション間で音量を記憶</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="285"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="291"/>
         <source>Initial volume:</source>
         <translation>起動時の音量:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="287"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="293"/>
         <source>The volume level set at startup when the volume is not remembered between sessions.</source>
         <translation>音量をセッション間で記憶しない場合に、起動時に設定される音量。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="303"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="309"/>
         <source>Synchronization</source>
         <translation>同期</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="311"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="317"/>
         <source>Global audio delay:</source>
         <translation>全体の音声遅延:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="327"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="333"/>
         <source>ms</source>
         <translation>ミリ秒</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="335"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="341"/>
         <source>Delay for the current audio device — “%1” — applied to every file (e.g. to compensate Bluetooth output latency). Remembered per device, so switching devices restores the right value. A negative value holds the video back to match late audio. Each file can add its own delay via Audio &gt; Set delay.</source>
         <translation>現在の音声デバイス「%1」に対する遅延で、すべてのファイルに適用されます（例: Bluetooth 出力の遅延を補正）。デバイスごとに記憶されるため、デバイスを切り替えると適切な値が復元されます。負の値は、遅れて届く音声に合わせて映像を遅らせます。ファイルごとの遅延は 音声 &gt; 遅延を設定 で追加できます。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="349"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="355"/>
         <source>Use software volume control</source>
         <translation>ソフトウェア音量制御を使用</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="353"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="359"/>
         <source>Max. amplification:</source>
         <translation>最大増幅:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="358"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="364"/>
         <source>Volume normalization by default</source>
         <translation>既定で音量を正規化</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="365"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="371"/>
         <source>Amplification above 100% and volume normalization require an audio pipeline filter, which Qt Multimedia does not provide.</source>
         <translation>100% を超える増幅と音量の正規化には音声パイプラインのフィルターが必要ですが、Qt Multimedia は提供していません。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="384"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="390"/>
         <source>Comma-separated language codes or names in order of preference (e.g. &quot;ja, en&quot;).</source>
         <translation>優先順に、言語コードまたは言語名をカンマ区切りで指定します（例: 「ja, en」）。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="389"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="395"/>
         <source>Preferred audio language:</source>
         <translation>優先する音声言語:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="392"/>
-        <location filename="../qml/PrefGeneralPage.qml" line="402"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="398"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="408"/>
         <source>e.g. ja, en</source>
         <translation>例: ja, en</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="399"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="405"/>
         <source>Preferred subtitle language:</source>
         <translation>優先する字幕言語:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="410"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="416"/>
         <source>Show subtitles by default</source>
         <translation>既定で字幕を表示</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="415"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="421"/>
         <source>When a file has embedded subtitles, turn one on automatically (preferring the languages above) instead of starting with subtitles off.</source>
         <translation>ファイルに埋め込み字幕がある場合、字幕オフで始めるのではなく、自動的に 1 つ（上の言語を優先）をオンにします。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="425"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="431"/>
         <source>...but not if the audio is already in a preferred language</source>
         <translation>...ただし、音声がすでに優先言語の場合を除く</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="431"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="437"/>
         <source>Skip the automatic subtitle above when its language matches the audio track that actually got selected -- if you already understand the audio, a subtitle in the same language is usually redundant.</source>
         <translation>上の自動字幕は、その言語が実際に選択された音声トラックと一致する場合はスキップされます。音声の内容をすでに理解できるなら、同じ言語の字幕は通常不要だからです。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="442"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="448"/>
         <source>Preferred audio track number:</source>
         <translation>優先する音声トラック番号:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="448"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="454"/>
         <source>Preferred subtitle track number:</source>
         <translation>優先する字幕トラック番号:</translation>
     </message>

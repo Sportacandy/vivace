@@ -7,8 +7,11 @@ Menuen **Indstillinger** indeholder indstillingerne og grænsefladekonfiguration
   Filtyper, Opdateringer, Netværk og Avanceret. Ændringer anvendes med det samme;
   **Annuller** fortryder dem.
   - **Generelt ▸ Video** angiver standardtilstanden for **Deinterlace**
-    (Ingen / Yadif / Bwdif) for nyligt åbnede filer — skift den pr. fil under
-    *Video ▸ Deinterlace*.
+    (Ingen / Yadif / Bwdif / Automatisk) for nyligt åbnede filer — skift den
+    pr. fil under *Video ▸ Deinterlace* (kun Ingen/Yadif/Bwdif; Automatisk
+    tilbydes ikke dér, da det kun giver mening som standardværdi).
+    **Automatisk** bruger Bwdif, men kun på billeder, filen selv markerer
+    som interlacet, og lader progressive billeder være urørte.
   - **Generelt ▸ Foretrukket lyd og undertekster** angiver de sprog,
     Vivace vælger automatisk blandt en fils indlejrede spor. **Vis
     undertekster som standard** slår automatisk en undertekst til, når en

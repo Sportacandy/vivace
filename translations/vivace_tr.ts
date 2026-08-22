@@ -2048,6 +2048,11 @@
         <translation>Bwdif</translation>
     </message>
     <message>
+        <location filename="../src/playercontroller.cpp" line="3313"/>
+        <source>Auto</source>
+        <translation>Otomatik</translation>
+    </message>
+    <message>
         <location filename="../src/playercontroller.cpp" line="3314"/>
         <source>Deinterlace: %1</source>
         <translation>Görüntü ayrıştırma: %1</translation>
@@ -2733,12 +2738,17 @@
         <translation>Bwdif</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="202"/>
-        <source>Deinterlacing removes the horizontal combing artifacts of interlaced video. This sets the default for newly opened files; change it per file from Video &gt; Deinterlace.</source>
-        <translation type="unfinished"></translation>
+        <location filename="../qml/PrefGeneralPage.qml" line="197"/>
+        <source>Auto</source>
+        <translation>Otomatik</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="215"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="202"/>
+        <source>Deinterlacing removes the horizontal combing artifacts of interlaced video. This sets the default for newly opened files; change it per file from Video &gt; Deinterlace. &quot;Auto&quot; uses Bwdif but only on frames the file itself marks as interlaced, leaving progressive frames untouched; it is not offered on the per-file Video &gt; Deinterlace menu, since it only makes sense as a default.</source>
+        <translation>Görüntü ayrıştırma, taranmış (interlaced) videonun yatay tarak izli bozulmalarını giderir. Bu, yeni açılan dosyalar için varsayılan değeri belirler; dosyaya özel olarak değiştirmek için Video &gt; Görüntü ayrıştırma menüsünü kullanın. &quot;Otomatik&quot; seçeneği, yalnızca dosyanın kendisinin taranmış olarak işaretlediği karelerde Bwdif kullanır ve düz taramalı (progressive) kareleri değiştirmeden bırakır; yalnızca varsayılan değer olarak bir anlamı olduğundan dosyaya özel Video &gt; Görüntü ayrıştırma menüsünde sunulmaz.</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefGeneralPage.qml" line="221"/>
         <source>Video equalizer and zoom/aspect controls are planned for Phase 4 (ShaderEffect / item transforms). Driver selection is not available with Qt Multimedia.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2747,135 +2757,135 @@
         <translation type="vanished">Yok (arka uç tarafından desteklenmiyor)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="233"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="239"/>
         <source>Output device:</source>
         <translation>Çıkış aygıtı:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="255"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="261"/>
         <source>Volume</source>
         <translation>Ses</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="263"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="269"/>
         <source>Volume step:</source>
         <translation>Ses düzeyi adımı:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="265"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="271"/>
         <source>How much each volume up/down key press or mouse-wheel notch changes the level.</source>
         <translation>Her ses artır/azalt tuşuna basış veya fare tekerleği çentiği düzeyi ne kadar değiştirir.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="273"/>
-        <location filename="../qml/PrefGeneralPage.qml" line="295"/>
-        <location filename="../qml/PrefGeneralPage.qml" line="355"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="279"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="301"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="361"/>
         <source>%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="278"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="284"/>
         <source>Remember volume between sessions</source>
         <translation>Ses düzeyini oturumlar arasında hatırla</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="285"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="291"/>
         <source>Initial volume:</source>
         <translation>Başlangıç ses düzeyi:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="287"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="293"/>
         <source>The volume level set at startup when the volume is not remembered between sessions.</source>
         <translation>Ses düzeyi oturumlar arasında hatırlanmadığında başlangıçta ayarlanan ses düzeyi.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="303"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="309"/>
         <source>Synchronization</source>
         <translation>Senkronizasyon</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="311"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="317"/>
         <source>Global audio delay:</source>
         <translation>Genel ses gecikmesi:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="327"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="333"/>
         <source>ms</source>
         <translation>ms</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="335"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="341"/>
         <source>Delay for the current audio device — “%1” — applied to every file (e.g. to compensate Bluetooth output latency). Remembered per device, so switching devices restores the right value. A negative value holds the video back to match late audio. Each file can add its own delay via Audio &gt; Set delay.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="349"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="355"/>
         <source>Use software volume control</source>
         <translation>Yazılıma bağlı ses kontr&amp;olü kullan</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="353"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="359"/>
         <source>Max. amplification:</source>
         <translation>Maks. yükseltme:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="358"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="364"/>
         <source>Volume normalization by default</source>
         <translation>Ses normalleştirme her zaman uygulansın</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="365"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="371"/>
         <source>Amplification above 100% and volume normalization require an audio pipeline filter, which Qt Multimedia does not provide.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="384"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="390"/>
         <source>Comma-separated language codes or names in order of preference (e.g. &quot;ja, en&quot;).</source>
         <translation>Tercih sırasına göre virgülle ayrılmış dil kodları veya adları (örn. &quot;ja, en&quot;).</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="389"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="395"/>
         <source>Preferred audio language:</source>
         <translation>Tercih edilen ses dili:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="392"/>
-        <location filename="../qml/PrefGeneralPage.qml" line="402"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="398"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="408"/>
         <source>e.g. ja, en</source>
         <translation>örn. ja, en</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="399"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="405"/>
         <source>Preferred subtitle language:</source>
         <translation>Tercih edilen altyazı dili:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="410"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="416"/>
         <source>Show subtitles by default</source>
         <translation>Altyazıları varsayılan olarak göster</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="415"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="421"/>
         <source>When a file has embedded subtitles, turn one on automatically (preferring the languages above) instead of starting with subtitles off.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="425"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="431"/>
         <source>...but not if the audio is already in a preferred language</source>
         <translation>...ancak ses zaten tercih edilen bir dildeyse hariç</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="431"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="437"/>
         <source>Skip the automatic subtitle above when its language matches the audio track that actually got selected -- if you already understand the audio, a subtitle in the same language is usually redundant.</source>
         <translation>Dili gerçekten seçilen ses parçasıyla eşleştiğinde yukarıdaki otomatik altyazıyı atla -- sesi zaten anlıyorsanız, aynı dildeki bir altyazı genellikle gereksizdir.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="442"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="448"/>
         <source>Preferred audio track number:</source>
         <translation>Tercih edilen ses parçası numarası:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="448"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="454"/>
         <source>Preferred subtitle track number:</source>
         <translation>Tercih edilen altyazı parçası numarası:</translation>
     </message>

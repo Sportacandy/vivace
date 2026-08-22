@@ -11,6 +11,23 @@ each get their own entry instead.
 
 ## [Unreleased]
 
+## [0.4.1] — 2026-08-22
+
+### Added
+- An "Auto" choice for Video ▸ Deinterlace's default mode (Preferences ▸
+  General ▸ Video), which deinterlaces (using Bwdif) only the frames a
+  file itself marks as interlaced, leaving progressive frames untouched
+  — no per-file configuration needed. Not offered on the per-file
+  Video ▸ Deinterlace menu, since it only makes sense as a default.
+  Requires the same custom-built Qt Multimedia as the other Deinterlace
+  modes.
+
+### Changed
+- Auto is now the default deinterlace mode (previously None). If you had
+  explicitly set Video ▸ Deinterlace's default to "None" or "Auto"
+  before this release, that saved choice now means the other one —
+  re-check Preferences ▸ General ▸ Video if this matters to you.
+
 ## [0.4.0] — 2026-08-20
 
 ### Added

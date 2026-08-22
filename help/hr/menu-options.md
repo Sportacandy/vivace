@@ -6,8 +6,12 @@ Izbornik **Opcije** sadrži postavke i konfiguraciju sučelja.
   Tipkovnica i miš, Popis za reprodukciju, Pogoni, TV, Vrste datoteka, Ažuriranja,
   Mreža i Napredno. Promjene se primjenjuju odmah; **Odustani** ih vraća.
   - **Općenito ▸ Slika** postavlja zadani način rada za **Raspletanje**
-    (Bez / Yadif / Bwdif) za novootvorene datoteke — promijenite ga za svaku
-    datoteku u *Slika ▸ Raspletanje*.
+    (Bez / Yadif / Bwdif / Automatski) za novootvorene datoteke —
+    promijenite ga za svaku datoteku u *Slika ▸ Raspletanje* (samo Bez/
+    Yadif/Bwdif; Automatski se tamo ne nudi, jer ima smisla samo kao
+    zadana vrijednost). **Automatski** koristi Bwdif, ali samo na
+    sličicama koje datoteka sama označava kao isprepletene, ostavljajući
+    progresivne sličice nepromijenjenima.
   - **Općenito ▸ Željeni zvučni zapisi i podnaslovi** postavlja jezike
     među kojima Vivace automatski bira ugrađene zapise datoteke. **Prikaži
     titlove prema zadanom** automatski uključuje podnaslov kada je

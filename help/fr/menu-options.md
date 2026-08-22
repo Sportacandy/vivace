@@ -7,8 +7,12 @@ Le menu **Options** contient les préférences et la configuration de l'interfac
   Lecteurs, TV, Types de fichiers, Mises à jour, Réseau et Avancé. Les
   changements s'appliquent immédiatement ; **Annuler** les rétablit.
   - **Général ▸ Vidéo** définit le mode **Désentrelacement** par défaut
-    (Aucun / Yadif / Bwdif) pour les nouveaux fichiers ouverts — modifiable
-    par fichier depuis *Vidéo ▸ Désentrelacement*.
+    (Aucun / Yadif / Bwdif / Automatique) pour les nouveaux fichiers
+    ouverts — modifiable par fichier depuis *Vidéo ▸ Désentrelacement*
+    (Aucun/Yadif/Bwdif uniquement ; Automatique n'y est pas proposé, car
+    il n'a de sens que comme valeur par défaut). **Automatique** utilise
+    Bwdif, mais uniquement sur les images que le fichier lui-même marque
+    comme entrelacées, laissant les images progressives inchangées.
   - **Général ▸ Audio et sous-titres préférés** définit les langues parmi
     lesquelles Vivace choisit automatiquement les pistes intégrées d'un
     fichier. **Afficher les sous-titres par défaut** en active un

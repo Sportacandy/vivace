@@ -3292,7 +3292,7 @@ void PlayerController::setVideoMirror(bool mirror)
 
 void PlayerController::setDeinterlaceMode(int mode)
 {
-    mode = qBound(0, mode, 2);
+    mode = qBound(0, mode, 3);
     if (mode == m_deinterlaceMode)
         return;
     m_deinterlaceMode = mode;
@@ -3309,8 +3309,11 @@ void PlayerController::setDeinterlaceMode(int mode)
     // Confirms via OSD that the change took effect immediately (it does --
     // no reopening the file needed, see the comment above), matching the
     // same OSD-on-change convention as A/V delay, subtitle delay, etc.
-    static const char *const kModeNames[] = { QT_TR_NOOP("None"), QT_TR_NOOP("Yadif"),
-                                               QT_TR_NOOP("Bwdif") };
+    // Index = mode value (0=Auto, 1=Yadif, 2=Bwdif, 3=None) -- see the
+    // 2026-08-22 None/Auto value swap noted on m_deinterlaceMode's own
+    // declaration in playercontroller.h.
+    static const char *const kModeNames[] = { QT_TR_NOOP("Auto"), QT_TR_NOOP("Yadif"),
+                                               QT_TR_NOOP("Bwdif"), QT_TR_NOOP("None") };
     emit osdMessage(tr("Deinterlace: %1").arg(tr(kModeNames[m_deinterlaceMode])));
 }
 

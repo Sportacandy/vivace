@@ -69,12 +69,28 @@ class Settings : public QObject
                NOTIFY closeOnFinishChanged)
     Q_PROPERTY(bool disableScreensaver READ disableScreensaver
                WRITE setDisableScreensaver NOTIFY disableScreensaverChanged)
-    // Default deinterlace mode for newly-opened files (0 = None, 1 = Yadif,
-    // 2 = Bwdif; SMPlayer's own "Initial deinterlace" combo, Preferences >
-    // General > Video). PlayerController.deinterlaceMode is the actual
-    // per-file/session value seeded from this default on each new source,
-    // changeable per file via Video > Deinterlace -- mirroring SMPlayer's
-    // two-level model (Preferences::initial_deinterlace seeding
+    // Default deinterlace mode for newly-opened files (0 = Auto, 1 = Yadif,
+    // 2 = Bwdif, 3 = None; SMPlayer's own "Initial deinterlace" combo,
+    // Preferences > General > Video, extended with a Vivace-only "Auto"
+    // choice with no SMPlayer/mplayer/mpv equivalent). Auto uses Bwdif with
+    // FFmpeg's own per-frame decoder-reported interlace flag
+    // (deint=interlaced instead of deint=all -- see
+    // patches/qtmultimedia-deinterlace.patch), so no media-info scanning of
+    // Vivace's own is needed. Auto is deliberately NOT offered on the
+    // per-file Video > Deinterlace menu (None/Yadif/Bwdif only) -- it only
+    // makes sense as a default, so a file whose active mode is inherited
+    // as Auto simply shows no radio item checked there.
+    // NOTE (2026-08-22, user directive): None and Auto's VALUES were
+    // deliberately swapped from the original 0=None/3=Auto numbering to
+    // 0=Auto/3=None, making Auto the default with NO change to this
+    // property's own compiled-in/persisted default literal (still 0) --
+    // an accepted, one-time compatibility break: a value a user had
+    // previously persisted for one of these two modes is now interpreted
+    // as the other.
+    // PlayerController.deinterlaceMode is the actual per-file/session value
+    // seeded from this default on each new source, changeable per file via
+    // Video > Deinterlace -- mirroring SMPlayer's two-level model
+    // (Preferences::initial_deinterlace seeding
     // MediaSettings::current_deinterlacer) without adding a third,
     // per-file-persistent store of its own.
     Q_PROPERTY(int deinterlaceMode READ deinterlaceMode WRITE setDeinterlaceMode

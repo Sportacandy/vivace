@@ -6,8 +6,12 @@ Nabídka **Možnosti** obsahuje předvolby a konfiguraci rozhraní.
   Klávesnice a myš, Seznam skladeb, Jednotky, TV, Typy souborů, Aktualizace, Síť
   a Pokročilé. Změny se použijí ihned; **Zrušit** je vrátí zpět.
   - **Obecné ▸ Video** nastavuje výchozí režim **Odstranění prokládání**
-    (Žádné / Yadif / Bwdif) pro nově otevřené soubory — změňte jej pro
-    jednotlivý soubor v *Video ▸ Odstranění prokládání*.
+    (Žádné / Yadif / Bwdif / Automatické) pro nově otevřené soubory —
+    změňte jej pro jednotlivý soubor v *Video ▸ Odstranění prokládání*
+    (jen Žádné/Yadif/Bwdif; režim Automatické tam není nabízen, protože
+    má smysl jen jako výchozí hodnota). Režim **Automatické** používá
+    Bwdif, ale jen na snímcích, které soubor sám označuje jako
+    prokládané, a nechává progresivní snímky beze změny.
   - **Obecné ▸ Preferovaný jazyk filmu** nastavuje jazyky, mezi kterými
     Vivace automaticky vybírá vestavěné stopy souboru. **Ve výchozím stavu
     zobrazovat titulky** automaticky zapne titulky, pokud jsou k dispozici;

@@ -194,7 +194,11 @@ ColumnLayout {
                     Label { text: qsTr("Deinterlace by default:") }
                     ComboBox {
                         Layout.fillWidth: true
-                        model: [qsTr("None"), qsTr("Yadif"), qsTr("Bwdif")]
+                        // Index = Settings.deinterlaceMode's own value (0 =
+                        // Auto, the default; 3 = None) -- see the 2026-08-22
+                        // None/Auto swap noted on that property's own
+                        // declaration in settings.h.
+                        model: [qsTr("Auto"), qsTr("Yadif"), qsTr("Bwdif"), qsTr("None")]
                         currentIndex: Settings.deinterlaceMode
                         onActivated: Settings.deinterlaceMode = currentIndex
                     }
@@ -203,7 +207,13 @@ ColumnLayout {
                                    + "combing artifacts of interlaced video. "
                                    + "This sets the default for newly opened "
                                    + "files; change it per file from Video > "
-                                   + "Deinterlace.")
+                                   + "Deinterlace. \"Auto\" uses Bwdif but "
+                                   + "only on frames the file itself marks as "
+                                   + "interlaced, leaving progressive frames "
+                                   + "untouched; it is not offered on the "
+                                   + "per-file Video > Deinterlace menu, "
+                                   + "since it only makes sense as a "
+                                   + "default.")
                     }
                 }
 

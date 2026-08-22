@@ -604,13 +604,18 @@ MenuBar {
         AppMenu {
             title: qsTr("&Deinterlace")
             enabled: bar.player.hasVideo
+            // None is mode 3, not 0 -- Auto (0, not offered on this menu)
+            // and None had their values swapped 2026-08-22 so Auto could
+            // become the default; see settings.h's own deinterlaceMode
+            // comment. A file whose active mode is inherited as Auto (0)
+            // correctly shows none of these three items checked.
             AppMenuItem {
                 text: qsTr("&None")
                 checkable: true
-                checked: bar.controller.deinterlaceMode === 0
+                checked: bar.controller.deinterlaceMode === 3
                 onTriggered: {
-                    bar.controller.deinterlaceMode = 0
-                    checked = Qt.binding(() => bar.controller.deinterlaceMode === 0)
+                    bar.controller.deinterlaceMode = 3
+                    checked = Qt.binding(() => bar.controller.deinterlaceMode === 3)
                 }
             }
             AppMenuItem {

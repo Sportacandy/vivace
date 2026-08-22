@@ -7,8 +7,12 @@ Das Menü **Optionen** enthält Einstellungen und die Oberflächenkonfiguration.
   Dateitypen, Updates, Netzwerk und Erweitert. Änderungen werden sofort wirksam;
   **Abbrechen** setzt sie zurück.
   - **Allgemein ▸ Video** legt den Standard-Modus für **Zeilenentflechtung**
-    (- / Yadif / Bwdif) für neu geöffnete Dateien fest — pro Datei änderbar
-    unter *Video ▸ Zeilenentflechtung*.
+    (- / Yadif / Bwdif / Automatisch) für neu geöffnete Dateien fest — pro
+    Datei änderbar unter *Video ▸ Zeilenentflechtung* (dort nur - / Yadif /
+    Bwdif; Automatisch wird dort nicht angeboten, da es nur als Standardwert
+    sinnvoll ist). **Automatisch** verwendet Bwdif, aber nur bei Bildern,
+    die die Datei selbst als interlaced markiert; progressive Bilder
+    bleiben unverändert.
   - **Allgemein ▸ Bevorzugter Ton und Untertitel** legt die Sprachen fest,
     unter denen Vivace automatisch aus den eingebetteten Spuren einer Datei
     auswählt. **Untertitel standardmäßig anzeigen** schaltet automatisch

@@ -6,8 +6,11 @@ The **Options** menu holds preferences and interface configuration.
   Subtitles, Keyboard and mouse, Playlist, Drives, TV, File types, Updates,
   Network and Advanced. Changes apply instantly; **Cancel** reverts them.
   - **General ▸ Video** sets the default **Deinterlace** mode (None / Yadif /
-    Bwdif) for newly opened files — change it per file from *Video ▸
-    Deinterlace*.
+    Bwdif / Auto) for newly opened files — change it per file from *Video ▸
+    Deinterlace* (None/Yadif/Bwdif only; Auto is not offered there, since it
+    only makes sense as a default). **Auto** uses Bwdif but only on frames
+    the file itself marks as interlaced, leaving progressive frames
+    untouched.
   - **General ▸ Preferred audio and subtitles** sets the languages Vivace
     auto-selects among a file's embedded tracks. **Show subtitles by
     default** turns one on automatically when available; its sub-option

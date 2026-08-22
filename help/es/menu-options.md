@@ -7,8 +7,12 @@ El menú **Opciones** contiene las preferencias y la configuración de la interf
   Unidades, TV, Tipos de archivo, Actualizaciones, Red y Avanzado. Los cambios se
   aplican al instante; **Cancelar** los revierte.
   - **General ▸ Vídeo** establece el modo **Desentrelazado** predeterminado
-    (Desactivar / Yadif / Bwdif) para los archivos recién abiertos —
-    cámbielo por archivo desde *Vídeo ▸ Desentrelazado*.
+    (Desactivar / Yadif / Bwdif / Automático) para los archivos recién
+    abiertos — cámbielo por archivo desde *Vídeo ▸ Desentrelazado* (solo
+    Desactivar/Yadif/Bwdif; Automático no se ofrece ahí, ya que solo tiene
+    sentido como valor predeterminado). **Automático** usa Bwdif, pero
+    solo en los fotogramas que el propio archivo marca como entrelazados,
+    dejando los fotogramas progresivos sin modificar.
   - **General ▸ Audio y subtítulos preferidos** establece los idiomas
     entre los que Vivace elige automáticamente las pistas incrustadas de un
     archivo. **Mostrar subtítulos de forma predeterminada** activa uno

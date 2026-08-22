@@ -6,8 +6,13 @@
   Näppäimistö ja hiiri, Soittolista, Asemat, TV, Tiedostotyypit, Päivitykset,
   Verkko ja Lisäasetukset. Muutokset tulevat voimaan heti; **Peruuta** kumoaa ne.
   - **Yleiset ▸ Video** asettaa oletusarvon kohdalle **Lomituksen poisto**
-    (Ei mitään / Yadif / Bwdif) äskettäin avatuille tiedostoille — muuta sitä
-    tiedostokohtaisesti kohdassa *Video ▸ Lomituksen poisto*.
+    (Ei mitään / Yadif / Bwdif / Automaattinen) äskettäin avatuille
+    tiedostoille — muuta sitä tiedostokohtaisesti kohdassa *Video ▸
+    Lomituksen poisto* (vain Ei mitään/Yadif/Bwdif; Automaattinen ei ole
+    tarjolla siellä, koska se on mielekäs vain oletusarvona).
+    **Automaattinen** käyttää Bwdifiä, mutta vain kuvissa, jotka tiedosto
+    itse merkitsee lomitetuiksi, jättäen progressiiviset kuvat
+    koskemattomiksi.
   - **Yleiset ▸ Haluttu ääni ja tekstitys** asettaa kielet, joiden
     joukosta Vivace valitsee automaattisesti tiedoston sisäänrakennetuista
     raidoista. **Näytä tekstitykset oletuksena** ottaa tekstityksen

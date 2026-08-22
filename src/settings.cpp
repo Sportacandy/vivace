@@ -215,7 +215,7 @@ Settings::Settings(QObject *parent)
               m_store.value(Keys::subtitlesHideWhenAudioLanguageMatches, false).toBool()),
       m_closeOnFinish(m_store.value(Keys::closeOnFinish, false).toBool()),
       m_disableScreensaver(m_store.value(Keys::disableScreensaver, true).toBool()),
-      m_deinterlaceMode(qBound(0, m_store.value(Keys::deinterlaceMode, 0).toInt(), 2)),
+      m_deinterlaceMode(qBound(0, m_store.value(Keys::deinterlaceMode, 0).toInt(), 3)),
       m_pauseWhenMinimized(m_store.value(Keys::pauseWhenMinimized, false).toBool()),
       m_volumeStep(qBound(1, m_store.value(Keys::volumeStep, 5).toInt(), 25)),
       m_seekShortStep(qBound(1, m_store.value(Keys::seekShortStep, 10).toInt(), 60)),
@@ -936,7 +936,7 @@ void Settings::setDisableScreensaver(bool disable)
 
 void Settings::setDeinterlaceMode(int mode)
 {
-    mode = qBound(0, mode, 2);
+    mode = qBound(0, mode, 3);
     if (mode == m_deinterlaceMode)
         return;
     m_deinterlaceMode = mode;
