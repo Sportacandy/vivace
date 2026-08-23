@@ -61,6 +61,28 @@ for module in "${MODULES[@]}"; do
         -DCMAKE_INSTALL_PREFIX="$PREFIX"
         -DQT_BUILD_EXAMPLES=OFF
         -DQT_BUILD_TESTS=OFF
+        # Real failure hit 2026-08-23 (v0.4.2's nightly/release build):
+        # gcc-12 crashed with "internal compiler error: in gt_pch_save, at
+        # ggc-common.cc:671" while writing OpenGLWidgets' precompiled
+        # header, a real, documented class of GCC bug triggered by memory
+        # pressure while serializing a large PCH (Widgets/OpenGLWidgets'
+        # own cmake_pch.hxx pulls in the whole QtWidgets+QtGui+QtCore+
+        # QtOpenGL header set) -- consistent with, not contradicting, this
+        # script's own already-capped --parallel 2 below (added 2026-08-10
+        # for a DIFFERENT OOM symptom on the same job/runner class), just a
+        # second, PCH-specific way to hit the same underlying memory
+        # ceiling. BUILD_WITH_PCH is a real, documented top-level Qt 6
+        # CMake option (confirmed against qtbase's own qt_cmdline.cmake at
+        # this exact v6.11.1 tag: `qt_commandline_option(pch TYPE boolean
+        # CMAKE_VARIABLE BUILD_WITH_PCH)`, the CMake variable `configure
+        # -no-pch` maps to) -- disabling it removes the memory-hungry PCH-
+        # generation step entirely (for all 4 modules, not just qtbase),
+        # rather than only reducing the ODDS of hitting it via even lower
+        # parallelism, at the cost of somewhat slower per-file compiles
+        # (acceptable for a from-source build that's cached afterward via
+        # actions/cache and only re-runs when these very scripts/patches
+        # change).
+        -DBUILD_WITH_PCH=OFF
     )
     # qtbase has no Qt dependency of its own (it IS the base); every module
     # after it needs to find qtbase's (and each other's) installed CMake
