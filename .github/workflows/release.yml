@@ -39,6 +39,34 @@ jobs:
             Start-Sleep -Seconds 30
             if ($i -eq 3) { exit 1 }
           }
+          # choco's meson package is MSI-based and updates the MACHINE/USER
+          # PATH in the registry, but does NOT refresh this (or any later
+          # step's) already-running process environment -- choco itself
+          # warns "Environment Vars (like PATH) have changed. Close/reopen
+          # your shell..." and GitHub Actions never does that mid-job. Found
+          # the hard way: v0.4.1's real release build silently produced a
+          # Blu-ray-DISABLED binary because CMake's find_program(meson)
+          # couldn't see it, even though choco reported success. Re-read the
+          # registry PATH directly and publish each tool's real directory to
+          # $GITHUB_PATH so every later step (in particular CMake's own
+          # configure) can see it too -- ninja is included defensively even
+          # though it's normally already preinstalled on this runner image.
+          $refreshedPath = @(
+              [System.Environment]::GetEnvironmentVariable('Path', 'Machine'),
+              [System.Environment]::GetEnvironmentVariable('Path', 'User'),
+              $env:Path
+          ) -join ';'
+          $env:Path = $refreshedPath
+          foreach ($tool in @('meson', 'ninja')) {
+            $cmd = Get-Command $tool -ErrorAction SilentlyContinue
+            if (-not $cmd) {
+              Write-Error "$tool not found on PATH even after refreshing from the registry"
+              exit 1
+            }
+            $dir = Split-Path $cmd.Source -Parent
+            Write-Host "Adding $dir to GITHUB_PATH for $tool"
+            Add-Content -Path $env:GITHUB_PATH -Value $dir
+          }
 
       - name: Build the patched qtmultimedia (AV1 + Speed Control + bitmap subtitles) from source
         # Builds against THIS job's own just-installed official Qt kit,

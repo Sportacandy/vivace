@@ -39,11 +39,37 @@ jobs:
         run: |
           if [ "$RUNNER_OS" = "Windows" ]; then
             for i in 1 2 3; do
-              choco install meson ninja -y && exit 0
+              choco install meson ninja -y && break
               echo "choco install meson/ninja failed (attempt $i), retrying in 30s..."
               sleep 30
+              if [ "$i" = 3 ]; then exit 1; fi
             done
-            exit 1
+            # choco's meson package is MSI-based and updates the MACHINE/USER
+            # PATH in the registry, but does NOT refresh this already-running
+            # process's own environment -- choco itself warns "Environment
+            # Vars (like PATH) have changed. Close/reopen your shell..." and
+            # GitHub Actions never does that mid-job. Found the hard way:
+            # v0.4.1's real release build silently produced a Blu-ray-DISABLED
+            # binary because CMake's find_program(meson) couldn't see it, even
+            # though choco reported success. Ask PowerShell (which has direct
+            # .NET registry-PATH access) to re-read it and locate each tool,
+            # then publish its real directory to $GITHUB_PATH so later steps
+            # (in particular CMake's own configure) can see it too -- ninja is
+            # included defensively even though it's normally already
+            # preinstalled on this runner image.
+            for tool in meson ninja; do
+              dir=$(powershell.exe -NoProfile -Command "
+                \$env:Path = [System.Environment]::GetEnvironmentVariable('Path','Machine') + ';' + [System.Environment]::GetEnvironmentVariable('Path','User') + ';' + \$env:Path
+                \$cmd = Get-Command $tool -ErrorAction SilentlyContinue
+                if (\$cmd) { (Split-Path \$cmd.Source -Parent) }
+              " | tr -d '\r')
+              if [ -z "$dir" ]; then
+                echo "$tool not found on PATH even after refreshing from the registry" >&2
+                exit 1
+              fi
+              echo "Adding $dir to GITHUB_PATH for $tool"
+              echo "$dir" >> "$GITHUB_PATH"
+            done
           else
             brew install meson ninja
           fi
