@@ -11,6 +11,16 @@ each get their own entry instead.
 
 ## [Unreleased]
 
+## [0.4.2] — 2026-08-23
+
+### Fixed
+- Windows builds could silently ship with Blu-ray Disc playback disabled
+  (a Chocolatey/MSI PATH-refresh timing issue in CI meant the build tool
+  needed to compile it in wasn't always found). If Blu-ray discs failed
+  to open in v0.4.1's Windows release with "Could not open the Blu-ray
+  disc" or "No Blu-ray video found", this release fixes it — no user
+  action needed beyond updating.
+
 ## [0.4.1] — 2026-08-22
 
 ### Added

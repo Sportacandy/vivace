@@ -17,18 +17,20 @@ is also published from the tip of `main` between tagged releases. See
 
 ## Status
 
-**v0.4.1** — adds an "Auto" choice for Video ▸ Deinterlace's default mode
-(Preferences ▸ General ▸ Video), which deinterlaces only the frames a file
-itself marks as interlaced, and makes it the new default (previously None —
-see CHANGELOG.md for the one-time compatibility note if you'd already set
-this yourself). Builds on v0.4.0, which added Video ▸ Deinterlace itself
-(None/Yadif/Bwdif) and matured Blu-ray Disc playback (added in v0.3.2's
-development): multi-clip titles now play back gaplessly, and selecting a
-Blu-ray subtitle (PG/PGS) track correctly renders on screen (all of this
-needs the custom-built Qt Multimedia described below — see "Blu-ray Disc
-playback"). Also adds a Preferences option to skip an automatic subtitle
-when the audio track actually selected is already in a preferred language,
-configurable edge smoothing for bitmap subtitles, and a round of DVD
+**v0.4.2** — fixes Windows builds that could silently ship with Blu-ray Disc
+playback disabled (a CI tooling issue, not a code bug — see CHANGELOG.md).
+Builds on v0.4.1, which added an "Auto" choice for Video ▸ Deinterlace's
+default mode (Preferences ▸ General ▸ Video), deinterlacing only the frames
+a file itself marks as interlaced and making it the new default (previously
+None — see CHANGELOG.md for the one-time compatibility note if you'd
+already set this yourself); and on v0.4.0, which added Video ▸ Deinterlace
+itself (None/Yadif/Bwdif) and matured Blu-ray Disc playback (added in
+v0.3.2's development): multi-clip titles now play back gaplessly, and
+selecting a Blu-ray subtitle (PG/PGS) track correctly renders on screen (all
+of this needs the custom-built Qt Multimedia described below — see "Blu-ray
+Disc playback"). Also adds a Preferences option to skip an automatic
+subtitle when the audio track actually selected is already in a preferred
+language, configurable edge smoothing for bitmap subtitles, and a round of DVD
 on-screen-menu and subtitle-timing fixes.
 Vivace is a working daily-driver media player:
 playback (mkv/mp4/mpeg2, seeking, embedded + external subtitles, audio/subtitle
