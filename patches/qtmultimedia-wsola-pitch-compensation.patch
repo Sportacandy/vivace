@@ -106,6 +106,31 @@ patches/qtmultimedia-wsola-pitch-compensation.patch (or `patch -p1 <
 ...patch` if not a git checkout), then rebuild qtmultimedia (or all of
 Qt) and Vivace.
 
+MISSING #include <algorithm> FIXED 2026-08-23 (real CI failure, Linux
+arm64/Bookworm build, found via the actual GitHub Actions log): gcc-12
+failed `RateTransposer.cpp` (vendored, unmodified upstream SoundTouch
+2.4.1 source) with `error: 'max' is not a member of 'std'` / `'min' is
+not a member of 'std'` at the `TransposerBase::setRate()` calls to
+`std::max`/`std::min` -- a genuine latent bug in upstream SoundTouch
+itself (confirmed it's the ONLY file in the whole vendored tree using
+`std::min`/`std::max`/`std::clamp` without including `<algorithm>`,
+grepped every vendored .cpp/.h), that happened to compile everywhere
+else (MSVC on Windows, Clang on macOS, GCC on x86_64 Linux) purely by
+luck of which OTHER header transitively pulled in `<algorithm>` on
+those toolchains -- this specific GCC 12/ARM64/glibc combination simply
+doesn't. Fixed with a single added `#include <algorithm>` line, next to
+the file's existing C-header includes. VERIFIED the standing way: edited
+the real local checkout directly, isolated the delta to exactly this
+one file via a scratch repo with the pre-fix patch already applied (`git
+diff --stat` confirmed a single one-line addition, nothing else
+touched), regenerated this whole patch file's `RateTransposer.cpp`
+hunk from a diff against a fresh `v6.11.1` clone, then re-verified end
+to end: `git apply --check` + `git apply` against another fresh clone,
+both alone and stacked with all three other patches (av1-hwaccel-
+disable -> this patch -> subtitle-bitmap -> deinterlace) in order, and a
+byte-for-byte diff of the resulting file against the real local checkout
+(identical).
+
 diff --git a/src/3rdparty/soundtouch/LICENSE.txt b/src/3rdparty/soundtouch/LICENSE.txt
 new file mode 100644
 index 000000000..3b473dbfc
@@ -3629,10 +3654,10 @@ index 000000000..b403917a3
 +
 diff --git a/src/3rdparty/soundtouch/source/SoundTouch/RateTransposer.cpp b/src/3rdparty/soundtouch/source/SoundTouch/RateTransposer.cpp
 new file mode 100644
-index 000000000..acc8dd48e
+index 0000000..9eebd2d
 --- /dev/null
 +++ b/src/3rdparty/soundtouch/source/SoundTouch/RateTransposer.cpp
-@@ -0,0 +1,329 @@
+@@ -0,0 +1,330 @@
 +////////////////////////////////////////////////////////////////////////////////
 +///
 +/// Sample rate transposer. Changes sample rate by using linear interpolation
@@ -3670,6 +3695,7 @@ index 000000000..acc8dd48e
 +#include <assert.h>
 +#include <stdlib.h>
 +#include <stdio.h>
++#include <algorithm>
 +#include "RateTransposer.h"
 +#include "InterpolateLinear.h"
 +#include "InterpolateCubic.h"
