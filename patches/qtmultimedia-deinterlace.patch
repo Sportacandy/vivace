@@ -298,6 +298,82 @@ and confirmed "it's working as expected") -- Auto is now the default,
 and Yadif/Bwdif/explicit-None all continue to work correctly, closing
 out the earlier "not yet verified via a full rebuild" caveat.
 
+PER-SINK OPT-OUT ADDED 2026-08-27 (real regression found the day after
+the swap above: "The movie thumbnail is now displaying black box only"
+-- the seek-bar hover-preview thumbnail, not the (unrelated, external-
+ffmpeg-process-based) playlist row thumbnail cache). Root-caused
+directly: Vivace has a SEPARATE, hidden, paused `QMediaPlayer` for the
+seek-bar hover preview (`PlayerController::m_previewPlayer`/
+`m_previewSink`) -- it does exactly one `setPosition()` per hover and
+expects exactly one resulting frame, with nothing further arriving
+after it. yadif/bwdif's own one-frame lookahead (see this patch's
+original header above) means `Deinterlacer::process()` can NEVER
+produce output for a frame that's the only one it will ever receive --
+`VideoRenderer::renderInternal()` never calls `setVideoFrame()` for it,
+so the preview sink just stays empty (solid black). This bug existed
+latently since deinterlacing first shipped (anyone who manually chose
+Yadif/Bwdif would have hit it too), but Auto becoming the DEFAULT the
+day before turned it from "a rare, never-reported edge case" into
+"every user hits it on every hover."
+Considered and REJECTED a fix inside `Deinterlacer` itself (push the
+stuck frame's own data a second time to force yadif/bwdif to emit
+something immediately): traced through the filter graph's own internal
+FIFO state carefully and found it would leave a stray, already-primed
+"extra" frame sitting in the graph after the fallback fires -- the
+NEXT genuinely new frame to arrive (in an ordinary CONTINUOUS playback
+session that happens to hit this same first-frame case, e.g. right
+after any mode change or seek) would then incorrectly drain THAT
+stray frame's own output instead of its own, corrupting frame content/
+timing for one frame every time the graph is rebuilt -- a worse,
+harder-to-notice bug than the one being fixed. A timer-based flush
+(wait briefly for a second frame; only fall back once none arrives)
+would be more correct but requires real confidence in this private
+Renderer's own threading model to implement and test safely, not
+attempted under time pressure for a live regression.
+INSTEAD (the user's own suggestion, confirmed to be exactly right):
+since Vivace's own `PlayerController` constructs BOTH `QVideoSink`
+instances itself (the main one via QML's `VideoOutput`, and
+`m_previewSink` directly in C++), and `QVideoSink` is an ordinary
+`QObject`, `VideoRenderer::renderInternal()` now checks a plain
+dynamic property (`m_sink->property("vivace_no_deinterlace")`)
+alongside the existing `VIVACE_DEINTERLACE_MODE` env-var check --
+`PlayerController` sets this property to `true` on `m_previewSink`
+once, right after constructing it (Vivace-side change, not part of
+this patch). This completely bypasses the Deinterlacer for that ONE
+sink regardless of the global mode, while leaving the main player's
+own sink -- and therefore ordinary continuous playback, including
+Auto-by-default -- entirely untouched. Zero risk to the Deinterlacer's
+own internal FIFO/timing correctness, since its code isn't touched at
+all; a tiny, briefly-shown hover thumbnail was never going to show a
+visible deinterlacing difference anyway, so skipping it there is a
+correct trade, not just a convenient one.
+VERIFIED the standing way: edited the real local checkout directly,
+isolated the delta to exactly `qffmpegvideorenderer.cpp` via a scratch
+repo with the pre-fix patch already applied (`git diff --stat`
+confirmed a single-file, 29-line-net change), regenerated this whole
+patch file's `qffmpegvideorenderer.cpp` hunk from a diff against a
+fresh `v6.11.1` clone, then re-verified end to end: `git apply --check`
++ `git apply` against another fresh clone, a byte-for-byte diff of all
+5 clearly-attributable files against the real local checkout (all
+identical), and a full four-patch stack apply (av1-hwaccel-disable ->
+wsola-pitch-compensation -> subtitle-bitmap -> this patch) against yet
+another fresh clone -- all clean. Vivace's own side (`src/
+playercontroller.cpp`, tagging `m_previewSink`) rebuilds clean
+(`cmake --build build/Debug --config Debug --target vivace`).
+VERIFIED 2026-08-27 (user rebuilt qtmultimedia with this patch applied:
+"Qtmultimedia rebuild done"): rebuilt Vivace against it and drove the
+seek-bar hover preview interactively against the exact repro file at
+two different positions -- both now show a real, correctly-tracking
+thumbnail instead of solid black. Confirmed via `vivace.log` that the
+main player's own Deinterlacer still constructs and successfully
+produces output ("deinterlace enabled, mode=0 (bwdif, auto/interlaced-
+only)" / "deinterlace producing filtered output frames") -- Auto
+deinterlacing for ordinary playback is genuinely unaffected. Also
+confirmed via the FFmpeg avfilter log lines that only ONE
+`vivace_deint_in` filter context is created now (previously two, one
+per player) -- direct evidence the preview player's own VideoRenderer
+never constructs a Deinterlacer at all anymore.
+
 diff --git a/src/multimedia/configure.cmake b/src/multimedia/configure.cmake
 index 8757b84..be0f105 100644
 --- a/src/multimedia/configure.cmake
@@ -685,7 +761,7 @@ index 0000000..fa6b5fa
 +
 +#endif // QFFMPEGDEINTERLACER_P_H
 diff --git a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegvideorenderer.cpp b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegvideorenderer.cpp
-index 83792ce..158d8f1 100644
+index 83792ce..7cac84e 100644
 --- a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegvideorenderer.cpp
 +++ b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegvideorenderer.cpp
 @@ -6,6 +6,8 @@
@@ -706,7 +782,7 @@ index 83792ce..158d8f1 100644
          m_sink->setVideoFrame({});
          return {};
      }
-@@ -45,6 +49,72 @@ VideoRenderer::RenderingResult VideoRenderer::renderInternal(Frame frame)
+@@ -45,6 +49,100 @@ VideoRenderer::RenderingResult VideoRenderer::renderInternal(Frame frame)
      const auto codecContext = frame.codecContext();
      Q_ASSERT(codecContext);
  
@@ -721,8 +797,36 @@ index 83792ce..158d8f1 100644
 +    // Checking "!= None" rather than "> 0" is deliberate: Auto is mode 0
 +    // (see qffmpegdeinterlacer_p.h's own file comment for why), so a plain
 +    // "> 0" gate would have wrongly excluded it.
++    //
++    // Per-sink opt-out (2026-08-27, real regression fix): yadif/bwdif have
++    // a genuine one-frame lookahead -- they only emit output for frame N
++    // once frame N+1 has also been pushed. That's invisible during
++    // ordinary continuous playback (the next frame arrives moments later),
++    // but Vivace also has a SEPARATE, paused QMediaPlayer for its seek-bar
++    // hover-preview thumbnail: it does a single setPosition() and expects
++    // exactly one resulting frame, with nothing further arriving after it.
++    // Once Auto became the default deinterlace mode, that preview's own
++    // VideoRenderer (a distinct instance, but reading the SAME process-wide
++    // env var) started hitting this exact case on every hover -- the first
++    // (only) frame it ever receives is permanently stuck "still buffering",
++    // so QVideoSink::setVideoFrame() is never called and the preview shows
++    // solid black. Fixing the Deinterlacer's own buffering to tolerate a
++    // one-shot caller would need real filter-graph-state surgery (a stray
++    // duplicate-pushed frame's own output would otherwise resurface out of
++    // order against a LATER genuine frame, corrupting timing for actual
++    // continuous playback -- not attempted). Instead, since Vivace's
++    // PlayerController owns and constructs BOTH QVideoSink instances
++    // itself, it tags the preview-only one with a plain dynamic property
++    // (no new Q_PROPERTY/API surface needed) that this renderer checks
++    // here -- deinterlacing a tiny, briefly-shown hover thumbnail was never
++    // going to be visually meaningful anyway, so skipping it entirely for
++    // that ONE sink (leaving the main player's own sink, and therefore
++    // ordinary playback, completely unaffected) is a correct trade, not
++    // just an easy one.
 +    const int deinterlaceMode = qEnvironmentVariableIntValue("VIVACE_DEINTERLACE_MODE");
-+    if (deinterlaceMode != Deinterlacer::None) {
++    const bool deinterlaceDisabledForThisSink =
++            m_sink && m_sink->property("vivace_no_deinterlace").toBool();
++    if (deinterlaceMode != Deinterlacer::None && !deinterlaceDisabledForThisSink) {
 +        if (!m_deinterlacer || m_deinterlacer->mode() != deinterlaceMode) {
 +            m_deinterlacer = std::make_unique<Deinterlacer>(deinterlaceMode);
 +            // vivace: one-time-per-(re)construction diagnostic, kept
@@ -779,7 +883,7 @@ index 83792ce..158d8f1 100644
  #ifdef Q_OS_ANDROID
      // QTBUG-108446
      // In general case, just creation of frames context is not correct since
-@@ -80,6 +150,16 @@ VideoRenderer::RenderingResult VideoRenderer::renderInternal(Frame frame)
+@@ -80,6 +178,16 @@ VideoRenderer::RenderingResult VideoRenderer::renderInternal(Frame frame)
      return {};
  }
  

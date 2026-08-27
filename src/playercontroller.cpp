@@ -484,6 +484,19 @@ PlayerController::PlayerController(QObject *parent)
     // so subsequent setPosition() calls deliver paused-seek frames.
     m_previewPlayer = new QMediaPlayer(this);
     m_previewSink = new QVideoSink(this);
+    // Tells the patched qtmultimedia FFmpeg plugin's VideoRenderer (see
+    // patches/qtmultimedia-deinterlace.patch) to skip deinterlacing for
+    // this ONE sink specifically, regardless of the global Video >
+    // Deinterlace / Auto-by-default setting -- this player only ever
+    // decodes to a single paused position and delivers exactly one frame,
+    // which yadif/bwdif's own one-frame lookahead can never satisfy on its
+    // own (found 2026-08-27: it left the seek-bar hover-preview thumbnail
+    // permanently black once Auto became the default). A brief, small
+    // hover thumbnail was never going to show a visible deinterlacing
+    // difference anyway, so disabling it here is a correct trade, not a
+    // workaround -- the main player's own sink (and therefore ordinary
+    // playback) is completely unaffected.
+    m_previewSink->setProperty("vivace_no_deinterlace", true);
     m_previewPlayer->setVideoSink(m_previewSink);
     connect(m_previewSink, &QVideoSink::videoFrameChanged,
             this, &PlayerController::onPreviewFrameChanged);
