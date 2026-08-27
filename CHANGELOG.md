@@ -11,6 +11,15 @@ each get their own entry instead.
 
 ## [Unreleased]
 
+## [0.4.3] — 2026-08-27
+
+### Fixed
+- The small preview thumbnail shown while dragging the seek bar could
+  show a solid black box instead of a frame, whenever Video ▸
+  Deinterlace's default mode was Auto (the default since v0.4.1).
+  Deinterlacing is now skipped for that preview specifically — ordinary
+  playback's own Auto deinterlacing is unaffected.
+
 ## [0.4.2] — 2026-08-23
 
 ### Fixed
