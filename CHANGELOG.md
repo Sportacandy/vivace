@@ -11,6 +11,8 @@ each get their own entry instead.
 
 ## [Unreleased]
 
+## [0.4.4] — 2026-08-31
+
 ### Fixed
 - Pressing Stop while playing a live TV stream didn't close the
   connection to the streaming server, and in some cases could freeze

@@ -17,11 +17,14 @@ is also published from the tip of `main` between tagged releases. See
 
 ## Status
 
-**v0.4.3** — fixes the seek-bar hover preview thumbnail showing solid black
-when Video ▸ Deinterlace's default is Auto (the default since v0.4.1) — see
-CHANGELOG.md. Builds on v0.4.2, which fixed Windows builds that could
-silently ship with Blu-ray Disc playback disabled (a CI tooling issue, not
-a code bug); on v0.4.1, which added an "Auto" choice for Video ▸
+**v0.4.4** — fixes Stop not closing the connection to a live TV stream's
+server (and, in some cases, freezing Vivace entirely); radio streams and
+ordinary files were unaffected — see CHANGELOG.md. Builds on v0.4.3, which
+fixed the seek-bar hover preview thumbnail showing solid black when Video ▸
+Deinterlace's default is Auto (the default since v0.4.1); on v0.4.2, which
+fixed Windows builds that could silently ship with Blu-ray Disc playback
+disabled (a CI tooling issue, not a code bug); on v0.4.1, which added an
+"Auto" choice for Video ▸
 Deinterlace's default mode (Preferences ▸ General ▸ Video), deinterlacing
 only the frames a file itself marks as interlaced and making it the new
 default (previously None — see CHANGELOG.md for the one-time compatibility
