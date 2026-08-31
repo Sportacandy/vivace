@@ -11,6 +11,11 @@ each get their own entry instead.
 
 ## [Unreleased]
 
+### Fixed
+- Pressing Stop while playing a live TV stream didn't close the
+  connection to the streaming server, and in some cases could freeze
+  Vivace entirely. Radio streams and ordinary files were unaffected.
+
 ## [0.4.3] — 2026-08-27
 
 ### Fixed

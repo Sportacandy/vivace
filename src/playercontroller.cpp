@@ -986,6 +986,14 @@ void PlayerController::open(const QList<QUrl> &urls)
     // funnels through. leaveMenu() is a safe no-op when no menu is active.
     leaveMenu();
 
+    // Same reasoning for a live TV stream's HttpTsSource (found 2026-08-31):
+    // opening a DVD/Blu-ray/directory below returns early, before ever
+    // reaching playIndex()'s own http(s)-scheme teardown -- so without this,
+    // switching from a TV stream straight to a disc/folder left the old
+    // stream's connection open behind the new playback, same bug class as
+    // the Stop-button one fixed in closeSource(). A no-op otherwise.
+    teardownHttpTsSource();
+
     // A dropped/opened folder is a DVD (VIDEO_TS), a Blu-ray disc (BDMV), or
     // a plain media folder.
     if (urls.size() == 1 && urls.first().isLocalFile()
@@ -3967,6 +3975,27 @@ QUrl PlayerController::closeSource()
 {
     const QUrl was = m_player->source();
     saveCurrentPosition();
+    // MUST run before m_player->stop()/setSource() below, not after -- a
+    // live TV stream's LiveStreamDevice::readData() blocks the backend's own
+    // demuxer thread until data arrives or the device is told to stop (see
+    // LiveStreamDevice's own doc comment). setSource(QUrl()) synchronously
+    // destroys the FFmpeg backend's PlaybackEngine, which needs that same
+    // thread to actually exit before it can join/delete it
+    // (QFFmpeg::PlaybackEngine::deleteFreeThreads() calls QThread::wait()) --
+    // so calling teardownHttpTsSource() (which wakes the blocked read via
+    // device()->abort()) AFTER setSource(QUrl()) is too late: the GUI thread
+    // is already stuck inside setSource(), unable to reach this line at all.
+    // Confirmed via a real cdb thread dump (2026-08-31): the main thread sat
+    // in QThread::wait() <- PlaybackEngine::~PlaybackEngine() <-
+    // QFFmpegMediaPlayer::setMedia() <- QMediaPlayer::setSource(), i.e.
+    // Vivace's whole UI froze, not just "the connection stayed open" -- the
+    // user's own report ("vivace does not close the streaming connection...
+    // while Vivace runs") is consistent with this: the process keeps
+    // running, just permanently unresponsive, which is easy to miss if
+    // nothing else is clicked afterward. A no-op for anything that isn't a
+    // live TV stream, since teardownHttpTsSource() itself early-returns when
+    // m_httpTsSource is already null.
+    teardownHttpTsSource();
     m_player->stop();
     m_player->setSource(QUrl()); // release the file handle
     // dvdInMenu (and therefore Main.qml's dvdMenuOverlay visibility) derives
@@ -3988,7 +4017,16 @@ QUrl PlayerController::closeSource()
 void PlayerController::releaseSourceDeferred()
 {
     QMetaObject::invokeMethod(
-            this, [this] { m_player->setSource(QUrl()); }, Qt::QueuedConnection);
+            this,
+            [this] {
+                // Must run BEFORE setSource(QUrl()) below -- see the
+                // matching comment in closeSource(), whose ordering bug
+                // (a real GUI-thread deadlock, not just a leaked
+                // connection) applies identically here.
+                teardownHttpTsSource();
+                m_player->setSource(QUrl());
+            },
+            Qt::QueuedConnection);
 }
 
 void PlayerController::seekRelative(qint64 deltaMs)
