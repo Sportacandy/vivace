@@ -95,7 +95,18 @@ QString langCode(const QByteArray &data, qint64 offset)
 // audio count at 0x202 (2 bytes), 8-byte entries from 0x204, language at
 // entry+2; subtitle count at 0x254 (2 bytes), 6-byte entries from 0x256,
 // language at entry+2.
-void parseStreamTables(const QByteArray &vts, QList<AudioStream> &audio,
+//
+// `pgc` (the SAME entry-PGC offset the caller already resolved for
+// duration/palette/cells) additionally resolves each logical subtitle
+// stream's REAL physical sub-stream id via the PGC's own subp_control[32]
+// table (pgc_t, 4-byte big-endian entries at pgc + 0x1C: one byte per
+// display mode, each byte = 1 available-bit + 7-bit physical id). Byte1
+// (bits 23-16) is the slot to trust -- confirmed against two real discs
+// (see SubtitleStream::physicalId's own doc comment for the full
+// investigation): it's the identity mapping on a disc with no real
+// remapping, and the genuinely-different real id on one that does remap.
+void parseStreamTables(const QByteArray &vts, qint64 pgc,
+                       QList<AudioStream> &audio,
                        QList<SubtitleStream> &subtitle)
 {
     const int audioCount = qBound(0, int(be16(vts, 0x202)), 8);
@@ -114,6 +125,21 @@ void parseStreamTables(const QByteArray &vts, QList<AudioStream> &audio,
         SubtitleStream s;
         s.id = i;
         s.language = langCode(vts, entry + 2);
+        // subp_control[i]'s own byte0 top bit says whether this ENTRY was
+        // authored at all -- found necessary 2026-09-04, regression-testing
+        // against real discs whose subtitle selection already worked
+        // correctly before this fix: a disc can leave one stream's whole
+        // 4-byte entry all-zero (e.g. "ルパン三世 カリオストロの城"'s English
+        // track), and byte1 being 0 there is NOT "physical id 0" (which
+        // would collide with byte1's real, populated id-0 for a DIFFERENT
+        // stream) -- it means "no override was authored, use the plain
+        // logical index" (SubtitleStream::physicalId's own -1 sentinel,
+        // which the caller already falls back on). Only trust byte1 when
+        // byte0's own avail bit is set, matching every disc's authored
+        // entries (both identity-mapped and genuinely remapped ones).
+        const quint8 byte0 = u8(vts, pgc + 0x1C + qint64(i) * 4);
+        if (byte0 & 0x80)
+            s.physicalId = u8(vts, pgc + 0x1C + qint64(i) * 4 + 1) & 0x7F;
         subtitle.append(s);
     }
 }
@@ -177,7 +203,7 @@ QList<Title> titles(const QString &videoTsDir)
         title.vtsNumber = vtsNumber;
         title.vtsTitleNumber = vtsTitleNumber;
         title.durationMs = bcdTimeMs(be32(vts, pgc + 4));
-        parseStreamTables(vts, title.audioStreams, title.subtitleStreams);
+        parseStreamTables(vts, pgc, title.audioStreams, title.subtitleStreams);
         // Highlight/subtitle palette: 16 entries of (reserved, Y, Cr, Cb) at
         // PGC + 0xA4 (same pgc_t layout dvdmenuparser.cpp uses for menus).
         for (int p = 0; p < 16; ++p)

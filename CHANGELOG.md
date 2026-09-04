@@ -11,6 +11,13 @@ each get their own entry instead.
 
 ## [Unreleased]
 
+### Fixed
+- Selecting a DVD subtitle language in Subtitles ▸ Track could show the
+  wrong language, or none at all, on discs with many subtitle tracks —
+  the disc's own stream-mapping table wasn't being consulted, so a
+  language selection could silently resolve to a completely different
+  physical subtitle stream on the disc.
+
 ## [0.4.4] — 2026-08-31
 
 ### Fixed

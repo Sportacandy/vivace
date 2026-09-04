@@ -42,10 +42,37 @@ struct Cell {
 };
 
 // VTSI_MAT's subtitle (subpicture) stream attribute table: declared once per
-// VTS, shared by every title in it. `id` is 0-based (0..31); the actual
-// private_stream_1 sub-stream ID a decoder must match is 0x20 + id.
+// VTS, shared by every title in it. `id` is this stream's 0-based LOGICAL
+// index (0..31) -- the number a menu/VM SPRM2 selection or this struct's own
+// array position refers to. It is NOT necessarily the physical private_
+// stream_1 sub-stream ID a decoder must pattern-match (0x20 + physicalId):
+// the PGC's own subp_control[32] table (pgc_t, offset +0x1C, 4 bytes per
+// logical entry) can remap a logical subtitle stream onto a DIFFERENT
+// physical stream per display mode -- found 2026-09-04 on a real disc
+// ("リトル・ロマンス") whose 8 logical streams (id 0..7) map onto 16 real
+// physical streams (physicalId 0..15, two per language: a "wide" and a
+// "letterbox" copy, byte1/byte2 of the 4-byte entry respectively -- Japanese
+// on that disc even had DIFFERENT content per copy, horizontal vs vertical
+// text). Confirmed against real SPU bitmap data (decoded and read the actual
+// glyphs) that byte1 (bits 23-16 of the big-endian subp_control value) is
+// the slot to use: on a "simple" disc whose subp_control happens to be the
+// identity mapping (byte1 == logical id, e.g. "あなただけ今晩は"/Irma la
+// Douce, already verified working), it's a no-op; on the doubled disc above
+// it resolves to the REAL id (byte1 == 2 * logical id) instead of the wrong,
+// unrelated stream the raw logical index would hit. `physicalId` holds this
+// resolved value once a title's PGC has been parsed (see parseStreamTables()
+// in dvdifoparser.cpp), but ONLY when the disc actually authored an override
+// for this logical stream (subp_control[i]'s own byte0 top bit set) -- a
+// disc can legitimately leave one stream's whole 4-byte entry all-zero
+// (found on "ルパン三世 カリオストロの城"'s English track), which means "no
+// override, use the plain logical index" and must NOT be read as "physical
+// id 0" (that would collide with whichever OTHER stream's real, authored id
+// 0 happens to be). `physicalId` stays -1 in that case, same as before any
+// title has loaded, meaning "fall back to `id`" (also still true for the
+// menu-domain parsing paths, which don't resolve subp_control at all).
 struct SubtitleStream {
     int id = 0;
+    int physicalId = -1; // resolved PES sub-stream id (0x20 + physicalId); -1 = unresolved/unauthored, use `id`
     QString language; // 2-letter code (e.g. "en", "ja"); empty if unset
 };
 

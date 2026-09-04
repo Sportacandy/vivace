@@ -2574,6 +2574,24 @@ void PlayerController::startDvdSubtitleTrackBuild(int streamIndex)
     if (!title)
         return;
 
+    // `streamIndex` is the LOGICAL subtitle stream number (the menu/SPRM2
+    // selection, and m_dvdSubtitleStreams' own array index) -- NOT
+    // necessarily the physical private_stream_1 sub-stream id Track::build()
+    // needs to pattern-match. Resolve it via the PGC's own subp_control
+    // remapping (parsed into SubtitleStream::physicalId; see its doc comment
+    // for the real-disc investigation this fixes -- a disc with a non-
+    // identity subp_control table, e.g. two physical copies per language,
+    // previously showed nothing or the WRONG language's subtitle for a
+    // logical selection that landed on some other language's physical id).
+    // physicalId < 0 means it was never resolved (shouldn't happen once a
+    // title has actually loaded, since parseStreamTables() always sets it);
+    // fall back to the plain logical index in that case, matching the
+    // previous, pre-fix behaviour rather than silently going out of range.
+    const int physicalStreamId = (streamIndex >= 0 && streamIndex < m_dvdSubtitleStreams.size()
+                                          && m_dvdSubtitleStreams.at(streamIndex).physicalId >= 0)
+            ? m_dvdSubtitleStreams.at(streamIndex).physicalId
+            : streamIndex;
+
     // The specific cell run actually being played (see applyDvdTitle()'s own
     // single-timeline slicing, and m_dvdRunStartCell/m_dvdRunEndCell) -- not
     // necessarily the whole title -- and its ms-since-run-start timings, both
@@ -2601,11 +2619,11 @@ void PlayerController::startDvdSubtitleTrackBuild(int streamIndex)
     QPointer<PlayerController> self(this);
     QThreadPool::globalInstance()->start(
             [self, generation, videoTsDir, vtsNumber, cells, cellStartsMs,
-             runDurationMs, streamIndex, timeMapUnitSec, timeMapSectors,
+             runDurationMs, physicalStreamId, timeMapUnitSec, timeMapSectors,
              base]() {
         DvdSubtitle::Track track = DvdSubtitle::Track::build(
                 videoTsDir, vtsNumber, cells, cellStartsMs, runDurationMs,
-                streamIndex, timeMapUnitSec, timeMapSectors, base);
+                physicalStreamId, timeMapUnitSec, timeMapSectors, base);
         QMetaObject::invokeMethod(qApp, [self, generation, track]() mutable {
             if (!self || generation != self->m_dvdSubtitleBuildGeneration)
                 return; // title/track changed while this was building
