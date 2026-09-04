@@ -11,6 +11,8 @@ each get their own entry instead.
 
 ## [Unreleased]
 
+## [0.4.5] — 2026-09-05
+
 ### Fixed
 - Selecting a DVD subtitle language in Subtitles ▸ Track could show the
   wrong language, or none at all, on discs with many subtitle tracks —
