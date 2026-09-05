@@ -11,6 +11,10 @@ each get their own entry instead.
 
 ## [Unreleased]
 
+### Fixed
+- Pressing Stop on a DVD while a subtitle was on screen left that
+  subtitle showing over the "Drop media files here" placeholder.
+
 ## [0.4.5] — 2026-09-05
 
 ### Fixed

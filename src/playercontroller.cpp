@@ -4016,6 +4016,29 @@ QUrl PlayerController::closeSource()
     teardownHttpTsSource();
     m_player->stop();
     m_player->setSource(QUrl()); // release the file handle
+    // The DVD subtitle overlay is Vivace's OWN QML-bound state (a decoded
+    // SPU bitmap, not driven by QVideoSink) -- it's only ever refreshed from
+    // the positionChanged handler (updateDvdSubtitleImage(), see its own
+    // connect() in the constructor), which stops firing the instant the
+    // source is cleared above. Without this, whatever bitmap happened to be
+    // showing at the moment Stop was pressed stayed on screen indefinitely
+    // over the "Drop media files here" placeholder (found 2026-09-05).
+    // Deliberately not calling updateDvdSubtitleImage() itself: with a
+    // track still selected (Stop doesn't turn subtitles off) it would
+    // recompute whichever event matches position 0 rather than
+    // unconditionally clearing -- a real event there would wrongly
+    // reappear. External-subtitle text needs no equivalent fix here: the
+    // setSource(QUrl()) above already fires sourceChanged synchronously,
+    // whose own handler clears m_externalSubs and calls updateSubtitle(0)
+    // (which correctly clears m_currentSubtitleText once m_externalSubs is
+    // empty). Embedded-track subtitles (mov_text, DVD/Blu-ray PGS/bitmap)
+    // likewise need no fix -- those render via QVideoSink's own subtitle
+    // state, which the FFmpeg backend's PlaybackEngine destructor already
+    // clears when setSource(QUrl()) tears it down above.
+    if (!m_dvdSubtitleImageUrl.isEmpty()) {
+        m_dvdSubtitleImageUrl.clear();
+        emit dvdSubtitleImageChanged();
+    }
     // dvdInMenu (and therefore Main.qml's dvdMenuOverlay visibility) derives
     // from m_menuVts, not from the player's own source/state -- without
     // this, stopping playback while a DVD menu was showing left the button-
@@ -4043,6 +4066,16 @@ void PlayerController::releaseSourceDeferred()
                 // connection) applies identically here.
                 teardownHttpTsSource();
                 m_player->setSource(QUrl());
+                // Same leftover-DVD-subtitle-overlay fix as closeSource() --
+                // see its own comment (external-subtitle text needs no
+                // equivalent here, for the same reason). Reachable when
+                // playback reaches its natural end with nothing queued to
+                // auto-play next and a subtitle happened to be showing at
+                // that exact instant.
+                if (!m_dvdSubtitleImageUrl.isEmpty()) {
+                    m_dvdSubtitleImageUrl.clear();
+                    emit dvdSubtitleImageChanged();
+                }
             },
             Qt::QueuedConnection);
 }
