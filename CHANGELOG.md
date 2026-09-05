@@ -11,6 +11,8 @@ each get their own entry instead.
 
 ## [Unreleased]
 
+## [0.4.6] — 2026-09-05
+
 ### Fixed
 - Pressing Stop on a DVD while a subtitle was on screen left that
   subtitle showing over the "Drop media files here" placeholder.
