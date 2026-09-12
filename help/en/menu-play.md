@@ -40,7 +40,7 @@ Loop part of a file:
 
 ## Cast
 
-**Cast ▸ Smartphone/tablet…** starts a small built-in web server so a phone
+**Cast…** starts a small built-in web server so a phone
 or tablet on the same network can open a page and play the file Vivace is
 currently playing, with a QR code to scan or the address to type in. The
 port is fixed in *Preferences ▸ Network ▸ Cast* (not editable per session)

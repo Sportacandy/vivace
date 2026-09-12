@@ -41,7 +41,7 @@ Ponavljanje dijela datoteke:
 
 ## Emitiranje
 
-**Emitiraj na ▸ Pametni telefon/Tablet…** pokreće mali ugrađeni web-poslužitelj
+**Emitiraj…** pokreće mali ugrađeni web-poslužitelj
 kako bi telefon ili tablet na istoj mreži mogao otvoriti stranicu i reproducirati
 datoteku koju Vivace trenutačno reproducira — skeniranjem QR koda ili unosom
 prikazane adrese. Ulaz je fiksan u *Postavke ▸ Mreža ▸ Emitiranje* (nije ga

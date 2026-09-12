@@ -40,7 +40,7 @@ Gentag en del af en fil:
 
 ## Udsendelse
 
-**Udsend til ▸ Smartphone/tablet…** starter en lille indbygget webserver, så
+**Udsend…** starter en lille indbygget webserver, så
 en telefon eller tablet på samme netværk kan åbne en side og afspille den fil,
 Vivace afspiller lige nu — ved at scanne QR-koden eller indtaste den viste
 adresse. Porten er fast i *Indstillinger ▸ Netværk ▸ Udsendelse* (kan ikke

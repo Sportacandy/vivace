@@ -2,8 +2,8 @@
     Copyright (C) 2026 Hironori Komaba
     SPDX-License-Identifier: GPL-3.0-or-later
 
-    Play > Cast > Smartphone/tablet…: start/stop the embedded CastServer and
-    show the LAN address(es) to open on another device's browser.
+    Play > Cast…: start/stop the embedded CastServer and show the LAN
+    address(es) to open on another device's browser.
 */
 
 import QtQuick

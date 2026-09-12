@@ -413,14 +413,10 @@ MenuBar {
             onTriggered: bar.controller.next()
         }
         MenuSeparator {}
-        AppMenu {
-            title: qsTr("Ca&st")
+        Action {
+            text: qsTr("Cas&t…")
             icon.source: Theme.icon("cast")
-
-            Action {
-                text: qsTr("&Smartphone/tablet…")
-                onTriggered: bar.castRequested()
-            }
+            onTriggered: bar.castRequested()
         }
     }
 

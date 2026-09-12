@@ -41,7 +41,7 @@ Toista osa tiedostosta silmukkana:
 
 ## Lähetys
 
-**Lähetä ▸ Puhelin/tabletti…** käynnistää pienen sisäänrakennetun
+**Lähetä…** käynnistää pienen sisäänrakennetun
 verkkopalvelimen, jotta samassa verkossa oleva puhelin tai tabletti voi avata
 sivun ja toistaa tiedoston, jota Vivace parhaillaan toistaa — skannaamalla
 QR-koodin tai kirjoittamalla näytetyn osoitteen. Portti on kiinnitetty

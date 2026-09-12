@@ -41,7 +41,7 @@ Opakovanie časti súboru:
 
 ## Prenos
 
-**Prenášať do ▸ Smartfón/tablet…** spustí malý vstavaný webový server, aby
+**Prenášať…** spustí malý vstavaný webový server, aby
 telefón alebo tablet v tej istej sieti mohol otvoriť stránku a prehrať
 súbor, ktorý Vivace práve prehráva — naskenovaním QR kódu alebo zadaním
 zobrazenej adresy. Port je pevne nastavený v *Nastavenia ▸ Sieť ▸ Prenos*

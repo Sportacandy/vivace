@@ -1326,409 +1326,412 @@
         <translation>次へ(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="417"/>
         <source>Ca&amp;st</source>
-        <translation>キャス&amp;ト</translation>
+        <translation type="vanished">キャス&amp;ト</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="421"/>
         <source>&amp;Smartphone/tablet…</source>
-        <translation>スマートフォン/タブレット(&amp;S)…</translation>
+        <translation type="vanished">スマートフォン/タブレット(&amp;S)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="429"/>
+        <location filename="../qml/MainMenuBar.qml" line="417"/>
+        <source>Cas&amp;t…</source>
+        <translation>キャス&amp;ト…</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainMenuBar.qml" line="425"/>
         <source>&amp;Video</source>
         <translation>映像(&amp;V)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="433"/>
-        <location filename="../qml/MainMenuBar.qml" line="688"/>
-        <location filename="../qml/MainMenuBar.qml" line="774"/>
+        <location filename="../qml/MainMenuBar.qml" line="429"/>
+        <location filename="../qml/MainMenuBar.qml" line="684"/>
+        <location filename="../qml/MainMenuBar.qml" line="770"/>
         <source>&amp;Track</source>
         <translation>トラック(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="440"/>
-        <location filename="../qml/MainMenuBar.qml" line="705"/>
-        <location filename="../qml/MainMenuBar.qml" line="914"/>
-        <location filename="../qml/MainMenuBar.qml" line="939"/>
+        <location filename="../qml/MainMenuBar.qml" line="436"/>
+        <location filename="../qml/MainMenuBar.qml" line="701"/>
+        <location filename="../qml/MainMenuBar.qml" line="910"/>
+        <location filename="../qml/MainMenuBar.qml" line="935"/>
         <source>&lt;empty&gt;</source>
         <translation>&lt;なし&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="472"/>
+        <location filename="../qml/MainMenuBar.qml" line="468"/>
         <source>&amp;Fullscreen</source>
         <translation>全画面表示(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="480"/>
+        <location filename="../qml/MainMenuBar.qml" line="476"/>
         <source>Si&amp;ze</source>
         <translation>サイズ(&amp;Z)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="483"/>
+        <location filename="../qml/MainMenuBar.qml" line="479"/>
         <source>50%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="484"/>
+        <location filename="../qml/MainMenuBar.qml" line="480"/>
         <source>100%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="485"/>
+        <location filename="../qml/MainMenuBar.qml" line="481"/>
         <source>200%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="488"/>
+        <location filename="../qml/MainMenuBar.qml" line="484"/>
         <source>&amp;Zoom and pan</source>
         <translation>ズームと移動(&amp;Z)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="492"/>
+        <location filename="../qml/MainMenuBar.qml" line="488"/>
         <source>&amp;Reset</source>
         <translation>リセット(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="497"/>
+        <location filename="../qml/MainMenuBar.qml" line="493"/>
         <source>Zoom &amp;-</source>
         <translation>ズーム -</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="502"/>
+        <location filename="../qml/MainMenuBar.qml" line="498"/>
         <source>Zoom &amp;+</source>
         <translation>ズーム +</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="508"/>
+        <location filename="../qml/MainMenuBar.qml" line="504"/>
         <source>Move &amp;left</source>
         <translation>左へ移動(&amp;L)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="513"/>
+        <location filename="../qml/MainMenuBar.qml" line="509"/>
         <source>Move &amp;right</source>
         <translation>右へ移動(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="518"/>
+        <location filename="../qml/MainMenuBar.qml" line="514"/>
         <source>Move &amp;up</source>
         <translation>上へ移動(&amp;U)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="523"/>
+        <location filename="../qml/MainMenuBar.qml" line="519"/>
         <source>Move &amp;down</source>
         <translation>下へ移動(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="530"/>
+        <location filename="../qml/MainMenuBar.qml" line="526"/>
         <source>&amp;Aspect ratio</source>
         <translation>アスペクト比(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="552"/>
+        <location filename="../qml/MainMenuBar.qml" line="548"/>
         <source>&amp;Rotate</source>
         <translation>回転(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="556"/>
-        <location filename="../qml/MainMenuBar.qml" line="639"/>
+        <location filename="../qml/MainMenuBar.qml" line="552"/>
+        <location filename="../qml/MainMenuBar.qml" line="635"/>
         <source>&amp;None</source>
         <translation>なし(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="565"/>
+        <location filename="../qml/MainMenuBar.qml" line="561"/>
         <source>&amp;Rotate by 90° clockwise</source>
         <translation>時計回りに 90° 回転(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="574"/>
+        <location filename="../qml/MainMenuBar.qml" line="570"/>
         <source>Rotate by 90° &amp;counterclockwise</source>
         <translation>反時計回りに 90° 回転(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="583"/>
+        <location filename="../qml/MainMenuBar.qml" line="579"/>
         <source>Rotate by &amp;180°</source>
         <translation>180° 回転(&amp;1)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="593"/>
+        <location filename="../qml/MainMenuBar.qml" line="589"/>
         <source>Fli&amp;p image</source>
         <translation>上下反転(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="604"/>
+        <location filename="../qml/MainMenuBar.qml" line="600"/>
         <source>Mirr&amp;or image</source>
         <translation>左右反転(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="615"/>
+        <location filename="../qml/MainMenuBar.qml" line="611"/>
         <source>&amp;Deinterlace</source>
         <translation>デインターレース(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="648"/>
+        <location filename="../qml/MainMenuBar.qml" line="644"/>
         <source>&amp;Yadif</source>
         <translation>Yadif(&amp;Y)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="657"/>
+        <location filename="../qml/MainMenuBar.qml" line="653"/>
         <source>&amp;Bwdif</source>
         <translation>Bwdif(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="668"/>
+        <location filename="../qml/MainMenuBar.qml" line="664"/>
         <source>E&amp;qualizer…</source>
         <translation>イコライザー(&amp;Q)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="674"/>
+        <location filename="../qml/MainMenuBar.qml" line="670"/>
         <source>&amp;Screenshot</source>
         <translation>スクリーンショット(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="684"/>
+        <location filename="../qml/MainMenuBar.qml" line="680"/>
         <source>&amp;Audio</source>
         <translation>音声(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="732"/>
+        <location filename="../qml/MainMenuBar.qml" line="728"/>
         <source>&amp;Mute</source>
         <translation>ミュート(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="741"/>
+        <location filename="../qml/MainMenuBar.qml" line="737"/>
         <source>Volume &amp;-</source>
         <translation>音量 -</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="747"/>
+        <location filename="../qml/MainMenuBar.qml" line="743"/>
         <source>Volume &amp;+</source>
         <translation>音量 +</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="755"/>
-        <location filename="../qml/MainMenuBar.qml" line="852"/>
+        <location filename="../qml/MainMenuBar.qml" line="751"/>
+        <location filename="../qml/MainMenuBar.qml" line="848"/>
         <source>Delay &amp;-</source>
         <translation>遅延 -</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="759"/>
+        <location filename="../qml/MainMenuBar.qml" line="755"/>
         <source>D&amp;elay +</source>
         <translation>遅延 +</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="763"/>
+        <location filename="../qml/MainMenuBar.qml" line="759"/>
         <source>Set dela&amp;y…</source>
         <translation>遅延を設定(&amp;Y)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="770"/>
+        <location filename="../qml/MainMenuBar.qml" line="766"/>
         <source>&amp;Subtitles</source>
         <translation>字幕(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="790"/>
+        <location filename="../qml/MainMenuBar.qml" line="786"/>
         <source>&amp;Off</source>
         <translation>オフ(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="835"/>
+        <location filename="../qml/MainMenuBar.qml" line="831"/>
         <source>&amp;Load subtitles…</source>
         <translation>字幕を読み込む(&amp;L)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="841"/>
+        <location filename="../qml/MainMenuBar.qml" line="837"/>
         <source>&amp;Find subtitles at OpenSubtitles…</source>
         <translation>OpenSubtitles で字幕を検索(&amp;F)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="846"/>
+        <location filename="../qml/MainMenuBar.qml" line="842"/>
         <source>U&amp;nload subtitles</source>
         <translation>字幕を閉じる(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="857"/>
+        <location filename="../qml/MainMenuBar.qml" line="853"/>
         <source>Delay &amp;+</source>
         <translation>遅延 +</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="862"/>
+        <location filename="../qml/MainMenuBar.qml" line="858"/>
         <source>Se&amp;t delay…</source>
         <translation>遅延を設定(&amp;T)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="870"/>
+        <location filename="../qml/MainMenuBar.qml" line="866"/>
         <source>&amp;Browse</source>
         <translation>ブラウズ(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="873"/>
+        <location filename="../qml/MainMenuBar.qml" line="869"/>
         <source>&amp;DVD menu</source>
         <translation>DVD メニュー(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="882"/>
+        <location filename="../qml/MainMenuBar.qml" line="878"/>
         <source>&amp;Title</source>
         <translation>タイトル(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="921"/>
+        <location filename="../qml/MainMenuBar.qml" line="917"/>
         <source>&amp;Chapters</source>
         <translation>チャプター(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="946"/>
+        <location filename="../qml/MainMenuBar.qml" line="942"/>
         <source>&amp;Bookmarks</source>
         <translation>ブックマーク(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="956"/>
+        <location filename="../qml/MainMenuBar.qml" line="952"/>
         <source>&amp;Add new bookmark</source>
         <translation>ブックマークを追加(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="963"/>
+        <location filename="../qml/MainMenuBar.qml" line="959"/>
         <source>&amp;Edit bookmarks…</source>
         <translation>ブックマークを編集(&amp;E)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="987"/>
+        <location filename="../qml/MainMenuBar.qml" line="983"/>
         <source>Vie&amp;w</source>
         <translation>表示(&amp;W)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="990"/>
+        <location filename="../qml/MainMenuBar.qml" line="986"/>
         <source>&amp;Information and properties…</source>
         <translation>情報とプロパティ(&amp;I)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="997"/>
+        <location filename="../qml/MainMenuBar.qml" line="993"/>
         <source>&amp;Playlist</source>
         <translation>プレイリスト(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1005"/>
+        <location filename="../qml/MainMenuBar.qml" line="1001"/>
         <source>&amp;OSD</source>
         <translation>OSD(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1007"/>
+        <location filename="../qml/MainMenuBar.qml" line="1003"/>
         <source>Subtitles only</source>
         <translation>字幕のみ</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1008"/>
+        <location filename="../qml/MainMenuBar.qml" line="1004"/>
         <source>Volume + seek</source>
         <translation>音量 + シーク</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1009"/>
+        <location filename="../qml/MainMenuBar.qml" line="1005"/>
         <source>Volume + seek + timer</source>
         <translation>音量 + シーク + タイマー</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1015"/>
+        <location filename="../qml/MainMenuBar.qml" line="1011"/>
         <source>Op&amp;tions</source>
         <translation>オプション(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1018"/>
+        <location filename="../qml/MainMenuBar.qml" line="1014"/>
         <source>&amp;Preferences…</source>
         <translation>設定(&amp;P)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1031"/>
+        <location filename="../qml/MainMenuBar.qml" line="1027"/>
         <source>S&amp;how icon in system tray</source>
         <translation>システムトレイにアイコンを表示(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1037"/>
+        <location filename="../qml/MainMenuBar.qml" line="1033"/>
         <source>&amp;Toolbars</source>
         <translation>ツールバー(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1040"/>
+        <location filename="../qml/MainMenuBar.qml" line="1036"/>
         <source>&amp;Toolbar</source>
         <translation>ツールバー(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1046"/>
+        <location filename="../qml/MainMenuBar.qml" line="1042"/>
         <source>&amp;Control bar</source>
         <translation>コントロールバー(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1053"/>
+        <location filename="../qml/MainMenuBar.qml" line="1049"/>
         <source>Edit main &amp;toolbar…</source>
         <translation>メインツールバーを編集(&amp;T)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1057"/>
+        <location filename="../qml/MainMenuBar.qml" line="1053"/>
         <source>Edit control &amp;bar…</source>
         <translation>コントロールバーを編集(&amp;B)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1062"/>
+        <location filename="../qml/MainMenuBar.qml" line="1058"/>
         <source>&amp;Status bar</source>
         <translation>ステータスバー(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1065"/>
+        <location filename="../qml/MainMenuBar.qml" line="1061"/>
         <source>&amp;Show status bar</source>
         <translation>ステータスバーを表示(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1072"/>
+        <location filename="../qml/MainMenuBar.qml" line="1068"/>
         <source>&amp;Video info</source>
         <translation>映像情報(&amp;V)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1079"/>
+        <location filename="../qml/MainMenuBar.qml" line="1075"/>
         <source>&amp;Audio info</source>
         <translation>音声情報(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1086"/>
+        <location filename="../qml/MainMenuBar.qml" line="1082"/>
         <source>F&amp;ormat info</source>
         <translation>フォーマット情報(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1093"/>
+        <location filename="../qml/MainMenuBar.qml" line="1089"/>
         <source>&amp;Bitrate info</source>
         <translation>ビットレート情報(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1100"/>
+        <location filename="../qml/MainMenuBar.qml" line="1096"/>
         <source>&amp;Frame counter</source>
         <translation>フレームカウンター(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1108"/>
+        <location filename="../qml/MainMenuBar.qml" line="1104"/>
         <source>Display &amp;total time</source>
         <translation>総時間を表示(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1114"/>
+        <location filename="../qml/MainMenuBar.qml" line="1110"/>
         <source>Display &amp;remaining time</source>
         <translation>残り時間を表示(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1121"/>
+        <location filename="../qml/MainMenuBar.qml" line="1117"/>
         <source>Show the current time with &amp;milliseconds</source>
         <translation>現在位置をミリ秒付きで表示(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1131"/>
+        <location filename="../qml/MainMenuBar.qml" line="1127"/>
         <source>&amp;Help</source>
         <translation>ヘルプ(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1134"/>
+        <location filename="../qml/MainMenuBar.qml" line="1130"/>
         <source>&amp;Contents</source>
         <translation>目次(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1141"/>
+        <location filename="../qml/MainMenuBar.qml" line="1137"/>
         <source>&amp;Check for updates</source>
         <translation>更新を確認(&amp;C)</translation>
     </message>
@@ -1737,7 +1740,7 @@
         <translation type="vanished">YouTube サポートをインストール／更新(&amp;Y)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1147"/>
+        <location filename="../qml/MainMenuBar.qml" line="1143"/>
         <source>&amp;About Vivace</source>
         <translation>Vivace について(&amp;A)</translation>
     </message>
@@ -1912,32 +1915,32 @@
     <name>PlayerController</name>
     <message>
         <location filename="../src/playercontroller.cpp" line="181"/>
-        <location filename="../src/playercontroller.cpp" line="957"/>
-        <location filename="../src/playercontroller.cpp" line="973"/>
-        <location filename="../src/playercontroller.cpp" line="1638"/>
-        <location filename="../src/playercontroller.cpp" line="1654"/>
-        <location filename="../src/playercontroller.cpp" line="2565"/>
+        <location filename="../src/playercontroller.cpp" line="965"/>
+        <location filename="../src/playercontroller.cpp" line="981"/>
+        <location filename="../src/playercontroller.cpp" line="1646"/>
+        <location filename="../src/playercontroller.cpp" line="1662"/>
+        <location filename="../src/playercontroller.cpp" line="2573"/>
         <source>Track %1</source>
         <translation>トラック %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="875"/>
+        <location filename="../src/playercontroller.cpp" line="883"/>
         <source>A/V delay: %1 ms</source>
         <translation>A/V 遅延: %1 ミリ秒</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1695"/>
+        <location filename="../src/playercontroller.cpp" line="1703"/>
         <source>DVD title %1 could not be assembled</source>
         <translation>DVD タイトル %1 を構成できませんでした</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1701"/>
+        <location filename="../src/playercontroller.cpp" line="1709"/>
         <source>DVD title %1 could not be opened</source>
         <translation>DVD タイトル %1 を開けませんでした</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1515"/>
-        <location filename="../src/playercontroller.cpp" line="1882"/>
+        <location filename="../src/playercontroller.cpp" line="1523"/>
+        <location filename="../src/playercontroller.cpp" line="1890"/>
         <source>Title %1 (%2)</source>
         <translation>タイトル %1 (%2)</translation>
     </message>
@@ -1992,288 +1995,288 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1412"/>
+        <location filename="../src/playercontroller.cpp" line="1420"/>
         <source>Could not open the Blu-ray disc (it may be encrypted, or use an unsupported format).</source>
         <translation>Blu-ray ディスクを開けませんでした（暗号化されているか、非対応の形式である可能性があります）。</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1419"/>
+        <location filename="../src/playercontroller.cpp" line="1427"/>
         <source>No playable titles were found on this Blu-ray disc.</source>
         <translation>この Blu-ray ディスクに再生可能なタイトルが見つかりませんでした。</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1464"/>
+        <location filename="../src/playercontroller.cpp" line="1472"/>
         <source>This Blu-ray title could not be selected.</source>
         <translation>この Blu-ray タイトルを選択できませんでした。</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1474"/>
-        <location filename="../src/playercontroller.cpp" line="1478"/>
+        <location filename="../src/playercontroller.cpp" line="1482"/>
+        <location filename="../src/playercontroller.cpp" line="1486"/>
         <source>This Blu-ray title could not be opened.</source>
         <translation>この Blu-ray タイトルを開けませんでした。</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1898"/>
+        <location filename="../src/playercontroller.cpp" line="1906"/>
         <source>Chapter %1 (%2)</source>
         <translation>チャプター %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3059"/>
+        <location filename="../src/playercontroller.cpp" line="3067"/>
         <source>Could not open the stream</source>
         <translation>ストリームを開けませんでした</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3118"/>
+        <location filename="../src/playercontroller.cpp" line="3126"/>
         <source>System default</source>
         <translation>システム既定</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3297"/>
+        <location filename="../src/playercontroller.cpp" line="3305"/>
         <source>A marker set to %1</source>
         <translation>A マーカーを %1 に設定</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3308"/>
+        <location filename="../src/playercontroller.cpp" line="3316"/>
         <source>B marker set to %1</source>
         <translation>B マーカーを %1 に設定</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3318"/>
+        <location filename="../src/playercontroller.cpp" line="3326"/>
         <source>A-B markers cleared</source>
         <translation>A-B マーカーをクリアしました</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3379"/>
+        <location filename="../src/playercontroller.cpp" line="3387"/>
         <source>None</source>
         <translation>なし</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3378"/>
+        <location filename="../src/playercontroller.cpp" line="3386"/>
         <source>Yadif</source>
         <translation>Yadif</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3379"/>
+        <location filename="../src/playercontroller.cpp" line="3387"/>
         <source>Bwdif</source>
         <translation>Bwdif</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3378"/>
+        <location filename="../src/playercontroller.cpp" line="3386"/>
         <source>Auto</source>
         <translation>自動</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3380"/>
+        <location filename="../src/playercontroller.cpp" line="3388"/>
         <source>Deinterlace: %1</source>
         <translation>デインターレース: %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3464"/>
+        <location filename="../src/playercontroller.cpp" line="3472"/>
         <source>Could not load subtitles from %1</source>
         <translation>%1 から字幕を読み込めませんでした</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3481"/>
+        <location filename="../src/playercontroller.cpp" line="3489"/>
         <source>Subtitles loaded: %1</source>
         <translation>字幕を読み込みました: %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3492"/>
+        <location filename="../src/playercontroller.cpp" line="3500"/>
         <source>Subtitles unloaded</source>
         <translation>字幕を閉じました</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3502"/>
+        <location filename="../src/playercontroller.cpp" line="3510"/>
         <source>Subtitle delay: %1 ms</source>
         <translation>字幕の遅延: %1 ミリ秒</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3652"/>
+        <location filename="../src/playercontroller.cpp" line="3660"/>
         <source>General</source>
         <translation>一般</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3655"/>
+        <location filename="../src/playercontroller.cpp" line="3663"/>
         <source>File</source>
         <translation>ファイル</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3670"/>
+        <location filename="../src/playercontroller.cpp" line="3678"/>
         <source>Size</source>
         <translation>サイズ</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3670"/>
+        <location filename="../src/playercontroller.cpp" line="3678"/>
         <source>%1 KB (%2 MB)</source>
         <translation>%1 KB (%2 MB)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3675"/>
-        <location filename="../src/playercontroller.cpp" line="3709"/>
+        <location filename="../src/playercontroller.cpp" line="3683"/>
+        <location filename="../src/playercontroller.cpp" line="3717"/>
         <source>URL</source>
         <translation>URL</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3685"/>
+        <location filename="../src/playercontroller.cpp" line="3693"/>
         <source>Length</source>
         <translation>長さ</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3686"/>
+        <location filename="../src/playercontroller.cpp" line="3694"/>
         <source>Demuxer</source>
         <translation>デマルチプレクサ</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3691"/>
-        <location filename="../src/playercontroller.cpp" line="3742"/>
-        <location filename="../src/playercontroller.cpp" line="3805"/>
-        <location filename="../src/playercontroller.cpp" line="3835"/>
+        <location filename="../src/playercontroller.cpp" line="3699"/>
+        <location filename="../src/playercontroller.cpp" line="3750"/>
+        <location filename="../src/playercontroller.cpp" line="3813"/>
+        <location filename="../src/playercontroller.cpp" line="3843"/>
         <source>Name</source>
         <translation>名前</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3692"/>
+        <location filename="../src/playercontroller.cpp" line="3700"/>
         <source>Artist</source>
         <translation>アーティスト</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3694"/>
+        <location filename="../src/playercontroller.cpp" line="3702"/>
         <source>Album artist</source>
         <translation>アルバムアーティスト</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3696"/>
+        <location filename="../src/playercontroller.cpp" line="3704"/>
         <source>Author</source>
         <translation>作者</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3697"/>
+        <location filename="../src/playercontroller.cpp" line="3705"/>
         <source>Composer</source>
         <translation>作曲者</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3698"/>
+        <location filename="../src/playercontroller.cpp" line="3706"/>
         <source>Album</source>
         <translation>アルバム</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3699"/>
+        <location filename="../src/playercontroller.cpp" line="3707"/>
         <source>Genre</source>
         <translation>ジャンル</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3700"/>
+        <location filename="../src/playercontroller.cpp" line="3708"/>
         <source>Date</source>
         <translation>日付</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3701"/>
+        <location filename="../src/playercontroller.cpp" line="3709"/>
         <source>Track</source>
         <translation>トラック</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3702"/>
+        <location filename="../src/playercontroller.cpp" line="3710"/>
         <source>Copyright</source>
         <translation>著作権</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3703"/>
+        <location filename="../src/playercontroller.cpp" line="3711"/>
         <source>Comment</source>
         <translation>コメント</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3704"/>
+        <location filename="../src/playercontroller.cpp" line="3712"/>
         <source>Description</source>
         <translation>説明</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3706"/>
+        <location filename="../src/playercontroller.cpp" line="3714"/>
         <source>Publisher</source>
         <translation>発行元</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3707"/>
-        <location filename="../src/playercontroller.cpp" line="3742"/>
-        <location filename="../src/playercontroller.cpp" line="3805"/>
-        <location filename="../src/playercontroller.cpp" line="3835"/>
+        <location filename="../src/playercontroller.cpp" line="3715"/>
+        <location filename="../src/playercontroller.cpp" line="3750"/>
+        <location filename="../src/playercontroller.cpp" line="3813"/>
+        <location filename="../src/playercontroller.cpp" line="3843"/>
         <source>Language</source>
         <translation>言語</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3711"/>
+        <location filename="../src/playercontroller.cpp" line="3719"/>
         <source>Clip info</source>
         <translation>クリップ情報</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3715"/>
+        <location filename="../src/playercontroller.cpp" line="3723"/>
         <source>Initial Video Stream</source>
         <translation>最初の映像ストリーム</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3718"/>
+        <location filename="../src/playercontroller.cpp" line="3726"/>
         <source>Resolution</source>
         <translation>解像度</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3721"/>
+        <location filename="../src/playercontroller.cpp" line="3729"/>
         <source>Aspect ratio</source>
         <translation>アスペクト比</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3725"/>
-        <location filename="../src/playercontroller.cpp" line="3765"/>
+        <location filename="../src/playercontroller.cpp" line="3733"/>
+        <location filename="../src/playercontroller.cpp" line="3773"/>
         <source>Format</source>
         <translation>フォーマット</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3728"/>
-        <location filename="../src/playercontroller.cpp" line="3768"/>
+        <location filename="../src/playercontroller.cpp" line="3736"/>
+        <location filename="../src/playercontroller.cpp" line="3776"/>
         <source>Bitrate</source>
         <translation>ビットレート</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3728"/>
-        <location filename="../src/playercontroller.cpp" line="3768"/>
+        <location filename="../src/playercontroller.cpp" line="3736"/>
+        <location filename="../src/playercontroller.cpp" line="3776"/>
         <source>%1 kbps</source>
         <translation>%1 kbps</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3731"/>
+        <location filename="../src/playercontroller.cpp" line="3739"/>
         <source>Frames per second</source>
         <translation>フレーム毎秒</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3734"/>
+        <location filename="../src/playercontroller.cpp" line="3742"/>
         <source>HDR</source>
         <translation>HDR</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3734"/>
+        <location filename="../src/playercontroller.cpp" line="3742"/>
         <source>yes</source>
         <translation>あり</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3741"/>
+        <location filename="../src/playercontroller.cpp" line="3749"/>
         <source>Video Streams</source>
         <translation>映像ストリーム</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3749"/>
+        <location filename="../src/playercontroller.cpp" line="3757"/>
         <source>Initial Audio Stream</source>
         <translation>最初の音声ストリーム</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3804"/>
+        <location filename="../src/playercontroller.cpp" line="3812"/>
         <source>Audio Streams</source>
         <translation>音声ストリーム</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3834"/>
+        <location filename="../src/playercontroller.cpp" line="3842"/>
         <source>Subtitles</source>
         <translation>字幕</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="4184"/>
+        <location filename="../src/playercontroller.cpp" line="4192"/>
         <source>Chapter %1</source>
         <translation>チャプター %1</translation>
     </message>
@@ -3537,9 +3540,13 @@
         <translation type="vanished">&lt;h1&gt;ネットワーク&lt;/h1&gt;&lt;p&gt;&lt;b&gt;OpenSubtitles&lt;/b&gt; の検索は REST API を使用し、アプリケーションごとの無料 API キーが必要です。opensubtitles.com に登録して API コンシューマーを作成し、キーをここに貼り付けてください。アカウントのログイン（ユーザー名とパスワード）は任意ですが、1 日あたりのダウンロード上限が上がります。&lt;/p&gt;&lt;p&gt;&lt;b&gt;YouTube&lt;/b&gt;: 任意のリゾルバーは外部の yt-dlp プログラムを使用します。有効にすると、YouTube の URL を開いたときに yt-dlp を実行して直接再生可能なストリームを取得します。yt-dlp はご自身でインストールし、PATH に無い場合はフルパスを設定してください。QMediaPlayer は単一の多重化ストリームを再生するため、ストリーミングは最良のプログレッシブ形式（YouTube では約 720p）までです。Cookie はストリーミングにはあえて使用しません。認証済み（Cookie）のセッションは、通常のプレーヤーが開けない URL を返すためです。&lt;/p&gt;&lt;p&gt;&lt;b&gt;HD&lt;/b&gt;（および Cookie）を使うには、ダウンロードモードを有効にするか、外部ダウンローダーを独自のツール（プログラムまたは .bat/.cmd）に向けてください。HD 形式は映像と音声が別々のストリームで多重化ストリーミングできないため、Vivace は yt-dlp（またはお使いのツール）を実行して動画をダウンロード・結合し、ダウンロードフォルダーに書き込まれたファイルを再生します。ダウンロードモードにはさらに、yt-dlp 自身が YouTube の JavaScript チャレンジを解決するために使う別のプログラム Deno も必要です — これが無いと、HD ダウンロードが前提とするログイン済み（Cookie）のリクエストで、利用できる形式が大幅に制限されます。Cookie を送らないストリーミングモードはほとんど影響を受けず、Deno は不要です。Deno はご自身でインストールし、PATH に無い場合はフルパスを「ダウンロードして再生」の設定に入力してください。&lt;/p&gt;&lt;p&gt;cookies.txt ファイルをブラウザからエクスポートする手順、および Deno のインストール手順については、&lt;b&gt;ヘルプ ▸ 目次 ▸ オプション&lt;/b&gt; をご覧ください。&lt;/p&gt;&lt;p&gt;ストリームの &lt;b&gt;接続タイムアウト&lt;/b&gt;（主にライブ TV チューナーで使用）は &lt;i&gt;設定 ▸ テレビとラジオ&lt;/i&gt; に移動しました。&lt;/p&gt;&lt;p&gt;&lt;b&gt;プロキシ&lt;/b&gt;タブの設定はアプリケーション全体に適用されます。OpenSubtitles検索とアップデート確認にはHTTP・SOCKS5どちらの種類も有効です。メディア再生とyt-dlpに適用されるのはHTTPプロキシのみです（Qtのネットワークスタックを経由せず、http_proxy/https_proxyという仕組みを直接参照するためで、SOCKS5にはこれに相当する仕組みがありません）。&lt;/p&gt;&lt;p&gt;&lt;b&gt;キャスト&lt;/b&gt;タブでは、再生 ▸ キャスト ▸ スマートフォン/タブレット が待ち受けるポートを設定します。キャストダイアログだけでなくここにあるのは、固定された値にするためです — 一度設定してそのポートをファイアウォールやルーターで一度許可しておけば、以後キャストは新たなファイアウォールの確認なしで動作し続けます。&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="25"/>
         <source>&lt;h1&gt;Network&lt;/h1&gt;&lt;p&gt;&lt;b&gt;OpenSubtitles&lt;/b&gt; search uses the REST API, which requires a free per-application API key: register at opensubtitles.com, create an API consumer, and paste the key here. An account login (username and password) is optional but raises the daily download limit.&lt;/p&gt;&lt;p&gt;&lt;b&gt;YouTube&lt;/b&gt;: the optional resolver uses an external yt-dlp program — when enabled, opening a YouTube URL runs yt-dlp to obtain a directly-playable stream. Vivace offers to install yt-dlp for you the first time you turn this on (or point it at your own copy with the path field below), and can keep it updated on its own per the &quot;Update yt-dlp automatically&quot; setting. Because QMediaPlayer plays a single muxed stream, streaming tops out at the best progressive format (about 720p on YouTube). Cookies are deliberately NOT used for streaming: an authenticated (cookie) session returns URLs a plain player cannot open.&lt;/p&gt;&lt;p&gt;For &lt;b&gt;HD&lt;/b&gt; (and for cookies), enable download mode, or point the external downloader at your own tool (a program or .bat/.cmd). HD formats are separate video and audio streams that cannot be streamed muxed, so Vivace runs yt-dlp (or your tool) to download and merge the video, then plays the file it writes into the download folder. Download mode also needs Deno, a further external program yt-dlp itself uses to solve YouTube&apos;s JavaScript challenges — without it, a signed-in (cookie) request, exactly what HD downloads rely on, sees severely limited format availability. Streaming mode, which never sends cookies, is largely unaffected and doesn&apos;t need Deno. Install Deno yourself and, if it is not on the PATH, set its full path in the Download &amp; play settings.&lt;/p&gt;&lt;p&gt;See &lt;b&gt;Help ▸ Contents ▸ Options&lt;/b&gt; for step-by-step instructions on exporting a cookies.txt file from your browser, and on installing Deno.&lt;/p&gt;&lt;p&gt;The stream &lt;b&gt;connection timeout&lt;/b&gt; (used mainly by live TV tuners) has moved to &lt;i&gt;Preferences ▸ TV and radio&lt;/i&gt;.&lt;/p&gt;&lt;p&gt;The &lt;b&gt;Proxy&lt;/b&gt; tab applies application-wide: both HTTP and SOCKS5 cover OpenSubtitles search and the update check; only HTTP additionally covers media playback and yt-dlp (they read the http_proxy/https_proxy convention directly instead of going through Qt&apos;s network stack, and there is no SOCKS5 equivalent for that convention).&lt;/p&gt;&lt;p&gt;The &lt;b&gt;Cast&lt;/b&gt; tab sets the port Play ▸ Cast ▸ Smartphone/tablet listens on. It&apos;s here (rather than only in the Cast dialog) so it stays fixed — set it once, allow that port through your firewall/router once, and casting keeps working without a new firewall prompt every time.&lt;/p&gt;</source>
-        <translation>&lt;h1&gt;ネットワーク&lt;/h1&gt;&lt;p&gt;&lt;b&gt;OpenSubtitles&lt;/b&gt; の検索は REST API を使用し、アプリケーションごとの無料 API キーが必要です。opensubtitles.com に登録して API コンシューマーを作成し、キーをここに貼り付けてください。アカウントのログイン（ユーザー名とパスワード）は任意ですが、1 日あたりのダウンロード上限が上がります。&lt;/p&gt;&lt;p&gt;&lt;b&gt;YouTube&lt;/b&gt;: 任意のリゾルバーは外部の yt-dlp プログラムを使用します。有効にすると、YouTube の URL を開いたときに yt-dlp を実行して直接再生可能なストリームを取得します。この設定を初めてオンにすると、Vivace が yt-dlp のインストールを申し出ます（下の yt-dlp のパス欄で自分のコピーを指定することもできます）。また、「yt-dlp を自動的に更新」の設定に従って自動的に最新の状態に保つこともできます。QMediaPlayer は単一の多重化ストリームを再生するため、ストリーミングは最良のプログレッシブ形式（YouTube では約 720p）までです。Cookie はストリーミングにはあえて使用しません。認証済み（Cookie）のセッションは、通常のプレーヤーが開けない URL を返すためです。&lt;/p&gt;&lt;p&gt;&lt;b&gt;HD&lt;/b&gt;（および Cookie）を使うには、ダウンロードモードを有効にするか、外部ダウンローダーを独自のツール（プログラムまたは .bat/.cmd）に向けてください。HD 形式は映像と音声が別々のストリームで多重化ストリーミングできないため、Vivace は yt-dlp（またはお使いのツール）を実行して動画をダウンロード・結合し、ダウンロードフォルダーに書き込まれたファイルを再生します。ダウンロードモードにはさらに、yt-dlp 自身が YouTube の JavaScript チャレンジを解決するために使う別のプログラム Deno も必要です — これが無いと、HD ダウンロードが前提とするログイン済み（Cookie）のリクエストで、利用できる形式が大幅に制限されます。Cookie を送らないストリーミングモードはほとんど影響を受けず、Deno は不要です。Deno はご自身でインストールし、PATH に無い場合はフルパスを「ダウンロードして再生」の設定に入力してください。&lt;/p&gt;&lt;p&gt;cookies.txt ファイルをブラウザからエクスポートする手順、および Deno のインストール手順については、&lt;b&gt;ヘルプ ▸ 目次 ▸ オプション&lt;/b&gt; をご覧ください。&lt;/p&gt;&lt;p&gt;ストリームの &lt;b&gt;接続タイムアウト&lt;/b&gt;（主にライブ TV チューナーで使用）は &lt;i&gt;設定 ▸ テレビとラジオ&lt;/i&gt; に移動しました。&lt;/p&gt;&lt;p&gt;&lt;b&gt;プロキシ&lt;/b&gt;タブの設定はアプリケーション全体に適用されます。OpenSubtitles検索とアップデート確認にはHTTP・SOCKS5どちらの種類も有効です。メディア再生とyt-dlpに適用されるのはHTTPプロキシのみです（Qtのネットワークスタックを経由せず、http_proxy/https_proxyという仕組みを直接参照するためで、SOCKS5にはこれに相当する仕組みがありません）。&lt;/p&gt;&lt;p&gt;&lt;b&gt;キャスト&lt;/b&gt;タブでは、再生 ▸ キャスト ▸ スマートフォン/タブレット が待ち受けるポートを設定します。キャストダイアログだけでなくここにあるのは、固定された値にするためです — 一度設定してそのポートをファイアウォールやルーターで一度許可しておけば、以後キャストは新たなファイアウォールの確認なしで動作し続けます。&lt;/p&gt;</translation>
+        <translation type="vanished">&lt;h1&gt;ネットワーク&lt;/h1&gt;&lt;p&gt;&lt;b&gt;OpenSubtitles&lt;/b&gt; の検索は REST API を使用し、アプリケーションごとの無料 API キーが必要です。opensubtitles.com に登録して API コンシューマーを作成し、キーをここに貼り付けてください。アカウントのログイン（ユーザー名とパスワード）は任意ですが、1 日あたりのダウンロード上限が上がります。&lt;/p&gt;&lt;p&gt;&lt;b&gt;YouTube&lt;/b&gt;: 任意のリゾルバーは外部の yt-dlp プログラムを使用します。有効にすると、YouTube の URL を開いたときに yt-dlp を実行して直接再生可能なストリームを取得します。この設定を初めてオンにすると、Vivace が yt-dlp のインストールを申し出ます（下の yt-dlp のパス欄で自分のコピーを指定することもできます）。また、「yt-dlp を自動的に更新」の設定に従って自動的に最新の状態に保つこともできます。QMediaPlayer は単一の多重化ストリームを再生するため、ストリーミングは最良のプログレッシブ形式（YouTube では約 720p）までです。Cookie はストリーミングにはあえて使用しません。認証済み（Cookie）のセッションは、通常のプレーヤーが開けない URL を返すためです。&lt;/p&gt;&lt;p&gt;&lt;b&gt;HD&lt;/b&gt;（および Cookie）を使うには、ダウンロードモードを有効にするか、外部ダウンローダーを独自のツール（プログラムまたは .bat/.cmd）に向けてください。HD 形式は映像と音声が別々のストリームで多重化ストリーミングできないため、Vivace は yt-dlp（またはお使いのツール）を実行して動画をダウンロード・結合し、ダウンロードフォルダーに書き込まれたファイルを再生します。ダウンロードモードにはさらに、yt-dlp 自身が YouTube の JavaScript チャレンジを解決するために使う別のプログラム Deno も必要です — これが無いと、HD ダウンロードが前提とするログイン済み（Cookie）のリクエストで、利用できる形式が大幅に制限されます。Cookie を送らないストリーミングモードはほとんど影響を受けず、Deno は不要です。Deno はご自身でインストールし、PATH に無い場合はフルパスを「ダウンロードして再生」の設定に入力してください。&lt;/p&gt;&lt;p&gt;cookies.txt ファイルをブラウザからエクスポートする手順、および Deno のインストール手順については、&lt;b&gt;ヘルプ ▸ 目次 ▸ オプション&lt;/b&gt; をご覧ください。&lt;/p&gt;&lt;p&gt;ストリームの &lt;b&gt;接続タイムアウト&lt;/b&gt;（主にライブ TV チューナーで使用）は &lt;i&gt;設定 ▸ テレビとラジオ&lt;/i&gt; に移動しました。&lt;/p&gt;&lt;p&gt;&lt;b&gt;プロキシ&lt;/b&gt;タブの設定はアプリケーション全体に適用されます。OpenSubtitles検索とアップデート確認にはHTTP・SOCKS5どちらの種類も有効です。メディア再生とyt-dlpに適用されるのはHTTPプロキシのみです（Qtのネットワークスタックを経由せず、http_proxy/https_proxyという仕組みを直接参照するためで、SOCKS5にはこれに相当する仕組みがありません）。&lt;/p&gt;&lt;p&gt;&lt;b&gt;キャスト&lt;/b&gt;タブでは、再生 ▸ キャスト ▸ スマートフォン/タブレット が待ち受けるポートを設定します。キャストダイアログだけでなくここにあるのは、固定された値にするためです — 一度設定してそのポートをファイアウォールやルーターで一度許可しておけば、以後キャストは新たなファイアウォールの確認なしで動作し続けます。&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="25"/>
+        <source>&lt;h1&gt;Network&lt;/h1&gt;&lt;p&gt;&lt;b&gt;OpenSubtitles&lt;/b&gt; search uses the REST API, which requires a free per-application API key: register at opensubtitles.com, create an API consumer, and paste the key here. An account login (username and password) is optional but raises the daily download limit.&lt;/p&gt;&lt;p&gt;&lt;b&gt;YouTube&lt;/b&gt;: the optional resolver uses an external yt-dlp program — when enabled, opening a YouTube URL runs yt-dlp to obtain a directly-playable stream. Vivace offers to install yt-dlp for you the first time you turn this on (or point it at your own copy with the path field below), and can keep it updated on its own per the &quot;Update yt-dlp automatically&quot; setting. Because QMediaPlayer plays a single muxed stream, streaming tops out at the best progressive format (about 720p on YouTube). Cookies are deliberately NOT used for streaming: an authenticated (cookie) session returns URLs a plain player cannot open.&lt;/p&gt;&lt;p&gt;For &lt;b&gt;HD&lt;/b&gt; (and for cookies), enable download mode, or point the external downloader at your own tool (a program or .bat/.cmd). HD formats are separate video and audio streams that cannot be streamed muxed, so Vivace runs yt-dlp (or your tool) to download and merge the video, then plays the file it writes into the download folder. Download mode also needs Deno, a further external program yt-dlp itself uses to solve YouTube&apos;s JavaScript challenges — without it, a signed-in (cookie) request, exactly what HD downloads rely on, sees severely limited format availability. Streaming mode, which never sends cookies, is largely unaffected and doesn&apos;t need Deno. Install Deno yourself and, if it is not on the PATH, set its full path in the Download &amp; play settings.&lt;/p&gt;&lt;p&gt;See &lt;b&gt;Help ▸ Contents ▸ Options&lt;/b&gt; for step-by-step instructions on exporting a cookies.txt file from your browser, and on installing Deno.&lt;/p&gt;&lt;p&gt;The stream &lt;b&gt;connection timeout&lt;/b&gt; (used mainly by live TV tuners) has moved to &lt;i&gt;Preferences ▸ TV and radio&lt;/i&gt;.&lt;/p&gt;&lt;p&gt;The &lt;b&gt;Proxy&lt;/b&gt; tab applies application-wide: both HTTP and SOCKS5 cover OpenSubtitles search and the update check; only HTTP additionally covers media playback and yt-dlp (they read the http_proxy/https_proxy convention directly instead of going through Qt&apos;s network stack, and there is no SOCKS5 equivalent for that convention).&lt;/p&gt;&lt;p&gt;The &lt;b&gt;Cast&lt;/b&gt; tab sets the port Play ▸ Cast… listens on. It&apos;s here (rather than only in the Cast dialog) so it stays fixed — set it once, allow that port through your firewall/router once, and casting keeps working without a new firewall prompt every time.&lt;/p&gt;</source>
+        <translation>&lt;h1&gt;ネットワーク&lt;/h1&gt;&lt;p&gt;&lt;b&gt;OpenSubtitles&lt;/b&gt; の検索は REST API を使用し、アプリケーションごとの無料 API キーが必要です。opensubtitles.com に登録して API コンシューマーを作成し、キーをここに貼り付けてください。アカウントのログイン（ユーザー名とパスワード）は任意ですが、1 日あたりのダウンロード上限が上がります。&lt;/p&gt;&lt;p&gt;&lt;b&gt;YouTube&lt;/b&gt;: 任意のリゾルバーは外部の yt-dlp プログラムを使用します。有効にすると、YouTube の URL を開いたときに yt-dlp を実行して直接再生可能なストリームを取得します。この設定を初めてオンにすると、Vivace が yt-dlp のインストールを申し出ます（下の yt-dlp のパス欄で自分のコピーを指定することもできます）。また、「yt-dlp を自動的に更新」の設定に従って自動的に最新の状態に保つこともできます。QMediaPlayer は単一の多重化ストリームを再生するため、ストリーミングは最良のプログレッシブ形式（YouTube では約 720p）までです。Cookie はストリーミングにはあえて使用しません。認証済み（Cookie）のセッションは、通常のプレーヤーが開けない URL を返すためです。&lt;/p&gt;&lt;p&gt;&lt;b&gt;HD&lt;/b&gt;（および Cookie）を使うには、ダウンロードモードを有効にするか、外部ダウンローダーを独自のツール（プログラムまたは .bat/.cmd）に向けてください。HD 形式は映像と音声が別々のストリームで多重化ストリーミングできないため、Vivace は yt-dlp（またはお使いのツール）を実行して動画をダウンロード・結合し、ダウンロードフォルダーに書き込まれたファイルを再生します。ダウンロードモードにはさらに、yt-dlp 自身が YouTube の JavaScript チャレンジを解決するために使う別のプログラム Deno も必要です — これが無いと、HD ダウンロードが前提とするログイン済み（Cookie）のリクエストで、利用できる形式が大幅に制限されます。Cookie を送らないストリーミングモードはほとんど影響を受けず、Deno は不要です。Deno はご自身でインストールし、PATH に無い場合はフルパスを「ダウンロードして再生」の設定に入力してください。&lt;/p&gt;&lt;p&gt;cookies.txt ファイルをブラウザからエクスポートする手順、および Deno のインストール手順については、&lt;b&gt;ヘルプ ▸ 目次 ▸ オプション&lt;/b&gt; をご覧ください。&lt;/p&gt;&lt;p&gt;ストリームの &lt;b&gt;接続タイムアウト&lt;/b&gt;（主にライブ TV チューナーで使用）は &lt;i&gt;設定 ▸ テレビとラジオ&lt;/i&gt; に移動しました。&lt;/p&gt;&lt;p&gt;&lt;b&gt;プロキシ&lt;/b&gt;タブの設定はアプリケーション全体に適用されます。OpenSubtitles検索とアップデート確認にはHTTP・SOCKS5どちらの種類も有効です。メディア再生とyt-dlpに適用されるのはHTTPプロキシのみです（Qtのネットワークスタックを経由せず、http_proxy/https_proxyという仕組みを直接参照するためで、SOCKS5にはこれに相当する仕組みがありません）。&lt;/p&gt;&lt;p&gt;&lt;b&gt;キャスト&lt;/b&gt;タブでは、再生 ▸ キャスト… が待ち受けるポートを設定します。キャストダイアログだけでなくここにあるのは、固定された値にするためです — 一度設定してそのポートをファイアウォールやルーターで一度許可しておけば、以後キャストは新たなファイアウォールの確認なしで動作し続けます。&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../qml/PrefNetworkPage.qml" line="188"/>
@@ -3849,41 +3856,45 @@
     </message>
     <message>
         <location filename="../qml/PrefNetworkPage.qml" line="664"/>
-        <source>The port Play ▸ Cast ▸ Smartphone/tablet listens on. Kept fixed here (rather than editable each time in the Cast dialog) so you can allow it through your firewall/router once and it keeps working.</source>
-        <translation>再生 ▸ キャスト ▸ スマートフォン/タブレット が待ち受けるポートです。キャストダイアログの方では毎回編集できるようにするのではなく、ここに固定することで、ファイアウォールやルーターで一度だけ許可すれば以後も動作し続けます。</translation>
+        <source>The port Play ▸ Cast… listens on. Kept fixed here (rather than editable each time in the Cast dialog) so you can allow it through your firewall/router once and it keeps working.</source>
+        <translation>再生 ▸ キャスト… が待ち受けるポートです。キャストダイアログの方では毎回編集できるようにするのではなく、ここに固定することで、ファイアウォールやルーターで一度だけ許可すれば以後も動作し続けます。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="686"/>
+        <source>The port Play ▸ Cast ▸ Smartphone/tablet listens on. Kept fixed here (rather than editable each time in the Cast dialog) so you can allow it through your firewall/router once and it keeps working.</source>
+        <translation type="vanished">再生 ▸ キャスト ▸ スマートフォン/タブレット が待ち受けるポートです。キャストダイアログの方では毎回編集できるようにするのではなく、ここに固定することで、ファイアウォールやルーターで一度だけ許可すれば以後も動作し続けます。</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="685"/>
         <source>Your OS&apos;s firewall (and most routers) block an app listening on a fresh port until you allow it. Pick a port once here, allow Vivace through your firewall for it, and Cast will keep working without a new prompt each time.</source>
         <translation>OS のファイアウォール（および大半のルーター）は、許可するまで新しいポートで待ち受けるアプリをブロックします。ここで一度ポートを決め、そのポートで Vivace をファイアウォールで許可すれば、以後キャストは毎回確認なしで動作します。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="701"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="700"/>
         <source>Select the cookies.txt file</source>
         <translation>cookies.txt ファイルを選択</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="707"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="706"/>
         <source>Select the deno executable</source>
         <translation>deno 実行ファイルを選択</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="713"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="712"/>
         <source>Select the folder containing ffmpeg</source>
         <translation>ffmpeg を含むフォルダーを選択</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="718"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="717"/>
         <source>Select the download cache folder</source>
         <translation>ダウンロードキャッシュフォルダーを選択</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="723"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="722"/>
         <source>Select the downloader program</source>
         <translation>ダウンローダープログラムを選択</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="729"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="728"/>
         <source>Select the download folder</source>
         <translation>ダウンロードフォルダーを選択</translation>
     </message>
@@ -4259,54 +4270,53 @@
 <context>
     <name>PrefTVPage</name>
     <message>
-        <location filename="../qml/PrefTVPage.qml" line="26"/>
         <source>&lt;h1&gt;TV and radio&lt;/h1&gt;&lt;p&gt;Vivace plays IPTV/web-radio streams from an m3u/m3u8 playlist via Open ▸ TV and Open ▸ Radio, editable like Favorites.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Connection timeout&lt;/b&gt; is how long to wait for stream data before giving up. Live TV tuners often stall for several seconds while they lock the channel; if it is too short, the stream fails with &quot;Could not open file&quot;. Raise it for slow tuners.&lt;/p&gt;&lt;p&gt;The scanning and EPG options belong to DVB tuner hardware, which the Qt Multimedia backend does not support, so they are disabled.&lt;/p&gt;</source>
-        <translation>&lt;h1&gt;テレビとラジオ&lt;/h1&gt;&lt;p&gt;Vivace は 開く ▸ テレビ と 開く ▸ ラジオ から、m3u/m3u8 プレイリストの IPTV／ウェブラジオのストリームを再生します。お気に入りと同様に編集できます。&lt;/p&gt;&lt;p&gt;&lt;b&gt;接続タイムアウト&lt;/b&gt; は、ストリームのデータを待つ時間です。ライブ TV チューナーはチャンネルをロックする間、数秒間停止することがよくあります。短すぎると「Could not open file」でストリームが失敗します。遅いチューナーでは値を大きくしてください。&lt;/p&gt;&lt;p&gt;スキャンと EPG のオプションは DVB チューナーのハードウェア用で、Qt Multimedia バックエンドは対応していないため無効です。&lt;/p&gt;</translation>
+        <translation type="vanished">&lt;h1&gt;テレビとラジオ&lt;/h1&gt;&lt;p&gt;Vivace は 開く ▸ テレビ と 開く ▸ ラジオ から、m3u/m3u8 プレイリストの IPTV／ウェブラジオのストリームを再生します。お気に入りと同様に編集できます。&lt;/p&gt;&lt;p&gt;&lt;b&gt;接続タイムアウト&lt;/b&gt; は、ストリームのデータを待つ時間です。ライブ TV チューナーはチャンネルをロックする間、数秒間停止することがよくあります。短すぎると「Could not open file」でストリームが失敗します。遅いチューナーでは値を大きくしてください。&lt;/p&gt;&lt;p&gt;スキャンと EPG のオプションは DVB チューナーのハードウェア用で、Qt Multimedia バックエンドは対応していないため無効です。&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/PrefTVPage.qml" line="43"/>
+        <location filename="../qml/PrefTVPage.qml" line="27"/>
+        <source>&lt;h1&gt;TV and radio&lt;/h1&gt;&lt;p&gt;Vivace plays IPTV/web-radio streams from an m3u/m3u8 playlist via Open ▸ TV and Open ▸ Radio, editable like Favorites.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Connection timeout&lt;/b&gt; is how long to wait for stream data before giving up. Live TV tuners often stall for several seconds while they lock the channel; if it is too short, the stream fails with &quot;Could not open file&quot;. Raise it for slow tuners.&lt;/p&gt;</source>
+        <translation>&lt;h1&gt;テレビとラジオ&lt;/h1&gt;&lt;p&gt;Vivace は 開く ▸ テレビ と 開く ▸ ラジオ から、m3u/m3u8 プレイリストの IPTV／ウェブラジオのストリームを再生します。お気に入りと同様に編集できます。&lt;/p&gt;&lt;p&gt;&lt;b&gt;接続タイムアウト&lt;/b&gt; は、ストリームのデータを待つ時間です。ライブ TV チューナーはチャンネルをロックする間、数秒間停止することがよくあります。短すぎると「Could not open file」でストリームが失敗します。遅いチューナーでは値を大きくしてください。&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefTVPage.qml" line="42"/>
         <source>Streaming</source>
         <translation>ストリーミング</translation>
     </message>
     <message>
-        <location filename="../qml/PrefTVPage.qml" line="48"/>
+        <location filename="../qml/PrefTVPage.qml" line="47"/>
         <source>Connection timeout:</source>
         <translation>接続タイムアウト:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefTVPage.qml" line="54"/>
+        <location filename="../qml/PrefTVPage.qml" line="53"/>
         <source>seconds</source>
         <translation>秒</translation>
     </message>
     <message>
-        <location filename="../qml/PrefTVPage.qml" line="55"/>
+        <location filename="../qml/PrefTVPage.qml" line="54"/>
         <source>How long to wait for network stream data before giving up. Live TV tuners can stall for several seconds while locking the channel — if this is too short the stream fails with &quot;Could not open file&quot;. Applies to the FFmpeg backend.</source>
         <translation>ネットワークストリームのデータを待つ時間です。ライブ TV チューナーはチャンネルをロックする間、数秒間停止することがあります。短すぎると「Could not open file」でストリームが失敗します。FFmpeg バックエンドに適用されます。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefTVPage.qml" line="66"/>
         <source>DVB tuner</source>
-        <translation>DVB チューナー</translation>
+        <translation type="vanished">DVB チューナー</translation>
     </message>
     <message>
-        <location filename="../qml/PrefTVPage.qml" line="72"/>
         <source>Rescan TV channels on startup</source>
-        <translation>起動時に TV チャンネルを再スキャン</translation>
+        <translation type="vanished">起動時に TV チャンネルを再スキャン</translation>
     </message>
     <message>
-        <location filename="../qml/PrefTVPage.qml" line="73"/>
         <source>Save TV channels in favorites</source>
-        <translation>TV チャンネルをお気に入りに保存</translation>
+        <translation type="vanished">TV チャンネルをお気に入りに保存</translation>
     </message>
     <message>
-        <location filename="../qml/PrefTVPage.qml" line="78"/>
         <source>TV standard:</source>
-        <translation>TV 方式:</translation>
+        <translation type="vanished">TV 方式:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefTVPage.qml" line="85"/>
         <source>TV and radio capture (DVB/V4L) is not supported by Vivace: it would require the mplayer/mpv engine that Vivace deliberately does not use.</source>
-        <translation>テレビ・ラジオのキャプチャ（DVB/V4L）は Vivace では対応していません。Vivace があえて使用しない mplayer/mpv エンジンが必要になるためです。</translation>
+        <translation type="vanished">テレビ・ラジオのキャプチャ（DVB/V4L）は Vivace では対応していません。Vivace があえて使用しない mplayer/mpv エンジンが必要になるためです。</translation>
     </message>
 </context>
 <context>

@@ -43,7 +43,7 @@ Einen Teil einer Datei wiederholen:
 
 ## Übertragung
 
-**Übertragen zum ▸ Smartphone/Tablet…** startet einen kleinen eingebauten
+**Übertragen…** startet einen kleinen eingebauten
 Webserver, damit ein Smartphone oder Tablet im selben Netzwerk eine Seite
 öffnen und die Datei abspielen kann, die Vivace gerade wiedergibt — per
 QR-Code oder durch Eingabe der angezeigten Adresse. Der Port ist unter

@@ -61,11 +61,15 @@ ColumnLayout {
             // rather than disabled (see the identical "Main window"/
             // YouTube-tab reasoning above): a disabled CheckBox still
             // renders in the normal *enabled* color on this Android Qt
-            // build. width: 0 alongside visible: false, since TabBar's
-            // ListView positions delegates by their own width regardless of
-            // visibility -- without it this would leave a blank gap.
+            // build.
+            //
+            // Deliberately ONLY `visible:` here, nothing touching `width`
+            // (see PrefNetworkPage.qml's YouTube tab, which had the exact
+            // same id + Binding-based width mechanism and was confirmed, by
+            // actually running the app, to render too narrow on desktop
+            // purely from being the target of a width value source, active
+            // or not).
             visible: Qt.platform.os !== "android"
-            width: visible ? implicitWidth : 0
         }
         TabButton {
             text: qsTr("Fullscreen")
@@ -73,7 +77,6 @@ ColumnLayout {
             // touch device with no persistent cursor. Same hide-not-disable
             // reasoning as the Instances tab above.
             visible: Qt.platform.os !== "android"
-            width: visible ? implicitWidth : 0
         }
         TabButton { text: qsTr("Privacy") }
     }

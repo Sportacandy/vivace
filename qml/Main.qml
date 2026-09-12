@@ -1554,9 +1554,9 @@ ApplicationWindow {
         password: Settings.proxyPassword
     }
 
-    // Play > Cast > Smartphone/tablet: serves the file currently playing to
-    // any browser on the LAN. Lives here (not owned by the dialog) so an
-    // active session survives the dialog being closed.
+    // Play > Cast…: serves the file currently playing to any browser on
+    // the LAN. Lives here (not owned by the dialog) so an active session
+    // survives the dialog being closed.
     CastServer {
         id: castServer
         controller: playerController

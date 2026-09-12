@@ -42,7 +42,7 @@ Repetir parte de un archivo:
 
 ## Transmisión
 
-**Transmitir a ▸ Teléfono/tableta…** inicia un pequeño servidor web integrado
+**Transmitir…** inicia un pequeño servidor web integrado
 para que un teléfono o tableta en la misma red pueda abrir una página y
 reproducir el archivo que Vivace está reproduciendo — escaneando el código QR
 o escribiendo la dirección mostrada. El puerto está fijado en *Preferencias ▸

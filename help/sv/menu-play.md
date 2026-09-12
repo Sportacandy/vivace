@@ -40,7 +40,7 @@ Loopa en del av en fil:
 
 ## Casta
 
-**Casta till ▸ Smarttelefon/surfplatta…** startar en liten inbyggd webbserver
+**Casta…** startar en liten inbyggd webbserver
 så att en telefon eller surfplatta på samma nätverk kan öppna en sida och
 spela upp filen som Vivace spelar upp just nu — genom att skanna QR-koden
 eller skriva in den visade adressen. Porten är fast inställd i

@@ -41,7 +41,7 @@ Een deel van een bestand herhalen:
 
 ## Casten
 
-**Casten naar ▸ Smartphone/tablet…** start een kleine ingebouwde webserver
+**Casten…** start een kleine ingebouwde webserver
 zodat een telefoon of tablet op hetzelfde netwerk een pagina kan openen en
 het bestand kan afspelen dat Vivace op dat moment afspeelt — door de QR-code
 te scannen of het getoonde adres in te typen. De poort staat vast in

@@ -40,7 +40,7 @@ Bir dosyanın bir kısmını döngüye alma:
 
 ## Yayınlama
 
-**Şuraya yayınla ▸ Akıllı telefon/tablet…**, aynı ağdaki bir telefon veya
+**Yayınla…**, aynı ağdaki bir telefon veya
 tabletin bir sayfa açıp Vivace'nin o an oynattığı dosyayı oynatabilmesi için
 küçük, yerleşik bir web sunucusu başlatır — QR kodunu tarayarak veya
 gösterilen adresi yazarak. Bağlantı noktası *Tercihler ▸ Ağ ▸ Yayınlama*

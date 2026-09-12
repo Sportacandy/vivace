@@ -41,7 +41,7 @@ Ripetere una parte di un file:
 
 ## Cast
 
-**Cast su ▸ Smartphone/tablet…** avvia un piccolo server web integrato in modo
+**Cast…** avvia un piccolo server web integrato in modo
 che uno smartphone o un tablet sulla stessa rete possa aprire una pagina e
 riprodurre il file che Vivace sta riproducendo — scansionando il codice QR o
 digitando l'indirizzo mostrato. La porta è fissata in *Preferenze ▸ Rete ▸

@@ -43,7 +43,7 @@ Répéter une partie d'un fichier :
 
 ## Diffusion
 
-**Diffuser vers ▸ Smartphone/tablette…** démarre un petit serveur web intégré
+**Diffuser…** démarre un petit serveur web intégré
 pour qu'un smartphone ou une tablette sur le même réseau puisse ouvrir une
 page et lire le fichier que Vivace lit actuellement — en scannant le code QR
 ou en saisissant l'adresse affichée. Le port est fixé dans *Préférences ▸

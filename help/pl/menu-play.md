@@ -41,7 +41,7 @@ Zapętl fragment pliku:
 
 ## Przesyłanie
 
-**Prześlij do ▸ Smartfon/tablet…** uruchamia mały wbudowany serwer WWW, dzięki
+**Prześlij…** uruchamia mały wbudowany serwer WWW, dzięki
 czemu telefon lub tablet w tej samej sieci może otworzyć stronę i odtworzyć
 plik, który aktualnie odtwarza Vivace — skanując kod QR lub wpisując
 wyświetlony adres. Port jest ustalony w *Ustawienia ▸ Sieć ▸ Przesyłanie*

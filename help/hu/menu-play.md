@@ -41,7 +41,7 @@ Fájl egy részének ismétlése:
 
 ## Átküldés
 
-Az **Átküldés ide ▸ Okostelefon/Tablet…** elindít egy kis beépített
+Az **Átküldés…** elindít egy kis beépített
 webkiszolgálót, hogy az azonos hálózaton lévő telefon vagy táblagép
 megnyithasson egy oldalt, és lejátszhassa azt a fájlt, amelyet a Vivace éppen
 lejátszik — a QR-kód beolvasásával vagy a megjelenő cím begépelésével. A port

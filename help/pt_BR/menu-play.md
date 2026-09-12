@@ -41,7 +41,7 @@ Repetir parte de um arquivo:
 
 ## Transmissão
 
-**Enviar para ▸ Smartphone/tablet…** inicia um pequeno servidor web embutido
+**Enviar…** inicia um pequeno servidor web embutido
 para que um smartphone ou tablet na mesma rede possa abrir uma página e
 reproduzir o arquivo que o Vivace está reproduzindo — escaneando o código QR
 ou digitando o endereço exibido. A porta é fixada em *Preferências ▸ Rede ▸

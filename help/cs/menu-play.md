@@ -41,7 +41,7 @@ Opakování části souboru:
 
 ## Vysílání
 
-**Vysílat do ▸ Chytrý telefon/tablet…** spustí malý vestavěný webový server,
+**Vysílat…** spustí malý vestavěný webový server,
 aby telefon nebo tablet ve stejné síti mohl otevřít stránku a přehrát soubor,
 který Vivace právě přehrává — naskenováním QR kódu nebo zadáním zobrazené
 adresy. Port je pevně nastaven v *Předvolby ▸ Síť ▸ Vysílání* (nelze jej

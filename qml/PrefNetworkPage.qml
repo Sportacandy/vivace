@@ -61,11 +61,11 @@ ColumnLayout {
         + "http_proxy/https_proxy convention directly instead of going "
         + "through Qt's network stack, and there is no SOCKS5 equivalent for "
         + "that convention).</p>"
-        + "<p>The <b>Cast</b> tab sets the port Play ▸ Cast ▸ Smartphone/"
-        + "tablet listens on. It's here (rather than only in the Cast dialog) "
-        + "so it stays fixed — set it once, allow that port through your "
-        + "firewall/router once, and casting keeps working without a new "
-        + "firewall prompt every time.</p>")
+        + "<p>The <b>Cast</b> tab sets the port Play ▸ Cast… listens on. "
+        + "It's here (rather than only in the Cast dialog) so it stays "
+        + "fixed — set it once, allow that port through your firewall/"
+        + "router once, and casting keeps working without a new firewall "
+        + "prompt every time.</p>")
 
     TabBar {
         id: tabs
@@ -80,11 +80,24 @@ ColumnLayout {
             // in their normal *enabled* text color -- a real Qt Quick
             // Controls Fusion-style palette quirk on Android, not fixable
             // from here), just remove the whole tab from the tab bar.
-            // width: 0 alongside visible: false, since TabBar's ListView
-            // positions delegates by their own width regardless of
-            // visibility -- without it this would leave a blank gap.
+            //
+            // Deliberately ONLY `visible:` here, nothing touching `width` at
+            // all: two different attempts to also zero `width` while hidden
+            // (a `width: visible ? implicitWidth : 0` ternary, and later a
+            // `Binding { ... when: !visible }`) were each confirmed, by
+            // actually running the app and screenshotting this exact tab
+            // bar, to make this tab render far too NARROW even while
+            // *visible* -- in both cases, merely being the target of SOME
+            // width value-source was enough to interfere with the Control's
+            // own normal implicitWidth-driven sizing, regardless of whether
+            // that source was ever actually active. A confirmed, reproduced
+            // regression on every desktop platform outweighs a theoretical,
+            // never-actually-observed gap in the Android tab bar (which is
+            // hidden here, not visible, and has not been reported as a real
+            // problem on-device) -- if a real gap does turn up on Android,
+            // revisit then with an Android device in hand, rather than
+            // guessing at a third mechanism blind.
             visible: Qt.platform.os !== "android"
-            width: visible ? implicitWidth : 0
         }
         TabButton { text: qsTr("Proxy") }
         TabButton { text: qsTr("Cast") }
@@ -661,12 +674,11 @@ ColumnLayout {
                         RowLayout {
                             spacing: 6
                             Label { text: qsTr("Port:") }
-                            HelpMark { text: qsTr("The port Play ▸ Cast ▸ Smartphone/"
-                                                  + "tablet listens on. Kept fixed here "
-                                                  + "(rather than editable each time in "
-                                                  + "the Cast dialog) so you can allow it "
-                                                  + "through your firewall/router once and "
-                                                  + "it keeps working.") }
+                            HelpMark { text: qsTr("The port Play ▸ Cast… listens on. "
+                                                  + "Kept fixed here (rather than editable "
+                                                  + "each time in the Cast dialog) so you "
+                                                  + "can allow it through your firewall/"
+                                                  + "router once and it keeps working.") }
                         }
                         SpinBox {
                             Layout.fillWidth: true

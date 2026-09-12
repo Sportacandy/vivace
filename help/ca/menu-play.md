@@ -40,7 +40,7 @@ Repetir una part d'un fitxer:
 
 ## Transmissió
 
-**Transmet a ▸ Mòbil/tauleta…** inicia un petit servidor web integrat perquè
+**Transmet…** inicia un petit servidor web integrat perquè
 un telèfon o una tauleta a la mateixa xarxa pugui obrir una pàgina i
 reproduir el fitxer que Vivace està reproduint en aquell moment — escanejant
 el codi QR o escrivint l'adreça mostrada. El port és fix a *Preferències ▸
