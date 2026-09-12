@@ -174,6 +174,29 @@ static QString defaultYoutubeCacheDir()
             + QStringLiteral("/Vivace YouTube");
 }
 
+// Auto (0) everywhere except Android. Confirmed 2026-09-07 against FFmpeg's
+// own real hwcontext_mediacodec.c: it defines NO transfer_data_to/from (nor
+// frames_get_constraints) at all -- av_hwframe_transfer_data() therefore
+// fails, unconditionally and permanently, for every MediaCodec-decoded
+// frame, on every Android device/build (not a config quirk of any one
+// FFmpeg build). Deinterlacer::process() (qffmpegdeinterlacer.cpp) needs
+// exactly that call to hand a hw-decoded frame to the software-only yadif/
+// bwdif filter, so ANY non-None mode -- Auto included, since it still runs
+// every frame through this same path before the filter decides per-frame
+// whether to act on it -- silently drops every single video frame forever
+// the moment hardware (MediaCodec) decode is in use, which is Android's
+// normal/default decode path for H.264 content. None is the only mode that
+// bypasses this entirely, so it's the only one Android's own compiled-in
+// default can safely be.
+static int defaultDeinterlaceMode()
+{
+#ifdef Q_OS_ANDROID
+    return 3; // None
+#else
+    return 0; // Auto
+#endif
+}
+
 // Reads a password from the OS secure store; one-time migration for anyone
 // upgrading from a version that kept it in plaintext QSettings under the
 // same key: adopt the legacy value into the keychain, then erase it from
@@ -215,7 +238,8 @@ Settings::Settings(QObject *parent)
               m_store.value(Keys::subtitlesHideWhenAudioLanguageMatches, false).toBool()),
       m_closeOnFinish(m_store.value(Keys::closeOnFinish, false).toBool()),
       m_disableScreensaver(m_store.value(Keys::disableScreensaver, true).toBool()),
-      m_deinterlaceMode(qBound(0, m_store.value(Keys::deinterlaceMode, 0).toInt(), 3)),
+      m_deinterlaceMode(qBound(0, m_store.value(Keys::deinterlaceMode,
+                                                 defaultDeinterlaceMode()).toInt(), 3)),
       m_pauseWhenMinimized(m_store.value(Keys::pauseWhenMinimized, false).toBool()),
       m_volumeStep(qBound(1, m_store.value(Keys::volumeStep, 5).toInt(), 25)),
       m_seekShortStep(qBound(1, m_store.value(Keys::seekShortStep, 10).toInt(), 60)),

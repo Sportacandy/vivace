@@ -23,13 +23,25 @@ Window {
     flags: Qt.Dialog
     modality: Qt.WindowModal
     color: palette.window
-    width: 560
-    height: 480
-    minimumWidth: 460
-    minimumHeight: 380
+    // Android: fill the transientParent's own bounds EXACTLY instead of a
+    // fixed desktop size -- Qt's Android backend doesn't give a secondary
+    // top-level Window real, independent screen geometry, so a fixed
+    // size renders into the wrong-sized/positioned area (confirmed via
+    // PreferencesDialog.qml, see its own comment). No guessed-constant
+    // margin here -- see the content ColumnLayout below, which uses the
+    // real platform-reported SafeArea inset instead.
+    width: Qt.platform.os === "android" && transientParent
+           ? transientParent.width : 560
+    height: Qt.platform.os === "android" && transientParent
+            ? transientParent.height : 480
+    minimumWidth: Qt.platform.os === "android" ? 0 : 460
+    minimumHeight: Qt.platform.os === "android" ? 0 : 380
 
     function open() {
-        if (transientParent) {
+        if (Qt.platform.os === "android") {
+            x = 0
+            y = 0
+        } else if (transientParent) {
             x = transientParent.x + (transientParent.width - width) / 2
             y = transientParent.y + (transientParent.height - height) / 2
         }
@@ -60,7 +72,12 @@ Window {
 
     ColumnLayout {
         anchors.fill: parent
-        anchors.margins: 12
+        // Real platform-reported inset, not a guessed constant -- see
+        // PreferencesDialog.qml's own outer ColumnLayout comment for why.
+        anchors.topMargin: 12 + SafeArea.margins.top
+        anchors.leftMargin: 12 + SafeArea.margins.left
+        anchors.rightMargin: 12 + SafeArea.margins.right
+        anchors.bottomMargin: 12 + SafeArea.margins.bottom
         spacing: 12
 
         // Header: app icon + name + tagline.
@@ -115,6 +132,18 @@ Window {
         StackLayout {
             Layout.fillWidth: true
             Layout.fillHeight: true
+            // Explicit 0 (Android, huge system font sizes): see
+            // PreferencesDialog.qml's own comment on the equivalent fix --
+            // without this, the button row below can be pushed off the
+            // bottom of the window entirely instead of this area just
+            // shrinking to what's actually available.
+            Layout.minimumHeight: 0
+            // Qt Quick doesn't clip children to their layout bounds by
+            // default -- without this, a tab taller than the space
+            // actually given here (once minimumHeight lets it shrink)
+            // paints straight through into the button row below instead
+            // of being hidden/scrolled.
+            clip: true
             currentIndex: tabs.currentIndex
 
             // ------------------------------------------------- Info

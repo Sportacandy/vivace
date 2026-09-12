@@ -37,6 +37,7 @@
 #include <QUrl>
 #include <QVariant>
 
+#include "androidshareintent.h"
 #include "singleinstance.h"
 
 namespace {
@@ -411,7 +412,20 @@ int main(int argc, char *argv[])
     if (handleCliInfoRequest(userArgs))
         return 0;
 
-    const QVariantMap startupOptions = parseVivaceArgs(userArgs);
+    QVariantMap startupOptions = parseVivaceArgs(userArgs);
+
+#ifdef Q_OS_ANDROID
+    // Cold-started directly from Android's Share sheet (see
+    // androidshareintent.h): merge the shared URL in as if it were the
+    // ordinary CLI positional <media> argument, so it opens through the
+    // exact same applyStartupOptions()/openMediaUrl() path everything
+    // else already uses.
+    if (!startupOptions.contains(QStringLiteral("source"))) {
+        const QString sharedUrl = AndroidShareIntent::coldStartUrl();
+        if (!sharedUrl.isEmpty())
+            startupOptions[QStringLiteral("source")] = sharedUrl;
+    }
+#endif
 
     // Single-instance mode (Preferences > Interface > Instances): hand the
     // arguments to a running instance and exit, or become the primary.
@@ -442,6 +456,21 @@ int main(int argc, char *argv[])
             if (engine.rootObjects().isEmpty())
                 return;
             const QVariantMap opts = parseVivaceArgs(incoming);
+            QMetaObject::invokeMethod(engine.rootObjects().first(),
+                                      "handleSecondInstance",
+                                      Q_ARG(QVariant, QVariant(opts)));
+        });
+
+    // Android Share sheet, while Vivace is already running (see
+    // androidshareintent.h) -- route it through the same
+    // handleSecondInstance() path as a forwarded second-instance open.
+    AndroidShareIntent shareIntent;
+    QObject::connect(
+        &shareIntent, &AndroidShareIntent::urlShared, &app,
+        [&engine](const QString &url) {
+            if (engine.rootObjects().isEmpty())
+                return;
+            const QVariantMap opts = { { QStringLiteral("source"), url } };
             QMetaObject::invokeMethod(engine.rootObjects().first(),
                                       "handleSecondInstance",
                                       Q_ARG(QVariant, QVariant(opts)));

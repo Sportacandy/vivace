@@ -453,6 +453,11 @@ Pane {
             }
             CBtn {
                 itemId: "fullscreen"
+                // Fullscreen is forced on Android (no real windowed mode
+                // to toggle out of there), so the button has nothing
+                // meaningful left to do -- hidden regardless of the
+                // user's own toolbar layout.
+                visible: controlBar.col(itemId) >= 0 && Qt.platform.os !== "android"
                 onClicked: controlBar.fullscreenToggleRequested()
             }
             CBtn {

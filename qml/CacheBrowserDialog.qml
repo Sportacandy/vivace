@@ -40,10 +40,16 @@ Window {
 
     title: qsTr("YouTube cache")
     flags: Qt.Dialog
-    width: 820
-    height: 560
-    minimumWidth: 560
-    minimumHeight: 360
+    // Android: fill the transientParent's own bounds EXACTLY instead of a
+    // fixed desktop size (see PreferencesDialog.qml's own comment for
+    // why -- no guessed-constant margin, real SafeArea inset used on the
+    // content layout below instead).
+    width: Qt.platform.os === "android" && transientParent
+           ? transientParent.width : 820
+    height: Qt.platform.os === "android" && transientParent
+            ? transientParent.height : 560
+    minimumWidth: Qt.platform.os === "android" ? 0 : 560
+    minimumHeight: Qt.platform.os === "android" ? 0 : 360
     color: palette.window
 
     property var allEntries: []
@@ -125,7 +131,10 @@ Window {
         filterField.clear()
         selected = {}
         reload()
-        if (transientParent) {
+        if (Qt.platform.os === "android") {
+            x = 0
+            y = 0
+        } else if (transientParent) {
             x = transientParent.x + (transientParent.width - width) / 2
             y = transientParent.y + (transientParent.height - height) / 2
         }
@@ -164,15 +173,28 @@ Window {
         flags: Qt.Dialog
         modality: Qt.WindowModal
         color: palette.window
-        width: 380
-        height: mcCol.implicitHeight + 24
-        minimumWidth: 320
+        // Android: fill the transientParent's own bounds instead of a
+        // fixed/content-driven desktop size (see PreferencesDialog.qml's
+        // own comment for why -- "small dialogs already work fine" turned
+        // out to be a wrong assumption once actually tested).
+        // transientParent auto-resolves to the outer CacheBrowserDialog
+        // `dialog`, which now fills its own transientParent EXACTLY (no
+        // guessed-constant subtraction -- see SafeArea-based content
+        // margins instead), so simply matching its height here is correct.
+        width: Qt.platform.os === "android" && transientParent
+               ? transientParent.width : 380
+        height: Qt.platform.os === "android" && transientParent
+                ? transientParent.height : mcCol.implicitHeight + 24
+        minimumWidth: Qt.platform.os === "android" ? 0 : 320
 
         property bool moveChosen: false
 
         function openDialog() {
             moveChosen = false
-            if (transientParent) {
+            if (Qt.platform.os === "android") {
+                x = 0
+                y = 0
+            } else if (transientParent) {
                 x = transientParent.x + (transientParent.width - width) / 2
                 y = transientParent.y + (transientParent.height - height) / 2
             }
@@ -186,7 +208,12 @@ Window {
         ColumnLayout {
             id: mcCol
             anchors.fill: parent
-            anchors.margins: 12
+            // Real platform-reported inset, not a guessed constant -- see
+            // PreferencesDialog.qml's own outer ColumnLayout comment for why.
+            anchors.topMargin: 12 + SafeArea.margins.top
+            anchors.leftMargin: 12 + SafeArea.margins.left
+            anchors.rightMargin: 12 + SafeArea.margins.right
+            anchors.bottomMargin: 12 + SafeArea.margins.bottom
             spacing: 10
 
             Label {
@@ -276,7 +303,12 @@ Window {
 
     ColumnLayout {
         anchors.fill: parent
-        anchors.margins: 12
+        // Real platform-reported inset, not a guessed constant -- see
+        // PreferencesDialog.qml's own outer ColumnLayout comment for why.
+        anchors.topMargin: 12 + SafeArea.margins.top
+        anchors.leftMargin: 12 + SafeArea.margins.left
+        anchors.rightMargin: 12 + SafeArea.margins.right
+        anchors.bottomMargin: 12 + SafeArea.margins.bottom
         spacing: 8
 
         // ---- toolbar: filter / sort / order / thumbnail size / delete ----
@@ -394,6 +426,9 @@ Window {
             visible: dialog.view.length > 0
             Layout.fillWidth: true
             Layout.fillHeight: true
+            // Explicit 0 (Android, huge system font sizes): see
+            // PreferencesDialog.qml's own comment on the equivalent fix.
+            Layout.minimumHeight: 0
             clip: true
             cellWidth: dialog.thumbW + 14
             cellHeight: dialog.thumbH + 46

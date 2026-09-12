@@ -27,10 +27,16 @@ Window {
     flags: Qt.Dialog
     modality: Qt.WindowModal
     color: palette.window
-    width: 480
-    height: contentCol.implicitHeight + 24
-    minimumWidth: 380
-    minimumHeight: contentCol.implicitHeight + 24
+    // Android: fill the transientParent's own bounds EXACTLY instead of a
+    // fixed/content-driven desktop size (see PreferencesDialog.qml's own
+    // comment for why -- no guessed-constant margin, real SafeArea inset
+    // used on the content layout below instead).
+    width: Qt.platform.os === "android" && transientParent
+           ? transientParent.width : 480
+    height: Qt.platform.os === "android" && transientParent
+            ? transientParent.height : contentCol.implicitHeight + 24
+    minimumWidth: Qt.platform.os === "android" ? 0 : 380
+    minimumHeight: Qt.platform.os === "android" ? 0 : contentCol.implicitHeight + 24
 
     // "confirm" | "downloading" | "done" | "error"
     property string phase: "confirm"
@@ -39,7 +45,10 @@ Window {
     function openDialog() {
         dlg.phase = "confirm"
         dlg.resultText = ""
-        if (transientParent) {
+        if (Qt.platform.os === "android") {
+            x = 0
+            y = 0
+        } else if (transientParent) {
             x = transientParent.x + (transientParent.width - width) / 2
             y = transientParent.y + (transientParent.height - height) / 2
         }
@@ -74,7 +83,12 @@ Window {
     ColumnLayout {
         id: contentCol
         anchors.fill: parent
-        anchors.margins: 12
+        // Real platform-reported inset, not a guessed constant -- see
+        // PreferencesDialog.qml's own outer ColumnLayout comment for why.
+        anchors.topMargin: 12 + SafeArea.margins.top
+        anchors.leftMargin: 12 + SafeArea.margins.left
+        anchors.rightMargin: 12 + SafeArea.margins.right
+        anchors.bottomMargin: 12 + SafeArea.margins.bottom
         spacing: 12
 
         // Confirmation text (shown before the download starts).

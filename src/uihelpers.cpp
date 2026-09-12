@@ -213,7 +213,44 @@ QUrl UiHelpers::logFileUrl() const
                           QStringLiteral("vivace_files"));
     const QString path = QFileInfo(probe.fileName()).absolutePath()
             + QStringLiteral("/vivace.log");
-    return QFileInfo::exists(path) ? QUrl::fromLocalFile(path) : QUrl();
+    if (!QFileInfo::exists(path))
+        return {};
+
+#ifdef Q_OS_ANDROID
+    // Qt.openUrlExternally() on Android resolves a file's app-chooser MIME
+    // type from its EXTENSION alone (QAndroidPlatformServices::getMimeOfUrl,
+    // via QMimeDatabase) -- and Qt's bundled freedesktop.org shared-mime-info
+    // database maps ".log" to the obscure "text/x-log" (a real,
+    // narrowly-scoped MIME type, NOT the same as "text/plain" even though
+    // it's declared a sub-class of it -- Android's own Intent-filter
+    // matching is a plain string/wildcard match, it does not walk MIME
+    // sub-class-of relationships). Essentially no installed Android app
+    // registers a handler for "text/x-log" specifically, so the chooser
+    // Android shows ends up being whatever generic apps happen to accept
+    // some arbitrary content -- exactly the "meaningless app picker" this
+    // was reported as. Sidestep this by handing off a plain-copy .txt file
+    // instead, which resolves to the much more broadly-supported
+    // "text/plain" and gets a real, useful chooser (text viewers, browsers,
+    // share targets). Re-copied on every call so it always reflects the
+    // real, current log. Written alongside the real log file (NOT e.g.
+    // QStandardPaths::CacheLocation, which resolves to Android's internal
+    // getCacheDir() -- the app's FileProvider paths config,
+    // res/xml/qtprovider_paths.xml, only declares a files-path (getFilesDir())
+    // and external-cache-path (getExternalCacheDir()) root, neither of which
+    // covers the internal cache dir; FileProvider.getUriForFile() would
+    // throw for a path there, silently failing the whole open instead of
+    // fixing the picker), so this reuses the exact directory root that
+    // already demonstrably works (the real log itself already opens,
+    // just with the wrong MIME type).
+    const QString txtPath = QFileInfo(probe.fileName()).absolutePath()
+            + QStringLiteral("/vivace-log.txt");
+    QFile::remove(txtPath);
+    if (!QFile::copy(path, txtPath))
+        return QUrl::fromLocalFile(path); // best-effort fallback
+    return QUrl::fromLocalFile(txtPath);
+#else
+    return QUrl::fromLocalFile(path);
+#endif
 }
 
 QString UiHelpers::qtRuntimeVersion() const

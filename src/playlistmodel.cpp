@@ -5,13 +5,23 @@
 
 #include "playlistmodel.h"
 
+#include <QFileInfo>
+
 #include <algorithm>
 
 namespace {
 
 QString titleForUrl(const QUrl &url)
 {
-    const QString name = url.fileName();
+    // QUrl::fileName() is a shallow URL-string split -- wrong for Android's
+    // content:// URLs (from the system's Storage Access Framework file
+    // picker, which QtQuick.Dialogs' FileDialog uses on Android): it
+    // returns the SAF document's own internal ID, not a real filename.
+    // QFileInfo resolves the real name for those too, via Qt's own
+    // AndroidContentFileEngineHandler (see PlayerController::sourceChanged's
+    // Recent-files fix for the full investigation).
+    const QString name =
+            QFileInfo(url.isLocalFile() ? url.toLocalFile() : url.toString()).fileName();
     return name.isEmpty() ? url.toDisplayString() : name;
 }
 

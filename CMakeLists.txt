@@ -2,8 +2,33 @@ cmake_minimum_required(VERSION 3.24)
 
 project(vivace VERSION 0.4.7 LANGUAGES CXX)
 
-find_package(Qt6 6.11 REQUIRED COMPONENTS Quick QuickControls2 Multimedia LabsPlatform Network ShaderTools DBus LinguistTools Sql)
+find_package(Qt6 6.11 REQUIRED COMPONENTS Quick QuickControls2 Multimedia LabsPlatform Network ShaderTools LinguistTools Sql)
 qt_standard_project_setup(REQUIRES 6.11)
+
+# DBus drives the Linux screensaver inhibitor, MPRIS2, and the Linux KWallet/
+# Secret-Service credential-store backend (see the target_link_libraries and
+# elseif(UNIX) blocks below). Android has no D-Bus session bus, and neither
+# the official nor a self-built Qt kit for Android even provides the DBus
+# module -- confirmed 2026-09-05 (a plain `find_package(Qt6 ... DBus)`
+# unconditionally REQUIRED failed configure outright: "Failed to find
+# required Qt component 'DBus'... Expected Config file...does NOT exist").
+# Every other platform Vivace targets already ships it, so this stays
+# narrowly scoped to Android rather than changing anything already verified
+# working elsewhere. VIVACE_HAVE_DBUS gates the DBus-only sources below
+# (mpris2.*, the KWallet keychain backend).
+if(NOT ANDROID)
+    find_package(Qt6 6.11 REQUIRED COMPONENTS DBus)
+    set(VIVACE_HAVE_DBUS TRUE)
+else()
+    set(VIVACE_HAVE_DBUS FALSE)
+endif()
+
+# Android package source dir override hook -- see its use on the vivace
+# target's QT_ANDROID_PACKAGE_SOURCE_DIR property below for the full
+# rationale. Defaults to this repo's own android/ dir, so the normal
+# open-source build is unaffected.
+set(VIVACE_ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android" CACHE PATH
+    "Android package source dir (manifest, icons, ...) passed to androiddeployqt")
 
 qt_add_executable(vivace
     src/main.cpp
@@ -23,6 +48,51 @@ file(GLOB vivace_help_files RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}
 
 # Theme.qml is a QML singleton (pragma Singleton needs this to register).
 set_source_files_properties(qml/Theme.qml PROPERTIES QT_QML_SINGLETON_TYPE TRUE)
+
+# Optional Android seed-data hook for a downstream/private build (e.g. a
+# family-only variant maintained in a separate project that references this
+# repo as a git submodule, since Android's app-storage sandboxing means the
+# ONLY way to pre-populate a fresh install's data is to bake it into the
+# APK at build time -- there is no way for a separate installer/app to
+# write into another app's private storage the way a Windows installer can
+# write into %APPDATA%). Each variable, when set, points at a file in the
+# SAME JSON-tree format FavoritesModel already reads/writes for tv.json/
+# radio.json/favorites.json; PlayerController's constructor copies it into
+# place on a fresh install only (never overwriting a real, already-existing,
+# possibly user-edited list -- see the Android branch there). All three
+# default to empty, a complete no-op for the normal open-source build:
+# nothing is embedded (the fixed alias below is simply absent from the
+# resource system when unset), nothing changes.
+set(VIVACE_TV_SEED_FILE "" CACHE FILEPATH
+    "Optional tv.json-format file to seed a fresh Android install's TV channel list from")
+set(VIVACE_RADIO_SEED_FILE "" CACHE FILEPATH
+    "Optional radio.json-format file to seed a fresh Android install's radio station list from")
+set(VIVACE_FAVORITES_SEED_FILE "" CACHE FILEPATH
+    "Optional favorites.json-format file to seed a fresh Android install's Favorites list from")
+
+set(vivace_seed_resources "")
+if(ANDROID)
+    # Only actually embedded on Android -- that is the one platform where
+    # this mechanism is needed at all (see the rationale above), so there is
+    # no reason to waste desktop-binary size on it there even if someone set
+    # one of these variables for an unrelated reason.
+    foreach(_vivace_seed_pair "VIVACE_TV_SEED_FILE:tv" "VIVACE_RADIO_SEED_FILE:radio"
+                              "VIVACE_FAVORITES_SEED_FILE:favorites")
+        string(REPLACE ":" ";" _vivace_seed_pair "${_vivace_seed_pair}")
+        list(GET _vivace_seed_pair 0 _vivace_seed_var)
+        list(GET _vivace_seed_pair 1 _vivace_seed_name)
+        if(${_vivace_seed_var})
+            # Fixed, predictable alias (":/qt/qml/Vivace/seed/<name>.json",
+            # verified directly against a real build's generated resource
+            # registration) independent of where the real file physically
+            # lives, so PlayerController can reference it by a constant path
+            # regardless of who supplies it.
+            set_source_files_properties("${${_vivace_seed_var}}" PROPERTIES
+                QT_RESOURCE_ALIAS "seed/${_vivace_seed_name}.json")
+            list(APPEND vivace_seed_resources "${${_vivace_seed_var}}")
+        endif()
+    endforeach()
+endif()
 
 qt_add_qml_module(vivace
     URI Vivace
@@ -87,7 +157,6 @@ qt_add_qml_module(vivace
         src/bookmarks.h src/bookmarks.cpp
         src/chapterparser.h src/chapterparser.cpp
         src/mediacontrols.h src/mediacontrols.cpp
-        src/mpris2.h src/mpris2.cpp
         src/opensubtitlesclient.h src/opensubtitlesclient.cpp
         src/networkproxy.h src/networkproxy.cpp
         src/castserver.h src/castserver.cpp
@@ -102,10 +171,20 @@ qt_add_qml_module(vivace
         src/settings.h src/settings.cpp
         src/securestore.h src/securestore.cpp
         src/uihelpers.h src/uihelpers.cpp
+        src/androidshareintent.h src/androidshareintent.cpp
     RESOURCES
         ${vivace_icon_files}
         ${vivace_help_files}
+        ${vivace_seed_resources}
 )
+
+# MPRIS2 (src/mpris2.*) unconditionally includes QtDBus headers -- it's only
+# ever instantiated on Linux (see mediacontrols.cpp), but needs Qt6::DBus to
+# even compile. Excluded entirely on Android, which has neither a D-Bus
+# session bus nor (as of this writing) the Qt DBus module available at all.
+if(VIVACE_HAVE_DBUS)
+    target_sources(vivace PRIVATE src/mpris2.h src/mpris2.cpp)
+endif()
 
 # Third-party vendored sources live under third_party/<name>/ regardless of
 # size or how their upstream expresses the license (inline header comment vs.
@@ -116,10 +195,11 @@ qt_add_qml_module(vivace
 # third_party/qtkeychain/COPYING) provides OS-level secure credential storage
 # (Windows Credential Manager / macOS Keychain / Linux Secret Service+
 # KWallet), used by SecureCredentials (src/securestore.*) to store the
-# OpenSubtitles and proxy passwords instead of plaintext QSettings. Only the
-# library sources for the platforms Vivace targets are vendored (no
-# tests/examples/translations, no Android/Haiku/WASM backends); compiled
-# directly into the vivace target rather than as a separate library, so
+# OpenSubtitles and proxy passwords instead of plaintext QSettings (Android:
+# the AndroidKeyStore, added 2026-09-12 -- see the ANDROID branch below).
+# Only the library sources for the platforms Vivace targets are vendored (no
+# tests/examples/translations, no Haiku/WASM backends); compiled directly
+# into the vivace target rather than as a separate library, so
 # QTKEYCHAIN_NO_EXPORT (below) skips the generated dllexport header.
 set(vivace_qtkeychain_dir "${CMAKE_CURRENT_SOURCE_DIR}/third_party/qtkeychain")
 target_sources(vivace PRIVATE
@@ -151,6 +231,36 @@ elseif(APPLE)
     find_package(Qt6 REQUIRED COMPONENTS QuickPrivate QuickTemplates2Private)
     target_link_libraries(vivace PRIVATE
         Qt6::QuickPrivate Qt6::QuickTemplates2Private)
+elseif(ANDROID)
+    # No D-Bus (see VIVACE_HAVE_DBUS above), so neither the real KWallet/
+    # Secret-Service backend (elseif(UNIX) below) nor its own Android
+    # equivalent applies here -- but upstream QtKeychain DOES ship a real
+    # Android backend (JNI + the Android Keystore, keychain_android.cpp +
+    # androidkeystore.cpp/_p.h), just never vendored when this project only
+    # targeted desktop platforms. Added 2026-09-12, fetched from the exact
+    # tag (0.17.0) already vendored for every other platform, so it lines up
+    # perfectly with the already-vendored keychain_p.h/plaintextstore_p.h --
+    # no source changes were needed. It generates an RSA-2048 keypair per
+    # service+key alias inside the AndroidKeyStore (a hardware-backed
+    # keystore on most devices) and uses it in a hybrid RSA+AES-GCM scheme
+    # (the RSA key wraps a random AES-256 key, which does the actual
+    # encryption -- RSA alone can't handle payloads over its own modulus
+    # size) to encrypt the value before it's written through the SAME
+    # PlainTextStore/QSettings storage every other platform's own backend
+    # uses as its final at-rest location -- so only the VALUE stored there
+    # is opaque ciphertext, unlike a real plaintext fallback. Uses only
+    # QJniObject/QJniEnvironment (public QtCore API, since Qt 6) -- no
+    # Qt6::CorePrivate dependency, unlike androidshareintent.h's.
+    # UNVERIFIED: fetched and wired to mirror upstream's own CMakeLists.txt
+    # ANDROID branch exactly, not yet compiled against a real Android NDK
+    # toolchain in this environment.
+    target_sources(vivace PRIVATE
+        ${vivace_qtkeychain_dir}/keychain_android.cpp
+        ${vivace_qtkeychain_dir}/androidkeystore.cpp
+        ${vivace_qtkeychain_dir}/androidkeystore_p.h
+        ${vivace_qtkeychain_dir}/plaintextstore.cpp
+        ${vivace_qtkeychain_dir}/plaintextstore_p.h
+    )
 elseif(UNIX)
     # Linux: KWallet via D-Bus (Qt6::DBus, already linked below) + optional
     # libsecret (GNOME Keyring/Secret Service) loaded dynamically at runtime
@@ -207,6 +317,38 @@ set_target_properties(vivace PROPERTIES
     # what the OS reads from the bundle before/around that). Only changes the
     # menu-bar/Get Info name; the file in Finder stays vivace.app.
     MACOSX_BUNDLE_BUNDLE_NAME "Vivace"
+    # Android: without this, Qt's own CMake Android integration
+    # (Qt6AndroidGradleHelpers.cmake, inside the Qt-for-Android kit itself,
+    # not this repo) silently defaults the app's package/applicationId to
+    # "org.qtproject.example.vivace" (found 2026-09-07 -- the user never
+    # set this and was surprised to see it) -- a generic placeholder meant
+    # to be overridden, not a real identifier. Deliberately NOT the same
+    # "org.vivaceplayer.vivace" this project uses for its macOS bundle ID
+    # and desktop packaging -- the user asked for their own personal
+    # domain-based identifier here instead.
+    QT_ANDROID_PACKAGE_NAME "org.vivaceplayer.vivace"
+    # Points androiddeployqt at this project's own custom Android package
+    # source dir (manifest, launcher icon, splash screen, etc.) so it merges
+    # those on top of Qt's own default template instead of using only that
+    # bare template. Found 2026-09-12 misplaced on the unrelated
+    # bluray_imported IMPORTED target below (a copy-paste mistake -- that
+    # target has nothing to do with Android packaging, so androiddeployqt
+    # never saw this property on the real vivace target at all): the built
+    # APK's res/ contained only Qt's own auto-generated files
+    # (values/libs.xml, xml/qtprovider_paths.xml) and the whole
+    # android/res/mipmap-*, drawable*, values/colors.xml etc. tree was
+    # silently absent -- explaining why the launcher icon (and splash
+    # screen) never took effect despite the resource files themselves being
+    # correct and present in the source tree.
+    #
+    # VIVACE_ANDROID_PACKAGE_SOURCE_DIR (cache variable, defaults to this
+    # repo's own android/ dir) lets an outer project override which
+    # android/ folder gets used -- e.g. a private/downstream build (see
+    # VIVACE_TV_SEED_FILE above) that references this repo as a git
+    # submodule and needs its OWN manifest (a distinct applicationId/app
+    # label) so it can install alongside an official Vivace release on the
+    # same device rather than colliding with or overwriting it.
+    QT_ANDROID_PACKAGE_SOURCE_DIR "${VIVACE_ANDROID_PACKAGE_SOURCE_DIR}"
 )
 
 # Windows: embed the brand icon into the executable. The RC references
@@ -330,15 +472,37 @@ target_link_libraries(vivace PRIVATE
     Qt6::Multimedia
     Qt6::LabsPlatform
     Qt6::Network
-    # DBus drives the Linux screensaver inhibitor and MPRIS2. It is linked on
-    # all platforms so the MPRIS2 code compiles everywhere (it is only
-    # instantiated on Linux); restrict to LINUX before packaging if desired.
-    Qt6::DBus
     # SQLite-backed LRU index for PlaylistThumbnailProvider's generated
     # thumbnail cache (playlistthumbnailprovider.cpp). The QSQLITE driver
     # ships with Qt itself, no extra vendoring needed.
     Qt6::Sql
 )
+
+# DBus drives the Linux screensaver inhibitor and MPRIS2. It was linked on
+# every platform (so the MPRIS2 code compiles everywhere, even though it's
+# only instantiated on Linux -- see mediacontrols.cpp) until Android exposed
+# that this was never actually safe to assume: Android has no DBus module at
+# all (see VIVACE_HAVE_DBUS, set above). screensaver.cpp/mpris2.cpp are both
+# now excluded from compiling their DBus-touching code on Android, so this
+# can just skip linking there instead of being unconditional.
+if(VIVACE_HAVE_DBUS)
+    target_link_libraries(vivace PRIVATE Qt6::DBus)
+endif()
+
+# Android's Share-intent handling (src/androidshareintent.*) needs
+# QtAndroidPrivate::NewIntentListener, a private QtCore header. The
+# Qt6::CorePrivate target exists as soon as Qt6Core is found, but its
+# INTERFACE_INCLUDE_DIRECTORIES (the actual path to QtCore/private/*_p.h)
+# is only populated once the Qt6CorePrivate package is separately found --
+# which only happens when it's explicitly requested as a find_package
+# COMPONENT (see the macOS QuickPrivate/QuickTemplates2Private case just
+# above, which already does this correctly); Core itself is only ever
+# pulled in here as an implicit dependency of Quick/Multimedia/etc., never
+# named directly, so this find_package call is required, not optional.
+if(ANDROID)
+    find_package(Qt6 REQUIRED COMPONENTS CorePrivate)
+    target_link_libraries(vivace PRIVATE Qt6::CorePrivate)
+endif()
 
 # macOS: screensaver inhibition uses an IOKit power-management assertion.
 if(APPLE)
@@ -588,6 +752,89 @@ if(VIVACE_ENABLE_BLURAY)
         set(VIVACE_LIBUDFREAD_LIBRARY_FILE
             "${VIVACE_LIBBLURAY_BUILD}/contrib/libudfread/src/libudfread.a")
 
+        # On Android, meson's own compiler auto-detection has no idea it's
+        # supposed to cross-compile -- run as a plain CONFIGURE_COMMAND with
+        # no cross-file, it just finds whatever compiler is on the HOST
+        # PATH (confirmed 2026-09-05, real build failure: ld.lld refused
+        # every libbluray.a member with "is neither ET_REL nor LLVM
+        # bitcode" -- native Windows COFF .obj files, not aarch64-android
+        # ELF, linked into an otherwise-correctly-cross-compiled vivace).
+        # A Meson "cross file" is the standard fix: it tells Meson which
+        # compiler/binutils to actually invoke and what target machine to
+        # describe itself as, instead of auto-detecting the host.
+        # Built entirely from CMake's OWN already-resolved Android
+        # toolchain variables (the exact ones the outer, correctly-
+        # cross-compiling CMake/Ninja build already uses for `vivace`
+        # itself) rather than re-deriving NDK paths independently, so it
+        # can't drift from whatever toolchain/API-level/ABI combination
+        # the user's own CMake configure actually resolved to.
+        # UNVERIFIED beyond this reasoning -- no Android NDK/SDK available
+        # in this environment to actually run `meson setup --cross-file`
+        # against; needs a real Android build to confirm.
+        set(VIVACE_LIBBLURAY_MESON_EXTRA_ARGS "")
+        if(ANDROID)
+            if(CMAKE_ANDROID_ARCH_ABI STREQUAL "arm64-v8a")
+                set(_vivace_meson_cpu_family "aarch64")
+                set(_vivace_meson_cpu "aarch64")
+            elseif(CMAKE_ANDROID_ARCH_ABI STREQUAL "armeabi-v7a")
+                set(_vivace_meson_cpu_family "arm")
+                set(_vivace_meson_cpu "armv7")
+            elseif(CMAKE_ANDROID_ARCH_ABI STREQUAL "x86_64")
+                set(_vivace_meson_cpu_family "x86_64")
+                set(_vivace_meson_cpu "x86_64")
+            elseif(CMAKE_ANDROID_ARCH_ABI STREQUAL "x86")
+                set(_vivace_meson_cpu_family "x86")
+                set(_vivace_meson_cpu "i686")
+            else()
+                message(WARNING "libbluray Android cross-file: unrecognized "
+                                "CMAKE_ANDROID_ARCH_ABI '${CMAKE_ANDROID_ARCH_ABI}', "
+                                "defaulting to aarch64")
+                set(_vivace_meson_cpu_family "aarch64")
+                set(_vivace_meson_cpu "aarch64")
+            endif()
+            # CMAKE_<LANG>_COMPILER_TARGET is the documented CMake variable
+            # for "the --target= a Clang-driver cross-compile uses"; falls
+            # back to reconstructing it from the ABI + API level (the same
+            # two pieces the target triple embeds, e.g. "aarch64-none-
+            # linux-android28") on the off chance it isn't set for some
+            # NDK/CMake version combination.
+            set(_vivace_meson_target "${CMAKE_CXX_COMPILER_TARGET}")
+            if(NOT _vivace_meson_target)
+                if(CMAKE_ANDROID_ARCH_ABI STREQUAL "arm64-v8a")
+                    set(_vivace_meson_target "aarch64-none-linux-android${CMAKE_SYSTEM_VERSION}")
+                elseif(CMAKE_ANDROID_ARCH_ABI STREQUAL "armeabi-v7a")
+                    set(_vivace_meson_target "armv7a-none-linux-androideabi${CMAKE_SYSTEM_VERSION}")
+                elseif(CMAKE_ANDROID_ARCH_ABI STREQUAL "x86_64")
+                    set(_vivace_meson_target "x86_64-none-linux-android${CMAKE_SYSTEM_VERSION}")
+                elseif(CMAKE_ANDROID_ARCH_ABI STREQUAL "x86")
+                    set(_vivace_meson_target "i686-none-linux-android${CMAKE_SYSTEM_VERSION}")
+                endif()
+            endif()
+            set(VIVACE_LIBBLURAY_MESON_CROSS_FILE
+                "${VIVACE_LIBBLURAY_PREFIX}/android-cross-${CMAKE_ANDROID_ARCH_ABI}.ini")
+            file(WRITE "${VIVACE_LIBBLURAY_MESON_CROSS_FILE}" "\
+[binaries]
+c = ['${CMAKE_C_COMPILER}']
+cpp = ['${CMAKE_CXX_COMPILER}']
+ar = '${CMAKE_AR}'
+strip = '${CMAKE_STRIP}'
+
+[built-in options]
+c_args = ['--target=${_vivace_meson_target}', '--sysroot=${CMAKE_SYSROOT}']
+c_link_args = ['--target=${_vivace_meson_target}', '--sysroot=${CMAKE_SYSROOT}']
+cpp_args = ['--target=${_vivace_meson_target}', '--sysroot=${CMAKE_SYSROOT}']
+cpp_link_args = ['--target=${_vivace_meson_target}', '--sysroot=${CMAKE_SYSROOT}']
+
+[host_machine]
+system = 'android'
+cpu_family = '${_vivace_meson_cpu_family}'
+cpu = '${_vivace_meson_cpu}'
+endian = 'little'
+")
+            list(APPEND VIVACE_LIBBLURAY_MESON_EXTRA_ARGS
+                --cross-file "${VIVACE_LIBBLURAY_MESON_CROSS_FILE}")
+        endif()
+
         include(ExternalProject)
         ExternalProject_Add(bluray_ext
             GIT_REPOSITORY "https://code.videolan.org/videolan/libbluray.git"
@@ -601,6 +848,7 @@ if(VIVACE_ENABLE_BLURAY)
                 --buildtype release
                 --prefix "${VIVACE_LIBBLURAY_INSTALL}"
                 -Dlibdir=lib
+                ${VIVACE_LIBBLURAY_MESON_EXTRA_ARGS}
                 -Ddefault_library=static
                 -Denable_tools=false
                 -Dbdj_jar=disabled
@@ -706,6 +954,13 @@ endif()
 install(TARGETS vivace
     BUNDLE DESTINATION .
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+    # On Android, qt_add_executable() produces a MODULE_LIBRARY (a shared
+    # object the Java activity wrapper loads via JNI, not a true executable),
+    # so install(TARGETS) needs a LIBRARY DESTINATION or configure fails
+    # outright ("no LIBRARY DESTINATION for module target"). A no-op on
+    # Windows/macOS/Linux -- each DESTINATION clause only applies to the
+    # target's actual output type, and none of those produce a MODULE_LIBRARY.
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
 )
 
 # Cross-platform deployment via Qt's CMake API (Qt 6.3+). `cmake --install`

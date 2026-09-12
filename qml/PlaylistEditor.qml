@@ -572,14 +572,25 @@ Item {
         flags: Qt.Dialog
         modality: Qt.WindowModal
         color: palette.window
-        width: 420
-        height: addUrlCol.implicitHeight + 24
-        minimumWidth: 320
-        minimumHeight: addUrlCol.implicitHeight + 24
+        // Android: fill the transientParent's own bounds EXACTLY instead
+        // of a fixed/content-driven desktop size (see PreferencesDialog.
+        // qml's own comment for why -- "small dialogs already work fine"
+        // turned out to be a wrong assumption once actually tested; no
+        // guessed-constant margin either, real SafeArea inset used on
+        // the content layout below instead).
+        width: Qt.platform.os === "android" && transientParent
+               ? transientParent.width : 420
+        height: Qt.platform.os === "android" && transientParent
+                ? transientParent.height : addUrlCol.implicitHeight + 24
+        minimumWidth: Qt.platform.os === "android" ? 0 : 320
+        minimumHeight: Qt.platform.os === "android" ? 0 : addUrlCol.implicitHeight + 24
 
         function open() {
             addUrlField.clear()
-            if (transientParent) {
+            if (Qt.platform.os === "android") {
+                x = 0
+                y = 0
+            } else if (transientParent) {
                 x = transientParent.x + (transientParent.width - width) / 2
                 y = transientParent.y + (transientParent.height - height) / 2
             }
@@ -603,7 +614,12 @@ Item {
         ColumnLayout {
             id: addUrlCol
             anchors.fill: parent
-            anchors.margins: 12
+            // Real platform-reported inset, not a guessed constant -- see
+            // PreferencesDialog.qml's own outer ColumnLayout comment for why.
+            anchors.topMargin: 12 + SafeArea.margins.top
+            anchors.leftMargin: 12 + SafeArea.margins.left
+            anchors.rightMargin: 12 + SafeArea.margins.right
+            anchors.bottomMargin: 12 + SafeArea.margins.bottom
             spacing: 12
 
             TextField {

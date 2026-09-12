@@ -71,7 +71,21 @@ ColumnLayout {
         id: tabs
         Layout.fillWidth: true
         TabButton { text: qsTr("OpenSubtitles") }
-        TabButton { text: qsTr("YouTube") }
+        TabButton {
+            id: youtubeTab
+            text: qsTr("YouTube")
+            // yt-dlp can never run on Android (see the GroupBox's own
+            // "enabled" comment below) -- rather than leave a page reachable
+            // that's all disabled controls (which, on this platform, render
+            // in their normal *enabled* text color -- a real Qt Quick
+            // Controls Fusion-style palette quirk on Android, not fixable
+            // from here), just remove the whole tab from the tab bar.
+            // width: 0 alongside visible: false, since TabBar's ListView
+            // positions delegates by their own width regardless of
+            // visibility -- without it this would leave a blank gap.
+            visible: Qt.platform.os !== "android"
+            width: visible ? implicitWidth : 0
+        }
         TabButton { text: qsTr("Proxy") }
         TabButton { text: qsTr("Cast") }
     }
@@ -156,6 +170,12 @@ ColumnLayout {
                 GroupBox {
                     Layout.fillWidth: true
                     title: qsTr("YouTube (yt-dlp)")
+                    // yt-dlp needs an external process, and Android (10+,
+                    // targeting API 29+) blocks an app from executing any
+                    // file it wrote to its own storage -- there is no way
+                    // to make this work here, so disable the whole section
+                    // rather than let it look available and silently fail.
+                    enabled: Qt.platform.os !== "android"
 
                     ColumnLayout {
                         anchors.fill: parent

@@ -25,10 +25,16 @@ Window {
 
     title: qsTr("Editor")
     flags: Qt.Dialog
-    width: 620
-    height: 520
-    minimumWidth: 480
-    minimumHeight: 380
+    // Android: fill the transientParent's own bounds EXACTLY instead of a
+    // fixed desktop size (see PreferencesDialog.qml's own comment for
+    // why -- no guessed-constant margin, real SafeArea inset used on the
+    // content layout below instead).
+    width: Qt.platform.os === "android" && transientParent
+           ? transientParent.width : 620
+    height: Qt.platform.os === "android" && transientParent
+            ? transientParent.height : 520
+    minimumWidth: Qt.platform.os === "android" ? 0 : 480
+    minimumHeight: Qt.platform.os === "android" ? 0 : 380
     color: palette.window
 
     function openFor(titleText, captionText, iconSource, model) {
@@ -38,7 +44,10 @@ Window {
         favorites = model
         path = ""
         listView.currentIndex = -1
-        if (transientParent) {
+        if (Qt.platform.os === "android") {
+            x = 0
+            y = 0
+        } else if (transientParent) {
             x = transientParent.x + (transientParent.width - width) / 2
             y = transientParent.y + (transientParent.height - height) / 2
         }
@@ -100,7 +109,12 @@ Window {
 
     ColumnLayout {
         anchors.fill: parent
-        anchors.margins: 12
+        // Real platform-reported inset, not a guessed constant -- see
+        // PreferencesDialog.qml's own outer ColumnLayout comment for why.
+        anchors.topMargin: 12 + SafeArea.margins.top
+        anchors.leftMargin: 12 + SafeArea.margins.left
+        anchors.rightMargin: 12 + SafeArea.margins.right
+        anchors.bottomMargin: 12 + SafeArea.margins.bottom
         spacing: 10
 
         // Header: icon + caption + intro (SMPlayer's title_label).
@@ -197,6 +211,9 @@ Window {
         Rectangle {
             Layout.fillWidth: true
             Layout.fillHeight: true
+            // Explicit 0 (Android, huge system font sizes): see
+            // PreferencesDialog.qml's own comment on the equivalent fix.
+            Layout.minimumHeight: 0
             color: palette.base
             border.color: palette.mid
 

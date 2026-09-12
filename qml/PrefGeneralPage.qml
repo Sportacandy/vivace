@@ -183,6 +183,19 @@ ColumnLayout {
                     text: qsTr("Start videos in fullscreen")
                     checked: Settings.startInFullscreen
                     onToggled: Settings.startInFullscreen = checked
+                    // Android has no real "windowed" mode to speak of, so
+                    // this is forced on and not user-editable there --
+                    // Settings.startInFullscreen itself already always
+                    // reports true on Android (see settings.h). HIDDEN
+                    // rather than merely disabled: a disabled CheckBox still
+                    // renders in the normal *enabled* text color on this
+                    // Android Qt build (a Qt Quick Controls palette-
+                    // resolution quirk, not fixable from Vivace's own QML --
+                    // see the identical finding for the YouTube tab and the
+                    // Interface page's Main window section), which would
+                    // look like a live, clickable checkbox that just doesn't
+                    // respond -- worse than not showing it at all.
+                    visible: Qt.platform.os !== "android"
                 }
 
                 CheckBox {
@@ -191,6 +204,14 @@ ColumnLayout {
                 }
                 RowLayout {
                     spacing: 8
+                    // Hidden on Android, not just disabled: any mode other
+                    // than None permanently drops every video frame there (a
+                    // real hardware/FFmpeg limitation -- see Settings::
+                    // deinterlaceMode()'s own comment, which now forces that
+                    // getter to always return None on this platform
+                    // regardless of what's persisted, so hiding this row is
+                    // purely cosmetic, not the only thing keeping this safe).
+                    visible: Qt.platform.os !== "android"
                     Label { text: qsTr("Deinterlace by default:") }
                     ComboBox {
                         Layout.fillWidth: true

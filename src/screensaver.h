@@ -6,6 +6,9 @@
     Qt has no cross-platform API for this, so each platform is handled
     natively: Windows uses SetThreadExecutionState, Linux the freedesktop
     ScreenSaver DBus service, macOS an IOKit power-management assertion.
+    Android has no D-Bus session bus (see CMakeLists.txt's VIVACE_HAVE_DBUS)
+    and falls through to a no-op -- revisit with a real WakeLock-based
+    implementation if Android release packaging is ever pursued.
 */
 
 #ifndef SCREENSAVER_H
@@ -38,7 +41,7 @@ private:
 
     bool m_inhibited = false;
 
-#if defined(Q_OS_UNIX) && !defined(Q_OS_MACOS)
+#if defined(Q_OS_UNIX) && !defined(Q_OS_MACOS) && !defined(Q_OS_ANDROID)
     QDBusInterface *m_interface = nullptr;
     unsigned int m_cookie = 0;
     bool m_haveCookie = false;

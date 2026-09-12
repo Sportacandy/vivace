@@ -478,7 +478,21 @@ public:
     bool disableScreensaver() const { return m_disableScreensaver; }
     void setDisableScreensaver(bool disable);
 
-    int deinterlaceMode() const { return m_deinterlaceMode; }
+    // Any mode other than None permanently drops every video frame on
+    // Android (MediaCodec-decoded frames can never be downloaded back to
+    // system memory for the software deinterlace filter to run on -- a
+    // real hardware/FFmpeg limitation, not a bug) -- force None
+    // unconditionally here (same single-override-point pattern as
+    // startInFullscreen()/youtubeEnabled() above), so a stale persisted
+    // value (e.g. imported from a desktop profile, or set before this
+    // guard existed) can never silently break playback.
+    int deinterlaceMode() const {
+#ifdef Q_OS_ANDROID
+        return 3; // None
+#else
+        return m_deinterlaceMode;
+#endif
+    }
     void setDeinterlaceMode(int mode);
 
     bool pauseWhenMinimized() const { return m_pauseWhenMinimized; }
@@ -571,7 +585,21 @@ public:
     void setProxyUsername(const QString &user);
     QString proxyPassword() const { return m_proxyPassword; }
     void setProxyPassword(const QString &pass);
-    bool youtubeEnabled() const { return m_youtubeEnabled; }
+    // YouTube playback needs an external yt-dlp *process* -- since Android
+    // 10, an app targeting API 29+ cannot execute any file living in its
+    // own writable storage (a W^X/noexec policy enforced at the OS/mount
+    // level, independent of chmod), so yt-dlp can never actually run here
+    // regardless of how it's configured. Force this off unconditionally
+    // (same single-override-point pattern as startInFullscreen() above)
+    // rather than letting a persisted "true" from a desktop profile (or
+    // manual registry/QSettings edit) silently try and fail on Android.
+    bool youtubeEnabled() const {
+#ifdef Q_OS_ANDROID
+        return false;
+#else
+        return m_youtubeEnabled;
+#endif
+    }
     void setYoutubeEnabled(bool enabled);
     QString ytdlPath() const { return m_ytdlPath; }
     void setYtdlPath(const QString &path);
@@ -722,7 +750,18 @@ public:
     bool addDirectoriesRecursively() const { return m_addDirectoriesRecursively; }
     void setAddDirectoriesRecursively(bool recursive);
 
-    bool startInFullscreen() const { return m_startInFullscreen; }
+    // Fullscreen is Android's only meaningful window state (there is no
+    // real "windowed" mode to speak of there) -- always report true on
+    // that platform regardless of the stored value, so every consumer
+    // (Main.qml's startup logic, the Preferences checkbox, snapshot/
+    // restore) sees the same forced answer with a single change here.
+    bool startInFullscreen() const {
+#ifdef Q_OS_ANDROID
+        return true;
+#else
+        return m_startInFullscreen;
+#endif
+    }
     void setStartInFullscreen(bool fullscreen);
 
     // Subtitle options below are persisted now and consumed by the

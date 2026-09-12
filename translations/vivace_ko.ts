@@ -9,72 +9,72 @@
         <translation>Vivace 정보</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="84"/>
+        <location filename="../qml/AboutDialog.qml" line="101"/>
         <source>A fast, pure-Qt media player — vee-VAH-cheh</source>
         <translation>순수 Qt로 만든 빠른 미디어 플레이어 — 비-바-체</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="94"/>
+        <location filename="../qml/AboutDialog.qml" line="111"/>
         <source>Info</source>
         <translation>정보(&amp;I)</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="99"/>
+        <location filename="../qml/AboutDialog.qml" line="116"/>
         <source>Contributions</source>
         <translation>공헌(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="104"/>
+        <location filename="../qml/AboutDialog.qml" line="121"/>
         <source>Translations</source>
         <translation>번역</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="109"/>
+        <location filename="../qml/AboutDialog.qml" line="126"/>
         <source>License</source>
         <translation>라이센스(&amp;L)</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="130"/>
+        <location filename="../qml/AboutDialog.qml" line="159"/>
         <source>Version: %1</source>
         <translation>버전: %1</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="132"/>
+        <location filename="../qml/AboutDialog.qml" line="161"/>
         <source>A ground-up rewrite inspired by SMPlayer, built on Qt Quick and Qt Multimedia (FFmpeg backend) — no mplayer/mpv process backend and no Qt Widgets.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="136"/>
+        <location filename="../qml/AboutDialog.qml" line="165"/>
         <source>Using Qt %1 (compiled with Qt %2)</source>
         <translation>Qt %1 사용 (Qt %2 로 컴파일됨)</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="139"/>
+        <location filename="../qml/AboutDialog.qml" line="168"/>
         <source>Links:</source>
         <translation>링크:</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="140"/>
+        <location filename="../qml/AboutDialog.qml" line="169"/>
         <source>Project home:</source>
         <translation>프로젝트 홈:</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="156"/>
+        <location filename="../qml/AboutDialog.qml" line="185"/>
         <source>Vivace is developed by %1.</source>
         <translation>Vivace는 %1에 의해 개발됩니다.</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="158"/>
+        <location filename="../qml/AboutDialog.qml" line="187"/>
         <source>Vivace ports UI conventions and the icon themes (H2O and the default theme) from %1, used under the GPL. Many thanks to its author Ricardo Villalba and contributors.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="164"/>
+        <location filename="../qml/AboutDialog.qml" line="193"/>
         <source>Secure password storage uses %1 by Frank Osterfeld and contributors, used under the modified BSD license.</source>
         <translation>안전한 비밀번호 저장에는 Frank Osterfeld와 기여자가 만든 %1을(를) 사용하며, 수정된 BSD 라이선스에 따라 사용됩니다.</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="181"/>
+        <location filename="../qml/AboutDialog.qml" line="210"/>
         <source>Vivace&apos;s interface is available in %1 languages, in addition to English. Japanese is the most complete (hand-translated); most of the others combine translations ported from %2 with machine translation, so quality varies — native-speaker review is welcome.</source>
         <translation>Vivace의 인터페이스는 영어 외에 %1개 언어로 제공됩니다. 일본어가 가장 완성도가 높으며(수작업 번역), 나머지 대부분은 %2에서 가져온 번역과 기계 번역을 조합한 것이라 품질이 다양합니다 — 원어민의 검토를 환영합니다.</translation>
     </message>
@@ -83,17 +83,17 @@
         <translation type="vanished">Vivace는 아직 번역되지 않았습니다. 현지화는 이후 단계로 예정되어 있으며, 기여자는 여기에 표시됩니다.</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="204"/>
+        <location filename="../qml/AboutDialog.qml" line="233"/>
         <source>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="210"/>
+        <location filename="../qml/AboutDialog.qml" line="239"/>
         <source>Read the entire license</source>
         <translation>전체 라이센스 읽기</translation>
     </message>
     <message>
-        <location filename="../qml/AboutDialog.qml" line="221"/>
+        <location filename="../qml/AboutDialog.qml" line="250"/>
         <source>Close</source>
         <translation>닫기</translation>
     </message>
@@ -102,57 +102,57 @@
     <name>BookmarksDialog</name>
     <message>
         <location filename="../qml/BookmarksDialog.qml" line="24"/>
-        <location filename="../qml/BookmarksDialog.qml" line="86"/>
+        <location filename="../qml/BookmarksDialog.qml" line="100"/>
         <source>Bookmarks</source>
         <translation>책갈피(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../qml/BookmarksDialog.qml" line="94"/>
+        <location filename="../qml/BookmarksDialog.qml" line="108"/>
         <source>You can edit the time and name of each bookmark, or add and delete bookmarks.</source>
         <translation>각 책갈피의 시간과 이름을 편집하거나 책갈피를 추가하고 삭제할 수 있습니다.</translation>
     </message>
     <message>
-        <location filename="../qml/BookmarksDialog.qml" line="121"/>
+        <location filename="../qml/BookmarksDialog.qml" line="138"/>
         <source>Time</source>
         <translation>시간</translation>
     </message>
     <message>
-        <location filename="../qml/BookmarksDialog.qml" line="127"/>
+        <location filename="../qml/BookmarksDialog.qml" line="144"/>
         <source>Accepts hh:mm:ss, mm:ss or plain seconds.</source>
         <translation>hh:mm:ss, mm:ss 또는 초 단위 숫자를 허용합니다.</translation>
     </message>
     <message>
-        <location filename="../qml/BookmarksDialog.qml" line="137"/>
+        <location filename="../qml/BookmarksDialog.qml" line="154"/>
         <source>Name</source>
         <translation>이름</translation>
     </message>
     <message>
-        <location filename="../qml/BookmarksDialog.qml" line="186"/>
+        <location filename="../qml/BookmarksDialog.qml" line="203"/>
         <source>(unnamed)</source>
         <translation>(이름 없음)</translation>
     </message>
     <message>
-        <location filename="../qml/BookmarksDialog.qml" line="203"/>
+        <location filename="../qml/BookmarksDialog.qml" line="220"/>
         <source>&amp;Add</source>
         <translation>추가(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/BookmarksDialog.qml" line="216"/>
+        <location filename="../qml/BookmarksDialog.qml" line="233"/>
         <source>D&amp;elete</source>
         <translation>삭제(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../qml/BookmarksDialog.qml" line="228"/>
+        <location filename="../qml/BookmarksDialog.qml" line="245"/>
         <source>Delete a&amp;ll</source>
         <translation>모두 삭제(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/BookmarksDialog.qml" line="246"/>
+        <location filename="../qml/BookmarksDialog.qml" line="263"/>
         <source>OK</source>
         <translation>확인(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/BookmarksDialog.qml" line="257"/>
+        <location filename="../qml/BookmarksDialog.qml" line="274"/>
         <source>Cancel</source>
         <translation>취소</translation>
     </message>
@@ -165,197 +165,197 @@
         <translation>YouTube 캐시</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="141"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="150"/>
         <source>Remove from cache</source>
         <translation>캐시에서 제거</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="142"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="151"/>
         <source>Are you sure you want to remove %1 selected cache file(s)?</source>
         <translation>선택한 캐시 파일 %1개를 제거하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="150"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="159"/>
         <source>Select a folder to save the selected videos to</source>
         <translation>선택한 동영상을 저장할 폴더를 선택하세요</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="163"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="172"/>
         <source>Move or copy?</source>
         <translation>이동할까요, 복사할까요?</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="195"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="222"/>
         <source>Move the selected files out of the cache, or keep a copy in the cache and copy them to the destination?</source>
         <translation>선택한 파일을 캐시에서 이동할까요, 아니면 캐시에 사본을 남기고 대상 위치로 복사할까요?</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="198"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="225"/>
         <source>Copy (keep them in the cache too)</source>
         <translation>복사(캐시에도 그대로 유지)</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="203"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="230"/>
         <source>Move (remove them from the cache)</source>
         <translation>이동(캐시에서 제거)</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="214"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="241"/>
         <source>OK</source>
         <translation type="unfinished">확인(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="245"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="272"/>
         <source>Cancel</source>
         <translation type="unfinished">취소</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="254"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="281"/>
         <source>Name the new playlist</source>
         <translation>새 재생 목록 이름 지정</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="257"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="284"/>
         <source>Playlists (*.m3u8 *.m3u)</source>
         <translation type="unfinished">재생 목록 (*.m3u8 *.m3u)</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="267"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="294"/>
         <source>Select an existing playlist</source>
         <translation>기존 재생 목록 선택</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="269"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="296"/>
         <source>Playlists (*.m3u *.m3u8)</source>
         <translation type="unfinished">재생 목록 (*.m3u *.m3u8)</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="269"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="296"/>
         <source>All files (*)</source>
         <translation type="unfinished">모든 파일 (*)</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="287"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="319"/>
         <source>Filter:</source>
         <translation>필터:</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="291"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="323"/>
         <source>type to narrow the list</source>
         <translation>입력하여 목록 좁히기</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="294"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="326"/>
         <source>Sort:</source>
         <translation>정렬:</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="297"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="329"/>
         <source>Date</source>
         <translation>날짜</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="297"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="329"/>
         <source>Title</source>
         <translation>제목(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="303"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="335"/>
         <source>Descending</source>
         <translation>내림차순</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="303"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="335"/>
         <source>Ascending</source>
         <translation>오름차순</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="309"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="341"/>
         <source>Size:</source>
         <translation>크기:</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="312"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="344"/>
         <source>Small</source>
         <translation>작게</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="312"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="344"/>
         <source>Medium</source>
         <translation>보통</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="312"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="344"/>
         <source>Large</source>
         <translation>크게</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="321"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="353"/>
         <source>Save ▾</source>
         <translation>저장 ▾</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="327"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="359"/>
         <source>Save the checked videos to a folder or a playlist</source>
         <translation>선택한 동영상을 폴더나 재생 목록에 저장</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="333"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="365"/>
         <source>Save to selected folder…</source>
         <translation>선택한 폴더에 저장…</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="337"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="369"/>
         <source>Create a new playlist…</source>
         <translation>새 재생 목록 만들기…</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="341"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="373"/>
         <source>Add to an existing playlist…</source>
         <translation>기존 재생 목록에 추가…</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="345"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="377"/>
         <source>Add to current playlist</source>
         <translation>현재 재생 목록에 추가</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="350"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="382"/>
         <source>Tick videos with the checkbox in their corner, then pick where to save them: a plain folder, a new playlist file, an existing one, or the currently loaded playlist. Every option asks for a destination folder and whether to move the files out of the cache or keep a copy there -- the cache is a limited-size rotation, so a file left only there can eventually be evicted.</source>
         <translation>모서리의 체크박스로 동영상을 선택한 다음 저장할 위치를 고르세요: 일반 폴더, 새 재생 목록 파일, 기존 재생 목록, 또는 현재 로드된 재생 목록. 각 옵션은 대상 폴더를 묻고 파일을 캐시에서 이동할지 캐시에 사본을 남길지 묻습니다 -- 캐시는 크기가 제한되어 있으므로 그곳에만 남은 파일은 나중에 삭제될 수 있습니다.</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="370"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="402"/>
         <source>Remove the checked videos from the cache</source>
         <translation>선택한 동영상을 캐시에서 제거</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="374"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="406"/>
         <source>Tick videos with the checkbox in their corner, then use this button to remove them from the cache (you&apos;ll be asked to confirm).</source>
         <translation>모서리의 체크박스로 동영상을 선택한 다음 이 버튼으로 캐시에서 제거하세요(확인 메시지가 표시됩니다).</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="388"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="420"/>
         <source>The cache is empty.</source>
         <translation>캐시가 비어 있습니다.</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="389"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="421"/>
         <source>No videos match the filter.</source>
         <translation>필터와 일치하는 동영상이 없습니다.</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="503"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="538"/>
         <source>%1 selected of %2</source>
         <translation>%2개 중 %1개 선택됨</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="504"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="539"/>
         <source>%1 video(s)</source>
         <translation>동영상 %1개</translation>
     </message>
     <message>
-        <location filename="../qml/CacheBrowserDialog.qml" line="508"/>
+        <location filename="../qml/CacheBrowserDialog.qml" line="543"/>
         <source>Close</source>
         <translation>닫기</translation>
     </message>
@@ -368,52 +368,52 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/CastDialog.qml" line="50"/>
+        <location filename="../qml/CastDialog.qml" line="89"/>
         <source>Starts a small web server so a phone or tablet on the same network can open a page and play the video Vivace is currently playing.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/CastDialog.qml" line="58"/>
+        <location filename="../qml/CastDialog.qml" line="97"/>
         <source>Port: %1</source>
         <translation>포트: %1</translation>
     </message>
     <message>
-        <location filename="../qml/CastDialog.qml" line="59"/>
+        <location filename="../qml/CastDialog.qml" line="98"/>
         <source>Set in Preferences ▸ Network ▸ Cast — kept fixed there so you can allow it through your firewall/router once.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/CastDialog.qml" line="64"/>
+        <location filename="../qml/CastDialog.qml" line="103"/>
         <source>Stop</source>
         <translation>정지</translation>
     </message>
     <message>
-        <location filename="../qml/CastDialog.qml" line="65"/>
+        <location filename="../qml/CastDialog.qml" line="104"/>
         <source>Start</source>
         <translation>시작</translation>
     </message>
     <message>
-        <location filename="../qml/CastDialog.qml" line="83"/>
+        <location filename="../qml/CastDialog.qml" line="122"/>
         <source>Could not start the server: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/CastDialog.qml" line="120"/>
+        <location filename="../qml/CastDialog.qml" line="159"/>
         <source>Scan the code, or open one of these addresses in the phone or tablet&apos;s web browser:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/CastDialog.qml" line="137"/>
+        <location filename="../qml/CastDialog.qml" line="176"/>
         <source>No network address was found — check that this computer is connected to a network.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/CastDialog.qml" line="150"/>
+        <location filename="../qml/CastDialog.qml" line="189"/>
         <source>Anyone on your network can open this address while casting is on. Only the file currently playing is served, and only while this is on — turn it off when you&apos;re done.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/CastDialog.qml" line="160"/>
+        <location filename="../qml/CastDialog.qml" line="199"/>
         <source>Close</source>
         <translation>닫기</translation>
     </message>
@@ -435,37 +435,37 @@
         <translation>%1초 앞으로</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="513"/>
+        <location filename="../qml/ControlBar.qml" line="518"/>
         <source>Error: %1</source>
         <translation>오류: %1</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="516"/>
+        <location filename="../qml/ControlBar.qml" line="521"/>
         <source>Playing %1</source>
         <translation>%1 재생 중</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="521"/>
+        <location filename="../qml/ControlBar.qml" line="526"/>
         <source>Paused</source>
         <translation>일시 정지됨</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="523"/>
+        <location filename="../qml/ControlBar.qml" line="528"/>
         <source>Stopped</source>
         <translation>정지됨</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="568"/>
+        <location filename="../qml/ControlBar.qml" line="573"/>
         <source>V: %1 kbps</source>
         <translation>V: %1 kbps</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="569"/>
+        <location filename="../qml/ControlBar.qml" line="574"/>
         <source>A: %1 kbps</source>
         <translation>A: %1 kbps</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="581"/>
+        <location filename="../qml/ControlBar.qml" line="586"/>
         <source>Frame: %1</source>
         <translation>프레임: %1</translation>
     </message>
@@ -511,77 +511,77 @@
         <translation>편집기</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="127"/>
+        <location filename="../qml/FavoritesDialog.qml" line="141"/>
         <source>You can edit, delete, sort or add new items. Select a submenu and press Open (or double-click it) to edit its contents.</source>
         <translation>항목을 편집, 삭제, 정렬하거나 추가할 수 있습니다. 하위 메뉴를 선택하고 열기를 누르거나 두 번 클릭하여 내용을 편집하세요.</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="143"/>
+        <location filename="../qml/FavoritesDialog.qml" line="157"/>
         <source>Up one level</source>
         <translation>한 단계 위로</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="183"/>
+        <location filename="../qml/FavoritesDialog.qml" line="197"/>
         <source>&amp;Open</source>
         <translation>열기(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="190"/>
+        <location filename="../qml/FavoritesDialog.qml" line="204"/>
         <source>Submenus group items into folders; select one and press Open (or double-click it) to edit inside, then use the path above to go back.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="219"/>
+        <location filename="../qml/FavoritesDialog.qml" line="236"/>
         <source>Name</source>
         <translation>이름</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="229"/>
+        <location filename="../qml/FavoritesDialog.qml" line="246"/>
         <source>Media</source>
         <translation>미디어</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="292"/>
+        <location filename="../qml/FavoritesDialog.qml" line="309"/>
         <source>(submenu)</source>
         <translation>(하위 메뉴)</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="317"/>
+        <location filename="../qml/FavoritesDialog.qml" line="334"/>
         <source>&amp;New item</source>
         <translation>새 항목(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="327"/>
+        <location filename="../qml/FavoritesDialog.qml" line="344"/>
         <source>D&amp;elete</source>
         <translation>삭제(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="338"/>
+        <location filename="../qml/FavoritesDialog.qml" line="355"/>
         <source>&amp;Up</source>
         <translation>위로(&amp;U)</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="350"/>
+        <location filename="../qml/FavoritesDialog.qml" line="367"/>
         <source>New &amp;submenu</source>
         <translation>새 하위메뉴(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="354"/>
+        <location filename="../qml/FavoritesDialog.qml" line="371"/>
         <source>New submenu</source>
         <translation>새 하위메뉴(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="360"/>
+        <location filename="../qml/FavoritesDialog.qml" line="377"/>
         <source>Delete &amp;all</source>
         <translation>모두 삭제(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="371"/>
+        <location filename="../qml/FavoritesDialog.qml" line="388"/>
         <source>&amp;Down</source>
         <translation>아래로(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="389"/>
+        <location filename="../qml/FavoritesDialog.qml" line="406"/>
         <source>Close</source>
         <translation>닫기</translation>
     </message>
@@ -607,7 +607,7 @@
 <context>
     <name>FavoritesModel</name>
     <message>
-        <location filename="../src/favoritesmodel.cpp" line="207"/>
+        <location filename="../src/favoritesmodel.cpp" line="215"/>
         <source>New submenu</source>
         <translation>새 하위메뉴(&amp;S)</translation>
     </message>
@@ -620,77 +620,77 @@
         <translation>자막 찾기 — Vivace</translation>
     </message>
     <message>
-        <location filename="../qml/FindSubtitlesDialog.qml" line="67"/>
+        <location filename="../qml/FindSubtitlesDialog.qml" line="82"/>
         <source>Search:</source>
         <translation>검색:</translation>
     </message>
     <message>
-        <location filename="../qml/FindSubtitlesDialog.qml" line="68"/>
+        <location filename="../qml/FindSubtitlesDialog.qml" line="83"/>
         <source>Matches are found by the video&apos;s content hash first, then by this text; leave it as the file name unless the hash finds nothing.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/FindSubtitlesDialog.qml" line="74"/>
+        <location filename="../qml/FindSubtitlesDialog.qml" line="89"/>
         <source>movie or show name</source>
         <translation>영화 또는 프로그램 이름</translation>
     </message>
     <message>
-        <location filename="../qml/FindSubtitlesDialog.qml" line="77"/>
+        <location filename="../qml/FindSubtitlesDialog.qml" line="92"/>
         <source>Languages:</source>
         <translation>언어:</translation>
     </message>
     <message>
-        <location filename="../qml/FindSubtitlesDialog.qml" line="78"/>
+        <location filename="../qml/FindSubtitlesDialog.qml" line="93"/>
         <source>Comma-separated language codes to search for, for example &quot;en, ja&quot;.</source>
         <translation>검색할 쉼표로 구분된 언어 코드, 예: &quot;en, ja&quot;.</translation>
     </message>
     <message>
-        <location filename="../qml/FindSubtitlesDialog.qml" line="83"/>
+        <location filename="../qml/FindSubtitlesDialog.qml" line="98"/>
         <source>en, ja</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/FindSubtitlesDialog.qml" line="87"/>
+        <location filename="../qml/FindSubtitlesDialog.qml" line="102"/>
         <source>&amp;Search</source>
         <translation>검색</translation>
     </message>
     <message>
-        <location filename="../qml/FindSubtitlesDialog.qml" line="91"/>
+        <location filename="../qml/FindSubtitlesDialog.qml" line="106"/>
         <source>Searching needs a free OpenSubtitles API key, set in Preferences &gt; Network.</source>
         <translation>검색하려면 환경 설정 &gt; 네트워크에서 설정하는 무료 OpenSubtitles API 키가 필요합니다.</translation>
     </message>
     <message>
-        <location filename="../qml/FindSubtitlesDialog.qml" line="101"/>
+        <location filename="../qml/FindSubtitlesDialog.qml" line="116"/>
         <source>Set your OpenSubtitles API key in Preferences &gt; Network to search. Create a free key at opensubtitles.com (a login there also raises the download limit).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/FindSubtitlesDialog.qml" line="129"/>
+        <location filename="../qml/FindSubtitlesDialog.qml" line="147"/>
         <source>Lang</source>
         <translation>언어</translation>
     </message>
     <message>
-        <location filename="../qml/FindSubtitlesDialog.qml" line="130"/>
+        <location filename="../qml/FindSubtitlesDialog.qml" line="148"/>
         <source>Release / file</source>
         <translation>릴리스 / 파일</translation>
     </message>
     <message>
-        <location filename="../qml/FindSubtitlesDialog.qml" line="131"/>
+        <location filename="../qml/FindSubtitlesDialog.qml" line="149"/>
         <source>Downloads</source>
         <translation>다운로드 수</translation>
     </message>
     <message>
-        <location filename="../qml/FindSubtitlesDialog.qml" line="132"/>
+        <location filename="../qml/FindSubtitlesDialog.qml" line="150"/>
         <source>Rating</source>
         <translation>평점</translation>
     </message>
     <message>
-        <location filename="../qml/FindSubtitlesDialog.qml" line="171"/>
+        <location filename="../qml/FindSubtitlesDialog.qml" line="189"/>
         <source>&amp;Download &amp;&amp; load</source>
         <translation>다운로드 후 열기(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../qml/FindSubtitlesDialog.qml" line="177"/>
+        <location filename="../qml/FindSubtitlesDialog.qml" line="195"/>
         <source>&amp;Close</source>
         <translation>닫기(&amp;C)</translation>
     </message>
@@ -703,62 +703,62 @@
         <translation>Vivace 도움말</translation>
     </message>
     <message>
-        <location filename="../qml/HelpDialog.qml" line="61"/>
+        <location filename="../qml/HelpDialog.qml" line="67"/>
         <source>Getting Started</source>
         <translation>시작하기</translation>
     </message>
     <message>
-        <location filename="../qml/HelpDialog.qml" line="62"/>
+        <location filename="../qml/HelpDialog.qml" line="68"/>
         <source>Open</source>
         <translation>열기(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/HelpDialog.qml" line="63"/>
+        <location filename="../qml/HelpDialog.qml" line="69"/>
         <source>Play</source>
         <translation>재생</translation>
     </message>
     <message>
-        <location filename="../qml/HelpDialog.qml" line="64"/>
+        <location filename="../qml/HelpDialog.qml" line="70"/>
         <source>Video</source>
         <translation>비디오</translation>
     </message>
     <message>
-        <location filename="../qml/HelpDialog.qml" line="65"/>
+        <location filename="../qml/HelpDialog.qml" line="71"/>
         <source>Audio</source>
         <translation>오디오</translation>
     </message>
     <message>
-        <location filename="../qml/HelpDialog.qml" line="66"/>
+        <location filename="../qml/HelpDialog.qml" line="72"/>
         <source>Subtitles</source>
         <translation>자막</translation>
     </message>
     <message>
-        <location filename="../qml/HelpDialog.qml" line="67"/>
+        <location filename="../qml/HelpDialog.qml" line="73"/>
         <source>Browse</source>
         <translation>이동(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../qml/HelpDialog.qml" line="68"/>
+        <location filename="../qml/HelpDialog.qml" line="74"/>
         <source>View</source>
         <translation>보기(&amp;W)</translation>
     </message>
     <message>
-        <location filename="../qml/HelpDialog.qml" line="69"/>
+        <location filename="../qml/HelpDialog.qml" line="75"/>
         <source>Options</source>
         <translation>옵션</translation>
     </message>
     <message>
-        <location filename="../qml/HelpDialog.qml" line="70"/>
+        <location filename="../qml/HelpDialog.qml" line="76"/>
         <source>Help</source>
         <translation>도움말</translation>
     </message>
     <message>
-        <location filename="../qml/HelpDialog.qml" line="71"/>
+        <location filename="../qml/HelpDialog.qml" line="77"/>
         <source>Command-line options</source>
         <translation>명령줄 옵션</translation>
     </message>
     <message>
-        <location filename="../qml/HelpDialog.qml" line="193"/>
+        <location filename="../qml/HelpDialog.qml" line="210"/>
         <source>Close</source>
         <translation>닫기</translation>
     </message>
@@ -766,294 +766,304 @@
 <context>
     <name>Main</name>
     <message>
-        <location filename="../qml/Main.qml" line="410"/>
+        <location filename="../qml/Main.qml" line="421"/>
         <source>TV editor</source>
         <translation>TV 편집기</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="410"/>
+        <location filename="../qml/Main.qml" line="421"/>
         <source>TV channels</source>
         <translation>TV 채널</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="413"/>
+        <location filename="../qml/Main.qml" line="424"/>
         <source>Radio editor</source>
         <translation>라디오 편집기</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="413"/>
+        <location filename="../qml/Main.qml" line="424"/>
         <source>Radio channels</source>
         <translation>라디오 방송국</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="416"/>
-        <location filename="../qml/Main.qml" line="459"/>
+        <location filename="../qml/Main.qml" line="427"/>
+        <location filename="../qml/Main.qml" line="470"/>
         <source>Favorite editor</source>
         <translation>즐겨찾기 편집기</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="416"/>
-        <location filename="../qml/Main.qml" line="459"/>
+        <location filename="../qml/Main.qml" line="427"/>
+        <location filename="../qml/Main.qml" line="470"/>
         <source>Favorite list</source>
         <translation>즐겨찾기 목록</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="420"/>
+        <location filename="../qml/Main.qml" line="431"/>
         <source>Bookmark added</source>
         <translation>책갈피가 추가됨</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="435"/>
+        <location filename="../qml/Main.qml" line="446"/>
         <source>Edit main toolbar</source>
         <translation>메인 툴바 편집하기(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="438"/>
+        <location filename="../qml/Main.qml" line="449"/>
         <source>Edit control bar</source>
         <translation>조작바 편집하기(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="466"/>
+        <location filename="../qml/Main.qml" line="477"/>
         <source>Screenshot saved as %1</source>
         <translation>스크린샷 저장: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="467"/>
+        <location filename="../qml/Main.qml" line="478"/>
         <source>Could not take the screenshot</source>
         <translation>스크린샷을 찍을 수 없습니다</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="580"/>
+        <location filename="../qml/Main.qml" line="609"/>
+        <source>Tap Open &gt; File… to choose media</source>
+        <translation>미디어를 선택하려면 열기 &gt; 파일...을 탭하세요</translation>
+    </message>
+    <message>
+        <location filename="../qml/Main.qml" line="610"/>
         <source>Drop media files here, or press Ctrl+O</source>
         <translation>여기에 미디어 파일을 놓거나 Ctrl+O를 누르세요</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="667"/>
+        <location filename="../qml/Main.qml" line="697"/>
         <source>Downloading video…</source>
         <translation>동영상 다운로드 중…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="674"/>
+        <location filename="../qml/Main.qml" line="704"/>
         <source>This can take a while — the external tool is downloading and merging HD video and audio.</source>
         <translation>시간이 걸릴 수 있습니다 — 외부 도구가 HD 비디오와 오디오를 다운로드하여 병합하고 있습니다.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="688"/>
-        <location filename="../qml/Main.qml" line="1752"/>
+        <location filename="../qml/Main.qml" line="718"/>
+        <location filename="../qml/Main.qml" line="1808"/>
         <source>Cancel</source>
         <translation>취소</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="761"/>
+        <location filename="../qml/Main.qml" line="791"/>
         <source>Loading…</source>
         <translation>불러오는 중…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="762"/>
+        <location filename="../qml/Main.qml" line="792"/>
         <source>Connecting…</source>
         <translation>연결 중...</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="763"/>
+        <location filename="../qml/Main.qml" line="793"/>
         <source>Buffering… %1%</source>
         <translation>버퍼링 중… %1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="771"/>
+        <location filename="../qml/Main.qml" line="801"/>
         <source>Live streams can take several seconds to start.</source>
         <translation>라이브 스트림은 시작하는 데 몇 초가 걸릴 수 있습니다.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="806"/>
+        <location filename="../qml/Main.qml" line="836"/>
         <source>Volume: %1%</source>
         <translation>음량: %1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="809"/>
+        <location filename="../qml/Main.qml" line="839"/>
         <source>Mute</source>
         <translation>음소거</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="809"/>
+        <location filename="../qml/Main.qml" line="839"/>
         <source>Mute off</source>
         <translation>음소거 해제</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="812"/>
+        <location filename="../qml/Main.qml" line="842"/>
         <source>Speed: %1x</source>
         <translation>속도: %1배</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1356"/>
+        <location filename="../qml/Main.qml" line="1386"/>
         <source>Media files (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1357"/>
-        <location filename="../qml/Main.qml" line="1427"/>
-        <location filename="../qml/Main.qml" line="1688"/>
+        <location filename="../qml/Main.qml" line="1387"/>
+        <location filename="../qml/Main.qml" line="1457"/>
+        <location filename="../qml/Main.qml" line="1727"/>
         <source>All files (*)</source>
         <translation>모든 파일 (*)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1399"/>
+        <location filename="../qml/Main.qml" line="1429"/>
         <source>Select the DVD drive or a folder containing VIDEO_TS</source>
         <translation>DVD 드라이브 또는 VIDEO_TS가 포함된 폴더를 선택하세요</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1403"/>
+        <location filename="../qml/Main.qml" line="1433"/>
         <source>No DVD video found in %1</source>
         <translation>%1에서 DVD 비디오를 찾을 수 없습니다</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1411"/>
+        <location filename="../qml/Main.qml" line="1441"/>
         <source>Select the Blu-ray drive or a folder containing BDMV</source>
         <translation>블루레이 드라이브 또는 BDMV가 포함된 폴더를 선택하세요</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1415"/>
+        <location filename="../qml/Main.qml" line="1445"/>
         <source>No Blu-ray video found in %1</source>
         <translation>%1에서 블루레이 비디오를 찾을 수 없습니다</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1426"/>
+        <location filename="../qml/Main.qml" line="1456"/>
         <source>Playlists (*.m3u *.m3u8)</source>
         <translation>재생 목록 (*.m3u *.m3u8)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1469"/>
+        <location filename="../qml/Main.qml" line="1499"/>
         <source>Playing stream</source>
         <translation>스트림 재생 중</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1475"/>
-        <location filename="../qml/Main.qml" line="1508"/>
+        <location filename="../qml/Main.qml" line="1505"/>
+        <location filename="../qml/Main.qml" line="1538"/>
         <source>Playing downloaded video</source>
         <translation>다운로드한 동영상 재생 중</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1479"/>
+        <location filename="../qml/Main.qml" line="1509"/>
         <source>YouTube: %1</source>
         <translation>YouTube: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1512"/>
+        <location filename="../qml/Main.qml" line="1542"/>
         <source>Download failed: %1</source>
         <translation>다운로드 실패: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1609"/>
+        <location filename="../qml/Main.qml" line="1639"/>
         <source>Saved %1 file(s); %2 failed.</source>
         <translation>%1개 파일 저장, %2개 실패.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1613"/>
+        <location filename="../qml/Main.qml" line="1643"/>
         <source>Saved %1 file(s).</source>
         <translation>%1개 파일을 저장했습니다.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1626"/>
+        <location filename="../qml/Main.qml" line="1656"/>
         <source>Could not read the shortcut file.</source>
         <translation>바로 가기 파일을 읽을 수 없습니다.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1641"/>
+        <location filename="../qml/Main.qml" line="1669"/>
+        <source>YouTube playback isn&apos;t supported on Android.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/Main.qml" line="1680"/>
         <source>Starting download…</source>
         <translation>다운로드 시작 중…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1642"/>
+        <location filename="../qml/Main.qml" line="1681"/>
         <source>Downloading video (this can take a while)…</source>
         <translation>동영상 다운로드 중 (시간이 걸릴 수 있음)…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1646"/>
+        <location filename="../qml/Main.qml" line="1685"/>
         <source>Resolving with yt-dlp…</source>
         <translation>yt-dlp로 확인 중…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1683"/>
+        <location filename="../qml/Main.qml" line="1722"/>
         <source>Load subtitle file</source>
         <translation>자막 파일 열기</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1687"/>
+        <location filename="../qml/Main.qml" line="1726"/>
         <source>Subtitle files (*.srt *.vtt *.ass *.ssa)</source>
         <translation>자막 파일 (*.srt *.vtt *.ass *.ssa)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1695"/>
+        <location filename="../qml/Main.qml" line="1734"/>
         <source>Subtitle delay</source>
         <translation>자막 지연</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1729"/>
+        <location filename="../qml/Main.qml" line="1785"/>
         <source>Delay:</source>
         <translation>지연:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1735"/>
-        <location filename="../qml/Main.qml" line="1807"/>
+        <location filename="../qml/Main.qml" line="1791"/>
+        <location filename="../qml/Main.qml" line="1881"/>
         <source>ms</source>
         <translation>ms</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1745"/>
+        <location filename="../qml/Main.qml" line="1801"/>
         <source>OK</source>
         <translation>확인(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1764"/>
+        <location filename="../qml/Main.qml" line="1820"/>
         <source>Audio delay — Vivace</source>
         <translation>오디오 지연 — Vivace</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1795"/>
+        <location filename="../qml/Main.qml" line="1869"/>
         <source>No delay for this file (use the global delay only)</source>
         <translation>이 파일에는 지연 없음 (전역 지연만 사용)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1800"/>
+        <location filename="../qml/Main.qml" line="1874"/>
         <source>This file&apos;s delay:</source>
         <translation>이 파일의 지연:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1815"/>
+        <location filename="../qml/Main.qml" line="1889"/>
         <source>The delay applied to this file is this value plus the global delay for the current audio device (%1 ms), set in Preferences &gt; General &gt; Audio. Negative values delay the video to match audio that arrives late (e.g. Bluetooth headphones).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1828"/>
+        <location filename="../qml/Main.qml" line="1902"/>
         <source>&amp;Apply</source>
         <translation>적용</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1837"/>
+        <location filename="../qml/Main.qml" line="1911"/>
         <source>&amp;Close</source>
         <translation>닫기(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1934"/>
+        <location filename="../qml/Main.qml" line="2008"/>
         <source>Hide window</source>
         <translation>창 숨기기</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1934"/>
+        <location filename="../qml/Main.qml" line="2008"/>
         <source>Show window</source>
         <translation>창 표시</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1939"/>
+        <location filename="../qml/Main.qml" line="2013"/>
         <source>Play / Pause</source>
         <translation>재생 / 일시 중지</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1943"/>
+        <location filename="../qml/Main.qml" line="2017"/>
         <source>Stop</source>
         <translation>정지</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1948"/>
+        <location filename="../qml/Main.qml" line="2022"/>
         <source>Quit</source>
         <translation>종료(&amp;Q)</translation>
     </message>
@@ -1332,393 +1342,393 @@
     </message>
     <message>
         <location filename="../qml/MainMenuBar.qml" line="433"/>
-        <location filename="../qml/MainMenuBar.qml" line="657"/>
-        <location filename="../qml/MainMenuBar.qml" line="743"/>
+        <location filename="../qml/MainMenuBar.qml" line="688"/>
+        <location filename="../qml/MainMenuBar.qml" line="774"/>
         <source>&amp;Track</source>
         <translation>트랙(&amp;T)</translation>
     </message>
     <message>
         <location filename="../qml/MainMenuBar.qml" line="440"/>
-        <location filename="../qml/MainMenuBar.qml" line="674"/>
-        <location filename="../qml/MainMenuBar.qml" line="883"/>
-        <location filename="../qml/MainMenuBar.qml" line="908"/>
+        <location filename="../qml/MainMenuBar.qml" line="705"/>
+        <location filename="../qml/MainMenuBar.qml" line="914"/>
+        <location filename="../qml/MainMenuBar.qml" line="939"/>
         <source>&lt;empty&gt;</source>
         <translation>&lt;비어 있음&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="462"/>
+        <location filename="../qml/MainMenuBar.qml" line="472"/>
         <source>&amp;Fullscreen</source>
         <translation>전체 화면(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="470"/>
+        <location filename="../qml/MainMenuBar.qml" line="480"/>
         <source>Si&amp;ze</source>
         <translation>크기(&amp;Z)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="473"/>
+        <location filename="../qml/MainMenuBar.qml" line="483"/>
         <source>50%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="474"/>
+        <location filename="../qml/MainMenuBar.qml" line="484"/>
         <source>100%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="475"/>
+        <location filename="../qml/MainMenuBar.qml" line="485"/>
         <source>200%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="478"/>
+        <location filename="../qml/MainMenuBar.qml" line="488"/>
         <source>&amp;Zoom and pan</source>
         <translation>확대 및 이동(&amp;Z)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="482"/>
+        <location filename="../qml/MainMenuBar.qml" line="492"/>
         <source>&amp;Reset</source>
         <translation>초기화</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="487"/>
+        <location filename="../qml/MainMenuBar.qml" line="497"/>
         <source>Zoom &amp;-</source>
         <translation>축소하기(&amp;-)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="492"/>
+        <location filename="../qml/MainMenuBar.qml" line="502"/>
         <source>Zoom &amp;+</source>
         <translation>확대하기(&amp;+)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="498"/>
+        <location filename="../qml/MainMenuBar.qml" line="508"/>
         <source>Move &amp;left</source>
         <translation>왼쪽으로 이동(&amp;L)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="503"/>
+        <location filename="../qml/MainMenuBar.qml" line="513"/>
         <source>Move &amp;right</source>
         <translation>오른쪽으로 이동(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="508"/>
+        <location filename="../qml/MainMenuBar.qml" line="518"/>
         <source>Move &amp;up</source>
         <translation>위로 이동(&amp;U)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="513"/>
+        <location filename="../qml/MainMenuBar.qml" line="523"/>
         <source>Move &amp;down</source>
         <translation>아래로 이동(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="520"/>
+        <location filename="../qml/MainMenuBar.qml" line="530"/>
         <source>&amp;Aspect ratio</source>
         <translation>화면 비율(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="542"/>
+        <location filename="../qml/MainMenuBar.qml" line="552"/>
         <source>&amp;Rotate</source>
         <translation>회전하기(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="546"/>
-        <location filename="../qml/MainMenuBar.qml" line="608"/>
+        <location filename="../qml/MainMenuBar.qml" line="556"/>
+        <location filename="../qml/MainMenuBar.qml" line="639"/>
         <source>&amp;None</source>
         <translation>없음(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="555"/>
+        <location filename="../qml/MainMenuBar.qml" line="565"/>
         <source>&amp;Rotate by 90° clockwise</source>
         <translation>시계 방향으로 90° 회전(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="564"/>
+        <location filename="../qml/MainMenuBar.qml" line="574"/>
         <source>Rotate by 90° &amp;counterclockwise</source>
         <translation>반시계 방향으로 90° 회전(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="573"/>
+        <location filename="../qml/MainMenuBar.qml" line="583"/>
         <source>Rotate by &amp;180°</source>
         <translation>180° 회전(&amp;1)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="583"/>
+        <location filename="../qml/MainMenuBar.qml" line="593"/>
         <source>Fli&amp;p image</source>
         <translation>상하 반전(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="594"/>
+        <location filename="../qml/MainMenuBar.qml" line="604"/>
         <source>Mirr&amp;or image</source>
         <translation>좌우 반전(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="605"/>
+        <location filename="../qml/MainMenuBar.qml" line="615"/>
         <source>&amp;Deinterlace</source>
         <translation>디인터레이스(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="617"/>
+        <location filename="../qml/MainMenuBar.qml" line="648"/>
         <source>&amp;Yadif</source>
         <translation>Yadif(&amp;Y)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="626"/>
+        <location filename="../qml/MainMenuBar.qml" line="657"/>
         <source>&amp;Bwdif</source>
         <translation>Bwdif(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="637"/>
+        <location filename="../qml/MainMenuBar.qml" line="668"/>
         <source>E&amp;qualizer…</source>
         <translation>이퀄라이저(&amp;Q)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="643"/>
+        <location filename="../qml/MainMenuBar.qml" line="674"/>
         <source>&amp;Screenshot</source>
         <translation>스크린샷(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="653"/>
+        <location filename="../qml/MainMenuBar.qml" line="684"/>
         <source>&amp;Audio</source>
         <translation>음성(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="701"/>
+        <location filename="../qml/MainMenuBar.qml" line="732"/>
         <source>&amp;Mute</source>
         <translation>음소거(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="710"/>
+        <location filename="../qml/MainMenuBar.qml" line="741"/>
         <source>Volume &amp;-</source>
         <translation>볼륨 &amp;-</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="716"/>
+        <location filename="../qml/MainMenuBar.qml" line="747"/>
         <source>Volume &amp;+</source>
         <translation>볼륨 &amp;+</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="724"/>
-        <location filename="../qml/MainMenuBar.qml" line="821"/>
+        <location filename="../qml/MainMenuBar.qml" line="755"/>
+        <location filename="../qml/MainMenuBar.qml" line="852"/>
         <source>Delay &amp;-</source>
         <translation>느리게(&amp;-)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="728"/>
+        <location filename="../qml/MainMenuBar.qml" line="759"/>
         <source>D&amp;elay +</source>
         <translation>빠르게(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="732"/>
+        <location filename="../qml/MainMenuBar.qml" line="763"/>
         <source>Set dela&amp;y…</source>
         <translation>싱크 조절하기(&amp;Y)...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="739"/>
+        <location filename="../qml/MainMenuBar.qml" line="770"/>
         <source>&amp;Subtitles</source>
         <translation>자막(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="759"/>
+        <location filename="../qml/MainMenuBar.qml" line="790"/>
         <source>&amp;Off</source>
         <translation>끄기(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="804"/>
+        <location filename="../qml/MainMenuBar.qml" line="835"/>
         <source>&amp;Load subtitles…</source>
         <translation>자막 열기(&amp;L)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="810"/>
+        <location filename="../qml/MainMenuBar.qml" line="841"/>
         <source>&amp;Find subtitles at OpenSubtitles…</source>
         <translation>OpenSubtitles에서 자막 찾기(&amp;F)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="815"/>
+        <location filename="../qml/MainMenuBar.qml" line="846"/>
         <source>U&amp;nload subtitles</source>
         <translation>자막 내리기(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="826"/>
+        <location filename="../qml/MainMenuBar.qml" line="857"/>
         <source>Delay &amp;+</source>
         <translation>빠르게(&amp;+)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="831"/>
+        <location filename="../qml/MainMenuBar.qml" line="862"/>
         <source>Se&amp;t delay…</source>
         <translation>싱크 조절하기(&amp;T)...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="839"/>
+        <location filename="../qml/MainMenuBar.qml" line="870"/>
         <source>&amp;Browse</source>
         <translation>이동(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="842"/>
+        <location filename="../qml/MainMenuBar.qml" line="873"/>
         <source>&amp;DVD menu</source>
         <translation>DVD 메뉴</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="851"/>
+        <location filename="../qml/MainMenuBar.qml" line="882"/>
         <source>&amp;Title</source>
         <translation>제목(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="890"/>
+        <location filename="../qml/MainMenuBar.qml" line="921"/>
         <source>&amp;Chapters</source>
         <translation>챕터(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="915"/>
+        <location filename="../qml/MainMenuBar.qml" line="946"/>
         <source>&amp;Bookmarks</source>
         <translation>책갈피(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="925"/>
+        <location filename="../qml/MainMenuBar.qml" line="956"/>
         <source>&amp;Add new bookmark</source>
         <translation>새 책갈피 추가(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="932"/>
+        <location filename="../qml/MainMenuBar.qml" line="963"/>
         <source>&amp;Edit bookmarks…</source>
         <translation>책갈피 편집(&amp;E)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="956"/>
+        <location filename="../qml/MainMenuBar.qml" line="987"/>
         <source>Vie&amp;w</source>
         <translation>보기(&amp;W)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="959"/>
+        <location filename="../qml/MainMenuBar.qml" line="990"/>
         <source>&amp;Information and properties…</source>
         <translation>정보와 속성(&amp;I)...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="966"/>
+        <location filename="../qml/MainMenuBar.qml" line="997"/>
         <source>&amp;Playlist</source>
         <translation>재생 목록(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="974"/>
+        <location filename="../qml/MainMenuBar.qml" line="1005"/>
         <source>&amp;OSD</source>
         <translation>화면 정보 표시(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="976"/>
+        <location filename="../qml/MainMenuBar.qml" line="1007"/>
         <source>Subtitles only</source>
         <translation>자막만(&amp;Y)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="977"/>
+        <location filename="../qml/MainMenuBar.qml" line="1008"/>
         <source>Volume + seek</source>
         <translation>음량 + 탐색</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="978"/>
+        <location filename="../qml/MainMenuBar.qml" line="1009"/>
         <source>Volume + seek + timer</source>
         <translation>음량 + 탐색 + 시간</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="984"/>
+        <location filename="../qml/MainMenuBar.qml" line="1015"/>
         <source>Op&amp;tions</source>
         <translation>옵션(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="987"/>
+        <location filename="../qml/MainMenuBar.qml" line="1018"/>
         <source>&amp;Preferences…</source>
         <translation>환경 설정(&amp;P)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="994"/>
+        <location filename="../qml/MainMenuBar.qml" line="1031"/>
         <source>S&amp;how icon in system tray</source>
         <translation>시스템 트레이에 아이콘 보이기(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1000"/>
+        <location filename="../qml/MainMenuBar.qml" line="1037"/>
         <source>&amp;Toolbars</source>
         <translation>툴바(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1003"/>
+        <location filename="../qml/MainMenuBar.qml" line="1040"/>
         <source>&amp;Toolbar</source>
         <translation>도구 모음(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1009"/>
+        <location filename="../qml/MainMenuBar.qml" line="1046"/>
         <source>&amp;Control bar</source>
         <translation>조작바</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1016"/>
+        <location filename="../qml/MainMenuBar.qml" line="1053"/>
         <source>Edit main &amp;toolbar…</source>
         <translation>기본 도구 모음 편집(&amp;T)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1020"/>
+        <location filename="../qml/MainMenuBar.qml" line="1057"/>
         <source>Edit control &amp;bar…</source>
         <translation>제어 막대 편집(&amp;B)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1025"/>
+        <location filename="../qml/MainMenuBar.qml" line="1062"/>
         <source>&amp;Status bar</source>
         <translation>상태 표시줄(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1028"/>
+        <location filename="../qml/MainMenuBar.qml" line="1065"/>
         <source>&amp;Show status bar</source>
         <translation>상태 표시줄 표시(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1035"/>
+        <location filename="../qml/MainMenuBar.qml" line="1072"/>
         <source>&amp;Video info</source>
         <translation>동영상 정보(&amp;V)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1042"/>
+        <location filename="../qml/MainMenuBar.qml" line="1079"/>
         <source>&amp;Audio info</source>
         <translation>오디오 정보(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1049"/>
+        <location filename="../qml/MainMenuBar.qml" line="1086"/>
         <source>F&amp;ormat info</source>
         <translation>형식 정보(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1056"/>
+        <location filename="../qml/MainMenuBar.qml" line="1093"/>
         <source>&amp;Bitrate info</source>
         <translation>비트레이트 정보(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1063"/>
+        <location filename="../qml/MainMenuBar.qml" line="1100"/>
         <source>&amp;Frame counter</source>
         <translation>프레임 카운터(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1071"/>
+        <location filename="../qml/MainMenuBar.qml" line="1108"/>
         <source>Display &amp;total time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1077"/>
+        <location filename="../qml/MainMenuBar.qml" line="1114"/>
         <source>Display &amp;remaining time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1084"/>
+        <location filename="../qml/MainMenuBar.qml" line="1121"/>
         <source>Show the current time with &amp;milliseconds</source>
         <translation>현재 시간을 밀리초로 보이기(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1094"/>
+        <location filename="../qml/MainMenuBar.qml" line="1131"/>
         <source>&amp;Help</source>
         <translation>도움말(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1097"/>
+        <location filename="../qml/MainMenuBar.qml" line="1134"/>
         <source>&amp;Contents</source>
         <translation>내용(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1104"/>
+        <location filename="../qml/MainMenuBar.qml" line="1141"/>
         <source>&amp;Check for updates</source>
         <translation>업데이트 검사(&amp;U)</translation>
     </message>
@@ -1727,7 +1737,7 @@
         <translation type="vanished">유튜브 지원 설치/업데이트</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1110"/>
+        <location filename="../qml/MainMenuBar.qml" line="1147"/>
         <source>&amp;About Vivace</source>
         <translation>Vivace 정보(&amp;A)</translation>
     </message>
@@ -1748,47 +1758,47 @@
         <translation>정보 및 속성</translation>
     </message>
     <message>
-        <location filename="../qml/MediaInfoDialog.qml" line="58"/>
+        <location filename="../qml/MediaInfoDialog.qml" line="67"/>
         <source>Supported by the playback backend; the entry used by the current file is highlighted. A specific one cannot be forced.</source>
         <translation>재생 백엔드에서 지원됩니다. 현재 파일이 사용하는 항목이 강조 표시됩니다. 특정 항목을 강제할 수는 없습니다.</translation>
     </message>
     <message>
-        <location filename="../qml/MediaInfoDialog.qml" line="66"/>
+        <location filename="../qml/MediaInfoDialog.qml" line="75"/>
         <source>Name</source>
         <translation>이름</translation>
     </message>
     <message>
-        <location filename="../qml/MediaInfoDialog.qml" line="71"/>
+        <location filename="../qml/MediaInfoDialog.qml" line="80"/>
         <source>Description</source>
         <translation>설명</translation>
     </message>
     <message>
-        <location filename="../qml/MediaInfoDialog.qml" line="126"/>
+        <location filename="../qml/MediaInfoDialog.qml" line="140"/>
         <source>&amp;Information</source>
         <translation>정보</translation>
     </message>
     <message>
-        <location filename="../qml/MediaInfoDialog.qml" line="127"/>
+        <location filename="../qml/MediaInfoDialog.qml" line="141"/>
         <source>&amp;Demuxer</source>
         <translation>디먹서</translation>
     </message>
     <message>
-        <location filename="../qml/MediaInfoDialog.qml" line="128"/>
+        <location filename="../qml/MediaInfoDialog.qml" line="142"/>
         <source>&amp;Video codec</source>
         <translation>비디오 코덱</translation>
     </message>
     <message>
-        <location filename="../qml/MediaInfoDialog.qml" line="129"/>
+        <location filename="../qml/MediaInfoDialog.qml" line="143"/>
         <source>&amp;Audio codec</source>
         <translation>오디오 코덱</translation>
     </message>
     <message>
-        <location filename="../qml/MediaInfoDialog.qml" line="154"/>
+        <location filename="../qml/MediaInfoDialog.qml" line="176"/>
         <source>No media loaded</source>
         <translation>불러온 미디어 없음</translation>
     </message>
     <message>
-        <location filename="../qml/MediaInfoDialog.qml" line="182"/>
+        <location filename="../qml/MediaInfoDialog.qml" line="204"/>
         <source>Close</source>
         <translation>닫기</translation>
     </message>
@@ -1902,32 +1912,32 @@
     <name>PlayerController</name>
     <message>
         <location filename="../src/playercontroller.cpp" line="181"/>
-        <location filename="../src/playercontroller.cpp" line="925"/>
-        <location filename="../src/playercontroller.cpp" line="941"/>
-        <location filename="../src/playercontroller.cpp" line="1598"/>
-        <location filename="../src/playercontroller.cpp" line="1614"/>
-        <location filename="../src/playercontroller.cpp" line="2525"/>
+        <location filename="../src/playercontroller.cpp" line="957"/>
+        <location filename="../src/playercontroller.cpp" line="973"/>
+        <location filename="../src/playercontroller.cpp" line="1638"/>
+        <location filename="../src/playercontroller.cpp" line="1654"/>
+        <location filename="../src/playercontroller.cpp" line="2565"/>
         <source>Track %1</source>
         <translation>트랙 %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="843"/>
+        <location filename="../src/playercontroller.cpp" line="875"/>
         <source>A/V delay: %1 ms</source>
         <translation>A/V 지연: %1 ms</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1655"/>
+        <location filename="../src/playercontroller.cpp" line="1695"/>
         <source>DVD title %1 could not be assembled</source>
         <translation>DVD 타이틀 %1을(를) 조합할 수 없습니다</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1661"/>
+        <location filename="../src/playercontroller.cpp" line="1701"/>
         <source>DVD title %1 could not be opened</source>
         <translation>DVD 타이틀 %1을(를) 열 수 없습니다</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1475"/>
-        <location filename="../src/playercontroller.cpp" line="1842"/>
+        <location filename="../src/playercontroller.cpp" line="1515"/>
+        <location filename="../src/playercontroller.cpp" line="1882"/>
         <source>Title %1 (%2)</source>
         <translation>타이틀 %1 (%2)</translation>
     </message>
@@ -1982,288 +1992,288 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1372"/>
+        <location filename="../src/playercontroller.cpp" line="1412"/>
         <source>Could not open the Blu-ray disc (it may be encrypted, or use an unsupported format).</source>
         <translation>블루레이 디스크를 열 수 없습니다(암호화되어 있거나 지원되지 않는 형식일 수 있습니다).</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1379"/>
+        <location filename="../src/playercontroller.cpp" line="1419"/>
         <source>No playable titles were found on this Blu-ray disc.</source>
         <translation>이 블루레이 디스크에서 재생 가능한 타이틀을 찾을 수 없습니다.</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1424"/>
+        <location filename="../src/playercontroller.cpp" line="1464"/>
         <source>This Blu-ray title could not be selected.</source>
         <translation>이 블루레이 타이틀을 선택할 수 없습니다.</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1434"/>
-        <location filename="../src/playercontroller.cpp" line="1438"/>
+        <location filename="../src/playercontroller.cpp" line="1474"/>
+        <location filename="../src/playercontroller.cpp" line="1478"/>
         <source>This Blu-ray title could not be opened.</source>
         <translation>이 블루레이 타이틀을 열 수 없습니다.</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1858"/>
+        <location filename="../src/playercontroller.cpp" line="1898"/>
         <source>Chapter %1 (%2)</source>
         <translation>챕터 %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3001"/>
+        <location filename="../src/playercontroller.cpp" line="3059"/>
         <source>Could not open the stream</source>
         <translation>스트림을 열 수 없습니다</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3060"/>
+        <location filename="../src/playercontroller.cpp" line="3118"/>
         <source>System default</source>
         <translation>시스템 기본값</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3234"/>
+        <location filename="../src/playercontroller.cpp" line="3297"/>
         <source>A marker set to %1</source>
         <translation>A 마커가 %1(으)로 설정됨</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3245"/>
+        <location filename="../src/playercontroller.cpp" line="3308"/>
         <source>B marker set to %1</source>
         <translation>B 마커가 %1(으)로 설정됨</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3255"/>
+        <location filename="../src/playercontroller.cpp" line="3318"/>
         <source>A-B markers cleared</source>
         <translation>A-B 표시를 지웠습니다</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3312"/>
+        <location filename="../src/playercontroller.cpp" line="3379"/>
         <source>None</source>
         <translation>없음</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3312"/>
+        <location filename="../src/playercontroller.cpp" line="3378"/>
         <source>Yadif</source>
         <translation>Yadif</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3313"/>
+        <location filename="../src/playercontroller.cpp" line="3379"/>
         <source>Bwdif</source>
         <translation>Bwdif</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3313"/>
+        <location filename="../src/playercontroller.cpp" line="3378"/>
         <source>Auto</source>
         <translation>자동</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3314"/>
+        <location filename="../src/playercontroller.cpp" line="3380"/>
         <source>Deinterlace: %1</source>
         <translation>디인터레이스: %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3393"/>
+        <location filename="../src/playercontroller.cpp" line="3464"/>
         <source>Could not load subtitles from %1</source>
         <translation>%1에서 자막을 불러올 수 없습니다</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3410"/>
+        <location filename="../src/playercontroller.cpp" line="3481"/>
         <source>Subtitles loaded: %1</source>
         <translation>자막을 불러옴: %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3421"/>
+        <location filename="../src/playercontroller.cpp" line="3492"/>
         <source>Subtitles unloaded</source>
         <translation>자막을 내림</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3431"/>
+        <location filename="../src/playercontroller.cpp" line="3502"/>
         <source>Subtitle delay: %1 ms</source>
         <translation>자막 싱크: %1 ms</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3576"/>
+        <location filename="../src/playercontroller.cpp" line="3652"/>
         <source>General</source>
         <translation>일반</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3579"/>
+        <location filename="../src/playercontroller.cpp" line="3655"/>
         <source>File</source>
         <translation>파일</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3594"/>
+        <location filename="../src/playercontroller.cpp" line="3670"/>
         <source>Size</source>
         <translation>크기</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3594"/>
+        <location filename="../src/playercontroller.cpp" line="3670"/>
         <source>%1 KB (%2 MB)</source>
         <translation>%1 KB (%2 MB)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3599"/>
-        <location filename="../src/playercontroller.cpp" line="3633"/>
+        <location filename="../src/playercontroller.cpp" line="3675"/>
+        <location filename="../src/playercontroller.cpp" line="3709"/>
         <source>URL</source>
         <translation>주소</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3609"/>
+        <location filename="../src/playercontroller.cpp" line="3685"/>
         <source>Length</source>
         <translation>시간</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3610"/>
+        <location filename="../src/playercontroller.cpp" line="3686"/>
         <source>Demuxer</source>
         <translation>디먹서</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3615"/>
-        <location filename="../src/playercontroller.cpp" line="3666"/>
-        <location filename="../src/playercontroller.cpp" line="3729"/>
-        <location filename="../src/playercontroller.cpp" line="3759"/>
+        <location filename="../src/playercontroller.cpp" line="3691"/>
+        <location filename="../src/playercontroller.cpp" line="3742"/>
+        <location filename="../src/playercontroller.cpp" line="3805"/>
+        <location filename="../src/playercontroller.cpp" line="3835"/>
         <source>Name</source>
         <translation>이름</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3616"/>
+        <location filename="../src/playercontroller.cpp" line="3692"/>
         <source>Artist</source>
         <translation>아티스트</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3618"/>
+        <location filename="../src/playercontroller.cpp" line="3694"/>
         <source>Album artist</source>
         <translation>앨범 아티스트</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3620"/>
+        <location filename="../src/playercontroller.cpp" line="3696"/>
         <source>Author</source>
         <translation>작가</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3621"/>
+        <location filename="../src/playercontroller.cpp" line="3697"/>
         <source>Composer</source>
         <translation>작곡가</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3622"/>
+        <location filename="../src/playercontroller.cpp" line="3698"/>
         <source>Album</source>
         <translation>앨범</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3623"/>
+        <location filename="../src/playercontroller.cpp" line="3699"/>
         <source>Genre</source>
         <translation>장르</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3624"/>
+        <location filename="../src/playercontroller.cpp" line="3700"/>
         <source>Date</source>
         <translation>날짜</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3625"/>
+        <location filename="../src/playercontroller.cpp" line="3701"/>
         <source>Track</source>
         <translation>트랙</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3626"/>
+        <location filename="../src/playercontroller.cpp" line="3702"/>
         <source>Copyright</source>
         <translation>저작권</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3627"/>
+        <location filename="../src/playercontroller.cpp" line="3703"/>
         <source>Comment</source>
         <translation>주석</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3628"/>
+        <location filename="../src/playercontroller.cpp" line="3704"/>
         <source>Description</source>
         <translation>설명</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3630"/>
+        <location filename="../src/playercontroller.cpp" line="3706"/>
         <source>Publisher</source>
         <translation>발행자</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3631"/>
-        <location filename="../src/playercontroller.cpp" line="3666"/>
-        <location filename="../src/playercontroller.cpp" line="3729"/>
-        <location filename="../src/playercontroller.cpp" line="3759"/>
+        <location filename="../src/playercontroller.cpp" line="3707"/>
+        <location filename="../src/playercontroller.cpp" line="3742"/>
+        <location filename="../src/playercontroller.cpp" line="3805"/>
+        <location filename="../src/playercontroller.cpp" line="3835"/>
         <source>Language</source>
         <translation>언어</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3635"/>
+        <location filename="../src/playercontroller.cpp" line="3711"/>
         <source>Clip info</source>
         <translation>클립 정보</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3639"/>
+        <location filename="../src/playercontroller.cpp" line="3715"/>
         <source>Initial Video Stream</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3642"/>
+        <location filename="../src/playercontroller.cpp" line="3718"/>
         <source>Resolution</source>
         <translation>해상도</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3645"/>
+        <location filename="../src/playercontroller.cpp" line="3721"/>
         <source>Aspect ratio</source>
         <translation>화면 비율</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3649"/>
-        <location filename="../src/playercontroller.cpp" line="3689"/>
+        <location filename="../src/playercontroller.cpp" line="3725"/>
+        <location filename="../src/playercontroller.cpp" line="3765"/>
         <source>Format</source>
         <translation>형식</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3652"/>
-        <location filename="../src/playercontroller.cpp" line="3692"/>
+        <location filename="../src/playercontroller.cpp" line="3728"/>
+        <location filename="../src/playercontroller.cpp" line="3768"/>
         <source>Bitrate</source>
         <translation>비트레이트</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3652"/>
-        <location filename="../src/playercontroller.cpp" line="3692"/>
+        <location filename="../src/playercontroller.cpp" line="3728"/>
+        <location filename="../src/playercontroller.cpp" line="3768"/>
         <source>%1 kbps</source>
         <translation>%1 kbps</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3655"/>
+        <location filename="../src/playercontroller.cpp" line="3731"/>
         <source>Frames per second</source>
         <translation>초당 프레임</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3658"/>
+        <location filename="../src/playercontroller.cpp" line="3734"/>
         <source>HDR</source>
         <translation>HDR</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3658"/>
+        <location filename="../src/playercontroller.cpp" line="3734"/>
         <source>yes</source>
         <translation>예</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3665"/>
+        <location filename="../src/playercontroller.cpp" line="3741"/>
         <source>Video Streams</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3673"/>
+        <location filename="../src/playercontroller.cpp" line="3749"/>
         <source>Initial Audio Stream</source>
         <translation>초기 오디오 스트림</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3728"/>
+        <location filename="../src/playercontroller.cpp" line="3804"/>
         <source>Audio Streams</source>
         <translation>오디오 스트림</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3758"/>
+        <location filename="../src/playercontroller.cpp" line="3834"/>
         <source>Subtitles</source>
         <translation>자막</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="4045"/>
+        <location filename="../src/playercontroller.cpp" line="4184"/>
         <source>Chapter %1</source>
         <translation>챕터 %1</translation>
     </message>
@@ -2412,17 +2422,17 @@
         <translation>URL 추가</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="612"/>
+        <location filename="../qml/PlaylistEditor.qml" line="628"/>
         <source>https://…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="622"/>
+        <location filename="../qml/PlaylistEditor.qml" line="638"/>
         <source>OK</source>
         <translation>확인(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/PlaylistEditor.qml" line="627"/>
+        <location filename="../qml/PlaylistEditor.qml" line="643"/>
         <source>Cancel</source>
         <translation>취소</translation>
     </message>
@@ -2443,57 +2453,57 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefAdvancedPage.qml" line="31"/>
+        <location filename="../qml/PrefAdvancedPage.qml" line="41"/>
         <source>Configuration</source>
         <translation>구성</translation>
     </message>
     <message>
-        <location filename="../qml/PrefAdvancedPage.qml" line="39"/>
+        <location filename="../qml/PrefAdvancedPage.qml" line="49"/>
         <source>Configuration folder:</source>
         <translation>구성 폴더:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefAdvancedPage.qml" line="46"/>
+        <location filename="../qml/PrefAdvancedPage.qml" line="56"/>
         <source>Open…</source>
         <translation>열기…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefAdvancedPage.qml" line="55"/>
+        <location filename="../qml/PrefAdvancedPage.qml" line="78"/>
         <source>Main settings are stored in the Windows registry (HKCUSoftware<byte value="xb"/>ivace-player); per-file data in vivace_files.ini in the folder above.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefAdvancedPage.qml" line="62"/>
+        <location filename="../qml/PrefAdvancedPage.qml" line="85"/>
         <source>Maintenance</source>
         <translation>유지 관리</translation>
     </message>
     <message>
-        <location filename="../qml/PrefAdvancedPage.qml" line="71"/>
+        <location filename="../qml/PrefAdvancedPage.qml" line="94"/>
         <source>Clear saved file settings</source>
         <translation>저장된 파일 설정 지우기</translation>
     </message>
     <message>
-        <location filename="../qml/PrefAdvancedPage.qml" line="77"/>
+        <location filename="../qml/PrefAdvancedPage.qml" line="100"/>
         <source>Erases every remembered playback position and per-file track choice at once; this happens immediately and is not undone by Cancel.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefAdvancedPage.qml" line="83"/>
+        <location filename="../qml/PrefAdvancedPage.qml" line="106"/>
         <source>Forgets all remembered playback positions and track selections.</source>
         <translation>기억된 모든 재생 위치와 트랙 선택을 잊어버립니다.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefAdvancedPage.qml" line="91"/>
+        <location filename="../qml/PrefAdvancedPage.qml" line="114"/>
         <source>Logs</source>
         <translation>로그</translation>
     </message>
     <message>
-        <location filename="../qml/PrefAdvancedPage.qml" line="100"/>
+        <location filename="../qml/PrefAdvancedPage.qml" line="123"/>
         <source>Vivace writes warnings and errors to vivace.log in the configuration folder above (kept across sessions, with the previous session as vivace.log.1). Include it when reporting a problem.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefAdvancedPage.qml" line="106"/>
+        <location filename="../qml/PrefAdvancedPage.qml" line="129"/>
         <source>Open log file</source>
         <translation>로그 파일 열기</translation>
     </message>
@@ -2501,68 +2511,68 @@
 <context>
     <name>PrefDrivesPage</name>
     <message>
-        <location filename="../qml/PrefDrivesPage.qml" line="20"/>
+        <location filename="../qml/PrefDrivesPage.qml" line="28"/>
         <source>&lt;h1&gt;Drives&lt;/h1&gt;&lt;p&gt;Vivace plays unencrypted DVD-Video. Open a disc or a VIDEO_TS folder with Open ▸ Disc ▸ DVD… — the title list and chapters are read from the disc&apos;s IFO structure, so there is no drive to preselect.&lt;/p&gt;&lt;p&gt;&lt;b&gt;DVD menus (experimental):&lt;/b&gt; when enabled, opening a disc shows its menu — buttons are clickable and can be navigated with the arrow keys (Enter selects). Use Browse ▸ DVD menu to return to it. If the menu is left idle for the timeout below, playback of the main title starts automatically (set 0 to keep the menu open). Subpicture highlight graphics and the First-Play sequence are not fully emulated.&lt;/p&gt;&lt;p&gt;CSS-encrypted discs are not supported. Blu-ray Disc playback is also available (Open ▸ Disc ▸ Blu-ray) — basic title/chapter playback only, with no on-disc menus and no Preferences of its own. Audio CD playback is being considered for a later phase.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefDrivesPage.qml" line="40"/>
+        <location filename="../qml/PrefDrivesPage.qml" line="52"/>
         <source>DVD</source>
         <translation>DVD</translation>
     </message>
     <message>
-        <location filename="../qml/PrefDrivesPage.qml" line="49"/>
+        <location filename="../qml/PrefDrivesPage.qml" line="61"/>
         <source>Vivace plays unencrypted DVD-Video. Use Open ▸ Disc ▸ DVD… (or drop a disc/VIDEO_TS folder) — the title list and chapters are read from the disc structure. There is no drive to preselect here.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefDrivesPage.qml" line="53"/>
+        <location filename="../qml/PrefDrivesPage.qml" line="65"/>
         <source>Show DVD menus (experimental)</source>
         <translation>DVD 메뉴 표시 (실험적)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefDrivesPage.qml" line="62"/>
+        <location filename="../qml/PrefDrivesPage.qml" line="74"/>
         <source>Play the First-Play sequence (intro / warnings)</source>
         <translation>첫 재생 시퀀스 재생 (인트로 / 경고)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefDrivesPage.qml" line="67"/>
+        <location filename="../qml/PrefDrivesPage.qml" line="79"/>
         <source>Run the disc&apos;s on-insert sequence (studio logos, warnings or an intro that may lead to a menu or auto-play), as a set-top player does. Off: go straight to the disc&apos;s interactive menu.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefDrivesPage.qml" line="77"/>
+        <location filename="../qml/PrefDrivesPage.qml" line="89"/>
         <source>Return to playback after menu inactivity:</source>
         <translation>메뉴 비활성 후 재생으로 복귀:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefDrivesPage.qml" line="84"/>
-        <location filename="../qml/PrefDrivesPage.qml" line="86"/>
+        <location filename="../qml/PrefDrivesPage.qml" line="96"/>
+        <location filename="../qml/PrefDrivesPage.qml" line="98"/>
         <source>Never</source>
         <translation>하지 않음</translation>
     </message>
     <message>
-        <location filename="../qml/PrefDrivesPage.qml" line="85"/>
+        <location filename="../qml/PrefDrivesPage.qml" line="97"/>
         <source>%1 s</source>
         <translation>%1초</translation>
     </message>
     <message>
-        <location filename="../qml/PrefDrivesPage.qml" line="90"/>
+        <location filename="../qml/PrefDrivesPage.qml" line="102"/>
         <source>Seconds a DVD menu may sit idle before Vivace plays the main title. Any menu activity resets the timer; 0 keeps the menu open indefinitely.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefDrivesPage.qml" line="101"/>
+        <location filename="../qml/PrefDrivesPage.qml" line="113"/>
         <source>Experimental: menu buttons are clickable and arrow-key navigable, but subpicture highlight graphics and the First-Play sequence are not fully emulated. CSS-encrypted discs (libdvdcss) are not supported. (Blu-ray Disc playback is supported separately via Open ▸ Disc ▸ Blu-ray, but has no on-disc menus and no settings here.)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefDrivesPage.qml" line="108"/>
+        <location filename="../qml/PrefDrivesPage.qml" line="120"/>
         <source>Audio CD</source>
         <translation>오디오 CD(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefDrivesPage.qml" line="114"/>
+        <location filename="../qml/PrefDrivesPage.qml" line="126"/>
         <source>Audio CD playback (libcdio) is being considered for a later phase.</source>
         <translation>오디오 CD 재생 (libcdio)은 이후 단계로 검토 중입니다.</translation>
     </message>
@@ -2570,32 +2580,32 @@
 <context>
     <name>PrefFileTypesPage</name>
     <message>
-        <location filename="../qml/PrefFileTypesPage.qml" line="63"/>
+        <location filename="../qml/PrefFileTypesPage.qml" line="74"/>
         <source>Select the file types Vivace should be associated with:</source>
         <translation>Vivace와 연결할 파일 형식을 선택하세요:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefFileTypesPage.qml" line="97"/>
+        <location filename="../qml/PrefFileTypesPage.qml" line="108"/>
         <source>Select all</source>
         <translation>모두 선택</translation>
     </message>
     <message>
-        <location filename="../qml/PrefFileTypesPage.qml" line="101"/>
+        <location filename="../qml/PrefFileTypesPage.qml" line="112"/>
         <source>Select none</source>
         <translation>모두 선택 해제</translation>
     </message>
     <message>
-        <location filename="../qml/PrefFileTypesPage.qml" line="106"/>
+        <location filename="../qml/PrefFileTypesPage.qml" line="117"/>
         <source>Apply</source>
         <translation>적용</translation>
     </message>
     <message>
-        <location filename="../qml/PrefFileTypesPage.qml" line="118"/>
+        <location filename="../qml/PrefFileTypesPage.qml" line="129"/>
         <source>This registers Vivace for the selected types and adds it to the &quot;Open with&quot; list. Windows may still ask you to confirm the default app for a type in its Settings.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefFileTypesPage.qml" line="125"/>
+        <location filename="../qml/PrefFileTypesPage.qml" line="136"/>
         <source>File associations are only available on Windows.</source>
         <translation>파일 연결은 Windows에서만 사용할 수 있습니다.</translation>
     </message>
@@ -2713,42 +2723,42 @@
         <translation>전체 화면에서 재생 시작하기</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="189"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="202"/>
         <source>Use software video equalizer</source>
         <translation>소프트웨어 비디오 이퀄라이저 사용하기</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="194"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="215"/>
         <source>Deinterlace by default:</source>
         <translation>기본적으로 디인터레이스:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="197"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="222"/>
         <source>None</source>
         <translation>없음</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="197"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="222"/>
         <source>Yadif</source>
         <translation>Yadif</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="197"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="222"/>
         <source>Bwdif</source>
         <translation>Bwdif</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="197"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="222"/>
         <source>Auto</source>
         <translation>자동</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="202"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="227"/>
         <source>Deinterlacing removes the horizontal combing artifacts of interlaced video. This sets the default for newly opened files; change it per file from Video &gt; Deinterlace. &quot;Auto&quot; uses Bwdif but only on frames the file itself marks as interlaced, leaving progressive frames untouched; it is not offered on the per-file Video &gt; Deinterlace menu, since it only makes sense as a default.</source>
         <translation>디인터레이스는 인터레이스 영상의 가로 빗살무늬 아티팩트를 제거합니다. 이 설정은 새로 여는 파일의 기본값이 되며, 파일별로 변경하려면 영상 &gt; 디인터레이스 메뉴를 사용하세요. &quot;자동&quot;은 파일 자체가 인터레이스로 표시한 프레임에만 Bwdif를 사용하고 순차 주사 프레임은 그대로 두며, 기본값으로서만 의미가 있으므로 파일별 영상 &gt; 디인터레이스 메뉴에는 제공되지 않습니다.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="221"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="246"/>
         <source>Video equalizer and zoom/aspect controls are planned for Phase 4 (ShaderEffect / item transforms). Driver selection is not available with Qt Multimedia.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2757,135 +2767,135 @@
         <translation type="vanished">없음 (백엔드에서 지원하지 않음)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="239"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="264"/>
         <source>Output device:</source>
         <translation>출력 장치:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="261"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="286"/>
         <source>Volume</source>
         <translation>볼륨</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="269"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="294"/>
         <source>Volume step:</source>
         <translation>음량 단계:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="271"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="296"/>
         <source>How much each volume up/down key press or mouse-wheel notch changes the level.</source>
         <translation>음량 올림/내림 키를 누르거나 마우스 휠을 한 칸 돌릴 때마다 수준이 얼마나 변경되는지입니다.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="279"/>
-        <location filename="../qml/PrefGeneralPage.qml" line="301"/>
-        <location filename="../qml/PrefGeneralPage.qml" line="361"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="304"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="326"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="386"/>
         <source>%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="284"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="309"/>
         <source>Remember volume between sessions</source>
         <translation>세션 간 음량 기억</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="291"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="316"/>
         <source>Initial volume:</source>
         <translation>초기 음량:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="293"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="318"/>
         <source>The volume level set at startup when the volume is not remembered between sessions.</source>
         <translation>음량이 세션 간에 기억되지 않을 때 시작 시 설정되는 음량 수준입니다.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="309"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="334"/>
         <source>Synchronization</source>
         <translation>동기화</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="317"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="342"/>
         <source>Global audio delay:</source>
         <translation>전역 오디오 지연:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="333"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="358"/>
         <source>ms</source>
         <translation>ms</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="341"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="366"/>
         <source>Delay for the current audio device — “%1” — applied to every file (e.g. to compensate Bluetooth output latency). Remembered per device, so switching devices restores the right value. A negative value holds the video back to match late audio. Each file can add its own delay via Audio &gt; Set delay.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="355"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="380"/>
         <source>Use software volume control</source>
         <translation>소프트웨어 볼륨 조절 사용하기</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="359"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="384"/>
         <source>Max. amplification:</source>
         <translation>최대 증폭:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="364"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="389"/>
         <source>Volume normalization by default</source>
         <translation>기본으로 볼륨 노멀라이즈 사용하기</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="371"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="396"/>
         <source>Amplification above 100% and volume normalization require an audio pipeline filter, which Qt Multimedia does not provide.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="390"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="415"/>
         <source>Comma-separated language codes or names in order of preference (e.g. &quot;ja, en&quot;).</source>
         <translation>선호 순서대로 쉼표로 구분된 언어 코드 또는 이름 (예: &quot;ja, en&quot;).</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="395"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="420"/>
         <source>Preferred audio language:</source>
         <translation>선호 오디오 언어:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="398"/>
-        <location filename="../qml/PrefGeneralPage.qml" line="408"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="423"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="433"/>
         <source>e.g. ja, en</source>
         <translation>예: ja, en</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="405"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="430"/>
         <source>Preferred subtitle language:</source>
         <translation>선호 자막 언어:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="416"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="441"/>
         <source>Show subtitles by default</source>
         <translation>기본적으로 자막 표시</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="421"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="446"/>
         <source>When a file has embedded subtitles, turn one on automatically (preferring the languages above) instead of starting with subtitles off.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="431"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="456"/>
         <source>...but not if the audio is already in a preferred language</source>
         <translation>...단, 오디오가 이미 선호 언어인 경우는 제외</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="437"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="462"/>
         <source>Skip the automatic subtitle above when its language matches the audio track that actually got selected -- if you already understand the audio, a subtitle in the same language is usually redundant.</source>
         <translation>위의 자동 자막은 실제로 선택된 오디오 트랙과 언어가 일치하면 건너뜁니다. 오디오를 이미 이해한다면 같은 언어의 자막은 대개 불필요합니다.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="448"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="473"/>
         <source>Preferred audio track number:</source>
         <translation>선호 오디오 트랙 번호:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="454"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="479"/>
         <source>Preferred subtitle track number:</source>
         <translation>선호 자막 트랙 번호:</translation>
     </message>
@@ -2995,37 +3005,37 @@
         <translation>단축키 설정</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="263"/>
+        <location filename="../qml/PrefInputPage.qml" line="283"/>
         <source>Press the new shortcut for “%1”.</source>
         <translation>“%1”의 새 단축키를 누르세요.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="271"/>
+        <location filename="../qml/PrefInputPage.qml" line="291"/>
         <source>…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="278"/>
+        <location filename="../qml/PrefInputPage.qml" line="298"/>
         <source>Already used by “%1”. Assigning will clear it there.</source>
         <translation>이미 “%1”에서 사용 중입니다. 할당하면 거기에서 지워집니다.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="287"/>
+        <location filename="../qml/PrefInputPage.qml" line="307"/>
         <source>Clear</source>
         <translation>지우기</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="288"/>
+        <location filename="../qml/PrefInputPage.qml" line="308"/>
         <source>Leave this action without a shortcut</source>
         <translation>이 동작을 단축키 없이 두기</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="297"/>
+        <location filename="../qml/PrefInputPage.qml" line="317"/>
         <source>Assign</source>
         <translation>할당</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInputPage.qml" line="308"/>
+        <location filename="../qml/PrefInputPage.qml" line="328"/>
         <source>Cancel</source>
         <translation>취소</translation>
     </message>
@@ -3043,17 +3053,17 @@
         <translation>탐색하기</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="56"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="57"/>
         <source>Instances</source>
         <translation>중복 실행</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="57"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="71"/>
         <source>Fullscreen</source>
         <translation>전체 화면</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="58"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="78"/>
         <source>Privacy</source>
         <translation>개인정보</translation>
     </message>
@@ -3062,57 +3072,57 @@
         <translation type="vanished">High &amp;DPI</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="77"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="97"/>
         <source>Main window</source>
         <translation>메인 창</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="85"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="120"/>
         <source>Auto-resize:</source>
         <translation>자동 크기 조정:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="90"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="125"/>
         <source>Never</source>
         <translation>하지 않음</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="91"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="126"/>
         <source>Whenever it&apos;s needed</source>
         <translation>필요할 때마다</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="92"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="127"/>
         <source>Only after loading a new video</source>
         <translation>새 동영상을 불러온 후에만</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="99"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="134"/>
         <source>Center window</source>
         <translation>창을 가운데로 놓기</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="104"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="139"/>
         <source>Prevent the window from getting outside of the screen</source>
         <translation>창이 화면 밖으로 나가지 않도록 방지</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="109"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="144"/>
         <source>Remember size and position of the main window</source>
         <translation>기본 창의 크기와 위치 기억</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="114"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="149"/>
         <source>Hide the video window when playing audio files</source>
         <translation>오디오 파일 재생 시 동영상 창 숨기기</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="176"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="211"/>
         <source>Language:</source>
         <translation>언어:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="123"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="158"/>
         <source>GUI:</source>
         <translation>인터페이스:</translation>
     </message>
@@ -3122,83 +3132,83 @@
         <translation>텍스트</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="133"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="168"/>
         <source>Basic GUI</source>
         <translation>기본 GUI</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="134"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="169"/>
         <source>Mini GUI</source>
         <translation>미니 GUI</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="135"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="170"/>
         <source>Mpc GUI</source>
         <translation>MPC GUI</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="136"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="171"/>
         <source>Skinnable GUI</source>
         <translation>스킨을 사용할 수 있는 GUI</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="159"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="194"/>
         <source>Icon set:</source>
         <translation>아이콘 셋:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="167"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="202"/>
         <source>Default</source>
         <translation>기본</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="168"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="203"/>
         <source>Classic</source>
         <translation>클래식</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="185"/>
-        <location filename="../qml/PrefInterfacePage.qml" line="253"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="220"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="288"/>
         <source>System default</source>
         <translation>시스템 기본값</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="199"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="234"/>
         <source>Language changes take effect after restarting Vivace. Untranslated text falls back to English.</source>
         <translation>언어 변경은 Vivace를 다시 시작한 후에 적용됩니다. 번역되지 않은 텍스트는 영어로 표시됩니다.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="204"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="239"/>
         <source>Style:</source>
         <translation>스타일:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="219"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="254"/>
         <source>Style changes take effect after restarting Vivace. Fusion is recommended: other styles may not render the custom menus and sliders correctly.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="248"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="283"/>
         <source>Application font:</source>
         <translation>애플리케이션 글꼴:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="259"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="294"/>
         <source>Change…</source>
         <translation>변경하기...</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="270"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="305"/>
         <source>Reset</source>
         <translation>초기화</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="284"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="319"/>
         <source>Font changes take effect after restarting Vivace. (The default font already renders Japanese and other scripts; a custom font only needs to be set for preference.)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="223"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="258"/>
         <source>Gradient background for the toolbar and control bar</source>
         <translation>도구 모음과 제어 막대의 그라데이션 배경</translation>
     </message>
@@ -3208,185 +3218,185 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="228"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="263"/>
         <source>Use the system native file dialog</source>
         <translation>시스템 자체 파일 대화상자 사용하기</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="289"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="324"/>
         <source>OSD</source>
         <translation>화면 정보 표시(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="296"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="331"/>
         <source>Show OSD messages</source>
         <translation>OSD 메시지 표시</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="302"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="337"/>
         <source>Duration of OSD messages:</source>
         <translation>OSD 메시지 표시 시간:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="308"/>
-        <location filename="../qml/PrefInterfacePage.qml" line="559"/>
-        <location filename="../qml/PrefInterfacePage.qml" line="567"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="343"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="594"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="602"/>
         <source>ms</source>
         <translation>ms</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="313"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="348"/>
         <source>OSD font size:</source>
         <translation>OSD 글꼴 크기:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="319"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="354"/>
         <source>px</source>
         <translation>px</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="327"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="362"/>
         <source>Touch</source>
         <translation>터치</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="336"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="371"/>
         <source>Touch-friendly controls (larger fonts and icons)</source>
         <translation>터치 친화적 컨트롤 (더 큰 글꼴 및 아이콘)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="341"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="376"/>
         <source>Enlarges the interface for finger use on a tablet. Toolbar icons resize immediately; the larger fonts take effect after you restart Vivace.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="351"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="386"/>
         <source>Swipe across the video to seek</source>
         <translation>동영상을 가로질러 스와이프하여 탐색</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="356"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="391"/>
         <source>Drag left or right on the video (with a finger or the mouse) to jump backward or forward. An on-screen message previews the target while you drag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="440"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="475"/>
         <source>seconds</source>
         <translation>초</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="446"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="481"/>
         <source>Short jump:</source>
         <translation>짧은 이동:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="453"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="488"/>
         <source>Medium jump:</source>
         <translation>중간 이동:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="460"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="495"/>
         <source>Long jump:</source>
         <translation>긴 이동:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="466"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="501"/>
         <source>Mouse wheel jump:</source>
         <translation>마우스 휠 이동:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="476"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="511"/>
         <source>Behaviour of time slider:</source>
         <translation>타임 슬라이더 동작:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="480"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="515"/>
         <source>Seek to position while dragging</source>
         <translation>마우스로 드래깅시 즉시 이동하기</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="481"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="516"/>
         <source>Seek to position when released</source>
         <translation>마우스 버튼을 놓았을 때 이동하기</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="492"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="527"/>
         <source>Absolute/relative seeking method and precise seeking are mplayer/mpv-specific and do not apply to Vivace&apos;s Qt Multimedia backend (seeking is already position-based).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="515"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="550"/>
         <source>Use only one running instance of Vivace</source>
         <translation>Vivace 인스턴스를 하나만 실행</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="526"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="561"/>
         <source>When enabled, opening a file while Vivace is already running hands it to the existing window instead of starting a new one. Takes effect on the next launch.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="540"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="575"/>
         <source>Hide the mouse pointer after inactivity</source>
         <translation>비활성 후 마우스 포인터 숨기기</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="545"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="580"/>
         <source>While a video is playing, hide the mouse pointer over the video after the delay below — in the normal window as well as in fullscreen.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="553"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="588"/>
         <source>Hide after:</source>
         <translation>다음 시간 후 숨기기:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="565"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="600"/>
         <source>Time to hide the control bar:</source>
         <translation>제어 막대를 숨기기까지의 시간:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="574"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="609"/>
         <source>The fullscreen control bar currently shows while the pointer is near the bottom edge; a time-based autohide is planned.</source>
         <translation>전체 화면에서 제어 막대는 현재 포인터가 아래쪽 가장자리 근처에 있을 때 표시됩니다. 시간 기반 자동 숨김이 계획되어 있습니다.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="586"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="621"/>
         <source>Recent files</source>
         <translation>최근 파일</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="591"/>
-        <location filename="../qml/PrefInterfacePage.qml" line="607"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="626"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="642"/>
         <source>Max. items:</source>
         <translation>최대 항목 수:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="602"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="637"/>
         <source>URLs</source>
         <translation>주소</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="617"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="652"/>
         <source>Remember last directory</source>
         <translation>마지막 폴더 기억하기</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="369"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="404"/>
         <source>Vivace scales the interface on high-DPI screens automatically. You can override the scale factor here if needed.</source>
         <translation>Vivace는 고DPI 화면에서 인터페이스를 자동으로 크기 조정합니다. 필요하면 여기서 배율을 재정의할 수 있습니다.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="373"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="408"/>
         <source>Scale factor:</source>
         <translation>스케일 요소:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="380"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="415"/>
         <source>Automatic</source>
         <translation>자동</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="397"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="432"/>
         <source>Scale factor changes take effect after restarting Vivace.</source>
         <translation>배율 변경은 Vivace를 다시 시작한 후에 적용됩니다.</translation>
     </message>
@@ -3395,66 +3405,66 @@
     <name>PrefNetworkPage</name>
     <message>
         <location filename="../qml/PrefNetworkPage.qml" line="73"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="95"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="109"/>
         <source>OpenSubtitles</source>
         <translation>OpenSubtitles</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="74"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="76"/>
         <source>YouTube</source>
         <translation>유투브</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="76"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="633"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="90"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="653"/>
         <source>Cast</source>
         <translation>전송</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="105"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="119"/>
         <source>API key:</source>
         <translation>API 키:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="106"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="120"/>
         <source>A free per-application key from opensubtitles.com (create an API consumer); subtitle search will not work until this is set.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="111"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="125"/>
         <source>from opensubtitles.com → API consumers</source>
         <translation>opensubtitles.com → API consumers에서</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="116"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="585"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="130"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="605"/>
         <source>Username:</source>
         <translation>사용자명:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="117"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="131"/>
         <source>Optional opensubtitles.com account login; signing in is not required but raises the daily download limit.</source>
         <translation>선택적 opensubtitles.com 계정 로그인. 로그인은 필수가 아니지만 일일 다운로드 한도를 높입니다.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="124"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="591"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="138"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="611"/>
         <source>Password:</source>
         <translation>패스워드:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="139"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="153"/>
         <source>The account password is stored securely using your operating system&apos;s credential manager.</source>
         <translation>계정 비밀번호는 운영체제의 자격 증명 관리자를 사용하여 안전하게 저장됩니다.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="75"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="542"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="89"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="562"/>
         <source>Proxy</source>
         <translation>프락시</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="598"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="618"/>
         <source>Type:</source>
         <translation>형식:</translation>
     </message>
@@ -3463,18 +3473,18 @@
         <translation type="vanished">없음</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="572"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="592"/>
         <source>Host:</source>
         <translation>호스트:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="578"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="643"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="598"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="663"/>
         <source>Port:</source>
         <translation>포트:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="158"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="172"/>
         <source>YouTube (yt-dlp)</source>
         <translation>YouTube (yt-dlp)</translation>
     </message>
@@ -3484,348 +3494,348 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="168"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="188"/>
         <source>Play YouTube URLs with yt-dlp</source>
         <translation>yt-dlp로 YouTube URL 재생</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="172"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="192"/>
         <source>When on, opening a YouTube URL runs yt-dlp instead of trying to play the page URL as-is.</source>
         <translation>켜져 있으면 YouTube URL을 열 때 페이지 URL을 그대로 재생하려 시도하는 대신 yt-dlp를 실행합니다.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="185"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="205"/>
         <source>Open YouTube URLs by:</source>
         <translation>YouTube URL 열기 방식:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="186"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="206"/>
         <source>Streaming is fastest but caps at ~720p and can&apos;t use cookies. Downloading gets full HD (uses cookies + ffmpeg), then plays and deletes the file. Or hand off to your own external downloader tool.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="196"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="216"/>
         <source>Streaming (fast, up to ~720p)</source>
         <translation>스트리밍 (빠름, 최대 ~720p)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="197"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="217"/>
         <source>Downloading then playing (HD, cookies)</source>
         <translation>다운로드 후 재생 (HD, 쿠키)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="198"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="218"/>
         <source>An external downloader tool</source>
         <translation>외부 다운로더 도구</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="209"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="229"/>
         <source>Use managed yt-dlp</source>
         <translation>관리되는 yt-dlp 사용</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="213"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="233"/>
         <source>When on, Vivace installs yt-dlp for you (see the button here) and can keep it updated automatically below. Turn this off to point at your own yt-dlp instead -- Vivace will not install or auto-update it.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="221"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="241"/>
         <source>Install / Update yt-dlp…</source>
         <translation>yt-dlp 설치/업데이트…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="230"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="250"/>
         <source>yt-dlp path:</source>
         <translation>yt-dlp 경로:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="231"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="251"/>
         <source>Leave as &quot;yt-dlp&quot; if it is on your system PATH; otherwise enter the full path to the yt-dlp executable.</source>
         <translation>시스템 PATH에 있으면 &quot;yt-dlp&quot;로 두세요. 그렇지 않으면 yt-dlp 실행 파일의 전체 경로를 입력하세요.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="237"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="257"/>
         <source>yt-dlp (on PATH) or a full path</source>
         <translation>yt-dlp (PATH에 있음) 또는 전체 경로</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="243"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="263"/>
         <source>Update yt-dlp automatically:</source>
         <translation>yt-dlp 자동 업데이트:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="244"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="264"/>
         <source>Runs yt-dlp&apos;s own self-update before playing a YouTube video. &quot;Every time&quot; adds a short delay to each play; the daily/weekly options check only that often. Failures (e.g. no network) are ignored and playback proceeds with whatever version is installed. Only applies to a managed yt-dlp.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="258"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="278"/>
         <source>Never</source>
         <translation>하지 않음</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="259"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="279"/>
         <source>Every time yt-dlp runs</source>
         <translation>yt-dlp를 실행할 때마다</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="260"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="280"/>
         <source>Once a day</source>
         <translation>하루에 한 번</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="261"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="281"/>
         <source>Once a week</source>
         <translation>일주일에 한 번</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="268"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="288"/>
         <source>Maximum quality:</source>
         <translation>최대 품질:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="269"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="289"/>
         <source>Upper limit on resolution. Streaming is capped at ~720p regardless; downloading can reach this height in full HD.</source>
         <translation>해상도 상한입니다. 스트리밍은 어쨌든 ~720p로 제한됩니다. 다운로드는 풀 HD로 이 높이에 도달할 수 있습니다.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="279"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="299"/>
         <source>360p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="280"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="300"/>
         <source>480p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="281"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="301"/>
         <source>720p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="282"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="302"/>
         <source>1080p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="283"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="303"/>
         <source>1440p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="284"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="304"/>
         <source>2160p (4K)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="285"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="305"/>
         <source>Best available</source>
         <translation>사용 가능한 최고 품질</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="300"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="320"/>
         <source>yt-dlp is a separate program and is not bundled with Vivace.</source>
         <translation>yt-dlp는 별도의 프로그램이며 Vivace에 포함되어 있지 않습니다.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="306"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="326"/>
         <source>Download &amp; play</source>
         <translation>다운로드 후 재생</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="318"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="338"/>
         <source>Downloads the video (merging HD video and audio with ffmpeg), plays it, and keeps it in a cache folder so replaying it is instant. The cache holds the most recent downloads up to the size below; older ones are removed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="332"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="352"/>
         <source>Cookies file:</source>
         <translation>쿠키 파일:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="333"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="353"/>
         <source>Optional cookies.txt exported from your browser (yt-dlp --cookies); unlocks HD, members-only and age-restricted videos. Safe here — cookies only affect the download, not a stream a player must open. See Help ▸ Contents ▸ Options for step-by-step export instructions.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="347"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="367"/>
         <source>optional cookies.txt</source>
         <translation>선택적 cookies.txt</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="350"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="369"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="396"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="414"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="486"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="522"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="370"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="389"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="416"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="434"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="506"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="542"/>
         <source>Browse…</source>
         <translation>찾아보기…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="355"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="375"/>
         <source>ffmpeg location:</source>
         <translation>ffmpeg 위치:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="356"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="376"/>
         <source>Folder containing ffmpeg (yt-dlp needs it to merge HD video+audio). Leave empty to use ffmpeg from the system PATH.</source>
         <translation>ffmpeg가 포함된 폴더 (yt-dlp가 HD 비디오와 오디오를 병합하는 데 필요합니다). 시스템 PATH의 ffmpeg를 사용하려면 비워 두세요.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="366"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="393"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="386"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="413"/>
         <source>empty = use PATH</source>
         <translation>비어 있음 = PATH 사용</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="374"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="394"/>
         <source>Deno path:</source>
         <translation>Deno 경로:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="375"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="395"/>
         <source>yt-dlp uses a separate program, Deno, to solve YouTube&apos;s JavaScript challenges. It&apos;s most needed here: a signed-in (cookie) request — exactly what unlocks HD above — sees severely limited format availability without it. Streaming mode, which never sends cookies, is largely unaffected. Leave empty if &quot;deno&quot; is already on your system PATH; otherwise enter the full path to the deno executable. See Help ▸ Contents ▸ Options for installation instructions.</source>
         <translation>yt-dlp는 YouTube의 JavaScript 문제를 해결하기 위해 별도의 프로그램인 Deno를 사용합니다. 이는 여기서 가장 중요합니다: 로그인(쿠키) 요청 — 위에서 HD를 해제하는 바로 그 요청 — 은 Deno가 없으면 사용 가능한 형식이 심각하게 제한됩니다. 쿠키를 전혀 보내지 않는 스트리밍 모드는 거의 영향을 받지 않습니다. 시스템 PATH에 이미 &quot;deno&quot;가 있으면 비워 두고, 그렇지 않으면 deno 실행 파일의 전체 경로를 입력하세요. 설치 방법은 도움말 ▸ 목차 ▸ 옵션을 참조하세요.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="401"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="421"/>
         <source>Cache folder:</source>
         <translation>캐시 폴더:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="402"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="422"/>
         <source>Where downloaded videos are kept for reuse. A video already here is replayed without downloading again.</source>
         <translation>다운로드한 동영상을 재사용을 위해 보관하는 위치입니다. 여기에 이미 있는 동영상은 다시 다운로드하지 않고 재생됩니다.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="419"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="439"/>
         <source>Cache size:</source>
         <translation>캐시 크기:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="420"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="440"/>
         <source>How many downloaded videos to keep. When the limit is reached, the least-recently-played one is deleted.</source>
         <translation>보관할 다운로드 동영상 수입니다. 한도에 도달하면 가장 오래전에 재생한 것이 삭제됩니다.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="431"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="451"/>
         <source>files</source>
         <translation>개 파일</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="437"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="457"/>
         <source>Thumbnail fallback at:</source>
         <translation>대체 썸네일 위치:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="438"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="458"/>
         <source>The cache thumbnail is normally YouTube&apos;s own poster image. Only if that is missing or black does Vivace grab a video frame — this is how many seconds in (past a black intro).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="451"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="471"/>
         <source>seconds</source>
         <translation>초</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="461"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="481"/>
         <source>External downloader tool</source>
         <translation>외부 다운로더 도구</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="472"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="492"/>
         <source>Downloader command:</source>
         <translation>다운로더 명령:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="473"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="493"/>
         <source>The program or .bat/.cmd script that downloads the video; it receives the URL as an argument.</source>
         <translation>동영상을 다운로드하는 프로그램 또는 .bat/.cmd 스크립트입니다. URL을 인수로 받습니다.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="483"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="503"/>
         <source>e.g. C:ToolsYouTubeDL.bat</source>
         <translation>예: C:\Tools\YouTubeDL.bat</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="491"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="511"/>
         <source>Arguments:</source>
         <translation>인수:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="492"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="512"/>
         <source>Arguments passed to the tool; the token {url} is replaced by the video URL (if omitted, the URL is appended). Add any cookies/format flags your tool needs here, e.g. --cookies C:pathcookies.txt.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="507"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="527"/>
         <source>Download folder:</source>
         <translation>다운로드 폴더:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="508"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="528"/>
         <source>The folder the tool writes the finished file into; Vivace plays the newest media file that appears there, so set it to match your tool&apos;s output folder.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="519"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="539"/>
         <source>your tool&apos;s output folder</source>
         <translation>도구의 출력 폴더</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="552"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="572"/>
         <source>Enable proxy</source>
         <translation>프록시 사용하기</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="556"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="576"/>
         <source>Applies to OpenSubtitles search and the update check (both proxy types). Only an HTTP proxy also applies to media playback and yt-dlp — a SOCKS5 proxy does not reach either, since neither goes through Qt&apos;s network stack.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="614"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="634"/>
         <source>The proxy password is stored securely using your operating system&apos;s credential manager.</source>
         <translation>프록시 비밀번호는 운영체제의 자격 증명 관리자를 사용하여 안전하게 저장됩니다.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="644"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="664"/>
         <source>The port Play ▸ Cast ▸ Smartphone/tablet listens on. Kept fixed here (rather than editable each time in the Cast dialog) so you can allow it through your firewall/router once and it keeps working.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="666"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="686"/>
         <source>Your OS&apos;s firewall (and most routers) block an app listening on a fresh port until you allow it. Pick a port once here, allow Vivace through your firewall for it, and Cast will keep working without a new prompt each time.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="681"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="701"/>
         <source>Select the cookies.txt file</source>
         <translation>cookies.txt 파일을 선택하세요</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="687"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="707"/>
         <source>Select the deno executable</source>
         <translation>deno 실행 파일을 선택하세요</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="693"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="713"/>
         <source>Select the folder containing ffmpeg</source>
         <translation>ffmpeg가 포함된 폴더를 선택하세요</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="698"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="718"/>
         <source>Select the download cache folder</source>
         <translation>다운로드 캐시 폴더를 선택하세요</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="703"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="723"/>
         <source>Select the downloader program</source>
         <translation>다운로더 프로그램을 선택하세요</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="709"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="729"/>
         <source>Select the download folder</source>
         <translation>다운로드 폴더를 선택하세요</translation>
     </message>
@@ -4075,87 +4085,87 @@
 <context>
     <name>PrefSubtitlesPage</name>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="17"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="25"/>
         <source>&lt;h1&gt;Subtitles&lt;/h1&gt;&lt;p&gt;Autoload picks up a subtitle file sitting next to the video. The font, size and vertical position apply to the external subtitle renderer (SRT/VTT/basic ASS) planned for a later phase.&lt;/p&gt;&lt;p&gt;Subtitles embedded in the media are drawn by the playback backend and cannot be restyled here.&lt;/p&gt;&lt;p&gt;Bitmap-based subtitles (DVD subpicture, PGS or DVB tracks) are rendered as images rather than text -- whether they come from a DVD disc&apos;s own menu system or an embedded subtitle track in an ordinary video file -- so a slight smoothing blur can be applied (or turned off) to soften their low-resolution edges.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="32"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="44"/>
         <source>Autoload</source>
         <translation>자동으로 불러오기</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="41"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="53"/>
         <source>Autoload subtitle files next to the video</source>
         <translation>동영상 옆의 자막 파일 자동 불러오기</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="46"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="58"/>
         <source>On opening a video, load a subtitle file (SRT/VTT/basic ASS) sharing its name in the same folder.</source>
         <translation>동영상을 열 때 같은 폴더에서 같은 이름의 자막 파일(SRT/VTT/기본 ASS)을 불러옵니다.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="54"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="66"/>
         <source>Autoload rule:</source>
         <translation>자동 불러오기 규칙:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="57"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="69"/>
         <source>Same name as the video</source>
         <translation>동영상과 같은 이름</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="65"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="77"/>
         <source>Font and position</source>
         <translation>글꼴 및 위치</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="73"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="85"/>
         <source>Font:</source>
         <translation>글꼴:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="76"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="88"/>
         <source>Default application font</source>
         <translation>기본 애플리케이션 글꼴</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="82"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="94"/>
         <source>Size:</source>
         <translation>크기:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="88"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="100"/>
         <source>px</source>
         <translation>px</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="90"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="102"/>
         <source>Vertical position:</source>
         <translation>세로 위치:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="96"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="108"/>
         <source>% from the top</source>
         <translation>위에서부터 %</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="103"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="115"/>
         <source>Encoding:</source>
         <translation>인코딩:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="104"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="116"/>
         <source>UTF-8 (autodetected)</source>
         <translation>UTF-8 (자동 감지됨)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="109"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="121"/>
         <source>Bitmap subtitles</source>
         <translation>비트맵 자막</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="121"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="133"/>
         <source>Bitmap-based subtitle images (DVD subpicture, PGS or DVB tracks) are low-resolution and can look jagged once scaled up to a modern window size -- whether they come from a DVD disc&apos;s own menu system or an embedded subtitle track in an ordinary video file. This softens the edges with a slight blur. 0 turns it off (the raw bitmap); higher values blur more.</source>
         <translation>비트맵 자막 이미지(DVD 서브픽처, PGS 또는 DVB 트랙)는 저해상도이며, DVD 디스크 자체의 메뉴 시스템에서 왔든 일반 동영상 파일에 내장된 자막 트랙에서 왔든 상관없이 최신 창 크기로 확대하면 계단현상이 보일 수 있습니다. 이 설정은 가장자리를 약간 흐리게 하여 부드럽게 만듭니다. 0은 끄기(원본 비트맵 그대로 표시)이며, 값이 클수록 더 많이 흐려집니다.</translation>
     </message>
@@ -4164,7 +4174,7 @@
         <translation type="vanished">DVD 자막</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="114"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="126"/>
         <source>Smoothing:</source>
         <translation>스무딩:</translation>
     </message>
@@ -4173,7 +4183,7 @@
         <translation type="vanished">디스크 자체의 자막 이미지는 저해상도 비트맵이라 최신 창 크기로 확대하면 계단현상이 보일 수 있습니다. 이 설정은 가장자리를 약간 흐리게 하여 부드럽게 만듭니다. 0은 끄기(디스크의 원본 비트맵 그대로 표시)이며, 값이 클수록 더 많이 흐려집니다.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefSubtitlesPage.qml" line="138"/>
+        <location filename="../qml/PrefSubtitlesPage.qml" line="150"/>
         <source>Font, size and position apply to Vivace&apos;s external subtitle renderer (SRT/VTT/basic ASS), loaded via Subtitles ▸ Load subtitles… or autoloaded next to the video. Subtitles embedded in the media are rendered by the playback backend and cannot be styled.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4181,52 +4191,52 @@
 <context>
     <name>PrefTVPage</name>
     <message>
-        <location filename="../qml/PrefTVPage.qml" line="18"/>
+        <location filename="../qml/PrefTVPage.qml" line="26"/>
         <source>&lt;h1&gt;TV and radio&lt;/h1&gt;&lt;p&gt;Vivace plays IPTV/web-radio streams from an m3u/m3u8 playlist via Open ▸ TV and Open ▸ Radio, editable like Favorites.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Connection timeout&lt;/b&gt; is how long to wait for stream data before giving up. Live TV tuners often stall for several seconds while they lock the channel; if it is too short, the stream fails with &quot;Could not open file&quot;. Raise it for slow tuners.&lt;/p&gt;&lt;p&gt;The scanning and EPG options belong to DVB tuner hardware, which the Qt Multimedia backend does not support, so they are disabled.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefTVPage.qml" line="31"/>
+        <location filename="../qml/PrefTVPage.qml" line="43"/>
         <source>Streaming</source>
         <translation>스트리밍</translation>
     </message>
     <message>
-        <location filename="../qml/PrefTVPage.qml" line="36"/>
+        <location filename="../qml/PrefTVPage.qml" line="48"/>
         <source>Connection timeout:</source>
         <translation>연결 시간 초과:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefTVPage.qml" line="42"/>
+        <location filename="../qml/PrefTVPage.qml" line="54"/>
         <source>seconds</source>
         <translation>초</translation>
     </message>
     <message>
-        <location filename="../qml/PrefTVPage.qml" line="43"/>
+        <location filename="../qml/PrefTVPage.qml" line="55"/>
         <source>How long to wait for network stream data before giving up. Live TV tuners can stall for several seconds while locking the channel — if this is too short the stream fails with &quot;Could not open file&quot;. Applies to the FFmpeg backend.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefTVPage.qml" line="54"/>
+        <location filename="../qml/PrefTVPage.qml" line="66"/>
         <source>DVB tuner</source>
         <translation>DVB 튜너</translation>
     </message>
     <message>
-        <location filename="../qml/PrefTVPage.qml" line="60"/>
+        <location filename="../qml/PrefTVPage.qml" line="72"/>
         <source>Rescan TV channels on startup</source>
         <translation>시작 시 TV 채널 다시 검색</translation>
     </message>
     <message>
-        <location filename="../qml/PrefTVPage.qml" line="61"/>
+        <location filename="../qml/PrefTVPage.qml" line="73"/>
         <source>Save TV channels in favorites</source>
         <translation>TV 채널을 즐겨찾기에 저장</translation>
     </message>
     <message>
-        <location filename="../qml/PrefTVPage.qml" line="66"/>
+        <location filename="../qml/PrefTVPage.qml" line="78"/>
         <source>TV standard:</source>
         <translation>TV 표준:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefTVPage.qml" line="73"/>
+        <location filename="../qml/PrefTVPage.qml" line="85"/>
         <source>TV and radio capture (DVB/V4L) is not supported by Vivace: it would require the mplayer/mpv engine that Vivace deliberately does not use.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4234,37 +4244,37 @@
 <context>
     <name>PrefUpdatesPage</name>
     <message>
-        <location filename="../qml/PrefUpdatesPage.qml" line="17"/>
+        <location filename="../qml/PrefUpdatesPage.qml" line="25"/>
         <source>&lt;h1&gt;Updates&lt;/h1&gt;&lt;p&gt;&lt;b&gt;Check for updates&lt;/b&gt;: when enabled, Vivace checks for a newer release on startup and notifies you if one is available.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Check interval&lt;/b&gt;: how many days to wait between automatic checks.&lt;/p&gt;&lt;p&gt;You can also check at any time from Help &amp;gt; Check for updates.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefUpdatesPage.qml" line="28"/>
+        <location filename="../qml/PrefUpdatesPage.qml" line="40"/>
         <source>Check for updates</source>
         <translation>업데이트 검사하기</translation>
     </message>
     <message>
-        <location filename="../qml/PrefUpdatesPage.qml" line="32"/>
+        <location filename="../qml/PrefUpdatesPage.qml" line="44"/>
         <source>When enabled, Vivace checks for a newer release on startup and notifies you only if one is available.</source>
         <translation>활성화하면 Vivace가 시작 시 새 릴리스를 확인하고 사용 가능한 경우에만 알립니다.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefUpdatesPage.qml" line="39"/>
+        <location filename="../qml/PrefUpdatesPage.qml" line="51"/>
         <source>Check interval:</source>
         <translation>확인 간격:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefUpdatesPage.qml" line="46"/>
+        <location filename="../qml/PrefUpdatesPage.qml" line="58"/>
         <source>days</source>
         <translation>일</translation>
     </message>
     <message>
-        <location filename="../qml/PrefUpdatesPage.qml" line="55"/>
+        <location filename="../qml/PrefUpdatesPage.qml" line="67"/>
         <source>Last checked: %1</source>
         <translation>마지막 확인: %1</translation>
     </message>
     <message>
-        <location filename="../qml/PrefUpdatesPage.qml" line="56"/>
+        <location filename="../qml/PrefUpdatesPage.qml" line="68"/>
         <source>Not checked yet.</source>
         <translation>아직 확인하지 않음.</translation>
     </message>
@@ -4277,92 +4287,92 @@
         <translation>환경 설정</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="85"/>
+        <location filename="../qml/PreferencesDialog.qml" line="100"/>
         <source>&lt;h1&gt;Help&lt;/h1&gt;&lt;p&gt;No help is available for this section.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="124"/>
+        <location filename="../qml/PreferencesDialog.qml" line="175"/>
         <source>General</source>
         <translation>일반</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="125"/>
+        <location filename="../qml/PreferencesDialog.qml" line="176"/>
         <source>Drives</source>
         <translation>드라이브</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="126"/>
+        <location filename="../qml/PreferencesDialog.qml" line="177"/>
         <source>Subtitles</source>
         <translation>자막</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="127"/>
+        <location filename="../qml/PreferencesDialog.qml" line="178"/>
         <source>Interface</source>
         <translation>인터페이스</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="128"/>
+        <location filename="../qml/PreferencesDialog.qml" line="179"/>
         <source>Keyboard and mouse</source>
         <translation>키보드 및 마우스</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="129"/>
+        <location filename="../qml/PreferencesDialog.qml" line="180"/>
         <source>Playlist</source>
         <translation>재생 목록</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="130"/>
+        <location filename="../qml/PreferencesDialog.qml" line="181"/>
         <source>TV and radio</source>
         <translation>TV 및 라디오</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="131"/>
+        <location filename="../qml/PreferencesDialog.qml" line="182"/>
         <source>File types</source>
         <translation>파일 형식</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="132"/>
+        <location filename="../qml/PreferencesDialog.qml" line="183"/>
         <source>Updates</source>
         <translation>업데이트</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="133"/>
+        <location filename="../qml/PreferencesDialog.qml" line="184"/>
         <source>Network</source>
         <translation>네트워크</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="134"/>
+        <location filename="../qml/PreferencesDialog.qml" line="185"/>
         <source>Advanced</source>
         <translation>고급</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="182"/>
+        <location filename="../qml/PreferencesDialog.qml" line="258"/>
         <source>&amp;Help</source>
         <translation>도움말(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="187"/>
+        <location filename="../qml/PreferencesDialog.qml" line="263"/>
         <source>OK</source>
         <translation>확인(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="191"/>
+        <location filename="../qml/PreferencesDialog.qml" line="267"/>
         <source>Apply</source>
         <translation>적용</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="197"/>
+        <location filename="../qml/PreferencesDialog.qml" line="273"/>
         <source>Cancel</source>
         <translation>취소</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="206"/>
+        <location filename="../qml/PreferencesDialog.qml" line="282"/>
         <source>Vivace — Help</source>
         <translation>Vivace — 도움말</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="254"/>
+        <location filename="../qml/PreferencesDialog.qml" line="346"/>
         <source>Close</source>
         <translation>닫기</translation>
     </message>
@@ -4646,62 +4656,62 @@
         <translation>도구 모음 편집기</translation>
     </message>
     <message>
-        <location filename="../qml/ToolbarEditor.qml" line="89"/>
+        <location filename="../qml/ToolbarEditor.qml" line="106"/>
         <source>Available</source>
         <translation>사용 가능</translation>
     </message>
     <message>
-        <location filename="../qml/ToolbarEditor.qml" line="91"/>
+        <location filename="../qml/ToolbarEditor.qml" line="108"/>
         <source>Actions you can add. Double-click one or select it and press Add → to place it on the toolbar; separators and spacers can be reused.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/ToolbarEditor.qml" line="128"/>
+        <location filename="../qml/ToolbarEditor.qml" line="145"/>
         <source>Add →</source>
         <translation>추가 →</translation>
     </message>
     <message>
-        <location filename="../qml/ToolbarEditor.qml" line="134"/>
+        <location filename="../qml/ToolbarEditor.qml" line="151"/>
         <source>← Remove</source>
         <translation>← 제거</translation>
     </message>
     <message>
-        <location filename="../qml/ToolbarEditor.qml" line="144"/>
+        <location filename="../qml/ToolbarEditor.qml" line="161"/>
         <source>Toolbar</source>
         <translation>도구 모음</translation>
     </message>
     <message>
-        <location filename="../qml/ToolbarEditor.qml" line="169"/>
+        <location filename="../qml/ToolbarEditor.qml" line="186"/>
         <source>Up</source>
         <translation>위로(&amp;U)</translation>
     </message>
     <message>
-        <location filename="../qml/ToolbarEditor.qml" line="174"/>
+        <location filename="../qml/ToolbarEditor.qml" line="191"/>
         <source>Down</source>
         <translation>아래로(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../qml/ToolbarEditor.qml" line="186"/>
+        <location filename="../qml/ToolbarEditor.qml" line="203"/>
         <source>&amp;Icon size:</source>
         <translation>아이콘 크기(&amp;I):</translation>
     </message>
     <message>
-        <location filename="../qml/ToolbarEditor.qml" line="188"/>
+        <location filename="../qml/ToolbarEditor.qml" line="205"/>
         <source>Size in pixels of this toolbar&apos;s button icons.</source>
         <translation>이 도구 모음의 버튼 아이콘 크기(픽셀)입니다.</translation>
     </message>
     <message>
-        <location filename="../qml/ToolbarEditor.qml" line="199"/>
+        <location filename="../qml/ToolbarEditor.qml" line="216"/>
         <source>Restore defaults</source>
         <translation>기본값 복원</translation>
     </message>
     <message>
-        <location filename="../qml/ToolbarEditor.qml" line="208"/>
+        <location filename="../qml/ToolbarEditor.qml" line="225"/>
         <source>OK</source>
         <translation>확인(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/ToolbarEditor.qml" line="216"/>
+        <location filename="../qml/ToolbarEditor.qml" line="233"/>
         <source>Cancel</source>
         <translation>취소</translation>
     </message>
@@ -4787,92 +4797,92 @@
         <translation>비디오 이퀄라이저</translation>
     </message>
     <message>
-        <location filename="../qml/VideoEqualizerDialog.qml" line="82"/>
+        <location filename="../qml/VideoEqualizerDialog.qml" line="96"/>
         <source>Contrast</source>
         <translation>대비(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/VideoEqualizerDialog.qml" line="83"/>
+        <location filename="../qml/VideoEqualizerDialog.qml" line="97"/>
         <source>Difference between the darkest and brightest parts of the picture.</source>
         <translation>그림의 가장 어두운 부분과 가장 밝은 부분의 차이입니다.</translation>
     </message>
     <message>
-        <location filename="../qml/VideoEqualizerDialog.qml" line="88"/>
+        <location filename="../qml/VideoEqualizerDialog.qml" line="102"/>
         <source>Brightness</source>
         <translation>밝기(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../qml/VideoEqualizerDialog.qml" line="89"/>
+        <location filename="../qml/VideoEqualizerDialog.qml" line="103"/>
         <source>Overall lightness of the picture.</source>
         <translation>그림의 전반적인 밝기입니다.</translation>
     </message>
     <message>
-        <location filename="../qml/VideoEqualizerDialog.qml" line="94"/>
+        <location filename="../qml/VideoEqualizerDialog.qml" line="108"/>
         <source>Hue</source>
         <translation>색상(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../qml/VideoEqualizerDialog.qml" line="95"/>
+        <location filename="../qml/VideoEqualizerDialog.qml" line="109"/>
         <source>Shifts all colours around the colour wheel.</source>
         <translation>모든 색을 색상환을 따라 이동합니다.</translation>
     </message>
     <message>
-        <location filename="../qml/VideoEqualizerDialog.qml" line="100"/>
+        <location filename="../qml/VideoEqualizerDialog.qml" line="114"/>
         <source>Saturation</source>
         <translation>채도(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/VideoEqualizerDialog.qml" line="101"/>
+        <location filename="../qml/VideoEqualizerDialog.qml" line="115"/>
         <source>Colour intensity; the lowest value gives a grayscale picture.</source>
         <translation>색상 강도입니다. 가장 낮은 값은 회색조 그림을 만듭니다.</translation>
     </message>
     <message>
-        <location filename="../qml/VideoEqualizerDialog.qml" line="106"/>
+        <location filename="../qml/VideoEqualizerDialog.qml" line="120"/>
         <source>Gamma</source>
         <translation>감마(&amp;G)</translation>
     </message>
     <message>
-        <location filename="../qml/VideoEqualizerDialog.qml" line="107"/>
+        <location filename="../qml/VideoEqualizerDialog.qml" line="121"/>
         <source>Adjusts mid-tone brightness without changing black and white.</source>
         <translation>검정과 흰색을 바꾸지 않고 중간 톤의 밝기를 조정합니다.</translation>
     </message>
     <message>
-        <location filename="../qml/VideoEqualizerDialog.qml" line="120"/>
+        <location filename="../qml/VideoEqualizerDialog.qml" line="134"/>
         <source>&amp;Reset</source>
         <translation>초기화</translation>
     </message>
     <message>
-        <location filename="../qml/VideoEqualizerDialog.qml" line="129"/>
+        <location filename="../qml/VideoEqualizerDialog.qml" line="143"/>
         <source>Sets all values back to zero (no adjustment).</source>
         <translation>모든 값을 0으로 되돌립니다 (조정 없음).</translation>
     </message>
     <message>
-        <location filename="../qml/VideoEqualizerDialog.qml" line="133"/>
+        <location filename="../qml/VideoEqualizerDialog.qml" line="147"/>
         <source>Set as &amp;default values</source>
         <translation>기본값으로 설정하기(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../qml/VideoEqualizerDialog.qml" line="143"/>
+        <location filename="../qml/VideoEqualizerDialog.qml" line="157"/>
         <source>Stores the current values as the defaults applied to each newly opened file.</source>
         <translation>현재 값을 새로 여는 각 파일에 적용되는 기본값으로 저장합니다.</translation>
     </message>
     <message>
-        <location filename="../qml/VideoEqualizerDialog.qml" line="146"/>
+        <location filename="../qml/VideoEqualizerDialog.qml" line="160"/>
         <source>&amp;Close</source>
         <translation>닫기(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/VideoEqualizerDialog.qml" line="155"/>
+        <location filename="../qml/VideoEqualizerDialog.qml" line="169"/>
         <source>Information</source>
         <translation>정보</translation>
     </message>
     <message>
-        <location filename="../qml/VideoEqualizerDialog.qml" line="186"/>
+        <location filename="../qml/VideoEqualizerDialog.qml" line="218"/>
         <source>The current values have been stored to be used as default.</source>
         <translation>현재 설정을 기본으로 사용하도록 저장했습니다.</translation>
     </message>
     <message>
-        <location filename="../qml/VideoEqualizerDialog.qml" line="192"/>
+        <location filename="../qml/VideoEqualizerDialog.qml" line="224"/>
         <source>OK</source>
         <translation>확인(&amp;O)</translation>
     </message>
@@ -4962,7 +4972,7 @@
         <translation>유튜브 지원 설치/업데이트</translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="66"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="75"/>
         <source>yt-dlp was installed successfully as:</source>
         <translation>yt-dlp가 다음으로 성공적으로 설치되었습니다:</translation>
     </message>
@@ -4971,42 +4981,42 @@
         <translation type="vanished">이제 YouTube 재생이 활성화되었습니다.</translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="70"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="79"/>
         <source>The download failed:</source>
         <translation>다운로드에 실패했습니다:</translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="86"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="100"/>
         <source>To play YouTube videos, Vivace uses an external program called yt-dlp.</source>
         <translation>YouTube 동영상을 재생하기 위해 Vivace는 yt-dlp라는 외부 프로그램을 사용합니다.</translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="89"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="103"/>
         <source>Vivace can download the latest version from the official website and install it as:</source>
         <translation>Vivace는 공식 웹사이트에서 최신 버전을 다운로드하여 다음으로 설치할 수 있습니다:</translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="92"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="106"/>
         <source>Would you like to proceed?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="100"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="114"/>
         <source>Downloading yt-dlp…</source>
         <translation>yt-dlp 다운로드 중…</translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="124"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="138"/>
         <source>Install</source>
         <translation>설치</translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="133"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="147"/>
         <source>Cancel</source>
         <translation>취소</translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="138"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="152"/>
         <source>Close</source>
         <translation>닫기</translation>
     </message>

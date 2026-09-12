@@ -45,6 +45,13 @@ ApplicationWindow {
     width: 1280
     height: 760
     visible: true
+    // Fullscreen is permanently forced on Android (no real windowed mode
+    // makes sense there) -- set as the initial state here, then never
+    // allow it to be reassigned away: toggleFullscreen() and the Escape
+    // shortcut below are both guarded against Android specifically, so
+    // this stays true for the whole app lifetime, not just at startup.
+    visibility: Qt.platform.os === "android" ? Window.FullScreen
+                                              : Window.AutomaticVisibility
     color: "black"
     title: playerController.mediaTitle !== ""
            ? playerController.mediaTitle + " — Vivace"
@@ -69,6 +76,10 @@ ApplicationWindow {
     }
 
     function toggleFullscreen() {
+        // Fullscreen is permanently forced on Android -- never let this
+        // exit it (see the `visibility:` property's own comment above).
+        if (Qt.platform.os === "android")
+            return
         visibility = fullscreen ? Window.Windowed : Window.FullScreen
     }
 
@@ -497,6 +508,17 @@ ApplicationWindow {
         // the video is captured and post-processed by a fragment shader. At
         // neutral settings the shader is an identity transform. Settings'
         // -100..100 range maps to the shader's neutral-at parameters.
+        //
+        // Android "audio plays, no video" report (2026-09-07): a temporary
+        // diagnostic bypassing this whole ShaderEffect capture (letting the
+        // plain VideoOutput render directly) made NO difference -- ruling out
+        // the premultiplied-alpha theory (equalizer.frag rendering fully
+        // transparent) as the cause. The problem is upstream of this shader
+        // entirely -- either video frames never reach QVideoSink on Android
+        // at all, or VideoOutput's own Android-specific rendering (likely via
+        // GL_TEXTURE_EXTERNAL_OES for MediaCodec/SurfaceTexture-backed
+        // decode) isn't compositing into the Qt Quick scene graph. See the
+        // CLAUDE.md entry dated 2026-09-07 for the ongoing investigation.
         ShaderEffect {
             id: videoEqualizer
             anchors.fill: parent
@@ -577,7 +599,15 @@ ApplicationWindow {
     Label {
         anchors.centerIn: parent
         visible: playerController.player.source.toString() === ""
-        text: qsTr("Drop media files here, or press Ctrl+O")
+        // Drag-and-drop and a physical Ctrl+O shortcut don't apply on
+        // Android -- point at the actual menu path instead (user report,
+        // 2026-09-12: the desktop wording made no sense there).
+        // Plain ">" here, not "▸" -- that glyph didn't render on Android in
+        // this Label specifically (user report, 2026-09-12), unlike the
+        // menu/dialog text elsewhere that uses it successfully.
+        text: Qt.platform.os === "android"
+              ? qsTr("Tap Open > File… to choose media")
+              : qsTr("Drop media files here, or press Ctrl+O")
         color: "#808080"
         font.pixelSize: 20
     }
@@ -1629,7 +1659,16 @@ ApplicationWindow {
             }
             s = target
         }
-        if (Settings.youtubeEnabled && youtubeResolver.isSupportedUrl(s)) {
+        if (Qt.platform.os === "android" && youtubeResolver.isSupportedUrl(s)) {
+            // YouTube playback needs an external yt-dlp process, which
+            // Android blocks an app from executing out of its own storage
+            // (see Settings::youtubeEnabled's own doc comment) -- tell the
+            // user plainly rather than letting this fall through to a
+            // confusing "could not open file" from trying to play the
+            // bare page URL as media.
+            root.showOsd(qsTr("YouTube playback isn't supported on Android."),
+                         root.osdErrorDurationMs)
+        } else if (Settings.youtubeEnabled && youtubeResolver.isSupportedUrl(s)) {
             if (Settings.youtubeMode === 1) {
                 // Download & play with Vivace's yt-dlp (HD, cookies). A cached
                 // video plays instantly; otherwise the busy overlay (bound to
@@ -1696,14 +1735,26 @@ ApplicationWindow {
         flags: Qt.Dialog
         modality: Qt.WindowModal
         color: palette.window
-        width: 320
-        height: subDelayCol.implicitHeight + 24
-        minimumWidth: 260
-        minimumHeight: subDelayCol.implicitHeight + 24
+        // Android: fill the transientParent's own bounds EXACTLY instead
+        // of a fixed/content-driven desktop size (see PreferencesDialog.
+        // qml's own comment for why -- no guessed-constant margin, real
+        // SafeArea inset used on the content layout below instead).
+        // Declared directly inside Main.qml, so transientParent auto-
+        // resolves to the fullscreen root window.
+        width: Qt.platform.os === "android" && transientParent
+               ? transientParent.width : 320
+        height: Qt.platform.os === "android" && transientParent
+                ? transientParent.height : subDelayCol.implicitHeight + 24
+        minimumWidth: Qt.platform.os === "android" ? 0 : 260
+        minimumHeight: Qt.platform.os === "android"
+                       ? 0 : subDelayCol.implicitHeight + 24
 
         function open() {
             delaySpin.value = playerController.subtitleDelay
-            if (transientParent) {
+            if (Qt.platform.os === "android") {
+                x = 0
+                y = 0
+            } else if (transientParent) {
                 x = transientParent.x + (transientParent.width - width) / 2
                 y = transientParent.y + (transientParent.height - height) / 2
             }
@@ -1720,7 +1771,12 @@ ApplicationWindow {
         ColumnLayout {
             id: subDelayCol
             anchors.fill: parent
-            anchors.margins: 12
+            // Real platform-reported inset, not a guessed constant -- see
+            // PreferencesDialog.qml's own outer ColumnLayout comment for why.
+            anchors.topMargin: 12 + SafeArea.margins.top
+            anchors.leftMargin: 12 + SafeArea.margins.left
+            anchors.rightMargin: 12 + SafeArea.margins.right
+            anchors.bottomMargin: 12 + SafeArea.margins.bottom
             spacing: 12
 
             RowLayout {
@@ -1763,15 +1819,28 @@ ApplicationWindow {
         id: audioDelayDialog
         title: qsTr("Audio delay — Vivace")
         flags: Qt.Dialog
-        width: 400
-        height: contentColumn.implicitHeight + 24
-        minimumWidth: 340
-        minimumHeight: contentColumn.implicitHeight + 24
+        // Android: fill the transientParent's own bounds EXACTLY instead
+        // of a fixed/content-driven desktop size (see PreferencesDialog.
+        // qml's own comment for why -- no guessed-constant margin, real
+        // SafeArea inset used on the content layout below instead). This
+        // dialog is declared directly inside Main.qml, so its
+        // transientParent auto-resolves to the fullscreen root window.
+        width: Qt.platform.os === "android" && transientParent
+               ? transientParent.width : 400
+        height: Qt.platform.os === "android" && transientParent
+                ? transientParent.height : contentColumn.implicitHeight + 24
+        minimumWidth: Qt.platform.os === "android" ? 0 : 340
+        minimumHeight: Qt.platform.os === "android"
+                       ? 0 : contentColumn.implicitHeight + 24
         color: palette.window
 
         function openDialog() {
             useDefaultCheck.checked = playerController.fileAudioDelay === 0
             audioDelaySpin.value = playerController.fileAudioDelay
+            if (Qt.platform.os === "android") {
+                x = 0
+                y = 0
+            }
             show()
             raise()
             requestActivate()
@@ -1787,7 +1856,12 @@ ApplicationWindow {
         ColumnLayout {
             id: contentColumn
             anchors.fill: parent
-            anchors.margins: 12
+            // Real platform-reported inset, not a guessed constant -- see
+            // PreferencesDialog.qml's own outer ColumnLayout comment for why.
+            anchors.topMargin: 12 + SafeArea.margins.top
+            anchors.leftMargin: 12 + SafeArea.margins.left
+            anchors.rightMargin: 12 + SafeArea.margins.right
+            anchors.bottomMargin: 12 + SafeArea.margins.bottom
             spacing: 8
 
             CheckBox {
@@ -1971,7 +2045,9 @@ ApplicationWindow {
     }
     Shortcut {
         sequence: "Escape"
-        enabled: root.fullscreen
+        // Fullscreen is permanently forced on Android -- never let Escape
+        // exit it there (see the `visibility:` property's own comment).
+        enabled: root.fullscreen && Qt.platform.os !== "android"
         onActivated: root.visibility = Window.Windowed
     }
 
@@ -2040,7 +2116,7 @@ ApplicationWindow {
         Component.onCompleted: {
             const mm = ["openFileRequested", "openDirectoryRequested",
                 "openPlaylistRequested", "openDvdRequested", "openBlurayRequested",
-                "openUrlRequested",
+                "openUrlRequested", "castRequested",
                 "youtubeCacheRequested", "editTvChannelsRequested",
                 "editRadioChannelsRequested", "editFavoritesRequested",
                 "addBookmarkRequested", "editBookmarksRequested",

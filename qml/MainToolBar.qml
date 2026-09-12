@@ -274,7 +274,14 @@ ToolBar {
             enabled: toolBar.player.seekable
             onClicked: toolBar.controller.seekRelative(Settings.seekLongStep * 1000)
         }
-        TBtn { itemId: "fullscreen"; onClicked: toolBar.fullscreenToggleRequested() }
+        TBtn {
+            itemId: "fullscreen"
+            // Same reasoning as ControlBar.qml's own fullscreen button:
+            // fullscreen is forced on Android, so this has nothing left
+            // to toggle there.
+            visible: toolBar.col(itemId) >= 0 && Qt.platform.os !== "android"
+            onClicked: toolBar.fullscreenToggleRequested()
+        }
         TBtn {
             itemId: "mute"
             icon.source: visible ? (Settings.muted ? Theme.icon("mute")

@@ -459,6 +459,16 @@ MenuBar {
             }
         }
         Action {
+            // Same reasoning as ControlBar.qml/MainToolBar.qml's own
+            // fullscreen buttons: fullscreen is forced on Android, so
+            // this has nothing left to toggle there. Action has no
+            // `visible` property in this Qt module version (unlike the
+            // Item-derived AppMenuItem/MenuItem elsewhere in this file --
+            // assigning it here crashed QML component loading on Android
+            // with "Cannot assign to non-existent property"), so disable
+            // it instead -- matching the same "disable, don't hide"
+            // precedent already used for the Deinterlace submenu above.
+            enabled: Qt.platform.os !== "android"
             text: qsTr("&Fullscreen")
             icon.source: Theme.icon("fullscreen")
             shortcut: Shortcuts.sequences["fullscreen"]
@@ -603,7 +613,23 @@ MenuBar {
         }
         AppMenu {
             title: qsTr("&Deinterlace")
-            enabled: bar.player.hasVideo
+            // Android (2026-09-07, real device evidence): the whole submenu
+            // is disabled here, not individual items -- confirmed via
+            // FFmpeg's own real hwcontext_mediacodec.c source that
+            // av_hwframe_transfer_data() can never succeed for a
+            // MediaCodec-decoded frame on ANY Android build (no
+            // transfer_data_to/from is implemented for that hw type at
+            // all, a permanent upstream limitation). Deinterlacer::process()
+            // (qffmpegdeinterlacer.cpp) needs exactly that call whenever
+            // hardware decode is in use -- Android's normal path for H.264
+            // content -- so every non-None mode silently drops every frame
+            // forever the instant it's selected while hw decode is active;
+            // None is forced as the compiled-in default there (see
+            // settings.cpp's defaultDeinterlaceMode()) and is the only
+            // mode that would ever do anything, so a submenu offering just
+            // that one fixed, unchangeable choice has no value -- disabled
+            // outright instead, like any other platform-unavailable menu.
+            enabled: bar.player.hasVideo && Qt.platform.os !== "android"
             // None is mode 3, not 0 -- Auto (0, not offered on this menu)
             // and None had their values swapped 2026-08-22 so Auto could
             // become the default; see settings.h's own deinterlaceMode
@@ -996,6 +1022,12 @@ MenuBar {
         }
         MenuSeparator {}
         Action {
+            // Android has no system tray at all -- disabled there, not
+            // hidden (Action has no `visible` property in this Qt module
+            // version, matching the Fullscreen action's own fix above;
+            // disabling also matches this project's established "disable,
+            // don't hide" precedent for platform-inapplicable items).
+            enabled: Qt.platform.os !== "android"
             text: qsTr("S&how icon in system tray")
             checkable: true
             checked: Settings.showTrayIcon

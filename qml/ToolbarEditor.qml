@@ -27,10 +27,16 @@ Window {
     title: qsTr("Toolbar editor")
     flags: Qt.Dialog
     modality: Qt.WindowModal
-    width: 620
-    height: 460
-    minimumWidth: 520
-    minimumHeight: 360
+    // Android: fill the transientParent's own bounds EXACTLY instead of a
+    // fixed desktop size (see PreferencesDialog.qml's own comment for
+    // why -- no guessed-constant margin, real SafeArea inset used on the
+    // content layout below instead).
+    width: Qt.platform.os === "android" && transientParent
+           ? transientParent.width : 620
+    height: Qt.platform.os === "android" && transientParent
+            ? transientParent.height : 460
+    minimumWidth: Qt.platform.os === "android" ? 0 : 520
+    minimumHeight: Qt.platform.os === "android" ? 0 : 360
     color: palette.window
 
     function openFor(titleText, targetKey, currentItems, defaults, iconSize) {
@@ -41,7 +47,10 @@ Window {
         work = (currentItems && currentItems.length > 0 ? currentItems : defaults).slice()
         availableList.currentIndex = -1
         currentList.currentIndex = -1
-        if (transientParent) {
+        if (Qt.platform.os === "android") {
+            x = 0
+            y = 0
+        } else if (transientParent) {
             x = transientParent.x + (transientParent.width - width) / 2
             y = transientParent.y + (transientParent.height - height) / 2
         }
@@ -71,12 +80,20 @@ Window {
 
     ColumnLayout {
         anchors.fill: parent
-        anchors.margins: 12
+        // Real platform-reported inset, not a guessed constant -- see
+        // PreferencesDialog.qml's own outer ColumnLayout comment for why.
+        anchors.topMargin: 12 + SafeArea.margins.top
+        anchors.leftMargin: 12 + SafeArea.margins.left
+        anchors.rightMargin: 12 + SafeArea.margins.right
+        anchors.bottomMargin: 12 + SafeArea.margins.bottom
         spacing: 8
 
         RowLayout {
             Layout.fillWidth: true
             Layout.fillHeight: true
+            // Explicit 0 (Android, huge system font sizes): see
+            // PreferencesDialog.qml's own comment on the equivalent fix.
+            Layout.minimumHeight: 0
             spacing: 8
 
             // Available items (the full catalog).

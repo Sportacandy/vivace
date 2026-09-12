@@ -453,6 +453,33 @@ PlayerController::PlayerController(QObject *parent)
                                 QStringLiteral("vivace_files"))
                               .fileName())
                     .absolutePath();
+#ifdef Q_OS_ANDROID
+    // Optional Android seed-data hook (see CMakeLists.txt's own
+    // VIVACE_TV_SEED_FILE/VIVACE_RADIO_SEED_FILE/VIVACE_FAVORITES_SEED_FILE
+    // comment for the full rationale): a downstream/private build can embed
+    // real tv.json/radio.json/favorites.json-format data at these fixed
+    // resource paths, which this pre-populates a FRESH install's own copy
+    // from -- only when the real file doesn't already exist, so this never
+    // overwrites a real, possibly user-edited list. A no-op for the normal
+    // open-source build: when the CMake variable wasn't set, the resource
+    // simply isn't embedded, so QFile::open() below just fails silently.
+    {
+        static const struct { const char *resource; const char *filename; } kSeeds[] = {
+            { ":/qt/qml/Vivace/seed/tv.json", "/tv.json" },
+            { ":/qt/qml/Vivace/seed/radio.json", "/radio.json" },
+            { ":/qt/qml/Vivace/seed/favorites.json", "/favorites.json" },
+        };
+        for (const auto &seed : kSeeds) {
+            const QString destPath = configDir + QString::fromLatin1(seed.filename);
+            if (QFile::exists(destPath))
+                continue;
+            QFile source(QString::fromLatin1(seed.resource));
+            QFile dest(destPath);
+            if (source.open(QIODevice::ReadOnly) && dest.open(QIODevice::WriteOnly))
+                dest.write(source.readAll());
+        }
+    }
+#endif
     m_tvChannels =
             new FavoritesModel(configDir + QStringLiteral("/tv.json"), this);
     m_radioChannels =
@@ -3221,8 +3248,13 @@ void PlayerController::addCurrentTo(FavoritesModel *list)
     if (url.isEmpty())
         return;
     QString title = m_player->metaData().stringValue(QMediaMetaData::Title);
-    if (title.isEmpty())
-        title = url.fileName();
+    // QUrl::fileName() is a shallow URL-string split -- wrong for Android's
+    // content:// URLs (see the sourceChanged/Recent-files fix above for the
+    // full investigation); QFileInfo resolves the real name for those too.
+    if (title.isEmpty()) {
+        const QString path = url.isLocalFile() ? url.toLocalFile() : url.toString();
+        title = QFileInfo(path).fileName();
+    }
     if (title.isEmpty())
         title = url.toDisplayString();
     list->addUrl(title, url.toString());
@@ -3430,10 +3462,15 @@ void PlayerController::updateSubtitle(qint64 positionMs)
 
 bool PlayerController::loadSubtitles(const QUrl &url)
 {
+    // QUrl::fileName() is a shallow URL-string split -- wrong for Android's
+    // content:// URLs (see the sourceChanged/Recent-files fix above for the
+    // full investigation); QFileInfo resolves the real name for those too.
+    const QString subtitleName =
+            QFileInfo(url.isLocalFile() ? url.toLocalFile() : url.toString()).fileName();
     QList<SubtitleCue> cues = SubtitleParser::load(url);
     if (cues.isEmpty()) {
         emit errorMessage(tr("Could not load subtitles from %1")
-                                  .arg(url.fileName()));
+                                  .arg(subtitleName));
         return false;
     }
     m_externalSubs = std::move(cues);
@@ -3449,7 +3486,7 @@ bool PlayerController::loadSubtitles(const QUrl &url)
     emit externalSubtitlesChanged();
     emit subtitleDelayChanged();
     updateSubtitle(m_player->position());
-    emit osdMessage(tr("Subtitles loaded: %1").arg(url.fileName()));
+    emit osdMessage(tr("Subtitles loaded: %1").arg(subtitleName));
     return true;
 }
 
@@ -3609,8 +3646,13 @@ QString PlayerController::mediaInfoHtml() const
         icon = QStringLiteral("type_video");
     else if (m_player->hasAudio())
         icon = QStringLiteral("type_audio");
+    // QUrl::fileName() is a shallow URL-string split -- wrong for Android's
+    // content:// URLs (see the sourceChanged/Recent-files fix above for the
+    // full investigation); QFileInfo resolves the real name for those too.
+    const QString resolvedName =
+            QFileInfo(url.isLocalFile() ? url.toLocalFile() : url.toString()).fileName();
     const QString displayName =
-            url.fileName().isEmpty() ? url.toDisplayString() : url.fileName();
+            resolvedName.isEmpty() ? url.toDisplayString() : resolvedName;
     s += QStringLiteral("<h1><img src=\"qrc:/qt/qml/Vivace/icons/Default/%1.png\"> %2</h1>")
                  .arg(icon, displayName.toHtmlEscaped());
 
@@ -4414,8 +4456,26 @@ void PlayerController::handleMediaStatus(QMediaPlayer::MediaStatus status)
 
         QString title = m_player->metaData()
                                 .stringValue(QMediaMetaData::Title);
-        if (title.isEmpty())
-            title = url.fileName();
+        if (title.isEmpty()) {
+            // QUrl::fileName() is a shallow, URL-string-level path-segment
+            // split -- fine for a plain file:// URL, but for Android's
+            // content:// URLs (from the system's Storage Access Framework
+            // file picker, which QtQuick.Dialogs' FileDialog uses on
+            // Android) it returns the SAF document's own internal ID
+            // (e.g. "video:12345"), not a real filename -- confirmed
+            // 2026-09-12 (real device report: Recent files showed exactly
+            // that instead of the real media filename). Route through
+            // QFileInfo instead, using the raw URL string for anything
+            // that isn't a plain local file: Qt's own
+            // AndroidContentFileEngineHandler (src/plugins/platforms/
+            // android/androidcontentfileengine.cpp in qtbase; see
+            // CastServer's own localEnginePath() for the fuller
+            // investigation) resolves this to the real SAF display name
+            // via a genuine ContentResolver query, exactly like it
+            // already does for file I/O.
+            const QString path = url.isLocalFile() ? url.toLocalFile() : url.toString();
+            title = QFileInfo(path).fileName();
+        }
         m_recents->add(url, title);
 
         // Track selection (selectPreferredTracks()/restoreTrackSelections(),

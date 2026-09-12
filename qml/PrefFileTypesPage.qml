@@ -10,9 +10,16 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 
-ColumnLayout {
+ScrollView {
     id: page
-    spacing: 10
+
+    Layout.fillWidth: true
+    Layout.fillHeight: true
+    // Content pane vertical-scroll fix (Android, huge system font sizes can
+    // make even a single-subtab page taller than the Preferences window) --
+    // no horizontal scrolling is ever needed since content.width is bound
+    // to the viewport's own available width.
+    ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
 
     readonly property var extensions: [
         "mp4", "mkv", "avi", "mov", "webm", "wmv", "ts", "m2ts", "flv", "ogv",
@@ -56,6 +63,10 @@ ColumnLayout {
     }
 
     Component.onCompleted: reload()
+
+    ColumnLayout {
+        width: page.availableWidth
+        spacing: 10
 
     Label {
         Layout.fillWidth: true
@@ -125,5 +136,5 @@ ColumnLayout {
         text: qsTr("File associations are only available on Windows.")
     }
 
-    Item { Layout.fillHeight: true }
+    } // ColumnLayout
 }

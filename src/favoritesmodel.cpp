@@ -110,7 +110,15 @@ QList<FavoritesModel::Node> parseSmplayerM3u(const QString &path,
             node.children = parseSmplayerM3u(line, visited, depth + 1);
         } else {
             const QUrl url = toUrl(line);
-            node.name = pendingName.isEmpty() ? url.fileName() : pendingName;
+            // QUrl::fileName() is a shallow URL-string split -- wrong for
+            // Android's content:// URLs; QFileInfo resolves the real name
+            // for those too (see PlayerController::sourceChanged's
+            // Recent-files fix for the full investigation).
+            const QString resolved =
+                    QFileInfo(url.isLocalFile() ? url.toLocalFile() : url.toString()).fileName();
+            node.name = pendingName.isEmpty()
+                    ? (resolved.isEmpty() ? url.toDisplayString() : resolved)
+                    : pendingName;
             node.url = url.toString();
         }
         nodes.append(node);
@@ -332,8 +340,14 @@ void FavoritesModel::load()
     if (!entries.isEmpty()) {
         for (const PlaylistEntry &entry : entries) {
             Node node;
-            node.name = entry.title.isEmpty() ? entry.url.fileName()
-                                              : entry.title;
+            // QUrl::fileName() is a shallow URL-string split -- wrong for
+            // Android's content:// URLs; QFileInfo resolves the real name
+            // for those too (see PlayerController::sourceChanged's
+            // Recent-files fix for the full investigation).
+            node.name = entry.title.isEmpty()
+                    ? QFileInfo(entry.url.isLocalFile() ? entry.url.toLocalFile()
+                                                        : entry.url.toString()).fileName()
+                    : entry.title;
             node.url = entry.url.toString();
             m_root.children.append(node);
         }

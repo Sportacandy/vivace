@@ -211,16 +211,31 @@ ColumnLayout {
         flags: Qt.Dialog
         modality: Qt.WindowModal
         color: palette.window
-        width: 380
-        height: capCol.implicitHeight + 24
-        minimumWidth: 320
+        // Android: fill the transientParent's own bounds EXACTLY instead
+        // of a fixed/content-driven desktop size (see PreferencesDialog.
+        // qml's own comment for why -- "small dialogs already work fine"
+        // turned out to be a wrong assumption once actually tested). This
+        // window's transientParent auto-resolves to prefsDialog (the
+        // nearest enclosing Window, since this page lives inside
+        // prefsDialog's pagesStack), which now fills its own
+        // transientParent exactly (no guessed-constant subtraction -- see
+        // SafeArea-based content margins instead), so simply matching its
+        // height here is correct.
+        width: Qt.platform.os === "android" && transientParent
+               ? transientParent.width : 380
+        height: Qt.platform.os === "android" && transientParent
+                ? transientParent.height : capCol.implicitHeight + 24
+        minimumWidth: Qt.platform.os === "android" ? 0 : 320
 
         function begin(id, label) {
             targetId = id
             targetLabel = label
             pending = Shortcuts.sequence(id)
             conflictId = ""
-            if (transientParent) {
+            if (Qt.platform.os === "android") {
+                x = 0
+                y = 0
+            } else if (transientParent) {
                 x = transientParent.x + (transientParent.width - width) / 2
                 y = transientParent.y + (transientParent.height - height) / 2
             }
@@ -254,7 +269,12 @@ ColumnLayout {
         ColumnLayout {
             id: capCol
             anchors.fill: parent
-            anchors.margins: 12
+            // Real platform-reported inset, not a guessed constant -- see
+            // PreferencesDialog.qml's own outer ColumnLayout comment for why.
+            anchors.topMargin: 12 + SafeArea.margins.top
+            anchors.leftMargin: 12 + SafeArea.margins.left
+            anchors.rightMargin: 12 + SafeArea.margins.right
+            anchors.bottomMargin: 12 + SafeArea.margins.bottom
             spacing: 10
 
             Label {

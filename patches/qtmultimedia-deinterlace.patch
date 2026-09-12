@@ -427,7 +427,7 @@ new file mode 100644
 index 0000000..9869393
 --- /dev/null
 +++ b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegdeinterlacer.cpp
-@@ -0,0 +1,179 @@
+@@ -0,0 +1,194 @@
 +/*  Vivace — a fast, pure-Qt media player.
 +    Copyright (C) 2026 Hironori Komaba
 +    SPDX-License-Identifier: GPL-3.0-or-later
@@ -498,6 +498,21 @@ index 0000000..9869393
 +
 +    const AVFilter *bufferFilter = avfilter_get_by_name("buffer");
 +    const AVFilter *sinkFilter = avfilter_get_by_name("buffersink");
++    // Android note (2026-09-07): a platform-specific yadif fallback was
++    // tried here (this platform's FFmpeg build has no "bwdif" filter
++    // registered, avfilter_get_by_name("bwdif") returns null) but turned
++    // out not to matter -- the REAL, deeper blocker is that
++    // av_hwframe_transfer_data() (process(), below) can never succeed for
++    // a MediaCodec-decoded frame at all (confirmed against FFmpeg's own
++    // real hwcontext_mediacodec.c: no transfer_data_to/from is
++    // implemented for that hw type, a permanent upstream limitation), so
++    // Yadif fails there identically to Bwdif whenever hardware decode is
++    // in use -- a same-filter-name fallback fixes nothing real. Vivace's
++    // own Settings/UI now force None as Android's default and disable the
++    // per-file Deinterlace menu entirely there instead (see settings.cpp's
++    // defaultDeinterlaceMode() and MainMenuBar.qml), so this code path is
++    // no longer reachable via the ordinary UI on that platform at all --
++    // reverted back to the plain, platform-unconditional selection.
 +    const AVFilter *deintFilter = avfilter_get_by_name(m_mode == Yadif ? "yadif" : "bwdif");
 +    if (!bufferFilter || !sinkFilter || !deintFilter) {
 +        freeGraph();

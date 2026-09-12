@@ -19,10 +19,16 @@ Window {
 
     title: qsTr("Find subtitles — Vivace")
     flags: Qt.Dialog
-    width: 640
-    height: 480
-    minimumWidth: 480
-    minimumHeight: 360
+    // Android: fill the transientParent's own bounds EXACTLY instead of a
+    // fixed desktop size (see PreferencesDialog.qml's own comment for
+    // why -- no guessed-constant margin, real SafeArea inset used on the
+    // content layout below instead).
+    width: Qt.platform.os === "android" && transientParent
+           ? transientParent.width : 640
+    height: Qt.platform.os === "android" && transientParent
+            ? transientParent.height : 480
+    minimumWidth: Qt.platform.os === "android" ? 0 : 480
+    minimumHeight: Qt.platform.os === "android" ? 0 : 360
     color: palette.window
 
     readonly property url source: controller.player.source
@@ -38,6 +44,10 @@ Window {
         const dot = base.lastIndexOf('.')
         queryField.text = dot > 0 ? base.substring(0, dot) : base
         langField.text = Settings.preferredSubtitleLanguage
+        if (Qt.platform.os === "android") {
+            x = 0
+            y = 0
+        }
         show()
         raise()
         requestActivate()
@@ -58,7 +68,12 @@ Window {
 
     ColumnLayout {
         anchors.fill: parent
-        anchors.margins: 12
+        // Real platform-reported inset, not a guessed constant -- see
+        // PreferencesDialog.qml's own outer ColumnLayout comment for why.
+        anchors.topMargin: 12 + SafeArea.margins.top
+        anchors.leftMargin: 12 + SafeArea.margins.left
+        anchors.rightMargin: 12 + SafeArea.margins.right
+        anchors.bottomMargin: 12 + SafeArea.margins.bottom
         spacing: 8
 
         RowLayout {
@@ -106,6 +121,9 @@ Window {
         Frame {
             Layout.fillWidth: true
             Layout.fillHeight: true
+            // Explicit 0 (Android, huge system font sizes): see
+            // PreferencesDialog.qml's own comment on the equivalent fix.
+            Layout.minimumHeight: 0
             padding: 1
 
             ListView {

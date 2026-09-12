@@ -18,13 +18,22 @@ Window {
     title: qsTr("Video equalizer")
     flags: Qt.Dialog
     color: palette.window
-    width: 440
-    height: eqCol.implicitHeight + 24
-    minimumWidth: 360
-    minimumHeight: eqCol.implicitHeight + 24
+    // Android: fill the transientParent's own bounds EXACTLY instead of a
+    // fixed/content-driven desktop size (see PreferencesDialog.qml's own
+    // comment for why -- no guessed-constant margin, real SafeArea inset
+    // used on the content layout below instead).
+    width: Qt.platform.os === "android" && transientParent
+           ? transientParent.width : 440
+    height: Qt.platform.os === "android" && transientParent
+            ? transientParent.height : eqCol.implicitHeight + 24
+    minimumWidth: Qt.platform.os === "android" ? 0 : 360
+    minimumHeight: Qt.platform.os === "android" ? 0 : eqCol.implicitHeight + 24
 
     function open() {
-        if (transientParent) {
+        if (Qt.platform.os === "android") {
+            x = 0
+            y = 0
+        } else if (transientParent) {
             x = transientParent.x + (transientParent.width - width) / 2
             y = transientParent.y + (transientParent.height - height) / 2
         }
@@ -75,7 +84,12 @@ Window {
     ColumnLayout {
         id: eqCol
         anchors.fill: parent
-        anchors.margins: 12
+        // Real platform-reported inset, not a guessed constant -- see
+        // PreferencesDialog.qml's own outer ColumnLayout comment for why.
+        anchors.topMargin: 12 + SafeArea.margins.top
+        anchors.leftMargin: 12 + SafeArea.margins.left
+        anchors.rightMargin: 12 + SafeArea.margins.right
+        anchors.bottomMargin: 12 + SafeArea.margins.bottom
         spacing: 6
 
         EqRow {
@@ -157,14 +171,27 @@ Window {
         modality: Qt.WindowModal
         transientParent: dialog
         color: palette.window
-        width: 360
-        height: savedCol.implicitHeight + 24
-        minimumWidth: 280
-        minimumHeight: savedCol.implicitHeight + 24
+        // Android: fill dialog's own bounds EXACTLY instead of a fixed/
+        // content-driven desktop size (see PreferencesDialog.qml's own
+        // comment for why -- "small dialogs already work fine" turned out
+        // to be a wrong assumption once actually tested). dialog now fills
+        // its own transientParent exactly (no guessed-constant subtraction
+        // -- see SafeArea-based content margins instead), so simply
+        // matching its height here is correct.
+        width: Qt.platform.os === "android" ? dialog.width : 360
+        height: Qt.platform.os === "android"
+                ? dialog.height : savedCol.implicitHeight + 24
+        minimumWidth: Qt.platform.os === "android" ? 0 : 280
+        minimumHeight: Qt.platform.os === "android" ? 0 : savedCol.implicitHeight + 24
 
         function showCentered() {
-            x = dialog.x + (dialog.width - width) / 2
-            y = dialog.y + (dialog.height - height) / 2
+            if (Qt.platform.os === "android") {
+                x = 0
+                y = 0
+            } else {
+                x = dialog.x + (dialog.width - width) / 2
+                y = dialog.y + (dialog.height - height) / 2
+            }
             visible = true
             raise()
             requestActivate()
@@ -178,7 +205,12 @@ Window {
         ColumnLayout {
             id: savedCol
             anchors.fill: parent
-            anchors.margins: 12
+            // Real platform-reported inset, not a guessed constant -- see
+            // PreferencesDialog.qml's own outer ColumnLayout comment for why.
+            anchors.topMargin: 12 + SafeArea.margins.top
+            anchors.leftMargin: 12 + SafeArea.margins.left
+            anchors.rightMargin: 12 + SafeArea.margins.right
+            anchors.bottomMargin: 12 + SafeArea.margins.bottom
             spacing: 12
             Label {
                 Layout.fillWidth: true

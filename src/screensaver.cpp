@@ -12,7 +12,7 @@
 #elif defined(Q_OS_MACOS)
 #include <IOKit/pwr_mgt/IOPMLib.h>
 #include <CoreFoundation/CoreFoundation.h>
-#elif defined(Q_OS_UNIX)
+#elif defined(Q_OS_UNIX) && !defined(Q_OS_ANDROID)
 #include <QDBusConnection>
 #include <QDBusInterface>
 #include <QDBusReply>
@@ -21,7 +21,7 @@
 ScreenSaver::ScreenSaver(QObject *parent)
     : QObject(parent)
 {
-#if defined(Q_OS_UNIX) && !defined(Q_OS_MACOS)
+#if defined(Q_OS_UNIX) && !defined(Q_OS_MACOS) && !defined(Q_OS_ANDROID)
     m_interface = new QDBusInterface(
         QStringLiteral("org.freedesktop.ScreenSaver"),
         QStringLiteral("/org/freedesktop/ScreenSaver"),
@@ -84,7 +84,7 @@ void ScreenSaver::doUninhibit()
     }
 }
 
-#elif defined(Q_OS_UNIX)
+#elif defined(Q_OS_UNIX) && !defined(Q_OS_ANDROID)
 
 void ScreenSaver::doInhibit()
 {

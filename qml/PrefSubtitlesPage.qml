@@ -11,8 +11,16 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 
-ColumnLayout {
-    spacing: 10
+ScrollView {
+    id: page
+
+    Layout.fillWidth: true
+    Layout.fillHeight: true
+    // Content pane vertical-scroll fix (Android, huge system font sizes can
+    // make even a single-subtab page taller than the Preferences window) --
+    // no horizontal scrolling is ever needed since content.width is bound
+    // to the viewport's own available width.
+    ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
 
     readonly property string helpText: qsTr(
         "<h1>Subtitles</h1>"
@@ -26,6 +34,10 @@ ColumnLayout {
         + "DVD disc's own menu system or an embedded subtitle track in an "
         + "ordinary video file -- so a slight smoothing blur can be applied "
         + "(or turned off) to soften their low-resolution edges.</p>")
+
+    ColumnLayout {
+        width: page.availableWidth
+        spacing: 10
 
     GroupBox {
         Layout.fillWidth: true
@@ -138,5 +150,5 @@ ColumnLayout {
         text: qsTr("Font, size and position apply to Vivace's external subtitle renderer (SRT/VTT/basic ASS), loaded via Subtitles ▸ Load subtitles… or autoloaded next to the video. Subtitles embedded in the media are rendered by the playback backend and cannot be styled.")
     }
 
-    Item { Layout.fillHeight: true }
+    } // ColumnLayout
 }

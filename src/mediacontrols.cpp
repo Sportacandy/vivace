@@ -9,7 +9,7 @@
 
 #if defined(Q_OS_WIN)
 #include "windowssmtc.h"
-#elif defined(Q_OS_UNIX) && !defined(Q_OS_MACOS)
+#elif defined(Q_OS_UNIX) && !defined(Q_OS_MACOS) && !defined(Q_OS_ANDROID)
 #include "mpris2.h"
 #endif
 
@@ -45,7 +45,7 @@ void MediaControls::initialize()
 
 #if defined(Q_OS_WIN)
     m_backend = new WindowsSmtc(m_controller, m_window, this);
-#elif defined(Q_OS_UNIX) && !defined(Q_OS_MACOS)
+#elif defined(Q_OS_UNIX) && !defined(Q_OS_MACOS) && !defined(Q_OS_ANDROID)
     m_backend = new Mpris2(m_controller, m_window, this);
 #endif
 }

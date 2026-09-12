@@ -14,8 +14,16 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 
-ColumnLayout {
-    spacing: 10
+ScrollView {
+    id: page
+
+    Layout.fillWidth: true
+    Layout.fillHeight: true
+    // Content pane vertical-scroll fix (Android, huge system font sizes can
+    // make even a single-subtab page taller than the Preferences window) --
+    // no horizontal scrolling is ever needed since content.width is bound
+    // to the viewport's own available width.
+    ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
 
     readonly property string helpText: qsTr(
         "<h1>Drives</h1>"
@@ -34,6 +42,10 @@ ColumnLayout {
         + "also available (Open ▸ Disc ▸ Blu-ray) — basic title/chapter "
         + "playback only, with no on-disc menus and no Preferences of its "
         + "own. Audio CD playback is being considered for a later phase.</p>")
+
+    ColumnLayout {
+        width: page.availableWidth
+        spacing: 10
 
     GroupBox {
         Layout.fillWidth: true
@@ -115,5 +127,5 @@ ColumnLayout {
         }
     }
 
-    Item { Layout.fillHeight: true }
+    } // ColumnLayout
 }

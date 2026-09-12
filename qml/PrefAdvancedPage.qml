@@ -10,7 +10,7 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 
-ColumnLayout {
+ScrollView {
     id: page
 
     property PlayerController controller
@@ -24,7 +24,17 @@ ColumnLayout {
         + "positions and per-file track choices — this is immediate and is not "
         + "undone by Cancel.</p>")
 
-    spacing: 10
+    Layout.fillWidth: true
+    Layout.fillHeight: true
+    // Content pane vertical-scroll fix (Android, huge system font sizes can
+    // make even a single-subtab page taller than the Preferences window) --
+    // no horizontal scrolling is ever needed since content.width is bound
+    // to the viewport's own available width.
+    ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
+
+    ColumnLayout {
+        width: page.availableWidth
+        spacing: 10
 
     GroupBox {
         Layout.fillWidth: true
@@ -44,6 +54,19 @@ ColumnLayout {
                 }
                 Button {
                     text: qsTr("Open…")
+                    // Hidden on Android: Qt.openUrlExternally() on a file://
+                    // URL pointing at a DIRECTORY has no defined meaning
+                    // there (no MIME type for "a folder"), so Android just
+                    // offers a chooser of essentially every installed app
+                    // that handles a generic view intent -- and even the
+                    // right kind of app (a file manager) couldn't actually
+                    // browse this path anyway, since it's Vivace's own
+                    // sandboxed private storage, inaccessible to any other
+                    // app regardless of which one gets picked. The path
+                    // itself stays visible in the TextField above (useful
+                    // for e.g. ADB-based inspection) -- only the button that
+                    // can't do anything meaningful is removed.
+                    visible: Qt.platform.os !== "android"
                     onClicked: Qt.openUrlExternally(UiHelpers.configFolderUrl())
                 }
             }
@@ -110,5 +133,5 @@ ColumnLayout {
         }
     }
 
-    Item { Layout.fillHeight: true }
+    } // ColumnLayout
 }

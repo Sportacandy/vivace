@@ -53,8 +53,28 @@ ColumnLayout {
         TabButton { text: qsTr("Interface") }
         TabButton { text: qsTr("Text") }
         TabButton { text: qsTr("Seeking") }
-        TabButton { text: qsTr("Instances") }
-        TabButton { text: qsTr("Fullscreen") }
+        TabButton {
+            text: qsTr("Instances")
+            // Single-instance mode is a desktop concept -- Android's own
+            // activity/task model already ensures at most one running
+            // instance, so this tab has nothing to configure there. Hidden
+            // rather than disabled (see the identical "Main window"/
+            // YouTube-tab reasoning above): a disabled CheckBox still
+            // renders in the normal *enabled* color on this Android Qt
+            // build. width: 0 alongside visible: false, since TabBar's
+            // ListView positions delegates by their own width regardless of
+            // visibility -- without it this would leave a blank gap.
+            visible: Qt.platform.os !== "android"
+            width: visible ? implicitWidth : 0
+        }
+        TabButton {
+            text: qsTr("Fullscreen")
+            // Hiding the mouse pointer after inactivity is meaningless on a
+            // touch device with no persistent cursor. Same hide-not-disable
+            // reasoning as the Instances tab above.
+            visible: Qt.platform.os !== "android"
+            width: visible ? implicitWidth : 0
+        }
         TabButton { text: qsTr("Privacy") }
     }
 
@@ -75,6 +95,21 @@ ColumnLayout {
                 GroupBox {
                     Layout.fillWidth: true
                     title: qsTr("Main window")
+                    // Auto-resize/center/remember-position/hide-on-audio are
+                    // all desktop window-management concepts; Android has no
+                    // real windowed mode (Main.qml forces the window
+                    // permanently fullscreen there -- see Settings::
+                    // startInFullscreen()'s own override), so none of this
+                    // has any effect to show as configurable. HIDDEN rather
+                    // than merely disabled: a disabled CheckBox/ComboBox/
+                    // Label in Fusion style still renders in the normal
+                    // *enabled* text color on this Android Qt build (a real
+                    // Qt Quick Controls palette-resolution quirk, not
+                    // something fixable from Vivace's own QML -- see the
+                    // identical finding for the YouTube tab), so disabling
+                    // this section would just look broken instead of
+                    // unavailable.
+                    visible: Qt.platform.os !== "android"
 
                     ColumnLayout {
                         anchors.fill: parent

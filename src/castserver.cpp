@@ -23,6 +23,37 @@
 
 namespace {
 
+// The path string QFile/QFileInfo need to actually open `url` as a local
+// file. For an ordinary file:// URL this is just toLocalFile() -- but on
+// Android, opening a file via the system's Storage Access Framework picker
+// (QtQuick.Dialogs' FileDialog uses this on Android) yields a content://
+// URL instead, for which toLocalFile() is always empty (it only resolves
+// file:// scheme URLs). Qt Multimedia can still play such a URL directly,
+// but this server previously took that emptiness to mean "not a local
+// file, refuse to serve it" -- confirmed 2026-09-12 (real Android device
+// report: casting a currently-playing MP4 always showed "isn't currently
+// playing a local file").
+//
+// Fixed by recognizing content:// URLs too: Qt's own
+// AndroidContentFileEngineHandler (src/plugins/platforms/android/
+// androidcontentfileengine.cpp in qtbase) is a globally-registered file
+// engine that transparently routes ANY QFile/QFileInfo path starting with
+// "content:" through Android's real ContentResolver -- no custom JNI
+// needed here. Its open() resolves a real native file descriptor via
+// ParcelFileDescriptor and hands it to the ordinary QFSFileEngine, so
+// seek()/range-reads work exactly like a normal file once opened, which
+// is exactly what serveStream()'s HTTP Range support needs. The one
+// requirement is passing the URL's own STRING form here, not
+// toLocalFile() (which is empty for any non-file:// scheme).
+QString localEnginePath(const QUrl &url)
+{
+    if (url.isLocalFile())
+        return url.toLocalFile();
+    if (url.scheme() == QLatin1String("content"))
+        return url.toString();
+    return QString();
+}
+
 // 256 KiB per write, paced by bytesWritten() so a whole (potentially
 // multi-gigabyte) video file is never buffered in memory at once.
 constexpr qint64 kChunkSize = 256 * 1024;
@@ -253,8 +284,8 @@ bool CastServer::canServeCurrentSource() const
     QMediaPlayer *player = m_controller->player();
     if (player->sourceDevice()) // DVD titles, live TV: not plain local files
         return false;
-    const QUrl url = player->source();
-    return url.isLocalFile() && QFileInfo(url.toLocalFile()).isFile();
+    const QString path = localEnginePath(player->source());
+    return !path.isEmpty() && QFileInfo(path).isFile();
 }
 
 void CastServer::serveIndex(QTcpSocket *socket)
@@ -271,7 +302,7 @@ void CastServer::serveIndex(QTcpSocket *socket)
     // as the main window's own title.
     QString title = m_controller->mediaTitle();
     if (title.isEmpty())
-        title = QFileInfo(m_controller->player()->source().toLocalFile()).fileName();
+        title = QFileInfo(localEnginePath(m_controller->player()->source())).fileName();
     QByteArray titleHtml = title.toHtmlEscaped().toUtf8();
     if (titleHtml.isEmpty())
         titleHtml = "Vivace";
@@ -306,7 +337,7 @@ void CastServer::serveStream(QTcpSocket *socket, const QByteArray &rangeHeader, 
         serveSimple(socket, 404, "Not Found", "No local file is currently playing");
         return;
     }
-    const QString path = m_controller->player()->source().toLocalFile();
+    const QString path = localEnginePath(m_controller->player()->source());
     const QFileInfo info(path);
     const qint64 size = info.size();
     const QByteArray mime =
