@@ -11,6 +11,15 @@ each get their own entry instead.
 
 ## [Unreleased]
 
+## [0.4.7] — 2026-09-12
+
+### Fixed
+- A preferred audio language (Preferences ▸ General ▸ Audio) could be
+  silently ignored on DVDs, leaving a different track active than the
+  one requested — the disc's own declared audio languages weren't
+  being consulted for this, the same class of issue already fixed for
+  DVD subtitles and Blu-ray audio.
+
 ## [0.4.6] — 2026-09-05
 
 ### Fixed

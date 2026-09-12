@@ -17,9 +17,12 @@ is also published from the tip of `main` between tagged releases. See
 
 ## Status
 
-**v0.4.6** — fixes a DVD subtitle left showing on screen after pressing
-Stop, over the "Drop media files here" placeholder — see CHANGELOG.md.
-Builds on v0.4.5, which fixed DVD subtitle language selection
+**v0.4.7** — fixes a preferred audio language (Preferences ▸ General ▸
+Audio) being silently ignored on DVDs, leaving a different track active
+than the one requested — see CHANGELOG.md. Builds on v0.4.6, which fixed
+a DVD subtitle left showing on screen after pressing Stop, over the
+"Drop media files here" placeholder. On v0.4.5, which fixed DVD subtitle
+language selection
 (Subtitles ▸ Track) on discs with many subtitle tracks, where a language
 selection could silently show the wrong language, or none at all,
 because the disc's own subtitle-stream-mapping table wasn't being
