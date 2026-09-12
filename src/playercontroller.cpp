@@ -4607,6 +4607,39 @@ void PlayerController::selectPreferredTracks()
         if (index >= 0)
             setActiveAudioTrack(index);
         selectedAudioLanguage = audioLangs.value(index >= 0 ? index : 0);
+    } else if (dvdPlayback()) {
+        // Same root cause as the Blu-ray branch above: QMediaMetaData::
+        // Language is never populated for DVD's raw VOB/MPEG-PS audio
+        // either (confirmed 2026-09-12 via ffprobe against a real disc --
+        // no language tag at all on either audio stream, same libavformat
+        // demuxer Qt Multimedia's FFmpeg backend uses), so
+        // findTrackByLanguages() below could never match a DVD audio
+        // preference and silently left whichever track Qt's FFmpeg backend
+        // happened to default to active (user report: "ja, en" preferred,
+        // English played by default on a real disc whose IFO declares
+        // Japanese as audio stream 0). Match against the IFO-declared
+        // table instead, exactly like dvdAudioTrackLabels() already does
+        // for the Track menu's own labels, and like applyDvdTitle()'s own
+        // subtitle-suppression "predictedAudio" logic already assumes this
+        // function does (see that code's own doc comment, which describes
+        // exactly this matcher).
+        QStringList dvdAudioLangs;
+        for (const DvdIfo::AudioStream &a : m_dvdAudioStreams)
+            dvdAudioLangs.append(a.language);
+        int index = -1;
+        if (!m_preferredAudioLanguages.trimmed().isEmpty()) {
+            index = findTrackByLanguageCodes(dvdAudioLangs, m_preferredAudioLanguages);
+            // A disc can declare more audio streams than FFmpeg actually
+            // multiplexes (m_dvdAudioStreams' own doc comment) -- cap DOWN
+            // to what's really switchable, same direction
+            // dvdAudioTrackLabels() already uses for DVD audio (the
+            // opposite of Blu-ray's cap-to-declared above).
+            if (index >= m_player->audioTracks().size())
+                index = -1;
+        }
+        if (index >= 0)
+            setActiveAudioTrack(index);
+        selectedAudioLanguage = dvdAudioLangs.value(index >= 0 ? index : 0);
     } else {
         int index = -1;
         if (!m_preferredAudioLanguages.trimmed().isEmpty())
