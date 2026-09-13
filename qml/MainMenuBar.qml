@@ -284,49 +284,52 @@ MenuBar {
             onTriggered: bar.controller.frameStep(-1)
         }
         MenuSeparator {}
-        Action {
-            text: qsTr("&Rewind %1").arg(bar.seekStepText(Settings.seekShortStep))
-            icon.source: Theme.icon("rewind10s")
-            shortcut: Shortcuts.sequences["rewind_short"]
-            enabled: bar.player.seekable
-            onTriggered: bar.controller.seekRelative(-Settings.seekShortStep * 1000)
+        AppMenu {
+            title: qsTr("See&k")
+
+            Action {
+                text: qsTr("&Rewind %1").arg(bar.seekStepText(Settings.seekShortStep))
+                icon.source: Theme.icon("rewind10s")
+                shortcut: Shortcuts.sequences["rewind_short"]
+                enabled: bar.player.seekable
+                onTriggered: bar.controller.seekRelative(-Settings.seekShortStep * 1000)
+            }
+            Action {
+                text: qsTr("&Forward %1").arg(bar.seekStepText(Settings.seekShortStep))
+                icon.source: Theme.icon("forward10s")
+                shortcut: Shortcuts.sequences["forward_short"]
+                enabled: bar.player.seekable
+                onTriggered: bar.controller.seekRelative(Settings.seekShortStep * 1000)
+            }
+            Action {
+                text: qsTr("Rewind %1").arg(bar.seekStepText(Settings.seekMediumStep))
+                icon.source: Theme.icon("rewind1m")
+                shortcut: Shortcuts.sequences["rewind_medium"]
+                enabled: bar.player.seekable
+                onTriggered: bar.controller.seekRelative(-Settings.seekMediumStep * 1000)
+            }
+            Action {
+                text: qsTr("Forward %1").arg(bar.seekStepText(Settings.seekMediumStep))
+                icon.source: Theme.icon("forward1m")
+                shortcut: Shortcuts.sequences["forward_medium"]
+                enabled: bar.player.seekable
+                onTriggered: bar.controller.seekRelative(Settings.seekMediumStep * 1000)
+            }
+            Action {
+                text: qsTr("Rewind %1").arg(bar.seekStepText(Settings.seekLongStep))
+                icon.source: Theme.icon("rewind10m")
+                shortcut: Shortcuts.sequences["rewind_long"]
+                enabled: bar.player.seekable
+                onTriggered: bar.controller.seekRelative(-Settings.seekLongStep * 1000)
+            }
+            Action {
+                text: qsTr("Forward %1").arg(bar.seekStepText(Settings.seekLongStep))
+                icon.source: Theme.icon("forward10m")
+                shortcut: Shortcuts.sequences["forward_long"]
+                enabled: bar.player.seekable
+                onTriggered: bar.controller.seekRelative(Settings.seekLongStep * 1000)
+            }
         }
-        Action {
-            text: qsTr("&Forward %1").arg(bar.seekStepText(Settings.seekShortStep))
-            icon.source: Theme.icon("forward10s")
-            shortcut: Shortcuts.sequences["forward_short"]
-            enabled: bar.player.seekable
-            onTriggered: bar.controller.seekRelative(Settings.seekShortStep * 1000)
-        }
-        Action {
-            text: qsTr("Rewind %1").arg(bar.seekStepText(Settings.seekMediumStep))
-            icon.source: Theme.icon("rewind1m")
-            shortcut: Shortcuts.sequences["rewind_medium"]
-            enabled: bar.player.seekable
-            onTriggered: bar.controller.seekRelative(-Settings.seekMediumStep * 1000)
-        }
-        Action {
-            text: qsTr("Forward %1").arg(bar.seekStepText(Settings.seekMediumStep))
-            icon.source: Theme.icon("forward1m")
-            shortcut: Shortcuts.sequences["forward_medium"]
-            enabled: bar.player.seekable
-            onTriggered: bar.controller.seekRelative(Settings.seekMediumStep * 1000)
-        }
-        Action {
-            text: qsTr("Rewind %1").arg(bar.seekStepText(Settings.seekLongStep))
-            icon.source: Theme.icon("rewind10m")
-            shortcut: Shortcuts.sequences["rewind_long"]
-            enabled: bar.player.seekable
-            onTriggered: bar.controller.seekRelative(-Settings.seekLongStep * 1000)
-        }
-        Action {
-            text: qsTr("Forward %1").arg(bar.seekStepText(Settings.seekLongStep))
-            icon.source: Theme.icon("forward10m")
-            shortcut: Shortcuts.sequences["forward_long"]
-            enabled: bar.player.seekable
-            onTriggered: bar.controller.seekRelative(Settings.seekLongStep * 1000)
-        }
-        MenuSeparator {}
         AppMenu {
             title: qsTr("Sp&eed")
             icon.source: Theme.icon("speed")
