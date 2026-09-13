@@ -1203,9 +1203,8 @@
         <translation>&amp;Zaustavi</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="265"/>
         <source>Frame &amp;step</source>
-        <translation>&amp;Pomak sličice</translation>
+        <translation type="vanished">&amp;Pomak sličice</translation>
     </message>
     <message>
         <location filename="../qml/MainMenuBar.qml" line="271"/>
@@ -1413,9 +1412,8 @@
         <translation>Pomakni &amp;lijevo</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="509"/>
         <source>Move &amp;right</source>
-        <translation>Pomakni &amp;desno</translation>
+        <translation type="vanished">Pomakni &amp;desno</translation>
     </message>
     <message>
         <location filename="../qml/MainMenuBar.qml" line="514"/>
@@ -1514,7 +1512,6 @@
         <translation>Glasnoća zvuka &amp;+</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="751"/>
         <location filename="../qml/MainMenuBar.qml" line="848"/>
         <source>Delay &amp;-</source>
         <translation>Kašnjenje &amp;-</translation>
@@ -1523,6 +1520,21 @@
         <location filename="../qml/MainMenuBar.qml" line="755"/>
         <source>D&amp;elay +</source>
         <translation>P&amp;rednačenje +</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainMenuBar.qml" line="265"/>
+        <source>Frame st&amp;ep</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/MainMenuBar.qml" line="509"/>
+        <source>Move r&amp;ight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/MainMenuBar.qml" line="751"/>
+        <source>&amp;Delay -</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/MainMenuBar.qml" line="759"/>
@@ -1666,8 +1678,17 @@
     </message>
     <message>
         <location filename="../qml/MainMenuBar.qml" line="1049"/>
+        <source>&amp;Edit main toolbar…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/MainMenuBar.qml" line="1137"/>
+        <source>Check for &amp;updates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Edit main &amp;toolbar…</source>
-        <translation>Uredi glavnu &amp;alatnu traku…</translation>
+        <translation type="vanished">Uredi glavnu &amp;alatnu traku…</translation>
     </message>
     <message>
         <location filename="../qml/MainMenuBar.qml" line="1053"/>
@@ -1735,9 +1756,8 @@
         <translation>&amp;Sadržaj</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1137"/>
         <source>&amp;Check for updates</source>
-        <translation>&amp;Provjeri za nadopune</translation>
+        <translation type="vanished">&amp;Provjeri za nadopune</translation>
     </message>
     <message>
         <source>Install / Update &amp;YouTube support</source>
@@ -3067,12 +3087,12 @@
         <translation>Pokrenuti primjerci</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="71"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="75"/>
         <source>Fullscreen</source>
         <translation>Cijeli zaslon</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="78"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="81"/>
         <source>Privacy</source>
         <translation>Privatnost</translation>
     </message>
@@ -3081,57 +3101,57 @@
         <translation type="vanished">Visok &amp;DPI</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="97"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="100"/>
         <source>Main window</source>
         <translation>Glavni prozor</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="120"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="123"/>
         <source>Auto-resize:</source>
         <translation>Automatska promjena veličine:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="125"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="128"/>
         <source>Never</source>
         <translation>Nikada</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="126"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="129"/>
         <source>Whenever it&apos;s needed</source>
         <translation>Uvijek kada je potrebno</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="127"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="130"/>
         <source>Only after loading a new video</source>
         <translation>Samo nakon učitavanja novog video zapisa</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="134"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="137"/>
         <source>Center window</source>
         <translation>Prozor u sredini</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="139"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="142"/>
         <source>Prevent the window from getting outside of the screen</source>
         <translation>Spriječi izlazak prozora izvan zaslona</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="144"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="147"/>
         <source>Remember size and position of the main window</source>
         <translation>Zapamti veličinu i položaj glavnog prozora</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="149"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="152"/>
         <source>Hide the video window when playing audio files</source>
         <translation>Sakrij prozor videozapisa pri reprodukciji zvučnih datoteka</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="211"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="214"/>
         <source>Language:</source>
         <translation>&amp;Jezici:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="158"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="161"/>
         <source>GUI:</source>
         <translation>Sučelje:</translation>
     </message>
@@ -3141,83 +3161,83 @@
         <translation>Tekst</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="168"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="171"/>
         <source>Basic GUI</source>
         <translation>Osnovno GUI sučelje</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="169"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="172"/>
         <source>Mini GUI</source>
         <translation>Mini GUI sučelje</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="170"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="173"/>
         <source>Mpc GUI</source>
         <translation>Mpc GUI sučelje</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="171"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="174"/>
         <source>Skinnable GUI</source>
         <translation>GUI s presvlakama</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="194"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="197"/>
         <source>Icon set:</source>
         <translation>Set iko&amp;na:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="202"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="205"/>
         <source>Default</source>
         <translation>Zadano</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="203"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="206"/>
         <source>Classic</source>
         <translation>Klasičan</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="220"/>
-        <location filename="../qml/PrefInterfacePage.qml" line="288"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="223"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="291"/>
         <source>System default</source>
         <translation>Zadano sustavom</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="234"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="237"/>
         <source>Language changes take effect after restarting Vivace. Untranslated text falls back to English.</source>
         <translation>Promjene jezika stupaju na snagu nakon ponovnog pokretanja Vivacea. Neprevedeni tekst prikazuje se na engleskom.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="239"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="242"/>
         <source>Style:</source>
         <translation>Iz&amp;gled:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="254"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="257"/>
         <source>Style changes take effect after restarting Vivace. Fusion is recommended: other styles may not render the custom menus and sliders correctly.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="283"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="286"/>
         <source>Application font:</source>
         <translation>Font aplikacije:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="294"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="297"/>
         <source>Change…</source>
         <translation>P&amp;romijeni...</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="305"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="308"/>
         <source>Reset</source>
         <translation>&amp;Vrati zadano</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="319"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="322"/>
         <source>Font changes take effect after restarting Vivace. (The default font already renders Japanese and other scripts; a custom font only needs to be set for preference.)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="258"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="261"/>
         <source>Gradient background for the toolbar and control bar</source>
         <translation>Gradijentna pozadina alatne trake i upravljačke trake</translation>
     </message>
@@ -3227,185 +3247,185 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="263"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="266"/>
         <source>Use the system native file dialog</source>
         <translation>Korist izvorni dijalog datoteke sustava</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="324"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="327"/>
         <source>OSD</source>
         <translation>&amp;OSD</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="331"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="334"/>
         <source>Show OSD messages</source>
         <translation>Prikaži OSD poruke</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="337"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="340"/>
         <source>Duration of OSD messages:</source>
         <translation>Trajanje OSD poruka:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="343"/>
-        <location filename="../qml/PrefInterfacePage.qml" line="594"/>
-        <location filename="../qml/PrefInterfacePage.qml" line="602"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="346"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="597"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="605"/>
         <source>ms</source>
         <translation>ms</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="348"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="351"/>
         <source>OSD font size:</source>
         <translation>Veličina fonta OSD-a:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="354"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="357"/>
         <source>px</source>
         <translation>px</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="362"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="365"/>
         <source>Touch</source>
         <translation>Dodir</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="371"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="374"/>
         <source>Touch-friendly controls (larger fonts and icons)</source>
         <translation>Kontrole prilagođene dodiru (veći fontovi i ikone)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="376"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="379"/>
         <source>Enlarges the interface for finger use on a tablet. Toolbar icons resize immediately; the larger fonts take effect after you restart Vivace.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="386"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="389"/>
         <source>Swipe across the video to seek</source>
         <translation>Povucite preko videozapisa za pomicanje</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="391"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="394"/>
         <source>Drag left or right on the video (with a finger or the mouse) to jump backward or forward. An on-screen message previews the target while you drag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="475"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="478"/>
         <source>seconds</source>
         <translation>sekundi</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="481"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="484"/>
         <source>Short jump:</source>
         <translation>Kratki skok:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="488"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="491"/>
         <source>Medium jump:</source>
         <translation>Srednji skok:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="495"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="498"/>
         <source>Long jump:</source>
         <translation>Dugi skok:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="501"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="504"/>
         <source>Mouse wheel jump:</source>
         <translation>Skok kotačićem miša:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="511"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="514"/>
         <source>Behaviour of time slider:</source>
         <translation>&amp;Ponašanje vremenskog klizača:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="515"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="518"/>
         <source>Seek to position while dragging</source>
         <translation>Premotaj u položaj prilikom povlačenja</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="516"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="519"/>
         <source>Seek to position when released</source>
         <translation>Premotaj u položaj kada je oslobođen</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="527"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="530"/>
         <source>Absolute/relative seeking method and precise seeking are mplayer/mpv-specific and do not apply to Vivace&apos;s Qt Multimedia backend (seeking is already position-based).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="550"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="553"/>
         <source>Use only one running instance of Vivace</source>
         <translation>Koristi samo jednu pokrenutu instancu Vivacea</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="561"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="564"/>
         <source>When enabled, opening a file while Vivace is already running hands it to the existing window instead of starting a new one. Takes effect on the next launch.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="575"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="578"/>
         <source>Hide the mouse pointer after inactivity</source>
         <translation>Sakrij pokazivač miša nakon neaktivnosti</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="580"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="583"/>
         <source>While a video is playing, hide the mouse pointer over the video after the delay below — in the normal window as well as in fullscreen.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="588"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="591"/>
         <source>Hide after:</source>
         <translation>Sakrij nakon:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="600"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="603"/>
         <source>Time to hide the control bar:</source>
         <translation>Vrijeme do skrivanja upravljačke trake:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="609"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="612"/>
         <source>The fullscreen control bar currently shows while the pointer is near the bottom edge; a time-based autohide is planned.</source>
         <translation>Na cijelom zaslonu upravljačka traka trenutačno se prikazuje dok je pokazivač blizu donjeg ruba; planira se automatsko skrivanje temeljeno na vremenu.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="621"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="624"/>
         <source>Recent files</source>
         <translation>Nedavne datoteke</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="626"/>
-        <location filename="../qml/PrefInterfacePage.qml" line="642"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="629"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="645"/>
         <source>Max. items:</source>
         <translation>Maks. stavki:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="637"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="640"/>
         <source>URLs</source>
         <translation>URL-ovi</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="652"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="655"/>
         <source>Remember last directory</source>
         <translation>Zapamti posljednji direktorij</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="404"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="407"/>
         <source>Vivace scales the interface on high-DPI screens automatically. You can override the scale factor here if needed.</source>
         <translation>Vivace automatski skalira sučelje na zaslonima visokog DPI-ja. Po potrebi ovdje možete zamijeniti faktor skaliranja.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="408"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="411"/>
         <source>Scale factor:</source>
         <translation>Razmjer prilag&amp;odbe:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="415"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="418"/>
         <source>Automatic</source>
         <translation>Automatski</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="432"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="435"/>
         <source>Scale factor changes take effect after restarting Vivace.</source>
         <translation>Promjene faktora skaliranja stupaju na snagu nakon ponovnog pokretanja Vivacea.</translation>
     </message>
@@ -3414,7 +3434,7 @@
     <name>PrefNetworkPage</name>
     <message>
         <location filename="../qml/PrefNetworkPage.qml" line="73"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="109"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="122"/>
         <source>OpenSubtitles</source>
         <translation>OpenSubtitles</translation>
     </message>
@@ -3424,51 +3444,51 @@
         <translation>YouTube</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="90"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="653"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="103"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="666"/>
         <source>Cast</source>
         <translation>Emitiranje</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="119"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="132"/>
         <source>API key:</source>
         <translation>API ključ:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="120"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="133"/>
         <source>A free per-application key from opensubtitles.com (create an API consumer); subtitle search will not work until this is set.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="125"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="138"/>
         <source>from opensubtitles.com → API consumers</source>
         <translation>s opensubtitles.com → API consumers</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="130"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="605"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="143"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="618"/>
         <source>Username:</source>
         <translation>&amp;Korisničko ime:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="131"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="144"/>
         <source>Optional opensubtitles.com account login; signing in is not required but raises the daily download limit.</source>
         <translation>Neobavezna prijava na račun opensubtitles.com; prijava nije potrebna, ali povećava dnevno ograničenje preuzimanja.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="138"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="611"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="151"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="624"/>
         <source>Password:</source>
         <translation>Lo&amp;zinka:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="153"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="166"/>
         <source>The account password is stored securely using your operating system&apos;s credential manager.</source>
         <translation>Lozinka računa sigurno se pohranjuje pomoću upravitelja vjerodajnicama vašeg operacijskog sustava.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="89"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="562"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="102"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="575"/>
         <source>Proxy</source>
         <translation>Proxy</translation>
     </message>
@@ -3478,7 +3498,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="618"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="631"/>
         <source>Type:</source>
         <translation>&amp;Vrsta:</translation>
     </message>
@@ -3487,364 +3507,364 @@
         <translation type="vanished">Nepoznato</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="592"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="605"/>
         <source>Host:</source>
         <translation>&amp;Računalo:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="598"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="663"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="611"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="676"/>
         <source>Port:</source>
         <translation>&amp;Ulaz:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="172"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="185"/>
         <source>YouTube (yt-dlp)</source>
         <translation>YouTube (yt-dlp)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="188"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="201"/>
         <source>Play YouTube URLs with yt-dlp</source>
         <translation>Reproduciraj YouTube URL-ove pomoću yt-dlp</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="192"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="205"/>
         <source>When on, opening a YouTube URL runs yt-dlp instead of trying to play the page URL as-is.</source>
         <translation>Kad je uključeno, otvaranje YouTube URL-a pokreće yt-dlp umjesto pokušaja izravne reprodukcije URL-a stranice.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="205"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="218"/>
         <source>Open YouTube URLs by:</source>
         <translation>Otvaraj YouTube URL-ove putem:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="206"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="219"/>
         <source>Streaming is fastest but caps at ~720p and can&apos;t use cookies. Downloading gets full HD (uses cookies + ffmpeg), then plays and deletes the file. Or hand off to your own external downloader tool.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="216"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="229"/>
         <source>Streaming (fast, up to ~720p)</source>
         <translation>Strujanje (brzo, do ~720p)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="217"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="230"/>
         <source>Downloading then playing (HD, cookies)</source>
         <translation>Preuzimanje pa reprodukcija (HD, kolačići)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="218"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="231"/>
         <source>An external downloader tool</source>
         <translation>Vanjski alat za preuzimanje</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="229"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="242"/>
         <source>Use managed yt-dlp</source>
         <translation>Koristi upravljani yt-dlp</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="233"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="246"/>
         <source>When on, Vivace installs yt-dlp for you (see the button here) and can keep it updated automatically below. Turn this off to point at your own yt-dlp instead -- Vivace will not install or auto-update it.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="241"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="254"/>
         <source>Install / Update yt-dlp…</source>
         <translation>Instaliraj / ažuriraj yt-dlp…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="250"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="263"/>
         <source>yt-dlp path:</source>
         <translation>Putanja yt-dlp:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="251"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="264"/>
         <source>Leave as &quot;yt-dlp&quot; if it is on your system PATH; otherwise enter the full path to the yt-dlp executable.</source>
         <translation>Ostavite &quot;yt-dlp&quot; ako je na sistemskoj PATH varijabli; u protivnom unesite punu putanju do izvršne datoteke yt-dlp.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="257"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="270"/>
         <source>yt-dlp (on PATH) or a full path</source>
         <translation>yt-dlp (na PATH-u) ili puna putanja</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="263"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="276"/>
         <source>Update yt-dlp automatically:</source>
         <translation>Automatski ažuriraj yt-dlp:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="264"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="277"/>
         <source>Runs yt-dlp&apos;s own self-update before playing a YouTube video. &quot;Every time&quot; adds a short delay to each play; the daily/weekly options check only that often. Failures (e.g. no network) are ignored and playback proceeds with whatever version is installed. Only applies to a managed yt-dlp.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="278"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="291"/>
         <source>Never</source>
         <translation>Nikada</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="279"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="292"/>
         <source>Every time yt-dlp runs</source>
         <translation>Svaki put kad se yt-dlp pokrene</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="280"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="293"/>
         <source>Once a day</source>
         <translation>Jednom dnevno</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="281"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="294"/>
         <source>Once a week</source>
         <translation>Jednom tjedno</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="288"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="301"/>
         <source>Maximum quality:</source>
         <translation>Maksimalna kvaliteta:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="289"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="302"/>
         <source>Upper limit on resolution. Streaming is capped at ~720p regardless; downloading can reach this height in full HD.</source>
         <translation>Gornja granica razlučivosti. Strujanje je ionako ograničeno na ~720p; preuzimanje može doseći ovu visinu u punom HD-u.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="299"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="312"/>
         <source>360p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="300"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="313"/>
         <source>480p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="301"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="314"/>
         <source>720p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="302"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="315"/>
         <source>1080p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="303"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="316"/>
         <source>1440p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="304"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="317"/>
         <source>2160p (4K)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="305"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="318"/>
         <source>Best available</source>
         <translation>Najbolja dostupna</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="320"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="333"/>
         <source>yt-dlp is a separate program and is not bundled with Vivace.</source>
         <translation>yt-dlp je zaseban program i ne isporučuje se s Vivaceom.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="326"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="339"/>
         <source>Download &amp; play</source>
         <translation>Preuzmi i reproduciraj</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="338"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="351"/>
         <source>Downloads the video (merging HD video and audio with ffmpeg), plays it, and keeps it in a cache folder so replaying it is instant. The cache holds the most recent downloads up to the size below; older ones are removed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="352"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="365"/>
         <source>Cookies file:</source>
         <translation>Datoteka kolačića:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="353"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="366"/>
         <source>Optional cookies.txt exported from your browser (yt-dlp --cookies); unlocks HD, members-only and age-restricted videos. Safe here — cookies only affect the download, not a stream a player must open. See Help ▸ Contents ▸ Options for step-by-step export instructions.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="367"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="380"/>
         <source>optional cookies.txt</source>
         <translation>neobavezni cookies.txt</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="370"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="389"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="416"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="434"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="506"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="542"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="383"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="402"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="429"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="447"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="519"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="555"/>
         <source>Browse…</source>
         <translation>Pregledaj…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="375"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="388"/>
         <source>ffmpeg location:</source>
         <translation>Lokacija ffmpeg:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="376"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="389"/>
         <source>Folder containing ffmpeg (yt-dlp needs it to merge HD video+audio). Leave empty to use ffmpeg from the system PATH.</source>
         <translation>Mapa koja sadrži ffmpeg (yt-dlp ga treba za spajanje HD videozapisa i zvuka). Ostavite prazno za korištenje ffmpeg-a sa sistemskog PATH-a.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="386"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="413"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="399"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="426"/>
         <source>empty = use PATH</source>
         <translation>prazno = koristi PATH</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="394"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="407"/>
         <source>Deno path:</source>
         <translation>Putanja do Deno-a:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="395"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="408"/>
         <source>yt-dlp uses a separate program, Deno, to solve YouTube&apos;s JavaScript challenges. It&apos;s most needed here: a signed-in (cookie) request — exactly what unlocks HD above — sees severely limited format availability without it. Streaming mode, which never sends cookies, is largely unaffected. Leave empty if &quot;deno&quot; is already on your system PATH; otherwise enter the full path to the deno executable. See Help ▸ Contents ▸ Options for installation instructions.</source>
         <translation>yt-dlp koristi zaseban program, Deno, za rješavanje JavaScript izazova YouTubea. To je najpotrebnije baš ovdje: prijavljeni (kolačić) zahtjev — točno ono što otključava HD iznad — bez njega ima znatno ograničenu dostupnost formata. Način streaminga, koji nikad ne šalje kolačiće, time je gotovo netaknut. Ostavite prazno ako je &quot;deno&quot; već u sistemskom PATH-u; inače unesite potpunu putanju do deno izvršne datoteke. Upute za instalaciju potražite u Pomoć ▸ Sadržaj ▸ Opcije.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="421"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="434"/>
         <source>Cache folder:</source>
         <translation>Mapa predmemorije:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="422"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="435"/>
         <source>Where downloaded videos are kept for reuse. A video already here is replayed without downloading again.</source>
         <translation>Gdje se čuvaju preuzeti videozapisi za ponovno korištenje. Videozapis koji je već ovdje reproducira se bez ponovnog preuzimanja.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="439"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="452"/>
         <source>Cache size:</source>
         <translation>Veličina predmemorije:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="440"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="453"/>
         <source>How many downloaded videos to keep. When the limit is reached, the least-recently-played one is deleted.</source>
         <translation>Koliko preuzetih videozapisa zadržati. Kad se dosegne ograničenje, briše se onaj koji je najdulje reproduciran.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="451"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="464"/>
         <source>files</source>
         <translation>datoteka</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="457"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="470"/>
         <source>Thumbnail fallback at:</source>
         <translation>Zamjenska minijatura na:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="458"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="471"/>
         <source>The cache thumbnail is normally YouTube&apos;s own poster image. Only if that is missing or black does Vivace grab a video frame — this is how many seconds in (past a black intro).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="471"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="484"/>
         <source>seconds</source>
         <translation>sekundi</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="481"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="494"/>
         <source>External downloader tool</source>
         <translation>Vanjski alat za preuzimanje</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="492"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="505"/>
         <source>Downloader command:</source>
         <translation>Naredba za preuzimanje:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="493"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="506"/>
         <source>The program or .bat/.cmd script that downloads the video; it receives the URL as an argument.</source>
         <translation>Program ili .bat/.cmd skripta koja preuzima videozapis; prima URL kao argument.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="503"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="516"/>
         <source>e.g. C:ToolsYouTubeDL.bat</source>
         <translation>npr. C:\Tools\YouTubeDL.bat</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="511"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="524"/>
         <source>Arguments:</source>
         <translation>Argumenti:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="512"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="525"/>
         <source>Arguments passed to the tool; the token {url} is replaced by the video URL (if omitted, the URL is appended). Add any cookies/format flags your tool needs here, e.g. --cookies C:pathcookies.txt.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="527"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="540"/>
         <source>Download folder:</source>
         <translation>Mapa za preuzimanje:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="528"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="541"/>
         <source>The folder the tool writes the finished file into; Vivace plays the newest media file that appears there, so set it to match your tool&apos;s output folder.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="539"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="552"/>
         <source>your tool&apos;s output folder</source>
         <translation>izlazna mapa vašeg alata</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="572"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="585"/>
         <source>Enable proxy</source>
         <translation>Omogući proxy</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="576"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="589"/>
         <source>Applies to OpenSubtitles search and the update check (both proxy types). Only an HTTP proxy also applies to media playback and yt-dlp — a SOCKS5 proxy does not reach either, since neither goes through Qt&apos;s network stack.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="634"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="647"/>
         <source>The proxy password is stored securely using your operating system&apos;s credential manager.</source>
         <translation>Lozinka proxyja sigurno se pohranjuje pomoću upravitelja vjerodajnicama vašeg operacijskog sustava.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="664"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="677"/>
         <source>The port Play ▸ Cast… listens on. Kept fixed here (rather than editable each time in the Cast dialog) so you can allow it through your firewall/router once and it keeps working.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="685"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="698"/>
         <source>Your OS&apos;s firewall (and most routers) block an app listening on a fresh port until you allow it. Pick a port once here, allow Vivace through your firewall for it, and Cast will keep working without a new prompt each time.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="700"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="713"/>
         <source>Select the cookies.txt file</source>
         <translation>Odaberite datoteku cookies.txt</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="706"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="719"/>
         <source>Select the deno executable</source>
         <translation>Odaberite izvršnu datoteku deno</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="712"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="725"/>
         <source>Select the folder containing ffmpeg</source>
         <translation>Odaberite mapu koja sadrži ffmpeg</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="717"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="730"/>
         <source>Select the download cache folder</source>
         <translation>Odaberite mapu predmemorije preuzimanja</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="722"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="735"/>
         <source>Select the downloader program</source>
         <translation>Odaberite program za preuzimanje</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="728"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="741"/>
         <source>Select the download folder</source>
         <translation>Odaberite mapu za preuzimanje</translation>
     </message>

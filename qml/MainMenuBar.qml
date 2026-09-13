@@ -202,7 +202,7 @@ MenuBar {
         }
         AppMenuItem {
             text: qsTr("YouTube &cache…")
-            icon.source: Theme.icon("url")
+            icon.source: Theme.icon("youtube")
             // Only when there is something to browse and download mode is on.
             enabled: bar.youtubeCacheCount > 0 && Settings.youtubeEnabled
                      && Settings.youtubeMode === 1
@@ -262,7 +262,7 @@ MenuBar {
             onTriggered: bar.controller.stop()
         }
         Action {
-            text: qsTr("Frame &step")
+            text: qsTr("Frame st&ep")
             shortcut: Shortcuts.sequences["frame_step"]
             enabled: bar.player.seekable && bar.player.hasVideo
             onTriggered: bar.controller.frameStep(1)
@@ -323,37 +323,42 @@ MenuBar {
 
             Action {
                 text: qsTr("&Normal speed")
+                icon.source: Theme.icon("speed-x100")
                 shortcut: Shortcuts.sequences["speed_normal"]
                 onTriggered: Settings.playbackRate = 1
             }
             MenuSeparator {}
             Action {
                 text: qsTr("&Halve speed")
+                icon.source: Theme.icon("speed-x050")
                 shortcut: Shortcuts.sequences["speed_halve"]
                 onTriggered: bar.adjustSpeed(0.5)
             }
             Action {
                 text: qsTr("&Double speed")
+                icon.source: Theme.icon("speed-x200")
                 shortcut: Shortcuts.sequences["speed_double"]
                 onTriggered: bar.adjustSpeed(2)
             }
             MenuSeparator {}
             Action {
                 text: qsTr("Speed &-10%")
+                icon.source: Theme.icon("speed-10")
                 shortcut: Shortcuts.sequences["speed_dec"]
                 onTriggered: bar.adjustSpeed(0.9)
             }
             Action {
                 text: qsTr("Speed &+10%")
+                icon.source: Theme.icon("speed+10")
                 shortcut: Shortcuts.sequences["speed_inc"]
                 onTriggered: bar.adjustSpeed(1.1)
             }
             MenuSeparator {}
-            Action { text: qsTr("Speed -4%"); onTriggered: bar.adjustSpeed(0.96) }
-            Action { text: qsTr("Speed +4%"); onTriggered: bar.adjustSpeed(1.04) }
+            Action { text: qsTr("Speed -4%"); icon.source: Theme.icon("speed-04"); onTriggered: bar.adjustSpeed(0.96) }
+            Action { text: qsTr("Speed +4%"); icon.source: Theme.icon("speed+04"); onTriggered: bar.adjustSpeed(1.04) }
             MenuSeparator {}
-            Action { text: qsTr("Speed -1%"); onTriggered: bar.adjustSpeed(0.99) }
-            Action { text: qsTr("Speed +1%"); onTriggered: bar.adjustSpeed(1.01) }
+            Action { text: qsTr("Speed -1%"); icon.source: Theme.icon("speed-01"); onTriggered: bar.adjustSpeed(0.99) }
+            Action { text: qsTr("Speed +1%"); icon.source: Theme.icon("speed+01"); onTriggered: bar.adjustSpeed(1.01) }
             MenuSeparator {}
             Action {
                 text: qsTr("Pi&tch compensation")
@@ -506,7 +511,7 @@ MenuBar {
                 onTriggered: bar.controller.panBy(-16, 0)
             }
             Action {
-                text: qsTr("Move &right")
+                text: qsTr("Move r&ight")
                 shortcut: Shortcuts.sequences["pan_right"]
                 onTriggered: bar.controller.panBy(16, 0)
             }
@@ -735,28 +740,32 @@ MenuBar {
         MenuSeparator {}
         Action {
             text: qsTr("Volume &-")
+            icon.source: Theme.icon("volume_dec")
             shortcut: Shortcuts.sequences["volume_dec"]
             onTriggered: Settings.volume =
                              Math.max(0, Settings.volume - Settings.volumeStep / 100)
         }
         Action {
             text: qsTr("Volume &+")
-            icon.source: Theme.icon("volume")
+            icon.source: Theme.icon("volume_inc")
             shortcut: Shortcuts.sequences["volume_inc"]
             onTriggered: Settings.volume =
                              Math.min(1, Settings.volume + Settings.volumeStep / 100)
         }
         MenuSeparator {}
         Action {
-            text: qsTr("Delay &-")
+            text: qsTr("&Delay -")
+            icon.source: Theme.icon("audio_delay_dec")
             onTriggered: bar.controller.adjustFileAudioDelay(-100)
         }
         Action {
             text: qsTr("D&elay +")
+            icon.source: Theme.icon("audio_delay_inc")
             onTriggered: bar.controller.adjustFileAudioDelay(100)
         }
         Action {
             text: qsTr("Set dela&y…")
+            icon.source: Theme.icon("audio_delay")
             onTriggered: bar.setAudioDelayRequested()
         }
     }
@@ -835,27 +844,32 @@ MenuBar {
         }
         Action {
             text: qsTr("&Find subtitles at OpenSubtitles…")
+            icon.source: Theme.icon("find_subtitles")
             enabled: bar.hasMedia
             onTriggered: bar.findSubtitlesRequested()
         }
         Action {
             text: qsTr("U&nload subtitles")
+            icon.source: Theme.icon("unload_subtitles")
             enabled: bar.controller.hasExternalSubtitles
             onTriggered: bar.controller.unloadSubtitles()
         }
         MenuSeparator {}
         Action {
             text: qsTr("Delay &-")
+            icon.source: Theme.icon("subtitle_delay_dec")
             enabled: bar.controller.hasExternalSubtitles
             onTriggered: bar.controller.adjustSubtitleDelay(-100)
         }
         Action {
             text: qsTr("Delay &+")
+            icon.source: Theme.icon("subtitle_delay_inc")
             enabled: bar.controller.hasExternalSubtitles
             onTriggered: bar.controller.adjustSubtitleDelay(100)
         }
         Action {
             text: qsTr("Se&t delay…")
+            icon.source: Theme.icon("subtitle_delay")
             enabled: bar.controller.hasExternalSubtitles
             onTriggered: bar.setSubtitleDelayRequested()
         }
@@ -1046,7 +1060,7 @@ MenuBar {
             }
             MenuSeparator {}
             Action {
-                text: qsTr("Edit main &toolbar…")
+                text: qsTr("&Edit main toolbar…")
                 onTriggered: bar.editMainToolbarRequested()
             }
             Action {
@@ -1134,7 +1148,7 @@ MenuBar {
         }
         MenuSeparator {}
         AppMenuItem {
-            text: qsTr("&Check for updates")
+            text: qsTr("Check for &updates")
             icon.source: Theme.icon("check_updates")
             onTriggered: bar.checkForUpdatesRequested()
         }
