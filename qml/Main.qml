@@ -460,8 +460,12 @@ ApplicationWindow {
                  && Settings.gui === "Basic"
         controller: playerController
         playlistOpen: root.playlistOpen
+        youtubeCacheCount: youtubeResolver.cacheCount
         onOpenFileRequested: fileDialog.open()
         onOpenUrlRequested: openUrlDialog.open()
+        onOpenDvdRequested: dvdDialog.open()
+        onOpenBlurayRequested: blurayDialog.open()
+        onOpenDirectoryRequested: directoryDialog.open()
         onPlaylistToggleRequested: root.togglePlaylist()
         onScreenshotRequested: root.takeScreenshot()
         onInfoRequested: mediaInfoDialog.open()
@@ -469,6 +473,25 @@ ApplicationWindow {
         onEditFavoritesRequested: favoritesDialog.openFor(
                 qsTr("Favorite editor"), qsTr("Favorite list"),
                 Theme.icon("open_favorites"), playerController.favorites)
+        onYoutubeCacheRequested: cacheBrowser.openDialog()
+        onCastRequested: castDialog.open()
+        onEditTvChannelsRequested: favoritesDialog.openFor(
+                qsTr("TV editor"), qsTr("TV channels"), Theme.icon("open_tv"),
+                playerController.tvChannels)
+        onEditRadioChannelsRequested: favoritesDialog.openFor(
+                qsTr("Radio editor"), qsTr("Radio channels"), Theme.icon("open_radio"),
+                playerController.radioChannels)
+        onVideoEqualizerRequested: videoEqualizerDialog.open()
+        onResizeToVideoPercentRequested: percent => root.resizeToVideoPercent(percent)
+        onSetAudioDelayRequested: audioDelayDialog.openDialog()
+        onLoadSubtitlesRequested: subtitleDialog.open()
+        onFindSubtitlesRequested: findSubtitlesDialog.openDialog()
+        onSetSubtitleDelayRequested: subtitleDelayDialog.open()
+        onAddBookmarkRequested: {
+            playerController.addBookmark()
+            root.showOsd(qsTr("Bookmark added"))
+        }
+        onEditBookmarksRequested: bookmarksDialog.open()
     }
 
     function takeScreenshot() {
@@ -2111,6 +2134,7 @@ ApplicationWindow {
             visible: Settings.showToolbar && Settings.gui === "Basic"
             controller: playerController
             playlistOpen: root.playlistOpen
+            youtubeCacheCount: youtubeResolver.cacheCount
         }
 
         Component.onCompleted: {
@@ -2131,9 +2155,16 @@ ApplicationWindow {
             for (const n of mm)
                 fsMenuBar[n].connect(mainMenuBar[n])
             const tt = ["openFileRequested", "openUrlRequested", "openDvdRequested",
-                "openDirectoryRequested", "playlistToggleRequested",
+                "openBlurayRequested", "openDirectoryRequested",
+                "playlistToggleRequested",
                 "screenshotRequested", "infoRequested", "preferencesRequested",
-                "fullscreenToggleRequested", "editFavoritesRequested"]
+                "fullscreenToggleRequested", "editFavoritesRequested",
+                "youtubeCacheRequested", "castRequested", "editTvChannelsRequested",
+                "editRadioChannelsRequested", "videoEqualizerRequested",
+                "resizeToVideoPercentRequested", "setAudioDelayRequested",
+                "loadSubtitlesRequested", "findSubtitlesRequested",
+                "setSubtitleDelayRequested", "addBookmarkRequested",
+                "editBookmarksRequested"]
             for (const n of tt)
                 fsToolBar[n].connect(mainToolBar[n])
         }
