@@ -95,6 +95,68 @@ ToolBar {
         return out
     }
 
+    // Row-wrap support: a phone screen in portrait is much narrower than a
+    // typical toolbar's natural width, so items wrap onto additional rows
+    // instead of clipping/overflowing off the right edge. Ordinary buttons
+    // and separators tile into a uniform-width grid (columnsPerRow columns
+    // per row); "spacer" gets a dedicated full-width row of its own
+    // (Layout.columnSpan) rather than sharing a column with them -- a
+    // GridLayout column's width is shared by every row that uses it, so a
+    // fillWidth item landing in an ordinary column would force that same
+    // column wide in every other row too.
+    readonly property real cellWidth: Theme.sz(Settings.mainToolbarIconSize) + 20
+    // The containing WINDOW's width, not this Pane's own `width`: the
+    // fullscreen overlay instance (Main.qml's fsToolBar) sets its own
+    // width via a plain `width: parent.width` binding, and Pane/ToolBar's
+    // "resize contentItem to fit its single child's implicit size"
+    // mechanism (see Qt's own Pane docs) made columnsPerRow -- and
+    // therefore the GridLayout's own implicitHeight -- transiently
+    // entangled with that same local width binding closely enough that
+    // Qt's declarative engine reported a real (if apparently harmless)
+    // "Binding loop detected for property implicitHeight" for that
+    // instance specifically (never for the docked header, whose width
+    // ApplicationWindow assigns through a different mechanism). The
+    // containing OS window's own width has no such entanglement.
+    readonly property int columnsPerRow: Math.max(1, Math.floor(
+        (Window.window ? Window.window.width : width) / cellWidth))
+    readonly property var wrapPositions: computeWrapPositions()
+
+    function computeWrapPositions() {
+        const perRow = columnsPerRow
+        // Fast path: everything already fits on one row -- keep the exact
+        // original single-row placement (column = i, "spacer" inline like
+        // every other item), since there is no second row for its
+        // fillWidth column to spill into.
+        if (layoutItems.length <= perRow) {
+            const out = []
+            for (let i = 0; i < layoutItems.length; ++i)
+                out.push({ row: 0, column: i, span: 1 })
+            return out
+        }
+        const out = []
+        let row = 0, column = 0
+        for (let i = 0; i < layoutItems.length; ++i) {
+            if (layoutItems[i] === "spacer") {
+                if (column > 0)
+                    row++
+                out.push({ row: row, column: 0, span: perRow })
+                row++
+                column = 0
+                continue
+            }
+            if (column >= perRow) {
+                row++
+                column = 0
+            }
+            out.push({ row: row, column: column, span: 1 })
+            column++
+        }
+        return out
+    }
+    function wrapRow(i) { return i >= 0 && wrapPositions[i] ? wrapPositions[i].row : 0 }
+    function wrapColumn(i) { return i >= 0 && wrapPositions[i] ? wrapPositions[i].column : 0 }
+    function wrapSpan(i) { return i >= 0 && wrapPositions[i] ? wrapPositions[i].span : 1 }
+
     // A toolbar button whose icon, tooltip, visibility and column all come
     // from its item id; instances add only enabled/checked/onClicked.
     component TBtn: ToolButton {
@@ -103,8 +165,8 @@ ToolBar {
         property bool menuIndicator: false
 
         visible: toolBar.col(itemId) >= 0
-        Layout.row: 0
-        Layout.column: toolBar.col(itemId)
+        Layout.row: toolBar.wrapRow(toolBar.col(itemId))
+        Layout.column: toolBar.wrapColumn(toolBar.col(itemId))
 
         icon.width: Theme.sz(Settings.mainToolbarIconSize)
         icon.height: Theme.sz(Settings.mainToolbarIconSize)
@@ -439,7 +501,6 @@ ToolBar {
 
     GridLayout {
         anchors.fill: parent
-        rows: 1
         columnSpacing: 2
         rowSpacing: 0
 
@@ -448,16 +509,17 @@ ToolBar {
             model: toolBar.positionsOf("separator")
             delegate: ToolSeparator {
                 required property int modelData
-                Layout.row: 0
-                Layout.column: modelData
+                Layout.row: toolBar.wrapRow(modelData)
+                Layout.column: toolBar.wrapColumn(modelData)
             }
         }
         Repeater {
             model: toolBar.positionsOf("spacer")
             delegate: Item {
                 required property int modelData
-                Layout.row: 0
-                Layout.column: modelData
+                Layout.row: toolBar.wrapRow(modelData)
+                Layout.column: toolBar.wrapColumn(modelData)
+                Layout.columnSpan: toolBar.wrapSpan(modelData)
                 Layout.fillWidth: true
             }
         }

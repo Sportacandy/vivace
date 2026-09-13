@@ -392,6 +392,8 @@ class Settings : public QObject
                WRITE setControlBarIconSize NOTIFY controlBarIconSizeChanged)
     Q_PROPERTY(bool showTrayIcon READ showTrayIcon WRITE setShowTrayIcon
                NOTIFY showTrayIconChanged)
+    Q_PROPERTY(bool showMenuBar READ showMenuBar WRITE setShowMenuBar
+               NOTIFY showMenuBarChanged)
     Q_PROPERTY(bool showToolbar READ showToolbar WRITE setShowToolbar
                NOTIFY showToolbarChanged)
     Q_PROPERTY(bool showControlBar READ showControlBar WRITE setShowControlBar
@@ -847,6 +849,9 @@ public:
     bool showTrayIcon() const { return m_showTrayIcon; }
     void setShowTrayIcon(bool show);
 
+    bool showMenuBar() const { return m_showMenuBar; }
+    void setShowMenuBar(bool show);
+
     bool showToolbar() const { return m_showToolbar; }
     void setShowToolbar(bool show);
 
@@ -987,6 +992,7 @@ signals:
     void mainToolbarIconSizeChanged();
     void controlBarIconSizeChanged();
     void showTrayIconChanged();
+    void showMenuBarChanged();
     void showToolbarChanged();
     void showControlBarChanged();
     void showStatusBarChanged();
@@ -1136,6 +1142,7 @@ private:
     int m_mainToolbarIconSize;
     int m_controlBarIconSize;
     bool m_showTrayIcon;
+    bool m_showMenuBar;
     bool m_showToolbar;
     bool m_showControlBar;
     bool m_showStatusBar;

@@ -308,13 +308,66 @@ Pane {
         return out
     }
 
+    // Row-wrap support (same mechanism as MainToolBar.qml's own -- see its
+    // comment for the full rationale): items wrap onto additional rows
+    // instead of clipping off the edge on a narrow screen. Ordinary buttons
+    // and separators tile into a uniform-width grid; the seek slider and
+    // "spacer" (both Layout.fillWidth) get a dedicated full-width row each,
+    // so their fillWidth doesn't force every other row sharing that column
+    // index to stretch too. The volume slider is a small, fixed width and
+    // stays an ordinary grid cell.
+    readonly property real cellWidth: Theme.sz(Settings.controlBarIconSize) + 20
+    // The containing WINDOW's width, not this Pane's own `width` -- see
+    // MainToolBar.qml's identical property for the full "binding loop"
+    // rationale (this control bar is a Pane too, so it's exposed to the
+    // exact same Pane content-fit entanglement).
+    readonly property int columnsPerRow: Math.max(1, Math.floor(
+        (Window.window ? Window.window.width : width) / cellWidth))
+    readonly property var wrapPositions: computeWrapPositions()
+
+    function computeWrapPositions() {
+        const perRow = columnsPerRow
+        // Fast path: everything already fits on one row -- keep the exact
+        // original single-row placement (column = i, seekslider/spacer
+        // inline like every other item), since there is no second row for
+        // their fillWidth column to spill into.
+        if (layoutItems.length <= perRow) {
+            const out = []
+            for (let i = 0; i < layoutItems.length; ++i)
+                out.push({ row: 0, column: i, span: 1 })
+            return out
+        }
+        const out = []
+        let row = 0, column = 0
+        for (let i = 0; i < layoutItems.length; ++i) {
+            if (layoutItems[i] === "spacer" || layoutItems[i] === "seekslider") {
+                if (column > 0)
+                    row++
+                out.push({ row: row, column: 0, span: perRow })
+                row++
+                column = 0
+                continue
+            }
+            if (column >= perRow) {
+                row++
+                column = 0
+            }
+            out.push({ row: row, column: column, span: 1 })
+            column++
+        }
+        return out
+    }
+    function wrapRow(i) { return i >= 0 && wrapPositions[i] ? wrapPositions[i].row : 0 }
+    function wrapColumn(i) { return i >= 0 && wrapPositions[i] ? wrapPositions[i].column : 0 }
+    function wrapSpan(i) { return i >= 0 && wrapPositions[i] ? wrapPositions[i].span : 1 }
+
     // A control-bar button whose icon/tooltip/visibility/column come from
     // its id; instances add only enabled/onClicked (and dynamic icons).
     component CBtn: ToolButton {
         property string itemId: ""
         visible: controlBar.col(itemId) >= 0
-        Layout.row: 0
-        Layout.column: controlBar.col(itemId)
+        Layout.row: controlBar.wrapRow(controlBar.col(itemId))
+        Layout.column: controlBar.wrapColumn(controlBar.col(itemId))
         icon.width: Theme.sz(Settings.controlBarIconSize)
         icon.height: Theme.sz(Settings.controlBarIconSize)
         icon.color: "transparent"
@@ -356,7 +409,6 @@ Pane {
         // controls shown/positioned by the layout list.
         GridLayout {
             Layout.fillWidth: true
-            rows: 1
             columnSpacing: 2
             rowSpacing: 0
 
@@ -364,16 +416,17 @@ Pane {
                 model: controlBar.positionsOf("separator")
                 delegate: ToolSeparator {
                     required property int modelData
-                    Layout.row: 0
-                    Layout.column: modelData
+                    Layout.row: controlBar.wrapRow(modelData)
+                    Layout.column: controlBar.wrapColumn(modelData)
                 }
             }
             Repeater {
                 model: controlBar.positionsOf("spacer")
                 delegate: Item {
                     required property int modelData
-                    Layout.row: 0
-                    Layout.column: modelData
+                    Layout.row: controlBar.wrapRow(modelData)
+                    Layout.column: controlBar.wrapColumn(modelData)
+                    Layout.columnSpan: controlBar.wrapSpan(modelData)
                     Layout.fillWidth: true
                 }
             }
@@ -481,15 +534,16 @@ Pane {
                 // every instance built from this object literal.
                 visible: !controlBar.seekOnOwnRow
                          && controlBar.col("seekslider") >= 0
-                Layout.row: 0
-                Layout.column: controlBar.col("seekslider")
+                Layout.row: controlBar.wrapRow(controlBar.col("seekslider"))
+                Layout.column: controlBar.wrapColumn(controlBar.col("seekslider"))
+                Layout.columnSpan: controlBar.wrapSpan(controlBar.col("seekslider"))
                 Layout.fillWidth: true
             }
             WinSlider {
                 id: volumeSlider
                 visible: controlBar.col("volumeslider") >= 0
-                Layout.row: 0
-                Layout.column: controlBar.col("volumeslider")
+                Layout.row: controlBar.wrapRow(controlBar.col("volumeslider"))
+                Layout.column: controlBar.wrapColumn(controlBar.col("volumeslider"))
                 implicitWidth: 90
                 from: 0
                 to: 1

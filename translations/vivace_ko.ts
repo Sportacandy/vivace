@@ -421,51 +421,51 @@
 <context>
     <name>ControlBar</name>
     <message>
-        <location filename="../qml/ControlBar.qml" line="420"/>
-        <location filename="../qml/ControlBar.qml" line="426"/>
-        <location filename="../qml/ControlBar.qml" line="432"/>
+        <location filename="../qml/ControlBar.qml" line="473"/>
+        <location filename="../qml/ControlBar.qml" line="479"/>
+        <location filename="../qml/ControlBar.qml" line="485"/>
         <source>Rewind %1 s</source>
         <translation>%1초 뒤로</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="438"/>
-        <location filename="../qml/ControlBar.qml" line="444"/>
-        <location filename="../qml/ControlBar.qml" line="450"/>
+        <location filename="../qml/ControlBar.qml" line="491"/>
+        <location filename="../qml/ControlBar.qml" line="497"/>
+        <location filename="../qml/ControlBar.qml" line="503"/>
         <source>Forward %1 s</source>
         <translation>%1초 앞으로</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="518"/>
+        <location filename="../qml/ControlBar.qml" line="572"/>
         <source>Error: %1</source>
         <translation>오류: %1</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="521"/>
+        <location filename="../qml/ControlBar.qml" line="575"/>
         <source>Playing %1</source>
         <translation>%1 재생 중</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="526"/>
+        <location filename="../qml/ControlBar.qml" line="580"/>
         <source>Paused</source>
         <translation>일시 정지됨</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="528"/>
+        <location filename="../qml/ControlBar.qml" line="582"/>
         <source>Stopped</source>
         <translation>정지됨</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="573"/>
+        <location filename="../qml/ControlBar.qml" line="627"/>
         <source>V: %1 kbps</source>
         <translation>V: %1 kbps</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="574"/>
+        <location filename="../qml/ControlBar.qml" line="628"/>
         <source>A: %1 kbps</source>
         <translation>A: %1 kbps</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="586"/>
+        <location filename="../qml/ControlBar.qml" line="640"/>
         <source>Frame: %1</source>
         <translation>프레임: %1</translation>
     </message>
@@ -767,38 +767,43 @@
     <name>Main</name>
     <message>
         <location filename="../qml/Main.qml" line="421"/>
+        <location filename="../qml/Main.qml" line="479"/>
         <source>TV editor</source>
         <translation>TV 편집기</translation>
     </message>
     <message>
         <location filename="../qml/Main.qml" line="421"/>
+        <location filename="../qml/Main.qml" line="479"/>
         <source>TV channels</source>
         <translation>TV 채널</translation>
     </message>
     <message>
         <location filename="../qml/Main.qml" line="424"/>
+        <location filename="../qml/Main.qml" line="482"/>
         <source>Radio editor</source>
         <translation>라디오 편집기</translation>
     </message>
     <message>
         <location filename="../qml/Main.qml" line="424"/>
+        <location filename="../qml/Main.qml" line="482"/>
         <source>Radio channels</source>
         <translation>라디오 방송국</translation>
     </message>
     <message>
         <location filename="../qml/Main.qml" line="427"/>
-        <location filename="../qml/Main.qml" line="470"/>
+        <location filename="../qml/Main.qml" line="474"/>
         <source>Favorite editor</source>
         <translation>즐겨찾기 편집기</translation>
     </message>
     <message>
         <location filename="../qml/Main.qml" line="427"/>
-        <location filename="../qml/Main.qml" line="470"/>
+        <location filename="../qml/Main.qml" line="474"/>
         <source>Favorite list</source>
         <translation>즐겨찾기 목록</translation>
     </message>
     <message>
         <location filename="../qml/Main.qml" line="431"/>
+        <location filename="../qml/Main.qml" line="492"/>
         <source>Bookmark added</source>
         <translation>책갈피가 추가됨</translation>
     </message>
@@ -813,257 +818,257 @@
         <translation>조작바 편집하기(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="477"/>
+        <location filename="../qml/Main.qml" line="500"/>
         <source>Screenshot saved as %1</source>
         <translation>스크린샷 저장: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="478"/>
+        <location filename="../qml/Main.qml" line="501"/>
         <source>Could not take the screenshot</source>
         <translation>스크린샷을 찍을 수 없습니다</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="609"/>
+        <location filename="../qml/Main.qml" line="632"/>
         <source>Tap Open &gt; File… to choose media</source>
         <translation>미디어를 선택하려면 열기 &gt; 파일...을 탭하세요</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="610"/>
+        <location filename="../qml/Main.qml" line="633"/>
         <source>Drop media files here, or press Ctrl+O</source>
         <translation>여기에 미디어 파일을 놓거나 Ctrl+O를 누르세요</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="697"/>
+        <location filename="../qml/Main.qml" line="720"/>
         <source>Downloading video…</source>
         <translation>동영상 다운로드 중…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="704"/>
+        <location filename="../qml/Main.qml" line="727"/>
         <source>This can take a while — the external tool is downloading and merging HD video and audio.</source>
         <translation>시간이 걸릴 수 있습니다 — 외부 도구가 HD 비디오와 오디오를 다운로드하여 병합하고 있습니다.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="718"/>
-        <location filename="../qml/Main.qml" line="1808"/>
+        <location filename="../qml/Main.qml" line="741"/>
+        <location filename="../qml/Main.qml" line="1831"/>
         <source>Cancel</source>
         <translation>취소</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="791"/>
+        <location filename="../qml/Main.qml" line="814"/>
         <source>Loading…</source>
         <translation>불러오는 중…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="792"/>
+        <location filename="../qml/Main.qml" line="815"/>
         <source>Connecting…</source>
         <translation>연결 중...</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="793"/>
+        <location filename="../qml/Main.qml" line="816"/>
         <source>Buffering… %1%</source>
         <translation>버퍼링 중… %1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="801"/>
+        <location filename="../qml/Main.qml" line="824"/>
         <source>Live streams can take several seconds to start.</source>
         <translation>라이브 스트림은 시작하는 데 몇 초가 걸릴 수 있습니다.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="836"/>
+        <location filename="../qml/Main.qml" line="859"/>
         <source>Volume: %1%</source>
         <translation>음량: %1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="839"/>
+        <location filename="../qml/Main.qml" line="862"/>
         <source>Mute</source>
         <translation>음소거</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="839"/>
+        <location filename="../qml/Main.qml" line="862"/>
         <source>Mute off</source>
         <translation>음소거 해제</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="842"/>
+        <location filename="../qml/Main.qml" line="865"/>
         <source>Speed: %1x</source>
         <translation>속도: %1배</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1386"/>
+        <location filename="../qml/Main.qml" line="1409"/>
         <source>Media files (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1387"/>
-        <location filename="../qml/Main.qml" line="1457"/>
-        <location filename="../qml/Main.qml" line="1727"/>
+        <location filename="../qml/Main.qml" line="1410"/>
+        <location filename="../qml/Main.qml" line="1480"/>
+        <location filename="../qml/Main.qml" line="1750"/>
         <source>All files (*)</source>
         <translation>모든 파일 (*)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1429"/>
+        <location filename="../qml/Main.qml" line="1452"/>
         <source>Select the DVD drive or a folder containing VIDEO_TS</source>
         <translation>DVD 드라이브 또는 VIDEO_TS가 포함된 폴더를 선택하세요</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1433"/>
+        <location filename="../qml/Main.qml" line="1456"/>
         <source>No DVD video found in %1</source>
         <translation>%1에서 DVD 비디오를 찾을 수 없습니다</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1441"/>
+        <location filename="../qml/Main.qml" line="1464"/>
         <source>Select the Blu-ray drive or a folder containing BDMV</source>
         <translation>블루레이 드라이브 또는 BDMV가 포함된 폴더를 선택하세요</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1445"/>
+        <location filename="../qml/Main.qml" line="1468"/>
         <source>No Blu-ray video found in %1</source>
         <translation>%1에서 블루레이 비디오를 찾을 수 없습니다</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1456"/>
+        <location filename="../qml/Main.qml" line="1479"/>
         <source>Playlists (*.m3u *.m3u8)</source>
         <translation>재생 목록 (*.m3u *.m3u8)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1499"/>
+        <location filename="../qml/Main.qml" line="1522"/>
         <source>Playing stream</source>
         <translation>스트림 재생 중</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1505"/>
-        <location filename="../qml/Main.qml" line="1538"/>
+        <location filename="../qml/Main.qml" line="1528"/>
+        <location filename="../qml/Main.qml" line="1561"/>
         <source>Playing downloaded video</source>
         <translation>다운로드한 동영상 재생 중</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1509"/>
+        <location filename="../qml/Main.qml" line="1532"/>
         <source>YouTube: %1</source>
         <translation>YouTube: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1542"/>
+        <location filename="../qml/Main.qml" line="1565"/>
         <source>Download failed: %1</source>
         <translation>다운로드 실패: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1639"/>
+        <location filename="../qml/Main.qml" line="1662"/>
         <source>Saved %1 file(s); %2 failed.</source>
         <translation>%1개 파일 저장, %2개 실패.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1643"/>
+        <location filename="../qml/Main.qml" line="1666"/>
         <source>Saved %1 file(s).</source>
         <translation>%1개 파일을 저장했습니다.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1656"/>
+        <location filename="../qml/Main.qml" line="1679"/>
         <source>Could not read the shortcut file.</source>
         <translation>바로 가기 파일을 읽을 수 없습니다.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1669"/>
+        <location filename="../qml/Main.qml" line="1692"/>
         <source>YouTube playback isn&apos;t supported on Android.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1680"/>
+        <location filename="../qml/Main.qml" line="1703"/>
         <source>Starting download…</source>
         <translation>다운로드 시작 중…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1681"/>
+        <location filename="../qml/Main.qml" line="1704"/>
         <source>Downloading video (this can take a while)…</source>
         <translation>동영상 다운로드 중 (시간이 걸릴 수 있음)…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1685"/>
+        <location filename="../qml/Main.qml" line="1708"/>
         <source>Resolving with yt-dlp…</source>
         <translation>yt-dlp로 확인 중…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1722"/>
+        <location filename="../qml/Main.qml" line="1745"/>
         <source>Load subtitle file</source>
         <translation>자막 파일 열기</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1726"/>
+        <location filename="../qml/Main.qml" line="1749"/>
         <source>Subtitle files (*.srt *.vtt *.ass *.ssa)</source>
         <translation>자막 파일 (*.srt *.vtt *.ass *.ssa)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1734"/>
+        <location filename="../qml/Main.qml" line="1757"/>
         <source>Subtitle delay</source>
         <translation>자막 지연</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1785"/>
+        <location filename="../qml/Main.qml" line="1808"/>
         <source>Delay:</source>
         <translation>지연:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1791"/>
-        <location filename="../qml/Main.qml" line="1881"/>
+        <location filename="../qml/Main.qml" line="1814"/>
+        <location filename="../qml/Main.qml" line="1904"/>
         <source>ms</source>
         <translation>ms</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1801"/>
+        <location filename="../qml/Main.qml" line="1824"/>
         <source>OK</source>
         <translation>확인(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1820"/>
+        <location filename="../qml/Main.qml" line="1843"/>
         <source>Audio delay — Vivace</source>
         <translation>오디오 지연 — Vivace</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1869"/>
+        <location filename="../qml/Main.qml" line="1892"/>
         <source>No delay for this file (use the global delay only)</source>
         <translation>이 파일에는 지연 없음 (전역 지연만 사용)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1874"/>
+        <location filename="../qml/Main.qml" line="1897"/>
         <source>This file&apos;s delay:</source>
         <translation>이 파일의 지연:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1889"/>
+        <location filename="../qml/Main.qml" line="1912"/>
         <source>The delay applied to this file is this value plus the global delay for the current audio device (%1 ms), set in Preferences &gt; General &gt; Audio. Negative values delay the video to match audio that arrives late (e.g. Bluetooth headphones).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1902"/>
+        <location filename="../qml/Main.qml" line="1925"/>
         <source>&amp;Apply</source>
         <translation>적용</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1911"/>
+        <location filename="../qml/Main.qml" line="1934"/>
         <source>&amp;Close</source>
         <translation>닫기(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2008"/>
+        <location filename="../qml/Main.qml" line="2031"/>
         <source>Hide window</source>
         <translation>창 숨기기</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2008"/>
+        <location filename="../qml/Main.qml" line="2031"/>
         <source>Show window</source>
         <translation>창 표시</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2013"/>
+        <location filename="../qml/Main.qml" line="2036"/>
         <source>Play / Pause</source>
         <translation>재생 / 일시 중지</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2017"/>
+        <location filename="../qml/Main.qml" line="2040"/>
         <source>Stop</source>
         <translation>정지</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2022"/>
+        <location filename="../qml/Main.qml" line="2045"/>
         <source>Quit</source>
         <translation>종료(&amp;Q)</translation>
     </message>
@@ -1076,66 +1081,66 @@
         <translation>자동(&amp;A)</translation>
     </message>
     <message numerus="yes">
-        <location filename="../qml/MainMenuBar.qml" line="83"/>
+        <location filename="../qml/MainMenuBar.qml" line="93"/>
         <source>%n minute(s)</source>
         <translation type="unfinished">
             <numerusform></numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../qml/MainMenuBar.qml" line="84"/>
+        <location filename="../qml/MainMenuBar.qml" line="94"/>
         <source>%n second(s)</source>
         <translation type="unfinished">
             <numerusform></numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="116"/>
+        <location filename="../qml/MainMenuBar.qml" line="126"/>
         <source>&amp;Open</source>
         <translation>열기(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="119"/>
+        <location filename="../qml/MainMenuBar.qml" line="129"/>
         <source>&amp;File…</source>
         <translation>파일(&amp;F)...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="126"/>
+        <location filename="../qml/MainMenuBar.qml" line="136"/>
         <source>&amp;Recent files</source>
         <translation>최근 파일(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="148"/>
+        <location filename="../qml/MainMenuBar.qml" line="158"/>
         <source>(empty)</source>
         <translation>(비어 있음)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="154"/>
+        <location filename="../qml/MainMenuBar.qml" line="164"/>
         <source>&amp;Clear</source>
         <translation>비우기(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="160"/>
+        <location filename="../qml/MainMenuBar.qml" line="170"/>
         <source>F&amp;avorites</source>
         <translation>즐겨찾기(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="169"/>
+        <location filename="../qml/MainMenuBar.qml" line="179"/>
         <source>&amp;Directory…</source>
         <translation>폴더(&amp;I)...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="174"/>
+        <location filename="../qml/MainMenuBar.qml" line="184"/>
         <source>&amp;Playlist…</source>
         <translation>재생 목록(&amp;P)...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="179"/>
+        <location filename="../qml/MainMenuBar.qml" line="189"/>
         <source>D&amp;isc</source>
         <translation>디스크(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="183"/>
+        <location filename="../qml/MainMenuBar.qml" line="193"/>
         <source>&amp;DVD from drive or folder…</source>
         <translation>드라이브 또는 폴더에서 DVD(&amp;D)…</translation>
     </message>
@@ -1144,57 +1149,57 @@
         <translation type="vanished">블루레이(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="188"/>
+        <location filename="../qml/MainMenuBar.qml" line="198"/>
         <source>&amp;Blu-ray from drive or folder…</source>
         <translation>드라이브 또는 폴더에서 블루레이(&amp;B)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="193"/>
+        <location filename="../qml/MainMenuBar.qml" line="203"/>
         <source>&amp;Audio CD</source>
         <translation>오디오 CD(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="198"/>
+        <location filename="../qml/MainMenuBar.qml" line="208"/>
         <source>&amp;URL…</source>
         <translation>주소(&amp;U)...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="204"/>
+        <location filename="../qml/MainMenuBar.qml" line="214"/>
         <source>YouTube &amp;cache…</source>
         <translation>YouTube 캐시(&amp;C)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="212"/>
+        <location filename="../qml/MainMenuBar.qml" line="222"/>
         <source>&amp;TV</source>
         <translation>텔레비전(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="222"/>
+        <location filename="../qml/MainMenuBar.qml" line="232"/>
         <source>Radi&amp;o</source>
         <translation>라디오(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="233"/>
+        <location filename="../qml/MainMenuBar.qml" line="243"/>
         <source>&amp;Quit</source>
         <translation>종료(&amp;Q)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="243"/>
+        <location filename="../qml/MainMenuBar.qml" line="253"/>
         <source>&amp;Play</source>
         <translation>재생(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="246"/>
+        <location filename="../qml/MainMenuBar.qml" line="256"/>
         <source>P&amp;lay</source>
         <translation>재생(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="253"/>
+        <location filename="../qml/MainMenuBar.qml" line="263"/>
         <source>&amp;Pause</source>
         <translation>일시 중지(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="259"/>
+        <location filename="../qml/MainMenuBar.qml" line="269"/>
         <source>&amp;Stop</source>
         <translation>정지(&amp;S)</translation>
     </message>
@@ -1203,124 +1208,124 @@
         <translation type="vanished">다음 프레임으로(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="271"/>
+        <location filename="../qml/MainMenuBar.qml" line="281"/>
         <source>Fra&amp;me back step</source>
         <translation>이전 프레임으로(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="278"/>
+        <location filename="../qml/MainMenuBar.qml" line="291"/>
         <source>&amp;Rewind %1</source>
         <translation>%1 뒤로(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="285"/>
+        <location filename="../qml/MainMenuBar.qml" line="298"/>
         <source>&amp;Forward %1</source>
         <translation>%1 앞으로(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="292"/>
-        <location filename="../qml/MainMenuBar.qml" line="306"/>
+        <location filename="../qml/MainMenuBar.qml" line="305"/>
+        <location filename="../qml/MainMenuBar.qml" line="319"/>
         <source>Rewind %1</source>
         <translation>%1 뒤로</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="299"/>
-        <location filename="../qml/MainMenuBar.qml" line="313"/>
+        <location filename="../qml/MainMenuBar.qml" line="312"/>
+        <location filename="../qml/MainMenuBar.qml" line="326"/>
         <source>Forward %1</source>
         <translation>%1 앞으로</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="321"/>
+        <location filename="../qml/MainMenuBar.qml" line="334"/>
         <source>Sp&amp;eed</source>
         <translation>재생 속도(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="325"/>
+        <location filename="../qml/MainMenuBar.qml" line="338"/>
         <source>&amp;Normal speed</source>
         <translation>보통 속도(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="331"/>
+        <location filename="../qml/MainMenuBar.qml" line="345"/>
         <source>&amp;Halve speed</source>
         <translation>속도 절반으로(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="336"/>
+        <location filename="../qml/MainMenuBar.qml" line="351"/>
         <source>&amp;Double speed</source>
         <translation>2배 속도(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="342"/>
+        <location filename="../qml/MainMenuBar.qml" line="358"/>
         <source>Speed &amp;-10%</source>
         <translation>속도 &amp;-10%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="347"/>
+        <location filename="../qml/MainMenuBar.qml" line="364"/>
         <source>Speed &amp;+10%</source>
         <translation>속도 &amp;+10%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="352"/>
+        <location filename="../qml/MainMenuBar.qml" line="370"/>
         <source>Speed -4%</source>
         <translation>속도 -4%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="353"/>
+        <location filename="../qml/MainMenuBar.qml" line="371"/>
         <source>Speed +4%</source>
         <translation>속도 +4%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="355"/>
+        <location filename="../qml/MainMenuBar.qml" line="373"/>
         <source>Speed -1%</source>
         <translation>속도 -&amp;1%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="356"/>
+        <location filename="../qml/MainMenuBar.qml" line="374"/>
         <source>Speed +1%</source>
         <translation>속도 +1%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="359"/>
+        <location filename="../qml/MainMenuBar.qml" line="377"/>
         <source>Pi&amp;tch compensation</source>
         <translation>음정 보정(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="368"/>
+        <location filename="../qml/MainMenuBar.qml" line="386"/>
         <source>&amp;A-B section</source>
         <translation>A-B 구간(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="372"/>
+        <location filename="../qml/MainMenuBar.qml" line="390"/>
         <source>Set &amp;A marker</source>
         <translation>A 마커 설정하기(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="378"/>
+        <location filename="../qml/MainMenuBar.qml" line="396"/>
         <source>Set &amp;B marker</source>
         <translation>B 마커 설정하기(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="384"/>
+        <location filename="../qml/MainMenuBar.qml" line="402"/>
         <source>&amp;Clear A-B markers</source>
         <translation>A-B 마커 지우기(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="392"/>
+        <location filename="../qml/MainMenuBar.qml" line="410"/>
         <source>&amp;Repeat</source>
         <translation>반복(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="398"/>
+        <location filename="../qml/MainMenuBar.qml" line="416"/>
         <source>&amp;Jump to…</source>
         <translation>이동하기(&amp;J)...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="401"/>
+        <location filename="../qml/MainMenuBar.qml" line="419"/>
         <source>Pre&amp;vious</source>
         <translation>이전(&amp;V)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="408"/>
+        <location filename="../qml/MainMenuBar.qml" line="426"/>
         <source>&amp;Next</source>
         <translation>다음(&amp;N)</translation>
     </message>
@@ -1333,77 +1338,77 @@
         <translation type="vanished">스마트폰/태블릿…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="417"/>
+        <location filename="../qml/MainMenuBar.qml" line="435"/>
         <source>Cas&amp;t…</source>
         <translation>전송…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="425"/>
+        <location filename="../qml/MainMenuBar.qml" line="443"/>
         <source>&amp;Video</source>
         <translation>영상(&amp;V)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="429"/>
-        <location filename="../qml/MainMenuBar.qml" line="684"/>
-        <location filename="../qml/MainMenuBar.qml" line="770"/>
+        <location filename="../qml/MainMenuBar.qml" line="447"/>
+        <location filename="../qml/MainMenuBar.qml" line="702"/>
+        <location filename="../qml/MainMenuBar.qml" line="792"/>
         <source>&amp;Track</source>
         <translation>트랙(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="436"/>
-        <location filename="../qml/MainMenuBar.qml" line="701"/>
-        <location filename="../qml/MainMenuBar.qml" line="910"/>
-        <location filename="../qml/MainMenuBar.qml" line="935"/>
+        <location filename="../qml/MainMenuBar.qml" line="454"/>
+        <location filename="../qml/MainMenuBar.qml" line="719"/>
+        <location filename="../qml/MainMenuBar.qml" line="937"/>
+        <location filename="../qml/MainMenuBar.qml" line="962"/>
         <source>&lt;empty&gt;</source>
         <translation>&lt;비어 있음&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="468"/>
+        <location filename="../qml/MainMenuBar.qml" line="486"/>
         <source>&amp;Fullscreen</source>
         <translation>전체 화면(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="476"/>
+        <location filename="../qml/MainMenuBar.qml" line="494"/>
         <source>Si&amp;ze</source>
         <translation>크기(&amp;Z)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="479"/>
+        <location filename="../qml/MainMenuBar.qml" line="497"/>
         <source>50%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="480"/>
+        <location filename="../qml/MainMenuBar.qml" line="498"/>
         <source>100%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="481"/>
+        <location filename="../qml/MainMenuBar.qml" line="499"/>
         <source>200%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="484"/>
+        <location filename="../qml/MainMenuBar.qml" line="502"/>
         <source>&amp;Zoom and pan</source>
         <translation>확대 및 이동(&amp;Z)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="488"/>
+        <location filename="../qml/MainMenuBar.qml" line="506"/>
         <source>&amp;Reset</source>
         <translation>초기화</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="493"/>
+        <location filename="../qml/MainMenuBar.qml" line="511"/>
         <source>Zoom &amp;-</source>
         <translation>축소하기(&amp;-)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="498"/>
+        <location filename="../qml/MainMenuBar.qml" line="516"/>
         <source>Zoom &amp;+</source>
         <translation>확대하기(&amp;+)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="504"/>
+        <location filename="../qml/MainMenuBar.qml" line="522"/>
         <source>Move &amp;left</source>
         <translation>왼쪽으로 이동(&amp;L)</translation>
     </message>
@@ -1412,273 +1417,278 @@
         <translation type="vanished">오른쪽으로 이동(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="514"/>
+        <location filename="../qml/MainMenuBar.qml" line="532"/>
         <source>Move &amp;up</source>
         <translation>위로 이동(&amp;U)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="519"/>
+        <location filename="../qml/MainMenuBar.qml" line="537"/>
         <source>Move &amp;down</source>
         <translation>아래로 이동(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="526"/>
+        <location filename="../qml/MainMenuBar.qml" line="544"/>
         <source>&amp;Aspect ratio</source>
         <translation>화면 비율(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="548"/>
+        <location filename="../qml/MainMenuBar.qml" line="566"/>
         <source>&amp;Rotate</source>
         <translation>회전하기(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="552"/>
-        <location filename="../qml/MainMenuBar.qml" line="635"/>
+        <location filename="../qml/MainMenuBar.qml" line="570"/>
+        <location filename="../qml/MainMenuBar.qml" line="653"/>
         <source>&amp;None</source>
         <translation>없음(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="561"/>
+        <location filename="../qml/MainMenuBar.qml" line="579"/>
         <source>&amp;Rotate by 90° clockwise</source>
         <translation>시계 방향으로 90° 회전(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="570"/>
+        <location filename="../qml/MainMenuBar.qml" line="588"/>
         <source>Rotate by 90° &amp;counterclockwise</source>
         <translation>반시계 방향으로 90° 회전(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="579"/>
+        <location filename="../qml/MainMenuBar.qml" line="597"/>
         <source>Rotate by &amp;180°</source>
         <translation>180° 회전(&amp;1)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="589"/>
+        <location filename="../qml/MainMenuBar.qml" line="607"/>
         <source>Fli&amp;p image</source>
         <translation>상하 반전(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="600"/>
+        <location filename="../qml/MainMenuBar.qml" line="618"/>
         <source>Mirr&amp;or image</source>
         <translation>좌우 반전(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="611"/>
+        <location filename="../qml/MainMenuBar.qml" line="629"/>
         <source>&amp;Deinterlace</source>
         <translation>디인터레이스(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="644"/>
+        <location filename="../qml/MainMenuBar.qml" line="662"/>
         <source>&amp;Yadif</source>
         <translation>Yadif(&amp;Y)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="653"/>
+        <location filename="../qml/MainMenuBar.qml" line="671"/>
         <source>&amp;Bwdif</source>
         <translation>Bwdif(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="664"/>
+        <location filename="../qml/MainMenuBar.qml" line="682"/>
         <source>E&amp;qualizer…</source>
         <translation>이퀄라이저(&amp;Q)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="670"/>
+        <location filename="../qml/MainMenuBar.qml" line="688"/>
         <source>&amp;Screenshot</source>
         <translation>스크린샷(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="680"/>
+        <location filename="../qml/MainMenuBar.qml" line="698"/>
         <source>&amp;Audio</source>
         <translation>음성(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="728"/>
+        <location filename="../qml/MainMenuBar.qml" line="746"/>
         <source>&amp;Mute</source>
         <translation>음소거(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="737"/>
+        <location filename="../qml/MainMenuBar.qml" line="755"/>
         <source>Volume &amp;-</source>
         <translation>볼륨 &amp;-</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="743"/>
+        <location filename="../qml/MainMenuBar.qml" line="762"/>
         <source>Volume &amp;+</source>
         <translation>볼륨 &amp;+</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="848"/>
+        <location filename="../qml/MainMenuBar.qml" line="872"/>
         <source>Delay &amp;-</source>
         <translation>느리게(&amp;-)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="755"/>
+        <location filename="../qml/MainMenuBar.qml" line="775"/>
         <source>D&amp;elay +</source>
         <translation>빠르게(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="265"/>
+        <location filename="../qml/MainMenuBar.qml" line="275"/>
         <source>Frame st&amp;ep</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="509"/>
+        <location filename="../qml/MainMenuBar.qml" line="288"/>
+        <source>See&amp;k</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/MainMenuBar.qml" line="527"/>
         <source>Move r&amp;ight</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="751"/>
+        <location filename="../qml/MainMenuBar.qml" line="770"/>
         <source>&amp;Delay -</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="759"/>
+        <location filename="../qml/MainMenuBar.qml" line="780"/>
         <source>Set dela&amp;y…</source>
         <translation>싱크 조절하기(&amp;Y)...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="766"/>
+        <location filename="../qml/MainMenuBar.qml" line="788"/>
         <source>&amp;Subtitles</source>
         <translation>자막(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="786"/>
+        <location filename="../qml/MainMenuBar.qml" line="808"/>
         <source>&amp;Off</source>
         <translation>끄기(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="831"/>
+        <location filename="../qml/MainMenuBar.qml" line="853"/>
         <source>&amp;Load subtitles…</source>
         <translation>자막 열기(&amp;L)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="837"/>
+        <location filename="../qml/MainMenuBar.qml" line="859"/>
         <source>&amp;Find subtitles at OpenSubtitles…</source>
         <translation>OpenSubtitles에서 자막 찾기(&amp;F)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="842"/>
+        <location filename="../qml/MainMenuBar.qml" line="865"/>
         <source>U&amp;nload subtitles</source>
         <translation>자막 내리기(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="853"/>
+        <location filename="../qml/MainMenuBar.qml" line="878"/>
         <source>Delay &amp;+</source>
         <translation>빠르게(&amp;+)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="858"/>
+        <location filename="../qml/MainMenuBar.qml" line="884"/>
         <source>Se&amp;t delay…</source>
         <translation>싱크 조절하기(&amp;T)...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="866"/>
+        <location filename="../qml/MainMenuBar.qml" line="893"/>
         <source>&amp;Browse</source>
         <translation>이동(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="869"/>
+        <location filename="../qml/MainMenuBar.qml" line="896"/>
         <source>&amp;DVD menu</source>
         <translation>DVD 메뉴</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="878"/>
+        <location filename="../qml/MainMenuBar.qml" line="905"/>
         <source>&amp;Title</source>
         <translation>제목(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="917"/>
+        <location filename="../qml/MainMenuBar.qml" line="944"/>
         <source>&amp;Chapters</source>
         <translation>챕터(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="942"/>
+        <location filename="../qml/MainMenuBar.qml" line="969"/>
         <source>&amp;Bookmarks</source>
         <translation>책갈피(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="952"/>
+        <location filename="../qml/MainMenuBar.qml" line="979"/>
         <source>&amp;Add new bookmark</source>
         <translation>새 책갈피 추가(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="959"/>
+        <location filename="../qml/MainMenuBar.qml" line="986"/>
         <source>&amp;Edit bookmarks…</source>
         <translation>책갈피 편집(&amp;E)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="983"/>
+        <location filename="../qml/MainMenuBar.qml" line="1010"/>
         <source>Vie&amp;w</source>
         <translation>보기(&amp;W)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="986"/>
+        <location filename="../qml/MainMenuBar.qml" line="1013"/>
         <source>&amp;Information and properties…</source>
         <translation>정보와 속성(&amp;I)...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="993"/>
+        <location filename="../qml/MainMenuBar.qml" line="1020"/>
         <source>&amp;Playlist</source>
         <translation>재생 목록(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1001"/>
+        <location filename="../qml/MainMenuBar.qml" line="1028"/>
         <source>&amp;OSD</source>
         <translation>화면 정보 표시(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1003"/>
+        <location filename="../qml/MainMenuBar.qml" line="1030"/>
         <source>Subtitles only</source>
         <translation>자막만(&amp;Y)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1004"/>
+        <location filename="../qml/MainMenuBar.qml" line="1031"/>
         <source>Volume + seek</source>
         <translation>음량 + 탐색</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1005"/>
+        <location filename="../qml/MainMenuBar.qml" line="1032"/>
         <source>Volume + seek + timer</source>
         <translation>음량 + 탐색 + 시간</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1011"/>
+        <location filename="../qml/MainMenuBar.qml" line="1038"/>
         <source>Op&amp;tions</source>
         <translation>옵션(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1014"/>
+        <location filename="../qml/MainMenuBar.qml" line="1041"/>
         <source>&amp;Preferences…</source>
         <translation>환경 설정(&amp;P)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1027"/>
+        <location filename="../qml/MainMenuBar.qml" line="1054"/>
         <source>S&amp;how icon in system tray</source>
         <translation>시스템 트레이에 아이콘 보이기(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1033"/>
+        <location filename="../qml/MainMenuBar.qml" line="1060"/>
         <source>&amp;Toolbars</source>
         <translation>툴바(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1036"/>
+        <location filename="../qml/MainMenuBar.qml" line="1063"/>
         <source>&amp;Toolbar</source>
         <translation>도구 모음(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1042"/>
+        <location filename="../qml/MainMenuBar.qml" line="1069"/>
         <source>&amp;Control bar</source>
         <translation>조작바</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1049"/>
+        <location filename="../qml/MainMenuBar.qml" line="1076"/>
         <source>&amp;Edit main toolbar…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1137"/>
+        <location filename="../qml/MainMenuBar.qml" line="1164"/>
         <source>Check for &amp;updates</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1687,67 +1697,67 @@
         <translation type="vanished">기본 도구 모음 편집(&amp;T)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1053"/>
+        <location filename="../qml/MainMenuBar.qml" line="1080"/>
         <source>Edit control &amp;bar…</source>
         <translation>제어 막대 편집(&amp;B)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1058"/>
+        <location filename="../qml/MainMenuBar.qml" line="1085"/>
         <source>&amp;Status bar</source>
         <translation>상태 표시줄(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1061"/>
+        <location filename="../qml/MainMenuBar.qml" line="1088"/>
         <source>&amp;Show status bar</source>
         <translation>상태 표시줄 표시(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1068"/>
+        <location filename="../qml/MainMenuBar.qml" line="1095"/>
         <source>&amp;Video info</source>
         <translation>동영상 정보(&amp;V)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1075"/>
+        <location filename="../qml/MainMenuBar.qml" line="1102"/>
         <source>&amp;Audio info</source>
         <translation>오디오 정보(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1082"/>
+        <location filename="../qml/MainMenuBar.qml" line="1109"/>
         <source>F&amp;ormat info</source>
         <translation>형식 정보(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1089"/>
+        <location filename="../qml/MainMenuBar.qml" line="1116"/>
         <source>&amp;Bitrate info</source>
         <translation>비트레이트 정보(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1096"/>
+        <location filename="../qml/MainMenuBar.qml" line="1123"/>
         <source>&amp;Frame counter</source>
         <translation>프레임 카운터(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1104"/>
+        <location filename="../qml/MainMenuBar.qml" line="1131"/>
         <source>Display &amp;total time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1110"/>
+        <location filename="../qml/MainMenuBar.qml" line="1137"/>
         <source>Display &amp;remaining time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1117"/>
+        <location filename="../qml/MainMenuBar.qml" line="1144"/>
         <source>Show the current time with &amp;milliseconds</source>
         <translation>현재 시간을 밀리초로 보이기(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1127"/>
+        <location filename="../qml/MainMenuBar.qml" line="1154"/>
         <source>&amp;Help</source>
         <translation>도움말(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1130"/>
+        <location filename="../qml/MainMenuBar.qml" line="1157"/>
         <source>&amp;Contents</source>
         <translation>내용(&amp;C)</translation>
     </message>
@@ -1760,7 +1770,7 @@
         <translation type="vanished">유튜브 지원 설치/업데이트</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1143"/>
+        <location filename="../qml/MainMenuBar.qml" line="1170"/>
         <source>&amp;About Vivace</source>
         <translation>Vivace 정보(&amp;A)</translation>
     </message>
@@ -1768,9 +1778,116 @@
 <context>
     <name>MainToolBar</name>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="136"/>
+        <location filename="../qml/MainToolBar.qml" line="58"/>
+        <source>Auto</source>
+        <translation>자동</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="243"/>
         <source>&amp;Off</source>
         <translation>끄기(&amp;O)</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="289"/>
+        <source>Normal speed</source>
+        <translation>보통 속도</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="295"/>
+        <source>Halve speed</source>
+        <translation>속도 절반으로</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="300"/>
+        <source>Double speed</source>
+        <translation>2배 속도(&amp;D)</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="306"/>
+        <source>Speed -10%</source>
+        <translation>속도 &amp;-10%</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="311"/>
+        <source>Speed +10%</source>
+        <translation>속도 &amp;+10%</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="316"/>
+        <source>Speed -4%</source>
+        <translation>속도 -4%</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="317"/>
+        <source>Speed +4%</source>
+        <translation>속도 +4%</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="319"/>
+        <source>Speed -1%</source>
+        <translation>속도 -&amp;1%</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="320"/>
+        <source>Speed +1%</source>
+        <translation>속도 +1%</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="323"/>
+        <source>Pitch compensation</source>
+        <translation>음정 보정</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="337"/>
+        <location filename="../qml/MainToolBar.qml" line="447"/>
+        <location filename="../qml/MainToolBar.qml" line="467"/>
+        <source>&lt;empty&gt;</source>
+        <translation>&lt;비어 있음&gt;</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="381"/>
+        <source>&amp;None</source>
+        <translation>없음(&amp;N)</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="390"/>
+        <source>&amp;Rotate by 90° clockwise</source>
+        <translation>시계 방향으로 90° 회전(&amp;R)</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="399"/>
+        <source>Rotate by 90° &amp;counterclockwise</source>
+        <translation>반시계 방향으로 90° 회전(&amp;C)</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="408"/>
+        <source>Rotate by &amp;180°</source>
+        <translation>180° 회전(&amp;1)</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="419"/>
+        <source>50%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="420"/>
+        <source>100%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="421"/>
+        <source>200%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="479"/>
+        <source>&amp;Add new bookmark</source>
+        <translation>새 책갈피 추가(&amp;A)</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="484"/>
+        <source>&amp;Edit bookmarks…</source>
+        <translation>책갈피 편집(&amp;E)…</translation>
     </message>
 </context>
 <context>
@@ -3066,27 +3183,27 @@
 <context>
     <name>PrefInterfacePage</name>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="53"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="56"/>
         <source>Interface</source>
         <translation>인터페이스</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="55"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="58"/>
         <source>Seeking</source>
         <translation>탐색하기</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="57"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="60"/>
         <source>Instances</source>
         <translation>중복 실행</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="75"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="78"/>
         <source>Fullscreen</source>
         <translation>전체 화면</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="81"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="84"/>
         <source>Privacy</source>
         <translation>개인정보</translation>
     </message>
@@ -3095,331 +3212,341 @@
         <translation type="vanished">High &amp;DPI</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="100"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="103"/>
         <source>Main window</source>
         <translation>메인 창</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="123"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="126"/>
         <source>Auto-resize:</source>
         <translation>자동 크기 조정:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="128"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="131"/>
         <source>Never</source>
         <translation>하지 않음</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="129"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="132"/>
         <source>Whenever it&apos;s needed</source>
         <translation>필요할 때마다</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="130"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="133"/>
         <source>Only after loading a new video</source>
         <translation>새 동영상을 불러온 후에만</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="137"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="140"/>
         <source>Center window</source>
         <translation>창을 가운데로 놓기</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="142"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="145"/>
         <source>Prevent the window from getting outside of the screen</source>
         <translation>창이 화면 밖으로 나가지 않도록 방지</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="147"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="150"/>
         <source>Remember size and position of the main window</source>
         <translation>기본 창의 크기와 위치 기억</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="152"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="155"/>
         <source>Hide the video window when playing audio files</source>
         <translation>오디오 파일 재생 시 동영상 창 숨기기</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="214"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="217"/>
         <source>Language:</source>
         <translation>언어:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="161"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="164"/>
         <source>GUI:</source>
         <translation>인터페이스:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="54"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="21"/>
+        <source>&lt;h1&gt;Interface&lt;/h1&gt;&lt;p&gt;&lt;b&gt;Interface&lt;/b&gt; — the GUI layout (Basic / Mini / Mpc), icon set, language, and Qt Quick Controls style, plus main-window behaviour (auto-resize, centre, keep on screen, remember geometry, hide the video area for audio-only files), whether the menu bar is shown (it can&apos;t wrap onto a second row the way the toolbar and control bar can, so it&apos;s easy to run out of room for it on a narrow phone screen), the toolbar gradient, and the native file dialog toggle.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Text&lt;/b&gt; — the application font, OSD options, touch-friendly sizing, and the high-DPI scale-factor override (Vivace scales automatically otherwise).&lt;/p&gt;&lt;p&gt;&lt;b&gt;Seeking&lt;/b&gt; — the jump lengths for the seek buttons and the mouse wheel, and whether the time slider seeks while dragging or on release.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Instances&lt;/b&gt; — reuse a single running instance so files open in the existing window (takes effect next launch).&lt;/p&gt;&lt;p&gt;&lt;b&gt;Fullscreen&lt;/b&gt; — hide the mouse pointer after inactivity.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Privacy&lt;/b&gt; — how many recent files and URLs to remember, and whether to remember the last folder.&lt;/p&gt;&lt;p&gt;Style, font and scale-factor changes take effect after restarting Vivace.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefInterfacePage.qml" line="57"/>
         <source>Text</source>
         <translation>텍스트</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="171"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="174"/>
         <source>Basic GUI</source>
         <translation>기본 GUI</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="172"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="175"/>
         <source>Mini GUI</source>
         <translation>미니 GUI</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="173"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="176"/>
         <source>Mpc GUI</source>
         <translation>MPC GUI</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="174"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="177"/>
         <source>Skinnable GUI</source>
         <translation>스킨을 사용할 수 있는 GUI</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="197"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="200"/>
         <source>Icon set:</source>
         <translation>아이콘 셋:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="205"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="208"/>
         <source>Default</source>
         <translation>기본</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="206"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="209"/>
         <source>Classic</source>
         <translation>클래식</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="223"/>
-        <location filename="../qml/PrefInterfacePage.qml" line="291"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="226"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="309"/>
         <source>System default</source>
         <translation>시스템 기본값</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="237"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="240"/>
         <source>Language changes take effect after restarting Vivace. Untranslated text falls back to English.</source>
         <translation>언어 변경은 Vivace를 다시 시작한 후에 적용됩니다. 번역되지 않은 텍스트는 영어로 표시됩니다.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="242"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="245"/>
         <source>Style:</source>
         <translation>스타일:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="257"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="260"/>
         <source>Style changes take effect after restarting Vivace. Fusion is recommended: other styles may not render the custom menus and sliders correctly.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="286"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="266"/>
+        <source>Show menu bar</source>
+        <translation>메뉴 표시줄 표시</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefInterfacePage.qml" line="271"/>
+        <source>The menu bar can&apos;t wrap onto a second row on a narrow screen (unlike the toolbar and control bar), so it can run out of room on a phone. Turn it off if that happens -- every menu action that&apos;s also on the toolbar (e.g. Preferences) stays reachable either way.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefInterfacePage.qml" line="304"/>
         <source>Application font:</source>
         <translation>애플리케이션 글꼴:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="297"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="315"/>
         <source>Change…</source>
         <translation>변경하기...</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="308"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="326"/>
         <source>Reset</source>
         <translation>초기화</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="322"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="340"/>
         <source>Font changes take effect after restarting Vivace. (The default font already renders Japanese and other scripts; a custom font only needs to be set for preference.)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="261"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="279"/>
         <source>Gradient background for the toolbar and control bar</source>
         <translation>도구 모음과 제어 막대의 그라데이션 배경</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="21"/>
-        <source>&lt;h1&gt;Interface&lt;/h1&gt;&lt;p&gt;&lt;b&gt;Interface&lt;/b&gt; — the GUI layout (Basic / Mini / Mpc), icon set, language, and Qt Quick Controls style, plus main-window behaviour (auto-resize, centre, keep on screen, remember geometry, hide the video area for audio-only files), the toolbar gradient, and the native file dialog toggle.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Text&lt;/b&gt; — the application font, OSD options, touch-friendly sizing, and the high-DPI scale-factor override (Vivace scales automatically otherwise).&lt;/p&gt;&lt;p&gt;&lt;b&gt;Seeking&lt;/b&gt; — the jump lengths for the seek buttons and the mouse wheel, and whether the time slider seeks while dragging or on release.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Instances&lt;/b&gt; — reuse a single running instance so files open in the existing window (takes effect next launch).&lt;/p&gt;&lt;p&gt;&lt;b&gt;Fullscreen&lt;/b&gt; — hide the mouse pointer after inactivity.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Privacy&lt;/b&gt; — how many recent files and URLs to remember, and whether to remember the last folder.&lt;/p&gt;&lt;p&gt;Style, font and scale-factor changes take effect after restarting Vivace.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="266"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="284"/>
         <source>Use the system native file dialog</source>
         <translation>시스템 자체 파일 대화상자 사용하기</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="327"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="345"/>
         <source>OSD</source>
         <translation>화면 정보 표시(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="334"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="352"/>
         <source>Show OSD messages</source>
         <translation>OSD 메시지 표시</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="340"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="358"/>
         <source>Duration of OSD messages:</source>
         <translation>OSD 메시지 표시 시간:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="346"/>
-        <location filename="../qml/PrefInterfacePage.qml" line="597"/>
-        <location filename="../qml/PrefInterfacePage.qml" line="605"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="364"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="615"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="623"/>
         <source>ms</source>
         <translation>ms</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="351"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="369"/>
         <source>OSD font size:</source>
         <translation>OSD 글꼴 크기:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="357"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="375"/>
         <source>px</source>
         <translation>px</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="365"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="383"/>
         <source>Touch</source>
         <translation>터치</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="374"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="392"/>
         <source>Touch-friendly controls (larger fonts and icons)</source>
         <translation>터치 친화적 컨트롤 (더 큰 글꼴 및 아이콘)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="379"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="397"/>
         <source>Enlarges the interface for finger use on a tablet. Toolbar icons resize immediately; the larger fonts take effect after you restart Vivace.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="389"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="407"/>
         <source>Swipe across the video to seek</source>
         <translation>동영상을 가로질러 스와이프하여 탐색</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="394"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="412"/>
         <source>Drag left or right on the video (with a finger or the mouse) to jump backward or forward. An on-screen message previews the target while you drag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="478"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="496"/>
         <source>seconds</source>
         <translation>초</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="484"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="502"/>
         <source>Short jump:</source>
         <translation>짧은 이동:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="491"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="509"/>
         <source>Medium jump:</source>
         <translation>중간 이동:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="498"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="516"/>
         <source>Long jump:</source>
         <translation>긴 이동:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="504"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="522"/>
         <source>Mouse wheel jump:</source>
         <translation>마우스 휠 이동:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="514"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="532"/>
         <source>Behaviour of time slider:</source>
         <translation>타임 슬라이더 동작:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="518"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="536"/>
         <source>Seek to position while dragging</source>
         <translation>마우스로 드래깅시 즉시 이동하기</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="519"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="537"/>
         <source>Seek to position when released</source>
         <translation>마우스 버튼을 놓았을 때 이동하기</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="530"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="548"/>
         <source>Absolute/relative seeking method and precise seeking are mplayer/mpv-specific and do not apply to Vivace&apos;s Qt Multimedia backend (seeking is already position-based).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="553"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="571"/>
         <source>Use only one running instance of Vivace</source>
         <translation>Vivace 인스턴스를 하나만 실행</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="564"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="582"/>
         <source>When enabled, opening a file while Vivace is already running hands it to the existing window instead of starting a new one. Takes effect on the next launch.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="578"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="596"/>
         <source>Hide the mouse pointer after inactivity</source>
         <translation>비활성 후 마우스 포인터 숨기기</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="583"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="601"/>
         <source>While a video is playing, hide the mouse pointer over the video after the delay below — in the normal window as well as in fullscreen.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="591"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="609"/>
         <source>Hide after:</source>
         <translation>다음 시간 후 숨기기:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="603"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="621"/>
         <source>Time to hide the control bar:</source>
         <translation>제어 막대를 숨기기까지의 시간:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="612"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="630"/>
         <source>The fullscreen control bar currently shows while the pointer is near the bottom edge; a time-based autohide is planned.</source>
         <translation>전체 화면에서 제어 막대는 현재 포인터가 아래쪽 가장자리 근처에 있을 때 표시됩니다. 시간 기반 자동 숨김이 계획되어 있습니다.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="624"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="642"/>
         <source>Recent files</source>
         <translation>최근 파일</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="629"/>
-        <location filename="../qml/PrefInterfacePage.qml" line="645"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="647"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="663"/>
         <source>Max. items:</source>
         <translation>최대 항목 수:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="640"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="658"/>
         <source>URLs</source>
         <translation>주소</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="655"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="673"/>
         <source>Remember last directory</source>
         <translation>마지막 폴더 기억하기</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="407"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="425"/>
         <source>Vivace scales the interface on high-DPI screens automatically. You can override the scale factor here if needed.</source>
         <translation>Vivace는 고DPI 화면에서 인터페이스를 자동으로 크기 조정합니다. 필요하면 여기서 배율을 재정의할 수 있습니다.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="411"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="429"/>
         <source>Scale factor:</source>
         <translation>스케일 요소:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="418"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="436"/>
         <source>Automatic</source>
         <translation>자동</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="435"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="453"/>
         <source>Scale factor changes take effect after restarting Vivace.</source>
         <translation>배율 변경은 Vivace를 다시 시작한 후에 적용됩니다.</translation>
     </message>

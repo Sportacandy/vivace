@@ -23,8 +23,11 @@ ColumnLayout {
         + "<p><b>Interface</b> — the GUI layout (Basic / Mini / Mpc), icon set, "
         + "language, and Qt Quick Controls style, plus main-window behaviour "
         + "(auto-resize, centre, keep on screen, remember geometry, hide the "
-        + "video area for audio-only files), the toolbar gradient, and the "
-        + "native file dialog toggle.</p>"
+        + "video area for audio-only files), whether the menu bar is shown "
+        + "(it can't wrap onto a second row the way the toolbar and control "
+        + "bar can, so it's easy to run out of room for it on a narrow "
+        + "phone screen), the toolbar gradient, and the native file dialog "
+        + "toggle.</p>"
         + "<p><b>Text</b> — the application font, OSD options, touch-friendly "
         + "sizing, and the high-DPI scale-factor override (Vivace scales "
         + "automatically otherwise).</p>"
@@ -257,6 +260,21 @@ ColumnLayout {
                     text: qsTr("Style changes take effect after restarting Vivace. Fusion is recommended: other styles may not render the custom menus and sliders correctly.")
                 }
 
+                RowLayout {
+                    spacing: 4
+                    CheckBox {
+                        text: qsTr("Show menu bar")
+                        checked: Settings.showMenuBar
+                        onToggled: Settings.showMenuBar = checked
+                    }
+                    HelpMark {
+                        text: qsTr("The menu bar can't wrap onto a second row on a narrow"
+                                   + " screen (unlike the toolbar and control bar), so it can"
+                                   + " run out of room on a phone. Turn it off if that"
+                                   + " happens -- every menu action that's also on the"
+                                   + " toolbar (e.g. Preferences) stays reachable either way.")
+                    }
+                }
                 CheckBox {
                     text: qsTr("Gradient background for the toolbar and control bar")
                     checked: Settings.toolbarGradient

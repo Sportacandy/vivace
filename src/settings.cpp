@@ -148,6 +148,7 @@ constexpr auto controlBarItems = "ui/controlBarItems";
 constexpr auto mainToolbarIconSize = "ui/mainToolbarIconSize";
 constexpr auto controlBarIconSize = "ui/controlBarIconSize";
 constexpr auto showTrayIcon = "ui/showTrayIcon";
+constexpr auto showMenuBar = "ui/showMenuBar";
 constexpr auto showToolbar = "ui/showToolbar";
 constexpr auto showControlBar = "ui/showControlBar";
 constexpr auto showStatusBar = "ui/showStatusBar";
@@ -195,6 +196,24 @@ static int defaultDeinterlaceMode()
 #else
     return 0; // Auto
 #endif
+}
+
+// The menu bar is a QQC2 MenuBar, which has no way to wrap onto a second
+// row -- on a narrow phone screen it just gets clipped/overflows, unlike
+// the toolbar/control bar (which do wrap, see MainToolBar.qml/
+// ControlBar.qml). Ideally it would default to OFF on Android for that
+// reason, but for NOW it defaults to ON there too (2026-09) -- most menu
+// actions aren't yet reachable from the toolbar's own editable catalog,
+// so hiding the menu bar from the very first launch would make large
+// parts of the app undiscoverable. Revisit turning this back off once
+// the toolbar catalog covers enough of the menu bar's own actions.
+// This is a genuine, user-editable preference either way (unlike
+// startInFullscreen(), which Android hard-forces via its own getter
+// override) -- only affects the FIRST-launch stored value; an existing
+// persisted value (any platform) is honored as-is.
+static bool defaultShowMenuBar()
+{
+    return true;
 }
 
 // Reads a password from the OS secure store; one-time migration for anyone
@@ -418,6 +437,7 @@ Settings::Settings(QObject *parent)
       m_controlBarIconSize(
               qBound(16, m_store.value(Keys::controlBarIconSize, 24).toInt(), 48)),
       m_showTrayIcon(m_store.value(Keys::showTrayIcon, false).toBool()),
+      m_showMenuBar(m_store.value(Keys::showMenuBar, defaultShowMenuBar()).toBool()),
       m_showToolbar(m_store.value(Keys::showToolbar, true).toBool()),
       m_showControlBar(m_store.value(Keys::showControlBar, true).toBool()),
       m_showStatusBar(m_store.value(Keys::showStatusBar, true).toBool()),
@@ -552,6 +572,15 @@ void Settings::setShowTrayIcon(bool show)
     m_showTrayIcon = show;
     m_store.setValue(Keys::showTrayIcon, show);
     emit showTrayIconChanged();
+}
+
+void Settings::setShowMenuBar(bool show)
+{
+    if (show == m_showMenuBar)
+        return;
+    m_showMenuBar = show;
+    m_store.setValue(Keys::showMenuBar, show);
+    emit showMenuBarChanged();
 }
 
 void Settings::setShowToolbar(bool show)

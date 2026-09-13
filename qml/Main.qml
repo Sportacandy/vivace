@@ -404,7 +404,7 @@ ApplicationWindow {
 
     menuBar: MainMenuBar {
         id: mainMenuBar
-        visible: !root.fullscreen
+        visible: !root.fullscreen && Settings.showMenuBar
         controller: playerController
         fullscreen: root.fullscreen
         playlistOpen: root.playlistOpen
@@ -2123,6 +2123,7 @@ ApplicationWindow {
         MainMenuBar {
             id: fsMenuBar
             width: parent.width
+            visible: Settings.showMenuBar
             controller: playerController
             fullscreen: root.fullscreen
             playlistOpen: root.playlistOpen
