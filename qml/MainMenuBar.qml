@@ -78,6 +78,16 @@ MenuBar {
                 Math.max(0.1, Math.round(Settings.playbackRate * factor * 100) / 100)
     }
 
+    // The +/-1%/4%/10% actions are fixed additive steps against the current
+    // speed (matching SMPlayer's Core::incSpeed10/decSpeed10/etc. -- e.g.
+    // "+10%" always adds 0.10, it does not multiply the current speed by
+    // 1.1), unlike Halve/Double speed above, which are genuinely
+    // multiplicative and use adjustSpeed() for that reason.
+    function adjustSpeedStep(delta) {
+        Settings.playbackRate =
+                Math.max(0.1, Math.round((Settings.playbackRate + delta) * 100) / 100)
+    }
+
     function seekStepText(seconds) {
         return seconds % 60 === 0 && seconds >= 60
                ? qsTr("%n minute(s)", "", seconds / 60)
@@ -345,20 +355,20 @@ MenuBar {
                 text: qsTr("Speed &-10%")
                 icon.source: Theme.icon("speed-10")
                 shortcut: Shortcuts.sequences["speed_dec"]
-                onTriggered: bar.adjustSpeed(0.9)
+                onTriggered: bar.adjustSpeedStep(-0.1)
             }
             Action {
                 text: qsTr("Speed &+10%")
                 icon.source: Theme.icon("speed+10")
                 shortcut: Shortcuts.sequences["speed_inc"]
-                onTriggered: bar.adjustSpeed(1.1)
+                onTriggered: bar.adjustSpeedStep(0.1)
             }
             MenuSeparator {}
-            Action { text: qsTr("Speed -4%"); icon.source: Theme.icon("speed-04"); onTriggered: bar.adjustSpeed(0.96) }
-            Action { text: qsTr("Speed +4%"); icon.source: Theme.icon("speed+04"); onTriggered: bar.adjustSpeed(1.04) }
+            Action { text: qsTr("Speed -4%"); icon.source: Theme.icon("speed-04"); onTriggered: bar.adjustSpeedStep(-0.04) }
+            Action { text: qsTr("Speed +4%"); icon.source: Theme.icon("speed+04"); onTriggered: bar.adjustSpeedStep(0.04) }
             MenuSeparator {}
-            Action { text: qsTr("Speed -1%"); icon.source: Theme.icon("speed-01"); onTriggered: bar.adjustSpeed(0.99) }
-            Action { text: qsTr("Speed +1%"); icon.source: Theme.icon("speed+01"); onTriggered: bar.adjustSpeed(1.01) }
+            Action { text: qsTr("Speed -1%"); icon.source: Theme.icon("speed-01"); onTriggered: bar.adjustSpeedStep(-0.01) }
+            Action { text: qsTr("Speed +1%"); icon.source: Theme.icon("speed+01"); onTriggered: bar.adjustSpeedStep(0.01) }
             MenuSeparator {}
             Action {
                 text: qsTr("Pi&tch compensation")
