@@ -57,11 +57,11 @@ Window {
         visible = true
     }
 
-    // Which item kinds each bar can host: the main toolbar has no sliders,
-    // the control bar has no popup (track) menus.
+    // Which item kinds each bar can host: the main toolbar has no sliders
+    // (no predefined seek/volume slider instance exists there). The control
+    // bar now supports every kind, including popup menus (see ControlBar.qml).
     function allowsKind(kind) {
         if (target === "main") return kind !== "slider"
-        if (target === "control") return kind !== "menu"
         return true
     }
 

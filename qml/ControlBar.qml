@@ -17,8 +17,54 @@ Pane {
     id: controlBar
 
     required property PlayerController controller
+    // Number of videos in the YouTube download cache (drives the cache-browser
+    // button's enabled state) -- mirrors MainMenuBar/MainToolBar's own
+    // property of the same name.
+    property int youtubeCacheCount: 0
 
     signal fullscreenToggleRequested()
+    signal openBlurayRequested()
+    signal youtubeCacheRequested()
+    signal castRequested()
+    signal editTvChannelsRequested()
+    signal editRadioChannelsRequested()
+    signal videoEqualizerRequested()
+    signal resizeToVideoPercentRequested(int percent)
+    signal setAudioDelayRequested()
+    signal loadSubtitlesRequested()
+    signal findSubtitlesRequested()
+    signal setSubtitleDelayRequested()
+    signal addBookmarkRequested()
+    signal editBookmarksRequested()
+
+    // Forced display aspect ratios (SMPlayer's Video > Aspect ratio); 0 = auto.
+    // Mirrors MainMenuBar/MainToolBar's own array of the same name/shape.
+    readonly property var aspectRatios: [
+        { label: qsTr("Auto"), value: 0 },
+        { label: "1:1", value: 1 / 1 },
+        { label: "5:4", value: 5 / 4 },
+        { label: "4:3", value: 4 / 3 },
+        { label: "11:8", value: 11 / 8 },
+        { label: "14:10", value: 14 / 10 },
+        { label: "3:2", value: 3 / 2 },
+        { label: "14:9", value: 14 / 9 },
+        { label: "16:10", value: 16 / 10 },
+        { label: "16:9", value: 16 / 9 },
+        { label: "2.35:1", value: 2.35 }
+    ]
+
+    // Same semantics as MainMenuBar/MainToolBar's adjustSpeed()/
+    // adjustSpeedStep(): the former is multiplicative (Halve/Double
+    // speed), the latter a fixed additive step (+/-10%, matching
+    // SMPlayer's Core::incSpeed10/etc).
+    function adjustSpeed(factor) {
+        Settings.playbackRate =
+                Math.max(0.1, Math.round(Settings.playbackRate * factor * 100) / 100)
+    }
+    function adjustSpeedStep(delta) {
+        Settings.playbackRate =
+                Math.max(0.1, Math.round((Settings.playbackRate + delta) * 100) / 100)
+    }
 
     // The active GUI ("Basic"/"Mini"/"Mpc"). Basic uses the editable
     // control-bar layout; Mini/Mpc use their fixed SMPlayer layouts.
@@ -364,7 +410,9 @@ Pane {
     // A control-bar button whose icon/tooltip/visibility/column come from
     // its id; instances add only enabled/onClicked (and dynamic icons).
     component CBtn: ToolButton {
+        id: cbtn
         property string itemId: ""
+        property bool menuIndicator: false
         visible: controlBar.col(itemId) >= 0
         Layout.row: controlBar.wrapRow(controlBar.col(itemId))
         Layout.column: controlBar.wrapColumn(controlBar.col(itemId))
@@ -376,6 +424,263 @@ Pane {
         ToolTip.text: Items.labelFor(itemId)
         ToolTip.visible: hovered && ToolTip.text !== ""
         ToolTip.delay: 700
+
+        Canvas {
+            visible: cbtn.menuIndicator
+            width: 8; height: 6
+            anchors.right: parent.right
+            anchors.bottom: parent.bottom
+            anchors.rightMargin: 3
+            anchors.bottomMargin: 4
+            onPaint: {
+                const ctx = getContext("2d")
+                ctx.reset()
+                ctx.beginPath()
+                ctx.moveTo(0.5, 0.5); ctx.lineTo(width - 0.5, 0.5)
+                ctx.lineTo(width / 2, height - 0.5); ctx.closePath()
+                ctx.fillStyle = "#707070"; ctx.fill()
+                ctx.lineWidth = 1; ctx.strokeStyle = "#303030"; ctx.stroke()
+            }
+        }
+    }
+
+    // Popup menus for the menu-kind catalog items (mirrors MainToolBar.qml's
+    // own popups exactly; "favorites"/"audiotrack"/"subtitletrack" are not
+    // included -- those pre-date the editable-catalog rework and were never
+    // wired to the control bar, an older, separate gap this fix doesn't
+    // touch).
+    FavoritesMenu {
+        id: tvPopup
+        controller: controlBar.controller
+        model: controlBar.controller.tvChannels
+        itemIcon: Theme.icon("open_tv")
+        showActions: true
+        onEditRequested: controlBar.editTvChannelsRequested()
+        onAddCurrentRequested: controlBar.controller.addCurrentTo(controlBar.controller.tvChannels)
+    }
+    FavoritesMenu {
+        id: radioPopup
+        controller: controlBar.controller
+        model: controlBar.controller.radioChannels
+        itemIcon: Theme.icon("open_radio")
+        showActions: true
+        onEditRequested: controlBar.editRadioChannelsRequested()
+        onAddCurrentRequested: controlBar.controller.addCurrentTo(controlBar.controller.radioChannels)
+    }
+    AppMenu {
+        id: speedPopup
+        AppMenuItem {
+            text: qsTr("Normal speed")
+            icon.source: Theme.icon("speed-x100")
+            onTriggered: Settings.playbackRate = 1
+        }
+        MenuSeparator {}
+        AppMenuItem {
+            text: qsTr("Halve speed")
+            icon.source: Theme.icon("speed-x050")
+            onTriggered: controlBar.adjustSpeed(0.5)
+        }
+        AppMenuItem {
+            text: qsTr("Double speed")
+            icon.source: Theme.icon("speed-x200")
+            onTriggered: controlBar.adjustSpeed(2)
+        }
+        MenuSeparator {}
+        AppMenuItem {
+            text: qsTr("Speed -10%")
+            icon.source: Theme.icon("speed-10")
+            onTriggered: controlBar.adjustSpeedStep(-0.1)
+        }
+        AppMenuItem {
+            text: qsTr("Speed +10%")
+            icon.source: Theme.icon("speed+10")
+            onTriggered: controlBar.adjustSpeedStep(0.1)
+        }
+        MenuSeparator {}
+        AppMenuItem { text: qsTr("Speed -4%"); icon.source: Theme.icon("speed-04"); onTriggered: controlBar.adjustSpeedStep(-0.04) }
+        AppMenuItem { text: qsTr("Speed +4%"); icon.source: Theme.icon("speed+04"); onTriggered: controlBar.adjustSpeedStep(0.04) }
+        MenuSeparator {}
+        AppMenuItem { text: qsTr("Speed -1%"); icon.source: Theme.icon("speed-01"); onTriggered: controlBar.adjustSpeedStep(-0.01) }
+        AppMenuItem { text: qsTr("Speed +1%"); icon.source: Theme.icon("speed+01"); onTriggered: controlBar.adjustSpeedStep(0.01) }
+        MenuSeparator {}
+        AppMenuItem {
+            text: qsTr("Pitch compensation")
+            checkable: true
+            checked: Settings.pitchCompensation
+            enabled: controlBar.player.pitchCompensationAvailability === MediaPlayer.Available
+            onTriggered: {
+                Settings.pitchCompensation = checked
+                checked = Qt.binding(() => Settings.pitchCompensation)
+            }
+        }
+    }
+    AppMenu {
+        id: videoTrackPopup
+        Instantiator {
+            model: controlBar.controller.videoTrackLabels.length === 0 ? 1 : 0
+            delegate: AppMenuItem { text: qsTr("<empty>"); enabled: false }
+            onObjectAdded: (index, object) => videoTrackPopup.insertItem(0, object)
+            onObjectRemoved: (index, object) => videoTrackPopup.removeItem(object)
+        }
+        Instantiator {
+            model: controlBar.controller.videoTrackLabels
+            delegate: AppMenuItem {
+                required property int index
+                required property string modelData
+                text: modelData
+                checkable: true
+                checked: controlBar.controller.activeVideoTrack === index
+                onTriggered: {
+                    controlBar.controller.activeVideoTrack = index
+                    checked = Qt.binding(() => controlBar.controller.activeVideoTrack === index)
+                }
+            }
+            onObjectAdded: (index, object) => videoTrackPopup.insertItem(index, object)
+            onObjectRemoved: (index, object) => videoTrackPopup.removeItem(object)
+        }
+    }
+    AppMenu {
+        id: aspectPopup
+        Instantiator {
+            model: controlBar.aspectRatios
+            delegate: AppMenuItem {
+                required property int index
+                required property var modelData
+                text: modelData.label
+                checkable: true
+                checked: Math.abs(controlBar.controller.videoAspect - modelData.value) < 0.001
+                onTriggered: {
+                    controlBar.controller.videoAspect = modelData.value
+                    checked = Qt.binding(() => Math.abs(
+                        controlBar.controller.videoAspect - modelData.value) < 0.001)
+                }
+            }
+            onObjectAdded: (index, object) => aspectPopup.insertItem(index, object)
+            onObjectRemoved: (index, object) => aspectPopup.removeItem(object)
+        }
+    }
+    AppMenu {
+        id: rotatePopup
+        AppMenuItem {
+            text: qsTr("&None")
+            checkable: true
+            checked: controlBar.controller.videoRotation === 0
+            onTriggered: {
+                controlBar.controller.videoRotation = 0
+                checked = Qt.binding(() => controlBar.controller.videoRotation === 0)
+            }
+        }
+        AppMenuItem {
+            text: qsTr("&Rotate by 90° clockwise")
+            checkable: true
+            checked: controlBar.controller.videoRotation === 90
+            onTriggered: {
+                controlBar.controller.videoRotation = 90
+                checked = Qt.binding(() => controlBar.controller.videoRotation === 90)
+            }
+        }
+        AppMenuItem {
+            text: qsTr("Rotate by 90° &counterclockwise")
+            checkable: true
+            checked: controlBar.controller.videoRotation === 270
+            onTriggered: {
+                controlBar.controller.videoRotation = 270
+                checked = Qt.binding(() => controlBar.controller.videoRotation === 270)
+            }
+        }
+        AppMenuItem {
+            text: qsTr("Rotate by &180°")
+            checkable: true
+            checked: controlBar.controller.videoRotation === 180
+            onTriggered: {
+                controlBar.controller.videoRotation = 180
+                checked = Qt.binding(() => controlBar.controller.videoRotation === 180)
+            }
+        }
+    }
+    AppMenu {
+        id: videoSizePopup
+        AppMenuItem { text: qsTr("50%"); onTriggered: controlBar.resizeToVideoPercentRequested(50) }
+        AppMenuItem { text: qsTr("100%"); onTriggered: controlBar.resizeToVideoPercentRequested(100) }
+        AppMenuItem { text: qsTr("200%"); onTriggered: controlBar.resizeToVideoPercentRequested(200) }
+    }
+    AppMenu {
+        id: titlesPopup
+        Instantiator {
+            model: controlBar.controller.dvdPlayback ? controlBar.controller.dvdTitles
+                 : controlBar.controller.blurayPlayback ? controlBar.controller.blurayTitles
+                 : []
+            delegate: AppMenuItem {
+                required property int index
+                required property var modelData
+                text: modelData.label
+                checkable: true
+                checked: controlBar.controller.dvdPlayback
+                         ? modelData.number === controlBar.controller.dvdCurrentTitle
+                         : modelData.index === controlBar.controller.blurayCurrentTitle
+                onTriggered: controlBar.controller.dvdPlayback
+                             ? controlBar.controller.playDvdTitle(modelData.number)
+                             : controlBar.controller.playBlurayTitle(modelData.index)
+            }
+            onObjectAdded: (index, object) => titlesPopup.insertItem(index, object)
+            onObjectRemoved: (index, object) => titlesPopup.removeItem(object)
+        }
+        Instantiator {
+            model: (controlBar.controller.dvdTitles.length === 0
+                    && controlBar.controller.blurayTitles.length === 0) ? 1 : 0
+            delegate: AppMenuItem { text: qsTr("<empty>"); enabled: false }
+            onObjectAdded: (index, object) => titlesPopup.insertItem(0, object)
+            onObjectRemoved: (index, object) => titlesPopup.removeItem(object)
+        }
+    }
+    AppMenu {
+        id: chaptersPopup
+        Instantiator {
+            model: controlBar.controller.chapters
+            delegate: AppMenuItem {
+                required property int index
+                required property var modelData
+                text: modelData.label
+                onTriggered: controlBar.controller.playChapter(index)
+            }
+            onObjectAdded: (index, object) => chaptersPopup.insertItem(index, object)
+            onObjectRemoved: (index, object) => chaptersPopup.removeItem(object)
+        }
+        Instantiator {
+            model: controlBar.controller.chapters.length === 0 ? 1 : 0
+            delegate: AppMenuItem { text: qsTr("<empty>"); enabled: false }
+            onObjectAdded: (index, object) => chaptersPopup.insertItem(0, object)
+            onObjectRemoved: (index, object) => chaptersPopup.removeItem(object)
+        }
+    }
+    AppMenu {
+        id: bookmarksPopup
+        readonly property var entries: {
+            controlBar.controller.bookmarks.revision // establish dependency
+            return controlBar.controller.bookmarks.entries()
+        }
+        AppMenuItem {
+            text: qsTr("&Add new bookmark")
+            enabled: controlBar.player.source.toString() !== ""
+            onTriggered: controlBar.addBookmarkRequested()
+        }
+        AppMenuItem {
+            text: qsTr("&Edit bookmarks…")
+            enabled: controlBar.player.source.toString() !== ""
+            onTriggered: controlBar.editBookmarksRequested()
+        }
+        MenuSeparator {}
+        Instantiator {
+            model: bookmarksPopup.entries
+            delegate: AppMenuItem {
+                required property int index
+                required property var modelData
+                text: modelData.label
+                onTriggered: controlBar.controller.goToBookmark(modelData.time)
+            }
+            onObjectAdded: (index, object) => bookmarksPopup.insertItem(index + 3, object)
+            onObjectRemoved: (index, object) => bookmarksPopup.removeItem(object)
+        }
     }
 
     padding: 4
@@ -520,6 +825,112 @@ Pane {
                 checkable: true
                 checked: Settings.muted
                 onClicked: Settings.muted = !Settings.muted
+            }
+            CBtn { itemId: "openbluray"; onClicked: controlBar.openBlurayRequested() }
+            CBtn {
+                itemId: "tv"; menuIndicator: true
+                onClicked: tvPopup.popup(this, 0, height)
+            }
+            CBtn {
+                itemId: "radio"; menuIndicator: true
+                onClicked: radioPopup.popup(this, 0, height)
+            }
+            CBtn {
+                itemId: "youtubecache"
+                enabled: controlBar.youtubeCacheCount > 0 && Settings.youtubeEnabled
+                         && Settings.youtubeMode === 1
+                onClicked: controlBar.youtubeCacheRequested()
+            }
+            CBtn { itemId: "cast"; onClicked: controlBar.castRequested() }
+            CBtn {
+                itemId: "speed"; menuIndicator: true
+                onClicked: speedPopup.popup(this, 0, height)
+            }
+            CBtn { itemId: "speedhalve"; onClicked: controlBar.adjustSpeed(0.5) }
+            CBtn { itemId: "speednormal"; onClicked: Settings.playbackRate = 1 }
+            CBtn { itemId: "speeddouble"; onClicked: controlBar.adjustSpeed(2) }
+            CBtn { itemId: "speeddec10"; onClicked: controlBar.adjustSpeedStep(-0.1) }
+            CBtn { itemId: "speedinc10"; onClicked: controlBar.adjustSpeedStep(0.1) }
+            CBtn { itemId: "abmarkera"; onClicked: controlBar.controller.setAMarker() }
+            CBtn { itemId: "abmarkerb"; onClicked: controlBar.controller.setBMarker() }
+            CBtn { itemId: "abclear"; onClicked: controlBar.controller.clearABMarkers() }
+            CBtn {
+                itemId: "videotrack"; menuIndicator: true
+                enabled: controlBar.controller.videoTrackLabels.length > 0
+                onClicked: videoTrackPopup.popup(this, 0, height)
+            }
+            CBtn { itemId: "equalizer"; onClicked: controlBar.videoEqualizerRequested() }
+            CBtn {
+                itemId: "aspectratio"; menuIndicator: true
+                enabled: controlBar.player.hasVideo
+                onClicked: aspectPopup.popup(this, 0, height)
+            }
+            CBtn {
+                itemId: "rotate"; menuIndicator: true
+                enabled: controlBar.player.hasVideo
+                onClicked: rotatePopup.popup(this, 0, height)
+            }
+            CBtn {
+                itemId: "videosize"; menuIndicator: true
+                enabled: controlBar.player.hasVideo
+                onClicked: videoSizePopup.popup(this, 0, height)
+            }
+            CBtn {
+                itemId: "flip"
+                enabled: controlBar.player.hasVideo
+                checkable: true
+                checked: controlBar.controller.videoFlip
+                onClicked: controlBar.controller.videoFlip = !controlBar.controller.videoFlip
+            }
+            CBtn {
+                itemId: "mirror"
+                enabled: controlBar.player.hasVideo
+                checkable: true
+                checked: controlBar.controller.videoMirror
+                onClicked: controlBar.controller.videoMirror = !controlBar.controller.videoMirror
+            }
+            CBtn {
+                itemId: "audiodelaydec"
+                onClicked: controlBar.controller.adjustFileAudioDelay(-100)
+            }
+            CBtn {
+                itemId: "audiodelayinc"
+                onClicked: controlBar.controller.adjustFileAudioDelay(100)
+            }
+            CBtn { itemId: "audiodelayset"; onClicked: controlBar.setAudioDelayRequested() }
+            CBtn { itemId: "loadsubtitles"; onClicked: controlBar.loadSubtitlesRequested() }
+            CBtn { itemId: "findsubtitles"; onClicked: controlBar.findSubtitlesRequested() }
+            CBtn { itemId: "unloadsubtitles"; onClicked: controlBar.controller.unloadSubtitles() }
+            CBtn {
+                itemId: "subtitledelaydec"
+                onClicked: controlBar.controller.adjustSubtitleDelay(-100)
+            }
+            CBtn {
+                itemId: "subtitledelayinc"
+                onClicked: controlBar.controller.adjustSubtitleDelay(100)
+            }
+            CBtn { itemId: "subtitledelayset"; onClicked: controlBar.setSubtitleDelayRequested() }
+            CBtn {
+                itemId: "dvdmenu"
+                enabled: controlBar.controller.dvdHasMenu
+                onClicked: controlBar.controller.showDvdMenu()
+            }
+            CBtn {
+                itemId: "titles"; menuIndicator: true
+                onClicked: titlesPopup.popup(this, 0, height)
+            }
+            CBtn {
+                itemId: "chaptersmenu"; menuIndicator: true
+                onClicked: chaptersPopup.popup(this, 0, height)
+            }
+            CBtn {
+                itemId: "bookmarksmenu"; menuIndicator: true
+                onClicked: bookmarksPopup.popup(this, 0, height)
+            }
+            CBtn {
+                itemId: "addbookmark"
+                enabled: controlBar.player.source.toString() !== ""
+                onClicked: controlBar.addBookmarkRequested()
             }
 
             SeekSlider {

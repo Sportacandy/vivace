@@ -2080,7 +2080,28 @@ ApplicationWindow {
         visible: !root.fullscreen && Settings.showControlBar
         controller: playerController
         guiMode: Settings.gui
+        youtubeCacheCount: youtubeResolver.cacheCount
         onFullscreenToggleRequested: root.toggleFullscreen()
+        onOpenBlurayRequested: blurayDialog.open()
+        onYoutubeCacheRequested: cacheBrowser.openDialog()
+        onCastRequested: castDialog.open()
+        onEditTvChannelsRequested: favoritesDialog.openFor(
+                qsTr("TV editor"), qsTr("TV channels"), Theme.icon("open_tv"),
+                playerController.tvChannels)
+        onEditRadioChannelsRequested: favoritesDialog.openFor(
+                qsTr("Radio editor"), qsTr("Radio channels"), Theme.icon("open_radio"),
+                playerController.radioChannels)
+        onVideoEqualizerRequested: videoEqualizerDialog.open()
+        onResizeToVideoPercentRequested: percent => root.resizeToVideoPercent(percent)
+        onSetAudioDelayRequested: audioDelayDialog.openDialog()
+        onLoadSubtitlesRequested: subtitleDialog.open()
+        onFindSubtitlesRequested: findSubtitlesDialog.openDialog()
+        onSetSubtitleDelayRequested: subtitleDelayDialog.open()
+        onAddBookmarkRequested: {
+            playerController.addBookmark()
+            root.showOsd(qsTr("Bookmark added"))
+        }
+        onEditBookmarksRequested: bookmarksDialog.open()
     }
 
     // Fullscreen chrome (top menu bar + toolbar, bottom transport controls) is
@@ -2180,6 +2201,27 @@ ApplicationWindow {
         visible: root.fullscreen && root.bottomChromeShown
         controller: playerController
         guiMode: Settings.gui
+        youtubeCacheCount: youtubeResolver.cacheCount
         onFullscreenToggleRequested: root.toggleFullscreen()
+        onOpenBlurayRequested: blurayDialog.open()
+        onYoutubeCacheRequested: cacheBrowser.openDialog()
+        onCastRequested: castDialog.open()
+        onEditTvChannelsRequested: favoritesDialog.openFor(
+                qsTr("TV editor"), qsTr("TV channels"), Theme.icon("open_tv"),
+                playerController.tvChannels)
+        onEditRadioChannelsRequested: favoritesDialog.openFor(
+                qsTr("Radio editor"), qsTr("Radio channels"), Theme.icon("open_radio"),
+                playerController.radioChannels)
+        onVideoEqualizerRequested: videoEqualizerDialog.open()
+        onResizeToVideoPercentRequested: percent => root.resizeToVideoPercent(percent)
+        onSetAudioDelayRequested: audioDelayDialog.openDialog()
+        onLoadSubtitlesRequested: subtitleDialog.open()
+        onFindSubtitlesRequested: findSubtitlesDialog.openDialog()
+        onSetSubtitleDelayRequested: subtitleDelayDialog.open()
+        onAddBookmarkRequested: {
+            playerController.addBookmark()
+            root.showOsd(qsTr("Bookmark added"))
+        }
+        onEditBookmarksRequested: bookmarksDialog.open()
     }
 }
