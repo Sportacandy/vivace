@@ -15,7 +15,6 @@ import QtQuick.Dialogs
 import QtQuick.Layouts
 import QtMultimedia
 import Qt.labs.platform as Platform
-import "ToolbarItems.js" as ToolbarItems
 import "GeometryUtils.js" as GeometryUtils
 
 // (FolderDialog also comes from QtQuick.Dialogs)
@@ -44,6 +43,19 @@ ApplicationWindow {
 
     width: 1280
     height: 760
+    // Keep the window at least as wide as the menu bar needs -- unlike the
+    // toolbar/control bar (which wrap to a second row when the window gets
+    // narrow), MenuBar has no such wrap capability, so a window narrower
+    // than its natural content width would clip/overflow it. mainMenuBar's
+    // own implicitWidth (Fusion's MenuBar.qml: a plain Row of MenuBarItems,
+    // whose implicitWidth is the natural unclipped sum regardless of the
+    // width it's actually stretched to as the docked menuBar) already
+    // reflects the real minimum needed for the current language/font/touch
+    // settings, so this stays correct without hardcoding a guessed number.
+    // Android has no drag-resizable window at all (always fullscreen), so
+    // this is a no-op there.
+    minimumWidth: Qt.platform.os === "android" ? 0
+                  : (Settings.showMenuBar ? Math.ceil(mainMenuBar.implicitWidth) : 0)
     visible: true
     // Fullscreen is permanently forced on Android (no real windowed mode
     // makes sense there) -- set as the initial state here, then never
@@ -442,12 +454,6 @@ ApplicationWindow {
         onScreenshotRequested: root.takeScreenshot()
         onInfoRequested: mediaInfoDialog.open()
         onPreferencesRequested: preferencesDialog.open()
-        onEditMainToolbarRequested: toolbarEditor.openFor(
-                qsTr("Edit main toolbar"), "main", Settings.mainToolbarItems,
-                ToolbarItems.defaultMainToolbar, Settings.mainToolbarIconSize)
-        onEditControlBarRequested: toolbarEditor.openFor(
-                qsTr("Edit control bar"), "control", Settings.controlBarItems,
-                ToolbarItems.defaultControlBar, Settings.controlBarIconSize)
         onAboutRequested: aboutDialog.open()
         onHelpContentsRequested: helpDialog.open()
         onCheckForUpdatesRequested: updateChecker.checkNow()
@@ -492,6 +498,10 @@ ApplicationWindow {
             root.showOsd(qsTr("Bookmark added"))
         }
         onEditBookmarksRequested: bookmarksDialog.open()
+        onOpenPlaylistRequested: playlistDialog.open()
+        onHelpContentsRequested: helpDialog.open()
+        onCheckForUpdatesRequested: updateChecker.checkNow()
+        onAboutRequested: aboutDialog.open()
     }
 
     function takeScreenshot() {
@@ -1992,19 +2002,6 @@ ApplicationWindow {
         controller: playerController
     }
 
-    ToolbarEditor {
-        id: toolbarEditor
-        onAccepted: (target, items, iconSize) => {
-            if (target === "main") {
-                Settings.mainToolbarItems = items
-                Settings.mainToolbarIconSize = iconSize
-            } else if (target === "control") {
-                Settings.controlBarItems = items
-                Settings.controlBarIconSize = iconSize
-            }
-        }
-    }
-
     // System tray icon (Options > Show icon in system tray). Left click
     // toggles the window; the context menu has show/hide, play/pause, quit.
     Platform.SystemTrayIcon {
@@ -2102,6 +2099,10 @@ ApplicationWindow {
             root.showOsd(qsTr("Bookmark added"))
         }
         onEditBookmarksRequested: bookmarksDialog.open()
+        onOpenPlaylistRequested: playlistDialog.open()
+        onHelpContentsRequested: helpDialog.open()
+        onCheckForUpdatesRequested: updateChecker.checkNow()
+        onAboutRequested: aboutDialog.open()
     }
 
     // Fullscreen chrome (top menu bar + toolbar, bottom transport controls) is
@@ -2171,7 +2172,6 @@ ApplicationWindow {
                 "videoEqualizerRequested", "resizeToVideoPercentRequested",
                 "fullscreenToggleRequested", "playlistToggleRequested",
                 "screenshotRequested", "infoRequested", "preferencesRequested",
-                "editMainToolbarRequested", "editControlBarRequested",
                 "aboutRequested", "checkForUpdatesRequested",
                 "helpContentsRequested"]
             for (const n of mm)
@@ -2186,7 +2186,9 @@ ApplicationWindow {
                 "resizeToVideoPercentRequested", "setAudioDelayRequested",
                 "loadSubtitlesRequested", "findSubtitlesRequested",
                 "setSubtitleDelayRequested", "addBookmarkRequested",
-                "editBookmarksRequested"]
+                "editBookmarksRequested", "openPlaylistRequested",
+                "helpContentsRequested", "checkForUpdatesRequested",
+                "aboutRequested"]
             for (const n of tt)
                 fsToolBar[n].connect(mainToolBar[n])
         }
@@ -2223,5 +2225,9 @@ ApplicationWindow {
             root.showOsd(qsTr("Bookmark added"))
         }
         onEditBookmarksRequested: bookmarksDialog.open()
+        onOpenPlaylistRequested: playlistDialog.open()
+        onHelpContentsRequested: helpDialog.open()
+        onCheckForUpdatesRequested: updateChecker.checkNow()
+        onAboutRequested: aboutDialog.open()
     }
 }

@@ -176,6 +176,7 @@ Window {
                         ListElement { name: qsTr("Drives"); iconFile: "pref_devices" }
                         ListElement { name: qsTr("Subtitles"); iconFile: "pref_subtitles" }
                         ListElement { name: qsTr("Interface"); iconFile: "pref_gui" }
+                        ListElement { name: qsTr("Toolbars"); iconFile: "toolbar" }
                         ListElement { name: qsTr("Keyboard and mouse"); iconFile: "mouse" }
                         ListElement { name: qsTr("Playlist"); iconFile: "pref_playlist" }
                         ListElement { name: qsTr("TV and radio"); iconFile: "pref_tv" }
@@ -238,6 +239,7 @@ Window {
                 PrefDrivesPage {}
                 PrefSubtitlesPage {}
                 PrefInterfacePage {}
+                PrefToolsPage {}
                 PrefInputPage {}
                 PrefPlaylistPage {}
                 PrefTVPage {}

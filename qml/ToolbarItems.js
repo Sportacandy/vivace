@@ -5,18 +5,21 @@
     Catalog of toolbar-editable items and the default bar layouts. Icon
     fields are Theme icon names (resolved at render time so icon-set
     switching applies). Labels are plain (translation is Phase 6). Used by
-    the data-driven MainToolBar / ControlBar and by ToolbarEditor.
+    the data-driven MainToolBar / ControlBar and by Preferences > Toolbars
+    (PrefToolsPage.qml)'s embedded dual-list editor.
 */
 .pragma library
 
 // kind: "button" (icon action), "menu" (popup button), "slider" (stretch),
 // "spacer" (stretch filler), "separator".
 var catalog = [
+    { id: "recentfiles",   label: "Recent files",      icon: "recents",        kind: "menu" },
     { id: "open",          label: "Open file…",        icon: "open",           kind: "button" },
     { id: "opendvd",       label: "Open DVD",          icon: "dvd",            kind: "button" },
     { id: "openbluray",    label: "Open Blu-ray",      icon: "dvd",            kind: "button" },
     { id: "openfolder",    label: "Open directory…",   icon: "openfolder",     kind: "button" },
     { id: "url",           label: "Open URL…",         icon: "url",            kind: "button" },
+    { id: "openplaylist",  label: "Open playlist…",    icon: "open_playlist",  kind: "button" },
     { id: "favorites",     label: "Favorites",         icon: "open_favorites", kind: "menu" },
     { id: "tv",            label: "TV",                icon: "open_tv",        kind: "menu" },
     { id: "radio",         label: "Radio",             icon: "open_radio",     kind: "menu" },
@@ -38,6 +41,8 @@ var catalog = [
     { id: "forwardshort",  label: "Forward (short)",   icon: "forward10s",     kind: "button" },
     { id: "forwardmed",    label: "Forward (medium)",  icon: "forward1m",      kind: "button" },
     { id: "forwardlong",   label: "Forward (long)",    icon: "forward10m",     kind: "button" },
+    { id: "framestep",     label: "Frame step",        icon: "forward10s",     kind: "button" },
+    { id: "framebackstep", label: "Frame back step",  icon: "rewind10s",      kind: "button" },
     { id: "speed",         label: "Speed",             icon: "speed",          kind: "menu" },
     { id: "speedhalve",    label: "Halve speed",       icon: "speed-x050",     kind: "button" },
     { id: "speednormal",   label: "Normal speed",      icon: "speed-x100",     kind: "button" },
@@ -47,6 +52,7 @@ var catalog = [
     { id: "abmarkera",     label: "Set A marker",      icon: "a_marker",       kind: "button" },
     { id: "abmarkerb",     label: "Set B marker",      icon: "b_marker",       kind: "button" },
     { id: "abclear",       label: "Clear A-B markers", icon: "delete",         kind: "button" },
+    { id: "abrepeat",      label: "A-B repeat",        icon: "repeat",         kind: "button" },
     { id: "fullscreen",    label: "Fullscreen",        icon: "fullscreen",     kind: "button" },
     { id: "mute",          label: "Mute",              icon: "volume",         kind: "button" },
     { id: "audiotrack",    label: "Audio track",       icon: "audio_track",    kind: "menu" },
@@ -56,6 +62,7 @@ var catalog = [
     { id: "aspectratio",   label: "Aspect ratio",      icon: "aspect",         kind: "menu" },
     { id: "rotate",        label: "Rotate",            icon: "rotate",         kind: "menu" },
     { id: "videosize",     label: "Video size",        icon: "video_size",     kind: "menu" },
+    { id: "zoompan",       label: "Zoom and pan",      icon: "video_size",     kind: "menu" },
     { id: "flip",          label: "Flip image",        icon: "flip",           kind: "button" },
     { id: "mirror",        label: "Mirror image",      icon: "mirror",         kind: "button" },
     { id: "audiodelaydec", label: "Audio delay -",     icon: "audio_delay_dec",kind: "button" },
@@ -72,6 +79,7 @@ var catalog = [
     { id: "chaptersmenu",  label: "Chapters",          icon: "chapter",        kind: "menu" },
     { id: "bookmarksmenu", label: "Bookmarks",         icon: "bookmarks",      kind: "menu" },
     { id: "addbookmark",   label: "Add bookmark",      icon: "add_bookmark",   kind: "button" },
+    { id: "help",          label: "Help",              icon: "guide",          kind: "menu" },
     { id: "seekslider",    label: "Seek bar",          icon: "",               kind: "slider" },
     { id: "volumeslider",  label: "Volume bar",        icon: "",               kind: "slider" },
     { id: "spacer",        label: "(stretch)",         icon: "",               kind: "spacer" },

@@ -49,6 +49,10 @@ ToolBar {
     signal setSubtitleDelayRequested()
     signal addBookmarkRequested()
     signal editBookmarksRequested()
+    signal openPlaylistRequested()
+    signal helpContentsRequested()
+    signal checkForUpdatesRequested()
+    signal aboutRequested()
 
     readonly property QtObject player: controller.player
 
@@ -498,6 +502,64 @@ ToolBar {
             onObjectRemoved: (index, object) => bookmarksPopup.removeItem(object)
         }
     }
+    AppMenu {
+        id: recentFilesPopup
+        Instantiator {
+            model: toolBar.controller.recents.titles
+            delegate: AppMenuItem {
+                required property int index
+                required property string modelData
+                text: modelData
+                onTriggered: toolBar.controller.open(
+                                 [toolBar.controller.recents.urlAt(index)])
+            }
+            onObjectAdded: (index, object) => recentFilesPopup.insertItem(index, object)
+            onObjectRemoved: (index, object) => recentFilesPopup.removeItem(object)
+        }
+        Instantiator {
+            model: toolBar.controller.recents.count === 0 ? 1 : 0
+            delegate: AppMenuItem { text: qsTr("(empty)"); enabled: false }
+            onObjectAdded: (index, object) => recentFilesPopup.insertItem(0, object)
+            onObjectRemoved: (index, object) => recentFilesPopup.removeItem(object)
+        }
+        MenuSeparator {}
+        AppMenuItem {
+            text: qsTr("Clear")
+            enabled: toolBar.controller.recents.count > 0
+            onTriggered: toolBar.controller.recents.clear()
+        }
+    }
+    AppMenu {
+        id: zoomPanPopup
+        AppMenuItem { text: qsTr("Reset"); onTriggered: toolBar.controller.resetZoomAndPan() }
+        AppMenuItem { text: qsTr("Zoom -"); onTriggered: toolBar.controller.zoomOut() }
+        AppMenuItem { text: qsTr("Zoom +"); onTriggered: toolBar.controller.zoomIn() }
+        MenuSeparator {}
+        AppMenuItem { text: qsTr("Move left"); onTriggered: toolBar.controller.panBy(-16, 0) }
+        AppMenuItem { text: qsTr("Move right"); onTriggered: toolBar.controller.panBy(16, 0) }
+        AppMenuItem { text: qsTr("Move up"); onTriggered: toolBar.controller.panBy(0, -16) }
+        AppMenuItem { text: qsTr("Move down"); onTriggered: toolBar.controller.panBy(0, 16) }
+    }
+    AppMenu {
+        id: helpPopup
+        AppMenuItem {
+            text: qsTr("Contents")
+            icon.source: Theme.icon("guide")
+            onTriggered: toolBar.helpContentsRequested()
+        }
+        MenuSeparator {}
+        AppMenuItem {
+            text: qsTr("Check for updates")
+            icon.source: Theme.icon("check_updates")
+            onTriggered: toolBar.checkForUpdatesRequested()
+        }
+        MenuSeparator {}
+        AppMenuItem {
+            text: qsTr("About Vivace")
+            icon.source: Theme.icon("logo")
+            onTriggered: toolBar.aboutRequested()
+        }
+    }
 
     GridLayout {
         anchors.fill: parent
@@ -745,6 +807,28 @@ ToolBar {
             itemId: "addbookmark"
             enabled: toolBar.player.source.toString() !== ""
             onClicked: toolBar.addBookmarkRequested()
+        }
+        TBtn {
+            itemId: "recentfiles"; menuIndicator: true
+            onClicked: recentFilesPopup.popup(this, 0, height)
+        }
+        TBtn { itemId: "openplaylist"; onClicked: toolBar.openPlaylistRequested() }
+        TBtn { itemId: "framestep"; onClicked: toolBar.controller.frameStep(1) }
+        TBtn { itemId: "framebackstep"; onClicked: toolBar.controller.frameStep(-1) }
+        TBtn {
+            itemId: "abrepeat"
+            checkable: true
+            checked: Settings.playlistRepeat
+            onClicked: Settings.playlistRepeat = !Settings.playlistRepeat
+        }
+        TBtn {
+            itemId: "zoompan"; menuIndicator: true
+            enabled: toolBar.player.hasVideo
+            onClicked: zoomPanPopup.popup(this, 0, height)
+        }
+        TBtn {
+            itemId: "help"; menuIndicator: true
+            onClicked: helpPopup.popup(this, 0, height)
         }
     }
 }

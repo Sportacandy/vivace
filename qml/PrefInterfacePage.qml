@@ -14,9 +14,24 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Dialogs
 import QtQuick.Layouts
+import "ToolbarItems.js" as Items
 
 ColumnLayout {
     spacing: 8
+
+    // Mirrors BarEditor's own wouldStrandPreferences() check (PrefToolsPage.qml)
+    // from the other direction: turning the menu bar off must not leave
+    // Preferences completely unreachable either. Same criteria (effective
+    // item-list membership only, not bar visibility/GUI-mode nuance) for
+    // consistency with that guard.
+    function menuBarOffWouldStrandPreferences() {
+        const mainItems = Settings.mainToolbarItems.length > 0
+                           ? Settings.mainToolbarItems : Items.defaultMainToolbar
+        const controlItems = Settings.controlBarItems.length > 0
+                              ? Settings.controlBarItems : Items.defaultControlBar
+        return mainItems.indexOf("preferences") < 0
+               && controlItems.indexOf("preferences") < 0
+    }
 
     readonly property string helpText: qsTr(
         "<h1>Interface</h1>"
@@ -25,9 +40,10 @@ ColumnLayout {
         + "(auto-resize, centre, keep on screen, remember geometry, hide the "
         + "video area for audio-only files), whether the menu bar is shown "
         + "(it can't wrap onto a second row the way the toolbar and control "
-        + "bar can, so it's easy to run out of room for it on a narrow "
-        + "phone screen), the toolbar gradient, and the native file dialog "
-        + "toggle.</p>"
+        + "bar can, so the window won't shrink narrower than the menu bar "
+        + "needs — except on Android, which has no minimum window size and "
+        + "can run out of room for it), the toolbar gradient, and the "
+        + "native file dialog toggle.</p>"
         + "<p><b>Text</b> — the application font, OSD options, touch-friendly "
         + "sizing, and the high-DPI scale-factor override (Vivace scales "
         + "automatically otherwise).</p>"
@@ -265,14 +281,26 @@ ColumnLayout {
                     CheckBox {
                         text: qsTr("Show menu bar")
                         checked: Settings.showMenuBar
-                        onToggled: Settings.showMenuBar = checked
+                        onToggled: {
+                            if (!checked && menuBarOffWouldStrandPreferences()) {
+                                ToolTip.show(qsTr("Can't turn off: Preferences isn't on "
+                                                  + "the Toolbar or Control bar, so the "
+                                                  + "menu bar must stay on to reach it."),
+                                             3000)
+                                checked = Qt.binding(() => Settings.showMenuBar)
+                                return
+                            }
+                            Settings.showMenuBar = checked
+                        }
                     }
                     HelpMark {
                         text: qsTr("The menu bar can't wrap onto a second row on a narrow"
-                                   + " screen (unlike the toolbar and control bar), so it can"
-                                   + " run out of room on a phone. Turn it off if that"
-                                   + " happens -- every menu action that's also on the"
-                                   + " toolbar (e.g. Preferences) stays reachable either way.")
+                                   + " screen (unlike the toolbar and control bar), so the"
+                                   + " window won't shrink narrower than it needs -- except on"
+                                   + " Android, which has no minimum window size and can run"
+                                   + " out of room for it. Turn it off if that happens -- every"
+                                   + " menu action that's also on the toolbar (e.g."
+                                   + " Preferences) stays reachable either way.")
                     }
                 }
                 CheckBox {

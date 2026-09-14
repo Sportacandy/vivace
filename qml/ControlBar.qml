@@ -36,6 +36,10 @@ Pane {
     signal setSubtitleDelayRequested()
     signal addBookmarkRequested()
     signal editBookmarksRequested()
+    signal openPlaylistRequested()
+    signal helpContentsRequested()
+    signal checkForUpdatesRequested()
+    signal aboutRequested()
 
     // Forced display aspect ratios (SMPlayer's Video > Aspect ratio); 0 = auto.
     // Mirrors MainMenuBar/MainToolBar's own array of the same name/shape.
@@ -682,6 +686,64 @@ Pane {
             onObjectRemoved: (index, object) => bookmarksPopup.removeItem(object)
         }
     }
+    AppMenu {
+        id: recentFilesPopup
+        Instantiator {
+            model: controlBar.controller.recents.titles
+            delegate: AppMenuItem {
+                required property int index
+                required property string modelData
+                text: modelData
+                onTriggered: controlBar.controller.open(
+                                 [controlBar.controller.recents.urlAt(index)])
+            }
+            onObjectAdded: (index, object) => recentFilesPopup.insertItem(index, object)
+            onObjectRemoved: (index, object) => recentFilesPopup.removeItem(object)
+        }
+        Instantiator {
+            model: controlBar.controller.recents.count === 0 ? 1 : 0
+            delegate: AppMenuItem { text: qsTr("(empty)"); enabled: false }
+            onObjectAdded: (index, object) => recentFilesPopup.insertItem(0, object)
+            onObjectRemoved: (index, object) => recentFilesPopup.removeItem(object)
+        }
+        MenuSeparator {}
+        AppMenuItem {
+            text: qsTr("Clear")
+            enabled: controlBar.controller.recents.count > 0
+            onTriggered: controlBar.controller.recents.clear()
+        }
+    }
+    AppMenu {
+        id: zoomPanPopup
+        AppMenuItem { text: qsTr("Reset"); onTriggered: controlBar.controller.resetZoomAndPan() }
+        AppMenuItem { text: qsTr("Zoom -"); onTriggered: controlBar.controller.zoomOut() }
+        AppMenuItem { text: qsTr("Zoom +"); onTriggered: controlBar.controller.zoomIn() }
+        MenuSeparator {}
+        AppMenuItem { text: qsTr("Move left"); onTriggered: controlBar.controller.panBy(-16, 0) }
+        AppMenuItem { text: qsTr("Move right"); onTriggered: controlBar.controller.panBy(16, 0) }
+        AppMenuItem { text: qsTr("Move up"); onTriggered: controlBar.controller.panBy(0, -16) }
+        AppMenuItem { text: qsTr("Move down"); onTriggered: controlBar.controller.panBy(0, 16) }
+    }
+    AppMenu {
+        id: helpPopup
+        AppMenuItem {
+            text: qsTr("Contents")
+            icon.source: Theme.icon("guide")
+            onTriggered: controlBar.helpContentsRequested()
+        }
+        MenuSeparator {}
+        AppMenuItem {
+            text: qsTr("Check for updates")
+            icon.source: Theme.icon("check_updates")
+            onTriggered: controlBar.checkForUpdatesRequested()
+        }
+        MenuSeparator {}
+        AppMenuItem {
+            text: qsTr("About Vivace")
+            icon.source: Theme.icon("logo")
+            onTriggered: controlBar.aboutRequested()
+        }
+    }
 
     padding: 4
 
@@ -931,6 +993,28 @@ Pane {
                 itemId: "addbookmark"
                 enabled: controlBar.player.source.toString() !== ""
                 onClicked: controlBar.addBookmarkRequested()
+            }
+            CBtn {
+                itemId: "recentfiles"; menuIndicator: true
+                onClicked: recentFilesPopup.popup(this, 0, height)
+            }
+            CBtn { itemId: "openplaylist"; onClicked: controlBar.openPlaylistRequested() }
+            CBtn { itemId: "framestep"; onClicked: controlBar.controller.frameStep(1) }
+            CBtn { itemId: "framebackstep"; onClicked: controlBar.controller.frameStep(-1) }
+            CBtn {
+                itemId: "abrepeat"
+                checkable: true
+                checked: Settings.playlistRepeat
+                onClicked: Settings.playlistRepeat = !Settings.playlistRepeat
+            }
+            CBtn {
+                itemId: "zoompan"; menuIndicator: true
+                enabled: controlBar.player.hasVideo
+                onClicked: zoomPanPopup.popup(this, 0, height)
+            }
+            CBtn {
+                itemId: "help"; menuIndicator: true
+                onClicked: helpPopup.popup(this, 0, height)
             }
 
             SeekSlider {

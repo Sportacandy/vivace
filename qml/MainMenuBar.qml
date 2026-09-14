@@ -46,8 +46,6 @@ MenuBar {
     signal screenshotRequested()
     signal infoRequested()
     signal preferencesRequested()
-    signal editMainToolbarRequested()
-    signal editControlBarRequested()
     signal aboutRequested()
     signal checkForUpdatesRequested()
     signal helpContentsRequested()
@@ -1055,97 +1053,6 @@ MenuBar {
             checkable: true
             checked: Settings.showTrayIcon
             onTriggered: Settings.showTrayIcon = !Settings.showTrayIcon
-        }
-        AppMenu {
-            title: qsTr("&Toolbars")
-
-            Action {
-                text: qsTr("&Toolbar")
-                checkable: true
-                checked: Settings.showToolbar
-                onTriggered: Settings.showToolbar = !Settings.showToolbar
-            }
-            Action {
-                text: qsTr("&Control bar")
-                checkable: true
-                checked: Settings.showControlBar
-                onTriggered: Settings.showControlBar = !Settings.showControlBar
-            }
-            MenuSeparator {}
-            Action {
-                text: qsTr("&Edit main toolbar…")
-                onTriggered: bar.editMainToolbarRequested()
-            }
-            Action {
-                text: qsTr("Edit control &bar…")
-                onTriggered: bar.editControlBarRequested()
-            }
-        }
-        AppMenu {
-            title: qsTr("&Status bar")
-
-            Action {
-                text: qsTr("&Show status bar")
-                checkable: true
-                checked: Settings.showStatusBar
-                onTriggered: Settings.showStatusBar = !Settings.showStatusBar
-            }
-            MenuSeparator {}
-            Action {
-                text: qsTr("&Video info")
-                checkable: true
-                checked: Settings.statusVideoInfo
-                enabled: Settings.showStatusBar
-                onTriggered: Settings.statusVideoInfo = !Settings.statusVideoInfo
-            }
-            Action {
-                text: qsTr("&Audio info")
-                checkable: true
-                checked: Settings.statusAudioInfo
-                enabled: Settings.showStatusBar
-                onTriggered: Settings.statusAudioInfo = !Settings.statusAudioInfo
-            }
-            Action {
-                text: qsTr("F&ormat info")
-                checkable: true
-                checked: Settings.statusFormatInfo
-                enabled: Settings.showStatusBar
-                onTriggered: Settings.statusFormatInfo = !Settings.statusFormatInfo
-            }
-            Action {
-                text: qsTr("&Bitrate info")
-                checkable: true
-                checked: Settings.statusBitrateInfo
-                enabled: Settings.showStatusBar
-                onTriggered: Settings.statusBitrateInfo = !Settings.statusBitrateInfo
-            }
-            Action {
-                text: qsTr("&Frame counter")
-                checkable: true
-                checked: Settings.statusFrameCounter
-                enabled: Settings.showStatusBar
-                onTriggered: Settings.statusFrameCounter = !Settings.statusFrameCounter
-            }
-            MenuSeparator {}
-            Action {
-                text: qsTr("Display &total time")
-                checkable: true
-                checked: !Settings.timeDisplayRemaining
-                onTriggered: Settings.timeDisplayRemaining = false
-            }
-            Action {
-                text: qsTr("Display &remaining time")
-                checkable: true
-                checked: Settings.timeDisplayRemaining
-                onTriggered: Settings.timeDisplayRemaining = true
-            }
-            MenuSeparator {}
-            Action {
-                text: qsTr("Show the current time with &milliseconds")
-                checkable: true
-                checked: Settings.showMilliseconds
-                onTriggered: Settings.showMilliseconds = !Settings.showMilliseconds
-            }
         }
     }
 

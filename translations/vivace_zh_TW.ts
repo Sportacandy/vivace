@@ -202,12 +202,12 @@
     <message>
         <location filename="../qml/CacheBrowserDialog.qml" line="241"/>
         <source>OK</source>
-        <translation type="unfinished">確定(&amp;O)</translation>
+        <translation>確定(&amp;O)</translation>
     </message>
     <message>
         <location filename="../qml/CacheBrowserDialog.qml" line="272"/>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="../qml/CacheBrowserDialog.qml" line="281"/>
@@ -217,7 +217,7 @@
     <message>
         <location filename="../qml/CacheBrowserDialog.qml" line="284"/>
         <source>Playlists (*.m3u8 *.m3u)</source>
-        <translation type="unfinished">播放清單 (*.m3u8 *.m3u)</translation>
+        <translation>播放清單 (*.m3u8 *.m3u)</translation>
     </message>
     <message>
         <location filename="../qml/CacheBrowserDialog.qml" line="294"/>
@@ -227,12 +227,12 @@
     <message>
         <location filename="../qml/CacheBrowserDialog.qml" line="296"/>
         <source>Playlists (*.m3u *.m3u8)</source>
-        <translation type="unfinished">播放清單 (*.m3u *.m3u8)</translation>
+        <translation>播放清單 (*.m3u *.m3u8)</translation>
     </message>
     <message>
         <location filename="../qml/CacheBrowserDialog.qml" line="296"/>
         <source>All files (*)</source>
-        <translation type="unfinished">所有檔案 (*)</translation>
+        <translation>所有檔案 (*)</translation>
     </message>
     <message>
         <location filename="../qml/CacheBrowserDialog.qml" line="319"/>
@@ -421,51 +421,218 @@
 <context>
     <name>ControlBar</name>
     <message>
-        <location filename="../qml/ControlBar.qml" line="473"/>
-        <location filename="../qml/ControlBar.qml" line="479"/>
-        <location filename="../qml/ControlBar.qml" line="485"/>
+        <location filename="../qml/ControlBar.qml" line="47"/>
+        <source>Auto</source>
+        <translation>自動</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="477"/>
+        <source>Normal speed</source>
+        <translation>正常速度</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="483"/>
+        <source>Halve speed</source>
+        <translation>速度減半</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="488"/>
+        <source>Double speed</source>
+        <translation>雙倍速度(&amp;D)</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="494"/>
+        <source>Speed -10%</source>
+        <translation>速度 &amp;-10%</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="499"/>
+        <source>Speed +10%</source>
+        <translation>速度 &amp;+10%</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="504"/>
+        <source>Speed -4%</source>
+        <translation>速度 -&amp;4%</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="505"/>
+        <source>Speed +4%</source>
+        <translation>速度 +4% (&amp;S)</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="507"/>
+        <source>Speed -1%</source>
+        <translation>速度 -&amp;1%</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="508"/>
+        <source>Speed +1%</source>
+        <translation>速度 +1% (&amp;p)</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="511"/>
+        <source>Pitch compensation</source>
+        <translation>音高補償</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="525"/>
+        <location filename="../qml/ControlBar.qml" line="635"/>
+        <location filename="../qml/ControlBar.qml" line="655"/>
+        <source>&lt;empty&gt;</source>
+        <translation>&lt;空&gt;</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="569"/>
+        <source>&amp;None</source>
+        <translation>無(&amp;N)</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="578"/>
+        <source>&amp;Rotate by 90° clockwise</source>
+        <translation>順時針旋轉 90°(&amp;R)</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="587"/>
+        <source>Rotate by 90° &amp;counterclockwise</source>
+        <translation>逆時針旋轉 90°(&amp;C)</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="596"/>
+        <source>Rotate by &amp;180°</source>
+        <translation>旋轉 180°(&amp;1)</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="607"/>
+        <source>50%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="608"/>
+        <source>100%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="609"/>
+        <source>200%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="667"/>
+        <source>&amp;Add new bookmark</source>
+        <translation>新增新書籤(&amp;A)</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="672"/>
+        <source>&amp;Edit bookmarks…</source>
+        <translation>編輯書籤(&amp;E)…</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="705"/>
+        <source>(empty)</source>
+        <translation>（空）</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="711"/>
+        <source>Clear</source>
+        <translation>清除</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="718"/>
+        <source>Reset</source>
+        <translation>重置(&amp;R)</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="719"/>
+        <source>Zoom -</source>
+        <translation>縮小</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="720"/>
+        <source>Zoom +</source>
+        <translation>放大</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="722"/>
+        <source>Move left</source>
+        <translation>左移(&amp;L)</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="723"/>
+        <source>Move right</source>
+        <translation>右移(&amp;R)</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="724"/>
+        <source>Move up</source>
+        <translation>上移(&amp;U)</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="725"/>
+        <source>Move down</source>
+        <translation>下移(&amp;D)</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="730"/>
+        <source>Contents</source>
+        <translation>內容</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="736"/>
+        <source>Check for updates</source>
+        <translation>檢查更新</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="742"/>
+        <source>About Vivace</source>
+        <translation>關於 Vivace</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="840"/>
+        <location filename="../qml/ControlBar.qml" line="846"/>
+        <location filename="../qml/ControlBar.qml" line="852"/>
         <source>Rewind %1 s</source>
         <translation>倒轉 %1 秒</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="491"/>
-        <location filename="../qml/ControlBar.qml" line="497"/>
-        <location filename="../qml/ControlBar.qml" line="503"/>
+        <location filename="../qml/ControlBar.qml" line="858"/>
+        <location filename="../qml/ControlBar.qml" line="864"/>
+        <location filename="../qml/ControlBar.qml" line="870"/>
         <source>Forward %1 s</source>
         <translation>快轉 %1 秒</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="572"/>
+        <location filename="../qml/ControlBar.qml" line="1067"/>
         <source>Error: %1</source>
         <translation>錯誤：%1</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="575"/>
+        <location filename="../qml/ControlBar.qml" line="1070"/>
         <source>Playing %1</source>
         <translation>正在播放 %1</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="580"/>
+        <location filename="../qml/ControlBar.qml" line="1075"/>
         <source>Paused</source>
         <translation>已暫停</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="582"/>
+        <location filename="../qml/ControlBar.qml" line="1077"/>
         <source>Stopped</source>
         <translation>已停止</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="627"/>
+        <location filename="../qml/ControlBar.qml" line="1122"/>
         <source>V: %1 kbps</source>
         <translation>視訊：%1 kbps</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="628"/>
+        <location filename="../qml/ControlBar.qml" line="1123"/>
         <source>A: %1 kbps</source>
         <translation>音訊：%1 kbps</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="640"/>
+        <location filename="../qml/ControlBar.qml" line="1135"/>
         <source>Frame: %1</source>
         <translation>影格：%1</translation>
     </message>
@@ -766,309 +933,317 @@
 <context>
     <name>Main</name>
     <message>
-        <location filename="../qml/Main.qml" line="421"/>
-        <location filename="../qml/Main.qml" line="479"/>
+        <location filename="../qml/Main.qml" line="433"/>
+        <location filename="../qml/Main.qml" line="485"/>
+        <location filename="../qml/Main.qml" line="2086"/>
+        <location filename="../qml/Main.qml" line="2212"/>
         <source>TV editor</source>
         <translation>電視編輯器</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="421"/>
-        <location filename="../qml/Main.qml" line="479"/>
+        <location filename="../qml/Main.qml" line="433"/>
+        <location filename="../qml/Main.qml" line="485"/>
+        <location filename="../qml/Main.qml" line="2086"/>
+        <location filename="../qml/Main.qml" line="2212"/>
         <source>TV channels</source>
         <translation>電視頻道</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="424"/>
-        <location filename="../qml/Main.qml" line="482"/>
+        <location filename="../qml/Main.qml" line="436"/>
+        <location filename="../qml/Main.qml" line="488"/>
+        <location filename="../qml/Main.qml" line="2089"/>
+        <location filename="../qml/Main.qml" line="2215"/>
         <source>Radio editor</source>
         <translation>廣播編輯器</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="424"/>
-        <location filename="../qml/Main.qml" line="482"/>
+        <location filename="../qml/Main.qml" line="436"/>
+        <location filename="../qml/Main.qml" line="488"/>
+        <location filename="../qml/Main.qml" line="2089"/>
+        <location filename="../qml/Main.qml" line="2215"/>
         <source>Radio channels</source>
         <translation>廣播電台</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="427"/>
-        <location filename="../qml/Main.qml" line="474"/>
+        <location filename="../qml/Main.qml" line="439"/>
+        <location filename="../qml/Main.qml" line="480"/>
         <source>Favorite editor</source>
         <translation>收藏編輯器</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="427"/>
-        <location filename="../qml/Main.qml" line="474"/>
+        <location filename="../qml/Main.qml" line="439"/>
+        <location filename="../qml/Main.qml" line="480"/>
         <source>Favorite list</source>
         <translation>收藏清單</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="431"/>
-        <location filename="../qml/Main.qml" line="492"/>
+        <location filename="../qml/Main.qml" line="443"/>
+        <location filename="../qml/Main.qml" line="498"/>
+        <location filename="../qml/Main.qml" line="2099"/>
+        <location filename="../qml/Main.qml" line="2225"/>
         <source>Bookmark added</source>
         <translation>已新增書籤</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="446"/>
         <source>Edit main toolbar</source>
-        <translation>編輯主工具列(&amp;T)</translation>
+        <translation type="vanished">編輯主工具列(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="449"/>
         <source>Edit control bar</source>
-        <translation>編輯控制列(&amp;C)</translation>
+        <translation type="vanished">編輯控制列(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="500"/>
+        <location filename="../qml/Main.qml" line="510"/>
         <source>Screenshot saved as %1</source>
         <translation>螢幕截圖已儲存於 %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="501"/>
+        <location filename="../qml/Main.qml" line="511"/>
         <source>Could not take the screenshot</source>
         <translation>無法擷取螢幕截圖</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="632"/>
+        <location filename="../qml/Main.qml" line="642"/>
         <source>Tap Open &gt; File… to choose media</source>
         <translation>點擊 開啟 &gt; 檔案... 以選擇媒體</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="633"/>
+        <location filename="../qml/Main.qml" line="643"/>
         <source>Drop media files here, or press Ctrl+O</source>
         <translation>將媒體檔案拖放到此處，或按 Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="720"/>
+        <location filename="../qml/Main.qml" line="730"/>
         <source>Downloading video…</source>
         <translation>正在下載影片…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="727"/>
+        <location filename="../qml/Main.qml" line="737"/>
         <source>This can take a while — the external tool is downloading and merging HD video and audio.</source>
         <translation>這可能需要一些時間 — 外部工具正在下載並合併高畫質視訊和音訊。</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="741"/>
-        <location filename="../qml/Main.qml" line="1831"/>
+        <location filename="../qml/Main.qml" line="751"/>
+        <location filename="../qml/Main.qml" line="1841"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="814"/>
+        <location filename="../qml/Main.qml" line="824"/>
         <source>Loading…</source>
         <translation>正在載入…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="815"/>
+        <location filename="../qml/Main.qml" line="825"/>
         <source>Connecting…</source>
         <translation>正在連線……</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="816"/>
+        <location filename="../qml/Main.qml" line="826"/>
         <source>Buffering… %1%</source>
         <translation>正在緩衝… %1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="824"/>
+        <location filename="../qml/Main.qml" line="834"/>
         <source>Live streams can take several seconds to start.</source>
         <translation>直播串流可能需要幾秒鐘才能開始。</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="859"/>
+        <location filename="../qml/Main.qml" line="869"/>
         <source>Volume: %1%</source>
         <translation>音量：%1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="862"/>
+        <location filename="../qml/Main.qml" line="872"/>
         <source>Mute</source>
         <translation>靜音</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="862"/>
+        <location filename="../qml/Main.qml" line="872"/>
         <source>Mute off</source>
         <translation>已取消靜音</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="865"/>
+        <location filename="../qml/Main.qml" line="875"/>
         <source>Speed: %1x</source>
         <translation>速度：%1x</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1409"/>
+        <location filename="../qml/Main.qml" line="1419"/>
         <source>Media files (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1410"/>
-        <location filename="../qml/Main.qml" line="1480"/>
-        <location filename="../qml/Main.qml" line="1750"/>
+        <location filename="../qml/Main.qml" line="1420"/>
+        <location filename="../qml/Main.qml" line="1490"/>
+        <location filename="../qml/Main.qml" line="1760"/>
         <source>All files (*)</source>
         <translation>所有檔案 (*)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1452"/>
+        <location filename="../qml/Main.qml" line="1462"/>
         <source>Select the DVD drive or a folder containing VIDEO_TS</source>
         <translation>選取 DVD 光碟機或包含 VIDEO_TS 的資料夾</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1456"/>
+        <location filename="../qml/Main.qml" line="1466"/>
         <source>No DVD video found in %1</source>
         <translation>在 %1 中找不到 DVD 視訊</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1464"/>
+        <location filename="../qml/Main.qml" line="1474"/>
         <source>Select the Blu-ray drive or a folder containing BDMV</source>
         <translation>選取藍光光碟機或包含 BDMV 的資料夾</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1468"/>
+        <location filename="../qml/Main.qml" line="1478"/>
         <source>No Blu-ray video found in %1</source>
         <translation>在 %1 中找不到藍光視訊</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1479"/>
+        <location filename="../qml/Main.qml" line="1489"/>
         <source>Playlists (*.m3u *.m3u8)</source>
         <translation>播放清單 (*.m3u *.m3u8)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1522"/>
+        <location filename="../qml/Main.qml" line="1532"/>
         <source>Playing stream</source>
         <translation>正在播放串流</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1528"/>
-        <location filename="../qml/Main.qml" line="1561"/>
+        <location filename="../qml/Main.qml" line="1538"/>
+        <location filename="../qml/Main.qml" line="1571"/>
         <source>Playing downloaded video</source>
         <translation>正在播放已下載的影片</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1532"/>
+        <location filename="../qml/Main.qml" line="1542"/>
         <source>YouTube: %1</source>
         <translation>YouTube：%1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1565"/>
+        <location filename="../qml/Main.qml" line="1575"/>
         <source>Download failed: %1</source>
         <translation>下載失敗：%1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1662"/>
+        <location filename="../qml/Main.qml" line="1672"/>
         <source>Saved %1 file(s); %2 failed.</source>
         <translation>已儲存 %1 個檔案；%2 個失敗。</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1666"/>
+        <location filename="../qml/Main.qml" line="1676"/>
         <source>Saved %1 file(s).</source>
         <translation>已儲存 %1 個檔案。</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1679"/>
+        <location filename="../qml/Main.qml" line="1689"/>
         <source>Could not read the shortcut file.</source>
         <translation>無法讀取捷徑檔案。</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1692"/>
+        <location filename="../qml/Main.qml" line="1702"/>
         <source>YouTube playback isn&apos;t supported on Android.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1703"/>
+        <location filename="../qml/Main.qml" line="1713"/>
         <source>Starting download…</source>
         <translation>正在開始下載…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1704"/>
+        <location filename="../qml/Main.qml" line="1714"/>
         <source>Downloading video (this can take a while)…</source>
         <translation>正在下載影片（這可能需要一些時間）…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1708"/>
+        <location filename="../qml/Main.qml" line="1718"/>
         <source>Resolving with yt-dlp…</source>
         <translation>正在使用 yt-dlp 解析…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1745"/>
+        <location filename="../qml/Main.qml" line="1755"/>
         <source>Load subtitle file</source>
         <translation>載入字幕檔案</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1749"/>
+        <location filename="../qml/Main.qml" line="1759"/>
         <source>Subtitle files (*.srt *.vtt *.ass *.ssa)</source>
         <translation>字幕檔案 (*.srt *.vtt *.ass *.ssa)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1757"/>
+        <location filename="../qml/Main.qml" line="1767"/>
         <source>Subtitle delay</source>
         <translation>字幕延遲</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1808"/>
+        <location filename="../qml/Main.qml" line="1818"/>
         <source>Delay:</source>
         <translation>延遲：</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1814"/>
-        <location filename="../qml/Main.qml" line="1904"/>
+        <location filename="../qml/Main.qml" line="1824"/>
+        <location filename="../qml/Main.qml" line="1914"/>
         <source>ms</source>
         <translation>毫秒</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1824"/>
+        <location filename="../qml/Main.qml" line="1834"/>
         <source>OK</source>
         <translation>確定(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1843"/>
+        <location filename="../qml/Main.qml" line="1853"/>
         <source>Audio delay — Vivace</source>
         <translation>音訊延遲 — Vivace</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1892"/>
+        <location filename="../qml/Main.qml" line="1902"/>
         <source>No delay for this file (use the global delay only)</source>
         <translation>此檔案無延遲（僅使用全域延遲）</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1897"/>
+        <location filename="../qml/Main.qml" line="1907"/>
         <source>This file&apos;s delay:</source>
         <translation>此檔案的延遲：</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1912"/>
+        <location filename="../qml/Main.qml" line="1922"/>
         <source>The delay applied to this file is this value plus the global delay for the current audio device (%1 ms), set in Preferences &gt; General &gt; Audio. Negative values delay the video to match audio that arrives late (e.g. Bluetooth headphones).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1925"/>
+        <location filename="../qml/Main.qml" line="1935"/>
         <source>&amp;Apply</source>
         <translation>套用(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1934"/>
+        <location filename="../qml/Main.qml" line="1944"/>
         <source>&amp;Close</source>
         <translation>關閉 (&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2031"/>
+        <location filename="../qml/Main.qml" line="2028"/>
         <source>Hide window</source>
         <translation>隱藏視窗</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2031"/>
+        <location filename="../qml/Main.qml" line="2028"/>
         <source>Show window</source>
         <translation>顯示視窗</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2036"/>
+        <location filename="../qml/Main.qml" line="2033"/>
         <source>Play / Pause</source>
         <translation>播放 / 暫停</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2040"/>
+        <location filename="../qml/Main.qml" line="2037"/>
         <source>Stop</source>
         <translation>停止</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2045"/>
+        <location filename="../qml/Main.qml" line="2042"/>
         <source>Quit</source>
         <translation>結束(&amp;Q)</translation>
     </message>
@@ -1076,71 +1251,71 @@
 <context>
     <name>MainMenuBar</name>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="63"/>
+        <location filename="../qml/MainMenuBar.qml" line="61"/>
         <source>&amp;Auto</source>
         <translation>自動(&amp;A)</translation>
     </message>
     <message numerus="yes">
-        <location filename="../qml/MainMenuBar.qml" line="93"/>
+        <location filename="../qml/MainMenuBar.qml" line="91"/>
         <source>%n minute(s)</source>
         <translation type="unfinished">
             <numerusform></numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../qml/MainMenuBar.qml" line="94"/>
+        <location filename="../qml/MainMenuBar.qml" line="92"/>
         <source>%n second(s)</source>
         <translation type="unfinished">
             <numerusform></numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="126"/>
+        <location filename="../qml/MainMenuBar.qml" line="124"/>
         <source>&amp;Open</source>
         <translation>開啟(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="129"/>
+        <location filename="../qml/MainMenuBar.qml" line="127"/>
         <source>&amp;File…</source>
         <translation>檔案(&amp;F)...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="136"/>
+        <location filename="../qml/MainMenuBar.qml" line="134"/>
         <source>&amp;Recent files</source>
         <translation>最近使用的檔案(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="158"/>
+        <location filename="../qml/MainMenuBar.qml" line="156"/>
         <source>(empty)</source>
         <translation>（空）</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="164"/>
+        <location filename="../qml/MainMenuBar.qml" line="162"/>
         <source>&amp;Clear</source>
         <translation>清除(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="170"/>
+        <location filename="../qml/MainMenuBar.qml" line="168"/>
         <source>F&amp;avorites</source>
         <translation>收藏(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="179"/>
+        <location filename="../qml/MainMenuBar.qml" line="177"/>
         <source>&amp;Directory…</source>
         <translation>目錄(&amp;I)...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="184"/>
+        <location filename="../qml/MainMenuBar.qml" line="182"/>
         <source>&amp;Playlist…</source>
         <translation>播放清單(&amp;P)...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="189"/>
+        <location filename="../qml/MainMenuBar.qml" line="187"/>
         <source>D&amp;isc</source>
         <translation>光碟(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="193"/>
+        <location filename="../qml/MainMenuBar.qml" line="191"/>
         <source>&amp;DVD from drive or folder…</source>
         <translation>從光碟機或資料夾開啟 DVD(&amp;D)…</translation>
     </message>
@@ -1149,57 +1324,57 @@
         <translation type="vanished">藍光(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="198"/>
+        <location filename="../qml/MainMenuBar.qml" line="196"/>
         <source>&amp;Blu-ray from drive or folder…</source>
         <translation>從光碟機或資料夾開啟藍光(&amp;B)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="203"/>
+        <location filename="../qml/MainMenuBar.qml" line="201"/>
         <source>&amp;Audio CD</source>
         <translation>音樂 CD (&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="208"/>
+        <location filename="../qml/MainMenuBar.qml" line="206"/>
         <source>&amp;URL…</source>
         <translation>網址(&amp;U)...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="214"/>
+        <location filename="../qml/MainMenuBar.qml" line="212"/>
         <source>YouTube &amp;cache…</source>
         <translation>YouTube 快取(&amp;C)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="222"/>
+        <location filename="../qml/MainMenuBar.qml" line="220"/>
         <source>&amp;TV</source>
         <translation>電視(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="232"/>
+        <location filename="../qml/MainMenuBar.qml" line="230"/>
         <source>Radi&amp;o</source>
         <translation>廣播電台(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="243"/>
+        <location filename="../qml/MainMenuBar.qml" line="241"/>
         <source>&amp;Quit</source>
         <translation>結束(&amp;Q)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="253"/>
+        <location filename="../qml/MainMenuBar.qml" line="251"/>
         <source>&amp;Play</source>
         <translation>播放(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="256"/>
+        <location filename="../qml/MainMenuBar.qml" line="254"/>
         <source>P&amp;lay</source>
         <translation>播放(&amp;L)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="263"/>
+        <location filename="../qml/MainMenuBar.qml" line="261"/>
         <source>&amp;Pause</source>
         <translation>暫停(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="269"/>
+        <location filename="../qml/MainMenuBar.qml" line="267"/>
         <source>&amp;Stop</source>
         <translation>停止(&amp;S)</translation>
     </message>
@@ -1208,124 +1383,124 @@
         <translation type="vanished">下一個畫面(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="281"/>
+        <location filename="../qml/MainMenuBar.qml" line="279"/>
         <source>Fra&amp;me back step</source>
         <translation>上一個畫面(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="291"/>
+        <location filename="../qml/MainMenuBar.qml" line="289"/>
         <source>&amp;Rewind %1</source>
         <translation>倒轉 %1(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="298"/>
+        <location filename="../qml/MainMenuBar.qml" line="296"/>
         <source>&amp;Forward %1</source>
         <translation>快轉 %1(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="305"/>
-        <location filename="../qml/MainMenuBar.qml" line="319"/>
+        <location filename="../qml/MainMenuBar.qml" line="303"/>
+        <location filename="../qml/MainMenuBar.qml" line="317"/>
         <source>Rewind %1</source>
         <translation>倒轉 %1</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="312"/>
-        <location filename="../qml/MainMenuBar.qml" line="326"/>
+        <location filename="../qml/MainMenuBar.qml" line="310"/>
+        <location filename="../qml/MainMenuBar.qml" line="324"/>
         <source>Forward %1</source>
         <translation>快轉 %1</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="334"/>
+        <location filename="../qml/MainMenuBar.qml" line="332"/>
         <source>Sp&amp;eed</source>
         <translation>速度(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="338"/>
+        <location filename="../qml/MainMenuBar.qml" line="336"/>
         <source>&amp;Normal speed</source>
         <translation>正常速度(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="345"/>
+        <location filename="../qml/MainMenuBar.qml" line="343"/>
         <source>&amp;Halve speed</source>
         <translation>速度減半(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="351"/>
+        <location filename="../qml/MainMenuBar.qml" line="349"/>
         <source>&amp;Double speed</source>
         <translation>雙倍速度(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="358"/>
+        <location filename="../qml/MainMenuBar.qml" line="356"/>
         <source>Speed &amp;-10%</source>
         <translation>速度 &amp;-10%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="364"/>
+        <location filename="../qml/MainMenuBar.qml" line="362"/>
         <source>Speed &amp;+10%</source>
         <translation>速度 &amp;+10%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="370"/>
+        <location filename="../qml/MainMenuBar.qml" line="368"/>
         <source>Speed -4%</source>
         <translation>速度 -&amp;4%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="371"/>
+        <location filename="../qml/MainMenuBar.qml" line="369"/>
         <source>Speed +4%</source>
         <translation>速度 +4% (&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="373"/>
+        <location filename="../qml/MainMenuBar.qml" line="371"/>
         <source>Speed -1%</source>
         <translation>速度 -&amp;1%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="374"/>
+        <location filename="../qml/MainMenuBar.qml" line="372"/>
         <source>Speed +1%</source>
         <translation>速度 +1% (&amp;p)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="377"/>
+        <location filename="../qml/MainMenuBar.qml" line="375"/>
         <source>Pi&amp;tch compensation</source>
         <translation>音高補償(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="386"/>
+        <location filename="../qml/MainMenuBar.qml" line="384"/>
         <source>&amp;A-B section</source>
         <translation>&amp;A-B 段</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="390"/>
+        <location filename="../qml/MainMenuBar.qml" line="388"/>
         <source>Set &amp;A marker</source>
         <translation>設定 &amp;A 標記</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="396"/>
+        <location filename="../qml/MainMenuBar.qml" line="394"/>
         <source>Set &amp;B marker</source>
         <translation>設定 &amp;B 標記</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="402"/>
+        <location filename="../qml/MainMenuBar.qml" line="400"/>
         <source>&amp;Clear A-B markers</source>
         <translation>清除 A-B 標記(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="410"/>
+        <location filename="../qml/MainMenuBar.qml" line="408"/>
         <source>&amp;Repeat</source>
         <translation>重複 (&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="416"/>
+        <location filename="../qml/MainMenuBar.qml" line="414"/>
         <source>&amp;Jump to…</source>
         <translation>跳至(&amp;J)...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="419"/>
+        <location filename="../qml/MainMenuBar.qml" line="417"/>
         <source>Pre&amp;vious</source>
         <translation>上一個(&amp;V)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="426"/>
+        <location filename="../qml/MainMenuBar.qml" line="424"/>
         <source>&amp;Next</source>
         <translation>下一個(&amp;N)</translation>
     </message>
@@ -1338,77 +1513,77 @@
         <translation type="vanished">智慧型手機／平板電腦(&amp;S)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="435"/>
+        <location filename="../qml/MainMenuBar.qml" line="433"/>
         <source>Cas&amp;t…</source>
         <translation>投影(&amp;C)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="443"/>
+        <location filename="../qml/MainMenuBar.qml" line="441"/>
         <source>&amp;Video</source>
         <translation>視訊(&amp;V)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="447"/>
-        <location filename="../qml/MainMenuBar.qml" line="702"/>
-        <location filename="../qml/MainMenuBar.qml" line="792"/>
+        <location filename="../qml/MainMenuBar.qml" line="445"/>
+        <location filename="../qml/MainMenuBar.qml" line="700"/>
+        <location filename="../qml/MainMenuBar.qml" line="790"/>
         <source>&amp;Track</source>
         <translation>視訊軌(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="454"/>
-        <location filename="../qml/MainMenuBar.qml" line="719"/>
-        <location filename="../qml/MainMenuBar.qml" line="937"/>
-        <location filename="../qml/MainMenuBar.qml" line="962"/>
+        <location filename="../qml/MainMenuBar.qml" line="452"/>
+        <location filename="../qml/MainMenuBar.qml" line="717"/>
+        <location filename="../qml/MainMenuBar.qml" line="935"/>
+        <location filename="../qml/MainMenuBar.qml" line="960"/>
         <source>&lt;empty&gt;</source>
         <translation>&lt;空&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="486"/>
+        <location filename="../qml/MainMenuBar.qml" line="484"/>
         <source>&amp;Fullscreen</source>
         <translation>全螢幕(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="494"/>
+        <location filename="../qml/MainMenuBar.qml" line="492"/>
         <source>Si&amp;ze</source>
         <translation>視窗大小(&amp;Z)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="497"/>
+        <location filename="../qml/MainMenuBar.qml" line="495"/>
         <source>50%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="498"/>
+        <location filename="../qml/MainMenuBar.qml" line="496"/>
         <source>100%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="499"/>
+        <location filename="../qml/MainMenuBar.qml" line="497"/>
         <source>200%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="502"/>
+        <location filename="../qml/MainMenuBar.qml" line="500"/>
         <source>&amp;Zoom and pan</source>
         <translation>縮放和平移(&amp;Z)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="506"/>
+        <location filename="../qml/MainMenuBar.qml" line="504"/>
         <source>&amp;Reset</source>
         <translation>重置(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="511"/>
+        <location filename="../qml/MainMenuBar.qml" line="509"/>
         <source>Zoom &amp;-</source>
         <translation>縮小 (&amp;-)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="516"/>
+        <location filename="../qml/MainMenuBar.qml" line="514"/>
         <source>Zoom &amp;+</source>
         <translation>放大(&amp;+)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="522"/>
+        <location filename="../qml/MainMenuBar.qml" line="520"/>
         <source>Move &amp;left</source>
         <translation>左移(&amp;L)</translation>
     </message>
@@ -1417,278 +1592,270 @@
         <translation type="vanished">右移(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="532"/>
+        <location filename="../qml/MainMenuBar.qml" line="530"/>
         <source>Move &amp;up</source>
         <translation>上移(&amp;U)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="537"/>
+        <location filename="../qml/MainMenuBar.qml" line="535"/>
         <source>Move &amp;down</source>
         <translation>下移(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="544"/>
+        <location filename="../qml/MainMenuBar.qml" line="542"/>
         <source>&amp;Aspect ratio</source>
         <translation>外觀比例(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="566"/>
+        <location filename="../qml/MainMenuBar.qml" line="564"/>
         <source>&amp;Rotate</source>
         <translation>旋轉(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="570"/>
-        <location filename="../qml/MainMenuBar.qml" line="653"/>
+        <location filename="../qml/MainMenuBar.qml" line="568"/>
+        <location filename="../qml/MainMenuBar.qml" line="651"/>
         <source>&amp;None</source>
         <translation>無(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="579"/>
+        <location filename="../qml/MainMenuBar.qml" line="577"/>
         <source>&amp;Rotate by 90° clockwise</source>
         <translation>順時針旋轉 90°(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="588"/>
+        <location filename="../qml/MainMenuBar.qml" line="586"/>
         <source>Rotate by 90° &amp;counterclockwise</source>
         <translation>逆時針旋轉 90°(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="597"/>
+        <location filename="../qml/MainMenuBar.qml" line="595"/>
         <source>Rotate by &amp;180°</source>
         <translation>旋轉 180°(&amp;1)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="607"/>
+        <location filename="../qml/MainMenuBar.qml" line="605"/>
         <source>Fli&amp;p image</source>
         <translation>翻轉影像(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="618"/>
+        <location filename="../qml/MainMenuBar.qml" line="616"/>
         <source>Mirr&amp;or image</source>
         <translation>鏡像(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="629"/>
+        <location filename="../qml/MainMenuBar.qml" line="627"/>
         <source>&amp;Deinterlace</source>
         <translation>去交錯(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="662"/>
+        <location filename="../qml/MainMenuBar.qml" line="660"/>
         <source>&amp;Yadif</source>
         <translation>Yadif(&amp;Y)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="671"/>
+        <location filename="../qml/MainMenuBar.qml" line="669"/>
         <source>&amp;Bwdif</source>
         <translation>Bwdif(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="682"/>
+        <location filename="../qml/MainMenuBar.qml" line="680"/>
         <source>E&amp;qualizer…</source>
         <translation>等化器(&amp;Q)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="688"/>
+        <location filename="../qml/MainMenuBar.qml" line="686"/>
         <source>&amp;Screenshot</source>
         <translation>擷取影像(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="698"/>
+        <location filename="../qml/MainMenuBar.qml" line="696"/>
         <source>&amp;Audio</source>
         <translation>音訊(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="746"/>
+        <location filename="../qml/MainMenuBar.qml" line="744"/>
         <source>&amp;Mute</source>
         <translation>靜音(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="755"/>
+        <location filename="../qml/MainMenuBar.qml" line="753"/>
         <source>Volume &amp;-</source>
         <translation>音量 &amp;-</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="762"/>
+        <location filename="../qml/MainMenuBar.qml" line="760"/>
         <source>Volume &amp;+</source>
         <translation>音量 &amp;+</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="872"/>
+        <location filename="../qml/MainMenuBar.qml" line="870"/>
         <source>Delay &amp;-</source>
         <translation>延遲 &amp;-</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="775"/>
+        <location filename="../qml/MainMenuBar.qml" line="773"/>
         <source>D&amp;elay +</source>
         <translation>延遲 + (&amp;E)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="275"/>
+        <location filename="../qml/MainMenuBar.qml" line="273"/>
         <source>Frame st&amp;ep</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="288"/>
+        <location filename="../qml/MainMenuBar.qml" line="286"/>
         <source>See&amp;k</source>
-        <translation type="unfinished"></translation>
+        <translation>定位(&amp;K)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="527"/>
+        <location filename="../qml/MainMenuBar.qml" line="525"/>
         <source>Move r&amp;ight</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="770"/>
+        <location filename="../qml/MainMenuBar.qml" line="768"/>
         <source>&amp;Delay -</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="780"/>
+        <location filename="../qml/MainMenuBar.qml" line="778"/>
         <source>Set dela&amp;y…</source>
         <translation>設定延遲(&amp;Y)...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="788"/>
+        <location filename="../qml/MainMenuBar.qml" line="786"/>
         <source>&amp;Subtitles</source>
         <translation>字幕(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="808"/>
+        <location filename="../qml/MainMenuBar.qml" line="806"/>
         <source>&amp;Off</source>
         <translation>關閉(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="853"/>
+        <location filename="../qml/MainMenuBar.qml" line="851"/>
         <source>&amp;Load subtitles…</source>
         <translation>載入字幕(&amp;L)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="859"/>
+        <location filename="../qml/MainMenuBar.qml" line="857"/>
         <source>&amp;Find subtitles at OpenSubtitles…</source>
         <translation>在 OpenSubtitles 尋找字幕(&amp;F)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="865"/>
+        <location filename="../qml/MainMenuBar.qml" line="863"/>
         <source>U&amp;nload subtitles</source>
         <translation>卸載字幕(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="878"/>
+        <location filename="../qml/MainMenuBar.qml" line="876"/>
         <source>Delay &amp;+</source>
         <translation>延遲 &amp;+</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="884"/>
+        <location filename="../qml/MainMenuBar.qml" line="882"/>
         <source>Se&amp;t delay…</source>
         <translation>設定延遲(&amp;T)...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="893"/>
+        <location filename="../qml/MainMenuBar.qml" line="891"/>
         <source>&amp;Browse</source>
         <translation>瀏覽(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="896"/>
+        <location filename="../qml/MainMenuBar.qml" line="894"/>
         <source>&amp;DVD menu</source>
         <translation>DVD 選單(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="905"/>
+        <location filename="../qml/MainMenuBar.qml" line="903"/>
         <source>&amp;Title</source>
         <translation>標題(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="944"/>
+        <location filename="../qml/MainMenuBar.qml" line="942"/>
         <source>&amp;Chapters</source>
         <translation>章節(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="969"/>
+        <location filename="../qml/MainMenuBar.qml" line="967"/>
         <source>&amp;Bookmarks</source>
         <translation>書籤(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="979"/>
+        <location filename="../qml/MainMenuBar.qml" line="977"/>
         <source>&amp;Add new bookmark</source>
         <translation>新增新書籤(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="986"/>
+        <location filename="../qml/MainMenuBar.qml" line="984"/>
         <source>&amp;Edit bookmarks…</source>
         <translation>編輯書籤(&amp;E)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1010"/>
+        <location filename="../qml/MainMenuBar.qml" line="1008"/>
         <source>Vie&amp;w</source>
         <translation>檢視(&amp;W)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1013"/>
+        <location filename="../qml/MainMenuBar.qml" line="1011"/>
         <source>&amp;Information and properties…</source>
         <translation>資訊和內容(&amp;I)...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1020"/>
+        <location filename="../qml/MainMenuBar.qml" line="1018"/>
         <source>&amp;Playlist</source>
         <translation>播放清單(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1028"/>
+        <location filename="../qml/MainMenuBar.qml" line="1026"/>
         <source>&amp;OSD</source>
         <translation>視控調整功能(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1030"/>
+        <location filename="../qml/MainMenuBar.qml" line="1028"/>
         <source>Subtitles only</source>
         <translation>只有字幕(&amp;Y)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1031"/>
+        <location filename="../qml/MainMenuBar.qml" line="1029"/>
         <source>Volume + seek</source>
         <translation>音量 + 定位</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1032"/>
+        <location filename="../qml/MainMenuBar.qml" line="1030"/>
         <source>Volume + seek + timer</source>
         <translation>音量 + 定位 + 時間</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1038"/>
+        <location filename="../qml/MainMenuBar.qml" line="1036"/>
         <source>Op&amp;tions</source>
         <translation>選項(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1041"/>
+        <location filename="../qml/MainMenuBar.qml" line="1039"/>
         <source>&amp;Preferences…</source>
         <translation>偏好設定(&amp;P)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1054"/>
+        <location filename="../qml/MainMenuBar.qml" line="1052"/>
         <source>S&amp;how icon in system tray</source>
         <translation>在系統匣顯示圖示(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1060"/>
         <source>&amp;Toolbars</source>
-        <translation>工具列(&amp;T)</translation>
+        <translation type="vanished">工具列(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1063"/>
         <source>&amp;Toolbar</source>
-        <translation>工具列(&amp;T)</translation>
+        <translation type="vanished">工具列(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1069"/>
         <source>&amp;Control bar</source>
-        <translation>控制列</translation>
+        <translation type="vanished">控制列</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1076"/>
-        <source>&amp;Edit main toolbar…</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/MainMenuBar.qml" line="1164"/>
+        <location filename="../qml/MainMenuBar.qml" line="1071"/>
         <source>Check for &amp;updates</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1697,67 +1864,56 @@
         <translation type="vanished">編輯主工具列(&amp;T)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1080"/>
         <source>Edit control &amp;bar…</source>
-        <translation>編輯控制列(&amp;B)…</translation>
+        <translation type="vanished">編輯控制列(&amp;B)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1085"/>
         <source>&amp;Status bar</source>
-        <translation>狀態列(&amp;S)</translation>
+        <translation type="vanished">狀態列(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1088"/>
         <source>&amp;Show status bar</source>
-        <translation>顯示狀態列(&amp;S)</translation>
+        <translation type="vanished">顯示狀態列(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1095"/>
         <source>&amp;Video info</source>
-        <translation>視訊資料(&amp;V)</translation>
+        <translation type="vanished">視訊資料(&amp;V)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1102"/>
         <source>&amp;Audio info</source>
-        <translation>音訊資訊(&amp;A)</translation>
+        <translation type="vanished">音訊資訊(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1109"/>
         <source>F&amp;ormat info</source>
-        <translation>格式資訊(&amp;O)</translation>
+        <translation type="vanished">格式資訊(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1116"/>
         <source>&amp;Bitrate info</source>
-        <translation>位元率資訊(&amp;B)</translation>
+        <translation type="vanished">位元率資訊(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1123"/>
         <source>&amp;Frame counter</source>
-        <translation>畫面計數器(&amp;F)</translation>
+        <translation type="vanished">畫面計數器(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1131"/>
         <source>Display &amp;total time</source>
-        <translation>顯示總時間(&amp;T)</translation>
+        <translation type="vanished">顯示總時間(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1137"/>
         <source>Display &amp;remaining time</source>
-        <translation>顯示剩餘時間(&amp;R)</translation>
+        <translation type="vanished">顯示剩餘時間(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1144"/>
         <source>Show the current time with &amp;milliseconds</source>
-        <translation>以毫秒顯示目前時間(&amp;S)</translation>
+        <translation type="vanished">以毫秒顯示目前時間(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1154"/>
+        <location filename="../qml/MainMenuBar.qml" line="1061"/>
         <source>&amp;Help</source>
         <translation>幫助(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1157"/>
+        <location filename="../qml/MainMenuBar.qml" line="1064"/>
         <source>&amp;Contents</source>
         <translation>內容(&amp;C)</translation>
     </message>
@@ -1770,7 +1926,7 @@
         <translation type="vanished">安裝／更新 YouTube 支援(&amp;Y)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1170"/>
+        <location filename="../qml/MainMenuBar.qml" line="1077"/>
         <source>&amp;About Vivace</source>
         <translation>關於 Vivace(&amp;A)</translation>
     </message>
@@ -1778,116 +1934,176 @@
 <context>
     <name>MainToolBar</name>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="58"/>
+        <location filename="../qml/MainToolBar.qml" line="62"/>
         <source>Auto</source>
         <translation>自動</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="243"/>
+        <location filename="../qml/MainToolBar.qml" line="247"/>
         <source>&amp;Off</source>
         <translation>關閉(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="289"/>
+        <location filename="../qml/MainToolBar.qml" line="293"/>
         <source>Normal speed</source>
         <translation>正常速度</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="295"/>
+        <location filename="../qml/MainToolBar.qml" line="299"/>
         <source>Halve speed</source>
         <translation>速度減半</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="300"/>
+        <location filename="../qml/MainToolBar.qml" line="304"/>
         <source>Double speed</source>
         <translation>雙倍速度(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="306"/>
+        <location filename="../qml/MainToolBar.qml" line="310"/>
         <source>Speed -10%</source>
         <translation>速度 &amp;-10%</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="311"/>
+        <location filename="../qml/MainToolBar.qml" line="315"/>
         <source>Speed +10%</source>
         <translation>速度 &amp;+10%</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="316"/>
+        <location filename="../qml/MainToolBar.qml" line="320"/>
         <source>Speed -4%</source>
         <translation>速度 -&amp;4%</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="317"/>
+        <location filename="../qml/MainToolBar.qml" line="321"/>
         <source>Speed +4%</source>
         <translation>速度 +4% (&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="319"/>
+        <location filename="../qml/MainToolBar.qml" line="323"/>
         <source>Speed -1%</source>
         <translation>速度 -&amp;1%</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="320"/>
+        <location filename="../qml/MainToolBar.qml" line="324"/>
         <source>Speed +1%</source>
         <translation>速度 +1% (&amp;p)</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="323"/>
+        <location filename="../qml/MainToolBar.qml" line="327"/>
         <source>Pitch compensation</source>
         <translation>音高補償</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="337"/>
-        <location filename="../qml/MainToolBar.qml" line="447"/>
-        <location filename="../qml/MainToolBar.qml" line="467"/>
+        <location filename="../qml/MainToolBar.qml" line="341"/>
+        <location filename="../qml/MainToolBar.qml" line="451"/>
+        <location filename="../qml/MainToolBar.qml" line="471"/>
         <source>&lt;empty&gt;</source>
         <translation>&lt;空&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="381"/>
+        <location filename="../qml/MainToolBar.qml" line="385"/>
         <source>&amp;None</source>
         <translation>無(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="390"/>
+        <location filename="../qml/MainToolBar.qml" line="394"/>
         <source>&amp;Rotate by 90° clockwise</source>
         <translation>順時針旋轉 90°(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="399"/>
+        <location filename="../qml/MainToolBar.qml" line="403"/>
         <source>Rotate by 90° &amp;counterclockwise</source>
         <translation>逆時針旋轉 90°(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="408"/>
+        <location filename="../qml/MainToolBar.qml" line="412"/>
         <source>Rotate by &amp;180°</source>
         <translation>旋轉 180°(&amp;1)</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="419"/>
+        <location filename="../qml/MainToolBar.qml" line="423"/>
         <source>50%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="420"/>
+        <location filename="../qml/MainToolBar.qml" line="424"/>
         <source>100%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="421"/>
+        <location filename="../qml/MainToolBar.qml" line="425"/>
         <source>200%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="479"/>
+        <location filename="../qml/MainToolBar.qml" line="483"/>
         <source>&amp;Add new bookmark</source>
         <translation>新增新書籤(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="484"/>
+        <location filename="../qml/MainToolBar.qml" line="488"/>
         <source>&amp;Edit bookmarks…</source>
         <translation>編輯書籤(&amp;E)…</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="521"/>
+        <source>(empty)</source>
+        <translation>（空）</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="527"/>
+        <source>Clear</source>
+        <translation>清除</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="534"/>
+        <source>Reset</source>
+        <translation>重置(&amp;R)</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="535"/>
+        <source>Zoom -</source>
+        <translation>縮小</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="536"/>
+        <source>Zoom +</source>
+        <translation>放大</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="538"/>
+        <source>Move left</source>
+        <translation>左移(&amp;L)</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="539"/>
+        <source>Move right</source>
+        <translation>右移(&amp;R)</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="540"/>
+        <source>Move up</source>
+        <translation>上移(&amp;U)</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="541"/>
+        <source>Move down</source>
+        <translation>下移(&amp;D)</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="546"/>
+        <source>Contents</source>
+        <translation>內容</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="552"/>
+        <source>Check for updates</source>
+        <translation>檢查更新</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="558"/>
+        <source>About Vivace</source>
+        <translation>關於 Vivace</translation>
     </message>
 </context>
 <context>
@@ -3183,27 +3399,27 @@
 <context>
     <name>PrefInterfacePage</name>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="56"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="72"/>
         <source>Interface</source>
         <translation>介面</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="58"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="74"/>
         <source>Seeking</source>
         <translation>尋找</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="60"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="76"/>
         <source>Instances</source>
         <translation>執行實體</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="78"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="94"/>
         <source>Fullscreen</source>
         <translation>全螢幕</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="84"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="100"/>
         <source>Privacy</source>
         <translation>隱私</translation>
     </message>
@@ -3212,341 +3428,346 @@
         <translation type="vanished">高 DPI(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="103"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="119"/>
         <source>Main window</source>
         <translation>主視窗</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="126"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="142"/>
         <source>Auto-resize:</source>
         <translation>自動調整大小：</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="131"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="147"/>
         <source>Never</source>
         <translation>從不</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="132"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="148"/>
         <source>Whenever it&apos;s needed</source>
         <translation>當需要的時候</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="133"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="149"/>
         <source>Only after loading a new video</source>
         <translation>只在新影片載入後</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="140"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="156"/>
         <source>Center window</source>
         <translation>視窗置中</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="145"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="161"/>
         <source>Prevent the window from getting outside of the screen</source>
         <translation>防止視窗移出螢幕</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="150"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="166"/>
         <source>Remember size and position of the main window</source>
         <translation>記住主視窗的大小和位置</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="155"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="171"/>
         <source>Hide the video window when playing audio files</source>
         <translation>播放音訊檔案時隱藏影片視窗</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="217"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="233"/>
         <source>Language:</source>
         <translation>語言(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="164"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="180"/>
         <source>GUI:</source>
         <translation>介面：</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="21"/>
-        <source>&lt;h1&gt;Interface&lt;/h1&gt;&lt;p&gt;&lt;b&gt;Interface&lt;/b&gt; — the GUI layout (Basic / Mini / Mpc), icon set, language, and Qt Quick Controls style, plus main-window behaviour (auto-resize, centre, keep on screen, remember geometry, hide the video area for audio-only files), whether the menu bar is shown (it can&apos;t wrap onto a second row the way the toolbar and control bar can, so it&apos;s easy to run out of room for it on a narrow phone screen), the toolbar gradient, and the native file dialog toggle.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Text&lt;/b&gt; — the application font, OSD options, touch-friendly sizing, and the high-DPI scale-factor override (Vivace scales automatically otherwise).&lt;/p&gt;&lt;p&gt;&lt;b&gt;Seeking&lt;/b&gt; — the jump lengths for the seek buttons and the mouse wheel, and whether the time slider seeks while dragging or on release.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Instances&lt;/b&gt; — reuse a single running instance so files open in the existing window (takes effect next launch).&lt;/p&gt;&lt;p&gt;&lt;b&gt;Fullscreen&lt;/b&gt; — hide the mouse pointer after inactivity.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Privacy&lt;/b&gt; — how many recent files and URLs to remember, and whether to remember the last folder.&lt;/p&gt;&lt;p&gt;Style, font and scale-factor changes take effect after restarting Vivace.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="57"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="73"/>
         <source>Text</source>
         <translation>文字</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="174"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="190"/>
         <source>Basic GUI</source>
         <translation>基本圖形使用者介面</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="175"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="191"/>
         <source>Mini GUI</source>
         <translation>精簡圖形使用者介面</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="176"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="192"/>
         <source>Mpc GUI</source>
         <translation>Mpc 圖形使用者介面</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="177"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="193"/>
         <source>Skinnable GUI</source>
         <translation>可換面板的圖形使用者介面</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="200"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="216"/>
         <source>Icon set:</source>
         <translation>圖示集(&amp;N)：</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="208"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="224"/>
         <source>Default</source>
         <translation>預設</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="209"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="225"/>
         <source>Classic</source>
         <translation>經典</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="226"/>
-        <location filename="../qml/PrefInterfacePage.qml" line="309"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="242"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="337"/>
         <source>System default</source>
         <translation>系統預設</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="240"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="256"/>
         <source>Language changes take effect after restarting Vivace. Untranslated text falls back to English.</source>
         <translation>語言變更在重新啟動 Vivace 後生效。未翻譯的文字將回復為英文。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="245"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="261"/>
         <source>Style:</source>
         <translation>樣式(&amp;Y)：</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="260"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="276"/>
         <source>Style changes take effect after restarting Vivace. Fusion is recommended: other styles may not render the custom menus and sliders correctly.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="266"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="282"/>
         <source>Show menu bar</source>
         <translation>顯示選單列</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="271"/>
-        <source>The menu bar can&apos;t wrap onto a second row on a narrow screen (unlike the toolbar and control bar), so it can run out of room on a phone. Turn it off if that happens -- every menu action that&apos;s also on the toolbar (e.g. Preferences) stays reachable either way.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="304"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="332"/>
         <source>Application font:</source>
         <translation>應用程式字型：</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="315"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="343"/>
         <source>Change…</source>
         <translation>改變(&amp;H)...</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="326"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="354"/>
         <source>Reset</source>
         <translation>重置(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="340"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="368"/>
         <source>Font changes take effect after restarting Vivace. (The default font already renders Japanese and other scripts; a custom font only needs to be set for preference.)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="279"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="307"/>
         <source>Gradient background for the toolbar and control bar</source>
         <translation>工具列和控制列的漸層背景</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="284"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="36"/>
+        <source>&lt;h1&gt;Interface&lt;/h1&gt;&lt;p&gt;&lt;b&gt;Interface&lt;/b&gt; — the GUI layout (Basic / Mini / Mpc), icon set, language, and Qt Quick Controls style, plus main-window behaviour (auto-resize, centre, keep on screen, remember geometry, hide the video area for audio-only files), whether the menu bar is shown (it can&apos;t wrap onto a second row the way the toolbar and control bar can, so the window won&apos;t shrink narrower than the menu bar needs — except on Android, which has no minimum window size and can run out of room for it), the toolbar gradient, and the native file dialog toggle.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Text&lt;/b&gt; — the application font, OSD options, touch-friendly sizing, and the high-DPI scale-factor override (Vivace scales automatically otherwise).&lt;/p&gt;&lt;p&gt;&lt;b&gt;Seeking&lt;/b&gt; — the jump lengths for the seek buttons and the mouse wheel, and whether the time slider seeks while dragging or on release.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Instances&lt;/b&gt; — reuse a single running instance so files open in the existing window (takes effect next launch).&lt;/p&gt;&lt;p&gt;&lt;b&gt;Fullscreen&lt;/b&gt; — hide the mouse pointer after inactivity.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Privacy&lt;/b&gt; — how many recent files and URLs to remember, and whether to remember the last folder.&lt;/p&gt;&lt;p&gt;Style, font and scale-factor changes take effect after restarting Vivace.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefInterfacePage.qml" line="286"/>
+        <source>Can&apos;t turn off: Preferences isn&apos;t on the Toolbar or Control bar, so the menu bar must stay on to reach it.</source>
+        <translation>無法關閉：「偏好設定」未加入工具列或控制列，因此選單列必須保持顯示以便存取它。</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefInterfacePage.qml" line="297"/>
+        <source>The menu bar can&apos;t wrap onto a second row on a narrow screen (unlike the toolbar and control bar), so the window won&apos;t shrink narrower than it needs -- except on Android, which has no minimum window size and can run out of room for it. Turn it off if that happens -- every menu action that&apos;s also on the toolbar (e.g. Preferences) stays reachable either way.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefInterfacePage.qml" line="312"/>
         <source>Use the system native file dialog</source>
         <translation>使用系統原生檔案對話框</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="345"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="373"/>
         <source>OSD</source>
         <translation>視控調整功能(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="352"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="380"/>
         <source>Show OSD messages</source>
         <translation>顯示 OSD 訊息</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="358"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="386"/>
         <source>Duration of OSD messages:</source>
         <translation>OSD 訊息的持續時間：</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="364"/>
-        <location filename="../qml/PrefInterfacePage.qml" line="615"/>
-        <location filename="../qml/PrefInterfacePage.qml" line="623"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="392"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="643"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="651"/>
         <source>ms</source>
         <translation>毫秒</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="369"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="397"/>
         <source>OSD font size:</source>
         <translation>OSD 字型大小：</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="375"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="403"/>
         <source>px</source>
         <translation>像素</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="383"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="411"/>
         <source>Touch</source>
         <translation>觸控</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="392"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="420"/>
         <source>Touch-friendly controls (larger fonts and icons)</source>
         <translation>觸控友善的控制項（較大的字型和圖示）</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="397"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="425"/>
         <source>Enlarges the interface for finger use on a tablet. Toolbar icons resize immediately; the larger fonts take effect after you restart Vivace.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="407"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="435"/>
         <source>Swipe across the video to seek</source>
         <translation>在影片上滑動以定位</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="412"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="440"/>
         <source>Drag left or right on the video (with a finger or the mouse) to jump backward or forward. An on-screen message previews the target while you drag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="496"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="524"/>
         <source>seconds</source>
         <translation>秒</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="502"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="530"/>
         <source>Short jump:</source>
         <translation>短跳轉：</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="509"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="537"/>
         <source>Medium jump:</source>
         <translation>中等跳轉：</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="516"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="544"/>
         <source>Long jump:</source>
         <translation>長跳轉：</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="522"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="550"/>
         <source>Mouse wheel jump:</source>
         <translation>滑鼠滾輪跳轉：</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="532"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="560"/>
         <source>Behaviour of time slider:</source>
         <translation>時間滑桿的行為(&amp;B)：</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="536"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="564"/>
         <source>Seek to position while dragging</source>
         <translation>拖曳時尋找位置</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="537"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="565"/>
         <source>Seek to position when released</source>
         <translation>釋放後尋找位置</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="548"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="576"/>
         <source>Absolute/relative seeking method and precise seeking are mplayer/mpv-specific and do not apply to Vivace&apos;s Qt Multimedia backend (seeking is already position-based).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="571"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="599"/>
         <source>Use only one running instance of Vivace</source>
         <translation>僅使用一個執行中的 Vivace 執行個體</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="582"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="610"/>
         <source>When enabled, opening a file while Vivace is already running hands it to the existing window instead of starting a new one. Takes effect on the next launch.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="596"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="624"/>
         <source>Hide the mouse pointer after inactivity</source>
         <translation>閒置後隱藏滑鼠指標</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="601"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="629"/>
         <source>While a video is playing, hide the mouse pointer over the video after the delay below — in the normal window as well as in fullscreen.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="609"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="637"/>
         <source>Hide after:</source>
         <translation>在此之後隱藏：</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="621"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="649"/>
         <source>Time to hide the control bar:</source>
         <translation>隱藏控制列的時間：</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="630"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="658"/>
         <source>The fullscreen control bar currently shows while the pointer is near the bottom edge; a time-based autohide is planned.</source>
         <translation>全螢幕控制列目前在指標靠近底部邊緣時顯示；計畫加入以時間為基礎的自動隱藏。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="642"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="670"/>
         <source>Recent files</source>
         <translation>最近使用的檔案</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="647"/>
-        <location filename="../qml/PrefInterfacePage.qml" line="663"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="675"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="691"/>
         <source>Max. items:</source>
         <translation>最大項目數：</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="658"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="686"/>
         <source>URLs</source>
         <translation>URL</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="673"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="701"/>
         <source>Remember last directory</source>
         <translation>記住上一個目錄</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="425"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="453"/>
         <source>Vivace scales the interface on high-DPI screens automatically. You can override the scale factor here if needed.</source>
         <translation>Vivace 會在高 DPI 螢幕上自動縮放介面。如有需要，您可以在此處覆寫縮放係數。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="429"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="457"/>
         <source>Scale factor:</source>
         <translation>縮放係數：(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="436"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="464"/>
         <source>Automatic</source>
         <translation>自動</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="453"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="481"/>
         <source>Scale factor changes take effect after restarting Vivace.</source>
         <translation>縮放係數變更在重新啟動 Vivace 後生效。</translation>
     </message>
@@ -4383,6 +4604,186 @@
     </message>
 </context>
 <context>
+    <name>PrefToolsPage</name>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="25"/>
+        <source>&lt;h1&gt;Toolbars&lt;/h1&gt;&lt;p&gt;&lt;b&gt;Toolbar&lt;/b&gt; and &lt;b&gt;Control bar&lt;/b&gt; let you show/hide each bar and choose which actions appear on it, in the same way as Options ▸ Toolbars ▸ Edit main toolbar / Edit control bar.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Status bar&lt;/b&gt; mirrors Options ▸ Status bar: which info fields are shown and how the time is displayed.&lt;/p&gt;&lt;p&gt;Everything on this page applies immediately, like the rest of Preferences.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="101"/>
+        <source>Can&apos;t remove: Preferences must stay on the Toolbar or Control bar, so it&apos;s always reachable.</source>
+        <translation>無法移除：「偏好設定」必須保留在工具列或控制列上，以便隨時可以存取。</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="135"/>
+        <source>Available</source>
+        <translation>可用</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="137"/>
+        <source>Actions you can add. Double-click one or select it and press Add → to place it on the bar; separators and spacers can be reused.</source>
+        <translation>可加入的動作。連按兩下項目，或選取後按「新增 →」以將其放到列上；分隔線和留白可重複使用。</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="169"/>
+        <source>Add →</source>
+        <translation>新增 →</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="175"/>
+        <source>← Remove</source>
+        <translation>← 移除</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="185"/>
+        <location filename="../qml/PrefToolsPage.qml" line="258"/>
+        <source>Toolbar</source>
+        <translation>工具列</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="186"/>
+        <location filename="../qml/PrefToolsPage.qml" line="259"/>
+        <source>Control bar</source>
+        <translation>控制列</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="212"/>
+        <source>Up</source>
+        <translation>上移(&amp;U)</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="217"/>
+        <source>Down</source>
+        <translation>下移(&amp;D)</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="228"/>
+        <source>Icon size:</source>
+        <translation>圖示大小：</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="237"/>
+        <source>Restore defaults</source>
+        <translation>還原預設值</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="241"/>
+        <source>Can&apos;t restore defaults: Preferences must stay on the Toolbar or Control bar, so it&apos;s always reachable.</source>
+        <translation>無法還原預設值：「偏好設定」必須保留在工具列或控制列上，以便隨時可以存取。</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="260"/>
+        <source>Status bar</source>
+        <translation>狀態列</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="287"/>
+        <source>Show toolbar</source>
+        <translation>顯示工具列</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="292"/>
+        <source>The toolbar sits below the menu bar.</source>
+        <translation>工具列位於選單列的下方。</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="299"/>
+        <source>Toolbar items</source>
+        <translation>工具列項目</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="310"/>
+        <source>Choose which actions appear on Toolbar, and in what order.</source>
+        <translation>選擇工具列上顯示哪些動作，以及排列順序。</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="340"/>
+        <source>Show control bar</source>
+        <translation>顯示控制列</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="345"/>
+        <source>The control bar sits at the bottom of the window, with the seek slider and playback buttons.</source>
+        <translation>控制列位於視窗底部，包含定位滑桿和播放按鈕。</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="353"/>
+        <source>Control bar items</source>
+        <translation>控制列項目</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="364"/>
+        <source>Choose which actions appear on Control bar, and in what order.</source>
+        <translation>選擇控制列上顯示哪些動作，以及排列順序。</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="396"/>
+        <source>Show status bar</source>
+        <translation>顯示狀態列</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="401"/>
+        <source>The status bar sits below the control bar and shows information about the currently playing file.</source>
+        <translation>狀態列位於控制列的下方，顯示目前播放檔案的相關資訊。</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="407"/>
+        <source>Status bar fields</source>
+        <translation>狀態列欄位</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="418"/>
+        <source>Choose which fields are shown and how the time is displayed.</source>
+        <translation>選擇顯示哪些欄位，以及時間的顯示方式。</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="422"/>
+        <source>Video info</source>
+        <translation>視訊資料</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="428"/>
+        <source>Audio info</source>
+        <translation>音訊資訊</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="434"/>
+        <source>Format info</source>
+        <translation>格式資訊</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="440"/>
+        <source>Bitrate info</source>
+        <translation>位元率資訊</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="446"/>
+        <source>Frame counter</source>
+        <translation>畫面計數器</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="453"/>
+        <source>Time display</source>
+        <translation>時間顯示</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="460"/>
+        <source>Display total time</source>
+        <translation>顯示總時間</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="466"/>
+        <source>Display remaining time</source>
+        <translation>顯示剩餘時間</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="474"/>
+        <source>Show the current time with milliseconds</source>
+        <translation>以毫秒顯示目前時間</translation>
+    </message>
+</context>
+<context>
     <name>PrefUpdatesPage</name>
     <message>
         <location filename="../qml/PrefUpdatesPage.qml" line="25"/>
@@ -4454,66 +4855,71 @@
     </message>
     <message>
         <location filename="../qml/PreferencesDialog.qml" line="179"/>
+        <source>Toolbars</source>
+        <translation>工具列</translation>
+    </message>
+    <message>
+        <location filename="../qml/PreferencesDialog.qml" line="180"/>
         <source>Keyboard and mouse</source>
         <translation>鍵盤和滑鼠</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="180"/>
+        <location filename="../qml/PreferencesDialog.qml" line="181"/>
         <source>Playlist</source>
         <translation>播放清單</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="181"/>
+        <location filename="../qml/PreferencesDialog.qml" line="182"/>
         <source>TV and radio</source>
         <translation>電視和廣播電台</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="182"/>
+        <location filename="../qml/PreferencesDialog.qml" line="183"/>
         <source>File types</source>
         <translation>檔案類型</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="183"/>
+        <location filename="../qml/PreferencesDialog.qml" line="184"/>
         <source>Updates</source>
         <translation>更新</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="184"/>
+        <location filename="../qml/PreferencesDialog.qml" line="185"/>
         <source>Network</source>
         <translation>網路</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="185"/>
+        <location filename="../qml/PreferencesDialog.qml" line="186"/>
         <source>Advanced</source>
         <translation>進階</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="258"/>
+        <location filename="../qml/PreferencesDialog.qml" line="260"/>
         <source>&amp;Help</source>
         <translation>幫助(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="263"/>
+        <location filename="../qml/PreferencesDialog.qml" line="265"/>
         <source>OK</source>
         <translation>確定(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="267"/>
+        <location filename="../qml/PreferencesDialog.qml" line="269"/>
         <source>Apply</source>
         <translation>套用</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="273"/>
+        <location filename="../qml/PreferencesDialog.qml" line="275"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="282"/>
+        <location filename="../qml/PreferencesDialog.qml" line="284"/>
         <source>Vivace — Help</source>
         <translation>Vivace — 說明</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="346"/>
+        <location filename="../qml/PreferencesDialog.qml" line="348"/>
         <source>Close</source>
         <translation>關閉</translation>
     </message>
@@ -4523,7 +4929,7 @@
     <message>
         <location filename="../src/blurayplayer.cpp" line="74"/>
         <source>Chapter %1</source>
-        <translation type="unfinished">章節 %1</translation>
+        <translation>章節 %1</translation>
     </message>
 </context>
 <context>
@@ -4792,69 +5198,52 @@
 <context>
     <name>ToolbarEditor</name>
     <message>
-        <location filename="../qml/ToolbarEditor.qml" line="27"/>
         <source>Toolbar editor</source>
-        <translation>工具列編輯器</translation>
+        <translation type="vanished">工具列編輯器</translation>
     </message>
     <message>
-        <location filename="../qml/ToolbarEditor.qml" line="106"/>
         <source>Available</source>
-        <translation>可用</translation>
+        <translation type="vanished">可用</translation>
     </message>
     <message>
-        <location filename="../qml/ToolbarEditor.qml" line="108"/>
-        <source>Actions you can add. Double-click one or select it and press Add → to place it on the toolbar; separators and spacers can be reused.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/ToolbarEditor.qml" line="145"/>
         <source>Add →</source>
-        <translation>新增 →</translation>
+        <translation type="vanished">新增 →</translation>
     </message>
     <message>
-        <location filename="../qml/ToolbarEditor.qml" line="151"/>
         <source>← Remove</source>
-        <translation>← 移除</translation>
+        <translation type="vanished">← 移除</translation>
     </message>
     <message>
-        <location filename="../qml/ToolbarEditor.qml" line="161"/>
         <source>Toolbar</source>
-        <translation>工具列</translation>
+        <translation type="vanished">工具列</translation>
     </message>
     <message>
-        <location filename="../qml/ToolbarEditor.qml" line="186"/>
         <source>Up</source>
-        <translation>上移(&amp;U)</translation>
+        <translation type="vanished">上移(&amp;U)</translation>
     </message>
     <message>
-        <location filename="../qml/ToolbarEditor.qml" line="191"/>
         <source>Down</source>
-        <translation>下移(&amp;D)</translation>
+        <translation type="vanished">下移(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../qml/ToolbarEditor.qml" line="203"/>
         <source>&amp;Icon size:</source>
-        <translation>圖示大小(&amp;I)：</translation>
+        <translation type="vanished">圖示大小(&amp;I)：</translation>
     </message>
     <message>
-        <location filename="../qml/ToolbarEditor.qml" line="205"/>
         <source>Size in pixels of this toolbar&apos;s button icons.</source>
-        <translation>此工具列按鈕圖示的像素大小。</translation>
+        <translation type="vanished">此工具列按鈕圖示的像素大小。</translation>
     </message>
     <message>
-        <location filename="../qml/ToolbarEditor.qml" line="216"/>
         <source>Restore defaults</source>
-        <translation>還原預設值</translation>
+        <translation type="vanished">還原預設值</translation>
     </message>
     <message>
-        <location filename="../qml/ToolbarEditor.qml" line="225"/>
         <source>OK</source>
-        <translation>確定(&amp;O)</translation>
+        <translation type="vanished">確定(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/ToolbarEditor.qml" line="233"/>
         <source>Cancel</source>
-        <translation>取消</translation>
+        <translation type="vanished">取消</translation>
     </message>
 </context>
 <context>

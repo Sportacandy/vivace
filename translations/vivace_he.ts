@@ -207,7 +207,7 @@
     <message>
         <location filename="../qml/CacheBrowserDialog.qml" line="272"/>
         <source>Cancel</source>
-        <translation type="unfinished">ביטול</translation>
+        <translation>ביטול</translation>
     </message>
     <message>
         <location filename="../qml/CacheBrowserDialog.qml" line="281"/>
@@ -217,7 +217,7 @@
     <message>
         <location filename="../qml/CacheBrowserDialog.qml" line="284"/>
         <source>Playlists (*.m3u8 *.m3u)</source>
-        <translation type="unfinished">רשימות השמעה (*.m3u8 *.m3u)</translation>
+        <translation>רשימות השמעה (*.m3u8 *.m3u)</translation>
     </message>
     <message>
         <location filename="../qml/CacheBrowserDialog.qml" line="294"/>
@@ -227,12 +227,12 @@
     <message>
         <location filename="../qml/CacheBrowserDialog.qml" line="296"/>
         <source>Playlists (*.m3u *.m3u8)</source>
-        <translation type="unfinished">רשימות השמעה (*.m3u *.m3u8)</translation>
+        <translation>רשימות השמעה (*.m3u *.m3u8)</translation>
     </message>
     <message>
         <location filename="../qml/CacheBrowserDialog.qml" line="296"/>
         <source>All files (*)</source>
-        <translation type="unfinished">כל הקבצים (*)</translation>
+        <translation>כל הקבצים (*)</translation>
     </message>
     <message>
         <location filename="../qml/CacheBrowserDialog.qml" line="319"/>
@@ -421,51 +421,218 @@
 <context>
     <name>ControlBar</name>
     <message>
-        <location filename="../qml/ControlBar.qml" line="473"/>
-        <location filename="../qml/ControlBar.qml" line="479"/>
-        <location filename="../qml/ControlBar.qml" line="485"/>
+        <location filename="../qml/ControlBar.qml" line="47"/>
+        <source>Auto</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="477"/>
+        <source>Normal speed</source>
+        <translation>מהירות רגילה</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="483"/>
+        <source>Halve speed</source>
+        <translation>חצי מהירות</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="488"/>
+        <source>Double speed</source>
+        <translation>מהירות &amp;כפולה</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="494"/>
+        <source>Speed -10%</source>
+        <translation>מהירות &amp;-10%</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="499"/>
+        <source>Speed +10%</source>
+        <translation>מהירות &amp;+10%</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="504"/>
+        <source>Speed -4%</source>
+        <translation>מהירות -&amp;4%</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="505"/>
+        <source>Speed +4%</source>
+        <translation>&amp;מהירות +4%</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="507"/>
+        <source>Speed -1%</source>
+        <translation>מהירות -&amp;1%</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="508"/>
+        <source>Speed +1%</source>
+        <translation>מ&amp;הירות +1%</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="511"/>
+        <source>Pitch compensation</source>
+        <translation>פיצוי גובה צליל</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="525"/>
+        <location filename="../qml/ControlBar.qml" line="635"/>
+        <location filename="../qml/ControlBar.qml" line="655"/>
+        <source>&lt;empty&gt;</source>
+        <translation>&lt;ריק&gt;</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="569"/>
+        <source>&amp;None</source>
+        <translation>&amp;כלום</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="578"/>
+        <source>&amp;Rotate by 90° clockwise</source>
+        <translation>סיבוב ב-90° עם כיוון השעון (&amp;R)</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="587"/>
+        <source>Rotate by 90° &amp;counterclockwise</source>
+        <translation>סיבוב ב-90° נגד כיוון השעון (&amp;C)</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="596"/>
+        <source>Rotate by &amp;180°</source>
+        <translation>סיבוב ב-180° (&amp;1)</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="607"/>
+        <source>50%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="608"/>
+        <source>100%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="609"/>
+        <source>200%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="667"/>
+        <source>&amp;Add new bookmark</source>
+        <translation>הוסף סימנייה חדשה</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="672"/>
+        <source>&amp;Edit bookmarks…</source>
+        <translation>עריכת סימניות (&amp;E)…</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="705"/>
+        <source>(empty)</source>
+        <translation>(ריק)</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="711"/>
+        <source>Clear</source>
+        <translation>טהר</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="718"/>
+        <source>Reset</source>
+        <translation>&amp;אפס</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="719"/>
+        <source>Zoom -</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="720"/>
+        <source>Zoom +</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="722"/>
+        <source>Move left</source>
+        <translation>הזז &amp;שמאלה</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="723"/>
+        <source>Move right</source>
+        <translation>הזז י&amp;מינה</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="724"/>
+        <source>Move up</source>
+        <translation>הזז מ&amp;עלה</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="725"/>
+        <source>Move down</source>
+        <translation>הזז מ&amp;טה</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="730"/>
+        <source>Contents</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="736"/>
+        <source>Check for updates</source>
+        <translation>בדוק עבור עדכונים</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="742"/>
+        <source>About Vivace</source>
+        <translation>אודות Vivace</translation>
+    </message>
+    <message>
+        <location filename="../qml/ControlBar.qml" line="840"/>
+        <location filename="../qml/ControlBar.qml" line="846"/>
+        <location filename="../qml/ControlBar.qml" line="852"/>
         <source>Rewind %1 s</source>
         <translation>אחורה %1 שנ׳</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="491"/>
-        <location filename="../qml/ControlBar.qml" line="497"/>
-        <location filename="../qml/ControlBar.qml" line="503"/>
+        <location filename="../qml/ControlBar.qml" line="858"/>
+        <location filename="../qml/ControlBar.qml" line="864"/>
+        <location filename="../qml/ControlBar.qml" line="870"/>
         <source>Forward %1 s</source>
         <translation>קדימה %1 שנ׳</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="572"/>
+        <location filename="../qml/ControlBar.qml" line="1067"/>
         <source>Error: %1</source>
         <translation>שגיאה: %1</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="575"/>
+        <location filename="../qml/ControlBar.qml" line="1070"/>
         <source>Playing %1</source>
         <translation>מנגן %1</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="580"/>
+        <location filename="../qml/ControlBar.qml" line="1075"/>
         <source>Paused</source>
         <translation>מושהה</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="582"/>
+        <location filename="../qml/ControlBar.qml" line="1077"/>
         <source>Stopped</source>
         <translation>נעצר</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="627"/>
+        <location filename="../qml/ControlBar.qml" line="1122"/>
         <source>V: %1 kbps</source>
         <translation>ו: %1 kbps</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="628"/>
+        <location filename="../qml/ControlBar.qml" line="1123"/>
         <source>A: %1 kbps</source>
         <translation>ש: %1 kbps</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="640"/>
+        <location filename="../qml/ControlBar.qml" line="1135"/>
         <source>Frame: %1</source>
         <translation>מסגרת: %1</translation>
     </message>
@@ -766,309 +933,317 @@
 <context>
     <name>Main</name>
     <message>
-        <location filename="../qml/Main.qml" line="421"/>
-        <location filename="../qml/Main.qml" line="479"/>
+        <location filename="../qml/Main.qml" line="433"/>
+        <location filename="../qml/Main.qml" line="485"/>
+        <location filename="../qml/Main.qml" line="2086"/>
+        <location filename="../qml/Main.qml" line="2212"/>
         <source>TV editor</source>
         <translation>עורך טלוויזיה</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="421"/>
-        <location filename="../qml/Main.qml" line="479"/>
+        <location filename="../qml/Main.qml" line="433"/>
+        <location filename="../qml/Main.qml" line="485"/>
+        <location filename="../qml/Main.qml" line="2086"/>
+        <location filename="../qml/Main.qml" line="2212"/>
         <source>TV channels</source>
         <translation>ערוצי טלוויזיה</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="424"/>
-        <location filename="../qml/Main.qml" line="482"/>
+        <location filename="../qml/Main.qml" line="436"/>
+        <location filename="../qml/Main.qml" line="488"/>
+        <location filename="../qml/Main.qml" line="2089"/>
+        <location filename="../qml/Main.qml" line="2215"/>
         <source>Radio editor</source>
         <translation>עורך רדיו</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="424"/>
-        <location filename="../qml/Main.qml" line="482"/>
+        <location filename="../qml/Main.qml" line="436"/>
+        <location filename="../qml/Main.qml" line="488"/>
+        <location filename="../qml/Main.qml" line="2089"/>
+        <location filename="../qml/Main.qml" line="2215"/>
         <source>Radio channels</source>
         <translation>תחנות רדיו</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="427"/>
-        <location filename="../qml/Main.qml" line="474"/>
+        <location filename="../qml/Main.qml" line="439"/>
+        <location filename="../qml/Main.qml" line="480"/>
         <source>Favorite editor</source>
         <translation>עורך מועדפים</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="427"/>
-        <location filename="../qml/Main.qml" line="474"/>
+        <location filename="../qml/Main.qml" line="439"/>
+        <location filename="../qml/Main.qml" line="480"/>
         <source>Favorite list</source>
         <translation>רשימת מועדפים</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="431"/>
-        <location filename="../qml/Main.qml" line="492"/>
+        <location filename="../qml/Main.qml" line="443"/>
+        <location filename="../qml/Main.qml" line="498"/>
+        <location filename="../qml/Main.qml" line="2099"/>
+        <location filename="../qml/Main.qml" line="2225"/>
         <source>Bookmark added</source>
         <translation>הסימנייה נוספה</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="446"/>
         <source>Edit main toolbar</source>
-        <translation>ערוך &amp;סרגל כלים ראשי</translation>
+        <translation type="vanished">ערוך &amp;סרגל כלים ראשי</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="449"/>
         <source>Edit control bar</source>
-        <translation>ערוך סרגל &amp;בקרה</translation>
+        <translation type="vanished">ערוך סרגל &amp;בקרה</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="500"/>
+        <location filename="../qml/Main.qml" line="510"/>
         <source>Screenshot saved as %1</source>
         <translation>צילום מסך נשמר בתור %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="501"/>
+        <location filename="../qml/Main.qml" line="511"/>
         <source>Could not take the screenshot</source>
         <translation>לא ניתן היה לצלם את המסך</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="632"/>
+        <location filename="../qml/Main.qml" line="642"/>
         <source>Tap Open &gt; File… to choose media</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="633"/>
+        <location filename="../qml/Main.qml" line="643"/>
         <source>Drop media files here, or press Ctrl+O</source>
         <translation>יש לגרור קובצי מדיה לכאן, או ללחוץ על Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="720"/>
+        <location filename="../qml/Main.qml" line="730"/>
         <source>Downloading video…</source>
         <translation>מוריד סרטון…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="727"/>
+        <location filename="../qml/Main.qml" line="737"/>
         <source>This can take a while — the external tool is downloading and merging HD video and audio.</source>
         <translation>פעולה זו עשויה להימשך זמן מה — הכלי החיצוני מוריד וממזג וידאו ושמע באיכות HD.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="741"/>
-        <location filename="../qml/Main.qml" line="1831"/>
+        <location filename="../qml/Main.qml" line="751"/>
+        <location filename="../qml/Main.qml" line="1841"/>
         <source>Cancel</source>
         <translation>ביטול</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="814"/>
+        <location filename="../qml/Main.qml" line="824"/>
         <source>Loading…</source>
         <translation>טוען…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="815"/>
+        <location filename="../qml/Main.qml" line="825"/>
         <source>Connecting…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="816"/>
+        <location filename="../qml/Main.qml" line="826"/>
         <source>Buffering… %1%</source>
         <translation>מאגר… %1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="824"/>
+        <location filename="../qml/Main.qml" line="834"/>
         <source>Live streams can take several seconds to start.</source>
         <translation>שידורים חיים עשויים להימשך מספר שניות עד שיתחילו.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="859"/>
+        <location filename="../qml/Main.qml" line="869"/>
         <source>Volume: %1%</source>
         <translation>עוצמה: %1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="862"/>
+        <location filename="../qml/Main.qml" line="872"/>
         <source>Mute</source>
         <translation>השתק</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="862"/>
+        <location filename="../qml/Main.qml" line="872"/>
         <source>Mute off</source>
         <translation>השתקה כבויה</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="865"/>
+        <location filename="../qml/Main.qml" line="875"/>
         <source>Speed: %1x</source>
         <translation>מהירות: %1x</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1409"/>
+        <location filename="../qml/Main.qml" line="1419"/>
         <source>Media files (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1410"/>
-        <location filename="../qml/Main.qml" line="1480"/>
-        <location filename="../qml/Main.qml" line="1750"/>
+        <location filename="../qml/Main.qml" line="1420"/>
+        <location filename="../qml/Main.qml" line="1490"/>
+        <location filename="../qml/Main.qml" line="1760"/>
         <source>All files (*)</source>
         <translation>כל הקבצים (*)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1452"/>
+        <location filename="../qml/Main.qml" line="1462"/>
         <source>Select the DVD drive or a folder containing VIDEO_TS</source>
         <translation>יש לבחור את כונן ה-DVD או תיקייה המכילה VIDEO_TS</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1456"/>
+        <location filename="../qml/Main.qml" line="1466"/>
         <source>No DVD video found in %1</source>
         <translation>לא נמצא וידאו DVD ב-%1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1464"/>
+        <location filename="../qml/Main.qml" line="1474"/>
         <source>Select the Blu-ray drive or a folder containing BDMV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1468"/>
+        <location filename="../qml/Main.qml" line="1478"/>
         <source>No Blu-ray video found in %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1479"/>
+        <location filename="../qml/Main.qml" line="1489"/>
         <source>Playlists (*.m3u *.m3u8)</source>
         <translation>רשימות השמעה (*.m3u *.m3u8)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1522"/>
+        <location filename="../qml/Main.qml" line="1532"/>
         <source>Playing stream</source>
         <translation>מנגן זרם</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1528"/>
-        <location filename="../qml/Main.qml" line="1561"/>
+        <location filename="../qml/Main.qml" line="1538"/>
+        <location filename="../qml/Main.qml" line="1571"/>
         <source>Playing downloaded video</source>
         <translation>מנגן סרטון שהורד</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1532"/>
+        <location filename="../qml/Main.qml" line="1542"/>
         <source>YouTube: %1</source>
         <translation>YouTube: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1565"/>
+        <location filename="../qml/Main.qml" line="1575"/>
         <source>Download failed: %1</source>
         <translation>ההורדה נכשלה: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1662"/>
+        <location filename="../qml/Main.qml" line="1672"/>
         <source>Saved %1 file(s); %2 failed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1666"/>
+        <location filename="../qml/Main.qml" line="1676"/>
         <source>Saved %1 file(s).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1679"/>
+        <location filename="../qml/Main.qml" line="1689"/>
         <source>Could not read the shortcut file.</source>
         <translation>לא ניתן היה לקרוא את קובץ הקיצור.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1692"/>
+        <location filename="../qml/Main.qml" line="1702"/>
         <source>YouTube playback isn&apos;t supported on Android.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1703"/>
+        <location filename="../qml/Main.qml" line="1713"/>
         <source>Starting download…</source>
         <translation>מתחיל בהורדה…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1704"/>
+        <location filename="../qml/Main.qml" line="1714"/>
         <source>Downloading video (this can take a while)…</source>
         <translation>מוריד סרטון (פעולה זו עשויה להימשך זמן מה)…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1708"/>
+        <location filename="../qml/Main.qml" line="1718"/>
         <source>Resolving with yt-dlp…</source>
         <translation>מנתח באמצעות yt-dlp…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1745"/>
+        <location filename="../qml/Main.qml" line="1755"/>
         <source>Load subtitle file</source>
         <translation>טעינת קובץ כתוביות</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1749"/>
+        <location filename="../qml/Main.qml" line="1759"/>
         <source>Subtitle files (*.srt *.vtt *.ass *.ssa)</source>
         <translation>קובצי כתוביות (*.srt *.vtt *.ass *.ssa)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1757"/>
+        <location filename="../qml/Main.qml" line="1767"/>
         <source>Subtitle delay</source>
         <translation>השהיית כתוביות</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1808"/>
+        <location filename="../qml/Main.qml" line="1818"/>
         <source>Delay:</source>
         <translation>השהיה:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1814"/>
-        <location filename="../qml/Main.qml" line="1904"/>
+        <location filename="../qml/Main.qml" line="1824"/>
+        <location filename="../qml/Main.qml" line="1914"/>
         <source>ms</source>
         <translation>מ״ש</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1824"/>
+        <location filename="../qml/Main.qml" line="1834"/>
         <source>OK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1843"/>
+        <location filename="../qml/Main.qml" line="1853"/>
         <source>Audio delay — Vivace</source>
         <translation>השהיית שמע — Vivace</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1892"/>
+        <location filename="../qml/Main.qml" line="1902"/>
         <source>No delay for this file (use the global delay only)</source>
         <translation>ללא השהיה לקובץ זה (שימוש בהשהיה הכללית בלבד)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1897"/>
+        <location filename="../qml/Main.qml" line="1907"/>
         <source>This file&apos;s delay:</source>
         <translation>השהיית קובץ זה:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1912"/>
+        <location filename="../qml/Main.qml" line="1922"/>
         <source>The delay applied to this file is this value plus the global delay for the current audio device (%1 ms), set in Preferences &gt; General &gt; Audio. Negative values delay the video to match audio that arrives late (e.g. Bluetooth headphones).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1925"/>
+        <location filename="../qml/Main.qml" line="1935"/>
         <source>&amp;Apply</source>
         <translation>&amp;החל</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1934"/>
+        <location filename="../qml/Main.qml" line="1944"/>
         <source>&amp;Close</source>
         <translation>&amp;סגור</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2031"/>
+        <location filename="../qml/Main.qml" line="2028"/>
         <source>Hide window</source>
         <translation>הסתרת החלון</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2031"/>
+        <location filename="../qml/Main.qml" line="2028"/>
         <source>Show window</source>
         <translation>הצגת החלון</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2036"/>
+        <location filename="../qml/Main.qml" line="2033"/>
         <source>Play / Pause</source>
         <translation>נגן / השהה</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2040"/>
+        <location filename="../qml/Main.qml" line="2037"/>
         <source>Stop</source>
         <translation>הפסק</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2045"/>
+        <location filename="../qml/Main.qml" line="2042"/>
         <source>Quit</source>
         <translation>י&amp;ציאה</translation>
     </message>
@@ -1076,12 +1251,12 @@
 <context>
     <name>MainMenuBar</name>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="63"/>
+        <location filename="../qml/MainMenuBar.qml" line="61"/>
         <source>&amp;Auto</source>
         <translation>&amp;אוטומטית</translation>
     </message>
     <message numerus="yes">
-        <location filename="../qml/MainMenuBar.qml" line="93"/>
+        <location filename="../qml/MainMenuBar.qml" line="91"/>
         <source>%n minute(s)</source>
         <translation type="unfinished">
             <numerusform></numerusform>
@@ -1089,7 +1264,7 @@
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../qml/MainMenuBar.qml" line="94"/>
+        <location filename="../qml/MainMenuBar.qml" line="92"/>
         <source>%n second(s)</source>
         <translation type="unfinished">
             <numerusform></numerusform>
@@ -1097,52 +1272,52 @@
         </translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="126"/>
+        <location filename="../qml/MainMenuBar.qml" line="124"/>
         <source>&amp;Open</source>
         <translation>&amp;פתיחה</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="129"/>
+        <location filename="../qml/MainMenuBar.qml" line="127"/>
         <source>&amp;File…</source>
         <translation>&amp;קובץ...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="136"/>
+        <location filename="../qml/MainMenuBar.qml" line="134"/>
         <source>&amp;Recent files</source>
         <translation>קבצים &amp;אחרונים</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="158"/>
+        <location filename="../qml/MainMenuBar.qml" line="156"/>
         <source>(empty)</source>
         <translation>(ריק)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="164"/>
+        <location filename="../qml/MainMenuBar.qml" line="162"/>
         <source>&amp;Clear</source>
         <translation>&amp;טהר</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="170"/>
+        <location filename="../qml/MainMenuBar.qml" line="168"/>
         <source>F&amp;avorites</source>
         <translation>מו&amp;עדפים</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="179"/>
+        <location filename="../qml/MainMenuBar.qml" line="177"/>
         <source>&amp;Directory…</source>
         <translation>&amp;מדור...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="184"/>
+        <location filename="../qml/MainMenuBar.qml" line="182"/>
         <source>&amp;Playlist…</source>
         <translation>רשימת &amp;נגינה...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="189"/>
+        <location filename="../qml/MainMenuBar.qml" line="187"/>
         <source>D&amp;isc</source>
         <translation>&amp;תקליטור</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="193"/>
+        <location filename="../qml/MainMenuBar.qml" line="191"/>
         <source>&amp;DVD from drive or folder…</source>
         <translation>‏DVD מכונן או תיקייה (&amp;D)…</translation>
     </message>
@@ -1151,57 +1326,57 @@
         <translation type="vanished">‏Blu-ray‏ (&amp;B)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="198"/>
+        <location filename="../qml/MainMenuBar.qml" line="196"/>
         <source>&amp;Blu-ray from drive or folder…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="203"/>
+        <location filename="../qml/MainMenuBar.qml" line="201"/>
         <source>&amp;Audio CD</source>
         <translation>&amp;תקליטור שמע</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="208"/>
+        <location filename="../qml/MainMenuBar.qml" line="206"/>
         <source>&amp;URL…</source>
         <translation>‏&amp;URL..‏.</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="214"/>
+        <location filename="../qml/MainMenuBar.qml" line="212"/>
         <source>YouTube &amp;cache…</source>
         <translation>מטמון YouTube (&amp;C)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="222"/>
+        <location filename="../qml/MainMenuBar.qml" line="220"/>
         <source>&amp;TV</source>
         <translation>&amp;טלוויזיה</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="232"/>
+        <location filename="../qml/MainMenuBar.qml" line="230"/>
         <source>Radi&amp;o</source>
         <translation>&amp;רדיו</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="243"/>
+        <location filename="../qml/MainMenuBar.qml" line="241"/>
         <source>&amp;Quit</source>
         <translation>י&amp;ציאה</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="253"/>
+        <location filename="../qml/MainMenuBar.qml" line="251"/>
         <source>&amp;Play</source>
         <translation>&amp;נגינה</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="256"/>
+        <location filename="../qml/MainMenuBar.qml" line="254"/>
         <source>P&amp;lay</source>
         <translation>&amp;נגן</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="263"/>
+        <location filename="../qml/MainMenuBar.qml" line="261"/>
         <source>&amp;Pause</source>
         <translation>&amp;השהה</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="269"/>
+        <location filename="../qml/MainMenuBar.qml" line="267"/>
         <source>&amp;Stop</source>
         <translation>ה&amp;פסק</translation>
     </message>
@@ -1210,214 +1385,209 @@
         <translation type="vanished">&amp;פסע מסגרת</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="281"/>
+        <location filename="../qml/MainMenuBar.qml" line="279"/>
         <source>Fra&amp;me back step</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="288"/>
+        <location filename="../qml/MainMenuBar.qml" line="286"/>
         <source>See&amp;k</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="291"/>
+        <location filename="../qml/MainMenuBar.qml" line="289"/>
         <source>&amp;Rewind %1</source>
         <translation>אחורה %1 (&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="298"/>
+        <location filename="../qml/MainMenuBar.qml" line="296"/>
         <source>&amp;Forward %1</source>
         <translation>קדימה %1 (&amp;F)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="305"/>
-        <location filename="../qml/MainMenuBar.qml" line="319"/>
+        <location filename="../qml/MainMenuBar.qml" line="303"/>
+        <location filename="../qml/MainMenuBar.qml" line="317"/>
         <source>Rewind %1</source>
         <translation>אחורה %1</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="312"/>
-        <location filename="../qml/MainMenuBar.qml" line="326"/>
+        <location filename="../qml/MainMenuBar.qml" line="310"/>
+        <location filename="../qml/MainMenuBar.qml" line="324"/>
         <source>Forward %1</source>
         <translation>קדימה %1</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="334"/>
+        <location filename="../qml/MainMenuBar.qml" line="332"/>
         <source>Sp&amp;eed</source>
         <translation>&amp;מהירות</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="338"/>
+        <location filename="../qml/MainMenuBar.qml" line="336"/>
         <source>&amp;Normal speed</source>
         <translation>מהירות &amp;רגילה</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="345"/>
+        <location filename="../qml/MainMenuBar.qml" line="343"/>
         <source>&amp;Halve speed</source>
         <translation>חצי מהירות (&amp;H)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="351"/>
+        <location filename="../qml/MainMenuBar.qml" line="349"/>
         <source>&amp;Double speed</source>
         <translation>מהירות &amp;כפולה</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="358"/>
+        <location filename="../qml/MainMenuBar.qml" line="356"/>
         <source>Speed &amp;-10%</source>
         <translation>מהירות &amp;-10%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="364"/>
+        <location filename="../qml/MainMenuBar.qml" line="362"/>
         <source>Speed &amp;+10%</source>
         <translation>מהירות &amp;+10%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="370"/>
+        <location filename="../qml/MainMenuBar.qml" line="368"/>
         <source>Speed -4%</source>
         <translation>מהירות -&amp;4%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="371"/>
+        <location filename="../qml/MainMenuBar.qml" line="369"/>
         <source>Speed +4%</source>
         <translation>&amp;מהירות +4%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="373"/>
+        <location filename="../qml/MainMenuBar.qml" line="371"/>
         <source>Speed -1%</source>
         <translation>מהירות -&amp;1%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="374"/>
+        <location filename="../qml/MainMenuBar.qml" line="372"/>
         <source>Speed +1%</source>
         <translation>מ&amp;הירות +1%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="377"/>
+        <location filename="../qml/MainMenuBar.qml" line="375"/>
         <source>Pi&amp;tch compensation</source>
         <translation>פיצוי גובה צליל (&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="386"/>
+        <location filename="../qml/MainMenuBar.qml" line="384"/>
         <source>&amp;A-B section</source>
         <translation>נקודות &amp;A-B‏</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="390"/>
+        <location filename="../qml/MainMenuBar.qml" line="388"/>
         <source>Set &amp;A marker</source>
         <translation>קבע נקודת &amp;A‏</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="396"/>
+        <location filename="../qml/MainMenuBar.qml" line="394"/>
         <source>Set &amp;B marker</source>
         <translation>קבע נקודת &amp;B‏</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="402"/>
+        <location filename="../qml/MainMenuBar.qml" line="400"/>
         <source>&amp;Clear A-B markers</source>
         <translation>&amp;טהר נקודות A-B‏</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="410"/>
+        <location filename="../qml/MainMenuBar.qml" line="408"/>
         <source>&amp;Repeat</source>
         <translation>&amp;חזור</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="416"/>
+        <location filename="../qml/MainMenuBar.qml" line="414"/>
         <source>&amp;Jump to…</source>
         <translation>&amp;קפוץ אל...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="419"/>
+        <location filename="../qml/MainMenuBar.qml" line="417"/>
         <source>Pre&amp;vious</source>
         <translation>&amp;קודמת</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="426"/>
+        <location filename="../qml/MainMenuBar.qml" line="424"/>
         <source>&amp;Next</source>
         <translation>ה&amp;באה</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="435"/>
+        <location filename="../qml/MainMenuBar.qml" line="433"/>
         <source>Cas&amp;t…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="443"/>
+        <location filename="../qml/MainMenuBar.qml" line="441"/>
         <source>&amp;Video</source>
         <translation>&amp;וידאו</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="447"/>
-        <location filename="../qml/MainMenuBar.qml" line="702"/>
-        <location filename="../qml/MainMenuBar.qml" line="792"/>
+        <location filename="../qml/MainMenuBar.qml" line="445"/>
+        <location filename="../qml/MainMenuBar.qml" line="700"/>
+        <location filename="../qml/MainMenuBar.qml" line="790"/>
         <source>&amp;Track</source>
         <translation>&amp;רצועה</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="454"/>
-        <location filename="../qml/MainMenuBar.qml" line="719"/>
-        <location filename="../qml/MainMenuBar.qml" line="937"/>
-        <location filename="../qml/MainMenuBar.qml" line="962"/>
+        <location filename="../qml/MainMenuBar.qml" line="452"/>
+        <location filename="../qml/MainMenuBar.qml" line="717"/>
+        <location filename="../qml/MainMenuBar.qml" line="935"/>
+        <location filename="../qml/MainMenuBar.qml" line="960"/>
         <source>&lt;empty&gt;</source>
         <translation>&lt;ריק&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="486"/>
+        <location filename="../qml/MainMenuBar.qml" line="484"/>
         <source>&amp;Fullscreen</source>
         <translation>&amp;מסך מלא</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="494"/>
+        <location filename="../qml/MainMenuBar.qml" line="492"/>
         <source>Si&amp;ze</source>
         <translation>מי&amp;דה</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="497"/>
+        <location filename="../qml/MainMenuBar.qml" line="495"/>
         <source>50%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="498"/>
+        <location filename="../qml/MainMenuBar.qml" line="496"/>
         <source>100%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="499"/>
+        <location filename="../qml/MainMenuBar.qml" line="497"/>
         <source>200%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="502"/>
+        <location filename="../qml/MainMenuBar.qml" line="500"/>
         <source>&amp;Zoom and pan</source>
         <translation>מרחק מתצוגה והזזה (&amp;Z)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="506"/>
+        <location filename="../qml/MainMenuBar.qml" line="504"/>
         <source>&amp;Reset</source>
         <translation>&amp;אפס</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="511"/>
+        <location filename="../qml/MainMenuBar.qml" line="509"/>
         <source>Zoom &amp;-</source>
         <translation>זום &amp;-</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="516"/>
+        <location filename="../qml/MainMenuBar.qml" line="514"/>
         <source>Zoom &amp;+</source>
         <translation>זום &amp;+</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="522"/>
+        <location filename="../qml/MainMenuBar.qml" line="520"/>
         <source>Move &amp;left</source>
         <translation>הזז &amp;שמאלה</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1076"/>
-        <source>&amp;Edit main toolbar…</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/MainMenuBar.qml" line="1164"/>
+        <location filename="../qml/MainMenuBar.qml" line="1071"/>
         <source>Check for &amp;updates</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1426,332 +1596,298 @@
         <translation type="vanished">הזז י&amp;מינה</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="532"/>
+        <location filename="../qml/MainMenuBar.qml" line="530"/>
         <source>Move &amp;up</source>
         <translation>הזז מ&amp;עלה</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="537"/>
+        <location filename="../qml/MainMenuBar.qml" line="535"/>
         <source>Move &amp;down</source>
         <translation>הזז מ&amp;טה</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="544"/>
+        <location filename="../qml/MainMenuBar.qml" line="542"/>
         <source>&amp;Aspect ratio</source>
         <translation>&amp;יחס רוחב גובה</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="566"/>
+        <location filename="../qml/MainMenuBar.qml" line="564"/>
         <source>&amp;Rotate</source>
         <translation>&amp;סובב</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="570"/>
-        <location filename="../qml/MainMenuBar.qml" line="653"/>
+        <location filename="../qml/MainMenuBar.qml" line="568"/>
+        <location filename="../qml/MainMenuBar.qml" line="651"/>
         <source>&amp;None</source>
         <translation>&amp;כלום</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="579"/>
+        <location filename="../qml/MainMenuBar.qml" line="577"/>
         <source>&amp;Rotate by 90° clockwise</source>
         <translation>סיבוב ב-90° עם כיוון השעון (&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="588"/>
+        <location filename="../qml/MainMenuBar.qml" line="586"/>
         <source>Rotate by 90° &amp;counterclockwise</source>
         <translation>סיבוב ב-90° נגד כיוון השעון (&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="597"/>
+        <location filename="../qml/MainMenuBar.qml" line="595"/>
         <source>Rotate by &amp;180°</source>
         <translation>סיבוב ב-180° (&amp;1)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="607"/>
+        <location filename="../qml/MainMenuBar.qml" line="605"/>
         <source>Fli&amp;p image</source>
         <translation>&amp;הפוך תמונה</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="618"/>
+        <location filename="../qml/MainMenuBar.qml" line="616"/>
         <source>Mirr&amp;or image</source>
         <translation>&amp;שקף תמונה</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="629"/>
+        <location filename="../qml/MainMenuBar.qml" line="627"/>
         <source>&amp;Deinterlace</source>
         <translation>&amp;איין שזירה</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="662"/>
+        <location filename="../qml/MainMenuBar.qml" line="660"/>
         <source>&amp;Yadif</source>
         <translation>&amp;Yadif</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="671"/>
+        <location filename="../qml/MainMenuBar.qml" line="669"/>
         <source>&amp;Bwdif</source>
         <translation>&amp;Bwdif</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="682"/>
+        <location filename="../qml/MainMenuBar.qml" line="680"/>
         <source>E&amp;qualizer…</source>
         <translation>אקולייזר (&amp;Q)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="688"/>
+        <location filename="../qml/MainMenuBar.qml" line="686"/>
         <source>&amp;Screenshot</source>
         <translation>&amp;תצלום מסך</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="698"/>
+        <location filename="../qml/MainMenuBar.qml" line="696"/>
         <source>&amp;Audio</source>
         <translation>&amp;אודיו</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="746"/>
+        <location filename="../qml/MainMenuBar.qml" line="744"/>
         <source>&amp;Mute</source>
         <translation>הש&amp;תק</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="755"/>
+        <location filename="../qml/MainMenuBar.qml" line="753"/>
         <source>Volume &amp;-</source>
         <translation>עוצמת שמע &amp;-</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="762"/>
+        <location filename="../qml/MainMenuBar.qml" line="760"/>
         <source>Volume &amp;+</source>
         <translation>עוצמת שמע &amp;+</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="872"/>
+        <location filename="../qml/MainMenuBar.qml" line="870"/>
         <source>Delay &amp;-</source>
         <translation>שיהוי &amp;-</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="775"/>
+        <location filename="../qml/MainMenuBar.qml" line="773"/>
         <source>D&amp;elay +</source>
         <translation>שי&amp;הוי +</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="275"/>
+        <location filename="../qml/MainMenuBar.qml" line="273"/>
         <source>Frame st&amp;ep</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="527"/>
+        <location filename="../qml/MainMenuBar.qml" line="525"/>
         <source>Move r&amp;ight</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="770"/>
+        <location filename="../qml/MainMenuBar.qml" line="768"/>
         <source>&amp;Delay -</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="780"/>
+        <location filename="../qml/MainMenuBar.qml" line="778"/>
         <source>Set dela&amp;y…</source>
         <translation>&amp;קבע שיהוי...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="788"/>
+        <location filename="../qml/MainMenuBar.qml" line="786"/>
         <source>&amp;Subtitles</source>
         <translation>&amp;כתוביות</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="808"/>
+        <location filename="../qml/MainMenuBar.qml" line="806"/>
         <source>&amp;Off</source>
         <translation>&amp;כבוי</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="853"/>
+        <location filename="../qml/MainMenuBar.qml" line="851"/>
         <source>&amp;Load subtitles…</source>
         <translation>טעינת כתוביות (&amp;L)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="859"/>
+        <location filename="../qml/MainMenuBar.qml" line="857"/>
         <source>&amp;Find subtitles at OpenSubtitles…</source>
         <translation>חיפוש כתוביות ב-OpenSubtitles (&amp;F)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="865"/>
+        <location filename="../qml/MainMenuBar.qml" line="863"/>
         <source>U&amp;nload subtitles</source>
         <translation>פריקת כתוביות (&amp;N)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="878"/>
+        <location filename="../qml/MainMenuBar.qml" line="876"/>
         <source>Delay &amp;+</source>
         <translation>שיהוי &amp;+</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="884"/>
+        <location filename="../qml/MainMenuBar.qml" line="882"/>
         <source>Se&amp;t delay…</source>
         <translation>&amp;קבע שיהוי...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="893"/>
+        <location filename="../qml/MainMenuBar.qml" line="891"/>
         <source>&amp;Browse</source>
         <translation>&amp;דפדוף</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="896"/>
+        <location filename="../qml/MainMenuBar.qml" line="894"/>
         <source>&amp;DVD menu</source>
         <translation>DVD &amp;תפריט</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="905"/>
+        <location filename="../qml/MainMenuBar.qml" line="903"/>
         <source>&amp;Title</source>
         <translation>&amp;כותרת</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="944"/>
+        <location filename="../qml/MainMenuBar.qml" line="942"/>
         <source>&amp;Chapters</source>
         <translation>פרקים (&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="969"/>
+        <location filename="../qml/MainMenuBar.qml" line="967"/>
         <source>&amp;Bookmarks</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="979"/>
+        <location filename="../qml/MainMenuBar.qml" line="977"/>
         <source>&amp;Add new bookmark</source>
         <translation>הוסף סימנייה חדשה</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="986"/>
+        <location filename="../qml/MainMenuBar.qml" line="984"/>
         <source>&amp;Edit bookmarks…</source>
         <translation>עריכת סימניות (&amp;E)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1010"/>
+        <location filename="../qml/MainMenuBar.qml" line="1008"/>
         <source>Vie&amp;w</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1013"/>
+        <location filename="../qml/MainMenuBar.qml" line="1011"/>
         <source>&amp;Information and properties…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1020"/>
+        <location filename="../qml/MainMenuBar.qml" line="1018"/>
         <source>&amp;Playlist</source>
         <translation>רשימת &amp;נגינה</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1028"/>
+        <location filename="../qml/MainMenuBar.qml" line="1026"/>
         <source>&amp;OSD</source>
         <translation>‏&amp;OSD‏</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1030"/>
+        <location filename="../qml/MainMenuBar.qml" line="1028"/>
         <source>Subtitles only</source>
         <translation>כתוביות &amp;בלבד</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1031"/>
+        <location filename="../qml/MainMenuBar.qml" line="1029"/>
         <source>Volume + seek</source>
         <translation>עוצמה + דילוג</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1032"/>
+        <location filename="../qml/MainMenuBar.qml" line="1030"/>
         <source>Volume + seek + timer</source>
         <translation>עוצמה + דילוג + זמן</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1038"/>
+        <location filename="../qml/MainMenuBar.qml" line="1036"/>
         <source>Op&amp;tions</source>
         <translation>אפ&amp;שרויות</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1041"/>
+        <location filename="../qml/MainMenuBar.qml" line="1039"/>
         <source>&amp;Preferences…</source>
         <translation>העדפות (&amp;P)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1054"/>
+        <location filename="../qml/MainMenuBar.qml" line="1052"/>
         <source>S&amp;how icon in system tray</source>
         <translation>ה&amp;צג סמל במגש מערכת</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1060"/>
         <source>&amp;Toolbars</source>
-        <translation>&amp;סרגלי כלים</translation>
+        <translation type="vanished">&amp;סרגלי כלים</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1063"/>
         <source>&amp;Toolbar</source>
-        <translation>סרגל כלים (&amp;T)</translation>
+        <translation type="vanished">סרגל כלים (&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1069"/>
         <source>&amp;Control bar</source>
-        <translation>סרגל בקרה</translation>
+        <translation type="vanished">סרגל בקרה</translation>
     </message>
     <message>
         <source>Edit main &amp;toolbar…</source>
         <translation type="vanished">עריכת סרגל הכלים הראשי (&amp;T)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1080"/>
         <source>Edit control &amp;bar…</source>
-        <translation>עריכת סרגל הבקרה (&amp;B)…</translation>
+        <translation type="vanished">עריכת סרגל הבקרה (&amp;B)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1085"/>
         <source>&amp;Status bar</source>
-        <translation>שורת מצב (&amp;S)</translation>
+        <translation type="vanished">שורת מצב (&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1088"/>
         <source>&amp;Show status bar</source>
-        <translation>הצגת שורת המצב (&amp;S)</translation>
+        <translation type="vanished">הצגת שורת המצב (&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1095"/>
         <source>&amp;Video info</source>
-        <translation>מידע &amp;וידאו</translation>
+        <translation type="vanished">מידע &amp;וידאו</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1102"/>
         <source>&amp;Audio info</source>
-        <translation>פרטי שמע (&amp;A)</translation>
+        <translation type="vanished">פרטי שמע (&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1109"/>
-        <source>F&amp;ormat info</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/MainMenuBar.qml" line="1116"/>
-        <source>&amp;Bitrate info</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/MainMenuBar.qml" line="1123"/>
         <source>&amp;Frame counter</source>
-        <translation>&amp;מונה מסגרת</translation>
+        <translation type="vanished">&amp;מונה מסגרת</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1131"/>
-        <source>Display &amp;total time</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/MainMenuBar.qml" line="1137"/>
-        <source>Display &amp;remaining time</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/MainMenuBar.qml" line="1144"/>
-        <source>Show the current time with &amp;milliseconds</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/MainMenuBar.qml" line="1154"/>
+        <location filename="../qml/MainMenuBar.qml" line="1061"/>
         <source>&amp;Help</source>
         <translation>&amp;עזרה</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1157"/>
+        <location filename="../qml/MainMenuBar.qml" line="1064"/>
         <source>&amp;Contents</source>
         <translation>תוכן (&amp;C)</translation>
     </message>
@@ -1760,7 +1896,7 @@
         <translation type="vanished">&amp;בדוק עבור עדכונים</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1170"/>
+        <location filename="../qml/MainMenuBar.qml" line="1077"/>
         <source>&amp;About Vivace</source>
         <translation>אודות Vivace (&amp;A)</translation>
     </message>
@@ -1768,116 +1904,176 @@
 <context>
     <name>MainToolBar</name>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="58"/>
+        <location filename="../qml/MainToolBar.qml" line="62"/>
         <source>Auto</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="243"/>
+        <location filename="../qml/MainToolBar.qml" line="247"/>
         <source>&amp;Off</source>
         <translation>&amp;כבוי</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="289"/>
+        <location filename="../qml/MainToolBar.qml" line="293"/>
         <source>Normal speed</source>
         <translation>מהירות רגילה</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="295"/>
+        <location filename="../qml/MainToolBar.qml" line="299"/>
         <source>Halve speed</source>
         <translation>חצי מהירות</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="300"/>
+        <location filename="../qml/MainToolBar.qml" line="304"/>
         <source>Double speed</source>
         <translation>מהירות &amp;כפולה</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="306"/>
+        <location filename="../qml/MainToolBar.qml" line="310"/>
         <source>Speed -10%</source>
         <translation>מהירות &amp;-10%</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="311"/>
+        <location filename="../qml/MainToolBar.qml" line="315"/>
         <source>Speed +10%</source>
         <translation>מהירות &amp;+10%</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="316"/>
+        <location filename="../qml/MainToolBar.qml" line="320"/>
         <source>Speed -4%</source>
         <translation>מהירות -&amp;4%</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="317"/>
+        <location filename="../qml/MainToolBar.qml" line="321"/>
         <source>Speed +4%</source>
         <translation>&amp;מהירות +4%</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="319"/>
+        <location filename="../qml/MainToolBar.qml" line="323"/>
         <source>Speed -1%</source>
         <translation>מהירות -&amp;1%</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="320"/>
+        <location filename="../qml/MainToolBar.qml" line="324"/>
         <source>Speed +1%</source>
         <translation>מ&amp;הירות +1%</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="323"/>
+        <location filename="../qml/MainToolBar.qml" line="327"/>
         <source>Pitch compensation</source>
         <translation>פיצוי גובה צליל</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="337"/>
-        <location filename="../qml/MainToolBar.qml" line="447"/>
-        <location filename="../qml/MainToolBar.qml" line="467"/>
+        <location filename="../qml/MainToolBar.qml" line="341"/>
+        <location filename="../qml/MainToolBar.qml" line="451"/>
+        <location filename="../qml/MainToolBar.qml" line="471"/>
         <source>&lt;empty&gt;</source>
         <translation>&lt;ריק&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="381"/>
+        <location filename="../qml/MainToolBar.qml" line="385"/>
         <source>&amp;None</source>
         <translation>&amp;כלום</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="390"/>
+        <location filename="../qml/MainToolBar.qml" line="394"/>
         <source>&amp;Rotate by 90° clockwise</source>
         <translation>סיבוב ב-90° עם כיוון השעון (&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="399"/>
+        <location filename="../qml/MainToolBar.qml" line="403"/>
         <source>Rotate by 90° &amp;counterclockwise</source>
         <translation>סיבוב ב-90° נגד כיוון השעון (&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="408"/>
+        <location filename="../qml/MainToolBar.qml" line="412"/>
         <source>Rotate by &amp;180°</source>
         <translation>סיבוב ב-180° (&amp;1)</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="419"/>
+        <location filename="../qml/MainToolBar.qml" line="423"/>
         <source>50%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="420"/>
+        <location filename="../qml/MainToolBar.qml" line="424"/>
         <source>100%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="421"/>
+        <location filename="../qml/MainToolBar.qml" line="425"/>
         <source>200%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="479"/>
+        <location filename="../qml/MainToolBar.qml" line="483"/>
         <source>&amp;Add new bookmark</source>
         <translation>הוסף סימנייה חדשה</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="484"/>
+        <location filename="../qml/MainToolBar.qml" line="488"/>
         <source>&amp;Edit bookmarks…</source>
         <translation>עריכת סימניות (&amp;E)…</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="521"/>
+        <source>(empty)</source>
+        <translation>(ריק)</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="527"/>
+        <source>Clear</source>
+        <translation>טהר</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="534"/>
+        <source>Reset</source>
+        <translation>&amp;אפס</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="535"/>
+        <source>Zoom -</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="536"/>
+        <source>Zoom +</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="538"/>
+        <source>Move left</source>
+        <translation>הזז &amp;שמאלה</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="539"/>
+        <source>Move right</source>
+        <translation>הזז י&amp;מינה</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="540"/>
+        <source>Move up</source>
+        <translation>הזז מ&amp;עלה</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="541"/>
+        <source>Move down</source>
+        <translation>הזז מ&amp;טה</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="546"/>
+        <source>Contents</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="552"/>
+        <source>Check for updates</source>
+        <translation>בדוק עבור עדכונים</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainToolBar.qml" line="558"/>
+        <source>About Vivace</source>
+        <translation>אודות Vivace</translation>
     </message>
 </context>
 <context>
@@ -2429,17 +2625,17 @@
     <message>
         <location filename="../qml/PlaylistEditor.qml" line="185"/>
         <source>Small</source>
-        <translation type="unfinished">קטן</translation>
+        <translation>קטן</translation>
     </message>
     <message>
         <location filename="../qml/PlaylistEditor.qml" line="191"/>
         <source>Medium</source>
-        <translation type="unfinished">בינוני</translation>
+        <translation>בינוני</translation>
     </message>
     <message>
         <location filename="../qml/PlaylistEditor.qml" line="197"/>
         <source>Large</source>
-        <translation type="unfinished">גדול</translation>
+        <translation>גדול</translation>
     </message>
     <message>
         <location filename="../qml/PlaylistEditor.qml" line="213"/>
@@ -3174,366 +3370,371 @@
 <context>
     <name>PrefInterfacePage</name>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="56"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="72"/>
         <source>Interface</source>
         <translation>ממשק</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="58"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="74"/>
         <source>Seeking</source>
         <translation>חיפוש</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="60"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="76"/>
         <source>Instances</source>
         <translation>מקרים</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="78"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="94"/>
         <source>Fullscreen</source>
         <translation>מסך מלא</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="84"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="100"/>
         <source>Privacy</source>
         <translation>פרטיות</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="103"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="119"/>
         <source>Main window</source>
         <translation>חלון ראשי</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="126"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="142"/>
         <source>Auto-resize:</source>
         <translation>שינוי גודל אוטומטי:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="131"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="147"/>
         <source>Never</source>
         <translation>אל תשנה</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="132"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="148"/>
         <source>Whenever it&apos;s needed</source>
         <translation>כאשר קיים צורך בכך</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="133"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="149"/>
         <source>Only after loading a new video</source>
         <translation>רק כעבור הטענת וידאו חדש</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="140"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="156"/>
         <source>Center window</source>
         <translation>מרכוז חלון</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="145"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="161"/>
         <source>Prevent the window from getting outside of the screen</source>
         <translation>מניעת יציאת החלון מחוץ למסך</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="150"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="166"/>
         <source>Remember size and position of the main window</source>
         <translation>זכירת הגודל והמיקום של החלון הראשי</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="155"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="171"/>
         <source>Hide the video window when playing audio files</source>
         <translation>הסתרת חלון הווידאו בעת ניגון קובצי שמע</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="217"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="233"/>
         <source>Language:</source>
         <translation>&amp;שפה:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="164"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="180"/>
         <source>GUI:</source>
         <translation>מנשק:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="21"/>
-        <source>&lt;h1&gt;Interface&lt;/h1&gt;&lt;p&gt;&lt;b&gt;Interface&lt;/b&gt; — the GUI layout (Basic / Mini / Mpc), icon set, language, and Qt Quick Controls style, plus main-window behaviour (auto-resize, centre, keep on screen, remember geometry, hide the video area for audio-only files), whether the menu bar is shown (it can&apos;t wrap onto a second row the way the toolbar and control bar can, so it&apos;s easy to run out of room for it on a narrow phone screen), the toolbar gradient, and the native file dialog toggle.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Text&lt;/b&gt; — the application font, OSD options, touch-friendly sizing, and the high-DPI scale-factor override (Vivace scales automatically otherwise).&lt;/p&gt;&lt;p&gt;&lt;b&gt;Seeking&lt;/b&gt; — the jump lengths for the seek buttons and the mouse wheel, and whether the time slider seeks while dragging or on release.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Instances&lt;/b&gt; — reuse a single running instance so files open in the existing window (takes effect next launch).&lt;/p&gt;&lt;p&gt;&lt;b&gt;Fullscreen&lt;/b&gt; — hide the mouse pointer after inactivity.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Privacy&lt;/b&gt; — how many recent files and URLs to remember, and whether to remember the last folder.&lt;/p&gt;&lt;p&gt;Style, font and scale-factor changes take effect after restarting Vivace.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="57"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="73"/>
         <source>Text</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="174"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="190"/>
         <source>Basic GUI</source>
         <translation>ממשק בסיסי</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="175"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="191"/>
         <source>Mini GUI</source>
         <translation>ממשק גרפי מוקטן</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="176"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="192"/>
         <source>Mpc GUI</source>
         <translation>ממשק גרפי Mpc</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="177"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="193"/>
         <source>Skinnable GUI</source>
         <translation>ממשק בר הלבשה (סקין)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="200"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="216"/>
         <source>Icon set:</source>
         <translation>מערך צ&amp;למית:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="208"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="224"/>
         <source>Default</source>
         <translation>שגרתי</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="209"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="225"/>
         <source>Classic</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="226"/>
-        <location filename="../qml/PrefInterfacePage.qml" line="309"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="242"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="337"/>
         <source>System default</source>
         <translation>ברירת המחדל של המערכת</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="240"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="256"/>
         <source>Language changes take effect after restarting Vivace. Untranslated text falls back to English.</source>
         <translation>שינויי שפה נכנסים לתוקף לאחר הפעלה מחדש של Vivace. טקסט שאינו מתורגם מוצג באנגלית.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="245"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="261"/>
         <source>Style:</source>
         <translation>ס&amp;גנון:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="260"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="276"/>
         <source>Style changes take effect after restarting Vivace. Fusion is recommended: other styles may not render the custom menus and sliders correctly.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="266"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="282"/>
         <source>Show menu bar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="271"/>
-        <source>The menu bar can&apos;t wrap onto a second row on a narrow screen (unlike the toolbar and control bar), so it can run out of room on a phone. Turn it off if that happens -- every menu action that&apos;s also on the toolbar (e.g. Preferences) stays reachable either way.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="304"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="332"/>
         <source>Application font:</source>
         <translation>גופן היישום:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="315"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="343"/>
         <source>Change…</source>
         <translation>&amp;שנה...</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="326"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="354"/>
         <source>Reset</source>
         <translation>&amp;אפס</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="340"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="368"/>
         <source>Font changes take effect after restarting Vivace. (The default font already renders Japanese and other scripts; a custom font only needs to be set for preference.)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="279"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="307"/>
         <source>Gradient background for the toolbar and control bar</source>
         <translation>רקע מדורג לסרגל הכלים ולסרגל הבקרה</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="284"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="36"/>
+        <source>&lt;h1&gt;Interface&lt;/h1&gt;&lt;p&gt;&lt;b&gt;Interface&lt;/b&gt; — the GUI layout (Basic / Mini / Mpc), icon set, language, and Qt Quick Controls style, plus main-window behaviour (auto-resize, centre, keep on screen, remember geometry, hide the video area for audio-only files), whether the menu bar is shown (it can&apos;t wrap onto a second row the way the toolbar and control bar can, so the window won&apos;t shrink narrower than the menu bar needs — except on Android, which has no minimum window size and can run out of room for it), the toolbar gradient, and the native file dialog toggle.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Text&lt;/b&gt; — the application font, OSD options, touch-friendly sizing, and the high-DPI scale-factor override (Vivace scales automatically otherwise).&lt;/p&gt;&lt;p&gt;&lt;b&gt;Seeking&lt;/b&gt; — the jump lengths for the seek buttons and the mouse wheel, and whether the time slider seeks while dragging or on release.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Instances&lt;/b&gt; — reuse a single running instance so files open in the existing window (takes effect next launch).&lt;/p&gt;&lt;p&gt;&lt;b&gt;Fullscreen&lt;/b&gt; — hide the mouse pointer after inactivity.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Privacy&lt;/b&gt; — how many recent files and URLs to remember, and whether to remember the last folder.&lt;/p&gt;&lt;p&gt;Style, font and scale-factor changes take effect after restarting Vivace.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefInterfacePage.qml" line="286"/>
+        <source>Can&apos;t turn off: Preferences isn&apos;t on the Toolbar or Control bar, so the menu bar must stay on to reach it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefInterfacePage.qml" line="297"/>
+        <source>The menu bar can&apos;t wrap onto a second row on a narrow screen (unlike the toolbar and control bar), so the window won&apos;t shrink narrower than it needs -- except on Android, which has no minimum window size and can run out of room for it. Turn it off if that happens -- every menu action that&apos;s also on the toolbar (e.g. Preferences) stays reachable either way.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefInterfacePage.qml" line="312"/>
         <source>Use the system native file dialog</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="345"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="373"/>
         <source>OSD</source>
         <translation>‏&amp;OSD‏</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="352"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="380"/>
         <source>Show OSD messages</source>
         <translation>הצגת הודעות OSD</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="358"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="386"/>
         <source>Duration of OSD messages:</source>
         <translation>משך הודעות OSD:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="364"/>
-        <location filename="../qml/PrefInterfacePage.qml" line="615"/>
-        <location filename="../qml/PrefInterfacePage.qml" line="623"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="392"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="643"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="651"/>
         <source>ms</source>
         <translation>מ״ש</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="369"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="397"/>
         <source>OSD font size:</source>
         <translation>גודל גופן OSD:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="375"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="403"/>
         <source>px</source>
         <translation>פיקסלים</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="383"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="411"/>
         <source>Touch</source>
         <translation>מגע</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="392"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="420"/>
         <source>Touch-friendly controls (larger fonts and icons)</source>
         <translation>פקדים ידידותיים למגע (גופנים וסמלים גדולים יותר)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="397"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="425"/>
         <source>Enlarges the interface for finger use on a tablet. Toolbar icons resize immediately; the larger fonts take effect after you restart Vivace.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="407"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="435"/>
         <source>Swipe across the video to seek</source>
         <translation>יש להחליק על הווידאו כדי לדלג</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="412"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="440"/>
         <source>Drag left or right on the video (with a finger or the mouse) to jump backward or forward. An on-screen message previews the target while you drag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="496"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="524"/>
         <source>seconds</source>
         <translation>שניות</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="502"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="530"/>
         <source>Short jump:</source>
         <translation>קפיצה קצרה:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="509"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="537"/>
         <source>Medium jump:</source>
         <translation>קפיצה בינונית:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="516"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="544"/>
         <source>Long jump:</source>
         <translation>קפיצה ארוכה:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="522"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="550"/>
         <source>Mouse wheel jump:</source>
         <translation>קפיצת גלגל עכבר:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="532"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="560"/>
         <source>Behaviour of time slider:</source>
         <translation>&amp;התנהגות של מחוון זמן:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="536"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="564"/>
         <source>Seek to position while dragging</source>
         <translation>חפש אל מקום במהלך גרירה</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="537"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="565"/>
         <source>Seek to position when released</source>
         <translation>חפש אל מקום כאשר משוחרר</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="548"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="576"/>
         <source>Absolute/relative seeking method and precise seeking are mplayer/mpv-specific and do not apply to Vivace&apos;s Qt Multimedia backend (seeking is already position-based).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="571"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="599"/>
         <source>Use only one running instance of Vivace</source>
         <translation>שימוש במופע פעיל אחד בלבד של Vivace</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="582"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="610"/>
         <source>When enabled, opening a file while Vivace is already running hands it to the existing window instead of starting a new one. Takes effect on the next launch.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="596"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="624"/>
         <source>Hide the mouse pointer after inactivity</source>
         <translation>הסתרת מצביע העכבר לאחר חוסר פעילות</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="601"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="629"/>
         <source>While a video is playing, hide the mouse pointer over the video after the delay below — in the normal window as well as in fullscreen.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="609"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="637"/>
         <source>Hide after:</source>
         <translation>הסתרה לאחר:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="621"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="649"/>
         <source>Time to hide the control bar:</source>
         <translation>זמן להסתרת סרגל הבקרה:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="630"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="658"/>
         <source>The fullscreen control bar currently shows while the pointer is near the bottom edge; a time-based autohide is planned.</source>
         <translation>סרגל הבקרה במסך מלא מוצג כעת כל עוד המצביע קרוב לקצה התחתון; מתוכננת הסתרה אוטומטית מבוססת זמן.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="642"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="670"/>
         <source>Recent files</source>
         <translation>קבצים אחרונים</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="647"/>
-        <location filename="../qml/PrefInterfacePage.qml" line="663"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="675"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="691"/>
         <source>Max. items:</source>
         <translation>פריטים מרביים:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="658"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="686"/>
         <source>URLs</source>
         <translation>URL</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="673"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="701"/>
         <source>Remember last directory</source>
         <translation>זכור מדור אחרון</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="425"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="453"/>
         <source>Vivace scales the interface on high-DPI screens automatically. You can override the scale factor here if needed.</source>
         <translation>‏Vivace מתאים את המנשק במסכי DPI גבוה אוטומטית. ניתן לעקוף כאן את מקדם קנה המידה במידת הצורך.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="429"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="457"/>
         <source>Scale factor:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="436"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="464"/>
         <source>Automatic</source>
         <translation>אוטומטי</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="453"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="481"/>
         <source>Scale factor changes take effect after restarting Vivace.</source>
         <translation>שינויי מקדם קנה המידה נכנסים לתוקף לאחר הפעלה מחדש של Vivace.</translation>
     </message>
@@ -3707,7 +3908,7 @@
     <message>
         <location filename="../qml/PrefNetworkPage.qml" line="291"/>
         <source>Never</source>
-        <translation type="unfinished">אל תשנה</translation>
+        <translation>אל תשנה</translation>
     </message>
     <message>
         <location filename="../qml/PrefNetworkPage.qml" line="292"/>
@@ -4366,6 +4567,186 @@
     </message>
 </context>
 <context>
+    <name>PrefToolsPage</name>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="25"/>
+        <source>&lt;h1&gt;Toolbars&lt;/h1&gt;&lt;p&gt;&lt;b&gt;Toolbar&lt;/b&gt; and &lt;b&gt;Control bar&lt;/b&gt; let you show/hide each bar and choose which actions appear on it, in the same way as Options ▸ Toolbars ▸ Edit main toolbar / Edit control bar.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Status bar&lt;/b&gt; mirrors Options ▸ Status bar: which info fields are shown and how the time is displayed.&lt;/p&gt;&lt;p&gt;Everything on this page applies immediately, like the rest of Preferences.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="101"/>
+        <source>Can&apos;t remove: Preferences must stay on the Toolbar or Control bar, so it&apos;s always reachable.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="135"/>
+        <source>Available</source>
+        <translation>זמינים</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="137"/>
+        <source>Actions you can add. Double-click one or select it and press Add → to place it on the bar; separators and spacers can be reused.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="169"/>
+        <source>Add →</source>
+        <translation>הוספה →</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="175"/>
+        <source>← Remove</source>
+        <translation>← הסרה</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="185"/>
+        <location filename="../qml/PrefToolsPage.qml" line="258"/>
+        <source>Toolbar</source>
+        <translation>סרגל כלים</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="186"/>
+        <location filename="../qml/PrefToolsPage.qml" line="259"/>
+        <source>Control bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="212"/>
+        <source>Up</source>
+        <translation>מ&amp;עלה</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="217"/>
+        <source>Down</source>
+        <translation>מ&amp;טה</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="228"/>
+        <source>Icon size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="237"/>
+        <source>Restore defaults</source>
+        <translation>שחזור ברירות המחדל</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="241"/>
+        <source>Can&apos;t restore defaults: Preferences must stay on the Toolbar or Control bar, so it&apos;s always reachable.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="260"/>
+        <source>Status bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="287"/>
+        <source>Show toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="292"/>
+        <source>The toolbar sits below the menu bar.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="299"/>
+        <source>Toolbar items</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="310"/>
+        <source>Choose which actions appear on Toolbar, and in what order.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="340"/>
+        <source>Show control bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="345"/>
+        <source>The control bar sits at the bottom of the window, with the seek slider and playback buttons.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="353"/>
+        <source>Control bar items</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="364"/>
+        <source>Choose which actions appear on Control bar, and in what order.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="396"/>
+        <source>Show status bar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="401"/>
+        <source>The status bar sits below the control bar and shows information about the currently playing file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="407"/>
+        <source>Status bar fields</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="418"/>
+        <source>Choose which fields are shown and how the time is displayed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="422"/>
+        <source>Video info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="428"/>
+        <source>Audio info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="434"/>
+        <source>Format info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="440"/>
+        <source>Bitrate info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="446"/>
+        <source>Frame counter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="453"/>
+        <source>Time display</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="460"/>
+        <source>Display total time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="466"/>
+        <source>Display remaining time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefToolsPage.qml" line="474"/>
+        <source>Show the current time with milliseconds</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PrefUpdatesPage</name>
     <message>
         <location filename="../qml/PrefUpdatesPage.qml" line="25"/>
@@ -4437,66 +4818,71 @@
     </message>
     <message>
         <location filename="../qml/PreferencesDialog.qml" line="179"/>
+        <source>Toolbars</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PreferencesDialog.qml" line="180"/>
         <source>Keyboard and mouse</source>
         <translation>מקלדת ועכבר</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="180"/>
+        <location filename="../qml/PreferencesDialog.qml" line="181"/>
         <source>Playlist</source>
         <translation>רשימת נגינה</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="181"/>
+        <location filename="../qml/PreferencesDialog.qml" line="182"/>
         <source>TV and radio</source>
         <translation>טלוויזיה ורדיו</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="182"/>
+        <location filename="../qml/PreferencesDialog.qml" line="183"/>
         <source>File types</source>
         <translation>טיפוסי קובץ</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="183"/>
+        <location filename="../qml/PreferencesDialog.qml" line="184"/>
         <source>Updates</source>
         <translation>עדכונים</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="184"/>
+        <location filename="../qml/PreferencesDialog.qml" line="185"/>
         <source>Network</source>
         <translation>רשת תקשורת</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="185"/>
+        <location filename="../qml/PreferencesDialog.qml" line="186"/>
         <source>Advanced</source>
         <translation>מתקדמות</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="258"/>
+        <location filename="../qml/PreferencesDialog.qml" line="260"/>
         <source>&amp;Help</source>
         <translation>&amp;עזרה</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="263"/>
+        <location filename="../qml/PreferencesDialog.qml" line="265"/>
         <source>OK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="267"/>
+        <location filename="../qml/PreferencesDialog.qml" line="269"/>
         <source>Apply</source>
         <translation>החל</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="273"/>
+        <location filename="../qml/PreferencesDialog.qml" line="275"/>
         <source>Cancel</source>
         <translation>ביטול</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="282"/>
+        <location filename="../qml/PreferencesDialog.qml" line="284"/>
         <source>Vivace — Help</source>
         <translation>Vivace — עזרה</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="346"/>
+        <location filename="../qml/PreferencesDialog.qml" line="348"/>
         <source>Close</source>
         <translation>סגור</translation>
     </message>
@@ -4506,7 +4892,7 @@
     <message>
         <location filename="../src/blurayplayer.cpp" line="74"/>
         <source>Chapter %1</source>
-        <translation type="unfinished">פרק %1</translation>
+        <translation>פרק %1</translation>
     </message>
 </context>
 <context>
@@ -4775,69 +5161,48 @@
 <context>
     <name>ToolbarEditor</name>
     <message>
-        <location filename="../qml/ToolbarEditor.qml" line="27"/>
         <source>Toolbar editor</source>
-        <translation>עורך סרגל הכלים</translation>
+        <translation type="vanished">עורך סרגל הכלים</translation>
     </message>
     <message>
-        <location filename="../qml/ToolbarEditor.qml" line="106"/>
         <source>Available</source>
-        <translation>זמינים</translation>
+        <translation type="vanished">זמינים</translation>
     </message>
     <message>
-        <location filename="../qml/ToolbarEditor.qml" line="108"/>
-        <source>Actions you can add. Double-click one or select it and press Add → to place it on the toolbar; separators and spacers can be reused.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/ToolbarEditor.qml" line="145"/>
         <source>Add →</source>
-        <translation>הוספה →</translation>
+        <translation type="vanished">הוספה →</translation>
     </message>
     <message>
-        <location filename="../qml/ToolbarEditor.qml" line="151"/>
         <source>← Remove</source>
-        <translation>← הסרה</translation>
+        <translation type="vanished">← הסרה</translation>
     </message>
     <message>
-        <location filename="../qml/ToolbarEditor.qml" line="161"/>
         <source>Toolbar</source>
-        <translation>סרגל כלים</translation>
+        <translation type="vanished">סרגל כלים</translation>
     </message>
     <message>
-        <location filename="../qml/ToolbarEditor.qml" line="186"/>
         <source>Up</source>
-        <translation>מ&amp;עלה</translation>
+        <translation type="vanished">מ&amp;עלה</translation>
     </message>
     <message>
-        <location filename="../qml/ToolbarEditor.qml" line="191"/>
         <source>Down</source>
-        <translation>מ&amp;טה</translation>
+        <translation type="vanished">מ&amp;טה</translation>
     </message>
     <message>
-        <location filename="../qml/ToolbarEditor.qml" line="203"/>
         <source>&amp;Icon size:</source>
-        <translation>&amp;גודל סמל:</translation>
+        <translation type="vanished">&amp;גודל סמל:</translation>
     </message>
     <message>
-        <location filename="../qml/ToolbarEditor.qml" line="205"/>
         <source>Size in pixels of this toolbar&apos;s button icons.</source>
-        <translation>הגודל בפיקסלים של סמלי הלחצנים בסרגל כלים זה.</translation>
+        <translation type="vanished">הגודל בפיקסלים של סמלי הלחצנים בסרגל כלים זה.</translation>
     </message>
     <message>
-        <location filename="../qml/ToolbarEditor.qml" line="216"/>
         <source>Restore defaults</source>
-        <translation>שחזור ברירות המחדל</translation>
+        <translation type="vanished">שחזור ברירות המחדל</translation>
     </message>
     <message>
-        <location filename="../qml/ToolbarEditor.qml" line="225"/>
-        <source>OK</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/ToolbarEditor.qml" line="233"/>
         <source>Cancel</source>
-        <translation>ביטול</translation>
+        <translation type="vanished">ביטול</translation>
     </message>
 </context>
 <context>

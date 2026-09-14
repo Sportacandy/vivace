@@ -102,7 +102,6 @@ qt_add_qml_module(vivace
         qml/Theme.qml
         qml/ToolbarItems.js
         qml/GeometryUtils.js
-        qml/ToolbarEditor.qml
         qml/MainMenuBar.qml
         qml/MainToolBar.qml
         qml/AppMenu.qml
@@ -136,6 +135,7 @@ qt_add_qml_module(vivace
         qml/PrefFileTypesPage.qml
         qml/PrefUpdatesPage.qml
         qml/PrefNetworkPage.qml
+        qml/PrefToolsPage.qml
         qml/PrefAdvancedPage.qml
     SOURCES
         src/playercontroller.h src/playercontroller.cpp
