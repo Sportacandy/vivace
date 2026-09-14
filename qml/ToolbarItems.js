@@ -86,20 +86,31 @@ var catalog = [
     { id: "separator",     label: "(separator)",       icon: "",               kind: "separator" }
 ];
 
-var defaultMainToolbar = [
-    "open", "url", "favorites", "separator",
-    "screenshot", "separator",
-    "info", "playlist", "separator",
-    "preferences", "separator",
-    "previous", "next", "separator",
-    "audiotrack", "subtitletrack", "spacer"
-];
+// Default main toolbar layout (empty Settings.mainToolbarItems falls back to
+// this). YouTube cache is dropped on Android -- the cache browser is a
+// download-based feature that isn't available there (see the "youtubecache"
+// TBtn's own enabled: gate; it's still in the catalog and reachable via the
+// toolbar editor, it's just not part of the out-of-the-box layout there).
+var defaultMainToolbar = (function() {
+    var items = [
+        "open", "recentfiles", "favorites", "youtubecache", "tv", "separator",
+        "screenshot", "separator",
+        "info", "playlist", "separator",
+        "preferences", "separator",
+        "previous", "next", "separator",
+        "audiotrack", "subtitletrack", "spacer"
+    ];
+    if (Qt.platform.os === "android")
+        items = items.filter(function(id) { return id !== "youtubecache"; });
+    return items;
+})();
 
 var defaultControlBar = [
     "playpause", "stop", "separator",
     "prevchapter", "rewindlong", "rewindmed", "rewindshort",
     "seekslider",
     "forwardshort", "forwardmed", "forwardlong", "nextchapter",
+    "separator", "speeddec10", "speednormal", "speedinc10", "speeddouble",
     "separator", "fullscreen", "mute", "volumeslider"
 ];
 
