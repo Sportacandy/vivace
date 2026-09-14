@@ -79,7 +79,7 @@ var catalog = [
     { id: "chaptersmenu",  label: "Chapters",          icon: "chapter",        kind: "menu" },
     { id: "bookmarksmenu", label: "Bookmarks",         icon: "bookmarks",      kind: "menu" },
     { id: "addbookmark",   label: "Add bookmark",      icon: "add_bookmark",   kind: "button" },
-    { id: "help",          label: "Help",              icon: "guide",          kind: "menu" },
+    { id: "help",          label: "Help",              icon: "help",           kind: "menu" },
     { id: "seekslider",    label: "Seek bar",          icon: "",               kind: "slider" },
     { id: "volumeslider",  label: "Volume bar",        icon: "",               kind: "slider" },
     { id: "spacer",        label: "(stretch)",         icon: "",               kind: "spacer" },
