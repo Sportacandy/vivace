@@ -100,8 +100,19 @@ var defaultMainToolbar = (function() {
         "previous", "next", "separator",
         "audiotrack", "subtitletrack", "spacer"
     ];
-    if (Qt.platform.os === "android")
-        items = items.filter(function(id) { return id !== "youtubecache"; });
+    if (Qt.platform.os === "android") {
+        // No separators at all on Android (user's own explicit choice,
+        // 2026-09-19): a phone-width toolbar wraps onto several rows
+        // (see MainToolBar.qml's own row-wrap logic), where a separator
+        // cell just wastes a slot better spent on a real button. YouTube
+        // cache stays dropped, same reasoning as before. Help is
+        // appended after the stretch ("spacer") so it always sits at the
+        // far right of the bar regardless of how many buttons precede it.
+        items = items.filter(function(id) {
+            return id !== "youtubecache" && id !== "separator";
+        });
+        items.push("help");
+    }
     return items;
 })();
 
@@ -112,6 +123,26 @@ var defaultControlBar = [
     "forwardshort", "forwardmed", "forwardlong", "nextchapter",
     "separator", "speeddec10", "speednormal", "speedinc10", "speeddouble",
     "separator", "fullscreen", "mute", "volumeslider"
+];
+
+// Default (Basic-GUI) control bar layout, Android variant (user's own
+// explicit choice, 2026-09-19) -- trimmed to fit a phone-width bar
+// comfortably: drops the 10-minute rewind/forward jumps (rewindlong/
+// forwardlong) and Fullscreen (meaningless there -- Android forces the
+// window permanently fullscreen, see Settings::startInFullscreen()'s own
+// override, and Main.qml's Escape shortcut/toggleFullscreen() are
+// likewise disabled on Android so there's nothing this button could do),
+// reorders the speed group to -10% / +10% / Normal / Double, and drops
+// every separator (a later, further explicit request -- no separators
+// at all on Android, same reasoning as defaultMainToolbar's own Android
+// branch above).
+var androidControlBar = [
+    "playpause", "stop",
+    "prevchapter", "rewindmed", "rewindshort",
+    "seekslider",
+    "forwardshort", "forwardmed", "nextchapter",
+    "speeddec10", "speedinc10", "speednormal", "speeddouble",
+    "mute", "volumeslider"
 ];
 
 // Mini GUI control widget (SMPlayer MiniGui: minimal, no status bar,
@@ -131,9 +162,13 @@ var mpcControlBar = [
 ];
 
 // The default control-bar layout for a GUI mode ("Basic"/"Mini"/"Mpc").
+// Mini/Mpc are unaffected by platform -- their layouts are already
+// minimal by design; only the Basic-GUI default (the editable one) has
+// an Android-specific variant.
 function defaultControlBarFor(gui) {
     if (gui === "Mini") return miniControlBar;
     if (gui === "Mpc") return mpcControlBar;
+    if (Qt.platform.os === "android") return androidControlBar;
     return defaultControlBar;
 }
 

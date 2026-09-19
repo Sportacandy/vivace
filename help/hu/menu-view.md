@@ -9,7 +9,7 @@ A **Nézet** menü információkat és másodlagos paneleket jelenít meg.
   *Beállítások ▸ Felület* szerint dokkolt panelként vagy külön ablakként jelenik
   meg. Lásd [Megnyitás](menu-open.md) a lejátszási listák betöltéséhez.
   - Minden sor bélyegképet mutat — a média mellett lévő kísérő
-    képfájlt (egy már ott lévő "<name>.jpg" fájlt), ha van ilyen,
+    képfájlt (egy már ott lévő "`<name>.jpg`" fájlt), ha van ilyen,
     egyébként a háttérben automatikusan kinyert képkockát. A lejátszási
     lista jobb felső sarkában lévő gomb váltja a sor-/bélyegkép méretét
     (**Kicsi**/**Közepes**/**Nagy**); Kicsi és Közepes méretnél a

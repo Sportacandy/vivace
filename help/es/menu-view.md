@@ -9,7 +9,7 @@ El menú **Ver** muestra información y paneles secundarios.
   Según *Preferencias ▸ Interfaz*, aparece como panel acoplado o como ventana
   independiente. Consulte [Abrir](menu-open.md) para cargar listas de reproducción.
   - Cada fila muestra una miniatura — un archivo de imagen junto al medio
-    (un «<name>.jpg» ya presente al lado) si existe uno, o en caso contrario
+    (un «`<name>.jpg`» ya presente al lado) si existe uno, o en caso contrario
     un fotograma capturado automáticamente en segundo plano. El botón de la
     esquina superior derecha de la lista de reproducción cambia el tamaño de
     fila/miniatura (**Pequeño**/**Mediano**/**Grande**); en Pequeño y

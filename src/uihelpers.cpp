@@ -17,6 +17,7 @@
 #include <QCursor>
 #include <QGuiApplication>
 #include <QSettings>
+#include <QStandardPaths>
 #include <QTextStream>
 #include <QUrl>
 
@@ -135,6 +136,40 @@ QString UiHelpers::toLocalPath(const QUrl &url) const
 {
     return url.isLocalFile() ? QDir::toNativeSeparators(url.toLocalFile())
                              : url.toString();
+}
+
+QString UiHelpers::copyToAppStorage(const QUrl &sourceUrl, const QString &destFileName) const
+{
+    // The URL's own string form (NOT toLocalPath()'s NativeSeparators
+    // conversion, which QFile doesn't need and which would be wrong for
+    // a non-file:// scheme anyway) -- QFile opens a content:// path
+    // transparently via Qt's own file-engine plugin, same as
+    // CastServer::localEnginePath()'s identical reasoning.
+    const QString sourcePath = sourceUrl.isLocalFile() ? sourceUrl.toLocalFile()
+                                                        : sourceUrl.toString();
+    QFile source(sourcePath);
+    if (!source.open(QIODevice::ReadOnly))
+        return QString();
+
+    const QString destDir =
+            QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+    QDir().mkpath(destDir);
+    const QString destPath = destDir + QLatin1Char('/') + destFileName;
+
+    // Overwrite cleanly rather than appending/merging with a stale copy
+    // from a previous pick.
+    QFile::remove(destPath);
+    QFile dest(destPath);
+    if (!dest.open(QIODevice::WriteOnly))
+        return QString();
+
+    const QByteArray data = source.readAll();
+    if (dest.write(data) != data.size()) {
+        dest.close();
+        QFile::remove(destPath);
+        return QString();
+    }
+    return destPath;
 }
 
 bool UiHelpers::isLocalDirectory(const QUrl &url) const

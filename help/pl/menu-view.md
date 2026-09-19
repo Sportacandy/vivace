@@ -9,7 +9,7 @@ Menu **Widok** pokazuje informacje i dodatkowe panele.
   *Ustawienia ▸ Interfejs* pojawia się jako zadokowany panel lub osobne okno.
   Zobacz [Otwórz](menu-open.md), aby wczytywać listy odtwarzania.
   - Każdy wiersz pokazuje miniaturę — sąsiadujący plik graficzny obok
-    multimediów (plik „<name>.jpg” już leżący obok niego), jeśli taki
+    multimediów (plik „`<name>.jpg`” już leżący obok niego), jeśli taki
     istnieje, w przeciwnym razie klatkę przechwyconą automatycznie w tle.
     Przycisk w prawym górnym rogu listy odtwarzania przełącza rozmiar
     wiersza/miniatury (**Mały**/**Średni**/**Duży**); przy rozmiarze Mały i

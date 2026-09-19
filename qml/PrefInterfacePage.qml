@@ -69,41 +69,39 @@ ColumnLayout {
     TabBar {
         id: tabs
         Layout.fillWidth: true
-        TabButton { text: qsTr("Interface") }
-        TabButton { text: qsTr("Text") }
-        TabButton { text: qsTr("Seeking") }
-        TabButton {
-            text: qsTr("Instances")
-            // Single-instance mode is a desktop concept -- Android's own
-            // activity/task model already ensures at most one running
-            // instance, so this tab has nothing to configure there. Hidden
-            // rather than disabled (see the identical "Main window"/
-            // YouTube-tab reasoning above): a disabled CheckBox still
-            // renders in the normal *enabled* color on this Android Qt
-            // build.
-            //
-            // Deliberately ONLY `visible:` here, nothing touching `width`
-            // (see PrefNetworkPage.qml's YouTube tab, which had the exact
-            // same id + Binding-based width mechanism and was confirmed, by
-            // actually running the app, to render too narrow on desktop
-            // purely from being the target of a width value source, active
-            // or not).
-            visible: Qt.platform.os !== "android"
+        // Single-instance mode is a desktop concept (Android's own
+        // activity/task model already ensures at most one running
+        // instance) and hiding the mouse pointer after inactivity is
+        // meaningless on a touch device with no persistent cursor -- so
+        // Instances/Fullscreen have nothing to configure on Android.
+        // A plain `visible: false` on a static TabButton was tried first
+        // and doesn't work: unlike QtQuick.Layouts (GridLayout etc.),
+        // TabBar's own C++ positioning still allocates each content
+        // item's slot regardless of visibility, leaving a real gap where
+        // the hidden tab would have been. Building the buttons through a
+        // Repeater over a model that OMITS the excluded tabs on Android
+        // is what actually removes them. pageIndices maps each VISIBLE
+        // TabButton position back to its corresponding StackLayout page
+        // below (whose 6 pages stay in their original, fixed order --
+        // see the "// ---- <name>" markers there), so nothing about the
+        // pages themselves needs to move or be duplicated.
+        readonly property var pageLabels: [
+            qsTr("Interface"), qsTr("Text"), qsTr("Seeking"),
+            qsTr("Instances"), qsTr("Fullscreen"), qsTr("Privacy")
+        ]
+        readonly property var pageIndices: Qt.platform.os === "android"
+                ? [0, 1, 2, 5]
+                : [0, 1, 2, 3, 4, 5]
+        Repeater {
+            model: tabs.pageIndices
+            TabButton { text: tabs.pageLabels[modelData] }
         }
-        TabButton {
-            text: qsTr("Fullscreen")
-            // Hiding the mouse pointer after inactivity is meaningless on a
-            // touch device with no persistent cursor. Same hide-not-disable
-            // reasoning as the Instances tab above.
-            visible: Qt.platform.os !== "android"
-        }
-        TabButton { text: qsTr("Privacy") }
     }
 
     StackLayout {
         Layout.fillWidth: true
         Layout.fillHeight: true
-        currentIndex: tabs.currentIndex
+        currentIndex: tabs.pageIndices[tabs.currentIndex]
 
         // ----------------------------------------------- Interface
         ScrollView {
@@ -281,6 +279,16 @@ ColumnLayout {
                     CheckBox {
                         text: qsTr("Show menu bar")
                         checked: Settings.showMenuBar
+                        // Always off on Android now (Settings::showMenuBar()
+                        // forces false there -- see its own doc comment):
+                        // the toolbar's catalog covers every menu action a
+                        // phone user needs, and a desktop-style menu bar has
+                        // no good touch affordance on a small screen. Kept
+                        // interactive (disabled, not hidden) rather than
+                        // hidden outright, matching this project's
+                        // established pattern for a setting that's still
+                        // conceptually "there" but forced to one value.
+                        enabled: Qt.platform.os !== "android"
                         onToggled: {
                             if (!checked && menuBarOffWouldStrandPreferences()) {
                                 ToolTip.show(qsTr("Can't turn off: Preferences isn't on "
@@ -294,13 +302,16 @@ ColumnLayout {
                         }
                     }
                     HelpMark {
-                        text: qsTr("The menu bar can't wrap onto a second row on a narrow"
+                        text: Qt.platform.os === "android"
+                              ? qsTr("Always off on Android -- the toolbar covers every menu"
+                                    + " action a phone needs, and the menu bar has no good"
+                                    + " touch affordance on a small screen.")
+                              : qsTr("The menu bar can't wrap onto a second row on a narrow"
                                    + " screen (unlike the toolbar and control bar), so the"
-                                   + " window won't shrink narrower than it needs -- except on"
-                                   + " Android, which has no minimum window size and can run"
-                                   + " out of room for it. Turn it off if that happens -- every"
-                                   + " menu action that's also on the toolbar (e.g."
-                                   + " Preferences) stays reachable either way.")
+                                   + " window won't shrink narrower than it needs. Turn it off"
+                                   + " if you need the extra room -- every menu action that's"
+                                   + " also on the toolbar (e.g. Preferences) stays reachable"
+                                   + " either way.")
                     }
                 }
                 CheckBox {

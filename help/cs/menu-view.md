@@ -9,7 +9,7 @@ Nabídka **Zobrazit** ukazuje informace a vedlejší panely.
   *Předvolby ▸ Rozhraní* se zobrazí jako ukotvený panel nebo samostatné okno.
   Viz [Otevřít](menu-open.md) pro načítání seznamů skladeb.
   - Každý řádek zobrazuje náhled — obrázek ležící vedle souboru média
-    (soubor „<name>.jpg“, který již vedle něj existuje), pokud je k
+    (soubor „`<name>.jpg`“, který již vedle něj existuje), pokud je k
     dispozici, jinak automaticky získaný snímek na pozadí. Tlačítko vpravo
     nahoře v seznamu skladeb přepíná velikost řádků/náhledů
     (**Malé**/**Střední**/**Velké**); u velikostí Malé a Střední se vybraný

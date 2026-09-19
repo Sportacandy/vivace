@@ -421,218 +421,218 @@
 <context>
     <name>ControlBar</name>
     <message>
-        <location filename="../qml/ControlBar.qml" line="47"/>
+        <location filename="../qml/ControlBar.qml" line="51"/>
         <source>Auto</source>
         <translation>自動</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="477"/>
+        <location filename="../qml/ControlBar.qml" line="488"/>
         <source>Normal speed</source>
         <translation>標準速度</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="483"/>
+        <location filename="../qml/ControlBar.qml" line="494"/>
         <source>Halve speed</source>
         <translation>速度を半分に</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="488"/>
+        <location filename="../qml/ControlBar.qml" line="499"/>
         <source>Double speed</source>
         <translation>速度を 2 倍に</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="494"/>
+        <location filename="../qml/ControlBar.qml" line="505"/>
         <source>Speed -10%</source>
         <translation>速度 -10%</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="499"/>
+        <location filename="../qml/ControlBar.qml" line="510"/>
         <source>Speed +10%</source>
         <translation>速度 +10%</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="504"/>
+        <location filename="../qml/ControlBar.qml" line="515"/>
         <source>Speed -4%</source>
         <translation>速度 -4%</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="505"/>
+        <location filename="../qml/ControlBar.qml" line="516"/>
         <source>Speed +4%</source>
         <translation>速度 +4%</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="507"/>
+        <location filename="../qml/ControlBar.qml" line="518"/>
         <source>Speed -1%</source>
         <translation>速度 -1%</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="508"/>
+        <location filename="../qml/ControlBar.qml" line="519"/>
         <source>Speed +1%</source>
         <translation>速度 +1%</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="511"/>
+        <location filename="../qml/ControlBar.qml" line="522"/>
         <source>Pitch compensation</source>
         <translation>ピッチ補正</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="525"/>
-        <location filename="../qml/ControlBar.qml" line="635"/>
-        <location filename="../qml/ControlBar.qml" line="655"/>
+        <location filename="../qml/ControlBar.qml" line="536"/>
+        <location filename="../qml/ControlBar.qml" line="646"/>
+        <location filename="../qml/ControlBar.qml" line="666"/>
         <source>&lt;empty&gt;</source>
         <translation>&lt;なし&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="569"/>
+        <location filename="../qml/ControlBar.qml" line="580"/>
         <source>&amp;None</source>
         <translation>なし(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="578"/>
+        <location filename="../qml/ControlBar.qml" line="589"/>
         <source>&amp;Rotate by 90° clockwise</source>
         <translation>時計回りに 90° 回転(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="587"/>
+        <location filename="../qml/ControlBar.qml" line="598"/>
         <source>Rotate by 90° &amp;counterclockwise</source>
         <translation>反時計回りに 90° 回転(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="596"/>
+        <location filename="../qml/ControlBar.qml" line="607"/>
         <source>Rotate by &amp;180°</source>
         <translation>180° 回転(&amp;1)</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="607"/>
+        <location filename="../qml/ControlBar.qml" line="618"/>
         <source>50%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="608"/>
+        <location filename="../qml/ControlBar.qml" line="619"/>
         <source>100%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="609"/>
+        <location filename="../qml/ControlBar.qml" line="620"/>
         <source>200%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="667"/>
+        <location filename="../qml/ControlBar.qml" line="678"/>
         <source>&amp;Add new bookmark</source>
         <translation>ブックマークを追加(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="672"/>
+        <location filename="../qml/ControlBar.qml" line="683"/>
         <source>&amp;Edit bookmarks…</source>
         <translation>ブックマークを編集(&amp;E)…</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="705"/>
+        <location filename="../qml/ControlBar.qml" line="716"/>
         <source>(empty)</source>
         <translation>(なし)</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="711"/>
+        <location filename="../qml/ControlBar.qml" line="722"/>
         <source>Clear</source>
         <translation>クリア</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="718"/>
+        <location filename="../qml/ControlBar.qml" line="729"/>
         <source>Reset</source>
         <translation>リセット</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="719"/>
+        <location filename="../qml/ControlBar.qml" line="730"/>
         <source>Zoom -</source>
         <translation>ズーム -</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="720"/>
+        <location filename="../qml/ControlBar.qml" line="731"/>
         <source>Zoom +</source>
         <translation>ズーム +</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="722"/>
+        <location filename="../qml/ControlBar.qml" line="733"/>
         <source>Move left</source>
         <translation>左へ移動</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="723"/>
+        <location filename="../qml/ControlBar.qml" line="734"/>
         <source>Move right</source>
         <translation>右へ移動</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="724"/>
+        <location filename="../qml/ControlBar.qml" line="735"/>
         <source>Move up</source>
         <translation>上へ移動</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="725"/>
+        <location filename="../qml/ControlBar.qml" line="736"/>
         <source>Move down</source>
         <translation>下へ移動</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="730"/>
+        <location filename="../qml/ControlBar.qml" line="741"/>
         <source>Contents</source>
         <translation>目次</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="736"/>
+        <location filename="../qml/ControlBar.qml" line="747"/>
         <source>Check for updates</source>
         <translation>更新を確認</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="742"/>
+        <location filename="../qml/ControlBar.qml" line="753"/>
         <source>About Vivace</source>
         <translation>Vivace について</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="840"/>
-        <location filename="../qml/ControlBar.qml" line="846"/>
-        <location filename="../qml/ControlBar.qml" line="852"/>
+        <location filename="../qml/ControlBar.qml" line="851"/>
+        <location filename="../qml/ControlBar.qml" line="857"/>
+        <location filename="../qml/ControlBar.qml" line="863"/>
         <source>Rewind %1 s</source>
         <translation>%1 秒巻き戻し</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="858"/>
-        <location filename="../qml/ControlBar.qml" line="864"/>
-        <location filename="../qml/ControlBar.qml" line="870"/>
+        <location filename="../qml/ControlBar.qml" line="869"/>
+        <location filename="../qml/ControlBar.qml" line="875"/>
+        <location filename="../qml/ControlBar.qml" line="881"/>
         <source>Forward %1 s</source>
         <translation>%1 秒早送り</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="1067"/>
+        <location filename="../qml/ControlBar.qml" line="1078"/>
         <source>Error: %1</source>
         <translation>エラー: %1</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="1070"/>
+        <location filename="../qml/ControlBar.qml" line="1081"/>
         <source>Playing %1</source>
         <translation>再生中 %1</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="1075"/>
+        <location filename="../qml/ControlBar.qml" line="1086"/>
         <source>Paused</source>
         <translation>一時停止中</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="1077"/>
+        <location filename="../qml/ControlBar.qml" line="1088"/>
         <source>Stopped</source>
         <translation>停止</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="1122"/>
+        <location filename="../qml/ControlBar.qml" line="1133"/>
         <source>V: %1 kbps</source>
         <translation>映像: %1 kbps</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="1123"/>
+        <location filename="../qml/ControlBar.qml" line="1134"/>
         <source>A: %1 kbps</source>
         <translation>音声: %1 kbps</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="1135"/>
+        <location filename="../qml/ControlBar.qml" line="1146"/>
         <source>Frame: %1</source>
         <translation>フレーム: %1</translation>
     </message>
@@ -756,17 +756,17 @@
 <context>
     <name>FavoritesMenu</name>
     <message>
-        <location filename="../qml/FavoritesMenu.qml" line="122"/>
+        <location filename="../qml/FavoritesMenu.qml" line="138"/>
         <source>(empty)</source>
         <translation>(なし)</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesMenu.qml" line="132"/>
+        <location filename="../qml/FavoritesMenu.qml" line="148"/>
         <source>&amp;Edit…</source>
         <translation>編集(&amp;E)…</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesMenu.qml" line="139"/>
+        <location filename="../qml/FavoritesMenu.qml" line="155"/>
         <source>&amp;Add current media</source>
         <translation>現在のメディアを追加(&amp;A)</translation>
     </message>
@@ -934,53 +934,53 @@
     <name>Main</name>
     <message>
         <location filename="../qml/Main.qml" line="433"/>
-        <location filename="../qml/Main.qml" line="485"/>
-        <location filename="../qml/Main.qml" line="2086"/>
-        <location filename="../qml/Main.qml" line="2212"/>
+        <location filename="../qml/Main.qml" line="486"/>
+        <location filename="../qml/Main.qml" line="2150"/>
+        <location filename="../qml/Main.qml" line="2278"/>
         <source>TV editor</source>
         <translation>テレビエディター</translation>
     </message>
     <message>
         <location filename="../qml/Main.qml" line="433"/>
-        <location filename="../qml/Main.qml" line="485"/>
-        <location filename="../qml/Main.qml" line="2086"/>
-        <location filename="../qml/Main.qml" line="2212"/>
+        <location filename="../qml/Main.qml" line="486"/>
+        <location filename="../qml/Main.qml" line="2150"/>
+        <location filename="../qml/Main.qml" line="2278"/>
         <source>TV channels</source>
         <translation>テレビチャンネル</translation>
     </message>
     <message>
         <location filename="../qml/Main.qml" line="436"/>
-        <location filename="../qml/Main.qml" line="488"/>
-        <location filename="../qml/Main.qml" line="2089"/>
-        <location filename="../qml/Main.qml" line="2215"/>
+        <location filename="../qml/Main.qml" line="489"/>
+        <location filename="../qml/Main.qml" line="2153"/>
+        <location filename="../qml/Main.qml" line="2281"/>
         <source>Radio editor</source>
         <translation>ラジオエディター</translation>
     </message>
     <message>
         <location filename="../qml/Main.qml" line="436"/>
-        <location filename="../qml/Main.qml" line="488"/>
-        <location filename="../qml/Main.qml" line="2089"/>
-        <location filename="../qml/Main.qml" line="2215"/>
+        <location filename="../qml/Main.qml" line="489"/>
+        <location filename="../qml/Main.qml" line="2153"/>
+        <location filename="../qml/Main.qml" line="2281"/>
         <source>Radio channels</source>
         <translation>ラジオチャンネル</translation>
     </message>
     <message>
         <location filename="../qml/Main.qml" line="439"/>
-        <location filename="../qml/Main.qml" line="480"/>
+        <location filename="../qml/Main.qml" line="481"/>
         <source>Favorite editor</source>
         <translation>お気に入りエディター</translation>
     </message>
     <message>
         <location filename="../qml/Main.qml" line="439"/>
-        <location filename="../qml/Main.qml" line="480"/>
+        <location filename="../qml/Main.qml" line="481"/>
         <source>Favorite list</source>
         <translation>お気に入り一覧</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="443"/>
-        <location filename="../qml/Main.qml" line="498"/>
-        <location filename="../qml/Main.qml" line="2099"/>
-        <location filename="../qml/Main.qml" line="2225"/>
+        <location filename="../qml/Main.qml" line="444"/>
+        <location filename="../qml/Main.qml" line="500"/>
+        <location filename="../qml/Main.qml" line="2164"/>
+        <location filename="../qml/Main.qml" line="2292"/>
         <source>Bookmark added</source>
         <translation>ブックマークを追加しました</translation>
     </message>
@@ -993,257 +993,271 @@
         <translation type="vanished">コントロールバーを編集</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="510"/>
+        <location filename="../qml/Main.qml" line="512"/>
         <source>Screenshot saved as %1</source>
         <translation>スクリーンショットを %1 に保存しました</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="511"/>
+        <location filename="../qml/Main.qml" line="513"/>
         <source>Could not take the screenshot</source>
         <translation>スクリーンショットを撮れませんでした</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="642"/>
+        <location filename="../qml/Main.qml" line="644"/>
         <source>Tap Open &gt; File… to choose media</source>
         <translation>メディアを選ぶには「開く &gt; ファイル…」をタップ</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="643"/>
+        <location filename="../qml/Main.qml" line="645"/>
         <source>Drop media files here, or press Ctrl+O</source>
         <translation>メディアファイルをここにドロップするか、Ctrl+O を押してください</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="730"/>
+        <location filename="../qml/Main.qml" line="733"/>
         <source>Downloading video…</source>
         <translation>動画をダウンロード中…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="737"/>
+        <location filename="../qml/Main.qml" line="741"/>
+        <source>This can take a while — Vivace is downloading and merging HD video and audio.</source>
+        <translation>Vivace が HD の映像と音声をダウンロードして結合しています。しばらくかかることがあります。</translation>
+    </message>
+    <message>
+        <location filename="../qml/Main.qml" line="743"/>
         <source>This can take a while — the external tool is downloading and merging HD video and audio.</source>
         <translation>外部ツールが HD の映像と音声をダウンロードして結合しています。しばらくかかることがあります。</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="751"/>
-        <location filename="../qml/Main.qml" line="1841"/>
+        <location filename="../qml/Main.qml" line="757"/>
+        <location filename="../qml/Main.qml" line="1905"/>
         <source>Cancel</source>
         <translation>キャンセル</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="824"/>
+        <location filename="../qml/Main.qml" line="832"/>
         <source>Loading…</source>
         <translation>読み込み中…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="825"/>
+        <location filename="../qml/Main.qml" line="833"/>
         <source>Connecting…</source>
         <translation>接続中…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="826"/>
+        <location filename="../qml/Main.qml" line="834"/>
         <source>Buffering… %1%</source>
         <translation>バッファリング中… %1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="834"/>
+        <location filename="../qml/Main.qml" line="842"/>
         <source>Live streams can take several seconds to start.</source>
         <translation>ライブストリームは開始まで数秒かかることがあります。</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="869"/>
+        <location filename="../qml/Main.qml" line="877"/>
         <source>Volume: %1%</source>
         <translation>音量: %1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="872"/>
+        <location filename="../qml/Main.qml" line="880"/>
         <source>Mute</source>
         <translation>ミュート</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="872"/>
+        <location filename="../qml/Main.qml" line="880"/>
         <source>Mute off</source>
         <translation>ミュート解除</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="875"/>
+        <location filename="../qml/Main.qml" line="883"/>
         <source>Speed: %1x</source>
         <translation>速度: %1x</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1419"/>
+        <location filename="../qml/Main.qml" line="1427"/>
         <source>Media files (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</source>
         <translation>メディアファイル (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1420"/>
-        <location filename="../qml/Main.qml" line="1490"/>
-        <location filename="../qml/Main.qml" line="1760"/>
+        <location filename="../qml/Main.qml" line="1428"/>
+        <location filename="../qml/Main.qml" line="1498"/>
+        <location filename="../qml/Main.qml" line="1824"/>
         <source>All files (*)</source>
         <translation>すべてのファイル (*)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1462"/>
+        <location filename="../qml/Main.qml" line="1470"/>
         <source>Select the DVD drive or a folder containing VIDEO_TS</source>
         <translation>DVD ドライブ、または VIDEO_TS を含むフォルダーを選択</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1466"/>
+        <location filename="../qml/Main.qml" line="1474"/>
         <source>No DVD video found in %1</source>
         <translation>%1 に DVD ビデオが見つかりません</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1474"/>
+        <location filename="../qml/Main.qml" line="1482"/>
         <source>Select the Blu-ray drive or a folder containing BDMV</source>
         <translation>Blu-ray ドライブ、または BDMV を含むフォルダーを選択してください</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1478"/>
+        <location filename="../qml/Main.qml" line="1486"/>
         <source>No Blu-ray video found in %1</source>
         <translation>%1 に Blu-ray の映像が見つかりません</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1489"/>
+        <location filename="../qml/Main.qml" line="1497"/>
         <source>Playlists (*.m3u *.m3u8)</source>
         <translation>プレイリスト (*.m3u *.m3u8)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1532"/>
+        <location filename="../qml/Main.qml" line="1540"/>
+        <location filename="../qml/Main.qml" line="1578"/>
         <source>Playing stream</source>
         <translation>ストリームを再生中</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1538"/>
-        <location filename="../qml/Main.qml" line="1571"/>
+        <location filename="../qml/Main.qml" line="1546"/>
+        <location filename="../qml/Main.qml" line="1587"/>
+        <location filename="../qml/Main.qml" line="1619"/>
         <source>Playing downloaded video</source>
         <translation>ダウンロードした動画を再生中</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1542"/>
+        <location filename="../qml/Main.qml" line="1550"/>
+        <location filename="../qml/Main.qml" line="1590"/>
         <source>YouTube: %1</source>
         <translation>YouTube: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1575"/>
+        <location filename="../qml/Main.qml" line="1623"/>
         <source>Download failed: %1</source>
         <translation>ダウンロード失敗: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1672"/>
+        <location filename="../qml/Main.qml" line="1725"/>
         <source>Saved %1 file(s); %2 failed.</source>
         <translation>%1 件のファイルを保存しました（失敗: %2 件）。</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1676"/>
+        <location filename="../qml/Main.qml" line="1729"/>
         <source>Saved %1 file(s).</source>
         <translation>%1 件のファイルを保存しました。</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1689"/>
+        <location filename="../qml/Main.qml" line="1742"/>
         <source>Could not read the shortcut file.</source>
         <translation>ショートカットファイルを読み取れませんでした。</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1702"/>
         <source>YouTube playback isn&apos;t supported on Android.</source>
-        <translation>AndroidではYouTubeの再生はサポートされていません。</translation>
+        <translation type="vanished">AndroidではYouTubeの再生はサポートされていません。</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1713"/>
+        <location filename="../qml/Main.qml" line="1777"/>
         <source>Starting download…</source>
         <translation>ダウンロードを開始しています…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1714"/>
+        <location filename="../qml/Main.qml" line="1762"/>
+        <location filename="../qml/Main.qml" line="1778"/>
         <source>Downloading video (this can take a while)…</source>
         <translation>動画をダウンロード中（しばらくかかることがあります）…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1718"/>
+        <location filename="../qml/Main.qml" line="1758"/>
+        <source>YouTube playback isn&apos;t supported on this device.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/Main.qml" line="1765"/>
+        <location filename="../qml/Main.qml" line="1782"/>
         <source>Resolving with yt-dlp…</source>
         <translation>yt-dlp で解決中…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1755"/>
+        <location filename="../qml/Main.qml" line="1819"/>
         <source>Load subtitle file</source>
         <translation>字幕ファイルを読み込む</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1759"/>
+        <location filename="../qml/Main.qml" line="1823"/>
         <source>Subtitle files (*.srt *.vtt *.ass *.ssa)</source>
         <translation>字幕ファイル (*.srt *.vtt *.ass *.ssa)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1767"/>
+        <location filename="../qml/Main.qml" line="1831"/>
         <source>Subtitle delay</source>
         <translation>字幕の遅延</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1818"/>
+        <location filename="../qml/Main.qml" line="1882"/>
         <source>Delay:</source>
         <translation>遅延:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1824"/>
-        <location filename="../qml/Main.qml" line="1914"/>
+        <location filename="../qml/Main.qml" line="1888"/>
+        <location filename="../qml/Main.qml" line="1978"/>
         <source>ms</source>
         <translation>ミリ秒</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1834"/>
+        <location filename="../qml/Main.qml" line="1898"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1853"/>
+        <location filename="../qml/Main.qml" line="1917"/>
         <source>Audio delay — Vivace</source>
         <translation>音声の遅延 — Vivace</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1902"/>
+        <location filename="../qml/Main.qml" line="1966"/>
         <source>No delay for this file (use the global delay only)</source>
         <translation>このファイルには遅延を設定しない（全体の遅延のみ使用）</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1907"/>
+        <location filename="../qml/Main.qml" line="1971"/>
         <source>This file&apos;s delay:</source>
         <translation>このファイルの遅延:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1922"/>
+        <location filename="../qml/Main.qml" line="1986"/>
         <source>The delay applied to this file is this value plus the global delay for the current audio device (%1 ms), set in Preferences &gt; General &gt; Audio. Negative values delay the video to match audio that arrives late (e.g. Bluetooth headphones).</source>
         <translation>このファイルに適用される遅延は、この値に加えて現在の音声デバイスの全体遅延（%1 ミリ秒、設定 &gt; 一般 &gt; 音声で設定）を足したものです。負の値は、遅れて届く音声（例: Bluetooth ヘッドフォン）に合わせて映像を遅らせます。</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1935"/>
+        <location filename="../qml/Main.qml" line="1999"/>
         <source>&amp;Apply</source>
         <translation>適用(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1944"/>
+        <location filename="../qml/Main.qml" line="2008"/>
         <source>&amp;Close</source>
         <translation>閉じる(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2028"/>
+        <location filename="../qml/Main.qml" line="2092"/>
         <source>Hide window</source>
         <translation>ウィンドウを隠す</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2028"/>
+        <location filename="../qml/Main.qml" line="2092"/>
         <source>Show window</source>
         <translation>ウィンドウを表示</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2033"/>
+        <location filename="../qml/Main.qml" line="2097"/>
         <source>Play / Pause</source>
         <translation>再生 / 一時停止</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2037"/>
+        <location filename="../qml/Main.qml" line="2101"/>
         <source>Stop</source>
         <translation>停止</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2042"/>
+        <location filename="../qml/Main.qml" line="2106"/>
         <source>Quit</source>
         <translation>終了</translation>
     </message>
@@ -1251,71 +1265,71 @@
 <context>
     <name>MainMenuBar</name>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="61"/>
+        <location filename="../qml/MainMenuBar.qml" line="66"/>
         <source>&amp;Auto</source>
         <translation>自動(&amp;A)</translation>
     </message>
     <message numerus="yes">
-        <location filename="../qml/MainMenuBar.qml" line="91"/>
+        <location filename="../qml/MainMenuBar.qml" line="96"/>
         <source>%n minute(s)</source>
         <translation>
             <numerusform>%n 分</numerusform>
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../qml/MainMenuBar.qml" line="92"/>
+        <location filename="../qml/MainMenuBar.qml" line="97"/>
         <source>%n second(s)</source>
         <translation>
             <numerusform>%n 秒</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="124"/>
+        <location filename="../qml/MainMenuBar.qml" line="129"/>
         <source>&amp;Open</source>
         <translation>開く(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="127"/>
+        <location filename="../qml/MainMenuBar.qml" line="132"/>
         <source>&amp;File…</source>
         <translation>ファイル(&amp;F)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="134"/>
+        <location filename="../qml/MainMenuBar.qml" line="139"/>
         <source>&amp;Recent files</source>
         <translation>最近使ったファイル(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="156"/>
+        <location filename="../qml/MainMenuBar.qml" line="161"/>
         <source>(empty)</source>
         <translation>(なし)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="162"/>
+        <location filename="../qml/MainMenuBar.qml" line="167"/>
         <source>&amp;Clear</source>
         <translation>クリア(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="168"/>
+        <location filename="../qml/MainMenuBar.qml" line="173"/>
         <source>F&amp;avorites</source>
         <translation>お気に入り(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="177"/>
+        <location filename="../qml/MainMenuBar.qml" line="183"/>
         <source>&amp;Directory…</source>
         <translation>フォルダー(&amp;D)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="182"/>
+        <location filename="../qml/MainMenuBar.qml" line="188"/>
         <source>&amp;Playlist…</source>
         <translation>プレイリスト(&amp;P)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="187"/>
+        <location filename="../qml/MainMenuBar.qml" line="193"/>
         <source>D&amp;isc</source>
         <translation>ディスク(&amp;I)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="191"/>
+        <location filename="../qml/MainMenuBar.qml" line="197"/>
         <source>&amp;DVD from drive or folder…</source>
         <translation>ドライブ／フォルダーから DVD(&amp;D)…</translation>
     </message>
@@ -1324,57 +1338,57 @@
         <translation type="vanished">Blu-ray(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="196"/>
+        <location filename="../qml/MainMenuBar.qml" line="202"/>
         <source>&amp;Blu-ray from drive or folder…</source>
         <translation>ドライブ／フォルダーから Blu-ray(&amp;B)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="201"/>
+        <location filename="../qml/MainMenuBar.qml" line="207"/>
         <source>&amp;Audio CD</source>
         <translation>オーディオ CD(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="206"/>
+        <location filename="../qml/MainMenuBar.qml" line="212"/>
         <source>&amp;URL…</source>
         <translation>URL(&amp;U)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="212"/>
+        <location filename="../qml/MainMenuBar.qml" line="218"/>
         <source>YouTube &amp;cache…</source>
         <translation>YouTube キャッシュ(&amp;C)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="220"/>
+        <location filename="../qml/MainMenuBar.qml" line="226"/>
         <source>&amp;TV</source>
         <translation>テレビ(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="230"/>
+        <location filename="../qml/MainMenuBar.qml" line="237"/>
         <source>Radi&amp;o</source>
         <translation>ラジオ(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="241"/>
+        <location filename="../qml/MainMenuBar.qml" line="249"/>
         <source>&amp;Quit</source>
         <translation>終了(&amp;Q)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="251"/>
+        <location filename="../qml/MainMenuBar.qml" line="259"/>
         <source>&amp;Play</source>
         <translation>再生(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="254"/>
+        <location filename="../qml/MainMenuBar.qml" line="262"/>
         <source>P&amp;lay</source>
         <translation>再生(&amp;L)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="261"/>
+        <location filename="../qml/MainMenuBar.qml" line="269"/>
         <source>&amp;Pause</source>
         <translation>一時停止(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="267"/>
+        <location filename="../qml/MainMenuBar.qml" line="275"/>
         <source>&amp;Stop</source>
         <translation>停止(&amp;S)</translation>
     </message>
@@ -1383,124 +1397,124 @@
         <translation type="vanished">コマ送り(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="279"/>
+        <location filename="../qml/MainMenuBar.qml" line="287"/>
         <source>Fra&amp;me back step</source>
         <translation>コマ戻し(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="289"/>
+        <location filename="../qml/MainMenuBar.qml" line="297"/>
         <source>&amp;Rewind %1</source>
         <translation>巻き戻し %1(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="296"/>
+        <location filename="../qml/MainMenuBar.qml" line="304"/>
         <source>&amp;Forward %1</source>
         <translation>早送り %1(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="303"/>
-        <location filename="../qml/MainMenuBar.qml" line="317"/>
+        <location filename="../qml/MainMenuBar.qml" line="311"/>
+        <location filename="../qml/MainMenuBar.qml" line="325"/>
         <source>Rewind %1</source>
         <translation>巻き戻し %1</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="310"/>
-        <location filename="../qml/MainMenuBar.qml" line="324"/>
+        <location filename="../qml/MainMenuBar.qml" line="318"/>
+        <location filename="../qml/MainMenuBar.qml" line="332"/>
         <source>Forward %1</source>
         <translation>早送り %1</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="332"/>
+        <location filename="../qml/MainMenuBar.qml" line="340"/>
         <source>Sp&amp;eed</source>
         <translation>速度(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="336"/>
+        <location filename="../qml/MainMenuBar.qml" line="344"/>
         <source>&amp;Normal speed</source>
         <translation>標準速度(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="343"/>
+        <location filename="../qml/MainMenuBar.qml" line="351"/>
         <source>&amp;Halve speed</source>
         <translation>速度を半分に(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="349"/>
+        <location filename="../qml/MainMenuBar.qml" line="357"/>
         <source>&amp;Double speed</source>
         <translation>速度を 2 倍に(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="356"/>
+        <location filename="../qml/MainMenuBar.qml" line="364"/>
         <source>Speed &amp;-10%</source>
         <translation>速度 -10%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="362"/>
+        <location filename="../qml/MainMenuBar.qml" line="370"/>
         <source>Speed &amp;+10%</source>
         <translation>速度 +10%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="368"/>
+        <location filename="../qml/MainMenuBar.qml" line="376"/>
         <source>Speed -4%</source>
         <translation>速度 -4%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="369"/>
+        <location filename="../qml/MainMenuBar.qml" line="377"/>
         <source>Speed +4%</source>
         <translation>速度 +4%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="371"/>
+        <location filename="../qml/MainMenuBar.qml" line="379"/>
         <source>Speed -1%</source>
         <translation>速度 -1%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="372"/>
+        <location filename="../qml/MainMenuBar.qml" line="380"/>
         <source>Speed +1%</source>
         <translation>速度 +1%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="375"/>
+        <location filename="../qml/MainMenuBar.qml" line="383"/>
         <source>Pi&amp;tch compensation</source>
         <translation>ピッチ補正(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="384"/>
+        <location filename="../qml/MainMenuBar.qml" line="392"/>
         <source>&amp;A-B section</source>
         <translation>A-B 区間(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="388"/>
+        <location filename="../qml/MainMenuBar.qml" line="396"/>
         <source>Set &amp;A marker</source>
         <translation>A マーカーを設定(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="394"/>
+        <location filename="../qml/MainMenuBar.qml" line="402"/>
         <source>Set &amp;B marker</source>
         <translation>B マーカーを設定(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="400"/>
+        <location filename="../qml/MainMenuBar.qml" line="408"/>
         <source>&amp;Clear A-B markers</source>
         <translation>A-B マーカーをクリア(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="408"/>
+        <location filename="../qml/MainMenuBar.qml" line="416"/>
         <source>&amp;Repeat</source>
         <translation>リピート(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="414"/>
+        <location filename="../qml/MainMenuBar.qml" line="422"/>
         <source>&amp;Jump to…</source>
         <translation>指定位置へ移動(&amp;J)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="417"/>
+        <location filename="../qml/MainMenuBar.qml" line="425"/>
         <source>Pre&amp;vious</source>
         <translation>前へ(&amp;V)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="424"/>
+        <location filename="../qml/MainMenuBar.qml" line="432"/>
         <source>&amp;Next</source>
         <translation>次へ(&amp;N)</translation>
     </message>
@@ -1513,77 +1527,77 @@
         <translation type="vanished">スマートフォン/タブレット(&amp;S)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="433"/>
+        <location filename="../qml/MainMenuBar.qml" line="441"/>
         <source>Cas&amp;t…</source>
         <translation>キャス&amp;ト…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="441"/>
+        <location filename="../qml/MainMenuBar.qml" line="449"/>
         <source>&amp;Video</source>
         <translation>映像(&amp;V)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="445"/>
-        <location filename="../qml/MainMenuBar.qml" line="700"/>
-        <location filename="../qml/MainMenuBar.qml" line="790"/>
+        <location filename="../qml/MainMenuBar.qml" line="453"/>
+        <location filename="../qml/MainMenuBar.qml" line="708"/>
+        <location filename="../qml/MainMenuBar.qml" line="798"/>
         <source>&amp;Track</source>
         <translation>トラック(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="452"/>
-        <location filename="../qml/MainMenuBar.qml" line="717"/>
-        <location filename="../qml/MainMenuBar.qml" line="935"/>
-        <location filename="../qml/MainMenuBar.qml" line="960"/>
+        <location filename="../qml/MainMenuBar.qml" line="460"/>
+        <location filename="../qml/MainMenuBar.qml" line="725"/>
+        <location filename="../qml/MainMenuBar.qml" line="943"/>
+        <location filename="../qml/MainMenuBar.qml" line="968"/>
         <source>&lt;empty&gt;</source>
         <translation>&lt;なし&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="484"/>
+        <location filename="../qml/MainMenuBar.qml" line="492"/>
         <source>&amp;Fullscreen</source>
         <translation>全画面表示(&amp;F)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="492"/>
+        <location filename="../qml/MainMenuBar.qml" line="500"/>
         <source>Si&amp;ze</source>
         <translation>サイズ(&amp;Z)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="495"/>
+        <location filename="../qml/MainMenuBar.qml" line="503"/>
         <source>50%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="496"/>
+        <location filename="../qml/MainMenuBar.qml" line="504"/>
         <source>100%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="497"/>
+        <location filename="../qml/MainMenuBar.qml" line="505"/>
         <source>200%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="500"/>
+        <location filename="../qml/MainMenuBar.qml" line="508"/>
         <source>&amp;Zoom and pan</source>
         <translation>ズームと移動(&amp;Z)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="504"/>
+        <location filename="../qml/MainMenuBar.qml" line="512"/>
         <source>&amp;Reset</source>
         <translation>リセット(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="509"/>
+        <location filename="../qml/MainMenuBar.qml" line="517"/>
         <source>Zoom &amp;-</source>
         <translation>ズーム -</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="514"/>
+        <location filename="../qml/MainMenuBar.qml" line="522"/>
         <source>Zoom &amp;+</source>
         <translation>ズーム +</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="520"/>
+        <location filename="../qml/MainMenuBar.qml" line="528"/>
         <source>Move &amp;left</source>
         <translation>左へ移動(&amp;L)</translation>
     </message>
@@ -1592,253 +1606,253 @@
         <translation type="vanished">右へ移動(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="530"/>
+        <location filename="../qml/MainMenuBar.qml" line="538"/>
         <source>Move &amp;up</source>
         <translation>上へ移動(&amp;U)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="535"/>
+        <location filename="../qml/MainMenuBar.qml" line="543"/>
         <source>Move &amp;down</source>
         <translation>下へ移動(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="542"/>
+        <location filename="../qml/MainMenuBar.qml" line="550"/>
         <source>&amp;Aspect ratio</source>
         <translation>アスペクト比(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="564"/>
+        <location filename="../qml/MainMenuBar.qml" line="572"/>
         <source>&amp;Rotate</source>
         <translation>回転(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="568"/>
-        <location filename="../qml/MainMenuBar.qml" line="651"/>
+        <location filename="../qml/MainMenuBar.qml" line="576"/>
+        <location filename="../qml/MainMenuBar.qml" line="659"/>
         <source>&amp;None</source>
         <translation>なし(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="577"/>
+        <location filename="../qml/MainMenuBar.qml" line="585"/>
         <source>&amp;Rotate by 90° clockwise</source>
         <translation>時計回りに 90° 回転(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="586"/>
+        <location filename="../qml/MainMenuBar.qml" line="594"/>
         <source>Rotate by 90° &amp;counterclockwise</source>
         <translation>反時計回りに 90° 回転(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="595"/>
+        <location filename="../qml/MainMenuBar.qml" line="603"/>
         <source>Rotate by &amp;180°</source>
         <translation>180° 回転(&amp;1)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="605"/>
+        <location filename="../qml/MainMenuBar.qml" line="613"/>
         <source>Fli&amp;p image</source>
         <translation>上下反転(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="616"/>
+        <location filename="../qml/MainMenuBar.qml" line="624"/>
         <source>Mirr&amp;or image</source>
         <translation>左右反転(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="627"/>
+        <location filename="../qml/MainMenuBar.qml" line="635"/>
         <source>&amp;Deinterlace</source>
         <translation>デインターレース(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="660"/>
+        <location filename="../qml/MainMenuBar.qml" line="668"/>
         <source>&amp;Yadif</source>
         <translation>Yadif(&amp;Y)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="669"/>
+        <location filename="../qml/MainMenuBar.qml" line="677"/>
         <source>&amp;Bwdif</source>
         <translation>Bwdif(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="680"/>
+        <location filename="../qml/MainMenuBar.qml" line="688"/>
         <source>E&amp;qualizer…</source>
         <translation>イコライザー(&amp;Q)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="686"/>
+        <location filename="../qml/MainMenuBar.qml" line="694"/>
         <source>&amp;Screenshot</source>
         <translation>スクリーンショット(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="696"/>
+        <location filename="../qml/MainMenuBar.qml" line="704"/>
         <source>&amp;Audio</source>
         <translation>音声(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="744"/>
+        <location filename="../qml/MainMenuBar.qml" line="752"/>
         <source>&amp;Mute</source>
         <translation>ミュート(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="753"/>
+        <location filename="../qml/MainMenuBar.qml" line="761"/>
         <source>Volume &amp;-</source>
         <translation>音量 -</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="760"/>
+        <location filename="../qml/MainMenuBar.qml" line="768"/>
         <source>Volume &amp;+</source>
         <translation>音量 +</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="870"/>
+        <location filename="../qml/MainMenuBar.qml" line="878"/>
         <source>Delay &amp;-</source>
         <translation>遅延 -</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="773"/>
+        <location filename="../qml/MainMenuBar.qml" line="781"/>
         <source>D&amp;elay +</source>
         <translation>遅延 +</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="273"/>
+        <location filename="../qml/MainMenuBar.qml" line="281"/>
         <source>Frame st&amp;ep</source>
         <translation>コマ送り(&amp;E)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="286"/>
+        <location filename="../qml/MainMenuBar.qml" line="294"/>
         <source>See&amp;k</source>
         <translation>シーク(&amp;K)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="525"/>
+        <location filename="../qml/MainMenuBar.qml" line="533"/>
         <source>Move r&amp;ight</source>
         <translation>右へ移動(&amp;I)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="768"/>
+        <location filename="../qml/MainMenuBar.qml" line="776"/>
         <source>&amp;Delay -</source>
         <translation>遅延(&amp;D) -</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="778"/>
+        <location filename="../qml/MainMenuBar.qml" line="786"/>
         <source>Set dela&amp;y…</source>
         <translation>遅延を設定(&amp;Y)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="786"/>
+        <location filename="../qml/MainMenuBar.qml" line="794"/>
         <source>&amp;Subtitles</source>
         <translation>字幕(&amp;S)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="806"/>
+        <location filename="../qml/MainMenuBar.qml" line="814"/>
         <source>&amp;Off</source>
         <translation>オフ(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="851"/>
+        <location filename="../qml/MainMenuBar.qml" line="859"/>
         <source>&amp;Load subtitles…</source>
         <translation>字幕を読み込む(&amp;L)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="857"/>
+        <location filename="../qml/MainMenuBar.qml" line="865"/>
         <source>&amp;Find subtitles at OpenSubtitles…</source>
         <translation>OpenSubtitles で字幕を検索(&amp;F)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="863"/>
+        <location filename="../qml/MainMenuBar.qml" line="871"/>
         <source>U&amp;nload subtitles</source>
         <translation>字幕を閉じる(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="876"/>
+        <location filename="../qml/MainMenuBar.qml" line="884"/>
         <source>Delay &amp;+</source>
         <translation>遅延 +</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="882"/>
+        <location filename="../qml/MainMenuBar.qml" line="890"/>
         <source>Se&amp;t delay…</source>
         <translation>遅延を設定(&amp;T)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="891"/>
+        <location filename="../qml/MainMenuBar.qml" line="899"/>
         <source>&amp;Browse</source>
         <translation>ブラウズ(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="894"/>
+        <location filename="../qml/MainMenuBar.qml" line="902"/>
         <source>&amp;DVD menu</source>
         <translation>DVD メニュー(&amp;D)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="903"/>
+        <location filename="../qml/MainMenuBar.qml" line="911"/>
         <source>&amp;Title</source>
         <translation>タイトル(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="942"/>
+        <location filename="../qml/MainMenuBar.qml" line="950"/>
         <source>&amp;Chapters</source>
         <translation>チャプター(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="967"/>
+        <location filename="../qml/MainMenuBar.qml" line="975"/>
         <source>&amp;Bookmarks</source>
         <translation>ブックマーク(&amp;B)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="977"/>
+        <location filename="../qml/MainMenuBar.qml" line="985"/>
         <source>&amp;Add new bookmark</source>
         <translation>ブックマークを追加(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="984"/>
+        <location filename="../qml/MainMenuBar.qml" line="992"/>
         <source>&amp;Edit bookmarks…</source>
         <translation>ブックマークを編集(&amp;E)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1008"/>
+        <location filename="../qml/MainMenuBar.qml" line="1016"/>
         <source>Vie&amp;w</source>
         <translation>表示(&amp;W)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1011"/>
+        <location filename="../qml/MainMenuBar.qml" line="1019"/>
         <source>&amp;Information and properties…</source>
         <translation>情報とプロパティ(&amp;I)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1018"/>
+        <location filename="../qml/MainMenuBar.qml" line="1026"/>
         <source>&amp;Playlist</source>
         <translation>プレイリスト(&amp;P)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1026"/>
+        <location filename="../qml/MainMenuBar.qml" line="1034"/>
         <source>&amp;OSD</source>
         <translation>OSD(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1028"/>
+        <location filename="../qml/MainMenuBar.qml" line="1036"/>
         <source>Subtitles only</source>
         <translation>字幕のみ</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1029"/>
+        <location filename="../qml/MainMenuBar.qml" line="1037"/>
         <source>Volume + seek</source>
         <translation>音量 + シーク</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1030"/>
+        <location filename="../qml/MainMenuBar.qml" line="1038"/>
         <source>Volume + seek + timer</source>
         <translation>音量 + シーク + タイマー</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1036"/>
+        <location filename="../qml/MainMenuBar.qml" line="1044"/>
         <source>Op&amp;tions</source>
         <translation>オプション(&amp;T)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1039"/>
+        <location filename="../qml/MainMenuBar.qml" line="1047"/>
         <source>&amp;Preferences…</source>
         <translation>設定(&amp;P)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1052"/>
+        <location filename="../qml/MainMenuBar.qml" line="1060"/>
         <source>S&amp;how icon in system tray</source>
         <translation>システムトレイにアイコンを表示(&amp;H)</translation>
     </message>
@@ -1859,7 +1873,7 @@
         <translation type="vanished">メインツールバーを編集(&amp;E)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1071"/>
+        <location filename="../qml/MainMenuBar.qml" line="1079"/>
         <source>Check for &amp;updates</source>
         <translation>更新を確認(&amp;U)</translation>
     </message>
@@ -1912,12 +1926,12 @@
         <translation type="vanished">現在位置をミリ秒付きで表示(&amp;M)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1061"/>
+        <location filename="../qml/MainMenuBar.qml" line="1069"/>
         <source>&amp;Help</source>
         <translation>ヘルプ(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1064"/>
+        <location filename="../qml/MainMenuBar.qml" line="1072"/>
         <source>&amp;Contents</source>
         <translation>目次(&amp;C)</translation>
     </message>
@@ -1930,7 +1944,7 @@
         <translation type="vanished">YouTube サポートをインストール／更新(&amp;Y)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1077"/>
+        <location filename="../qml/MainMenuBar.qml" line="1085"/>
         <source>&amp;About Vivace</source>
         <translation>Vivace について(&amp;A)</translation>
     </message>
@@ -1938,174 +1952,174 @@
 <context>
     <name>MainToolBar</name>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="62"/>
+        <location filename="../qml/MainToolBar.qml" line="67"/>
         <source>Auto</source>
         <translation>自動</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="247"/>
+        <location filename="../qml/MainToolBar.qml" line="253"/>
         <source>&amp;Off</source>
         <translation>オフ(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="293"/>
+        <location filename="../qml/MainToolBar.qml" line="301"/>
         <source>Normal speed</source>
         <translation>標準速度</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="299"/>
+        <location filename="../qml/MainToolBar.qml" line="307"/>
         <source>Halve speed</source>
         <translation>速度を半分に</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="304"/>
+        <location filename="../qml/MainToolBar.qml" line="312"/>
         <source>Double speed</source>
         <translation>速度を 2 倍に</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="310"/>
+        <location filename="../qml/MainToolBar.qml" line="318"/>
         <source>Speed -10%</source>
         <translation>速度 -10%</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="315"/>
+        <location filename="../qml/MainToolBar.qml" line="323"/>
         <source>Speed +10%</source>
         <translation>速度 +10%</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="320"/>
+        <location filename="../qml/MainToolBar.qml" line="328"/>
         <source>Speed -4%</source>
         <translation>速度 -4%</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="321"/>
+        <location filename="../qml/MainToolBar.qml" line="329"/>
         <source>Speed +4%</source>
         <translation>速度 +4%</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="323"/>
+        <location filename="../qml/MainToolBar.qml" line="331"/>
         <source>Speed -1%</source>
         <translation>速度 -1%</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="324"/>
+        <location filename="../qml/MainToolBar.qml" line="332"/>
         <source>Speed +1%</source>
         <translation>速度 +1%</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="327"/>
+        <location filename="../qml/MainToolBar.qml" line="335"/>
         <source>Pitch compensation</source>
         <translation>ピッチ補正</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="341"/>
-        <location filename="../qml/MainToolBar.qml" line="451"/>
-        <location filename="../qml/MainToolBar.qml" line="471"/>
+        <location filename="../qml/MainToolBar.qml" line="349"/>
+        <location filename="../qml/MainToolBar.qml" line="459"/>
+        <location filename="../qml/MainToolBar.qml" line="479"/>
         <source>&lt;empty&gt;</source>
         <translation>&lt;なし&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="385"/>
+        <location filename="../qml/MainToolBar.qml" line="393"/>
         <source>&amp;None</source>
         <translation>なし(&amp;N)</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="394"/>
+        <location filename="../qml/MainToolBar.qml" line="402"/>
         <source>&amp;Rotate by 90° clockwise</source>
         <translation>時計回りに 90° 回転(&amp;R)</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="403"/>
+        <location filename="../qml/MainToolBar.qml" line="411"/>
         <source>Rotate by 90° &amp;counterclockwise</source>
         <translation>反時計回りに 90° 回転(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="412"/>
+        <location filename="../qml/MainToolBar.qml" line="420"/>
         <source>Rotate by &amp;180°</source>
         <translation>180° 回転(&amp;1)</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="423"/>
+        <location filename="../qml/MainToolBar.qml" line="431"/>
         <source>50%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="424"/>
+        <location filename="../qml/MainToolBar.qml" line="432"/>
         <source>100%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="425"/>
+        <location filename="../qml/MainToolBar.qml" line="433"/>
         <source>200%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="483"/>
+        <location filename="../qml/MainToolBar.qml" line="491"/>
         <source>&amp;Add new bookmark</source>
         <translation>ブックマークを追加(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="488"/>
+        <location filename="../qml/MainToolBar.qml" line="496"/>
         <source>&amp;Edit bookmarks…</source>
         <translation>ブックマークを編集(&amp;E)…</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="521"/>
+        <location filename="../qml/MainToolBar.qml" line="529"/>
         <source>(empty)</source>
         <translation>(なし)</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="527"/>
+        <location filename="../qml/MainToolBar.qml" line="535"/>
         <source>Clear</source>
         <translation>クリア</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="534"/>
+        <location filename="../qml/MainToolBar.qml" line="542"/>
         <source>Reset</source>
         <translation>リセット</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="535"/>
+        <location filename="../qml/MainToolBar.qml" line="543"/>
         <source>Zoom -</source>
         <translation>ズーム -</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="536"/>
+        <location filename="../qml/MainToolBar.qml" line="544"/>
         <source>Zoom +</source>
         <translation>ズーム +</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="538"/>
+        <location filename="../qml/MainToolBar.qml" line="546"/>
         <source>Move left</source>
         <translation>左へ移動</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="539"/>
+        <location filename="../qml/MainToolBar.qml" line="547"/>
         <source>Move right</source>
         <translation>右へ移動</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="540"/>
+        <location filename="../qml/MainToolBar.qml" line="548"/>
         <source>Move up</source>
         <translation>上へ移動</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="541"/>
+        <location filename="../qml/MainToolBar.qml" line="549"/>
         <source>Move down</source>
         <translation>下へ移動</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="546"/>
+        <location filename="../qml/MainToolBar.qml" line="554"/>
         <source>Contents</source>
         <translation>目次</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="552"/>
+        <location filename="../qml/MainToolBar.qml" line="560"/>
         <source>Check for updates</source>
         <translation>更新を確認</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="558"/>
+        <location filename="../qml/MainToolBar.qml" line="566"/>
         <source>About Vivace</source>
         <translation>Vivace について</translation>
     </message>
@@ -2828,42 +2842,47 @@
         <translation>開く…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefAdvancedPage.qml" line="78"/>
-        <source>Main settings are stored in the Windows registry (HKCUSoftware<byte value="xb"/>ivace-player); per-file data in vivace_files.ini in the folder above.</source>
-        <translation type="unfinished"></translation>
+        <location filename="../qml/PrefAdvancedPage.qml" line="93"/>
+        <source>Main settings and per-file data are stored in the app&apos;s private storage, shown in the folder above.</source>
+        <translation>主な設定とファイルごとのデータは、上のフォルダーに示されているアプリの専用ストレージに保存されます。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefAdvancedPage.qml" line="85"/>
+        <location filename="../qml/PrefAdvancedPage.qml" line="96"/>
+        <source>Main settings are stored in the Windows registry (%1); per-file data in vivace_files.ini in the folder above.</source>
+        <translation>主な設定は Windows レジストリ（%1）に、ファイルごとのデータは上のフォルダーの vivace_files.ini に保存されます。</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefAdvancedPage.qml" line="105"/>
         <source>Maintenance</source>
         <translation>メンテナンス</translation>
     </message>
     <message>
-        <location filename="../qml/PrefAdvancedPage.qml" line="94"/>
+        <location filename="../qml/PrefAdvancedPage.qml" line="114"/>
         <source>Clear saved file settings</source>
         <translation>保存されたファイル設定を消去</translation>
     </message>
     <message>
-        <location filename="../qml/PrefAdvancedPage.qml" line="100"/>
+        <location filename="../qml/PrefAdvancedPage.qml" line="120"/>
         <source>Erases every remembered playback position and per-file track choice at once; this happens immediately and is not undone by Cancel.</source>
         <translation>記憶している再生位置とファイルごとのトラック選択を一度にすべて消去します。即時に実行され、キャンセルでは元に戻せません。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefAdvancedPage.qml" line="106"/>
+        <location filename="../qml/PrefAdvancedPage.qml" line="126"/>
         <source>Forgets all remembered playback positions and track selections.</source>
         <translation>記憶しているすべての再生位置とトラック選択を忘れます。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefAdvancedPage.qml" line="114"/>
+        <location filename="../qml/PrefAdvancedPage.qml" line="134"/>
         <source>Logs</source>
         <translation>ログ</translation>
     </message>
     <message>
-        <location filename="../qml/PrefAdvancedPage.qml" line="123"/>
+        <location filename="../qml/PrefAdvancedPage.qml" line="143"/>
         <source>Vivace writes warnings and errors to vivace.log in the configuration folder above (kept across sessions, with the previous session as vivace.log.1). Include it when reporting a problem.</source>
         <translation>Vivace は警告とエラーを上記の設定フォルダー内の vivace.log に書き込みます（セッションをまたいで保持され、前回分は vivace.log.1 になります）。問題を報告する際は添付してください。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefAdvancedPage.qml" line="129"/>
+        <location filename="../qml/PrefAdvancedPage.qml" line="149"/>
         <source>Open log file</source>
         <translation>ログファイルを開く</translation>
     </message>
@@ -3431,27 +3450,27 @@
         <translation type="vanished">&lt;h1&gt;インターフェース&lt;/h1&gt;&lt;p&gt;&lt;b&gt;インターフェース&lt;/b&gt; — GUI レイアウト（Basic / Mini / Mpc）、アイコンセット、Qt Quick Controls のスタイルとアプリケーションフォント、さらにメインウィンドウの動作（自動リサイズ、中央配置、画面内に保つ、位置とサイズの記憶、音声のみのファイルで映像領域を隠す）、ツールバーのグラデーション、ネイティブファイルダイアログの切り替え、OSD オプション。&lt;/p&gt;&lt;p&gt;&lt;b&gt;シーク&lt;/b&gt; — シークボタンとマウスホイールのジャンプ量、およびタイムスライダーをドラッグ中にシークするか離したときにシークするか。&lt;/p&gt;&lt;p&gt;&lt;b&gt;インスタンス&lt;/b&gt; — 実行中の単一インスタンスを再利用し、ファイルを既存のウィンドウで開きます（次回起動時に有効）。&lt;/p&gt;&lt;p&gt;&lt;b&gt;全画面表示&lt;/b&gt; — 一定時間操作がないとマウスポインターを隠します。&lt;/p&gt;&lt;p&gt;&lt;b&gt;プライバシー&lt;/b&gt; — 最近使ったファイルと URL をいくつ記憶するか、最後のフォルダーを記憶するか。&lt;/p&gt;&lt;p&gt;&lt;b&gt;高 DPI&lt;/b&gt; — インターフェースの拡大率を上書きします（通常は Vivace が自動で拡大します）。&lt;/p&gt;&lt;p&gt;スタイル・フォント・拡大率の変更は、Vivace の再起動後に反映されます。&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="72"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="89"/>
         <source>Interface</source>
         <translation>インターフェース</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="74"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="89"/>
         <source>Seeking</source>
         <translation>シーク</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="76"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="90"/>
         <source>Instances</source>
         <translation>インスタンス</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="94"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="90"/>
         <source>Fullscreen</source>
         <translation>全画面表示</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="100"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="90"/>
         <source>Privacy</source>
         <translation>プライバシー</translation>
     </message>
@@ -3460,57 +3479,57 @@
         <translation type="vanished">高 DPI</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="119"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="117"/>
         <source>Main window</source>
         <translation>メインウィンドウ</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="142"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="140"/>
         <source>Auto-resize:</source>
         <translation>自動リサイズ:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="147"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="145"/>
         <source>Never</source>
         <translation>しない</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="148"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="146"/>
         <source>Whenever it&apos;s needed</source>
         <translation>必要なときは常に</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="149"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="147"/>
         <source>Only after loading a new video</source>
         <translation>新しい動画を読み込んだ後のみ</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="156"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="154"/>
         <source>Center window</source>
         <translation>ウィンドウを中央に配置</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="161"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="159"/>
         <source>Prevent the window from getting outside of the screen</source>
         <translation>ウィンドウが画面の外に出ないようにする</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="166"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="164"/>
         <source>Remember size and position of the main window</source>
         <translation>メインウィンドウのサイズと位置を記憶</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="171"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="169"/>
         <source>Hide the video window when playing audio files</source>
         <translation>音声ファイルの再生時は映像ウィンドウを隠す</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="233"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="231"/>
         <source>Language:</source>
         <translation>言語:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="180"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="178"/>
         <source>GUI:</source>
         <translation>GUI:</translation>
     </message>
@@ -3519,52 +3538,52 @@
         <translation type="vanished">&lt;h1&gt;インターフェース&lt;/h1&gt;&lt;p&gt;&lt;b&gt;インターフェース&lt;/b&gt; — GUI レイアウト（Basic / Mini / Mpc）、アイコンセット、言語、Qt Quick Controls のスタイル、さらにメインウィンドウの動作（自動リサイズ、中央配置、画面内に保つ、位置とサイズの記憶、音声のみのファイルで映像領域を隠す）、メニューバーの表示有無（メニューバーはツールバーやコントロールバーと違って2行目に折り返せないため、狭いスマートフォン画面では表示しきれなくなりやすい）、ツールバーのグラデーション、ネイティブファイルダイアログの切り替え。&lt;/p&gt;&lt;p&gt;&lt;b&gt;テキスト&lt;/b&gt; — アプリケーションフォント、OSD オプション、タッチ操作向けの拡大表示、高 DPI の拡大率の上書き（通常は Vivace が自動で拡大します）。&lt;/p&gt;&lt;p&gt;&lt;b&gt;シーク&lt;/b&gt; — シークボタンとマウスホイールのジャンプ量、およびタイムスライダーをドラッグ中にシークするか離したときにシークするか。&lt;/p&gt;&lt;p&gt;&lt;b&gt;インスタンス&lt;/b&gt; — 実行中の単一インスタンスを再利用し、ファイルを既存のウィンドウで開きます（次回起動時に有効）。&lt;/p&gt;&lt;p&gt;&lt;b&gt;全画面表示&lt;/b&gt; — 一定時間操作がないとマウスポインターを隠します。&lt;/p&gt;&lt;p&gt;&lt;b&gt;プライバシー&lt;/b&gt; — 最近使ったファイルと URL をいくつ記憶するか、最後のフォルダーを記憶するか。&lt;/p&gt;&lt;p&gt;スタイル・フォント・拡大率の変更は、Vivace の再起動後に反映されます。&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="190"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="188"/>
         <source>Basic GUI</source>
         <translation>Basic GUI</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="191"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="189"/>
         <source>Mini GUI</source>
         <translation>Mini GUI</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="192"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="190"/>
         <source>Mpc GUI</source>
         <translation>Mpc GUI</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="193"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="191"/>
         <source>Skinnable GUI</source>
         <translation>スキン対応 GUI</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="216"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="214"/>
         <source>Icon set:</source>
         <translation>アイコンセット:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="224"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="222"/>
         <source>Default</source>
         <translation>既定</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="225"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="223"/>
         <source>Classic</source>
         <translation>クラシック</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="261"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="259"/>
         <source>Style:</source>
         <translation>スタイル:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="276"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="274"/>
         <source>Style changes take effect after restarting Vivace. Fusion is recommended: other styles may not render the custom menus and sliders correctly.</source>
         <translation>スタイルの変更は Vivace の再起動後に反映されます。Fusion を推奨します。他のスタイルではカスタムメニューやスライダーが正しく表示されないことがあります。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="282"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="280"/>
         <source>Show menu bar</source>
         <translation>メニューバーを表示</translation>
     </message>
@@ -3573,13 +3592,13 @@
         <translation type="vanished">メニューバーは狭い画面で2行目に折り返せない（ツールバーやコントロールバーと違う）ため、スマートフォンでは表示しきれなくなることがあります。その場合はオフにしてください。ツールバーにもある操作（例：「設定」）は、どちらの場合でも引き続き利用できます。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="332"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="343"/>
         <source>Application font:</source>
         <translation>アプリケーションフォント:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="242"/>
-        <location filename="../qml/PrefInterfacePage.qml" line="337"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="240"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="348"/>
         <source>System default</source>
         <translation>システム既定</translation>
     </message>
@@ -3588,42 +3607,41 @@
         <translation type="vanished">&lt;h1&gt;インターフェース&lt;/h1&gt;&lt;p&gt;&lt;b&gt;インターフェース&lt;/b&gt; — GUI レイアウト（Basic / Mini / Mpc）、アイコンセット、言語、Qt Quick Controls のスタイル、さらにメインウィンドウの動作（自動リサイズ、中央配置、画面内に保つ、位置とサイズの記憶、音声のみのファイルで映像領域を隠す）。&lt;/p&gt;&lt;p&gt;&lt;b&gt;テキスト&lt;/b&gt; — アプリケーションフォント、ツールバーのグラデーション、ネイティブファイルダイアログの切り替え、OSD オプション、タッチ操作向けの拡大表示、高 DPI の拡大率の上書き（通常は Vivace が自動で拡大します）。&lt;/p&gt;&lt;p&gt;&lt;b&gt;シーク&lt;/b&gt; — シークボタンとマウスホイールのジャンプ量、およびタイムスライダーをドラッグ中にシークするか離したときにシークするか。&lt;/p&gt;&lt;p&gt;&lt;b&gt;インスタンス&lt;/b&gt; — 実行中の単一インスタンスを再利用し、ファイルを既存のウィンドウで開きます（次回起動時に有効）。&lt;/p&gt;&lt;p&gt;&lt;b&gt;全画面表示&lt;/b&gt; — 一定時間操作がないとマウスポインターを隠します。&lt;/p&gt;&lt;p&gt;&lt;b&gt;プライバシー&lt;/b&gt; — 最近使ったファイルと URL をいくつ記憶するか、最後のフォルダーを記憶するか。&lt;/p&gt;&lt;p&gt;スタイル・フォント・拡大率の変更は、Vivace の再起動後に反映されます。&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="73"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="89"/>
         <source>Text</source>
         <translation>テキスト</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="256"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="254"/>
         <source>Language changes take effect after restarting Vivace. Untranslated text falls back to English.</source>
         <translation>言語の変更は Vivace を再起動すると反映されます。翻訳のないテキストは英語で表示されます。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="286"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="294"/>
         <source>Can&apos;t turn off: Preferences isn&apos;t on the Toolbar or Control bar, so the menu bar must stay on to reach it.</source>
         <translation>オフにできません: 「設定」がツールバーにもコントロールバーにもないため、アクセスできるようメニューバーは表示したままにする必要があります。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="297"/>
         <source>The menu bar can&apos;t wrap onto a second row on a narrow screen (unlike the toolbar and control bar), so the window won&apos;t shrink narrower than it needs -- except on Android, which has no minimum window size and can run out of room for it. Turn it off if that happens -- every menu action that&apos;s also on the toolbar (e.g. Preferences) stays reachable either way.</source>
-        <translation>メニューバーは狭い画面で2行目に折り返せない（ツールバーやコントロールバーと違う）ため、ウィンドウはメニューバーに必要な幅より狭くはなりません — ただし Android は最小ウィンドウサイズがないため、表示しきれなくなることがあります。その場合はオフにしてください。ツールバーにもある操作（例：「設定」）は、どちらの場合でも引き続き利用できます。</translation>
+        <translation type="vanished">メニューバーは狭い画面で2行目に折り返せない（ツールバーやコントロールバーと違う）ため、ウィンドウはメニューバーに必要な幅より狭くはなりません — ただし Android は最小ウィンドウサイズがないため、表示しきれなくなることがあります。その場合はオフにしてください。ツールバーにもある操作（例：「設定」）は、どちらの場合でも引き続き利用できます。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="343"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="354"/>
         <source>Change…</source>
         <translation>変更…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="354"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="365"/>
         <source>Reset</source>
         <translation>リセット</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="368"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="379"/>
         <source>Font changes take effect after restarting Vivace. (The default font already renders Japanese and other scripts; a custom font only needs to be set for preference.)</source>
         <translation>フォントの変更は Vivace の再起動後に反映されます。（既定のフォントでも日本語などは表示できます。カスタムフォントは好みに応じて設定します。）</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="307"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="318"/>
         <source>Gradient background for the toolbar and control bar</source>
         <translation>ツールバーとコントロールバーのグラデーション背景</translation>
     </message>
@@ -3632,170 +3650,170 @@
         <translation type="vanished">&lt;h1&gt;インターフェース&lt;/h1&gt;&lt;p&gt;&lt;b&gt;インターフェース&lt;/b&gt; — GUI レイアウト（Basic / Mini / Mpc）、アイコンセット、言語、Qt Quick Controls のスタイル、さらにメインウィンドウの動作（自動リサイズ、中央配置、画面内に保つ、位置とサイズの記憶、音声のみのファイルで映像領域を隠す）、ツールバーのグラデーション、ネイティブファイルダイアログの切り替え。&lt;/p&gt;&lt;p&gt;&lt;b&gt;テキスト&lt;/b&gt; — アプリケーションフォント、OSD オプション、タッチ操作向けの拡大表示、高 DPI の拡大率の上書き（通常は Vivace が自動で拡大します）。&lt;/p&gt;&lt;p&gt;&lt;b&gt;シーク&lt;/b&gt; — シークボタンとマウスホイールのジャンプ量、およびタイムスライダーをドラッグ中にシークするか離したときにシークするか。&lt;/p&gt;&lt;p&gt;&lt;b&gt;インスタンス&lt;/b&gt; — 実行中の単一インスタンスを再利用し、ファイルを既存のウィンドウで開きます（次回起動時に有効）。&lt;/p&gt;&lt;p&gt;&lt;b&gt;全画面表示&lt;/b&gt; — 一定時間操作がないとマウスポインターを隠します。&lt;/p&gt;&lt;p&gt;&lt;b&gt;プライバシー&lt;/b&gt; — 最近使ったファイルと URL をいくつ記憶するか、最後のフォルダーを記憶するか。&lt;/p&gt;&lt;p&gt;スタイル・フォント・拡大率の変更は、Vivace の再起動後に反映されます。&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="312"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="323"/>
         <source>Use the system native file dialog</source>
         <translation>システムのネイティブファイルダイアログを使用</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="373"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="384"/>
         <source>OSD</source>
         <translation>OSD</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="380"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="391"/>
         <source>Show OSD messages</source>
         <translation>OSD メッセージを表示</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="386"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="397"/>
         <source>Duration of OSD messages:</source>
         <translation>OSD メッセージの表示時間:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="392"/>
-        <location filename="../qml/PrefInterfacePage.qml" line="643"/>
-        <location filename="../qml/PrefInterfacePage.qml" line="651"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="403"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="654"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="662"/>
         <source>ms</source>
         <translation>ミリ秒</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="397"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="408"/>
         <source>OSD font size:</source>
         <translation>OSD のフォントサイズ:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="403"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="414"/>
         <source>px</source>
         <translation>px</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="411"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="422"/>
         <source>Touch</source>
         <translation>タッチ</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="420"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="431"/>
         <source>Touch-friendly controls (larger fonts and icons)</source>
         <translation>タッチ操作向けの表示（大きめのフォントとアイコン）</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="425"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="436"/>
         <source>Enlarges the interface for finger use on a tablet. Toolbar icons resize immediately; the larger fonts take effect after you restart Vivace.</source>
         <translation>タブレットで指で操作しやすいようにインターフェースを拡大します。ツールバーのアイコンはすぐに変わり、大きめのフォントは Vivace の再起動後に反映されます。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="435"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="446"/>
         <source>Swipe across the video to seek</source>
         <translation>映像上をスワイプしてシーク</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="440"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="451"/>
         <source>Drag left or right on the video (with a finger or the mouse) to jump backward or forward. An on-screen message previews the target while you drag.</source>
         <translation>映像上を（指またはマウスで）左右にドラッグして前後にジャンプします。ドラッグ中は移動先が画面上に表示されます。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="524"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="535"/>
         <source>seconds</source>
         <translation>秒</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="530"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="541"/>
         <source>Short jump:</source>
         <translation>短いジャンプ:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="537"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="548"/>
         <source>Medium jump:</source>
         <translation>中くらいのジャンプ:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="544"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="555"/>
         <source>Long jump:</source>
         <translation>長いジャンプ:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="550"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="561"/>
         <source>Mouse wheel jump:</source>
         <translation>マウスホイールのジャンプ:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="560"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="571"/>
         <source>Behaviour of time slider:</source>
         <translation>タイムスライダーの動作:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="564"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="575"/>
         <source>Seek to position while dragging</source>
         <translation>ドラッグ中に位置へシーク</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="565"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="576"/>
         <source>Seek to position when released</source>
         <translation>離したときに位置へシーク</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="576"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="587"/>
         <source>Absolute/relative seeking method and precise seeking are mplayer/mpv-specific and do not apply to Vivace&apos;s Qt Multimedia backend (seeking is already position-based).</source>
         <translation>絶対／相対シークの方式や精密シークは mplayer/mpv 固有のもので、Vivace の Qt Multimedia バックエンドには適用されません（シークはすでに位置ベースです）。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="599"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="610"/>
         <source>Use only one running instance of Vivace</source>
         <translation>Vivace の実行インスタンスを 1 つだけにする</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="610"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="621"/>
         <source>When enabled, opening a file while Vivace is already running hands it to the existing window instead of starting a new one. Takes effect on the next launch.</source>
         <translation>有効にすると、Vivace の実行中にファイルを開いたとき、新しいウィンドウを開かず既存のウィンドウに渡します。次回起動時に有効になります。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="624"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="635"/>
         <source>Hide the mouse pointer after inactivity</source>
         <translation>一定時間操作がないとマウスポインターを隠す</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="629"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="640"/>
         <source>While a video is playing, hide the mouse pointer over the video after the delay below — in the normal window as well as in fullscreen.</source>
         <translation>映像の再生中、下の時間が経過すると映像上のマウスポインターを隠します（通常ウィンドウでも全画面表示でも）。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="637"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="648"/>
         <source>Hide after:</source>
         <translation>隠すまでの時間:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="649"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="660"/>
         <source>Time to hide the control bar:</source>
         <translation>コントロールバーを隠すまでの時間:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="658"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="669"/>
         <source>The fullscreen control bar currently shows while the pointer is near the bottom edge; a time-based autohide is planned.</source>
         <translation>現在、全画面表示のコントロールバーはポインターが下端付近にある間だけ表示されます。時間ベースの自動非表示は予定中です。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="670"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="681"/>
         <source>Recent files</source>
         <translation>最近使ったファイル</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="675"/>
-        <location filename="../qml/PrefInterfacePage.qml" line="691"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="686"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="702"/>
         <source>Max. items:</source>
         <translation>最大件数:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="686"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="697"/>
         <source>URLs</source>
         <translation>URL</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="701"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="712"/>
         <source>Remember last directory</source>
         <translation>最後のフォルダーを記憶</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="453"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="464"/>
         <source>Vivace scales the interface on high-DPI screens automatically. You can override the scale factor here if needed.</source>
         <translation>Vivace は高 DPI 画面ではインターフェースを自動で拡大します。必要ならここで拡大率を上書きできます。</translation>
     </message>
@@ -3805,17 +3823,27 @@
         <translation>&lt;h1&gt;インターフェース&lt;/h1&gt;&lt;p&gt;&lt;b&gt;インターフェース&lt;/b&gt; — GUI レイアウト（Basic / Mini / Mpc）、アイコンセット、言語、Qt Quick Controls のスタイル、さらにメインウィンドウの動作（自動リサイズ、中央配置、画面内に保つ、位置とサイズの記憶、音声のみのファイルで映像領域を隠す）、メニューバーの表示有無（メニューバーはツールバーやコントロールバーと違って2行目に折り返せないため、ウィンドウはメニューバーに必要な幅より狭くはなりません — ただし Android は最小ウィンドウサイズがないため、表示しきれなくなることがあります）、ツールバーのグラデーション、ネイティブファイルダイアログの切り替え。&lt;/p&gt;&lt;p&gt;&lt;b&gt;テキスト&lt;/b&gt; — アプリケーションフォント、OSD オプション、タッチ操作向けの拡大表示、高 DPI の拡大率の上書き（通常は Vivace が自動で拡大します）。&lt;/p&gt;&lt;p&gt;&lt;b&gt;シーク&lt;/b&gt; — シークボタンとマウスホイールのジャンプ量、およびタイムスライダーをドラッグ中にシークするか離したときにシークするか。&lt;/p&gt;&lt;p&gt;&lt;b&gt;インスタンス&lt;/b&gt; — 実行中の単一インスタンスを再利用し、ファイルを既存のウィンドウで開きます（次回起動時に有効）。&lt;/p&gt;&lt;p&gt;&lt;b&gt;全画面表示&lt;/b&gt; — 一定時間操作がないとマウスポインターを隠します。&lt;/p&gt;&lt;p&gt;&lt;b&gt;プライバシー&lt;/b&gt; — 最近使ったファイルと URL をいくつ記憶するか、最後のフォルダーを記憶するか。&lt;/p&gt;&lt;p&gt;スタイル・フォント・拡大率の変更は、Vivace の再起動後に反映されます。&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="457"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="306"/>
+        <source>Always off on Android -- the toolbar covers every menu action a phone needs, and the menu bar has no good touch affordance on a small screen.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefInterfacePage.qml" line="309"/>
+        <source>The menu bar can&apos;t wrap onto a second row on a narrow screen (unlike the toolbar and control bar), so the window won&apos;t shrink narrower than it needs. Turn it off if you need the extra room -- every menu action that&apos;s also on the toolbar (e.g. Preferences) stays reachable either way.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefInterfacePage.qml" line="468"/>
         <source>Scale factor:</source>
         <translation>拡大率:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="464"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="475"/>
         <source>Automatic</source>
         <translation>自動</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="481"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="492"/>
         <source>Scale factor changes take effect after restarting Vivace.</source>
         <translation>拡大率の変更は Vivace の再起動後に反映されます。</translation>
     </message>
@@ -3828,7 +3856,7 @@
     </message>
     <message>
         <location filename="../qml/PrefNetworkPage.qml" line="73"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="122"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="103"/>
         <source>OpenSubtitles</source>
         <translation>OpenSubtitles</translation>
     </message>
@@ -3838,51 +3866,51 @@
         <translation>YouTube</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="103"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="666"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="84"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="715"/>
         <source>Cast</source>
         <translation>キャスト</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="132"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="113"/>
         <source>API key:</source>
         <translation>API キー:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="133"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="114"/>
         <source>A free per-application key from opensubtitles.com (create an API consumer); subtitle search will not work until this is set.</source>
         <translation>opensubtitles.com が発行するアプリケーションごとの無料キーです（API コンシューマーを作成）。設定するまで字幕検索は動作しません。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="138"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="119"/>
         <source>from opensubtitles.com → API consumers</source>
         <translation>opensubtitles.com → API consumers から</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="143"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="618"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="124"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="667"/>
         <source>Username:</source>
         <translation>ユーザー名:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="144"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="125"/>
         <source>Optional opensubtitles.com account login; signing in is not required but raises the daily download limit.</source>
         <translation>任意の opensubtitles.com アカウントのログインです。サインインは必須ではありませんが、1 日あたりのダウンロード上限が上がります。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="151"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="624"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="132"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="673"/>
         <source>Password:</source>
         <translation>パスワード:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="166"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="147"/>
         <source>The account password is stored securely using your operating system&apos;s credential manager.</source>
         <translation>アカウントのパスワードは、お使いのオペレーティングシステムの資格情報マネージャーを使って安全に保存されます。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="102"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="575"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="83"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="624"/>
         <source>Proxy</source>
         <translation>プロキシ</translation>
     </message>
@@ -3891,7 +3919,7 @@
         <translation type="vanished">&lt;h1&gt;ネットワーク&lt;/h1&gt;&lt;p&gt;&lt;b&gt;OpenSubtitles&lt;/b&gt; の検索は REST API を使用し、アプリケーションごとの無料 API キーが必要です。opensubtitles.com に登録して API コンシューマーを作成し、キーをここに貼り付けてください。アカウントのログイン（ユーザー名とパスワード）は任意ですが、1 日あたりのダウンロード上限が上がります。&lt;/p&gt;&lt;p&gt;&lt;b&gt;YouTube&lt;/b&gt;: 任意のリゾルバーは外部の yt-dlp プログラムを使用します。有効にすると、YouTube の URL を開いたときに yt-dlp を実行して直接再生可能なストリームを取得します。yt-dlp はご自身でインストールし、PATH に無い場合はフルパスを設定してください。QMediaPlayer は単一の多重化ストリームを再生するため、ストリーミングは最良のプログレッシブ形式（YouTube では約 720p）までです。Cookie はストリーミングにはあえて使用しません。認証済み（Cookie）のセッションは、通常のプレーヤーが開けない URL を返すためです。&lt;/p&gt;&lt;p&gt;&lt;b&gt;HD&lt;/b&gt;（および Cookie）には、外部ダウンローダーを有効にして独自のツール（プログラムまたは .bat/.cmd）を指定してください。HD 形式は映像と音声が別々のストリームで多重化ストリーミングできないため、Vivace はツールを実行して動画をダウンロード・結合し、ダウンロードフォルダーに書き込まれたファイルを再生します。ツールは独自の形式選択と Cookie を保持します（引数に例えば --cookies を追加）。Vivace はそれを実行して結果を再生するだけです。&lt;/p&gt;&lt;p&gt;ストリームの &lt;b&gt;接続タイムアウト&lt;/b&gt;（主にライブ TV チューナーで使用）は &lt;i&gt;設定 ▸ テレビとラジオ&lt;/i&gt; に移動しました。&lt;/p&gt;&lt;p&gt;&lt;b&gt;プロキシ&lt;/b&gt;タブの設定はアプリケーション全体に適用されます。OpenSubtitles検索とアップデート確認にはHTTP・SOCKS5どちらの種類も有効です。メディア再生とyt-dlpに適用されるのはHTTPプロキシのみです（Qtのネットワークスタックを経由せず、http_proxy/https_proxyという仕組みを直接参照するためで、SOCKS5にはこれに相当する仕組みがありません）。&lt;/p&gt;&lt;p&gt;&lt;b&gt;キャスト&lt;/b&gt;タブでは、再生 ▸ キャスト ▸ スマートフォン/タブレット が待ち受けるポートを設定します。キャストダイアログだけでなくここにあるのは、固定された値にするためです — 一度設定してそのポートをファイアウォールやルーターで一度許可しておけば、以後キャストは新たなファイアウォールの確認なしで動作し続けます。&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="631"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="680"/>
         <source>Type:</source>
         <translation>種類:</translation>
     </message>
@@ -3900,18 +3928,18 @@
         <translation type="vanished">なし</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="605"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="654"/>
         <source>Host:</source>
         <translation>ホスト:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="611"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="676"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="660"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="725"/>
         <source>Port:</source>
         <translation>ポート:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="185"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="166"/>
         <source>YouTube (yt-dlp)</source>
         <translation>YouTube (yt-dlp)</translation>
     </message>
@@ -3933,31 +3961,33 @@
         <translation>&lt;h1&gt;ネットワーク&lt;/h1&gt;&lt;p&gt;&lt;b&gt;OpenSubtitles&lt;/b&gt; の検索は REST API を使用し、アプリケーションごとの無料 API キーが必要です。opensubtitles.com に登録して API コンシューマーを作成し、キーをここに貼り付けてください。アカウントのログイン（ユーザー名とパスワード）は任意ですが、1 日あたりのダウンロード上限が上がります。&lt;/p&gt;&lt;p&gt;&lt;b&gt;YouTube&lt;/b&gt;: 任意のリゾルバーは外部の yt-dlp プログラムを使用します。有効にすると、YouTube の URL を開いたときに yt-dlp を実行して直接再生可能なストリームを取得します。この設定を初めてオンにすると、Vivace が yt-dlp のインストールを申し出ます（下の yt-dlp のパス欄で自分のコピーを指定することもできます）。また、「yt-dlp を自動的に更新」の設定に従って自動的に最新の状態に保つこともできます。QMediaPlayer は単一の多重化ストリームを再生するため、ストリーミングは最良のプログレッシブ形式（YouTube では約 720p）までです。Cookie はストリーミングにはあえて使用しません。認証済み（Cookie）のセッションは、通常のプレーヤーが開けない URL を返すためです。&lt;/p&gt;&lt;p&gt;&lt;b&gt;HD&lt;/b&gt;（および Cookie）を使うには、ダウンロードモードを有効にするか、外部ダウンローダーを独自のツール（プログラムまたは .bat/.cmd）に向けてください。HD 形式は映像と音声が別々のストリームで多重化ストリーミングできないため、Vivace は yt-dlp（またはお使いのツール）を実行して動画をダウンロード・結合し、ダウンロードフォルダーに書き込まれたファイルを再生します。ダウンロードモードにはさらに、yt-dlp 自身が YouTube の JavaScript チャレンジを解決するために使う別のプログラム Deno も必要です — これが無いと、HD ダウンロードが前提とするログイン済み（Cookie）のリクエストで、利用できる形式が大幅に制限されます。Cookie を送らないストリーミングモードはほとんど影響を受けず、Deno は不要です。Deno はご自身でインストールし、PATH に無い場合はフルパスを「ダウンロードして再生」の設定に入力してください。&lt;/p&gt;&lt;p&gt;cookies.txt ファイルをブラウザからエクスポートする手順、および Deno のインストール手順については、&lt;b&gt;ヘルプ ▸ 目次 ▸ オプション&lt;/b&gt; をご覧ください。&lt;/p&gt;&lt;p&gt;ストリームの &lt;b&gt;接続タイムアウト&lt;/b&gt;（主にライブ TV チューナーで使用）は &lt;i&gt;設定 ▸ テレビとラジオ&lt;/i&gt; に移動しました。&lt;/p&gt;&lt;p&gt;&lt;b&gt;プロキシ&lt;/b&gt;タブの設定はアプリケーション全体に適用されます。OpenSubtitles検索とアップデート確認にはHTTP・SOCKS5どちらの種類も有効です。メディア再生とyt-dlpに適用されるのはHTTPプロキシのみです（Qtのネットワークスタックを経由せず、http_proxy/https_proxyという仕組みを直接参照するためで、SOCKS5にはこれに相当する仕組みがありません）。&lt;/p&gt;&lt;p&gt;&lt;b&gt;キャスト&lt;/b&gt;タブでは、再生 ▸ キャスト… が待ち受けるポートを設定します。キャストダイアログだけでなくここにあるのは、固定された値にするためです — 一度設定してそのポートをファイアウォールやルーターで一度許可しておけば、以後キャストは新たなファイアウォールの確認なしで動作し続けます。&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="201"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="186"/>
         <source>Play YouTube URLs with yt-dlp</source>
         <translation>YouTube の URL を yt-dlp で再生</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="205"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="190"/>
         <source>When on, opening a YouTube URL runs yt-dlp instead of trying to play the page URL as-is.</source>
         <translation>オンにすると、YouTube の URL を開いたときにページ URL をそのまま再生しようとせず、yt-dlp を実行します。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="218"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="203"/>
         <source>Open YouTube URLs by:</source>
         <translation>YouTube の URL を開く方法:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="219"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="204"/>
         <source>Streaming is fastest but caps at ~720p and can&apos;t use cookies. Downloading gets full HD (uses cookies + ffmpeg), then plays and deletes the file. Or hand off to your own external downloader tool.</source>
         <translation>ストリーミングは最速ですが約 720p までで、Cookie は使えません。ダウンロードはフル HD が得られ（Cookie + ffmpeg を使用）、再生後にファイルを削除します。または独自の外部ダウンローダーツールに渡します。</translation>
     </message>
     <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="225"/>
         <location filename="../qml/PrefNetworkPage.qml" line="229"/>
         <source>Streaming (fast, up to ~720p)</source>
         <translation>ストリーミング（高速・最大約 720p）</translation>
     </message>
     <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="226"/>
         <location filename="../qml/PrefNetworkPage.qml" line="230"/>
         <source>Downloading then playing (HD, cookies)</source>
         <translation>ダウンロードしてから再生（HD・Cookie）</translation>
@@ -3973,273 +4003,273 @@
         <translation>管理された yt-dlp を使う</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="246"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="260"/>
         <source>When on, Vivace installs yt-dlp for you (see the button here) and can keep it updated automatically below. Turn this off to point at your own yt-dlp instead -- Vivace will not install or auto-update it.</source>
         <translation>オンにすると、Vivace が yt-dlp をインストールし（ここにあるボタンを参照）、下の設定に従って自動的に最新の状態に保つこともできます。オフにすると、自分自身の yt-dlp を指定できます — その場合、Vivace はインストールや自動更新を行いません。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="254"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="268"/>
         <source>Install / Update yt-dlp…</source>
         <translation>yt-dlp をインストール／更新…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="263"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="277"/>
         <source>yt-dlp path:</source>
         <translation>yt-dlp のパス:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="264"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="278"/>
         <source>Leave as &quot;yt-dlp&quot; if it is on your system PATH; otherwise enter the full path to the yt-dlp executable.</source>
         <translation>システムの PATH に yt-dlp がある場合は「yt-dlp」のままにします。そうでなければ yt-dlp 実行ファイルのフルパスを入力してください。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="270"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="284"/>
         <source>yt-dlp (on PATH) or a full path</source>
         <translation>yt-dlp（PATH 上）またはフルパス</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="276"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="290"/>
         <source>Update yt-dlp automatically:</source>
         <translation>yt-dlp を自動的に更新:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="277"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="291"/>
         <source>Runs yt-dlp&apos;s own self-update before playing a YouTube video. &quot;Every time&quot; adds a short delay to each play; the daily/weekly options check only that often. Failures (e.g. no network) are ignored and playback proceeds with whatever version is installed. Only applies to a managed yt-dlp.</source>
         <translation>YouTube 動画を再生する前に、yt-dlp 自体の自己更新を実行します。「実行するたび」を選ぶと再生ごとに少し時間がかかります。1日／1週間ごとの選択肢は、その頻度でのみ確認します。更新に失敗した場合（ネットワークがない場合など）は無視され、インストール済みのバージョンのまま再生が続行されます。管理された yt-dlp のみに適用されます。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="291"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="305"/>
         <source>Never</source>
         <translation>しない</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="292"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="306"/>
         <source>Every time yt-dlp runs</source>
         <translation>yt-dlp を実行するたび</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="293"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="307"/>
         <source>Once a day</source>
         <translation>1日に1回</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="294"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="308"/>
         <source>Once a week</source>
         <translation>1週間に1回</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="301"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="315"/>
         <source>Maximum quality:</source>
         <translation>最高画質:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="302"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="316"/>
         <source>Upper limit on resolution. Streaming is capped at ~720p regardless; downloading can reach this height in full HD.</source>
         <translation>解像度の上限です。ストリーミングは常に約 720p までですが、ダウンロードならこの高さのフル HD まで得られます。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="312"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="326"/>
         <source>360p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="313"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="327"/>
         <source>480p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="314"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="328"/>
         <source>720p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="315"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="329"/>
         <source>1080p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="316"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="330"/>
         <source>1440p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="317"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="331"/>
         <source>2160p (4K)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="318"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="332"/>
         <source>Best available</source>
         <translation>利用可能な最高画質</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="333"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="347"/>
         <source>yt-dlp is a separate program and is not bundled with Vivace.</source>
         <translation>yt-dlp は独立したプログラムで、Vivace には同梱されていません。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="339"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="353"/>
         <source>Download &amp; play</source>
         <translation>ダウンロードして再生</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="351"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="373"/>
         <source>Downloads the video (merging HD video and audio with ffmpeg), plays it, and keeps it in a cache folder so replaying it is instant. The cache holds the most recent downloads up to the size below; older ones are removed.</source>
         <translation>動画をダウンロードし（HD の映像と音声を ffmpeg で結合）、再生して、キャッシュフォルダーに保持するため再生し直すと瞬時です。キャッシュは下の件数まで最近のダウンロードを保持し、古いものは削除されます。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="365"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="387"/>
         <source>Cookies file:</source>
         <translation>Cookie ファイル:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="366"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="388"/>
         <source>Optional cookies.txt exported from your browser (yt-dlp --cookies); unlocks HD, members-only and age-restricted videos. Safe here — cookies only affect the download, not a stream a player must open. See Help ▸ Contents ▸ Options for step-by-step export instructions.</source>
         <translation>ブラウザーからエクスポートした任意の cookies.txt（yt-dlp --cookies）。HD・メンバー限定・年齢制限付き動画を利用できます。ここでは安全です。Cookie はダウンロードにのみ影響し、プレーヤーが開くストリームには影響しません。書き出し手順については「ヘルプ ▸ 目次 ▸ オプション」を参照してください。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="380"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="402"/>
         <source>optional cookies.txt</source>
         <translation>任意の cookies.txt</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="383"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="402"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="429"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="447"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="519"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="555"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="405"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="430"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="463"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="492"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="568"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="604"/>
         <source>Browse…</source>
         <translation>参照…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="388"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="415"/>
         <source>ffmpeg location:</source>
         <translation>ffmpeg の場所:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="389"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="416"/>
         <source>Folder containing ffmpeg (yt-dlp needs it to merge HD video+audio). Leave empty to use ffmpeg from the system PATH.</source>
         <translation>ffmpeg を含むフォルダー（HD の映像＋音声の結合に yt-dlp が必要とします）。空欄にするとシステムの PATH の ffmpeg を使います。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="399"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="426"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="427"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="460"/>
         <source>empty = use PATH</source>
         <translation>空欄 = PATH を使用</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="407"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="440"/>
         <source>Deno path:</source>
         <translation>Deno のパス:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="408"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="441"/>
         <source>yt-dlp uses a separate program, Deno, to solve YouTube&apos;s JavaScript challenges. It&apos;s most needed here: a signed-in (cookie) request — exactly what unlocks HD above — sees severely limited format availability without it. Streaming mode, which never sends cookies, is largely unaffected. Leave empty if &quot;deno&quot; is already on your system PATH; otherwise enter the full path to the deno executable. See Help ▸ Contents ▸ Options for installation instructions.</source>
         <translation>yt-dlp は、YouTube の JavaScript チャレンジを解決するために別のプログラム Deno を使用します。これが最も必要になるのはここです。ログイン済み（Cookie）のリクエスト — 上の HD を解除するのに使われるのと同じリクエスト — は、Deno が無いと利用できる形式が大きく制限されます。Cookie を送らないストリーミングモードはほとんど影響を受けません。システムの PATH に &quot;deno&quot; が既にある場合は空のままにし、そうでない場合は deno 実行ファイルへのフルパスを入力してください。インストール手順はヘルプ ▸ 目次 ▸ オプション をご覧ください。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="434"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="478"/>
         <source>Cache folder:</source>
         <translation>キャッシュフォルダー:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="435"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="479"/>
         <source>Where downloaded videos are kept for reuse. A video already here is replayed without downloading again.</source>
         <translation>ダウンロードした動画を再利用のために保持する場所です。ここに既にある動画は再ダウンロードせずに再生されます。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="452"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="497"/>
         <source>Cache size:</source>
         <translation>キャッシュサイズ:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="453"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="498"/>
         <source>How many downloaded videos to keep. When the limit is reached, the least-recently-played one is deleted.</source>
         <translation>ダウンロードした動画を保持する件数です。上限に達すると、最後に再生してから最も時間が経ったものが削除されます。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="464"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="509"/>
         <source>files</source>
         <translation>件</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="470"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="515"/>
         <source>Thumbnail fallback at:</source>
         <translation>サムネイルの代替取得位置:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="471"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="516"/>
         <source>The cache thumbnail is normally YouTube&apos;s own poster image. Only if that is missing or black does Vivace grab a video frame — this is how many seconds in (past a black intro).</source>
         <translation>キャッシュのサムネイルは通常 YouTube 自身のポスター画像です。それが無いか真っ黒な場合のみ、Vivace は動画のフレームを取得します。これはその位置（秒数、黒いイントロを過ぎた辺り）です。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="484"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="529"/>
         <source>seconds</source>
         <translation>秒</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="494"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="539"/>
         <source>External downloader tool</source>
         <translation>外部ダウンローダーツール</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="505"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="554"/>
         <source>Downloader command:</source>
         <translation>ダウンローダーのコマンド:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="506"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="555"/>
         <source>The program or .bat/.cmd script that downloads the video; it receives the URL as an argument.</source>
         <translation>動画をダウンロードするプログラムまたは .bat/.cmd スクリプト。URL を引数として受け取ります。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="516"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="565"/>
         <source>e.g. C:ToolsYouTubeDL.bat</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="524"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="573"/>
         <source>Arguments:</source>
         <translation>引数:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="525"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="574"/>
         <source>Arguments passed to the tool; the token {url} is replaced by the video URL (if omitted, the URL is appended). Add any cookies/format flags your tool needs here, e.g. --cookies C:pathcookies.txt.</source>
         <translation>ツールに渡す引数です。トークン {url} は動画の URL に置き換えられます（省略した場合は URL が末尾に追加されます）。cookie や形式の指定など、ツールに必要なフラグをここに記述します。例: --cookies C:\path\cookies.txt</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="540"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="589"/>
         <source>Download folder:</source>
         <translation>ダウンロードフォルダー:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="541"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="590"/>
         <source>The folder the tool writes the finished file into; Vivace plays the newest media file that appears there, so set it to match your tool&apos;s output folder.</source>
         <translation>ツールが完成したファイルを書き込むフォルダーです。Vivace はそこに現れた最新のメディアファイルを再生するため、ツールの出力フォルダーに合わせて設定してください。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="552"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="601"/>
         <source>your tool&apos;s output folder</source>
         <translation>ツールの出力フォルダー</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="585"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="634"/>
         <source>Enable proxy</source>
         <translation>プロキシを有効にする</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="589"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="638"/>
         <source>Applies to OpenSubtitles search and the update check (both proxy types). Only an HTTP proxy also applies to media playback and yt-dlp — a SOCKS5 proxy does not reach either, since neither goes through Qt&apos;s network stack.</source>
         <translation>OpenSubtitles検索とアップデート確認に適用されます（HTTP・SOCKS5どちらの種類でも有効）。メディア再生とyt-dlpに適用されるのはHTTPプロキシのみです — どちらもQtのネットワークスタックを経由しないため、SOCKS5プロキシは届きません。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="647"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="696"/>
         <source>The proxy password is stored securely using your operating system&apos;s credential manager.</source>
         <translation>プロキシのパスワードは、お使いのオペレーティングシステムの資格情報マネージャーを使って安全に保存されます。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="677"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="726"/>
         <source>The port Play ▸ Cast… listens on. Kept fixed here (rather than editable each time in the Cast dialog) so you can allow it through your firewall/router once and it keeps working.</source>
         <translation>再生 ▸ キャスト… が待ち受けるポートです。キャストダイアログの方では毎回編集できるようにするのではなく、ここに固定することで、ファイアウォールやルーターで一度だけ許可すれば以後も動作し続けます。</translation>
     </message>
@@ -4248,37 +4278,37 @@
         <translation type="vanished">再生 ▸ キャスト ▸ スマートフォン/タブレット が待ち受けるポートです。キャストダイアログの方では毎回編集できるようにするのではなく、ここに固定することで、ファイアウォールやルーターで一度だけ許可すれば以後も動作し続けます。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="698"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="747"/>
         <source>Your OS&apos;s firewall (and most routers) block an app listening on a fresh port until you allow it. Pick a port once here, allow Vivace through your firewall for it, and Cast will keep working without a new prompt each time.</source>
         <translation>OS のファイアウォール（および大半のルーター）は、許可するまで新しいポートで待ち受けるアプリをブロックします。ここで一度ポートを決め、そのポートで Vivace をファイアウォールで許可すれば、以後キャストは毎回確認なしで動作します。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="713"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="762"/>
         <source>Select the cookies.txt file</source>
         <translation>cookies.txt ファイルを選択</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="719"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="768"/>
         <source>Select the deno executable</source>
         <translation>deno 実行ファイルを選択</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="725"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="774"/>
         <source>Select the folder containing ffmpeg</source>
         <translation>ffmpeg を含むフォルダーを選択</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="730"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="779"/>
         <source>Select the download cache folder</source>
         <translation>ダウンロードキャッシュフォルダーを選択</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="735"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="784"/>
         <source>Select the downloader program</source>
         <translation>ダウンローダープログラムを選択</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="741"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="790"/>
         <source>Select the download folder</source>
         <translation>ダウンロードフォルダーを選択</translation>
     </message>
@@ -5564,22 +5594,22 @@
         <translation>yt-dlp がファイルを生成しませんでした（終了コード %1）。HD 動画の場合は、ffmpeg と Deno のパスを確認してください。</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="769"/>
+        <location filename="../src/youtuberesolver.cpp" line="778"/>
         <source>Could not create the destination folder</source>
         <translation>保存先フォルダーを作成できませんでした</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="785"/>
+        <location filename="../src/youtuberesolver.cpp" line="794"/>
         <source>File no longer exists</source>
         <translation>ファイルはすでに存在しません</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="807"/>
+        <location filename="../src/youtuberesolver.cpp" line="816"/>
         <source>Could not move the file</source>
         <translation>ファイルを移動できませんでした</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="808"/>
+        <location filename="../src/youtuberesolver.cpp" line="817"/>
         <source>Could not copy the file</source>
         <translation>ファイルをコピーできませんでした</translation>
     </message>
@@ -5588,12 +5618,12 @@
         <translation type="vanished">yt-dlp はファイルを生成しませんでした（終了コード %1）。HD 動画の場合は ffmpeg の場所を確認してください。</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="929"/>
+        <location filename="../src/youtuberesolver.cpp" line="938"/>
         <source>Could not write %1.</source>
         <translation>%1 を書き込めませんでした。</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="935"/>
+        <location filename="../src/youtuberesolver.cpp" line="944"/>
         <source>Could not save %1.</source>
         <translation>%1 を保存できませんでした。</translation>
     </message>
@@ -5601,12 +5631,12 @@
 <context>
     <name>YoutubeSupportDialog</name>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="26"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="35"/>
         <source>Install / Update YouTube support</source>
         <translation>YouTube サポートのインストール／更新</translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="75"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="90"/>
         <source>yt-dlp was installed successfully as:</source>
         <translation>yt-dlp を次の場所にインストールしました:</translation>
     </message>
@@ -5615,42 +5645,42 @@
         <translation type="vanished">YouTube の再生が有効になりました。</translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="79"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="94"/>
         <source>The download failed:</source>
         <translation>ダウンロードに失敗しました:</translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="100"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="115"/>
         <source>To play YouTube videos, Vivace uses an external program called yt-dlp.</source>
         <translation>YouTube 動画を再生するために、Vivace は yt-dlp という外部プログラムを使用します。</translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="103"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="118"/>
         <source>Vivace can download the latest version from the official website and install it as:</source>
         <translation>Vivace は公式サイトから最新版をダウンロードし、次の場所にインストールできます:</translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="106"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="121"/>
         <source>Would you like to proceed?</source>
         <translation>続行しますか？</translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="114"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="129"/>
         <source>Downloading yt-dlp…</source>
         <translation>yt-dlp をダウンロード中…</translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="138"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="153"/>
         <source>Install</source>
         <translation>インストール</translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="147"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="162"/>
         <source>Cancel</source>
         <translation>キャンセル</translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="152"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="167"/>
         <source>Close</source>
         <translation>閉じる</translation>
     </message>

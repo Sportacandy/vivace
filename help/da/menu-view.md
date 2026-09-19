@@ -9,7 +9,7 @@ Menuen **Vis** viser oplysninger og sekundære paneler.
   *Indstillinger ▸ Grænseflade* vises den som et forankret panel eller et separat
   vindue. Se [Åbn](menu-open.md) for at indlæse afspilningslister.
   - Hver række viser en miniature — en tilhørende billedfil ved siden
-    af mediet (en "<name>.jpg", der allerede ligger ved siden af det),
+    af mediet (en "`<name>.jpg`", der allerede ligger ved siden af det),
     hvis en sådan findes, ellers et billede, der automatisk hentes i
     baggrunden. Knappen øverst til højre i afspilningslisten skifter
     række-/miniaturestørrelsen (**Lille**/**Mellem**/**Stor**); ved

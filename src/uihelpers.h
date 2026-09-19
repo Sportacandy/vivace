@@ -33,6 +33,28 @@ public:
     // file:///C:/x -> C:\x (for showing folder-dialog results in the UI).
     Q_INVOKABLE QString toLocalPath(const QUrl &url) const;
 
+    // Copies sourceUrl's real bytes into destFileName under the app's own
+    // private storage, returning the resulting LOCAL path, or an empty
+    // string on failure. For an ordinary file:// URL this is a plain file
+    // copy; the real purpose is Android's Storage Access Framework file
+    // picker (QtQuick.Dialogs' FileDialog uses it there), which can only
+    // ever return an opaque content:// URI for a document outside the
+    // app's own storage -- QFile/QFileInfo can open one transparently via
+    // Qt's own AndroidContentFileEngineHandler (a real ContentResolver
+    // query under the hood; see CastServer's own localEnginePath() for the
+    // fuller investigation), but embedded CPython's own open() (a raw
+    // POSIX call yt-dlp's cookiefile option ultimately uses) has no such
+    // bridge and can never open a content:// URI directly. Copying once,
+    // right when the file is picked, into a plain always-openable local
+    // path sidesteps that gap entirely. Intended for Android specifically
+    // -- a caller on desktop should keep using toLocalPath() as before,
+    // since a live external path (re-read fresh on every use) lets a
+    // user's periodically re-exported cookies.txt stay effective without
+    // re-picking it in Preferences each time; a one-time copy would lose
+    // that.
+    Q_INVOKABLE QString copyToAppStorage(const QUrl &sourceUrl,
+                                         const QString &destFileName) const;
+
     // Whether a dropped/opened URL is a local directory -- opening one (a
     // DVD disc folder, or a plain media folder) does substantially more
     // FFmpeg-backend work than a single file, so a drag-and-drop needs a

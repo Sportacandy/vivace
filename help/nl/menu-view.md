@@ -9,7 +9,7 @@ Het menu **Weergave** toont informatie en secundaire panelen.
   *Voorkeuren ▸ Interface* verschijnt ze als vastgezet paneel of apart venster.
   Zie [Openen](menu-open.md) voor het laden van afspeellijsten.
   - Elke rij toont een miniatuur — een naast het mediabestand staand
-    afbeeldingsbestand (een "<name>.jpg" die al ernaast staat) als dat
+    afbeeldingsbestand (een "`<name>.jpg`" die al ernaast staat) als dat
     bestaat, anders een frame dat automatisch op de achtergrond wordt
     vastgelegd. De knop rechtsboven in de afspeellijst schakelt tussen
     rij-/miniatuurgroottes (**Klein**/**Gemiddeld**/**Groot**); bij Klein en

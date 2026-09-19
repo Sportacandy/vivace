@@ -171,8 +171,22 @@ static QString defaultScreenshotFolder()
 
 static QString defaultYoutubeCacheDir()
 {
+#ifdef Q_OS_ANDROID
+    // MoviesLocation resolves to a PUBLIC shared-storage folder there,
+    // writable directly (without a SAF picker/extra permissions) only up
+    // to Android 9 -- scoped storage on later versions blocks a plain
+    // POSIX write to it for an app that hasn't requested broad storage
+    // access. AppDataLocation is the app's own private, always-writable
+    // folder -- the same base PythonYoutubeResolver's downloads already
+    // used before this setting became shared with it. The "Cache folder:"
+    // row is hidden on Android for this reason (see PrefNetworkPage.qml),
+    // so this default is never user-overridden there.
+    return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation)
+            + QStringLiteral("/YouTube cache");
+#else
     return QStandardPaths::writableLocation(QStandardPaths::MoviesLocation)
             + QStringLiteral("/Vivace YouTube");
+#endif
 }
 
 // Auto (0) everywhere except Android. Confirmed 2026-09-07 against FFmpeg's
@@ -307,7 +321,7 @@ Settings::Settings(QObject *parent)
       m_proxyPort(m_store.value(Keys::proxyPort, 0).toInt()),
       m_proxyUsername(m_store.value(Keys::proxyUsername).toString()),
       m_proxyPassword(readSecurePassword(m_store, Keys::proxyPassword)),
-      m_youtubeEnabled(m_store.value(Keys::youtubeEnabled, false).toBool()),
+      m_youtubeEnabled(m_store.value(Keys::youtubeEnabled, true).toBool()),
       m_ytdlPath(m_store.value(Keys::ytdlPath, QStringLiteral("yt-dlp"))
                          .toString()),
       m_youtubeUseManagedYtdlp(
@@ -334,7 +348,7 @@ Settings::Settings(QObject *parent)
       m_youtubeDownloadFolder(
               m_store.value(Keys::youtubeDownloadFolder).toString()),
       m_youtubeAutoUpdate(
-              qBound(0, m_store.value(Keys::youtubeAutoUpdate, 0).toInt(), 3)),
+              qBound(0, m_store.value(Keys::youtubeAutoUpdate, 3).toInt(), 3)),
       m_youtubeLastAutoUpdateCheck(
               m_store.value(Keys::youtubeLastAutoUpdateCheck).toString()),
       m_updateCheckEnabled(

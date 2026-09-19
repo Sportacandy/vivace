@@ -86,6 +86,12 @@ cookies directly out of a browser's profile.
 4. In Vivace, open *Preferences ▸ Network ▸ YouTube* and use **Browse…** next
    to **Cookies file:** to select that file.
 
+**On Android:** Chrome for Android does not support browser extensions, so
+steps 2–3 above can't be done on the device itself. Export `cookies.txt` on a
+desktop or laptop computer as described above, then transfer that file to
+your Android device (e.g. via cloud storage, a USB cable, or email) before
+using **Browse…** in step 4.
+
 **Keep in mind:**
 
 - A `cookies.txt` file is effectively a saved login session — anyone who has

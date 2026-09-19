@@ -9,7 +9,7 @@ Das Menü **Anzeigen** zeigt Informationen und zusätzliche Bereiche.
   *Einstellungen ▸ Oberfläche* erscheint sie als angedocktes Feld oder separates
   Fenster. Siehe [Öffnen](menu-open.md) zum Laden von Wiedergabelisten.
   - Jede Zeile zeigt ein Vorschaubild — eine Bilddatei, die bereits neben der
-    Mediendatei liegt (eine vorhandene „<name>.jpg“), sofern eine existiert,
+    Mediendatei liegt (eine vorhandene „`<name>.jpg`“), sofern eine existiert,
     andernfalls ein automatisch im Hintergrund erstelltes Einzelbild. Die
     Schaltfläche oben rechts in der Wiedergabeliste schaltet die
     Zeilen-/Vorschaubildgröße um (**Klein**/**Mittel**/**Groß**); bei Klein

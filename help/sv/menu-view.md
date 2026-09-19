@@ -9,7 +9,7 @@ Menyn **Visa** visar information och sekundära paneler.
   *Inställningar ▸ Gränssnitt* visas den som en dockad panel eller ett separat
   fönster. Se [Öppna](menu-open.md) för att ladda spellistor.
   - Varje rad visar en miniatyrbild — en bifogad bildfil bredvid mediet
-    (en "<name>.jpg" som redan ligger bredvid det) om en sådan finns,
+    (en "`<name>.jpg`" som redan ligger bredvid det) om en sådan finns,
     annars en bildruta som hämtas automatiskt i bakgrunden. Knappen
     längst upp till höger i spellistan växlar rad-/miniatyrstorleken
     (**Liten**/**Medel**/**Stor**); vid Liten och Medel förstoras både

@@ -33,6 +33,11 @@ MenuBar {
     signal editTvChannelsRequested()
     signal editRadioChannelsRequested()
     signal editFavoritesRequested()
+    // Bubbled from the Favorites/TV/Radio FavoritesMenu instances below --
+    // see FavoritesMenu.qml's own urlActivated doc comment for why this
+    // needs to route through Main.qml's openMediaUrl() rather than opening
+    // directly.
+    signal urlActivated(string url)
     signal addBookmarkRequested()
     signal editBookmarksRequested()
     signal loadSubtitlesRequested()
@@ -172,6 +177,7 @@ MenuBar {
             showActions: true
             onEditRequested: bar.editFavoritesRequested()
             onAddCurrentRequested: bar.controller.addCurrentTo(bar.controller.favorites)
+            onUrlActivated: url => bar.urlActivated(url)
         }
         Action {
             text: qsTr("&Directory…")
@@ -225,6 +231,7 @@ MenuBar {
             showActions: true
             onEditRequested: bar.editTvChannelsRequested()
             onAddCurrentRequested: bar.controller.addCurrentTo(bar.controller.tvChannels)
+            onUrlActivated: url => bar.urlActivated(url)
         }
         FavoritesMenu {
             title: qsTr("Radi&o")
@@ -235,6 +242,7 @@ MenuBar {
             showActions: true
             onEditRequested: bar.editRadioChannelsRequested()
             onAddCurrentRequested: bar.controller.addCurrentTo(bar.controller.radioChannels)
+            onUrlActivated: url => bar.urlActivated(url)
         }
         MenuSeparator {}
         Action {

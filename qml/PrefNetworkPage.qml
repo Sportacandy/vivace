@@ -74,30 +74,11 @@ ColumnLayout {
         TabButton {
             id: youtubeTab
             text: qsTr("YouTube")
-            // yt-dlp can never run on Android (see the GroupBox's own
-            // "enabled" comment below) -- rather than leave a page reachable
-            // that's all disabled controls (which, on this platform, render
-            // in their normal *enabled* text color -- a real Qt Quick
-            // Controls Fusion-style palette quirk on Android, not fixable
-            // from here), just remove the whole tab from the tab bar.
-            //
-            // Deliberately ONLY `visible:` here, nothing touching `width` at
-            // all: two different attempts to also zero `width` while hidden
-            // (a `width: visible ? implicitWidth : 0` ternary, and later a
-            // `Binding { ... when: !visible }`) were each confirmed, by
-            // actually running the app and screenshotting this exact tab
-            // bar, to make this tab render far too NARROW even while
-            // *visible* -- in both cases, merely being the target of SOME
-            // width value-source was enough to interfere with the Control's
-            // own normal implicitWidth-driven sizing, regardless of whether
-            // that source was ever actually active. A confirmed, reproduced
-            // regression on every desktop platform outweighs a theoretical,
-            // never-actually-observed gap in the Android tab bar (which is
-            // hidden here, not visible, and has not been reported as a real
-            // problem on-device) -- if a real gap does turn up on Android,
-            // revisit then with an Android device in hand, rather than
-            // guessing at a third mechanism blind.
-            visible: Qt.platform.os !== "android"
+            // Previously hidden outright on Android (yt-dlp could never run
+            // there) -- no longer applicable: Streaming-mode resolution now
+            // works via an embedded CPython interpreter (see
+            // pythonYoutubeResolver in Main.qml), so this tab is reachable
+            // there again, same as every other platform.
         }
         TabButton { text: qsTr("Proxy") }
         TabButton { text: qsTr("Cast") }
@@ -183,12 +164,16 @@ ColumnLayout {
                 GroupBox {
                     Layout.fillWidth: true
                     title: qsTr("YouTube (yt-dlp)")
-                    // yt-dlp needs an external process, and Android (10+,
-                    // targeting API 29+) blocks an app from executing any
-                    // file it wrote to its own storage -- there is no way
-                    // to make this work here, so disable the whole section
-                    // rather than let it look available and silently fail.
-                    enabled: Qt.platform.os !== "android"
+                    // Previously disabled outright on Android (yt-dlp needs
+                    // an external process, and Android blocks executing a
+                    // downloaded native binary) -- no longer needed:
+                    // Streaming-mode resolution now works there too, via an
+                    // embedded CPython interpreter running yt-dlp's own
+                    // pure-Python release instead of spawning a subprocess
+                    // (see pythonYoutubeResolver in Main.qml). The specific
+                    // parts that still can't work on Android (Download &
+                    // play, External tool -- both need a native-binary
+                    // exec) are excluded individually further down instead.
 
                     ColumnLayout {
                         anchors.fill: parent
@@ -225,11 +210,26 @@ ColumnLayout {
                             ComboBox {
                                 id: modeCombo
                                 Layout.fillWidth: true
-                                model: [
-                                    qsTr("Streaming (fast, up to ~720p)"),
-                                    qsTr("Downloading then playing (HD, cookies)"),
-                                    qsTr("An external downloader tool")
-                                ]
+                                // An external downloader tool needs an arbitrary
+                                // user-supplied binary, which can never be bundled
+                                // the way ffmpeg/Node.js are -- so that choice is
+                                // simply absent from the model on Android, rather
+                                // than present-but-disabled. Streaming and
+                                // Download & play are both reachable there (via
+                                // pythonYoutubeResolver, Main.qml -- an embedded
+                                // CPython interpreter running yt-dlp's pure-Python
+                                // release, plus a bundled ffmpeg + Node.js for the
+                                // download case's HD merge / JS-challenge needs).
+                                model: Qt.platform.os === "android"
+                                       ? [
+                                           qsTr("Streaming (fast, up to ~720p)"),
+                                           qsTr("Downloading then playing (HD, cookies)")
+                                         ]
+                                       : [
+                                           qsTr("Streaming (fast, up to ~720p)"),
+                                           qsTr("Downloading then playing (HD, cookies)"),
+                                           qsTr("An external downloader tool")
+                                         ]
                                 currentIndex: Settings.youtubeMode
                                 onActivated: Settings.youtubeMode = currentIndex
                             }
@@ -240,7 +240,21 @@ ColumnLayout {
                                 CheckBox {
                                     id: managedYtdlp
                                     text: qsTr("Use managed yt-dlp")
-                                    checked: Settings.youtubeUseManagedYtdlp
+                                    // Android has no equivalent of "point at
+                                    // your own yt-dlp executable" at all --
+                                    // PythonYoutubeResolver always runs its
+                                    // own managed download through the
+                                    // embedded interpreter, never a
+                                    // user-supplied path -- so force this on
+                                    // and non-interactive there, which also
+                                    // correctly cascades (via the enabled:
+                                    // bindings below, keyed off this
+                                    // checkbox) into enabling "Update yt-dlp
+                                    // automatically" and disabling "yt-dlp
+                                    // path:".
+                                    checked: Qt.platform.os === "android"
+                                             ? true : Settings.youtubeUseManagedYtdlp
+                                    enabled: Qt.platform.os !== "android"
                                     onToggled: Settings.youtubeUseManagedYtdlp = checked
                                 }
                                 HelpMark { text: qsTr("When on, Vivace installs yt-dlp for you "
@@ -348,6 +362,14 @@ ColumnLayout {
                             wrapMode: Text.WordWrap
                             opacity: 0.75
                             font.pixelSize: 12
+                            // On Android this downloads via the bundled
+                            // ffmpeg + Node.js (pythonYoutubeResolver,
+                            // Main.qml) instead of user-supplied ones --
+                            // see the ffmpeg-location/Deno-path rows' own
+                            // Android exclusion below -- but the cookies/
+                            // caching behaviour this text describes is now
+                            // genuinely shared, so one description covers
+                            // both platforms.
                             text: qsTr("Downloads the video (merging HD video and audio "
                                        + "with ffmpeg), plays it, and keeps it in a cache "
                                        + "folder so replaying it is instant. The cache holds "
@@ -363,13 +385,23 @@ ColumnLayout {
                             RowLayout {
                                 spacing: 6
                                 Label { text: qsTr("Cookies file:") }
-                                HelpMark { text: qsTr("Optional cookies.txt exported from your "
-                                                      + "browser (yt-dlp --cookies); unlocks HD, "
-                                                      + "members-only and age-restricted videos. "
-                                                      + "Safe here — cookies only affect the "
-                                                      + "download, not a stream a player must open. "
-                                                      + "See Help ▸ Contents ▸ Options for "
-                                                      + "step-by-step export instructions.") }
+                                HelpMark { text: Qt.platform.os === "android"
+                                    ? qsTr("Optional cookies.txt exported from your "
+                                          + "browser (yt-dlp --cookies); unlocks HD, "
+                                          + "members-only and age-restricted videos. "
+                                          + "Safe here — cookies only affect the "
+                                          + "download, not a stream a player must open. "
+                                          + "A copy is kept in Vivace's own storage, "
+                                          + "since Android can't reopen the original file "
+                                          + "location directly — browse again here after "
+                                          + "re-exporting it from your browser.")
+                                    : qsTr("Optional cookies.txt exported from your "
+                                          + "browser (yt-dlp --cookies); unlocks HD, "
+                                          + "members-only and age-restricted videos. "
+                                          + "Safe here — cookies only affect the "
+                                          + "download, not a stream a player must open. "
+                                          + "See Help ▸ Contents ▸ Options for "
+                                          + "step-by-step export instructions.") }
                             }
                             RowLayout {
                                 Layout.fillWidth: true
@@ -385,6 +417,11 @@ ColumnLayout {
 
                             RowLayout {
                                 spacing: 6
+                                // Android's ffmpeg is bundled inside the APK
+                                // and resolved automatically at runtime (see
+                                // PythonYoutubeResolver::ffmpegToolPath()) --
+                                // there is no user-supplied path to point at.
+                                visible: Qt.platform.os !== "android"
                                 Label { text: qsTr("ffmpeg location:") }
                                 HelpMark { text: qsTr("Folder containing ffmpeg (yt-dlp needs it "
                                                       + "to merge HD video+audio). Leave empty to "
@@ -393,6 +430,7 @@ ColumnLayout {
                             RowLayout {
                                 Layout.fillWidth: true
                                 spacing: 6
+                                visible: Qt.platform.os !== "android"
                                 TextField {
                                     Layout.fillWidth: true
                                     text: Settings.youtubeFfmpegLocation
@@ -404,6 +442,11 @@ ColumnLayout {
 
                             RowLayout {
                                 spacing: 6
+                                // Android uses a bundled Node.js instead of
+                                // Deno (no Deno build exists for Android) --
+                                // resolved automatically, same reasoning as
+                                // ffmpeg location above.
+                                visible: Qt.platform.os !== "android"
                                 Label { text: qsTr("Deno path:") }
                                 HelpMark { text: qsTr("yt-dlp uses a separate program, Deno, to "
                                                       + "solve YouTube's JavaScript challenges. It's "
@@ -420,6 +463,7 @@ ColumnLayout {
                             RowLayout {
                                 Layout.fillWidth: true
                                 spacing: 6
+                                visible: Qt.platform.os !== "android"
                                 TextField {
                                     Layout.fillWidth: true
                                     text: Settings.youtubeDenoLocation
@@ -431,6 +475,16 @@ ColumnLayout {
 
                             RowLayout {
                                 spacing: 6
+                                // Android keeps a fixed, app-private cache
+                                // folder (Settings::defaultYoutubeCacheDir()'s
+                                // own Android branch) rather than exposing an
+                                // arbitrary user-editable path here -- writing
+                                // to a public folder like the desktop default
+                                // needs storage permissions this app doesn't
+                                // request, and there is no tested folder
+                                // picker for it either. Cache SIZE and the
+                                // thumbnail fallback below still apply.
+                                visible: Qt.platform.os !== "android"
                                 Label { text: qsTr("Cache folder:") }
                                 HelpMark { text: qsTr("Where downloaded videos are kept for "
                                                       + "reuse. A video already here is replayed "
@@ -439,6 +493,7 @@ ColumnLayout {
                             RowLayout {
                                 Layout.fillWidth: true
                                 spacing: 6
+                                visible: Qt.platform.os !== "android"
                                 TextField {
                                     Layout.fillWidth: true
                                     text: Settings.youtubeCacheDir
@@ -492,7 +547,11 @@ ColumnLayout {
                 GroupBox {
                     Layout.fillWidth: true
                     title: qsTr("External downloader tool")
-                    visible: ytEnable.checked && Settings.youtubeMode === 2
+                    // Not reachable on Android at all (needs an arbitrary
+                    // native binary) -- same reasoning as the Download &
+                    // play GroupBox above.
+                    visible: Qt.platform.os !== "android"
+                             && ytEnable.checked && Settings.youtubeMode === 2
 
                     GridLayout {
                         anchors.fill: parent
@@ -712,7 +771,30 @@ ColumnLayout {
         id: cookiesFileDialog
         title: qsTr("Select the cookies.txt file")
         options: Settings.useNativeFileDialog ? 0 : FileDialog.DontUseNativeDialog
-        onAccepted: Settings.youtubeCookiesFile = UiHelpers.toLocalPath(selectedFile)
+        // Android's Storage Access Framework picker (what this dialog uses
+        // there) returns an opaque content:// URI for a document outside
+        // Vivace's own storage -- Qt's own QFile can open it transparently,
+        // but embedded CPython's plain open() (which yt-dlp's cookiefile
+        // option ultimately calls) has no such bridge and can never open
+        // it directly. Copy it into app-private storage once, right here,
+        // and store THAT local path instead -- see UiHelpers::
+        // copyToAppStorage()'s own doc comment for the full reasoning.
+        // Desktop keeps the existing live-external-path behaviour (a
+        // plain, already-openable path -- and re-reading it fresh lets a
+        // periodically re-exported cookies.txt stay effective with no
+        // need to re-pick it here).
+        onAccepted: {
+            if (Qt.platform.os === "android") {
+                const localPath = UiHelpers.copyToAppStorage(selectedFile, "cookies.txt")
+                if (localPath !== "")
+                    Settings.youtubeCookiesFile = localPath
+                else
+                    console.warn("cookiesFileDialog: copyToAppStorage failed for "
+                                  + selectedFile)
+            } else {
+                Settings.youtubeCookiesFile = UiHelpers.toLocalPath(selectedFile)
+            }
+        }
     }
     FileDialog {
         id: denoFileDialog

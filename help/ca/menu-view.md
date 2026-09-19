@@ -9,7 +9,7 @@ El menú **Visualitza** mostra informació i plafons secundaris.
   Segons *Preferències ▸ Interfície*, apareix com a plafó acoblat o finestra
   independent. Vegeu [Obre](menu-open.md) per carregar llistes de reproducció.
   - Cada fila mostra una miniatura — un fitxer d'imatge annex al costat
-    del mitjà (un "<name>.jpg" que ja hi ha al costat) si n'hi ha, o si
+    del mitjà (un "`<name>.jpg`" que ja hi ha al costat) si n'hi ha, o si
     no, un fotograma capturat automàticament en segon pla. El botó de
     la cantonada superior dreta de la llista de reproducció canvia la
     mida de la fila/miniatura (**Petit**/**Mitjà**/**Gran**); amb Petit

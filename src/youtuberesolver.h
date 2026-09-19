@@ -125,6 +125,19 @@ public:
     // Delete a cached video (and its thumbnail) by its file:// URL.
     Q_INVOKABLE void removeCacheEntry(const QUrl &fileUrl);
 
+    // Called after some OTHER downloader (PythonYoutubeResolver, on
+    // Android -- it has no cache mechanism of its own) writes a video
+    // directly into this SAME cacheDir. cacheEntries()/cacheCount are
+    // already a pure filesystem scan with no dependency on which code
+    // wrote the files there, so the only thing that needs an explicit
+    // nudge is this class's own private LRU bookkeeping (touchFile/
+    // enforceCacheLimit/updateCacheCount) -- bumping mtime (so this
+    // fresh download isn't immediately the next eviction candidate),
+    // evicting anything now over the cap, and refreshing cacheCount so
+    // e.g. the "YouTube cache" menu item enables correctly. Silently
+    // ignores a path outside cacheDir, same guard as removeCacheEntry().
+    Q_INVOKABLE void noteExternalDownload(const QString &path);
+
     // Copies (or, if moveFiles, moves) each cached video in fileUrls -- plus
     // its sibling thumbnail, if any -- into destFolder, renaming on a name
     // collision (Explorer-style " (2)", " (3)", ...). Returns one map per

@@ -9,7 +9,7 @@ O menu **Exibir** mostra informações e painéis secundários.
   Dependendo de *Preferências ▸ Interface*, ela aparece como painel encaixado ou
   janela separada. Veja [Abrir](menu-open.md) para carregar listas de reprodução.
   - Cada linha mostra uma miniatura — um arquivo de imagem ao lado da mídia
-    (um "<name>.jpg" que já esteja ali) se houver um, ou, caso contrário, um
+    (um "`<name>.jpg`" que já esteja ali) se houver um, ou, caso contrário, um
     quadro capturado automaticamente em segundo plano. O botão no canto
     superior direito da lista de reprodução alterna o tamanho da
     linha/miniatura (**Pequeno**/**Médio**/**Grande**); em Pequeno e Médio,

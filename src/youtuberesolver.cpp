@@ -743,6 +743,15 @@ void YoutubeResolver::removeCacheEntry(const QUrl &fileUrl)
     updateCacheCount();
 }
 
+void YoutubeResolver::noteExternalDownload(const QString &path)
+{
+    if (path.isEmpty() || QFileInfo(path).absolutePath() != QDir(m_cacheDir).absolutePath())
+        return; // only inside the cache folder -- same guard as removeCacheEntry()
+    touchFile(path);
+    enforceCacheLimit();
+    updateCacheCount();
+}
+
 void YoutubeResolver::clearDestForOverwrite(const QString &destPath)
 {
     // Mirrors deleteVideoAndThumbnail()'s retry: a destination file can be

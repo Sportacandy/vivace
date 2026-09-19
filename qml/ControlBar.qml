@@ -28,6 +28,10 @@ Pane {
     signal castRequested()
     signal editTvChannelsRequested()
     signal editRadioChannelsRequested()
+    // Bubbled from tvPopup/radioPopup below -- see FavoritesMenu.qml's own
+    // urlActivated doc comment for why this needs to route through
+    // Main.qml's openMediaUrl() rather than opening directly.
+    signal urlActivated(string url)
     signal videoEqualizerRequested()
     signal resizeToVideoPercentRequested(int percent)
     signal setAudioDelayRequested()
@@ -74,9 +78,8 @@ Pane {
     // control-bar layout; Mini/Mpc use their fixed SMPlayer layouts.
     property string guiMode: "Basic"
 
-    readonly property var layoutItems: guiMode === "Basic"
-            ? (Settings.controlBarItems.length > 0 ? Settings.controlBarItems
-                                                   : Items.defaultControlBar)
+    readonly property var layoutItems: guiMode === "Basic" && Settings.controlBarItems.length > 0
+            ? Settings.controlBarItems
             : Items.defaultControlBarFor(guiMode)
 
     // Status bar: shown in Basic/Mpc (per the preference), hidden in Mini.
@@ -140,7 +143,12 @@ Pane {
         background: Rectangle {
             x: slider.leftPadding
             y: slider.topPadding + slider.availableHeight / 2 - height / 2
-            implicitWidth: 120
+            // Desktop's 120px floor is too wide on a typical phone screen,
+            // where this shares one row with many other control-bar
+            // buttons (rewind/forward/chapter/etc.) -- Layout.fillWidth
+            // still lets it grow past this on either platform, this only
+            // sets the minimum it can shrink to.
+            implicitWidth: Qt.platform.os === "android" ? 40 : 120
             implicitHeight: 7
             width: slider.availableWidth
             height: implicitHeight
@@ -461,6 +469,7 @@ Pane {
         showActions: true
         onEditRequested: controlBar.editTvChannelsRequested()
         onAddCurrentRequested: controlBar.controller.addCurrentTo(controlBar.controller.tvChannels)
+        onUrlActivated: url => controlBar.urlActivated(url)
     }
     FavoritesMenu {
         id: radioPopup
@@ -470,6 +479,7 @@ Pane {
         showActions: true
         onEditRequested: controlBar.editRadioChannelsRequested()
         onAddCurrentRequested: controlBar.controller.addCurrentTo(controlBar.controller.radioChannels)
+        onUrlActivated: url => controlBar.urlActivated(url)
     }
     AppMenu {
         id: speedPopup

@@ -951,6 +951,413 @@ if(VIVACE_HAVE_BLURAY)
     target_link_libraries(vivace PRIVATE ${VIVACE_LIBBLURAY_SYSTEM_LIBS})
 endif()
 
+# Embedded CPython (Android only) -- runs yt-dlp's own official pure-Python
+# release for YouTube URL resolution. Every other platform's YoutubeResolver
+# spawns a downloaded yt-dlp/ffmpeg BINARY as a subprocess -- Android forbids
+# executing a native binary that wasn't shipped inside the signed APK.
+# Embedding an interpreter INSIDE the app and only ever interpreting
+# downloaded .py/.pyz DATA through it sidesteps that restriction (Google's
+# own Device and Network Abuse policy explicitly allows this: "code that
+# runs in a virtual machine or an interpreter... Python, Lua, etc. loaded at
+# run time must not allow potential violations of Google Play policies" --
+# i.e. permitted for a legitimate declared feature like this one).
+#
+# libpython.so is fetched as a prebuilt release asset from
+# https://github.com/Sportacandy/cpython-android-prebuilt (a separate repo,
+# so other projects can reuse it too), which cross-compiles CPython via its
+# own official Android build support (PEP 738). That build script only runs
+# on Linux/macOS (confirmed directly from CPython's own Android/README.md --
+# Windows can't build it at all), so this project consumes it as a published
+# release rather than building it as part of Vivace's own configure step --
+# the same reasoning as using BtbN's prebuilt FFmpeg
+# (scripts/build-patched-qtmultimedia-*.sh) instead of building FFmpeg from
+# source too.
+option(VIVACE_ENABLE_PYTHON_YOUTUBE
+    "Enable embedded-Python YouTube URL resolution (Android only)" ON)
+set(VIVACE_HAVE_PYTHON_YOUTUBE FALSE)
+if(WIN32 AND VIVACE_ENABLE_PYTHON_YOUTUBE)
+    # TEMPORARY, desktop-testing-only (2026-09-19, user request): the
+    # embedded-Python YouTube resolver (PythonYoutubeResolver) was built
+    # Android-only, but desktop's own subprocess-based YoutubeResolver has
+    # turned out to be unreliable against current YouTube/yt-dlp (streaming
+    # mode succeeds on only a limited set of URLs, and not even
+    # consistently for those). This branch links against a REAL,
+    # already-installed desktop Python (found via CMake's own standard
+    # FindPython3 module -- e.g. C:/Python3 on this dev machine) purely so
+    # PythonYoutubeResolver can be exercised interactively on Windows to
+    # compare its success rate against the subprocess-based resolver, with
+    # NO Android-specific asset extraction/packaging involved. REVERT this
+    # whole branch (and every other block guarded by
+    # VIVACE_CPYTHON_DESKTOP_HOME below) once the comparison is done -- this
+    # was never meant to ship real desktop support this way; a real desktop
+    # build would need to bundle its own Python runtime, not silently
+    # depend on whatever full Python install happens to be on this machine.
+    # Interpreter (not just Development) is needed too -- Python3_EXECUTABLE
+    # is only ever set by the Interpreter component; requesting Development
+    # alone left it empty, and VIVACE_CPYTHON_DESKTOP_HOME along with it (a
+    # real bug caught by inspecting this very message() line's own output).
+    find_package(Python3 COMPONENTS Interpreter Development)
+    if(Python3_FOUND)
+        set(VIVACE_HAVE_PYTHON_YOUTUBE TRUE)
+        set(VIVACE_CPYTHON_ABI_VERSION "${Python3_VERSION_MAJOR}.${Python3_VERSION_MINOR}")
+        get_filename_component(VIVACE_CPYTHON_DESKTOP_HOME
+            "${Python3_EXECUTABLE}" DIRECTORY)
+        message(STATUS "Embedded-Python YouTube resolution: ENABLED "
+                        "(TEMPORARY desktop test build, Python "
+                        "${Python3_VERSION} at ${VIVACE_CPYTHON_DESKTOP_HOME})")
+    else()
+        message(WARNING "Embedded-Python YouTube resolution: no Python3 "
+                         "development package found for the desktop test "
+                         "build -- disabling.")
+    endif()
+elseif(ANDROID AND VIVACE_ENABLE_PYTHON_YOUTUBE)
+    set(VIVACE_CPYTHON_VERSION "3.14.7" CACHE STRING
+        "cpython-android-prebuilt release tag to fetch (must match a real \
+published tag at https://github.com/Sportacandy/cpython-android-prebuilt/releases)")
+
+    # cpython-android-prebuilt names its release assets by CPython's own GNU
+    # host triple, not the Gradle-style ABI name CMAKE_ANDROID_ARCH_ABI uses.
+    # SHA256 pins are of the actual v3.14.7 release assets (computed directly
+    # from a real download, not guessed) -- only valid for that exact
+    # version; bump both together if VIVACE_CPYTHON_VERSION is ever changed,
+    # or configure will fail its hash check (which is the point: it means
+    # the pin is stale, not that something is actually wrong).
+    if(CMAKE_ANDROID_ARCH_ABI STREQUAL "arm64-v8a")
+        set(_vivace_cpython_host "aarch64-linux-android")
+        set(_vivace_cpython_sha256 "492cdd80ebab2a1374d0749167ebed06465aa0d08430c30de183f2f113d20451")
+    elseif(CMAKE_ANDROID_ARCH_ABI STREQUAL "x86_64")
+        set(_vivace_cpython_host "x86_64-linux-android")
+        set(_vivace_cpython_sha256 "27a2ac462bd7e4c62d7e382cea30dc4ab61b8369035ed734f036dde97b84756a")
+    else()
+        message(WARNING "Embedded-Python YouTube resolution: no prebuilt CPython "
+                         "published for CMAKE_ANDROID_ARCH_ABI "
+                         "'${CMAKE_ANDROID_ARCH_ABI}' (cpython-android-prebuilt "
+                         "only builds arm64-v8a and x86_64) -- disabling.")
+    endif()
+
+    if(_vivace_cpython_host)
+        set(VIVACE_HAVE_PYTHON_YOUTUBE TRUE)
+        # "3.14", not the full "3.14.7" -- the tarball's own internal paths
+        # (lib/libpython3.14.so, include/python3.14/) use major.minor only.
+        string(REGEX MATCH "^[0-9]+\\.[0-9]+" VIVACE_CPYTHON_ABI_VERSION
+            "${VIVACE_CPYTHON_VERSION}")
+
+        set(VIVACE_CPYTHON_PREFIX "${CMAKE_BINARY_DIR}/cpython-android-prefix")
+        # SOURCE_DIR must be a dedicated subdirectory under src/, NOT src/
+        # itself -- ExternalProject's own default stamp dir is
+        # <prefix>/src/<name>-stamp (a SIBLING of SOURCE_DIR under src/), and
+        # its extraction step does `file(REMOVE_RECURSE ${SOURCE_DIR})`
+        # before unpacking. Setting SOURCE_DIR to the bare "src" (a real
+        # first-attempt mistake here, root-caused 2026-09-14 against an
+        # actual failed Android build) wipes out the stamp directory as a
+        # side effect of that REMOVE_RECURSE, since it's nested inside
+        # SOURCE_DIR in that case -- explaining the exact observed symptom:
+        # download/verify/extract all genuinely succeeded, but the final
+        # `cmake -E touch <stamp>/..-download` always failed because its own
+        # parent directory had just been deleted. bluray_ext avoids this
+        # correctly (SOURCE_DIR = .../src/bluray_ext, not bare .../src).
+        set(VIVACE_CPYTHON_SRC "${VIVACE_CPYTHON_PREFIX}/src/cpython_android_ext")
+        # Real layout verified directly against a downloaded release asset
+        # (tar -tzf), not assumed: everything sits under prefix/, and the
+        # tarball also bundles CPython's own Android/README.md, android.py,
+        # android-env.sh, and testbed/ sample app alongside it -- harmless
+        # extras, just not what SOURCE_DIR's own name might suggest.
+        set(VIVACE_CPYTHON_LIB
+            "${VIVACE_CPYTHON_SRC}/prefix/lib/libpython${VIVACE_CPYTHON_ABI_VERSION}.so")
+        # CPython's own Android build vendors its OWN copies of OpenSSL/
+        # SQLite under "_python"-suffixed names (libssl_python.so etc,
+        # alongside plain libssl.so/libcrypto.so/libsqlite3.so of the same
+        # size -- confirmed identical byte-for-byte, just duplicated under
+        # both names) specifically so its own _ssl/_hashlib/_sqlite3
+        # extension modules never collide with Android's own system
+        # OpenSSL (an incompatible ABI/version on most devices). These are
+        # real, separate runtime dependencies of the extracted stdlib's
+        # lib-dynload/*.so extension modules -- confirmed via a real
+        # on-device failure, 2026-09-15: "dlopen failed: library
+        # libssl_python.so not found ... needed by .../_ssl...so in
+        # namespace classloader-namespace" -- the "classloader-namespace" a
+        # dlopen() from app-PRIVATE storage (extractedStdlibHomeDir() at
+        # runtime) gets loaded under does not search app-private storage
+        # for its own NEEDED dependencies. See QT_ANDROID_EXTRA_LIBS below.
+        set(VIVACE_CPYTHON_SSL_LIB "${VIVACE_CPYTHON_SRC}/prefix/lib/libssl_python.so")
+        set(VIVACE_CPYTHON_CRYPTO_LIB "${VIVACE_CPYTHON_SRC}/prefix/lib/libcrypto_python.so")
+        set(VIVACE_CPYTHON_SQLITE_LIB "${VIVACE_CPYTHON_SRC}/prefix/lib/libsqlite3_python.so")
+
+        include(ExternalProject)
+        ExternalProject_Add(cpython_android_ext
+            URL "https://github.com/Sportacandy/cpython-android-prebuilt/releases/download/v${VIVACE_CPYTHON_VERSION}/python-${VIVACE_CPYTHON_VERSION}-${_vivace_cpython_host}.tar.gz"
+            URL_HASH "SHA256=${_vivace_cpython_sha256}"
+            PREFIX "${VIVACE_CPYTHON_PREFIX}"
+            DOWNLOAD_DIR "${VIVACE_CPYTHON_PREFIX}/download"
+            SOURCE_DIR "${VIVACE_CPYTHON_SRC}"
+            CONFIGURE_COMMAND ""
+            BUILD_COMMAND ""
+            INSTALL_COMMAND ""
+            BUILD_BYPRODUCTS "${VIVACE_CPYTHON_LIB}" "${VIVACE_CPYTHON_SSL_LIB}"
+                "${VIVACE_CPYTHON_CRYPTO_LIB}" "${VIVACE_CPYTHON_SQLITE_LIB}"
+            USES_TERMINAL_DOWNLOAD TRUE
+        )
+
+        # The stdlib ships as a plain directory of ~2700 .py files in the
+        # release tarball. FIRST ATTEMPT (reverted 2026-09-15, a real bug
+        # found on a real device): zipped them into ONE file and pointed
+        # config.module_search_paths at it directly (PyConfig_InitIsolatedConfig
+        # + module_search_paths_set=1, no config.home) -- this consistently
+        # failed on a real Android device with "Py_InitializeFromConfig
+        # failed: Failed to import encodings module". Root-caused by reading
+        # CPython's own official Android CI harness, bundled inside this
+        # exact release tarball at Android/testbed/ (app/src/main/java/org/
+        # python/testbed/MainActivity.kt + app/src/main/c/main_activity.c) --
+        # it does NOT use a zip or module_search_paths at all: it extracts
+        # the WHOLE stdlib as a real directory tree onto disk and points
+        # PyConfig.home (via PyConfig_InitPythonConfig, not isolated) at the
+        # directory ABOVE it, letting CPython's own normal getpath.c
+        # calculation find lib/python<ver>/ underneath -- the same
+        # PYTHONHOME convention a real desktop install uses. Since that
+        # harness is CPython's own tested, working recipe for this exact
+        # build (and the zip-based shortcut is not something it exercises
+        # at all), Vivace now mirrors it instead of the zip shortcut: copy
+        # the whole stdlib directory tree into Android assets (a real
+        # recursive directory, not a single zip member) via
+        # `cmake -E copy_directory`, and PythonYoutubeResolver's own
+        # ensurePythonInitialized() extracts + points config.home at it the
+        # same way at runtime (see pythonyoutuberesolver.cpp).
+        #
+        # Written directly into the checked-in android/assets/ dir (not a
+        # build-tree path) because QT_ANDROID_PACKAGE_SOURCE_DIR/
+        # androiddeployqt need a real, static directory tree to merge into
+        # the Gradle project at packaging time -- there's no mechanism to
+        # inject one generated directory from the build tree into that merge
+        # otherwise. The copied tree is gitignored (see .gitignore), same as
+        # any other generated build artifact. A stamp file (rather than the
+        # directory itself) is the custom command's OUTPUT, since
+        # copy_directory has no single output file CMake could track.
+        set(VIVACE_CPYTHON_STDLIB_DIR
+            "${VIVACE_CPYTHON_SRC}/prefix/lib/python${VIVACE_CPYTHON_ABI_VERSION}")
+        set(VIVACE_CPYTHON_STDLIB_ASSETS_DIR
+            "${VIVACE_ANDROID_PACKAGE_SOURCE_DIR}/assets/python-stdlib")
+        set(VIVACE_CPYTHON_STDLIB_STAMP
+            "${CMAKE_BINARY_DIR}/cpython-android-stdlib.stamp")
+        add_custom_command(
+            OUTPUT "${VIVACE_CPYTHON_STDLIB_STAMP}"
+            COMMAND ${CMAKE_COMMAND} -E make_directory
+                "${VIVACE_ANDROID_PACKAGE_SOURCE_DIR}/assets"
+            COMMAND ${CMAKE_COMMAND} -E copy_directory
+                "${VIVACE_CPYTHON_STDLIB_DIR}" "${VIVACE_CPYTHON_STDLIB_ASSETS_DIR}"
+            COMMAND ${CMAKE_COMMAND} -E touch "${VIVACE_CPYTHON_STDLIB_STAMP}"
+            DEPENDS cpython_android_ext
+            COMMENT "Copying the embedded CPython stdlib into Android assets"
+            VERBATIM
+        )
+        add_custom_target(cpython_android_stdlib_assets ALL
+            DEPENDS "${VIVACE_CPYTHON_STDLIB_STAMP}")
+
+        # A CA certificate bundle for the embedded interpreter's own OpenSSL
+        # (libssl_python.so/libcrypto_python.so) to verify HTTPS connections
+        # against -- real bug found 2026-09-15: yt-dlp's real network call to
+        # YouTube's API failed with "[SSL: CERTIFICATE_VERIFY_FAILED]...
+        # unable to get local issuer certificate". Root cause: unlike every
+        # desktop platform (which has a real OS-provided cert store at a
+        # well-known path OpenSSL's own default-verify-paths logic already
+        # knows to check), Android has no such POSIX-visible store at all --
+        # the system trust store is exposed only through Java APIs, invisible
+        # to a plain C library. FIX: bundle curl.se's own canonical
+        # redistribution of Mozilla's CA root list (the SAME data the
+        # `certifi` PyPI package ships, just fetched directly rather than
+        # depending on a pip install) as an asset, and set the SSL_CERT_FILE
+        # environment variable (read directly by OpenSSL's own
+        # X509_STORE_set_default_paths(), independent of anything Python's
+        # own config.use_environment governs) to point at it once extracted
+        # (see ensureCaCertBundle() in pythonyoutuberesolver.cpp).
+        # file(DOWNLOAD) at CONFIGURE time (not an ExternalProject_Add step)
+        # since this doesn't depend on cpython_android_ext at all -- guarded
+        # by NOT EXISTS so a normal reconfigure doesn't re-fetch it every time.
+        set(VIVACE_CACERT_ASSET "${VIVACE_ANDROID_PACKAGE_SOURCE_DIR}/assets/cacert.pem")
+        if(NOT EXISTS "${VIVACE_CACERT_ASSET}")
+            file(DOWNLOAD "https://curl.se/ca/cacert.pem" "${VIVACE_CACERT_ASSET}"
+                STATUS _vivace_cacert_status)
+            list(GET _vivace_cacert_status 0 _vivace_cacert_status_code)
+            if(NOT _vivace_cacert_status_code EQUAL 0)
+                file(REMOVE "${VIVACE_CACERT_ASSET}")
+                message(WARNING "Could not download the CA certificate bundle for "
+                                 "embedded-Python YouTube resolution "
+                                 "(${_vivace_cacert_status}) -- HTTPS requests from "
+                                 "that path will fail with a certificate-verify error "
+                                 "until android/assets/cacert.pem is provided some "
+                                 "other way.")
+            endif()
+        endif()
+
+        message(STATUS "Embedded-Python YouTube resolution: ENABLED "
+                        "(CPython ${VIVACE_CPYTHON_VERSION} for ${_vivace_cpython_host})")
+    endif()
+endif()
+
+target_sources(vivace PRIVATE src/pythonyoutuberesolver.h src/pythonyoutuberesolver.cpp)
+if(VIVACE_HAVE_PYTHON_YOUTUBE AND ANDROID)
+    add_library(cpython_android_imported SHARED IMPORTED GLOBAL)
+    set_target_properties(cpython_android_imported PROPERTIES
+        IMPORTED_LOCATION "${VIVACE_CPYTHON_LIB}")
+    add_dependencies(cpython_android_imported cpython_android_ext)
+
+    target_compile_definitions(vivace PRIVATE
+        VIVACE_HAVE_PYTHON_YOUTUBE=1
+        VIVACE_CPYTHON_ABI_VERSION="${VIVACE_CPYTHON_ABI_VERSION}"
+        # Tags the on-device extracted-stdlib marker file (see
+        # extractedStdlibHomeDir()) with the exact bundled version, so a
+        # STALE extraction left over in app-private storage from an
+        # earlier install of a DIFFERENT build (e.g. one from before some
+        # stdlib-affecting fix) is correctly invalidated and re-extracted,
+        # rather than silently reused forever just because a marker file
+        # happens to already exist there -- real bug found 2026-09-15,
+        # "ModuleNotFoundError: No module named 'zipfile._path'" on a
+        # device that had run an earlier, differently-built APK before.
+        VIVACE_CPYTHON_VERSION="${VIVACE_CPYTHON_VERSION}")
+    target_include_directories(vivace PRIVATE
+        "${VIVACE_CPYTHON_SRC}/prefix/include/python${VIVACE_CPYTHON_ABI_VERSION}")
+    target_link_libraries(vivace PRIVATE cpython_android_imported)
+
+    # QT_ANDROID_EXTRA_LIBS is Qt's own documented mechanism for "copy this
+    # prebuilt .so into the APK's libs folder and load it at startup" --
+    # linking it above satisfies the LINKER, but does nothing to make
+    # androiddeployqt actually ship the file inside the APK on its own.
+    # Per Qt's own docs for this property: a prebuilt produced by an
+    # ExternalProject_Add in this same build tree needs an explicit
+    # add_dependencies(), or there's no guarantee the .so exists yet by the
+    # time the APK deployment step runs.
+    # cpython_android_stdlib_assets must finish before androiddeployqt reads
+    # android/assets/ -- vivace itself is a reasonable proxy dependency for
+    # "before packaging", matching how add_dependencies(vivace
+    # cpython_android_ext) is used just above for the same reason.
+    add_dependencies(vivace cpython_android_ext cpython_android_stdlib_assets)
+    # libssl_python.so/libcrypto_python.so/libsqlite3_python.so are NOT
+    # link-time dependencies of vivace's own .so (nothing in Vivace's own
+    # C++ calls OpenSSL/SQLite APIs directly) -- so, unlike libpython3.14.so
+    # above, ordinary ELF NEEDED-dependency resolution would never load them
+    # at all. QT_ANDROID_EXTRA_LIBS's own documented behavior ("copied into
+    # your application's libs folder AND LOADED ON START-UP... used to
+    # enable OpenSSL") is exactly what's needed here: get them resident in
+    # the process, under the app's normal/default linker namespace, before
+    # anything else runs -- including the embedded interpreter's own later
+    # dlopen() of _ssl.cpython-...so from app-private storage (which runs
+    # under a DIFFERENT, more restricted linker namespace that can't find
+    # its own dependencies there on its own; see the comment above
+    # VIVACE_CPYTHON_SSL_LIB for the real on-device error this fixes).
+    set_property(TARGET vivace APPEND PROPERTY
+        QT_ANDROID_EXTRA_LIBS "${VIVACE_CPYTHON_LIB}" "${VIVACE_CPYTHON_SSL_LIB}"
+            "${VIVACE_CPYTHON_CRYPTO_LIB}" "${VIVACE_CPYTHON_SQLITE_LIB}")
+elseif(VIVACE_HAVE_PYTHON_YOUTUBE)
+    # TEMPORARY desktop-test branch -- see the VIVACE_ENABLE_PYTHON_YOUTUBE
+    # block above for why this exists. No asset extraction/packaging at
+    # all: Python3::Python (from find_package(Python3 COMPONENTS
+    # Development) above) already carries the correct include dirs and
+    # import library for the real, already-installed Python this links
+    # against; VIVACE_CPYTHON_DESKTOP_HOME tells pythonyoutuberesolver.cpp
+    # to point PyConfig.home directly at that real install instead of
+    # extracting anything from Android assets.
+    target_compile_definitions(vivace PRIVATE
+        VIVACE_HAVE_PYTHON_YOUTUBE=1
+        VIVACE_CPYTHON_ABI_VERSION="${VIVACE_CPYTHON_ABI_VERSION}"
+        VIVACE_CPYTHON_DESKTOP_HOME="${VIVACE_CPYTHON_DESKTOP_HOME}")
+    target_link_libraries(vivace PRIVATE Python3::Python)
+endif()
+
+# YouTube "Download & play" mode on Android: needs a real ffmpeg (to merge
+# yt-dlp's separately-downloaded video+audio streams -- QMediaPlayer can't
+# play separate DASH streams) and a real JS runtime (yt-dlp's own
+# --js-runtimes mechanism, needed for YouTube's signature/PoToken
+# challenges on many videos). Both are built from source (see
+# scripts/build-android-youtube-tools.sh for the full "why" -- a minimal
+# static ffmpeg with no --disable-programs, since fftools/ffmpeg.c itself
+# needs avfilter even for a plain -c copy remux; a thin node_main.cc-style
+# wrapper around nodejs-mobile's libnode.so, since it ships no standalone
+# "node" binary of its own) and bundled the SAME way libssl_python.so etc.
+# already are for the embedded CPython work above -- named to end in
+# ".so" and deployed via QT_ANDROID_EXTRA_LIBS, landing in the app's own
+# nativeLibraryDir (part of the signed, installed package -- legal to
+# exec() there, unlike app-private storage).
+option(VIVACE_ENABLE_YOUTUBE_DOWNLOAD_TOOLS
+    "Bundle a minimal ffmpeg + Node.js for YouTube Download & play mode (Android only)" ON)
+set(VIVACE_HAVE_YOUTUBE_DOWNLOAD_TOOLS FALSE)
+if(ANDROID AND VIVACE_HAVE_PYTHON_YOUTUBE AND VIVACE_ENABLE_YOUTUBE_DOWNLOAD_TOOLS)
+    find_program(VIVACE_BASH_EXECUTABLE bash)
+    if(NOT VIVACE_BASH_EXECUTABLE)
+        message(WARNING "YouTube Download & play tools: no bash found to run "
+                         "scripts/build-android-youtube-tools.sh -- disabling.")
+    elseif(NOT DEFINED ANDROID_NDK)
+        message(WARNING "YouTube Download & play tools: ANDROID_NDK not set by "
+                         "the NDK's own toolchain file -- disabling.")
+    else()
+        set(VIVACE_YOUTUBE_TOOLS_OUT "${CMAKE_BINARY_DIR}/android-youtube-tools")
+        set(VIVACE_YOUTUBE_TOOLS_ABI "${CMAKE_ANDROID_ARCH_ABI}")
+        set(VIVACE_YOUTUBE_TOOLS_STAMP "${CMAKE_BINARY_DIR}/android-youtube-tools.stamp")
+        add_custom_command(
+            OUTPUT "${VIVACE_YOUTUBE_TOOLS_STAMP}"
+            COMMAND "${VIVACE_BASH_EXECUTABLE}"
+                "${CMAKE_SOURCE_DIR}/scripts/build-android-youtube-tools.sh"
+                "${ANDROID_NDK}" "${VIVACE_YOUTUBE_TOOLS_OUT}" "${VIVACE_YOUTUBE_TOOLS_ABI}"
+            COMMAND ${CMAKE_COMMAND} -E touch "${VIVACE_YOUTUBE_TOOLS_STAMP}"
+            DEPENDS "${CMAKE_SOURCE_DIR}/scripts/build-android-youtube-tools.sh"
+                    "${CMAKE_SOURCE_DIR}/src/android/vivace_node_main.cc"
+            COMMENT "Building ffmpeg + Node.js for YouTube Download & play mode (${VIVACE_YOUTUBE_TOOLS_ABI})"
+            USES_TERMINAL
+            VERBATIM
+        )
+        add_custom_target(vivace_youtube_tools ALL DEPENDS "${VIVACE_YOUTUBE_TOOLS_STAMP}")
+        set(VIVACE_HAVE_YOUTUBE_DOWNLOAD_TOOLS TRUE)
+        message(STATUS "YouTube Download & play tools: ENABLED (building ffmpeg + "
+                        "Node.js for ${VIVACE_YOUTUBE_TOOLS_ABI})")
+    endif()
+endif()
+
+if(VIVACE_HAVE_YOUTUBE_DOWNLOAD_TOOLS)
+    set(_vivace_yt_tools_dir "${VIVACE_YOUTUBE_TOOLS_OUT}/${VIVACE_YOUTUBE_TOOLS_ABI}")
+    add_dependencies(vivace vivace_youtube_tools)
+    # QT_ANDROID_EXTRA_LIBS: same documented "copied into the libs folder
+    # AND LOADED ON START-UP" mechanism already used for the CPython/
+    # OpenSSL libraries above. libffmpeg.so/libvivace_node.so are real
+    # EXECUTABLES (not shared libraries) despite the extension AND the
+    # "lib" prefix -- both are required by androiddeployqt itself (a real
+    # error hit wiring this up: "must begin with \"lib\" and end with the
+    # suffix \".so\""), but Qt's own deployment step doesn't care what's
+    # actually INSIDE the file, it just copies whatever is listed here
+    # into the APK's lib/<abi>/ directory, which is exactly the
+    # nativeLibraryDir location a real exec() is legal from. libnode.so/
+    # libc++_shared.so MUST keep those exact names (not renamed further)
+    # -- see build-android-youtube-tools.sh's own comment on why.
+    set_property(TARGET vivace APPEND PROPERTY
+        QT_ANDROID_EXTRA_LIBS
+            "${_vivace_yt_tools_dir}/libffmpeg.so"
+            "${_vivace_yt_tools_dir}/libvivace_node.so"
+            "${_vivace_yt_tools_dir}/libnode.so"
+            "${_vivace_yt_tools_dir}/libc++_shared.so")
+    target_compile_definitions(vivace PRIVATE VIVACE_HAVE_YOUTUBE_DOWNLOAD_TOOLS=1)
+endif()
+
+# TEMPORARY desktop-test convenience (2026-09-19, user request): a plain
+# cache-variable pair letting a developer point Vivace at LOCAL,
+# already-built copies of these same tools (e.g. this project's own
+# scripts/build-android-youtube-tools.sh output, or just a system ffmpeg/
+# node on PATH) to exercise the SAME "bundled external tool" code path on
+# desktop without needing a real Android device for every iteration. Not
+# meant to ship real desktop behavior -- desktop already has its own,
+# separate, user-configurable ffmpeg/Deno paths via YoutubeResolver's own
+# Settings (ytdlPath, ffmpegLocation, denoLocation).
+set(VIVACE_YOUTUBE_DOWNLOAD_TOOLS_DESKTOP_FFMPEG "" CACHE FILEPATH
+    "Dev/debug only: path to a local ffmpeg executable, used to test the Android-style bundled-tool code path on desktop")
+set(VIVACE_YOUTUBE_DOWNLOAD_TOOLS_DESKTOP_NODE "" CACHE FILEPATH
+    "Dev/debug only: path to a local node executable, used to test the Android-style bundled-tool code path on desktop")
+if(NOT ANDROID AND VIVACE_YOUTUBE_DOWNLOAD_TOOLS_DESKTOP_FFMPEG AND VIVACE_YOUTUBE_DOWNLOAD_TOOLS_DESKTOP_NODE)
+    set(VIVACE_HAVE_YOUTUBE_DOWNLOAD_TOOLS TRUE)
+    target_compile_definitions(vivace PRIVATE
+        VIVACE_HAVE_YOUTUBE_DOWNLOAD_TOOLS=1
+        VIVACE_YOUTUBE_TOOLS_DESKTOP_FFMPEG="${VIVACE_YOUTUBE_DOWNLOAD_TOOLS_DESKTOP_FFMPEG}"
+        VIVACE_YOUTUBE_TOOLS_DESKTOP_NODE="${VIVACE_YOUTUBE_DOWNLOAD_TOOLS_DESKTOP_NODE}")
+    message(STATUS "YouTube Download & play tools: ENABLED (TEMPORARY desktop "
+                    "test build, ffmpeg=${VIVACE_YOUTUBE_DOWNLOAD_TOOLS_DESKTOP_FFMPEG} "
+                    "node=${VIVACE_YOUTUBE_DOWNLOAD_TOOLS_DESKTOP_NODE})")
+endif()
+
 install(TARGETS vivace
     BUNDLE DESTINATION .
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}

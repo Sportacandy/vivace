@@ -370,8 +370,9 @@ ColumnLayout {
                         Layout.minimumHeight: 0
                         barTarget: "control"
                         currentItems: Settings.controlBarItems.length > 0
-                                      ? Settings.controlBarItems : Items.defaultControlBar
-                        defaultItems: Items.defaultControlBar
+                                      ? Settings.controlBarItems
+                                      : Items.defaultControlBarFor("Basic")
+                        defaultItems: Items.defaultControlBarFor("Basic")
                         iconSize: Settings.controlBarIconSize
                         otherBarItems: mainBarEditor.currentItems
                         onItemsEdited: newItems => Settings.controlBarItems = newItems

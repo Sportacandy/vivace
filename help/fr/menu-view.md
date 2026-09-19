@@ -10,7 +10,7 @@ Le menu **Afficher** montre des informations et des panneaux secondaires.
   *Préférences ▸ Interface*, elle apparaît en panneau ancré ou en fenêtre
   séparée. Voir [Ouvrir](menu-open.md) pour charger des listes de lecture.
   - Chaque ligne affiche une vignette — un fichier image adjacent au média
-    (un « <name>.jpg » déjà présent à côté) s'il en existe une, sinon une
+    (un « `<name>.jpg` » déjà présent à côté) s'il en existe une, sinon une
     image capturée automatiquement en arrière-plan. Le bouton en haut à
     droite de la liste de lecture permet de changer la taille des
     lignes/vignettes (**Petit**/**Moyen**/**Grand**) ; en taille Petit et

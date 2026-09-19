@@ -9,7 +9,7 @@
   *Tercihler ▸ Arayüz* ayarına göre yerleştirilmiş panel veya ayrı pencere olarak
   görünür. Oynatma listelerini yüklemek için [Aç](menu-open.md) bölümüne bakın.
   - Her satır bir küçük resim gösterir — ortam dosyasının yanında zaten
-    duran aynı adı taşıyan bir "<name>.jpg" varsa onu, yoksa arka planda
+    duran aynı adı taşıyan bir "`<name>.jpg`" varsa onu, yoksa arka planda
     otomatik olarak yakalanan bir kareyi kullanır. Oynatma listesinin sağ
     üstündeki düğme satır/küçük resim boyutunu değiştirir (**Küçük**/
     **Orta**/**Büyük**); Küçük ve Orta boyutlarda, seçili satır ile o anda

@@ -75,7 +75,27 @@ ScrollView {
                 wrapMode: Text.WordWrap
                 opacity: 0.7
                 font.pixelSize: 12
-                text: qsTr("Main settings are stored in the Windows registry (HKCU\\Software\\vivace-player); per-file data in vivace_files.ini in the folder above.")
+                // Two independent fixes here: (1) this used to embed the
+                // literal registry path directly inside the qsTr() text --
+                // lupdate's own extraction pipeline mis-processed its
+                // escaped backslashes as a SECOND round of C-style escape
+                // interpretation ("\\v" becoming a real vertical-tab byte),
+                // corrupting the <source> entry in every .ts file and
+                // making it impossible to translate at all (confirmed:
+                // vivace_ja.ts had it stuck at type="unfinished"). Moving
+                // the backslash-containing path out into .arg() sidesteps
+                // this -- lupdate only ever sees the wrapper text, which
+                // has no backslashes in it. (2) the claim itself was wrong
+                // on Android, which has no Windows registry at all --
+                // Qt's own QSettings there uses a plain private-storage
+                // file instead.
+                text: Qt.platform.os === "android"
+                      ? qsTr("Main settings and per-file data are stored in "
+                             + "the app's private storage, shown in the "
+                             + "folder above.")
+                      : qsTr("Main settings are stored in the Windows registry (%1); "
+                             + "per-file data in vivace_files.ini in the folder above.")
+                            .arg("HKCU\\Software\\vivace-player")
             }
         }
     }

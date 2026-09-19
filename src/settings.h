@@ -587,21 +587,21 @@ public:
     void setProxyUsername(const QString &user);
     QString proxyPassword() const { return m_proxyPassword; }
     void setProxyPassword(const QString &pass);
-    // YouTube playback needs an external yt-dlp *process* -- since Android
-    // 10, an app targeting API 29+ cannot execute any file living in its
-    // own writable storage (a W^X/noexec policy enforced at the OS/mount
-    // level, independent of chmod), so yt-dlp can never actually run here
-    // regardless of how it's configured. Force this off unconditionally
-    // (same single-override-point pattern as startInFullscreen() above)
-    // rather than letting a persisted "true" from a desktop profile (or
-    // manual registry/QSettings edit) silently try and fail on Android.
-    bool youtubeEnabled() const {
-#ifdef Q_OS_ANDROID
-        return false;
-#else
-        return m_youtubeEnabled;
-#endif
-    }
+    // YouTube playback needs an external yt-dlp *process* on desktop, which
+    // Android's W^X/noexec policy (since API 29) forbids executing out of
+    // the app's own storage -- this property USED to be force-false on
+    // Android for exactly that reason. No longer needed: Streaming-mode
+    // resolution now works there too, via an embedded CPython interpreter
+    // running yt-dlp's own pure-Python release instead of spawning a
+    // subprocess (see PythonYoutubeResolver in Main.qml). Leaving the old
+    // override in place here (found 2026-09-15, a real bug) silently
+    // defeated the whole feature: the checkbox's `checked: Settings.
+    // youtubeEnabled` binding always re-read false immediately after
+    // setYoutubeEnabled(true) ran, so the checkbox visibly snapped back,
+    // Preferences' generic snapshot-based dirty check never saw a change
+    // (Apply stayed disabled), and Main.qml's own `Settings.youtubeEnabled`
+    // gate for the Android YouTube path was permanently unreachable.
+    bool youtubeEnabled() const { return m_youtubeEnabled; }
     void setYoutubeEnabled(bool enabled);
     QString ytdlPath() const { return m_ytdlPath; }
     void setYtdlPath(const QString &path);
@@ -849,7 +849,20 @@ public:
     bool showTrayIcon() const { return m_showTrayIcon; }
     void setShowTrayIcon(bool show);
 
-    bool showMenuBar() const { return m_showMenuBar; }
+    // Always hidden on Android regardless of the stored value (same
+    // single-override-point pattern as startInFullscreen() above): the
+    // toolbar's own catalog already covers every menu action a phone user
+    // needs, and a traditional desktop-style menu bar has no good touch
+    // affordance on a small screen. Only meaningful now that the toolbar
+    // itself has been built out enough to stand alone -- see the toolbar
+    // row-wrap/editable-layout work earlier in this project's history.
+    bool showMenuBar() const {
+#ifdef Q_OS_ANDROID
+        return false;
+#else
+        return m_showMenuBar;
+#endif
+    }
     void setShowMenuBar(bool show);
 
     bool showToolbar() const { return m_showToolbar; }

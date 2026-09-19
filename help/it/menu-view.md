@@ -9,7 +9,7 @@ Il menu **Visualizza** mostra informazioni e pannelli secondari.
   *Preferenze ▸ Interfaccia*, appare come pannello agganciato o finestra
   separata. Vedi [Apri](menu-open.md) per caricare le playlist.
   - Ogni riga mostra una miniatura — un file immagine presente accanto al
-    file multimediale (un "<name>.jpg" già presente lì accanto), se ne
+    file multimediale (un "`<name>.jpg`" già presente lì accanto), se ne
     esiste una, altrimenti un fotogramma catturato automaticamente in
     background. Il pulsante in alto a destra della playlist cambia la
     dimensione di riga/miniatura (**Piccolo**/**Medio**/**Grande**); con

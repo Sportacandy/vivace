@@ -25,3 +25,12 @@ qt-patched-prebuilt-linux64.tar.gz
 # Compiled translation catalogs — CMake generates these into build/ from the
 # .ts sources; the copies lrelease may drop next to the .ts are artifacts.
 translations/*.qm
+
+# Embedded-CPython stdlib, copied into android/assets/ at build time
+# (CMakeLists.txt, VIVACE_HAVE_PYTHON_YOUTUBE) from a downloaded
+# cpython-android-prebuilt release -- not source, regenerated every build.
+android/assets/python-stdlib/
+# CA certificate bundle downloaded at CMake configure time (same
+# VIVACE_HAVE_PYTHON_YOUTUBE block) from curl.se's own canonical
+# redistribution of Mozilla's root CA list -- not source either.
+android/assets/cacert.pem

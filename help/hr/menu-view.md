@@ -9,7 +9,7 @@ Izbornik **Prikaz** prikazuje informacije i sekundarne ploče.
   Ovisno o *Postavke ▸ Sučelje*, pojavljuje se kao usidrena ploča ili zaseban
   prozor. Pogledajte [Otvori](menu-open.md) za učitavanje popisa za reprodukciju.
   - Svaki redak prikazuje minijaturu — susjednu slikovnu datoteku pored medija
-    (postojeći "<naziv>.jpg" koji već stoji pored njega) ako postoji, u
+    (postojeći "`<naziv>.jpg`" koji već stoji pored njega) ako postoji, u
     suprotnom kadar automatski uhvaćen u pozadini. Gumb u gornjem desnom kutu
     popisa za reprodukciju mijenja veličinu retka/minijature (**Mali**/
     **Srednji**/**Velik**); pri veličini Mali i Srednji, odabrani redak i

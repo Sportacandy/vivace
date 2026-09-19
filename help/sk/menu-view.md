@@ -9,7 +9,7 @@ Ponuka **Zobraziť** ukazuje informácie a vedľajšie panely.
   *Nastavenia ▸ Rozhranie* sa zobrazí ako ukotvený panel alebo samostatné okno.
   Pozri [Otvoriť](menu-open.md) pre načítanie zoznamov skladieb.
   - Každý riadok zobrazuje náhľad — obrázkový súbor uložený vedľa média
-    (už existujúci súbor „<name>.jpg“), ak existuje, inak snímku
+    (už existujúci súbor „`<name>.jpg`“), ak existuje, inak snímku
     automaticky zachytenú na pozadí. Tlačidlo vpravo hore v zozname
     skladieb prepína veľkosť riadku/náhľadu (**Malé**/**Stredné**/
     **Veľké**); pri veľkostiach Malé a Stredné sa vybraný riadok a práve

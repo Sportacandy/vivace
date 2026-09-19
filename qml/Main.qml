@@ -438,6 +438,7 @@ ApplicationWindow {
         onEditFavoritesRequested: favoritesDialog.openFor(
                 qsTr("Favorite editor"), qsTr("Favorite list"),
                 Theme.icon("open_favorites"), playerController.favorites)
+        onUrlActivated: url => root.openMediaUrl(url)
         onAddBookmarkRequested: {
             playerController.addBookmark()
             root.showOsd(qsTr("Bookmark added"))
@@ -487,6 +488,7 @@ ApplicationWindow {
         onEditRadioChannelsRequested: favoritesDialog.openFor(
                 qsTr("Radio editor"), qsTr("Radio channels"), Theme.icon("open_radio"),
                 playerController.radioChannels)
+        onUrlActivated: url => root.openMediaUrl(url)
         onVideoEqualizerRequested: videoEqualizerDialog.open()
         onResizeToVideoPercentRequested: percent => root.resizeToVideoPercent(percent)
         onSetAudioDelayRequested: audioDelayDialog.openDialog()
@@ -714,6 +716,7 @@ ApplicationWindow {
         // click meant for the Cancel button underneath, including its own.
         z: 20
         visible: externalDownloader.busy || youtubeResolver.downloading
+                 || pythonYoutubeResolver.busy
         anchors.centerIn: parent
         width: Math.min(parent.width * 0.8, 640)
         height: dlColumn.implicitHeight + 24
@@ -734,8 +737,11 @@ ApplicationWindow {
             }
             Label {
                 Layout.fillWidth: true
-                text: qsTr("This can take a while — the external tool is "
-                           + "downloading and merging HD video and audio.")
+                text: pythonYoutubeResolver.busy
+                      ? qsTr("This can take a while — Vivace is downloading "
+                             + "and merging HD video and audio.")
+                      : qsTr("This can take a while — the external tool is "
+                             + "downloading and merging HD video and audio.")
                 color: "#cccccc"
                 wrapMode: Text.WordWrap
             }
@@ -755,6 +761,8 @@ ApplicationWindow {
                         youtubeResolver.cancel()
                     if (externalDownloader.busy)
                         externalDownloader.cancel()
+                    if (pythonYoutubeResolver.busy)
+                        pythonYoutubeResolver.cancel()
                     root.downloadStatus = ""
                 }
             }
@@ -797,7 +805,7 @@ ApplicationWindow {
     Rectangle {
         id: connectingOverlay
         visible: root.connectingShown && !externalDownloader.busy
-                 && !youtubeResolver.downloading
+                 && !youtubeResolver.downloading && !pythonYoutubeResolver.busy
         anchors.centerIn: parent
         width: connectingRow.implicitWidth + 32
         height: connectingRow.implicitHeight + 24
@@ -1543,6 +1551,46 @@ ApplicationWindow {
         }
     }
 
+    // Android-only YouTube URL resolution: yt-dlp's own subprocess-based
+    // mechanism (YoutubeResolver, above) can't run there at all -- Android
+    // forbids executing a downloaded native binary out of the app's own
+    // storage. This runs yt-dlp's pure-Python release through an embedded
+    // CPython interpreter instead (see src/pythonyoutuberesolver.h for the
+    // full rationale). Streaming mode (resolve()) works everywhere this
+    // class is compiled for; Download & play mode (download()) additionally
+    // needs the bundled ffmpeg + Node.js tools -- see
+    // downloadModeSupported(), consulted in openMediaUrl() below. External
+    // downloader tool mode stays unreachable on Android regardless (it
+    // fundamentally needs an arbitrary user-supplied binary) -- see
+    // PrefNetworkPage.qml's own Android mode restriction.
+    PythonYoutubeResolver {
+        id: pythonYoutubeResolver
+        preferredHeight: Settings.youtubeQuality
+        // Both shared with youtubeResolver's own identically-named
+        // properties (same Settings keys) -- see cacheDir's own doc
+        // comment in pythonyoutuberesolver.h for why sharing the folder
+        // is what makes the cache browser/menu work for Android's
+        // downloads with no separate cache implementation needed here.
+        cookiesFile: Settings.youtubeCookiesFile
+        cacheDir: Settings.youtubeCacheDir
+        onResolved: (mediaUrl, title, pageUrl) => {
+            playerController.openStream(mediaUrl, title)
+            root.showOsd(title !== "" ? title : qsTr("Playing stream"))
+        }
+        onDownloaded: (fileUrl, title, pageUrl) => {
+            // Lets youtubeResolver's own LRU bookkeeping (mtime touch,
+            // eviction, cacheCount) treat this file the same as one of
+            // its own downloads -- see YoutubeResolver::
+            // noteExternalDownload()'s own doc comment.
+            youtubeResolver.noteExternalDownload(UiHelpers.toLocalPath(fileUrl))
+            playerController.open([fileUrl])
+            root.showOsd(title !== "" ? title : qsTr("Playing downloaded video"))
+        }
+        onFailed: message => {
+            root.showOsd(qsTr("YouTube: %1").arg(message), root.osdErrorDurationMs)
+        }
+    }
+
     // Playlist row thumbnails reuse the same ffmpeg location as YouTube
     // download mode (the app's one "where's ffmpeg" setting).
     Binding {
@@ -1602,7 +1650,12 @@ ApplicationWindow {
 
     YoutubeSupportDialog {
         id: youtubeSupportDialog
-        resolver: youtubeResolver
+        // Android's YouTube path is entirely PythonYoutubeResolver's own
+        // (an embedded interpreter running yt-dlp's pure-Python zipapp) --
+        // YoutubeResolver's own installOrUpdate() downloads a native
+        // per-platform BINARY, which Android can never execute at all, so
+        // it would silently fetch the wrong (unusable) asset there.
+        resolver: Qt.platform.os === "android" ? pythonYoutubeResolver : youtubeResolver
     }
 
     // Thumbnail browser for the YouTube download cache (Open > YouTube cache).
@@ -1693,14 +1746,25 @@ ApplicationWindow {
             s = target
         }
         if (Qt.platform.os === "android" && youtubeResolver.isSupportedUrl(s)) {
-            // YouTube playback needs an external yt-dlp process, which
-            // Android blocks an app from executing out of its own storage
-            // (see Settings::youtubeEnabled's own doc comment) -- tell the
-            // user plainly rather than letting this fall through to a
-            // confusing "could not open file" from trying to play the
-            // bare page URL as media.
-            root.showOsd(qsTr("YouTube playback isn't supported on Android."),
-                         root.osdErrorDurationMs)
+            // yt-dlp's own subprocess-based mechanism can't run on Android
+            // at all (see Settings::youtubeEnabled's own doc comment) --
+            // resolve/download via the embedded-Python path instead. Download
+            // & play needs the bundled ffmpeg + Node.js tools on top of the
+            // interpreter itself (see downloadModeSupported()); when those
+            // aren't available (e.g. an ABI cpython-android-prebuilt/this
+            // build doesn't bundle them for), fall back to Streaming rather
+            // than fail outright.
+            if (!Settings.youtubeEnabled || !pythonYoutubeResolver.isSupported()) {
+                root.showOsd(qsTr("YouTube playback isn't supported on this device."),
+                             root.osdErrorDurationMs)
+            } else if (Settings.youtubeMode === 1
+                       && pythonYoutubeResolver.downloadModeSupported()) {
+                root.showOsd(qsTr("Downloading video (this can take a while)…"))
+                pythonYoutubeResolver.download(s)
+            } else {
+                root.showOsd(qsTr("Resolving with yt-dlp…"))
+                pythonYoutubeResolver.resolve(s)
+            }
         } else if (Settings.youtubeEnabled && youtubeResolver.isSupportedUrl(s)) {
             if (Settings.youtubeMode === 1) {
                 // Download & play with Vivace's yt-dlp (HD, cookies). A cached
@@ -2088,6 +2152,7 @@ ApplicationWindow {
         onEditRadioChannelsRequested: favoritesDialog.openFor(
                 qsTr("Radio editor"), qsTr("Radio channels"), Theme.icon("open_radio"),
                 playerController.radioChannels)
+        onUrlActivated: url => root.openMediaUrl(url)
         onVideoEqualizerRequested: videoEqualizerDialog.open()
         onResizeToVideoPercentRequested: percent => root.resizeToVideoPercent(percent)
         onSetAudioDelayRequested: audioDelayDialog.openDialog()
@@ -2166,6 +2231,7 @@ ApplicationWindow {
                 "openUrlRequested", "castRequested",
                 "youtubeCacheRequested", "editTvChannelsRequested",
                 "editRadioChannelsRequested", "editFavoritesRequested",
+                "urlActivated",
                 "addBookmarkRequested", "editBookmarksRequested",
                 "loadSubtitlesRequested", "findSubtitlesRequested",
                 "setSubtitleDelayRequested", "setAudioDelayRequested",
@@ -2182,7 +2248,7 @@ ApplicationWindow {
                 "screenshotRequested", "infoRequested", "preferencesRequested",
                 "fullscreenToggleRequested", "editFavoritesRequested",
                 "youtubeCacheRequested", "castRequested", "editTvChannelsRequested",
-                "editRadioChannelsRequested", "videoEqualizerRequested",
+                "editRadioChannelsRequested", "urlActivated", "videoEqualizerRequested",
                 "resizeToVideoPercentRequested", "setAudioDelayRequested",
                 "loadSubtitlesRequested", "findSubtitlesRequested",
                 "setSubtitleDelayRequested", "addBookmarkRequested",
@@ -2214,6 +2280,7 @@ ApplicationWindow {
         onEditRadioChannelsRequested: favoritesDialog.openFor(
                 qsTr("Radio editor"), qsTr("Radio channels"), Theme.icon("open_radio"),
                 playerController.radioChannels)
+        onUrlActivated: url => root.openMediaUrl(url)
         onVideoEqualizerRequested: videoEqualizerDialog.open()
         onResizeToVideoPercentRequested: percent => root.resizeToVideoPercent(percent)
         onSetAudioDelayRequested: audioDelayDialog.openDialog()

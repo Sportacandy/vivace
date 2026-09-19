@@ -20,8 +20,17 @@ import QtQuick.Layouts
 Window {
     id: dlg
 
-    // The YoutubeResolver instance that performs the download.
-    required property YoutubeResolver resolver
+    // The resolver instance that performs the download -- YoutubeResolver
+    // on desktop (a subprocess-spawned native yt-dlp binary), or
+    // PythonYoutubeResolver on Android (yt-dlp's own pure-Python zipapp,
+    // run through an embedded interpreter -- Android can't execute a
+    // downloaded native binary at all). Deliberately typed as a plain
+    // QtObject (duck-typed) rather than YoutubeResolver specifically --
+    // neither resolver class inherits from the other, but both implement
+    // the same plannedInstallPath()/installOrUpdate()/installProgress/
+    // installFinished/installFailed shape, so this dialog works with
+    // either unchanged.
+    required property QtObject resolver
 
     title: qsTr("Install / Update YouTube support")
     flags: Qt.Dialog
@@ -69,7 +78,13 @@ Window {
             if (total > 0) { progressBar.to = total; progressBar.value = received }
         }
         function onInstallFinished(path) {
-            Settings.ytdlPath = path
+            // Settings.ytdlPath means nothing on Android -- the embedded
+            // PythonYoutubeResolver always reads/writes its own fixed
+            // AppDataLocation path (plannedInstallPath() above), never
+            // this setting -- so leave it untouched there instead of
+            // populating a field that stays disabled and unused anyway.
+            if (Qt.platform.os !== "android")
+                Settings.ytdlPath = path
             dlg.phase = "done"
             dlg.resultText =
                 qsTr("yt-dlp was installed successfully as:") + "\n" + path

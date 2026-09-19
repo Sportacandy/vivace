@@ -23,6 +23,17 @@ AppMenu {
 
     signal editRequested()
     signal addCurrentRequested()
+    // Emitted instead of opening the URL directly (see itemComponent's
+    // onTriggered below) so the app-level YouTube-URL detection in Main.qml
+    // openMediaUrl() gets a chance to run first -- a Favorites/TV/Radio
+    // entry that happens to be a YouTube page URL was previously always
+    // silently mishandled (desktop: never ran yt-dlp at all; Android: fell
+    // through to "Could not open file") on every platform, since
+    // controller.open() was called directly here, bypassing openMediaUrl()
+    // entirely. Forwarded up through every nesting level -- see
+    // submenuComponent's createObject() below, which connects a nested
+    // instance's own urlActivated straight to this one's.
+    signal urlActivated(string url)
 
     // Created at runtime (not a declared Component) so QML does not reject
     // FavoritesMenu referencing its own type as static recursion.
@@ -84,6 +95,11 @@ AppMenu {
                                 model: model, itemIcon: itemIcon,
                                 path: childPath(i),
                                 "icon.source": Theme.icon("open_favorites") })
+                // A leaf item's urlActivated fires on the SUBMENU instance
+                // that owns it, not this (the root) one -- forward it up
+                // so a click at any nesting depth still reaches whichever
+                // top-level handler is listening on the root favMenu.
+                menu.urlActivated.connect(favMenu.urlActivated)
                 _keepAlive.push(menu)
                 addMenu(menu)
             } else {
@@ -112,8 +128,8 @@ AppMenu {
         AppMenuItem {
             property int entryIndex: -1
             icon.source: favMenu.itemIcon
-            onTriggered: favMenu.controller.open(
-                    [favMenu.model.urlAt(favMenu.path, entryIndex)])
+            onTriggered: favMenu.urlActivated(
+                    favMenu.model.urlAt(favMenu.path, entryIndex))
         }
     }
 

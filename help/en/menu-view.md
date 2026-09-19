@@ -9,7 +9,7 @@ The **View** menu shows information and secondary panels.
   *Preferences ▸ Playlist*, it appears as a docked panel or a separate window.
   See [Open](menu-open.md) for loading playlists.
   - Each row shows a thumbnail — a sibling image file next to the media (a
-    "<name>.jpg" already sitting beside it) if one exists, otherwise a frame
+    "`<name>.jpg`" already sitting beside it) if one exists, otherwise a frame
     grabbed automatically in the background. The button at the top right of
     the playlist switches the row/thumbnail size (**Small**/**Medium**/
     **Large**); at Small and Medium, the selected row and the now-playing

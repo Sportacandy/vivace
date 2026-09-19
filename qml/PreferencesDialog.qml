@@ -94,7 +94,7 @@ Window {
     // Context help for the current section (SMPlayer's per-page help window):
     // each page exposes a `helpText` HTML string.
     function showHelp() {
-        const page = pagesStack.children[sections.currentIndex]
+        const page = pagesStack.children[sections.pageIndices[sections.currentIndex]]
         helpWindow.showText(page && page.helpText
                             ? page.helpText
                             : qsTr("<h1>Help</h1><p>No help is available for "
@@ -171,38 +171,57 @@ Window {
                     anchors.fill: parent
                     clip: true
                     currentIndex: 0
-                    model: ListModel {
-                        ListElement { name: qsTr("General"); iconFile: "pref_general" }
-                        ListElement { name: qsTr("Drives"); iconFile: "pref_devices" }
-                        ListElement { name: qsTr("Subtitles"); iconFile: "pref_subtitles" }
-                        ListElement { name: qsTr("Interface"); iconFile: "pref_gui" }
-                        ListElement { name: qsTr("Toolbars"); iconFile: "toolbar" }
-                        ListElement { name: qsTr("Keyboard and mouse"); iconFile: "mouse" }
-                        ListElement { name: qsTr("Playlist"); iconFile: "pref_playlist" }
-                        ListElement { name: qsTr("TV and radio"); iconFile: "pref_tv" }
-                        ListElement { name: qsTr("File types"); iconFile: "pref_associations" }
-                        ListElement { name: qsTr("Updates"); iconFile: "pref_updates" }
-                        ListElement { name: qsTr("Network"); iconFile: "pref_network" }
-                        ListElement { name: qsTr("Advanced"); iconFile: "pref_advanced" }
-                    }
+
+                    // File-type/protocol association is a Windows-registry
+                    // concept -- PrefFileTypesPage.qml only ever wires up
+                    // UiHelpers::setFileAssociations(), an HKCU-only
+                    // mechanism with no equivalent elsewhere -- so the
+                    // section is omitted entirely off Windows rather than
+                    // showing a page with nothing useful to do. pageIndices
+                    // maps each VISIBLE section's position back to its
+                    // corresponding StackLayout page below (whose 12 pages
+                    // stay in their original, fixed order) -- the same
+                    // "Repeater/index-map over a platform-filtered model"
+                    // fix already applied to PrefInterfacePage.qml's own
+                    // Instances/Fullscreen tabs (a plain `visible: false`
+                    // on one of several static rows doesn't remove its
+                    // reserved space in most Qt Quick Controls containers,
+                    // whether a TabBar's buttons or this ListView's rows).
+                    readonly property var allSections: [
+                        { name: qsTr("General"), iconFile: "pref_general" },
+                        { name: qsTr("Drives"), iconFile: "pref_devices" },
+                        { name: qsTr("Subtitles"), iconFile: "pref_subtitles" },
+                        { name: qsTr("Interface"), iconFile: "pref_gui" },
+                        { name: qsTr("Toolbars"), iconFile: "toolbar" },
+                        { name: qsTr("Keyboard and mouse"), iconFile: "mouse" },
+                        { name: qsTr("Playlist"), iconFile: "pref_playlist" },
+                        { name: qsTr("TV and radio"), iconFile: "pref_tv" },
+                        { name: qsTr("File types"), iconFile: "pref_associations" },
+                        { name: qsTr("Updates"), iconFile: "pref_updates" },
+                        { name: qsTr("Network"), iconFile: "pref_network" },
+                        { name: qsTr("Advanced"), iconFile: "pref_advanced" }
+                    ]
+                    readonly property var pageIndices: Qt.platform.os === "windows"
+                            ? [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+                            : [0, 1, 2, 3, 4, 5, 6, 7, 9, 10, 11]
+                    model: pageIndices.map(i => allSections[i])
 
                     // Plain default (AsNeeded) policy: shows only when the
-                    // 11 sections genuinely don't fit the dialog's own
-                    // height (e.g. Android's larger system font on a
-                    // shorter screen), hidden otherwise -- correct on both
-                    // desktop and a tall-enough Android screen alike, with
-                    // no platform check needed. Horizontal scrolling is
-                    // never needed, since each delegate's own width already
+                    // sections genuinely don't fit the dialog's own height
+                    // (e.g. Android's larger system font on a shorter
+                    // screen), hidden otherwise -- correct on both desktop
+                    // and a tall-enough Android screen alike, with no
+                    // platform check needed. Horizontal scrolling is never
+                    // needed, since each delegate's own width already
                     // matches the list's fixed column width.
                     ScrollBar.vertical: ScrollBar {}
 
                     delegate: ItemDelegate {
                         required property int index
-                        required property string name
-                        required property string iconFile
+                        required property var modelData
                         width: ListView.view.width
-                        text: name
-                        icon.source: Theme.icon(iconFile)
+                        text: modelData.name
+                        icon.source: Theme.icon(modelData.iconFile)
                         icon.width: 22
                         icon.height: 22
                         icon.color: "transparent"
@@ -233,7 +252,7 @@ Window {
                 // how tall it's allowed to be in the first place).
                 Layout.minimumHeight: 0
                 clip: true
-                currentIndex: sections.currentIndex
+                currentIndex: sections.pageIndices[sections.currentIndex]
 
                 PrefGeneralPage { controller: prefsDialog.controller }
                 PrefDrivesPage {}

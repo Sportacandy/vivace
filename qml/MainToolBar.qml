@@ -41,6 +41,11 @@ ToolBar {
     signal castRequested()
     signal editTvChannelsRequested()
     signal editRadioChannelsRequested()
+    // Bubbled from favoritesPopup/tvPopup/radioPopup below -- see
+    // FavoritesMenu.qml's own urlActivated doc comment for why this needs
+    // to route through Main.qml's openMediaUrl() rather than opening
+    // directly.
+    signal urlActivated(string url)
     signal videoEqualizerRequested()
     signal resizeToVideoPercentRequested(int percent)
     signal setAudioDelayRequested()
@@ -221,6 +226,7 @@ ToolBar {
         onEditRequested: toolBar.editFavoritesRequested()
         onAddCurrentRequested: toolBar.controller.addCurrentTo(
                                    toolBar.controller.favorites)
+        onUrlActivated: url => toolBar.urlActivated(url)
     }
     AppMenu {
         id: audioMenu
@@ -277,6 +283,7 @@ ToolBar {
         showActions: true
         onEditRequested: toolBar.editTvChannelsRequested()
         onAddCurrentRequested: toolBar.controller.addCurrentTo(toolBar.controller.tvChannels)
+        onUrlActivated: url => toolBar.urlActivated(url)
     }
     FavoritesMenu {
         id: radioPopup
@@ -286,6 +293,7 @@ ToolBar {
         showActions: true
         onEditRequested: toolBar.editRadioChannelsRequested()
         onAddCurrentRequested: toolBar.controller.addCurrentTo(toolBar.controller.radioChannels)
+        onUrlActivated: url => toolBar.urlActivated(url)
     }
     AppMenu {
         id: speedPopup

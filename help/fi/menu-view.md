@@ -9,7 +9,7 @@
   *Asetukset ▸ Käyttöliittymä* mukaan se näkyy kiinnitettynä paneelina tai
   erillisenä ikkunana. Katso [Avaa](menu-open.md) soittolistojen lataamiseen.
   - Jokainen rivi näyttää pienoiskuvan — median vieressä olevan
-    kuvatiedoston (jo valmiiksi vieressä olevan "<name>.jpg"-tiedoston),
+    kuvatiedoston (jo valmiiksi vieressä olevan "`<name>.jpg`"-tiedoston),
     jos sellainen on olemassa, tai muuten taustalla automaattisesti
     otetun kuvakaappauksen. Soittolistan oikeassa yläkulmassa oleva
     painike vaihtaa rivin/pienoiskuvan kokoa
