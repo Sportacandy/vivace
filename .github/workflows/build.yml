@@ -218,6 +218,21 @@ jobs:
         # (.qtcreator/CMakeLists.txt.user's CMake.Initial.Parameters) as
         # closely as possible, rather than guessing at CMake/Qt-for-Android
         # flags from scratch.
+        #
+        # CI FIX 2026-09-20 (real run failed here): the NDK's own toolchain
+        # file sets CMAKE_FIND_ROOT_PATH_MODE_PACKAGE=ONLY when cross-
+        # compiling, which restricts find_package()'s CONFIG-mode lookup
+        # (used by find_package(Qt6 ...)) to the NDK sysroot only --
+        # CMAKE_PREFIX_PATH is completely ignored, so Qt6Config.cmake is
+        # never found even though it genuinely exists under $QT_ROOT_DIR
+        # (confirmed directly: reproduced this exact failure locally against
+        # a real aqt-installed Qt-for-Android kit, and confirmed
+        # CMAKE_FIND_ROOT_PATH_MODE_PACKAGE=BOTH fixes it). Qt Creator's own
+        # local Android builds work without this flag only because Qt
+        # Creator auto-injects its own CMAKE_PROJECT_INCLUDE_BEFORE helper
+        # file that sets this (among other things) -- CI's plain cmake
+        # invocation had no equivalent (real log:
+        # media/build-android-log-20260920T125000.txt).
         run: |
           cmake -B build-android -G Ninja \
             -DCMAKE_TOOLCHAIN_FILE="$ANDROID_SDK_ROOT/ndk/26.1.10909125/build/cmake/android.toolchain.cmake" \
@@ -228,6 +243,7 @@ jobs:
             -DANDROID_NDK="$ANDROID_SDK_ROOT/ndk/26.1.10909125" \
             -DANDROID_SDK_ROOT="$ANDROID_SDK_ROOT" \
             -DCMAKE_PREFIX_PATH="$QT_ROOT_DIR" \
+            -DCMAKE_FIND_ROOT_PATH_MODE_PACKAGE=BOTH \
             -DQT_HOST_PATH="$QT_HOST_PATH" \
             -DQT_NO_GLOBAL_APK_TARGET_PART_OF_ALL=ON \
             -DCMAKE_BUILD_TYPE=Release
