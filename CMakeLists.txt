@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.24)
 
-project(vivace VERSION 0.4.7 LANGUAGES CXX)
+project(vivace VERSION 0.4.7 LANGUAGES CXX C)
 
 find_package(Qt6 6.11 REQUIRED COMPONENTS Quick QuickControls2 Multimedia LabsPlatform Network ShaderTools LinguistTools Sql)
 qt_standard_project_setup(REQUIRES 6.11)
@@ -768,9 +768,16 @@ if(VIVACE_ENABLE_BLURAY)
         # itself) rather than re-deriving NDK paths independently, so it
         # can't drift from whatever toolchain/API-level/ABI combination
         # the user's own CMake configure actually resolved to.
-        # UNVERIFIED beyond this reasoning -- no Android NDK/SDK available
-        # in this environment to actually run `meson setup --cross-file`
-        # against; needs a real Android build to confirm.
+        # CONFIRMED 2026-09-20 by a real Android CI run: the cross-file's
+        # own `c = ['${CMAKE_C_COMPILER}']` line rendered as `c = ['']`,
+        # since this project's top-level project() only ever enabled
+        # LANGUAGES CXX -- CMake never runs C-compiler detection (and
+        # never populates CMAKE_C_COMPILER at all) unless C is actually
+        # enabled as a project language, regardless of what a cross-
+        # compiling toolchain file itself could resolve if asked. Fixed
+        # by adding C to the top-level project() languages (harmless
+        # everywhere else -- no .c sources are needed for CMake to just
+        # detect a C compiler alongside the C++ one).
         set(VIVACE_LIBBLURAY_MESON_EXTRA_ARGS "")
         if(ANDROID)
             if(CMAKE_ANDROID_ARCH_ABI STREQUAL "arm64-v8a")
