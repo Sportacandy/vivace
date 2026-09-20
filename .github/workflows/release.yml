@@ -348,3 +348,127 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: Vivace-macos.dmg
+
+  build-and-release-android:
+    needs: build-and-release
+    runs-on: ubuntu-latest
+    # NEW (2026-09-20): builds a real, installable Android APK, extending the
+    # compile-only Android job already proven working in build.yml (see that
+    # job's own comment history for the SDK/NDK/Qt-for-Android setup and the
+    # three real CI fixes it took to get there -- the setup steps here mirror
+    # it exactly). The one addition: a JDK (AGP 9.0.0's own compatibility
+    # table requires JDK 17 minimum, confirmed directly against
+    # developer.android.com/build/releases/agp-9-0-0-release-notes) and
+    # building the `vivace_make_apk` target instead of plain `vivace`, which
+    # runs androiddeployqt + Gradle to actually produce a package (per Qt's
+    # own qt_android_add_apk_target docs: qt_add_executable already wires
+    # this target up automatically, no qt_android_add_apk_target() call
+    # needed in CMakeLists.txt).
+    #
+    # DEBUG-SIGNED, not a production release build: no real Android signing
+    # keystore/secrets exist for this project yet (matching every other
+    # platform here -- none of them have real code-signing set up either,
+    # see this project's own [[project-vivace-code-signing-reputation]]
+    # history), so this is Gradle's own auto-generated debug key. Good
+    # enough to sideload and test, not to publish to the Play Store as-is.
+    #
+    # Also does NOT build any of the four qtmultimedia source patches
+    # (AV1-hwaccel-disable / WSOLA pitch compensation / bitmap-subtitle
+    # display / deinterlace) -- Android uses the plain aqt-installed stock
+    # Qt-for-Android kit, same as build.yml's job; patching qtmultimedia for
+    # a cross-compiled Android target is a separate, not-yet-attempted
+    # undertaking.
+    #
+    # UNVERIFIED as of this writing: this is the first time this project's
+    # CI has ever built (not just compiled) an Android APK -- the exact
+    # output path/filename from androiddeployqt+Gradle is discovered via a
+    # glob rather than hardcoded, specifically because guessing it wrong is
+    # exactly the class of mistake this whole Android CI effort kept hitting
+    # (see build.yml's own job history); expect this may still need a
+    # follow-up fix once it actually runs, and the resulting APK still needs
+    # a real device/emulator install test before being trusted.
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Linux system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y meson ninja-build
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+        with:
+          packages: platform-tools
+
+      - name: Install Android NDK
+        run: |
+          sdkmanager --install "ndk;26.1.10909125"
+          echo "ANDROID_SDK_ROOT=${ANDROID_SDK_ROOT:-$ANDROID_HOME}" >> "$GITHUB_ENV"
+
+      - name: Install host Qt (for cross-compiling)
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: '6.11.1'
+          arch: linux_gcc_64
+          modules: 'qtmultimedia qtshadertools'
+          aqtsource: 'git+https://github.com/miurahr/aqtinstall.git@8c3695d4a4e1ceabf6a74dc6c79681656dc6b74b'
+
+      - name: Remember the host Qt path
+        run: echo "QT_HOST_PATH=$QT_ROOT_DIR" >> "$GITHUB_ENV"
+
+      - name: Install Android Qt
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: '6.11.1'
+          host: all_os
+          target: android
+          arch: android_arm64_v8a
+          modules: 'qtmultimedia qtshadertools'
+          aqtsource: 'git+https://github.com/miurahr/aqtinstall.git@8c3695d4a4e1ceabf6a74dc6c79681656dc6b74b'
+
+      - name: Configure
+        # See build.yml's own "Configure" step comment for why
+        # CMAKE_FIND_ROOT_PATH_MODE_PACKAGE=BOTH is needed. No
+        # QT_NO_GLOBAL_APK_TARGET_PART_OF_ALL here -- this job wants the APK.
+        run: |
+          cmake -B build-android -G Ninja \
+            -DCMAKE_TOOLCHAIN_FILE="$ANDROID_SDK_ROOT/ndk/26.1.10909125/build/cmake/android.toolchain.cmake" \
+            -DANDROID_ABI=arm64-v8a \
+            -DANDROID_PLATFORM=android-28 \
+            -DANDROID_STL=c++_shared \
+            -DANDROID_USE_LEGACY_TOOLCHAIN_FILE=OFF \
+            -DANDROID_NDK="$ANDROID_SDK_ROOT/ndk/26.1.10909125" \
+            -DANDROID_SDK_ROOT="$ANDROID_SDK_ROOT" \
+            -DCMAKE_PREFIX_PATH="$QT_ROOT_DIR" \
+            -DCMAKE_FIND_ROOT_PATH_MODE_PACKAGE=BOTH \
+            -DQT_HOST_PATH="$QT_HOST_PATH" \
+            -DCMAKE_BUILD_TYPE=Release
+
+      - name: Build APK
+        run: cmake --build build-android --target vivace_make_apk --parallel 2
+
+      - name: Locate the built APK
+        # androiddeployqt/Gradle's exact output filename isn't hardcoded
+        # here on purpose -- see this job's own top comment on why guessing
+        # paths has been the recurring failure mode in this whole effort.
+        run: |
+          APK=$(find build-android/android-build -iname '*.apk' | head -n 1)
+          if [ -z "$APK" ]; then
+            echo "::error::No .apk file found under build-android/android-build"
+            find build-android/android-build -maxdepth 4 || true
+            exit 1
+          fi
+          echo "Found APK: $APK"
+          cp "$APK" Vivace-android-arm64-v8a-debug.apk
+
+      - name: Upload to release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: Vivace-android-arm64-v8a-debug.apk
