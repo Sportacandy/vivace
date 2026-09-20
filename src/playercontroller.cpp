@@ -3377,15 +3377,29 @@ void PlayerController::setDeinterlaceMode(int mode)
     // this takes effect immediately with no restart.
     qputenv("VIVACE_DEINTERLACE_MODE", QByteArray::number(m_deinterlaceMode));
     emit deinterlaceModeChanged();
+#ifndef Q_OS_ANDROID
     // Confirms via OSD that the change took effect immediately (it does --
     // no reopening the file needed, see the comment above), matching the
     // same OSD-on-change convention as A/V delay, subtitle delay, etc.
     // Index = mode value (0=Auto, 1=Yadif, 2=Bwdif, 3=None) -- see the
     // 2026-08-22 None/Auto value swap noted on m_deinterlaceMode's own
     // declaration in playercontroller.h.
+    //
+    // Skipped entirely on Android: deinterlacing has no user-facing
+    // control there at all (the per-file Video > Deinterlace menu is
+    // disabled, and the mode is permanently forced to None -- see
+    // Settings::defaultDeinterlaceMode()'s own Android override), so this
+    // setter is only ever reached there via the automatic per-file/
+    // session reset (Main.qml, seeding this property from Settings.
+    // deinterlaceMode on every new file's LoadedMedia) -- never from a
+    // genuine user action -- making the OSD pure startup noise on that
+    // platform. The property/env-var propagation above still runs
+    // unconditionally regardless of platform; only this confirmation
+    // message is Android-specific.
     static const char *const kModeNames[] = { QT_TR_NOOP("Auto"), QT_TR_NOOP("Yadif"),
                                                QT_TR_NOOP("Bwdif"), QT_TR_NOOP("None") };
     emit osdMessage(tr("Deinterlace: %1").arg(tr(kModeNames[m_deinterlaceMode])));
+#endif
 }
 
 void PlayerController::zoomIn()
