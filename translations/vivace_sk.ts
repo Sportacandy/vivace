@@ -3000,16 +3000,6 @@
         <translation>Preferovaný zvuk a titulky</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="61"/>
-        <source>Multimedia engine:</source>
-        <translation>Multim&amp;ediálny nástroj</translation>
-    </message>
-    <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="66"/>
-        <source>Qt Multimedia (FFmpeg)</source>
-        <translation>Qt Multimedia (FFmpeg)</translation>
-    </message>
-    <message>
         <location filename="../qml/PrefGeneralPage.qml" line="72"/>
         <source>Media settings</source>
         <translation>Nastavenia médií</translation>

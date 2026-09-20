@@ -56,17 +56,6 @@ ColumnLayout {
                 width: parent.width
                 spacing: 10
 
-                RowLayout {
-                    spacing: 8
-                    Label { text: qsTr("Multimedia engine:") }
-                    TextField {
-                        Layout.fillWidth: true
-                        readOnly: true
-                        enabled: false
-                        text: qsTr("Qt Multimedia (FFmpeg)")
-                    }
-                }
-
                 GroupBox {
                     Layout.fillWidth: true
                     title: qsTr("Media settings")

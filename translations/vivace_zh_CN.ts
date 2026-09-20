@@ -2994,16 +2994,6 @@
         <translation>首选音频和字幕</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="61"/>
-        <source>Multimedia engine:</source>
-        <translation>多媒体引擎(&amp;E):</translation>
-    </message>
-    <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="66"/>
-        <source>Qt Multimedia (FFmpeg)</source>
-        <translation>Qt Multimedia (FFmpeg)</translation>
-    </message>
-    <message>
         <location filename="../qml/PrefGeneralPage.qml" line="72"/>
         <source>Media settings</source>
         <translation>媒体设置</translation>

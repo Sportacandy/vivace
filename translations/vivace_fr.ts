@@ -2997,16 +2997,6 @@
         <translation>Audio et sous-titres préférés</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="61"/>
-        <source>Multimedia engine:</source>
-        <translation>M&amp;oteur multimédia&#xa0;:</translation>
-    </message>
-    <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="66"/>
-        <source>Qt Multimedia (FFmpeg)</source>
-        <translation>Qt Multimedia (FFmpeg)</translation>
-    </message>
-    <message>
         <location filename="../qml/PrefGeneralPage.qml" line="72"/>
         <source>Media settings</source>
         <translation>Configurations du média</translation>

@@ -2997,16 +2997,6 @@
         <translation>Føretrekt lyd og undertekstar</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="61"/>
-        <source>Multimedia engine:</source>
-        <translation>Multimedia&amp;motor:</translation>
-    </message>
-    <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="66"/>
-        <source>Qt Multimedia (FFmpeg)</source>
-        <translation>Qt Multimedia (FFmpeg)</translation>
-    </message>
-    <message>
         <location filename="../qml/PrefGeneralPage.qml" line="72"/>
         <source>Media settings</source>
         <translation>Mediainnstillingar</translation>
