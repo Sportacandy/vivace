@@ -17,9 +17,21 @@ is also published from the tip of `main` between tagged releases. See
 
 ## Status
 
-**v0.4.7** — fixes a preferred audio language (Preferences ▸ General ▸
-Audio) being silently ignored on DVDs, leaving a different track active
-than the one requested — see CHANGELOG.md. Builds on v0.4.6, which fixed
+**v0.5.0** — adds Android support (playback, YouTube streaming and
+Download & play via a bundled embedded Python/yt-dlp plus a bundled
+ffmpeg + Node.js, AndroidKeyStore credential storage, a Share-intent
+handler; CI now also publishes a debug-signed Android APK alongside
+every other platform's downloads), a dedicated Preferences ▸ Toolbars
+page (replacing the old Options ▸ Toolbars/Status bar submenus), full
+toolbar/control-bar parity with the menu bar's own actions (35 new
+editable-catalog items) with row-wrapping instead of clipping on
+narrow windows, and a handful of fixes (Speed +/-1%/4%/10% compounding
+instead of adding a fixed step, seeking while paused freezing the
+picture when Auto/Yadif/Bwdif deinterlacing was active, several
+duplicate menu mnemonics) — see CHANGELOG.md. Builds on v0.4.7, which
+fixed a preferred audio language (Preferences ▸ General ▸ Audio) being
+silently ignored on DVDs, leaving a different track active than the
+one requested. On v0.4.6, which fixed
 a DVD subtitle left showing on screen after pressing Stop, over the
 "Drop media files here" placeholder. On v0.4.5, which fixed DVD subtitle
 language selection
@@ -118,6 +130,37 @@ OS), while Raspberry Pi OS — still commonly based on Debian 12 "bookworm"
 
 Not sure which glibc you have? Run `ldd --version`. If it reports 2.39 or
 higher, either build works; below that, use the `-bookworm` one.
+
+## Android
+
+The Android build (`Vivace-android-arm64-v8a-debug.apk`, from
+[Releases](https://github.com/Sportacandy/vivace/releases) and the
+[nightly build](https://github.com/Sportacandy/vivace/releases/tag/nightly))
+is an early port. Two things worth knowing before installing it:
+
+- **It's an unsigned, debug-signed APK — not a production release
+  build.** There's no real Android signing keystore set up for this
+  project yet (matching every other platform here — none of them have
+  real code-signing set up either), so CI's Gradle build signs it with
+  its own auto-generated debug key. Android will warn that the app is
+  from an unverified/unknown source during install (you'll need to
+  allow it explicitly), and some devices' Play Protect may flag a
+  debug-signed APK more aggressively than it would a properly-signed
+  release — expected, not a sign anything is actually wrong with the
+  build. Because every CI build reuses the same debug key, installing a
+  newer release over an older one works as a normal in-place update.
+- **It doesn't include the custom `qtmultimedia` patches the Windows/
+  Linux builds do.** AV1 decode, the improved speed/pitch compensation,
+  bitmap-subtitle display, and Yadif/Bwdif deinterlacing (all described
+  below) are fixes to a custom-built Qt Multimedia that Android's CI
+  job doesn't produce — it installs the plain, stock Qt-for-Android kit
+  instead, same as building Vivace yourself against a stock Qt on any
+  platform. Deinterlacing is always forced to **None** on Android
+  specifically (not just unpatched-and-inert): MediaCodec-decoded video
+  frames can't be downloaded back to system memory for a software
+  deinterlace filter to run on at all, so `Video ▸ Deinterlace` is
+  disabled there rather than offered with no effect (see "Deinterlacing"
+  below).
 
 ## AV1 support
 
@@ -267,7 +310,9 @@ configured}.
 `qtmultimedia` build as AV1 and speed/pitch compensation above — Qt
 Multimedia has no filter-graph stage and no interlace awareness at all,
 so with a **stock Qt**, Yadif/Bwdif have no effect (the menu is present
-everywhere, but does nothing without the patch).
+but does nothing without the patch). **Android** is the one exception —
+see "Android" above for why the menu is disabled outright there instead
+of just being a no-op.
 
 **Windows and Linux** prebuilt releases and the nightly build get this
 via the same CI-built `qtmultimedia` described in "AV1 support" above

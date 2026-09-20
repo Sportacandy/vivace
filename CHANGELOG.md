@@ -11,6 +11,53 @@ each get their own entry instead.
 
 ## [Unreleased]
 
+## [0.5.0] — 2026-09-20
+
+### Added
+- Android support: an initial port covering playback, YouTube (both
+  streaming and Download & play, via a bundled embedded Python running
+  yt-dlp plus a bundled minimal ffmpeg + Node.js for HD merging and
+  JS-runtime challenges), AndroidKeyStore-backed credential storage,
+  and a Share-intent handler for opening files from other apps.
+  CI now also builds and publishes a (debug-signed) Android APK
+  alongside every other platform's nightly and release downloads.
+- A dedicated Preferences ▸ Toolbars page for editing the toolbar,
+  control bar, and status bar, reachable even when the menu bar itself
+  is hidden — replacing the old Options ▸ Toolbars/Status bar
+  submenus and the standalone toolbar-editor dialog. A new "Show menu
+  bar" option (Preferences ▸ Interface) lets it be hidden entirely,
+  mainly useful on Android.
+- The toolbar and control bar can now show every action already
+  reachable from the menu bar — speed controls, A-B markers, TV/Radio,
+  video track/aspect/rotate/size, audio/subtitle delay, DVD/Blu-ray
+  title/chapters/bookmarks, and more (35 new items in the editable
+  catalog) — and both bars now wrap onto extra rows instead of
+  clipping when the window is too narrow.
+- A "Seek" submenu (Play menu) grouping the Rewind/Forward actions,
+  mirroring the existing "Speed" submenu.
+- New menu icons for delay/volume/speed/subtitle actions, a dedicated
+  help icon, and refreshed playback-speed icon artwork.
+
+### Fixed
+- Seeking while paused could leave the picture frozen on the pre-seek
+  frame whenever Video ▸ Deinterlace's Auto/Yadif/Bwdif modes were
+  active (the seek bar and OSD still updated correctly) — deinterlace's
+  own one-frame lookahead was stalling the single frame Qt forces
+  through the renderer on a paused seek.
+- Play ▸ Speed's +1%/-1%/+4%/-4%/+10%/-10% actions multiplied the
+  current playback rate instead of adding a fixed step, so repeated
+  presses compounded instead of moving by a consistent amount.
+- Several duplicate menu keyboard mnemonics (Play, Zoom and pan,
+  Audio, Toolbars, Help).
+- Preferences ▸ Network's YouTube tab, and Interface's Instances and
+  Fullscreen tabs, could render far too narrow.
+- A duplicate internal id could make the Preferences dialog fail to
+  open at all.
+- Removed the "DVB tuner" section from Preferences ▸ TV and radio, and
+  the "Multimedia engine" row from Preferences ▸ General — both were
+  non-functional placeholders for capabilities Vivace never actually
+  has (DVB capture, multiple media backends).
+
 ## [0.4.7] — 2026-09-12
 
 ### Fixed
