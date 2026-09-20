@@ -146,7 +146,19 @@ jobs:
           sudo apt-get install -y meson ninja-build
 
       - name: Set up Android SDK
+        # CI FIX 2026-09-20 (first real run of this job failed here): this
+        # action's own default `packages` input is "tools platform-tools" --
+        # but Google removed the legacy "Android SDK Tools" package ('tools')
+        # from its repository years ago, so `sdkmanager tools` fails with
+        # "Warning: Failed to find package 'tools'" and the action throws,
+        # exiting the whole job before NDK/Qt installation ever runs (real
+        # log: media/build-android-log-20260920T120300.txt). Vivace's own
+        # build never needs the legacy tools package (NDK is installed
+        # separately below via `sdkmanager --install`), so just install
+        # platform-tools.
         uses: android-actions/setup-android@v3
+        with:
+          packages: platform-tools
 
       - name: Install Android NDK
         # Pinned to the exact version this project's own local (Qt Creator)
