@@ -193,9 +193,21 @@ jobs:
         run: echo "QT_HOST_PATH=$QT_ROOT_DIR" >> "$GITHUB_ENV"
 
       - name: Install Android Qt
+        # CI FIX 2026-09-20 (real run failed here): install-qt-action
+        # defaults the `host` input to the runner's own OS ("linux") unless
+        # told otherwise -- but Qt 6.11.1's Android packages are published
+        # ONLY under the host-independent "all_os" directory on Qt's own
+        # repository (confirmed directly: download.qt.io/online/
+        # qtsdkrepository/linux_x64/android/ tops out at qt6_663 (6.6.3);
+        # .../all_os/android/ has qt6_6111). Without this, aqt's version
+        # lookup ("aqt list-qt linux android --spec 6.11.1 --latest-version")
+        # returns "No latest version available for this request" and the
+        # step fails before any Qt is installed (real log:
+        # media/build-android-log-20260920T121700.txt).
         uses: jurplel/install-qt-action@v4
         with:
           version: '6.11.1'
+          host: all_os
           target: android
           arch: android_arm64_v8a
           modules: 'qtmultimedia qtshadertools'
