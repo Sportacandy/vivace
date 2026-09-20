@@ -776,7 +776,7 @@ index 0000000..fa6b5fa
 +
 +#endif // QFFMPEGDEINTERLACER_P_H
 diff --git a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegvideorenderer.cpp b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegvideorenderer.cpp
-index 83792ce..7cac84e 100644
+index 83792ce..8f1a2b3 100644
 --- a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegvideorenderer.cpp
 +++ b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegvideorenderer.cpp
 @@ -6,6 +6,8 @@
@@ -797,7 +797,7 @@ index 83792ce..7cac84e 100644
          m_sink->setVideoFrame({});
          return {};
      }
-@@ -45,6 +49,100 @@ VideoRenderer::RenderingResult VideoRenderer::renderInternal(Frame frame)
+@@ -45,6 +49,125 @@ VideoRenderer::RenderingResult VideoRenderer::renderInternal(Frame frame)
      const auto codecContext = frame.codecContext();
      Q_ASSERT(codecContext);
  
@@ -867,30 +867,55 @@ index 83792ce..7cac84e 100644
 +        const bool haveOutput = m_deinterlacer->process(frame.avFrame(), frame.startTime(),
 +                                                          frame.duration(), filtered, outStartTime,
 +                                                          outDuration);
-+        if (!haveOutput)
-+            return {}; // filter is still buffering; nothing to present for this input frame yet
++        if (haveOutput) {
++            if (!m_deinterlaceLoggedFirstFrame) {
++                m_deinterlaceLoggedFirstFrame = true;
++                qWarning("vivace: deinterlace producing filtered output frames");
++            }
 +
-+        if (!m_deinterlaceLoggedFirstFrame) {
-+            m_deinterlaceLoggedFirstFrame = true;
-+            qWarning("vivace: deinterlace producing filtered output frames");
++            const auto pixelAspectRatio = codecContext->pixelAspectRatio(filtered.get());
++            auto buffer =
++                    std::make_unique<QFFmpegVideoBuffer>(std::move(filtered), pixelAspectRatio);
++            QVideoFrameFormat format(buffer->size(), buffer->pixelFormat());
++            format.setColorSpace(buffer->colorSpace());
++            format.setColorTransfer(buffer->colorTransfer());
++            format.setColorRange(buffer->colorRange());
++            format.setMaxLuminance(buffer->maxNits());
++            format.setRotation(m_transform.rotation);
++            format.setMirrored(m_transform.mirroredHorizontallyAfterRotation);
++            QVideoFrame videoFrame = QVideoFramePrivate::createFrame(std::move(buffer), format);
++            videoFrame.setStartTime(outStartTime.get());
++            videoFrame.setEndTime((outStartTime + outDuration).get());
++            m_sink->setVideoFrame(videoFrame);
++            return {};
 +        }
-+
-+        const auto pixelAspectRatio = codecContext->pixelAspectRatio(filtered.get());
-+        auto buffer = std::make_unique<QFFmpegVideoBuffer>(std::move(filtered), pixelAspectRatio);
-+        QVideoFrameFormat format(buffer->size(), buffer->pixelFormat());
-+        format.setColorSpace(buffer->colorSpace());
-+        format.setColorTransfer(buffer->colorTransfer());
-+        format.setColorRange(buffer->colorRange());
-+        format.setMaxLuminance(buffer->maxNits());
-+        format.setRotation(m_transform.rotation);
-+        format.setMirrored(m_transform.mirroredHorizontallyAfterRotation);
-+        QVideoFrame videoFrame = QVideoFramePrivate::createFrame(std::move(buffer), format);
-+        videoFrame.setStartTime(outStartTime.get());
-+        videoFrame.setEndTime((outStartTime + outDuration).get());
-+        m_sink->setVideoFrame(videoFrame);
-+        return {};
-+    }
-+    if (m_deinterlacer) {
++        // Vivace (real bug fix, 2026-09-20): yadif/bwdif's one-frame
++        // lookahead (see Deinterlacer::process()'s own comment -- most
++        // commonly AVERROR(EAGAIN) here) is invisible during ordinary
++        // continuous playback, since the next frame arrives moments later
++        // and unblocks it. But PlaybackEngine::triggerStepIfNeeded() forces
++        // exactly ONE frame through this renderer for a seek performed
++        // while paused (real user report: the seek bar's own OSD/position
++        // updates correctly, but the displayed picture stays frozen on the
++        // pre-seek frame) -- with nothing further arriving while paused, no
++        // second frame will EVER come to satisfy the lookahead, so this
++        // isolated frame would otherwise be silently dropped forever.
++        // Detected here via isPaused() (inherited from
++        // PlaybackEngineObject) rather than threading a "was this call a
++        // forced step" flag through the virtual renderInternal() signature
++        // shared with AudioRenderer/SubtitleRenderer. Falls through to the
++        // plain, undeinterlaced path below for just this one frame -- the
++        // same "an isolated frame with no follow-up doesn't need
++        // deinterlacing anyway" reasoning as the preview-sink opt-out
++        // above, just detected dynamically instead of via a fixed per-sink
++        // tag -- WITHOUT touching m_deinterlacer's own buffered filter
++        // state, so ordinary deinterlaced playback resumes correctly once
++        // play() is pressed again (a plain `return {}` here, matching the
++        // still-playing case, would instead need the filter to eventually
++        // catch up, which it never can while paused).
++        if (!isPaused())
++            return {}; // filter is still buffering; nothing to present for this input frame yet
++    } else if (m_deinterlacer) {
 +        m_deinterlacer.reset(); // vivace: mode turned off; drop filter state
 +        m_deinterlaceLoggedFirstFrame = false;
 +    }
@@ -898,7 +923,7 @@ index 83792ce..7cac84e 100644
  #ifdef Q_OS_ANDROID
      // QTBUG-108446
      // In general case, just creation of frames context is not correct since
-@@ -80,6 +178,16 @@ VideoRenderer::RenderingResult VideoRenderer::renderInternal(Frame frame)
+@@ -80,6 +203,16 @@ VideoRenderer::RenderingResult VideoRenderer::renderInternal(Frame frame)
      return {};
  }
  
