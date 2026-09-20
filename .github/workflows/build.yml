@@ -116,3 +116,102 @@ jobs:
         # that run, but capping them too keeps this one shared step simple
         # and is a small, safe cost.
         run: cmake --build build --config Release --parallel 2
+
+  # Android: a genuinely different build shape from the desktop matrix above
+  # (cross-compiling needs both a host and an Android Qt kit, an NDK/SDK, and
+  # Vivace's own Android-only CMake options -- VIVACE_ENABLE_PYTHON_YOUTUBE's
+  # embedded CPython, VIVACE_ENABLE_YOUTUBE_DOWNLOAD_TOOLS' bundled ffmpeg +
+  # Node.js), so it's its own job rather than a 4th entry squeezed into that
+  # matrix's shared steps. Compile-only, matching this workflow's own stated
+  # "no packaging" scope for every other platform -- QT_NO_GLOBAL_APK_TARGET_
+  # PART_OF_ALL keeps a plain build from also invoking Gradle/androiddeployqt
+  # (which would need a JDK/signing setup this job doesn't have). UNVERIFIED:
+  # this is the first CI run ever attempted for Android in this project --
+  # every other new-platform CI job added here (Linux arm64, the Bookworm
+  # from-source job) needed real iteration once actually run, and this one
+  # has more new moving parts (SDK/NDK, two Qt kits, the bundled-tools native
+  # build) than any of those did at the start.
+  build-android:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Linux system dependencies
+        # meson/ninja: builds libbluray from source (VIVACE_ENABLE_BLURAY),
+        # same as the desktop Linux job above -- Vivace's own CMakeLists.txt
+        # treats this identically regardless of target platform.
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y meson ninja-build
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install Android NDK
+        # Pinned to the exact version this project's own local (Qt Creator)
+        # Android builds already use (.qtcreator/CMakeLists.txt.user) --
+        # keeping CI on the same NDK as the tested local dev builds avoids
+        # introducing a second, unverified NDK version into the mix.
+        # android-actions/setup-android is expected to put sdkmanager on
+        # PATH and set both ANDROID_HOME/ANDROID_SDK_ROOT, but that isn't
+        # verified against a real run yet (see this job's own top-level
+        # comment) -- the explicit fallback/re-export just makes the later
+        # Configure step robust if only one of the two ends up set.
+        run: |
+          sdkmanager --install "ndk;26.1.10909125"
+          echo "ANDROID_SDK_ROOT=${ANDROID_SDK_ROOT:-$ANDROID_HOME}" >> "$GITHUB_ENV"
+
+      - name: Install host Qt (for cross-compiling)
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: '6.11.1'
+          arch: linux_gcc_64
+          modules: 'qtmultimedia qtshadertools'
+          # Same aqtinstall pin as the desktop jobs above -- see that step's
+          # own comment (aqtinstall#959 vs. Qt 6.11's repository layout).
+          aqtsource: 'git+https://github.com/miurahr/aqtinstall.git@8c3695d4a4e1ceabf6a74dc6c79681656dc6b74b'
+
+      - name: Remember the host Qt path
+        # install-qt-action's own QT_ROOT_DIR env var gets overwritten by
+        # the Android Qt install below -- capture it now under its own name
+        # for the Android configure step's -DQT_HOST_PATH (cross-compiling
+        # needs a host Qt for build-time tools like qmlcachegen/qsb, which
+        # can't run as Android binaries on this runner).
+        run: echo "QT_HOST_PATH=$QT_ROOT_DIR" >> "$GITHUB_ENV"
+
+      - name: Install Android Qt
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: '6.11.1'
+          target: android
+          arch: android_arm64_v8a
+          modules: 'qtmultimedia qtshadertools'
+          aqtsource: 'git+https://github.com/miurahr/aqtinstall.git@8c3695d4a4e1ceabf6a74dc6c79681656dc6b74b'
+
+      - name: Configure
+        # Mirrors this project's own real, tested local Android configure
+        # (.qtcreator/CMakeLists.txt.user's CMake.Initial.Parameters) as
+        # closely as possible, rather than guessing at CMake/Qt-for-Android
+        # flags from scratch.
+        run: |
+          cmake -B build-android -G Ninja \
+            -DCMAKE_TOOLCHAIN_FILE="$ANDROID_SDK_ROOT/ndk/26.1.10909125/build/cmake/android.toolchain.cmake" \
+            -DANDROID_ABI=arm64-v8a \
+            -DANDROID_PLATFORM=android-28 \
+            -DANDROID_STL=c++_shared \
+            -DANDROID_USE_LEGACY_TOOLCHAIN_FILE=OFF \
+            -DANDROID_NDK="$ANDROID_SDK_ROOT/ndk/26.1.10909125" \
+            -DANDROID_SDK_ROOT="$ANDROID_SDK_ROOT" \
+            -DCMAKE_PREFIX_PATH="$QT_ROOT_DIR" \
+            -DQT_HOST_PATH="$QT_HOST_PATH" \
+            -DQT_NO_GLOBAL_APK_TARGET_PART_OF_ALL=ON \
+            -DCMAKE_BUILD_TYPE=Release
+
+      - name: Build
+        # --parallel 2, same OOM-avoidance reasoning as the desktop Linux
+        # job above -- this build compiles at least as much per translation
+        # unit (the same AOT QML/Blu-ray sources, plus the Android-only
+        # embedded-CPython and pythonyoutuberesolver.cpp sources) on the
+        # same class of runner.
+        run: cmake --build build-android --target vivace --parallel 2
