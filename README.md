@@ -17,7 +17,13 @@ is also published from the tip of `main` between tagged releases. See
 
 ## Status
 
-**v0.5.0** — adds Android support (playback, YouTube streaming and
+**v0.5.1** — two Android build/runtime fixes: a Windows build could pick
+up the wrong `bash` (`C:\Windows\System32\bash.exe`) for the bundled
+YouTube "Download & play" build step, and a device that had run an
+earlier build could get stuck reusing a stale, incomplete extraction of
+the embedded Python standard library, showing `ModuleNotFoundError: No
+module named 'zipfile._path'` — see CHANGELOG.md. Builds on v0.5.0,
+which added Android support (playback, YouTube streaming and
 Download & play via a bundled embedded Python/yt-dlp plus a bundled
 ffmpeg + Node.js, AndroidKeyStore credential storage, a Share-intent
 handler; CI now also publishes a debug-signed Android APK alongside
@@ -28,7 +34,7 @@ editable-catalog items) with row-wrapping instead of clipping on
 narrow windows, and a handful of fixes (Speed +/-1%/4%/10% compounding
 instead of adding a fixed step, seeking while paused freezing the
 picture when Auto/Yadif/Bwdif deinterlacing was active, several
-duplicate menu mnemonics) — see CHANGELOG.md. Builds on v0.4.7, which
+duplicate menu mnemonics). Builds on v0.4.7, which
 fixed a preferred audio language (Preferences ▸ General ▸ Audio) being
 silently ignored on DVDs, leaving a different track active than the
 one requested. On v0.4.6, which fixed

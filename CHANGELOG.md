@@ -11,6 +11,22 @@ each get their own entry instead.
 
 ## [Unreleased]
 
+## [0.5.1] — 2026-09-21
+
+### Fixed
+- Android: `find_program(bash)` for the bundled YouTube "Download & play"
+  build step could resolve to `C:\Windows\System32\bash.exe` on some
+  Windows machines, which cannot run the build script at all — build now
+  prefers Git for Windows' own bash and rejects the System32 one
+  explicitly if found instead.
+- Android: a device that had run an earlier build (from before a fix to
+  how the embedded Python standard library gets extracted from the APK)
+  could get stuck reusing that old, incomplete extraction forever, even
+  after installing a newer build with the fix already in it — showing
+  `ModuleNotFoundError: No module named 'zipfile._path'` when trying to
+  use YouTube. Fixed by making a fresh extraction happen once,
+  independent of the bundled Python version.
+
 ## [0.5.0] — 2026-09-20
 
 ### Added
