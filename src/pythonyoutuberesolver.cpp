@@ -435,7 +435,21 @@ QString extractedStdlibHomeDir(QString *errorOut)
                              + QStringLiteral("/pyhome");
     const QString libDir = destDir + QStringLiteral("/lib/python" VIVACE_CPYTHON_ABI_VERSION);
     const QString markerPath = destDir + QStringLiteral("/.extracted");
-    const QByteArray expectedMarker = QByteArrayLiteral(VIVACE_CPYTHON_VERSION);
+    // The literal suffix ("-fmt2") is independent of VIVACE_CPYTHON_VERSION --
+    // bump it whenever copyAssetTree()/this function's own extraction LOGIC
+    // changes, not just when the bundled CPython release does. Real bug hit
+    // 2026-09-2x: the exact "ModuleNotFoundError: No module named
+    // 'zipfile._path'" symptom this marker mechanism was originally built to
+    // fix (see the big comment above copyAssetTree()) recurred on a device
+    // that had already run an APK built BEFORE the manual-recursion fix for
+    // Qt's "assets:" file-engine depth-limit bug -- its marker still matched
+    // the (unchanged) CPython version, so extractedStdlibHomeDir() kept
+    // reusing that device's incomplete, pre-fix extraction forever, even
+    // after installing a newer APK whose OWN extraction code was already
+    // correct. A CPython version bump was never guaranteed to correlate with
+    // an extraction-code fix, so it can't be the only invalidation signal.
+    const QByteArray expectedMarker =
+        QByteArrayLiteral(VIVACE_CPYTHON_VERSION "-fmt2");
     {
         QFile existingMarker(markerPath);
         if (existingMarker.open(QIODevice::ReadOnly)

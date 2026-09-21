@@ -1287,9 +1287,43 @@ option(VIVACE_ENABLE_YOUTUBE_DOWNLOAD_TOOLS
     "Bundle a minimal ffmpeg + Node.js for YouTube Download & play mode (Android only)" ON)
 set(VIVACE_HAVE_YOUTUBE_DOWNLOAD_TOOLS FALSE)
 if(ANDROID AND VIVACE_HAVE_PYTHON_YOUTUBE AND VIVACE_ENABLE_YOUTUBE_DOWNLOAD_TOOLS)
-    find_program(VIVACE_BASH_EXECUTABLE bash)
+    # Real bug found 2026-09-20 (a genuine Qt Creator build failure): a
+    # plain find_program(bash) can match C:/Windows/System32/bash.exe --
+    # present on the PATH of some Windows installs regardless of whether
+    # Git for Windows is also installed -- which is not a suitable
+    # interpreter for this script (it operates on a different filesystem
+    # view than the plain Windows paths this custom command passes as
+    # arguments, so the script is reported missing even though it exists).
+    # HINTS are searched before the plain system PATH by find_program's own
+    # documented search order, so listing Git for Windows' common install
+    # locations here reliably prefers a real, working bash over that one
+    # whenever Git for Windows is installed at one of them.
+    find_program(VIVACE_BASH_EXECUTABLE bash
+        HINTS
+            "$ENV{ProgramFiles}/Git/bin"
+            "$ENV{ProgramFiles}/Git/usr/bin"
+            "C:/Program Files (x86)/Git/bin"
+            "C:/Program Files (x86)/Git/usr/bin"
+            "C:/Git/bin"
+            "C:/Git/usr/bin"
+    )
+    # Defensive fallback: if none of the HINTS matched (Git for Windows
+    # installed somewhere else entirely) and the plain PATH search found
+    # the unsuitable System32 one anyway, reject it explicitly rather than
+    # silently trying -- and failing -- to use it.
+    if(VIVACE_BASH_EXECUTABLE)
+        string(TOLOWER "${VIVACE_BASH_EXECUTABLE}" _vivace_bash_lower)
+        if(_vivace_bash_lower MATCHES "system32")
+            message(WARNING "YouTube Download & play tools: find_program(bash) "
+                             "resolved to '${VIVACE_BASH_EXECUTABLE}', which cannot "
+                             "run this script. Install Git for Windows, or set "
+                             "-DVIVACE_BASH_EXECUTABLE=<path to a real bash.exe> "
+                             "explicitly. Disabling for now.")
+            unset(VIVACE_BASH_EXECUTABLE CACHE)
+        endif()
+    endif()
     if(NOT VIVACE_BASH_EXECUTABLE)
-        message(WARNING "YouTube Download & play tools: no bash found to run "
+        message(WARNING "YouTube Download & play tools: no usable bash found to run "
                          "scripts/build-android-youtube-tools.sh -- disabling.")
     elseif(NOT DEFINED ANDROID_NDK)
         message(WARNING "YouTube Download & play tools: ANDROID_NDK not set by "
