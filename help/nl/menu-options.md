@@ -67,17 +67,86 @@ onderhoudt dat wordt gebruikt om YouTube-links af te spelen:
   installeert of werkt nooit een yt-dlp bij die het niet zelf beheert. De
   knop **yt-dlp installeren/bijwerken…** is in deze modus ook uitgeschakeld.
 
-## Cookies exporteren voor YouTube-downloads
+## De YouTube PO-tokenprovider installeren
 
-Met het veld **Cookiebestand:** (*Voorkeuren ▸ Netwerk ▸ YouTube*) kunnen de
-YouTube-modi **Downloaden en afspelen** en **externe tool** zich gedragen
-alsof u bent aangemeld — nodig voor video's met leeftijdsbeperking, video's
-die alleen voor leden toegankelijk zijn, of anderszins aan een account
-gebonden video's, en het is wat volledige HD/4K-downloads ontgrendelt. Het
-verwacht een gewoon tekstbestand `cookies.txt` in het klassieke
-Netscape-cookiejar-formaat (hetzelfde formaat dat yt-dlp's eigen
-`--cookies`-optie leest); Vivace leest cookies niet rechtstreeks uit het
-profiel van een browser.
+Steeds meer recente YouTube-video's vereisen tegenwoordig een
+**PO-token (proof-of-origin)** om sowieso te kunnen afspelen — een
+algemene afspeelbaarheidsvereiste, los van cookies of aangemeld zijn.
+Zonder dit token meldt yt-dlp dat de video niet beschikbaar is, zelfs bij
+een gewoon, anoniem verzoek. Dit geldt voor **beide** modi, Streaming en
+Downloaden en afspelen, in tegenstelling tot cookies (alleen voor
+downloaden, zie hieronder) of Deno (vooral van belang bij Downloaden en
+afspelen, zie verderop).
+
+*Voorkeuren ▸ Netwerk ▸ YouTube* heeft een knop **PO-tokenprovider
+installeren…** die het community-project **"BgUtils POT Provider"**
+instelt: een kleine yt-dlp-plug-in plus een script — dat op aanvraag via
+Deno wordt uitgevoerd, hetzelfde programma dat verderop wordt behandeld —
+waarmee yt-dlp automatisch een token kan genereren. Klik erop, wacht tot
+het korte download-en-bouwproces is voltooid, en het is klaar; het label
+van de knop verandert in **PO-tokenprovider opnieuw
+installeren/bijwerken…** zodra het geïnstalleerd is, voor het geval er
+later ooit een update nodig is.
+
+**Houd er rekening mee:**
+
+- Dit vereist een werkende Deno-installatie (zie "Deno installeren voor
+  YouTube-downloads" hieronder) — de knop downloadt en bouwt het eigen
+  script van de provider, dat yt-dlp vervolgens via Deno uitvoert wanneer
+  een video daadwerkelijk een token nodig heeft.
+- Niet elke video heeft een PO-token nodig, dus afspelen kan prima werken
+  zonder dat dit geïnstalleerd is — maar als een video zich als niet
+  beschikbaar meldt terwijl deze elders wel prima afspeelt, is dit de
+  moeite waard om te installeren.
+- **Op Android** wordt dit met Vivace meegeleverd en automatisch
+  ingesteld — er is niets te installeren en er is geen vergelijkbare
+  knop; het werkt gewoon.
+
+## Cookies voor YouTube-downloads
+
+De YouTube-modi **Downloaden en afspelen** en **externe tool** kunnen zich
+gedragen alsof u bent aangemeld — nodig voor video's met
+leeftijdsbeperking, video's die alleen voor leden toegankelijk zijn, of
+anderszins aan een account gebonden video's, en het is wat volledige
+HD/4K-downloads ontgrendelt. Vivace ondersteunt twee manieren om cookies
+aan te leveren (beide onder *Voorkeuren ▸ Netwerk ▸ YouTube ▸ Downloaden
+en afspelen*); op Windows/Linux/macOS is **Cookies ophalen uit browser**
+de te gebruiken optie, tenzij deze niet werkt voor uw opstelling.
+
+### Cookies ophalen uit browser (aanbevolen)
+
+Het keuzevak **Cookies ophalen uit browser:** biedt Firefox, Chrome, Edge,
+Brave, Chromium, Opera, Safari, Vivaldi en Whale. Kies uw browser en
+Vivace leest de cookies ervan live, elke keer opnieuw — niets om te
+exporteren, niets dat verouderd raakt.
+
+**Houd er rekening mee:**
+
+- YouTube heeft de levensduur van zijn eigen cookies aanzienlijk verkort,
+  waardoor een eerder geëxporteerd `cookies.txt`-bestand (zie hieronder)
+  binnen enkele dagen verouderd kan raken — deze optie voorkomt dit
+  volledig door de eigen, altijd actuele cookie-opslag van de browser te
+  lezen.
+- **Op Windows werkt hier alleen Firefox daadwerkelijk.** Chrome, Edge en
+  andere op Chromium gebaseerde browsers op Windows versleutelen hun
+  cookies op een manier die gekoppeld is aan het eigen uitvoerbare
+  bestand van de browser ("App-Bound Encryption", Chrome 127+) — dit
+  blokkeert yt-dlp, en elk ander extern hulpprogramma, volledig van het
+  lezen ervan. Het is een beperking aan de kant van Chrome; de
+  ontwikkelaars van yt-dlp zelf kunnen dit niet omzeilen. Chrome/Edge op
+  Linux en macOS ondervinden hier geen last van en werken normaal.
+- Het selecteren van een browser hier heeft voorrang op het veld
+  **Cookiebestand:** hieronder, wanneer beide zijn ingesteld.
+- **Niet beschikbaar op Android** — gebruik in plaats daarvan de
+  handmatige exportmethode hieronder.
+
+### Cookies naar een bestand exporteren (alternatief, en de enige optie op Android)
+
+Het veld **Cookiebestand:** verwacht een gewoon tekstbestand `cookies.txt`
+in het klassieke Netscape-cookiejar-formaat (hetzelfde formaat dat
+yt-dlp's eigen `--cookies`-optie leest) — gebruik dit wanneer de optie
+hierboven om cookies live uit de browser te halen niet beschikbaar is
+(Android) of niet werkt voor uw browser (Chrome/Edge op Windows).
 
 **Zo maakt u er een:**
 
@@ -94,20 +163,33 @@ profiel van een browser.
 4. Open in Vivace *Voorkeuren ▸ Netwerk ▸ YouTube* en gebruik
    **Bladeren…** naast **Cookiebestand:** om dat bestand te selecteren.
 
+**Op Android:** Chrome voor Android ondersteunt geen browserextensies, dus
+stap 2–3 hierboven kunnen niet op het apparaat zelf worden uitgevoerd.
+Exporteer `cookies.txt` zoals hierboven beschreven op een desktop- of
+laptopcomputer, en breng dat bestand vervolgens over naar uw
+Android-apparaat (bijvoorbeeld via cloudopslag, een USB-kabel of e-mail)
+voordat u **Bladeren…** gebruikt in stap 4.
+
 **Houd er rekening mee:**
 
 - Een `cookies.txt`-bestand is in feite een opgeslagen aanmeldsessie —
   iedereen die het bestand heeft, kan zich voordoen als uw YouTube-account
   totdat de cookies verlopen of u zich afmeldt. Bewaar het ergens privé en
   deel het niet.
+- Cookies verlopen. Als downloads die eerder werkten beginnen te mislukken,
+  of terugvallen op een resultaat van lagere kwaliteit/openbaar resultaat,
+  exporteert u een nieuw `cookies.txt`-bestand — of schakelt u over naar
+  **Cookies ophalen uit browser** hierboven, indien beschikbaar, om dit
+  volledig te vermijden.
+
+**Geldt voor beide bovenstaande methoden:**
+
 - Cookies worden alleen gebruikt door het **download**-pad (Downloaden en
   afspelen / externe tool). Vivace stuurt bewust nooit cookies in
   **streaming**-modus — een aangemelde stream-URL is aan die sessie gebonden
   op een manier die Vivace's eenvoudige videospeler niet kan openen, dus
-  streaming blijft anoniem, zelfs als er een cookiebestand is geconfigureerd.
-- Cookies verlopen. Als downloads die eerder werkten beginnen te mislukken,
-  of terugvallen op een resultaat van lagere kwaliteit/openbaar resultaat,
-  exporteert u een nieuw `cookies.txt`-bestand.
+  streaming blijft anoniem, ongeacht of cookies op een van beide manieren
+  zijn geconfigureerd.
 
 ## ffmpeg installeren voor YouTube-downloads
 
@@ -159,7 +241,7 @@ niet meteen kapot: de beschikbaarheid van formaten wordt gewoon beperkt, en
 **vooral ernstig bij een aangemeld (cookie-)verzoek** — precies het soort
 verzoek dat de modus **Downloaden en afspelen** doet om HD-,
 alleen-voor-leden- en leeftijdsbeperkte video's te ontgrendelen.
-**Streaming**-modus stuurt nooit cookies (zie "Cookies exporteren voor
+**Streaming**-modus stuurt nooit cookies (zie "Cookies voor
 YouTube-downloads" hierboven), dus dat is niet het ernstige geval en werkt in
 de meeste gevallen prima zonder Deno. Dit is waarom het veld
 **Deno-locatie:** te vinden is bij *Voorkeuren ▸ Netwerk ▸ YouTube ▸

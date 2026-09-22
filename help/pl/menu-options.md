@@ -68,16 +68,87 @@ yt-dlp**, które określa, w jaki sposób Vivace pozyskuje i utrzymuje program
   trybie przycisk **Zainstaluj / zaktualizuj yt-dlp…** jest również
   wyłączony.
 
-## Eksportowanie plików cookie do pobierania z YouTube
+## Instalowanie dostawcy tokenów PO dla YouTube
 
-Pole **Plik cookie:** (*Ustawienia ▸ Sieć ▸ YouTube*) pozwala trybom YouTube
-**Pobierz i odtwórz** oraz **narzędzie zewnętrzne** działać tak, jakbyś był
-zalogowany — jest to potrzebne w przypadku filmów z ograniczeniem wiekowym,
-dostępnych tylko dla członków lub w inny sposób wymagających konta, i to
-właśnie ono odblokowuje pełne pobieranie w HD/4K. Wymagany jest zwykły plik
-tekstowy `cookies.txt` w klasycznym formacie Netscape cookie-jar (tym samym,
-który odczytuje własna opcja `--cookies` narzędzia yt-dlp); Vivace nie
-odczytuje plików cookie bezpośrednio z profilu przeglądarki.
+Coraz więcej najnowszych filmów na YouTube wymaga **tokenu PO
+(proof-of-origin)**, aby w ogóle mogły się odtworzyć — jest to ogólny
+wymóg odtwarzalności, niezależny od plików cookie czy zalogowania. Bez
+niego yt-dlp zgłasza, że film jest niedostępny, nawet przy zwykłym,
+anonimowym żądaniu. Dotyczy to **obu** trybów — Strumieniowania oraz
+Pobierania i odtwarzania — w przeciwieństwie do plików cookie (tylko
+pobieranie, patrz niżej) czy Deno (dotyczy głównie Pobierania i
+odtwarzania, patrz dalej).
+
+*Ustawienia ▸ Sieć ▸ YouTube* zawiera przycisk **Zainstaluj dostawcę
+tokenów PO…**, który konfiguruje społecznościowy projekt **„BgUtils POT
+Provider”**: niewielką wtyczkę do yt-dlp oraz skrypt — uruchamiany na
+żądanie przez Deno, ten sam program opisany dalej — dzięki któremu
+yt-dlp może wygenerować token automatycznie. Kliknij przycisk, poczekaj
+na zakończenie krótkiego procesu pobierania i budowania, i gotowe; po
+zainstalowaniu etykieta przycisku zmienia się na **Zainstaluj ponownie /
+zaktualizuj dostawcę tokenów PO…**, na wypadek gdyby później potrzebna
+była aktualizacja.
+
+**Warto pamiętać:**
+
+- Wymaga to działającej instalacji Deno (zobacz „Instalowanie Deno do
+  pobierania z YouTube” poniżej) — przycisk pobiera i buduje własny
+  skrypt dostawcy, który yt-dlp uruchamia następnie przez Deno za
+  każdym razem, gdy dany film rzeczywiście wymaga tokenu.
+- Nie każdy film wymaga tokenu PO, więc odtwarzanie może działać
+  poprawnie bez tej instalacji — ale jeśli film zgłasza się jako
+  niedostępny, mimo że odtwarza się poprawnie gdzie indziej, warto go
+  zainstalować.
+- **Na Androidzie** ten komponent jest dołączony do Vivace i
+  konfigurowany automatycznie — nie trzeba niczego instalować i nie ma
+  odpowiadającego mu przycisku; po prostu działa.
+
+## Pliki cookie do pobierania z YouTube
+
+Tryby YouTube **Pobierz i odtwórz** oraz **narzędzie zewnętrzne** mogą
+działać tak, jakbyś był zalogowany — jest to potrzebne w przypadku
+filmów z ograniczeniem wiekowym, dostępnych tylko dla członków lub w
+inny sposób wymagających konta, i to właśnie ono odblokowuje pełne
+pobieranie w HD/4K. Vivace obsługuje dwa sposoby dostarczania plików
+cookie (oba w *Ustawienia ▸ Sieć ▸ YouTube ▸ Pobierz i odtwórz*); w
+systemach Windows/Linux/macOS zalecaną opcją jest **Pobierz pliki
+cookie z przeglądarki**, chyba że nie działa ona w Twojej konfiguracji.
+
+### Pobierz pliki cookie z przeglądarki (zalecane)
+
+Lista rozwijana **Pobierz pliki cookie z przeglądarki:** obejmuje
+Firefox, Chrome, Edge, Brave, Chromium, Opera, Safari, Vivaldi i Whale.
+Wybierz swoją przeglądarkę, a Vivace będzie odczytywać jej pliki cookie
+na żywo, za każdym razem od nowa — nic nie trzeba eksportować, nic nie
+traci ważności.
+
+**Warto pamiętać:**
+
+- YouTube znacząco skrócił czas życia własnych plików cookie, przez co
+  wcześniej wyeksportowany plik `cookies.txt` (patrz niżej) może stracić
+  ważność w ciągu kilku dni — ta opcja całkowicie temu zapobiega,
+  odczytując bieżące, zawsze aktualne przechowywanie plików cookie samej
+  przeglądarki.
+- **W systemie Windows faktycznie działa tu tylko Firefox.** Chrome,
+  Edge i inne przeglądarki oparte na Chromium w systemie Windows
+  szyfrują swoje pliki cookie w sposób powiązany z własnym plikiem
+  wykonywalnym przeglądarki („App-Bound Encryption”, Chrome 127+) — to
+  całkowicie uniemożliwia yt-dlp i każdemu innemu zewnętrznemu
+  narzędziu ich odczytanie. Jest to ograniczenie po stronie Chrome,
+  którego nawet twórcy yt-dlp nie mogą obejść. Chrome/Edge w systemach
+  Linux i macOS nie są tym dotknięte i działają normalnie.
+- Wybranie tu przeglądarki ma pierwszeństwo przed polem **Plik
+  cookie:** poniżej, gdy ustawione są oba warianty.
+- **Niedostępne na Androidzie** — zamiast tego skorzystaj z metody
+  ręcznego eksportu poniżej.
+
+### Eksportowanie plików cookie do pliku (rozwiązanie zastępcze i jedyne na Androidzie)
+
+Pole **Plik cookie:** wymaga zwykłego pliku tekstowego `cookies.txt` w
+klasycznym formacie Netscape cookie-jar (tym samym, który odczytuje
+własna opcja `--cookies` narzędzia yt-dlp) — użyj go, gdy powyższa opcja
+odczytu na żywo z przeglądarki jest niedostępna (Android) lub nie działa
+w Twojej przeglądarce (Chrome/Edge w systemie Windows).
 
 **Aby go utworzyć:**
 
@@ -95,21 +166,33 @@ odczytuje plików cookie bezpośrednio z profilu przeglądarki.
 4. W Vivace otwórz *Ustawienia ▸ Sieć ▸ YouTube* i użyj przycisku
    **Przeglądaj…** obok pola **Plik cookie:**, aby wybrać ten plik.
 
+**Na Androidzie:** Chrome na Androida nie obsługuje rozszerzeń
+przeglądarki, więc kroków 2–3 powyżej nie da się wykonać na samym
+urządzeniu. Wyeksportuj `cookies.txt` w sposób opisany powyżej na
+komputerze stacjonarnym lub laptopie, a następnie przenieś ten plik na
+urządzenie z Androidem (np. za pomocą chmury, kabla USB lub e-maila),
+zanim użyjesz przycisku **Przeglądaj…** w kroku 4.
+
 **Warto pamiętać:**
 
 - Plik `cookies.txt` jest w praktyce zapisaną sesją logowania — każdy, kto
   ma ten plik, może działać jako Twoje konto YouTube, dopóki pliki cookie
   nie wygasną lub się nie wylogujesz. Przechowuj go w bezpiecznym miejscu i
   nie udostępniaj go nikomu.
+- Pliki cookie wygasają. Jeśli pobieranie, które wcześniej działało, zaczyna
+  się nie powodzić lub zwraca wynik o niższej jakości/publiczny, wyeksportuj
+  nowy plik `cookies.txt` — albo, jeśli to możliwe, przełącz się na **Pobierz
+  pliki cookie z przeglądarki** powyżej, aby całkowicie tego uniknąć.
+
+**Dotyczy obu powyższych metod:**
+
 - Pliki cookie są używane wyłącznie na ścieżce **pobierania** (Pobierz i
   odtwórz / narzędzie zewnętrzne). Vivace celowo nigdy nie wysyła plików
   cookie w trybie **strumieniowania** — adres URL strumienia powiązanego z
   zalogowaną sesją jest związany z tą sesją w sposób, którego zwykły
   odtwarzacz wideo Vivace nie jest w stanie otworzyć, więc strumieniowanie
-  pozostaje anonimowe, nawet jeśli skonfigurowano plik cookie.
-- Pliki cookie wygasają. Jeśli pobieranie, które wcześniej działało, zaczyna
-  się nie powodzić lub zwraca wynik o niższej jakości/publiczny, wyeksportuj
-  nowy plik `cookies.txt`.
+  pozostaje anonimowe, niezależnie od tego, czy pliki cookie są
+  skonfigurowane w ten czy inny sposób.
 
 ## Instalowanie ffmpeg do pobierania z YouTube
 
@@ -162,7 +245,7 @@ formatów jest po prostu ograniczona, i to **poważnie w przypadku zapytań z
 zalogowaną sesją (plikami cookie)** — czyli dokładnie takich, jakie wykonuje
 tryb **Pobierz i odtwórz**, aby odblokować materiały w jakości HD, dostępne
 tylko dla członków oraz z ograniczeniem wiekowym. Tryb **Strumieniowanie**
-nigdy nie wysyła plików cookie (zobacz sekcję „Eksportowanie plików cookie do
+nigdy nie wysyła plików cookie (zobacz sekcję „Pliki cookie do
 pobierania z YouTube” powyżej), więc nie dotyczy go ten poważny przypadek i w
 większości sytuacji działa poprawnie bez Deno. Dlatego pole **Ścieżka do
 Deno:** znajduje się w *Ustawienia ▸ Sieć ▸ YouTube ▸ Pobierz i odtwórz*, a

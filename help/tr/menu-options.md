@@ -66,15 +66,83 @@ denetleyen bir **Yönetilen yt-dlp kullan** onay kutusu vardır:
   yönetmediği bir yt-dlp'yi asla kurmaz veya güncellemez. **yt-dlp'yi kur /
   güncelle…** düğmesi de bu modda devre dışıdır.
 
-## YouTube indirmeleri için çerezleri dışa aktarma
+## YouTube PO belirteci sağlayıcısını kurma
 
-**Çerez dosyası:** alanı (*Tercihler ▸ Ağ ▸ YouTube*), **İndir ve oynat** ve
-**dış araç** YouTube modlarının sanki oturum açmışsınız gibi davranmasını
-sağlar — yaş sınırlı, yalnızca üyelere özel veya başka şekilde hesaba bağlı
-videolar için gereklidir ve tam HD/4K indirmelerin kilidini açan da budur.
-Bu alan, klasik Netscape çerez kavanozu biçiminde (yt-dlp'nin kendi
-`--cookies` seçeneğinin okuduğu biçimin aynısı) düz metin bir `cookies.txt`
-dosyası bekler; Vivace çerezleri doğrudan bir tarayıcı profilinden okumaz.
+Son zamanlarda YouTube videoları, yalnızca oynatılabilmek için bile
+giderek daha sık bir **PO (kaynak kanıtı, proof-of-origin) belirteci**
+istiyor — bu, çerezlerden veya oturum açmış olmaktan bağımsız, genel bir
+oynatılabilirlik gereksinimidir. Bu belirteç olmadan, sıradan, anonim bir
+istekte bile yt-dlp videoyu kullanılamaz olarak bildirir. Bu, yalnızca
+indirmeyi ilgilendiren çerezlerden (aşağıya bakın) veya çoğunlukla İndir
+ve oynat'ı ilgilendiren Deno'dan (daha aşağıya bakın) farklı olarak, hem
+Akış (streaming) hem de İndir ve oynat modlarının **her ikisi** için de
+geçerlidir.
+
+*Tercihler ▸ Ağ ▸ YouTube*'da, topluluk projesi **"BgUtils POT
+Provider"**'ı kuran bir **PO belirteci sağlayıcısını kur…** düğmesi
+vardır: küçük bir yt-dlp eklentisi ile, gerektiğinde Deno (daha aşağıda
+ele alınan aynı program) aracılığıyla çalıştırılan bir betik, böylece
+yt-dlp bir belirteci otomatik olarak oluşturabilir. Düğmeye tıklayın,
+kısa indirme ve derleme işleminin tamamlanmasını bekleyin, işte bu kadar;
+kurulduktan sonra, ileride bir güncelleme gerekirse diye düğmenin etiketi
+**PO belirteci sağlayıcısını yeniden kur / güncelle…** olarak değişir.
+
+**Aklınızda bulunsun:**
+
+- Bu, çalışan bir Deno kurulumu gerektirir (aşağıdaki "YouTube
+  indirmeleri için Deno kurulumu" bölümüne bakın) — düğme, sağlayıcının
+  kendi betiğini indirip derler; yt-dlp da bir video gerçekten bir
+  belirtece ihtiyaç duyduğunda bu betiği Deno aracılığıyla çalıştırır.
+- Her video bir PO belirtecine ihtiyaç duymaz, bu yüzden bunu kurmadan da
+  oynatma sorunsuz çalışabilir — ancak bir video başka bir yerde sorunsuz
+  oynarken burada kullanılamaz olarak bildiriliyorsa, bunu kurmaya değer.
+- **Android'de** bu, Vivace ile birlikte paketlenir ve otomatik olarak
+  kurulur — kurulacak bir şey ve buna karşılık gelen bir düğme yoktur;
+  sadece çalışır.
+
+## YouTube indirmeleri için çerezler
+
+**İndir ve oynat** ve **dış araç** YouTube modları sanki oturum açmışsınız
+gibi davranabilir — yaş sınırlı, yalnızca üyelere özel veya başka şekilde
+hesaba bağlı videolar için gereklidir ve tam HD/4K indirmelerin kilidini
+açan da budur. Vivace, çerez sağlamak için iki yol destekler (ikisi de
+*Tercihler ▸ Ağ ▸ YouTube ▸ İndir ve oynat* altındadır); Windows/Linux/
+macOS'ta, sizin kurulumunuzda işe yaramadığı sürece kullanılması gereken
+yöntem **Çerezleri tarayıcıdan al**'dır.
+
+### Çerezleri tarayıcıdan al (önerilir)
+
+**Çerezleri tarayıcıdan al:** açılır kutusu Firefox, Chrome, Edge, Brave,
+Chromium, Opera, Safari, Vivaldi ve Whale'i listeler. Tarayıcınızı seçin;
+Vivace her seferinde çerezlerini canlı olarak okur — dışa aktarılacak
+hiçbir şey, eskiyecek hiçbir şey yoktur.
+
+**Aklınızda bulunsun:**
+
+- YouTube kendi çerez ömürlerini önemli ölçüde kısalttı, bu yüzden daha
+  önce dışa aktarılmış bir `cookies.txt` dosyası (aşağıya bakın) birkaç
+  gün içinde eskiyebilir — bu seçenek, tarayıcının kendi, her zaman
+  güncel çerez deposunu okuyarak bunu tamamen ortadan kaldırır.
+- **Windows'ta burada gerçekten yalnızca Firefox çalışır.** Windows'ta
+  Chrome, Edge ve diğer Chromium tabanlı tarayıcılar, çerezleri
+  tarayıcının kendi ikili dosyasına bağlı bir şekilde şifreler
+  ("App-Bound Encryption", Chrome 127+) — bu, yt-dlp'nin (ve diğer tüm
+  harici araçların) çerezleri hiç okuyamamasına neden olur. Bu,
+  yt-dlp'nin kendi geliştiricilerinin aşamadığı Chrome tarafındaki bir
+  kısıtlamadır. Linux ve macOS'taki Chrome/Edge bundan etkilenmez ve
+  normal şekilde çalışır.
+- Burada bir tarayıcı seçmek, ikisi de ayarlandığında aşağıdaki
+  **Çerez dosyası:** alanına göre önceliklidir.
+- **Android'de kullanılamaz** — bunun yerine aşağıdaki elle dışa aktarma
+  yöntemini kullanın.
+
+### Çerezleri bir dosyaya dışa aktarma (yedek yöntem, ve Android'deki tek seçenek)
+
+**Çerez dosyası:** alanı, klasik Netscape çerez kavanozu biçiminde
+(yt-dlp'nin kendi `--cookies` seçeneğinin okuduğu biçimin aynısı) düz
+metin bir `cookies.txt` dosyası bekler — yukarıdaki canlı tarayıcı
+seçeneği kullanılamadığında (Android) veya tarayıcınızda işe yaramadığında
+(Windows'ta Chrome/Edge) bunu kullanın.
 
 **Bir tane oluşturmak için:**
 
@@ -91,20 +159,31 @@ dosyası bekler; Vivace çerezleri doğrudan bir tarayıcı profilinden okumaz.
 4. Vivace'de *Tercihler ▸ Ağ ▸ YouTube* bölümünü açın ve **Çerez dosyası:**
    yanındaki **Gözat…** düğmesini kullanarak bu dosyayı seçin.
 
+**Android'de:** Android için Chrome tarayıcı uzantılarını desteklemez, bu
+yüzden yukarıdaki 2–3. adımlar cihazın kendisinde yapılamaz. `cookies.txt`
+dosyasını yukarıda açıklandığı gibi bir masaüstü veya dizüstü bilgisayarda
+dışa aktarın, ardından 4. adımda **Gözat…**'ı kullanmadan önce bu dosyayı
+Android cihazınıza aktarın (örn. bulut depolama, bir USB kablosu veya
+e-posta yoluyla).
+
 **Aklınızda bulunsun:**
 
 - Bir `cookies.txt` dosyası, aslında kaydedilmiş bir oturum açma oturumudur
   — bu dosyaya sahip olan herkes, çerezler süresi dolana veya siz oturumu
   kapatana kadar YouTube hesabınız gibi davranabilir. Onu özel bir yerde
   saklayın ve kimseyle paylaşmayın.
+- Çerezlerin süresi dolar. Daha önce çalışan indirmeler başarısız olmaya
+  başlarsa veya daha düşük kaliteli/herkese açık bir sonuca geri düşerse,
+  yeni bir `cookies.txt` dışa aktarın — veya mümkünse bunu tamamen önlemek
+  için yukarıdaki **Çerezleri tarayıcıdan al** seçeneğine geçin.
+
+**Yukarıdaki her iki yöntem için de geçerlidir:**
+
 - Çerezler yalnızca **indirme** yolunda (İndir ve oynat / dış araç)
   kullanılır. Vivace, **akış (streaming)** modunda çerezleri kasıtlı olarak
   asla göndermez — oturum açılmış bir akış URL'si, Vivace'nin sade video
-  oynatıcısının açamayacağı bir şekilde o oturuma bağlıdır, bu yüzden bir
-  çerez dosyası yapılandırılmış olsa bile akış anonim kalır.
-- Çerezlerin süresi dolar. Daha önce çalışan indirmeler başarısız olmaya
-  başlarsa veya daha düşük kaliteli/herkese açık bir sonuca geri düşerse,
-  yeni bir `cookies.txt` dışa aktarın.
+  oynatıcısının açamayacağı bir şekilde o oturuma bağlıdır, bu yüzden
+  çerezler hangi şekilde yapılandırılmış olursa olsun akış anonim kalır.
 
 ## YouTube indirmeleri için ffmpeg kurulumu
 
@@ -157,7 +236,7 @@ biçim sayısı azalır ve bu azalma **oturum açmış (çerez) bir istek için
 ciddi biçimde** gerçekleşir — tam olarak **İndir ve oynat** modunun HD,
 yalnızca üyelere özel ve yaş sınırlı videoların kilidini açmak için
 yaptığı istek türü budur. **Akış (streaming)** modu asla çerez göndermez
-(yukarıdaki "YouTube indirmeleri için çerezleri dışa aktarma" bölümüne
+(yukarıdaki "YouTube indirmeleri için çerezler" bölümüne
 bakın), bu yüzden ciddi durum bu değildir ve çoğu durumda Deno olmadan da
 iyi çalışır. **Deno yolu:** alanının genel bir YouTube ayarı olarak değil
 de *Tercihler ▸ Ağ ▸ YouTube ▸ İndir ve oynat* altında bulunmasının

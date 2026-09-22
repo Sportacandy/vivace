@@ -67,16 +67,82 @@ YouTube-links:
   aldrig en yt-dlp, den ikke administrerer. Knappen **Installer/opdater
   yt-dlp…** er også deaktiveret i denne tilstand.
 
-## Eksport af cookies til YouTube-downloads
+## Installation af YouTube PO-token-udbyderen
 
-Feltet **Cookiefil:** (*Indstillinger ▸ Netværk ▸ YouTube*) gør, at
+Nyere YouTube-videoer kræver i stigende grad en **PO-token
+(proof-of-origin)** bare for overhovedet at kunne afspilles — et generelt
+krav til afspilbarhed, uafhængigt af cookies eller om man er logget ind.
+Uden en sådan rapporterer yt-dlp videoen som utilgængelig, selv ved en
+almindelig, anonym forespørgsel. Dette gælder for **både** tilstandene
+Streaming og Download og afspil, i modsætning til cookies (kun til
+download, se nedenfor) eller Deno (primært en sag for Download og afspil,
+se længere nede).
+
+*Indstillinger ▸ Netværk ▸ YouTube* har knappen **Installér
+PO-token-udbyder…**, som sætter communityprojektet **"BgUtils POT
+Provider"** op: et lille yt-dlp-plugin plus et script — der køres efter
+behov via Deno, det samme program, der dækkes længere nede — som lader
+yt-dlp generere en token automatisk. Klik på den, vent på, at den korte
+download- og byggeproces er færdig, og så er det klaret; knappens
+etiket ændres til **Geninstallér/opdatér PO-token-udbyder…**, når den
+først er installeret, i tilfælde af at en senere opdatering nogensinde
+bliver nødvendig.
+
+**Husk:**
+
+- Dette kræver en fungerende Deno-installation (se "Installation af Deno
+  til YouTube-downloads" nedenfor) — knappen downloader og bygger
+  udbyderens eget script, som yt-dlp derefter kører via Deno, når en
+  video rent faktisk har brug for en token.
+- Ikke alle videoer har brug for en PO-token, så afspilning kan fungere
+  fint uden dette installeret — men hvis en video rapporterer sig selv
+  som utilgængelig, når den ellers spiller fint andre steder, er det
+  værd at installere dette.
+- **På Android** følger dette med Vivace og sættes op automatisk — der
+  er intet at installere og ingen tilsvarende knap; det virker bare.
+
+## Cookies til YouTube-downloads
+
 YouTube-tilstandene **Download og afspil** og **eksternt værktøj** kan
 opføre sig, som om du var logget ind — nødvendigt for aldersbegrænsede,
 medlemslåste eller på anden måde kontobundne videoer, og det er det, der
-låser op for fulde HD/4K-downloads. Det forventer en almindelig
-tekstfil, `cookies.txt`, i det klassiske Netscape cookie-format (samme
-format som yt-dlps eget flag `--cookies` læser); Vivace læser ikke
-cookies direkte fra en browserprofil.
+låser op for fulde HD/4K-downloads. Vivace understøtter to måder at
+angive cookies på (begge under *Indstillinger ▸ Netværk ▸ YouTube ▸
+Download og afspil*); på Windows/Linux/macOS er **Hent cookies fra
+browser** den, du bør bruge, medmindre den ikke virker til din opsætning.
+
+### Hent cookies fra browser (anbefales)
+
+Kombinationsfeltet **Hent cookies fra browser:** viser Firefox, Chrome,
+Edge, Brave, Chromium, Opera, Safari, Vivaldi og Whale. Vælg din browser,
+og Vivace læser dens cookies direkte, hver gang — intet at eksportere,
+intet der bliver forældet.
+
+**Husk:**
+
+- YouTube har afkortet sine cookies' levetid betydeligt, så en tidligere
+  eksporteret `cookies.txt`-fil (se nedenfor) kan blive forældet inden for
+  få dage — denne mulighed undgår det helt ved at læse browserens egen,
+  altid opdaterede cookielager.
+- **På Windows virker kun Firefox reelt her.** Chrome, Edge og andre
+  Chromium-baserede browsere på Windows krypterer deres cookies på en
+  måde, der er bundet til browserens egen binærfil ("App-Bound
+  Encryption", Chrome 127+) — dette forhindrer yt-dlp, og ethvert andet
+  eksternt værktøj, i overhovedet at læse dem. Det er en begrænsning på
+  Chromes side; yt-dlps egne udviklere kan ikke omgå den. Chrome/Edge på
+  Linux og macOS er ikke berørt af dette og fungerer normalt.
+- At vælge en browser her har forrang frem for feltet **Cookiefil:**
+  nedenfor, når begge er angivet.
+- **Ikke tilgængeligt på Android** — brug den manuelle eksportmetode
+  nedenfor i stedet.
+
+### Eksport af cookies til en fil (reserveløsning, og den eneste mulighed på Android)
+
+Feltet **Cookiefil:** forventer en almindelig tekstfil, `cookies.txt`, i
+det klassiske Netscape cookie-format (samme format som yt-dlps eget flag
+`--cookies` læser) — brug dette, når muligheden med direkte
+browseradgang ovenfor ikke er tilgængelig (Android) eller ikke virker til
+din browser (Chrome/Edge på Windows).
 
 **Sådan opretter du en:**
 
@@ -94,19 +160,30 @@ cookies direkte fra en browserprofil.
 4. Åbn i Vivace *Indstillinger ▸ Netværk ▸ YouTube*, og brug
    **Gennemse…** ved siden af **Cookiefil:** til at vælge den fil.
 
+**På Android:** Chrome til Android understøtter ikke browserudvidelser,
+så trin 2-3 ovenfor kan ikke udføres på selve enheden. Eksportér
+`cookies.txt` på en stationær eller bærbar computer som beskrevet ovenfor,
+og overfør derefter filen til din Android-enhed (f.eks. via cloud-lagring,
+et USB-kabel eller e-mail), før du bruger **Gennemse…** i trin 4.
+
 **Husk:**
 
 - En `cookies.txt`-fil er i praksis en gemt loginsession — alle, der har
   filen, kan agere som din YouTube-konto, indtil cookies udløber, eller
   du logger ud. Opbevar den et privat sted, og del den ikke.
+- Cookies udløber. Hvis downloads, der tidligere virkede, begynder at
+  fejle eller falder tilbage til et resultat af lavere kvalitet/et
+  offentligt resultat, så eksportér en ny `cookies.txt` — eller skift til
+  **Hent cookies fra browser** ovenfor, hvis tilgængeligt, for at undgå
+  dette helt.
+
+**Gælder for begge metoder ovenfor:**
+
 - Cookies bruges kun af **download**-stien (Download og afspil /
   eksternt værktøj). Vivace sender bevidst aldrig cookies i
   **streaming**-tilstand — en logget-ind stream-URL er bundet til den
   session på en måde, Vivaces enkle videoafspiller ikke kan åbne, så
-  streaming forbliver anonym, selv hvis en cookiefil er konfigureret.
-- Cookies udløber. Hvis downloads, der tidligere virkede, begynder at
-  fejle eller falder tilbage til et resultat af lavere kvalitet/et
-  offentligt resultat, så eksportér en ny `cookies.txt`.
+  streaming forbliver anonym, uanset hvilken metode der er konfigureret.
 
 ## Installation af ffmpeg til YouTube-downloads
 
@@ -160,7 +237,7 @@ ligefrem fejl: formatudvalget bliver blot reduceret, og **kraftigt for
 en logget ind (cookie-baseret) forespørgsel** — netop den slags
 forespørgsel, som tilstanden **Download og afspil** bruger for at låse
 op for HD, medlemsindhold og aldersbegrænsede videoer. Tilstanden
-**Streaming** sender aldrig cookies (se "Eksport af cookies til
+**Streaming** sender aldrig cookies (se "Cookies til
 YouTube-downloads" ovenfor), så det er ikke det alvorlige tilfælde, og
 det fungerer som regel fint uden Deno. Det er derfor, feltet **Deno-sti:**
 findes under *Indstillinger ▸ Netværk ▸ YouTube ▸ Download og afspil* og

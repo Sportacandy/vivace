@@ -64,16 +64,82 @@ používá k přehrávání odkazů YouTube:
   neinstaluje ani neaktualizuje yt-dlp, který nespravuje sama. V tomto
   režimu je zakázáno i tlačítko **Nainstalovat / aktualizovat yt-dlp…**.
 
-## Export cookies pro stahování z YouTube
+## Instalace poskytovatele tokenů PO pro YouTube
 
-Pole **Soubor cookies:** (*Předvolby ▸ Síť ▸ YouTube*) umožňuje režimům
-YouTube **Stáhnout a přehrát** a **externí nástroj** chovat se, jako byste
-byli přihlášeni — to je potřeba pro videa s věkovým omezením, dostupná
-pouze členům nebo jinak vázaná na účet, a právě to odemyká plnohodnotné
-stahování v HD/4K. Očekává se prostý textový soubor `cookies.txt` v
-klasickém formátu Netscape cookie-jar (stejném formátu, jaký čte vlastní
-volba `--cookies` nástroje yt-dlp); Vivace nečte cookies přímo z profilu
-prohlížeče.
+Novější videa na YouTube stále častěji vyžadují **token PO
+(proof-of-origin)** jen k tomu, aby se vůbec přehrála — jde o obecný
+požadavek přehratelnosti, nezávislý na cookies nebo přihlášení. Bez něj
+yt-dlp nahlásí, že video není dostupné, a to i u běžného, anonymního
+požadavku. Platí to pro **oba** režimy — Streamování i Stáhnout a
+přehrát — na rozdíl od cookies (jen stahování, viz níže) nebo Deno
+(týká se hlavně režimu Stáhnout a přehrát, viz dále).
+
+*Předvolby ▸ Síť ▸ YouTube* obsahuje tlačítko **Nainstalovat
+poskytovatele tokenů PO…**, které nastaví komunitní projekt
+**„BgUtils POT Provider“**: malý plugin pro yt-dlp plus skript —
+spouštěný na vyžádání přes Deno, tentýž program popsaný dále —
+díky němuž může yt-dlp vygenerovat token automaticky. Klikněte na něj,
+počkejte na dokončení krátkého procesu stažení a sestavení a je hotovo;
+jakmile je nainstalován, popisek tlačítka se změní na **Přeinstalovat /
+aktualizovat poskytovatele tokenů PO…** pro případ, že by později bylo
+potřeba jej aktualizovat.
+
+**Mějte na paměti:**
+
+- Vyžaduje to funkční instalaci Deno (viz „Instalace Deno pro stahování
+  z YouTube“ níže) — tlačítko stáhne a sestaví vlastní skript
+  poskytovatele, který yt-dlp poté spouští přes Deno kdykoli video
+  skutečně potřebuje token.
+- Ne každé video token PO potřebuje, takže přehrávání může fungovat i
+  bez této instalace — ale pokud se video hlásí jako nedostupné, přitom
+  jinde se přehrává bez problémů, stojí za to jej nainstalovat.
+- **Na Androidu** je tato součást dodávána s Vivace a nastavuje se
+  automaticky — není co instalovat a neexistuje pro ni žádné podobné
+  tlačítko; prostě to funguje.
+
+## Cookies pro stahování z YouTube
+
+Režimy YouTube **Stáhnout a přehrát** a **externí nástroj** se mohou
+chovat, jako byste byli přihlášeni — to je potřeba pro videa s věkovým
+omezením, dostupná pouze členům nebo jinak vázaná na účet, a právě to
+odemyká plnohodnotné stahování v HD/4K. Vivace podporuje dva způsoby
+zadání cookies (oba v *Předvolby ▸ Síť ▸ YouTube ▸ Stáhnout a přehrát*);
+ve Windows/Linuxu/macOS je vhodné použít **Získat cookies z
+prohlížeče**, pokud pro vaše nastavení nefunguje.
+
+### Získat cookies z prohlížeče (doporučeno)
+
+Rozevírací nabídka **Získat cookies z prohlížeče:** obsahuje Firefox,
+Chrome, Edge, Brave, Chromium, Operu, Safari, Vivaldi a Whale. Vyberte
+svůj prohlížeč a Vivace bude jeho cookies číst přímo, pokaždé znovu —
+není co exportovat a nic nezastarává.
+
+**Mějte na paměti:**
+
+- YouTube výrazně zkrátil platnost vlastních cookies, takže dříve
+  exportovaný soubor `cookies.txt` (viz níže) může zastarat během pár
+  dnů — tato možnost tomu zcela zabrání tím, že čte přímo aktuální
+  úložiště cookies samotného prohlížeče.
+- **Ve Windows zde skutečně funguje jen Firefox.** Chrome, Edge a další
+  prohlížeče založené na Chromiu ve Windows šifrují své cookies
+  způsobem svázaným se samotným spustitelným souborem prohlížeče
+  („App-Bound Encryption“, Chrome 127+) — to znemožňuje nástroji
+  yt-dlp, i jakémukoli jinému externímu nástroji, je vůbec číst. Jde o
+  omezení na straně Chromu, které ani samotní vývojáři yt-dlp nemohou
+  obejít. Chrome/Edge na Linuxu a macOS tím nejsou dotčeny a fungují
+  normálně.
+- Výběr prohlížeče zde má přednost před polem **Soubor cookies:**
+  níže, pokud jsou nastaveny obě možnosti.
+- **Není dostupné na Androidu** — místo toho použijte metodu ručního
+  exportu níže.
+
+### Export cookies do souboru (záložní varianta a jediná možnost na Androidu)
+
+Pole **Soubor cookies:** vyžaduje prostý textový soubor `cookies.txt` v
+klasickém formátu Netscape cookie-jar (stejném formátu, jaký čte
+vlastní volba `--cookies` nástroje yt-dlp) — použijte jej, pokud výše
+uvedená možnost přímého čtení z prohlížeče není dostupná (Android) nebo
+nefunguje s vaším prohlížečem (Chrome/Edge ve Windows).
 
 **Jak jej vytvořit:**
 
@@ -89,21 +155,32 @@ prohlížeče.
 4. Ve Vivace otevřete *Předvolby ▸ Síť ▸ YouTube* a pomocí tlačítka
    **Procházet…** vedle pole **Soubor cookies:** tento soubor vyberte.
 
+**Na Androidu:** Chrome pro Android nepodporuje rozšíření prohlížeče,
+takže kroky 2–3 výše nelze provést přímo na zařízení. Exportujte
+`cookies.txt` podle výše uvedeného postupu na stolním počítači nebo
+notebooku a poté tento soubor přeneste do svého zařízení s Androidem
+(například přes cloudové úložiště, USB kabel nebo e-mail), než v kroku 4
+použijete tlačítko **Procházet…**.
+
 **Mějte na paměti:**
 
 - Soubor `cookies.txt` je v podstatě uložená přihlašovací relace — kdokoli,
   kdo tento soubor má, může jednat jako váš účet YouTube, dokud cookies
   nevyprší nebo se neodhlásíte. Uchovávejte jej někde v soukromí a nesdílejte
   jej.
+- Platnost cookies vyprší. Pokud stahování, které dříve fungovalo, začne
+  selhávat nebo se vrací k výsledku nižší kvality/veřejnému výsledku,
+  exportujte nový soubor `cookies.txt` — nebo, je-li to možné, přepněte se
+  na **Získat cookies z prohlížeče** výše, čímž se tomu zcela vyhnete.
+
+**Platí pro obě výše uvedené metody:**
+
 - Cookies se používají pouze pro cestu **stahování** (Stáhnout a přehrát /
   externí nástroj). Vivace záměrně nikdy neodesílá cookies v režimu
   **streamování** — adresa URL streamu přihlášené relace je vázána na danou
   relaci způsobem, který obyčejný video přehrávač Vivace nedokáže otevřít,
-  takže streamování zůstává anonymní, i když je nakonfigurován soubor
-  cookies.
-- Platnost cookies vyprší. Pokud stahování, které dříve fungovalo, začne
-  selhávat nebo se vrací k výsledku nižší kvality/veřejnému výsledku,
-  exportujte nový soubor `cookies.txt`.
+  takže streamování zůstává anonymní bez ohledu na to, jakým způsobem jsou
+  cookies nastaveny.
 
 ## Instalace ffmpeg pro stahování z YouTube
 
@@ -153,7 +230,7 @@ něj „zastaralý“ (deprecated), ale rovnou neselže: dostupnost formátů se
 pouze omezí, a to **výrazně u přihlášených požadavků (s cookies)** — což je
 přesně ten druh požadavku, který provádí režim **Stáhnout a přehrát**, aby
 odemkl HD, obsah jen pro členy a videa s věkovým omezením. Režim
-**Streamování** nikdy neodesílá cookies (viz „Export cookies pro stahování
+**Streamování** nikdy neodesílá cookies (viz „Cookies pro stahování
 z YouTube“ výše), takže se ho tento vážnější případ netýká a ve většině
 případů funguje bez Deno bez problémů. Proto pole **Cesta k Deno:** patří
 do *Předvolby ▸ Síť ▸ YouTube ▸ Stáhnout a přehrát*, nikoli mezi obecná

@@ -72,17 +72,87 @@ yt-dlp gestionat**, que controla com el Vivace obté i manté el programa
   gestiona. El botó **Instal·la / actualitza yt-dlp…** també queda
   desactivat en aquest mode.
 
-## Exportar galetes per a les baixades de YouTube
+## Instal·lar el proveïdor de token PO de YouTube
 
-El camp **Fitxer de galetes:** (*Preferències ▸ Xarxa ▸ YouTube*) permet
-que els modes de YouTube **Baixa i reprodueix** i **eina externa** actuïn
-com si haguessis iniciat la sessió — necessari per a vídeos amb
+Els vídeos recents de YouTube cada vegada requereixen més sovint un
+**token PO (proof-of-origin)** només per poder-se reproduir — un
+requisit general de reproduïbilitat, independent de les galetes o
+d'haver iniciat sessió. Sense un, el yt-dlp informa que el vídeo no
+està disponible fins i tot per a una sol·licitud anònima normal. Això
+s'aplica **tant** al mode Reproducció en flux com a Baixa i reprodueix,
+a diferència de les galetes (només per a la baixada, vegeu més avall) o
+del Deno (principalment una qüestió del mode Baixa i reprodueix, vegeu
+més avall).
+
+*Preferències ▸ Xarxa ▸ YouTube* té el botó **Instal·la el proveïdor de
+token PO…**, que configura el projecte de la comunitat **"BgUtils POT
+Provider"**: un petit connector de yt-dlp més un script — executat a
+petició mitjançant Deno, el mateix programa que es tracta més avall —
+que permet que el yt-dlp generi un token automàticament. Fes-hi clic,
+espera que acabi el breu procés de baixada i compilació, i ja està fet;
+l'etiqueta del botó canvia a **Reinstal·la / actualitza el proveïdor de
+token PO…** un cop instal·lat, per si mai calgués una actualització
+posterior.
+
+**Tingues en compte:**
+
+- Això requereix una instal·lació de Deno funcional (vegeu «Instal·lar
+  Deno per a les baixades de YouTube» més avall) — el botó baixa i
+  compila l'script propi del proveïdor, que el yt-dlp després executa
+  mitjançant Deno sempre que un vídeo realment necessita un token.
+- No tots els vídeos necessiten un token PO, així que la reproducció pot
+  funcionar bé sense tenir-ho instal·lat — però si un vídeo indica que
+  no està disponible quan es reprodueix bé en un altre lloc, val la pena
+  instal·lar-ho.
+- **A Android,** això s'inclou amb el Vivace i es configura
+  automàticament — no hi ha res a instal·lar ni cap botó equivalent;
+  simplement funciona.
+
+## Galetes per a les baixades de YouTube
+
+Els modes de YouTube **Baixa i reprodueix** i **eina externa** poden
+actuar com si haguessis iniciat la sessió — necessari per a vídeos amb
 restricció d'edat, exclusius per a membres o d'una altra manera
-vinculats a un compte, i és el que desbloqueja les baixades completes en
-HD/4K. Espera un fitxer de text pla, `cookies.txt`, en el format clàssic
-de galetes de Netscape (el mateix format que llegeix l'opció pròpia
-`--cookies` del yt-dlp); el Vivace no llegeix les galetes directament
-del perfil d'un navegador.
+vinculats a un compte, i és el que desbloqueja les baixades completes
+en HD/4K. El Vivace admet dues maneres de proporcionar galetes (totes
+dues sota *Preferències ▸ Xarxa ▸ YouTube ▸ Baixa i reprodueix*); a
+Windows/Linux/macOS, **Obtenir galetes des del navegador** és la que
+cal fer servir tret que no funcioni per a la teva configuració.
+
+### Obtenir galetes des del navegador (recomanat)
+
+El desplegable **Obtenir galetes des del navegador:** llista Firefox,
+Chrome, Edge, Brave, Chromium, Opera, Safari, Vivaldi i Whale. Tria el
+teu navegador i el Vivace en llegeix les galetes en directe, cada
+vegada — no cal exportar res, i res no queda obsolet.
+
+**Tingues en compte:**
+
+- El YouTube ha escurçat significativament la durada de les seves
+  pròpies galetes, de manera que un fitxer `cookies.txt` exportat
+  anteriorment (vegeu més avall) pot quedar obsolet en pocs dies —
+  aquesta opció ho evita completament llegint la memòria de galetes
+  pròpia del navegador, sempre actualitzada.
+- **A Windows, aquí només funciona realment el Firefox.** El Chrome,
+  l'Edge i altres navegadors basats en Chromium a Windows xifren les
+  seves galetes d'una manera vinculada al propi executable del
+  navegador ("App-Bound Encryption", Chrome 127 i posteriors) — això
+  impedeix que el yt-dlp, i qualsevol altra eina externa, les pugui
+  llegir en absolut. Es tracta d'una restricció del costat de Chrome;
+  els mateixos desenvolupadors de yt-dlp no la poden evitar. El
+  Chrome/Edge de Linux i macOS no es veuen afectats.
+- Triar un navegador aquí té prioritat sobre el camp **Fitxer de
+  galetes:** de més avall, quan tots dos estan establerts.
+- **No disponible a Android** — utilitza en el seu lloc el mètode
+  d'exportació manual de més avall.
+
+### Exportar galetes a un fitxer (alternativa, i l'única opció a Android)
+
+El camp **Fitxer de galetes:** espera un fitxer de text pla,
+`cookies.txt`, en el format clàssic de galetes de Netscape (el mateix
+format que llegeix l'opció pròpia `--cookies` del yt-dlp) — utilitza'l
+quan l'opció de navegador en directe de més amunt no estigui disponible
+(Android) o no funcioni amb el teu navegador (Chrome/Edge a Windows).
 
 **Per crear-ne un:**
 
@@ -101,22 +171,35 @@ del perfil d'un navegador.
    **Navega…** al costat de **Fitxer de galetes:** per seleccionar
    aquest fitxer.
 
+**A Android:** el Chrome per a Android no admet extensions de
+navegador, de manera que els passos 2–3 de més amunt no es poden fer al
+mateix dispositiu. Exporta `cookies.txt` en un ordinador de sobretaula o
+portàtil tal com s'ha descrit més amunt, i després transfereix aquest
+fitxer al teu dispositiu Android (per exemple, mitjançant emmagatzematge
+al núvol, un cable USB o el correu electrònic) abans d'utilitzar
+**Navega…** en el pas 4.
+
 **Tingues en compte:**
 
 - Un fitxer `cookies.txt` és, de fet, una sessió d'inici de sessió
   desada — qualsevol persona que tingui el fitxer pot actuar com el teu
   compte de YouTube fins que les galetes caduquin o tanquis la sessió.
   Guarda'l en un lloc privat i no el comparteixis.
+- Les galetes caduquen. Si les baixades que abans funcionaven comencen a
+  fallar, o donen com a resultat una versió de qualitat
+  inferior/pública, exporta un `cookies.txt` nou — o canvia a **Obtenir
+  galetes des del navegador** de més amunt, si està disponible, per
+  evitar-ho completament.
+
+**S'aplica a ambdós mètodes anteriors:**
+
 - Les galetes només s'utilitzen per la via de **baixada** (Baixa i
   reprodueix / eina externa). El Vivace deliberadament mai envia
   galetes en mode de **transmissió** — un URL de transmissió amb
   sessió iniciada està vinculat a aquesta sessió d'una manera que el
   reproductor de vídeo senzill del Vivace no pot obrir, de manera que
-  la transmissió continua sent anònima encara que hi hagi configurat un
-  fitxer de galetes.
-- Les galetes caduquen. Si les baixades que abans funcionaven comencen a
-  fallar, o donen com a resultat una versió de qualitat
-  inferior/pública, exporta un `cookies.txt` nou.
+  la transmissió continua sent anònima independentment de quin mètode
+  estigui configurat.
 
 ## Instal·lar ffmpeg per a les baixades de YouTube
 
@@ -171,7 +254,7 @@ simplement es redueix, i **de manera severa per a una sol·licitud amb
 sessió iniciada (basada en galetes)** — exactament el tipus de
 sol·licitud que fa el mode **Baixa i reprodueix** per desbloquejar
 vídeos en HD, exclusius per a membres i amb restricció d'edat. El mode
-**Reproducció en flux** mai no envia galetes (vegeu «Exportar galetes per a les
+**Reproducció en flux** mai no envia galetes (vegeu «Galetes per a les
 baixades de YouTube» més amunt), de manera que no és el cas sever, i
 funciona bé sense Deno en la majoria dels casos. Per això el camp
 **Camí de Deno:** es troba a *Preferències ▸ Xarxa ▸ YouTube ▸ Baixa i

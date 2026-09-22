@@ -67,16 +67,83 @@ que ele usa para reproduzir links do YouTube:
   yt-dlp que não gerencia. O botão **Instalar / atualizar o yt-dlp…** também
   fica desativado nesse modo.
 
-## Exportando cookies para downloads do YouTube
+## Instalando o provedor de token PO do YouTube
 
-O campo **Arquivo de cookies:** (*Preferências ▸ Rede ▸ YouTube*) permite
-que os modos do YouTube **Baixar e reproduzir** e **Ferramenta externa**
-ajam como se você estivesse conectado — necessário para vídeos com
+Vídeos recentes do YouTube exigem cada vez mais um **token PO
+(proof-of-origin)** só para conseguir reproduzir — um requisito geral de
+reprodutibilidade, independente de cookies ou de estar conectado. Sem ele,
+o yt-dlp informa que o vídeo está indisponível mesmo para uma solicitação
+comum e anônima. Isso se aplica a **ambos** os modos, Transmissão e Baixar
+e reproduzir, ao contrário dos cookies (somente para download, veja abaixo)
+ou do Deno (uma preocupação principalmente do Baixar e reproduzir, veja
+mais adiante).
+
+*Preferências ▸ Rede ▸ YouTube* tem um botão **Instalar o provedor de
+token PO…** que configura o projeto da comunidade **"BgUtils POT
+Provider"**: um pequeno plugin do yt-dlp mais um script — executado sob
+demanda via Deno, o mesmo programa abordado mais adiante — que permite ao
+yt-dlp gerar um token automaticamente. Clique nele, aguarde o breve
+processo de download e compilação terminar, e pronto; o texto do botão
+muda para **Reinstalar / atualizar o provedor de token PO…** depois de
+instalado, para caso uma atualização seja necessária mais tarde.
+
+**Vale lembrar:**
+
+- Isso exige uma instalação funcional do Deno (veja "Instalando o Deno para
+  downloads do YouTube" abaixo) — o botão baixa e compila o próprio script
+  do provedor, que o yt-dlp então executa via Deno sempre que um vídeo
+  realmente precisa de um token.
+- Nem todo vídeo precisa de um token PO, então a reprodução pode funcionar
+  bem sem essa instalação — mas se um vídeo se informa como indisponível
+  quando reproduz normalmente em outro lugar, vale a pena instalar.
+- **No Android,** isso já vem incluído no Vivace e é configurado
+  automaticamente — não há nada para instalar nem um botão equivalente; ele
+  simplesmente funciona.
+
+## Cookies para downloads do YouTube
+
+Os modos do YouTube **Baixar e reproduzir** e **Ferramenta externa** podem
+agir como se você estivesse conectado — necessário para vídeos com
 restrição de idade, exclusivos para membros ou vinculados de outra forma a
-uma conta, e é isso que também libera downloads em HD/4K completo. Ele
-espera um arquivo de texto simples `cookies.txt` no formato clássico de
-cookies do Netscape (o mesmo formato que a própria opção `--cookies` do
-yt-dlp lê); o Vivace não lê cookies diretamente do perfil de um navegador.
+uma conta, e é isso que também libera downloads em HD/4K completo. O
+Vivace tem suporte a duas formas de fornecer cookies (ambas em
+*Preferências ▸ Rede ▸ YouTube ▸ Baixar e reproduzir*); no
+Windows/Linux/macOS, **Obter cookies do navegador** é a que deve ser usada,
+a menos que não funcione na sua configuração.
+
+### Obter cookies do navegador (recomendado)
+
+A caixa de seleção **Obter cookies do navegador:** lista Firefox, Chrome,
+Edge, Brave, Chromium, Opera, Safari, Vivaldi e Whale. Escolha seu
+navegador e o Vivace lê os cookies dele ao vivo, todas as vezes — nada para
+exportar, nada que fique desatualizado.
+
+**Vale lembrar:**
+
+- O YouTube reduziu bastante a vida útil dos próprios cookies, então um
+  arquivo `cookies.txt` exportado anteriormente (veja abaixo) pode ficar
+  desatualizado em poucos dias — essa opção evita isso por completo,
+  lendo o próprio armazenamento de cookies do navegador, sempre atualizado.
+- **No Windows, só o Firefox realmente funciona aqui.** Chrome, Edge e
+  outros navegadores baseados em Chromium no Windows criptografam os
+  cookies de um jeito vinculado ao próprio binário do navegador
+  ("App-Bound Encryption", Chrome 127+) — isso impede totalmente que o
+  yt-dlp, e qualquer outra ferramenta externa, os leia. É uma restrição do
+  lado do Chrome; os próprios desenvolvedores do yt-dlp não conseguem
+  contorná-la. Linux e macOS com Chrome/Edge não são afetados por isso e
+  funcionam normalmente.
+- Selecionar um navegador aqui tem prioridade sobre o campo **Arquivo de
+  cookies:** abaixo, quando os dois estiverem definidos.
+- **Não disponível no Android** — use o método de exportação manual abaixo
+  em vez disso.
+
+### Exportando cookies para um arquivo (alternativa, e a única opção no Android)
+
+O campo **Arquivo de cookies:** espera um arquivo de texto simples
+`cookies.txt` no formato clássico de cookies do Netscape (o mesmo formato
+que a própria opção `--cookies` do yt-dlp lê) — use isso quando a opção de
+navegador ao vivo acima não estiver disponível (Android) ou não funcionar
+com seu navegador (Chrome/Edge no Windows).
 
 **Para criar um:**
 
@@ -93,21 +160,32 @@ yt-dlp lê); o Vivace não lê cookies diretamente do perfil de um navegador.
 4. No Vivace, abra *Preferências ▸ Rede ▸ YouTube* e use **Procurar…** ao
    lado de **Arquivo de cookies:** para selecionar esse arquivo.
 
+**No Android:** o Chrome para Android não é compatível com extensões de
+navegador, então os passos 2–3 acima não podem ser feitos no próprio
+dispositivo. Exporte o `cookies.txt` em um computador de mesa ou notebook
+como descrito acima, depois transfira esse arquivo para seu dispositivo
+Android (por exemplo, via armazenamento em nuvem, um cabo USB ou e-mail)
+antes de usar **Procurar…** no passo 4.
+
 **Vale lembrar:**
 
 - Um arquivo `cookies.txt` é, na prática, uma sessão de login salva —
   qualquer pessoa que tenha o arquivo pode agir como sua conta do YouTube
   até os cookies expirarem ou você sair da conta. Guarde-o em um lugar
   privado e não o compartilhe.
+- Os cookies expiram. Se downloads que antes funcionavam começarem a
+  falhar, ou caírem para um resultado público/de qualidade inferior,
+  exporte um novo `cookies.txt` — ou mude para **Obter cookies do
+  navegador** acima, se disponível, para evitar isso por completo.
+
+**Aplica-se aos dois métodos acima:**
+
 - Os cookies são usados apenas pelo caminho de **download** (Baixar e
   reproduzir / Ferramenta externa). O Vivace propositalmente nunca envia
   cookies no modo de **streaming** — uma URL de streaming autenticada fica
   vinculada a essa sessão de um jeito que o reprodutor de vídeo simples do
-  Vivace não consegue abrir, então o streaming permanece anônimo mesmo com
-  um arquivo de cookies configurado.
-- Os cookies expiram. Se downloads que antes funcionavam começarem a
-  falhar, ou caírem para um resultado público/de qualidade inferior,
-  exporte um novo `cookies.txt`.
+  Vivace não consegue abrir, então o streaming permanece anônimo não
+  importa como os cookies estejam configurados.
 
 ## Instalando o ffmpeg para downloads do YouTube
 
@@ -160,7 +238,7 @@ simplesmente é reduzida, e **de forma severa para uma solicitação com login
 (cookies)** — exatamente o tipo de solicitação que o modo **Baixar e
 reproduzir** faz para desbloquear vídeos em HD, exclusivos para membros e
 com restrição de idade. O modo **Transmissão** nunca envia cookies (veja
-"Exportando cookies para downloads do YouTube" acima), então não é o caso
+"Cookies para downloads do YouTube" acima), então não é o caso
 mais grave e funciona bem sem o Deno na maioria dos casos. É por isso que o
 campo **Caminho do Deno:** fica em *Preferências ▸ Rede ▸ YouTube ▸ Baixar
 e reproduzir*, e não como uma configuração geral do YouTube. O yt-dlp

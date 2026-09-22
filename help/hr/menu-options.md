@@ -66,16 +66,83 @@ reprodukciju YouTube poveznica:
   ne instalira niti ažurira yt-dlp kojim ne upravlja. Gumb **Instaliraj /
   ažuriraj yt-dlp…** također je onemogućen u ovom načinu rada.
 
-## Izvoz kolačića za YouTube preuzimanja
+## Instalacija YouTube pružatelja PO tokena
 
-Polje **Datoteka kolačića:** (*Postavke ▸ Mreža ▸ YouTube*) omogućuje da
-se YouTube načini rada **Preuzmi i reproduciraj** i **vanjski alat**
-ponašaju kao da ste prijavljeni — potrebno za videozapise s dobnim
+Noviji YouTube videozapisi sve češće zahtijevaju **PO (proof-of-origin)
+token** samo da bi se uopće reproducirali — opći zahtjev za mogućnost
+reprodukcije, neovisan o kolačićima ili prijavi. Bez njega yt-dlp
+prijavljuje da videozapis nije dostupan čak i za običan, anonimni
+zahtjev. To vrijedi za **oba** načina rada, i Streaming i Preuzmi i
+reproduciraj, za razliku od kolačića (samo za preuzimanje, pogledajte
+ispod) ili Dena (uglavnom pitanje načina Preuzmi i reproduciraj,
+pogledajte dalje ispod).
+
+*Postavke ▸ Mreža ▸ YouTube* ima gumb **Instaliraj pružatelja PO
+tokena…** koji postavlja zajednički projekt **„BgUtils POT Provider”**:
+mali yt-dlp dodatak plus skriptu — koja se na zahtjev pokreće putem
+Dena, istog programa opisanog dalje ispod — koja omogućuje yt-dlp-u da
+automatski generira token. Kliknite ga, pričekajte da kratki postupak
+preuzimanja i izgradnje završi, i gotovo je; oznaka gumba mijenja se u
+**Ponovno instaliraj / ažuriraj pružatelja PO tokena…** nakon
+instalacije, za slučaj da kasnije zatreba ažuriranje.
+
+**Imajte na umu:**
+
+- Ovo zahtijeva ispravno instaliran Deno (pogledajte „Instalacija Dena
+  za YouTube preuzimanja” ispod) — gumb preuzima i izgrađuje vlastitu
+  skriptu pružatelja, koju yt-dlp zatim pokreće putem Dena kad god
+  videozapis stvarno zatreba token.
+- Ne treba svaki videozapis PO token, pa reprodukcija može raditi
+  ispravno i bez ovoga instaliranog — no ako videozapis prijavljuje da
+  nije dostupan dok se drugdje reproducira bez problema, vrijedi ga
+  instalirati.
+- **Na Androidu** ovo je već ugrađeno u Vivace i postavljeno automatski
+  — nema se što instalirati niti postoji odgovarajući gumb; jednostavno
+  radi.
+
+## Kolačići za YouTube preuzimanja
+
+Načini rada YouTubea **Preuzmi i reproduciraj** i **vanjski alat** mogu
+se ponašati kao da ste prijavljeni — potrebno za videozapise s dobnim
 ograničenjem, samo za članove ili na drugi način vezane uz račun, a to
-je i ono što otključava potpuna HD/4K preuzimanja. Očekuje se obična
-tekstna datoteka `cookies.txt` u klasičnom Netscape formatu kolačića
-(isti format koji čita vlastita opcija `--cookies` alata yt-dlp); Vivace
-ne čita kolačiće izravno iz profila preglednika.
+je i ono što otključava potpuna HD/4K preuzimanja. Vivace podržava dva
+načina za dostavu kolačića (oba u *Postavke ▸ Mreža ▸ YouTube ▸ Preuzmi
+i reproduciraj*); na Windowsima/Linuxu/macOS-u, **Preuzmi kolačiće iz
+preglednika** je onaj koji biste trebali koristiti, osim ako ne radi za
+vašu konfiguraciju.
+
+### Preuzimanje kolačića iz preglednika (preporučeno)
+
+Padajući izbornik **Preuzmi kolačiće iz preglednika:** navodi Firefox,
+Chrome, Edge, Brave, Chromium, Opera, Safari, Vivaldi i Whale. Odaberite
+svoj preglednik i Vivace uživo čita njegove kolačiće, svaki put — ništa
+za izvoziti, ništa što zastarijeva.
+
+**Imajte na umu:**
+
+- YouTube je znatno skratio trajanje vlastitih kolačića, pa prethodno
+  izvezena datoteka `cookies.txt` (pogledajte ispod) može zastarjeti
+  unutar nekoliko dana — ova opcija to potpuno izbjegava čitajući
+  izravno preglednikovu vlastitu, uvijek ažurnu pohranu kolačića.
+- **Na Windowsima ovdje zapravo radi samo Firefox.** Chrome, Edge i
+  drugi preglednici temeljeni na Chromiumu na Windowsima šifriraju
+  svoje kolačiće na način vezan uz sam binarni program preglednika
+  („App-Bound Encryption”, Chrome 127+) — to onemogućuje yt-dlp-u, i
+  svakom drugom vanjskom alatu, da ih uopće čita. To je ograničenje na
+  strani Chromea; ni sami razvijatelji yt-dlp-a ne mogu ga zaobići.
+  Chrome/Edge na Linuxu i macOS-u nisu time pogođeni i rade normalno.
+- Odabir preglednika ovdje ima prednost nad poljem **Datoteka
+  kolačića:** ispod, kada su oba postavljena.
+- **Nije dostupno na Androidu** — umjesto toga upotrijebite ručnu
+  metodu izvoza ispod.
+
+### Izvoz kolačića u datoteku (rezervna opcija, i jedina na Androidu)
+
+Polje **Datoteka kolačića:** očekuje običnu tekstualnu datoteku
+`cookies.txt` u klasičnom Netscape formatu kolačića (isti format koji
+čita vlastita opcija `--cookies` alata yt-dlp) — upotrijebite ovo kada
+gornja opcija uživo iz preglednika nije dostupna (Android) ili ne radi
+za vaš preglednik (Chrome/Edge na Windowsima).
 
 **Kako ga izraditi:**
 
@@ -92,21 +159,33 @@ ne čita kolačiće izravno iz profila preglednika.
 4. U Vivaceu otvorite *Postavke ▸ Mreža ▸ YouTube* i upotrijebite
    **Pregledaj…** pored **Datoteka kolačića:** za odabir te datoteke.
 
+**Na Androidu:** Chrome za Android ne podržava proširenja preglednika,
+pa se koraci 2–3 iznad ne mogu izvesti na samom uređaju. Izvezite
+`cookies.txt` na stolnom ili prijenosnom računalu kako je opisano
+iznad, a zatim prenesite tu datoteku na svoj Android uređaj (npr.
+putem pohrane u oblaku, USB kabela ili e-pošte) prije nego što
+upotrijebite **Pregledaj…** u koraku 4.
+
 **Imajte na umu:**
 
-- Datoteka `cookies.txt` zapravo je spremljena prijavljena sesija — bilo
-  tko tko posjeduje tu datoteku može djelovati kao vaš YouTube račun sve
-  dok kolačići ne isteknu ili se ne odjavite. Čuvajte je na privatnom
-  mjestu i nemojte je dijeliti.
-- Kolačići se koriste samo za put **preuzimanja** (Preuzmi i reproduciraj
-  / vanjski alat). Vivace namjerno nikada ne šalje kolačiće u načinu
-  **streaminga** — URL streama s prijavljenim korisnikom vezan je uz tu
-  sesiju na način koji jednostavni videoplayer Vivacea ne može otvoriti,
-  pa streaming ostaje anoniman čak i ako je konfigurirana datoteka
-  kolačića.
+- Datoteka `cookies.txt` zapravo je spremljena prijavljena sesija —
+  bilo tko tko posjeduje tu datoteku može djelovati kao vaš YouTube
+  račun sve dok kolačići ne isteknu ili se ne odjavite. Čuvajte je na
+  privatnom mjestu i nemojte je dijeliti.
 - Kolačići istječu. Ako preuzimanja koja su prije radila počnu ne
   uspijevati ili se vrate na rezultat niže kvalitete/javni rezultat,
-  izvezite novu datoteku `cookies.txt`.
+  izvezite novu datoteku `cookies.txt` — ili, ako je dostupno, prijeđite
+  na **Preuzmi kolačiće iz preglednika** iznad kako biste to potpuno
+  izbjegli.
+
+**Odnosi se na obje metode iznad:**
+
+- Kolačići se koriste samo za put **preuzimanja** (Preuzmi i
+  reproduciraj / vanjski alat). Vivace namjerno nikada ne šalje
+  kolačiće u načinu **streaminga** — URL streama s prijavljenim
+  korisnikom vezan je uz tu sesiju na način koji jednostavni
+  videoplayer Vivacea ne može otvoriti, pa streaming ostaje anoniman
+  čak i ako su kolačići konfigurirani na bilo koji od ta dva načina.
 
 ## Instalacija ffmpeg-a za YouTube preuzimanja
 
@@ -159,7 +238,7 @@ neuspjeha: dostupnost formata jednostavno je smanjena, i to **znatno za
 prijavljeni (kolačić) zahtjev** — upravo onu vrstu zahtjeva koju način rada
 **Preuzmi i reproduciraj** upućuje kako bi otključao HD, sadržaj samo za
 članove i videozapise s dobnim ograničenjem. Način **streaminga** nikada ne
-šalje kolačiće (pogledajte "Izvoz kolačića za YouTube preuzimanja" iznad),
+šalje kolačiće (pogledajte "Kolačići za YouTube preuzimanja" iznad),
 pa to nije ozbiljan slučaj i u većini slučajeva funkcionira dobro i bez
 Dena. Zato se polje **Putanja do Deno-a:** nalazi pod *Postavke ▸ Mreža ▸
 YouTube ▸ Preuzmi i reproduciraj*, a ne kao opća YouTube postavka. yt-dlp

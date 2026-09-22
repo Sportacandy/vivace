@@ -62,15 +62,77 @@ YouTube links:
   disabled — Vivace never installs or updates a yt-dlp it doesn't manage.
   The **Install / Update yt-dlp…** button is also disabled in this mode.
 
-## Exporting cookies for YouTube downloads
+## Installing the YouTube PO token provider
 
-The **Cookies file:** field (*Preferences ▸ Network ▸ YouTube*) lets the
-**Download & play** and **external tool** YouTube modes act as if you were
-signed in — needed for age-restricted, members-only, or otherwise
-account-gated videos, and it's what unlocks full HD/4K downloads. It expects
-a plain-text `cookies.txt` file in the classic Netscape cookie-jar format
-(the same format yt-dlp's own `--cookies` option reads); Vivace does not read
-cookies directly out of a browser's profile.
+Recent YouTube videos increasingly require a **PO (proof-of-origin) token**
+just to play at all — a general playability requirement, independent of
+cookies or being signed in. Without one, yt-dlp reports the video as
+unavailable even for an ordinary, anonymous request. This applies to
+**both** Streaming and Download & play modes, unlike cookies (download-only,
+see below) or Deno (mainly a Download & play concern, see further below).
+
+*Preferences ▸ Network ▸ YouTube* has an **Install PO token provider…**
+button that sets up the community **"BgUtils POT Provider"** project: a
+small yt-dlp plugin plus a script — run on demand via Deno, the same
+program covered further below — that lets yt-dlp generate a token
+automatically. Click it, wait for the short download-and-build process to
+finish, and it's done; the button's label changes to **Reinstall / Update
+PO token provider…** once installed, in case a later update is ever
+needed.
+
+**Keep in mind:**
+
+- This needs a working Deno install (see "Installing Deno for YouTube
+  downloads" below) — the button downloads and builds the provider's own
+  script, which yt-dlp then runs through Deno whenever a video actually
+  needs a token.
+- Not every video needs a PO token, so playback can work fine without this
+  installed — but if a video reports itself as unavailable when it plays
+  fine elsewhere, this is worth installing.
+- **On Android,** this is bundled with Vivace and set up automatically —
+  there's nothing to install and no equivalent button; it just works.
+
+## Cookies for YouTube downloads
+
+The **Download & play** and **external tool** YouTube modes can act as if
+you were signed in — needed for age-restricted, members-only, or otherwise
+account-gated videos, and it's what unlocks full HD/4K downloads. Vivace
+supports two ways to supply cookies (both under *Preferences ▸ Network ▸
+YouTube ▸ Download & play*); on Windows/Linux/macOS, **Get cookies from
+browser** is the one to use unless it doesn't work for your setup.
+
+### Get cookies from browser (recommended)
+
+The **Get cookies from browser:** combo box lists Firefox, Chrome, Edge,
+Brave, Chromium, Opera, Safari, Vivaldi, and Whale. Pick your browser and
+Vivace reads its cookies live, every time — nothing to export, nothing
+that goes stale.
+
+**Keep in mind:**
+
+- YouTube shortened its own cookie lifetimes significantly, so a
+  previously-exported `cookies.txt` file (see below) can go stale within
+  days — this option avoids that entirely by reading the browser's own,
+  always-current cookie store.
+- **On Windows, only Firefox actually works here.** Chrome, Edge, and other
+  Chromium-based browsers on Windows encrypt their cookies in a way tied to
+  the browser's own binary ("App-Bound Encryption", Chrome 127+) — this
+  blocks yt-dlp, and every other external tool, from reading them at all.
+  It's a restriction on Chrome's side; yt-dlp's own developers can't work
+  around it. Linux and macOS Chrome/Edge are unaffected by this and work
+  normally.
+- Selecting a browser here takes priority over the **Cookies file:** field
+  below, when both are set.
+- **Not available on Android** — use the manual export method below
+  instead.
+
+### Exporting cookies to a file (fallback, and the only option on Android)
+
+The **Cookies file:** field expects a plain-text `cookies.txt` file in the
+classic Netscape cookie-jar format (the same format yt-dlp's own
+`--cookies` option reads) — use this when the live-browser option above
+isn't available (Android) or doesn't work for your browser (Chrome/Edge on
+Windows).
 
 **To create one:**
 
@@ -97,13 +159,18 @@ using **Browse…** in step 4.
 - A `cookies.txt` file is effectively a saved login session — anyone who has
   the file can act as your YouTube account until the cookies expire or you
   sign out. Store it somewhere private and don't share it.
+- Cookies expire. If downloads that previously worked start failing, or fall
+  back to a lower-quality/public result, export a fresh `cookies.txt` — or
+  switch to **Get cookies from browser** above, if available, to avoid this
+  entirely.
+
+**Applies to both methods above:**
+
 - Cookies are used only by the **download** path (Download & play / external
   tool). Vivace deliberately never sends cookies in **streaming** mode — a
   signed-in stream URL is bound to that session in a way Vivace's plain video
-  player cannot open, so streaming stays anonymous even if a cookies file is
-  configured.
-- Cookies expire. If downloads that previously worked start failing, or fall
-  back to a lower-quality/public result, export a fresh `cookies.txt`.
+  player cannot open, so streaming stays anonymous even if cookies are
+  configured either way.
 
 ## Installing ffmpeg for YouTube downloads
 
@@ -150,8 +217,8 @@ real download URL. Per yt-dlp's own documentation, running without one is
 reduced, and **severely so for a signed-in (cookie) request** — exactly
 the kind of request **Download & play** mode makes to unlock HD,
 members-only, and age-restricted videos. **Streaming** mode never sends
-cookies (see "Exporting cookies for YouTube downloads" above), so it isn't
-the severe case and works fine without Deno in most cases. This is why the
+cookies (see "Cookies for YouTube downloads" above), so it isn't the
+severe case and works fine without Deno in most cases. This is why the
 **Deno path:** field lives under *Preferences ▸ Network ▸ YouTube ▸
 Download & play*, not as a general YouTube setting. yt-dlp supports
 several JS runtimes; Deno is the one it looks for by default.

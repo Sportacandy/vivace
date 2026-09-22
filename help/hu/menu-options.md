@@ -71,17 +71,86 @@ programot:
   **yt-dlp telepítése/frissítése…** gomb szintén le van tiltva ebben a
   módban.
 
-## Cookie-k exportálása YouTube-letöltésekhez
+## A YouTube PO token-szolgáltatójának telepítése
 
-A **Sütifájl:** mező (*Beállítások ▸ Hálózat ▸ YouTube*) lehetővé teszi,
-hogy a **Letöltés és lejátszás** és a **külső eszköz** YouTube-módok úgy
-viselkedjenek, mintha be lennél jelentkezve — ez szükséges a
+Az újabb YouTube-videók egyre gyakrabban megkövetelnek egy **PO
+(proof-of-origin) tokent** már a lejátszáshoz is — ez egy általános
+lejátszhatósági követelmény, függetlenül a sütiktől vagy a
+bejelentkezéstől. Enélkül a yt-dlp elérhetetlennek jelzi a videót, még
+egy hétköznapi, névtelen kérés esetén is. Ez **mindkét** — Adatfolyam és
+Letöltés és lejátszás — módra vonatkozik, ellentétben a sütikkel (csak
+letöltéshez, lásd lent) vagy a Denóval (elsősorban a Letöltés és
+lejátszás módot érinti, lásd lejjebb).
+
+A *Beállítások ▸ Hálózat ▸ YouTube* lapon található a **PO
+token-szolgáltató telepítése…** gomb, amely beállítja a közösségi
+**„BgUtils POT Provider”** projektet: egy kis yt-dlp-bővítményt és egy
+szkriptet — amelyet igény szerint a Deno futtat, ugyanaz a program,
+amelyet lejjebb tárgyalunk —, hogy a yt-dlp automatikusan tudjon
+generálni egy tokent. Kattints rá, várd meg, amíg a rövid letöltési és
+build folyamat befejeződik, és kész is; a gomb felirata **PO
+token-szolgáltató újratelepítése/frissítése…**-re változik, miután
+telepítve lett, arra az esetre, ha egy későbbi frissítésre szükség
+lenne.
+
+**Ne feledd:**
+
+- Ehhez egy működő Deno-telepítés szükséges (lásd lentebb a „Deno
+  telepítése YouTube-letöltésekhez” szakaszt) — a gomb letölti és
+  buildeli a szolgáltató saját szkriptjét, amelyet a yt-dlp aztán a
+  Denón keresztül futtat, amikor egy videónak ténylegesen szüksége van
+  egy tokenre.
+- Nem minden videóhoz szükséges PO token, így a lejátszás enélkül is
+  jól működhet — de ha egy videó elérhetetlennek jelzi magát, miközben
+  máshol rendben lejátszható, érdemes telepíteni ezt.
+- **Androidon** ez a Vivace-hoz van csomagolva, és automatikusan
+  beállításra kerül — nincs mit telepíteni, és nincs hozzá tartozó gomb;
+  egyszerűen működik.
+
+## Cookie-k YouTube-letöltésekhez
+
+A **Letöltés és lejátszás** és a **külső eszköz** YouTube-módok úgy
+tudnak viselkedni, mintha be lennél jelentkezve — ez szükséges a
 korhatáros, csak tagoknak elérhető vagy más módon fiókhoz kötött
-videókhoz, és ez teszi lehetővé a teljes HD/4K letöltéseket is. Egy
-egyszerű szöveges `cookies.txt` fájlt vár a klasszikus Netscape
-süti-formátumban (ugyanaz a formátum, amelyet a yt-dlp saját
-`--cookies` kapcsolója is olvas); a Vivace nem olvassa ki közvetlenül a
-sütiket egy böngésző profiljából.
+videókhoz, és ez teszi lehetővé a teljes HD/4K letöltéseket is. A Vivace
+két módot támogat a sütik megadására (mindkettő a *Beállítások ▸
+Hálózat ▸ YouTube ▸ Letöltés és lejátszás* alatt); Windows/Linux/macOS
+alatt a **Sütik lekérése böngészőből** használatát javasoljuk, hacsak az
+nem működik a te beállításodnál.
+
+### Sütik lekérése böngészőből (ajánlott)
+
+A **Sütik lekérése böngészőből:** legördülő menü a Firefoxot, a Chrome-ot,
+az Edge-et, a Brave-et, a Chromiumot, az Operát, a Safarit, a Vivaldit és
+a Whale-t sorolja fel. Válaszd ki a böngésződet, és a Vivace élőben,
+minden alkalommal beolvassa a sütijeit — nincs mit exportálni, és semmi
+nem évül el.
+
+**Ne feledd:**
+
+- A YouTube jelentősen lerövidítette a saját sütijeinek élettartamát,
+  így egy korábban exportált `cookies.txt` fájl (lásd lent) néhány napon
+  belül elévülhet — ez a lehetőség teljesen elkerüli ezt azáltal, hogy a
+  böngésző saját, mindig aktuális sütitárolóját olvassa.
+- **Windows alatt csak a Firefox működik ténylegesen ehhez.** A Chrome,
+  az Edge és más Chromium-alapú böngészők Windows alatt a böngésző saját
+  futtatható fájljához kötötten titkosítják a sütiket
+  („App-Bound Encryption”, Chrome 127+) — ez megakadályozza, hogy a
+  yt-dlp, és bármely más külső eszköz, egyáltalán beolvassa őket. Ez egy
+  Chrome oldali korlátozás; ezt még a yt-dlp fejlesztői sem tudják
+  megkerülni. A Linuxon és macOS-en futó Chrome/Edge ezt nem érinti.
+- A böngésző kiválasztása itt elsőbbséget élvez a lenti **Sütifájl:**
+  mezővel szemben, ha mindkettő be van állítva.
+- **Androidon nem elérhető** — helyette használd a lenti kézi exportálási
+  módszert.
+
+### Sütik exportálása fájlba (tartalék megoldás, és az egyetlen lehetőség Androidon)
+
+A **Sütifájl:** mező egy egyszerű szöveges `cookies.txt` fájlt vár a
+klasszikus Netscape süti-formátumban (ugyanaz a formátum, amelyet a
+yt-dlp saját `--cookies` kapcsolója is olvas) — akkor használd, ha a
+fenti élő böngészős lehetőség nem elérhető (Android), vagy nem működik a
+böngésződdel (Chrome/Edge Windows alatt).
 
 **Létrehozás menete:**
 
@@ -100,21 +169,32 @@ sütiket egy böngésző profiljából.
    használd a **Sütifájl:** melletti **Tallózás…** gombot a fájl
    kiválasztásához.
 
+**Androidon:** az Android Chrome nem támogatja a böngészőbővítményeket,
+így a fenti 2–3. lépést nem lehet magán az eszközön elvégezni. Exportáld
+a `cookies.txt` fájlt egy asztali vagy laptop számítógépen a fent
+leírtak szerint, majd vidd át azt a fájlt az Android-eszközödre (pl.
+felhőtárhelyen, USB-kábelen vagy e-mailben keresztül), mielőtt a 4.
+lépésben használnád a **Tallózás…** gombot.
+
 **Ne feledd:**
 
 - A `cookies.txt` fájl gyakorlatilag egy elmentett bejelentkezési
   munkamenet — bárki, akinek megvan a fájl, felhasználhatja a YouTube
   fiókodat, amíg a sütik le nem járnak, vagy ki nem jelentkezel. Tárold
   privát helyen, és ne oszd meg senkivel.
+- A sütik lejárnak. Ha a korábban működő letöltések hibázni kezdenek,
+  vagy alacsonyabb minőségű/nyilvános eredményre esnek vissza, exportálj
+  egy friss `cookies.txt` fájlt — vagy válts a fenti **Sütik lekérése
+  böngészőből** lehetőségre, ha elérhető, hogy ezt teljesen elkerüld.
+
+**Mindkét fenti módszerre érvényes:**
+
 - A sütiket csak a **letöltési** útvonal használja (Letöltés és
   lejátszás / külső eszköz). A Vivace szándékosan soha nem küld sütiket
   **Adatfolyam** módban — egy bejelentkezett stream URL úgy kötődik
   ahhoz a munkamenethez, hogy a Vivace egyszerű videólejátszója nem
-  tudja megnyitni, így a streamelés névtelen marad még akkor is, ha be
-  van állítva egy sütifájl.
-- A sütik lejárnak. Ha a korábban működő letöltések hibázni kezdenek,
-  vagy alacsonyabb minőségű/nyilvános eredményre esnek vissza, exportálj
-  egy friss `cookies.txt` fájlt.
+  tudja megnyitni, így a streamelés névtelen marad, függetlenül attól,
+  hogy melyik módszer van beállítva.
 
 ## ffmpeg telepítése YouTube-letöltésekhez
 
@@ -169,7 +249,7 @@ egyszerűen csökken, és ez **különösen súlyos egy bejelentkezett (süti
 alapú) kérés esetén** — pontosan az ilyen típusú kérést használja a
 **Letöltés és lejátszás** mód a HD-, csak tagoknak elérhető és
 korhatáros videók feloldásához. Az **Adatfolyam** mód soha nem küld
-sütiket (lásd a fenti „Cookie-k exportálása YouTube-letöltésekhez”
+sütiket (lásd a fenti „Cookie-k YouTube-letöltésekhez”
 szakaszt), így ez nem a súlyos eset, és a legtöbb esetben Deno nélkül is
 jól működik. Ezért található a **Deno útvonala:** mező a *Beállítások ▸
 Hálózat ▸ YouTube ▸ Letöltés és lejátszás* alatt, nem pedig egy általános

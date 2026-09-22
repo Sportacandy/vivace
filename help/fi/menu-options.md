@@ -68,16 +68,86 @@ YouTube-linkkien toistamiseen käyttämäänsä `yt-dlp`-ohjelmaa:
   hallitse. Myös painike **Asenna/päivitä yt-dlp…** on poissa käytöstä
   tässä tilassa.
 
-## Evästeiden vieminen YouTube-latauksia varten
+## YouTuben PO-token-palveluntarjoajan asentaminen
 
-Kenttä **Evästetiedosto:** (*Asetukset ▸ Verkko ▸ YouTube*) antaa
-YouTube-tiloille **Lataa ja toista** ja **ulkoinen työkalu**
-mahdollisuuden toimia ikään kuin olisit kirjautunut sisään — tarpeen
-ikärajoitetuille, vain jäsenille tarkoitetuille tai muuten tiliin
-sidotuille videoille, ja se on myös se, mikä avaa täydet HD/4K-lataukset.
-Se odottaa pelkkää tekstitiedostoa, `cookies.txt`, klassisessa
-Netscape-evästemuodossa (sama muoto, jota yt-dlpin oma valitsin
-`--cookies` lukee); Vivace ei lue evästeitä suoraan selaimen profiilista.
+Uudet YouTube-videot vaativat yhä useammin **PO-tokenin
+(proof-of-origin)** edes toiston mahdollistamiseksi — yleisen
+toistettavuusvaatimuksen, joka on riippumaton evästeistä tai
+kirjautumisesta. Ilman sitä yt-dlp ilmoittaa videon olevan
+tavoittamattomissa jopa tavallisella, anonyymillä pyynnöllä. Tämä koskee
+**sekä** Suoratoisto- että Lataa ja toista -tiloja, toisin kuin evästeet
+(vain latauksia varten, katso alta) tai Deno (lähinnä Lataa ja toista
+-tilan asia, katso alempaa).
+
+Kohdassa *Asetukset ▸ Verkko ▸ YouTube* on painike **Asenna
+PO-token-palveluntarjoaja…**, joka ottaa käyttöön yhteisön
+**"BgUtils POT Provider"** -projektin: pienen yt-dlp-laajennuksen sekä
+skriptin — joka ajetaan tarvittaessa Denolla, samalla ohjelmalla, jota
+käsitellään alempana — minkä ansiosta yt-dlp voi luoda tokenin
+automaattisesti. Napsauta sitä, odota, että lyhyt lataus- ja
+koontiprosessi valmistuu, ja se on tehty; painikkeen teksti muuttuu
+muotoon **Asenna uudelleen / päivitä PO-token-palveluntarjoaja…**, kun
+se on asennettu, siltä varalta, että myöhempi päivitys on joskus
+tarpeen.
+
+**Muista:**
+
+- Tämä vaatii toimivan Deno-asennuksen (katso "Denon asentaminen
+  YouTube-latauksia varten" alta) — painike lataa ja koontaa
+  palveluntarjoajan oman skriptin, jonka yt-dlp sitten ajaa Denolla aina
+  kun video todella tarvitsee tokenin.
+- Kaikki videot eivät tarvitse PO-tokenia, joten toisto voi toimia hyvin
+  ilman tätä asennusta — mutta jos video ilmoittaa olevansa
+  tavoittamattomissa, vaikka se toimii hyvin muualla, tämän asentaminen
+  kannattaa.
+- **Androidissa** tämä sisältyy Vivaceen ja otetaan käyttöön
+  automaattisesti — mitään ei tarvitse asentaa, eikä vastaavaa painiketta
+  ole; se vain toimii.
+
+## Evästeet YouTube-latauksia varten
+
+YouTube-tilat **Lataa ja toista** ja **ulkoinen työkalu** voivat toimia
+ikään kuin olisit kirjautunut sisään — tarpeen ikärajoitetuille, vain
+jäsenille tarkoitetuille tai muuten tiliin sidotuille videoille, ja se on
+myös se, mikä avaa täydet HD/4K-lataukset. Vivace tukee kahta tapaa
+antaa evästeet (molemmat kohdassa *Asetukset ▸ Verkko ▸ YouTube ▸ Lataa
+ja toista*); Windowsissa/Linuxissa/macOS:ssä **Hae evästeet selaimesta**
+on se, jota kannattaa käyttää, ellei se toimi juuri sinun
+asennuksessasi.
+
+### Hae evästeet selaimesta (suositeltu)
+
+Yhdistelmäruutu **Hae evästeet selaimesta:** listaa Firefoxin, Chromen,
+Edgen, Braven, Chromiumin, Operan, Safarin, Vivaldin ja Whalen. Valitse
+selaimesi, niin Vivace lukee sen evästeet suoraan, joka kerta — ei
+mitään vietävää, ei mitään vanhenevaa.
+
+**Muista:**
+
+- YouTube lyhensi omien evästeidensä elinikää merkittävästi, joten
+  aiemmin viety `cookies.txt`-tiedosto (katso alta) voi vanhentua
+  muutamassa päivässä — tämä vaihtoehto välttää sen kokonaan lukemalla
+  selaimen omaa, aina ajantasaista evästevarastoa.
+- **Windowsissa vain Firefox toimii tässä käytännössä.** Chrome, Edge ja
+  muut Chromium-pohjaiset selaimet Windowsissa salaavat evästeensä
+  tavalla, joka on sidottu selaimen omaan binääritiedostoon
+  ("App-Bound Encryption", Chrome 127+) — tämä estää yt-dlpiä, ja
+  kaikkia muita ulkoisia työkaluja, lukemasta niitä lainkaan. Tämä on
+  Chromen puolelta tuleva rajoitus; yt-dlpin omat kehittäjät eivät voi
+  kiertää sitä. Linuxin ja macOS:n Chrome/Edge eivät kärsi tästä ja
+  toimivat normaalisti.
+- Selaimen valitseminen tässä ohittaa alla olevan **Evästetiedosto:**
+  -kentän, kun molemmat on asetettu.
+- **Ei saatavilla Androidissa** — käytä sen sijaan alla olevaa manuaalista
+  vientitapaa.
+
+### Evästeiden vieminen tiedostoon (varavaihtoehto, ja Androidin ainoa vaihtoehto)
+
+Kenttä **Evästetiedosto:** odottaa pelkkää tekstitiedostoa,
+`cookies.txt`, klassisessa Netscape-evästemuodossa (sama muoto, jota
+yt-dlpin oma valitsin `--cookies` lukee) — käytä tätä, kun yllä oleva
+suoran selainyhteyden vaihtoehto ei ole saatavilla (Android) tai ei
+toimi selaimessasi (Chrome/Edge Windowsissa).
 
 **Näin luot sellaisen:**
 
@@ -94,21 +164,32 @@ Netscape-evästemuodossa (sama muoto, jota yt-dlpin oma valitsin
 4. Avaa Vivacessa *Asetukset ▸ Verkko ▸ YouTube* ja käytä **Selaa…**
    kohdan **Evästetiedosto:** vieressä valitaksesi kyseisen tiedoston.
 
+**Androidissa:** Chrome Androidille ei tue selainlaajennuksia, joten
+yllä olevia vaiheita 2–3 ei voi tehdä itse laitteella. Vie
+`cookies.txt` pöytäkoneella tai kannettavalla tietokoneella yllä
+kuvatulla tavalla ja siirrä sitten tiedosto Android-laitteellesi (esim.
+pilvitallennuksen, USB-kaapelin tai sähköpostin kautta) ennen kuin
+käytät **Selaa…**-toimintoa vaiheessa 4.
+
 **Muista:**
 
 - `Cookies.txt`-tiedosto on käytännössä tallennettu kirjautumisistunto —
   kuka tahansa, jolla on tiedosto, voi toimia YouTube-tilinäsi, kunnes
   evästeet vanhenevat tai kirjaudut ulos. Säilytä sitä yksityisessä
   paikassa äläkä jaa sitä.
+- Evästeet vanhenevat. Jos aiemmin toimineet lataukset alkavat
+  epäonnistua tai palata alempilaatuiseen/julkiseen tulokseen, vie uusi
+  `cookies.txt` — tai vaihda yllä olevaan **Hae evästeet selaimesta**
+  -vaihtoehtoon, jos se on saatavilla, jotta vältät tämän kokonaan.
+
+**Koskee molempia yllä mainittuja tapoja:**
+
 - Evästeitä käytetään vain **lataus**-polulla (Lataa ja toista / ulkoinen
   työkalu). Vivace ei koskaan lähetä evästeitä **suoratoisto**tilassa
   tarkoituksella — kirjautuneen suoratoisto-URL:n on sidottu tähän
   istuntoon tavalla, jota Vivacen yksinkertainen videosoitin ei pysty
-  avaamaan, joten suoratoisto pysyy nimettömänä, vaikka evästetiedosto
-  olisi määritetty.
-- Evästeet vanhenevat. Jos aiemmin toimineet lataukset alkavat
-  epäonnistua tai palata alempilaatuiseen/julkiseen tulokseen, vie uusi
-  `cookies.txt`.
+  avaamaan, joten suoratoisto pysyy nimettömänä riippumatta siitä, kumpi
+  tapa on määritetty.
 
 ## ffmpegin asentaminen YouTube-latauksia varten
 
@@ -160,7 +241,7 @@ mutta ei suoranaisesti epäonnistu: muotojen saatavuus vain vähenee, ja
 **merkittävästi kirjautuneen (evästepohjaisen) pyynnön kohdalla** — juuri
 sellaisen pyynnön, jonka **Lataa ja toista** -tila tekee avatakseen
 HD-, jäsen- ja ikärajoitetut videot. **Suoratoisto**-tila ei koskaan
-lähetä evästeitä (katso yllä oleva "Evästeiden vieminen YouTube-latauksia
+lähetä evästeitä (katso yllä oleva "Evästeet YouTube-latauksia
 varten"), joten se ei ole tämä vakavampi tapaus, ja se toimii useimmiten
 hyvin ilman Denoa. Tästä syystä kenttä **Deno-polku:** sijaitsee kohdassa
 *Asetukset ▸ Verkko ▸ YouTube ▸ Lataa ja toista* eikä yleisenä
