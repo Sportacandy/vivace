@@ -69,6 +69,14 @@ void YoutubeResolver::setCookiesFile(const QString &path)
     emit cookiesFileChanged();
 }
 
+void YoutubeResolver::setCookiesFromBrowser(const QString &browser)
+{
+    if (browser == m_cookiesFromBrowser)
+        return;
+    m_cookiesFromBrowser = browser;
+    emit cookiesFromBrowserChanged();
+}
+
 void YoutubeResolver::setFfmpegLocation(const QString &path)
 {
     if (path == m_ffmpegLocation)
@@ -375,7 +383,15 @@ void YoutubeResolver::startDownload(const QString &requestUrl)
                          QStringLiteral("--convert-thumbnails"),
                          QStringLiteral("jpg"),
                          QStringLiteral("-o"), outTemplate };
-    if (!m_cookiesFile.isEmpty())
+    // cookiesFromBrowser (a LIVE browser's own cookie store) takes priority
+    // over a static exported cookiesFile -- YouTube's own cookie lifetimes
+    // got much shorter, so an exported file goes stale quickly, while
+    // re-reading a live browser's store doesn't. yt-dlp itself accepts only
+    // one cookie source per invocation, so these are mutually exclusive, not
+    // combined.
+    if (!m_cookiesFromBrowser.isEmpty())
+        args << QStringLiteral("--cookies-from-browser") << m_cookiesFromBrowser;
+    else if (!m_cookiesFile.isEmpty())
         args << QStringLiteral("--cookies") << m_cookiesFile;
     if (!m_ffmpegLocation.isEmpty())
         args << QStringLiteral("--ffmpeg-location") << m_ffmpegLocation;

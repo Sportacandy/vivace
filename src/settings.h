@@ -216,6 +216,17 @@ class Settings : public QObject
     // the separate HD video+audio streams; empty = rely on PATH).
     Q_PROPERTY(QString youtubeCookiesFile READ youtubeCookiesFile
                WRITE setYoutubeCookiesFile NOTIFY youtubeChanged)
+    // Read cookies live from an installed browser's own cookie store instead
+    // of a static exported file (yt-dlp --cookies-from-browser <name>) --
+    // empty disables this and falls back to youtubeCookiesFile above. Added
+    // because YouTube's own cookie lifetimes got much shorter, making a
+    // once-exported cookies.txt go stale quickly; re-reading a live browser's
+    // store avoids needing to re-export by hand. One of "firefox", "chrome",
+    // "edge", "brave", "chromium", "opera", "safari", "vivaldi", "whale" (see
+    // PrefNetworkPage.qml's combo) -- takes priority over youtubeCookiesFile
+    // when set (see YoutubeResolver::startResolve()/startDownload()).
+    Q_PROPERTY(QString youtubeCookiesFromBrowser READ youtubeCookiesFromBrowser
+               WRITE setYoutubeCookiesFromBrowser NOTIFY youtubeChanged)
     Q_PROPERTY(QString youtubeFfmpegLocation READ youtubeFfmpegLocation
                WRITE setYoutubeFfmpegLocation NOTIFY youtubeChanged)
     // Path to Deno (or empty to rely on PATH): yt-dlp's own external
@@ -613,6 +624,8 @@ public:
     void setYoutubeMode(int mode);
     QString youtubeCookiesFile() const { return m_youtubeCookiesFile; }
     void setYoutubeCookiesFile(const QString &path);
+    QString youtubeCookiesFromBrowser() const { return m_youtubeCookiesFromBrowser; }
+    void setYoutubeCookiesFromBrowser(const QString &browser);
     QString youtubeFfmpegLocation() const { return m_youtubeFfmpegLocation; }
     void setYoutubeFfmpegLocation(const QString &path);
     QString youtubeDenoLocation() const { return m_youtubeDenoLocation; }
@@ -1080,6 +1093,7 @@ private:
     int m_youtubeQuality;
     int m_youtubeMode;
     QString m_youtubeCookiesFile;
+    QString m_youtubeCookiesFromBrowser;
     QString m_youtubeFfmpegLocation;
     QString m_youtubeDenoLocation;
     QString m_youtubeCacheDir;

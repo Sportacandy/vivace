@@ -50,6 +50,13 @@ ColumnLayout {
         + "which never sends cookies, is largely unaffected and doesn't need "
         + "Deno. Install Deno yourself and, if it is not on the PATH, set its "
         + "full path in the Download & play settings.</p>"
+        + "<p>Since YouTube shortened its own cookie lifetimes, an exported "
+        + "cookies.txt file can go stale within days. <b>Get cookies from "
+        + "browser</b> reads them live from an installed browser instead, "
+        + "so there's nothing to re-export. On Windows, only Firefox works "
+        + "here — Chrome/Edge's own \"App-Bound Encryption\" blocks every "
+        + "external tool, including yt-dlp, from reading their cookies at "
+        + "all; Linux and macOS Chrome/Edge are unaffected.</p>"
         + "<p>See <b>Help ▸ Contents ▸ Options</b> for step-by-step "
         + "instructions on exporting a cookies.txt file from your browser, and "
         + "on installing Deno.</p>"
@@ -413,6 +420,49 @@ ColumnLayout {
                                     onEditingFinished: Settings.youtubeCookiesFile = text
                                 }
                                 Button { text: qsTr("Browse…"); onClicked: cookiesFileDialog.open() }
+                            }
+
+                            RowLayout {
+                                spacing: 6
+                                visible: Qt.platform.os !== "android"
+                                Label { text: qsTr("Get cookies from browser:") }
+                                HelpMark { text: qsTr("Reads cookies live from an installed "
+                                                      + "browser instead of the file above — "
+                                                      + "recommended, since YouTube's cookie "
+                                                      + "lifetimes are now much shorter, making "
+                                                      + "an exported cookies.txt go stale within "
+                                                      + "days. Takes priority over the cookies "
+                                                      + "file when set. On Windows, only Firefox "
+                                                      + "actually works here: Chrome/Edge encrypt "
+                                                      + "cookies in a way tied to the browser's "
+                                                      + "own binary (\"App-Bound Encryption\"), "
+                                                      + "which blocks yt-dlp (and every other "
+                                                      + "external tool) from reading them at all — "
+                                                      + "this is a Chrome-side restriction yt-dlp's "
+                                                      + "own developers can't work around. Linux "
+                                                      + "and macOS Chrome/Edge are unaffected.") }
+                            }
+                            ComboBox {
+                                Layout.fillWidth: true
+                                visible: Qt.platform.os !== "android"
+                                readonly property var browserValues: [
+                                    "", "firefox", "chrome", "edge", "brave",
+                                    "chromium", "opera", "safari", "vivaldi", "whale"
+                                ]
+                                model: [
+                                    qsTr("Off (use the cookies file above)"),
+                                    qsTr("Firefox (recommended)"),
+                                    qsTr("Chrome"),
+                                    qsTr("Edge"),
+                                    qsTr("Brave"),
+                                    qsTr("Chromium"),
+                                    qsTr("Opera"),
+                                    qsTr("Safari"),
+                                    qsTr("Vivaldi"),
+                                    qsTr("Whale")
+                                ]
+                                currentIndex: browserValues.indexOf(Settings.youtubeCookiesFromBrowser)
+                                onActivated: Settings.youtubeCookiesFromBrowser = browserValues[currentIndex]
                             }
 
                             RowLayout {

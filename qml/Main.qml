@@ -1525,6 +1525,7 @@ ApplicationWindow {
         ytdlPath: Settings.ytdlPath
         preferredHeight: Settings.youtubeQuality
         cookiesFile: Settings.youtubeCookiesFile
+        cookiesFromBrowser: Settings.youtubeCookiesFromBrowser
         ffmpegLocation: Settings.youtubeFfmpegLocation
         denoLocation: Settings.youtubeDenoLocation
         cacheDir: Settings.youtubeCacheDir

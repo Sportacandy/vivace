@@ -74,6 +74,7 @@ constexpr auto youtubeUseManagedYtdlp = "youtube/useManagedYtdlp";
 constexpr auto youtubeQuality = "youtube/quality";
 constexpr auto youtubeMode = "youtube/mode";
 constexpr auto youtubeCookiesFile = "youtube/cookiesFile";
+constexpr auto youtubeCookiesFromBrowser = "youtube/cookiesFromBrowser";
 constexpr auto youtubeFfmpegLocation = "youtube/ffmpegLocation";
 constexpr auto youtubeDenoLocation = "youtube/denoLocation";
 constexpr auto youtubeCacheDir = "youtube/cacheDir";
@@ -329,6 +330,7 @@ Settings::Settings(QObject *parent)
       m_youtubeQuality(m_store.value(Keys::youtubeQuality, 720).toInt()),
       m_youtubeMode(qBound(0, m_store.value(Keys::youtubeMode, 0).toInt(), 2)),
       m_youtubeCookiesFile(m_store.value(Keys::youtubeCookiesFile).toString()),
+      m_youtubeCookiesFromBrowser(m_store.value(Keys::youtubeCookiesFromBrowser).toString()),
       m_youtubeFfmpegLocation(
               m_store.value(Keys::youtubeFfmpegLocation).toString()),
       m_youtubeDenoLocation(
@@ -1354,6 +1356,15 @@ void Settings::setYoutubeCookiesFile(const QString &path)
         return;
     m_youtubeCookiesFile = path;
     m_store.setValue(Keys::youtubeCookiesFile, path);
+    emit youtubeChanged();
+}
+
+void Settings::setYoutubeCookiesFromBrowser(const QString &browser)
+{
+    if (browser == m_youtubeCookiesFromBrowser)
+        return;
+    m_youtubeCookiesFromBrowser = browser;
+    m_store.setValue(Keys::youtubeCookiesFromBrowser, browser);
     emit youtubeChanged();
 }
 

@@ -46,6 +46,26 @@ class YoutubeResolver : public QObject
     // location yt-dlp needs to merge separate HD video+audio (empty = PATH).
     Q_PROPERTY(QString cookiesFile READ cookiesFile WRITE setCookiesFile
                        NOTIFY cookiesFileChanged)
+    // Read cookies live from an installed browser instead of a static
+    // exported file (yt-dlp --cookies-from-browser <name>) -- takes priority
+    // over cookiesFile when non-empty. DOWNLOAD MODE ONLY, same as
+    // cookiesFile itself -- streaming deliberately never sends cookies at
+    // all (see the class doc comment above and startResolve()'s own code:
+    // a cookie-authenticated URL carries extra signed params QMediaPlayer's
+    // FFmpeg backend can't open; this applies just as much to a live
+    // browser's cookies as to an exported file, so it stays out of
+    // startResolve() entirely, only used in startDownload()).
+    // Added because YouTube's own cookie lifetimes got much shorter, making a
+    // once-exported cookies.txt go stale quickly. NOTE: on Windows, this only
+    // actually works for Firefox -- Chrome/Edge's "App-Bound Encryption"
+    // (Chrome 127+, mid-2024) ties cookie decryption to the Chrome binary
+    // itself, blocking every external reader including yt-dlp (confirmed via
+    // yt-dlp's own issue tracker, still open, tagged "external-issue" by the
+    // maintainers -- i.e. not something yt-dlp itself can fix). Linux/macOS
+    // Chrome/Edge are unaffected (weaker/no OS-level encryption, or Keychain,
+    // both of which yt-dlp already handles).
+    Q_PROPERTY(QString cookiesFromBrowser READ cookiesFromBrowser
+                       WRITE setCookiesFromBrowser NOTIFY cookiesFromBrowserChanged)
     Q_PROPERTY(QString ffmpegLocation READ ffmpegLocation WRITE setFfmpegLocation
                        NOTIFY ffmpegLocationChanged)
     // Path to the Deno executable yt-dlp uses to solve YouTube's JavaScript
@@ -107,6 +127,8 @@ public:
     void setPreferredHeight(int height);
     QString cookiesFile() const { return m_cookiesFile; }
     void setCookiesFile(const QString &path);
+    QString cookiesFromBrowser() const { return m_cookiesFromBrowser; }
+    void setCookiesFromBrowser(const QString &browser);
     QString ffmpegLocation() const { return m_ffmpegLocation; }
     void setFfmpegLocation(const QString &path);
     QString denoLocation() const { return m_denoLocation; }
@@ -193,6 +215,7 @@ signals:
     void ytdlPathChanged();
     void preferredHeightChanged();
     void cookiesFileChanged();
+    void cookiesFromBrowserChanged();
     void ffmpegLocationChanged();
     void denoLocationChanged();
     void cacheDirChanged();
@@ -265,6 +288,7 @@ private:
     QString m_ytdlPath = QStringLiteral("yt-dlp");
     int m_preferredHeight = 720;
     QString m_cookiesFile;
+    QString m_cookiesFromBrowser;
     QString m_ffmpegLocation;
     QString m_denoLocation;
     QString m_cacheDir;

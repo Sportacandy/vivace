@@ -79,10 +79,6 @@
         <translation>Інтерфейс Vivace доступний %1 мовами, окрім англійської. Японська перекладена найповніше (вручну); більшість інших поєднують переклади, перенесені з %2, з машинним перекладом, тому якість різниться — перевірка носіями мови вітається.</translation>
     </message>
     <message>
-        <source>Vivace is not translated yet. Localization is planned for a later phase; contributions will be credited here.</source>
-        <translation type="vanished">Vivace ще не перекладено. Локалізацію заплановано на пізніший етап; внесок учасників буде зазначено тут.</translation>
-    </message>
-    <message>
         <location filename="../qml/AboutDialog.qml" line="233"/>
         <source>This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.</source>
         <translation type="unfinished"></translation>
@@ -421,218 +417,218 @@
 <context>
     <name>ControlBar</name>
     <message>
-        <location filename="../qml/ControlBar.qml" line="47"/>
+        <location filename="../qml/ControlBar.qml" line="51"/>
         <source>Auto</source>
         <translation>Автоматично</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="477"/>
+        <location filename="../qml/ControlBar.qml" line="487"/>
         <source>Normal speed</source>
         <translation>Звичайна швидкість</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="483"/>
+        <location filename="../qml/ControlBar.qml" line="493"/>
         <source>Halve speed</source>
         <translation>Зменшити швидкість удвічі</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="488"/>
+        <location filename="../qml/ControlBar.qml" line="498"/>
         <source>Double speed</source>
         <translation>Подвійна &amp;швидкість</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="494"/>
+        <location filename="../qml/ControlBar.qml" line="504"/>
         <source>Speed -10%</source>
         <translation>Швидкість &amp;-10%</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="499"/>
+        <location filename="../qml/ControlBar.qml" line="509"/>
         <source>Speed +10%</source>
         <translation>Швидкість &amp;+10%</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="504"/>
+        <location filename="../qml/ControlBar.qml" line="514"/>
         <source>Speed -4%</source>
         <translation>Швидкість -&amp;4%</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="505"/>
+        <location filename="../qml/ControlBar.qml" line="515"/>
         <source>Speed +4%</source>
         <translation>Ш&amp;видкість +4%</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="507"/>
+        <location filename="../qml/ControlBar.qml" line="517"/>
         <source>Speed -1%</source>
         <translation>Швидкість -&amp;1%</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="508"/>
+        <location filename="../qml/ControlBar.qml" line="518"/>
         <source>Speed +1%</source>
         <translation>Шви&amp;дкість +1%</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="511"/>
+        <location filename="../qml/ControlBar.qml" line="521"/>
         <source>Pitch compensation</source>
         <translation>Компенсація &amp;висоти тону</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="525"/>
-        <location filename="../qml/ControlBar.qml" line="635"/>
-        <location filename="../qml/ControlBar.qml" line="655"/>
+        <location filename="../qml/ControlBar.qml" line="535"/>
+        <location filename="../qml/ControlBar.qml" line="645"/>
+        <location filename="../qml/ControlBar.qml" line="665"/>
         <source>&lt;empty&gt;</source>
         <translation>&lt;нема&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="569"/>
+        <location filename="../qml/ControlBar.qml" line="579"/>
         <source>&amp;None</source>
         <translation>&amp;Нема</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="578"/>
+        <location filename="../qml/ControlBar.qml" line="588"/>
         <source>&amp;Rotate by 90° clockwise</source>
         <translation>&amp;Повернути на 90° за годинниковою стрілкою</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="587"/>
+        <location filename="../qml/ControlBar.qml" line="597"/>
         <source>Rotate by 90° &amp;counterclockwise</source>
         <translation>Повернути на 90° &amp;проти годинникової стрілки</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="596"/>
+        <location filename="../qml/ControlBar.qml" line="606"/>
         <source>Rotate by &amp;180°</source>
         <translation>Повернути на &amp;180°</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="607"/>
+        <location filename="../qml/ControlBar.qml" line="617"/>
         <source>50%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="608"/>
+        <location filename="../qml/ControlBar.qml" line="618"/>
         <source>100%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="609"/>
+        <location filename="../qml/ControlBar.qml" line="619"/>
         <source>200%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="667"/>
+        <location filename="../qml/ControlBar.qml" line="677"/>
         <source>&amp;Add new bookmark</source>
         <translation>&amp;Додати нову закладку</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="672"/>
+        <location filename="../qml/ControlBar.qml" line="682"/>
         <source>&amp;Edit bookmarks…</source>
         <translation>&amp;Змінити закладки…</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="705"/>
+        <location filename="../qml/ControlBar.qml" line="715"/>
         <source>(empty)</source>
         <translation>(порожньо)</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="711"/>
+        <location filename="../qml/ControlBar.qml" line="721"/>
         <source>Clear</source>
         <translation>Очистити</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="718"/>
+        <location filename="../qml/ControlBar.qml" line="728"/>
         <source>Reset</source>
         <translation>&amp;Скинути</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="719"/>
+        <location filename="../qml/ControlBar.qml" line="729"/>
         <source>Zoom -</source>
         <translation>Зменшити -</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="720"/>
+        <location filename="../qml/ControlBar.qml" line="730"/>
         <source>Zoom +</source>
         <translation>Збільшити +</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="722"/>
+        <location filename="../qml/ControlBar.qml" line="732"/>
         <source>Move left</source>
         <translation>Посунути &amp;ліворуч</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="723"/>
+        <location filename="../qml/ControlBar.qml" line="733"/>
         <source>Move right</source>
         <translation>Посунути &amp;праворуч</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="724"/>
+        <location filename="../qml/ControlBar.qml" line="734"/>
         <source>Move up</source>
         <translation>Посунути &amp;догори</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="725"/>
+        <location filename="../qml/ControlBar.qml" line="735"/>
         <source>Move down</source>
         <translation>&amp;Посунути донизу</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="730"/>
+        <location filename="../qml/ControlBar.qml" line="740"/>
         <source>Contents</source>
         <translation>Зміст</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="736"/>
+        <location filename="../qml/ControlBar.qml" line="746"/>
         <source>Check for updates</source>
         <translation>Перевірити оновлення</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="742"/>
+        <location filename="../qml/ControlBar.qml" line="752"/>
         <source>About Vivace</source>
         <translation>Про Vivace</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="840"/>
-        <location filename="../qml/ControlBar.qml" line="846"/>
-        <location filename="../qml/ControlBar.qml" line="852"/>
+        <location filename="../qml/ControlBar.qml" line="850"/>
+        <location filename="../qml/ControlBar.qml" line="856"/>
+        <location filename="../qml/ControlBar.qml" line="862"/>
         <source>Rewind %1 s</source>
         <translation>Назад на %1 с</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="858"/>
-        <location filename="../qml/ControlBar.qml" line="864"/>
-        <location filename="../qml/ControlBar.qml" line="870"/>
+        <location filename="../qml/ControlBar.qml" line="868"/>
+        <location filename="../qml/ControlBar.qml" line="874"/>
+        <location filename="../qml/ControlBar.qml" line="880"/>
         <source>Forward %1 s</source>
         <translation>Вперед на %1 с</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="1067"/>
+        <location filename="../qml/ControlBar.qml" line="1077"/>
         <source>Error: %1</source>
         <translation>Помилка: %1</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="1070"/>
+        <location filename="../qml/ControlBar.qml" line="1080"/>
         <source>Playing %1</source>
         <translation>Відтворення %1</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="1075"/>
+        <location filename="../qml/ControlBar.qml" line="1085"/>
         <source>Paused</source>
         <translation>Призупинено</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="1077"/>
+        <location filename="../qml/ControlBar.qml" line="1087"/>
         <source>Stopped</source>
         <translation>Зупинено</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="1122"/>
+        <location filename="../qml/ControlBar.qml" line="1132"/>
         <source>V: %1 kbps</source>
         <translation>В: %1 кбіт/с</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="1123"/>
+        <location filename="../qml/ControlBar.qml" line="1133"/>
         <source>A: %1 kbps</source>
         <translation>А: %1 кбіт/с</translation>
     </message>
     <message>
-        <location filename="../qml/ControlBar.qml" line="1135"/>
+        <location filename="../qml/ControlBar.qml" line="1145"/>
         <source>Frame: %1</source>
         <translation>Кадр: %1</translation>
     </message>
@@ -756,17 +752,17 @@
 <context>
     <name>FavoritesMenu</name>
     <message>
-        <location filename="../qml/FavoritesMenu.qml" line="122"/>
+        <location filename="../qml/FavoritesMenu.qml" line="138"/>
         <source>(empty)</source>
         <translation>(порожньо)</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesMenu.qml" line="132"/>
+        <location filename="../qml/FavoritesMenu.qml" line="148"/>
         <source>&amp;Edit…</source>
         <translation>&amp;Змінити...</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesMenu.qml" line="139"/>
+        <location filename="../qml/FavoritesMenu.qml" line="155"/>
         <source>&amp;Add current media</source>
         <translation>&amp;Додати поточне медіа</translation>
     </message>
@@ -934,316 +930,318 @@
     <name>Main</name>
     <message>
         <location filename="../qml/Main.qml" line="433"/>
-        <location filename="../qml/Main.qml" line="485"/>
-        <location filename="../qml/Main.qml" line="2086"/>
-        <location filename="../qml/Main.qml" line="2212"/>
+        <location filename="../qml/Main.qml" line="486"/>
+        <location filename="../qml/Main.qml" line="2151"/>
+        <location filename="../qml/Main.qml" line="2279"/>
         <source>TV editor</source>
         <translation>Редактор ТБ</translation>
     </message>
     <message>
         <location filename="../qml/Main.qml" line="433"/>
-        <location filename="../qml/Main.qml" line="485"/>
-        <location filename="../qml/Main.qml" line="2086"/>
-        <location filename="../qml/Main.qml" line="2212"/>
+        <location filename="../qml/Main.qml" line="486"/>
+        <location filename="../qml/Main.qml" line="2151"/>
+        <location filename="../qml/Main.qml" line="2279"/>
         <source>TV channels</source>
         <translation>Телеканали</translation>
     </message>
     <message>
         <location filename="../qml/Main.qml" line="436"/>
-        <location filename="../qml/Main.qml" line="488"/>
-        <location filename="../qml/Main.qml" line="2089"/>
-        <location filename="../qml/Main.qml" line="2215"/>
+        <location filename="../qml/Main.qml" line="489"/>
+        <location filename="../qml/Main.qml" line="2154"/>
+        <location filename="../qml/Main.qml" line="2282"/>
         <source>Radio editor</source>
         <translation>Редактор радіо</translation>
     </message>
     <message>
         <location filename="../qml/Main.qml" line="436"/>
-        <location filename="../qml/Main.qml" line="488"/>
-        <location filename="../qml/Main.qml" line="2089"/>
-        <location filename="../qml/Main.qml" line="2215"/>
+        <location filename="../qml/Main.qml" line="489"/>
+        <location filename="../qml/Main.qml" line="2154"/>
+        <location filename="../qml/Main.qml" line="2282"/>
         <source>Radio channels</source>
         <translation>Радіостанції</translation>
     </message>
     <message>
         <location filename="../qml/Main.qml" line="439"/>
-        <location filename="../qml/Main.qml" line="480"/>
+        <location filename="../qml/Main.qml" line="481"/>
         <source>Favorite editor</source>
         <translation>Редагувач улюблених</translation>
     </message>
     <message>
         <location filename="../qml/Main.qml" line="439"/>
-        <location filename="../qml/Main.qml" line="480"/>
+        <location filename="../qml/Main.qml" line="481"/>
         <source>Favorite list</source>
         <translation>Перелік улюблених</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="443"/>
-        <location filename="../qml/Main.qml" line="498"/>
-        <location filename="../qml/Main.qml" line="2099"/>
-        <location filename="../qml/Main.qml" line="2225"/>
+        <location filename="../qml/Main.qml" line="444"/>
+        <location filename="../qml/Main.qml" line="500"/>
+        <location filename="../qml/Main.qml" line="2165"/>
+        <location filename="../qml/Main.qml" line="2293"/>
         <source>Bookmark added</source>
         <translation>Закладку додано</translation>
     </message>
     <message>
-        <source>Edit main toolbar</source>
-        <translation type="vanished">&amp;Змінити головну панель</translation>
-    </message>
-    <message>
-        <source>Edit control bar</source>
-        <translation type="vanished">Змінити панель &amp;керування</translation>
-    </message>
-    <message>
-        <location filename="../qml/Main.qml" line="510"/>
+        <location filename="../qml/Main.qml" line="512"/>
         <source>Screenshot saved as %1</source>
         <translation>Зняток збережено як %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="511"/>
+        <location filename="../qml/Main.qml" line="513"/>
         <source>Could not take the screenshot</source>
         <translation>Не вдалося зробити знімок екрана</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="642"/>
+        <location filename="../qml/Main.qml" line="644"/>
         <source>Tap Open &gt; File… to choose media</source>
         <translation>Торкніться Відкрити &gt; Файл..., щоб вибрати медіафайл</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="643"/>
+        <location filename="../qml/Main.qml" line="645"/>
         <source>Drop media files here, or press Ctrl+O</source>
         <translation>Перетягніть медіафайли сюди або натисніть Ctrl+O</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="730"/>
+        <location filename="../qml/Main.qml" line="733"/>
         <source>Downloading video…</source>
         <translation>Завантаження відео…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="737"/>
+        <location filename="../qml/Main.qml" line="741"/>
+        <source>This can take a while — Vivace is downloading and merging HD video and audio.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/Main.qml" line="743"/>
         <source>This can take a while — the external tool is downloading and merging HD video and audio.</source>
         <translation>Це може зайняти деякий час — зовнішній інструмент завантажує та об&apos;єднує HD-відео й звук.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="751"/>
-        <location filename="../qml/Main.qml" line="1841"/>
+        <location filename="../qml/Main.qml" line="757"/>
+        <location filename="../qml/Main.qml" line="1906"/>
         <source>Cancel</source>
         <translation>Скасувати</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="824"/>
+        <location filename="../qml/Main.qml" line="832"/>
         <source>Loading…</source>
         <translation>Завантаження…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="825"/>
+        <location filename="../qml/Main.qml" line="833"/>
         <source>Connecting…</source>
         <translation>З&apos;єднання...</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="826"/>
+        <location filename="../qml/Main.qml" line="834"/>
         <source>Buffering… %1%</source>
         <translation>Буферизація… %1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="834"/>
+        <location filename="../qml/Main.qml" line="842"/>
         <source>Live streams can take several seconds to start.</source>
         <translation>Прямі трансляції можуть запускатися кілька секунд.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="869"/>
+        <location filename="../qml/Main.qml" line="877"/>
         <source>Volume: %1%</source>
         <translation>Гучність: %1%</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="872"/>
+        <location filename="../qml/Main.qml" line="880"/>
         <source>Mute</source>
         <translation>Вимкнути звук</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="872"/>
+        <location filename="../qml/Main.qml" line="880"/>
         <source>Mute off</source>
         <translation>Звук увімкнено</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="875"/>
+        <location filename="../qml/Main.qml" line="883"/>
         <source>Speed: %1x</source>
         <translation>Швидкість: %1x</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1419"/>
+        <location filename="../qml/Main.qml" line="1427"/>
         <source>Media files (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1420"/>
-        <location filename="../qml/Main.qml" line="1490"/>
-        <location filename="../qml/Main.qml" line="1760"/>
+        <location filename="../qml/Main.qml" line="1428"/>
+        <location filename="../qml/Main.qml" line="1498"/>
+        <location filename="../qml/Main.qml" line="1825"/>
         <source>All files (*)</source>
         <translation>Усі файли (*)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1462"/>
+        <location filename="../qml/Main.qml" line="1470"/>
         <source>Select the DVD drive or a folder containing VIDEO_TS</source>
         <translation>Виберіть привід DVD або теку з VIDEO_TS</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1466"/>
+        <location filename="../qml/Main.qml" line="1474"/>
         <source>No DVD video found in %1</source>
         <translation>Відео DVD не знайдено в %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1474"/>
+        <location filename="../qml/Main.qml" line="1482"/>
         <source>Select the Blu-ray drive or a folder containing BDMV</source>
         <translation>Виберіть привід Blu-ray або теку з BDMV</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1478"/>
+        <location filename="../qml/Main.qml" line="1486"/>
         <source>No Blu-ray video found in %1</source>
         <translation>Відео Blu-ray не знайдено в %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1489"/>
+        <location filename="../qml/Main.qml" line="1497"/>
         <source>Playlists (*.m3u *.m3u8)</source>
         <translation>Списки відтворення (*.m3u *.m3u8)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1532"/>
+        <location filename="../qml/Main.qml" line="1541"/>
+        <location filename="../qml/Main.qml" line="1579"/>
         <source>Playing stream</source>
         <translation>Відтворення потоку</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1538"/>
-        <location filename="../qml/Main.qml" line="1571"/>
+        <location filename="../qml/Main.qml" line="1547"/>
+        <location filename="../qml/Main.qml" line="1588"/>
+        <location filename="../qml/Main.qml" line="1620"/>
         <source>Playing downloaded video</source>
         <translation>Відтворення завантаженого відео</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1542"/>
+        <location filename="../qml/Main.qml" line="1551"/>
+        <location filename="../qml/Main.qml" line="1591"/>
         <source>YouTube: %1</source>
         <translation>YouTube: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1575"/>
+        <location filename="../qml/Main.qml" line="1624"/>
         <source>Download failed: %1</source>
         <translation>Не вдалося завантажити: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1672"/>
+        <location filename="../qml/Main.qml" line="1726"/>
         <source>Saved %1 file(s); %2 failed.</source>
         <translation>Збережено файлів: %1; помилок: %2.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1676"/>
+        <location filename="../qml/Main.qml" line="1730"/>
         <source>Saved %1 file(s).</source>
         <translation>Збережено файлів: %1.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1689"/>
+        <location filename="../qml/Main.qml" line="1743"/>
         <source>Could not read the shortcut file.</source>
         <translation>Не вдалося прочитати файл ярлика.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1702"/>
-        <source>YouTube playback isn&apos;t supported on Android.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/Main.qml" line="1713"/>
+        <location filename="../qml/Main.qml" line="1778"/>
         <source>Starting download…</source>
         <translation>Початок завантаження…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1714"/>
+        <location filename="../qml/Main.qml" line="1763"/>
+        <location filename="../qml/Main.qml" line="1779"/>
         <source>Downloading video (this can take a while)…</source>
         <translation>Завантаження відео (це може зайняти деякий час)…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1718"/>
+        <location filename="../qml/Main.qml" line="1759"/>
+        <source>YouTube playback isn&apos;t supported on this device.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/Main.qml" line="1766"/>
+        <location filename="../qml/Main.qml" line="1783"/>
         <source>Resolving with yt-dlp…</source>
         <translation>Обробка через yt-dlp…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1755"/>
+        <location filename="../qml/Main.qml" line="1820"/>
         <source>Load subtitle file</source>
         <translation>Завантажити файл субтитрів</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1759"/>
+        <location filename="../qml/Main.qml" line="1824"/>
         <source>Subtitle files (*.srt *.vtt *.ass *.ssa)</source>
         <translation>Файли субтитрів (*.srt *.vtt *.ass *.ssa)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1767"/>
+        <location filename="../qml/Main.qml" line="1832"/>
         <source>Subtitle delay</source>
         <translation>Затримка субтитрів</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1818"/>
+        <location filename="../qml/Main.qml" line="1883"/>
         <source>Delay:</source>
         <translation>Затримка:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1824"/>
-        <location filename="../qml/Main.qml" line="1914"/>
+        <location filename="../qml/Main.qml" line="1889"/>
+        <location filename="../qml/Main.qml" line="1979"/>
         <source>ms</source>
         <translation>мс</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1834"/>
+        <location filename="../qml/Main.qml" line="1899"/>
         <source>OK</source>
         <translation>&amp;OK</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1853"/>
+        <location filename="../qml/Main.qml" line="1918"/>
         <source>Audio delay — Vivace</source>
         <translation>Затримка звуку — Vivace</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1902"/>
+        <location filename="../qml/Main.qml" line="1967"/>
         <source>No delay for this file (use the global delay only)</source>
         <translation>Без затримки для цього файлу (використовувати лише глобальну затримку)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1907"/>
+        <location filename="../qml/Main.qml" line="1972"/>
         <source>This file&apos;s delay:</source>
         <translation>Затримка цього файлу:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1922"/>
+        <location filename="../qml/Main.qml" line="1987"/>
         <source>The delay applied to this file is this value plus the global delay for the current audio device (%1 ms), set in Preferences &gt; General &gt; Audio. Negative values delay the video to match audio that arrives late (e.g. Bluetooth headphones).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1935"/>
+        <location filename="../qml/Main.qml" line="2000"/>
         <source>&amp;Apply</source>
         <translation>&amp;Застосувати</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1944"/>
+        <location filename="../qml/Main.qml" line="2009"/>
         <source>&amp;Close</source>
         <translation>&amp;Закрити</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2028"/>
+        <location filename="../qml/Main.qml" line="2093"/>
         <source>Hide window</source>
         <translation>Сховати вікно</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2028"/>
+        <location filename="../qml/Main.qml" line="2093"/>
         <source>Show window</source>
         <translation>Показати вікно</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2033"/>
+        <location filename="../qml/Main.qml" line="2098"/>
         <source>Play / Pause</source>
         <translation>Відтворити / Призупинити</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2037"/>
+        <location filename="../qml/Main.qml" line="2102"/>
         <source>Stop</source>
         <translation>Зупинено</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2042"/>
+        <location filename="../qml/Main.qml" line="2107"/>
         <source>Quit</source>
         <translation>&amp;Вийти</translation>
     </message>
@@ -1251,12 +1249,12 @@
 <context>
     <name>MainMenuBar</name>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="61"/>
+        <location filename="../qml/MainMenuBar.qml" line="66"/>
         <source>&amp;Auto</source>
         <translation>&amp;Автоматично</translation>
     </message>
     <message numerus="yes">
-        <location filename="../qml/MainMenuBar.qml" line="91"/>
+        <location filename="../qml/MainMenuBar.qml" line="96"/>
         <source>%n minute(s)</source>
         <translation type="unfinished">
             <numerusform></numerusform>
@@ -1265,7 +1263,7 @@
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../qml/MainMenuBar.qml" line="92"/>
+        <location filename="../qml/MainMenuBar.qml" line="97"/>
         <source>%n second(s)</source>
         <translation type="unfinished">
             <numerusform></numerusform>
@@ -1274,663 +1272,575 @@
         </translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="124"/>
+        <location filename="../qml/MainMenuBar.qml" line="129"/>
         <source>&amp;Open</source>
         <translation>&amp;Відкрити</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="127"/>
+        <location filename="../qml/MainMenuBar.qml" line="132"/>
         <source>&amp;File…</source>
         <translation>&amp;Файл...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="134"/>
+        <location filename="../qml/MainMenuBar.qml" line="139"/>
         <source>&amp;Recent files</source>
         <translation>&amp;Останні файли</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="156"/>
+        <location filename="../qml/MainMenuBar.qml" line="161"/>
         <source>(empty)</source>
         <translation>(порожньо)</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="162"/>
+        <location filename="../qml/MainMenuBar.qml" line="167"/>
         <source>&amp;Clear</source>
         <translation>&amp;Очистити</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="168"/>
+        <location filename="../qml/MainMenuBar.qml" line="173"/>
         <source>F&amp;avorites</source>
         <translation>&amp;Улюблене</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="177"/>
+        <location filename="../qml/MainMenuBar.qml" line="183"/>
         <source>&amp;Directory…</source>
         <translation>&amp;Тека...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="182"/>
+        <location filename="../qml/MainMenuBar.qml" line="188"/>
         <source>&amp;Playlist…</source>
         <translation>&amp;Перелік відтворення...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="187"/>
+        <location filename="../qml/MainMenuBar.qml" line="193"/>
         <source>D&amp;isc</source>
         <translation>&amp;Диск</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="191"/>
+        <location filename="../qml/MainMenuBar.qml" line="197"/>
         <source>&amp;DVD from drive or folder…</source>
         <translation>&amp;DVD з привода або теки…</translation>
     </message>
     <message>
-        <source>&amp;Blu-ray</source>
-        <translation type="vanished">&amp;Blu-ray</translation>
-    </message>
-    <message>
-        <location filename="../qml/MainMenuBar.qml" line="196"/>
+        <location filename="../qml/MainMenuBar.qml" line="202"/>
         <source>&amp;Blu-ray from drive or folder…</source>
         <translation>&amp;Blu-ray з привода або теки…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="201"/>
+        <location filename="../qml/MainMenuBar.qml" line="207"/>
         <source>&amp;Audio CD</source>
         <translation>&amp;Звуковий КД</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="206"/>
+        <location filename="../qml/MainMenuBar.qml" line="212"/>
         <source>&amp;URL…</source>
         <translation>&amp;URL-адреса...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="212"/>
+        <location filename="../qml/MainMenuBar.qml" line="218"/>
         <source>YouTube &amp;cache…</source>
         <translation>&amp;Кеш YouTube…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="220"/>
+        <location filename="../qml/MainMenuBar.qml" line="226"/>
         <source>&amp;TV</source>
         <translation>Т&amp;Б</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="230"/>
+        <location filename="../qml/MainMenuBar.qml" line="237"/>
         <source>Radi&amp;o</source>
         <translation>&amp;Радіо</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="241"/>
+        <location filename="../qml/MainMenuBar.qml" line="249"/>
         <source>&amp;Quit</source>
         <translation>&amp;Вийти</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="251"/>
+        <location filename="../qml/MainMenuBar.qml" line="259"/>
         <source>&amp;Play</source>
         <translation>Від&amp;творити</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="254"/>
+        <location filename="../qml/MainMenuBar.qml" line="262"/>
         <source>P&amp;lay</source>
         <translation>&amp;Відтворення</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="261"/>
+        <location filename="../qml/MainMenuBar.qml" line="269"/>
         <source>&amp;Pause</source>
         <translation>&amp;Призупинити</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="267"/>
+        <location filename="../qml/MainMenuBar.qml" line="275"/>
         <source>&amp;Stop</source>
         <translation>&amp;Зупинити</translation>
     </message>
     <message>
-        <source>Frame &amp;step</source>
-        <translation type="vanished">&amp;Крок кадру</translation>
-    </message>
-    <message>
-        <location filename="../qml/MainMenuBar.qml" line="279"/>
+        <location filename="../qml/MainMenuBar.qml" line="287"/>
         <source>Fra&amp;me back step</source>
         <translation>Поп&amp;ередній кадр</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="289"/>
+        <location filename="../qml/MainMenuBar.qml" line="297"/>
         <source>&amp;Rewind %1</source>
         <translation>&amp;Назад %1</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="296"/>
+        <location filename="../qml/MainMenuBar.qml" line="304"/>
         <source>&amp;Forward %1</source>
         <translation>&amp;Вперед %1</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="303"/>
-        <location filename="../qml/MainMenuBar.qml" line="317"/>
+        <location filename="../qml/MainMenuBar.qml" line="311"/>
+        <location filename="../qml/MainMenuBar.qml" line="325"/>
         <source>Rewind %1</source>
         <translation>Назад %1</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="310"/>
-        <location filename="../qml/MainMenuBar.qml" line="324"/>
+        <location filename="../qml/MainMenuBar.qml" line="318"/>
+        <location filename="../qml/MainMenuBar.qml" line="332"/>
         <source>Forward %1</source>
         <translation>Вперед %1</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="332"/>
+        <location filename="../qml/MainMenuBar.qml" line="340"/>
         <source>Sp&amp;eed</source>
         <translation>&amp;Швидкість</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="336"/>
+        <location filename="../qml/MainMenuBar.qml" line="344"/>
         <source>&amp;Normal speed</source>
         <translation>&amp;Звичайна швидкість</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="343"/>
+        <location filename="../qml/MainMenuBar.qml" line="351"/>
         <source>&amp;Halve speed</source>
         <translation>&amp;Зменшити швидкість удвічі</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="349"/>
+        <location filename="../qml/MainMenuBar.qml" line="357"/>
         <source>&amp;Double speed</source>
         <translation>Подвійна &amp;швидкість</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="356"/>
+        <location filename="../qml/MainMenuBar.qml" line="364"/>
         <source>Speed &amp;-10%</source>
         <translation>Швидкість &amp;-10%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="362"/>
+        <location filename="../qml/MainMenuBar.qml" line="370"/>
         <source>Speed &amp;+10%</source>
         <translation>Швидкість &amp;+10%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="368"/>
+        <location filename="../qml/MainMenuBar.qml" line="376"/>
         <source>Speed -4%</source>
         <translation>Швидкість -&amp;4%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="369"/>
+        <location filename="../qml/MainMenuBar.qml" line="377"/>
         <source>Speed +4%</source>
         <translation>Ш&amp;видкість +4%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="371"/>
+        <location filename="../qml/MainMenuBar.qml" line="379"/>
         <source>Speed -1%</source>
         <translation>Швидкість -&amp;1%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="372"/>
+        <location filename="../qml/MainMenuBar.qml" line="380"/>
         <source>Speed +1%</source>
         <translation>Шви&amp;дкість +1%</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="375"/>
+        <location filename="../qml/MainMenuBar.qml" line="383"/>
         <source>Pi&amp;tch compensation</source>
         <translation>Компенсація &amp;висоти тону</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="384"/>
+        <location filename="../qml/MainMenuBar.qml" line="392"/>
         <source>&amp;A-B section</source>
         <translation>&amp;Ділянка А-Б</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="388"/>
+        <location filename="../qml/MainMenuBar.qml" line="396"/>
         <source>Set &amp;A marker</source>
         <translation>Встановити позначку &amp;А</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="394"/>
+        <location filename="../qml/MainMenuBar.qml" line="402"/>
         <source>Set &amp;B marker</source>
         <translation>Встановити позначку &amp;Б</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="400"/>
+        <location filename="../qml/MainMenuBar.qml" line="408"/>
         <source>&amp;Clear A-B markers</source>
         <translation>Вилучити &amp;позначки А-Б</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="408"/>
+        <location filename="../qml/MainMenuBar.qml" line="416"/>
         <source>&amp;Repeat</source>
         <translation>&amp;Повторити</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="414"/>
+        <location filename="../qml/MainMenuBar.qml" line="422"/>
         <source>&amp;Jump to…</source>
         <translation>&amp;Перейти до...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="417"/>
+        <location filename="../qml/MainMenuBar.qml" line="425"/>
         <source>Pre&amp;vious</source>
         <translation>Поп&amp;ередній</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="424"/>
+        <location filename="../qml/MainMenuBar.qml" line="432"/>
         <source>&amp;Next</source>
         <translation>&amp;Наступний</translation>
     </message>
     <message>
-        <source>Ca&amp;st</source>
-        <translation type="vanished">&amp;Транслювати на</translation>
-    </message>
-    <message>
-        <source>&amp;Smartphone/tablet…</source>
-        <translation type="vanished">&amp;Смартфон/планшет…</translation>
-    </message>
-    <message>
-        <location filename="../qml/MainMenuBar.qml" line="433"/>
+        <location filename="../qml/MainMenuBar.qml" line="441"/>
         <source>Cas&amp;t…</source>
         <translation>&amp;Транслювати…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="441"/>
+        <location filename="../qml/MainMenuBar.qml" line="449"/>
         <source>&amp;Video</source>
         <translation>Від&amp;ео</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="445"/>
-        <location filename="../qml/MainMenuBar.qml" line="700"/>
-        <location filename="../qml/MainMenuBar.qml" line="790"/>
+        <location filename="../qml/MainMenuBar.qml" line="453"/>
+        <location filename="../qml/MainMenuBar.qml" line="708"/>
+        <location filename="../qml/MainMenuBar.qml" line="798"/>
         <source>&amp;Track</source>
         <translation>&amp;Доріжка</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="452"/>
-        <location filename="../qml/MainMenuBar.qml" line="717"/>
-        <location filename="../qml/MainMenuBar.qml" line="935"/>
-        <location filename="../qml/MainMenuBar.qml" line="960"/>
+        <location filename="../qml/MainMenuBar.qml" line="460"/>
+        <location filename="../qml/MainMenuBar.qml" line="725"/>
+        <location filename="../qml/MainMenuBar.qml" line="943"/>
+        <location filename="../qml/MainMenuBar.qml" line="968"/>
         <source>&lt;empty&gt;</source>
         <translation>&lt;нема&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="484"/>
+        <location filename="../qml/MainMenuBar.qml" line="492"/>
         <source>&amp;Fullscreen</source>
         <translation>По&amp;вноекранно</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="492"/>
+        <location filename="../qml/MainMenuBar.qml" line="500"/>
         <source>Si&amp;ze</source>
         <translation>Роз&amp;мір</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="495"/>
+        <location filename="../qml/MainMenuBar.qml" line="503"/>
         <source>50%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="496"/>
+        <location filename="../qml/MainMenuBar.qml" line="504"/>
         <source>100%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="497"/>
+        <location filename="../qml/MainMenuBar.qml" line="505"/>
         <source>200%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="500"/>
+        <location filename="../qml/MainMenuBar.qml" line="508"/>
         <source>&amp;Zoom and pan</source>
         <translation>&amp;Масштаб і панорама</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="504"/>
+        <location filename="../qml/MainMenuBar.qml" line="512"/>
         <source>&amp;Reset</source>
         <translation>&amp;Скинути</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="509"/>
+        <location filename="../qml/MainMenuBar.qml" line="517"/>
         <source>Zoom &amp;-</source>
         <translation>Зменшити &amp;-</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="514"/>
+        <location filename="../qml/MainMenuBar.qml" line="522"/>
         <source>Zoom &amp;+</source>
         <translation>Збільшити &amp;+</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="520"/>
+        <location filename="../qml/MainMenuBar.qml" line="528"/>
         <source>Move &amp;left</source>
         <translation>Посунути &amp;ліворуч</translation>
     </message>
     <message>
-        <source>Move &amp;right</source>
-        <translation type="vanished">Посунути &amp;праворуч</translation>
-    </message>
-    <message>
-        <location filename="../qml/MainMenuBar.qml" line="530"/>
+        <location filename="../qml/MainMenuBar.qml" line="538"/>
         <source>Move &amp;up</source>
         <translation>Посунути &amp;догори</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="535"/>
+        <location filename="../qml/MainMenuBar.qml" line="543"/>
         <source>Move &amp;down</source>
         <translation>&amp;Посунути донизу</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="542"/>
+        <location filename="../qml/MainMenuBar.qml" line="550"/>
         <source>&amp;Aspect ratio</source>
         <translation>Співвід&amp;ношення сторін</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="564"/>
+        <location filename="../qml/MainMenuBar.qml" line="572"/>
         <source>&amp;Rotate</source>
         <translation>По&amp;вернути</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="568"/>
-        <location filename="../qml/MainMenuBar.qml" line="651"/>
+        <location filename="../qml/MainMenuBar.qml" line="576"/>
+        <location filename="../qml/MainMenuBar.qml" line="659"/>
         <source>&amp;None</source>
         <translation>&amp;Нема</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="577"/>
+        <location filename="../qml/MainMenuBar.qml" line="585"/>
         <source>&amp;Rotate by 90° clockwise</source>
         <translation>&amp;Повернути на 90° за годинниковою стрілкою</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="586"/>
+        <location filename="../qml/MainMenuBar.qml" line="594"/>
         <source>Rotate by 90° &amp;counterclockwise</source>
         <translation>Повернути на 90° &amp;проти годинникової стрілки</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="595"/>
+        <location filename="../qml/MainMenuBar.qml" line="603"/>
         <source>Rotate by &amp;180°</source>
         <translation>Повернути на &amp;180°</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="605"/>
+        <location filename="../qml/MainMenuBar.qml" line="613"/>
         <source>Fli&amp;p image</source>
         <translation>Повернути з&amp;ображення</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="616"/>
+        <location filename="../qml/MainMenuBar.qml" line="624"/>
         <source>Mirr&amp;or image</source>
         <translation>Віддзер&amp;калити зображення</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="627"/>
+        <location filename="../qml/MainMenuBar.qml" line="635"/>
         <source>&amp;Deinterlace</source>
         <translation>Деін&amp;терлейсинг</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="660"/>
+        <location filename="../qml/MainMenuBar.qml" line="668"/>
         <source>&amp;Yadif</source>
         <translation>&amp;Yadif</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="669"/>
+        <location filename="../qml/MainMenuBar.qml" line="677"/>
         <source>&amp;Bwdif</source>
         <translation>&amp;Bwdif</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="680"/>
+        <location filename="../qml/MainMenuBar.qml" line="688"/>
         <source>E&amp;qualizer…</source>
         <translation>&amp;Еквалайзер…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="686"/>
+        <location filename="../qml/MainMenuBar.qml" line="694"/>
         <source>&amp;Screenshot</source>
         <translation>Зняток екран&amp;у</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="696"/>
+        <location filename="../qml/MainMenuBar.qml" line="704"/>
         <source>&amp;Audio</source>
         <translation>&amp;Звук</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="744"/>
+        <location filename="../qml/MainMenuBar.qml" line="752"/>
         <source>&amp;Mute</source>
         <translation>&amp;Вимкнути звук</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="753"/>
+        <location filename="../qml/MainMenuBar.qml" line="761"/>
         <source>Volume &amp;-</source>
         <translation>Гучність &amp;-</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="760"/>
+        <location filename="../qml/MainMenuBar.qml" line="768"/>
         <source>Volume &amp;+</source>
         <translation>Гучність &amp;+</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="870"/>
+        <location filename="../qml/MainMenuBar.qml" line="878"/>
         <source>Delay &amp;-</source>
         <translation>Затримка &amp;-</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="773"/>
+        <location filename="../qml/MainMenuBar.qml" line="781"/>
         <source>D&amp;elay +</source>
         <translation>З&amp;атримка +</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="273"/>
+        <location filename="../qml/MainMenuBar.qml" line="281"/>
         <source>Frame st&amp;ep</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="286"/>
+        <location filename="../qml/MainMenuBar.qml" line="294"/>
         <source>See&amp;k</source>
         <translation>&amp;Перемотування</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="525"/>
+        <location filename="../qml/MainMenuBar.qml" line="533"/>
         <source>Move r&amp;ight</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="768"/>
+        <location filename="../qml/MainMenuBar.qml" line="776"/>
         <source>&amp;Delay -</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="778"/>
+        <location filename="../qml/MainMenuBar.qml" line="786"/>
         <source>Set dela&amp;y…</source>
         <translation>Вста&amp;новити затримку...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="786"/>
+        <location filename="../qml/MainMenuBar.qml" line="794"/>
         <source>&amp;Subtitles</source>
         <translation>&amp;Субтитри</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="806"/>
+        <location filename="../qml/MainMenuBar.qml" line="814"/>
         <source>&amp;Off</source>
         <translation>&amp;Вимкнено</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="851"/>
+        <location filename="../qml/MainMenuBar.qml" line="859"/>
         <source>&amp;Load subtitles…</source>
         <translation>&amp;Завантажити субтитри…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="857"/>
+        <location filename="../qml/MainMenuBar.qml" line="865"/>
         <source>&amp;Find subtitles at OpenSubtitles…</source>
         <translation>&amp;Знайти субтитри на OpenSubtitles…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="863"/>
+        <location filename="../qml/MainMenuBar.qml" line="871"/>
         <source>U&amp;nload subtitles</source>
         <translation>&amp;Вивантажити субтитри</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="876"/>
+        <location filename="../qml/MainMenuBar.qml" line="884"/>
         <source>Delay &amp;+</source>
         <translation>Затримка &amp;+</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="882"/>
+        <location filename="../qml/MainMenuBar.qml" line="890"/>
         <source>Se&amp;t delay…</source>
         <translation>Вста&amp;новити затримку...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="891"/>
+        <location filename="../qml/MainMenuBar.qml" line="899"/>
         <source>&amp;Browse</source>
         <translation>&amp;Огляд</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="894"/>
+        <location filename="../qml/MainMenuBar.qml" line="902"/>
         <source>&amp;DVD menu</source>
         <translation>&amp;Меню DVD</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="903"/>
+        <location filename="../qml/MainMenuBar.qml" line="911"/>
         <source>&amp;Title</source>
         <translation>&amp;Заголовок</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="942"/>
+        <location filename="../qml/MainMenuBar.qml" line="950"/>
         <source>&amp;Chapters</source>
         <translation>&amp;Розділи</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="967"/>
+        <location filename="../qml/MainMenuBar.qml" line="975"/>
         <source>&amp;Bookmarks</source>
         <translation>&amp;Закладки</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="977"/>
+        <location filename="../qml/MainMenuBar.qml" line="985"/>
         <source>&amp;Add new bookmark</source>
         <translation>&amp;Додати нову закладку</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="984"/>
+        <location filename="../qml/MainMenuBar.qml" line="992"/>
         <source>&amp;Edit bookmarks…</source>
         <translation>&amp;Змінити закладки…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1008"/>
+        <location filename="../qml/MainMenuBar.qml" line="1016"/>
         <source>Vie&amp;w</source>
         <translation>Пе&amp;регляд</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1011"/>
+        <location filename="../qml/MainMenuBar.qml" line="1019"/>
         <source>&amp;Information and properties…</source>
         <translation>&amp;Інформація та властивості...</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1018"/>
+        <location filename="../qml/MainMenuBar.qml" line="1026"/>
         <source>&amp;Playlist</source>
         <translation>&amp;Перелік відтворення</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1026"/>
+        <location filename="../qml/MainMenuBar.qml" line="1034"/>
         <source>&amp;OSD</source>
         <translation>&amp;Екранна індикація</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1028"/>
+        <location filename="../qml/MainMenuBar.qml" line="1036"/>
         <source>Subtitles only</source>
         <translation>Лише &amp;субтитри</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1029"/>
+        <location filename="../qml/MainMenuBar.qml" line="1037"/>
         <source>Volume + seek</source>
         <translation>Гучність + перемотування</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1030"/>
+        <location filename="../qml/MainMenuBar.qml" line="1038"/>
         <source>Volume + seek + timer</source>
         <translation>Гучність + перемотування + час</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1036"/>
+        <location filename="../qml/MainMenuBar.qml" line="1044"/>
         <source>Op&amp;tions</source>
         <translation>&amp;Налаштування</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1039"/>
+        <location filename="../qml/MainMenuBar.qml" line="1047"/>
         <source>&amp;Preferences…</source>
         <translation>&amp;Налаштування…</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1052"/>
+        <location filename="../qml/MainMenuBar.qml" line="1060"/>
         <source>S&amp;how icon in system tray</source>
         <translation>По&amp;казувати піктограму в системній таці</translation>
     </message>
     <message>
-        <source>&amp;Toolbars</source>
-        <translation type="vanished">П&amp;анелі</translation>
-    </message>
-    <message>
-        <source>&amp;Toolbar</source>
-        <translation type="vanished">&amp;Панель інструментів</translation>
-    </message>
-    <message>
-        <source>&amp;Control bar</source>
-        <translation type="vanished">Панель керування</translation>
-    </message>
-    <message>
-        <location filename="../qml/MainMenuBar.qml" line="1071"/>
+        <location filename="../qml/MainMenuBar.qml" line="1079"/>
         <source>Check for &amp;updates</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Edit main &amp;toolbar…</source>
-        <translation type="vanished">Змінити головну &amp;панель інструментів…</translation>
-    </message>
-    <message>
-        <source>Edit control &amp;bar…</source>
-        <translation type="vanished">Змінити панель &amp;керування…</translation>
-    </message>
-    <message>
-        <source>&amp;Status bar</source>
-        <translation type="vanished">&amp;Рядок стану</translation>
-    </message>
-    <message>
-        <source>&amp;Show status bar</source>
-        <translation type="vanished">&amp;Показувати рядок стану</translation>
-    </message>
-    <message>
-        <source>&amp;Video info</source>
-        <translation type="vanished">Інформація &amp;відео</translation>
-    </message>
-    <message>
-        <source>&amp;Audio info</source>
-        <translation type="vanished">Відомості про &amp;звук</translation>
-    </message>
-    <message>
-        <source>F&amp;ormat info</source>
-        <translation type="vanished">Інформація про ф&amp;ормат</translation>
-    </message>
-    <message>
-        <source>&amp;Bitrate info</source>
-        <translation type="vanished">Інформація про &amp;бітрейт</translation>
-    </message>
-    <message>
-        <source>&amp;Frame counter</source>
-        <translation type="vanished">&amp;Лічильник кадрів</translation>
-    </message>
-    <message>
-        <source>Display &amp;total time</source>
-        <translation type="vanished">Показувати &amp;загальний час</translation>
-    </message>
-    <message>
-        <source>Display &amp;remaining time</source>
-        <translation type="vanished">Показувати за&amp;лишок часу</translation>
-    </message>
-    <message>
-        <source>Show the current time with &amp;milliseconds</source>
-        <translation type="vanished">Показати поточний час з &amp;мілісекундами</translation>
-    </message>
-    <message>
-        <location filename="../qml/MainMenuBar.qml" line="1061"/>
+        <location filename="../qml/MainMenuBar.qml" line="1069"/>
         <source>&amp;Help</source>
         <translation>&amp;Довідка</translation>
     </message>
     <message>
-        <location filename="../qml/MainMenuBar.qml" line="1064"/>
+        <location filename="../qml/MainMenuBar.qml" line="1072"/>
         <source>&amp;Contents</source>
         <translation>&amp;Зміст</translation>
     </message>
     <message>
-        <source>&amp;Check for updates</source>
-        <translation type="vanished">&amp;Перевірити оновлення</translation>
-    </message>
-    <message>
-        <source>Install / Update &amp;YouTube support</source>
-        <translation type="vanished">Встановити / Оновити підтримку &amp;YouTube</translation>
-    </message>
-    <message>
-        <location filename="../qml/MainMenuBar.qml" line="1077"/>
+        <location filename="../qml/MainMenuBar.qml" line="1085"/>
         <source>&amp;About Vivace</source>
         <translation>&amp;Про Vivace</translation>
     </message>
@@ -1938,174 +1848,174 @@
 <context>
     <name>MainToolBar</name>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="62"/>
+        <location filename="../qml/MainToolBar.qml" line="67"/>
         <source>Auto</source>
         <translation>Автоматично</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="247"/>
+        <location filename="../qml/MainToolBar.qml" line="253"/>
         <source>&amp;Off</source>
         <translation>&amp;Вимкнено</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="293"/>
+        <location filename="../qml/MainToolBar.qml" line="301"/>
         <source>Normal speed</source>
         <translation>Звичайна швидкість</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="299"/>
+        <location filename="../qml/MainToolBar.qml" line="307"/>
         <source>Halve speed</source>
         <translation>Зменшити швидкість удвічі</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="304"/>
+        <location filename="../qml/MainToolBar.qml" line="312"/>
         <source>Double speed</source>
         <translation>Подвійна &amp;швидкість</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="310"/>
+        <location filename="../qml/MainToolBar.qml" line="318"/>
         <source>Speed -10%</source>
         <translation>Швидкість &amp;-10%</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="315"/>
+        <location filename="../qml/MainToolBar.qml" line="323"/>
         <source>Speed +10%</source>
         <translation>Швидкість &amp;+10%</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="320"/>
+        <location filename="../qml/MainToolBar.qml" line="328"/>
         <source>Speed -4%</source>
         <translation>Швидкість -&amp;4%</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="321"/>
+        <location filename="../qml/MainToolBar.qml" line="329"/>
         <source>Speed +4%</source>
         <translation>Ш&amp;видкість +4%</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="323"/>
+        <location filename="../qml/MainToolBar.qml" line="331"/>
         <source>Speed -1%</source>
         <translation>Швидкість -&amp;1%</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="324"/>
+        <location filename="../qml/MainToolBar.qml" line="332"/>
         <source>Speed +1%</source>
         <translation>Шви&amp;дкість +1%</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="327"/>
+        <location filename="../qml/MainToolBar.qml" line="335"/>
         <source>Pitch compensation</source>
         <translation>Компенсація &amp;висоти тону</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="341"/>
-        <location filename="../qml/MainToolBar.qml" line="451"/>
-        <location filename="../qml/MainToolBar.qml" line="471"/>
+        <location filename="../qml/MainToolBar.qml" line="349"/>
+        <location filename="../qml/MainToolBar.qml" line="459"/>
+        <location filename="../qml/MainToolBar.qml" line="479"/>
         <source>&lt;empty&gt;</source>
         <translation>&lt;нема&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="385"/>
+        <location filename="../qml/MainToolBar.qml" line="393"/>
         <source>&amp;None</source>
         <translation>&amp;Нема</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="394"/>
+        <location filename="../qml/MainToolBar.qml" line="402"/>
         <source>&amp;Rotate by 90° clockwise</source>
         <translation>&amp;Повернути на 90° за годинниковою стрілкою</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="403"/>
+        <location filename="../qml/MainToolBar.qml" line="411"/>
         <source>Rotate by 90° &amp;counterclockwise</source>
         <translation>Повернути на 90° &amp;проти годинникової стрілки</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="412"/>
+        <location filename="../qml/MainToolBar.qml" line="420"/>
         <source>Rotate by &amp;180°</source>
         <translation>Повернути на &amp;180°</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="423"/>
+        <location filename="../qml/MainToolBar.qml" line="431"/>
         <source>50%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="424"/>
+        <location filename="../qml/MainToolBar.qml" line="432"/>
         <source>100%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="425"/>
+        <location filename="../qml/MainToolBar.qml" line="433"/>
         <source>200%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="483"/>
+        <location filename="../qml/MainToolBar.qml" line="491"/>
         <source>&amp;Add new bookmark</source>
         <translation>&amp;Додати нову закладку</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="488"/>
+        <location filename="../qml/MainToolBar.qml" line="496"/>
         <source>&amp;Edit bookmarks…</source>
         <translation>&amp;Змінити закладки…</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="521"/>
+        <location filename="../qml/MainToolBar.qml" line="529"/>
         <source>(empty)</source>
         <translation>(порожньо)</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="527"/>
+        <location filename="../qml/MainToolBar.qml" line="535"/>
         <source>Clear</source>
         <translation>Очистити</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="534"/>
+        <location filename="../qml/MainToolBar.qml" line="542"/>
         <source>Reset</source>
         <translation>&amp;Скинути</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="535"/>
+        <location filename="../qml/MainToolBar.qml" line="543"/>
         <source>Zoom -</source>
         <translation>Зменшити -</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="536"/>
+        <location filename="../qml/MainToolBar.qml" line="544"/>
         <source>Zoom +</source>
         <translation>Збільшити +</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="538"/>
+        <location filename="../qml/MainToolBar.qml" line="546"/>
         <source>Move left</source>
         <translation>Посунути &amp;ліворуч</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="539"/>
+        <location filename="../qml/MainToolBar.qml" line="547"/>
         <source>Move right</source>
         <translation>Посунути &amp;праворуч</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="540"/>
+        <location filename="../qml/MainToolBar.qml" line="548"/>
         <source>Move up</source>
         <translation>Посунути &amp;догори</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="541"/>
+        <location filename="../qml/MainToolBar.qml" line="549"/>
         <source>Move down</source>
         <translation>&amp;Посунути донизу</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="546"/>
+        <location filename="../qml/MainToolBar.qml" line="554"/>
         <source>Contents</source>
         <translation>Зміст</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="552"/>
+        <location filename="../qml/MainToolBar.qml" line="560"/>
         <source>Check for updates</source>
         <translation>Перевірити оновлення</translation>
     </message>
     <message>
-        <location filename="../qml/MainToolBar.qml" line="558"/>
+        <location filename="../qml/MainToolBar.qml" line="566"/>
         <source>About Vivace</source>
         <translation>Про Vivace</translation>
     </message>
@@ -2405,237 +2315,237 @@
         <translation>Позначки А-Б вилучено</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3387"/>
+        <location filename="../src/playercontroller.cpp" line="3400"/>
         <source>None</source>
         <translation>Нема</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3386"/>
+        <location filename="../src/playercontroller.cpp" line="3399"/>
         <source>Yadif</source>
         <translation>Yadif</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3387"/>
+        <location filename="../src/playercontroller.cpp" line="3400"/>
         <source>Bwdif</source>
         <translation>Bwdif</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3386"/>
+        <location filename="../src/playercontroller.cpp" line="3399"/>
         <source>Auto</source>
         <translation>Автоматично</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3388"/>
+        <location filename="../src/playercontroller.cpp" line="3401"/>
         <source>Deinterlace: %1</source>
         <translation>Деінтерлейсинг: %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3472"/>
+        <location filename="../src/playercontroller.cpp" line="3486"/>
         <source>Could not load subtitles from %1</source>
         <translation>Не вдалося завантажити субтитри з %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3489"/>
+        <location filename="../src/playercontroller.cpp" line="3503"/>
         <source>Subtitles loaded: %1</source>
         <translation>Субтитри завантажено: %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3500"/>
+        <location filename="../src/playercontroller.cpp" line="3514"/>
         <source>Subtitles unloaded</source>
         <translation>Субтитри вивантажено</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3510"/>
+        <location filename="../src/playercontroller.cpp" line="3524"/>
         <source>Subtitle delay: %1 ms</source>
         <translation>Затримка субтитрів: %1 мс</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3660"/>
+        <location filename="../src/playercontroller.cpp" line="3674"/>
         <source>General</source>
         <translation>Загальні</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3663"/>
+        <location filename="../src/playercontroller.cpp" line="3677"/>
         <source>File</source>
         <translation>Файл</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3678"/>
+        <location filename="../src/playercontroller.cpp" line="3692"/>
         <source>Size</source>
         <translation>Розмір</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3678"/>
+        <location filename="../src/playercontroller.cpp" line="3692"/>
         <source>%1 KB (%2 MB)</source>
         <translation>%1 кбайт (%2 Мбайт)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3683"/>
-        <location filename="../src/playercontroller.cpp" line="3717"/>
+        <location filename="../src/playercontroller.cpp" line="3697"/>
+        <location filename="../src/playercontroller.cpp" line="3731"/>
         <source>URL</source>
         <translation>URL-адреса</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3693"/>
+        <location filename="../src/playercontroller.cpp" line="3707"/>
         <source>Length</source>
         <translation>Тривалість</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3694"/>
+        <location filename="../src/playercontroller.cpp" line="3708"/>
         <source>Demuxer</source>
         <translation>Демультиплексор</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3699"/>
-        <location filename="../src/playercontroller.cpp" line="3750"/>
-        <location filename="../src/playercontroller.cpp" line="3813"/>
-        <location filename="../src/playercontroller.cpp" line="3843"/>
+        <location filename="../src/playercontroller.cpp" line="3713"/>
+        <location filename="../src/playercontroller.cpp" line="3764"/>
+        <location filename="../src/playercontroller.cpp" line="3827"/>
+        <location filename="../src/playercontroller.cpp" line="3857"/>
         <source>Name</source>
         <translation>Назва</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3700"/>
+        <location filename="../src/playercontroller.cpp" line="3714"/>
         <source>Artist</source>
         <translation>Виконавець</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3702"/>
+        <location filename="../src/playercontroller.cpp" line="3716"/>
         <source>Album artist</source>
         <translation>Виконавець альбому</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3704"/>
+        <location filename="../src/playercontroller.cpp" line="3718"/>
         <source>Author</source>
         <translation>Автор</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3705"/>
+        <location filename="../src/playercontroller.cpp" line="3719"/>
         <source>Composer</source>
         <translation>Композитор</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3706"/>
+        <location filename="../src/playercontroller.cpp" line="3720"/>
         <source>Album</source>
         <translation>Альбом</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3707"/>
+        <location filename="../src/playercontroller.cpp" line="3721"/>
         <source>Genre</source>
         <translation>Жанр</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3708"/>
+        <location filename="../src/playercontroller.cpp" line="3722"/>
         <source>Date</source>
         <translation>Дата</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3709"/>
+        <location filename="../src/playercontroller.cpp" line="3723"/>
         <source>Track</source>
         <translation>Доріжка</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3710"/>
+        <location filename="../src/playercontroller.cpp" line="3724"/>
         <source>Copyright</source>
         <translation>Авторське право</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3711"/>
+        <location filename="../src/playercontroller.cpp" line="3725"/>
         <source>Comment</source>
         <translation>Нотатка</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3712"/>
+        <location filename="../src/playercontroller.cpp" line="3726"/>
         <source>Description</source>
         <translation>Опис</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3714"/>
+        <location filename="../src/playercontroller.cpp" line="3728"/>
         <source>Publisher</source>
         <translation>Видавець</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3715"/>
-        <location filename="../src/playercontroller.cpp" line="3750"/>
-        <location filename="../src/playercontroller.cpp" line="3813"/>
-        <location filename="../src/playercontroller.cpp" line="3843"/>
+        <location filename="../src/playercontroller.cpp" line="3729"/>
+        <location filename="../src/playercontroller.cpp" line="3764"/>
+        <location filename="../src/playercontroller.cpp" line="3827"/>
+        <location filename="../src/playercontroller.cpp" line="3857"/>
         <source>Language</source>
         <translation>Мова</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3719"/>
+        <location filename="../src/playercontroller.cpp" line="3733"/>
         <source>Clip info</source>
         <translation>Відомості про кліп</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3723"/>
+        <location filename="../src/playercontroller.cpp" line="3737"/>
         <source>Initial Video Stream</source>
         <translation>Первинний відеопотік</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3726"/>
+        <location filename="../src/playercontroller.cpp" line="3740"/>
         <source>Resolution</source>
         <translation>Роздільність</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3729"/>
+        <location filename="../src/playercontroller.cpp" line="3743"/>
         <source>Aspect ratio</source>
         <translation>Співвідношення сторін</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3733"/>
-        <location filename="../src/playercontroller.cpp" line="3773"/>
+        <location filename="../src/playercontroller.cpp" line="3747"/>
+        <location filename="../src/playercontroller.cpp" line="3787"/>
         <source>Format</source>
         <translation>Формат</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3736"/>
-        <location filename="../src/playercontroller.cpp" line="3776"/>
+        <location filename="../src/playercontroller.cpp" line="3750"/>
+        <location filename="../src/playercontroller.cpp" line="3790"/>
         <source>Bitrate</source>
         <translation>Швидкість потоку</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3736"/>
-        <location filename="../src/playercontroller.cpp" line="3776"/>
+        <location filename="../src/playercontroller.cpp" line="3750"/>
+        <location filename="../src/playercontroller.cpp" line="3790"/>
         <source>%1 kbps</source>
         <translation>%1 кбіт/с</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3739"/>
+        <location filename="../src/playercontroller.cpp" line="3753"/>
         <source>Frames per second</source>
         <translation>Кадрів на секунду</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3742"/>
+        <location filename="../src/playercontroller.cpp" line="3756"/>
         <source>HDR</source>
         <translation>HDR</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3742"/>
+        <location filename="../src/playercontroller.cpp" line="3756"/>
         <source>yes</source>
         <translation>так</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3749"/>
+        <location filename="../src/playercontroller.cpp" line="3763"/>
         <source>Video Streams</source>
         <translation>Відеопотоки</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3757"/>
+        <location filename="../src/playercontroller.cpp" line="3771"/>
         <source>Initial Audio Stream</source>
         <translation>Початковий звуковий потік</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3812"/>
+        <location filename="../src/playercontroller.cpp" line="3826"/>
         <source>Audio Streams</source>
         <translation>Звукові потоки</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3842"/>
+        <location filename="../src/playercontroller.cpp" line="3856"/>
         <source>Subtitles</source>
         <translation>Субтитри</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="4192"/>
+        <location filename="../src/playercontroller.cpp" line="4206"/>
         <source>Chapter %1</source>
         <translation>Розділ %1</translation>
     </message>
@@ -2830,42 +2740,47 @@
         <translation>Відкрити…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefAdvancedPage.qml" line="78"/>
-        <source>Main settings are stored in the Windows registry (HKCUSoftware<byte value="xb"/>ivace-player); per-file data in vivace_files.ini in the folder above.</source>
+        <location filename="../qml/PrefAdvancedPage.qml" line="93"/>
+        <source>Main settings and per-file data are stored in the app&apos;s private storage, shown in the folder above.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefAdvancedPage.qml" line="85"/>
+        <location filename="../qml/PrefAdvancedPage.qml" line="96"/>
+        <source>Main settings are stored in the Windows registry (%1); per-file data in vivace_files.ini in the folder above.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefAdvancedPage.qml" line="105"/>
         <source>Maintenance</source>
         <translation>Обслуговування</translation>
     </message>
     <message>
-        <location filename="../qml/PrefAdvancedPage.qml" line="94"/>
+        <location filename="../qml/PrefAdvancedPage.qml" line="114"/>
         <source>Clear saved file settings</source>
         <translation>Очистити збережені налаштування файлів</translation>
     </message>
     <message>
-        <location filename="../qml/PrefAdvancedPage.qml" line="100"/>
+        <location filename="../qml/PrefAdvancedPage.qml" line="120"/>
         <source>Erases every remembered playback position and per-file track choice at once; this happens immediately and is not undone by Cancel.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefAdvancedPage.qml" line="106"/>
+        <location filename="../qml/PrefAdvancedPage.qml" line="126"/>
         <source>Forgets all remembered playback positions and track selections.</source>
         <translation>Забуває всі збережені позиції відтворення та вибір доріжок.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefAdvancedPage.qml" line="114"/>
+        <location filename="../qml/PrefAdvancedPage.qml" line="134"/>
         <source>Logs</source>
         <translation>Журнали</translation>
     </message>
     <message>
-        <location filename="../qml/PrefAdvancedPage.qml" line="123"/>
+        <location filename="../qml/PrefAdvancedPage.qml" line="143"/>
         <source>Vivace writes warnings and errors to vivace.log in the configuration folder above (kept across sessions, with the previous session as vivace.log.1). Include it when reporting a problem.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefAdvancedPage.qml" line="129"/>
+        <location filename="../qml/PrefAdvancedPage.qml" line="149"/>
         <source>Open log file</source>
         <translation>Відкрити файл журналу</translation>
     </message>
@@ -3000,254 +2915,250 @@
         <translation>Бажані звук і субтитри</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="72"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="61"/>
         <source>Media settings</source>
         <translation>Налаштування медіа</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="81"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="70"/>
         <source>Remember settings for all files (audio and subtitle tracks)</source>
         <translation>Запам&apos;ятовувати налаштування для всіх файлів (доріжки звуку та субтитрів)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="86"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="75"/>
         <source>Store each file&apos;s chosen audio and subtitle track, and restore them the next time that file is opened.</source>
         <translation>Зберігає вибрану для кожного файлу доріжку звуку та субтитрів і відновлює їх під час наступного відкриття файлу.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="93"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="82"/>
         <source>Remember time position of files</source>
         <translation>Запам&apos;ятовувати позицію відтворення файлів</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="98"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="87"/>
         <source>Close the main window when the playlist finishes</source>
         <translation>Закривати головне вікно після завершення списку відтворення</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="103"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="92"/>
         <source>Pause when the window is minimized</source>
         <translation>Призупиняти під час згортання вікна</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="110"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="99"/>
         <source>Disable screensaver while playing video</source>
         <translation>Вимикати заставку під час відтворення відео</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="115"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="104"/>
         <source>Keep the screen awake only while a video is actually playing; audio-only playback and paused/stopped states are unaffected.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="126"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="115"/>
         <source>Screenshots</source>
         <translation>Знятки екрану</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="134"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="123"/>
         <source>Folder:</source>
         <translation>&amp;Тека:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="141"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="130"/>
         <source>Browse…</source>
         <translation>Огляд…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="147"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="136"/>
         <source>Image format:</source>
         <translation>Формат зображення:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="174"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="163"/>
         <source>Output driver:</source>
         <translation>Пристрої &amp;виведення:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="178"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="167"/>
         <source>Auto (Qt RHI)</source>
         <translation>Авто (Qt RHI)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="183"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="172"/>
         <source>Start videos in fullscreen</source>
         <translation>Починати відео повноекранно</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="202"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="191"/>
         <source>Use software video equalizer</source>
         <translation>Використовувати прог&amp;рамний відеоеквалайзер</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="215"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="204"/>
         <source>Deinterlace by default:</source>
         <translation>Усунення черезрядковості за замовчуванням:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="222"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="211"/>
         <source>None</source>
         <translation>Нема</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="222"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="211"/>
         <source>Yadif</source>
         <translation>Yadif</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="222"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="211"/>
         <source>Bwdif</source>
         <translation>Bwdif</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="222"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="211"/>
         <source>Auto</source>
         <translation>Автоматично</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="227"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="216"/>
         <source>Deinterlacing removes the horizontal combing artifacts of interlaced video. This sets the default for newly opened files; change it per file from Video &gt; Deinterlace. &quot;Auto&quot; uses Bwdif but only on frames the file itself marks as interlaced, leaving progressive frames untouched; it is not offered on the per-file Video &gt; Deinterlace menu, since it only makes sense as a default.</source>
         <translation>Усунення черезрядковості видаляє горизонтальні гребінчасті артефакти черезрядкового відео. Це визначає значення за замовчуванням для новостворених файлів; змінюйте його для окремого файлу в меню Відео &gt; Деінтерлейсинг. «Авто» використовує Bwdif, але лише для кадрів, які файл сам позначає як черезрядкові, залишаючи прогресивні кадри без змін; цей варіант не пропонується в меню Відео &gt; Деінтерлейсинг для окремого файлу, оскільки має сенс лише як значення за замовчуванням.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="246"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="235"/>
         <source>Video equalizer and zoom/aspect controls are planned for Phase 4 (ShaderEffect / item transforms). Driver selection is not available with Qt Multimedia.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>None (not supported by the backend)</source>
-        <translation type="vanished">Немає (не підтримується рушієм)</translation>
-    </message>
-    <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="264"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="253"/>
         <source>Output device:</source>
         <translation>Пристрій виводу:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="286"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="275"/>
         <source>Volume</source>
         <translation>Гучність</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="294"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="283"/>
         <source>Volume step:</source>
         <translation>Крок гучності:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="296"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="285"/>
         <source>How much each volume up/down key press or mouse-wheel notch changes the level.</source>
         <translation>Наскільки кожне натискання клавіші збільшення/зменшення гучності або крок коліщатка миші змінює рівень.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="304"/>
-        <location filename="../qml/PrefGeneralPage.qml" line="326"/>
-        <location filename="../qml/PrefGeneralPage.qml" line="386"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="293"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="315"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="375"/>
         <source>%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="309"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="298"/>
         <source>Remember volume between sessions</source>
         <translation>Запам&apos;ятовувати гучність між сеансами</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="316"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="305"/>
         <source>Initial volume:</source>
         <translation>Початкова гучність:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="318"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="307"/>
         <source>The volume level set at startup when the volume is not remembered between sessions.</source>
         <translation>Рівень гучності, що встановлюється під час запуску, коли гучність не запам&apos;ятовується між сеансами.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="334"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="323"/>
         <source>Synchronization</source>
         <translation>Синхронізація</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="342"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="331"/>
         <source>Global audio delay:</source>
         <translation>Глобальна затримка звуку:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="358"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="347"/>
         <source>ms</source>
         <translation>мс</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="366"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="355"/>
         <source>Delay for the current audio device — “%1” — applied to every file (e.g. to compensate Bluetooth output latency). Remembered per device, so switching devices restores the right value. A negative value holds the video back to match late audio. Each file can add its own delay via Audio &gt; Set delay.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="380"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="369"/>
         <source>Use software volume control</source>
         <translation>Використовувати програмне &amp;керування гучности</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="384"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="373"/>
         <source>Max. amplification:</source>
         <translation>Макс. підсилення:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="389"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="378"/>
         <source>Volume normalization by default</source>
         <translation>Типова нормалізація гучности</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="396"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="385"/>
         <source>Amplification above 100% and volume normalization require an audio pipeline filter, which Qt Multimedia does not provide.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="415"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="404"/>
         <source>Comma-separated language codes or names in order of preference (e.g. &quot;ja, en&quot;).</source>
         <translation>Коди або назви мов через кому в порядку переваги (напр. &quot;ja, en&quot;).</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="420"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="409"/>
         <source>Preferred audio language:</source>
         <translation>Бажана мова звуку:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="423"/>
-        <location filename="../qml/PrefGeneralPage.qml" line="433"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="412"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="422"/>
         <source>e.g. ja, en</source>
         <translation>напр. ja, en</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="430"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="419"/>
         <source>Preferred subtitle language:</source>
         <translation>Бажана мова субтитрів:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="441"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="430"/>
         <source>Show subtitles by default</source>
         <translation>Показувати субтитри за замовчуванням</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="446"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="435"/>
         <source>When a file has embedded subtitles, turn one on automatically (preferring the languages above) instead of starting with subtitles off.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="456"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="445"/>
         <source>...but not if the audio is already in a preferred language</source>
         <translation>...але не якщо звук вже потрібною мовою</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="462"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="451"/>
         <source>Skip the automatic subtitle above when its language matches the audio track that actually got selected -- if you already understand the audio, a subtitle in the same language is usually redundant.</source>
         <translation>Пропускати автоматичні субтитри вище, якщо їхня мова збігається з фактично вибраною звуковою доріжкою -- якщо ви вже розумієте звук, субтитри тією ж мовою зазвичай зайві.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="473"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="462"/>
         <source>Preferred audio track number:</source>
         <translation>Бажаний номер аудіодоріжки:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefGeneralPage.qml" line="479"/>
+        <location filename="../qml/PrefGeneralPage.qml" line="468"/>
         <source>Preferred subtitle track number:</source>
         <translation>Бажаний номер доріжки субтитрів:</translation>
     </message>
@@ -3395,177 +3306,183 @@
 <context>
     <name>PrefInterfacePage</name>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="72"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="89"/>
         <source>Interface</source>
         <translation>Інтерфейс</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="74"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="89"/>
         <source>Seeking</source>
         <translation>Переміщення</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="76"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="90"/>
         <source>Instances</source>
         <translation>Примірники</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="94"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="90"/>
         <source>Fullscreen</source>
         <translation>На весь екран</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="100"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="90"/>
         <source>Privacy</source>
         <translation>Конфіденційність</translation>
     </message>
     <message>
-        <source>High DPI</source>
-        <translation type="vanished">Високе &amp;DPI</translation>
-    </message>
-    <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="119"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="117"/>
         <source>Main window</source>
         <translation>Головне вікно</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="142"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="140"/>
         <source>Auto-resize:</source>
         <translation>Автозмінення розміру:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="147"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="145"/>
         <source>Never</source>
         <translation>Ніколи</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="148"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="146"/>
         <source>Whenever it&apos;s needed</source>
         <translation>Коли це потрібно</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="149"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="147"/>
         <source>Only after loading a new video</source>
         <translation>Лише після відкриття нового відео</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="156"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="154"/>
         <source>Center window</source>
         <translation>Вікно по центру</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="161"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="159"/>
         <source>Prevent the window from getting outside of the screen</source>
         <translation>Не дозволяти вікну виходити за межі екрана</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="166"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="164"/>
         <source>Remember size and position of the main window</source>
         <translation>Запам&apos;ятовувати розмір і положення головного вікна</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="171"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="169"/>
         <source>Hide the video window when playing audio files</source>
         <translation>Приховувати вікно відео під час відтворення аудіофайлів</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="233"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="231"/>
         <source>Language:</source>
         <translation>&amp;Мова:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="180"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="178"/>
         <source>GUI:</source>
         <translation>Інтерфейс:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="73"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="89"/>
         <source>Text</source>
         <translation>Текст</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="190"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="188"/>
         <source>Basic GUI</source>
         <translation>Основний інтерфейс</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="191"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="189"/>
         <source>Mini GUI</source>
         <translation>Зменшений графічний інтерфейс</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="192"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="190"/>
         <source>Mpc GUI</source>
         <translation>Графічний інтерфейс Mpc</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="193"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="191"/>
         <source>Skinnable GUI</source>
         <translation>GUI з підтримкою шкурок</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="216"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="214"/>
         <source>Icon set:</source>
         <translation>Встановити пі&amp;ктограми:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="224"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="222"/>
         <source>Default</source>
         <translation>Типово</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="225"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="223"/>
         <source>Classic</source>
         <translation>Класичне</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="242"/>
-        <location filename="../qml/PrefInterfacePage.qml" line="337"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="240"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="348"/>
         <source>System default</source>
         <translation>Як у системі</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="256"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="254"/>
         <source>Language changes take effect after restarting Vivace. Untranslated text falls back to English.</source>
         <translation>Зміни мови набувають чинності після перезапуску Vivace. Неперекладений текст відображається англійською.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="261"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="259"/>
         <source>Style:</source>
         <translation>Ст&amp;иль:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="276"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="274"/>
         <source>Style changes take effect after restarting Vivace. Fusion is recommended: other styles may not render the custom menus and sliders correctly.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="282"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="280"/>
         <source>Show menu bar</source>
         <translation>Показувати рядок меню</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="332"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="306"/>
+        <source>Always off on Android -- the toolbar covers every menu action a phone needs, and the menu bar has no good touch affordance on a small screen.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefInterfacePage.qml" line="309"/>
+        <source>The menu bar can&apos;t wrap onto a second row on a narrow screen (unlike the toolbar and control bar), so the window won&apos;t shrink narrower than it needs. Turn it off if you need the extra room -- every menu action that&apos;s also on the toolbar (e.g. Preferences) stays reachable either way.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefInterfacePage.qml" line="343"/>
         <source>Application font:</source>
         <translation>Шрифт застосунку:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="343"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="354"/>
         <source>Change…</source>
         <translation>З&amp;мінити...</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="354"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="365"/>
         <source>Reset</source>
         <translation>&amp;Скинути</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="368"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="379"/>
         <source>Font changes take effect after restarting Vivace. (The default font already renders Japanese and other scripts; a custom font only needs to be set for preference.)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="307"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="318"/>
         <source>Gradient background for the toolbar and control bar</source>
         <translation>Градієнтний фон для панелі інструментів і панелі керування</translation>
     </message>
@@ -3575,195 +3492,190 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="286"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="294"/>
         <source>Can&apos;t turn off: Preferences isn&apos;t on the Toolbar or Control bar, so the menu bar must stay on to reach it.</source>
         <translation>Неможливо вимкнути: пункту «Налаштування» немає на панелі інструментів або панелі керування, тому рядок меню має залишатися увімкненим, щоб мати до нього доступ.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="297"/>
-        <source>The menu bar can&apos;t wrap onto a second row on a narrow screen (unlike the toolbar and control bar), so the window won&apos;t shrink narrower than it needs -- except on Android, which has no minimum window size and can run out of room for it. Turn it off if that happens -- every menu action that&apos;s also on the toolbar (e.g. Preferences) stays reachable either way.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="312"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="323"/>
         <source>Use the system native file dialog</source>
         <translation>Використовувати системний файловий діалог</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="373"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="384"/>
         <source>OSD</source>
         <translation>&amp;Екранна індикація</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="380"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="391"/>
         <source>Show OSD messages</source>
         <translation>Показувати екранні повідомлення (OSD)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="386"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="397"/>
         <source>Duration of OSD messages:</source>
         <translation>Тривалість повідомлень OSD:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="392"/>
-        <location filename="../qml/PrefInterfacePage.qml" line="643"/>
-        <location filename="../qml/PrefInterfacePage.qml" line="651"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="403"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="654"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="662"/>
         <source>ms</source>
         <translation>мс</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="397"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="408"/>
         <source>OSD font size:</source>
         <translation>Розмір шрифту OSD:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="403"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="414"/>
         <source>px</source>
         <translation>пікс.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="411"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="422"/>
         <source>Touch</source>
         <translation>Дотик</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="420"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="431"/>
         <source>Touch-friendly controls (larger fonts and icons)</source>
         <translation>Зручні для дотику елементи (більші шрифти та піктограми)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="425"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="436"/>
         <source>Enlarges the interface for finger use on a tablet. Toolbar icons resize immediately; the larger fonts take effect after you restart Vivace.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="435"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="446"/>
         <source>Swipe across the video to seek</source>
         <translation>Проведіть по відео для перемотування</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="440"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="451"/>
         <source>Drag left or right on the video (with a finger or the mouse) to jump backward or forward. An on-screen message previews the target while you drag.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="524"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="535"/>
         <source>seconds</source>
         <translation>секунд</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="530"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="541"/>
         <source>Short jump:</source>
         <translation>Короткий стрибок:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="537"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="548"/>
         <source>Medium jump:</source>
         <translation>Середній стрибок:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="544"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="555"/>
         <source>Long jump:</source>
         <translation>Довгий стрибок:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="550"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="561"/>
         <source>Mouse wheel jump:</source>
         <translation>Стрибок коліщатком миші:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="560"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="571"/>
         <source>Behaviour of time slider:</source>
         <translation>&amp;Поведінка повзунка часу:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="564"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="575"/>
         <source>Seek to position while dragging</source>
         <translation>Здійснювати переміщення при перетягуванні</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="565"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="576"/>
         <source>Seek to position when released</source>
         <translation>Здійснювати переміщення на позицію після відпускання</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="576"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="587"/>
         <source>Absolute/relative seeking method and precise seeking are mplayer/mpv-specific and do not apply to Vivace&apos;s Qt Multimedia backend (seeking is already position-based).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="599"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="610"/>
         <source>Use only one running instance of Vivace</source>
         <translation>Використовувати лише один запущений екземпляр Vivace</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="610"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="621"/>
         <source>When enabled, opening a file while Vivace is already running hands it to the existing window instead of starting a new one. Takes effect on the next launch.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="624"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="635"/>
         <source>Hide the mouse pointer after inactivity</source>
         <translation>Приховувати вказівник миші після бездіяльності</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="629"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="640"/>
         <source>While a video is playing, hide the mouse pointer over the video after the delay below — in the normal window as well as in fullscreen.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="637"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="648"/>
         <source>Hide after:</source>
         <translation>Приховувати через:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="649"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="660"/>
         <source>Time to hide the control bar:</source>
         <translation>Час до приховування панелі керування:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="658"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="669"/>
         <source>The fullscreen control bar currently shows while the pointer is near the bottom edge; a time-based autohide is planned.</source>
         <translation>У повноекранному режимі панель керування зараз показується, доки вказівник біля нижнього краю; заплановано автоприховування за часом.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="670"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="681"/>
         <source>Recent files</source>
         <translation>Останні файли</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="675"/>
-        <location filename="../qml/PrefInterfacePage.qml" line="691"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="686"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="702"/>
         <source>Max. items:</source>
         <translation>Макс. елементів:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="686"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="697"/>
         <source>URLs</source>
         <translation>URL-адреси</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="701"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="712"/>
         <source>Remember last directory</source>
         <translation>Запам&apos;ятати останню теку</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="453"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="464"/>
         <source>Vivace scales the interface on high-DPI screens automatically. You can override the scale factor here if needed.</source>
         <translation>Vivace автоматично масштабує інтерфейс на екранах із високою щільністю. За потреби тут можна перевизначити коефіцієнт масштабування.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="457"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="468"/>
         <source>Scale factor:</source>
         <translation>Коефіцієнт масш&amp;табування:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="464"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="475"/>
         <source>Automatic</source>
         <translation>Автоматично</translation>
     </message>
     <message>
-        <location filename="../qml/PrefInterfacePage.qml" line="481"/>
+        <location filename="../qml/PrefInterfacePage.qml" line="492"/>
         <source>Scale factor changes take effect after restarting Vivace.</source>
         <translation>Зміни коефіцієнта масштабування набувають чинності після перезапуску Vivace.</translation>
     </message>
@@ -3771,438 +3683,501 @@
 <context>
     <name>PrefNetworkPage</name>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="73"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="122"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="80"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="110"/>
         <source>OpenSubtitles</source>
         <translation>OpenSubtitles</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="76"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="83"/>
         <source>YouTube</source>
         <translation>YouTube</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="103"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="666"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="91"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="775"/>
         <source>Cast</source>
         <translation>Трансляція</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="132"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="120"/>
         <source>API key:</source>
         <translation>Ключ API:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="133"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="121"/>
         <source>A free per-application key from opensubtitles.com (create an API consumer); subtitle search will not work until this is set.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="138"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="126"/>
         <source>from opensubtitles.com → API consumers</source>
         <translation>з opensubtitles.com → API consumers</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="143"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="618"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="131"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="727"/>
         <source>Username:</source>
         <translation>&amp;Ім&apos;я користувача:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="144"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="132"/>
         <source>Optional opensubtitles.com account login; signing in is not required but raises the daily download limit.</source>
         <translation>Необов&apos;язковий вхід до облікового запису opensubtitles.com; вхід не потрібен, але підвищує денний ліміт завантажень.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="151"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="624"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="139"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="733"/>
         <source>Password:</source>
         <translation>П&amp;ароль:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="166"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="154"/>
         <source>The account password is stored securely using your operating system&apos;s credential manager.</source>
         <translation>Пароль облікового запису надійно зберігається за допомогою диспетчера облікових даних вашої операційної системи.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="102"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="575"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="90"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="684"/>
         <source>Proxy</source>
         <translation>Проксі</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="25"/>
-        <source>&lt;h1&gt;Network&lt;/h1&gt;&lt;p&gt;&lt;b&gt;OpenSubtitles&lt;/b&gt; search uses the REST API, which requires a free per-application API key: register at opensubtitles.com, create an API consumer, and paste the key here. An account login (username and password) is optional but raises the daily download limit.&lt;/p&gt;&lt;p&gt;&lt;b&gt;YouTube&lt;/b&gt;: the optional resolver uses an external yt-dlp program — when enabled, opening a YouTube URL runs yt-dlp to obtain a directly-playable stream. Vivace offers to install yt-dlp for you the first time you turn this on (or point it at your own copy with the path field below), and can keep it updated on its own per the &quot;Update yt-dlp automatically&quot; setting. Because QMediaPlayer plays a single muxed stream, streaming tops out at the best progressive format (about 720p on YouTube). Cookies are deliberately NOT used for streaming: an authenticated (cookie) session returns URLs a plain player cannot open.&lt;/p&gt;&lt;p&gt;For &lt;b&gt;HD&lt;/b&gt; (and for cookies), enable download mode, or point the external downloader at your own tool (a program or .bat/.cmd). HD formats are separate video and audio streams that cannot be streamed muxed, so Vivace runs yt-dlp (or your tool) to download and merge the video, then plays the file it writes into the download folder. Download mode also needs Deno, a further external program yt-dlp itself uses to solve YouTube&apos;s JavaScript challenges — without it, a signed-in (cookie) request, exactly what HD downloads rely on, sees severely limited format availability. Streaming mode, which never sends cookies, is largely unaffected and doesn&apos;t need Deno. Install Deno yourself and, if it is not on the PATH, set its full path in the Download &amp; play settings.&lt;/p&gt;&lt;p&gt;See &lt;b&gt;Help ▸ Contents ▸ Options&lt;/b&gt; for step-by-step instructions on exporting a cookies.txt file from your browser, and on installing Deno.&lt;/p&gt;&lt;p&gt;The stream &lt;b&gt;connection timeout&lt;/b&gt; (used mainly by live TV tuners) has moved to &lt;i&gt;Preferences ▸ TV and radio&lt;/i&gt;.&lt;/p&gt;&lt;p&gt;The &lt;b&gt;Proxy&lt;/b&gt; tab applies application-wide: both HTTP and SOCKS5 cover OpenSubtitles search and the update check; only HTTP additionally covers media playback and yt-dlp (they read the http_proxy/https_proxy convention directly instead of going through Qt&apos;s network stack, and there is no SOCKS5 equivalent for that convention).&lt;/p&gt;&lt;p&gt;The &lt;b&gt;Cast&lt;/b&gt; tab sets the port Play ▸ Cast… listens on. It&apos;s here (rather than only in the Cast dialog) so it stays fixed — set it once, allow that port through your firewall/router once, and casting keeps working without a new firewall prompt every time.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="631"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="740"/>
         <source>Type:</source>
         <translation>&amp;Тип:</translation>
     </message>
     <message>
-        <source>None</source>
-        <translation type="vanished">Нема</translation>
-    </message>
-    <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="605"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="714"/>
         <source>Host:</source>
         <translation>&amp;Сервер:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="611"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="676"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="720"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="785"/>
         <source>Port:</source>
         <translation>П&amp;орт:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="185"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="173"/>
         <source>YouTube (yt-dlp)</source>
         <translation>YouTube (yt-dlp)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="201"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="25"/>
+        <source>&lt;h1&gt;Network&lt;/h1&gt;&lt;p&gt;&lt;b&gt;OpenSubtitles&lt;/b&gt; search uses the REST API, which requires a free per-application API key: register at opensubtitles.com, create an API consumer, and paste the key here. An account login (username and password) is optional but raises the daily download limit.&lt;/p&gt;&lt;p&gt;&lt;b&gt;YouTube&lt;/b&gt;: the optional resolver uses an external yt-dlp program — when enabled, opening a YouTube URL runs yt-dlp to obtain a directly-playable stream. Vivace offers to install yt-dlp for you the first time you turn this on (or point it at your own copy with the path field below), and can keep it updated on its own per the &quot;Update yt-dlp automatically&quot; setting. Because QMediaPlayer plays a single muxed stream, streaming tops out at the best progressive format (about 720p on YouTube). Cookies are deliberately NOT used for streaming: an authenticated (cookie) session returns URLs a plain player cannot open.&lt;/p&gt;&lt;p&gt;For &lt;b&gt;HD&lt;/b&gt; (and for cookies), enable download mode, or point the external downloader at your own tool (a program or .bat/.cmd). HD formats are separate video and audio streams that cannot be streamed muxed, so Vivace runs yt-dlp (or your tool) to download and merge the video, then plays the file it writes into the download folder. Download mode also needs Deno, a further external program yt-dlp itself uses to solve YouTube&apos;s JavaScript challenges — without it, a signed-in (cookie) request, exactly what HD downloads rely on, sees severely limited format availability. Streaming mode, which never sends cookies, is largely unaffected and doesn&apos;t need Deno. Install Deno yourself and, if it is not on the PATH, set its full path in the Download &amp; play settings.&lt;/p&gt;&lt;p&gt;Since YouTube shortened its own cookie lifetimes, an exported cookies.txt file can go stale within days. &lt;b&gt;Get cookies from browser&lt;/b&gt; reads them live from an installed browser instead, so there&apos;s nothing to re-export. On Windows, only Firefox works here — Chrome/Edge&apos;s own &quot;App-Bound Encryption&quot; blocks every external tool, including yt-dlp, from reading their cookies at all; Linux and macOS Chrome/Edge are unaffected.&lt;/p&gt;&lt;p&gt;See &lt;b&gt;Help ▸ Contents ▸ Options&lt;/b&gt; for step-by-step instructions on exporting a cookies.txt file from your browser, and on installing Deno.&lt;/p&gt;&lt;p&gt;The stream &lt;b&gt;connection timeout&lt;/b&gt; (used mainly by live TV tuners) has moved to &lt;i&gt;Preferences ▸ TV and radio&lt;/i&gt;.&lt;/p&gt;&lt;p&gt;The &lt;b&gt;Proxy&lt;/b&gt; tab applies application-wide: both HTTP and SOCKS5 cover OpenSubtitles search and the update check; only HTTP additionally covers media playback and yt-dlp (they read the http_proxy/https_proxy convention directly instead of going through Qt&apos;s network stack, and there is no SOCKS5 equivalent for that convention).&lt;/p&gt;&lt;p&gt;The &lt;b&gt;Cast&lt;/b&gt; tab sets the port Play ▸ Cast… listens on. It&apos;s here (rather than only in the Cast dialog) so it stays fixed — set it once, allow that port through your firewall/router once, and casting keeps working without a new firewall prompt every time.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="193"/>
         <source>Play YouTube URLs with yt-dlp</source>
         <translation>Відтворювати посилання YouTube через yt-dlp</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="205"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="197"/>
         <source>When on, opening a YouTube URL runs yt-dlp instead of trying to play the page URL as-is.</source>
         <translation>Коли увімкнено, відкриття посилання YouTube запускає yt-dlp замість спроби відтворити URL сторінки напряму.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="218"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="210"/>
         <source>Open YouTube URLs by:</source>
         <translation>Відкривати посилання YouTube способом:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="219"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="211"/>
         <source>Streaming is fastest but caps at ~720p and can&apos;t use cookies. Downloading gets full HD (uses cookies + ffmpeg), then plays and deletes the file. Or hand off to your own external downloader tool.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="229"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="232"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="236"/>
         <source>Streaming (fast, up to ~720p)</source>
         <translation>Потокове (швидко, до ~720p)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="230"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="233"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="237"/>
         <source>Downloading then playing (HD, cookies)</source>
         <translation>Завантаження, потім відтворення (HD, cookie)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="231"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="238"/>
         <source>An external downloader tool</source>
         <translation>Зовнішній інструмент завантаження</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="242"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="249"/>
         <source>Use managed yt-dlp</source>
         <translation>Використовувати керований yt-dlp</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="246"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="267"/>
         <source>When on, Vivace installs yt-dlp for you (see the button here) and can keep it updated automatically below. Turn this off to point at your own yt-dlp instead -- Vivace will not install or auto-update it.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="254"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="275"/>
         <source>Install / Update yt-dlp…</source>
         <translation>Встановити / оновити yt-dlp…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="263"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="284"/>
         <source>yt-dlp path:</source>
         <translation>Шлях до yt-dlp:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="264"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="285"/>
         <source>Leave as &quot;yt-dlp&quot; if it is on your system PATH; otherwise enter the full path to the yt-dlp executable.</source>
         <translation>Залиште &quot;yt-dlp&quot;, якщо він у системному PATH; інакше вкажіть повний шлях до виконуваного файлу yt-dlp.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="270"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="291"/>
         <source>yt-dlp (on PATH) or a full path</source>
         <translation>yt-dlp (у PATH) або повний шлях</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="276"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="297"/>
         <source>Update yt-dlp automatically:</source>
         <translation>Автоматично оновлювати yt-dlp:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="277"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="298"/>
         <source>Runs yt-dlp&apos;s own self-update before playing a YouTube video. &quot;Every time&quot; adds a short delay to each play; the daily/weekly options check only that often. Failures (e.g. no network) are ignored and playback proceeds with whatever version is installed. Only applies to a managed yt-dlp.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="291"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="312"/>
         <source>Never</source>
         <translation>Ніколи</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="292"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="313"/>
         <source>Every time yt-dlp runs</source>
         <translation>Щоразу під час запуску yt-dlp</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="293"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="314"/>
         <source>Once a day</source>
         <translation>Раз на день</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="294"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="315"/>
         <source>Once a week</source>
         <translation>Раз на тиждень</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="301"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="322"/>
         <source>Maximum quality:</source>
         <translation>Максимальна якість:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="302"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="323"/>
         <source>Upper limit on resolution. Streaming is capped at ~720p regardless; downloading can reach this height in full HD.</source>
         <translation>Верхня межа роздільної здатності. Потокове в будь-якому разі обмежене ~720p; завантаження може досягти цієї висоти в повному HD.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="312"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="333"/>
         <source>360p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="313"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="334"/>
         <source>480p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="314"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="335"/>
         <source>720p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="315"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="336"/>
         <source>1080p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="316"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="337"/>
         <source>1440p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="317"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="338"/>
         <source>2160p (4K)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="318"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="339"/>
         <source>Best available</source>
         <translation>Найкраща доступна</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="333"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="354"/>
         <source>yt-dlp is a separate program and is not bundled with Vivace.</source>
         <translation>yt-dlp — це окрема програма, яка не постачається з Vivace.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="339"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="360"/>
         <source>Download &amp; play</source>
         <translation>Завантажити й відтворити</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="351"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="380"/>
         <source>Downloads the video (merging HD video and audio with ffmpeg), plays it, and keeps it in a cache folder so replaying it is instant. The cache holds the most recent downloads up to the size below; older ones are removed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="365"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="394"/>
         <source>Cookies file:</source>
         <translation>Файл cookie:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="366"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="396"/>
+        <source>Optional cookies.txt exported from your browser (yt-dlp --cookies); unlocks HD, members-only and age-restricted videos. Safe here — cookies only affect the download, not a stream a player must open. A copy is kept in Vivace&apos;s own storage, since Android can&apos;t reopen the original file location directly — browse again here after re-exporting it from your browser.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="405"/>
         <source>Optional cookies.txt exported from your browser (yt-dlp --cookies); unlocks HD, members-only and age-restricted videos. Safe here — cookies only affect the download, not a stream a player must open. See Help ▸ Contents ▸ Options for step-by-step export instructions.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="380"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="419"/>
         <source>optional cookies.txt</source>
         <translation>необов&apos;язковий cookies.txt</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="383"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="402"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="429"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="447"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="519"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="555"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="422"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="490"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="523"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="552"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="628"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="664"/>
         <source>Browse…</source>
         <translation>Огляд…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="388"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="428"/>
+        <source>Get cookies from browser:</source>
+        <translation>Отримувати cookie з браузера:</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="429"/>
+        <source>Reads cookies live from an installed browser instead of the file above — recommended, since YouTube&apos;s cookie lifetimes are now much shorter, making an exported cookies.txt go stale within days. Takes priority over the cookies file when set. On Windows, only Firefox actually works here: Chrome/Edge encrypt cookies in a way tied to the browser&apos;s own binary (&quot;App-Bound Encryption&quot;), which blocks yt-dlp (and every other external tool) from reading them at all — this is a Chrome-side restriction yt-dlp&apos;s own developers can&apos;t work around. Linux and macOS Chrome/Edge are unaffected.</source>
+        <translation>Зчитує cookie напряму з встановленого браузера замість файлу вище — рекомендовано, оскільки термін дії cookie YouTube тепер значно коротший, тож експортований файл cookies.txt застаріває за кілька днів. Має пріоритет над файлом cookie, якщо встановлено. У Windows тут справді працює лише Firefox: Chrome/Edge шифрують cookie у спосіб, прив&apos;язаний до самого виконуваного файлу браузера (&quot;App-Bound Encryption&quot;), що повністю блокує yt-dlp (та будь-який інший зовнішній інструмент) від їх читання — це обмеження з боку Chrome, яке розробники yt-dlp не можуть обійти. У Linux і macOS Chrome/Edge не постраждали.</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="453"/>
+        <source>Off (use the cookies file above)</source>
+        <translation>Вимкнено (використовувати файл cookie вище)</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="454"/>
+        <source>Firefox (recommended)</source>
+        <translation>Firefox (рекомендовано)</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="455"/>
+        <source>Chrome</source>
+        <translation>Chrome</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="456"/>
+        <source>Edge</source>
+        <translation>Edge</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="457"/>
+        <source>Brave</source>
+        <translation>Brave</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="458"/>
+        <source>Chromium</source>
+        <translation>Chromium</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="459"/>
+        <source>Opera</source>
+        <translation>Opera</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="460"/>
+        <source>Safari</source>
+        <translation>Safari</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="461"/>
+        <source>Vivaldi</source>
+        <translation>Vivaldi</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="462"/>
+        <source>Whale</source>
+        <translation>Whale</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="475"/>
         <source>ffmpeg location:</source>
         <translation>Розташування ffmpeg:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="389"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="476"/>
         <source>Folder containing ffmpeg (yt-dlp needs it to merge HD video+audio). Leave empty to use ffmpeg from the system PATH.</source>
         <translation>Тека з ffmpeg (yt-dlp потрібен для об&apos;єднання HD-відео та звуку). Залиште порожнім, щоб використовувати ffmpeg із системного PATH.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="399"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="426"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="487"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="520"/>
         <source>empty = use PATH</source>
         <translation>порожньо = використовувати PATH</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="407"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="500"/>
         <source>Deno path:</source>
         <translation>Шлях до Deno:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="408"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="501"/>
         <source>yt-dlp uses a separate program, Deno, to solve YouTube&apos;s JavaScript challenges. It&apos;s most needed here: a signed-in (cookie) request — exactly what unlocks HD above — sees severely limited format availability without it. Streaming mode, which never sends cookies, is largely unaffected. Leave empty if &quot;deno&quot; is already on your system PATH; otherwise enter the full path to the deno executable. See Help ▸ Contents ▸ Options for installation instructions.</source>
         <translation>yt-dlp використовує окрему програму Deno для вирішення завдань JavaScript від YouTube. Це найважливіше саме тут: авторизований (із cookie) запит — саме те, що розблоковує HD вище — без Deno має суттєво обмежену доступність форматів. Режим трансляції, який ніколи не надсилає cookie, майже не постраждає. Залиште порожнім, якщо «deno» вже є в системному PATH; інакше вкажіть повний шлях до виконуваного файлу deno. Інструкції зі встановлення див. у Довідка ▸ Зміст ▸ Параметри.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="434"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="538"/>
         <source>Cache folder:</source>
         <translation>Тека кешу:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="435"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="539"/>
         <source>Where downloaded videos are kept for reuse. A video already here is replayed without downloading again.</source>
         <translation>Де зберігаються завантажені відео для повторного використання. Наявне тут відео відтворюється без повторного завантаження.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="452"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="557"/>
         <source>Cache size:</source>
         <translation>Розмір кешу:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="453"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="558"/>
         <source>How many downloaded videos to keep. When the limit is reached, the least-recently-played one is deleted.</source>
         <translation>Скільки завантажених відео зберігати. Після досягнення ліміту видаляється те, що відтворювалося найдавніше.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="464"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="569"/>
         <source>files</source>
         <translation>файлів</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="470"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="575"/>
         <source>Thumbnail fallback at:</source>
         <translation>Резервна мініатюра на:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="471"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="576"/>
         <source>The cache thumbnail is normally YouTube&apos;s own poster image. Only if that is missing or black does Vivace grab a video frame — this is how many seconds in (past a black intro).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="484"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="589"/>
         <source>seconds</source>
         <translation>секунд</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="494"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="599"/>
         <source>External downloader tool</source>
         <translation>Зовнішній інструмент завантаження</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="505"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="614"/>
         <source>Downloader command:</source>
         <translation>Команда завантажувача:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="506"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="615"/>
         <source>The program or .bat/.cmd script that downloads the video; it receives the URL as an argument.</source>
         <translation>Програма або сценарій .bat/.cmd, що завантажує відео; отримує URL як аргумент.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="516"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="625"/>
         <source>e.g. C:ToolsYouTubeDL.bat</source>
         <translation>напр. C:\Tools\YouTubeDL.bat</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="524"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="633"/>
         <source>Arguments:</source>
         <translation>Аргументи:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="525"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="634"/>
         <source>Arguments passed to the tool; the token {url} is replaced by the video URL (if omitted, the URL is appended). Add any cookies/format flags your tool needs here, e.g. --cookies C:pathcookies.txt.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="540"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="649"/>
         <source>Download folder:</source>
         <translation>Тека завантаження:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="541"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="650"/>
         <source>The folder the tool writes the finished file into; Vivace plays the newest media file that appears there, so set it to match your tool&apos;s output folder.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="552"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="661"/>
         <source>your tool&apos;s output folder</source>
         <translation>вихідна тека вашого інструмента</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="585"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="694"/>
         <source>Enable proxy</source>
         <translation>Увімкнути проксі</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="589"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="698"/>
         <source>Applies to OpenSubtitles search and the update check (both proxy types). Only an HTTP proxy also applies to media playback and yt-dlp — a SOCKS5 proxy does not reach either, since neither goes through Qt&apos;s network stack.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="647"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="756"/>
         <source>The proxy password is stored securely using your operating system&apos;s credential manager.</source>
         <translation>Пароль проксі надійно зберігається за допомогою диспетчера облікових даних вашої операційної системи.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="677"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="786"/>
         <source>The port Play ▸ Cast… listens on. Kept fixed here (rather than editable each time in the Cast dialog) so you can allow it through your firewall/router once and it keeps working.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="698"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="807"/>
         <source>Your OS&apos;s firewall (and most routers) block an app listening on a fresh port until you allow it. Pick a port once here, allow Vivace through your firewall for it, and Cast will keep working without a new prompt each time.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="713"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="822"/>
         <source>Select the cookies.txt file</source>
         <translation>Виберіть файл cookies.txt</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="719"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="851"/>
         <source>Select the deno executable</source>
         <translation>Виберіть виконуваний файл deno</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="725"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="857"/>
         <source>Select the folder containing ffmpeg</source>
         <translation>Виберіть теку з ffmpeg</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="730"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="862"/>
         <source>Select the download cache folder</source>
         <translation>Виберіть теку кешу завантажень</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="735"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="867"/>
         <source>Select the downloader program</source>
         <translation>Виберіть програму завантажувача</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="741"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="873"/>
         <source>Select the download folder</source>
         <translation>Виберіть теку завантаження</translation>
     </message>
@@ -4411,14 +4386,6 @@
         <translation>Як збільшується мініатюра рядка, на який ви клацаєте або переходите, у списку відтворення, незалежно від налаштування відтворюваного елемента вище.</translation>
     </message>
     <message>
-        <source>Restore\ the\ playlist\ you\ had\ open\ the\ last\ time\ Vivace\ was\ closed\.</source>
-        <translation type="vanished">Відновлює список відтворення, який був відкритий під час останнього закриття Vivace.</translation>
-    </message>
-    <message>
-        <source>Sessions</source>
-        <translation type="vanished">Сеанси</translation>
-    </message>
-    <message>
         <location filename="../qml/PrefPlaylistPage.qml" line="230"/>
         <source>Remember the playlist between sessions</source>
         <translation>Запам&apos;ятовувати список відтворення між сеансами</translation>
@@ -4537,17 +4504,9 @@
         <translation>Зображення растрових субтитрів (підкартинки DVD, доріжки PGS або DVB) мають низьку роздільну здатність і можуть виглядати зазубреними після збільшення до розміру сучасного вікна — незалежно від того, надходять вони з меню DVD-диска чи з вбудованої доріжки субтитрів у звичайному відеофайлі. Цей параметр згладжує краї легким розмиттям. 0 вимикає ефект (необроблене растрове зображення); вищі значення дають сильніше розмиття.</translation>
     </message>
     <message>
-        <source>DVD subtitles</source>
-        <translation type="vanished">Субтитри DVD</translation>
-    </message>
-    <message>
         <location filename="../qml/PrefSubtitlesPage.qml" line="126"/>
         <source>Smoothing:</source>
         <translation>Згладжування:</translation>
-    </message>
-    <message>
-        <source>A disc&apos;s own subtitle images are low-resolution bitmaps that can look jagged once scaled up to a modern window size. This softens the edges with a slight blur. 0 turns it off (the raw disc bitmap); higher values blur more.</source>
-        <translation type="vanished">Зображення субтитрів на диску — це растрові картинки низької роздільної здатності, які можуть виглядати зазубреними після збільшення до розміру сучасного вікна. Цей параметр згладжує краї легким розмиттям. 0 вимикає ефект (необроблене зображення диска); вищі значення дають сильніше розмиття.</translation>
     </message>
     <message>
         <location filename="../qml/PrefSubtitlesPage.qml" line="150"/>
@@ -4581,22 +4540,6 @@
         <location filename="../qml/PrefTVPage.qml" line="54"/>
         <source>How long to wait for network stream data before giving up. Live TV tuners can stall for several seconds while locking the channel — if this is too short the stream fails with &quot;Could not open file&quot;. Applies to the FFmpeg backend.</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>DVB tuner</source>
-        <translation type="vanished">DVB-тюнер</translation>
-    </message>
-    <message>
-        <source>Rescan TV channels on startup</source>
-        <translation type="vanished">Пересканувати телеканали під час запуску</translation>
-    </message>
-    <message>
-        <source>Save TV channels in favorites</source>
-        <translation type="vanished">Зберігати телеканали в обраному</translation>
-    </message>
-    <message>
-        <source>TV standard:</source>
-        <translation type="vanished">Стандарт ТБ:</translation>
     </message>
 </context>
 <context>
@@ -4714,67 +4657,67 @@
         <translation>Виберіть, які дії відображаються на панелі керування, і в якому порядку.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefToolsPage.qml" line="396"/>
+        <location filename="../qml/PrefToolsPage.qml" line="397"/>
         <source>Show status bar</source>
         <translation>Показувати рядок стану</translation>
     </message>
     <message>
-        <location filename="../qml/PrefToolsPage.qml" line="401"/>
+        <location filename="../qml/PrefToolsPage.qml" line="402"/>
         <source>The status bar sits below the control bar and shows information about the currently playing file.</source>
         <translation>Рядок стану розташований під панеллю керування та показує відомості про файл, який зараз відтворюється.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefToolsPage.qml" line="407"/>
+        <location filename="../qml/PrefToolsPage.qml" line="408"/>
         <source>Status bar fields</source>
         <translation>Поля рядка стану</translation>
     </message>
     <message>
-        <location filename="../qml/PrefToolsPage.qml" line="418"/>
+        <location filename="../qml/PrefToolsPage.qml" line="419"/>
         <source>Choose which fields are shown and how the time is displayed.</source>
         <translation>Виберіть, які поля відображаються та як показується час.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefToolsPage.qml" line="422"/>
+        <location filename="../qml/PrefToolsPage.qml" line="423"/>
         <source>Video info</source>
         <translation>Інформація відео</translation>
     </message>
     <message>
-        <location filename="../qml/PrefToolsPage.qml" line="428"/>
+        <location filename="../qml/PrefToolsPage.qml" line="429"/>
         <source>Audio info</source>
         <translation>Відомості про звук</translation>
     </message>
     <message>
-        <location filename="../qml/PrefToolsPage.qml" line="434"/>
+        <location filename="../qml/PrefToolsPage.qml" line="435"/>
         <source>Format info</source>
         <translation>Інформація про формат</translation>
     </message>
     <message>
-        <location filename="../qml/PrefToolsPage.qml" line="440"/>
+        <location filename="../qml/PrefToolsPage.qml" line="441"/>
         <source>Bitrate info</source>
         <translation>Інформація про бітрейт</translation>
     </message>
     <message>
-        <location filename="../qml/PrefToolsPage.qml" line="446"/>
+        <location filename="../qml/PrefToolsPage.qml" line="447"/>
         <source>Frame counter</source>
         <translation>Лічильник кадрів</translation>
     </message>
     <message>
-        <location filename="../qml/PrefToolsPage.qml" line="453"/>
+        <location filename="../qml/PrefToolsPage.qml" line="454"/>
         <source>Time display</source>
         <translation>Відображення часу</translation>
     </message>
     <message>
-        <location filename="../qml/PrefToolsPage.qml" line="460"/>
+        <location filename="../qml/PrefToolsPage.qml" line="461"/>
         <source>Display total time</source>
         <translation>Показувати загальний час</translation>
     </message>
     <message>
-        <location filename="../qml/PrefToolsPage.qml" line="466"/>
+        <location filename="../qml/PrefToolsPage.qml" line="467"/>
         <source>Display remaining time</source>
         <translation>Показувати залишок часу</translation>
     </message>
     <message>
-        <location filename="../qml/PrefToolsPage.qml" line="474"/>
+        <location filename="../qml/PrefToolsPage.qml" line="475"/>
         <source>Show the current time with milliseconds</source>
         <translation>Показати поточний час з мілісекундами</translation>
     </message>
@@ -4830,92 +4773,92 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="175"/>
+        <location filename="../qml/PreferencesDialog.qml" line="191"/>
         <source>General</source>
         <translation>Загальні</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="176"/>
+        <location filename="../qml/PreferencesDialog.qml" line="192"/>
         <source>Drives</source>
         <translation>Диски</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="177"/>
+        <location filename="../qml/PreferencesDialog.qml" line="193"/>
         <source>Subtitles</source>
         <translation>Субтитри</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="178"/>
+        <location filename="../qml/PreferencesDialog.qml" line="194"/>
         <source>Interface</source>
         <translation>Інтерфейс</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="179"/>
+        <location filename="../qml/PreferencesDialog.qml" line="195"/>
         <source>Toolbars</source>
         <translation>Панелі</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="180"/>
+        <location filename="../qml/PreferencesDialog.qml" line="196"/>
         <source>Keyboard and mouse</source>
         <translation>Клавіатура та миша</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="181"/>
+        <location filename="../qml/PreferencesDialog.qml" line="197"/>
         <source>Playlist</source>
         <translation>Перелік відтворення</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="182"/>
+        <location filename="../qml/PreferencesDialog.qml" line="198"/>
         <source>TV and radio</source>
         <translation>ТБ і радіо</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="183"/>
+        <location filename="../qml/PreferencesDialog.qml" line="199"/>
         <source>File types</source>
         <translation>Типи файлів</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="184"/>
+        <location filename="../qml/PreferencesDialog.qml" line="200"/>
         <source>Updates</source>
         <translation>Оновлення</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="185"/>
+        <location filename="../qml/PreferencesDialog.qml" line="201"/>
         <source>Network</source>
         <translation>Мережа</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="186"/>
+        <location filename="../qml/PreferencesDialog.qml" line="202"/>
         <source>Advanced</source>
         <translation>Додатково</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="260"/>
+        <location filename="../qml/PreferencesDialog.qml" line="279"/>
         <source>&amp;Help</source>
         <translation>&amp;Довідка</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="265"/>
+        <location filename="../qml/PreferencesDialog.qml" line="284"/>
         <source>OK</source>
         <translation>&amp;OK</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="269"/>
+        <location filename="../qml/PreferencesDialog.qml" line="288"/>
         <source>Apply</source>
         <translation>Застосувати</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="275"/>
+        <location filename="../qml/PreferencesDialog.qml" line="294"/>
         <source>Cancel</source>
         <translation>Скасувати</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="284"/>
+        <location filename="../qml/PreferencesDialog.qml" line="303"/>
         <source>Vivace — Help</source>
         <translation>Vivace — Довідка</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="348"/>
+        <location filename="../qml/PreferencesDialog.qml" line="367"/>
         <source>Close</source>
         <translation>Закрити</translation>
     </message>
@@ -5192,57 +5135,6 @@
     </message>
 </context>
 <context>
-    <name>ToolbarEditor</name>
-    <message>
-        <source>Toolbar editor</source>
-        <translation type="vanished">Редактор панелі інструментів</translation>
-    </message>
-    <message>
-        <source>Available</source>
-        <translation type="vanished">Доступні</translation>
-    </message>
-    <message>
-        <source>Add →</source>
-        <translation type="vanished">Додати →</translation>
-    </message>
-    <message>
-        <source>← Remove</source>
-        <translation type="vanished">← Видалити</translation>
-    </message>
-    <message>
-        <source>Toolbar</source>
-        <translation type="vanished">Панель інструментів</translation>
-    </message>
-    <message>
-        <source>Up</source>
-        <translation type="vanished">У&amp;гору</translation>
-    </message>
-    <message>
-        <source>Down</source>
-        <translation type="vanished">Ун&amp;из</translation>
-    </message>
-    <message>
-        <source>&amp;Icon size:</source>
-        <translation type="vanished">&amp;Розмір піктограм:</translation>
-    </message>
-    <message>
-        <source>Size in pixels of this toolbar&apos;s button icons.</source>
-        <translation type="vanished">Розмір піктограм кнопок цієї панелі в пікселях.</translation>
-    </message>
-    <message>
-        <source>Restore defaults</source>
-        <translation type="vanished">Відновити типові значення</translation>
-    </message>
-    <message>
-        <source>OK</source>
-        <translation type="vanished">&amp;OK</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="vanished">Скасувати</translation>
-    </message>
-</context>
-<context>
     <name>UpdateChecker</name>
     <message>
         <location filename="../src/updatechecker.cpp" line="93"/>
@@ -5416,76 +5308,72 @@
 <context>
     <name>YoutubeResolver</name>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="321"/>
+        <location filename="../src/youtuberesolver.cpp" line="329"/>
         <source>Could not create the download cache folder.</source>
         <translation>Не вдалося створити теку кешу завантажень.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="335"/>
+        <location filename="../src/youtuberesolver.cpp" line="343"/>
         <source>Could not determine the video id to download.</source>
         <translation>Не вдалося визначити ідентифікатор відео для завантаження.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="451"/>
+        <location filename="../src/youtuberesolver.cpp" line="467"/>
         <source>Could not run yt-dlp (&quot;%1&quot;). Check the path in Preferences &gt; Network.</source>
         <translation>Не вдалося запустити yt-dlp (&quot;%1&quot;). Перевірте шлях у Налаштування &gt; Мережа.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="473"/>
+        <location filename="../src/youtuberesolver.cpp" line="489"/>
         <source>yt-dlp did not finish normally.</source>
         <translation>yt-dlp завершився нештатно.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="480"/>
+        <location filename="../src/youtuberesolver.cpp" line="496"/>
         <source>yt-dlp exited with code %1.</source>
         <translation>yt-dlp завершився з кодом %1.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="495"/>
+        <location filename="../src/youtuberesolver.cpp" line="511"/>
         <source>yt-dlp returned no playable stream.</source>
         <translation>yt-dlp не повернув відтворюваний потік.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="517"/>
+        <location filename="../src/youtuberesolver.cpp" line="533"/>
         <source>The download did not finish normally.</source>
         <translation>Завантаження завершилося нештатно.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="520"/>
+        <location filename="../src/youtuberesolver.cpp" line="536"/>
         <source>yt-dlp produced no file (exit code %1). If this is an HD video, check the ffmpeg and Deno paths.</source>
         <translation>yt-dlp не створив файл (код виходу %1). Якщо це відео в HD, перевірте шляхи до ffmpeg і Deno.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="769"/>
+        <location filename="../src/youtuberesolver.cpp" line="794"/>
         <source>Could not create the destination folder</source>
         <translation>Не вдалося створити цільову папку</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="785"/>
+        <location filename="../src/youtuberesolver.cpp" line="810"/>
         <source>File no longer exists</source>
         <translation>Файл більше не існує</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="807"/>
+        <location filename="../src/youtuberesolver.cpp" line="832"/>
         <source>Could not move the file</source>
         <translation>Не вдалося перемістити файл</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="808"/>
+        <location filename="../src/youtuberesolver.cpp" line="833"/>
         <source>Could not copy the file</source>
         <translation>Не вдалося скопіювати файл</translation>
     </message>
     <message>
-        <source>yt-dlp produced no file (exit code %1). If this is an HD video, check the ffmpeg location.</source>
-        <translation type="vanished">yt-dlp не створив файл (код виходу %1). Якщо це HD-відео, перевірте розташування ffmpeg.</translation>
-    </message>
-    <message>
-        <location filename="../src/youtuberesolver.cpp" line="929"/>
+        <location filename="../src/youtuberesolver.cpp" line="954"/>
         <source>Could not write %1.</source>
         <translation>Не вдалося записати %1.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="935"/>
+        <location filename="../src/youtuberesolver.cpp" line="960"/>
         <source>Could not save %1.</source>
         <translation>Не вдалося зберегти %1.</translation>
     </message>
@@ -5493,56 +5381,52 @@
 <context>
     <name>YoutubeSupportDialog</name>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="26"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="35"/>
         <source>Install / Update YouTube support</source>
         <translation>Встановити / Оновити підтримку YouTube</translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="75"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="90"/>
         <source>yt-dlp was installed successfully as:</source>
         <translation>yt-dlp успішно встановлено як:</translation>
     </message>
     <message>
-        <source>YouTube playback is now enabled.</source>
-        <translation type="vanished">Відтворення YouTube тепер увімкнено.</translation>
-    </message>
-    <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="79"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="94"/>
         <source>The download failed:</source>
         <translation>Не вдалося завантажити:</translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="100"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="115"/>
         <source>To play YouTube videos, Vivace uses an external program called yt-dlp.</source>
         <translation>Для відтворення відео з YouTube Vivace використовує зовнішню програму yt-dlp.</translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="103"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="118"/>
         <source>Vivace can download the latest version from the official website and install it as:</source>
         <translation>Vivace може завантажити останню версію з офіційного сайту та встановити її як:</translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="106"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="121"/>
         <source>Would you like to proceed?</source>
         <translation>Бажаєте продовжити?</translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="114"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="129"/>
         <source>Downloading yt-dlp…</source>
         <translation>Завантаження yt-dlp…</translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="138"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="153"/>
         <source>Install</source>
         <translation>Встановити</translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="147"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="162"/>
         <source>Cancel</source>
         <translation>Скасувати</translation>
     </message>
     <message>
-        <location filename="../qml/YoutubeSupportDialog.qml" line="152"/>
+        <location filename="../qml/YoutubeSupportDialog.qml" line="167"/>
         <source>Close</source>
         <translation>Закрити</translation>
     </message>
