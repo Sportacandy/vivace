@@ -21,6 +21,23 @@ ColumnLayout {
     spacing: 8
 
     required property YoutubeSupportDialog youtubeInstallDialog
+    required property QtObject ytResolver
+
+    // Inline progress line for the PO token provider install below, updated
+    // live from ytResolver's own text-line-per-step signals -- shown right
+    // next to the button that triggered it rather than routed through
+    // Main.qml's video-download busy overlay/OSD, since this action is
+    // triggered from (and normally watched from) this Preferences page
+    // itself, which can sit in front of or beside the main window.
+    property string potStatus: ""
+    Connections {
+        target: ytResolver
+        function onPotProviderInstallProgress(line) { potStatus = line }
+        function onPotProviderInstallFinished() {
+            potStatus = qsTr("PO token provider installed.")
+        }
+        function onPotProviderInstallFailed(message) { potStatus = message }
+    }
 
     readonly property string helpText: qsTr(
         "<h1>Network</h1>"
@@ -50,6 +67,14 @@ ColumnLayout {
         + "which never sends cookies, is largely unaffected and doesn't need "
         + "Deno. Install Deno yourself and, if it is not on the PATH, set its "
         + "full path in the Download & play settings.</p>"
+        + "<p>Recent YouTube videos increasingly require a <b>PO token</b> "
+        + "just to play at all — a general playability requirement, "
+        + "unrelated to cookies/login, that shows up as yt-dlp reporting the "
+        + "video as unavailable. <b>Install PO token provider…</b> sets up "
+        + "the community \"BgUtils POT Provider\": a small yt-dlp plugin "
+        + "plus a script (built with Deno, the same program used above) "
+        + "that yt-dlp runs on demand to generate a token. It applies to "
+        + "both streaming and downloading.</p>"
         + "<p>Since YouTube shortened its own cookie lifetimes, an exported "
         + "cookies.txt file can go stale within days. <b>Get cookies from "
         + "browser</b> reads them live from an installed browser instead, "
@@ -276,6 +301,46 @@ ColumnLayout {
                                     enabled: managedYtdlp.checked
                                     onClicked: youtubeInstallDialog.openDialog()
                                 }
+                            }
+
+                            RowLayout {
+                                Layout.columnSpan: 2
+                                spacing: 6
+                                visible: Qt.platform.os !== "android"
+                                Label { text: qsTr("PO token provider:") }
+                                HelpMark { text: qsTr("Recent YouTube videos increasingly "
+                                                      + "require a \"PO token\" just to play at "
+                                                      + "all, even with no login involved -- "
+                                                      + "without one, yt-dlp reports the video as "
+                                                      + "unavailable. Installs the community "
+                                                      + "\"BgUtils POT Provider\" (a small yt-dlp "
+                                                      + "plugin plus a script run on demand via "
+                                                      + "Deno, which Vivace already uses above) "
+                                                      + "so yt-dlp can generate one automatically. "
+                                                      + "Applies to both streaming and "
+                                                      + "downloading.") }
+                                Item { Layout.fillWidth: true }
+                                Button {
+                                    text: ytResolver.potProviderInstalling
+                                          ? qsTr("Installing…")
+                                          : (ytResolver.potProviderInstalled
+                                             ? qsTr("Reinstall / Update PO token provider…")
+                                             : qsTr("Install PO token provider…"))
+                                    enabled: !ytResolver.potProviderInstalling
+                                    onClicked: {
+                                        potStatus = ""
+                                        ytResolver.installOrUpdatePotProvider()
+                                    }
+                                }
+                            }
+                            Label {
+                                Layout.columnSpan: 2
+                                Layout.fillWidth: true
+                                visible: Qt.platform.os !== "android" && potStatus !== ""
+                                wrapMode: Text.WordWrap
+                                opacity: 0.75
+                                font.pixelSize: 11
+                                text: potStatus
                             }
 
                             RowLayout {

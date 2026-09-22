@@ -11,6 +11,21 @@ each get their own entry instead.
 
 ## [Unreleased]
 
+### Added
+- YouTube: Preferences ▸ Network ▸ YouTube ▸ Download & play gained a
+  "Get cookies from browser" option, reading cookies live from an
+  installed browser instead of a previously-exported `cookies.txt` —
+  recommended now that YouTube's own cookie lifetimes are much shorter,
+  making an exported file go stale within days. On Windows, only
+  Firefox actually works here; Chrome/Edge's "App-Bound Encryption"
+  blocks yt-dlp (and every other external tool) from reading their
+  cookies at all. Linux and macOS Chrome/Edge are unaffected.
+- YouTube: an "Install PO token provider…" button (Preferences ▸
+  Network ▸ YouTube) sets up the community "BgUtils POT Provider" so
+  yt-dlp can generate a PO token on demand — increasingly required just
+  to play a video at all, independent of cookies/login. Applies to both
+  streaming and downloading.
+
 ## [0.5.1] — 2026-09-21
 
 ### Fixed

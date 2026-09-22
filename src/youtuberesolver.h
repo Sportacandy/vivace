@@ -117,6 +117,24 @@ class YoutubeResolver : public QObject
     Q_PROPERTY(bool useManagedYtdlp READ useManagedYtdlp
                        WRITE setUseManagedYtdlp NOTIFY useManagedYtdlpChanged)
 
+    // PO (proof-of-origin) token provider: recent videos increasingly need a
+    // PO token to play at all -- yt-dlp reports this as "player response
+    // playability status: UNPLAYABLE" even with no cookies/authentication
+    // involved (a general playability requirement, unlike cookies). Uses
+    // the community-standard "BgUtils POT Provider" (github.com/Brainicism/
+    // bgutil-ytdlp-pot-provider), already integrated into yt-dlp's own POT
+    // Provider Framework, in its "Generation Script" mode (no persistent
+    // server process to manage -- yt-dlp just runs a small script on demand
+    // via Node.js or Deno, which Vivace already depends on for --js-runtimes
+    // above). installOrUpdatePotProvider() downloads the project's source,
+    // installs its yt-dlp plugin into yt-dlp's own standard plugin
+    // directory, and builds the generation script via Deno (reusing
+    // denoLocation). True once server/build/generate_once.js exists.
+    Q_PROPERTY(bool potProviderInstalled READ potProviderInstalled
+                       NOTIFY potProviderInstalledChanged)
+    Q_PROPERTY(bool potProviderInstalling READ potProviderInstalling
+                       NOTIFY potProviderInstallingChanged)
+
 public:
     explicit YoutubeResolver(QObject *parent = nullptr);
     ~YoutubeResolver() override;
@@ -191,6 +209,15 @@ public:
     // installFinished / installFailed.
     Q_INVOKABLE void installOrUpdate();
 
+    bool potProviderInstalled() const;
+    bool potProviderInstalling() const { return m_potProviderInstalling; }
+    // Fetches bgutil-ytdlp-pot-provider's latest tagged source, installs its
+    // yt-dlp plugin, and builds its Generation Script via Deno. Safe to call
+    // again later to pick up a newer release. Emits potProviderInstallProgress
+    // (a line of build output, for a progress overlay) / potProviderInstallFinished
+    // / potProviderInstallFailed.
+    Q_INVOKABLE void installOrUpdatePotProvider();
+
     // True for YouTube page URLs (youtube.com / youtu.be family). Mirrors
     // SMPlayer's isUrlSupported, which keys off a resolvable YouTube video ID.
     Q_INVOKABLE static bool isSupportedUrl(const QString &url);
@@ -239,6 +266,11 @@ signals:
     void installProgress(qint64 received, qint64 total);
     void installFinished(const QString &path);
     void installFailed(const QString &message);
+    void potProviderInstalledChanged();
+    void potProviderInstallingChanged();
+    void potProviderInstallProgress(const QString &line);
+    void potProviderInstallFinished();
+    void potProviderInstallFailed(const QString &message);
 
 private:
     enum class Op { None, Resolve, Download };
@@ -282,8 +314,27 @@ private:
     static QString platformDownloadUrl();
     static QString defaultBinName();
 
+    // PO token provider install/build (see potProviderInstalled's doc comment).
+    QString potProviderDir() const;         // AppDataLocation/bgutil-ytdlp-pot-provider
+    QString potProviderScriptPath() const;  // potProviderDir()/server/build/generate_once.js
+    static QString ytdlpPluginDir();        // yt-dlp's own standard per-user plugin directory
+    void setPotProviderInstalling(bool installing);
+    void potProviderExtract(const QString &tarGzPath);
+    void potProviderInstallPluginThenBuild(const QString &extractedDir);
+    // Runs one external step (tar extraction, or a deno build step) as a
+    // fresh, self-contained QProcess; calls onSuccess() on a clean (exit
+    // code 0) finish, else potProviderFail() with its captured output.
+    void potProviderRunProcess(const QString &program, const QStringList &args,
+                               const QString &workingDir,
+                               const std::function<void()> &onSuccess);
+    void potProviderFail(const QString &message);
+    // The --extractor-args pair to append when potProviderInstalled() is
+    // true, empty otherwise -- shared by startResolve()/startDownload().
+    QStringList potProviderExtractorArgs() const;
+
     QProcess *m_process = nullptr;
     QProcess *m_updateProcess = nullptr; // transient "<ytdlPath> -U" self-update
+    bool m_potProviderInstalling = false;
     QNetworkAccessManager m_net;
     QString m_ytdlPath = QStringLiteral("yt-dlp");
     int m_preferredHeight = 720;

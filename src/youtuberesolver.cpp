@@ -9,6 +9,7 @@
 
 #include <QDateTime>
 #include <QDir>
+#include <QDirIterator>
 #include <QFileInfo>
 #include <QImage>
 #include <QJsonDocument>
@@ -312,6 +313,7 @@ void YoutubeResolver::startResolve(const QString &requestUrl)
     // when empty: yt-dlp already looks for "deno" on PATH itself by default.
     if (!m_denoLocation.isEmpty())
         args << QStringLiteral("--js-runtimes") << (QStringLiteral("deno:") + m_denoLocation);
+    args << potProviderExtractorArgs();
     args << requestUrl;
     m_process->start(m_ytdlPath, args);
 }
@@ -397,6 +399,7 @@ void YoutubeResolver::startDownload(const QString &requestUrl)
         args << QStringLiteral("--ffmpeg-location") << m_ffmpegLocation;
     if (!m_denoLocation.isEmpty())
         args << QStringLiteral("--js-runtimes") << (QStringLiteral("deno:") + m_denoLocation);
+    args << potProviderExtractorArgs();
     args << requestUrl;
 
     m_op = Op::Download;
@@ -969,5 +972,288 @@ void YoutubeResolver::installOrUpdate()
         setInstalling(false);
         setYtdlPath(target); // adopt the freshly installed binary
         emit installFinished(QDir::toNativeSeparators(target));
+    });
+}
+
+// --- PO token provider (BgUtils POT Provider, Generation Script mode) ------
+
+QString YoutubeResolver::potProviderDir() const
+{
+    return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation)
+            + QStringLiteral("/bgutil-ytdlp-pot-provider");
+}
+
+QString YoutubeResolver::potProviderScriptPath() const
+{
+    return potProviderDir() + QStringLiteral("/server/build/generate_once.js");
+}
+
+bool YoutubeResolver::potProviderInstalled() const
+{
+    return QFileInfo::exists(potProviderScriptPath());
+}
+
+QStringList YoutubeResolver::potProviderExtractorArgs() const
+{
+    if (!potProviderInstalled())
+        return {};
+    // script_path (not server_home) is the real, working option name --
+    // confirmed directly against the project's own install_plugin_dev.sh,
+    // not the (differently-worded) informal usage description found
+    // earlier. "youtube:player-client=mweb" is the SAME project's own
+    // paired recommendation in that same script (their generated
+    // yt-dlp.conf sets both together) -- the mweb client is one PO token
+    // generation is well-supported for; only added here, gated on the
+    // provider actually being installed, so it's a no-op for anyone who
+    // hasn't opted in.
+    return { QStringLiteral("--extractor-args"),
+             QStringLiteral("youtubepot-bgutilscript:script_path=%1").arg(potProviderScriptPath()),
+             QStringLiteral("--extractor-args"),
+             QStringLiteral("youtube:player-client=mweb") };
+}
+
+QString YoutubeResolver::ytdlpPluginDir()
+{
+    // Matches yt-dlp's own documented "User Plugins" locations exactly
+    // (github.com/yt-dlp/yt-dlp/wiki/Plugin-Development) rather than a path
+    // relative to ytdlPath's own binary -- so the plugin keeps working even
+    // if the user later points ytdlPath at a different copy of yt-dlp.
+#if defined(Q_OS_WIN)
+    QString appData = qEnvironmentVariable("APPDATA");
+    if (appData.isEmpty())
+        appData = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+    return QDir::fromNativeSeparators(appData) + QStringLiteral("/yt-dlp/plugins");
+#else
+    QString xdgConfig = qEnvironmentVariable("XDG_CONFIG_HOME");
+    if (xdgConfig.isEmpty())
+        xdgConfig = QDir::homePath() + QStringLiteral("/.config");
+    return xdgConfig + QStringLiteral("/yt-dlp/plugins");
+#endif
+}
+
+void YoutubeResolver::setPotProviderInstalling(bool installing)
+{
+    if (installing == m_potProviderInstalling)
+        return;
+    m_potProviderInstalling = installing;
+    emit potProviderInstallingChanged();
+}
+
+void YoutubeResolver::potProviderFail(const QString &message)
+{
+    setPotProviderInstalling(false);
+    emit potProviderInstallFailed(message);
+}
+
+// Runs one external command (tar extraction, or a Deno build step) as a
+// fresh, self-contained QProcess parented to `this` -- deliberately NOT a
+// reused member process (unlike m_process/m_updateProcess above): each of
+// this install flow's few steps runs at most once per installOrUpdatePotProvider()
+// call, so a fresh QProcess per step avoids ever having to reset/rewire
+// signal connections between steps.
+void YoutubeResolver::potProviderRunProcess(const QString &program, const QStringList &args,
+                                            const QString &workingDir,
+                                            const std::function<void()> &onSuccess)
+{
+    auto *process = new QProcess(this);
+    process->setWorkingDirectory(workingDir);
+    process->setProcessChannelMode(QProcess::MergedChannels);
+    connect(process, &QProcess::readyReadStandardOutput, this, [this, process] {
+        const QByteArray data = process->readAllStandardOutput();
+        const QList<QByteArray> lines = data.split('\n');
+        for (const QByteArray &line : lines) {
+            const QByteArray trimmed = line.trimmed();
+            if (!trimmed.isEmpty())
+                emit potProviderInstallProgress(QString::fromUtf8(trimmed));
+        }
+    });
+    connect(process, &QProcess::errorOccurred, this, [this, process, program](QProcess::ProcessError) {
+        potProviderFail(tr("Could not run %1: %2").arg(program, process->errorString()));
+        process->deleteLater();
+    });
+    connect(process,
+            static_cast<void (QProcess::*)(int, QProcess::ExitStatus)>(&QProcess::finished),
+            this,
+            [this, process, program, onSuccess](int exitCode, QProcess::ExitStatus status) {
+                const bool ok = (status == QProcess::NormalExit && exitCode == 0);
+                process->deleteLater();
+                if (!ok) {
+                    potProviderFail(tr("%1 exited with an error (code %2).")
+                                            .arg(program).arg(exitCode));
+                    return;
+                }
+                onSuccess();
+            });
+    process->start(program, args);
+}
+
+void YoutubeResolver::installOrUpdatePotProvider()
+{
+    if (m_potProviderInstalling)
+        return;
+    setPotProviderInstalling(true);
+    emit potProviderInstallProgress(tr("Checking the latest release…"));
+
+    QNetworkRequest req(QUrl(QStringLiteral(
+            "https://api.github.com/repos/Brainicism/bgutil-ytdlp-pot-provider/releases/latest")));
+    req.setRawHeader("User-Agent", "Mozilla/5.0 (compatible; Vivace PO-token-provider installer)");
+    req.setRawHeader("Accept", "application/vnd.github+json");
+    QNetworkReply *reply = m_net.get(req);
+    connect(reply, &QNetworkReply::finished, this, [this, reply] {
+        reply->deleteLater();
+        if (reply->error() != QNetworkReply::NoError) {
+            potProviderFail(tr("Could not check the latest release: %1").arg(reply->errorString()));
+            return;
+        }
+        const QJsonObject obj = QJsonDocument::fromJson(reply->readAll()).object();
+        const QString tarballUrl = obj.value(QStringLiteral("tarball_url")).toString();
+        if (tarballUrl.isEmpty()) {
+            potProviderFail(tr("Could not find the source download URL in the release info."));
+            return;
+        }
+
+        emit potProviderInstallProgress(tr("Downloading source…"));
+        QNetworkRequest tarReq{QUrl(tarballUrl)};
+        tarReq.setRawHeader("User-Agent",
+                           "Mozilla/5.0 (compatible; Vivace PO-token-provider installer)");
+        tarReq.setAttribute(QNetworkRequest::RedirectPolicyAttribute,
+                           QNetworkRequest::NoLessSafeRedirectPolicy);
+        QNetworkReply *tarReply = m_net.get(tarReq);
+        connect(tarReply, &QNetworkReply::downloadProgress, this,
+                &YoutubeResolver::installProgress);
+        connect(tarReply, &QNetworkReply::finished, this, [this, tarReply] {
+            tarReply->deleteLater();
+            if (tarReply->error() != QNetworkReply::NoError) {
+                potProviderFail(tr("Could not download the source: %1")
+                                        .arg(tarReply->errorString()));
+                return;
+            }
+            const QString downloadDir = potProviderDir() + QStringLiteral("-download");
+            QDir(downloadDir).removeRecursively();
+            QDir().mkpath(downloadDir);
+            const QString tarPath = downloadDir + QStringLiteral("/source.tar.gz");
+            QFile file(tarPath);
+            if (!file.open(QIODevice::WriteOnly)) {
+                potProviderFail(tr("Could not write %1.").arg(tarPath));
+                return;
+            }
+            file.write(tarReply->readAll());
+            file.close();
+            potProviderExtract(tarPath);
+        });
+    });
+}
+
+void YoutubeResolver::potProviderExtract(const QString &tarGzPath)
+{
+    emit potProviderInstallProgress(tr("Extracting…"));
+    const QString downloadDir = QFileInfo(tarGzPath).absolutePath();
+    const QString extractDir = downloadDir + QStringLiteral("/extracted");
+    QDir(extractDir).removeRecursively();
+    QDir().mkpath(extractDir);
+
+    // `tar` handles GitHub's own tarball_url format (always .tar.gz)
+    // identically on Windows (bsdtar, bundled since Windows 10 1803),
+    // Linux, and macOS -- no separate zip-handling code needed anywhere in
+    // this install flow, since the plugin's Python source (plugin/
+    // yt_dlp_plugins/) and its server/ TypeScript both live in this SAME
+    // tarball, confirmed directly against the real repository tree rather
+    // than assumed.
+    potProviderRunProcess(QStringLiteral("tar"),
+                          { QStringLiteral("-xzf"), tarGzPath, QStringLiteral("-C"), extractDir },
+                          downloadDir, [this, extractDir] {
+        // GitHub's source tarball has ONE top-level directory named
+        // "<owner>-<repo>-<short-sha>/" -- find it rather than hardcoding
+        // a name that changes with every commit.
+        QDir extracted(extractDir);
+        const QStringList topLevel =
+                extracted.entryList(QDir::Dirs | QDir::NoDotAndDotDot);
+        if (topLevel.size() != 1) {
+            potProviderFail(tr("Unexpected archive layout after extracting "
+                               "(expected exactly one top-level folder)."));
+            return;
+        }
+        potProviderInstallPluginThenBuild(extractDir + QLatin1Char('/') + topLevel.first());
+    });
+}
+
+// Recursively copies srcDir's contents into dstDir (created as needed),
+// overwriting any existing files -- QDir has no built-in recursive copy.
+static bool copyDirRecursively(const QString &srcDir, const QString &dstDir)
+{
+    QDir().mkpath(dstDir);
+    QDirIterator it(srcDir, QDir::Files | QDir::Hidden, QDirIterator::Subdirectories);
+    while (it.hasNext()) {
+        const QString srcFile = it.next();
+        const QString relative = QDir(srcDir).relativeFilePath(srcFile);
+        const QString dstFile = dstDir + QLatin1Char('/') + relative;
+        QDir().mkpath(QFileInfo(dstFile).absolutePath());
+        QFile::remove(dstFile); // QFile::copy() refuses to overwrite
+        if (!QFile::copy(srcFile, dstFile))
+            return false;
+    }
+    return true;
+}
+
+void YoutubeResolver::potProviderInstallPluginThenBuild(const QString &extractedDir)
+{
+    emit potProviderInstallProgress(tr("Installing the yt-dlp plugin…"));
+    const QString pluginSrc = extractedDir + QStringLiteral("/plugin/yt_dlp_plugins");
+    const QString pluginDst =
+            ytdlpPluginDir() + QStringLiteral("/bgutil-ytdlp-pot-provider/yt_dlp_plugins");
+    if (!QFileInfo::exists(pluginSrc)) {
+        potProviderFail(tr("The downloaded source is missing its plugin/yt_dlp_plugins folder "
+                           "(unexpected repository layout)."));
+        return;
+    }
+    if (!copyDirRecursively(pluginSrc, pluginDst)) {
+        potProviderFail(tr("Could not copy the yt-dlp plugin into %1.").arg(pluginDst));
+        return;
+    }
+
+    // Move (not copy) the server/ sources into the real, permanent
+    // potProviderDir() location -- this IS what generate_once.js's own
+    // eventual absolute path points at, so it has to be the final resting
+    // place, not the temporary extraction directory.
+    const QString serverSrc = extractedDir + QStringLiteral("/server");
+    const QString serverDst = potProviderDir() + QStringLiteral("/server");
+    if (!QFileInfo::exists(serverSrc)) {
+        potProviderFail(tr("The downloaded source is missing its server/ folder "
+                           "(unexpected repository layout)."));
+        return;
+    }
+    QDir(serverDst).removeRecursively();
+    QDir().mkpath(QFileInfo(serverDst).absolutePath());
+    if (!QDir().rename(serverSrc, serverDst)) {
+        // rename() can fail across filesystems/drives -- fall back to a
+        // real copy in that case rather than failing outright.
+        if (!copyDirRecursively(serverSrc, serverDst)) {
+            potProviderFail(tr("Could not move the server/ folder into %1.").arg(serverDst));
+            return;
+        }
+    }
+
+    const QString deno = m_denoLocation.isEmpty() ? QStringLiteral("deno") : m_denoLocation;
+    emit potProviderInstallProgress(tr("Installing server dependencies (deno install)…"));
+    potProviderRunProcess(deno,
+                         { QStringLiteral("install"), QStringLiteral("--allow-scripts=npm:canvas"),
+                           QStringLiteral("--frozen") },
+                         serverDst, [this, deno, serverDst] {
+        emit potProviderInstallProgress(tr("Compiling TypeScript (deno run tsc)…"));
+        potProviderRunProcess(deno,
+                             { QStringLiteral("run"), QStringLiteral("--allow-net"),
+                               QStringLiteral("--allow-env"), QStringLiteral("--allow-read"),
+                               QStringLiteral("--allow-write"),
+                               QStringLiteral("npm:typescript/tsc") },
+                             serverDst, [this] {
+            if (!potProviderInstalled()) {
+                potProviderFail(tr("The build finished but generate_once.js was not produced "
+                                   "-- check the output above for a compiler error."));
+                return;
+            }
+            setPotProviderInstalling(false);
+            emit potProviderInstalledChanged();
+            emit potProviderInstallFinished();
+        });
     });
 }

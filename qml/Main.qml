@@ -2056,6 +2056,7 @@ ApplicationWindow {
         id: preferencesDialog
         controller: playerController
         youtubeInstallDialog: youtubeSupportDialog
+        ytResolver: youtubeResolver
     }
 
     FavoritesDialog {
