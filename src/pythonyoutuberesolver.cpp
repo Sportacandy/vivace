@@ -511,6 +511,87 @@ QString ensureCaCertBundle(QString *errorOut)
 }
 #endif // VIVACE_CPYTHON_DESKTOP_HOME
 
+#if defined(VIVACE_HAVE_YOUTUBE_DOWNLOAD_TOOLS) && defined(VIVACE_HAVE_POT_PROVIDER)
+// Extracts the bundled YouTube PO token provider assets (see
+// scripts/build-android-pot-provider.sh for how they're built/bundled at
+// APK-build time -- there is no on-device build step of any kind, unlike
+// desktop's YoutubeResolver::installOrUpdatePotProvider(), which downloads
+// and builds the exact same upstream project live). Mirrors
+// extractedStdlibHomeDir()'s own versioned-marker extraction pattern
+// exactly, same reasoning: neither the plugin's own plain os.path-based
+// file I/O nor Node's module resolution can see Qt's "assets:" virtual
+// filesystem, so both need real files on disk, and a version-tagged
+// marker avoids silently reusing a stale extraction from an earlier,
+// differently-built install forever.
+//
+// Two independent asset trees are extracted: pot-plugin (the yt-dlp
+// plugin's own yt_dlp_plugins/ package -- *pluginParentDirOut is the
+// directory to put on sys.path, i.e. the parent OF yt_dlp_plugins/, not
+// that folder itself, matching yt-dlp's own plugins.py::
+// default_plugin_paths() PYTHONPATH-scanning convention) and pot-provider
+// (server/build/generate_once.js + jsdom's own real node_modules subtree
+// -- *scriptPathOut is that .js file's absolute path, exactly what
+// --extractor-args youtubepot-bgutilscript:script_path=... expects).
+//
+// Returns false (leaving both out-parameters untouched) on any failure --
+// callers must treat this as "PO token support unavailable this run," not
+// fail resolve()/download() outright, since a video that doesn't actually
+// need a PO token should still play normally either way.
+bool ensurePotProviderAssets(QString *pluginParentDirOut, QString *scriptPathOut)
+{
+    const QString base = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation)
+                          + QStringLiteral("/pot-provider-assets");
+    const QString pluginParentDir = base + QStringLiteral("/plugin");
+    const QString providerDir = base + QStringLiteral("/provider");
+    const QString scriptPath = providerDir + QStringLiteral("/server/build/generate_once.js");
+    const QString markerPath = base + QStringLiteral("/.extracted");
+    const QByteArray expectedMarker = QByteArrayLiteral(VIVACE_POT_PROVIDER_VERSION);
+
+    {
+        QFile existingMarker(markerPath);
+        if (existingMarker.open(QIODevice::ReadOnly)
+            && existingMarker.readAll() == expectedMarker
+            && QFileInfo::exists(scriptPath)) {
+            *pluginParentDirOut = pluginParentDir;
+            *scriptPathOut = scriptPath;
+            return true;
+        }
+    }
+
+    QDir(pluginParentDir).removeRecursively();
+    QDir(providerDir).removeRecursively();
+    QDir().mkpath(pluginParentDir);
+    QDir().mkpath(providerDir);
+
+    QString err;
+    int count = 0;
+    if (!copyAssetTree(QStringLiteral("assets:/pot-plugin"), pluginParentDir, &count, &err)) {
+        qWarning() << "PythonYoutubeResolver: could not extract the PO token provider "
+                      "plugin:" << err;
+        return false;
+    }
+    count = 0;
+    if (!copyAssetTree(QStringLiteral("assets:/pot-provider"), providerDir, &count, &err)) {
+        qWarning() << "PythonYoutubeResolver: could not extract the PO token provider "
+                      "script:" << err;
+        return false;
+    }
+    if (!QFileInfo::exists(scriptPath)) {
+        qWarning() << "PythonYoutubeResolver: PO token provider extraction finished but"
+                   << scriptPath << "is missing";
+        return false;
+    }
+
+    QFile marker(markerPath);
+    if (marker.open(QIODevice::WriteOnly))
+        marker.write(expectedMarker);
+
+    *pluginParentDirOut = pluginParentDir;
+    *scriptPathOut = scriptPath;
+    return true;
+}
+#endif // VIVACE_HAVE_YOUTUBE_DOWNLOAD_TOOLS && VIVACE_HAVE_POT_PROVIDER
+
 #if defined(VIVACE_HAVE_YOUTUBE_DOWNLOAD_TOOLS)
 #ifdef Q_OS_ANDROID
 // Resolves ApplicationInfo.nativeLibraryDir via JNI -- the ONE directory an
@@ -789,6 +870,18 @@ QString formatCurrentPythonError()
 // nullptr on failure (logs the full traceback via qWarning() and fills
 // errorOut with a short message -- see formatCurrentPythonError()'s own
 // doc comment for why that's more reliable here than PyErr_Print()).
+//
+// ALSO puts the PO token provider plugin's own parent directory on
+// sys.path, when the bundled assets are available (see
+// ensurePotProviderAssets()) -- yt-dlp's own plugin loader
+// (yt_dlp/plugins.py::default_plugin_paths()) scans every sys.path entry
+// for a yt_dlp_plugins/ subdirectory by default (plugin_dirs.value ==
+// ['default'], never overridden here), so this is sufficient on its own;
+// no separate registration call or config file is needed. Harmless to do
+// on every call (yt_dlp's own module-level plugin loading only actually
+// re-runs on the FIRST real import in a process, per Python's normal
+// sys.modules caching, but re-inserting the same path is a no-op either
+// way) and correctly does nothing on a build/run without these assets.
 PyObject *importYoutubeDlClass(const QString &ytdlpPath, QString *errorOut)
 {
     PyObject *sysPath = PySys_GetObject("path"); // borrowed reference
@@ -799,6 +892,15 @@ PyObject *importYoutubeDlClass(const QString &ytdlpPath, QString *errorOut)
     PyObject *ytdlpPathObj = PyUnicode_FromString(ytdlpPath.toUtf8().constData());
     PyList_Insert(sysPath, 0, ytdlpPathObj); // does not steal the reference
     Py_DECREF(ytdlpPathObj);
+
+#if defined(VIVACE_HAVE_YOUTUBE_DOWNLOAD_TOOLS) && defined(VIVACE_HAVE_POT_PROVIDER)
+    QString potPluginDir, potScriptPath;
+    if (ensurePotProviderAssets(&potPluginDir, &potScriptPath)) {
+        PyObject *pluginDirObj = PyUnicode_FromString(potPluginDir.toUtf8().constData());
+        PyList_Insert(sysPath, 0, pluginDirObj);
+        Py_DECREF(pluginDirObj);
+    }
+#endif
 
     PyObject *ytDlpModule = PyImport_ImportModule("yt_dlp");
     if (!ytDlpModule) {
@@ -841,6 +943,83 @@ PyObject *constructYoutubeDl(PyObject *ytDlpClass, PyObject *opts, QString *erro
     return ydl;
 }
 
+#if defined(VIVACE_HAVE_YOUTUBE_DOWNLOAD_TOOLS) && defined(VIVACE_HAVE_POT_PROVIDER)
+// Shared by runYtdlp()/runYtdlpDownload(): adds the extractor-args (and,
+// if not already present, js_runtimes) opts entries that let yt-dlp
+// generate a PO (proof-of-origin) token via the bundled BgUtils POT
+// Provider script -- see the doc comment on ensurePotProviderAssets() for
+// what's actually bundled/extracted, and desktop's own YoutubeResolver::
+// potProviderExtractorArgs() for the equivalent CLI-flag form (-c
+// script_path=... youtube:player-client=mweb). Silently does nothing
+// (leaving opts untouched) when the assets aren't available or the
+// bundled Node.js tool can't be resolved -- a video that doesn't actually
+// need a PO token should still play normally either way, and this must
+// never be treated as a hard failure.
+//
+// Dict shapes confirmed directly against yt-dlp's own real source (not
+// guessed): extractor_args is {ie_key_lower: {field: [values...]}} --
+// ExtractorCommon._configuration_arg() reads exactly this shape via
+// traverse_obj(params, ('extractor_args', ie_key.lower(), key)), and the
+// plugin's own getpot_bgutil.py reads 'script_path' un-normalized (no
+// underscore/hyphen difference to worry about there), while youtube/
+// _video.py's own player-client handling reads the CLI-normalized
+// 'player_client' key specifically (--extractor-args itself lowercases
+// and hyphen-to-underscore's every field name when parsed from the CLI,
+// so the programmatic dict must already be in that normalized form).
+// js_runtimes = {'node': {'path': ...}} matches
+// BgUtilScriptNodePTP._JSRT_EXEC == 'node', reading traverse_obj(
+// self.ie.get_param('js_runtimes'), (self._JSRT_EXEC, 'path')) --
+// literally the SAME key runYtdlpDownload() already sets for YouTube's
+// own unrelated JS-challenge-solving need, so download mode's own dict is
+// left alone here (already correct) and only extractor_args is added.
+void addPotProviderExtractorArgs(PyObject *opts)
+{
+    QString potPluginDir, potScriptPath;
+    if (!ensurePotProviderAssets(&potPluginDir, &potScriptPath))
+        return;
+    QString toolErr;
+    const QString nodePath = nodeToolPath(&toolErr);
+    if (nodePath.isEmpty())
+        return;
+
+    PyObject *scriptPathList = PyList_New(1);
+    PyList_SetItem(scriptPathList, 0,
+                    PyUnicode_FromString(potScriptPath.toUtf8().constData())); // steals ref
+    PyObject *bgutilArgs = PyDict_New();
+    PyDict_SetItemString(bgutilArgs, "script_path", scriptPathList);
+    Py_DECREF(scriptPathList);
+
+    PyObject *playerClientList = PyList_New(1);
+    PyList_SetItem(playerClientList, 0, PyUnicode_FromString("mweb")); // steals ref
+    PyObject *youtubeArgs = PyDict_New();
+    PyDict_SetItemString(youtubeArgs, "player_client", playerClientList);
+    Py_DECREF(playerClientList);
+
+    PyObject *extractorArgs = PyDict_New();
+    PyDict_SetItemString(extractorArgs, "youtubepot-bgutilscript", bgutilArgs);
+    Py_DECREF(bgutilArgs);
+    PyDict_SetItemString(extractorArgs, "youtube", youtubeArgs);
+    Py_DECREF(youtubeArgs);
+    PyDict_SetItemString(opts, "extractor_args", extractorArgs);
+    Py_DECREF(extractorArgs);
+
+    PyObject *jsRuntimesKey = PyUnicode_FromString("js_runtimes");
+    const bool hasJsRuntimes = PyDict_Contains(opts, jsRuntimesKey) == 1;
+    Py_DECREF(jsRuntimesKey);
+    if (!hasJsRuntimes) {
+        PyObject *nodePathVal = PyUnicode_FromString(nodePath.toUtf8().constData());
+        PyObject *nodeRuntimeOpts = PyDict_New();
+        PyDict_SetItemString(nodeRuntimeOpts, "path", nodePathVal);
+        Py_DECREF(nodePathVal);
+        PyObject *jsRuntimes = PyDict_New();
+        PyDict_SetItemString(jsRuntimes, "node", nodeRuntimeOpts);
+        Py_DECREF(nodeRuntimeOpts);
+        PyDict_SetItemString(opts, "js_runtimes", jsRuntimes);
+        Py_DECREF(jsRuntimes);
+    }
+}
+#endif // VIVACE_HAVE_YOUTUBE_DOWNLOAD_TOOLS && VIVACE_HAVE_POT_PROVIDER
+
 // Runs entirely while holding the GIL (caller's responsibility). Returns
 // true and fills mediaUrl/title on success; on failure, logs the full
 // Python traceback via qWarning() and fills errorOut with a short,
@@ -869,6 +1048,9 @@ bool runYtdlp(const QString &ytdlpPath, const QString &pageUrl, int preferredHei
     PyDict_SetItemString(opts, "noplaylist", Py_True);
     PyDict_SetItemString(opts, "quiet", Py_True);
     PyDict_SetItemString(opts, "no_warnings", Py_True);
+#if defined(VIVACE_HAVE_YOUTUBE_DOWNLOAD_TOOLS) && defined(VIVACE_HAVE_POT_PROVIDER)
+    addPotProviderExtractorArgs(opts);
+#endif
 
     PyObject *ydl = constructYoutubeDl(ytDlpClass, opts, errorOut);
     if (!ydl)
@@ -1003,6 +1185,15 @@ bool runYtdlpDownload(const QString &ytdlpPath, const QString &pageUrl, int pref
     PyObject *convertThumbsVal = PyUnicode_FromString("jpg");
     PyDict_SetItemString(opts, "convertthumbnails", convertThumbsVal);
     Py_DECREF(convertThumbsVal);
+#ifdef VIVACE_HAVE_POT_PROVIDER
+    // This function's own enclosing #if already guarantees
+    // VIVACE_HAVE_YOUTUBE_DOWNLOAD_TOOLS -- only the POT-provider-specific
+    // half needs checking here. js_runtimes is already set a few lines up
+    // (for YouTube's own unrelated JS-challenge-solving need) with the
+    // exact same 'node' key this call would otherwise add, so it's a safe
+    // no-op there; only extractor_args is genuinely new.
+    addPotProviderExtractorArgs(opts);
+#endif
 
     PyObject *ydl = constructYoutubeDl(ytDlpClass, opts, errorOut);
     if (!ydl)

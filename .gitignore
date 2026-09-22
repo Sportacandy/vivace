@@ -34,3 +34,9 @@ android/assets/python-stdlib/
 # VIVACE_HAVE_PYTHON_YOUTUBE block) from curl.se's own canonical
 # redistribution of Mozilla's root CA list -- not source either.
 android/assets/cacert.pem
+# YouTube PO token provider assets (scripts/build-android-pot-provider.sh,
+# CMakeLists.txt's VIVACE_HAVE_YOUTUBE_DOWNLOAD_TOOLS block) -- a pre-built
+# yt-dlp plugin + bundled generation script/jsdom, downloaded and built at
+# CMake build time. Not source, regenerated every build.
+android/assets/pot-plugin/
+android/assets/pot-provider/

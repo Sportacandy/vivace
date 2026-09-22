@@ -1375,6 +1375,54 @@ if(VIVACE_HAVE_YOUTUBE_DOWNLOAD_TOOLS)
     target_compile_definitions(vivace PRIVATE VIVACE_HAVE_YOUTUBE_DOWNLOAD_TOOLS=1)
 endif()
 
+# YouTube "PO token provider" on Android (Phase 2 of the feature -- see
+# YoutubeResolver::installOrUpdatePotProvider() for the desktop/Windows-
+# Linux-macOS equivalent, which downloads+builds the same upstream project
+# live on demand instead). Recent YouTube videos increasingly need a PO
+# (proof-of-origin) token just to play at all, independent of cookies/
+# login. Reuses the SAME bundled Node.js runtime as Download & play mode
+# above (see scripts/build-android-pot-provider.sh's own big comment for
+# why a live on-device build/download, like desktop does, is not viable
+# here at all -- no Deno on Android, no compiler toolchain for native
+# addons, no writable npm cache) -- gated behind the identical
+# VIVACE_HAVE_YOUTUBE_DOWNLOAD_TOOLS condition rather than its own
+# separate flag, since it has no purpose without that runtime present.
+if(VIVACE_HAVE_YOUTUBE_DOWNLOAD_TOOLS AND VIVACE_BASH_EXECUTABLE)
+    set(VIVACE_POT_PROVIDER_OUT "${CMAKE_BINARY_DIR}/android-pot-provider")
+    set(VIVACE_POT_PROVIDER_STAMP "${CMAKE_BINARY_DIR}/android-pot-provider.stamp")
+    add_custom_command(
+        OUTPUT "${VIVACE_POT_PROVIDER_STAMP}"
+        COMMAND "${VIVACE_BASH_EXECUTABLE}"
+            "${CMAKE_SOURCE_DIR}/scripts/build-android-pot-provider.sh"
+            "${VIVACE_POT_PROVIDER_OUT}"
+        COMMAND ${CMAKE_COMMAND} -E make_directory
+            "${VIVACE_ANDROID_PACKAGE_SOURCE_DIR}/assets"
+        COMMAND ${CMAKE_COMMAND} -E copy_directory
+            "${VIVACE_POT_PROVIDER_OUT}/pot-plugin"
+            "${VIVACE_ANDROID_PACKAGE_SOURCE_DIR}/assets/pot-plugin"
+        COMMAND ${CMAKE_COMMAND} -E copy_directory
+            "${VIVACE_POT_PROVIDER_OUT}/pot-provider"
+            "${VIVACE_ANDROID_PACKAGE_SOURCE_DIR}/assets/pot-provider"
+        COMMAND ${CMAKE_COMMAND} -E touch "${VIVACE_POT_PROVIDER_STAMP}"
+        DEPENDS "${CMAKE_SOURCE_DIR}/scripts/build-android-pot-provider.sh"
+        COMMENT "Building the YouTube PO token provider assets (Node/jsdom, network access needed)"
+        USES_TERMINAL
+        VERBATIM
+    )
+    add_custom_target(vivace_pot_provider_assets ALL DEPENDS "${VIVACE_POT_PROVIDER_STAMP}")
+    add_dependencies(vivace vivace_pot_provider_assets)
+    # Tags the on-device extraction marker (mirrors extractedStdlibHomeDir()'s
+    # own VIVACE_CPYTHON_VERSION-based invalidation exactly, same reasoning:
+    # a stale extraction left over in app-private storage from an earlier
+    # install must not be silently reused forever just because a marker file
+    # happens to already exist). Must match build-android-pot-provider.sh's
+    # own POT_PROVIDER_VERSION.
+    target_compile_definitions(vivace PRIVATE
+        VIVACE_HAVE_POT_PROVIDER=1
+        VIVACE_POT_PROVIDER_VERSION="2.0.0")
+    message(STATUS "YouTube PO token provider (Android): ENABLED")
+endif()
+
 # TEMPORARY desktop-test convenience (2026-09-19, user request): a plain
 # cache-variable pair letting a developer point Vivace at LOCAL,
 # already-built copies of these same tools (e.g. this project's own

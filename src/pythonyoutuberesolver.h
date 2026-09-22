@@ -28,12 +28,36 @@
     restriction. VIVACE_HAVE_YOUTUBE_DOWNLOAD_TOOLS (CMakeLists.txt) gates
     whether download() is usable at all; see downloadModeSupported().
 
+    PO (proof-of-origin) token support (VIVACE_HAVE_POT_PROVIDER,
+    CMakeLists.txt): both resolve() and download() transparently pass a
+    bundled, pre-built copy of the community "BgUtils POT Provider"
+    project to yt-dlp (script_path extractor-arg + js_runtimes, resolved
+    in importYoutubeDlClass()/addPotProviderExtractorArgs() in the .cpp)
+    when available -- no user setup, unlike desktop's own YoutubeResolver::
+    installOrUpdatePotProvider() button. See
+    scripts/build-android-pot-provider.sh for how those assets are built
+    at APK-build time (a real, empirically-necessary departure from
+    upstream's own dependency versions, to run on this project's Node
+    18-based Android JS runtime) and ensurePotProviderAssets() in the .cpp
+    for how they're extracted/located at runtime.
+
     UNVERIFIED IN THIS SESSION beyond careful reading of CPython's own
-    documented embedding API (Py_Initialize/PyGILState/zipimport) and real,
+    documented embedding API (Py_Initialize/PyGILState/zipimport), real,
     local compilation/ELF-header verification of the bundled ffmpeg/node
-    tools (scripts/build-android-youtube-tools.sh) -- this environment has
-    no Android device or emulator to actually run any of this. Needs the
-    user's own build+device test cycle, same division of labor as every
+    tools (scripts/build-android-youtube-tools.sh), a REAL Android NDK
+    build of this whole file (including every PO-token-provider addition)
+    via the project's own Android_Qt_6_11_1_aarch64_v8a_Debug CMake
+    preset, and -- for the PO token provider generation script
+    specifically -- a real end-to-end run of the exact bundle scripts/
+    build-android-pot-provider.sh produces, under a real Node v18.20.4
+    binary (matching nodejs-mobile's own exact bundled version) on a
+    desktop machine, generating a real, correctly-shaped PO token. What
+    remains genuinely unverified: this environment has no Android device
+    or emulator to confirm the SAME script actually runs correctly when
+    spawned as a real subprocess by nodejs-mobile specifically (as opposed
+    to a same-version desktop Node binary), or that the plugin/sys.path
+    wiring behaves identically inside the real embedded-CPython-on-Android
+    environment. Needs the user's own build+device test cycle, same
     other Android-native change in this project.
 */
 

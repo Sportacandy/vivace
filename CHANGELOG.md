@@ -25,6 +25,10 @@ each get their own entry instead.
   yt-dlp can generate a PO token on demand — increasingly required just
   to play a video at all, independent of cookies/login. Applies to both
   streaming and downloading.
+- Android: YouTube playback now generates a PO token automatically too
+  (via a bundled, pre-built copy of the same "BgUtils POT Provider"
+  project, running on the app's own bundled Node.js) — no user setup
+  needed, unlike the desktop install button above.
 
 ## [0.5.1] — 2026-09-21
 
