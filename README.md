@@ -17,12 +17,26 @@ is also published from the tip of `main` between tagged releases. See
 
 ## Status
 
-**v0.5.1** — two Android build/runtime fixes: a Windows build could pick
-up the wrong `bash` (`C:\Windows\System32\bash.exe`) for the bundled
-YouTube "Download & play" build step, and a device that had run an
-earlier build could get stuck reusing a stale, incomplete extraction of
-the embedded Python standard library, showing `ModuleNotFoundError: No
-module named 'zipfile._path'` — see CHANGELOG.md. Builds on v0.5.0,
+**v0.5.2** — YouTube playback reliability: a new **Get cookies from
+browser** option (Preferences ▸ Network ▸ YouTube ▸ Download & play)
+reads cookies live from an installed browser instead of a
+previously-exported file — recommended now that YouTube's own cookie
+lifetimes are much shorter, making an exported `cookies.txt` go stale
+within days (Windows: only Firefox actually works here, since Chrome/
+Edge's "App-Bound Encryption" blocks every external tool from reading
+their cookies at all; Linux and macOS Chrome/Edge are unaffected). Also
+adds support for the **PO (proof-of-origin) token** many YouTube videos
+now require just to play at all, independent of cookies or being signed
+in: an **Install PO token provider…** button on desktop sets up the
+community "BgUtils POT Provider" project, and on Android the same
+support is bundled and set up automatically with no user action needed
+at all. See CHANGELOG.md for details. Builds on v0.5.1, which fixed two
+Android build/runtime issues: a Windows build could pick up the wrong
+`bash` (`C:\Windows\System32\bash.exe`) for the bundled YouTube
+"Download & play" build step, and a device that had run an earlier
+build could get stuck reusing a stale, incomplete extraction of the
+embedded Python standard library, showing `ModuleNotFoundError: No
+module named 'zipfile._path'`. On v0.5.0,
 which added Android support (playback, YouTube streaming and
 Download & play via a bundled embedded Python/yt-dlp plus a bundled
 ffmpeg + Node.js, AndroidKeyStore credential storage, a Share-intent

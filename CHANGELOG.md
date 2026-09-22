@@ -11,6 +11,8 @@ each get their own entry instead.
 
 ## [Unreleased]
 
+## [0.5.2] — 2026-09-22
+
 ### Added
 - YouTube: Preferences ▸ Network ▸ YouTube ▸ Download & play gained a
   "Get cookies from browser" option, reading cookies live from an
