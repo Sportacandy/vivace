@@ -179,7 +179,16 @@ jobs:
         with:
           version: '6.11.1'
           arch: linux_gcc_64
-          modules: 'qtmultimedia qtshadertools'
+          # qtwebview added 2026-09-24 (CI fix): CMakeLists.txt's Android-only
+          # embedded-YouTube-login feature unconditionally does
+          # find_package(Qt6 REQUIRED COMPONENTS WebView WebViewQuick) once
+          # ANDROID is true -- neither module was ever requested here, so
+          # every Android CI build failed at configure time the moment that
+          # feature landed ("Failed to find required Qt component WebView",
+          # media/build.log). Added to both this host install and the
+          # Android-target install below, matching qtmultimedia/qtshadertools'
+          # own existing host+target pattern.
+          modules: 'qtmultimedia qtshadertools qtwebview'
           # Same aqtinstall pin as the desktop jobs above -- see that step's
           # own comment (aqtinstall#959 vs. Qt 6.11's repository layout).
           aqtsource: 'git+https://github.com/miurahr/aqtinstall.git@8c3695d4a4e1ceabf6a74dc6c79681656dc6b74b'
@@ -210,7 +219,7 @@ jobs:
           host: all_os
           target: android
           arch: android_arm64_v8a
-          modules: 'qtmultimedia qtshadertools'
+          modules: 'qtmultimedia qtshadertools qtwebview'
           aqtsource: 'git+https://github.com/miurahr/aqtinstall.git@8c3695d4a4e1ceabf6a74dc6c79681656dc6b74b'
 
       - name: Configure
