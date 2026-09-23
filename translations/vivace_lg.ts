@@ -95,6 +95,24 @@
     </message>
 </context>
 <context>
+    <name>AndroidYoutubeLogin</name>
+    <message>
+        <location filename="../src/androidyoutubelogin.cpp" line="107"/>
+        <source>Embedded YouTube login is not available in this build.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/androidyoutubelogin.cpp" line="155"/>
+        <source>No YouTube login cookies were found. Make sure you finished signing in before closing the login window.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/androidyoutubelogin.cpp" line="164"/>
+        <source>Could not write %1: %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>BookmarksDialog</name>
     <message>
         <location filename="../qml/BookmarksDialog.qml" line="24"/>
@@ -931,32 +949,32 @@
     <message>
         <location filename="../qml/Main.qml" line="433"/>
         <location filename="../qml/Main.qml" line="486"/>
-        <location filename="../qml/Main.qml" line="2152"/>
-        <location filename="../qml/Main.qml" line="2280"/>
+        <location filename="../qml/Main.qml" line="2166"/>
+        <location filename="../qml/Main.qml" line="2294"/>
         <source>TV editor</source>
         <translation>Omutegeka wa TV</translation>
     </message>
     <message>
         <location filename="../qml/Main.qml" line="433"/>
         <location filename="../qml/Main.qml" line="486"/>
-        <location filename="../qml/Main.qml" line="2152"/>
-        <location filename="../qml/Main.qml" line="2280"/>
+        <location filename="../qml/Main.qml" line="2166"/>
+        <location filename="../qml/Main.qml" line="2294"/>
         <source>TV channels</source>
         <translation>Emikutu gya TV</translation>
     </message>
     <message>
         <location filename="../qml/Main.qml" line="436"/>
         <location filename="../qml/Main.qml" line="489"/>
-        <location filename="../qml/Main.qml" line="2155"/>
-        <location filename="../qml/Main.qml" line="2283"/>
+        <location filename="../qml/Main.qml" line="2169"/>
+        <location filename="../qml/Main.qml" line="2297"/>
         <source>Radio editor</source>
         <translation>Omutegeka wa Leediyo</translation>
     </message>
     <message>
         <location filename="../qml/Main.qml" line="436"/>
         <location filename="../qml/Main.qml" line="489"/>
-        <location filename="../qml/Main.qml" line="2155"/>
-        <location filename="../qml/Main.qml" line="2283"/>
+        <location filename="../qml/Main.qml" line="2169"/>
+        <location filename="../qml/Main.qml" line="2297"/>
         <source>Radio channels</source>
         <translation>Emikutu gya Leediyo</translation>
     </message>
@@ -975,8 +993,8 @@
     <message>
         <location filename="../qml/Main.qml" line="444"/>
         <location filename="../qml/Main.qml" line="500"/>
-        <location filename="../qml/Main.qml" line="2166"/>
-        <location filename="../qml/Main.qml" line="2294"/>
+        <location filename="../qml/Main.qml" line="2180"/>
+        <location filename="../qml/Main.qml" line="2308"/>
         <source>Bookmark added</source>
         <translation>Akabonero kaayongeddwako</translation>
     </message>
@@ -1017,7 +1035,7 @@
     </message>
     <message>
         <location filename="../qml/Main.qml" line="757"/>
-        <location filename="../qml/Main.qml" line="1906"/>
+        <location filename="../qml/Main.qml" line="1919"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1069,7 +1087,7 @@
     <message>
         <location filename="../qml/Main.qml" line="1428"/>
         <location filename="../qml/Main.qml" line="1498"/>
-        <location filename="../qml/Main.qml" line="1825"/>
+        <location filename="../qml/Main.qml" line="1838"/>
         <source>All files (*)</source>
         <translation>Fayiro zonna (*)</translation>
     </message>
@@ -1123,125 +1141,125 @@
         <translation>Okudownuloda kugaanye: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1726"/>
+        <location filename="../qml/Main.qml" line="1739"/>
         <source>Saved %1 file(s); %2 failed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1730"/>
+        <location filename="../qml/Main.qml" line="1743"/>
         <source>Saved %1 file(s).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1743"/>
+        <location filename="../qml/Main.qml" line="1756"/>
         <source>Could not read the shortcut file.</source>
         <translation>Tekisoboka kusoma fayiro y&apos;akakubo akaympi.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1778"/>
+        <location filename="../qml/Main.qml" line="1791"/>
         <source>Starting download…</source>
         <translation>Kutandika okudownuloda…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1763"/>
-        <location filename="../qml/Main.qml" line="1779"/>
+        <location filename="../qml/Main.qml" line="1776"/>
+        <location filename="../qml/Main.qml" line="1792"/>
         <source>Downloading video (this can take a while)…</source>
         <translation>Kudownuloda vidiyo (kino kiyinza okutwala akaseera)…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1759"/>
+        <location filename="../qml/Main.qml" line="1772"/>
         <source>YouTube playback isn&apos;t supported on this device.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1766"/>
-        <location filename="../qml/Main.qml" line="1783"/>
+        <location filename="../qml/Main.qml" line="1779"/>
+        <location filename="../qml/Main.qml" line="1796"/>
         <source>Resolving with yt-dlp…</source>
         <translation>Kukolako ne yt-dlp…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1820"/>
+        <location filename="../qml/Main.qml" line="1833"/>
         <source>Load subtitle file</source>
         <translation>Tikka fayiro y&apos;ebiwandiiko wansi</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1824"/>
+        <location filename="../qml/Main.qml" line="1837"/>
         <source>Subtitle files (*.srt *.vtt *.ass *.ssa)</source>
         <translation>Fayiro z&apos;ebiwandiiko wansi (*.srt *.vtt *.ass *.ssa)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1832"/>
+        <location filename="../qml/Main.qml" line="1845"/>
         <source>Subtitle delay</source>
         <translation>Okulwawo kw&apos;ebiwandiiko wansi</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1883"/>
+        <location filename="../qml/Main.qml" line="1896"/>
         <source>Delay:</source>
         <translation>Okulwawo:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1889"/>
-        <location filename="../qml/Main.qml" line="1979"/>
+        <location filename="../qml/Main.qml" line="1902"/>
+        <location filename="../qml/Main.qml" line="1992"/>
         <source>ms</source>
         <translation>ms</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1899"/>
+        <location filename="../qml/Main.qml" line="1912"/>
         <source>OK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1918"/>
+        <location filename="../qml/Main.qml" line="1931"/>
         <source>Audio delay — Vivace</source>
         <translation>Okulwawo kw&apos;amaloboozi — Vivace</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1967"/>
+        <location filename="../qml/Main.qml" line="1980"/>
         <source>No delay for this file (use the global delay only)</source>
         <translation>Tewali kulwawo ku fayiro eno (kozesa kulwawo okwa bulijjo kwokka)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1972"/>
+        <location filename="../qml/Main.qml" line="1985"/>
         <source>This file&apos;s delay:</source>
         <translation>Okulwawo kwa fayiro eno:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1987"/>
+        <location filename="../qml/Main.qml" line="2000"/>
         <source>The delay applied to this file is this value plus the global delay for the current audio device (%1 ms), set in Preferences &gt; General &gt; Audio. Negative values delay the video to match audio that arrives late (e.g. Bluetooth headphones).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2000"/>
+        <location filename="../qml/Main.qml" line="2013"/>
         <source>&amp;Apply</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2009"/>
+        <location filename="../qml/Main.qml" line="2022"/>
         <source>&amp;Close</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2094"/>
+        <location filename="../qml/Main.qml" line="2108"/>
         <source>Hide window</source>
         <translation>Kweka eddirisa</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2094"/>
+        <location filename="../qml/Main.qml" line="2108"/>
         <source>Show window</source>
         <translation>Laga eddirisa</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2099"/>
+        <location filename="../qml/Main.qml" line="2113"/>
         <source>Play / Pause</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2103"/>
+        <location filename="../qml/Main.qml" line="2117"/>
         <source>Stop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2108"/>
+        <location filename="../qml/Main.qml" line="2122"/>
         <source>Quit</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3680,531 +3698,546 @@
 <context>
     <name>PrefNetworkPage</name>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="105"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="135"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="117"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="147"/>
         <source>OpenSubtitles</source>
         <translation>OpenSubtitles</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="108"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="120"/>
         <source>YouTube</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="116"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="840"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="128"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="873"/>
         <source>Cast</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="145"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="157"/>
         <source>API key:</source>
         <translation>Ekisumuluzo kya API:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="146"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="158"/>
         <source>A free per-application key from opensubtitles.com (create an API consumer); subtitle search will not work until this is set.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="151"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="163"/>
         <source>from opensubtitles.com → API consumers</source>
         <translation>okuva ku opensubtitles.com → API consumers</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="156"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="792"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="168"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="825"/>
         <source>Username:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="157"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="169"/>
         <source>Optional opensubtitles.com account login; signing in is not required but raises the daily download limit.</source>
         <translation>Okuyingira mu akaawunti ya opensubtitles.com kwa ky&apos;olonda; okuyingira tekyetaagisa naye kwongera ekkomo ery&apos;okudownuloda erya buli lunaku.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="164"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="798"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="176"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="831"/>
         <source>Password:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="115"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="749"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="127"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="782"/>
         <source>Proxy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="805"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="838"/>
         <source>Type:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="779"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="812"/>
         <source>Host:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="470"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="481"/>
         <source>Optional cookies.txt exported from your browser (yt-dlp --cookies); unlocks HD, members-only and age-restricted videos. Safe here — cookies only affect the download, not a stream a player must open. See Help ▸ Contents ▸ Options for step-by-step export instructions.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="785"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="850"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="818"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="883"/>
         <source>Port:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="198"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="210"/>
         <source>YouTube (yt-dlp)</source>
         <translation>YouTube (yt-dlp)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="179"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="191"/>
         <source>The account password is stored securely using your operating system&apos;s credential manager.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="218"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="230"/>
         <source>Play YouTube URLs with yt-dlp</source>
         <translation>Zannya URL za YouTube ne yt-dlp</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="222"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="234"/>
         <source>When on, opening a YouTube URL runs yt-dlp instead of trying to play the page URL as-is.</source>
         <translation>Bwe kiba kikola, okubikkula URL ya YouTube kutandika yt-dlp mu kifo ky&apos;okugezaako okuzannya URL y&apos;olupapula nga bw&apos;eri.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="235"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="247"/>
         <source>Open YouTube URLs by:</source>
         <translation>Bikkula URL za YouTube nga okozesa:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="236"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="248"/>
         <source>Streaming is fastest but caps at ~720p and can&apos;t use cookies. Downloading gets full HD (uses cookies + ffmpeg), then plays and deletes the file. Or hand off to your own external downloader tool.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="257"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="261"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="269"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="273"/>
         <source>Streaming (fast, up to ~720p)</source>
         <translation>Streaming (kya mangu, okutuuka ku ~720p)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="258"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="262"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="270"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="274"/>
         <source>Downloading then playing (HD, cookies)</source>
         <translation>Okudownuloda n&apos;oluvannyuma okuzannya (HD, cookies)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="263"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="275"/>
         <source>An external downloader tool</source>
         <translation>Ekyuma eky&apos;okudownuloda eky&apos;ebweru</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="274"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="286"/>
         <source>Use managed yt-dlp</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="292"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="304"/>
         <source>When on, Vivace installs yt-dlp for you (see the button here) and can keep it updated automatically below. Turn this off to point at your own yt-dlp instead -- Vivace will not install or auto-update it.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="300"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="312"/>
         <source>Install / Update yt-dlp…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="310"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="322"/>
         <source>PO token provider:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="311"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="323"/>
         <source>Recent YouTube videos increasingly require a &quot;PO token&quot; just to play at all, even with no login involved -- without one, yt-dlp reports the video as unavailable. Installs the community &quot;BgUtils POT Provider&quot; (a small yt-dlp plugin plus a script run on demand via Deno, which Vivace already uses above) so yt-dlp can generate one automatically. Applies to both streaming and downloading.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="325"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="337"/>
         <source>Installing…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="327"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="339"/>
         <source>Reinstall / Update PO token provider…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="328"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="340"/>
         <source>Install PO token provider…</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="349"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="361"/>
         <source>yt-dlp path:</source>
         <translation>Ekkubo lya yt-dlp:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="350"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="362"/>
         <source>Leave as &quot;yt-dlp&quot; if it is on your system PATH; otherwise enter the full path to the yt-dlp executable.</source>
         <translation>Leka nga &quot;yt-dlp&quot; bwe kiba kiri ku PATH ya sisitemu yo; oba nno yingiza ekkubo erijjuvu ery&apos;okutuuka ku yt-dlp.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="356"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="368"/>
         <source>yt-dlp (on PATH) or a full path</source>
         <translation>yt-dlp (ku PATH) oba ekkubo erijjuvu</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="362"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="374"/>
         <source>Update yt-dlp automatically:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="363"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="375"/>
         <source>Runs yt-dlp&apos;s own self-update before playing a YouTube video. &quot;Every time&quot; adds a short delay to each play; the daily/weekly options check only that often. Failures (e.g. no network) are ignored and playback proceeds with whatever version is installed. Only applies to a managed yt-dlp.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="377"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="389"/>
         <source>Never</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="378"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="390"/>
         <source>Every time yt-dlp runs</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="379"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="391"/>
         <source>Once a day</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="380"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="392"/>
         <source>Once a week</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="387"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="399"/>
         <source>Maximum quality:</source>
         <translation>Omutindo ogusukkulumu:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="388"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="400"/>
         <source>Upper limit on resolution. Streaming is capped at ~720p regardless; downloading can reach this height in full HD.</source>
         <translation>Ekkomo ery&apos;engulu ku resolution. Streaming ekomekerezebwa ku ~720p wadde kiri kitya; okudownuloda kuyinza okutuuka ku buwanvu buno mu HD enjuvu.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="398"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="410"/>
         <source>360p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="399"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="411"/>
         <source>480p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="400"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="412"/>
         <source>720p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="401"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="413"/>
         <source>1080p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="402"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="414"/>
         <source>1440p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="403"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="415"/>
         <source>2160p (4K)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="404"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="416"/>
         <source>Best available</source>
         <translation>Ekisinga obulungi ekiriwo</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="419"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="431"/>
         <source>yt-dlp is a separate program and is not bundled with Vivace.</source>
         <translation>yt-dlp pulogulaamu ya yokka era teteberezebwa wamu ne Vivace.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="425"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="437"/>
         <source>Download &amp; play</source>
         <translation>Downuloda ozannye</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="445"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="457"/>
         <source>Downloads the video (merging HD video and audio with ffmpeg), plays it, and keeps it in a cache folder so replaying it is instant. The cache holds the most recent downloads up to the size below; older ones are removed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="459"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="471"/>
         <source>Cookies file:</source>
         <translation>Fayiro ya cookies:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="461"/>
-        <source>Optional cookies.txt exported from your browser (yt-dlp --cookies); unlocks HD, members-only and age-restricted videos. Safe here — cookies only affect the download, not a stream a player must open. A copy is kept in Vivace&apos;s own storage, since Android can&apos;t reopen the original file location directly — browse again here after re-exporting it from your browser.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="493"/>
-        <source>Get cookies from browser:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="494"/>
-        <source>Reads cookies live from an installed browser instead of the file above — recommended, since YouTube&apos;s cookie lifetimes are now much shorter, making an exported cookies.txt go stale within days. Takes priority over the cookies file when set. On Windows, only Firefox actually works here: Chrome/Edge encrypt cookies in a way tied to the browser&apos;s own binary (&quot;App-Bound Encryption&quot;), which blocks yt-dlp (and every other external tool) from reading them at all — this is a Chrome-side restriction yt-dlp&apos;s own developers can&apos;t work around. Linux and macOS Chrome/Edge are unaffected.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="518"/>
-        <source>Off (use the cookies file above)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="519"/>
-        <source>Firefox (recommended)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="520"/>
-        <source>Chrome</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="521"/>
-        <source>Edge</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="522"/>
-        <source>Brave</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="523"/>
-        <source>Chromium</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="524"/>
-        <source>Opera</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="525"/>
-        <source>Safari</source>
+        <location filename="../qml/PrefNetworkPage.qml" line="508"/>
+        <source>Opens a sign-in page inside Vivace itself and saves the resulting session as the cookies file above — Android&apos;s equivalent of exporting cookies.txt from a desktop browser, with no separate export/transfer step. Sign in with the YouTube account whose access you want to use, then tap &quot;Save cookies&quot;, then &quot;Close&quot;.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/PrefNetworkPage.qml" line="526"/>
-        <source>Vivaldi</source>
+        <source>Get cookies from browser:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/PrefNetworkPage.qml" line="527"/>
+        <source>Reads cookies live from an installed browser instead of the file above — recommended, since YouTube&apos;s cookie lifetimes are now much shorter, making an exported cookies.txt go stale within days. Takes priority over the cookies file when set. On Windows, only Firefox actually works here: Chrome/Edge encrypt cookies in a way tied to the browser&apos;s own binary (&quot;App-Bound Encryption&quot;), which blocks yt-dlp (and every other external tool) from reading them at all — this is a Chrome-side restriction yt-dlp&apos;s own developers can&apos;t work around. Linux and macOS Chrome/Edge are unaffected.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="551"/>
+        <source>Off (use the cookies file above)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="552"/>
+        <source>Firefox (recommended)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="553"/>
+        <source>Chrome</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="554"/>
+        <source>Edge</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="555"/>
+        <source>Brave</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="556"/>
+        <source>Chromium</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="557"/>
+        <source>Opera</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="558"/>
+        <source>Safari</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="559"/>
+        <source>Vivaldi</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="560"/>
         <source>Whale</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="821"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="854"/>
         <source>The proxy password is stored securely using your operating system&apos;s credential manager.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="851"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="884"/>
         <source>The port Play ▸ Cast… listens on. Kept fixed here (rather than editable each time in the Cast dialog) so you can allow it through your firewall/router once and it keeps working.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="484"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="495"/>
         <source>optional cookies.txt</source>
         <translation>cookies.txt eya ky&apos;olonda</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="37"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="38"/>
         <source>PO token provider installed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="42"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="54"/>
         <source>&lt;h1&gt;Network&lt;/h1&gt;&lt;p&gt;&lt;b&gt;OpenSubtitles&lt;/b&gt; search uses the REST API, which requires a free per-application API key: register at opensubtitles.com, create an API consumer, and paste the key here. An account login (username and password) is optional but raises the daily download limit.&lt;/p&gt;&lt;p&gt;&lt;b&gt;YouTube&lt;/b&gt;: the optional resolver uses an external yt-dlp program — when enabled, opening a YouTube URL runs yt-dlp to obtain a directly-playable stream. Vivace offers to install yt-dlp for you the first time you turn this on (or point it at your own copy with the path field below), and can keep it updated on its own per the &quot;Update yt-dlp automatically&quot; setting. Because QMediaPlayer plays a single muxed stream, streaming tops out at the best progressive format (about 720p on YouTube). Cookies are deliberately NOT used for streaming: an authenticated (cookie) session returns URLs a plain player cannot open.&lt;/p&gt;&lt;p&gt;For &lt;b&gt;HD&lt;/b&gt; (and for cookies), enable download mode, or point the external downloader at your own tool (a program or .bat/.cmd). HD formats are separate video and audio streams that cannot be streamed muxed, so Vivace runs yt-dlp (or your tool) to download and merge the video, then plays the file it writes into the download folder. Download mode also needs Deno, a further external program yt-dlp itself uses to solve YouTube&apos;s JavaScript challenges — without it, a signed-in (cookie) request, exactly what HD downloads rely on, sees severely limited format availability. Streaming mode, which never sends cookies, is largely unaffected and doesn&apos;t need Deno. Install Deno yourself and, if it is not on the PATH, set its full path in the Download &amp; play settings.&lt;/p&gt;&lt;p&gt;Recent YouTube videos increasingly require a &lt;b&gt;PO token&lt;/b&gt; just to play at all — a general playability requirement, unrelated to cookies/login, that shows up as yt-dlp reporting the video as unavailable. &lt;b&gt;Install PO token provider…&lt;/b&gt; sets up the community &quot;BgUtils POT Provider&quot;: a small yt-dlp plugin plus a script (built with Deno, the same program used above) that yt-dlp runs on demand to generate a token. It applies to both streaming and downloading.&lt;/p&gt;&lt;p&gt;Since YouTube shortened its own cookie lifetimes, an exported cookies.txt file can go stale within days. &lt;b&gt;Get cookies from browser&lt;/b&gt; reads them live from an installed browser instead, so there&apos;s nothing to re-export. On Windows, only Firefox works here — Chrome/Edge&apos;s own &quot;App-Bound Encryption&quot; blocks every external tool, including yt-dlp, from reading their cookies at all; Linux and macOS Chrome/Edge are unaffected.&lt;/p&gt;&lt;p&gt;See &lt;b&gt;Help ▸ Contents ▸ Options&lt;/b&gt; for step-by-step instructions on exporting a cookies.txt file from your browser, and on installing Deno.&lt;/p&gt;&lt;p&gt;The stream &lt;b&gt;connection timeout&lt;/b&gt; (used mainly by live TV tuners) has moved to &lt;i&gt;Preferences ▸ TV and radio&lt;/i&gt;.&lt;/p&gt;&lt;p&gt;The &lt;b&gt;Proxy&lt;/b&gt; tab applies application-wide: both HTTP and SOCKS5 cover OpenSubtitles search and the update check; only HTTP additionally covers media playback and yt-dlp (they read the http_proxy/https_proxy convention directly instead of going through Qt&apos;s network stack, and there is no SOCKS5 equivalent for that convention).&lt;/p&gt;&lt;p&gt;The &lt;b&gt;Cast&lt;/b&gt; tab sets the port Play ▸ Cast… listens on. It&apos;s here (rather than only in the Cast dialog) so it stays fixed — set it once, allow that port through your firewall/router once, and casting keeps working without a new firewall prompt every time.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="487"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="555"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="473"/>
+        <source>Optional cookies.txt; unlocks HD, members-only and age-restricted videos. Safe here — cookies only affect the download, not a stream a player must open. &quot;Log in to YouTube…&quot; below fills this in for you automatically — use it instead of exporting cookies.txt from a desktop browser and transferring it here by hand.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="498"/>
         <location filename="../qml/PrefNetworkPage.qml" line="588"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="617"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="693"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="729"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="621"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="650"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="726"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="762"/>
         <source>Browse…</source>
         <translation>Noonya…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="540"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="507"/>
+        <source>Log in to YouTube:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="518"/>
+        <source>Log in to YouTube…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="573"/>
         <source>ffmpeg location:</source>
         <translation>Ekifo kya ffmpeg:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="541"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="574"/>
         <source>Folder containing ffmpeg (yt-dlp needs it to merge HD video+audio). Leave empty to use ffmpeg from the system PATH.</source>
         <translation>Efolda erimu ffmpeg (yt-dlp agyetaaga okugatta vidiyo n&apos;amaloboozi aga HD). Leka nga terimu okukozesa ffmpeg okuva ku PATH ya sisitemu.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="552"/>
         <location filename="../qml/PrefNetworkPage.qml" line="585"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="618"/>
         <source>empty = use PATH</source>
         <translation>terimu = kozesa PATH</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="565"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="598"/>
         <source>Deno path:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="566"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="599"/>
         <source>yt-dlp uses a separate program, Deno, to solve YouTube&apos;s JavaScript challenges. It&apos;s most needed here: a signed-in (cookie) request — exactly what unlocks HD above — sees severely limited format availability without it. Streaming mode, which never sends cookies, is largely unaffected. Leave empty if &quot;deno&quot; is already on your system PATH; otherwise enter the full path to the deno executable. See Help ▸ Contents ▸ Options for installation instructions.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="603"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="636"/>
         <source>Cache folder:</source>
         <translation>Efolda y&apos;etterekero:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="604"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="637"/>
         <source>Where downloaded videos are kept for reuse. A video already here is replayed without downloading again.</source>
         <translation>Awo vidiyo ezadownulodeddwa we ziterekerwa okuddamu okukozesa. Vidiyo eri wano dda ezannyibwa okuddamu awatali kuddamu kudownuloda.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="622"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="655"/>
         <source>Cache size:</source>
         <translation>Obunene bw&apos;etterekero:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="623"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="656"/>
         <source>How many downloaded videos to keep. When the limit is reached, the least-recently-played one is deleted.</source>
         <translation>Vidiyo ezadownulodeddwa mmeka z&apos;okukuuma. Ekkomo bwe lituukibwa, esemba okuzannyibwa esangulwa.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="634"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="667"/>
         <source>files</source>
         <translation>fayiro</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="640"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="673"/>
         <source>Thumbnail fallback at:</source>
         <translation>Akafaananyi akaddirira ku:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="641"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="674"/>
         <source>The cache thumbnail is normally YouTube&apos;s own poster image. Only if that is missing or black does Vivace grab a video frame — this is how many seconds in (past a black intro).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="654"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="687"/>
         <source>seconds</source>
         <translation>sekonda</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="664"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="697"/>
         <source>External downloader tool</source>
         <translation>Ekyuma eky&apos;okudownuloda eky&apos;ebweru</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="679"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="712"/>
         <source>Downloader command:</source>
         <translation>Ekiragiro kya kadownuloda:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="680"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="713"/>
         <source>The program or .bat/.cmd script that downloads the video; it receives the URL as an argument.</source>
         <translation>Pulogulaamu oba sikuliputi .bat/.cmd edownuloda vidiyo; efuna URL ng&apos;akawandiiko.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="690"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="723"/>
         <source>e.g. C:ToolsYouTubeDL.bat</source>
         <translation>okugeza C:\Tools\YouTubeDL.bat</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="698"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="731"/>
         <source>Arguments:</source>
         <translation>Ebiwandiiko:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="699"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="732"/>
         <source>Arguments passed to the tool; the token {url} is replaced by the video URL (if omitted, the URL is appended). Add any cookies/format flags your tool needs here, e.g. --cookies C:pathcookies.txt.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="714"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="747"/>
         <source>Download folder:</source>
         <translation>Efolda y&apos;okudownuloda:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="715"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="748"/>
         <source>The folder the tool writes the finished file into; Vivace plays the newest media file that appears there, so set it to match your tool&apos;s output folder.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="726"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="759"/>
         <source>your tool&apos;s output folder</source>
         <translation>efolda y&apos;ebivaamu ey&apos;ekyuma kyo</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="759"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="792"/>
         <source>Enable proxy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="763"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="796"/>
         <source>Applies to OpenSubtitles search and the update check (both proxy types). Only an HTTP proxy also applies to media playback and yt-dlp — a SOCKS5 proxy does not reach either, since neither goes through Qt&apos;s network stack.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="872"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="905"/>
         <source>Your OS&apos;s firewall (and most routers) block an app listening on a fresh port until you allow it. Pick a port once here, allow Vivace through your firewall for it, and Cast will keep working without a new prompt each time.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="887"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="920"/>
         <source>Select the cookies.txt file</source>
         <translation>Londa fayiro cookies.txt</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="916"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="949"/>
         <source>Select the deno executable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="922"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="955"/>
         <source>Select the folder containing ffmpeg</source>
         <translation>Londa efolda erimu ffmpeg</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="927"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="960"/>
         <source>Select the download cache folder</source>
         <translation>Londa efolda y&apos;etterekero ery&apos;okudownuloda</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="932"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="965"/>
         <source>Select the downloader program</source>
         <translation>Londa pulogulaamu ya kadownuloda</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="938"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="971"/>
         <source>Select the download folder</source>
         <translation>Londa efolda y&apos;okudownuloda</translation>
     </message>
@@ -4790,102 +4823,102 @@
 <context>
     <name>PreferencesDialog</name>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="27"/>
+        <location filename="../qml/PreferencesDialog.qml" line="28"/>
         <source>Preferences</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="101"/>
+        <location filename="../qml/PreferencesDialog.qml" line="102"/>
         <source>&lt;h1&gt;Help&lt;/h1&gt;&lt;p&gt;No help is available for this section.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="192"/>
+        <location filename="../qml/PreferencesDialog.qml" line="193"/>
         <source>General</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="193"/>
+        <location filename="../qml/PreferencesDialog.qml" line="194"/>
         <source>Drives</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="194"/>
+        <location filename="../qml/PreferencesDialog.qml" line="195"/>
         <source>Subtitles</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="195"/>
+        <location filename="../qml/PreferencesDialog.qml" line="196"/>
         <source>Interface</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="196"/>
+        <location filename="../qml/PreferencesDialog.qml" line="197"/>
         <source>Toolbars</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="197"/>
+        <location filename="../qml/PreferencesDialog.qml" line="198"/>
         <source>Keyboard and mouse</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="198"/>
+        <location filename="../qml/PreferencesDialog.qml" line="199"/>
         <source>Playlist</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="199"/>
+        <location filename="../qml/PreferencesDialog.qml" line="200"/>
         <source>TV and radio</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="200"/>
+        <location filename="../qml/PreferencesDialog.qml" line="201"/>
         <source>File types</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="201"/>
+        <location filename="../qml/PreferencesDialog.qml" line="202"/>
         <source>Updates</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="202"/>
+        <location filename="../qml/PreferencesDialog.qml" line="203"/>
         <source>Network</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="203"/>
+        <location filename="../qml/PreferencesDialog.qml" line="204"/>
         <source>Advanced</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="281"/>
+        <location filename="../qml/PreferencesDialog.qml" line="283"/>
         <source>&amp;Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="286"/>
+        <location filename="../qml/PreferencesDialog.qml" line="288"/>
         <source>OK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="290"/>
+        <location filename="../qml/PreferencesDialog.qml" line="292"/>
         <source>Apply</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="296"/>
+        <location filename="../qml/PreferencesDialog.qml" line="298"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="305"/>
+        <location filename="../qml/PreferencesDialog.qml" line="307"/>
         <source>Vivace — Help</source>
         <translation>Vivace — Obuyambi</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="369"/>
+        <location filename="../qml/PreferencesDialog.qml" line="371"/>
         <source>Close</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5329,6 +5362,37 @@
     <message>
         <location filename="../qml/VideoEqualizerDialog.qml" line="224"/>
         <source>OK</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>YoutubeLoginDialog</name>
+    <message>
+        <location filename="../qml/YoutubeLoginDialog.qml" line="54"/>
+        <source>Log in to YouTube</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../qml/YoutubeLoginDialog.qml" line="87"/>
+        <source>%n cookie(s) saved — tap “Close” to finish.</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message>
+        <location filename="../qml/YoutubeLoginDialog.qml" line="115"/>
+        <source>Sign in below, then tap “Save cookies”, then “Close”.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/YoutubeLoginDialog.qml" line="118"/>
+        <source>Save cookies</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/YoutubeLoginDialog.qml" line="125"/>
+        <source>Close</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

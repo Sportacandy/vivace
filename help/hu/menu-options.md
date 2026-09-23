@@ -113,12 +113,13 @@ A **Letöltés és lejátszás** és a **külső eszköz** YouTube-módok úgy
 tudnak viselkedni, mintha be lennél jelentkezve — ez szükséges a
 korhatáros, csak tagoknak elérhető vagy más módon fiókhoz kötött
 videókhoz, és ez teszi lehetővé a teljes HD/4K letöltéseket is. A Vivace
-két módot támogat a sütik megadására (mindkettő a *Beállítások ▸
-Hálózat ▸ YouTube ▸ Letöltés és lejátszás* alatt); Windows/Linux/macOS
-alatt a **Sütik lekérése böngészőből** használatát javasoljuk, hacsak az
-nem működik a te beállításodnál.
+három módot támogat a sütik megadására (mindegyik a *Beállítások ▸
+Hálózat ▸ YouTube* alatt): **Sütik lekérése böngészőből**
+Windows/Linux/macOS alatt, **Bejelentkezés a YouTube-ba…** Androidon,
+és egy `cookies.txt` fájl kézi exportálása tartalék megoldásként
+mindenhol.
 
-### Sütik lekérése böngészőből (ajánlott)
+### Sütik lekérése böngészőből (Windows/Linux/macOS alatt ajánlott)
 
 A **Sütik lekérése böngészőből:** legördülő menü a Firefoxot, a Chrome-ot,
 az Edge-et, a Brave-et, a Chromiumot, az Operát, a Safarit, a Vivaldit és
@@ -141,16 +142,40 @@ nem évül el.
   megkerülni. A Linuxon és macOS-en futó Chrome/Edge ezt nem érinti.
 - A böngésző kiválasztása itt elsőbbséget élvez a lenti **Sütifájl:**
   mezővel szemben, ha mindkettő be van állítva.
-- **Androidon nem elérhető** — helyette használd a lenti kézi exportálási
-  módszert.
+- **Androidon nem elérhető** — helyette lásd lent a **Bejelentkezés a
+  YouTube-ba** részt.
 
-### Sütik exportálása fájlba (tartalék megoldás, és az egyetlen lehetőség Androidon)
+### Bejelentkezés a YouTube-ba (Android, ott ajánlott)
+
+A *Beállítások ▸ Hálózat ▸ YouTube* lapon található egy **Bejelentkezés
+a YouTube-ba…** gomb (a sütifájl mező mellett), amely egy valódi
+bejelentkezési oldalt nyit meg magán a Vivace-on belül, egy beágyazott,
+natív operációsrendszer-WebView segítségével. Jelentkezz be azzal a
+fiókkal, amelynek hozzáférését használni szeretnéd, majd koppints a
+**Bejelentkeztem** gombra — a Vivace beolvassa a keletkezett
+munkamenet-sütiket, és automatikusan elmenti őket aktív sütifájlként.
+Ez az Android megfelelője a fenti **Sütik lekérése böngészőből**
+funkciónak: nincs mit exportálni, és nincs mit kézzel átvinni egy másik
+eszközről.
+
+**Ne feledd:**
+
+- Androidon egyáltalán nincs megfelelője az asztali böngésző élő
+  sütitárolójának, amelyből olvasni lehetne (minden alkalmazás tárhelye
+  el van szigetelve az összes többi alkalmazásétól), ezért működik ez
+  másképp, mint az asztali lehetőség — a bejelentkezés *magán a Vivace
+  saját beágyazott böngészőjén belül* a gyakorlati helyettesítő
+  megoldás.
+- Csak Androidon érhető el; minden más platform a **Sütik lekérése
+  böngészőből** funkciót használja.
+
+### Sütik exportálása fájlba (tartalék megoldás minden platformon)
 
 A **Sütifájl:** mező egy egyszerű szöveges `cookies.txt` fájlt vár a
 klasszikus Netscape süti-formátumban (ugyanaz a formátum, amelyet a
 yt-dlp saját `--cookies` kapcsolója is olvas) — akkor használd, ha a
-fenti élő böngészős lehetőség nem elérhető (Android), vagy nem működik a
-böngésződdel (Chrome/Edge Windows alatt).
+fenti élő lehetőségek egyike sem érhető el vagy nem működik nálad (pl.
+Chrome/Edge Windows alatt).
 
 **Létrehozás menete:**
 
@@ -169,8 +194,11 @@ böngésződdel (Chrome/Edge Windows alatt).
    használd a **Sütifájl:** melletti **Tallózás…** gombot a fájl
    kiválasztásához.
 
-**Androidon:** az Android Chrome nem támogatja a böngészőbővítményeket,
-így a fenti 2–3. lépést nem lehet magán az eszközön elvégezni. Exportáld
+**Androidon:** inkább a fenti **Bejelentkezés a YouTube-ba…** funkciót
+használd — annak egyáltalán nincs szüksége külön exportálási/átviteli
+lépésre. Ha mégis ezen a módon szeretnéd megtenni, vedd figyelembe,
+hogy az Android Chrome nem támogatja a böngészőbővítményeket, így a
+fenti 2–3. lépést nem lehet magán az eszközön elvégezni. Exportáld
 a `cookies.txt` fájlt egy asztali vagy laptop számítógépen a fent
 leírtak szerint, majd vidd át azt a fájlt az Android-eszközödre (pl.
 felhőtárhelyen, USB-kábelen vagy e-mailben keresztül), mielőtt a 4.

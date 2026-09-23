@@ -87,10 +87,7 @@ var catalog = [
 ];
 
 // Default main toolbar layout (empty Settings.mainToolbarItems falls back to
-// this). YouTube cache is dropped on Android -- the cache browser is a
-// download-based feature that isn't available there (see the "youtubecache"
-// TBtn's own enabled: gate; it's still in the catalog and reachable via the
-// toolbar editor, it's just not part of the out-of-the-box layout there).
+// this).
 var defaultMainToolbar = (function() {
     var items = [
         "open", "recentfiles", "favorites", "youtubecache", "tv", "separator",
@@ -104,12 +101,24 @@ var defaultMainToolbar = (function() {
         // No separators at all on Android (user's own explicit choice,
         // 2026-09-19): a phone-width toolbar wraps onto several rows
         // (see MainToolBar.qml's own row-wrap logic), where a separator
-        // cell just wastes a slot better spent on a real button. YouTube
-        // cache stays dropped, same reasoning as before. Help is
-        // appended after the stretch ("spacer") so it always sits at the
-        // far right of the bar regardless of how many buttons precede it.
+        // cell just wastes a slot better spent on a real button.
+        //
+        // "youtubecache" USED to be dropped here too, back when YouTube
+        // Download & play mode wasn't yet working on Android at all --
+        // re-added 2026-09-23 now that it is: the button's own enabled:
+        // gate in MainToolBar.qml (youtubeCacheCount > 0 &&
+        // Settings.youtubeEnabled && Settings.youtubeMode === 1) is
+        // already fully platform-agnostic, and youtubeResolver.cacheCount
+        // already reflects Android's own downloads too (PythonYoutubeResolver
+        // shares the exact same cacheDir -- see its own doc comment in
+        // Main.qml), so no Android-specific wiring was needed, only
+        // removing this now-stale exclusion.
+        //
+        // Help is appended after the stretch ("spacer") so it always sits
+        // at the far right of the bar regardless of how many buttons
+        // precede it.
         items = items.filter(function(id) {
-            return id !== "youtubecache" && id !== "separator";
+            return id !== "separator";
         });
         items.push("help");
     }

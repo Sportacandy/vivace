@@ -112,12 +112,12 @@ Le modalità YouTube **Scarica e riproduci** e **Strumento esterno** possono
 comportarsi come se si avesse effettuato l'accesso — necessario per i video
 con restrizioni di età, riservati agli iscritti o altrimenti vincolati a un
 account, ed è ciò che sblocca anche i download in piena qualità HD/4K.
-Vivace supporta due modi per fornire i cookie (entrambi in *Preferenze ▸
-Rete ▸ YouTube ▸ Scarica e riproduci*); su Windows/Linux/macOS,
-**Recupero cookie dal browser** è quello da usare, a meno che non funzioni
-con la tua configurazione.
+Vivace supporta tre modi per fornire i cookie (tutti in *Preferenze ▸ Rete
+▸ YouTube*): **Recupero cookie dal browser** su Windows/Linux/macOS,
+**Accedi a YouTube…** su Android, ed esportare manualmente un file
+`cookies.txt` come soluzione alternativa su qualsiasi piattaforma.
 
-### Recupero cookie dal browser (consigliato)
+### Recupero cookie dal browser (consigliato su Windows/Linux/macOS)
 
 Il menu a tendina **Recupero cookie dal browser:** elenca Firefox, Chrome,
 Edge, Brave, Chromium, Opera, Safari, Vivaldi e Whale. Scegli il tuo
@@ -140,16 +140,37 @@ esportare, niente che diventi obsoleto.
   su Linux e macOS non sono interessati e funzionano normalmente.
 - Selezionare un browser qui ha la priorità sul campo **File dei cookie:**
   più sotto, quando entrambi sono impostati.
-- **Non disponibile su Android** — usa invece il metodo di esportazione
-  manuale più sotto.
+- **Non disponibile su Android** — vedi invece **Accedi a YouTube** più
+  sotto.
 
-### Esportare i cookie in un file (soluzione alternativa, e unica opzione su Android)
+### Accedi a YouTube (Android, consigliato su questa piattaforma)
+
+*Preferenze ▸ Rete ▸ YouTube* ha un pulsante **Accedi a YouTube…**
+(accanto al campo del file dei cookie) che apre una vera pagina di accesso
+direttamente dentro Vivace, tramite una WebView incorporata e nativa del
+sistema operativo. Accedi con l'account di cui vuoi usare l'accesso, poi
+tocca **Ho eseguito l'accesso** — Vivace legge i cookie di sessione
+risultanti e li salva automaticamente come file dei cookie attivo. È
+l'equivalente su Android di **Recupero cookie dal browser** sopra: niente
+da esportare, niente da trasferire manualmente da un altro dispositivo.
+
+**Da tenere presente:**
+
+- Android non ha alcun equivalente di un archivio cookie del browser
+  desktop leggibile in tempo reale (l'archiviazione di ogni app è isolata
+  da quella di tutte le altre) — per questo qui funziona diversamente
+  dall'opzione desktop: accedere *dentro* al browser incorporato di Vivace
+  è il sostituto pratico.
+- Disponibile solo su Android; tutte le altre piattaforme usano **Recupero
+  cookie dal browser** al suo posto.
+
+### Esportare i cookie in un file (soluzione alternativa su qualsiasi piattaforma)
 
 Il campo **File dei cookie:** richiede un file di testo semplice
 `cookies.txt` nel classico formato dei cookie Netscape (lo stesso formato
-letto dall'opzione `--cookies` di yt-dlp) — usalo quando l'opzione del
-browser in tempo reale sopra non è disponibile (Android) o non funziona con
-il tuo browser (Chrome/Edge su Windows).
+letto dall'opzione `--cookies` di yt-dlp) — usalo quando nessuna delle due
+opzioni in tempo reale sopra è disponibile o funziona per te (ad es.
+Chrome/Edge su Windows).
 
 **Per crearne uno:**
 
@@ -167,9 +188,12 @@ il tuo browser (Chrome/Edge su Windows).
 4. In Vivace, apri *Preferenze ▸ Rete ▸ YouTube* e usa **Sfoglia…** accanto
    a **File dei cookie:** per selezionare quel file.
 
-**Su Android:** Chrome per Android non supporta le estensioni del browser,
-quindi i passaggi 2–3 sopra non possono essere eseguiti sul dispositivo
-stesso. Esporta `cookies.txt` su un computer desktop o portatile come
+**Su Android:** preferisci invece **Accedi a YouTube…** sopra — non
+richiede alcun passaggio di esportazione/trasferimento. Se vuoi comunque
+procedere in questo modo, tieni presente che Chrome per Android non
+supporta le estensioni del browser, quindi i passaggi 2–3 sopra non
+possono essere eseguiti sul dispositivo stesso. Esporta `cookies.txt` su
+un computer desktop o portatile come
 descritto sopra, quindi trasferisci quel file sul tuo dispositivo Android
 (ad es. tramite archiviazione cloud, un cavo USB o e-mail) prima di usare
 **Sfoglia…** al passaggio 4.

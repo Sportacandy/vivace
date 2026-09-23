@@ -40,6 +40,10 @@
 #include "androidshareintent.h"
 #include "singleinstance.h"
 
+#ifdef VIVACE_HAVE_ANDROID_YOUTUBE_LOGIN
+#include <QtWebView>
+#endif
+
 namespace {
 
 // Persistent troubleshooting log. A WIN32 GUI app has no usable stderr, so
@@ -313,6 +317,16 @@ int main(int argc, char *argv[])
         qputenv("QT_SCALE_FACTOR", QByteArray::number(scaleFactor));
 
     QGuiApplication app(argc, argv);
+
+    // Per Qt WebView's own docs: must be called right after constructing
+    // QGuiApplication, before anything else touches the QML engine or a
+    // WebView item. Android-only (VIVACE_HAVE_ANDROID_YOUTUBE_LOGIN) -- see
+    // CMakeLists.txt's own comment on why this feature doesn't extend to
+    // desktop.
+#ifdef VIVACE_HAVE_ANDROID_YOUTUBE_LOGIN
+    QtWebView::initialize();
+#endif
+
     QCoreApplication::setApplicationName(QStringLiteral("vivace"));
     QCoreApplication::setOrganizationName(QStringLiteral("vivace-player"));
     QCoreApplication::setApplicationVersion(QStringLiteral("0.5.2"));

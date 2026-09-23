@@ -11,6 +11,13 @@ each get their own entry instead.
 
 ## [Unreleased]
 
+### Added
+- Android: a "Log in to YouTube…" button (Preferences ▸ Network ▸
+  YouTube, next to the cookies file field) opens a sign-in page inside
+  Vivace itself and saves the resulting session as the active cookies
+  file — no manual export/transfer from a desktop browser needed, the
+  Android equivalent of desktop's "Get cookies from browser".
+
 ## [0.5.2] — 2026-09-22
 
 ### Added

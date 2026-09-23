@@ -108,12 +108,13 @@ De YouTube-modi **Downloaden en afspelen** en **externe tool** kunnen zich
 gedragen alsof u bent aangemeld — nodig voor video's met
 leeftijdsbeperking, video's die alleen voor leden toegankelijk zijn, of
 anderszins aan een account gebonden video's, en het is wat volledige
-HD/4K-downloads ontgrendelt. Vivace ondersteunt twee manieren om cookies
-aan te leveren (beide onder *Voorkeuren ▸ Netwerk ▸ YouTube ▸ Downloaden
-en afspelen*); op Windows/Linux/macOS is **Cookies ophalen uit browser**
-de te gebruiken optie, tenzij deze niet werkt voor uw opstelling.
+HD/4K-downloads ontgrendelt. Vivace ondersteunt drie manieren om cookies
+aan te leveren (allemaal onder *Voorkeuren ▸ Netwerk ▸ YouTube*):
+**Cookies ophalen uit browser** op Windows/Linux/macOS, **Inloggen bij
+YouTube…** op Android, en het handmatig exporteren van een
+`cookies.txt`-bestand als alternatief overal.
 
-### Cookies ophalen uit browser (aanbevolen)
+### Cookies ophalen uit browser (aanbevolen op Windows/Linux/macOS)
 
 Het keuzevak **Cookies ophalen uit browser:** biedt Firefox, Chrome, Edge,
 Brave, Chromium, Opera, Safari, Vivaldi en Whale. Kies uw browser en
@@ -137,16 +138,38 @@ exporteren, niets dat verouderd raakt.
   Linux en macOS ondervinden hier geen last van en werken normaal.
 - Het selecteren van een browser hier heeft voorrang op het veld
   **Cookiebestand:** hieronder, wanneer beide zijn ingesteld.
-- **Niet beschikbaar op Android** — gebruik in plaats daarvan de
-  handmatige exportmethode hieronder.
+- **Niet beschikbaar op Android** — zie **Inloggen bij YouTube**
+  hieronder in plaats daarvan.
 
-### Cookies naar een bestand exporteren (alternatief, en de enige optie op Android)
+### Inloggen bij YouTube (Android, daar aanbevolen)
+
+*Voorkeuren ▸ Netwerk ▸ YouTube* heeft een knop **Inloggen bij
+YouTube…** (naast het veld voor het cookiebestand) die een echte
+aanmeldpagina binnen Vivace zelf opent, met behulp van een ingebouwde,
+systeemeigen WebView. Meld u aan met het account waarvan u de toegang
+wilt gebruiken en tik vervolgens op **Ik ben ingelogd** — Vivace leest
+de resulterende sessiecookies en slaat ze automatisch op als het actieve
+cookiebestand. Dit is het Android-equivalent van **Cookies ophalen uit
+browser** hierboven: niets om te exporteren, niets om handmatig van een
+ander apparaat over te zetten.
+
+**Houd er rekening mee:**
+
+- Android heeft helemaal geen equivalent van een live cookie-opslag van
+  een desktopbrowser om uit te lezen (de opslag van elke app is
+  afgeschermd van elke andere app) — daarom werkt dit anders dan de
+  desktopoptie: aanmelden *binnen* de ingebouwde browser van Vivace zelf
+  is het praktische alternatief.
+- Alleen beschikbaar op Android; elk ander platform gebruikt in plaats
+  daarvan **Cookies ophalen uit browser**.
+
+### Cookies naar een bestand exporteren (alternatief op elk platform)
 
 Het veld **Cookiebestand:** verwacht een gewoon tekstbestand `cookies.txt`
 in het klassieke Netscape-cookiejar-formaat (hetzelfde formaat dat
-yt-dlp's eigen `--cookies`-optie leest) — gebruik dit wanneer de optie
-hierboven om cookies live uit de browser te halen niet beschikbaar is
-(Android) of niet werkt voor uw browser (Chrome/Edge op Windows).
+yt-dlp's eigen `--cookies`-optie leest) — gebruik dit wanneer geen van
+beide bovenstaande live-opties beschikbaar is of voor u werkt (bijv.
+Chrome/Edge op Windows).
 
 **Zo maakt u er een:**
 
@@ -163,7 +186,10 @@ hierboven om cookies live uit de browser te halen niet beschikbaar is
 4. Open in Vivace *Voorkeuren ▸ Netwerk ▸ YouTube* en gebruik
    **Bladeren…** naast **Cookiebestand:** om dat bestand te selecteren.
 
-**Op Android:** Chrome voor Android ondersteunt geen browserextensies, dus
+**Op Android:** gebruik in plaats daarvan liever **Inloggen bij
+YouTube…** hierboven — dat vereist helemaal geen export-/overzetstap.
+Als u het toch op deze manier wilt doen: Chrome voor Android ondersteunt
+geen browserextensies, dus
 stap 2–3 hierboven kunnen niet op het apparaat zelf worden uitgevoerd.
 Exporteer `cookies.txt` zoals hierboven beschreven op een desktop- of
 laptopcomputer, en breng dat bestand vervolgens over naar uw

@@ -109,12 +109,13 @@ Tryby YouTube **Pobierz i odtwórz** oraz **narzędzie zewnętrzne** mogą
 działać tak, jakbyś był zalogowany — jest to potrzebne w przypadku
 filmów z ograniczeniem wiekowym, dostępnych tylko dla członków lub w
 inny sposób wymagających konta, i to właśnie ono odblokowuje pełne
-pobieranie w HD/4K. Vivace obsługuje dwa sposoby dostarczania plików
-cookie (oba w *Ustawienia ▸ Sieć ▸ YouTube ▸ Pobierz i odtwórz*); w
-systemach Windows/Linux/macOS zalecaną opcją jest **Pobierz pliki
-cookie z przeglądarki**, chyba że nie działa ona w Twojej konfiguracji.
+pobieranie w HD/4K. Vivace obsługuje trzy sposoby dostarczania plików
+cookie (wszystkie w *Ustawienia ▸ Sieć ▸ YouTube*): **Pobierz pliki
+cookie z przeglądarki** w systemach Windows/Linux/macOS, **Zaloguj się
+do YouTube…** na Androidzie oraz ręczne wyeksportowanie pliku
+`cookies.txt` jako rozwiązanie zastępcze wszędzie.
 
-### Pobierz pliki cookie z przeglądarki (zalecane)
+### Pobierz pliki cookie z przeglądarki (zalecane w systemach Windows/Linux/macOS)
 
 Lista rozwijana **Pobierz pliki cookie z przeglądarki:** obejmuje
 Firefox, Chrome, Edge, Brave, Chromium, Opera, Safari, Vivaldi i Whale.
@@ -139,16 +140,38 @@ traci ważności.
   Linux i macOS nie są tym dotknięte i działają normalnie.
 - Wybranie tu przeglądarki ma pierwszeństwo przed polem **Plik
   cookie:** poniżej, gdy ustawione są oba warianty.
-- **Niedostępne na Androidzie** — zamiast tego skorzystaj z metody
-  ręcznego eksportu poniżej.
+- **Niedostępne na Androidzie** — zamiast tego zobacz **Zaloguj się do
+  YouTube** poniżej.
 
-### Eksportowanie plików cookie do pliku (rozwiązanie zastępcze i jedyne na Androidzie)
+### Zaloguj się do YouTube (Android, zalecane tam)
+
+*Ustawienia ▸ Sieć ▸ YouTube* zawiera przycisk **Zaloguj się do
+YouTube…** (obok pola pliku cookie), który otwiera prawdziwą stronę
+logowania wewnątrz samego Vivace, przy użyciu wbudowanej, natywnej dla
+systemu przeglądarki WebView. Zaloguj się na konto, z którego dostępu
+chcesz skorzystać, a następnie stuknij **Jestem zalogowany** — Vivace
+odczyta wynikowe pliki cookie sesji i automatycznie zapisze je jako
+aktywny plik cookie. Jest to odpowiednik funkcji **Pobierz pliki cookie
+z przeglądarki** powyżej dla Androida: nic nie trzeba eksportować ani
+ręcznie przenosić z innego urządzenia.
+
+**Warto pamiętać:**
+
+- Android w ogóle nie ma odpowiednika bieżącego magazynu plików cookie
+  przeglądarki na komputerze, z którego można by odczytywać dane
+  (pamięć każdej aplikacji jest odizolowana od pozostałych) — dlatego
+  działa to inaczej niż opcja na komputerze: logowanie się *wewnątrz*
+  własnej wbudowanej przeglądarki Vivace jest praktycznym zamiennikiem.
+- Dostępne tylko na Androidzie; na każdej innej platformie zamiast tego
+  używana jest funkcja **Pobierz pliki cookie z przeglądarki**.
+
+### Eksportowanie plików cookie do pliku (rozwiązanie zastępcze na każdej platformie)
 
 Pole **Plik cookie:** wymaga zwykłego pliku tekstowego `cookies.txt` w
 klasycznym formacie Netscape cookie-jar (tym samym, który odczytuje
-własna opcja `--cookies` narzędzia yt-dlp) — użyj go, gdy powyższa opcja
-odczytu na żywo z przeglądarki jest niedostępna (Android) lub nie działa
-w Twojej przeglądarce (Chrome/Edge w systemie Windows).
+własna opcja `--cookies` narzędzia yt-dlp) — użyj go, gdy żadna z
+powyższych opcji na żywo nie jest dostępna lub nie działa (np.
+Chrome/Edge w systemie Windows).
 
 **Aby go utworzyć:**
 
@@ -166,7 +189,10 @@ w Twojej przeglądarce (Chrome/Edge w systemie Windows).
 4. W Vivace otwórz *Ustawienia ▸ Sieć ▸ YouTube* i użyj przycisku
    **Przeglądaj…** obok pola **Plik cookie:**, aby wybrać ten plik.
 
-**Na Androidzie:** Chrome na Androida nie obsługuje rozszerzeń
+**Na Androidzie:** zamiast tego lepiej skorzystaj z **Zaloguj się do
+YouTube…** powyżej — nie wymaga ono w ogóle kroku eksportu/przenoszenia.
+Jeśli mimo to chcesz zrobić to w ten sposób: Chrome na Androida nie
+obsługuje rozszerzeń
 przeglądarki, więc kroków 2–3 powyżej nie da się wykonać na samym
 urządzeniu. Wyeksportuj `cookies.txt` w sposób opisany powyżej na
 komputerze stacjonarnym lub laptopie, a następnie przenieś ten plik na

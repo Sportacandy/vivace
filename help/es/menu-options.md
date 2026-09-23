@@ -110,12 +110,12 @@ Los modos de YouTube **Descargar y reproducir** y **Herramienta externa**
 pueden actuar como si hubiera iniciado sesión — necesario para vídeos con
 restricción de edad, exclusivos para miembros o vinculados de otro modo a
 una cuenta, y es lo que además desbloquea las descargas en HD/4K completa.
-Vivace admite dos formas de proporcionar cookies (ambas en *Preferencias ▸
-Red ▸ YouTube ▸ Descargar y reproducir*); en Windows/Linux/macOS,
-**Obtener cookies del navegador** es la que conviene usar, salvo que no
-funcione con su configuración.
+Vivace admite tres formas de proporcionar cookies (todas en *Preferencias
+▸ Red ▸ YouTube*): **Obtener cookies del navegador** en Windows/Linux/
+macOS, **Iniciar sesión en YouTube…** en Android, y exportar manualmente
+un archivo `cookies.txt` como alternativa en cualquier plataforma.
 
-### Obtener cookies del navegador (recomendado)
+### Obtener cookies del navegador (recomendado en Windows/Linux/macOS)
 
 El menú desplegable **Obtener cookies del navegador:** enumera Firefox,
 Chrome, Edge, Brave, Chromium, Opera, Safari, Vivaldi y Whale. Elija su
@@ -137,16 +137,39 @@ exportar, nada que caduque.
   Linux y macOS no se ven afectados por esto y funcionan con normalidad.
 - Seleccionar un navegador aquí tiene prioridad sobre el campo **Archivo de
   cookies:** de más abajo, cuando ambos están configurados.
-- **No disponible en Android** — use en su lugar el método de exportación
-  manual de más abajo.
+- **No disponible en Android** — consulte en su lugar **Iniciar sesión en
+  YouTube** más abajo.
 
-### Exportar las cookies a un archivo (alternativa, y la única opción en Android)
+### Iniciar sesión en YouTube (Android, recomendado en esa plataforma)
+
+*Preferencias ▸ Red ▸ YouTube* tiene un botón **Iniciar sesión en
+YouTube…** (junto al campo del archivo de cookies) que abre una página de
+inicio de sesión real dentro de la propia Vivace, mediante una vista web
+(WebView) integrada y nativa del sistema operativo. Inicie sesión con la
+cuenta cuyo acceso desea usar y luego toque **He iniciado sesión** —
+Vivace lee las cookies de sesión resultantes y las guarda automáticamente
+como el archivo de cookies activo. Es el equivalente en Android de
+**Obtener cookies del navegador** de arriba: nada que exportar, nada que
+transferir a mano desde otro dispositivo.
+
+**Tenga en cuenta:**
+
+- Android no tiene ningún equivalente a un almacén de cookies de
+  navegador de escritorio que se pueda leer en directo (el almacenamiento
+  de cada aplicación está aislado del de las demás) — por eso esto
+  funciona de forma distinta a la opción de escritorio: iniciar sesión
+  *dentro* del propio navegador integrado de Vivace es el sustituto
+  práctico.
+- Solo disponible en Android; el resto de plataformas usan **Obtener
+  cookies del navegador** en su lugar.
+
+### Exportar las cookies a un archivo (alternativa en cualquier plataforma)
 
 El campo **Archivo de cookies:** espera un archivo de texto plano
 `cookies.txt` en el clásico formato Netscape de cookies (el mismo formato
-que lee la propia opción `--cookies` de yt-dlp) — úselo cuando la opción de
-navegador en directo de arriba no esté disponible (Android) o no funcione
-con su navegador (Chrome/Edge en Windows).
+que lee la propia opción `--cookies` de yt-dlp) — úselo cuando ninguna de
+las dos opciones en directo de arriba esté disponible o funcione para
+usted (por ejemplo, Chrome/Edge en Windows).
 
 **Para crear uno:**
 
@@ -163,9 +186,12 @@ con su navegador (Chrome/Edge en Windows).
 4. En Vivace, abra *Preferencias ▸ Red ▸ YouTube* y use **Examinar…** junto
    a **Archivo de cookies:** para seleccionar ese archivo.
 
-**En Android:** Chrome para Android no admite extensiones de navegador, así
-que los pasos 2 y 3 anteriores no se pueden realizar en el propio
-dispositivo. Exporte `cookies.txt` en un ordenador de escritorio o portátil
+**En Android:** prefiera en su lugar **Iniciar sesión en YouTube…** de
+arriba — no requiere ningún paso de exportación o transferencia. Si aun
+así desea hacerlo de esta manera, tenga en cuenta que Chrome para Android
+no admite extensiones de navegador, así que los pasos 2 y 3 anteriores no
+se pueden realizar en el propio dispositivo. Exporte `cookies.txt` en un
+ordenador de escritorio o portátil
 como se describió antes, y luego transfiera ese archivo a su dispositivo
 Android (por ejemplo, mediante almacenamiento en la nube, un cable USB o
 correo electrónico) antes de usar **Examinar…** en el paso 4.

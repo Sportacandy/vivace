@@ -105,13 +105,13 @@ instalacije, za slučaj da kasnije zatreba ažuriranje.
 Načini rada YouTubea **Preuzmi i reproduciraj** i **vanjski alat** mogu
 se ponašati kao da ste prijavljeni — potrebno za videozapise s dobnim
 ograničenjem, samo za članove ili na drugi način vezane uz račun, a to
-je i ono što otključava potpuna HD/4K preuzimanja. Vivace podržava dva
-načina za dostavu kolačića (oba u *Postavke ▸ Mreža ▸ YouTube ▸ Preuzmi
-i reproduciraj*); na Windowsima/Linuxu/macOS-u, **Preuzmi kolačiće iz
-preglednika** je onaj koji biste trebali koristiti, osim ako ne radi za
-vašu konfiguraciju.
+je i ono što otključava potpuna HD/4K preuzimanja. Vivace podržava tri
+načina za dostavu kolačića (svi u *Postavke ▸ Mreža ▸ YouTube*):
+**Preuzmi kolačiće iz preglednika** na Windowsima/Linuxu/macOS-u,
+**Prijava na YouTube…** na Androidu i ručni izvoz datoteke
+`cookies.txt` kao rezervna opcija posvuda.
 
-### Preuzimanje kolačića iz preglednika (preporučeno)
+### Preuzimanje kolačića iz preglednika (preporučeno na Windowsima/Linuxu/macOS-u)
 
 Padajući izbornik **Preuzmi kolačiće iz preglednika:** navodi Firefox,
 Chrome, Edge, Brave, Chromium, Opera, Safari, Vivaldi i Whale. Odaberite
@@ -133,16 +133,37 @@ za izvoziti, ništa što zastarijeva.
   Chrome/Edge na Linuxu i macOS-u nisu time pogođeni i rade normalno.
 - Odabir preglednika ovdje ima prednost nad poljem **Datoteka
   kolačića:** ispod, kada su oba postavljena.
-- **Nije dostupno na Androidu** — umjesto toga upotrijebite ručnu
-  metodu izvoza ispod.
+- **Nije dostupno na Androidu** — umjesto toga pogledajte **Prijava na
+  YouTube** ispod.
 
-### Izvoz kolačića u datoteku (rezervna opcija, i jedina na Androidu)
+### Prijava na YouTube (Android, preporučeno ondje)
+
+*Postavke ▸ Mreža ▸ YouTube* ima gumb **Prijava na YouTube…** (pored
+polja za datoteku kolačića) koji unutar samog Vivacea otvara pravu
+stranicu za prijavu, koristeći ugrađeni, izvorni WebView operacijskog
+sustava. Prijavite se s računom čiji pristup želite koristiti, a zatim
+dodirnite **Prijavljen/a sam** — Vivace čita dobivene kolačiće sesije i
+automatski ih sprema kao aktivnu datoteku kolačića. Ovo je Androidov
+ekvivalent gornje opcije **Preuzimanje kolačića iz preglednika**: ništa
+se ne izvozi, ništa se ne prenosi ručno s drugog uređaja.
+
+**Imajte na umu:**
+
+- Android nema nikakav ekvivalent pohrani kolačića uživo iz stolnog
+  preglednika iz koje bi se moglo čitati (pohrana svake aplikacije
+  izolirana je od pohrane svih drugih aplikacija), zbog čega ovo radi
+  drukčije nego stolna opcija — prijava *unutar* Vivaceova vlastitog
+  ugrađenog preglednika praktična je zamjena.
+- Dostupno je samo na Androidu; svaka druga platforma umjesto toga
+  koristi opciju **Preuzimanje kolačića iz preglednika**.
+
+### Izvoz kolačića u datoteku (rezervna opcija na svakoj platformi)
 
 Polje **Datoteka kolačića:** očekuje običnu tekstualnu datoteku
 `cookies.txt` u klasičnom Netscape formatu kolačića (isti format koji
 čita vlastita opcija `--cookies` alata yt-dlp) — upotrijebite ovo kada
-gornja opcija uživo iz preglednika nije dostupna (Android) ili ne radi
-za vaš preglednik (Chrome/Edge na Windowsima).
+nijedna od gornjih opcija uživo nije dostupna ili ne radi za vas (npr.
+Chrome/Edge na Windowsima).
 
 **Kako ga izraditi:**
 
@@ -159,12 +180,14 @@ za vaš preglednik (Chrome/Edge na Windowsima).
 4. U Vivaceu otvorite *Postavke ▸ Mreža ▸ YouTube* i upotrijebite
    **Pregledaj…** pored **Datoteka kolačića:** za odabir te datoteke.
 
-**Na Androidu:** Chrome za Android ne podržava proširenja preglednika,
-pa se koraci 2–3 iznad ne mogu izvesti na samom uređaju. Izvezite
-`cookies.txt` na stolnom ili prijenosnom računalu kako je opisano
-iznad, a zatim prenesite tu datoteku na svoj Android uređaj (npr.
-putem pohrane u oblaku, USB kabela ili e-pošte) prije nego što
-upotrijebite **Pregledaj…** u koraku 4.
+**Na Androidu:** umjesto ovoga radije upotrijebite **Prijava na
+YouTube…** iznad — uopće ne zahtijeva korak izvoza/prijenosa. Ako ipak
+želite postupiti na ovaj način, imajte na umu da Chrome za Android ne
+podržava proširenja preglednika, pa se koraci 2–3 iznad ne mogu izvesti
+na samom uređaju: izvezite `cookies.txt` na stolnom ili prijenosnom
+računalu kako je opisano iznad, a zatim prenesite tu datoteku na svoj
+Android uređaj (npr. putem pohrane u oblaku, USB kabela ili e-pošte)
+prije nego što upotrijebite **Pregledaj…** u koraku 4.
 
 **Imajte na umu:**
 

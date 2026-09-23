@@ -106,12 +106,13 @@ bliver nødvendig.
 YouTube-tilstandene **Download og afspil** og **eksternt værktøj** kan
 opføre sig, som om du var logget ind — nødvendigt for aldersbegrænsede,
 medlemslåste eller på anden måde kontobundne videoer, og det er det, der
-låser op for fulde HD/4K-downloads. Vivace understøtter to måder at
-angive cookies på (begge under *Indstillinger ▸ Netværk ▸ YouTube ▸
-Download og afspil*); på Windows/Linux/macOS er **Hent cookies fra
-browser** den, du bør bruge, medmindre den ikke virker til din opsætning.
+låser op for fulde HD/4K-downloads. Vivace understøtter tre måder at
+angive cookies på (alle under *Indstillinger ▸ Netværk ▸ YouTube*):
+**Hent cookies fra browser** på Windows/Linux/macOS, **Log ind på
+YouTube…** på Android, og manuel eksport af en `cookies.txt`-fil som
+reserveløsning overalt.
 
-### Hent cookies fra browser (anbefales)
+### Hent cookies fra browser (anbefales på Windows/Linux/macOS)
 
 Kombinationsfeltet **Hent cookies fra browser:** viser Firefox, Chrome,
 Edge, Brave, Chromium, Opera, Safari, Vivaldi og Whale. Vælg din browser,
@@ -133,16 +134,37 @@ intet der bliver forældet.
   Linux og macOS er ikke berørt af dette og fungerer normalt.
 - At vælge en browser her har forrang frem for feltet **Cookiefil:**
   nedenfor, når begge er angivet.
-- **Ikke tilgængeligt på Android** — brug den manuelle eksportmetode
-  nedenfor i stedet.
+- **Ikke tilgængeligt på Android** — se **Log ind på YouTube** nedenfor
+  i stedet.
 
-### Eksport af cookies til en fil (reserveløsning, og den eneste mulighed på Android)
+### Log ind på YouTube (Android, anbefales der)
+
+*Indstillinger ▸ Netværk ▸ YouTube* har en knap **Log ind på
+YouTube…** (ved siden af feltet til cookiefilen), som åbner en rigtig
+loginside inde i Vivace selv, via en indlejret, OS-native WebView. Log
+ind med den konto, hvis adgang du vil bruge, og tryk derefter på **Jeg
+er logget ind** — Vivace læser de resulterende sessionscookies og
+gemmer dem automatisk som den aktive cookiefil. Dette er Androids
+modstykke til **Hent cookies fra browser** ovenfor: intet at
+eksportere, intet at overføre fra en anden enhed manuelt.
+
+**Husk:**
+
+- Android har intet modstykke til et aktivt skrivebords-browsers
+  cookielager at læse fra overhovedet (hver apps lager er sandboxet fra
+  alle andre appers), hvilket er grunden til, at dette fungerer
+  anderledes end skrivebordsmuligheden — at logge ind *inde i* Vivaces
+  egen indlejrede browser er den praktiske erstatning.
+- Kun tilgængeligt på Android; alle andre platforme bruger **Hent
+  cookies fra browser** i stedet.
+
+### Eksport af cookies til en fil (reserveløsning på alle platforme)
 
 Feltet **Cookiefil:** forventer en almindelig tekstfil, `cookies.txt`, i
 det klassiske Netscape cookie-format (samme format som yt-dlps eget flag
-`--cookies` læser) — brug dette, når muligheden med direkte
-browseradgang ovenfor ikke er tilgængelig (Android) eller ikke virker til
-din browser (Chrome/Edge på Windows).
+`--cookies` læser) — brug dette, når ingen af de direkte muligheder
+ovenfor er tilgængelige eller virker for dig (f.eks. Chrome/Edge på
+Windows).
 
 **Sådan opretter du en:**
 
@@ -160,8 +182,11 @@ din browser (Chrome/Edge på Windows).
 4. Åbn i Vivace *Indstillinger ▸ Netværk ▸ YouTube*, og brug
    **Gennemse…** ved siden af **Cookiefil:** til at vælge den fil.
 
-**På Android:** Chrome til Android understøtter ikke browserudvidelser,
-så trin 2-3 ovenfor kan ikke udføres på selve enheden. Eksportér
+**På Android:** foretræk **Log ind på YouTube…** ovenfor i stedet — det
+kræver intet eksport-/overførselstrin overhovedet. Hvis du stadig vil
+gøre det på denne måde, bemærk, at Chrome til Android ikke understøtter
+browserudvidelser, så trin 2-3 ovenfor kan ikke udføres på selve
+enheden. Eksportér
 `cookies.txt` på en stationær eller bærbar computer som beskrevet ovenfor,
 og overfør derefter filen til din Android-enhed (f.eks. via cloud-lagring,
 et USB-kabel eller e-mail), før du bruger **Gennemse…** i trin 4.

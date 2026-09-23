@@ -95,6 +95,24 @@
     </message>
 </context>
 <context>
+    <name>AndroidYoutubeLogin</name>
+    <message>
+        <location filename="../src/androidyoutubelogin.cpp" line="107"/>
+        <source>Embedded YouTube login is not available in this build.</source>
+        <translation>Inbäddad YouTube-inloggning är inte tillgänglig i den här versionen.</translation>
+    </message>
+    <message>
+        <location filename="../src/androidyoutubelogin.cpp" line="155"/>
+        <source>No YouTube login cookies were found. Make sure you finished signing in before closing the login window.</source>
+        <translation>Inga cookies för YouTube-inloggning hittades. Se till att du har slutfört inloggningen innan du stänger inloggningsfönstret.</translation>
+    </message>
+    <message>
+        <location filename="../src/androidyoutubelogin.cpp" line="164"/>
+        <source>Could not write %1: %2</source>
+        <translation>Kunde inte skriva %1: %2</translation>
+    </message>
+</context>
+<context>
     <name>BookmarksDialog</name>
     <message>
         <location filename="../qml/BookmarksDialog.qml" line="24"/>
@@ -150,7 +168,7 @@
     <message>
         <location filename="../qml/BookmarksDialog.qml" line="274"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Avbryt</translation>
     </message>
 </context>
 <context>
@@ -203,7 +221,7 @@
     <message>
         <location filename="../qml/CacheBrowserDialog.qml" line="272"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Avbryt</translation>
     </message>
     <message>
         <location filename="../qml/CacheBrowserDialog.qml" line="281"/>
@@ -931,32 +949,32 @@
     <message>
         <location filename="../qml/Main.qml" line="433"/>
         <location filename="../qml/Main.qml" line="486"/>
-        <location filename="../qml/Main.qml" line="2152"/>
-        <location filename="../qml/Main.qml" line="2280"/>
+        <location filename="../qml/Main.qml" line="2166"/>
+        <location filename="../qml/Main.qml" line="2294"/>
         <source>TV editor</source>
         <translation>TV-redigerare</translation>
     </message>
     <message>
         <location filename="../qml/Main.qml" line="433"/>
         <location filename="../qml/Main.qml" line="486"/>
-        <location filename="../qml/Main.qml" line="2152"/>
-        <location filename="../qml/Main.qml" line="2280"/>
+        <location filename="../qml/Main.qml" line="2166"/>
+        <location filename="../qml/Main.qml" line="2294"/>
         <source>TV channels</source>
         <translation>TV-kanaler</translation>
     </message>
     <message>
         <location filename="../qml/Main.qml" line="436"/>
         <location filename="../qml/Main.qml" line="489"/>
-        <location filename="../qml/Main.qml" line="2155"/>
-        <location filename="../qml/Main.qml" line="2283"/>
+        <location filename="../qml/Main.qml" line="2169"/>
+        <location filename="../qml/Main.qml" line="2297"/>
         <source>Radio editor</source>
         <translation>Radioredigerare</translation>
     </message>
     <message>
         <location filename="../qml/Main.qml" line="436"/>
         <location filename="../qml/Main.qml" line="489"/>
-        <location filename="../qml/Main.qml" line="2155"/>
-        <location filename="../qml/Main.qml" line="2283"/>
+        <location filename="../qml/Main.qml" line="2169"/>
+        <location filename="../qml/Main.qml" line="2297"/>
         <source>Radio channels</source>
         <translation>Radiokanaler</translation>
     </message>
@@ -975,8 +993,8 @@
     <message>
         <location filename="../qml/Main.qml" line="444"/>
         <location filename="../qml/Main.qml" line="500"/>
-        <location filename="../qml/Main.qml" line="2166"/>
-        <location filename="../qml/Main.qml" line="2294"/>
+        <location filename="../qml/Main.qml" line="2180"/>
+        <location filename="../qml/Main.qml" line="2308"/>
         <source>Bookmark added</source>
         <translation>Bokmärke tillagt</translation>
     </message>
@@ -1017,9 +1035,9 @@
     </message>
     <message>
         <location filename="../qml/Main.qml" line="757"/>
-        <location filename="../qml/Main.qml" line="1906"/>
+        <location filename="../qml/Main.qml" line="1919"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Avbryt</translation>
     </message>
     <message>
         <location filename="../qml/Main.qml" line="832"/>
@@ -1069,7 +1087,7 @@
     <message>
         <location filename="../qml/Main.qml" line="1428"/>
         <location filename="../qml/Main.qml" line="1498"/>
-        <location filename="../qml/Main.qml" line="1825"/>
+        <location filename="../qml/Main.qml" line="1838"/>
         <source>All files (*)</source>
         <translation>Alla filer (*)</translation>
     </message>
@@ -1123,125 +1141,125 @@
         <translation>Nedladdningen misslyckades: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1726"/>
+        <location filename="../qml/Main.qml" line="1739"/>
         <source>Saved %1 file(s); %2 failed.</source>
         <translation>%1 fil(er) sparade; %2 misslyckades.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1730"/>
+        <location filename="../qml/Main.qml" line="1743"/>
         <source>Saved %1 file(s).</source>
         <translation>%1 fil(er) sparade.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1743"/>
+        <location filename="../qml/Main.qml" line="1756"/>
         <source>Could not read the shortcut file.</source>
         <translation>Kunde inte läsa genvägsfilen.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1778"/>
+        <location filename="../qml/Main.qml" line="1791"/>
         <source>Starting download…</source>
         <translation>Startar nedladdning…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1763"/>
-        <location filename="../qml/Main.qml" line="1779"/>
+        <location filename="../qml/Main.qml" line="1776"/>
+        <location filename="../qml/Main.qml" line="1792"/>
         <source>Downloading video (this can take a while)…</source>
         <translation>Laddar ner video (detta kan ta en stund)…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1759"/>
+        <location filename="../qml/Main.qml" line="1772"/>
         <source>YouTube playback isn&apos;t supported on this device.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1766"/>
-        <location filename="../qml/Main.qml" line="1783"/>
+        <location filename="../qml/Main.qml" line="1779"/>
+        <location filename="../qml/Main.qml" line="1796"/>
         <source>Resolving with yt-dlp…</source>
         <translation>Bearbetar med yt-dlp…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1820"/>
+        <location filename="../qml/Main.qml" line="1833"/>
         <source>Load subtitle file</source>
         <translation>Öppna undertextfil</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1824"/>
+        <location filename="../qml/Main.qml" line="1837"/>
         <source>Subtitle files (*.srt *.vtt *.ass *.ssa)</source>
         <translation>Undertextfiler (*.srt *.vtt *.ass *.ssa)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1832"/>
+        <location filename="../qml/Main.qml" line="1845"/>
         <source>Subtitle delay</source>
         <translation>Undertextfördröjning</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1883"/>
+        <location filename="../qml/Main.qml" line="1896"/>
         <source>Delay:</source>
         <translation>Fördröjning:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1889"/>
-        <location filename="../qml/Main.qml" line="1979"/>
+        <location filename="../qml/Main.qml" line="1902"/>
+        <location filename="../qml/Main.qml" line="1992"/>
         <source>ms</source>
         <translation>ms</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1899"/>
+        <location filename="../qml/Main.qml" line="1912"/>
         <source>OK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1918"/>
+        <location filename="../qml/Main.qml" line="1931"/>
         <source>Audio delay — Vivace</source>
         <translation>Ljudfördröjning — Vivace</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1967"/>
+        <location filename="../qml/Main.qml" line="1980"/>
         <source>No delay for this file (use the global delay only)</source>
         <translation>Ingen fördröjning för denna fil (använd endast den globala fördröjningen)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1972"/>
+        <location filename="../qml/Main.qml" line="1985"/>
         <source>This file&apos;s delay:</source>
         <translation>Denna fils fördröjning:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1987"/>
+        <location filename="../qml/Main.qml" line="2000"/>
         <source>The delay applied to this file is this value plus the global delay for the current audio device (%1 ms), set in Preferences &gt; General &gt; Audio. Negative values delay the video to match audio that arrives late (e.g. Bluetooth headphones).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2000"/>
+        <location filename="../qml/Main.qml" line="2013"/>
         <source>&amp;Apply</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2009"/>
+        <location filename="../qml/Main.qml" line="2022"/>
         <source>&amp;Close</source>
         <translation>&amp;Stäng</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2094"/>
+        <location filename="../qml/Main.qml" line="2108"/>
         <source>Hide window</source>
         <translation>Dölj fönster</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2094"/>
+        <location filename="../qml/Main.qml" line="2108"/>
         <source>Show window</source>
         <translation>Visa fönster</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2099"/>
+        <location filename="../qml/Main.qml" line="2113"/>
         <source>Play / Pause</source>
         <translation>Spela upp/Paus</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2103"/>
+        <location filename="../qml/Main.qml" line="2117"/>
         <source>Stop</source>
         <translation>Stopp</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2108"/>
+        <location filename="../qml/Main.qml" line="2122"/>
         <source>Quit</source>
         <translation>&amp;Avsluta</translation>
     </message>
@@ -2174,7 +2192,7 @@
     <message>
         <location filename="../qml/OpenUrlDialog.qml" line="123"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Avbryt</translation>
     </message>
 </context>
 <context>
@@ -2703,7 +2721,7 @@
     <message>
         <location filename="../qml/PlaylistEditor.qml" line="643"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Avbryt</translation>
     </message>
 </context>
 <context>
@@ -3297,7 +3315,7 @@
     <message>
         <location filename="../qml/PrefInputPage.qml" line="328"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Avbryt</translation>
     </message>
 </context>
 <context>
@@ -3680,531 +3698,550 @@
 <context>
     <name>PrefNetworkPage</name>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="105"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="135"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="117"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="147"/>
         <source>OpenSubtitles</source>
         <translation>OpenSubtitles</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="108"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="120"/>
         <source>YouTube</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="116"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="840"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="128"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="873"/>
         <source>Cast</source>
         <translation>Casta</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="145"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="157"/>
         <source>API key:</source>
         <translation>API-nyckel:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="146"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="158"/>
         <source>A free per-application key from opensubtitles.com (create an API consumer); subtitle search will not work until this is set.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="151"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="163"/>
         <source>from opensubtitles.com → API consumers</source>
         <translation>från opensubtitles.com → API consumers</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="156"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="792"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="168"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="825"/>
         <source>Username:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="157"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="169"/>
         <source>Optional opensubtitles.com account login; signing in is not required but raises the daily download limit.</source>
         <translation>Valfri inloggning med ett opensubtitles.com-konto; inloggning krävs inte men höjer den dagliga nedladdningsgränsen.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="164"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="798"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="176"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="831"/>
         <source>Password:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="179"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="191"/>
         <source>The account password is stored securely using your operating system&apos;s credential manager.</source>
         <translation>Kontolösenordet lagras säkert i operativsystemets autentiseringshanterare.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="115"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="749"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="127"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="782"/>
         <source>Proxy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="37"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="38"/>
         <source>PO token provider installed.</source>
         <translation>PO-tokenleverantören har installerats.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="42"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="54"/>
         <source>&lt;h1&gt;Network&lt;/h1&gt;&lt;p&gt;&lt;b&gt;OpenSubtitles&lt;/b&gt; search uses the REST API, which requires a free per-application API key: register at opensubtitles.com, create an API consumer, and paste the key here. An account login (username and password) is optional but raises the daily download limit.&lt;/p&gt;&lt;p&gt;&lt;b&gt;YouTube&lt;/b&gt;: the optional resolver uses an external yt-dlp program — when enabled, opening a YouTube URL runs yt-dlp to obtain a directly-playable stream. Vivace offers to install yt-dlp for you the first time you turn this on (or point it at your own copy with the path field below), and can keep it updated on its own per the &quot;Update yt-dlp automatically&quot; setting. Because QMediaPlayer plays a single muxed stream, streaming tops out at the best progressive format (about 720p on YouTube). Cookies are deliberately NOT used for streaming: an authenticated (cookie) session returns URLs a plain player cannot open.&lt;/p&gt;&lt;p&gt;For &lt;b&gt;HD&lt;/b&gt; (and for cookies), enable download mode, or point the external downloader at your own tool (a program or .bat/.cmd). HD formats are separate video and audio streams that cannot be streamed muxed, so Vivace runs yt-dlp (or your tool) to download and merge the video, then plays the file it writes into the download folder. Download mode also needs Deno, a further external program yt-dlp itself uses to solve YouTube&apos;s JavaScript challenges — without it, a signed-in (cookie) request, exactly what HD downloads rely on, sees severely limited format availability. Streaming mode, which never sends cookies, is largely unaffected and doesn&apos;t need Deno. Install Deno yourself and, if it is not on the PATH, set its full path in the Download &amp; play settings.&lt;/p&gt;&lt;p&gt;Recent YouTube videos increasingly require a &lt;b&gt;PO token&lt;/b&gt; just to play at all — a general playability requirement, unrelated to cookies/login, that shows up as yt-dlp reporting the video as unavailable. &lt;b&gt;Install PO token provider…&lt;/b&gt; sets up the community &quot;BgUtils POT Provider&quot;: a small yt-dlp plugin plus a script (built with Deno, the same program used above) that yt-dlp runs on demand to generate a token. It applies to both streaming and downloading.&lt;/p&gt;&lt;p&gt;Since YouTube shortened its own cookie lifetimes, an exported cookies.txt file can go stale within days. &lt;b&gt;Get cookies from browser&lt;/b&gt; reads them live from an installed browser instead, so there&apos;s nothing to re-export. On Windows, only Firefox works here — Chrome/Edge&apos;s own &quot;App-Bound Encryption&quot; blocks every external tool, including yt-dlp, from reading their cookies at all; Linux and macOS Chrome/Edge are unaffected.&lt;/p&gt;&lt;p&gt;See &lt;b&gt;Help ▸ Contents ▸ Options&lt;/b&gt; for step-by-step instructions on exporting a cookies.txt file from your browser, and on installing Deno.&lt;/p&gt;&lt;p&gt;The stream &lt;b&gt;connection timeout&lt;/b&gt; (used mainly by live TV tuners) has moved to &lt;i&gt;Preferences ▸ TV and radio&lt;/i&gt;.&lt;/p&gt;&lt;p&gt;The &lt;b&gt;Proxy&lt;/b&gt; tab applies application-wide: both HTTP and SOCKS5 cover OpenSubtitles search and the update check; only HTTP additionally covers media playback and yt-dlp (they read the http_proxy/https_proxy convention directly instead of going through Qt&apos;s network stack, and there is no SOCKS5 equivalent for that convention).&lt;/p&gt;&lt;p&gt;The &lt;b&gt;Cast&lt;/b&gt; tab sets the port Play ▸ Cast… listens on. It&apos;s here (rather than only in the Cast dialog) so it stays fixed — set it once, allow that port through your firewall/router once, and casting keeps working without a new firewall prompt every time.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="805"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="473"/>
+        <source>Optional cookies.txt; unlocks HD, members-only and age-restricted videos. Safe here — cookies only affect the download, not a stream a player must open. &quot;Log in to YouTube…&quot; below fills this in for you automatically — use it instead of exporting cookies.txt from a desktop browser and transferring it here by hand.</source>
+        <translation>Valfri cookies.txt-fil. Låser upp HD, medlemsinnehåll och åldersbegränsade videor. Säkert här — cookies påverkar bara nedladdningen, inte en ström som en spelare måste öppna. &quot;Logga in på YouTube…&quot; nedan fyller i detta åt dig automatiskt — använd det i stället för att exportera cookies.txt från en dator-webbläsare och överföra den hit för hand.</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="508"/>
+        <source>Opens a sign-in page inside Vivace itself and saves the resulting session as the cookies file above — Android&apos;s equivalent of exporting cookies.txt from a desktop browser, with no separate export/transfer step. Sign in with the YouTube account whose access you want to use, then tap &quot;Save cookies&quot;, then &quot;Close&quot;.</source>
+        <translation>Öppnar en inloggningssida inuti Vivace och sparar den resulterande sessionen som cookiefilen ovan — Androids motsvarighet till att exportera cookies.txt från en dator-webbläsare, utan ett separat export-/överföringssteg. Logga in med det YouTube-konto vars åtkomst du vill använda och tryck sedan på "Spara cookies" och sedan på "Stäng".</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="838"/>
         <source>Type:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="779"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="812"/>
         <source>Host:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="785"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="850"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="818"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="883"/>
         <source>Port:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="198"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="210"/>
         <source>YouTube (yt-dlp)</source>
         <translation>YouTube (yt-dlp)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="218"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="230"/>
         <source>Play YouTube URLs with yt-dlp</source>
         <translation>Spela upp YouTube-URL:er med yt-dlp</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="222"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="234"/>
         <source>When on, opening a YouTube URL runs yt-dlp instead of trying to play the page URL as-is.</source>
         <translation>När det är på kör öppning av en YouTube-URL yt-dlp i stället för att försöka spela upp sidans URL som den är.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="235"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="247"/>
         <source>Open YouTube URLs by:</source>
         <translation>Öppna YouTube-URL:er genom:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="236"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="248"/>
         <source>Streaming is fastest but caps at ~720p and can&apos;t use cookies. Downloading gets full HD (uses cookies + ffmpeg), then plays and deletes the file. Or hand off to your own external downloader tool.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="257"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="261"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="269"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="273"/>
         <source>Streaming (fast, up to ~720p)</source>
         <translation>Strömning (snabb, upp till ~720p)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="258"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="262"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="270"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="274"/>
         <source>Downloading then playing (HD, cookies)</source>
         <translation>Ladda ner och spela sedan upp (HD, cookies)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="263"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="275"/>
         <source>An external downloader tool</source>
         <translation>Ett externt nedladdningsverktyg</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="274"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="286"/>
         <source>Use managed yt-dlp</source>
         <translation>Använd hanterad yt-dlp</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="292"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="304"/>
         <source>When on, Vivace installs yt-dlp for you (see the button here) and can keep it updated automatically below. Turn this off to point at your own yt-dlp instead -- Vivace will not install or auto-update it.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="300"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="312"/>
         <source>Install / Update yt-dlp…</source>
         <translation>Installera/uppdatera yt-dlp…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="310"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="322"/>
         <source>PO token provider:</source>
         <translation>PO-tokenleverantör:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="311"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="323"/>
         <source>Recent YouTube videos increasingly require a &quot;PO token&quot; just to play at all, even with no login involved -- without one, yt-dlp reports the video as unavailable. Installs the community &quot;BgUtils POT Provider&quot; (a small yt-dlp plugin plus a script run on demand via Deno, which Vivace already uses above) so yt-dlp can generate one automatically. Applies to both streaming and downloading.</source>
         <translation>Nya YouTube-videor kräver allt oftare en &quot;PO-token&quot; bara för att kunna spelas upp alls, även utan inloggning -- utan en sådan rapporterar yt-dlp videon som otillgänglig. Installerar communityprojektet &quot;BgUtils POT Provider&quot; (ett litet yt-dlp-tillägg plus ett skript som körs vid behov via Deno, som Vivace redan använder ovan) så att yt-dlp kan generera en automatiskt. Gäller både strömning och nedladdning.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="325"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="337"/>
         <source>Installing…</source>
         <translation>Installerar…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="327"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="339"/>
         <source>Reinstall / Update PO token provider…</source>
         <translation>Installera om/uppdatera PO-tokenleverantör…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="328"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="340"/>
         <source>Install PO token provider…</source>
         <translation>Installera PO-tokenleverantör…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="349"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="361"/>
         <source>yt-dlp path:</source>
         <translation>yt-dlp-sökväg:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="350"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="362"/>
         <source>Leave as &quot;yt-dlp&quot; if it is on your system PATH; otherwise enter the full path to the yt-dlp executable.</source>
         <translation>Lämna &quot;yt-dlp&quot; om den finns i systemets PATH; ange annars den fullständiga sökvägen till yt-dlp-programmet.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="356"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="368"/>
         <source>yt-dlp (on PATH) or a full path</source>
         <translation>yt-dlp (i PATH) eller en fullständig sökväg</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="362"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="374"/>
         <source>Update yt-dlp automatically:</source>
         <translation>Uppdatera yt-dlp automatiskt:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="363"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="375"/>
         <source>Runs yt-dlp&apos;s own self-update before playing a YouTube video. &quot;Every time&quot; adds a short delay to each play; the daily/weekly options check only that often. Failures (e.g. no network) are ignored and playback proceeds with whatever version is installed. Only applies to a managed yt-dlp.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="377"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="389"/>
         <source>Never</source>
         <translation>Aldrig</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="378"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="390"/>
         <source>Every time yt-dlp runs</source>
         <translation>Varje gång yt-dlp körs</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="379"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="391"/>
         <source>Once a day</source>
         <translation>En gång om dagen</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="380"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="392"/>
         <source>Once a week</source>
         <translation>En gång i veckan</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="387"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="399"/>
         <source>Maximum quality:</source>
         <translation>Maximal kvalitet:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="388"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="400"/>
         <source>Upper limit on resolution. Streaming is capped at ~720p regardless; downloading can reach this height in full HD.</source>
         <translation>Övre gräns för upplösning. Strömning är ändå begränsad till ~720p; nedladdning kan nå denna höjd i full HD.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="398"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="410"/>
         <source>360p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="399"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="411"/>
         <source>480p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="400"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="412"/>
         <source>720p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="401"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="413"/>
         <source>1080p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="402"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="414"/>
         <source>1440p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="403"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="415"/>
         <source>2160p (4K)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="404"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="416"/>
         <source>Best available</source>
         <translation>Bästa tillgängliga</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="419"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="431"/>
         <source>yt-dlp is a separate program and is not bundled with Vivace.</source>
         <translation>yt-dlp är ett separat program och medföljer inte Vivace.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="425"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="437"/>
         <source>Download &amp; play</source>
         <translation>Ladda ner och spela upp</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="445"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="457"/>
         <source>Downloads the video (merging HD video and audio with ffmpeg), plays it, and keeps it in a cache folder so replaying it is instant. The cache holds the most recent downloads up to the size below; older ones are removed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="459"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="471"/>
         <source>Cookies file:</source>
         <translation>Cookiefil:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="461"/>
-        <source>Optional cookies.txt exported from your browser (yt-dlp --cookies); unlocks HD, members-only and age-restricted videos. Safe here — cookies only affect the download, not a stream a player must open. A copy is kept in Vivace&apos;s own storage, since Android can&apos;t reopen the original file location directly — browse again here after re-exporting it from your browser.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="470"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="481"/>
         <source>Optional cookies.txt exported from your browser (yt-dlp --cookies); unlocks HD, members-only and age-restricted videos. Safe here — cookies only affect the download, not a stream a player must open. See Help ▸ Contents ▸ Options for step-by-step export instructions.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="484"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="495"/>
         <source>optional cookies.txt</source>
         <translation>valfri cookies.txt</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="487"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="555"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="498"/>
         <location filename="../qml/PrefNetworkPage.qml" line="588"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="617"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="693"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="729"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="621"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="650"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="726"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="762"/>
         <source>Browse…</source>
         <translation>Bläddra…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="493"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="507"/>
+        <source>Log in to YouTube:</source>
+        <translation>Logga in på YouTube:</translation>
+    </message>
+    <message>
+        <source>Opens a sign-in page inside Vivace itself and saves the resulting session as the cookies file above — Android&apos;s equivalent of exporting cookies.txt from a desktop browser, with no separate export/transfer step. Sign in with the YouTube account whose access you want to use, then tap &quot;I&apos;m signed in&quot;.</source>
+        <translation type="vanished">Öppnar en inloggningssida inuti Vivace och sparar den resulterande sessionen som cookiefilen ovan — Androids motsvarighet till att exportera cookies.txt från en dator-webbläsare, utan ett separat export-/överföringssteg. Logga in med det YouTube-konto vars åtkomst du vill använda och tryck sedan på &quot;Jag är inloggad&quot;.</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="518"/>
+        <source>Log in to YouTube…</source>
+        <translation>Logga in på YouTube…</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="526"/>
         <source>Get cookies from browser:</source>
         <translation>Hämta cookies från webbläsare:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="494"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="527"/>
         <source>Reads cookies live from an installed browser instead of the file above — recommended, since YouTube&apos;s cookie lifetimes are now much shorter, making an exported cookies.txt go stale within days. Takes priority over the cookies file when set. On Windows, only Firefox actually works here: Chrome/Edge encrypt cookies in a way tied to the browser&apos;s own binary (&quot;App-Bound Encryption&quot;), which blocks yt-dlp (and every other external tool) from reading them at all — this is a Chrome-side restriction yt-dlp&apos;s own developers can&apos;t work around. Linux and macOS Chrome/Edge are unaffected.</source>
         <translation>Läser cookies direkt från en installerad webbläsare istället för filen ovan — rekommenderas, eftersom YouTubes cookies nu har mycket kortare livslängd, vilket gör att en exporterad cookies.txt blir inaktuell inom några dagar. Har företräde framför cookiefilen när den är angiven. På Windows är det bara Firefox som faktiskt fungerar här: Chrome/Edge krypterar cookies på ett sätt som är kopplat till webbläsarens egen binärfil (&quot;App-Bound Encryption&quot;), vilket hindrar yt-dlp (och alla andra externa verktyg) från att läsa dem alls — detta är en begränsning på Chrome-sidan som yt-dlps egna utvecklare inte kan komma runt. Linux- och macOS-versionerna av Chrome/Edge påverkas inte.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="518"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="551"/>
         <source>Off (use the cookies file above)</source>
         <translation>Av (använd cookiefilen ovan)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="519"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="552"/>
         <source>Firefox (recommended)</source>
         <translation>Firefox (rekommenderas)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="520"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="553"/>
         <source>Chrome</source>
         <translation>Chrome</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="521"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="554"/>
         <source>Edge</source>
         <translation>Edge</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="522"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="555"/>
         <source>Brave</source>
         <translation>Brave</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="523"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="556"/>
         <source>Chromium</source>
         <translation>Chromium</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="524"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="557"/>
         <source>Opera</source>
         <translation>Opera</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="525"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="558"/>
         <source>Safari</source>
         <translation>Safari</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="526"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="559"/>
         <source>Vivaldi</source>
         <translation>Vivaldi</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="527"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="560"/>
         <source>Whale</source>
         <translation>Whale</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="540"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="573"/>
         <source>ffmpeg location:</source>
         <translation>ffmpeg-plats:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="541"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="574"/>
         <source>Folder containing ffmpeg (yt-dlp needs it to merge HD video+audio). Leave empty to use ffmpeg from the system PATH.</source>
         <translation>Mapp som innehåller ffmpeg (yt-dlp behöver den för att slå samman HD-video och -ljud). Lämna tomt för att använda ffmpeg från systemets PATH.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="552"/>
         <location filename="../qml/PrefNetworkPage.qml" line="585"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="618"/>
         <source>empty = use PATH</source>
         <translation>tomt = använd PATH</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="565"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="598"/>
         <source>Deno path:</source>
         <translation>Deno-sökväg:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="566"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="599"/>
         <source>yt-dlp uses a separate program, Deno, to solve YouTube&apos;s JavaScript challenges. It&apos;s most needed here: a signed-in (cookie) request — exactly what unlocks HD above — sees severely limited format availability without it. Streaming mode, which never sends cookies, is largely unaffected. Leave empty if &quot;deno&quot; is already on your system PATH; otherwise enter the full path to the deno executable. See Help ▸ Contents ▸ Options for installation instructions.</source>
         <translation>yt-dlp använder ett separat program, Deno, för att lösa YouTubes JavaScript-utmaningar. Det behövs mest just här: en inloggad (cookie-)begäran — precis det som låser upp HD ovan — får kraftigt begränsad formattillgänglighet utan det. Strömningsläget, som aldrig skickar cookies, påverkas knappt. Lämna tomt om &quot;deno&quot; redan finns i systemets PATH; ange annars den fullständiga sökvägen till deno-programmet. Se Hjälp ▸ Innehåll ▸ Alternativ för installationsanvisningar.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="603"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="636"/>
         <source>Cache folder:</source>
         <translation>Cachemapp:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="604"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="637"/>
         <source>Where downloaded videos are kept for reuse. A video already here is replayed without downloading again.</source>
         <translation>Var nedladdade videor sparas för återanvändning. En video som redan finns här spelas upp igen utan ny nedladdning.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="622"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="655"/>
         <source>Cache size:</source>
         <translation>Cachestorlek:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="623"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="656"/>
         <source>How many downloaded videos to keep. When the limit is reached, the least-recently-played one is deleted.</source>
         <translation>Hur många nedladdade videor som ska behållas. När gränsen nås tas den som spelats upp för längst sedan bort.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="634"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="667"/>
         <source>files</source>
         <translation>filer</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="640"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="673"/>
         <source>Thumbnail fallback at:</source>
         <translation>Reservminiatyr vid:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="641"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="674"/>
         <source>The cache thumbnail is normally YouTube&apos;s own poster image. Only if that is missing or black does Vivace grab a video frame — this is how many seconds in (past a black intro).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="654"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="687"/>
         <source>seconds</source>
         <translation>sekunder</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="664"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="697"/>
         <source>External downloader tool</source>
         <translation>Externt nedladdningsverktyg</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="679"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="712"/>
         <source>Downloader command:</source>
         <translation>Nedladdningskommando:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="680"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="713"/>
         <source>The program or .bat/.cmd script that downloads the video; it receives the URL as an argument.</source>
         <translation>Programmet eller .bat/.cmd-skriptet som laddar ner videon; det tar emot URL:en som ett argument.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="690"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="723"/>
         <source>e.g. C:ToolsYouTubeDL.bat</source>
         <translation>t.ex. C:\Tools\YouTubeDL.bat</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="698"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="731"/>
         <source>Arguments:</source>
         <translation>Argument:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="699"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="732"/>
         <source>Arguments passed to the tool; the token {url} is replaced by the video URL (if omitted, the URL is appended). Add any cookies/format flags your tool needs here, e.g. --cookies C:pathcookies.txt.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="714"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="747"/>
         <source>Download folder:</source>
         <translation>Nedladdningsmapp:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="715"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="748"/>
         <source>The folder the tool writes the finished file into; Vivace plays the newest media file that appears there, so set it to match your tool&apos;s output folder.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="726"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="759"/>
         <source>your tool&apos;s output folder</source>
         <translation>ditt verktygs utdatamapp</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="759"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="792"/>
         <source>Enable proxy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="763"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="796"/>
         <source>Applies to OpenSubtitles search and the update check (both proxy types). Only an HTTP proxy also applies to media playback and yt-dlp — a SOCKS5 proxy does not reach either, since neither goes through Qt&apos;s network stack.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="821"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="854"/>
         <source>The proxy password is stored securely using your operating system&apos;s credential manager.</source>
         <translation>Proxylösenordet lagras säkert i operativsystemets autentiseringshanterare.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="851"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="884"/>
         <source>The port Play ▸ Cast… listens on. Kept fixed here (rather than editable each time in the Cast dialog) so you can allow it through your firewall/router once and it keeps working.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="872"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="905"/>
         <source>Your OS&apos;s firewall (and most routers) block an app listening on a fresh port until you allow it. Pick a port once here, allow Vivace through your firewall for it, and Cast will keep working without a new prompt each time.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="887"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="920"/>
         <source>Select the cookies.txt file</source>
         <translation>Välj filen cookies.txt</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="916"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="949"/>
         <source>Select the deno executable</source>
         <translation>Välj deno-programmet</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="922"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="955"/>
         <source>Select the folder containing ffmpeg</source>
         <translation>Välj mappen som innehåller ffmpeg</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="927"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="960"/>
         <source>Select the download cache folder</source>
         <translation>Välj cachemappen för nedladdningar</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="932"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="965"/>
         <source>Select the downloader program</source>
         <translation>Välj nedladdningsprogrammet</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="938"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="971"/>
         <source>Select the download folder</source>
         <translation>Välj nedladdningsmappen</translation>
     </message>
@@ -4790,102 +4827,102 @@
 <context>
     <name>PreferencesDialog</name>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="27"/>
+        <location filename="../qml/PreferencesDialog.qml" line="28"/>
         <source>Preferences</source>
         <translation>&amp;Inställningar</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="101"/>
+        <location filename="../qml/PreferencesDialog.qml" line="102"/>
         <source>&lt;h1&gt;Help&lt;/h1&gt;&lt;p&gt;No help is available for this section.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="192"/>
+        <location filename="../qml/PreferencesDialog.qml" line="193"/>
         <source>General</source>
         <translation>Allmänt</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="193"/>
+        <location filename="../qml/PreferencesDialog.qml" line="194"/>
         <source>Drives</source>
         <translation>Enheter</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="194"/>
+        <location filename="../qml/PreferencesDialog.qml" line="195"/>
         <source>Subtitles</source>
         <translation>Undertexter</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="195"/>
+        <location filename="../qml/PreferencesDialog.qml" line="196"/>
         <source>Interface</source>
         <translation>Gränssnitt</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="196"/>
+        <location filename="../qml/PreferencesDialog.qml" line="197"/>
         <source>Toolbars</source>
         <translation>Verktygsfält</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="197"/>
+        <location filename="../qml/PreferencesDialog.qml" line="198"/>
         <source>Keyboard and mouse</source>
         <translation>Tangentbord och mus</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="198"/>
+        <location filename="../qml/PreferencesDialog.qml" line="199"/>
         <source>Playlist</source>
         <translation>Spellista</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="199"/>
+        <location filename="../qml/PreferencesDialog.qml" line="200"/>
         <source>TV and radio</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="200"/>
+        <location filename="../qml/PreferencesDialog.qml" line="201"/>
         <source>File types</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="201"/>
+        <location filename="../qml/PreferencesDialog.qml" line="202"/>
         <source>Updates</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="202"/>
+        <location filename="../qml/PreferencesDialog.qml" line="203"/>
         <source>Network</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="203"/>
+        <location filename="../qml/PreferencesDialog.qml" line="204"/>
         <source>Advanced</source>
         <translation>Avancerat</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="281"/>
+        <location filename="../qml/PreferencesDialog.qml" line="283"/>
         <source>&amp;Help</source>
         <translation>&amp;Hjälp</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="286"/>
+        <location filename="../qml/PreferencesDialog.qml" line="288"/>
         <source>OK</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="290"/>
+        <location filename="../qml/PreferencesDialog.qml" line="292"/>
         <source>Apply</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="296"/>
+        <location filename="../qml/PreferencesDialog.qml" line="298"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Avbryt</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="305"/>
+        <location filename="../qml/PreferencesDialog.qml" line="307"/>
         <source>Vivace — Help</source>
         <translation>Vivace — Hjälp</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="369"/>
+        <location filename="../qml/PreferencesDialog.qml" line="371"/>
         <source>Close</source>
         <translation>Stäng</translation>
     </message>
@@ -5333,6 +5370,56 @@
     </message>
 </context>
 <context>
+    <name>YoutubeLoginDialog</name>
+    <message>
+        <location filename="../qml/YoutubeLoginDialog.qml" line="54"/>
+        <source>Log in to YouTube</source>
+        <translation>Logga in på YouTube</translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../qml/YoutubeLoginDialog.qml" line="87"/>
+        <source>%n cookie(s) saved — tap “Close” to finish.</source>
+        <translation>
+            <numerusform>%n cookie sparad — tryck på ”Stäng” för att slutföra.</numerusform>
+            <numerusform>%n cookies sparade — tryck på ”Stäng” för att slutföra.</numerusform>
+        </translation>
+    </message>
+    <message>
+        <location filename="../qml/YoutubeLoginDialog.qml" line="115"/>
+        <source>Sign in below, then tap “Save cookies”, then “Close”.</source>
+        <translation>Logga in nedan och tryck sedan på ”Spara cookies” och sedan på ”Stäng”.</translation>
+    </message>
+    <message>
+        <location filename="../qml/YoutubeLoginDialog.qml" line="118"/>
+        <source>Save cookies</source>
+        <translation>Spara cookies</translation>
+    </message>
+    <message>
+        <location filename="../qml/YoutubeLoginDialog.qml" line="125"/>
+        <source>Close</source>
+        <translation>Stäng</translation>
+    </message>
+    <message numerus="yes">
+        <source>Signed in — %n cookie(s) saved.</source>
+        <translation type="vanished">
+            <numerusform>Inloggad — %n cookie sparad.</numerusform>
+            <numerusform>Inloggad — %n cookies sparade.</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>Sign in below, then tap “I’m signed in”.</source>
+        <translation type="vanished">Logga in nedan och tryck sedan på ”Jag är inloggad”.</translation>
+    </message>
+    <message>
+        <source>I’m signed in</source>
+        <translation type="vanished">Jag är inloggad</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="vanished">Avbryt</translation>
+    </message>
+</context>
+<context>
     <name>YoutubeResolver</name>
     <message>
         <location filename="../src/youtuberesolver.cpp" line="331"/>
@@ -5536,7 +5623,7 @@
     <message>
         <location filename="../qml/YoutubeSupportDialog.qml" line="162"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Avbryt</translation>
     </message>
     <message>
         <location filename="../qml/YoutubeSupportDialog.qml" line="167"/>

@@ -23,6 +23,7 @@ Window {
     required property PlayerController controller
     required property YoutubeSupportDialog youtubeInstallDialog
     required property QtObject ytResolver
+    required property YoutubeLoginDialog ytLoginDialog
 
     title: qsTr("Preferences")
     modality: Qt.WindowModal
@@ -268,6 +269,7 @@ Window {
                 PrefNetworkPage {
                     youtubeInstallDialog: prefsDialog.youtubeInstallDialog
                     ytResolver: prefsDialog.ytResolver
+                    ytLoginDialog: prefsDialog.ytLoginDialog
                 }
                 PrefAdvancedPage { controller: prefsDialog.controller }
             }

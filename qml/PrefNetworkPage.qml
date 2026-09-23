@@ -22,6 +22,7 @@ ColumnLayout {
 
     required property YoutubeSupportDialog youtubeInstallDialog
     required property QtObject ytResolver
+    required property YoutubeLoginDialog ytLoginDialog
 
     // Inline progress line for the PO token provider install below, updated
     // live from ytResolver's own text-line-per-step signals -- shown right
@@ -37,6 +38,17 @@ ColumnLayout {
             potStatus = qsTr("PO token provider installed.")
         }
         function onPotProviderInstallFailed(message) { potStatus = message }
+    }
+
+    // Once the Android login dialog reports real cookies saved, adopt the
+    // resulting file as the active cookies file immediately -- no manual
+    // Browse… step needed, matching this feature's whole point (no
+    // export/transfer round trip).
+    Connections {
+        target: ytLoginDialog.resolver
+        function onCookiesSaved(count) {
+            Settings.youtubeCookiesFile = ytLoginDialog.resolver.plannedCookiesPath()
+        }
     }
 
     readonly property string helpText: qsTr(
@@ -458,15 +470,14 @@ ColumnLayout {
                                 spacing: 6
                                 Label { text: qsTr("Cookies file:") }
                                 HelpMark { text: Qt.platform.os === "android"
-                                    ? qsTr("Optional cookies.txt exported from your "
-                                          + "browser (yt-dlp --cookies); unlocks HD, "
+                                    ? qsTr("Optional cookies.txt; unlocks HD, "
                                           + "members-only and age-restricted videos. "
                                           + "Safe here — cookies only affect the "
                                           + "download, not a stream a player must open. "
-                                          + "A copy is kept in Vivace's own storage, "
-                                          + "since Android can't reopen the original file "
-                                          + "location directly — browse again here after "
-                                          + "re-exporting it from your browser.")
+                                          + "\"Log in to YouTube…\" below fills this in "
+                                          + "for you automatically — use it instead of "
+                                          + "exporting cookies.txt from a desktop "
+                                          + "browser and transferring it here by hand.")
                                     : qsTr("Optional cookies.txt exported from your "
                                           + "browser (yt-dlp --cookies); unlocks HD, "
                                           + "members-only and age-restricted videos. "
@@ -485,6 +496,28 @@ ColumnLayout {
                                     onEditingFinished: Settings.youtubeCookiesFile = text
                                 }
                                 Button { text: qsTr("Browse…"); onClicked: cookiesFileDialog.open() }
+                            }
+
+                            RowLayout {
+                                Layout.columnSpan: 2
+                                spacing: 6
+                                visible: Qt.platform.os === "android"
+                                         && ytLoginDialog.resolver
+                                         && ytLoginDialog.resolver.isSupported()
+                                Label { text: qsTr("Log in to YouTube:") }
+                                HelpMark { text: qsTr("Opens a sign-in page inside Vivace itself and "
+                                                      + "saves the resulting session as the cookies "
+                                                      + "file above — Android's equivalent of "
+                                                      + "exporting cookies.txt from a desktop browser, "
+                                                      + "with no separate export/transfer step. Sign in "
+                                                      + "with the YouTube account whose access you want "
+                                                      + "to use, then tap \"Save cookies\", then "
+                                                      + "\"Close\".") }
+                                Item { Layout.fillWidth: true }
+                                Button {
+                                    text: qsTr("Log in to YouTube…")
+                                    onClicked: ytLoginDialog.open()
+                                }
                             }
 
                             RowLayout {

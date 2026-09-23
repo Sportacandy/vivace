@@ -52,7 +52,17 @@ fi
 
 API=28  # matches this project's qtMinSdkVersion (see android/gradle.properties)
 FFMPEG_TAG="n7.1"  # matches the version this project's other FFmpeg work already pins to
-NODEJS_MOBILE_VERSION="v18.20.4"
+# Node.js v22.9.0, built from nodejs-mobile's own official (but unreleased,
+# work-in-progress) update22-9-0 branch -- see
+# https://github.com/Sportacandy/nodejs-mobile-prebuilt for the full story
+# (two small patches: a real Android NDK r26 Clang/CWG2518 workaround, and a
+# build-parallelism cap to avoid an OOM kill on standard CI runners) and why
+# this exists instead of nodejs-mobile's own official v18.20.4 release: that
+# version fails yt-dlp's own `NodeJsRuntime.MIN_SUPPORTED_VERSION = (22, 0,
+# 0)` floor for real (not just a version-STRING check -- a genuinely older
+# runtime), leaving every signature-protected YouTube format unplayable even
+# with a correctly-minted PO token.
+NODEJS_MOBILE_PREBUILT_TAG="v22.9.0"
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 WORK_DIR="$OUT_ROOT/_work"
@@ -118,15 +128,36 @@ if [ ! -d "$FFMPEG_SRC" ]; then
     git clone --branch "$FFMPEG_TAG" --depth 1 https://github.com/FFmpeg/FFmpeg.git "$FFMPEG_SRC"
 fi
 
-# --- Fetch nodejs-mobile's Android release once, shared across ABIs --------
+# --- Fetch our own prebuilt nodejs-mobile v22.9.0, one tarball per ABI -----
+# (see NODEJS_MOBILE_PREBUILT_TAG's own comment above for why this isn't
+# nodejs-mobile's official release). Unlike that official release (one zip
+# bundling every ABI under a shared bin/<abi>/ + include/node/ layout), this
+# repo publishes a SEPARATE tarball per ABI, each self-contained
+# (nodejs-mobile-<abi>/libnode.so + nodejs-mobile-<abi>/include/node/) --
+# fetched here for every requested ABI upfront, matching this section's own
+# "shared setup before the per-ABI build loop" convention.
 NODEJS_MOBILE_DIR="$WORK_DIR/nodejs-mobile"
-if [ ! -d "$NODEJS_MOBILE_DIR" ]; then
-    echo "Downloading nodejs-mobile $NODEJS_MOBILE_VERSION (Android)..."
-    mkdir -p "$NODEJS_MOBILE_DIR"
-    curl -sL -o "$WORK_DIR/nodejs-mobile-android.zip" \
-        "https://github.com/nodejs-mobile/nodejs-mobile/releases/download/${NODEJS_MOBILE_VERSION}/nodejs-mobile-${NODEJS_MOBILE_VERSION}-android.zip"
-    unzip -o -q "$WORK_DIR/nodejs-mobile-android.zip" -d "$NODEJS_MOBILE_DIR"
-fi
+mkdir -p "$NODEJS_MOBILE_DIR"
+for abi in "${ABIS[@]}"; do
+    if [ ! -d "$NODEJS_MOBILE_DIR/nodejs-mobile-$abi" ]; then
+        echo "Downloading nodejs-mobile-prebuilt $NODEJS_MOBILE_PREBUILT_TAG ($abi)..."
+        curl -fsSL -o "$WORK_DIR/nodejs-mobile-$abi.tar.gz" \
+            "https://github.com/Sportacandy/nodejs-mobile-prebuilt/releases/download/${NODEJS_MOBILE_PREBUILT_TAG}/nodejs-mobile-${NODEJS_MOBILE_PREBUILT_TAG}-${abi}.tar.gz"
+        # Real bug hit bringing this up: plain `tar -xzf` failed here with
+        # "tar: Child returned status 128" specifically when invoked via
+        # CMake/Ninja's own non-interactive bash.exe (a different, more
+        # minimal PATH than an interactive Git Bash session) -- GNU tar's
+        # gzip decompression can shell out to an external `gzip` helper,
+        # which that environment apparently can't resolve. Python's own
+        # `tarfile` module has zlib built directly into the standard
+        # library (no external gzip process at all), sidestepping the
+        # whole PATH-dependent question -- Python is already a hard
+        # requirement elsewhere in this project's Android build (the
+        # embedded CPython work), so this adds no new dependency.
+        python3 -c "import tarfile,sys; tarfile.open(sys.argv[1]).extractall(sys.argv[2])" \
+            "$WORK_DIR/nodejs-mobile-$abi.tar.gz" "$NODEJS_MOBILE_DIR"
+    fi
+done
 
 build_for_abi() {
     local abi="$1"
@@ -216,10 +247,14 @@ build_for_abi() {
     echo "  -> $abi_out/libffmpeg.so"
 
     # --- node wrapper ---------------------------------------------------
-    local node_inc="$NODEJS_MOBILE_DIR/include/node"
-    local node_lib_dir="$NODEJS_MOBILE_DIR/bin/$abi"
+    # nodejs-mobile-prebuilt's own per-ABI tarball layout (see the fetch
+    # step above): nodejs-mobile-<abi>/libnode.so directly, no bin/<abi>/
+    # nesting like the official nodejs-mobile zip used.
+    local node_root="$NODEJS_MOBILE_DIR/nodejs-mobile-$abi"
+    local node_inc="$node_root/include/node"
+    local node_lib_dir="$node_root"
     if [ ! -f "$node_lib_dir/libnode.so" ]; then
-        echo "ERROR: $node_lib_dir/libnode.so not found (nodejs-mobile has no $abi build?)" >&2
+        echo "ERROR: $node_lib_dir/libnode.so not found (nodejs-mobile-prebuilt has no $abi build?)" >&2
         return 1
     fi
     "$cxx" --sysroot="$sysroot" \

@@ -1649,6 +1649,19 @@ ApplicationWindow {
         server: castServer
     }
 
+    // Android only -- a real, no-op AndroidYoutubeLogin still exists on
+    // every other platform (isSupported() just returns false there), so
+    // this instantiation is unconditional, matching PythonYoutubeResolver's
+    // own always-present/conditionally-functional pattern.
+    AndroidYoutubeLogin {
+        id: androidYoutubeLogin
+    }
+    YoutubeLoginDialog {
+        id: youtubeLoginDialog
+        resolver: androidYoutubeLogin
+        hideWhileOpen: preferencesDialog
+    }
+
     YoutubeSupportDialog {
         id: youtubeSupportDialog
         // Android's YouTube path is entirely PythonYoutubeResolver's own
@@ -2057,6 +2070,7 @@ ApplicationWindow {
         controller: playerController
         youtubeInstallDialog: youtubeSupportDialog
         ytResolver: youtubeResolver
+        ytLoginDialog: youtubeLoginDialog
     }
 
     FavoritesDialog {

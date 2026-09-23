@@ -134,6 +134,46 @@ mkdir -p "$OUT_ROOT/pot-plugin"
 cp -r "$SRC_DIR/plugin/yt_dlp_plugins" "$PLUGIN_ASSET_DIR"
 echo "  -> $PLUGIN_ASSET_DIR"
 
+# --- Stage 1b: patch BgUtilScriptNodePTP's hardcoded _JSRT_MIN_VER gate ---
+# (getpot_bgutil_script.py, COPIED plugin only -- desktop's own live-
+# installed, UNMODIFIED plugin keeps upstream's real (22, 0, 0) gate, since
+# desktop's own jsdom stays at the real upstream ^29.1.1 pin and genuinely
+# needs Node 22 for it). Real bug found 2026-09-23, root-caused via a real
+# device's own verbose yt-dlp log (no_warnings/quiet temporarily flipped
+# off in PythonYoutubeResolver for the investigation, then reverted): even
+# though THIS Android build's jsdom-26 pin (stages 3-4 below) already
+# removes the ACTUAL technical Node-22 dependency (no @exodus/bytes ESM
+# import, no resizable-ArrayBuffer check -- see the big comment above),
+# the plugin's own is_available() check never learns that -- it just
+# reads its own hardcoded class attribute, `_JSRT_MIN_VER = (22, 0, 0)`,
+# and refuses to even ATTEMPT running the (perfectly capable) bundled
+# script against nodejs-mobile's real v18.20.4, logging only a quiet
+# debug-level "Node.js version too low" and silently falling through to
+# no usable PO token provider at all -- every real video/audio format
+# requiring a PO token then gets dropped ("mweb client https formats
+# require a GVS PO Token which was not provided... they may yield HTTP
+# Error 403"), ending in yt-dlp's own generic "Requested format is not
+# available" once nothing playable remains. Lowering the gate to
+# (18, 0, 0) here is exactly as safe as this whole file's jsdom-26 pin
+# already is -- it doesn't change what the script needs, only what
+# version the PYTHON PLUGIN is willing to try it against; verified this
+# doesn't regress anything else (Stage 5's own build/version-check smoke
+# test below still exercises the identical script this gate now allows to
+# actually run).
+patch_node_min_version() {
+    local f="$PLUGIN_ASSET_DIR/extractor/getpot_bgutil_script.py"
+    if ! grep -q '_JSRT_MIN_VER = (22, 0, 0)' "$f"; then
+        echo "ERROR: getpot_bgutil_script.py's expected _JSRT_MIN_VER = (22, 0, 0)" >&2
+        echo "       line was not found -- upstream source may have changed shape;" >&2
+        echo "       update patch_node_min_version() (and re-check whether the" >&2
+        echo "       Node-22 requirement this patch works around is still" >&2
+        echo "       accurately described above)." >&2
+        exit 1
+    fi
+    sed -i 's/_JSRT_MIN_VER = (22, 0, 0)/_JSRT_MIN_VER = (18, 0, 0)/' "$f"
+}
+patch_node_min_version
+
 # --- Stage 2: install the REAL runtime dependencies (respecting upstream's
 # own package-lock.json, matching desktop's own `deno install --frozen`
 # exactly) -- everything except jsdom, which gets a separate, deliberately
@@ -197,6 +237,85 @@ fi
         --external:canvas --external:jsdom \
         --outfile="$WORK_DIR/generate_once.js"
 )
+
+# --- Stage 5b: patch out Unicode PROPERTY ESCAPES (\p{...}/\P{...}) from the
+# bundled output -- nodejs-mobile's Android build configures V8 with
+# `--with-intl=none` (see android_configure.py in the nodejs-mobile source;
+# this is upstream's own official recipe, not something this project chose),
+# which drops the ICU-backed Unicode property database V8 needs to resolve
+# named regex properties -- ANY `\p{Name}` inside a `/u`-flagged regex
+# LITERAL then throws `SyntaxError: Invalid regular expression: ... Invalid
+# property name` the instant the containing file is require()'d (a regex
+# literal is compiled as part of PARSING the file, not lazily when the regex
+# is actually used -- so this crashes module load even for a code path that
+# never actually runs). Real bug found 2026-09-23, root-caused via direct
+# on-device probing (a small wrapper script requiring generate_once.js with
+# uncaughtException/unhandledRejection handlers attached, since the plugin's
+# own version-check invocation -- getpot_bgutil_script.py's
+# _check_script_impl() -- only captures stdout, not stderr, so the real
+# SyntaxError was otherwise completely invisible, logged only as an opaque
+# "Script returned 1 exit status. Script stdout:" with empty output).
+#
+# Confirmed via a full scan of the bundled output (grep -o for \p{...}/
+# \P{...}) that there are EXACTLY TWO occurrences in the whole ~89k-line
+# bundle, both in youtubei.js code paths generate_once.ts pulls in
+# transitively (via esbuild's whole-module bundling) but never actually
+# CALLS -- Text.ts's is-this-run-just-emoji check (used for rendering rich
+# comment/description text with custom emoji images) and Comment.translate()
+# (translates a YouTube comment to another language) -- neither is reachable
+# from generate_once.ts's own PO-token-minting entry point, so exact
+# semantic fidelity of the replacements below doesn't matter, only that they
+# stay syntactically valid and don't introduce a NEW crash.
+patch_unicode_property_escapes() {
+    local f="$WORK_DIR/generate_once.js"
+    python3 - "$f" <<'PYEOF'
+import sys
+path = sys.argv[1]
+with open(path, "rb") as fh:
+    data = fh.read()
+
+replacements = [
+    # Text.ts: "is this attachment run just emoji (+ ZWJ joiners)". Replaced
+    # with literal Unicode code-point ranges covering the main emoji blocks
+    # (Miscellaneous Symbols/Pictographs/Emoticons/Transport/Supplemental
+    # Symbols and Pictographs, Misc Symbols, Dingbats, Misc Technical,
+    # Geometric Shapes, Misc Symbols and Arrows) plus U+FE0F (the emoji
+    # presentation selector) -- a reasonable, non-crashing approximation of
+    # the original property escape, verified end to end on a real device
+    # (Node 18.20.4 via nodejs-mobile) to no longer throw at require() time.
+    (
+        rb"/^(?:\p{Emoji}|\u200d)+$/u",
+        rb"/^(?:[\u{1F000}-\u{1FFFF}\u2600-\u27BF\u2300-\u23FF\u25A0-\u25FF\u2B00-\u2BFF\uFE0F]|\u200d)+$/u",
+    ),
+    # Comment.translate(): strips everything that ISN'T a letter/number/
+    # punctuation/separator before sending comment text off for translation.
+    # Replaced with a plain "strip ASCII control characters" pattern --
+    # different in exact effect (the original also strips other exotic
+    # Unicode categories this one doesn't touch) but this code path is dead
+    # for our use case either way, so only "stays valid, doesn't crash"
+    # matters.
+    (
+        rb"/[^\p{L}\p{N}\p{P}\p{Z}]/gu",
+        rb"/[\x00-\x1F\x7F]/g",
+    ),
+]
+
+for old, new in replacements:
+    count = data.count(old)
+    if count != 1:
+        sys.stderr.write(
+            f"ERROR: expected exactly 1 occurrence of {old!r} in the bundled "
+            f"generate_once.js, found {count} -- upstream source (or esbuild's "
+            "own output shape) may have changed; re-check "
+            "patch_unicode_property_escapes() before trusting this build.\n")
+        sys.exit(1)
+    data = data.replace(old, new)
+
+with open(path, "wb") as fh:
+    fh.write(data)
+PYEOF
+}
+patch_unicode_property_escapes
 
 # --- Stage 6: assemble the final asset tree, matching the exact directory
 # shape the plugin's own path math expects (see getpot_bgutil.py/

@@ -73,6 +73,27 @@ Q_LOGGING_CATEGORY(lcPyYoutube, "vivace.pythonyoutube")
 // -- exactly what Android can't execute).
 const char *const kYtdlpZipappUrl =
         "https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp";
+
+#ifdef VIVACE_HAVE_PYTHON_YOUTUBE
+// Forward declaration -- defined further down, in a LATER anonymous
+// namespace block of this same translation unit (needs Python.h types in
+// its own BODY, but not in this signature). Deliberately placed HERE,
+// inside this file's FIRST anonymous-namespace block, rather than at
+// plain global/external-linkage scope right after it -- multiple
+// `namespace { ... }` blocks in one translation unit all denote the SAME
+// underlying (uniquely-named, internal-linkage) namespace, so this
+// declaration and the real definition below refer to the identical
+// entity; a plain global-scope declaration would instead describe a
+// DIFFERENT, external-linkage symbol that the internal-linkage
+// definition could never satisfy -- confirmed the hard way via a real
+// "undefined symbol: patchYtdlpJsRuntimeVersionGate(QString const&,
+// QString*)" link error before this was moved in here. Called from
+// ensureYtdlpDownloaded()/installOrUpdate() below, both of which precede
+// the definition in this file. See the function's own doc comment
+// (right before its definition, next to importYoutubeDlClass()) for the
+// full story.
+bool patchYtdlpJsRuntimeVersionGate(const QString &pyzPath, QString *errorOut);
+#endif
 } // namespace
 
 PythonYoutubeResolver::PythonYoutubeResolver(QObject *parent)
@@ -142,6 +163,11 @@ bool PythonYoutubeResolver::ensureYtdlpDownloaded(QString *pathOut, QString *err
     const QString path = plannedInstallPath();
 
     if (QFileInfo::exists(path) && QFileInfo(path).size() > 0) {
+#ifdef VIVACE_HAVE_PYTHON_YOUTUBE
+        QString patchError;
+        if (!patchYtdlpJsRuntimeVersionGate(path, &patchError))
+            qCWarning(lcPyYoutube).noquote() << "js-runtime version gate patch failed:" << patchError;
+#endif
         *pathOut = path;
         return true;
     }
@@ -194,6 +220,12 @@ bool PythonYoutubeResolver::ensureYtdlpDownloaded(QString *pathOut, QString *err
         return false;
     }
 
+#ifdef VIVACE_HAVE_PYTHON_YOUTUBE
+    QString patchError;
+    if (!patchYtdlpJsRuntimeVersionGate(path, &patchError))
+        qCWarning(lcPyYoutube).noquote() << "js-runtime version gate patch failed:" << patchError;
+#endif
+
     *pathOut = path;
     return true;
 }
@@ -240,6 +272,11 @@ void PythonYoutubeResolver::installOrUpdate()
             emit installFailed(QStringLiteral("Could not finalize the downloaded yt-dlp file."));
             return;
         }
+#ifdef VIVACE_HAVE_PYTHON_YOUTUBE
+        QString patchError;
+        if (!patchYtdlpJsRuntimeVersionGate(path, &patchError))
+            qCWarning(lcPyYoutube).noquote() << "js-runtime version gate patch failed:" << patchError;
+#endif
         emit installFinished(path);
     });
 }
@@ -863,6 +900,114 @@ QString formatCurrentPythonError()
     return result.isEmpty() ? QStringLiteral("(unknown Python error)") : result;
 }
 
+// yt-dlp CORE (independent of the bgutil POT-provider plugin -- see
+// build-android-pot-provider.sh's own patch_node_min_version(), which
+// patches a DIFFERENT, separate version gate) ALSO refuses to use a JS
+// runtime it considers too old: yt_dlp/utils/_jsruntime.py's
+// NodeJsRuntime.MIN_SUPPORTED_VERSION = (22, 0, 0), consulted by yt-dlp's
+// own EJS-based signature/"n" challenge solver before it will ever try
+// running a script through a discovered `node` binary. With this gate in
+// place, Android's bundled nodejs-mobile v18.20.4 is unconditionally
+// logged "(unsupported)" and every signature-protected format is dropped
+// -- "Signature solving failed" / "n challenge solving failed" -- EVEN
+// after a real PO token has already been minted successfully via the
+// bgutil provider. Confirmed end to end on a real device 2026-09-23: the
+// exact sequence "Retrieved a gvs PO Token for mweb client" immediately
+// followed by "WARNING: ... Signature solving failed" then "Only images
+// are available for download" / "Requested format is not available".
+//
+// Per yt-dlp's own real announcement for this exact version bump
+// (github.com/yt-dlp/yt-dlp issue #16765, "ejs is dropping support for
+// Node v20 and v21"): this is a PURE end-of-life/support-lifecycle
+// alignment decision ("Node v20 reached its end-of-life... yt-dlp/ejs
+// intends to align with the Node.js support lifecycle"), not a stated
+// technical dependency on any Node-22-only language/API feature -- the
+// same class of justification already used for patching the bgutil
+// plugin's OWN version gate. Lowering the floor back to 18 here is that
+// identical reasoning applied to yt-dlp's own copy of the same idea.
+//
+// yt-dlp's official release asset (kYtdlpZipappUrl) is a self-executable
+// zipapp (a shebang line followed by a real ZIP archive). Patched here
+// using the ALREADY-EMBEDDED interpreter's own `zipfile` module rather
+// than adding a ZIP-handling dependency of our own: read
+// yt_dlp/utils/_jsruntime.py out of the zip, apply the one exact string
+// replacement (raises loudly if the count isn't exactly 1, in case
+// upstream's source shape ever changes), and rewrite the WHOLE zip with
+// just that one member's content swapped -- deliberately not preserving
+// the shebang prefix, since Vivace never executes this file directly
+// (importYoutubeDlClass() below only ever inserts it into sys.path and
+// imports it as `yt_dlp`, which works identically for a pure,
+// shebang-less ZIP).
+//
+// Gated by a version-marker file (mirrors extractedStdlibHomeDir()'s own
+// versioned-marker pattern) so an already-patched, cached download isn't
+// needlessly re-opened/rewritten on every single resolve()/download()
+// call -- bump kYtdlpJsRuntimePatchVersion whenever THIS function's own
+// patch logic changes, independent of whichever yt-dlp version happens
+// to be currently downloaded. Best-effort: a failure here is logged and
+// otherwise ignored by both call sites (ensureYtdlpDownloaded() and
+// installOrUpdate()'s completion handler) -- exactly like the CA cert
+// bundle above, this only ever costs signature-solving capability, never
+// yt-dlp usability outright (plenty of formats need no signature
+// deciphering at all).
+bool patchYtdlpJsRuntimeVersionGate(const QString &pyzPath, QString *errorOut)
+{
+    static const char *const kYtdlpJsRuntimePatchVersion = "1";
+    const QString markerPath = pyzPath + QStringLiteral(".jsrt-patch-v")
+                                + QString::fromLatin1(kYtdlpJsRuntimePatchVersion);
+    if (QFileInfo::exists(markerPath))
+        return true;
+
+    if (!ensurePythonInitialized(errorOut))
+        return false;
+
+    PyGILState_STATE gstate = PyGILState_Ensure();
+    bool ok = false;
+    PyObject *pathObj = PyUnicode_FromString(pyzPath.toUtf8().constData());
+    PyObject *globals = PyDict_New();
+    PyDict_SetItemString(globals, "__builtins__", PyEval_GetBuiltins());
+    PyDict_SetItemString(globals, "_pyz_path", pathObj);
+    Py_DECREF(pathObj);
+
+    static const char *const kScript =
+            "import zipfile, os\n"
+            "target = 'yt_dlp/utils/_jsruntime.py'\n"
+            "old = 'MIN_SUPPORTED_VERSION = (22, 0, 0)'\n"
+            "new = 'MIN_SUPPORTED_VERSION = (18, 0, 0)'\n"
+            "tmp = _pyz_path + '.jsrt.tmp'\n"
+            "with zipfile.ZipFile(_pyz_path, 'r') as zin:\n"
+            "    infos = zin.infolist()\n"
+            "    content = zin.read(target).decode('utf-8')\n"
+            "    count = content.count(old)\n"
+            "    if count != 1:\n"
+            "        raise RuntimeError(\n"
+            "            f'expected exactly 1 occurrence of {old!r} in {target}, '\n"
+            "            f'found {count} -- yt-dlp source shape may have changed')\n"
+            "    content = content.replace(old, new)\n"
+            "    with zipfile.ZipFile(tmp, 'w', zipfile.ZIP_DEFLATED) as zout:\n"
+            "        for info in infos:\n"
+            "            data = zin.read(info.filename)\n"
+            "            if info.filename == target:\n"
+            "                data = content.encode('utf-8')\n"
+            "            zout.writestr(info, data)\n"
+            "os.replace(tmp, _pyz_path)\n";
+
+    PyObject *result = PyRun_String(kScript, Py_file_input, globals, globals);
+    if (!result) {
+        *errorOut = QStringLiteral("Could not patch yt-dlp's Node version gate: %1")
+                            .arg(formatCurrentPythonError());
+    } else {
+        Py_DECREF(result);
+        QFile marker(markerPath);
+        if (marker.open(QIODevice::WriteOnly))
+            marker.write("1");
+        ok = true;
+    }
+    Py_DECREF(globals);
+    PyGILState_Release(gstate);
+    return ok;
+}
+
 // Shared by runYtdlp()/runYtdlpDownload(): puts ytdlpPath (the zipapp's own
 // file path -- zipimport recognizes it as a zip archive purely from being
 // on sys.path, per the module's own header comment on kYtdlpZipappUrl) on
@@ -941,6 +1086,42 @@ PyObject *constructYoutubeDl(PyObject *ytDlpClass, PyObject *opts, QString *erro
         return nullptr;
     }
     return ydl;
+}
+
+// Calls ydl.close() -- best-effort, never treated as a hard failure. This
+// is what makes yt-dlp itself persist any newly-rotated session cookies
+// back to the configured cookiefile: YoutubeDL.close() calls its own
+// save_cookies() (confirmed directly against yt_dlp/YoutubeDL.py), which
+// only writes anything when 'cookiefile' was set in opts. Real gap found
+// 2026-09-23: yt-dlp's own documented usage pattern is a `with
+// YoutubeDL(opts) as ydl:` context manager (__exit__ -> close()), but
+// every call site in this file constructs a plain YoutubeDL and lets it
+// fall out of scope with no __del__ finalizer either -- so close() (and
+// therefore save_cookies()) was NEVER being called at all, meaning the
+// one-time cookie snapshot AndroidYoutubeLogin::saveCookies() writes at
+// login time could only ever go stale, never benefit from whatever
+// Set-Cookie refreshes a real request to youtube.com/google.com already
+// causes during ordinary use. Calling this after every extract_info()
+// closes that gap for free, using a mechanism yt-dlp already has -- no
+// new cookie-handling logic of Vivace's own. A failure here is logged and
+// otherwise ignored: cookie persistence is a nice-to-have that must never
+// turn an otherwise-successful resolve/download into a reported failure.
+void closeYoutubeDl(PyObject *ydl)
+{
+    PyObject *close = PyObject_GetAttrString(ydl, "close");
+    if (!close) {
+        PyErr_Clear();
+        return;
+    }
+    PyObject *result = PyObject_CallNoArgs(close);
+    Py_DECREF(close);
+    if (!result) {
+        qWarning().noquote() << "PythonYoutubeResolver: YoutubeDL.close() failed "
+                                 "(cookies may not have been refreshed):\n"
+                              << formatCurrentPythonError();
+        return;
+    }
+    Py_DECREF(result);
 }
 
 #if defined(VIVACE_HAVE_YOUTUBE_DOWNLOAD_TOOLS) && defined(VIVACE_HAVE_POT_PROVIDER)
@@ -1056,50 +1237,60 @@ bool runYtdlp(const QString &ytdlpPath, const QString &pageUrl, int preferredHei
     if (!ydl)
         return false;
 
-    PyObject *extractInfo = PyObject_GetAttrString(ydl, "extract_info");
+    // ydl stays alive (not DECREF'd) until closeYoutubeDl() below has had a
+    // chance to run -- see that function's own doc comment for why. The
+    // lambda gives every internal failure path a single, guaranteed exit
+    // through the cleanup below instead of needing closeYoutubeDl()/
+    // Py_DECREF(ydl) duplicated at each early return.
+    const bool ok = [&]() -> bool {
+        PyObject *extractInfo = PyObject_GetAttrString(ydl, "extract_info");
+        if (!extractInfo) {
+            const QString tb = formatCurrentPythonError();
+            qWarning().noquote() << "PythonYoutubeResolver: YoutubeDL.extract_info not found:\n" << tb;
+            *errorOut = QStringLiteral("YoutubeDL.extract_info not found: %1")
+                                .arg(tb.section(QLatin1Char('\n'), -1, -1));
+            return false;
+        }
+
+        PyObject *urlArg = PyUnicode_FromString(pageUrl.toUtf8().constData());
+        PyObject *extractArgs = PyTuple_Pack(1, urlArg);
+        Py_DECREF(urlArg);
+        PyObject *kwargs = PyDict_New();
+        PyDict_SetItemString(kwargs, "download", Py_False);
+
+        PyObject *info = PyObject_Call(extractInfo, extractArgs, kwargs);
+        Py_DECREF(extractInfo);
+        Py_DECREF(extractArgs);
+        Py_DECREF(kwargs);
+
+        if (!info) {
+            const QString tb = formatCurrentPythonError();
+            qWarning().noquote() << "PythonYoutubeResolver: extract_info failed:\n" << tb;
+            *errorOut = QStringLiteral("yt-dlp could not resolve this URL: %1")
+                                .arg(tb.section(QLatin1Char('\n'), -1, -1));
+            return false;
+        }
+
+        PyObject *urlObj = PyDict_GetItemString(info, "url"); // borrowed
+        PyObject *titleObj = PyDict_GetItemString(info, "title"); // borrowed
+        if (urlObj && PyUnicode_Check(urlObj))
+            *mediaUrlOut = QString::fromUtf8(PyUnicode_AsUTF8(urlObj));
+        if (titleObj && PyUnicode_Check(titleObj))
+            *titleOut = QString::fromUtf8(PyUnicode_AsUTF8(titleObj));
+        Py_DECREF(info);
+
+        if (mediaUrlOut->isEmpty()) {
+            *errorOut = QStringLiteral(
+                    "yt-dlp returned no direct URL for this video (it may need "
+                    "a separate video+audio merge, which isn't supported here)");
+            return false;
+        }
+        return true;
+    }();
+
+    closeYoutubeDl(ydl);
     Py_DECREF(ydl);
-    if (!extractInfo) {
-        const QString tb = formatCurrentPythonError();
-        qWarning().noquote() << "PythonYoutubeResolver: YoutubeDL.extract_info not found:\n" << tb;
-        *errorOut = QStringLiteral("YoutubeDL.extract_info not found: %1")
-                            .arg(tb.section(QLatin1Char('\n'), -1, -1));
-        return false;
-    }
-
-    PyObject *urlArg = PyUnicode_FromString(pageUrl.toUtf8().constData());
-    PyObject *extractArgs = PyTuple_Pack(1, urlArg);
-    Py_DECREF(urlArg);
-    PyObject *kwargs = PyDict_New();
-    PyDict_SetItemString(kwargs, "download", Py_False);
-
-    PyObject *info = PyObject_Call(extractInfo, extractArgs, kwargs);
-    Py_DECREF(extractInfo);
-    Py_DECREF(extractArgs);
-    Py_DECREF(kwargs);
-
-    if (!info) {
-        const QString tb = formatCurrentPythonError();
-        qWarning().noquote() << "PythonYoutubeResolver: extract_info failed:\n" << tb;
-        *errorOut = QStringLiteral("yt-dlp could not resolve this URL: %1")
-                            .arg(tb.section(QLatin1Char('\n'), -1, -1));
-        return false;
-    }
-
-    PyObject *urlObj = PyDict_GetItemString(info, "url"); // borrowed
-    PyObject *titleObj = PyDict_GetItemString(info, "title"); // borrowed
-    if (urlObj && PyUnicode_Check(urlObj))
-        *mediaUrlOut = QString::fromUtf8(PyUnicode_AsUTF8(urlObj));
-    if (titleObj && PyUnicode_Check(titleObj))
-        *titleOut = QString::fromUtf8(PyUnicode_AsUTF8(titleObj));
-    Py_DECREF(info);
-
-    if (mediaUrlOut->isEmpty()) {
-        *errorOut = QStringLiteral(
-                "yt-dlp returned no direct URL for this video (it may need "
-                "a separate video+audio merge, which isn't supported here)");
-        return false;
-    }
-    return true;
+    return ok;
 }
 
 #if defined(VIVACE_HAVE_YOUTUBE_DOWNLOAD_TOOLS)
@@ -1199,94 +1390,101 @@ bool runYtdlpDownload(const QString &ytdlpPath, const QString &pageUrl, int pref
     if (!ydl)
         return false;
 
-    PyObject *extractInfo = PyObject_GetAttrString(ydl, "extract_info");
-    Py_DECREF(ydl);
-    if (!extractInfo) {
-        const QString tb = formatCurrentPythonError();
-        qWarning().noquote() << "PythonYoutubeResolver: YoutubeDL.extract_info not found:\n" << tb;
-        *errorOut = QStringLiteral("YoutubeDL.extract_info not found: %1")
-                            .arg(tb.section(QLatin1Char('\n'), -1, -1));
-        return false;
-    }
-
-    PyObject *urlArg = PyUnicode_FromString(pageUrl.toUtf8().constData());
-    PyObject *extractArgs = PyTuple_Pack(1, urlArg);
-    Py_DECREF(urlArg);
-    PyObject *kwargs = PyDict_New();
-    PyDict_SetItemString(kwargs, "download", Py_True);
-
-    PyObject *info = PyObject_Call(extractInfo, extractArgs, kwargs);
-    Py_DECREF(extractInfo);
-    Py_DECREF(extractArgs);
-    Py_DECREF(kwargs);
-
-    if (!info) {
-        const QString tb = formatCurrentPythonError();
-        qWarning().noquote() << "PythonYoutubeResolver: extract_info(download=True) failed:\n" << tb;
-        *errorOut = QStringLiteral("yt-dlp could not download this video: %1")
-                            .arg(tb.section(QLatin1Char('\n'), -1, -1));
-        return false;
-    }
-
-    // CORRECTED (2026-09-19, real on-device evidence): the top-level dict
-    // 'filepath' key this used to read here is NEVER actually set for a
-    // real download -- confirmed directly against YoutubeDL.py's own
-    // process_video_result(): its download loop always calls
-    // process_info() on a COPY of info_dict (new_info), never on
-    // info_dict itself, and the loop's only write-back to the top-level
-    // dict at the end (info_dict.update(best_format)) copies plain format
-    // metadata, not any per-format copy's 'filepath'. This was wrong for
-    // EVERY download, not just the video+audio-merge case -- it happened
-    // to go unnoticed until a real merge (two separate downloads, seen in
-    // logcat) exposed it as "yt-dlp did not report a downloaded file
-    // path" despite both streams downloading to 100%.
-    //
-    // The real final (post-merge) path lives on each entry of
-    // 'requested_downloads' instead -- confirmed against
-    // FFmpegMergerPP.run() itself: it renames its merged output onto
-    // exactly info['filepath'] on the SAME per-format dict this list
-    // holds (info_dict['requested_downloads'] = downloaded_formats, each
-    // element one of those new_info copies) -- so this is the correct
-    // key regardless of whether a merge happened at all (a plain
-    // single-format download also produces exactly one entry here, with
-    // its own already-correct 'filepath').
-    PyObject *titleObj = PyDict_GetItemString(info, "title"); // borrowed
-    if (titleObj && PyUnicode_Check(titleObj))
-        *titleOut = QString::fromUtf8(PyUnicode_AsUTF8(titleObj));
-
-    PyObject *requestedDownloads = PyDict_GetItemString(info, "requested_downloads"); // borrowed
-    if (requestedDownloads && PyList_Check(requestedDownloads) && PyList_Size(requestedDownloads) > 0) {
-        PyObject *lastEntry = PyList_GetItem( // borrowed
-                requestedDownloads, PyList_Size(requestedDownloads) - 1);
-        if (lastEntry && PyDict_Check(lastEntry)) {
-            PyObject *entryPath = PyDict_GetItemString(lastEntry, "filepath"); // borrowed
-            if (entryPath && PyUnicode_Check(entryPath))
-                *filePathOut = QString::fromUtf8(PyUnicode_AsUTF8(entryPath));
+    // ydl stays alive (not DECREF'd) until closeYoutubeDl() below has had a
+    // chance to run -- see that function's own doc comment for why.
+    const bool ok = [&]() -> bool {
+        PyObject *extractInfo = PyObject_GetAttrString(ydl, "extract_info");
+        if (!extractInfo) {
+            const QString tb = formatCurrentPythonError();
+            qWarning().noquote() << "PythonYoutubeResolver: YoutubeDL.extract_info not found:\n" << tb;
+            *errorOut = QStringLiteral("YoutubeDL.extract_info not found: %1")
+                                .arg(tb.section(QLatin1Char('\n'), -1, -1));
+            return false;
         }
-    }
-    Py_DECREF(info);
 
-    if (filePathOut->isEmpty()) {
-        *errorOut = QStringLiteral("yt-dlp did not report a downloaded file path");
-        return false;
-    }
-    // A merge that never actually ran (e.g. ffmpeg not recognized as
-    // usable by yt-dlp's own probe -- it silently skips merging rather
-    // than raising an error in that case) still reports the WOULD-BE
-    // merged path here without ever creating it, since that rename only
-    // happens inside a successful FFmpegMergerPP.run(); catch that
-    // explicitly with a message that actually points at the cause,
-    // rather than the player failing to open a nonexistent file with no
-    // context.
-    if (!QFile::exists(*filePathOut)) {
-        *errorOut = QStringLiteral(
-                "yt-dlp reported a downloaded file that does not exist "
-                "(the video and audio likely downloaded separately but could "
-                "not be merged -- check that the bundled ffmpeg is usable)");
-        filePathOut->clear();
-        return false;
-    }
-    return true;
+        PyObject *urlArg = PyUnicode_FromString(pageUrl.toUtf8().constData());
+        PyObject *extractArgs = PyTuple_Pack(1, urlArg);
+        Py_DECREF(urlArg);
+        PyObject *kwargs = PyDict_New();
+        PyDict_SetItemString(kwargs, "download", Py_True);
+
+        PyObject *info = PyObject_Call(extractInfo, extractArgs, kwargs);
+        Py_DECREF(extractInfo);
+        Py_DECREF(extractArgs);
+        Py_DECREF(kwargs);
+
+        if (!info) {
+            const QString tb = formatCurrentPythonError();
+            qWarning().noquote() << "PythonYoutubeResolver: extract_info(download=True) failed:\n" << tb;
+            *errorOut = QStringLiteral("yt-dlp could not download this video: %1")
+                                .arg(tb.section(QLatin1Char('\n'), -1, -1));
+            return false;
+        }
+
+        // CORRECTED (2026-09-19, real on-device evidence): the top-level dict
+        // 'filepath' key this used to read here is NEVER actually set for a
+        // real download -- confirmed directly against YoutubeDL.py's own
+        // process_video_result(): its download loop always calls
+        // process_info() on a COPY of info_dict (new_info), never on
+        // info_dict itself, and the loop's only write-back to the top-level
+        // dict at the end (info_dict.update(best_format)) copies plain format
+        // metadata, not any per-format copy's 'filepath'. This was wrong for
+        // EVERY download, not just the video+audio-merge case -- it happened
+        // to go unnoticed until a real merge (two separate downloads, seen in
+        // logcat) exposed it as "yt-dlp did not report a downloaded file
+        // path" despite both streams downloading to 100%.
+        //
+        // The real final (post-merge) path lives on each entry of
+        // 'requested_downloads' instead -- confirmed against
+        // FFmpegMergerPP.run() itself: it renames its merged output onto
+        // exactly info['filepath'] on the SAME per-format dict this list
+        // holds (info_dict['requested_downloads'] = downloaded_formats, each
+        // element one of those new_info copies) -- so this is the correct
+        // key regardless of whether a merge happened at all (a plain
+        // single-format download also produces exactly one entry here, with
+        // its own already-correct 'filepath').
+        PyObject *titleObj = PyDict_GetItemString(info, "title"); // borrowed
+        if (titleObj && PyUnicode_Check(titleObj))
+            *titleOut = QString::fromUtf8(PyUnicode_AsUTF8(titleObj));
+
+        PyObject *requestedDownloads = PyDict_GetItemString(info, "requested_downloads"); // borrowed
+        if (requestedDownloads && PyList_Check(requestedDownloads) && PyList_Size(requestedDownloads) > 0) {
+            PyObject *lastEntry = PyList_GetItem( // borrowed
+                    requestedDownloads, PyList_Size(requestedDownloads) - 1);
+            if (lastEntry && PyDict_Check(lastEntry)) {
+                PyObject *entryPath = PyDict_GetItemString(lastEntry, "filepath"); // borrowed
+                if (entryPath && PyUnicode_Check(entryPath))
+                    *filePathOut = QString::fromUtf8(PyUnicode_AsUTF8(entryPath));
+            }
+        }
+        Py_DECREF(info);
+
+        if (filePathOut->isEmpty()) {
+            *errorOut = QStringLiteral("yt-dlp did not report a downloaded file path");
+            return false;
+        }
+        // A merge that never actually ran (e.g. ffmpeg not recognized as
+        // usable by yt-dlp's own probe -- it silently skips merging rather
+        // than raising an error in that case) still reports the WOULD-BE
+        // merged path here without ever creating it, since that rename only
+        // happens inside a successful FFmpegMergerPP.run(); catch that
+        // explicitly with a message that actually points at the cause,
+        // rather than the player failing to open a nonexistent file with no
+        // context.
+        if (!QFile::exists(*filePathOut)) {
+            *errorOut = QStringLiteral(
+                    "yt-dlp reported a downloaded file that does not exist "
+                    "(the video and audio likely downloaded separately but could "
+                    "not be merged -- check that the bundled ffmpeg is usable)");
+            filePathOut->clear();
+            return false;
+        }
+        return true;
+    }();
+
+    closeYoutubeDl(ydl);
+    Py_DECREF(ydl);
+    return ok;
 }
 #endif // VIVACE_HAVE_YOUTUBE_DOWNLOAD_TOOLS
 

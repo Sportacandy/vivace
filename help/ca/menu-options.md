@@ -114,12 +114,13 @@ Els modes de YouTube **Baixa i reprodueix** i **eina externa** poden
 actuar com si haguessis iniciat la sessió — necessari per a vídeos amb
 restricció d'edat, exclusius per a membres o d'una altra manera
 vinculats a un compte, i és el que desbloqueja les baixades completes
-en HD/4K. El Vivace admet dues maneres de proporcionar galetes (totes
-dues sota *Preferències ▸ Xarxa ▸ YouTube ▸ Baixa i reprodueix*); a
-Windows/Linux/macOS, **Obtenir galetes des del navegador** és la que
-cal fer servir tret que no funcioni per a la teva configuració.
+en HD/4K. El Vivace admet tres maneres de proporcionar galetes (totes
+sota *Preferències ▸ Xarxa ▸ YouTube*): **Obtenir galetes des del
+navegador** a Windows/Linux/macOS, **Inicia la sessió a YouTube…** a
+Android, i l'exportació manual d'un fitxer `cookies.txt` com a
+alternativa arreu.
 
-### Obtenir galetes des del navegador (recomanat)
+### Obtenir galetes des del navegador (recomanat a Windows/Linux/macOS)
 
 El desplegable **Obtenir galetes des del navegador:** llista Firefox,
 Chrome, Edge, Brave, Chromium, Opera, Safari, Vivaldi i Whale. Tria el
@@ -143,16 +144,39 @@ vegada — no cal exportar res, i res no queda obsolet.
   Chrome/Edge de Linux i macOS no es veuen afectats.
 - Triar un navegador aquí té prioritat sobre el camp **Fitxer de
   galetes:** de més avall, quan tots dos estan establerts.
-- **No disponible a Android** — utilitza en el seu lloc el mètode
-  d'exportació manual de més avall.
+- **No disponible a Android** — vegeu en el seu lloc **Inicia la sessió
+  a YouTube** de més avall.
 
-### Exportar galetes a un fitxer (alternativa, i l'única opció a Android)
+### Inicia la sessió a YouTube (Android, recomanat allà)
+
+*Preferències ▸ Xarxa ▸ YouTube* té un botó **Inicia la sessió a
+YouTube…** (al costat del camp del fitxer de galetes) que obre una
+pàgina real d'inici de sessió dins del mateix Vivace, mitjançant una
+WebView incrustada, nativa del sistema operatiu. Inicia la sessió amb
+el compte l'accés del qual vols utilitzar i després toca **He iniciat
+la sessió** — el Vivace llegeix les galetes de sessió resultants i les
+desa automàticament com el fitxer de galetes actiu. Això és
+l'equivalent a Android de l'opció **Obtenir galetes des del navegador**
+de més amunt: no cal exportar res, ni transferir res manualment des
+d'un altre dispositiu.
+
+**Tingues en compte:**
+
+- L'Android no té cap equivalent d'una memòria de galetes activa d'un
+  navegador d'escriptori de la qual llegir (l'emmagatzematge de cada
+  aplicació està aïllat de totes les altres), per això funciona de
+  manera diferent de l'opció d'escriptori — iniciar la sessió *dins*
+  del navegador propi incrustat del Vivace és el substitut pràctic.
+- Només disponible a Android; totes les altres plataformes utilitzen
+  **Obtenir galetes des del navegador**.
+
+### Exportar galetes a un fitxer (alternativa a totes les plataformes)
 
 El camp **Fitxer de galetes:** espera un fitxer de text pla,
 `cookies.txt`, en el format clàssic de galetes de Netscape (el mateix
 format que llegeix l'opció pròpia `--cookies` del yt-dlp) — utilitza'l
-quan l'opció de navegador en directe de més amunt no estigui disponible
-(Android) o no funcioni amb el teu navegador (Chrome/Edge a Windows).
+quan cap de les opcions en directe de més amunt estigui disponible o
+funcioni per a tu (per exemple, Chrome/Edge a Windows).
 
 **Per crear-ne un:**
 
@@ -171,9 +195,11 @@ quan l'opció de navegador en directe de més amunt no estigui disponible
    **Navega…** al costat de **Fitxer de galetes:** per seleccionar
    aquest fitxer.
 
-**A Android:** el Chrome per a Android no admet extensions de
-navegador, de manera que els passos 2–3 de més amunt no es poden fer al
-mateix dispositiu. Exporta `cookies.txt` en un ordinador de sobretaula o
+**A Android:** és preferible utilitzar **Inicia la sessió a YouTube…**
+de més amunt — no requereix cap pas d'exportació/transferència. Si
+encara vols fer-ho d'aquesta manera, tingues en compte que el Chrome
+per a Android no admet extensions de navegador, de manera que els
+passos 2–3 de més amunt no es poden fer al mateix dispositiu. Exporta `cookies.txt` en un ordinador de sobretaula o
 portàtil tal com s'ha descrit més amunt, i després transfereix aquest
 fitxer al teu dispositiu Android (per exemple, mitjançant emmagatzematge
 al núvol, un cable USB o el correu electrònic) abans d'utilitzar

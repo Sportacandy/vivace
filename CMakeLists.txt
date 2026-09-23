@@ -94,6 +94,27 @@ if(ANDROID)
     endforeach()
 endif()
 
+# Which YoutubeLoginDialog.qml gets compiled into the module -- the real,
+# WebView-hosting one (Android only) or a WebView-free stub everywhere
+# else. See qml/stubs/YoutubeLoginDialog.qml's own comment for the full
+# story: qmlimportscanner statically scans every .qml file's `import`
+# statements regardless of platform, so simply having the real file's
+# `import QtWebView` line anywhere in QML_FILES was enough, by itself, to
+# make a DESKTOP build discover and load the real desktop QtWebView QML
+# plugin (Qt ships one there too) and hit a genuine
+# "QMetaObject::indexOfSignal... redefined in QQuickWindowQmlImpl" warning
+# on ordinary startup -- confirmed by A/B testing an otherwise-identical
+# build with and without this file in QML_FILES. Both files register under
+# the identical "YoutubeLoginDialog" QML type name (qt_add_qml_module maps
+# a QML_FILES entry's type name from its basename, not its full path), so
+# Main.qml/PreferencesDialog.qml/PrefNetworkPage.qml's type references
+# resolve identically either way.
+if(ANDROID)
+    set(vivace_youtube_login_qml qml/YoutubeLoginDialog.qml)
+else()
+    set(vivace_youtube_login_qml qml/stubs/YoutubeLoginDialog.qml)
+endif()
+
 qt_add_qml_module(vivace
     URI Vivace
     VERSION 1.0
@@ -122,6 +143,7 @@ qt_add_qml_module(vivace
         qml/YoutubeSupportDialog.qml
         qml/CacheBrowserDialog.qml
         qml/CastDialog.qml
+        ${vivace_youtube_login_qml}
         qml/VideoEqualizerDialog.qml
         qml/OpenUrlDialog.qml
         qml/PreferencesDialog.qml
@@ -172,6 +194,7 @@ qt_add_qml_module(vivace
         src/securestore.h src/securestore.cpp
         src/uihelpers.h src/uihelpers.cpp
         src/androidshareintent.h src/androidshareintent.cpp
+        src/androidyoutubelogin.h src/androidyoutubelogin.cpp
     RESOURCES
         ${vivace_icon_files}
         ${vivace_help_files}
@@ -1415,12 +1438,55 @@ if(VIVACE_HAVE_YOUTUBE_DOWNLOAD_TOOLS AND VIVACE_BASH_EXECUTABLE)
     # own VIVACE_CPYTHON_VERSION-based invalidation exactly, same reasoning:
     # a stale extraction left over in app-private storage from an earlier
     # install must not be silently reused forever just because a marker file
-    # happens to already exist). Must match build-android-pot-provider.sh's
-    # own POT_PROVIDER_VERSION.
+    # happens to already exist). The base "2.0.0" must match build-android-
+    # pot-provider.sh's own POT_PROVIDER_VERSION (the real upstream tag) --
+    # the "-fmt1" suffix is this project's OWN, independent of that (mirrors
+    # extractedStdlibHomeDir()'s own "-fmt2" suffix exactly): bump it
+    # whenever build-android-pot-provider.sh's own extraction/patching LOGIC
+    # changes, not just when the real upstream POT_PROVIDER_VERSION does --
+    # e.g. "-fmt1" itself was added 2026-09-23 for patch_node_min_version()
+    # (see that function's own comment), which changes what's inside the
+    # bundled plugin without changing which upstream tag it was cloned from.
     target_compile_definitions(vivace PRIVATE
         VIVACE_HAVE_POT_PROVIDER=1
-        VIVACE_POT_PROVIDER_VERSION="2.0.0")
+        VIVACE_POT_PROVIDER_VERSION="2.0.0-fmt1")
     message(STATUS "YouTube PO token provider (Android): ENABLED")
+endif()
+
+# Embedded YouTube login (Android only, via QtWebView) -- lets the user sign
+# into YouTube inside a real, native-backed WebView embedded in Vivace, then
+# extracts the resulting session cookies (via JNI, android.webkit.
+# CookieManager -- QtWebView's own QML API deliberately doesn't expose
+# cookie VALUES, only that a cookie changed, see src/androidyoutubelogin.cpp's
+# own comment) into a synthesized cookies.txt, wired straight into the SAME
+# Settings.youtubeCookiesFile both YoutubeResolver and PythonYoutubeResolver
+# already read. This is the Android answer to desktop's "Get cookies from
+# browser" (YoutubeResolver::cookiesFromBrowser) -- Android has no equivalent
+# live-desktop-browser-cookie-file to read at all (per-app sandboxing blocks
+# reading another app's storage unconditionally), so signing in INSIDE
+# Vivace's own embedded WebView is the only practical way to get fresh
+# cookies without a manual per-session export/transfer round trip.
+#
+# Genuinely lower-risk than a desktop QtWebEngine integration would be:
+# QtWebView wraps the OS's own already-installed WebView component (no
+# bundled Chromium, no extra APK size to speak of, no new build-toolchain
+# requirement) -- unlike QtWebEngine, which bundles a full Chromium runtime
+# and needs a C++20 compiler for that one module. Deliberately Android-only
+# for this reason; a desktop equivalent is a separate, larger decision (see
+# this project's own memory notes) not part of this feature.
+option(VIVACE_ENABLE_ANDROID_YOUTUBE_LOGIN
+    "Embedded YouTube login via QtWebView, for fresh cookies (Android only)" ON)
+if(ANDROID AND VIVACE_ENABLE_ANDROID_YOUTUBE_LOGIN)
+    # WebView is the base module (QtWebView::initialize(), called from
+    # main.cpp); WebViewQuick is the separate QML-integration module (the
+    # `import QtWebView` / WebView QML type used by YoutubeLoginDialog.qml)
+    # -- both are needed, confirmed by a real build error when only
+    # WebViewQuick was linked ("'QtWebView' file not found", since that C++
+    # header lives in the base module).
+    find_package(Qt6 REQUIRED COMPONENTS WebView WebViewQuick)
+    target_link_libraries(vivace PRIVATE Qt6::WebView Qt6::WebViewQuick)
+    target_compile_definitions(vivace PRIVATE VIVACE_HAVE_ANDROID_YOUTUBE_LOGIN=1)
+    message(STATUS "Embedded YouTube login (Android): ENABLED")
 endif()
 
 # TEMPORARY desktop-test convenience (2026-09-19, user request): a plain

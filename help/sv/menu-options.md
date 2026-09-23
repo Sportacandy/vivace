@@ -103,13 +103,13 @@ den väl är installerad, ifall en senare uppdatering någonsin behövs.
 YouTube-lägena **Ladda ned och spela upp** och **externt verktyg** kan bete
 sig som om du vore inloggad — vilket behövs för åldersbegränsade,
 medlemslåsta eller på annat sätt kontobundna videor, och det är vad som
-låser upp fullständiga HD/4K-nedladdningar. Vivace har stöd för två sätt
-att ange cookies (båda under *Inställningar ▸ Nätverk ▸ YouTube ▸ Ladda
-ned och spela upp*); på Windows/Linux/macOS är **Hämta cookies från
-webbläsare** det du bör använda, om det inte skulle fungera för din
-uppsättning.
+låser upp fullständiga HD/4K-nedladdningar. Vivace har stöd för tre sätt
+att ange cookies (alla under *Inställningar ▸ Nätverk ▸ YouTube*):
+**Hämta cookies från webbläsare** på Windows/Linux/macOS, **Logga in på
+YouTube…** på Android, och manuell export av en `cookies.txt`-fil som
+reserv överallt.
 
-### Hämta cookies från webbläsare (rekommenderas)
+### Hämta cookies från webbläsare (rekommenderas på Windows/Linux/macOS)
 
 Kombinationsrutan **Hämta cookies från webbläsare:** listar Firefox,
 Chrome, Edge, Brave, Chromium, Opera, Safari, Vivaldi och Whale. Välj din
@@ -132,16 +132,37 @@ exportera, inget som blir inaktuellt.
   fungerar normalt.
 - Att välja en webbläsare här har företräde framför fältet **Cookiefil:**
   nedan, när båda är angivna.
-- **Inte tillgängligt på Android** — använd den manuella exportmetoden
-  nedan i stället.
+- **Inte tillgängligt på Android** — se **Logga in på YouTube** nedan i
+  stället.
 
-### Exportera cookies till en fil (reserv, och det enda alternativet på Android)
+### Logga in på YouTube (Android, rekommenderas där)
+
+*Inställningar ▸ Nätverk ▸ YouTube* har en knapp **Logga in på
+YouTube…** (bredvid fältet för cookiefilen) som öppnar en riktig
+inloggningssida inuti Vivace självt, med hjälp av en inbäddad, OS-egen
+webbvy. Logga in med det konto vars åtkomst du vill använda, tryck sedan
+på **Jag är inloggad** — Vivace läser de resulterande sessionscookies
+och sparar dem som den aktiva cookiefilen automatiskt. Det här är
+Androids motsvarighet till **Hämta cookies från webbläsare** ovan: inget
+att exportera, inget att överföra från en annan enhet för hand.
+
+**Tänk på:**
+
+- Android har ingen motsvarighet till en aktiv skrivbordswebbläsares
+  cookielagring att läsa från alls (varje apps lagring är sandboxad från
+  alla andra appars), vilket är varför det här fungerar annorlunda än
+  skrivbordsalternativet — att logga in *inuti* Vivaces egen inbäddade
+  webbläsare är den praktiska ersättningen.
+- Endast tillgängligt på Android; alla andra plattformar använder
+  **Hämta cookies från webbläsare** i stället.
+
+### Exportera cookies till en fil (reserv på alla plattformar)
 
 Fältet **Cookiefil:** förväntar sig en vanlig textfil, `cookies.txt`, i
 det klassiska Netscape-cookieformatet (samma format som yt-dlps egen
-flagga `--cookies` läser) — använd det här när alternativet med direkt
-webbläsaråtkomst ovan inte är tillgängligt (Android) eller inte fungerar
-för din webbläsare (Chrome/Edge på Windows).
+flagga `--cookies` läser) — använd det här när inget av de direkta
+alternativen ovan är tillgängligt eller fungerar för dig (t.ex.
+Chrome/Edge på Windows).
 
 **Så skapar du en:**
 
@@ -158,8 +179,11 @@ för din webbläsare (Chrome/Edge på Windows).
 4. I Vivace, öppna *Inställningar ▸ Nätverk ▸ YouTube* och använd
    **Bläddra…** bredvid **Cookiefil:** för att välja den filen.
 
-**På Android:** Chrome för Android stöder inte webbläsartillägg, så steg
-2–3 ovan kan inte göras på själva enheten. Exportera `cookies.txt` på en
+**På Android:** föredra **Logga in på YouTube…** ovan i stället — det
+kräver inget export-/överföringssteg alls. Om du ändå vill göra det på
+det här sättet, observera att Chrome för Android inte stöder
+webbläsartillägg, så steg 2–3 ovan kan inte göras på själva enheten.
+Exportera `cookies.txt` på en
 stationär eller bärbar dator enligt beskrivningen ovan, och överför sedan
 filen till din Android-enhet (t.ex. via molnlagring, en USB-kabel eller
 e-post) innan du använder **Bläddra…** i steg 4.

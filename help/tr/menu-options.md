@@ -105,12 +105,12 @@ kurulduktan sonra, ileride bir güncelleme gerekirse diye düğmenin etiketi
 **İndir ve oynat** ve **dış araç** YouTube modları sanki oturum açmışsınız
 gibi davranabilir — yaş sınırlı, yalnızca üyelere özel veya başka şekilde
 hesaba bağlı videolar için gereklidir ve tam HD/4K indirmelerin kilidini
-açan da budur. Vivace, çerez sağlamak için iki yol destekler (ikisi de
-*Tercihler ▸ Ağ ▸ YouTube ▸ İndir ve oynat* altındadır); Windows/Linux/
-macOS'ta, sizin kurulumunuzda işe yaramadığı sürece kullanılması gereken
-yöntem **Çerezleri tarayıcıdan al**'dır.
+açan da budur. Vivace, çerez sağlamak için üç yol destekler (hepsi
+*Tercihler ▸ Ağ ▸ YouTube* altındadır): Windows/Linux/macOS'ta
+**Çerezleri tarayıcıdan al**, Android'de **YouTube'a giriş yap…** ve her
+platformda yedek olarak elle bir `cookies.txt` dosyası dışa aktarma.
 
-### Çerezleri tarayıcıdan al (önerilir)
+### Çerezleri tarayıcıdan al (Windows/Linux/macOS'ta önerilir)
 
 **Çerezleri tarayıcıdan al:** açılır kutusu Firefox, Chrome, Edge, Brave,
 Chromium, Opera, Safari, Vivaldi ve Whale'i listeler. Tarayıcınızı seçin;
@@ -133,16 +133,38 @@ hiçbir şey, eskiyecek hiçbir şey yoktur.
   normal şekilde çalışır.
 - Burada bir tarayıcı seçmek, ikisi de ayarlandığında aşağıdaki
   **Çerez dosyası:** alanına göre önceliklidir.
-- **Android'de kullanılamaz** — bunun yerine aşağıdaki elle dışa aktarma
-  yöntemini kullanın.
+- **Android'de kullanılamaz** — bunun yerine aşağıdaki **YouTube'a
+  giriş yap** bölümüne bakın.
 
-### Çerezleri bir dosyaya dışa aktarma (yedek yöntem, ve Android'deki tek seçenek)
+### YouTube'a giriş yap (Android, orada önerilir)
+
+*Tercihler ▸ Ağ ▸ YouTube* içinde (çerez dosyası alanının yanında) gömülü,
+işletim sistemine özgü bir WebView kullanarak Vivace'nin kendi içinde
+gerçek bir oturum açma sayfası açan bir **YouTube'a giriş yap…** düğmesi
+bulunur. Erişimini kullanmak istediğiniz hesapla oturum açın, ardından
+**"Giriş yaptım"**'a dokunun — Vivace ortaya çıkan oturum çerezlerini
+okur ve bunları etkin çerez dosyası olarak otomatik olarak kaydeder. Bu,
+yukarıdaki **Çerezleri tarayıcıdan al**'ın Android karşılığıdır: dışa
+aktarılacak hiçbir şey, başka bir cihazdan elle aktarılacak hiçbir şey
+yoktur.
+
+**Aklınızda bulunsun:**
+
+- Android'de okunacak canlı bir masaüstü tarayıcı çerez deposunun bir
+  benzeri hiç yoktur (her uygulamanın deposu diğer tüm uygulamalardan
+  yalıtılmıştır); bu yöntemin masaüstü seçeneğinden farklı çalışmasının
+  nedeni de budur — Vivace'nin kendi gömülü tarayıcısının *içinde*
+  oturum açmak pratik bir alternatiftir.
+- Yalnızca Android'de kullanılabilir; diğer tüm platformlar bunun yerine
+  **Çerezleri tarayıcıdan al**'ı kullanır.
+
+### Çerezleri bir dosyaya dışa aktarma (her platformda yedek yöntem)
 
 **Çerez dosyası:** alanı, klasik Netscape çerez kavanozu biçiminde
 (yt-dlp'nin kendi `--cookies` seçeneğinin okuduğu biçimin aynısı) düz
-metin bir `cookies.txt` dosyası bekler — yukarıdaki canlı tarayıcı
-seçeneği kullanılamadığında (Android) veya tarayıcınızda işe yaramadığında
-(Windows'ta Chrome/Edge) bunu kullanın.
+metin bir `cookies.txt` dosyası bekler — yukarıdaki canlı seçeneklerden
+hiçbiri kullanılamadığında veya işe yaramadığında (ör. Windows'ta
+Chrome/Edge) bunu kullanın.
 
 **Bir tane oluşturmak için:**
 
@@ -159,9 +181,12 @@ seçeneği kullanılamadığında (Android) veya tarayıcınızda işe yaramadı
 4. Vivace'de *Tercihler ▸ Ağ ▸ YouTube* bölümünü açın ve **Çerez dosyası:**
    yanındaki **Gözat…** düğmesini kullanarak bu dosyayı seçin.
 
-**Android'de:** Android için Chrome tarayıcı uzantılarını desteklemez, bu
-yüzden yukarıdaki 2–3. adımlar cihazın kendisinde yapılamaz. `cookies.txt`
-dosyasını yukarıda açıklandığı gibi bir masaüstü veya dizüstü bilgisayarda
+**Android'de:** bunun yerine yukarıdaki **YouTube'a giriş yap…**'ı
+tercih edin — hiçbir dışa aktarma/aktarma adımına gerek kalmaz. Yine de
+bu şekilde yapmak isterseniz, Android için Chrome'un tarayıcı
+uzantılarını desteklemediğini, bu yüzden yukarıdaki 2–3. adımların
+cihazın kendisinde yapılamayacağını unutmayın: `cookies.txt` dosyasını
+yukarıda açıklandığı gibi bir masaüstü veya dizüstü bilgisayarda
 dışa aktarın, ardından 4. adımda **Gözat…**'ı kullanmadan önce bu dosyayı
 Android cihazınıza aktarın (örn. bulut depolama, bir USB kablosu veya
 e-posta yoluyla).

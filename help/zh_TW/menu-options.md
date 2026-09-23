@@ -80,12 +80,12 @@
 
 **下載並播放** 與 **外部工具** 這兩種 YouTube 模式可以表現得如同您已經
 登入一樣——這對於有年齡限制、僅限會員或其他需要帳號驗證的影片是必要
-的，也是解鎖完整 HD/4K 下載的關鍵。Vivace 支援兩種提供 Cookie 的方式
-（皆位於 *偏好設定 ▸ 網路 ▸ YouTube ▸ 下載並播放* 下）；在
-Windows/Linux/macOS 上，除非 **從瀏覽器取得 Cookie** 在您的設定上無法
-運作，否則應優先使用這種方式。
+的，也是解鎖完整 HD/4K 下載的關鍵。Vivace 支援三種提供 Cookie 的方式
+（皆位於 *偏好設定 ▸ 網路 ▸ YouTube* 下）：在 Windows/Linux/macOS 上
+使用 **從瀏覽器取得 Cookie**，在 Android 上使用 **登入 YouTube…**，以及
+在所有平台皆可使用的備援方案——手動匯出 `cookies.txt` 檔案。
 
-### 從瀏覽器取得 Cookie（建議）
+### 從瀏覽器取得 Cookie（建議用於 Windows/Linux/macOS）
 
 **從瀏覽器取得 Cookie：** 下拉方塊列出了 Firefox、Chrome、Edge、Brave、
 Chromium、Opera、Safari、Vivaldi 和 Whale。選取您的瀏覽器後，Vivace 每次
@@ -104,14 +104,31 @@ Chromium、Opera、Safari、Vivaldi 和 Whale。選取您的瀏覽器後，Vivac
   不受此影響，可正常運作。
 - 在此選取瀏覽器時，若下方的 **Cookie 檔案：** 欄位也已設定，此選項
   將優先生效。
-- **在 Android 上無法使用** —— 請改用下方的手動匯出方式。
+- **在 Android 上無法使用** —— 請改用下方的 **登入 YouTube** 一節。
 
-### 匯出 Cookie 至檔案（備援方案，也是 Android 上的唯一選項）
+### 登入 YouTube（Android，建議在此平台使用）
+
+*偏好設定 ▸ 網路 ▸ YouTube* 中有一個 **登入 YouTube…** 按鈕（位於
+Cookie 檔案欄位旁），會使用內嵌、作業系統原生的 WebView，在 Vivace
+本身開啟一個真正的登入頁面。使用您想要使用其存取權的帳號登入，然後
+點選 **「已登入」** —— Vivace 會讀取由此產生的工作階段 Cookie，並
+自動將其儲存為目前使用的 Cookie 檔案。這是 Android 上 **從瀏覽器取得
+Cookie**（見上文）的對等方式：無需匯出，也無需從其他裝置手動傳輸。
+
+**請注意：**
+
+- Android 上完全沒有類似桌面瀏覽器即時 Cookie 儲存區可供讀取（每個
+  應用程式的儲存空間皆與其他所有應用程式相互隔離），這正是此方式與
+  桌面選項運作方式不同的原因——在 Vivace 自身的內嵌瀏覽器 *內* 登入
+  是實際可行的替代方案。
+- 僅在 Android 上可用；其他所有平台皆改用 **從瀏覽器取得 Cookie**。
+
+### 匯出 Cookie 至檔案（各平台通用的備援方案）
 
 **Cookie 檔案：** 欄位需要一個採用傳統 Netscape cookie 格式的純文字
 `cookies.txt` 檔案（與 yt-dlp 自身的 `--cookies` 選項所讀取的格式相
-同）——當上方的即時瀏覽器選項無法使用（Android）或對您的瀏覽器不起
-作用（Windows 上的 Chrome/Edge）時，請使用此方式。
+同）——當上方兩種即時選項皆無法使用或對您不起作用時（例如 Windows 上
+的 Chrome/Edge），請使用此方式。
 
 **建立方式：**
 
@@ -126,8 +143,10 @@ Chromium、Opera、Safari、Vivaldi 和 Whale。選取您的瀏覽器後，Vivac
 4. 在 Vivace 中開啟 *偏好設定 ▸ 網路 ▸ YouTube*，並使用 **Cookie 檔案：**
    旁邊的 **瀏覽…** 按鈕選取該檔案。
 
-**在 Android 上：** Android 版 Chrome 不支援瀏覽器擴充功能，因此上述
-步驟 2–3 無法在裝置本身完成。請依照上述方式在桌上型或筆記型電腦上
+**在 Android 上：** 請優先使用上方的 **登入 YouTube…**——它完全不需要
+匯出／傳輸步驟。若您仍想以這種方式進行，請注意 Android 版 Chrome 不
+支援瀏覽器擴充功能，因此上述步驟 2–3 無法在裝置本身完成：請依照上述
+方式在桌上型或筆記型電腦上
 匯出 `cookies.txt`，再將該檔案傳輸到您的 Android 裝置（例如透過雲端
 儲存、USB 連接線或電子郵件），之後再執行步驟 4 中的 **瀏覽…** 操作。
 

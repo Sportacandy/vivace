@@ -97,11 +97,12 @@ needed.
 The **Download & play** and **external tool** YouTube modes can act as if
 you were signed in — needed for age-restricted, members-only, or otherwise
 account-gated videos, and it's what unlocks full HD/4K downloads. Vivace
-supports two ways to supply cookies (both under *Preferences ▸ Network ▸
-YouTube ▸ Download & play*); on Windows/Linux/macOS, **Get cookies from
-browser** is the one to use unless it doesn't work for your setup.
+supports three ways to supply cookies (all under *Preferences ▸ Network ▸
+YouTube*): **Get cookies from browser** on Windows/Linux/macOS, **Log in
+to YouTube…** on Android, and manually exporting a `cookies.txt` file as
+a fallback everywhere.
 
-### Get cookies from browser (recommended)
+### Get cookies from browser (recommended on Windows/Linux/macOS)
 
 The **Get cookies from browser:** combo box lists Firefox, Chrome, Edge,
 Brave, Chromium, Opera, Safari, Vivaldi, and Whale. Pick your browser and
@@ -123,16 +124,45 @@ that goes stale.
   normally.
 - Selecting a browser here takes priority over the **Cookies file:** field
   below, when both are set.
-- **Not available on Android** — use the manual export method below
-  instead.
+- **Not available on Android** — see **Log in to YouTube** below instead.
 
-### Exporting cookies to a file (fallback, and the only option on Android)
+### Log in to YouTube (Android, recommended there)
+
+*Preferences ▸ Network ▸ YouTube* has a **Log in to YouTube…** button
+(next to the cookies file field) that opens a real sign-in page inside
+Vivace itself, using an embedded, OS-native WebView. Sign in with the
+account whose access you want to use, then tap **Save cookies** — Vivace
+reads the resulting session cookies and saves them as the active cookies
+file automatically. Tap **Close** once done. This is Android's equivalent
+of **Get cookies from browser** above: nothing to export, nothing to
+transfer from another device by hand.
+
+**Keep in mind:**
+
+- Android has no equivalent of a live desktop-browser cookie store to
+  read from at all (each app's storage is sandboxed from every other
+  app's), which is why this works differently from the desktop option —
+  signing in *inside* Vivace's own embedded browser is the practical
+  substitute.
+- Only available on Android; every other platform uses **Get cookies
+  from browser** instead.
+- The cookies file is a one-time snapshot taken the moment you tap **Save
+  cookies** — Vivace never reopens the sign-in page or contacts YouTube
+  on its own just to keep it fresh. From then on, every ordinary resolve/
+  download YouTube video updates the file with whatever newer session
+  cookies YouTube's own servers hand back during that request (the same
+  way a browser's cookie jar quietly refreshes itself from normal
+  browsing), so cookies from an account you use regularly tend to stay
+  valid a long time. If YouTube ever starts asking you to sign in again
+  (e.g. after a long period without using this feature), just repeat
+  **Log in to YouTube…** once to save a fresh snapshot.
+
+### Exporting cookies to a file (fallback on every platform)
 
 The **Cookies file:** field expects a plain-text `cookies.txt` file in the
 classic Netscape cookie-jar format (the same format yt-dlp's own
-`--cookies` option reads) — use this when the live-browser option above
-isn't available (Android) or doesn't work for your browser (Chrome/Edge on
-Windows).
+`--cookies` option reads) — use this when neither of the live options
+above is available or working for you (e.g. Chrome/Edge on Windows).
 
 **To create one:**
 
@@ -148,10 +178,12 @@ Windows).
 4. In Vivace, open *Preferences ▸ Network ▸ YouTube* and use **Browse…** next
    to **Cookies file:** to select that file.
 
-**On Android:** Chrome for Android does not support browser extensions, so
-steps 2–3 above can't be done on the device itself. Export `cookies.txt` on a
-desktop or laptop computer as described above, then transfer that file to
-your Android device (e.g. via cloud storage, a USB cable, or email) before
+**On Android:** prefer **Log in to YouTube…** above instead — it needs no
+export/transfer step at all. If you still want to do it this way, note that
+Chrome for Android does not support browser extensions, so steps 2–3 above
+can't be done on the device itself: export `cookies.txt` on a desktop or
+laptop computer as described above, then transfer that file to your
+Android device (e.g. via cloud storage, a USB cable, or email) before
 using **Browse…** in step 4.
 
 **Keep in mind:**

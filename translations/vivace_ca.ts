@@ -95,6 +95,24 @@
     </message>
 </context>
 <context>
+    <name>AndroidYoutubeLogin</name>
+    <message>
+        <location filename="../src/androidyoutubelogin.cpp" line="107"/>
+        <source>Embedded YouTube login is not available in this build.</source>
+        <translation>L&apos;inici de sessió incorporat de YouTube no està disponible en aquesta versió.</translation>
+    </message>
+    <message>
+        <location filename="../src/androidyoutubelogin.cpp" line="155"/>
+        <source>No YouTube login cookies were found. Make sure you finished signing in before closing the login window.</source>
+        <translation>No s&apos;ha trobat cap galeta d&apos;inici de sessió de YouTube. Assegureu-vos d&apos;haver acabat d&apos;iniciar la sessió abans de tancar la finestra d&apos;inici de sessió.</translation>
+    </message>
+    <message>
+        <location filename="../src/androidyoutubelogin.cpp" line="164"/>
+        <source>Could not write %1: %2</source>
+        <translation>No s&apos;ha pogut escriure %1: %2</translation>
+    </message>
+</context>
+<context>
     <name>BookmarksDialog</name>
     <message>
         <location filename="../qml/BookmarksDialog.qml" line="24"/>
@@ -931,32 +949,32 @@
     <message>
         <location filename="../qml/Main.qml" line="433"/>
         <location filename="../qml/Main.qml" line="486"/>
-        <location filename="../qml/Main.qml" line="2152"/>
-        <location filename="../qml/Main.qml" line="2280"/>
+        <location filename="../qml/Main.qml" line="2166"/>
+        <location filename="../qml/Main.qml" line="2294"/>
         <source>TV editor</source>
         <translation>Editor de TV</translation>
     </message>
     <message>
         <location filename="../qml/Main.qml" line="433"/>
         <location filename="../qml/Main.qml" line="486"/>
-        <location filename="../qml/Main.qml" line="2152"/>
-        <location filename="../qml/Main.qml" line="2280"/>
+        <location filename="../qml/Main.qml" line="2166"/>
+        <location filename="../qml/Main.qml" line="2294"/>
         <source>TV channels</source>
         <translation>Canals de TV</translation>
     </message>
     <message>
         <location filename="../qml/Main.qml" line="436"/>
         <location filename="../qml/Main.qml" line="489"/>
-        <location filename="../qml/Main.qml" line="2155"/>
-        <location filename="../qml/Main.qml" line="2283"/>
+        <location filename="../qml/Main.qml" line="2169"/>
+        <location filename="../qml/Main.qml" line="2297"/>
         <source>Radio editor</source>
         <translation>Editor de ràdio</translation>
     </message>
     <message>
         <location filename="../qml/Main.qml" line="436"/>
         <location filename="../qml/Main.qml" line="489"/>
-        <location filename="../qml/Main.qml" line="2155"/>
-        <location filename="../qml/Main.qml" line="2283"/>
+        <location filename="../qml/Main.qml" line="2169"/>
+        <location filename="../qml/Main.qml" line="2297"/>
         <source>Radio channels</source>
         <translation>Emissores de ràdio</translation>
     </message>
@@ -975,8 +993,8 @@
     <message>
         <location filename="../qml/Main.qml" line="444"/>
         <location filename="../qml/Main.qml" line="500"/>
-        <location filename="../qml/Main.qml" line="2166"/>
-        <location filename="../qml/Main.qml" line="2294"/>
+        <location filename="../qml/Main.qml" line="2180"/>
+        <location filename="../qml/Main.qml" line="2308"/>
         <source>Bookmark added</source>
         <translation>S&apos;ha afegit el marcador</translation>
     </message>
@@ -1017,7 +1035,7 @@
     </message>
     <message>
         <location filename="../qml/Main.qml" line="757"/>
-        <location filename="../qml/Main.qml" line="1906"/>
+        <location filename="../qml/Main.qml" line="1919"/>
         <source>Cancel</source>
         <translation>Cancel·la</translation>
     </message>
@@ -1069,7 +1087,7 @@
     <message>
         <location filename="../qml/Main.qml" line="1428"/>
         <location filename="../qml/Main.qml" line="1498"/>
-        <location filename="../qml/Main.qml" line="1825"/>
+        <location filename="../qml/Main.qml" line="1838"/>
         <source>All files (*)</source>
         <translation>Tots els fitxers (*)</translation>
     </message>
@@ -1123,125 +1141,125 @@
         <translation>Ha fallat la baixada: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1726"/>
+        <location filename="../qml/Main.qml" line="1739"/>
         <source>Saved %1 file(s); %2 failed.</source>
         <translation>%1 fitxer(s) desat(s); %2 han fallat.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1730"/>
+        <location filename="../qml/Main.qml" line="1743"/>
         <source>Saved %1 file(s).</source>
         <translation>%1 fitxer(s) desat(s).</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1743"/>
+        <location filename="../qml/Main.qml" line="1756"/>
         <source>Could not read the shortcut file.</source>
         <translation>No s&apos;ha pogut llegir el fitxer de drecera.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1778"/>
+        <location filename="../qml/Main.qml" line="1791"/>
         <source>Starting download…</source>
         <translation>S&apos;està iniciant la baixada…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1763"/>
-        <location filename="../qml/Main.qml" line="1779"/>
+        <location filename="../qml/Main.qml" line="1776"/>
+        <location filename="../qml/Main.qml" line="1792"/>
         <source>Downloading video (this can take a while)…</source>
         <translation>S&apos;està baixant el vídeo (això pot trigar una estona)…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1759"/>
+        <location filename="../qml/Main.qml" line="1772"/>
         <source>YouTube playback isn&apos;t supported on this device.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1766"/>
-        <location filename="../qml/Main.qml" line="1783"/>
+        <location filename="../qml/Main.qml" line="1779"/>
+        <location filename="../qml/Main.qml" line="1796"/>
         <source>Resolving with yt-dlp…</source>
         <translation>S&apos;està resolent amb yt-dlp…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1820"/>
+        <location filename="../qml/Main.qml" line="1833"/>
         <source>Load subtitle file</source>
         <translation>Carrega un fitxer de subtítols</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1824"/>
+        <location filename="../qml/Main.qml" line="1837"/>
         <source>Subtitle files (*.srt *.vtt *.ass *.ssa)</source>
         <translation>Fitxers de subtítols (*.srt *.vtt *.ass *.ssa)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1832"/>
+        <location filename="../qml/Main.qml" line="1845"/>
         <source>Subtitle delay</source>
         <translation>Retard dels subtítols</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1883"/>
+        <location filename="../qml/Main.qml" line="1896"/>
         <source>Delay:</source>
         <translation>Retard:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1889"/>
-        <location filename="../qml/Main.qml" line="1979"/>
+        <location filename="../qml/Main.qml" line="1902"/>
+        <location filename="../qml/Main.qml" line="1992"/>
         <source>ms</source>
         <translation>ms</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1899"/>
+        <location filename="../qml/Main.qml" line="1912"/>
         <source>OK</source>
         <translation>D&apos;ac&amp;ord</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1918"/>
+        <location filename="../qml/Main.qml" line="1931"/>
         <source>Audio delay — Vivace</source>
         <translation>Retard de l&apos;àudio — Vivace</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1967"/>
+        <location filename="../qml/Main.qml" line="1980"/>
         <source>No delay for this file (use the global delay only)</source>
         <translation>Sense retard per a aquest fitxer (usa només el retard global)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1972"/>
+        <location filename="../qml/Main.qml" line="1985"/>
         <source>This file&apos;s delay:</source>
         <translation>Retard d&apos;aquest fitxer:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1987"/>
+        <location filename="../qml/Main.qml" line="2000"/>
         <source>The delay applied to this file is this value plus the global delay for the current audio device (%1 ms), set in Preferences &gt; General &gt; Audio. Negative values delay the video to match audio that arrives late (e.g. Bluetooth headphones).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2000"/>
+        <location filename="../qml/Main.qml" line="2013"/>
         <source>&amp;Apply</source>
         <translation>&amp;Aplica</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2009"/>
+        <location filename="../qml/Main.qml" line="2022"/>
         <source>&amp;Close</source>
         <translation>Tan&amp;ca</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2094"/>
+        <location filename="../qml/Main.qml" line="2108"/>
         <source>Hide window</source>
         <translation>Amaga la finestra</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2094"/>
+        <location filename="../qml/Main.qml" line="2108"/>
         <source>Show window</source>
         <translation>Mostra la finestra</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2099"/>
+        <location filename="../qml/Main.qml" line="2113"/>
         <source>Play / Pause</source>
         <translation>Reprodueix / Pausa</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2103"/>
+        <location filename="../qml/Main.qml" line="2117"/>
         <source>Stop</source>
         <translation>Atura</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2108"/>
+        <location filename="../qml/Main.qml" line="2122"/>
         <source>Quit</source>
         <translation>&amp;Surt</translation>
     </message>
@@ -3680,531 +3698,550 @@
 <context>
     <name>PrefNetworkPage</name>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="105"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="135"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="117"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="147"/>
         <source>OpenSubtitles</source>
         <translation>OpenSubtitles</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="108"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="120"/>
         <source>YouTube</source>
         <translation>YouTube</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="116"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="840"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="128"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="873"/>
         <source>Cast</source>
         <translation>Transmissió</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="145"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="157"/>
         <source>API key:</source>
         <translation>Clau d&apos;API:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="146"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="158"/>
         <source>A free per-application key from opensubtitles.com (create an API consumer); subtitle search will not work until this is set.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="151"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="163"/>
         <source>from opensubtitles.com → API consumers</source>
         <translation>des d&apos;opensubtitles.com → API consumers</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="156"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="792"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="168"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="825"/>
         <source>Username:</source>
         <translation>Nom d&apos;&amp;usuari:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="157"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="169"/>
         <source>Optional opensubtitles.com account login; signing in is not required but raises the daily download limit.</source>
         <translation>Inici de sessió opcional amb un compte d&apos;opensubtitles.com; no és obligatori, però augmenta el límit diari de baixades.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="164"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="798"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="176"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="831"/>
         <source>Password:</source>
         <translation>Contra&amp;senya:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="179"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="191"/>
         <source>The account password is stored securely using your operating system&apos;s credential manager.</source>
         <translation>La contrasenya del compte es desa de manera segura mitjançant el gestor de credencials del sistema operatiu.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="115"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="749"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="127"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="782"/>
         <source>Proxy</source>
         <translation>Servidor intermediari</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="37"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="38"/>
         <source>PO token provider installed.</source>
         <translation>El proveïdor de token PO s&apos;ha instal·lat.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="42"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="54"/>
         <source>&lt;h1&gt;Network&lt;/h1&gt;&lt;p&gt;&lt;b&gt;OpenSubtitles&lt;/b&gt; search uses the REST API, which requires a free per-application API key: register at opensubtitles.com, create an API consumer, and paste the key here. An account login (username and password) is optional but raises the daily download limit.&lt;/p&gt;&lt;p&gt;&lt;b&gt;YouTube&lt;/b&gt;: the optional resolver uses an external yt-dlp program — when enabled, opening a YouTube URL runs yt-dlp to obtain a directly-playable stream. Vivace offers to install yt-dlp for you the first time you turn this on (or point it at your own copy with the path field below), and can keep it updated on its own per the &quot;Update yt-dlp automatically&quot; setting. Because QMediaPlayer plays a single muxed stream, streaming tops out at the best progressive format (about 720p on YouTube). Cookies are deliberately NOT used for streaming: an authenticated (cookie) session returns URLs a plain player cannot open.&lt;/p&gt;&lt;p&gt;For &lt;b&gt;HD&lt;/b&gt; (and for cookies), enable download mode, or point the external downloader at your own tool (a program or .bat/.cmd). HD formats are separate video and audio streams that cannot be streamed muxed, so Vivace runs yt-dlp (or your tool) to download and merge the video, then plays the file it writes into the download folder. Download mode also needs Deno, a further external program yt-dlp itself uses to solve YouTube&apos;s JavaScript challenges — without it, a signed-in (cookie) request, exactly what HD downloads rely on, sees severely limited format availability. Streaming mode, which never sends cookies, is largely unaffected and doesn&apos;t need Deno. Install Deno yourself and, if it is not on the PATH, set its full path in the Download &amp; play settings.&lt;/p&gt;&lt;p&gt;Recent YouTube videos increasingly require a &lt;b&gt;PO token&lt;/b&gt; just to play at all — a general playability requirement, unrelated to cookies/login, that shows up as yt-dlp reporting the video as unavailable. &lt;b&gt;Install PO token provider…&lt;/b&gt; sets up the community &quot;BgUtils POT Provider&quot;: a small yt-dlp plugin plus a script (built with Deno, the same program used above) that yt-dlp runs on demand to generate a token. It applies to both streaming and downloading.&lt;/p&gt;&lt;p&gt;Since YouTube shortened its own cookie lifetimes, an exported cookies.txt file can go stale within days. &lt;b&gt;Get cookies from browser&lt;/b&gt; reads them live from an installed browser instead, so there&apos;s nothing to re-export. On Windows, only Firefox works here — Chrome/Edge&apos;s own &quot;App-Bound Encryption&quot; blocks every external tool, including yt-dlp, from reading their cookies at all; Linux and macOS Chrome/Edge are unaffected.&lt;/p&gt;&lt;p&gt;See &lt;b&gt;Help ▸ Contents ▸ Options&lt;/b&gt; for step-by-step instructions on exporting a cookies.txt file from your browser, and on installing Deno.&lt;/p&gt;&lt;p&gt;The stream &lt;b&gt;connection timeout&lt;/b&gt; (used mainly by live TV tuners) has moved to &lt;i&gt;Preferences ▸ TV and radio&lt;/i&gt;.&lt;/p&gt;&lt;p&gt;The &lt;b&gt;Proxy&lt;/b&gt; tab applies application-wide: both HTTP and SOCKS5 cover OpenSubtitles search and the update check; only HTTP additionally covers media playback and yt-dlp (they read the http_proxy/https_proxy convention directly instead of going through Qt&apos;s network stack, and there is no SOCKS5 equivalent for that convention).&lt;/p&gt;&lt;p&gt;The &lt;b&gt;Cast&lt;/b&gt; tab sets the port Play ▸ Cast… listens on. It&apos;s here (rather than only in the Cast dialog) so it stays fixed — set it once, allow that port through your firewall/router once, and casting keeps working without a new firewall prompt every time.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="805"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="473"/>
+        <source>Optional cookies.txt; unlocks HD, members-only and age-restricted videos. Safe here — cookies only affect the download, not a stream a player must open. &quot;Log in to YouTube…&quot; below fills this in for you automatically — use it instead of exporting cookies.txt from a desktop browser and transferring it here by hand.</source>
+        <translation>cookies.txt opcional; desbloqueja vídeos en HD, exclusius per a membres i amb restricció d&apos;edat. Segur aquí — les galetes només afecten la baixada, no un flux que un reproductor hagi d&apos;obrir. &quot;Inicia la sessió a YouTube…&quot; a continuació ho emplena automàticament per vosaltres — utilitzeu-ho en lloc d&apos;exportar cookies.txt des d&apos;un navegador d&apos;escriptori i transferir-lo aquí manualment.</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="508"/>
+        <source>Opens a sign-in page inside Vivace itself and saves the resulting session as the cookies file above — Android&apos;s equivalent of exporting cookies.txt from a desktop browser, with no separate export/transfer step. Sign in with the YouTube account whose access you want to use, then tap &quot;Save cookies&quot;, then &quot;Close&quot;.</source>
+        <translation>Obre una pàgina d'inici de sessió dins del mateix Vivace i desa la sessió resultant com el fitxer de galetes de dalt — l'equivalent a Android d'exportar cookies.txt des d'un navegador d'escriptori, sense cap pas separat d'exportació/transferència. Inicieu la sessió amb el compte de YouTube l'accés del qual vulgueu utilitzar i, després, toqueu "Desa les galetes" i "Tanca".</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="838"/>
         <source>Type:</source>
         <translation>&amp;Tipus:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="779"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="812"/>
         <source>Host:</source>
         <translation>Am&amp;fitrió:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="785"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="850"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="818"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="883"/>
         <source>Port:</source>
         <translation>&amp;Port:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="198"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="210"/>
         <source>YouTube (yt-dlp)</source>
         <translation>YouTube (yt-dlp)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="218"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="230"/>
         <source>Play YouTube URLs with yt-dlp</source>
         <translation>Reprodueix els URL de YouTube amb yt-dlp</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="222"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="234"/>
         <source>When on, opening a YouTube URL runs yt-dlp instead of trying to play the page URL as-is.</source>
         <translation>Quan està activat, obrir un URL de YouTube executa yt-dlp en lloc d&apos;intentar reproduir l&apos;URL de la pàgina tal com és.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="235"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="247"/>
         <source>Open YouTube URLs by:</source>
         <translation>Obre els URL de YouTube mitjançant:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="236"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="248"/>
         <source>Streaming is fastest but caps at ~720p and can&apos;t use cookies. Downloading gets full HD (uses cookies + ffmpeg), then plays and deletes the file. Or hand off to your own external downloader tool.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="257"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="261"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="269"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="273"/>
         <source>Streaming (fast, up to ~720p)</source>
         <translation>Reproducció en flux (ràpid, fins a ~720p)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="258"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="262"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="270"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="274"/>
         <source>Downloading then playing (HD, cookies)</source>
         <translation>Baixa i després reprodueix (HD, galetes)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="263"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="275"/>
         <source>An external downloader tool</source>
         <translation>Una eina de baixada externa</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="274"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="286"/>
         <source>Use managed yt-dlp</source>
         <translation>Utilitza yt-dlp gestionat</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="292"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="304"/>
         <source>When on, Vivace installs yt-dlp for you (see the button here) and can keep it updated automatically below. Turn this off to point at your own yt-dlp instead -- Vivace will not install or auto-update it.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="300"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="312"/>
         <source>Install / Update yt-dlp…</source>
         <translation>Instal·la / actualitza yt-dlp…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="310"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="322"/>
         <source>PO token provider:</source>
         <translation>Proveïdor de token PO:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="311"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="323"/>
         <source>Recent YouTube videos increasingly require a &quot;PO token&quot; just to play at all, even with no login involved -- without one, yt-dlp reports the video as unavailable. Installs the community &quot;BgUtils POT Provider&quot; (a small yt-dlp plugin plus a script run on demand via Deno, which Vivace already uses above) so yt-dlp can generate one automatically. Applies to both streaming and downloading.</source>
         <translation>Els vídeos recents de YouTube cada vegada requereixen més sovint un &quot;token PO&quot; només per poder-se reproduir, fins i tot sense haver iniciat sessió -- sense un, el yt-dlp informa que el vídeo no està disponible. Instal·la el projecte de la comunitat &quot;BgUtils POT Provider&quot; (un petit connector de yt-dlp més un script executat a petició mitjançant Deno, que el Vivace ja utilitza més amunt) perquè el yt-dlp en pugui generar un automàticament. S&apos;aplica tant a la reproducció en flux com a la baixada.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="325"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="337"/>
         <source>Installing…</source>
         <translation>S&apos;està instal·lant…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="327"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="339"/>
         <source>Reinstall / Update PO token provider…</source>
         <translation>Reinstal·la / actualitza el proveïdor de token PO…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="328"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="340"/>
         <source>Install PO token provider…</source>
         <translation>Instal·la el proveïdor de token PO…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="349"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="361"/>
         <source>yt-dlp path:</source>
         <translation>Camí de yt-dlp:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="350"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="362"/>
         <source>Leave as &quot;yt-dlp&quot; if it is on your system PATH; otherwise enter the full path to the yt-dlp executable.</source>
         <translation>Deixeu &quot;yt-dlp&quot; si és al PATH del sistema; altrament, introduïu el camí complet a l&apos;executable yt-dlp.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="356"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="368"/>
         <source>yt-dlp (on PATH) or a full path</source>
         <translation>yt-dlp (al PATH) o un camí complet</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="362"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="374"/>
         <source>Update yt-dlp automatically:</source>
         <translation>Actualitza yt-dlp automàticament:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="363"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="375"/>
         <source>Runs yt-dlp&apos;s own self-update before playing a YouTube video. &quot;Every time&quot; adds a short delay to each play; the daily/weekly options check only that often. Failures (e.g. no network) are ignored and playback proceeds with whatever version is installed. Only applies to a managed yt-dlp.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="377"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="389"/>
         <source>Never</source>
         <translation>Mai</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="378"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="390"/>
         <source>Every time yt-dlp runs</source>
         <translation>Cada vegada que s&apos;executa yt-dlp</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="379"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="391"/>
         <source>Once a day</source>
         <translation>Un cop al dia</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="380"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="392"/>
         <source>Once a week</source>
         <translation>Un cop a la setmana</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="387"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="399"/>
         <source>Maximum quality:</source>
         <translation>Qualitat màxima:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="388"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="400"/>
         <source>Upper limit on resolution. Streaming is capped at ~720p regardless; downloading can reach this height in full HD.</source>
         <translation>Límit superior de resolució. La reproducció en flux es limita a ~720p de tota manera; la baixada pot arribar a aquesta alçada en HD complet.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="398"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="410"/>
         <source>360p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="399"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="411"/>
         <source>480p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="400"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="412"/>
         <source>720p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="401"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="413"/>
         <source>1080p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="402"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="414"/>
         <source>1440p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="403"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="415"/>
         <source>2160p (4K)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="404"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="416"/>
         <source>Best available</source>
         <translation>La millor disponible</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="419"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="431"/>
         <source>yt-dlp is a separate program and is not bundled with Vivace.</source>
         <translation>yt-dlp és un programa a part i no s&apos;inclou amb el Vivace.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="425"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="437"/>
         <source>Download &amp; play</source>
         <translation>Baixa i reprodueix</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="445"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="457"/>
         <source>Downloads the video (merging HD video and audio with ffmpeg), plays it, and keeps it in a cache folder so replaying it is instant. The cache holds the most recent downloads up to the size below; older ones are removed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="459"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="471"/>
         <source>Cookies file:</source>
         <translation>Fitxer de galetes:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="461"/>
-        <source>Optional cookies.txt exported from your browser (yt-dlp --cookies); unlocks HD, members-only and age-restricted videos. Safe here — cookies only affect the download, not a stream a player must open. A copy is kept in Vivace&apos;s own storage, since Android can&apos;t reopen the original file location directly — browse again here after re-exporting it from your browser.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="470"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="481"/>
         <source>Optional cookies.txt exported from your browser (yt-dlp --cookies); unlocks HD, members-only and age-restricted videos. Safe here — cookies only affect the download, not a stream a player must open. See Help ▸ Contents ▸ Options for step-by-step export instructions.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="484"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="495"/>
         <source>optional cookies.txt</source>
         <translation>cookies.txt (opcional)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="487"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="555"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="498"/>
         <location filename="../qml/PrefNetworkPage.qml" line="588"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="617"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="693"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="729"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="621"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="650"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="726"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="762"/>
         <source>Browse…</source>
         <translation>Navega…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="493"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="507"/>
+        <source>Log in to YouTube:</source>
+        <translation>Inicia la sessió a YouTube:</translation>
+    </message>
+    <message>
+        <source>Opens a sign-in page inside Vivace itself and saves the resulting session as the cookies file above — Android&apos;s equivalent of exporting cookies.txt from a desktop browser, with no separate export/transfer step. Sign in with the YouTube account whose access you want to use, then tap &quot;I&apos;m signed in&quot;.</source>
+        <translation type="vanished">Obre una pàgina d&apos;inici de sessió dins del mateix Vivace i desa la sessió resultant com el fitxer de galetes de dalt — l&apos;equivalent a Android d&apos;exportar cookies.txt des d&apos;un navegador d&apos;escriptori, sense cap pas separat d&apos;exportació/transferència. Inicieu la sessió amb el compte de YouTube l&apos;accés del qual vulgueu utilitzar i, després, toqueu &quot;He iniciat la sessió&quot;.</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="518"/>
+        <source>Log in to YouTube…</source>
+        <translation>Inicia la sessió a YouTube…</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="526"/>
         <source>Get cookies from browser:</source>
         <translation>Obtenir galetes des del navegador:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="494"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="527"/>
         <source>Reads cookies live from an installed browser instead of the file above — recommended, since YouTube&apos;s cookie lifetimes are now much shorter, making an exported cookies.txt go stale within days. Takes priority over the cookies file when set. On Windows, only Firefox actually works here: Chrome/Edge encrypt cookies in a way tied to the browser&apos;s own binary (&quot;App-Bound Encryption&quot;), which blocks yt-dlp (and every other external tool) from reading them at all — this is a Chrome-side restriction yt-dlp&apos;s own developers can&apos;t work around. Linux and macOS Chrome/Edge are unaffected.</source>
         <translation>Llegeix les galetes en directe des d&apos;un navegador instal·lat en lloc del fitxer de dalt — recomanat, ja que la durada de les galetes de YouTube ara és molt més curta, cosa que fa que un cookies.txt exportat quedi obsolet en pocs dies. Té prioritat sobre el fitxer de galetes quan està establert. A Windows, aquí només funciona realment el Firefox: Chrome/Edge xifren les galetes d&apos;una manera vinculada al propi executable del navegador (&quot;App-Bound Encryption&quot;), la qual cosa impedeix que yt-dlp (i qualsevol altra eina externa) les pugui llegir en absolut — es tracta d&apos;una restricció del costat de Chrome que els mateixos desenvolupadors de yt-dlp no poden evitar. El Chrome/Edge de Linux i macOS no es veuen afectats.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="518"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="551"/>
         <source>Off (use the cookies file above)</source>
         <translation>Desactivat (utilitza el fitxer de galetes de dalt)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="519"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="552"/>
         <source>Firefox (recommended)</source>
         <translation>Firefox (recomanat)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="520"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="553"/>
         <source>Chrome</source>
         <translation>Chrome</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="521"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="554"/>
         <source>Edge</source>
         <translation>Edge</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="522"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="555"/>
         <source>Brave</source>
         <translation>Brave</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="523"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="556"/>
         <source>Chromium</source>
         <translation>Chromium</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="524"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="557"/>
         <source>Opera</source>
         <translation>Opera</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="525"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="558"/>
         <source>Safari</source>
         <translation>Safari</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="526"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="559"/>
         <source>Vivaldi</source>
         <translation>Vivaldi</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="527"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="560"/>
         <source>Whale</source>
         <translation>Whale</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="540"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="573"/>
         <source>ffmpeg location:</source>
         <translation>Ubicació de ffmpeg:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="541"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="574"/>
         <source>Folder containing ffmpeg (yt-dlp needs it to merge HD video+audio). Leave empty to use ffmpeg from the system PATH.</source>
         <translation>Carpeta que conté ffmpeg (yt-dlp el necessita per combinar vídeo i àudio HD). Deixeu-ho buit per usar ffmpeg del PATH del sistema.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="552"/>
         <location filename="../qml/PrefNetworkPage.qml" line="585"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="618"/>
         <source>empty = use PATH</source>
         <translation>buit = usa el PATH</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="565"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="598"/>
         <source>Deno path:</source>
         <translation>Camí de Deno:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="566"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="599"/>
         <source>yt-dlp uses a separate program, Deno, to solve YouTube&apos;s JavaScript challenges. It&apos;s most needed here: a signed-in (cookie) request — exactly what unlocks HD above — sees severely limited format availability without it. Streaming mode, which never sends cookies, is largely unaffected. Leave empty if &quot;deno&quot; is already on your system PATH; otherwise enter the full path to the deno executable. See Help ▸ Contents ▸ Options for installation instructions.</source>
         <translation>yt-dlp utilitza un programa separat, Deno, per resoldre els reptes de JavaScript de YouTube. És on més falta fa: una sol·licitud autenticada (amb cookies) — exactament el que desbloqueja l&apos;HD anterior — té una disponibilitat de formats molt limitada sense ell. El mode de transmissió, que mai envia cookies, gairebé no se&apos;n veu afectat. Deixeu-ho en blanc si «deno» ja és al PATH del sistema; en cas contrari, introduïu el camí complet a l&apos;executable de deno. Vegeu Ajuda ▸ Sumari ▸ Opcions per obtenir instruccions d&apos;instal·lació.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="603"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="636"/>
         <source>Cache folder:</source>
         <translation>Carpeta de memòria cau:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="604"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="637"/>
         <source>Where downloaded videos are kept for reuse. A video already here is replayed without downloading again.</source>
         <translation>On es guarden els vídeos baixats per reutilitzar-los. Un vídeo que ja hi és es reprodueix sense tornar-lo a baixar.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="622"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="655"/>
         <source>Cache size:</source>
         <translation>Mida de la memòria cau:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="623"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="656"/>
         <source>How many downloaded videos to keep. When the limit is reached, the least-recently-played one is deleted.</source>
         <translation>Quants vídeos baixats s&apos;han de conservar. En assolir el límit, s&apos;elimina el reproduït menys recentment.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="634"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="667"/>
         <source>files</source>
         <translation>fitxers</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="640"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="673"/>
         <source>Thumbnail fallback at:</source>
         <translation>Miniatura alternativa a:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="641"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="674"/>
         <source>The cache thumbnail is normally YouTube&apos;s own poster image. Only if that is missing or black does Vivace grab a video frame — this is how many seconds in (past a black intro).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="654"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="687"/>
         <source>seconds</source>
         <translation>segons</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="664"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="697"/>
         <source>External downloader tool</source>
         <translation>Eina de baixada externa</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="679"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="712"/>
         <source>Downloader command:</source>
         <translation>Ordre de baixada:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="680"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="713"/>
         <source>The program or .bat/.cmd script that downloads the video; it receives the URL as an argument.</source>
         <translation>El programa o script .bat/.cmd que baixa el vídeo; rep l&apos;URL com a argument.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="690"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="723"/>
         <source>e.g. C:ToolsYouTubeDL.bat</source>
         <translation>p. ex. C:\Tools\YouTubeDL.bat</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="698"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="731"/>
         <source>Arguments:</source>
         <translation>Arguments:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="699"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="732"/>
         <source>Arguments passed to the tool; the token {url} is replaced by the video URL (if omitted, the URL is appended). Add any cookies/format flags your tool needs here, e.g. --cookies C:pathcookies.txt.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="714"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="747"/>
         <source>Download folder:</source>
         <translation>Carpeta de baixades:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="715"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="748"/>
         <source>The folder the tool writes the finished file into; Vivace plays the newest media file that appears there, so set it to match your tool&apos;s output folder.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="726"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="759"/>
         <source>your tool&apos;s output folder</source>
         <translation>carpeta de sortida de la vostra eina</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="759"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="792"/>
         <source>Enable proxy</source>
         <translation>Habilita el servidor intermediari</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="763"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="796"/>
         <source>Applies to OpenSubtitles search and the update check (both proxy types). Only an HTTP proxy also applies to media playback and yt-dlp — a SOCKS5 proxy does not reach either, since neither goes through Qt&apos;s network stack.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="821"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="854"/>
         <source>The proxy password is stored securely using your operating system&apos;s credential manager.</source>
         <translation>La contrasenya del servidor intermediari es desa de manera segura mitjançant el gestor de credencials del sistema operatiu.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="851"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="884"/>
         <source>The port Play ▸ Cast… listens on. Kept fixed here (rather than editable each time in the Cast dialog) so you can allow it through your firewall/router once and it keeps working.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="872"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="905"/>
         <source>Your OS&apos;s firewall (and most routers) block an app listening on a fresh port until you allow it. Pick a port once here, allow Vivace through your firewall for it, and Cast will keep working without a new prompt each time.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="887"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="920"/>
         <source>Select the cookies.txt file</source>
         <translation>Seleccioneu el fitxer cookies.txt</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="916"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="949"/>
         <source>Select the deno executable</source>
         <translation>Seleccioneu l&apos;executable de deno</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="922"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="955"/>
         <source>Select the folder containing ffmpeg</source>
         <translation>Seleccioneu la carpeta que conté ffmpeg</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="927"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="960"/>
         <source>Select the download cache folder</source>
         <translation>Seleccioneu la carpeta de memòria cau de baixades</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="932"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="965"/>
         <source>Select the downloader program</source>
         <translation>Seleccioneu el programa de baixada</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="938"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="971"/>
         <source>Select the download folder</source>
         <translation>Seleccioneu la carpeta de baixades</translation>
     </message>
@@ -4790,102 +4827,102 @@
 <context>
     <name>PreferencesDialog</name>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="27"/>
+        <location filename="../qml/PreferencesDialog.qml" line="28"/>
         <source>Preferences</source>
         <translation>Preferències</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="101"/>
+        <location filename="../qml/PreferencesDialog.qml" line="102"/>
         <source>&lt;h1&gt;Help&lt;/h1&gt;&lt;p&gt;No help is available for this section.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="192"/>
+        <location filename="../qml/PreferencesDialog.qml" line="193"/>
         <source>General</source>
         <translation>General</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="193"/>
+        <location filename="../qml/PreferencesDialog.qml" line="194"/>
         <source>Drives</source>
         <translation>Unitats</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="194"/>
+        <location filename="../qml/PreferencesDialog.qml" line="195"/>
         <source>Subtitles</source>
         <translation>Subtítols</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="195"/>
+        <location filename="../qml/PreferencesDialog.qml" line="196"/>
         <source>Interface</source>
         <translation>Interfície</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="196"/>
+        <location filename="../qml/PreferencesDialog.qml" line="197"/>
         <source>Toolbars</source>
         <translation>Barres d&apos;eines</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="197"/>
+        <location filename="../qml/PreferencesDialog.qml" line="198"/>
         <source>Keyboard and mouse</source>
         <translation>Teclat i ratolí</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="198"/>
+        <location filename="../qml/PreferencesDialog.qml" line="199"/>
         <source>Playlist</source>
         <translation>Llista de reproducció</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="199"/>
+        <location filename="../qml/PreferencesDialog.qml" line="200"/>
         <source>TV and radio</source>
         <translation>TV i ràdio</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="200"/>
+        <location filename="../qml/PreferencesDialog.qml" line="201"/>
         <source>File types</source>
         <translation>Tipus de fitxers</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="201"/>
+        <location filename="../qml/PreferencesDialog.qml" line="202"/>
         <source>Updates</source>
         <translation>Actualitzacions</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="202"/>
+        <location filename="../qml/PreferencesDialog.qml" line="203"/>
         <source>Network</source>
         <translation>Xarxa</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="203"/>
+        <location filename="../qml/PreferencesDialog.qml" line="204"/>
         <source>Advanced</source>
         <translation>Avançat</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="281"/>
+        <location filename="../qml/PreferencesDialog.qml" line="283"/>
         <source>&amp;Help</source>
         <translation>&amp;Ajuda</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="286"/>
+        <location filename="../qml/PreferencesDialog.qml" line="288"/>
         <source>OK</source>
         <translation>D&apos;ac&amp;ord</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="290"/>
+        <location filename="../qml/PreferencesDialog.qml" line="292"/>
         <source>Apply</source>
         <translation>Aplica</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="296"/>
+        <location filename="../qml/PreferencesDialog.qml" line="298"/>
         <source>Cancel</source>
         <translation>Cancel·la</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="305"/>
+        <location filename="../qml/PreferencesDialog.qml" line="307"/>
         <source>Vivace — Help</source>
         <translation>Vivace — Ajuda</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="369"/>
+        <location filename="../qml/PreferencesDialog.qml" line="371"/>
         <source>Close</source>
         <translation>Tanca</translation>
     </message>
@@ -5330,6 +5367,56 @@
         <location filename="../qml/VideoEqualizerDialog.qml" line="224"/>
         <source>OK</source>
         <translation>D&apos;ac&amp;ord</translation>
+    </message>
+</context>
+<context>
+    <name>YoutubeLoginDialog</name>
+    <message>
+        <location filename="../qml/YoutubeLoginDialog.qml" line="54"/>
+        <source>Log in to YouTube</source>
+        <translation>Inicia la sessió a YouTube</translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../qml/YoutubeLoginDialog.qml" line="87"/>
+        <source>%n cookie(s) saved — tap “Close” to finish.</source>
+        <translation>
+            <numerusform>%n galeta desada — toqueu «Tanca» per acabar.</numerusform>
+            <numerusform>%n galetes desades — toqueu «Tanca» per acabar.</numerusform>
+        </translation>
+    </message>
+    <message>
+        <location filename="../qml/YoutubeLoginDialog.qml" line="115"/>
+        <source>Sign in below, then tap “Save cookies”, then “Close”.</source>
+        <translation>Inicieu la sessió a continuació i, després, toqueu «Desa les galetes» i «Tanca».</translation>
+    </message>
+    <message>
+        <location filename="../qml/YoutubeLoginDialog.qml" line="118"/>
+        <source>Save cookies</source>
+        <translation>Desa les galetes</translation>
+    </message>
+    <message>
+        <location filename="../qml/YoutubeLoginDialog.qml" line="125"/>
+        <source>Close</source>
+        <translation>Tanca</translation>
+    </message>
+    <message numerus="yes">
+        <source>Signed in — %n cookie(s) saved.</source>
+        <translation type="vanished">
+            <numerusform>Sessió iniciada — %n galeta desada.</numerusform>
+            <numerusform>Sessió iniciada — %n galetes desades.</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>Sign in below, then tap “I’m signed in”.</source>
+        <translation type="vanished">Inicieu la sessió a continuació i, després, toqueu «He iniciat la sessió».</translation>
+    </message>
+    <message>
+        <source>I’m signed in</source>
+        <translation type="vanished">He iniciat la sessió</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="vanished">Cancel·la</translation>
     </message>
 </context>
 <context>

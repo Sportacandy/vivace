@@ -109,13 +109,13 @@ tarpeen.
 YouTube-tilat **Lataa ja toista** ja **ulkoinen työkalu** voivat toimia
 ikään kuin olisit kirjautunut sisään — tarpeen ikärajoitetuille, vain
 jäsenille tarkoitetuille tai muuten tiliin sidotuille videoille, ja se on
-myös se, mikä avaa täydet HD/4K-lataukset. Vivace tukee kahta tapaa
-antaa evästeet (molemmat kohdassa *Asetukset ▸ Verkko ▸ YouTube ▸ Lataa
-ja toista*); Windowsissa/Linuxissa/macOS:ssä **Hae evästeet selaimesta**
-on se, jota kannattaa käyttää, ellei se toimi juuri sinun
-asennuksessasi.
+myös se, mikä avaa täydet HD/4K-lataukset. Vivace tukee kolmea tapaa
+antaa evästeet (kaikki kohdassa *Asetukset ▸ Verkko ▸ YouTube*): **Hae
+evästeet selaimesta** Windowsissa/Linuxissa/macOS:ssä, **Kirjaudu
+YouTubeen…** Androidissa, ja `cookies.txt`-tiedoston manuaalinen vienti
+varavaihtoehtona kaikkialla.
 
-### Hae evästeet selaimesta (suositeltu)
+### Hae evästeet selaimesta (suositeltu Windowsissa/Linuxissa/macOS:ssä)
 
 Yhdistelmäruutu **Hae evästeet selaimesta:** listaa Firefoxin, Chromen,
 Edgen, Braven, Chromiumin, Operan, Safarin, Vivaldin ja Whalen. Valitse
@@ -138,16 +138,38 @@ mitään vietävää, ei mitään vanhenevaa.
   toimivat normaalisti.
 - Selaimen valitseminen tässä ohittaa alla olevan **Evästetiedosto:**
   -kentän, kun molemmat on asetettu.
-- **Ei saatavilla Androidissa** — käytä sen sijaan alla olevaa manuaalista
-  vientitapaa.
+- **Ei saatavilla Androidissa** — katso sen sijaan alta **Kirjaudu
+  YouTubeen**.
 
-### Evästeiden vieminen tiedostoon (varavaihtoehto, ja Androidin ainoa vaihtoehto)
+### Kirjaudu YouTubeen (Android, suositeltu siellä)
+
+Kohdassa *Asetukset ▸ Verkko ▸ YouTube* on **Kirjaudu YouTubeen…**
+-painike (evästetiedostokentän vieressä), joka avaa oikean
+kirjautumissivun Vivacen sisällä käyttäen upotettua, käyttöjärjestelmän
+omaa WebView-näkymää. Kirjaudu sillä tilillä, jonka käyttöoikeuksia
+haluat käyttää, ja napauta sitten **Olen kirjautunut sisään** — Vivace
+lukee syntyneet istuntoevästeet ja tallentaa ne automaattisesti
+aktiiviseksi evästetiedostoksi. Tämä vastaa Androidilla yllä olevaa
+**Hae evästeet selaimesta** -toimintoa: ei mitään vietävää, ei mitään
+siirrettävää toiselta laitteelta käsin.
+
+**Muista:**
+
+- Androidissa ei ole lainkaan vastinetta työpöytäselaimen aktiiviselle
+  evästevarastolle, josta lukea (jokaisen sovelluksen tallennustila on
+  eristetty muiden sovellusten tallennustilasta), minkä vuoksi tämä
+  toimii eri tavalla kuin työpöytävaihtoehto — kirjautuminen Vivacen
+  omaan upotettuun selaimeen *sisällä* on käytännön korvike.
+- Saatavilla vain Androidissa; kaikki muut alustat käyttävät **Hae
+  evästeet selaimesta** -toimintoa.
+
+### Evästeiden vieminen tiedostoon (varavaihtoehto kaikilla alustoilla)
 
 Kenttä **Evästetiedosto:** odottaa pelkkää tekstitiedostoa,
 `cookies.txt`, klassisessa Netscape-evästemuodossa (sama muoto, jota
-yt-dlpin oma valitsin `--cookies` lukee) — käytä tätä, kun yllä oleva
-suoran selainyhteyden vaihtoehto ei ole saatavilla (Android) tai ei
-toimi selaimessasi (Chrome/Edge Windowsissa).
+yt-dlpin oma valitsin `--cookies` lukee) — käytä tätä, kun kumpikaan
+yllä olevista suorista vaihtoehdoista ei ole saatavilla tai toimi
+sinulla (esim. Chrome/Edge Windowsissa).
 
 **Näin luot sellaisen:**
 
@@ -164,8 +186,11 @@ toimi selaimessasi (Chrome/Edge Windowsissa).
 4. Avaa Vivacessa *Asetukset ▸ Verkko ▸ YouTube* ja käytä **Selaa…**
    kohdan **Evästetiedosto:** vieressä valitaksesi kyseisen tiedoston.
 
-**Androidissa:** Chrome Androidille ei tue selainlaajennuksia, joten
-yllä olevia vaiheita 2–3 ei voi tehdä itse laitteella. Vie
+**Androidissa:** suosi sen sijaan yllä olevaa **Kirjaudu YouTubeen…**
+-toimintoa — se ei vaadi lainkaan vienti-/siirtovaihetta. Jos haluat
+silti tehdä sen tällä tavalla, huomaa, että Chrome Androidille ei tue
+selainlaajennuksia, joten yllä olevia vaiheita 2–3 ei voi tehdä itse
+laitteella. Vie
 `cookies.txt` pöytäkoneella tai kannettavalla tietokoneella yllä
 kuvatulla tavalla ja siirrä sitten tiedosto Android-laitteellesi (esim.
 pilvitallennuksen, USB-kaapelin tai sähköpostin kautta) ennen kuin

@@ -95,6 +95,24 @@
     </message>
 </context>
 <context>
+    <name>AndroidYoutubeLogin</name>
+    <message>
+        <location filename="../src/androidyoutubelogin.cpp" line="107"/>
+        <source>Embedded YouTube login is not available in this build.</source>
+        <translation>이 빌드에서는 내장 YouTube 로그인을 사용할 수 없습니다.</translation>
+    </message>
+    <message>
+        <location filename="../src/androidyoutubelogin.cpp" line="155"/>
+        <source>No YouTube login cookies were found. Make sure you finished signing in before closing the login window.</source>
+        <translation>YouTube 로그인 쿠키를 찾을 수 없습니다. 로그인 창을 닫기 전에 로그인을 완료했는지 확인하세요.</translation>
+    </message>
+    <message>
+        <location filename="../src/androidyoutubelogin.cpp" line="164"/>
+        <source>Could not write %1: %2</source>
+        <translation>%1 쓰기에 실패했습니다: %2</translation>
+    </message>
+</context>
+<context>
     <name>BookmarksDialog</name>
     <message>
         <location filename="../qml/BookmarksDialog.qml" line="24"/>
@@ -931,32 +949,32 @@
     <message>
         <location filename="../qml/Main.qml" line="433"/>
         <location filename="../qml/Main.qml" line="486"/>
-        <location filename="../qml/Main.qml" line="2152"/>
-        <location filename="../qml/Main.qml" line="2280"/>
+        <location filename="../qml/Main.qml" line="2166"/>
+        <location filename="../qml/Main.qml" line="2294"/>
         <source>TV editor</source>
         <translation>TV 편집기</translation>
     </message>
     <message>
         <location filename="../qml/Main.qml" line="433"/>
         <location filename="../qml/Main.qml" line="486"/>
-        <location filename="../qml/Main.qml" line="2152"/>
-        <location filename="../qml/Main.qml" line="2280"/>
+        <location filename="../qml/Main.qml" line="2166"/>
+        <location filename="../qml/Main.qml" line="2294"/>
         <source>TV channels</source>
         <translation>TV 채널</translation>
     </message>
     <message>
         <location filename="../qml/Main.qml" line="436"/>
         <location filename="../qml/Main.qml" line="489"/>
-        <location filename="../qml/Main.qml" line="2155"/>
-        <location filename="../qml/Main.qml" line="2283"/>
+        <location filename="../qml/Main.qml" line="2169"/>
+        <location filename="../qml/Main.qml" line="2297"/>
         <source>Radio editor</source>
         <translation>라디오 편집기</translation>
     </message>
     <message>
         <location filename="../qml/Main.qml" line="436"/>
         <location filename="../qml/Main.qml" line="489"/>
-        <location filename="../qml/Main.qml" line="2155"/>
-        <location filename="../qml/Main.qml" line="2283"/>
+        <location filename="../qml/Main.qml" line="2169"/>
+        <location filename="../qml/Main.qml" line="2297"/>
         <source>Radio channels</source>
         <translation>라디오 방송국</translation>
     </message>
@@ -975,8 +993,8 @@
     <message>
         <location filename="../qml/Main.qml" line="444"/>
         <location filename="../qml/Main.qml" line="500"/>
-        <location filename="../qml/Main.qml" line="2166"/>
-        <location filename="../qml/Main.qml" line="2294"/>
+        <location filename="../qml/Main.qml" line="2180"/>
+        <location filename="../qml/Main.qml" line="2308"/>
         <source>Bookmark added</source>
         <translation>책갈피가 추가됨</translation>
     </message>
@@ -1017,7 +1035,7 @@
     </message>
     <message>
         <location filename="../qml/Main.qml" line="757"/>
-        <location filename="../qml/Main.qml" line="1906"/>
+        <location filename="../qml/Main.qml" line="1919"/>
         <source>Cancel</source>
         <translation>취소</translation>
     </message>
@@ -1069,7 +1087,7 @@
     <message>
         <location filename="../qml/Main.qml" line="1428"/>
         <location filename="../qml/Main.qml" line="1498"/>
-        <location filename="../qml/Main.qml" line="1825"/>
+        <location filename="../qml/Main.qml" line="1838"/>
         <source>All files (*)</source>
         <translation>모든 파일 (*)</translation>
     </message>
@@ -1123,125 +1141,125 @@
         <translation>다운로드 실패: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1726"/>
+        <location filename="../qml/Main.qml" line="1739"/>
         <source>Saved %1 file(s); %2 failed.</source>
         <translation>%1개 파일 저장, %2개 실패.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1730"/>
+        <location filename="../qml/Main.qml" line="1743"/>
         <source>Saved %1 file(s).</source>
         <translation>%1개 파일을 저장했습니다.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1743"/>
+        <location filename="../qml/Main.qml" line="1756"/>
         <source>Could not read the shortcut file.</source>
         <translation>바로 가기 파일을 읽을 수 없습니다.</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1778"/>
+        <location filename="../qml/Main.qml" line="1791"/>
         <source>Starting download…</source>
         <translation>다운로드 시작 중…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1763"/>
-        <location filename="../qml/Main.qml" line="1779"/>
+        <location filename="../qml/Main.qml" line="1776"/>
+        <location filename="../qml/Main.qml" line="1792"/>
         <source>Downloading video (this can take a while)…</source>
         <translation>동영상 다운로드 중 (시간이 걸릴 수 있음)…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1759"/>
+        <location filename="../qml/Main.qml" line="1772"/>
         <source>YouTube playback isn&apos;t supported on this device.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1766"/>
-        <location filename="../qml/Main.qml" line="1783"/>
+        <location filename="../qml/Main.qml" line="1779"/>
+        <location filename="../qml/Main.qml" line="1796"/>
         <source>Resolving with yt-dlp…</source>
         <translation>yt-dlp로 확인 중…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1820"/>
+        <location filename="../qml/Main.qml" line="1833"/>
         <source>Load subtitle file</source>
         <translation>자막 파일 열기</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1824"/>
+        <location filename="../qml/Main.qml" line="1837"/>
         <source>Subtitle files (*.srt *.vtt *.ass *.ssa)</source>
         <translation>자막 파일 (*.srt *.vtt *.ass *.ssa)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1832"/>
+        <location filename="../qml/Main.qml" line="1845"/>
         <source>Subtitle delay</source>
         <translation>자막 지연</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1883"/>
+        <location filename="../qml/Main.qml" line="1896"/>
         <source>Delay:</source>
         <translation>지연:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1889"/>
-        <location filename="../qml/Main.qml" line="1979"/>
+        <location filename="../qml/Main.qml" line="1902"/>
+        <location filename="../qml/Main.qml" line="1992"/>
         <source>ms</source>
         <translation>ms</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1899"/>
+        <location filename="../qml/Main.qml" line="1912"/>
         <source>OK</source>
         <translation>확인(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1918"/>
+        <location filename="../qml/Main.qml" line="1931"/>
         <source>Audio delay — Vivace</source>
         <translation>오디오 지연 — Vivace</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1967"/>
+        <location filename="../qml/Main.qml" line="1980"/>
         <source>No delay for this file (use the global delay only)</source>
         <translation>이 파일에는 지연 없음 (전역 지연만 사용)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1972"/>
+        <location filename="../qml/Main.qml" line="1985"/>
         <source>This file&apos;s delay:</source>
         <translation>이 파일의 지연:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1987"/>
+        <location filename="../qml/Main.qml" line="2000"/>
         <source>The delay applied to this file is this value plus the global delay for the current audio device (%1 ms), set in Preferences &gt; General &gt; Audio. Negative values delay the video to match audio that arrives late (e.g. Bluetooth headphones).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2000"/>
+        <location filename="../qml/Main.qml" line="2013"/>
         <source>&amp;Apply</source>
         <translation>적용</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2009"/>
+        <location filename="../qml/Main.qml" line="2022"/>
         <source>&amp;Close</source>
         <translation>닫기(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2094"/>
+        <location filename="../qml/Main.qml" line="2108"/>
         <source>Hide window</source>
         <translation>창 숨기기</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2094"/>
+        <location filename="../qml/Main.qml" line="2108"/>
         <source>Show window</source>
         <translation>창 표시</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2099"/>
+        <location filename="../qml/Main.qml" line="2113"/>
         <source>Play / Pause</source>
         <translation>재생 / 일시 중지</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2103"/>
+        <location filename="../qml/Main.qml" line="2117"/>
         <source>Stop</source>
         <translation>정지</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2108"/>
+        <location filename="../qml/Main.qml" line="2122"/>
         <source>Quit</source>
         <translation>종료(&amp;Q)</translation>
     </message>
@@ -3677,531 +3695,550 @@
 <context>
     <name>PrefNetworkPage</name>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="105"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="135"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="117"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="147"/>
         <source>OpenSubtitles</source>
         <translation>OpenSubtitles</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="108"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="120"/>
         <source>YouTube</source>
         <translation>유투브</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="116"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="840"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="128"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="873"/>
         <source>Cast</source>
         <translation>전송</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="145"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="157"/>
         <source>API key:</source>
         <translation>API 키:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="146"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="158"/>
         <source>A free per-application key from opensubtitles.com (create an API consumer); subtitle search will not work until this is set.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="151"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="163"/>
         <source>from opensubtitles.com → API consumers</source>
         <translation>opensubtitles.com → API consumers에서</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="156"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="792"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="168"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="825"/>
         <source>Username:</source>
         <translation>사용자명:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="157"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="169"/>
         <source>Optional opensubtitles.com account login; signing in is not required but raises the daily download limit.</source>
         <translation>선택적 opensubtitles.com 계정 로그인. 로그인은 필수가 아니지만 일일 다운로드 한도를 높입니다.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="164"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="798"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="176"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="831"/>
         <source>Password:</source>
         <translation>패스워드:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="179"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="191"/>
         <source>The account password is stored securely using your operating system&apos;s credential manager.</source>
         <translation>계정 비밀번호는 운영체제의 자격 증명 관리자를 사용하여 안전하게 저장됩니다.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="115"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="749"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="127"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="782"/>
         <source>Proxy</source>
         <translation>프락시</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="37"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="38"/>
         <source>PO token provider installed.</source>
         <translation>PO 토큰 제공자를 설치했습니다.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="42"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="54"/>
         <source>&lt;h1&gt;Network&lt;/h1&gt;&lt;p&gt;&lt;b&gt;OpenSubtitles&lt;/b&gt; search uses the REST API, which requires a free per-application API key: register at opensubtitles.com, create an API consumer, and paste the key here. An account login (username and password) is optional but raises the daily download limit.&lt;/p&gt;&lt;p&gt;&lt;b&gt;YouTube&lt;/b&gt;: the optional resolver uses an external yt-dlp program — when enabled, opening a YouTube URL runs yt-dlp to obtain a directly-playable stream. Vivace offers to install yt-dlp for you the first time you turn this on (or point it at your own copy with the path field below), and can keep it updated on its own per the &quot;Update yt-dlp automatically&quot; setting. Because QMediaPlayer plays a single muxed stream, streaming tops out at the best progressive format (about 720p on YouTube). Cookies are deliberately NOT used for streaming: an authenticated (cookie) session returns URLs a plain player cannot open.&lt;/p&gt;&lt;p&gt;For &lt;b&gt;HD&lt;/b&gt; (and for cookies), enable download mode, or point the external downloader at your own tool (a program or .bat/.cmd). HD formats are separate video and audio streams that cannot be streamed muxed, so Vivace runs yt-dlp (or your tool) to download and merge the video, then plays the file it writes into the download folder. Download mode also needs Deno, a further external program yt-dlp itself uses to solve YouTube&apos;s JavaScript challenges — without it, a signed-in (cookie) request, exactly what HD downloads rely on, sees severely limited format availability. Streaming mode, which never sends cookies, is largely unaffected and doesn&apos;t need Deno. Install Deno yourself and, if it is not on the PATH, set its full path in the Download &amp; play settings.&lt;/p&gt;&lt;p&gt;Recent YouTube videos increasingly require a &lt;b&gt;PO token&lt;/b&gt; just to play at all — a general playability requirement, unrelated to cookies/login, that shows up as yt-dlp reporting the video as unavailable. &lt;b&gt;Install PO token provider…&lt;/b&gt; sets up the community &quot;BgUtils POT Provider&quot;: a small yt-dlp plugin plus a script (built with Deno, the same program used above) that yt-dlp runs on demand to generate a token. It applies to both streaming and downloading.&lt;/p&gt;&lt;p&gt;Since YouTube shortened its own cookie lifetimes, an exported cookies.txt file can go stale within days. &lt;b&gt;Get cookies from browser&lt;/b&gt; reads them live from an installed browser instead, so there&apos;s nothing to re-export. On Windows, only Firefox works here — Chrome/Edge&apos;s own &quot;App-Bound Encryption&quot; blocks every external tool, including yt-dlp, from reading their cookies at all; Linux and macOS Chrome/Edge are unaffected.&lt;/p&gt;&lt;p&gt;See &lt;b&gt;Help ▸ Contents ▸ Options&lt;/b&gt; for step-by-step instructions on exporting a cookies.txt file from your browser, and on installing Deno.&lt;/p&gt;&lt;p&gt;The stream &lt;b&gt;connection timeout&lt;/b&gt; (used mainly by live TV tuners) has moved to &lt;i&gt;Preferences ▸ TV and radio&lt;/i&gt;.&lt;/p&gt;&lt;p&gt;The &lt;b&gt;Proxy&lt;/b&gt; tab applies application-wide: both HTTP and SOCKS5 cover OpenSubtitles search and the update check; only HTTP additionally covers media playback and yt-dlp (they read the http_proxy/https_proxy convention directly instead of going through Qt&apos;s network stack, and there is no SOCKS5 equivalent for that convention).&lt;/p&gt;&lt;p&gt;The &lt;b&gt;Cast&lt;/b&gt; tab sets the port Play ▸ Cast… listens on. It&apos;s here (rather than only in the Cast dialog) so it stays fixed — set it once, allow that port through your firewall/router once, and casting keeps working without a new firewall prompt every time.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="805"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="473"/>
+        <source>Optional cookies.txt; unlocks HD, members-only and age-restricted videos. Safe here — cookies only affect the download, not a stream a player must open. &quot;Log in to YouTube…&quot; below fills this in for you automatically — use it instead of exporting cookies.txt from a desktop browser and transferring it here by hand.</source>
+        <translation>선택적인 cookies.txt 파일입니다. HD, 회원 전용, 연령 제한 동영상을 잠금 해제합니다. 여기서는 안전합니다 — 쿠키는 다운로드에만 영향을 주며, 플레이어가 열어야 하는 스트림에는 영향을 주지 않습니다. 아래의 &quot;YouTube에 로그인…&quot;을 사용하면 이 항목이 자동으로 채워집니다 — 데스크톱 브라우저에서 cookies.txt를 내보낸 뒤 수동으로 전송하는 대신 이 기능을 사용하세요.</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="508"/>
+        <source>Opens a sign-in page inside Vivace itself and saves the resulting session as the cookies file above — Android&apos;s equivalent of exporting cookies.txt from a desktop browser, with no separate export/transfer step. Sign in with the YouTube account whose access you want to use, then tap &quot;Save cookies&quot;, then &quot;Close&quot;.</source>
+        <translation>Vivace 내부에서 로그인 페이지를 열고, 그 결과 세션을 위의 쿠키 파일로 저장합니다 — 데스크톱 브라우저에서 cookies.txt를 내보내는 것과 동등한 Android용 기능으로, 별도의 내보내기/전송 단계가 필요 없습니다. 사용하려는 YouTube 계정으로 로그인한 다음 "쿠키 저장"을 누르고 이어서 "닫기"를 누르세요.</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="838"/>
         <source>Type:</source>
         <translation>형식:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="779"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="812"/>
         <source>Host:</source>
         <translation>호스트:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="785"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="850"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="818"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="883"/>
         <source>Port:</source>
         <translation>포트:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="198"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="210"/>
         <source>YouTube (yt-dlp)</source>
         <translation>YouTube (yt-dlp)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="218"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="230"/>
         <source>Play YouTube URLs with yt-dlp</source>
         <translation>yt-dlp로 YouTube URL 재생</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="222"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="234"/>
         <source>When on, opening a YouTube URL runs yt-dlp instead of trying to play the page URL as-is.</source>
         <translation>켜져 있으면 YouTube URL을 열 때 페이지 URL을 그대로 재생하려 시도하는 대신 yt-dlp를 실행합니다.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="235"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="247"/>
         <source>Open YouTube URLs by:</source>
         <translation>YouTube URL 열기 방식:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="236"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="248"/>
         <source>Streaming is fastest but caps at ~720p and can&apos;t use cookies. Downloading gets full HD (uses cookies + ffmpeg), then plays and deletes the file. Or hand off to your own external downloader tool.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="257"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="261"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="269"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="273"/>
         <source>Streaming (fast, up to ~720p)</source>
         <translation>스트리밍 (빠름, 최대 ~720p)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="258"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="262"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="270"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="274"/>
         <source>Downloading then playing (HD, cookies)</source>
         <translation>다운로드 후 재생 (HD, 쿠키)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="263"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="275"/>
         <source>An external downloader tool</source>
         <translation>외부 다운로더 도구</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="274"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="286"/>
         <source>Use managed yt-dlp</source>
         <translation>관리되는 yt-dlp 사용</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="292"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="304"/>
         <source>When on, Vivace installs yt-dlp for you (see the button here) and can keep it updated automatically below. Turn this off to point at your own yt-dlp instead -- Vivace will not install or auto-update it.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="300"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="312"/>
         <source>Install / Update yt-dlp…</source>
         <translation>yt-dlp 설치/업데이트…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="310"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="322"/>
         <source>PO token provider:</source>
         <translation>PO 토큰 제공자:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="311"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="323"/>
         <source>Recent YouTube videos increasingly require a &quot;PO token&quot; just to play at all, even with no login involved -- without one, yt-dlp reports the video as unavailable. Installs the community &quot;BgUtils POT Provider&quot; (a small yt-dlp plugin plus a script run on demand via Deno, which Vivace already uses above) so yt-dlp can generate one automatically. Applies to both streaming and downloading.</source>
         <translation>YouTube 영상은 로그인 없이도 재생​하려면 점점 더 &quot;PO 토큰&quot;을 요구하는 경우가 늘고 있습니다. 토큰이 없으면 yt-dlp는 해당 영상을 사용할 수 없다고 보고합니다. yt-dlp가 토큰을 자동으로 생성할 수 있도록 커뮤니티 &quot;BgUtils POT Provider&quot;(작은 yt-dlp 플러그인과, 위에서 이미 Vivace가 사용하는 Deno로 필요시 실행하는 스크립트)를 설치합니다. 스트리밍과 다운로드 모두에 적용됩니다.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="325"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="337"/>
         <source>Installing…</source>
         <translation>설치 중…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="327"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="339"/>
         <source>Reinstall / Update PO token provider…</source>
         <translation>PO 토큰 제공자 재설치 / 업데이트…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="328"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="340"/>
         <source>Install PO token provider…</source>
         <translation>PO 토큰 제공자 설치…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="349"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="361"/>
         <source>yt-dlp path:</source>
         <translation>yt-dlp 경로:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="350"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="362"/>
         <source>Leave as &quot;yt-dlp&quot; if it is on your system PATH; otherwise enter the full path to the yt-dlp executable.</source>
         <translation>시스템 PATH에 있으면 &quot;yt-dlp&quot;로 두세요. 그렇지 않으면 yt-dlp 실행 파일의 전체 경로를 입력하세요.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="356"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="368"/>
         <source>yt-dlp (on PATH) or a full path</source>
         <translation>yt-dlp (PATH에 있음) 또는 전체 경로</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="362"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="374"/>
         <source>Update yt-dlp automatically:</source>
         <translation>yt-dlp 자동 업데이트:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="363"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="375"/>
         <source>Runs yt-dlp&apos;s own self-update before playing a YouTube video. &quot;Every time&quot; adds a short delay to each play; the daily/weekly options check only that often. Failures (e.g. no network) are ignored and playback proceeds with whatever version is installed. Only applies to a managed yt-dlp.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="377"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="389"/>
         <source>Never</source>
         <translation>하지 않음</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="378"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="390"/>
         <source>Every time yt-dlp runs</source>
         <translation>yt-dlp를 실행할 때마다</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="379"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="391"/>
         <source>Once a day</source>
         <translation>하루에 한 번</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="380"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="392"/>
         <source>Once a week</source>
         <translation>일주일에 한 번</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="387"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="399"/>
         <source>Maximum quality:</source>
         <translation>최대 품질:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="388"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="400"/>
         <source>Upper limit on resolution. Streaming is capped at ~720p regardless; downloading can reach this height in full HD.</source>
         <translation>해상도 상한입니다. 스트리밍은 어쨌든 ~720p로 제한됩니다. 다운로드는 풀 HD로 이 높이에 도달할 수 있습니다.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="398"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="410"/>
         <source>360p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="399"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="411"/>
         <source>480p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="400"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="412"/>
         <source>720p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="401"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="413"/>
         <source>1080p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="402"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="414"/>
         <source>1440p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="403"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="415"/>
         <source>2160p (4K)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="404"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="416"/>
         <source>Best available</source>
         <translation>사용 가능한 최고 품질</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="419"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="431"/>
         <source>yt-dlp is a separate program and is not bundled with Vivace.</source>
         <translation>yt-dlp는 별도의 프로그램이며 Vivace에 포함되어 있지 않습니다.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="425"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="437"/>
         <source>Download &amp; play</source>
         <translation>다운로드 후 재생</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="445"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="457"/>
         <source>Downloads the video (merging HD video and audio with ffmpeg), plays it, and keeps it in a cache folder so replaying it is instant. The cache holds the most recent downloads up to the size below; older ones are removed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="459"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="471"/>
         <source>Cookies file:</source>
         <translation>쿠키 파일:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="461"/>
-        <source>Optional cookies.txt exported from your browser (yt-dlp --cookies); unlocks HD, members-only and age-restricted videos. Safe here — cookies only affect the download, not a stream a player must open. A copy is kept in Vivace&apos;s own storage, since Android can&apos;t reopen the original file location directly — browse again here after re-exporting it from your browser.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="470"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="481"/>
         <source>Optional cookies.txt exported from your browser (yt-dlp --cookies); unlocks HD, members-only and age-restricted videos. Safe here — cookies only affect the download, not a stream a player must open. See Help ▸ Contents ▸ Options for step-by-step export instructions.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="484"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="495"/>
         <source>optional cookies.txt</source>
         <translation>선택적 cookies.txt</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="487"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="555"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="498"/>
         <location filename="../qml/PrefNetworkPage.qml" line="588"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="617"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="693"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="729"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="621"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="650"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="726"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="762"/>
         <source>Browse…</source>
         <translation>찾아보기…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="493"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="507"/>
+        <source>Log in to YouTube:</source>
+        <translation>YouTube에 로그인:</translation>
+    </message>
+    <message>
+        <source>Opens a sign-in page inside Vivace itself and saves the resulting session as the cookies file above — Android&apos;s equivalent of exporting cookies.txt from a desktop browser, with no separate export/transfer step. Sign in with the YouTube account whose access you want to use, then tap &quot;I&apos;m signed in&quot;.</source>
+        <translation type="vanished">Vivace 내부에서 로그인 페이지를 열고, 그 결과 세션을 위의 쿠키 파일로 저장합니다 — 데스크톱 브라우저에서 cookies.txt를 내보내는 것과 동등한 Android용 기능으로, 별도의 내보내기/전송 단계가 필요 없습니다. 사용하려는 YouTube 계정으로 로그인한 다음 &quot;로그인 완료&quot;를 누르세요.</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="518"/>
+        <source>Log in to YouTube…</source>
+        <translation>YouTube에 로그인…</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="526"/>
         <source>Get cookies from browser:</source>
         <translation>브라우저에서 쿠키 가져오기:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="494"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="527"/>
         <source>Reads cookies live from an installed browser instead of the file above — recommended, since YouTube&apos;s cookie lifetimes are now much shorter, making an exported cookies.txt go stale within days. Takes priority over the cookies file when set. On Windows, only Firefox actually works here: Chrome/Edge encrypt cookies in a way tied to the browser&apos;s own binary (&quot;App-Bound Encryption&quot;), which blocks yt-dlp (and every other external tool) from reading them at all — this is a Chrome-side restriction yt-dlp&apos;s own developers can&apos;t work around. Linux and macOS Chrome/Edge are unaffected.</source>
         <translation>위 파일 대신 설치된 브라우저에서 실시간으로 쿠키를 읽어옵니다 — 권장 방식입니다. YouTube의 쿠키 유효 기간이 이제 훨씬 짧아져서, 내보낸 cookies.txt 파일이 며칠 안에 못 쓰게 되기 때문입니다. 설정하면 위의 쿠키 파일보다 우선합니다. Windows에서는 Firefox만 실제로 작동합니다. Chrome/Edge는 브라우저 실행 파일 자체에 연결된 방식으로 쿠키를 암호화하는데(&quot;App-Bound Encryption&quot;), 이 때문에 yt-dlp(및 그 밖의 모든 외부 도구)가 쿠키를 전혀 읽을 수 없습니다 — 이는 Chrome 쪽의 제한이라 yt-dlp 개발자들도 우회할 수 없습니다. Linux와 macOS의 Chrome/Edge는 영향을 받지 않습니다.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="518"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="551"/>
         <source>Off (use the cookies file above)</source>
         <translation>끄기(위의 쿠키 파일 사용)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="519"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="552"/>
         <source>Firefox (recommended)</source>
         <translation>Firefox (권장)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="520"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="553"/>
         <source>Chrome</source>
         <translation>Chrome</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="521"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="554"/>
         <source>Edge</source>
         <translation>Edge</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="522"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="555"/>
         <source>Brave</source>
         <translation>Brave</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="523"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="556"/>
         <source>Chromium</source>
         <translation>Chromium</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="524"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="557"/>
         <source>Opera</source>
         <translation>Opera</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="525"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="558"/>
         <source>Safari</source>
         <translation>Safari</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="526"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="559"/>
         <source>Vivaldi</source>
         <translation>Vivaldi</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="527"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="560"/>
         <source>Whale</source>
         <translation>Whale</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="540"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="573"/>
         <source>ffmpeg location:</source>
         <translation>ffmpeg 위치:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="541"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="574"/>
         <source>Folder containing ffmpeg (yt-dlp needs it to merge HD video+audio). Leave empty to use ffmpeg from the system PATH.</source>
         <translation>ffmpeg가 포함된 폴더 (yt-dlp가 HD 비디오와 오디오를 병합하는 데 필요합니다). 시스템 PATH의 ffmpeg를 사용하려면 비워 두세요.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="552"/>
         <location filename="../qml/PrefNetworkPage.qml" line="585"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="618"/>
         <source>empty = use PATH</source>
         <translation>비어 있음 = PATH 사용</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="565"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="598"/>
         <source>Deno path:</source>
         <translation>Deno 경로:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="566"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="599"/>
         <source>yt-dlp uses a separate program, Deno, to solve YouTube&apos;s JavaScript challenges. It&apos;s most needed here: a signed-in (cookie) request — exactly what unlocks HD above — sees severely limited format availability without it. Streaming mode, which never sends cookies, is largely unaffected. Leave empty if &quot;deno&quot; is already on your system PATH; otherwise enter the full path to the deno executable. See Help ▸ Contents ▸ Options for installation instructions.</source>
         <translation>yt-dlp는 YouTube의 JavaScript 문제를 해결하기 위해 별도의 프로그램인 Deno를 사용합니다. 이는 여기서 가장 중요합니다: 로그인(쿠키) 요청 — 위에서 HD를 해제하는 바로 그 요청 — 은 Deno가 없으면 사용 가능한 형식이 심각하게 제한됩니다. 쿠키를 전혀 보내지 않는 스트리밍 모드는 거의 영향을 받지 않습니다. 시스템 PATH에 이미 &quot;deno&quot;가 있으면 비워 두고, 그렇지 않으면 deno 실행 파일의 전체 경로를 입력하세요. 설치 방법은 도움말 ▸ 목차 ▸ 옵션을 참조하세요.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="603"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="636"/>
         <source>Cache folder:</source>
         <translation>캐시 폴더:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="604"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="637"/>
         <source>Where downloaded videos are kept for reuse. A video already here is replayed without downloading again.</source>
         <translation>다운로드한 동영상을 재사용을 위해 보관하는 위치입니다. 여기에 이미 있는 동영상은 다시 다운로드하지 않고 재생됩니다.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="622"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="655"/>
         <source>Cache size:</source>
         <translation>캐시 크기:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="623"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="656"/>
         <source>How many downloaded videos to keep. When the limit is reached, the least-recently-played one is deleted.</source>
         <translation>보관할 다운로드 동영상 수입니다. 한도에 도달하면 가장 오래전에 재생한 것이 삭제됩니다.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="634"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="667"/>
         <source>files</source>
         <translation>개 파일</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="640"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="673"/>
         <source>Thumbnail fallback at:</source>
         <translation>대체 썸네일 위치:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="641"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="674"/>
         <source>The cache thumbnail is normally YouTube&apos;s own poster image. Only if that is missing or black does Vivace grab a video frame — this is how many seconds in (past a black intro).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="654"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="687"/>
         <source>seconds</source>
         <translation>초</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="664"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="697"/>
         <source>External downloader tool</source>
         <translation>외부 다운로더 도구</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="679"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="712"/>
         <source>Downloader command:</source>
         <translation>다운로더 명령:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="680"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="713"/>
         <source>The program or .bat/.cmd script that downloads the video; it receives the URL as an argument.</source>
         <translation>동영상을 다운로드하는 프로그램 또는 .bat/.cmd 스크립트입니다. URL을 인수로 받습니다.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="690"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="723"/>
         <source>e.g. C:ToolsYouTubeDL.bat</source>
         <translation>예: C:\Tools\YouTubeDL.bat</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="698"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="731"/>
         <source>Arguments:</source>
         <translation>인수:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="699"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="732"/>
         <source>Arguments passed to the tool; the token {url} is replaced by the video URL (if omitted, the URL is appended). Add any cookies/format flags your tool needs here, e.g. --cookies C:pathcookies.txt.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="714"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="747"/>
         <source>Download folder:</source>
         <translation>다운로드 폴더:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="715"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="748"/>
         <source>The folder the tool writes the finished file into; Vivace plays the newest media file that appears there, so set it to match your tool&apos;s output folder.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="726"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="759"/>
         <source>your tool&apos;s output folder</source>
         <translation>도구의 출력 폴더</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="759"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="792"/>
         <source>Enable proxy</source>
         <translation>프록시 사용하기</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="763"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="796"/>
         <source>Applies to OpenSubtitles search and the update check (both proxy types). Only an HTTP proxy also applies to media playback and yt-dlp — a SOCKS5 proxy does not reach either, since neither goes through Qt&apos;s network stack.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="821"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="854"/>
         <source>The proxy password is stored securely using your operating system&apos;s credential manager.</source>
         <translation>프록시 비밀번호는 운영체제의 자격 증명 관리자를 사용하여 안전하게 저장됩니다.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="851"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="884"/>
         <source>The port Play ▸ Cast… listens on. Kept fixed here (rather than editable each time in the Cast dialog) so you can allow it through your firewall/router once and it keeps working.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="872"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="905"/>
         <source>Your OS&apos;s firewall (and most routers) block an app listening on a fresh port until you allow it. Pick a port once here, allow Vivace through your firewall for it, and Cast will keep working without a new prompt each time.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="887"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="920"/>
         <source>Select the cookies.txt file</source>
         <translation>cookies.txt 파일을 선택하세요</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="916"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="949"/>
         <source>Select the deno executable</source>
         <translation>deno 실행 파일을 선택하세요</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="922"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="955"/>
         <source>Select the folder containing ffmpeg</source>
         <translation>ffmpeg가 포함된 폴더를 선택하세요</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="927"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="960"/>
         <source>Select the download cache folder</source>
         <translation>다운로드 캐시 폴더를 선택하세요</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="932"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="965"/>
         <source>Select the downloader program</source>
         <translation>다운로더 프로그램을 선택하세요</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="938"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="971"/>
         <source>Select the download folder</source>
         <translation>다운로드 폴더를 선택하세요</translation>
     </message>
@@ -4787,102 +4824,102 @@
 <context>
     <name>PreferencesDialog</name>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="27"/>
+        <location filename="../qml/PreferencesDialog.qml" line="28"/>
         <source>Preferences</source>
         <translation>환경 설정</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="101"/>
+        <location filename="../qml/PreferencesDialog.qml" line="102"/>
         <source>&lt;h1&gt;Help&lt;/h1&gt;&lt;p&gt;No help is available for this section.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="192"/>
+        <location filename="../qml/PreferencesDialog.qml" line="193"/>
         <source>General</source>
         <translation>일반</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="193"/>
+        <location filename="../qml/PreferencesDialog.qml" line="194"/>
         <source>Drives</source>
         <translation>드라이브</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="194"/>
+        <location filename="../qml/PreferencesDialog.qml" line="195"/>
         <source>Subtitles</source>
         <translation>자막</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="195"/>
+        <location filename="../qml/PreferencesDialog.qml" line="196"/>
         <source>Interface</source>
         <translation>인터페이스</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="196"/>
+        <location filename="../qml/PreferencesDialog.qml" line="197"/>
         <source>Toolbars</source>
         <translation>툴바</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="197"/>
+        <location filename="../qml/PreferencesDialog.qml" line="198"/>
         <source>Keyboard and mouse</source>
         <translation>키보드 및 마우스</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="198"/>
+        <location filename="../qml/PreferencesDialog.qml" line="199"/>
         <source>Playlist</source>
         <translation>재생 목록</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="199"/>
+        <location filename="../qml/PreferencesDialog.qml" line="200"/>
         <source>TV and radio</source>
         <translation>TV 및 라디오</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="200"/>
+        <location filename="../qml/PreferencesDialog.qml" line="201"/>
         <source>File types</source>
         <translation>파일 형식</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="201"/>
+        <location filename="../qml/PreferencesDialog.qml" line="202"/>
         <source>Updates</source>
         <translation>업데이트</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="202"/>
+        <location filename="../qml/PreferencesDialog.qml" line="203"/>
         <source>Network</source>
         <translation>네트워크</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="203"/>
+        <location filename="../qml/PreferencesDialog.qml" line="204"/>
         <source>Advanced</source>
         <translation>고급</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="281"/>
+        <location filename="../qml/PreferencesDialog.qml" line="283"/>
         <source>&amp;Help</source>
         <translation>도움말(&amp;H)</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="286"/>
+        <location filename="../qml/PreferencesDialog.qml" line="288"/>
         <source>OK</source>
         <translation>확인(&amp;O)</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="290"/>
+        <location filename="../qml/PreferencesDialog.qml" line="292"/>
         <source>Apply</source>
         <translation>적용</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="296"/>
+        <location filename="../qml/PreferencesDialog.qml" line="298"/>
         <source>Cancel</source>
         <translation>취소</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="305"/>
+        <location filename="../qml/PreferencesDialog.qml" line="307"/>
         <source>Vivace — Help</source>
         <translation>Vivace — 도움말</translation>
     </message>
     <message>
-        <location filename="../qml/PreferencesDialog.qml" line="369"/>
+        <location filename="../qml/PreferencesDialog.qml" line="371"/>
         <source>Close</source>
         <translation>닫기</translation>
     </message>
@@ -5327,6 +5364,54 @@
         <location filename="../qml/VideoEqualizerDialog.qml" line="224"/>
         <source>OK</source>
         <translation>확인(&amp;O)</translation>
+    </message>
+</context>
+<context>
+    <name>YoutubeLoginDialog</name>
+    <message>
+        <location filename="../qml/YoutubeLoginDialog.qml" line="54"/>
+        <source>Log in to YouTube</source>
+        <translation>YouTube에 로그인</translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../qml/YoutubeLoginDialog.qml" line="87"/>
+        <source>%n cookie(s) saved — tap “Close” to finish.</source>
+        <translation>
+            <numerusform>쿠키 %n개를 저장했습니다 — "닫기"를 눌러 완료하세요.</numerusform>
+        </translation>
+    </message>
+    <message>
+        <location filename="../qml/YoutubeLoginDialog.qml" line="115"/>
+        <source>Sign in below, then tap “Save cookies”, then “Close”.</source>
+        <translation>아래에서 로그인한 다음 "쿠키 저장"을 누르고 이어서 "닫기"를 누르세요.</translation>
+    </message>
+    <message>
+        <location filename="../qml/YoutubeLoginDialog.qml" line="118"/>
+        <source>Save cookies</source>
+        <translation>쿠키 저장</translation>
+    </message>
+    <message>
+        <location filename="../qml/YoutubeLoginDialog.qml" line="125"/>
+        <source>Close</source>
+        <translation>닫기</translation>
+    </message>
+    <message numerus="yes">
+        <source>Signed in — %n cookie(s) saved.</source>
+        <translation type="vanished">
+            <numerusform>로그인 완료 — 쿠키 %n개를 저장했습니다.</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>Sign in below, then tap “I’m signed in”.</source>
+        <translation type="vanished">아래에서 로그인한 다음 &quot;로그인 완료&quot;를 누르세요.</translation>
+    </message>
+    <message>
+        <source>I’m signed in</source>
+        <translation type="vanished">로그인 완료</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="vanished">취소</translation>
     </message>
 </context>
 <context>
