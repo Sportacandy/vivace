@@ -235,7 +235,27 @@ build_for_abi() {
             --enable-bsf=aac_adtstoasc,h264_mp4toannexb,hevc_mp4toannexb,vp9_superframe,extract_extradata,null \
             --enable-small \
             --disable-symver
-        make -j"$(nproc 2>/dev/null || echo 4)"
+        # Real bug found 2026-09-26 (user report: the build always hangs
+        # right around "CC fftools/ffprobe.o"): `make` on this Windows dev
+        # machine resolves to a NATIVE Win32-built GNU Make (Chocolatey's;
+        # "Built for Windows32", not an MSYS/Cygwin build -- Git for Windows
+        # doesn't ship a make.exe of its own at all), while every recipe
+        # line it runs is executed through Git Bash's own MSYS-based sh.exe
+        # (this whole script's shell). That combination is a well-known GNU
+        # Make deadlock trap: `-j`'s pipe-based jobserver token handshake
+        # between the native-Win32 Make process and its MSYS-subshell-run
+        # child jobs doesn't survive that boundary reliably, and the hang
+        # characteristically shows up exactly when the parallel job pool
+        # has to converge/synchronize -- i.e. right after the LAST
+        # compilable object (here, fftools/ffmpeg.o then fftools/ffprobe.o)
+        # finishes and Make needs to reap all outstanding parallel workers
+        # before it can proceed to the link step. This matches the reported
+        # symptom exactly and reproduces the same way every time, since the
+        # compile order is deterministic. `-j1` sidesteps the whole jobserver
+        # synchronization path (nothing to hand tokens between), trading
+        # build time for not hanging -- a small ffmpeg-with-`--enable-small`
+        # build like this one still finishes in a reasonable time serial.
+        make -j1
     )
     # "lib" prefix is not optional -- androiddeployqt rejects a
     # QT_ANDROID_EXTRA_LIBS entry outright ("must begin with \"lib\" and
