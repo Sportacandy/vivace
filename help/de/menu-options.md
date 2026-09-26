@@ -142,20 +142,26 @@ Sie Ihren Browser aus, und Vivace liest dessen Cookies jedes Mal live aus
   nicht betroffen und funktionieren normal.
 - Die Auswahl eines Browsers hier hat Vorrang vor dem Feld **Cookie-Datei:**
   weiter unten, wenn beide eingestellt sind.
-- **Unter Android nicht verfügbar** — siehe stattdessen **Bei YouTube
+- **Funktioniert unter Android überhaupt nicht und auch nicht mit
+  Chrome/Edge unter Windows** — siehe für beide Fälle **Bei YouTube
   anmelden** weiter unten.
 
-### Bei YouTube anmelden (Android, dort empfohlen)
+### Bei YouTube anmelden (Android, und als Ausweichlösung für Chrome/Edge unter Windows)
 
 *Einstellungen ▸ Netzwerk ▸ YouTube* enthält eine Schaltfläche **Bei
 YouTube anmelden…** (neben dem Feld für die Cookie-Datei), die eine echte
-Anmeldeseite direkt in Vivace selbst öffnet — über eine eingebettete,
-betriebssystemeigene WebView. Melden Sie sich mit dem Konto an, dessen
-Zugriff Sie nutzen möchten, und tippen Sie dann auf **Ich bin angemeldet**
-— Vivace liest die entstehenden Sitzungs-Cookies aus und speichert sie
-automatisch als aktive Cookie-Datei. Dies ist das Android-Gegenstück zu
-**Cookies aus Browser abrufen** oben: nichts zu exportieren, nichts von
-einem anderen Gerät von Hand zu übertragen.
+Anmeldeseite direkt in Vivace selbst öffnet — unter Android über eine
+eingebettete, betriebssystemeigene WebView, unter Windows/Linux/macOS über
+eine mitgelieferte Chromium-basierte Ansicht (QtWebEngine). Melden Sie
+sich mit dem Konto an, dessen Zugriff Sie nutzen möchten, und tippen Sie
+dann auf **Cookies speichern** — Vivace liest die entstehenden
+Sitzungs-Cookies aus und speichert sie automatisch als aktive
+Cookie-Datei. Tippen Sie danach auf **Schließen**. Unter Android ist dies
+die einzige Möglichkeit, überhaupt aktuelle Cookies zu erhalten; auf dem
+Desktop dient es vor allem als Ausweichlösung für Chrome/Edge unter
+Windows, wo **Cookies aus Browser abrufen** oben deren Cookies nicht
+lesen kann — in beiden Fällen gibt es nichts zu exportieren und nichts von
+Hand von einem anderen Gerät zu übertragen.
 
 **Zu beachten:**
 
@@ -164,8 +170,11 @@ einem anderen Gerät von Hand zu übertragen.
   jeder anderen App abgeschottet) — deshalb funktioniert dies anders als
   die Desktop-Option: Sich *innerhalb* von Vivaces eigener eingebetteter
   Browseransicht anzumelden ist der praktische Ersatz dafür.
-- Nur unter Android verfügbar; jede andere Plattform verwendet stattdessen
-  **Cookies aus Browser abrufen**.
+- Auf dem Desktop handelt es sich um eine echte, separate Browsersitzung,
+  die Vivace selbst steuert — eine deutlich aufwendigere Funktion als
+  **Cookies aus Browser abrufen** (sie bringt eine eigene Browser-Engine
+  mit), daher lohnt sie sich vor allem dort, wo die einfachere Option
+  nicht funktioniert, also bei Chrome/Edge unter Windows.
 
 ### Cookies in eine Datei exportieren (Ausweichlösung auf jeder Plattform)
 
@@ -173,7 +182,8 @@ Das Feld **Cookie-Datei:** erwartet eine Klartextdatei `cookies.txt` im
 klassischen Netscape-Cookie-Format (demselben Format, das auch yt-dlps
 eigene Option `--cookies` einliest) — verwenden Sie dies, wenn keine der
 beiden Live-Optionen oben verfügbar ist oder für Sie funktioniert (z. B.
-Chrome/Edge unter Windows).
+wenn **Bei YouTube anmelden** in Ihrer Vivace-Version nicht verfügbar
+ist).
 
 **So erstellen Sie eine:**
 

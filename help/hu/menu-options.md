@@ -142,21 +142,26 @@ nem évül el.
   megkerülni. A Linuxon és macOS-en futó Chrome/Edge ezt nem érinti.
 - A böngésző kiválasztása itt elsőbbséget élvez a lenti **Sütifájl:**
   mezővel szemben, ha mindkettő be van állítva.
-- **Androidon nem elérhető** — helyette lásd lent a **Bejelentkezés a
-  YouTube-ba** részt.
+- **Androidon egyáltalán nem működik, és nem működik Windows alatti
+  Chrome-mal/Edge-dzsel sem** — mindkét esetben lásd lent a
+  **Bejelentkezés a YouTube-ba** részt.
 
-### Bejelentkezés a YouTube-ba (Android, ott ajánlott)
+### Bejelentkezés a YouTube-ba (Android, és tartalék megoldás Windows alatti Chrome-hoz/Edge-hez)
 
 A *Beállítások ▸ Hálózat ▸ YouTube* lapon található egy **Bejelentkezés
 a YouTube-ba…** gomb (a sütifájl mező mellett), amely egy valódi
-bejelentkezési oldalt nyit meg magán a Vivace-on belül, egy beágyazott,
-natív operációsrendszer-WebView segítségével. Jelentkezz be azzal a
-fiókkal, amelynek hozzáférését használni szeretnéd, majd koppints a
-**Bejelentkeztem** gombra — a Vivace beolvassa a keletkezett
-munkamenet-sütiket, és automatikusan elmenti őket aktív sütifájlként.
-Ez az Android megfelelője a fenti **Sütik lekérése böngészőből**
-funkciónak: nincs mit exportálni, és nincs mit kézzel átvinni egy másik
-eszközről.
+bejelentkezési oldalt nyit meg magán a Vivace-on belül — Androidon egy
+beágyazott, natív operációsrendszer-WebView segítségével, Windows/
+Linux/macOS alatt pedig egy mellékelt, Chromium-alapú nézet
+(QtWebEngine) segítségével. Jelentkezz be azzal a fiókkal, amelynek
+hozzáférését használni szeretnéd, majd koppints a **Sütik mentése**
+gombra — a Vivace beolvassa a keletkezett munkamenet-sütiket, és
+automatikusan elmenti őket aktív sütifájlként. Ha végeztél, koppints a
+**Bezár** gombra. Androidon ez az egyetlen mód friss sütik
+megszerzésére; asztali gépen elsősorban a Windows alatti Chrome/Edge
+esetén hasznos, ahol a fenti **Sütik lekérése böngészőből** nem tudja
+beolvasni azok sütijeit — mindkét esetben nincs mit exportálni, és
+nincs mit kézzel átvinni egy másik eszközről.
 
 **Ne feledd:**
 
@@ -166,8 +171,11 @@ eszközről.
   másképp, mint az asztali lehetőség — a bejelentkezés *magán a Vivace
   saját beágyazott böngészőjén belül* a gyakorlati helyettesítő
   megoldás.
-- Csak Androidon érhető el; minden más platform a **Sütik lekérése
-  böngészőből** funkciót használja.
+- Asztali gépen ez egy valódi, önálló böngészőmunkamenet, amelyet
+  maga a Vivace vezérel — valódi értelemben nehezebb funkció, mint a
+  **Sütik lekérése böngészőből** (saját böngészőmotort is tartalmaz),
+  ezért elsősorban ott érdemes használni, ahol az egyszerűbb megoldás
+  nem működik, vagyis a Windows alatti Chrome/Edge esetén.
 
 ### Sütik exportálása fájlba (tartalék megoldás minden platformon)
 
@@ -175,7 +183,8 @@ A **Sütifájl:** mező egy egyszerű szöveges `cookies.txt` fájlt vár a
 klasszikus Netscape süti-formátumban (ugyanaz a formátum, amelyet a
 yt-dlp saját `--cookies` kapcsolója is olvas) — akkor használd, ha a
 fenti élő lehetőségek egyike sem érhető el vagy nem működik nálad (pl.
-Chrome/Edge Windows alatt).
+ha a **Bejelentkezés a YouTube-ba** nem érhető el a Vivace adott
+buildjében).
 
 **Létrehozás menete:**
 

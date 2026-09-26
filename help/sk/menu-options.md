@@ -134,19 +134,25 @@ nie je čo exportovať a nič nezastaráva.
   a fungujú normálne.
 - Výber prehliadača tu má prednosť pred poľom **Súbor cookies:**
   nižšie, ak sú nastavené obe možnosti.
-- **Nie je dostupné na Androide** — namiesto toho pozrite **Prihlásiť
-  sa do YouTube** nižšie.
+- **Vôbec nefunguje na Androide a nefunguje ani pre Chrome/Edge v
+  systéme Windows** — v oboch prípadoch použite **Prihlásiť sa do
+  YouTube** nižšie.
 
-### Prihlásiť sa do YouTube (Android, tam odporúčané)
+### Prihlásiť sa do YouTube (Android a záložné riešenie pre Chrome/Edge v systéme Windows)
 
 *Nastavenia ▸ Sieť ▸ YouTube* obsahuje tlačidlo **Prihlásiť sa do
 YouTube…** (vedľa poľa so súborom cookies), ktoré otvorí skutočnú
-prihlasovaciu stránku priamo vo Vivace, pomocou vstavaného, natívneho
-prvku WebView. Prihláste sa pod účtom, ktorého prístup chcete použiť, a
-potom ťuknite na **Som prihlásený** — Vivace načíta výsledné cookies
-relácie a automaticky ich uloží ako aktívny súbor cookies. Ide o
-android obdobu funkcie **Získať cookies z prehliadača** vyššie: nie je
-čo exportovať ani manuálne prenášať z iného zariadenia.
+prihlasovaciu stránku priamo vo Vivace — na Androide ide o vstavaný,
+natívny prvok WebView, v systémoch Windows/Linux/macOS o priložené
+zobrazenie založené na Chromiu (QtWebEngine). Prihláste sa pod účtom,
+ktorého prístup chcete použiť, a potom ťuknite na **Uložiť cookies** —
+Vivace načíta výsledné cookies relácie a automaticky ich uloží ako
+aktívny súbor cookies. Po dokončení ťuknite na **Zavrieť**. Na Androide
+je to jediný spôsob, ako vôbec získať nové cookies; na počítači slúži
+najmä pre Chrome/Edge v systéme Windows, kde vyššie uvedená funkcia
+**Získať cookies z prehliadača** nedokáže ich cookies prečítať — v
+oboch prípadoch nie je čo manuálne exportovať ani prenášať z iného
+zariadenia.
 
 **Majte na pamäti:**
 
@@ -155,8 +161,11 @@ android obdobu funkcie **Získať cookies z prehliadača** vyššie: nie je
   oddelené od ostatných) — preto to funguje inak než možnosť pre
   počítač: praktickou náhradou je prihlásenie sa *vnútri* vlastného
   vstavaného prehliadača Vivace.
-- Dostupné iba na Androide; na každej inej platforme sa namiesto toho
-  používa **Získať cookies z prehliadača**.
+- Na počítači ide o skutočnú, samostatnú reláciu prehliadača, ktorú
+  riadi samotná Vivace — citeľne náročnejšiu funkciu ako **Získať
+  cookies z prehliadača** (obsahuje vlastný prehliadací engine), takže
+  sa oplatí použiť ju najmä tam, kde táto jednoduchšia možnosť
+  nefunguje, teda pre Chrome/Edge v systéme Windows.
 
 ### Export cookies do súboru (záložná možnosť na každej platforme)
 
@@ -164,7 +173,8 @@ Pole **Súbor cookies:** vyžaduje obyčajný textový súbor `cookies.txt` v
 klasickom formáte Netscape cookie-jar (rovnakom formáte, aký číta
 vlastná voľba `--cookies` nástroja yt-dlp) — použite ho, keď ani jedna
 z vyššie uvedených možností v reálnom čase nie je dostupná alebo u vás
-nefunguje (napr. Chrome/Edge v systéme Windows).
+nefunguje (napr. keď funkcia **Prihlásiť sa do YouTube** nie je vo
+vašej verzii Vivace k dispozícii).
 
 **Ako ho vytvoriť:**
 

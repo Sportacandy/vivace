@@ -94,23 +94,65 @@ if(ANDROID)
     endforeach()
 endif()
 
-# Which YoutubeLoginDialog.qml gets compiled into the module -- the real,
-# WebView-hosting one (Android only) or a WebView-free stub everywhere
-# else. See qml/stubs/YoutubeLoginDialog.qml's own comment for the full
-# story: qmlimportscanner statically scans every .qml file's `import`
-# statements regardless of platform, so simply having the real file's
-# `import QtWebView` line anywhere in QML_FILES was enough, by itself, to
-# make a DESKTOP build discover and load the real desktop QtWebView QML
-# plugin (Qt ships one there too) and hit a genuine
-# "QMetaObject::indexOfSignal... redefined in QQuickWindowQmlImpl" warning
-# on ordinary startup -- confirmed by A/B testing an otherwise-identical
-# build with and without this file in QML_FILES. Both files register under
-# the identical "YoutubeLoginDialog" QML type name (qt_add_qml_module maps
-# a QML_FILES entry's type name from its basename, not its full path), so
-# Main.qml/PreferencesDialog.qml/PrefNetworkPage.qml's type references
-# resolve identically either way.
+# Desktop embedded YouTube login (QtWebEngine) -- probed EARLY, before the
+# QML file selection just below, unlike the Android/QtWebView option
+# further down this file (which only ever checks `if(ANDROID)`, independent
+# of whether that platform's own find_package actually succeeds -- an
+# existing, accepted minor inconsistency, harmless there since qtwebview IS
+# confirmed present in Qt's standard online-installer repository for every
+# Android arch this project targets). QtWebEngine is a materially bigger
+# risk to just assume: its open-source prebuilt binaries are NOT published
+# through the same aqt-mirrored "addons" package tree Qt's other optional
+# modules use at all -- confirmed directly by fetching the real Qt 6.11.1
+# Windows desktop repository listing and grepping every package name
+# containing "web": qtwebview/qtwebsockets/qtwebchannel are all there,
+# qtwebengine is nowhere in it -- so a CI runner provisioned the same way
+# as this project's other desktop jobs (jurplel/install-qt-action's
+# aqt-based install) may well not have it at all, even though it happens to
+# already be installed on this project's own local Windows dev kit. A QUIET,
+# non-REQUIRED probe (mirroring VIVACE_ENABLE_BLURAY's own graceful
+# missing-build-tool degradation below, rather than Android WebView's
+# REQUIRED-and-just-trust-it pattern) lets both the QML file selection AND
+# the later target_link_libraries/compile-definitions block (see
+# VIVACE_ENABLE_DESKTOP_YOUTUBE_LOGIN further down) react to whether the
+# module is genuinely available, instead of guaranteeing a hard configure
+# failure the next time CI runs without it.
+option(VIVACE_ENABLE_DESKTOP_YOUTUBE_LOGIN
+    "Embedded YouTube login via QtWebEngine, for fresh cookies (Windows/Linux/macOS)" ON)
+set(VIVACE_HAVE_DESKTOP_YOUTUBE_LOGIN FALSE)
+if(NOT ANDROID AND VIVACE_ENABLE_DESKTOP_YOUTUBE_LOGIN)
+    find_package(Qt6 COMPONENTS WebEngineCore WebEngineQuick QUIET)
+    if(Qt6WebEngineCore_FOUND AND Qt6WebEngineQuick_FOUND)
+        set(VIVACE_HAVE_DESKTOP_YOUTUBE_LOGIN TRUE)
+    endif()
+endif()
+
+# Which YoutubeLoginDialog.qml gets compiled into the module -- the real
+# QtWebView-hosting one (Android), the real QtWebEngine-hosting one
+# (Windows/Linux/macOS, only when the probe above actually found the
+# module), or a browser-free stub otherwise. See qml/stubs/
+# YoutubeLoginDialog.qml's own comment for the full story: qmlimportscanner
+# statically scans every .qml file's `import` statements regardless of
+# platform, so simply having the Android file's `import QtWebView` line
+# anywhere in QML_FILES was enough, by itself, to make a DESKTOP build
+# discover and load the real desktop QtWebView QML plugin (Qt ships one
+# there too) and hit a genuine "QMetaObject::indexOfSignal... redefined in
+# QQuickWindowQmlImpl" warning on ordinary startup -- confirmed by A/B
+# testing an otherwise-identical build with and without this file in
+# QML_FILES. The identical risk applies in reverse to the desktop file's
+# `import QtWebEngine` line -- QtWebEngine doesn't even ship a QML plugin
+# for Android at all, so that import must never reach an Android build's
+# QML_FILES either, and (per the graceful-degradation reasoning above) must
+# also never reach a desktop build that doesn't actually have the module.
+# All three files register under the identical "YoutubeLoginDialog" QML
+# type name (qt_add_qml_module maps a QML_FILES entry's type name from its
+# basename, not its full path), so Main.qml/PreferencesDialog.qml/
+# PrefNetworkPage.qml's type references resolve identically regardless of
+# which one a given platform compiles.
 if(ANDROID)
     set(vivace_youtube_login_qml qml/YoutubeLoginDialog.qml)
+elseif(VIVACE_HAVE_DESKTOP_YOUTUBE_LOGIN)
+    set(vivace_youtube_login_qml qml/desktop/YoutubeLoginDialog.qml)
 else()
     set(vivace_youtube_login_qml qml/stubs/YoutubeLoginDialog.qml)
 endif()
@@ -195,6 +237,7 @@ qt_add_qml_module(vivace
         src/uihelpers.h src/uihelpers.cpp
         src/androidshareintent.h src/androidshareintent.cpp
         src/androidyoutubelogin.h src/androidyoutubelogin.cpp
+        src/desktopyoutubelogin.h src/desktopyoutubelogin.cpp
     RESOURCES
         ${vivace_icon_files}
         ${vivace_help_files}
@@ -1487,6 +1530,37 @@ if(ANDROID AND VIVACE_ENABLE_ANDROID_YOUTUBE_LOGIN)
     target_link_libraries(vivace PRIVATE Qt6::WebView Qt6::WebViewQuick)
     target_compile_definitions(vivace PRIVATE VIVACE_HAVE_ANDROID_YOUTUBE_LOGIN=1)
     message(STATUS "Embedded YouTube login (Android): ENABLED")
+endif()
+
+# Desktop counterpart (2026-09-26), via QtWebEngine -- see
+# src/desktopyoutubelogin.h's own comment for the full "why" (a real
+# fallback for Windows Chrome/Edge users, where "Get cookies from browser"
+# can't read their cookies at all, plus the same no-export-step convenience
+# Android's own embedded login already has). A genuinely heavier dependency
+# than Android's QtWebView (a full bundled Chromium vs. wrapping the OS's
+# own WebView), so kept behind its own option rather than folded into the
+# Android one. The actual find_package/option-declaration happens much
+# earlier in this file (right before qt_add_qml_module, see that comment
+# for why -- the QML file selection needs the result too, and QUIET/
+# graceful rather than REQUIRED, since QtWebEngine's open-source binaries
+# aren't published the same way qtwebview's are and a CI runner may
+# genuinely lack it); this block just wires up the already-computed
+# VIVACE_HAVE_DESKTOP_YOUTUBE_LOGIN result. WebEngineCore is the base
+# module (QWebEngineCookieStore/QNetworkCookie, used directly from C++ in
+# src/desktopyoutubelogin.cpp); WebEngineQuick is the separate QML-
+# integration module (the `import QtWebEngine` / WebEngineView QML type
+# used by qml/desktop/YoutubeLoginDialog.qml, and
+# QQuickWebEngineProfile::defaultProfile() from C++) -- both linked
+# explicitly, mirroring the Android WebView/WebViewQuick pair above rather
+# than assuming one re-exports the other.
+if(VIVACE_HAVE_DESKTOP_YOUTUBE_LOGIN)
+    target_link_libraries(vivace PRIVATE Qt6::WebEngineCore Qt6::WebEngineQuick)
+    target_compile_definitions(vivace PRIVATE VIVACE_HAVE_DESKTOP_YOUTUBE_LOGIN=1)
+    message(STATUS "Embedded YouTube login (Desktop): ENABLED")
+elseif(NOT ANDROID AND VIVACE_ENABLE_DESKTOP_YOUTUBE_LOGIN)
+    message(STATUS "Embedded YouTube login (Desktop): DISABLED (QtWebEngine not found -- "
+                    "install it and reconfigure, or set "
+                    "VIVACE_ENABLE_DESKTOP_YOUTUBE_LOGIN=OFF to silence this message)")
 endif()
 
 # TEMPORARY desktop-test convenience (2026-09-19, user request): a plain

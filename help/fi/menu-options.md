@@ -138,20 +138,26 @@ mitään vietävää, ei mitään vanhenevaa.
   toimivat normaalisti.
 - Selaimen valitseminen tässä ohittaa alla olevan **Evästetiedosto:**
   -kentän, kun molemmat on asetettu.
-- **Ei saatavilla Androidissa** — katso sen sijaan alta **Kirjaudu
-  YouTubeen**.
+- **Ei toimi lainkaan Androidissa, eikä toimi Chromessa/Edgessä
+  Windowsissa** — katso alta **Kirjaudu YouTubeen** kummassakin
+  tapauksessa.
 
-### Kirjaudu YouTubeen (Android, suositeltu siellä)
+### Kirjaudu YouTubeen (Android, ja varavaihtoehto Chromelle/Edgelle Windowsissa)
 
 Kohdassa *Asetukset ▸ Verkko ▸ YouTube* on **Kirjaudu YouTubeen…**
 -painike (evästetiedostokentän vieressä), joka avaa oikean
-kirjautumissivun Vivacen sisällä käyttäen upotettua, käyttöjärjestelmän
-omaa WebView-näkymää. Kirjaudu sillä tilillä, jonka käyttöoikeuksia
-haluat käyttää, ja napauta sitten **Olen kirjautunut sisään** — Vivace
-lukee syntyneet istuntoevästeet ja tallentaa ne automaattisesti
-aktiiviseksi evästetiedostoksi. Tämä vastaa Androidilla yllä olevaa
-**Hae evästeet selaimesta** -toimintoa: ei mitään vietävää, ei mitään
-siirrettävää toiselta laitteelta käsin.
+kirjautumissivun Vivacen sisällä — Androidissa upotetun,
+käyttöjärjestelmän oman WebView-näkymän kautta, tai Windowsissa/
+Linuxissa/macOS:ssä mukana tulevan Chromium-pohjaisen näkymän
+(QtWebEngine) kautta. Kirjaudu sillä tilillä, jonka käyttöoikeuksia
+haluat käyttää, ja napauta sitten **Tallenna evästeet** — Vivace lukee
+syntyneet istuntoevästeet ja tallentaa ne automaattisesti aktiiviseksi
+evästetiedostoksi. Napauta **Sulje**, kun olet valmis. Androidissa tämä
+on ainoa tapa saada tuoreita evästeitä ylipäätään; työpöydällä se on
+lähinnä Chromea/Edgeä varten Windowsissa, joissa yllä oleva **Hae
+evästeet selaimesta** ei pysty lukemaan niiden evästeitä — kummassakin
+tapauksessa ei ole mitään vietävää eikä siirrettävää toiselta laitteelta
+käsin.
 
 **Muista:**
 
@@ -160,8 +166,11 @@ siirrettävää toiselta laitteelta käsin.
   eristetty muiden sovellusten tallennustilasta), minkä vuoksi tämä
   toimii eri tavalla kuin työpöytävaihtoehto — kirjautuminen Vivacen
   omaan upotettuun selaimeen *sisällä* on käytännön korvike.
-- Saatavilla vain Androidissa; kaikki muut alustat käyttävät **Hae
-  evästeet selaimesta** -toimintoa.
+- Työpöydällä tämä on oikea, erillinen selainistunto, jota Vivace itse
+  ohjaa — aidosti raskaampi ominaisuus kuin **Hae evästeet selaimesta**
+  (se sisältää oman selainmoottorinsa), joten sitä kannattaa käyttää
+  lähinnä silloin, kun tuo yksinkertaisempi vaihtoehto ei toimi, eli
+  Chromen/Edgen kanssa Windowsissa.
 
 ### Evästeiden vieminen tiedostoon (varavaihtoehto kaikilla alustoilla)
 
@@ -169,7 +178,8 @@ Kenttä **Evästetiedosto:** odottaa pelkkää tekstitiedostoa,
 `cookies.txt`, klassisessa Netscape-evästemuodossa (sama muoto, jota
 yt-dlpin oma valitsin `--cookies` lukee) — käytä tätä, kun kumpikaan
 yllä olevista suorista vaihtoehdoista ei ole saatavilla tai toimi
-sinulla (esim. Chrome/Edge Windowsissa).
+sinulla (esim. jos **Kirjaudu YouTubeen** ei ole saatavilla käyttämässäsi
+Vivace-versiossa).
 
 **Näin luot sellaisen:**
 

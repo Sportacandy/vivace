@@ -133,20 +133,24 @@ hiçbir şey, eskiyecek hiçbir şey yoktur.
   normal şekilde çalışır.
 - Burada bir tarayıcı seçmek, ikisi de ayarlandığında aşağıdaki
   **Çerez dosyası:** alanına göre önceliklidir.
-- **Android'de kullanılamaz** — bunun yerine aşağıdaki **YouTube'a
-  giriş yap** bölümüne bakın.
+- **Android'de hiç çalışmaz, Windows'ta Chrome/Edge'de de çalışmaz** —
+  her iki durum için de aşağıdaki **YouTube'a giriş yap** bölümüne bakın.
 
-### YouTube'a giriş yap (Android, orada önerilir)
+### YouTube'a giriş yap (Android, ve Windows'ta bir Chrome/Edge yedeği)
 
-*Tercihler ▸ Ağ ▸ YouTube* içinde (çerez dosyası alanının yanında) gömülü,
-işletim sistemine özgü bir WebView kullanarak Vivace'nin kendi içinde
-gerçek bir oturum açma sayfası açan bir **YouTube'a giriş yap…** düğmesi
-bulunur. Erişimini kullanmak istediğiniz hesapla oturum açın, ardından
-**"Giriş yaptım"**'a dokunun — Vivace ortaya çıkan oturum çerezlerini
-okur ve bunları etkin çerez dosyası olarak otomatik olarak kaydeder. Bu,
-yukarıdaki **Çerezleri tarayıcıdan al**'ın Android karşılığıdır: dışa
-aktarılacak hiçbir şey, başka bir cihazdan elle aktarılacak hiçbir şey
-yoktur.
+*Tercihler ▸ Ağ ▸ YouTube* içinde (çerez dosyası alanının yanında)
+Vivace'nin kendi içinde gerçek bir oturum açma sayfası açan bir
+**YouTube'a giriş yap…** düğmesi bulunur — Android'de gömülü, işletim
+sistemine özgü bir WebView, Windows/Linux/macOS'ta ise Chromium tabanlı
+gömülü bir görünüm (QtWebEngine) kullanılarak. Erişimini kullanmak
+istediğiniz hesapla oturum açın, ardından **"Çerezleri kaydet"**'e
+dokunun — Vivace ortaya çıkan oturum çerezlerini okur ve bunları etkin
+çerez dosyası olarak otomatik olarak kaydeder. İşiniz bitince
+**"Kapat"**'a dokunun. Android'de yeni çerezler edinmenin tek yolu
+budur; masaüstünde ise esas olarak Windows'taki Chrome/Edge içindir —
+yukarıdaki **Çerezleri tarayıcıdan al** bu tarayıcıların çerezlerini
+okuyamaz — her iki durumda da dışa aktarılacak veya başka bir cihazdan
+elle aktarılacak hiçbir şey yoktur.
 
 **Aklınızda bulunsun:**
 
@@ -155,16 +159,19 @@ yoktur.
   yalıtılmıştır); bu yöntemin masaüstü seçeneğinden farklı çalışmasının
   nedeni de budur — Vivace'nin kendi gömülü tarayıcısının *içinde*
   oturum açmak pratik bir alternatiftir.
-- Yalnızca Android'de kullanılabilir; diğer tüm platformlar bunun yerine
-  **Çerezleri tarayıcıdan al**'ı kullanır.
+- Masaüstünde bu, Vivace'nin kendisinin denetlediği gerçek, ayrı bir
+  tarayıcı oturumudur — **Çerezleri tarayıcıdan al**'a kıyasla gerçekten
+  daha "ağır" bir özelliktir (kendi tarayıcı motorunu içinde barındırır),
+  bu yüzden esas olarak daha basit seçeneğin işe yaramadığı durumlarda,
+  yani Windows'ta Chrome/Edge'de kullanmaya değer.
 
 ### Çerezleri bir dosyaya dışa aktarma (her platformda yedek yöntem)
 
 **Çerez dosyası:** alanı, klasik Netscape çerez kavanozu biçiminde
 (yt-dlp'nin kendi `--cookies` seçeneğinin okuduğu biçimin aynısı) düz
 metin bir `cookies.txt` dosyası bekler — yukarıdaki canlı seçeneklerden
-hiçbiri kullanılamadığında veya işe yaramadığında (ör. Windows'ta
-Chrome/Edge) bunu kullanın.
+hiçbiri kullanılamadığında veya işe yaramadığında (ör. kullandığınız
+Vivace sürümünde **YouTube'a giriş yap** özelliği yoksa) bunu kullanın.
 
 **Bir tane oluşturmak için:**
 

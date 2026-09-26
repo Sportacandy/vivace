@@ -134,18 +134,22 @@ intet der bliver forældet.
   Linux og macOS er ikke berørt af dette og fungerer normalt.
 - At vælge en browser her har forrang frem for feltet **Cookiefil:**
   nedenfor, når begge er angivet.
-- **Ikke tilgængeligt på Android** — se **Log ind på YouTube** nedenfor
-  i stedet.
+- **Virker slet ikke på Android, og virker ikke for Chrome/Edge på
+  Windows** — se **Log ind på YouTube** nedenfor for begge tilfælde.
 
-### Log ind på YouTube (Android, anbefales der)
+### Log ind på YouTube (Android, og en Chrome/Edge-reserveløsning på Windows)
 
 *Indstillinger ▸ Netværk ▸ YouTube* har en knap **Log ind på
 YouTube…** (ved siden af feltet til cookiefilen), som åbner en rigtig
-loginside inde i Vivace selv, via en indlejret, OS-native WebView. Log
-ind med den konto, hvis adgang du vil bruge, og tryk derefter på **Jeg
-er logget ind** — Vivace læser de resulterende sessionscookies og
-gemmer dem automatisk som den aktive cookiefil. Dette er Androids
-modstykke til **Hent cookies fra browser** ovenfor: intet at
+loginside inde i Vivace selv — en indlejret, OS-native WebView på
+Android, eller en medfølgende Chromium-baseret visning (QtWebEngine) på
+Windows/Linux/macOS. Log ind med den konto, hvis adgang du vil bruge, og
+tryk derefter på **Gem cookies** — Vivace læser de resulterende
+sessionscookies og gemmer dem automatisk som den aktive cookiefil. Tryk
+på **Luk**, når du er færdig. På Android er dette den eneste måde at få
+friske cookies på overhovedet; på skrivebordet er det primært til
+Chrome/Edge på Windows, hvor **Hent cookies fra browser** ovenfor ikke
+kan læse deres cookies — under alle omstændigheder er der intet at
 eksportere, intet at overføre fra en anden enhed manuelt.
 
 **Husk:**
@@ -155,16 +159,19 @@ eksportere, intet at overføre fra en anden enhed manuelt.
   alle andre appers), hvilket er grunden til, at dette fungerer
   anderledes end skrivebordsmuligheden — at logge ind *inde i* Vivaces
   egen indlejrede browser er den praktiske erstatning.
-- Kun tilgængeligt på Android; alle andre platforme bruger **Hent
-  cookies fra browser** i stedet.
+- På skrivebordet er dette en rigtig, separat browsersession, som
+  Vivace selv styrer — en reelt tungere funktion end **Hent cookies fra
+  browser** (den medbringer sin egen browsermotor), så den er primært
+  værd at bruge dér, hvor den enklere mulighed ikke virker, altså
+  Chrome/Edge på Windows.
 
 ### Eksport af cookies til en fil (reserveløsning på alle platforme)
 
 Feltet **Cookiefil:** forventer en almindelig tekstfil, `cookies.txt`, i
 det klassiske Netscape cookie-format (samme format som yt-dlps eget flag
 `--cookies` læser) — brug dette, når ingen af de direkte muligheder
-ovenfor er tilgængelige eller virker for dig (f.eks. Chrome/Edge på
-Windows).
+ovenfor er tilgængelige eller virker for dig (f.eks. hvis **Log ind på
+YouTube** ikke er tilgængelig i din version af Vivace).
 
 **Sådan opretter du en:**
 

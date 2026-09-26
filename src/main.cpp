@@ -44,6 +44,10 @@
 #include <QtWebView>
 #endif
 
+#ifdef VIVACE_HAVE_DESKTOP_YOUTUBE_LOGIN
+#include <QtWebEngineQuick>
+#endif
+
 namespace {
 
 // Persistent troubleshooting log. A WIN32 GUI app has no usable stderr, so
@@ -296,6 +300,16 @@ bool handleCliInfoRequest(const QStringList &userArgs)
 
 int main(int argc, char *argv[])
 {
+    // Per QtWebEngineQuick's own docs: "Sets up an OpenGL Context that can
+    // be shared between threads. This has to be done before QGuiApplication
+    // is created" -- the OPPOSITE ordering from QtWebView::initialize()
+    // below, which must run AFTER QGuiApplication instead. Desktop-only
+    // (VIVACE_HAVE_DESKTOP_YOUTUBE_LOGIN) -- see CMakeLists.txt's own
+    // comment on why this feature doesn't extend to Android.
+#ifdef VIVACE_HAVE_DESKTOP_YOUTUBE_LOGIN
+    QtWebEngineQuick::initialize();
+#endif
+
     // Force Qt Multimedia's FFmpeg backend. Vivace is designed and tested only
     // against it (subtitle delivery via the video sink, DVD device sourcing,
     // etc.); the platform backends are unsupported. On Windows in particular the
@@ -320,9 +334,9 @@ int main(int argc, char *argv[])
 
     // Per Qt WebView's own docs: must be called right after constructing
     // QGuiApplication, before anything else touches the QML engine or a
-    // WebView item. Android-only (VIVACE_HAVE_ANDROID_YOUTUBE_LOGIN) -- see
-    // CMakeLists.txt's own comment on why this feature doesn't extend to
-    // desktop.
+    // WebView item. Android-only (VIVACE_HAVE_ANDROID_YOUTUBE_LOGIN) --
+    // desktop's own equivalent feature uses QtWebEngine instead (see
+    // QtWebEngineQuick::initialize() above, called BEFORE QGuiApplication).
 #ifdef VIVACE_HAVE_ANDROID_YOUTUBE_LOGIN
     QtWebView::initialize();
 #endif

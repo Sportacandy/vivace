@@ -140,20 +140,26 @@ traci ważności.
   Linux i macOS nie są tym dotknięte i działają normalnie.
 - Wybranie tu przeglądarki ma pierwszeństwo przed polem **Plik
   cookie:** poniżej, gdy ustawione są oba warianty.
-- **Niedostępne na Androidzie** — zamiast tego zobacz **Zaloguj się do
-  YouTube** poniżej.
+- **W ogóle nie działa na Androidzie, a także nie działa w przypadku
+  Chrome/Edge w systemie Windows** — w obu przypadkach zobacz **Zaloguj
+  się do YouTube** poniżej.
 
-### Zaloguj się do YouTube (Android, zalecane tam)
+### Zaloguj się do YouTube (Android oraz zastępcze rozwiązanie dla Chrome/Edge w systemie Windows)
 
 *Ustawienia ▸ Sieć ▸ YouTube* zawiera przycisk **Zaloguj się do
 YouTube…** (obok pola pliku cookie), który otwiera prawdziwą stronę
-logowania wewnątrz samego Vivace, przy użyciu wbudowanej, natywnej dla
-systemu przeglądarki WebView. Zaloguj się na konto, z którego dostępu
-chcesz skorzystać, a następnie stuknij **Jestem zalogowany** — Vivace
-odczyta wynikowe pliki cookie sesji i automatycznie zapisze je jako
-aktywny plik cookie. Jest to odpowiednik funkcji **Pobierz pliki cookie
-z przeglądarki** powyżej dla Androida: nic nie trzeba eksportować ani
-ręcznie przenosić z innego urządzenia.
+logowania wewnątrz samego Vivace — na Androidzie jest to wbudowana,
+natywna dla systemu przeglądarka WebView, a w systemach
+Windows/Linux/macOS dołączony widok oparty na Chromium (QtWebEngine).
+Zaloguj się na konto, z którego dostępu chcesz skorzystać, a następnie
+stuknij **Zapisz pliki cookie** — Vivace odczyta wynikowe pliki cookie
+sesji i automatycznie zapisze je jako aktywny plik cookie. Po
+zakończeniu stuknij **Zamknij**. Na Androidzie jest to jedyny sposób,
+by w ogóle uzyskać świeże pliki cookie; na komputerze służy głównie
+przeglądarkom Chrome/Edge w systemie Windows, w przypadku których
+funkcja **Pobierz pliki cookie z przeglądarki** powyżej nie może
+odczytać ich plików cookie — w obu przypadkach nic nie trzeba
+eksportować ani ręcznie przenosić z innego urządzenia.
 
 **Warto pamiętać:**
 
@@ -162,16 +168,20 @@ ręcznie przenosić z innego urządzenia.
   (pamięć każdej aplikacji jest odizolowana od pozostałych) — dlatego
   działa to inaczej niż opcja na komputerze: logowanie się *wewnątrz*
   własnej wbudowanej przeglądarki Vivace jest praktycznym zamiennikiem.
-- Dostępne tylko na Androidzie; na każdej innej platformie zamiast tego
-  używana jest funkcja **Pobierz pliki cookie z przeglądarki**.
+- Na komputerze jest to prawdziwa, oddzielna sesja przeglądarki, którą
+  zarządza sam Vivace — zdecydowanie cięższa funkcja niż **Pobierz
+  pliki cookie z przeglądarki** (dołącza własny silnik przeglądarki),
+  więc warto z niej korzystać głównie tam, gdzie ta prostsza opcja nie
+  działa, czyli w przypadku Chrome/Edge w systemie Windows.
 
 ### Eksportowanie plików cookie do pliku (rozwiązanie zastępcze na każdej platformie)
 
 Pole **Plik cookie:** wymaga zwykłego pliku tekstowego `cookies.txt` w
 klasycznym formacie Netscape cookie-jar (tym samym, który odczytuje
 własna opcja `--cookies` narzędzia yt-dlp) — użyj go, gdy żadna z
-powyższych opcji na żywo nie jest dostępna lub nie działa (np.
-Chrome/Edge w systemie Windows).
+powyższych opcji na żywo nie jest dostępna lub nie działa (np. gdy
+funkcja **Zaloguj się do YouTube** jest niedostępna w Twojej wersji
+Vivace).
 
 **Aby go utworzyć:**
 

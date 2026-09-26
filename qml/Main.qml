@@ -1649,16 +1649,22 @@ ApplicationWindow {
         server: castServer
     }
 
-    // Android only -- a real, no-op AndroidYoutubeLogin still exists on
-    // every other platform (isSupported() just returns false there), so
-    // this instantiation is unconditional, matching PythonYoutubeResolver's
-    // own always-present/conditionally-functional pattern.
+    // Both instantiated unconditionally on every platform -- each is a
+    // real, no-op on the "wrong" platform (isSupported() just returns
+    // false there), matching PythonYoutubeResolver's own always-present/
+    // conditionally-functional pattern. YoutubeLoginDialog itself resolves
+    // to whichever of the three real QML files (Android/desktop/stub)
+    // CMakeLists.txt compiled for this platform, so only its `resolver`
+    // binding needs to pick the matching backend.
     AndroidYoutubeLogin {
         id: androidYoutubeLogin
     }
+    DesktopYoutubeLogin {
+        id: desktopYoutubeLogin
+    }
     YoutubeLoginDialog {
         id: youtubeLoginDialog
-        resolver: androidYoutubeLogin
+        resolver: Qt.platform.os === "android" ? androidYoutubeLogin : desktopYoutubeLogin
         hideWhileOpen: preferencesDialog
     }
 

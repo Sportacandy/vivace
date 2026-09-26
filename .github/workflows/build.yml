@@ -79,7 +79,7 @@ jobs:
         with:
           version: '6.11.1'
           arch: ${{ matrix.qt-arch }}
-          modules: 'qtmultimedia qtshadertools'
+          modules: 'qtmultimedia qtshadertools qtwebengine qtpositioning qtwebchannel'
           # aqtinstall's last PyPI release (3.3.0) predates Qt 6.11's repository
           # restructuring (per-toolchain top-level dirs on Windows, modules moved
           # under an "addons." package namespace) -- see aqtinstall#959, fixed by

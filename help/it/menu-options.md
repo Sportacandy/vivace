@@ -140,19 +140,24 @@ esportare, niente che diventi obsoleto.
   su Linux e macOS non sono interessati e funzionano normalmente.
 - Selezionare un browser qui ha la priorità sul campo **File dei cookie:**
   più sotto, quando entrambi sono impostati.
-- **Non disponibile su Android** — vedi invece **Accedi a YouTube** più
-  sotto.
+- **Non funziona affatto su Android, e non funziona nemmeno con Chrome/Edge
+  su Windows** — per entrambi i casi vedi **Accedi a YouTube** più sotto.
 
-### Accedi a YouTube (Android, consigliato su questa piattaforma)
+### Accedi a YouTube (Android, e soluzione alternativa per Chrome/Edge su Windows)
 
 *Preferenze ▸ Rete ▸ YouTube* ha un pulsante **Accedi a YouTube…**
 (accanto al campo del file dei cookie) che apre una vera pagina di accesso
-direttamente dentro Vivace, tramite una WebView incorporata e nativa del
-sistema operativo. Accedi con l'account di cui vuoi usare l'accesso, poi
-tocca **Ho eseguito l'accesso** — Vivace legge i cookie di sessione
-risultanti e li salva automaticamente come file dei cookie attivo. È
-l'equivalente su Android di **Recupero cookie dal browser** sopra: niente
-da esportare, niente da trasferire manualmente da un altro dispositivo.
+direttamente dentro Vivace — tramite una WebView incorporata e nativa del
+sistema operativo su Android, oppure tramite una vista basata su Chromium
+inclusa con Vivace (QtWebEngine) su Windows/Linux/macOS. Accedi con
+l'account di cui vuoi usare l'accesso, poi tocca **Salva i cookie** —
+Vivace legge i cookie di sessione risultanti e li salva automaticamente
+come file dei cookie attivo. Tocca **Chiudi** quando hai finito. Su
+Android questo è l'unico modo per ottenere cookie aggiornati; sul desktop
+serve principalmente come soluzione alternativa per Chrome/Edge su
+Windows, dove **Recupero cookie dal browser** sopra non riesce a leggerne
+i cookie — in entrambi i casi non c'è nulla da esportare né da
+trasferire manualmente da un altro dispositivo.
 
 **Da tenere presente:**
 
@@ -161,16 +166,20 @@ da esportare, niente da trasferire manualmente da un altro dispositivo.
   da quella di tutte le altre) — per questo qui funziona diversamente
   dall'opzione desktop: accedere *dentro* al browser incorporato di Vivace
   è il sostituto pratico.
-- Disponibile solo su Android; tutte le altre piattaforme usano **Recupero
-  cookie dal browser** al suo posto.
+- Sul desktop si tratta di una vera sessione del browser separata,
+  controllata direttamente da Vivace — una funzione decisamente più
+  impegnativa rispetto a **Recupero cookie dal browser** (include un
+  proprio motore del browser), quindi conviene usarla soprattutto dove
+  quell'opzione più semplice non funziona, cioè con Chrome/Edge su
+  Windows.
 
 ### Esportare i cookie in un file (soluzione alternativa su qualsiasi piattaforma)
 
 Il campo **File dei cookie:** richiede un file di testo semplice
 `cookies.txt` nel classico formato dei cookie Netscape (lo stesso formato
 letto dall'opzione `--cookies` di yt-dlp) — usalo quando nessuna delle due
-opzioni in tempo reale sopra è disponibile o funziona per te (ad es.
-Chrome/Edge su Windows).
+opzioni in tempo reale sopra è disponibile o funziona per te (ad es. se
+**Accedi a YouTube** non è disponibile nella tua versione di Vivace).
 
 **Per crearne uno:**
 

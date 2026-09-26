@@ -104,16 +104,21 @@ Chromium、Opera、Safari、Vivaldi 和 Whale。選取您的瀏覽器後，Vivac
   不受此影響，可正常運作。
 - 在此選取瀏覽器時，若下方的 **Cookie 檔案：** 欄位也已設定，此選項
   將優先生效。
-- **在 Android 上無法使用** —— 請改用下方的 **登入 YouTube** 一節。
+- **在 Android 上完全無法使用，在 Windows 上的 Chrome/Edge 中也無法
+  使用** —— 這兩種情況都請參閱下方的 **登入 YouTube** 一節。
 
-### 登入 YouTube（Android，建議在此平台使用）
+### 登入 YouTube（Android，以及 Windows 上 Chrome/Edge 的備援方案）
 
 *偏好設定 ▸ 網路 ▸ YouTube* 中有一個 **登入 YouTube…** 按鈕（位於
-Cookie 檔案欄位旁），會使用內嵌、作業系統原生的 WebView，在 Vivace
-本身開啟一個真正的登入頁面。使用您想要使用其存取權的帳號登入，然後
-點選 **「已登入」** —— Vivace 會讀取由此產生的工作階段 Cookie，並
-自動將其儲存為目前使用的 Cookie 檔案。這是 Android 上 **從瀏覽器取得
-Cookie**（見上文）的對等方式：無需匯出，也無需從其他裝置手動傳輸。
+Cookie 檔案欄位旁），會在 Vivace 本身開啟一個真正的登入頁面——在
+Android 上使用內嵌、作業系統原生的 WebView，在 Windows/Linux/macOS 上
+則使用內建的 Chromium 型檢視元件（QtWebEngine）。使用您想要使用其存取
+權的帳號登入，然後點選 **「儲存 Cookie」** —— Vivace 會讀取由此產生
+的工作階段 Cookie，並自動將其儲存為目前使用的 Cookie 檔案。完成後點選
+**「關閉」**。在 Android 上，這是取得最新 Cookie 的唯一方式；在桌面
+平台上，它主要用於 Windows 上的 Chrome/Edge，因為上方的 **從瀏覽器取得
+Cookie** 無法讀取它們的 Cookie——無論哪種情況，都無需匯出，也無需從
+其他裝置手動傳輸。
 
 **請注意：**
 
@@ -121,14 +126,17 @@ Cookie**（見上文）的對等方式：無需匯出，也無需從其他裝置
   應用程式的儲存空間皆與其他所有應用程式相互隔離），這正是此方式與
   桌面選項運作方式不同的原因——在 Vivace 自身的內嵌瀏覽器 *內* 登入
   是實際可行的替代方案。
-- 僅在 Android 上可用；其他所有平台皆改用 **從瀏覽器取得 Cookie**。
+- 在桌面平台上，這是一個由 Vivace 自身控制的真正獨立瀏覽器工作階段
+  ——相較於 **從瀏覽器取得 Cookie**，這其實是更「重量級」的功能（它
+  內建了自己的瀏覽器引擎），因此主要值得在那個較簡單的選項無法使用時
+  才使用，也就是 Windows 上的 Chrome/Edge。
 
 ### 匯出 Cookie 至檔案（各平台通用的備援方案）
 
 **Cookie 檔案：** 欄位需要一個採用傳統 Netscape cookie 格式的純文字
 `cookies.txt` 檔案（與 yt-dlp 自身的 `--cookies` 選項所讀取的格式相
-同）——當上方兩種即時選項皆無法使用或對您不起作用時（例如 Windows 上
-的 Chrome/Edge），請使用此方式。
+同）——當上方兩種即時選項皆無法使用或對您不起作用時（例如您所使用的
+Vivace 版本沒有提供 **登入 YouTube** 功能），請使用此方式。
 
 **建立方式：**
 

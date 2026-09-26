@@ -101,16 +101,21 @@ Chromium、Opera、Safari、Vivaldi 和 Whale。选择您的浏览器后，Vivac
   此影响，可正常工作。
 - 在此处选择浏览器时，若下方的 **Cookie 文件：** 字段也已设置，此选项
   将优先生效。
-- **在 Android 上不可用** —— 请改用下方的 **登录 YouTube** 部分。
+- **在 Android 上完全不可用，在 Windows 上的 Chrome/Edge 中也不可用**
+  —— 这两种情况都请参阅下方的 **登录 YouTube** 部分。
 
-### 登录 YouTube（Android，推荐在此平台使用）
+### 登录 YouTube（Android，以及 Windows 上 Chrome/Edge 的备用方案）
 
 *首选项 ▸ 网络 ▸ YouTube* 中有一个 **登录 YouTube…** 按钮（位于 Cookie
-文件字段旁），它会使用嵌入式、操作系统原生的 WebView，在 Vivace 内部
-打开一个真实的登录页面。使用您想要使用其访问权限的账号登录，然后点击
-**"已登录"** —— Vivace 会读取由此产生的会话 Cookie，并自动将其保存
-为当前使用的 Cookie 文件。这是 Android 上 **从浏览器获取 Cookie**
-（见上文）的等效方式：无需导出，也无需从其他设备手动传输。
+文件字段旁），它会在 Vivace 内部打开一个真实的登录页面——在 Android 上
+使用嵌入式、操作系统原生的 WebView，在 Windows/Linux/macOS 上使用内置
+的基于 Chromium 的视图（QtWebEngine）。使用您想要使用其访问权限的账号
+登录，然后点击 **"保存 Cookie"** —— Vivace 会读取由此产生的会话
+Cookie，并自动将其保存为当前使用的 Cookie 文件。完成后点击
+**"关闭"**。在 Android 上，这是获取最新 Cookie 的唯一方式；在桌面平台
+上，它主要用于 Windows 上的 Chrome/Edge，因为上方的 **从浏览器获取
+Cookie** 无法读取它们的 Cookie——无论哪种情况，都无需导出，也无需从
+其他设备手动传输。
 
 **请注意：**
 
@@ -118,14 +123,17 @@ Chromium、Opera、Safari、Vivaldi 和 Whale。选择您的浏览器后，Vivac
   （每个应用的存储都与其他所有应用相互隔离），这正是此方式与桌面选项
   不同的原因——在 Vivace 自身的内嵌浏览器 *内部* 登录是实际可行的替代
   方案。
-- 仅在 Android 上可用；其他所有平台均使用 **从浏览器获取 Cookie**。
+- 在桌面平台上，这是一个由 Vivace 自身控制的真正独立的浏览器会话——
+  相比 **从浏览器获取 Cookie**，这实际上是一个更"重量级"的功能（它
+  内置了自己的浏览器引擎），因此主要值得在那个更简单的选项无法使用时
+  才使用，即 Windows 上的 Chrome/Edge。
 
 ### 导出 Cookie 到文件（各平台通用的备用方案）
 
 **Cookie 文件：** 字段需要一个采用经典 Netscape cookie 格式的纯文本
 `cookies.txt` 文件（与 yt-dlp 自身的 `--cookies` 选项读取的格式相同）——
-当上方两种实时选项均不可用或对您不起作用时（例如 Windows 上的
-Chrome/Edge），请使用此方法。
+当上方两种实时选项均不可用或对您不起作用时（例如您所使用的 Vivace
+版本不提供 **登录 YouTube** 功能），请使用此方法。
 
 **创建方法：**
 

@@ -17,6 +17,12 @@ each get their own entry instead.
   Vivace itself and saves the resulting session as the active cookies
   file — no manual export/transfer from a desktop browser needed, the
   Android equivalent of desktop's "Get cookies from browser".
+- Windows/Linux/macOS: the same "Log in to YouTube…" button is now also
+  available on desktop (using an embedded, Chromium-based view instead
+  of Android's native WebView) — mainly useful as a fallback for
+  Chrome/Edge on Windows, where "Get cookies from browser" can't read
+  their cookies at all. Requires a Qt build with QtWebEngine; degrades
+  gracefully (the button just doesn't appear) if it isn't available.
 
 ## [0.5.2] — 2026-09-22
 

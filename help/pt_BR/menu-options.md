@@ -135,19 +135,25 @@ exportar, nada que fique desatualizado.
   funcionam normalmente.
 - Selecionar um navegador aqui tem prioridade sobre o campo **Arquivo de
   cookies:** abaixo, quando os dois estiverem definidos.
-- **Não disponível no Android** — veja **Fazer login no YouTube** abaixo em
-  vez disso.
+- **Não funciona no Android de jeito nenhum, e também não funciona no
+  Chrome/Edge no Windows** — veja **Fazer login no YouTube** abaixo para
+  os dois casos.
 
-### Fazer login no YouTube (Android, recomendado nessa plataforma)
+### Fazer login no YouTube (Android, e uma alternativa para Chrome/Edge no Windows)
 
 *Preferências ▸ Rede ▸ YouTube* tem um botão **Fazer login no YouTube…**
 (ao lado do campo do arquivo de cookies) que abre uma página de login de
-verdade dentro do próprio Vivace, usando uma WebView incorporada e nativa
-do sistema operacional. Faça login com a conta cujo acesso você quer usar
-e depois toque em **Concluí o login** — o Vivace lê os cookies de sessão
-resultantes e os salva automaticamente como o arquivo de cookies ativo.
-Esse é o equivalente no Android de **Obter cookies do navegador** acima:
-nada para exportar, nada para transferir manualmente de outro dispositivo.
+verdade dentro do próprio Vivace — usando uma WebView incorporada e nativa
+do sistema operacional no Android, ou uma visualização baseada em Chromium
+que acompanha o Vivace (QtWebEngine) no Windows/Linux/macOS. Faça login
+com a conta cujo acesso você quer usar e depois toque em **Salvar
+cookies** — o Vivace lê os cookies de sessão resultantes e os salva
+automaticamente como o arquivo de cookies ativo. Toque em **Fechar**
+quando terminar. No Android, essa é a única forma de obter cookies
+atualizados; no desktop, ela serve principalmente como alternativa para
+Chrome/Edge no Windows, onde **Obter cookies do navegador** acima não
+consegue ler os cookies deles — de qualquer forma, não há nada para
+exportar nem para transferir manualmente de outro dispositivo.
 
 **Vale lembrar:**
 
@@ -156,8 +162,11 @@ nada para exportar, nada para transferir manualmente de outro dispositivo.
   app é isolado do de todos os outros) — por isso isso funciona de um
   jeito diferente da opção de desktop: fazer login *dentro* do navegador
   incorporado do próprio Vivace é o substituto prático.
-- Disponível somente no Android; todas as outras plataformas usam
-  **Obter cookies do navegador** em vez disso.
+- No desktop, essa é uma sessão de navegador real e separada, controlada
+  pelo próprio Vivace — um recurso bem mais pesado do que **Obter cookies
+  do navegador** (ele traz seu próprio motor de navegador), então vale a
+  pena usá-lo principalmente onde essa opção mais simples não funciona,
+  ou seja, Chrome/Edge no Windows.
 
 ### Exportando cookies para um arquivo (alternativa em qualquer plataforma)
 
@@ -165,7 +174,8 @@ O campo **Arquivo de cookies:** espera um arquivo de texto simples
 `cookies.txt` no formato clássico de cookies do Netscape (o mesmo formato
 que a própria opção `--cookies` do yt-dlp lê) — use isso quando nenhuma
 das duas opções ao vivo acima estiver disponível ou funcionar para você
-(por exemplo, Chrome/Edge no Windows).
+(por exemplo, se **Fazer login no YouTube** não estiver disponível na sua
+versão do Vivace).
 
 **Para criar um:**
 

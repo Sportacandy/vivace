@@ -137,20 +137,26 @@ exportar, nada que caduque.
   Linux y macOS no se ven afectados por esto y funcionan con normalidad.
 - Seleccionar un navegador aquí tiene prioridad sobre el campo **Archivo de
   cookies:** de más abajo, cuando ambos están configurados.
-- **No disponible en Android** — consulte en su lugar **Iniciar sesión en
-  YouTube** más abajo.
+- **No funciona en absoluto en Android, y tampoco funciona con Chrome/Edge
+  en Windows** — consulte **Iniciar sesión en YouTube** más abajo para
+  ambos casos.
 
-### Iniciar sesión en YouTube (Android, recomendado en esa plataforma)
+### Iniciar sesión en YouTube (Android, y alternativa para Chrome/Edge en Windows)
 
 *Preferencias ▸ Red ▸ YouTube* tiene un botón **Iniciar sesión en
 YouTube…** (junto al campo del archivo de cookies) que abre una página de
-inicio de sesión real dentro de la propia Vivace, mediante una vista web
-(WebView) integrada y nativa del sistema operativo. Inicie sesión con la
-cuenta cuyo acceso desea usar y luego toque **He iniciado sesión** —
-Vivace lee las cookies de sesión resultantes y las guarda automáticamente
-como el archivo de cookies activo. Es el equivalente en Android de
-**Obtener cookies del navegador** de arriba: nada que exportar, nada que
-transferir a mano desde otro dispositivo.
+inicio de sesión real dentro de la propia Vivace — mediante una vista web
+(WebView) integrada y nativa del sistema operativo en Android, o mediante
+una vista basada en Chromium incluida con Vivace (QtWebEngine) en
+Windows/Linux/macOS. Inicie sesión con la cuenta cuyo acceso desea usar y
+luego toque **Guardar cookies** — Vivace lee las cookies de sesión
+resultantes y las guarda automáticamente como el archivo de cookies
+activo. Toque **Cerrar** cuando termine. En Android, esta es la única
+forma de obtener cookies actualizadas; en el escritorio, sirve
+principalmente como alternativa para Chrome/Edge en Windows, donde
+**Obtener cookies del navegador** de arriba no puede leer sus cookies —
+en cualquier caso, no hay nada que exportar ni que transferir a mano desde
+otro dispositivo.
 
 **Tenga en cuenta:**
 
@@ -160,8 +166,11 @@ transferir a mano desde otro dispositivo.
   funciona de forma distinta a la opción de escritorio: iniciar sesión
   *dentro* del propio navegador integrado de Vivace es el sustituto
   práctico.
-- Solo disponible en Android; el resto de plataformas usan **Obtener
-  cookies del navegador** en su lugar.
+- En el escritorio, esta es una sesión de navegador real y separada que
+  la propia Vivace controla — una función considerablemente más pesada
+  que **Obtener cookies del navegador** (incluye su propio motor de
+  navegador), así que conviene usarla sobre todo donde esa opción más
+  sencilla no funciona, es decir, Chrome/Edge en Windows.
 
 ### Exportar las cookies a un archivo (alternativa en cualquier plataforma)
 
@@ -169,7 +178,8 @@ El campo **Archivo de cookies:** espera un archivo de texto plano
 `cookies.txt` en el clásico formato Netscape de cookies (el mismo formato
 que lee la propia opción `--cookies` de yt-dlp) — úselo cuando ninguna de
 las dos opciones en directo de arriba esté disponible o funcione para
-usted (por ejemplo, Chrome/Edge en Windows).
+usted (por ejemplo, si **Iniciar sesión en YouTube** no está disponible en
+su compilación de Vivace).
 
 **Para crear uno:**
 

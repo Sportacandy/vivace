@@ -144,21 +144,25 @@ vegada — no cal exportar res, i res no queda obsolet.
   Chrome/Edge de Linux i macOS no es veuen afectats.
 - Triar un navegador aquí té prioritat sobre el camp **Fitxer de
   galetes:** de més avall, quan tots dos estan establerts.
-- **No disponible a Android** — vegeu en el seu lloc **Inicia la sessió
-  a YouTube** de més avall.
+- **No funciona en absolut a Android, ni funciona amb el Chrome/Edge a
+  Windows** — vegeu **Inicia la sessió a YouTube** de més avall per a
+  tots dos casos.
 
-### Inicia la sessió a YouTube (Android, recomanat allà)
+### Inicia la sessió a YouTube (Android, i una alternativa per al Chrome/Edge a Windows)
 
 *Preferències ▸ Xarxa ▸ YouTube* té un botó **Inicia la sessió a
 YouTube…** (al costat del camp del fitxer de galetes) que obre una
-pàgina real d'inici de sessió dins del mateix Vivace, mitjançant una
-WebView incrustada, nativa del sistema operatiu. Inicia la sessió amb
-el compte l'accés del qual vols utilitzar i després toca **He iniciat
-la sessió** — el Vivace llegeix les galetes de sessió resultants i les
-desa automàticament com el fitxer de galetes actiu. Això és
-l'equivalent a Android de l'opció **Obtenir galetes des del navegador**
-de més amunt: no cal exportar res, ni transferir res manualment des
-d'un altre dispositiu.
+pàgina real d'inici de sessió dins del mateix Vivace — mitjançant una
+WebView incrustada i nativa del sistema operatiu a Android, o una
+vista basada en Chromium inclosa (QtWebEngine) a Windows/Linux/macOS.
+Inicia la sessió amb el compte l'accés del qual vols utilitzar i
+després toca **Desa les galetes** — el Vivace llegeix les galetes de
+sessió resultants i les desa automàticament com el fitxer de galetes
+actiu. Toca **Tanca** un cop fet. A Android, aquesta és l'única manera
+d'obtenir galetes noves; a l'escriptori, principalment serveix per al
+Chrome/Edge a Windows, on l'opció **Obtenir galetes des del navegador**
+de més amunt no pot llegir-ne les galetes — en qualsevol cas, no cal
+exportar res ni transferir res manualment des d'un altre dispositiu.
 
 **Tingues en compte:**
 
@@ -167,8 +171,12 @@ d'un altre dispositiu.
   aplicació està aïllat de totes les altres), per això funciona de
   manera diferent de l'opció d'escriptori — iniciar la sessió *dins*
   del navegador propi incrustat del Vivace és el substitut pràctic.
-- Només disponible a Android; totes les altres plataformes utilitzen
-  **Obtenir galetes des del navegador**.
+- A l'escriptori, això és una sessió de navegador real i separada que
+  el mateix Vivace controla — una funció genuïnament més pesant que
+  **Obtenir galetes des del navegador** (inclou el seu propi motor de
+  navegador), de manera que val la pena utilitzar-la sobretot allà on
+  aquella opció més senzilla no funciona, és a dir, amb el Chrome/Edge
+  a Windows.
 
 ### Exportar galetes a un fitxer (alternativa a totes les plataformes)
 
@@ -176,7 +184,8 @@ El camp **Fitxer de galetes:** espera un fitxer de text pla,
 `cookies.txt`, en el format clàssic de galetes de Netscape (el mateix
 format que llegeix l'opció pròpia `--cookies` del yt-dlp) — utilitza'l
 quan cap de les opcions en directe de més amunt estigui disponible o
-funcioni per a tu (per exemple, Chrome/Edge a Windows).
+funcioni per a tu (per exemple, si **Inicia la sessió a YouTube** no
+està disponible en la vostra versió del Vivace).
 
 **Per crear-ne un:**
 

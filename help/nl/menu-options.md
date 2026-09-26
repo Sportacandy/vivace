@@ -138,20 +138,25 @@ exporteren, niets dat verouderd raakt.
   Linux en macOS ondervinden hier geen last van en werken normaal.
 - Het selecteren van een browser hier heeft voorrang op het veld
   **Cookiebestand:** hieronder, wanneer beide zijn ingesteld.
-- **Niet beschikbaar op Android** — zie **Inloggen bij YouTube**
-  hieronder in plaats daarvan.
+- **Werkt helemaal niet op Android, en werkt niet voor Chrome/Edge op
+  Windows** — zie **Inloggen bij YouTube** hieronder voor beide
+  gevallen.
 
-### Inloggen bij YouTube (Android, daar aanbevolen)
+### Inloggen bij YouTube (Android, en een Windows Chrome/Edge-alternatief)
 
 *Voorkeuren ▸ Netwerk ▸ YouTube* heeft een knop **Inloggen bij
 YouTube…** (naast het veld voor het cookiebestand) die een echte
-aanmeldpagina binnen Vivace zelf opent, met behulp van een ingebouwde,
-systeemeigen WebView. Meld u aan met het account waarvan u de toegang
-wilt gebruiken en tik vervolgens op **Ik ben ingelogd** — Vivace leest
-de resulterende sessiecookies en slaat ze automatisch op als het actieve
-cookiebestand. Dit is het Android-equivalent van **Cookies ophalen uit
-browser** hierboven: niets om te exporteren, niets om handmatig van een
-ander apparaat over te zetten.
+aanmeldpagina binnen Vivace zelf opent — op Android een ingebouwde,
+systeemeigen WebView, op Windows/Linux/macOS een meegeleverde, op
+Chromium gebaseerde weergave (QtWebEngine). Meld u aan met het account
+waarvan u de toegang wilt gebruiken en tik vervolgens op **Cookies
+bewaren** — Vivace leest de resulterende sessiecookies en slaat ze
+automatisch op als het actieve cookiebestand. Tik op **Sluiten** zodra
+u klaar bent. Op Android is dit de enige manier om sowieso nieuwe
+cookies te krijgen; op de desktop is dit er vooral voor Chrome/Edge op
+Windows, waar **Cookies ophalen uit browser** hierboven de cookies niet
+kan lezen — in beide gevallen hoeft u niets handmatig te exporteren of
+van een ander apparaat over te zetten.
 
 **Houd er rekening mee:**
 
@@ -160,8 +165,11 @@ ander apparaat over te zetten.
   afgeschermd van elke andere app) — daarom werkt dit anders dan de
   desktopoptie: aanmelden *binnen* de ingebouwde browser van Vivace zelf
   is het praktische alternatief.
-- Alleen beschikbaar op Android; elk ander platform gebruikt in plaats
-  daarvan **Cookies ophalen uit browser**.
+- Op de desktop is dit een echte, aparte browsersessie die Vivace zelf
+  beheert — een aanzienlijk zwaardere functie dan **Cookies ophalen uit
+  browser** (er wordt een eigen browser-engine meegeleverd), dus is dit
+  vooral de moeite waard wanneer die eenvoudigere optie niet werkt, dat
+  wil zeggen Chrome/Edge op Windows.
 
 ### Cookies naar een bestand exporteren (alternatief op elk platform)
 
@@ -169,7 +177,8 @@ Het veld **Cookiebestand:** verwacht een gewoon tekstbestand `cookies.txt`
 in het klassieke Netscape-cookiejar-formaat (hetzelfde formaat dat
 yt-dlp's eigen `--cookies`-optie leest) — gebruik dit wanneer geen van
 beide bovenstaande live-opties beschikbaar is of voor u werkt (bijv.
-Chrome/Edge op Windows).
+wanneer **Inloggen bij YouTube** niet beschikbaar is in uw build van
+Vivace).
 
 **Zo maakt u er een:**
 

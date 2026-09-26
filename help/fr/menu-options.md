@@ -146,20 +146,26 @@ et Whale. Choisissez votre navigateur et Vivace lit ses cookies en direct,
   fonctionnent normalement.
 - Sélectionner un navigateur ici prend le pas sur le champ **Fichier de
   cookies :** ci-dessous, lorsque les deux sont définis.
-- **Non disponible sous Android** — consultez plutôt **Se connecter à
-  YouTube** ci-dessous.
+- **Ne fonctionne pas du tout sous Android, et ne fonctionne pas non plus
+  avec Chrome/Edge sous Windows** — consultez **Se connecter à YouTube**
+  ci-dessous pour les deux cas.
 
-### Se connecter à YouTube (Android, recommandé sur cette plateforme)
+### Se connecter à YouTube (Android, et solution de repli pour Chrome/Edge sous Windows)
 
 *Préférences ▸ Réseau ▸ YouTube* propose un bouton **Se connecter à
 YouTube…** (à côté du champ du fichier de cookies) qui ouvre une véritable
-page de connexion directement dans Vivace, via une vue web (WebView)
-intégrée et native de l'OS. Connectez-vous avec le compte dont vous voulez
-utiliser l'accès, puis appuyez sur **Je suis connecté** — Vivace lit les
-cookies de session obtenus et les enregistre automatiquement comme fichier
-de cookies actif. C'est l'équivalent, sous Android, de **Récupérer les
-cookies depuis le navigateur** ci-dessus : rien à exporter, rien à
-transférer manuellement depuis un autre appareil.
+page de connexion directement dans Vivace lui-même — via une vue web
+(WebView) intégrée et native de l'OS sous Android, ou via une vue basée
+sur Chromium fournie avec Vivace (QtWebEngine) sous Windows/Linux/macOS.
+Connectez-vous avec le compte dont vous voulez utiliser l'accès, puis
+appuyez sur **Enregistrer les cookies** — Vivace lit les cookies de
+session obtenus et les enregistre automatiquement comme fichier de
+cookies actif. Appuyez ensuite sur **Fermer**. Sous Android, c'est le seul
+moyen d'obtenir des cookies à jour ; sur le bureau, c'est surtout une
+solution de repli pour Chrome/Edge sous Windows, où **Récupérer les
+cookies depuis le navigateur** ci-dessus ne peut pas lire leurs cookies —
+dans les deux cas, rien à exporter, rien à transférer manuellement depuis
+un autre appareil.
 
 **À garder à l'esprit :**
 
@@ -168,16 +174,21 @@ transférer manuellement depuis un autre appareil.
   isolé de celui de toutes les autres) — c'est pourquoi cette option
   fonctionne différemment de celle du bureau : se connecter *à l'intérieur*
   du navigateur intégré de Vivace en est le substitut pratique.
-- Disponible uniquement sous Android ; toutes les autres plateformes
-  utilisent **Récupérer les cookies depuis le navigateur** à la place.
+- Sur le bureau, il s'agit d'une véritable session de navigateur distincte
+  que Vivace contrôle lui-même — une fonctionnalité nettement plus lourde
+  que **Récupérer les cookies depuis le navigateur** (elle embarque son
+  propre moteur de navigateur), donc elle est surtout utile là où cette
+  option plus simple ne fonctionne pas, c'est-à-dire Chrome/Edge sous
+  Windows.
 
 ### Exporter les cookies dans un fichier (solution de repli sur toutes les plateformes)
 
 Le champ **Fichier de cookies :** attend un fichier texte `cookies.txt` au
 format classique Netscape (le même format que lit l'option `--cookies` de
 yt-dlp lui-même) — utilisez-le lorsqu'aucune des deux options en direct
-ci-dessus n'est disponible ou ne fonctionne pour vous (par exemple
-Chrome/Edge sous Windows).
+ci-dessus n'est disponible ou ne fonctionne pour vous (par exemple si
+**Se connecter à YouTube** n'est pas disponible dans votre version de
+Vivace).
 
 **Pour en créer un :**
 

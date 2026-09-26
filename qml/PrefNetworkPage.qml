@@ -40,10 +40,11 @@ ColumnLayout {
         function onPotProviderInstallFailed(message) { potStatus = message }
     }
 
-    // Once the Android login dialog reports real cookies saved, adopt the
-    // resulting file as the active cookies file immediately -- no manual
-    // Browse… step needed, matching this feature's whole point (no
-    // export/transfer round trip).
+    // Once the embedded login dialog (Android or desktop -- whichever
+    // resolver this platform actually has) reports real cookies saved,
+    // adopt the resulting file as the active cookies file immediately --
+    // no manual Browse… step needed, matching this feature's whole point
+    // (no export/transfer round trip).
     Connections {
         target: ytLoginDialog.resolver
         function onCookiesSaved(count) {
@@ -438,8 +439,24 @@ ColumnLayout {
                     visible: ytEnable.checked && Settings.youtubeMode === 1
 
                     ColumnLayout {
+                        id: downloadPlaySection
                         anchors.fill: parent
                         spacing: 6
+
+                        // "Get cookies from browser" (below) takes priority
+                        // over the cookies file whenever it's set to
+                        // anything but "Off" -- both the file field/Browse…
+                        // button AND "Log in to YouTube…" (which only ever
+                        // WRITES to that same file) are pointless to touch
+                        // in that state, since whatever they'd produce gets
+                        // ignored. Greyed out (not hidden) rather than left
+                        // fully interactive-but-irrelevant, so the real
+                        // precedence (already true of the underlying
+                        // behaviour, and already documented in both rows'
+                        // own HelpMarks) is visible at a glance instead of
+                        // only discoverable by reading the help text.
+                        readonly property bool cookiesFileActive:
+                            Settings.youtubeCookiesFromBrowser === ""
 
                         Label {
                             Layout.fillWidth: true
@@ -468,6 +485,7 @@ ColumnLayout {
 
                             RowLayout {
                                 spacing: 6
+                                enabled: downloadPlaySection.cookiesFileActive
                                 Label { text: qsTr("Cookies file:") }
                                 HelpMark { text: Qt.platform.os === "android"
                                     ? qsTr("Optional cookies.txt; unlocks HD, "
@@ -489,6 +507,7 @@ ColumnLayout {
                             RowLayout {
                                 Layout.fillWidth: true
                                 spacing: 6
+                                enabled: downloadPlaySection.cookiesFileActive
                                 TextField {
                                     Layout.fillWidth: true
                                     text: Settings.youtubeCookiesFile
@@ -501,18 +520,21 @@ ColumnLayout {
                             RowLayout {
                                 Layout.columnSpan: 2
                                 spacing: 6
-                                visible: Qt.platform.os === "android"
-                                         && ytLoginDialog.resolver
+                                visible: ytLoginDialog.resolver
                                          && ytLoginDialog.resolver.isSupported()
+                                enabled: downloadPlaySection.cookiesFileActive
                                 Label { text: qsTr("Log in to YouTube:") }
                                 HelpMark { text: qsTr("Opens a sign-in page inside Vivace itself and "
                                                       + "saves the resulting session as the cookies "
-                                                      + "file above — Android's equivalent of "
-                                                      + "exporting cookies.txt from a desktop browser, "
-                                                      + "with no separate export/transfer step. Sign in "
-                                                      + "with the YouTube account whose access you want "
-                                                      + "to use, then tap \"Save cookies\", then "
-                                                      + "\"Close\".") }
+                                                      + "file above, with no separate export/transfer "
+                                                      + "step. On Android this is the only way to get "
+                                                      + "fresh cookies at all (there's no live browser "
+                                                      + "cookie store to read); on desktop it's mainly "
+                                                      + "a fallback for Chrome/Edge on Windows, where "
+                                                      + "\"Get cookies from browser\" below can't read "
+                                                      + "their cookies. Sign in with the YouTube "
+                                                      + "account whose access you want to use, then "
+                                                      + "tap \"Save cookies\", then \"Close\".") }
                                 Item { Layout.fillWidth: true }
                                 Button {
                                     text: qsTr("Log in to YouTube…")

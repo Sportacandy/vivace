@@ -132,19 +132,23 @@ exportera, inget som blir inaktuellt.
   fungerar normalt.
 - Att välja en webbläsare här har företräde framför fältet **Cookiefil:**
   nedan, när båda är angivna.
-- **Inte tillgängligt på Android** — se **Logga in på YouTube** nedan i
-  stället.
+- **Fungerar inte alls på Android, och fungerar inte för Chrome/Edge på
+  Windows** — se **Logga in på YouTube** nedan för båda fallen.
 
-### Logga in på YouTube (Android, rekommenderas där)
+### Logga in på YouTube (Android, och en reserv för Chrome/Edge på Windows)
 
 *Inställningar ▸ Nätverk ▸ YouTube* har en knapp **Logga in på
 YouTube…** (bredvid fältet för cookiefilen) som öppnar en riktig
-inloggningssida inuti Vivace självt, med hjälp av en inbäddad, OS-egen
-webbvy. Logga in med det konto vars åtkomst du vill använda, tryck sedan
-på **Jag är inloggad** — Vivace läser de resulterande sessionscookies
-och sparar dem som den aktiva cookiefilen automatiskt. Det här är
-Androids motsvarighet till **Hämta cookies från webbläsare** ovan: inget
-att exportera, inget att överföra från en annan enhet för hand.
+inloggningssida inuti Vivace självt — en inbäddad, OS-egen webbvy på
+Android, eller en medföljande Chromium-baserad vy (QtWebEngine) på
+Windows/Linux/macOS. Logga in med det konto vars åtkomst du vill
+använda, tryck sedan på **Spara cookies** — Vivace läser de resulterande
+sessionscookies och sparar dem som den aktiva cookiefilen automatiskt.
+Tryck på **Stäng** när du är klar. På Android är det här det enda sättet
+att över huvud taget få nya cookies; på skrivbordet finns det mest till
+för Chrome/Edge på Windows, där **Hämta cookies från webbläsare** ovan
+inte kan läsa deras cookies — i båda fallen: inget att exportera, inget
+att överföra från en annan enhet för hand.
 
 **Tänk på:**
 
@@ -153,16 +157,19 @@ att exportera, inget att överföra från en annan enhet för hand.
   alla andra appars), vilket är varför det här fungerar annorlunda än
   skrivbordsalternativet — att logga in *inuti* Vivaces egen inbäddade
   webbläsare är den praktiska ersättningen.
-- Endast tillgängligt på Android; alla andra plattformar använder
-  **Hämta cookies från webbläsare** i stället.
+- På skrivbordet är det här en riktig, separat webbläsarsession som
+  Vivace självt styr — en genuint tyngre funktion än **Hämta cookies
+  från webbläsare** (den innehåller en egen webbläsarmotor), så den är
+  mest värd att använda där det enklare alternativet inte fungerar,
+  det vill säga Chrome/Edge på Windows.
 
 ### Exportera cookies till en fil (reserv på alla plattformar)
 
 Fältet **Cookiefil:** förväntar sig en vanlig textfil, `cookies.txt`, i
 det klassiska Netscape-cookieformatet (samma format som yt-dlps egen
 flagga `--cookies` läser) — använd det här när inget av de direkta
-alternativen ovan är tillgängligt eller fungerar för dig (t.ex.
-Chrome/Edge på Windows).
+alternativen ovan är tillgängligt eller fungerar för dig (t.ex. om
+**Logga in på YouTube** inte är tillgängligt i din version av Vivace).
 
 **Så skapar du en:**
 

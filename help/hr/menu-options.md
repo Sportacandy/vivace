@@ -133,19 +133,25 @@ za izvoziti, ništa što zastarijeva.
   Chrome/Edge na Linuxu i macOS-u nisu time pogođeni i rade normalno.
 - Odabir preglednika ovdje ima prednost nad poljem **Datoteka
   kolačića:** ispod, kada su oba postavljena.
-- **Nije dostupno na Androidu** — umjesto toga pogledajte **Prijava na
-  YouTube** ispod.
+- **Uopće ne radi na Androidu, a ne radi ni s Chromeom/Edgeom na
+  Windowsima** — za oba slučaja pogledajte **Prijava na YouTube**
+  ispod.
 
-### Prijava na YouTube (Android, preporučeno ondje)
+### Prijava na YouTube (Android, i rezervna opcija za Chrome/Edge na Windowsima)
 
 *Postavke ▸ Mreža ▸ YouTube* ima gumb **Prijava na YouTube…** (pored
 polja za datoteku kolačića) koji unutar samog Vivacea otvara pravu
-stranicu za prijavu, koristeći ugrađeni, izvorni WebView operacijskog
-sustava. Prijavite se s računom čiji pristup želite koristiti, a zatim
-dodirnite **Prijavljen/a sam** — Vivace čita dobivene kolačiće sesije i
-automatski ih sprema kao aktivnu datoteku kolačića. Ovo je Androidov
-ekvivalent gornje opcije **Preuzimanje kolačića iz preglednika**: ništa
-se ne izvozi, ništa se ne prenosi ručno s drugog uređaja.
+stranicu za prijavu — putem ugrađenog, izvornog WebViewa operacijskog
+sustava na Androidu, ili putem priloženog Chromium prikaza (QtWebEngine)
+na Windowsima/Linuxu/macOS-u. Prijavite se s računom čiji pristup
+želite koristiti, a zatim dodirnite **Spremi kolačiće** — Vivace čita
+dobivene kolačiće sesije i automatski ih sprema kao aktivnu datoteku
+kolačića. Dodirnite **Zatvori** kad završite. Na Androidu je ovo
+jedini način da se uopće dobiju svježi kolačići; na stolnim računalima
+uglavnom služi za Chrome/Edge na Windowsima, gdje gornja opcija
+**Preuzimanje kolačića iz preglednika** ne može pročitati njihove
+kolačiće — u svakom slučaju, ništa se ne izvozi niti ručno prenosi s
+drugog uređaja.
 
 **Imajte na umu:**
 
@@ -154,8 +160,12 @@ se ne izvozi, ništa se ne prenosi ručno s drugog uređaja.
   izolirana je od pohrane svih drugih aplikacija), zbog čega ovo radi
   drukčije nego stolna opcija — prijava *unutar* Vivaceova vlastitog
   ugrađenog preglednika praktična je zamjena.
-- Dostupno je samo na Androidu; svaka druga platforma umjesto toga
-  koristi opciju **Preuzimanje kolačića iz preglednika**.
+- Na stolnom računalu ovo je prava, zasebna sesija preglednika koju
+  kontrolira sam Vivace — funkcija koja je uistinu zahtjevnija od
+  **Preuzimanja kolačića iz preglednika** (uključuje vlastiti motor
+  preglednika), pa je uglavnom vrijedno koristiti je ondje gdje ta
+  jednostavnija opcija ne radi, odnosno s Chromeom/Edgeom na
+  Windowsima.
 
 ### Izvoz kolačića u datoteku (rezervna opcija na svakoj platformi)
 
@@ -163,7 +173,7 @@ Polje **Datoteka kolačića:** očekuje običnu tekstualnu datoteku
 `cookies.txt` u klasičnom Netscape formatu kolačića (isti format koji
 čita vlastita opcija `--cookies` alata yt-dlp) — upotrijebite ovo kada
 nijedna od gornjih opcija uživo nije dostupna ili ne radi za vas (npr.
-Chrome/Edge na Windowsima).
+ako **Prijava na YouTube** nije dostupna u vašoj verziji Vivacea).
 
 **Kako ga izraditi:**
 

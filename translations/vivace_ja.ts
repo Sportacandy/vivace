@@ -652,6 +652,24 @@
     </message>
 </context>
 <context>
+    <name>DesktopYoutubeLogin</name>
+    <message>
+        <location filename="../src/desktopyoutubelogin.cpp" line="100"/>
+        <source>Embedded YouTube login is not available in this build.</source>
+        <translation>組み込みの YouTube ログインは、このビルドでは利用できません。</translation>
+    </message>
+    <message>
+        <location filename="../src/desktopyoutubelogin.cpp" line="148"/>
+        <source>No YouTube login cookies were found. Make sure you finished signing in before closing the login window.</source>
+        <translation>YouTube のログイン Cookie が見つかりませんでした。ログイン画面を閉じる前に、サインインを完了させてください。</translation>
+    </message>
+    <message>
+        <location filename="../src/desktopyoutubelogin.cpp" line="157"/>
+        <source>Could not write %1: %2</source>
+        <translation>%1 を書き込めませんでした: %2</translation>
+    </message>
+</context>
+<context>
     <name>ExternalDownloader</name>
     <message>
         <location filename="../src/externaldownloader.cpp" line="112"/>
@@ -949,32 +967,32 @@
     <message>
         <location filename="../qml/Main.qml" line="433"/>
         <location filename="../qml/Main.qml" line="486"/>
-        <location filename="../qml/Main.qml" line="2166"/>
-        <location filename="../qml/Main.qml" line="2294"/>
+        <location filename="../qml/Main.qml" line="2172"/>
+        <location filename="../qml/Main.qml" line="2300"/>
         <source>TV editor</source>
         <translation>テレビエディター</translation>
     </message>
     <message>
         <location filename="../qml/Main.qml" line="433"/>
         <location filename="../qml/Main.qml" line="486"/>
-        <location filename="../qml/Main.qml" line="2166"/>
-        <location filename="../qml/Main.qml" line="2294"/>
+        <location filename="../qml/Main.qml" line="2172"/>
+        <location filename="../qml/Main.qml" line="2300"/>
         <source>TV channels</source>
         <translation>テレビチャンネル</translation>
     </message>
     <message>
         <location filename="../qml/Main.qml" line="436"/>
         <location filename="../qml/Main.qml" line="489"/>
-        <location filename="../qml/Main.qml" line="2169"/>
-        <location filename="../qml/Main.qml" line="2297"/>
+        <location filename="../qml/Main.qml" line="2175"/>
+        <location filename="../qml/Main.qml" line="2303"/>
         <source>Radio editor</source>
         <translation>ラジオエディター</translation>
     </message>
     <message>
         <location filename="../qml/Main.qml" line="436"/>
         <location filename="../qml/Main.qml" line="489"/>
-        <location filename="../qml/Main.qml" line="2169"/>
-        <location filename="../qml/Main.qml" line="2297"/>
+        <location filename="../qml/Main.qml" line="2175"/>
+        <location filename="../qml/Main.qml" line="2303"/>
         <source>Radio channels</source>
         <translation>ラジオチャンネル</translation>
     </message>
@@ -993,8 +1011,8 @@
     <message>
         <location filename="../qml/Main.qml" line="444"/>
         <location filename="../qml/Main.qml" line="500"/>
-        <location filename="../qml/Main.qml" line="2180"/>
-        <location filename="../qml/Main.qml" line="2308"/>
+        <location filename="../qml/Main.qml" line="2186"/>
+        <location filename="../qml/Main.qml" line="2314"/>
         <source>Bookmark added</source>
         <translation>ブックマークを追加しました</translation>
     </message>
@@ -1035,7 +1053,7 @@
     </message>
     <message>
         <location filename="../qml/Main.qml" line="757"/>
-        <location filename="../qml/Main.qml" line="1919"/>
+        <location filename="../qml/Main.qml" line="1925"/>
         <source>Cancel</source>
         <translation>キャンセル</translation>
     </message>
@@ -1087,7 +1105,7 @@
     <message>
         <location filename="../qml/Main.qml" line="1428"/>
         <location filename="../qml/Main.qml" line="1498"/>
-        <location filename="../qml/Main.qml" line="1838"/>
+        <location filename="../qml/Main.qml" line="1844"/>
         <source>All files (*)</source>
         <translation>すべてのファイル (*)</translation>
     </message>
@@ -1141,125 +1159,125 @@
         <translation>ダウンロード失敗: %1</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1739"/>
+        <location filename="../qml/Main.qml" line="1745"/>
         <source>Saved %1 file(s); %2 failed.</source>
         <translation>%1 件のファイルを保存しました（失敗: %2 件）。</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1743"/>
+        <location filename="../qml/Main.qml" line="1749"/>
         <source>Saved %1 file(s).</source>
         <translation>%1 件のファイルを保存しました。</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1756"/>
+        <location filename="../qml/Main.qml" line="1762"/>
         <source>Could not read the shortcut file.</source>
         <translation>ショートカットファイルを読み取れませんでした。</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1791"/>
+        <location filename="../qml/Main.qml" line="1797"/>
         <source>Starting download…</source>
         <translation>ダウンロードを開始しています…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1776"/>
-        <location filename="../qml/Main.qml" line="1792"/>
+        <location filename="../qml/Main.qml" line="1782"/>
+        <location filename="../qml/Main.qml" line="1798"/>
         <source>Downloading video (this can take a while)…</source>
         <translation>動画をダウンロード中（しばらくかかることがあります）…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1772"/>
+        <location filename="../qml/Main.qml" line="1778"/>
         <source>YouTube playback isn&apos;t supported on this device.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1779"/>
-        <location filename="../qml/Main.qml" line="1796"/>
+        <location filename="../qml/Main.qml" line="1785"/>
+        <location filename="../qml/Main.qml" line="1802"/>
         <source>Resolving with yt-dlp…</source>
         <translation>yt-dlp で解決中…</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1833"/>
+        <location filename="../qml/Main.qml" line="1839"/>
         <source>Load subtitle file</source>
         <translation>字幕ファイルを読み込む</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1837"/>
+        <location filename="../qml/Main.qml" line="1843"/>
         <source>Subtitle files (*.srt *.vtt *.ass *.ssa)</source>
         <translation>字幕ファイル (*.srt *.vtt *.ass *.ssa)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1845"/>
+        <location filename="../qml/Main.qml" line="1851"/>
         <source>Subtitle delay</source>
         <translation>字幕の遅延</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1896"/>
+        <location filename="../qml/Main.qml" line="1902"/>
         <source>Delay:</source>
         <translation>遅延:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1902"/>
-        <location filename="../qml/Main.qml" line="1992"/>
+        <location filename="../qml/Main.qml" line="1908"/>
+        <location filename="../qml/Main.qml" line="1998"/>
         <source>ms</source>
         <translation>ミリ秒</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1912"/>
+        <location filename="../qml/Main.qml" line="1918"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1931"/>
+        <location filename="../qml/Main.qml" line="1937"/>
         <source>Audio delay — Vivace</source>
         <translation>音声の遅延 — Vivace</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1980"/>
+        <location filename="../qml/Main.qml" line="1986"/>
         <source>No delay for this file (use the global delay only)</source>
         <translation>このファイルには遅延を設定しない（全体の遅延のみ使用）</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="1985"/>
+        <location filename="../qml/Main.qml" line="1991"/>
         <source>This file&apos;s delay:</source>
         <translation>このファイルの遅延:</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2000"/>
+        <location filename="../qml/Main.qml" line="2006"/>
         <source>The delay applied to this file is this value plus the global delay for the current audio device (%1 ms), set in Preferences &gt; General &gt; Audio. Negative values delay the video to match audio that arrives late (e.g. Bluetooth headphones).</source>
         <translation>このファイルに適用される遅延は、この値に加えて現在の音声デバイスの全体遅延（%1 ミリ秒、設定 &gt; 一般 &gt; 音声で設定）を足したものです。負の値は、遅れて届く音声（例: Bluetooth ヘッドフォン）に合わせて映像を遅らせます。</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2013"/>
+        <location filename="../qml/Main.qml" line="2019"/>
         <source>&amp;Apply</source>
         <translation>適用(&amp;A)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2022"/>
+        <location filename="../qml/Main.qml" line="2028"/>
         <source>&amp;Close</source>
         <translation>閉じる(&amp;C)</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2108"/>
+        <location filename="../qml/Main.qml" line="2114"/>
         <source>Hide window</source>
         <translation>ウィンドウを隠す</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2108"/>
+        <location filename="../qml/Main.qml" line="2114"/>
         <source>Show window</source>
         <translation>ウィンドウを表示</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2113"/>
+        <location filename="../qml/Main.qml" line="2119"/>
         <source>Play / Pause</source>
         <translation>再生 / 一時停止</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2117"/>
+        <location filename="../qml/Main.qml" line="2123"/>
         <source>Stop</source>
         <translation>停止</translation>
     </message>
     <message>
-        <location filename="../qml/Main.qml" line="2122"/>
+        <location filename="../qml/Main.qml" line="2128"/>
         <source>Quit</source>
         <translation>終了</translation>
     </message>
@@ -3695,62 +3713,62 @@
 <context>
     <name>PrefNetworkPage</name>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="117"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="147"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="118"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="148"/>
         <source>OpenSubtitles</source>
         <translation>OpenSubtitles</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="120"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="121"/>
         <source>YouTube</source>
         <translation>YouTube</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="128"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="873"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="129"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="876"/>
         <source>Cast</source>
         <translation>キャスト</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="157"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="158"/>
         <source>API key:</source>
         <translation>API キー:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="158"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="159"/>
         <source>A free per-application key from opensubtitles.com (create an API consumer); subtitle search will not work until this is set.</source>
         <translation>opensubtitles.com が発行するアプリケーションごとの無料キーです（API コンシューマーを作成）。設定するまで字幕検索は動作しません。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="163"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="164"/>
         <source>from opensubtitles.com → API consumers</source>
         <translation>opensubtitles.com → API consumers から</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="168"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="825"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="169"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="828"/>
         <source>Username:</source>
         <translation>ユーザー名:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="169"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="170"/>
         <source>Optional opensubtitles.com account login; signing in is not required but raises the daily download limit.</source>
         <translation>任意の opensubtitles.com アカウントのログインです。サインインは必須ではありませんが、1 日あたりのダウンロード上限が上がります。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="176"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="831"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="177"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="834"/>
         <source>Password:</source>
         <translation>パスワード:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="191"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="192"/>
         <source>The account password is stored securely using your operating system&apos;s credential manager.</source>
         <translation>アカウントのパスワードは、お使いのオペレーティングシステムの資格情報マネージャーを使って安全に保存されます。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="127"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="782"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="128"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="785"/>
         <source>Proxy</source>
         <translation>プロキシ</translation>
     </message>
@@ -3760,240 +3778,245 @@
         <translation>PO トークンプロバイダーをインストールしました。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="54"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="55"/>
         <source>&lt;h1&gt;Network&lt;/h1&gt;&lt;p&gt;&lt;b&gt;OpenSubtitles&lt;/b&gt; search uses the REST API, which requires a free per-application API key: register at opensubtitles.com, create an API consumer, and paste the key here. An account login (username and password) is optional but raises the daily download limit.&lt;/p&gt;&lt;p&gt;&lt;b&gt;YouTube&lt;/b&gt;: the optional resolver uses an external yt-dlp program — when enabled, opening a YouTube URL runs yt-dlp to obtain a directly-playable stream. Vivace offers to install yt-dlp for you the first time you turn this on (or point it at your own copy with the path field below), and can keep it updated on its own per the &quot;Update yt-dlp automatically&quot; setting. Because QMediaPlayer plays a single muxed stream, streaming tops out at the best progressive format (about 720p on YouTube). Cookies are deliberately NOT used for streaming: an authenticated (cookie) session returns URLs a plain player cannot open.&lt;/p&gt;&lt;p&gt;For &lt;b&gt;HD&lt;/b&gt; (and for cookies), enable download mode, or point the external downloader at your own tool (a program or .bat/.cmd). HD formats are separate video and audio streams that cannot be streamed muxed, so Vivace runs yt-dlp (or your tool) to download and merge the video, then plays the file it writes into the download folder. Download mode also needs Deno, a further external program yt-dlp itself uses to solve YouTube&apos;s JavaScript challenges — without it, a signed-in (cookie) request, exactly what HD downloads rely on, sees severely limited format availability. Streaming mode, which never sends cookies, is largely unaffected and doesn&apos;t need Deno. Install Deno yourself and, if it is not on the PATH, set its full path in the Download &amp; play settings.&lt;/p&gt;&lt;p&gt;Recent YouTube videos increasingly require a &lt;b&gt;PO token&lt;/b&gt; just to play at all — a general playability requirement, unrelated to cookies/login, that shows up as yt-dlp reporting the video as unavailable. &lt;b&gt;Install PO token provider…&lt;/b&gt; sets up the community &quot;BgUtils POT Provider&quot;: a small yt-dlp plugin plus a script (built with Deno, the same program used above) that yt-dlp runs on demand to generate a token. It applies to both streaming and downloading.&lt;/p&gt;&lt;p&gt;Since YouTube shortened its own cookie lifetimes, an exported cookies.txt file can go stale within days. &lt;b&gt;Get cookies from browser&lt;/b&gt; reads them live from an installed browser instead, so there&apos;s nothing to re-export. On Windows, only Firefox works here — Chrome/Edge&apos;s own &quot;App-Bound Encryption&quot; blocks every external tool, including yt-dlp, from reading their cookies at all; Linux and macOS Chrome/Edge are unaffected.&lt;/p&gt;&lt;p&gt;See &lt;b&gt;Help ▸ Contents ▸ Options&lt;/b&gt; for step-by-step instructions on exporting a cookies.txt file from your browser, and on installing Deno.&lt;/p&gt;&lt;p&gt;The stream &lt;b&gt;connection timeout&lt;/b&gt; (used mainly by live TV tuners) has moved to &lt;i&gt;Preferences ▸ TV and radio&lt;/i&gt;.&lt;/p&gt;&lt;p&gt;The &lt;b&gt;Proxy&lt;/b&gt; tab applies application-wide: both HTTP and SOCKS5 cover OpenSubtitles search and the update check; only HTTP additionally covers media playback and yt-dlp (they read the http_proxy/https_proxy convention directly instead of going through Qt&apos;s network stack, and there is no SOCKS5 equivalent for that convention).&lt;/p&gt;&lt;p&gt;The &lt;b&gt;Cast&lt;/b&gt; tab sets the port Play ▸ Cast… listens on. It&apos;s here (rather than only in the Cast dialog) so it stays fixed — set it once, allow that port through your firewall/router once, and casting keeps working without a new firewall prompt every time.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="473"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="474"/>
         <source>Optional cookies.txt; unlocks HD, members-only and age-restricted videos. Safe here — cookies only affect the download, not a stream a player must open. &quot;Log in to YouTube…&quot; below fills this in for you automatically — use it instead of exporting cookies.txt from a desktop browser and transferring it here by hand.</source>
         <translation>任意の cookies.txt です。HD・メンバー限定・年齢制限付き動画を利用できます。ここでは安全です。Cookie はダウンロードにのみ影響し、プレーヤーが開くストリームには影響しません。下の「YouTube にログイン…」を使うと自動的にここへ設定されるので、デスクトップブラウザーから cookies.txt を書き出して手動で転送する代わりに利用できます。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="838"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="508"/>
+        <source>Opens a sign-in page inside Vivace itself and saves the resulting session as the cookies file above, with no separate export/transfer step. On Android this is the only way to get fresh cookies at all (there&apos;s no live browser cookie store to read); on desktop it&apos;s mainly a fallback for Chrome/Edge on Windows, where &quot;Get cookies from browser&quot; below can&apos;t read their cookies. Sign in with the YouTube account whose access you want to use, then tap &quot;Save cookies&quot;, then &quot;Close&quot;.</source>
+        <translation>Vivace 自身の中にサインイン画面を開き、そのセッションを上の Cookie ファイルとして保存します。別途エクスポート/転送する手順は不要です。Android では、これがフレッシュな Cookie を取得する唯一の方法です（読み取れるライブなブラウザーの Cookie ストアが存在しないため）。デスクトップでは、主に Windows 版 Chrome/Edge 向けのフォールバックです（下の「ブラウザーから Cookie を取得」では、それらの Cookie を読み取れません）。利用したい YouTube アカウントでサインインしたら、「Cookie を保存」、続けて「閉じる」をタップしてください。</translation>
+    </message>
+    <message>
+        <location filename="../qml/PrefNetworkPage.qml" line="841"/>
         <source>Type:</source>
         <translation>種類:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="812"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="815"/>
         <source>Host:</source>
         <translation>ホスト:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="818"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="883"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="821"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="886"/>
         <source>Port:</source>
         <translation>ポート:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="210"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="211"/>
         <source>YouTube (yt-dlp)</source>
         <translation>YouTube (yt-dlp)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="230"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="231"/>
         <source>Play YouTube URLs with yt-dlp</source>
         <translation>YouTube の URL を yt-dlp で再生</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="234"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="235"/>
         <source>When on, opening a YouTube URL runs yt-dlp instead of trying to play the page URL as-is.</source>
         <translation>オンにすると、YouTube の URL を開いたときにページ URL をそのまま再生しようとせず、yt-dlp を実行します。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="247"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="248"/>
         <source>Open YouTube URLs by:</source>
         <translation>YouTube の URL を開く方法:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="248"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="249"/>
         <source>Streaming is fastest but caps at ~720p and can&apos;t use cookies. Downloading gets full HD (uses cookies + ffmpeg), then plays and deletes the file. Or hand off to your own external downloader tool.</source>
         <translation>ストリーミングは最速ですが約 720p までで、Cookie は使えません。ダウンロードはフル HD が得られ（Cookie + ffmpeg を使用）、再生後にファイルを削除します。または独自の外部ダウンローダーツールに渡します。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="269"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="273"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="270"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="274"/>
         <source>Streaming (fast, up to ~720p)</source>
         <translation>ストリーミング（高速・最大約 720p）</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="270"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="274"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="271"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="275"/>
         <source>Downloading then playing (HD, cookies)</source>
         <translation>ダウンロードしてから再生（HD・Cookie）</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="275"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="276"/>
         <source>An external downloader tool</source>
         <translation>外部ダウンローダーツール</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="286"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="287"/>
         <source>Use managed yt-dlp</source>
         <translation>管理された yt-dlp を使う</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="304"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="305"/>
         <source>When on, Vivace installs yt-dlp for you (see the button here) and can keep it updated automatically below. Turn this off to point at your own yt-dlp instead -- Vivace will not install or auto-update it.</source>
         <translation>オンにすると、Vivace が yt-dlp をインストールし（ここにあるボタンを参照）、下の設定に従って自動的に最新の状態に保つこともできます。オフにすると、自分自身の yt-dlp を指定できます — その場合、Vivace はインストールや自動更新を行いません。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="312"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="313"/>
         <source>Install / Update yt-dlp…</source>
         <translation>yt-dlp をインストール／更新…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="322"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="323"/>
         <source>PO token provider:</source>
         <translation>PO トークンプロバイダー:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="323"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="324"/>
         <source>Recent YouTube videos increasingly require a &quot;PO token&quot; just to play at all, even with no login involved -- without one, yt-dlp reports the video as unavailable. Installs the community &quot;BgUtils POT Provider&quot; (a small yt-dlp plugin plus a script run on demand via Deno, which Vivace already uses above) so yt-dlp can generate one automatically. Applies to both streaming and downloading.</source>
         <translation>ログイン不要な場合でも、最近の YouTube 動画は再生するだけで「PO トークン」を必要とすることが増えています — これが無いと、yt-dlp は動画を利用できないと報告します。コミュニティ製の「BgUtils POT Provider」（小さな yt-dlp プラグインと、上で使用している Deno によって必要に応じて実行されるスクリプト）をインストールし、yt-dlp が自動的に PO トークンを生成できるようにします。ストリーミングとダウンロードの両方に適用されます。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="337"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="338"/>
         <source>Installing…</source>
         <translation>インストール中…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="339"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="340"/>
         <source>Reinstall / Update PO token provider…</source>
         <translation>PO トークンプロバイダーを再インストール／更新…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="340"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="341"/>
         <source>Install PO token provider…</source>
         <translation>PO トークンプロバイダーをインストール…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="361"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="362"/>
         <source>yt-dlp path:</source>
         <translation>yt-dlp のパス:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="362"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="363"/>
         <source>Leave as &quot;yt-dlp&quot; if it is on your system PATH; otherwise enter the full path to the yt-dlp executable.</source>
         <translation>システムの PATH に yt-dlp がある場合は「yt-dlp」のままにします。そうでなければ yt-dlp 実行ファイルのフルパスを入力してください。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="368"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="369"/>
         <source>yt-dlp (on PATH) or a full path</source>
         <translation>yt-dlp（PATH 上）またはフルパス</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="374"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="375"/>
         <source>Update yt-dlp automatically:</source>
         <translation>yt-dlp を自動的に更新:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="375"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="376"/>
         <source>Runs yt-dlp&apos;s own self-update before playing a YouTube video. &quot;Every time&quot; adds a short delay to each play; the daily/weekly options check only that often. Failures (e.g. no network) are ignored and playback proceeds with whatever version is installed. Only applies to a managed yt-dlp.</source>
         <translation>YouTube 動画を再生する前に、yt-dlp 自体の自己更新を実行します。「実行するたび」を選ぶと再生ごとに少し時間がかかります。1日／1週間ごとの選択肢は、その頻度でのみ確認します。更新に失敗した場合（ネットワークがない場合など）は無視され、インストール済みのバージョンのまま再生が続行されます。管理された yt-dlp のみに適用されます。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="389"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="390"/>
         <source>Never</source>
         <translation>しない</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="390"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="391"/>
         <source>Every time yt-dlp runs</source>
         <translation>yt-dlp を実行するたび</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="391"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="392"/>
         <source>Once a day</source>
         <translation>1日に1回</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="392"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="393"/>
         <source>Once a week</source>
         <translation>1週間に1回</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="399"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="400"/>
         <source>Maximum quality:</source>
         <translation>最高画質:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="400"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="401"/>
         <source>Upper limit on resolution. Streaming is capped at ~720p regardless; downloading can reach this height in full HD.</source>
         <translation>解像度の上限です。ストリーミングは常に約 720p までですが、ダウンロードならこの高さのフル HD まで得られます。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="410"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="411"/>
         <source>360p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="411"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="412"/>
         <source>480p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="412"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="413"/>
         <source>720p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="413"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="414"/>
         <source>1080p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="414"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="415"/>
         <source>1440p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="415"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="416"/>
         <source>2160p (4K)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="416"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="417"/>
         <source>Best available</source>
         <translation>利用可能な最高画質</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="431"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="432"/>
         <source>yt-dlp is a separate program and is not bundled with Vivace.</source>
         <translation>yt-dlp は独立したプログラムで、Vivace には同梱されていません。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="437"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="438"/>
         <source>Download &amp; play</source>
         <translation>ダウンロードして再生</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="457"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="458"/>
         <source>Downloads the video (merging HD video and audio with ffmpeg), plays it, and keeps it in a cache folder so replaying it is instant. The cache holds the most recent downloads up to the size below; older ones are removed.</source>
         <translation>動画をダウンロードし（HD の映像と音声を ffmpeg で結合）、再生して、キャッシュフォルダーに保持するため再生し直すと瞬時です。キャッシュは下の件数まで最近のダウンロードを保持し、古いものは削除されます。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="471"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="472"/>
         <source>Cookies file:</source>
         <translation>Cookie ファイル:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="481"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="482"/>
         <source>Optional cookies.txt exported from your browser (yt-dlp --cookies); unlocks HD, members-only and age-restricted videos. Safe here — cookies only affect the download, not a stream a player must open. See Help ▸ Contents ▸ Options for step-by-step export instructions.</source>
         <translation>ブラウザーからエクスポートした任意の cookies.txt（yt-dlp --cookies）。HD・メンバー限定・年齢制限付き動画を利用できます。ここでは安全です。Cookie はダウンロードにのみ影響し、プレーヤーが開くストリームには影響しません。書き出し手順については「ヘルプ ▸ 目次 ▸ オプション」を参照してください。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="495"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="496"/>
         <source>optional cookies.txt</source>
         <translation>任意の cookies.txt</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="498"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="588"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="621"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="650"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="726"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="762"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="499"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="591"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="624"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="653"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="729"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="765"/>
         <source>Browse…</source>
         <translation>参照…</translation>
     </message>
@@ -4003,238 +4026,237 @@
         <translation>YouTube にログイン:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="508"/>
         <source>Opens a sign-in page inside Vivace itself and saves the resulting session as the cookies file above — Android&apos;s equivalent of exporting cookies.txt from a desktop browser, with no separate export/transfer step. Sign in with the YouTube account whose access you want to use, then tap &quot;Save cookies&quot;, then &quot;Close&quot;.</source>
-        <translation>Vivace 自身の中にサインイン画面を開き、そのセッションを上の Cookie ファイルとして保存します。デスクトップブラウザーから cookies.txt を書き出して転送する手順が不要になる、Android 版の代替手段です。利用したい YouTube アカウントでサインインしたら、「Cookie を保存」、続けて「閉じる」をタップしてください。</translation>
+        <translation type="vanished">Vivace 自身の中にサインイン画面を開き、そのセッションを上の Cookie ファイルとして保存します。デスクトップブラウザーから cookies.txt を書き出して転送する手順が不要になる、Android 版の代替手段です。利用したい YouTube アカウントでサインインしたら、「Cookie を保存」、続けて「閉じる」をタップしてください。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="518"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="521"/>
         <source>Log in to YouTube…</source>
         <translation>YouTube にログイン…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="526"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="529"/>
         <source>Get cookies from browser:</source>
         <translation>ブラウザーから Cookie を取得:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="527"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="530"/>
         <source>Reads cookies live from an installed browser instead of the file above — recommended, since YouTube&apos;s cookie lifetimes are now much shorter, making an exported cookies.txt go stale within days. Takes priority over the cookies file when set. On Windows, only Firefox actually works here: Chrome/Edge encrypt cookies in a way tied to the browser&apos;s own binary (&quot;App-Bound Encryption&quot;), which blocks yt-dlp (and every other external tool) from reading them at all — this is a Chrome-side restriction yt-dlp&apos;s own developers can&apos;t work around. Linux and macOS Chrome/Edge are unaffected.</source>
         <translation>上記のファイルの代わりに、インストール済みのブラウザーから Cookie を直接読み取ります — 推奨設定です。YouTube の Cookie の有効期限が大幅に短縮されたため、エクスポートした cookies.txt は数日で使えなくなってしまいます。この設定を指定すると Cookie ファイルより優先されます。Windows では Firefox のみ動作します。Chrome/Edge はブラウザー本体に紐付けられた方式（「App-Bound Encryption」）で Cookie を暗号化しており、yt-dlp を含むあらゆる外部ツールからの読み取りをブロックしています — これは Chrome 側の制限であり、yt-dlp の開発者側では回避できません。Linux と macOS の Chrome/Edge は影響を受けません。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="551"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="554"/>
         <source>Off (use the cookies file above)</source>
         <translation>オフ（上記の Cookie ファイルを使用）</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="552"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="555"/>
         <source>Firefox (recommended)</source>
         <translation>Firefox（推奨）</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="553"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="556"/>
         <source>Chrome</source>
         <translation>Chrome</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="554"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="557"/>
         <source>Edge</source>
         <translation>Edge</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="555"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="558"/>
         <source>Brave</source>
         <translation>Brave</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="556"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="559"/>
         <source>Chromium</source>
         <translation>Chromium</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="557"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="560"/>
         <source>Opera</source>
         <translation>Opera</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="558"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="561"/>
         <source>Safari</source>
         <translation>Safari</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="559"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="562"/>
         <source>Vivaldi</source>
         <translation>Vivaldi</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="560"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="563"/>
         <source>Whale</source>
         <translation>Whale</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="573"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="576"/>
         <source>ffmpeg location:</source>
         <translation>ffmpeg の場所:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="574"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="577"/>
         <source>Folder containing ffmpeg (yt-dlp needs it to merge HD video+audio). Leave empty to use ffmpeg from the system PATH.</source>
         <translation>ffmpeg を含むフォルダー（HD の映像＋音声の結合に yt-dlp が必要とします）。空欄にするとシステムの PATH の ffmpeg を使います。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="585"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="618"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="588"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="621"/>
         <source>empty = use PATH</source>
         <translation>空欄 = PATH を使用</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="598"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="601"/>
         <source>Deno path:</source>
         <translation>Deno のパス:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="599"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="602"/>
         <source>yt-dlp uses a separate program, Deno, to solve YouTube&apos;s JavaScript challenges. It&apos;s most needed here: a signed-in (cookie) request — exactly what unlocks HD above — sees severely limited format availability without it. Streaming mode, which never sends cookies, is largely unaffected. Leave empty if &quot;deno&quot; is already on your system PATH; otherwise enter the full path to the deno executable. See Help ▸ Contents ▸ Options for installation instructions.</source>
         <translation>yt-dlp は、YouTube の JavaScript チャレンジを解決するために別のプログラム Deno を使用します。これが最も必要になるのはここです。ログイン済み（Cookie）のリクエスト — 上の HD を解除するのに使われるのと同じリクエスト — は、Deno が無いと利用できる形式が大きく制限されます。Cookie を送らないストリーミングモードはほとんど影響を受けません。システムの PATH に &quot;deno&quot; が既にある場合は空のままにし、そうでない場合は deno 実行ファイルへのフルパスを入力してください。インストール手順はヘルプ ▸ 目次 ▸ オプション をご覧ください。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="636"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="639"/>
         <source>Cache folder:</source>
         <translation>キャッシュフォルダー:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="637"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="640"/>
         <source>Where downloaded videos are kept for reuse. A video already here is replayed without downloading again.</source>
         <translation>ダウンロードした動画を再利用のために保持する場所です。ここに既にある動画は再ダウンロードせずに再生されます。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="655"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="658"/>
         <source>Cache size:</source>
         <translation>キャッシュサイズ:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="656"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="659"/>
         <source>How many downloaded videos to keep. When the limit is reached, the least-recently-played one is deleted.</source>
         <translation>ダウンロードした動画を保持する件数です。上限に達すると、最後に再生してから最も時間が経ったものが削除されます。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="667"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="670"/>
         <source>files</source>
         <translation>件</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="673"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="676"/>
         <source>Thumbnail fallback at:</source>
         <translation>サムネイルの代替取得位置:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="674"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="677"/>
         <source>The cache thumbnail is normally YouTube&apos;s own poster image. Only if that is missing or black does Vivace grab a video frame — this is how many seconds in (past a black intro).</source>
         <translation>キャッシュのサムネイルは通常 YouTube 自身のポスター画像です。それが無いか真っ黒な場合のみ、Vivace は動画のフレームを取得します。これはその位置（秒数、黒いイントロを過ぎた辺り）です。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="687"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="690"/>
         <source>seconds</source>
         <translation>秒</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="697"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="700"/>
         <source>External downloader tool</source>
         <translation>外部ダウンローダーツール</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="712"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="715"/>
         <source>Downloader command:</source>
         <translation>ダウンローダーのコマンド:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="713"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="716"/>
         <source>The program or .bat/.cmd script that downloads the video; it receives the URL as an argument.</source>
         <translation>動画をダウンロードするプログラムまたは .bat/.cmd スクリプト。URL を引数として受け取ります。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="723"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="726"/>
         <source>e.g. C:ToolsYouTubeDL.bat</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="731"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="734"/>
         <source>Arguments:</source>
         <translation>引数:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="732"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="735"/>
         <source>Arguments passed to the tool; the token {url} is replaced by the video URL (if omitted, the URL is appended). Add any cookies/format flags your tool needs here, e.g. --cookies C:pathcookies.txt.</source>
         <translation>ツールに渡す引数です。トークン {url} は動画の URL に置き換えられます（省略した場合は URL が末尾に追加されます）。cookie や形式の指定など、ツールに必要なフラグをここに記述します。例: --cookies C:\path\cookies.txt</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="747"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="750"/>
         <source>Download folder:</source>
         <translation>ダウンロードフォルダー:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="748"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="751"/>
         <source>The folder the tool writes the finished file into; Vivace plays the newest media file that appears there, so set it to match your tool&apos;s output folder.</source>
         <translation>ツールが完成したファイルを書き込むフォルダーです。Vivace はそこに現れた最新のメディアファイルを再生するため、ツールの出力フォルダーに合わせて設定してください。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="759"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="762"/>
         <source>your tool&apos;s output folder</source>
         <translation>ツールの出力フォルダー</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="792"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="795"/>
         <source>Enable proxy</source>
         <translation>プロキシを有効にする</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="796"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="799"/>
         <source>Applies to OpenSubtitles search and the update check (both proxy types). Only an HTTP proxy also applies to media playback and yt-dlp — a SOCKS5 proxy does not reach either, since neither goes through Qt&apos;s network stack.</source>
         <translation>OpenSubtitles検索とアップデート確認に適用されます（HTTP・SOCKS5どちらの種類でも有効）。メディア再生とyt-dlpに適用されるのはHTTPプロキシのみです — どちらもQtのネットワークスタックを経由しないため、SOCKS5プロキシは届きません。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="854"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="857"/>
         <source>The proxy password is stored securely using your operating system&apos;s credential manager.</source>
         <translation>プロキシのパスワードは、お使いのオペレーティングシステムの資格情報マネージャーを使って安全に保存されます。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="884"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="887"/>
         <source>The port Play ▸ Cast… listens on. Kept fixed here (rather than editable each time in the Cast dialog) so you can allow it through your firewall/router once and it keeps working.</source>
         <translation>再生 ▸ キャスト… が待ち受けるポートです。キャストダイアログの方では毎回編集できるようにするのではなく、ここに固定することで、ファイアウォールやルーターで一度だけ許可すれば以後も動作し続けます。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="905"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="908"/>
         <source>Your OS&apos;s firewall (and most routers) block an app listening on a fresh port until you allow it. Pick a port once here, allow Vivace through your firewall for it, and Cast will keep working without a new prompt each time.</source>
         <translation>OS のファイアウォール（および大半のルーター）は、許可するまで新しいポートで待ち受けるアプリをブロックします。ここで一度ポートを決め、そのポートで Vivace をファイアウォールで許可すれば、以後キャストは毎回確認なしで動作します。</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="920"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="923"/>
         <source>Select the cookies.txt file</source>
         <translation>cookies.txt ファイルを選択</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="949"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="952"/>
         <source>Select the deno executable</source>
         <translation>deno 実行ファイルを選択</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="955"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="958"/>
         <source>Select the folder containing ffmpeg</source>
         <translation>ffmpeg を含むフォルダーを選択</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="960"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="963"/>
         <source>Select the download cache folder</source>
         <translation>ダウンロードキャッシュフォルダーを選択</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="965"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="968"/>
         <source>Select the downloader program</source>
         <translation>ダウンローダープログラムを選択</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="971"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="974"/>
         <source>Select the download folder</source>
         <translation>ダウンロードフォルダーを選択</translation>
     </message>
@@ -5365,11 +5387,13 @@
 <context>
     <name>YoutubeLoginDialog</name>
     <message>
+        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="47"/>
         <location filename="../qml/YoutubeLoginDialog.qml" line="54"/>
         <source>Log in to YouTube</source>
         <translation>YouTube にログイン</translation>
     </message>
     <message numerus="yes">
+        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="79"/>
         <location filename="../qml/YoutubeLoginDialog.qml" line="87"/>
         <source>%n cookie(s) saved — tap “Close” to finish.</source>
         <translation>
@@ -5377,16 +5401,19 @@
         </translation>
     </message>
     <message>
+        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="104"/>
         <location filename="../qml/YoutubeLoginDialog.qml" line="115"/>
         <source>Sign in below, then tap “Save cookies”, then “Close”.</source>
         <translation>下でサインインしたら、「Cookie を保存」、続けて「閉じる」をタップしてください。</translation>
     </message>
     <message>
+        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="107"/>
         <location filename="../qml/YoutubeLoginDialog.qml" line="118"/>
         <source>Save cookies</source>
         <translation>Cookie を保存</translation>
     </message>
     <message>
+        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="114"/>
         <location filename="../qml/YoutubeLoginDialog.qml" line="125"/>
         <source>Close</source>
         <translation>閉じる</translation>

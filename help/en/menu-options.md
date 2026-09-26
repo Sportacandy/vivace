@@ -124,28 +124,35 @@ that goes stale.
   normally.
 - Selecting a browser here takes priority over the **Cookies file:** field
   below, when both are set.
-- **Not available on Android** — see **Log in to YouTube** below instead.
+- **Doesn't work at all on Android, and doesn't work for Chrome/Edge on
+  Windows** — see **Log in to YouTube** below for both cases.
 
-### Log in to YouTube (Android, recommended there)
+### Log in to YouTube (Android, and a Windows Chrome/Edge fallback)
 
 *Preferences ▸ Network ▸ YouTube* has a **Log in to YouTube…** button
 (next to the cookies file field) that opens a real sign-in page inside
-Vivace itself, using an embedded, OS-native WebView. Sign in with the
+Vivace itself — an embedded, OS-native WebView on Android, or a bundled
+Chromium-based view (QtWebEngine) on Windows/Linux/macOS. Sign in with the
 account whose access you want to use, then tap **Save cookies** — Vivace
 reads the resulting session cookies and saves them as the active cookies
-file automatically. Tap **Close** once done. This is Android's equivalent
-of **Get cookies from browser** above: nothing to export, nothing to
-transfer from another device by hand.
+file automatically. Tap **Close** once done. On Android this is the only
+way to get fresh cookies at all; on desktop it's mainly there for
+Chrome/Edge on Windows, where **Get cookies from browser** above can't
+read their cookies — either way, nothing to export, nothing to transfer
+from another device by hand.
 
 **Keep in mind:**
 
 - Android has no equivalent of a live desktop-browser cookie store to
   read from at all (each app's storage is sandboxed from every other
-  app's), which is why this works differently from the desktop option —
-  signing in *inside* Vivace's own embedded browser is the practical
-  substitute.
-- Only available on Android; every other platform uses **Get cookies
-  from browser** instead.
+  app's), which is why this works differently from the desktop **Get
+  cookies from browser** option — signing in *inside* Vivace's own
+  embedded browser is the practical substitute there.
+- On desktop, this is a real, separate browser session Vivace itself
+  controls — a genuinely heavier feature than **Get cookies from
+  browser** (it bundles its own browser engine), so it's mainly worth
+  using where that simpler option doesn't work, i.e. Chrome/Edge on
+  Windows.
 - The cookies file is a one-time snapshot taken the moment you tap **Save
   cookies** — Vivace never reopens the sign-in page or contacts YouTube
   on its own just to keep it fresh. From then on, every ordinary resolve/
@@ -162,7 +169,8 @@ transfer from another device by hand.
 The **Cookies file:** field expects a plain-text `cookies.txt` file in the
 classic Netscape cookie-jar format (the same format yt-dlp's own
 `--cookies` option reads) — use this when neither of the live options
-above is available or working for you (e.g. Chrome/Edge on Windows).
+above is available or working for you (e.g. **Log in to YouTube** isn't
+available in your build of Vivace).
 
 **To create one:**
 
