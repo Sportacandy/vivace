@@ -11,6 +11,8 @@ each get their own entry instead.
 
 ## [Unreleased]
 
+## [0.5.3] — 2026-09-26
+
 ### Added
 - Android: a "Log in to YouTube…" button (Preferences ▸ Network ▸
   YouTube, next to the cookies file field) opens a sign-in page inside
@@ -23,6 +25,16 @@ each get their own entry instead.
   Chrome/Edge on Windows, where "Get cookies from browser" can't read
   their cookies at all. Requires a Qt build with QtWebEngine; degrades
   gracefully (the button just doesn't appear) if it isn't available.
+
+### Fixed
+- Preferences ▸ Network ▸ YouTube: "Cookies file" and "Log in to
+  YouTube" are now greyed out whenever "Get cookies from browser" is
+  set to anything but "Off", instead of staying interactive while
+  silently ignored (yt-dlp only ever reads one cookie source per
+  invocation, preferring the live browser cookie store when set).
+- CI: the Android release build was missing a required Qt module,
+  which would have made it fail the same way the nightly build once
+  did before that was fixed.
 
 ## [0.5.2] — 2026-09-22
 

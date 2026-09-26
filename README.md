@@ -17,20 +17,32 @@ is also published from the tip of `main` between tagged releases. See
 
 ## Status
 
-**v0.5.2** — YouTube playback reliability: a new **Get cookies from
-browser** option (Preferences ▸ Network ▸ YouTube ▸ Download & play)
-reads cookies live from an installed browser instead of a
-previously-exported file — recommended now that YouTube's own cookie
-lifetimes are much shorter, making an exported `cookies.txt` go stale
-within days (Windows: only Firefox actually works here, since Chrome/
-Edge's "App-Bound Encryption" blocks every external tool from reading
-their cookies at all; Linux and macOS Chrome/Edge are unaffected). Also
-adds support for the **PO (proof-of-origin) token** many YouTube videos
-now require just to play at all, independent of cookies or being signed
-in: an **Install PO token provider…** button on desktop sets up the
-community "BgUtils POT Provider" project, and on Android the same
-support is bundled and set up automatically with no user action needed
-at all. See CHANGELOG.md for details. Builds on v0.5.1, which fixed two
+**v0.5.3** — the **Log in to YouTube…** button (Preferences ▸ Network ▸
+YouTube ▸ Download & play), previously Android-only, now also works on
+Windows/Linux/macOS: it opens a real sign-in page inside Vivace itself
+(an embedded, Chromium-based view via QtWebEngine on desktop) and saves
+the resulting session as the active cookies file, with no separate
+export/transfer step — mainly useful as a fallback for Chrome/Edge on
+Windows, where **Get cookies from browser** can't read their cookies at
+all. Also fixes a real UI conflict: **Cookies file** and **Log in to
+YouTube** now grey out whenever **Get cookies from browser** is set to
+anything but "Off", since yt-dlp only ever reads one cookie source per
+invocation and silently ignored the others before. See CHANGELOG.md for
+details. Builds on v0.5.2, which added YouTube playback reliability: a
+new **Get cookies from browser** option (Preferences ▸ Network ▸
+YouTube ▸ Download & play) reads cookies live from an installed browser
+instead of a previously-exported file — recommended now that YouTube's
+own cookie lifetimes are much shorter, making an exported `cookies.txt`
+go stale within days (Windows: only Firefox actually works here, since
+Chrome/Edge's "App-Bound Encryption" blocks every external tool from
+reading their cookies at all; Linux and macOS Chrome/Edge are
+unaffected). It also added support for the **PO (proof-of-origin)
+token** many YouTube videos now require just to play at all,
+independent of cookies or being signed in: an **Install PO token
+provider…** button on desktop sets up the community "BgUtils POT
+Provider" project, and on Android the same support is bundled and set
+up automatically with no user action needed at all. Before that, v0.5.1
+fixed two
 Android build/runtime issues: a Windows build could pick up the wrong
 `bash` (`C:\Windows\System32\bash.exe`) for the bundled YouTube
 "Download & play" build step, and a device that had run an earlier
