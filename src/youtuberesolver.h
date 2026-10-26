@@ -20,6 +20,7 @@
 #define YOUTUBERESOLVER_H
 
 #include <functional>
+#include <memory>
 
 #include <QNetworkAccessManager>
 #include <QObject>
@@ -31,6 +32,7 @@
 #include <QtQml/qqmlregistration.h>
 
 class QFileInfo;
+class ProcessTree;
 
 class YoutubeResolver : public QObject
 {
@@ -333,7 +335,11 @@ private:
     QStringList potProviderExtractorArgs() const;
 
     QProcess *m_process = nullptr;
+    // Kills m_process together with its children (yt-dlp's ffmpeg).
+    std::unique_ptr<ProcessTree> m_processTree;
     QProcess *m_updateProcess = nullptr; // transient "<ytdlPath> -U" self-update
+    // Lives exactly as long as m_updateProcess is non-null.
+    std::unique_ptr<ProcessTree> m_updateProcessTree;
     bool m_potProviderInstalling = false;
     QNetworkAccessManager m_net;
     QString m_ytdlPath = QStringLiteral("yt-dlp");

@@ -17,6 +17,8 @@
 #include <QNetworkReply>
 #include <QNetworkRequest>
 #include <QRegularExpression>
+#include "processtree.h"
+
 #include <QSaveFile>
 #include <QSignalBlocker>
 #include <QStandardPaths>
@@ -27,6 +29,7 @@
 YoutubeResolver::YoutubeResolver(QObject *parent) : QObject(parent)
 {
     m_process = new QProcess(this);
+    m_processTree = std::make_unique<ProcessTree>(m_process);
     connect(m_process, &QProcess::finished, this, &YoutubeResolver::onFinished);
     connect(m_process, &QProcess::errorOccurred, this,
             &YoutubeResolver::onErrorOccurred);
@@ -37,10 +40,12 @@ YoutubeResolver::YoutubeResolver(QObject *parent) : QObject(parent)
 YoutubeResolver::~YoutubeResolver()
 {
     if (m_updateProcess && m_updateProcess->state() != QProcess::NotRunning) {
+        m_updateProcessTree->killTree();
         m_updateProcess->kill();
         m_updateProcess->waitForFinished(1000);
     }
     if (m_process->state() != QProcess::NotRunning) {
+        m_processTree->killTree();
         m_process->kill();
         m_process->waitForFinished(1000);
     }
@@ -208,11 +213,17 @@ void YoutubeResolver::maybeAutoUpdateThen(const std::function<void()> &next)
     recordAutoUpdateCheck(); // stamp now regardless of outcome below
 
     m_updateProcess = new QProcess(this);
+    // On Windows, yt-dlp -U starts a helper that deletes the replaced
+    // yt-dlp.exe.old after yt-dlp exits, so a normal finish must not kill
+    // leftover descendants; cancel() still kills them all.
+    m_updateProcessTree = std::make_unique<ProcessTree>(
+            m_updateProcess, ProcessTree::OnRelease::LeaveDescendants);
     auto finish = [this, next] {
         if (!m_updateProcess)
             return; // already handled (e.g. cancel()) -- don't invoke twice
         m_updateProcess->deleteLater();
         m_updateProcess = nullptr;
+        m_updateProcessTree.reset();
         next();
     };
     connect(m_updateProcess, &QProcess::finished, this,
@@ -416,11 +427,13 @@ void YoutubeResolver::cancel()
     if (m_updateProcess) {
         m_updateProcess->disconnect(this);
         if (m_updateProcess->state() != QProcess::NotRunning) {
+            m_updateProcessTree->killTree();
             m_updateProcess->kill();
             m_updateProcess->waitForFinished(1000);
         }
         m_updateProcess->deleteLater();
         m_updateProcess = nullptr;
+        m_updateProcessTree.reset();
     }
     if (m_process->state() != QProcess::NotRunning) {
         // m_process is long-lived (reused for every resolve()/download()), so
@@ -433,6 +446,9 @@ void YoutubeResolver::cancel()
         // suppresses emission for this scope, leaving the connections intact
         // for the next operation.
         const QSignalBlocker blocker(m_process);
+        // Kill the whole tree: for a live stream yt-dlp records through a
+        // child ffmpeg, which plain kill() would leave running.
+        m_processTree->killTree();
         m_process->kill();
         m_process->waitForFinished(1000);
     }

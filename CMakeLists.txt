@@ -230,6 +230,7 @@ qt_add_qml_module(vivace
         src/shortcuts.h src/shortcuts.cpp
         src/updatechecker.h src/updatechecker.cpp
         src/youtuberesolver.h src/youtuberesolver.cpp
+        src/processtree.h src/processtree.cpp
         src/playlistthumbnailprovider.h src/playlistthumbnailprovider.cpp
         src/externaldownloader.h src/externaldownloader.cpp
         src/settings.h src/settings.cpp

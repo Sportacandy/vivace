@@ -20,12 +20,16 @@
 #ifndef EXTERNALDOWNLOADER_H
 #define EXTERNALDOWNLOADER_H
 
+#include <memory>
+
 #include <QDateTime>
 #include <QObject>
 #include <QProcess>
 #include <QString>
 #include <QUrl>
 #include <QtQml/qqmlregistration.h>
+
+class ProcessTree;
 
 class ExternalDownloader : public QObject
 {
@@ -81,6 +85,8 @@ private:
     static bool isMediaFile(const QString &fileName);
 
     QProcess *m_process = nullptr;
+    // Kills m_process together with the tool's children (yt-dlp, ffmpeg).
+    std::unique_ptr<ProcessTree> m_processTree;
     QString m_command;
     QString m_arguments = QStringLiteral("{url}");
     QString m_outputFolder;

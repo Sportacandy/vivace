@@ -5,12 +5,16 @@
 
 #include "externaldownloader.h"
 
+#include "processtree.h"
+
 #include <QDir>
 #include <QFileInfo>
+#include <QSignalBlocker>
 
 ExternalDownloader::ExternalDownloader(QObject *parent) : QObject(parent)
 {
     m_process = new QProcess(this);
+    m_processTree = std::make_unique<ProcessTree>(m_process);
     // Merge stderr into stdout: batch downloaders echo progress to both.
     m_process->setProcessChannelMode(QProcess::MergedChannels);
     connect(m_process, &QProcess::finished, this,
@@ -24,6 +28,7 @@ ExternalDownloader::ExternalDownloader(QObject *parent) : QObject(parent)
 ExternalDownloader::~ExternalDownloader()
 {
     if (m_process->state() != QProcess::NotRunning) {
+        m_processTree->killTree();
         m_process->kill();
         m_process->waitForFinished(1000);
     }
@@ -160,6 +165,12 @@ void ExternalDownloader::download(const QString &url)
 void ExternalDownloader::cancel()
 {
     if (m_process->state() != QProcess::NotRunning) {
+        // waitForFinished() emits finished() synchronously; onFinished() would
+        // then treat the partially written file as a finished download.
+        const QSignalBlocker blocker(m_process);
+        // The tool (often "cmd /c <script>.bat") runs yt-dlp and ffmpeg as
+        // children; plain kill() would end only the top process.
+        m_processTree->killTree();
         m_process->kill();
         m_process->waitForFinished(1000);
     }
