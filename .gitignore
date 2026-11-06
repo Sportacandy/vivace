@@ -26,6 +26,9 @@ qt-patched-prebuilt-linux64.tar.gz
 # .ts sources; the copies lrelease may drop next to the .ts are artifacts.
 translations/*.qm
 
+# Generated at CMake configure time from the Qt kit's build.gradle template
+# plus Vivace's asset pattern (see CMakeLists.txt) -- not source.
+android/build.gradle
 # Embedded-CPython stdlib, copied into android/assets/ at build time
 # (CMakeLists.txt, VIVACE_HAVE_PYTHON_YOUTUBE) from a downloaded
 # cpython-android-prebuilt release -- not source, regenerated every build.

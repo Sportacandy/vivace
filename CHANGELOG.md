@@ -50,6 +50,10 @@ each get their own entry instead.
 - Android release builds failed Android's lint check because they
   included the test files of the embedded Python. The APK is about 36 MB
   smaller without them.
+- Android: the downloadable APKs (built by CI, including 0.5.3) were
+  missing parts of the embedded Python's standard library, such as
+  `zipfile/_path`, which yt-dlp needs for YouTube playback. Vivace's
+  Android build now always keeps them.
 
 ## [0.5.3] — 2026-09-26
 

@@ -578,6 +578,39 @@ if(ANDROID)
     # into these; a runtime request only works for declared permissions.
     qt_add_android_permission(vivace NAME android.permission.READ_MEDIA_VIDEO)
     qt_add_android_permission(vivace NAME android.permission.READ_MEDIA_AUDIO)
+
+    # android/build.gradle is generated here from this Qt kit's own template
+    # (so it always matches the kit's Android Gradle plugin version) plus one
+    # Vivace setting: an aapt ignoreAssetsPattern without the default "<dir>_*"
+    # token. That default silently drops every asset folder whose name starts
+    # with "_" from the APK, and the bundled CPython stdlib needs several:
+    # zipfile/_path/ (importlib.metadata, used by yt-dlp; without it:
+    # "ModuleNotFoundError: No module named 'zipfile._path'"), _pyrepl/,
+    # compression/_common/, ensurepip/_bundled/. The pattern is the aapt
+    # default minus that token. A hand-kept build.gradle used to carry this,
+    # but it was never tracked, so CI-built APKs (v0.5.x) shipped without
+    # those folders; a tracked full copy would instead go stale on the next
+    # Qt upgrade, as the old tracked Gradle wrapper did.
+    set(_vivace_gradle_template "${QT6_INSTALL_PREFIX}/src/android/templates/build.gradle")
+    if(NOT EXISTS "${_vivace_gradle_template}")
+        message(FATAL_ERROR "Qt's Android build.gradle template not found at ${_vivace_gradle_template}")
+    endif()
+    set_property(DIRECTORY APPEND PROPERTY CMAKE_CONFIGURE_DEPENDS "${_vivace_gradle_template}")
+    file(READ "${_vivace_gradle_template}" _vivace_gradle)
+    set(_vivace_gradle_anchor "noCompress 'rcc'")
+    string(FIND "${_vivace_gradle}" "${_vivace_gradle_anchor}" _vivace_gradle_pos)
+    if(_vivace_gradle_pos EQUAL -1)
+        message(FATAL_ERROR "Qt's Android build.gradle template has no \"${_vivace_gradle_anchor}\" line "
+                            "to add Vivace's ignoreAssetsPattern after: ${_vivace_gradle_template}")
+    endif()
+    string(REPLACE "${_vivace_gradle_anchor}"
+        "${_vivace_gradle_anchor}\n        // Vivace: keep asset folders starting with \"_\" (see CMakeLists.txt).\n        ignoreAssetsPattern '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'"
+        _vivace_gradle "${_vivace_gradle}")
+    # Written via a build-tree copy so the package source dir's file only
+    # changes (and Gradle only reruns) when the content actually changes.
+    file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/vivace-build.gradle" "${_vivace_gradle}")
+    configure_file("${CMAKE_CURRENT_BINARY_DIR}/vivace-build.gradle"
+                   "${VIVACE_ANDROID_PACKAGE_SOURCE_DIR}/build.gradle" COPYONLY)
 endif()
 
 # macOS: screensaver inhibition uses an IOKit power-management assertion.
