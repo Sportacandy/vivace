@@ -41,6 +41,7 @@
 
 #include "pythonyoutuberesolver.h"
 
+#include <QDateTime>
 #include <QDir>
 #include <QDirIterator>
 #include <QEventLoop>
@@ -952,11 +953,22 @@ QString formatCurrentPythonError()
 // deciphering at all).
 bool patchYtdlpJsRuntimeVersionGate(const QString &pyzPath, QString *errorOut)
 {
-    static const char *const kYtdlpJsRuntimePatchVersion = "1";
+    static const char *const kYtdlpJsRuntimePatchVersion = "2";
     const QString markerPath = pyzPath + QStringLiteral(".jsrt-patch-v")
                                 + QString::fromLatin1(kYtdlpJsRuntimePatchVersion);
-    if (QFileInfo::exists(markerPath))
-        return true;
+    // The marker records which pyz it belongs to (size + mtime), so a pyz
+    // replaced by installOrUpdate() is patched again instead of being
+    // skipped because of an old marker.
+    const auto pyzStamp = [&pyzPath]() {
+        const QFileInfo fi(pyzPath);
+        return QByteArray::number(fi.size()) + ' '
+                + QByteArray::number(fi.lastModified().toMSecsSinceEpoch());
+    };
+    {
+        QFile marker(markerPath);
+        if (marker.open(QIODevice::ReadOnly) && marker.readAll() == pyzStamp())
+            return true;
+    }
 
     if (!ensurePythonInitialized(errorOut))
         return false;
@@ -969,28 +981,52 @@ bool patchYtdlpJsRuntimeVersionGate(const QString &pyzPath, QString *errorOut)
     PyDict_SetItemString(globals, "_pyz_path", pathObj);
     Py_DECREF(pathObj);
 
+    // Each entry is (member, old, new). An entry whose `new` text is already
+    // present is skipped, so a pyz patched by an earlier patch version only
+    // gets the missing changes.
+    //
+    // Second entry: yt-dlp's Node challenge solver (jsc/_builtin/node.py)
+    // starts Node with --experimental-permission below v23.5.0. Node added
+    // that flag in v20.0.0, so nodejs-mobile 18 exits with "bad option",
+    // every JS challenge fails, and only images are left ("Requested format
+    // is not available"). Node 18 has no permission model, so the patch
+    // passes no permission flag there. The challenge script then runs
+    // without Node's sandbox, inside Vivace's own Android app sandbox.
     static const char *const kScript =
             "import zipfile, os\n"
-            "target = 'yt_dlp/utils/_jsruntime.py'\n"
-            "old = 'MIN_SUPPORTED_VERSION = (22, 0, 0)'\n"
-            "new = 'MIN_SUPPORTED_VERSION = (18, 0, 0)'\n"
+            "patches = [\n"
+            "    ('yt_dlp/utils/_jsruntime.py',\n"
+            "     'MIN_SUPPORTED_VERSION = (22, 0, 0)',\n"
+            "     'MIN_SUPPORTED_VERSION = (18, 0, 0)'),\n"
+            "    ('yt_dlp/extractor/youtube/jsc/_builtin/node.py',\n"
+            "     '        if self.runtime_info.version_tuple < (23, 5, 0):\\n',\n"
+            "     '        if self.runtime_info.version_tuple < (20, 0, 0):\\n'\n"
+            "     '            pass  # Vivace: Node 18 has no permission flag\\n'\n"
+            "     '        elif self.runtime_info.version_tuple < (23, 5, 0):\\n'),\n"
+            "]\n"
             "tmp = _pyz_path + '.jsrt.tmp'\n"
             "with zipfile.ZipFile(_pyz_path, 'r') as zin:\n"
             "    infos = zin.infolist()\n"
-            "    content = zin.read(target).decode('utf-8')\n"
-            "    count = content.count(old)\n"
-            "    if count != 1:\n"
-            "        raise RuntimeError(\n"
-            "            f'expected exactly 1 occurrence of {old!r} in {target}, '\n"
-            "            f'found {count} -- yt-dlp source shape may have changed')\n"
-            "    content = content.replace(old, new)\n"
-            "    with zipfile.ZipFile(tmp, 'w', zipfile.ZIP_DEFLATED) as zout:\n"
-            "        for info in infos:\n"
-            "            data = zin.read(info.filename)\n"
-            "            if info.filename == target:\n"
-            "                data = content.encode('utf-8')\n"
-            "            zout.writestr(info, data)\n"
-            "os.replace(tmp, _pyz_path)\n";
+            "    changed = {}\n"
+            "    for target, old, new in patches:\n"
+            "        content = changed.get(target) or zin.read(target).decode('utf-8')\n"
+            "        if new in content:\n"
+            "            continue\n"
+            "        count = content.count(old)\n"
+            "        if count != 1:\n"
+            "            raise RuntimeError(\n"
+            "                f'expected exactly 1 occurrence of {old!r} in {target}, '\n"
+            "                f'found {count} -- yt-dlp source shape may have changed')\n"
+            "        changed[target] = content.replace(old, new)\n"
+            "    if changed:\n"
+            "        with zipfile.ZipFile(tmp, 'w', zipfile.ZIP_DEFLATED) as zout:\n"
+            "            for info in infos:\n"
+            "                data = zin.read(info.filename)\n"
+            "                if info.filename in changed:\n"
+            "                    data = changed[info.filename].encode('utf-8')\n"
+            "                zout.writestr(info, data)\n"
+            "if changed:\n"
+            "    os.replace(tmp, _pyz_path)\n";
 
     PyObject *result = PyRun_String(kScript, Py_file_input, globals, globals);
     if (!result) {
@@ -1000,7 +1036,7 @@ bool patchYtdlpJsRuntimeVersionGate(const QString &pyzPath, QString *errorOut)
         Py_DECREF(result);
         QFile marker(markerPath);
         if (marker.open(QIODevice::WriteOnly))
-            marker.write("1");
+            marker.write(pyzStamp());
         ok = true;
     }
     Py_DECREF(globals);
@@ -1228,7 +1264,9 @@ bool runYtdlp(const QString &ytdlpPath, const QString &pageUrl, int preferredHei
     Py_DECREF(formatVal);
     PyDict_SetItemString(opts, "noplaylist", Py_True);
     PyDict_SetItemString(opts, "quiet", Py_True);
-    PyDict_SetItemString(opts, "no_warnings", Py_True);
+    // Keep yt-dlp's WARNING lines: they go to logcat ("python.stderr") and
+    // are the only place that says WHY no format was found (for example
+    // "n challenge solving failed").
 #if defined(VIVACE_HAVE_YOUTUBE_DOWNLOAD_TOOLS) && defined(VIVACE_HAVE_POT_PROVIDER)
     addPotProviderExtractorArgs(opts);
 #endif
@@ -1357,7 +1395,9 @@ bool runYtdlpDownload(const QString &ytdlpPath, const QString &pageUrl, int pref
     Py_DECREF(jsRuntimes);
     PyDict_SetItemString(opts, "noplaylist", Py_True);
     PyDict_SetItemString(opts, "quiet", Py_True);
-    PyDict_SetItemString(opts, "no_warnings", Py_True);
+    // Keep yt-dlp's WARNING lines: they go to logcat ("python.stderr") and
+    // are the only place that says WHY no format was found (for example
+    // "n challenge solving failed").
     // Same key names as yt-dlp's own CLI options.py (dest='cookiefile',
     // dest='writethumbnail'/'convertthumbnails') -- confirmed against the
     // real installed yt_dlp source, not guessed. The poster thumbnail lets

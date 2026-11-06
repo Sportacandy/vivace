@@ -54,6 +54,11 @@ each get their own entry instead.
   missing parts of the embedded Python's standard library, such as
   `zipfile/_path`, which yt-dlp needs for YouTube playback. Vivace's
   Android build now always keeps them.
+- Android: YouTube downloads failed with "Requested format is not
+  available". Vivace's bundled Node.js didn't run: the Qt 6.12 build
+  kept it inside the APK, and current yt-dlp passes it a flag that
+  Node.js 18 rejects. Vivace now installs Node.js as a real file and
+  patches yt-dlp to skip that flag.
 
 ## [0.5.3] — 2026-09-26
 

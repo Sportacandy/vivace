@@ -418,6 +418,14 @@ set_target_properties(vivace PROPERTIES
     # label) so it can install alongside an official Vivace release on the
     # same device rather than colliding with or overwriting it.
     QT_ANDROID_PACKAGE_SOURCE_DIR "${VIVACE_ANDROID_PACKAGE_SOURCE_DIR}"
+    # Extract native libraries to nativeLibraryDir on install. The YouTube
+    # download path runs libffmpeg.so and libvivace_node.so as programs
+    # from that folder, so they must exist as real files. Qt 6.11's Gradle
+    # template extracted them by accident (it read legacyPackaging=false as
+    # a non-empty string, which Groovy treats as true); Qt 6.12's template
+    # reads it correctly, so without this property the files stay inside
+    # the APK and yt-dlp finds no JS runtime and no PO token.
+    QT_ANDROID_LEGACY_PACKAGING TRUE
 )
 
 # Windows: embed the brand icon into the executable. The RC references
