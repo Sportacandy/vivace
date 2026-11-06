@@ -5,6 +5,8 @@
 
 #include "uihelpers.h"
 
+#include "androidcontentpath.h"
+
 #include <algorithm>
 
 #include <QCoreApplication>
@@ -193,6 +195,23 @@ void UiHelpers::setCursorHidden(bool hidden)
         QGuiApplication::setOverrideCursor(QCursor(Qt::BlankCursor));
     else
         QGuiApplication::restoreOverrideCursor();
+}
+
+void UiHelpers::resolvePickedFile(const QUrl &url, const QJSValue &callback)
+{
+    if (url.scheme() != QLatin1String("content")) {
+        QJSValue(callback).call({ toLocalPath(url) });
+        return;
+    }
+    // Which files Android lets an app read by path depends on the Android
+    // version and the file type, so try opening the real path instead of
+    // predicting it; the content:// URI always stays readable.
+    AndroidContentPath::requestMediaReadPermission(this, [url, callback](bool) {
+        const QString path = AndroidContentPath::contentFilePath(url);
+        QFile file(path);
+        const bool readable = !path.isEmpty() && file.open(QIODevice::ReadOnly);
+        QJSValue(callback).call({ readable ? path : url.toString() });
+    });
 }
 
 QString UiHelpers::readInternetShortcut(const QUrl &fileUrl) const

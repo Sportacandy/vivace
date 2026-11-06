@@ -39,6 +39,7 @@
 
 #include "androidshareintent.h"
 #include "singleinstance.h"
+#include "windowplacementguard.h"
 
 #ifdef VIVACE_HAVE_ANDROID_YOUTUBE_LOGIN
 #include <QtWebView>
@@ -235,6 +236,51 @@ static void registerAppIdentity()
 {
     SetCurrentProcessExplicitAppUserModelID(L"VivacePlayer.Vivace");
 }
+
+// QtWebEngine (Chromium) crashes at startup (exception 0x80000003 in
+// Qt6WebEngineCore, NOTREACHED in GetPreRS5UniversalApiContractVersion) when
+// the working directory is System32 or SysWOW64: it finds the OS version by
+// reading "kernel32.dll" by relative name, and from a folder holding a
+// kernel32.dll the result breaks its version check. explorer.exe starts
+// programs with System32 as the working directory, so the installer's
+// "Launch Vivace" crashed. Move off a system directory before WebEngine starts.
+static void leaveSystemWorkingDirectory()
+{
+    wchar_t cwd[MAX_PATH];
+    const DWORD cwdLen = GetCurrentDirectoryW(MAX_PATH, cwd);
+    if (cwdLen == 0 || cwdLen >= MAX_PATH)
+        return;
+
+    wchar_t sysDirs[2][MAX_PATH] = {};
+    GetSystemDirectoryW(sysDirs[0], MAX_PATH);
+    GetSystemWow64DirectoryW(sysDirs[1], MAX_PATH);
+    bool inSystemDir = false;
+    for (const wchar_t *dir : sysDirs) {
+        const size_t len = wcslen(dir);
+        if (len == 0)
+            continue;
+        // Ignore a trailing backslash on either side.
+        size_t cmpLen = len;
+        if (dir[cmpLen - 1] == L'\\')
+            --cmpLen;
+        size_t cwdCmpLen = cwdLen;
+        if (cwd[cwdCmpLen - 1] == L'\\')
+            --cwdCmpLen;
+        if (cwdCmpLen == cmpLen && _wcsnicmp(cwd, dir, cmpLen) == 0)
+            inSystemDir = true;
+    }
+    if (!inSystemDir)
+        return;
+
+    wchar_t exePath[MAX_PATH];
+    const DWORD exeLen = GetModuleFileNameW(nullptr, exePath, MAX_PATH);
+    if (exeLen == 0 || exeLen >= MAX_PATH)
+        return;
+    if (wchar_t *slash = wcsrchr(exePath, L'\\')) {
+        *slash = L'\0';
+        SetCurrentDirectoryW(exePath);
+    }
+}
 #endif
 
 namespace {
@@ -300,6 +346,10 @@ bool handleCliInfoRequest(const QStringList &userArgs)
 
 int main(int argc, char *argv[])
 {
+#ifdef Q_OS_WIN
+    leaveSystemWorkingDirectory(); // before QtWebEngine (see its comment)
+#endif
+
     // Per QtWebEngineQuick's own docs: "Sets up an OpenGL Context that can
     // be shared between threads. This has to be done before QGuiApplication
     // is created" -- the OPPOSITE ordering from QtWebView::initialize()
@@ -347,6 +397,11 @@ int main(int argc, char *argv[])
     QGuiApplication::setApplicationDisplayName(QStringLiteral("Vivace"));
 
     installFileLogger(); // capture Qt/QML warnings to a file for troubleshooting
+
+#ifndef Q_OS_ANDROID
+    // Keep every window's title bar on screen (see windowplacementguard.h).
+    app.installEventFilter(new WindowPlacementGuard(&app));
+#endif
 
     // UI language: the ui/language setting ("" = follow the system's *display*
     // language), applied here before the QML engine loads so qsTr()/tr()

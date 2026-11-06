@@ -11,6 +11,7 @@
 
 import QtQuick
 import QtQuick.Controls
+import QtQuick.Dialogs
 import QtQuick.Layouts
 
 Window {
@@ -273,10 +274,15 @@ Window {
                             onClicked: listView.currentIndex = row.index
                             onDoubleClicked: {
                                 if (row.modelData.isSubmenu) {
-                                    dialog.path = dialog.path === ""
+                                    // Clear the selection first: changing
+                                    // dialog.path rebuilds the list and
+                                    // destroys this delegate, after which
+                                    // listView no longer resolves here.
+                                    const newPath = dialog.path === ""
                                             ? String(row.index)
                                             : dialog.path + "/" + row.index
                                     listView.currentIndex = -1
+                                    dialog.path = newPath
                                 }
                             }
                         }
@@ -304,6 +310,7 @@ Window {
                             }
                             TextField {
                                 width: parent.width - 40 - dialog.width * 0.35
+                                       - (browseButton.visible ? browseButton.width : 0)
                                 height: parent.height
                                 text: row.modelData.isSubmenu
                                       ? qsTr("(submenu)") : row.modelData.url
@@ -314,6 +321,20 @@ Window {
                                         dialog.favorites.updateItem(
                                             dialog.path, row.index,
                                             row.modelData.name, text)
+                                }
+                            }
+                            ToolButton {
+                                id: browseButton
+                                width: 30
+                                height: parent.height
+                                visible: !row.modelData.isSubmenu
+                                text: "…"
+                                ToolTip.visible: hovered
+                                ToolTip.text: qsTr("Choose a media or playlist file")
+                                onClicked: {
+                                    listView.currentIndex = row.index
+                                    mediaFileDialog.row = row.index
+                                    mediaFileDialog.open()
                                 }
                             }
                         }
@@ -404,6 +425,36 @@ Window {
             Layout.fillWidth: true
             Item { Layout.fillWidth: true }
             Button { text: qsTr("Close"); onClicked: dialog.close() }
+        }
+    }
+
+    // Picks the Media of item `row` (in the current submenu). On Android the
+    // picker returns a content:// URI; resolvePickedFile() stores the real
+    // file path instead when Vivace can read it, and keeps the URI (whose
+    // access Qt preserves across restarts) when it can't.
+    FileDialog {
+        id: mediaFileDialog
+        property int row: -1
+        title: qsTr("Choose a media or playlist file")
+        fileMode: FileDialog.OpenFile
+        options: Settings.useNativeFileDialog ? 0 : FileDialog.DontUseNativeDialog
+        nameFilters: [
+            qsTr("Media files (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)"),
+            qsTr("Playlists (*.m3u *.m3u8)"),
+            qsTr("All files (*)")
+        ]
+        onAccepted: {
+            // Captured now: resolvePickedFile() may wait for a permission
+            // prompt, and the editor can change in the meantime.
+            const path = dialog.path
+            const index = row
+            UiHelpers.resolvePickedFile(selectedFile, function(media) {
+                const items = dialog.favorites.items(path)
+                if (index < 0 || index >= items.length || items[index].isSubmenu)
+                    return
+                // An empty name makes the model use the file's own name.
+                dialog.favorites.updateItem(path, index, items[index].name, media)
+            })
         }
     }
 }

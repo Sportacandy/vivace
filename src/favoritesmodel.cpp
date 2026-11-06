@@ -34,6 +34,19 @@ QUrl toUrl(const QString &text)
     return QUrl::fromLocalFile(QDir::fromNativeSeparators(trimmed));
 }
 
+// Default item name for `url`. QUrl::fileName() is a plain URL-path split,
+// which for an Android content:// URI yields the document id (e.g.
+// "msf:1234"); QFileInfo resolves the real display name for those through
+// Qt's Android content file engine.
+QString defaultName(const QUrl &url)
+{
+    if (url.isLocalFile())
+        return QFileInfo(url.toLocalFile()).fileName();
+    if (url.scheme() == QLatin1String("content"))
+        return QFileInfo(url.toString()).fileName();
+    return url.fileName();
+}
+
 // SMPlayer's configuration directory (mirrors smplayer's Paths::configPath()),
 // where its favorites.m3u8 / tv.m3u8 / radio.m3u8 live.
 QString smplayerConfigDir()
@@ -197,7 +210,7 @@ void FavoritesModel::addItem(const QString &path, const QString &name,
     const QUrl parsed = toUrl(url);
     Node item;
     item.name = name.trimmed().isEmpty() && !parsed.isEmpty()
-                        ? parsed.fileName() : name.trimmed();
+                        ? defaultName(parsed) : name.trimmed();
     item.url = parsed.toString();
     node->children.append(item);
     save();
@@ -231,7 +244,7 @@ void FavoritesModel::updateItem(const QString &path, int index,
     } else {
         const QUrl parsed = toUrl(url);
         child.name = name.trimmed().isEmpty() && !parsed.isEmpty()
-                             ? parsed.fileName() : name.trimmed();
+                             ? defaultName(parsed) : name.trimmed();
         child.url = parsed.toString();
     }
     save();

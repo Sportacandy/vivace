@@ -10,8 +10,12 @@
     C++ platform-side file and its Java-side companion class both only
     exist starting at the v6.11.2 tag, neither at v6.11.1).
 
-    AndroidManifest.xml declares an ACTION_SEND/text-plain intent-filter on
-    the main activity; this class extracts the shared URL from BOTH ends
+    It also handles "Open with" from a file manager (ACTION_VIEW with a
+    content:// media or playlist URI), which arrives the same two ways.
+
+    AndroidManifest.xml declares an ACTION_SEND/text-plain intent-filter
+    (and an ACTION_VIEW one) on the main activity; this class extracts the
+    URL to open from BOTH ends
     of Android's own intent-delivery split: the activity's own initial
     intent (a cold launch straight from the Share sheet -- coldStartUrl(),
     called once at startup) and any LATER intent delivered while already

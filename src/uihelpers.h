@@ -6,6 +6,7 @@
 #ifndef UIHELPERS_H
 #define UIHELPERS_H
 
+#include <QJSValue>
 #include <QObject>
 #include <QVariant>
 #include <QtQml/qqmlregistration.h>
@@ -66,6 +67,13 @@ public:
     // (a stationary MouseArea.cursorShape won't re-apply). The caller scopes
     // it to the video so the menu bar and dialogs are never affected.
     Q_INVOKABLE void setCursorHidden(bool hidden);
+
+    // Media location to store for a picked file, passed to `callback` (a JS
+    // function taking one string). For an Android content:// URI this asks
+    // for media-read permission, then passes the real file path when Vivace
+    // can open the file by that path, and the URI itself otherwise. Any other
+    // URL is passed as toLocalPath() returns it, without waiting.
+    Q_INVOKABLE void resolvePickedFile(const QUrl &url, const QJSValue &callback);
 
     // A Windows ".url" internet shortcut is an INI file with
     // [InternetShortcut] / URL=<target>. Returns the target URL string, or an

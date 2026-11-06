@@ -43,6 +43,7 @@
 #include "dvdtitledevice.h"
 #include "filesettings.h"
 #include "playlistparser.h"
+#include "androidcontentpath.h"
 
 namespace {
 
@@ -1020,6 +1021,24 @@ void PlayerController::open(const QList<QUrl> &urls)
     // stream's connection open behind the new playback, same bug class as
     // the Stop-button one fixed in closeSource(). A no-op otherwise.
     teardownHttpTsSource();
+
+    // Android: a playlist picked with the system file picker (content://)
+    // has its entries resolved to real file paths (AndroidContentPath), and
+    // opening those needs media-read permission. Ask first, then continue
+    // this same open; m_mediaPermissionAsked keeps a denial from re-asking.
+    if (urls.size() == 1 && urls.first().scheme() == QLatin1String("content")
+        && PlaylistParser::isPlaylistFile(urls.first()) && !m_mediaPermissionAsked
+        && !AndroidContentPath::hasMediaReadPermission()) {
+        AndroidContentPath::requestMediaReadPermission(this, [this, urls](bool granted) {
+            if (!granted)
+                emit osdMessage(tr("Vivace needs permission to read media files "
+                                   "to play this playlist."));
+            m_mediaPermissionAsked = true;
+            open(urls);
+            m_mediaPermissionAsked = false;
+        });
+        return;
+    }
 
     // A dropped/opened folder is a DVD (VIDEO_TS), a Blu-ray disc (BDMV), or
     // a plain media folder.

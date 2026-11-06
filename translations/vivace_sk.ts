@@ -672,27 +672,27 @@
 <context>
     <name>ExternalDownloader</name>
     <message>
-        <location filename="../src/externaldownloader.cpp" line="112"/>
+        <location filename="../src/externaldownloader.cpp" line="117"/>
         <source>No downloader command is configured (Preferences &gt; Network).</source>
         <translation>Nie je nastavený príkaz na sťahovanie (Nastavenia &gt; Sieť).</translation>
     </message>
     <message>
-        <location filename="../src/externaldownloader.cpp" line="117"/>
+        <location filename="../src/externaldownloader.cpp" line="122"/>
         <source>The download folder does not exist (Preferences &gt; Network).</source>
         <translation>Priečinok na sťahovanie neexistuje (Nastavenia &gt; Sieť).</translation>
     </message>
     <message>
-        <location filename="../src/externaldownloader.cpp" line="184"/>
+        <location filename="../src/externaldownloader.cpp" line="195"/>
         <source>Could not run the downloader (&quot;%1&quot;).</source>
         <translation>Nedá sa spustiť sťahovač (&quot;%1&quot;).</translation>
     </message>
     <message>
-        <location filename="../src/externaldownloader.cpp" line="201"/>
+        <location filename="../src/externaldownloader.cpp" line="212"/>
         <source>The downloader did not finish normally.</source>
         <translation>Sťahovač neskončil normálne.</translation>
     </message>
     <message>
-        <location filename="../src/externaldownloader.cpp" line="204"/>
+        <location filename="../src/externaldownloader.cpp" line="215"/>
         <source>The downloader produced no media file (exit code %1).</source>
         <translation>Sťahovač nevytvoril žiadny súbor médií (návratový kód %1).</translation>
     </message>
@@ -700,89 +700,110 @@
 <context>
     <name>FavoritesDialog</name>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="22"/>
+        <location filename="../qml/FavoritesDialog.qml" line="23"/>
         <source>Favorite list</source>
         <translation>Zoznam obľúbených</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="26"/>
+        <location filename="../qml/FavoritesDialog.qml" line="27"/>
         <source>Editor</source>
         <translation>Editor</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="141"/>
+        <location filename="../qml/FavoritesDialog.qml" line="142"/>
         <source>You can edit, delete, sort or add new items. Select a submenu and press Open (or double-click it) to edit its contents.</source>
         <translation>Môžete upravovať, odstraňovať, zoraďovať alebo pridávať položky. Vyberte podponuku a kliknite na Otvoriť (alebo na ňu dvakrát kliknite) na úpravu jej obsahu.</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="157"/>
+        <location filename="../qml/FavoritesDialog.qml" line="158"/>
         <source>Up one level</source>
         <translation>O úroveň vyššie</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="197"/>
+        <location filename="../qml/FavoritesDialog.qml" line="198"/>
         <source>&amp;Open</source>
         <translation>&amp;Otvoriť</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="204"/>
+        <location filename="../qml/FavoritesDialog.qml" line="205"/>
         <source>Submenus group items into folders; select one and press Open (or double-click it) to edit inside, then use the path above to go back.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="236"/>
+        <location filename="../qml/FavoritesDialog.qml" line="237"/>
         <source>Name</source>
         <translation>Meno</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="246"/>
+        <location filename="../qml/FavoritesDialog.qml" line="247"/>
         <source>Media</source>
         <translation>Médiá</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="309"/>
+        <location filename="../qml/FavoritesDialog.qml" line="316"/>
         <source>(submenu)</source>
         <translation>(podponuka)</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="334"/>
+        <location filename="../qml/FavoritesDialog.qml" line="333"/>
+        <location filename="../qml/FavoritesDialog.qml" line="438"/>
+        <source>Choose a media or playlist file</source>
+        <translation>Vyberte multimediálny súbor alebo zoznam skladieb</translation>
+    </message>
+    <message>
+        <location filename="../qml/FavoritesDialog.qml" line="355"/>
         <source>&amp;New item</source>
         <translation>&amp;Nová položka</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="344"/>
+        <location filename="../qml/FavoritesDialog.qml" line="365"/>
         <source>D&amp;elete</source>
         <translation>&amp;Vymazať</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="355"/>
+        <location filename="../qml/FavoritesDialog.qml" line="376"/>
         <source>&amp;Up</source>
         <translation>Posunúť &amp;vyššie</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="367"/>
+        <location filename="../qml/FavoritesDialog.qml" line="388"/>
         <source>New &amp;submenu</source>
         <translation>Nové &amp;podmenu</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="371"/>
+        <location filename="../qml/FavoritesDialog.qml" line="392"/>
         <source>New submenu</source>
         <translation>Nové &amp;podmenu</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="377"/>
+        <location filename="../qml/FavoritesDialog.qml" line="398"/>
         <source>Delete &amp;all</source>
         <translation>Vym&amp;azať všetko</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="388"/>
+        <location filename="../qml/FavoritesDialog.qml" line="409"/>
         <source>&amp;Down</source>
         <translation>Posunúť &amp;nižsie</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="406"/>
+        <location filename="../qml/FavoritesDialog.qml" line="427"/>
         <source>Close</source>
         <translation>Zavrieť</translation>
+    </message>
+    <message>
+        <location filename="../qml/FavoritesDialog.qml" line="442"/>
+        <source>Media files (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</source>
+        <translation>Multimediálne súbory (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</translation>
+    </message>
+    <message>
+        <location filename="../qml/FavoritesDialog.qml" line="443"/>
+        <source>Playlists (*.m3u *.m3u8)</source>
+        <translation>Zoznamy skladieb (*.m3u *.m3u8)</translation>
+    </message>
+    <message>
+        <location filename="../qml/FavoritesDialog.qml" line="444"/>
+        <source>All files (*)</source>
+        <translation>Všetky súbory (*)</translation>
     </message>
 </context>
 <context>
@@ -806,7 +827,7 @@
 <context>
     <name>FavoritesModel</name>
     <message>
-        <location filename="../src/favoritesmodel.cpp" line="215"/>
+        <location filename="../src/favoritesmodel.cpp" line="228"/>
         <source>New submenu</source>
         <translation>Nové &amp;podmenu</translation>
     </message>
@@ -1100,7 +1121,7 @@
     <message>
         <location filename="../qml/Main.qml" line="1427"/>
         <source>Media files (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</source>
-        <translation type="unfinished"></translation>
+        <translation>Multimediálne súbory (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</translation>
     </message>
     <message>
         <location filename="../qml/Main.qml" line="1428"/>
@@ -2219,369 +2240,374 @@
 <context>
     <name>PlayerController</name>
     <message>
-        <location filename="../src/playercontroller.cpp" line="181"/>
-        <location filename="../src/playercontroller.cpp" line="965"/>
-        <location filename="../src/playercontroller.cpp" line="981"/>
-        <location filename="../src/playercontroller.cpp" line="1646"/>
-        <location filename="../src/playercontroller.cpp" line="1662"/>
-        <location filename="../src/playercontroller.cpp" line="2573"/>
+        <location filename="../src/playercontroller.cpp" line="182"/>
+        <location filename="../src/playercontroller.cpp" line="966"/>
+        <location filename="../src/playercontroller.cpp" line="982"/>
+        <location filename="../src/playercontroller.cpp" line="1665"/>
+        <location filename="../src/playercontroller.cpp" line="1681"/>
+        <location filename="../src/playercontroller.cpp" line="2592"/>
         <source>Track %1</source>
         <translation>Stopa %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="883"/>
+        <location filename="../src/playercontroller.cpp" line="884"/>
         <source>A/V delay: %1 ms</source>
         <translation>Oneskorenie A/V: %1 ms</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1703"/>
+        <location filename="../src/playercontroller.cpp" line="1722"/>
         <source>DVD title %1 could not be assembled</source>
         <translation>Titul DVD %1 sa nedá zostaviť</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1709"/>
+        <location filename="../src/playercontroller.cpp" line="1728"/>
         <source>DVD title %1 could not be opened</source>
         <translation>Titul DVD %1 sa nedá otvoriť</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1523"/>
-        <location filename="../src/playercontroller.cpp" line="1890"/>
+        <location filename="../src/playercontroller.cpp" line="1542"/>
+        <location filename="../src/playercontroller.cpp" line="1909"/>
         <source>Title %1 (%2)</source>
         <translation>Titul %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="237"/>
+        <location filename="../src/playercontroller.cpp" line="238"/>
         <source>MPEG-1 Audio</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="238"/>
+        <location filename="../src/playercontroller.cpp" line="239"/>
         <source>MPEG-2 Audio</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="239"/>
+        <location filename="../src/playercontroller.cpp" line="240"/>
         <source>LPCM</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="240"/>
+        <location filename="../src/playercontroller.cpp" line="241"/>
         <source>AC-3 (Dolby Digital)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="242"/>
+        <location filename="../src/playercontroller.cpp" line="243"/>
         <source>Dolby TrueHD</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="243"/>
+        <location filename="../src/playercontroller.cpp" line="244"/>
         <source>AC-3 Plus (Dolby Digital Plus)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="244"/>
+        <location filename="../src/playercontroller.cpp" line="245"/>
         <source>DTS-HD High Resolution Audio</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="245"/>
+        <location filename="../src/playercontroller.cpp" line="246"/>
         <source>DTS-HD Master Audio</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="246"/>
+        <location filename="../src/playercontroller.cpp" line="247"/>
         <source>AC-3 Plus (secondary)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="247"/>
+        <location filename="../src/playercontroller.cpp" line="248"/>
         <source>DTS-HD (secondary)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1420"/>
+        <location filename="../src/playercontroller.cpp" line="1439"/>
         <source>Could not open the Blu-ray disc (it may be encrypted, or use an unsupported format).</source>
         <translation>Disk Blu-ray sa nepodarilo otvoriť (môže byť zašifrovaný alebo používať nepodporovaný formát).</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1427"/>
+        <location filename="../src/playercontroller.cpp" line="1446"/>
         <source>No playable titles were found on this Blu-ray disc.</source>
         <translation>Na tomto disku Blu-ray sa nenašli žiadne prehrateľné tituly.</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1472"/>
+        <location filename="../src/playercontroller.cpp" line="1491"/>
         <source>This Blu-ray title could not be selected.</source>
         <translation>Tento titul Blu-ray sa nepodarilo vybrať.</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1482"/>
-        <location filename="../src/playercontroller.cpp" line="1486"/>
+        <location filename="../src/playercontroller.cpp" line="1501"/>
+        <location filename="../src/playercontroller.cpp" line="1505"/>
         <source>This Blu-ray title could not be opened.</source>
         <translation>Tento titul Blu-ray sa nepodarilo otvoriť.</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1906"/>
+        <location filename="../src/playercontroller.cpp" line="1925"/>
         <source>Chapter %1 (%2)</source>
         <translation>Kapitola %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3067"/>
+        <location filename="../src/playercontroller.cpp" line="3086"/>
         <source>Could not open the stream</source>
         <translation>Nedá sa otvoriť stream</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3126"/>
+        <location filename="../src/playercontroller.cpp" line="3145"/>
         <source>System default</source>
         <translation>Predvolené systému</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3305"/>
+        <location filename="../src/playercontroller.cpp" line="3324"/>
         <source>A marker set to %1</source>
         <translation>Značka A nastavená na %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3316"/>
+        <location filename="../src/playercontroller.cpp" line="3335"/>
         <source>B marker set to %1</source>
         <translation>Značka B nastavená na %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3326"/>
+        <location filename="../src/playercontroller.cpp" line="3345"/>
         <source>A-B markers cleared</source>
         <translation>Značky A-B vymazané</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3400"/>
+        <location filename="../src/playercontroller.cpp" line="3419"/>
         <source>None</source>
         <translation>Žiadne</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3399"/>
+        <location filename="../src/playercontroller.cpp" line="3418"/>
         <source>Yadif</source>
         <translation>Yadif</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3400"/>
+        <location filename="../src/playercontroller.cpp" line="3419"/>
         <source>Bwdif</source>
         <translation>Bwdif</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3399"/>
+        <location filename="../src/playercontroller.cpp" line="3418"/>
         <source>Auto</source>
         <translation>Automatické</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3401"/>
+        <location filename="../src/playercontroller.cpp" line="1034"/>
+        <source>Vivace needs permission to read media files to play this playlist.</source>
+        <translation>Vivace potrebuje povolenie na čítanie multimediálnych súborov, aby mohol prehrať tento zoznam skladieb.</translation>
+    </message>
+    <message>
+        <location filename="../src/playercontroller.cpp" line="3420"/>
         <source>Deinterlace: %1</source>
         <translation>Odstrániť prekladanie: %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3486"/>
+        <location filename="../src/playercontroller.cpp" line="3505"/>
         <source>Could not load subtitles from %1</source>
         <translation>Nedajú sa načítať titulky z %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3503"/>
+        <location filename="../src/playercontroller.cpp" line="3522"/>
         <source>Subtitles loaded: %1</source>
         <translation>Titulky načítané: %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3514"/>
+        <location filename="../src/playercontroller.cpp" line="3533"/>
         <source>Subtitles unloaded</source>
         <translation>Titulky odobrané</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3524"/>
+        <location filename="../src/playercontroller.cpp" line="3543"/>
         <source>Subtitle delay: %1 ms</source>
         <translation>Oneskorenie titulkov: %1 ms</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3674"/>
+        <location filename="../src/playercontroller.cpp" line="3693"/>
         <source>General</source>
         <translation>Všeobecné</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3677"/>
+        <location filename="../src/playercontroller.cpp" line="3696"/>
         <source>File</source>
         <translation>Súbor</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3692"/>
+        <location filename="../src/playercontroller.cpp" line="3711"/>
         <source>Size</source>
         <translation>Veľkosť</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3692"/>
+        <location filename="../src/playercontroller.cpp" line="3711"/>
         <source>%1 KB (%2 MB)</source>
         <translation>%1 KB (%2 MB)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3697"/>
-        <location filename="../src/playercontroller.cpp" line="3731"/>
+        <location filename="../src/playercontroller.cpp" line="3716"/>
+        <location filename="../src/playercontroller.cpp" line="3750"/>
         <source>URL</source>
         <translation>URL</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3707"/>
+        <location filename="../src/playercontroller.cpp" line="3726"/>
         <source>Length</source>
         <translation>Dĺžka</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3708"/>
+        <location filename="../src/playercontroller.cpp" line="3727"/>
         <source>Demuxer</source>
         <translation>Demuxer</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3713"/>
-        <location filename="../src/playercontroller.cpp" line="3764"/>
-        <location filename="../src/playercontroller.cpp" line="3827"/>
-        <location filename="../src/playercontroller.cpp" line="3857"/>
+        <location filename="../src/playercontroller.cpp" line="3732"/>
+        <location filename="../src/playercontroller.cpp" line="3783"/>
+        <location filename="../src/playercontroller.cpp" line="3846"/>
+        <location filename="../src/playercontroller.cpp" line="3876"/>
         <source>Name</source>
         <translation>Meno</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3714"/>
+        <location filename="../src/playercontroller.cpp" line="3733"/>
         <source>Artist</source>
         <translation>Umelec</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3716"/>
+        <location filename="../src/playercontroller.cpp" line="3735"/>
         <source>Album artist</source>
         <translation>Interpret albumu</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3718"/>
+        <location filename="../src/playercontroller.cpp" line="3737"/>
         <source>Author</source>
         <translation>Autor</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3719"/>
+        <location filename="../src/playercontroller.cpp" line="3738"/>
         <source>Composer</source>
         <translation>Skladateľ</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3720"/>
+        <location filename="../src/playercontroller.cpp" line="3739"/>
         <source>Album</source>
         <translation>Album</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3721"/>
+        <location filename="../src/playercontroller.cpp" line="3740"/>
         <source>Genre</source>
         <translation>Typ</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3722"/>
+        <location filename="../src/playercontroller.cpp" line="3741"/>
         <source>Date</source>
         <translation>Dátum</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3723"/>
+        <location filename="../src/playercontroller.cpp" line="3742"/>
         <source>Track</source>
         <translation>Stopa</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3724"/>
+        <location filename="../src/playercontroller.cpp" line="3743"/>
         <source>Copyright</source>
         <translation>Copyright</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3725"/>
+        <location filename="../src/playercontroller.cpp" line="3744"/>
         <source>Comment</source>
         <translation>Komentár</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3726"/>
+        <location filename="../src/playercontroller.cpp" line="3745"/>
         <source>Description</source>
         <translation>Popis</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3728"/>
+        <location filename="../src/playercontroller.cpp" line="3747"/>
         <source>Publisher</source>
         <translation>Vydavateľ</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3729"/>
-        <location filename="../src/playercontroller.cpp" line="3764"/>
-        <location filename="../src/playercontroller.cpp" line="3827"/>
-        <location filename="../src/playercontroller.cpp" line="3857"/>
+        <location filename="../src/playercontroller.cpp" line="3748"/>
+        <location filename="../src/playercontroller.cpp" line="3783"/>
+        <location filename="../src/playercontroller.cpp" line="3846"/>
+        <location filename="../src/playercontroller.cpp" line="3876"/>
         <source>Language</source>
         <translation>Jazyk</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3733"/>
+        <location filename="../src/playercontroller.cpp" line="3752"/>
         <source>Clip info</source>
         <translation>Informácie o klipe</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3737"/>
+        <location filename="../src/playercontroller.cpp" line="3756"/>
         <source>Initial Video Stream</source>
         <translation>Počiatočná video stopa</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3740"/>
+        <location filename="../src/playercontroller.cpp" line="3759"/>
         <source>Resolution</source>
         <translation>Rozlíšenie</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3743"/>
+        <location filename="../src/playercontroller.cpp" line="3762"/>
         <source>Aspect ratio</source>
         <translation>Pomer strán</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3747"/>
-        <location filename="../src/playercontroller.cpp" line="3787"/>
+        <location filename="../src/playercontroller.cpp" line="3766"/>
+        <location filename="../src/playercontroller.cpp" line="3806"/>
         <source>Format</source>
         <translation>Formát</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3750"/>
-        <location filename="../src/playercontroller.cpp" line="3790"/>
+        <location filename="../src/playercontroller.cpp" line="3769"/>
+        <location filename="../src/playercontroller.cpp" line="3809"/>
         <source>Bitrate</source>
         <translation>Dátový tok</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3750"/>
-        <location filename="../src/playercontroller.cpp" line="3790"/>
+        <location filename="../src/playercontroller.cpp" line="3769"/>
+        <location filename="../src/playercontroller.cpp" line="3809"/>
         <source>%1 kbps</source>
         <translation>%1 kbps</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3753"/>
+        <location filename="../src/playercontroller.cpp" line="3772"/>
         <source>Frames per second</source>
         <translation>Snímok za sekundu</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3756"/>
+        <location filename="../src/playercontroller.cpp" line="3775"/>
         <source>HDR</source>
         <translation>HDR</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3756"/>
+        <location filename="../src/playercontroller.cpp" line="3775"/>
         <source>yes</source>
         <translation>áno</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3763"/>
+        <location filename="../src/playercontroller.cpp" line="3782"/>
         <source>Video Streams</source>
         <translation>Video stopy</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3771"/>
+        <location filename="../src/playercontroller.cpp" line="3790"/>
         <source>Initial Audio Stream</source>
         <translation>Počiatočná zvuková stopa</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3826"/>
+        <location filename="../src/playercontroller.cpp" line="3845"/>
         <source>Audio Streams</source>
         <translation>Zvukové stopy</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3856"/>
+        <location filename="../src/playercontroller.cpp" line="3875"/>
         <source>Subtitles</source>
         <translation>Titulky</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="4206"/>
+        <location filename="../src/playercontroller.cpp" line="4225"/>
         <source>Chapter %1</source>
         <translation>Kapitola %1</translation>
     </message>
@@ -2706,7 +2732,7 @@
     <message>
         <location filename="../qml/PlaylistEditor.qml" line="536"/>
         <source>Media files (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</source>
-        <translation type="unfinished"></translation>
+        <translation>Multimediálne súbory (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</translation>
     </message>
     <message>
         <location filename="../qml/PlaylistEditor.qml" line="537"/>
@@ -3731,7 +3757,7 @@
     </message>
     <message>
         <location filename="../qml/PrefNetworkPage.qml" line="129"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="876"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="895"/>
         <source>Cast</source>
         <translation>Prenos</translation>
     </message>
@@ -3752,7 +3778,7 @@
     </message>
     <message>
         <location filename="../qml/PrefNetworkPage.qml" line="169"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="828"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="847"/>
         <source>Username:</source>
         <translation>Po&amp;užívateľské meno</translation>
     </message>
@@ -3763,7 +3789,7 @@
     </message>
     <message>
         <location filename="../qml/PrefNetworkPage.qml" line="177"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="834"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="853"/>
         <source>Password:</source>
         <translation>He&amp;slo:</translation>
     </message>
@@ -3774,7 +3800,7 @@
     </message>
     <message>
         <location filename="../qml/PrefNetworkPage.qml" line="128"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="785"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="804"/>
         <source>Proxy</source>
         <translation>Proxy</translation>
     </message>
@@ -3789,7 +3815,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="474"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="491"/>
         <source>Optional cookies.txt; unlocks HD, members-only and age-restricted videos. Safe here — cookies only affect the download, not a stream a player must open. &quot;Log in to YouTube…&quot; below fills this in for you automatically — use it instead of exporting cookies.txt from a desktop browser and transferring it here by hand.</source>
         <translation>Voliteľný súbor cookies.txt; odomyká videá v HD, len pre členov a s vekovým obmedzením. Tu je to bezpečné — cookies ovplyvňujú iba sťahovanie, nie tok, ktorý musí otvoriť prehrávač. Nižšie uvedená voľba „Prihlásiť sa do YouTube…“ toto pole vyplní za vás automaticky — použite ju namiesto exportovania cookies.txt z prehliadača v počítači a jeho ručného prenášania sem.</translation>
     </message>
@@ -3798,23 +3824,23 @@
         <translation type="vanished">Otvorí prihlasovaciu stránku priamo v aplikácii Vivace a výslednú reláciu uloží ako súbor cookies uvedený vyššie — obdoba exportovania cookies.txt z prehliadača v počítači pre Android, bez samostatného kroku exportu a prenosu. Prihláste sa do účtu YouTube, ktorého prístup chcete použiť, a potom klepnite na „Uložiť cookies“ a na „Zavrieť“.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="841"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="860"/>
         <source>Type:</source>
         <translation>&amp;Typ:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="815"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="834"/>
         <source>Host:</source>
         <translation>&amp;Hostiteľ</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="508"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="527"/>
         <source>Opens a sign-in page inside Vivace itself and saves the resulting session as the cookies file above, with no separate export/transfer step. On Android this is the only way to get fresh cookies at all (there&apos;s no live browser cookie store to read); on desktop it&apos;s mainly a fallback for Chrome/Edge on Windows, where &quot;Get cookies from browser&quot; below can&apos;t read their cookies. Sign in with the YouTube account whose access you want to use, then tap &quot;Save cookies&quot;, then &quot;Close&quot;.</source>
         <translation>Otvorí prihlasovaciu stránku priamo v aplikácii Vivace a výslednú reláciu uloží ako súbor cookies uvedený vyššie, bez samostatného kroku exportu a prenosu. Na Androide je toto jediný spôsob, ako vôbec získať čerstvé cookies (neexistuje žiadne živé úložisko cookies prehliadača na čítanie); na počítači ide hlavne o záložné riešenie pre Chrome/Edge vo Windows, kde nižšie uvedená možnosť „Získať cookies z prehliadača“ nedokáže prečítať ich cookies. Prihláste sa do účtu YouTube, ktorého prístup chcete použiť, a potom ťuknite na „Uložiť cookies“ a na „Zavrieť“.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="821"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="886"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="840"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="905"/>
         <source>Port:</source>
         <translation>&amp;Port:</translation>
     </message>
@@ -4001,37 +4027,37 @@
         <translation>Stiahnuť a prehrať</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="458"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="474"/>
         <source>Downloads the video (merging HD video and audio with ffmpeg), plays it, and keeps it in a cache folder so replaying it is instant. The cache holds the most recent downloads up to the size below; older ones are removed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="472"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="489"/>
         <source>Cookies file:</source>
         <translation>Súbor cookies:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="482"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="499"/>
         <source>Optional cookies.txt exported from your browser (yt-dlp --cookies); unlocks HD, members-only and age-restricted videos. Safe here — cookies only affect the download, not a stream a player must open. See Help ▸ Contents ▸ Options for step-by-step export instructions.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="496"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="514"/>
         <source>optional cookies.txt</source>
         <translation>voliteľný cookies.txt</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="499"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="591"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="624"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="653"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="729"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="765"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="517"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="610"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="643"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="672"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="748"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="784"/>
         <source>Browse…</source>
         <translation>Prehľadávať…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="507"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="526"/>
         <source>Log in to YouTube:</source>
         <translation>Prihlásiť sa do YouTube:</translation>
     </message>
@@ -4040,233 +4066,233 @@
         <translation type="vanished">Otvorí prihlasovaciu stránku priamo v aplikácii Vivace a výslednú reláciu uloží ako súbor cookies uvedený vyššie — obdoba exportovania cookies.txt z prehliadača v počítači pre Android, bez samostatného kroku exportu a prenosu. Prihláste sa do účtu YouTube, ktorého prístup chcete použiť, a potom klepnite na „Som prihlásený“.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="521"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="540"/>
         <source>Log in to YouTube…</source>
         <translation>Prihlásiť sa do YouTube…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="529"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="548"/>
         <source>Get cookies from browser:</source>
         <translation>Získať cookies z prehliadača:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="530"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="549"/>
         <source>Reads cookies live from an installed browser instead of the file above — recommended, since YouTube&apos;s cookie lifetimes are now much shorter, making an exported cookies.txt go stale within days. Takes priority over the cookies file when set. On Windows, only Firefox actually works here: Chrome/Edge encrypt cookies in a way tied to the browser&apos;s own binary (&quot;App-Bound Encryption&quot;), which blocks yt-dlp (and every other external tool) from reading them at all — this is a Chrome-side restriction yt-dlp&apos;s own developers can&apos;t work around. Linux and macOS Chrome/Edge are unaffected.</source>
         <translation>Číta cookies priamo z nainštalovaného prehliadača namiesto súboru vyššie — odporúča sa, pretože platnosť cookies YouTube je teraz oveľa kratšia, takže exportovaný súbor cookies.txt zastará v priebehu niekoľkých dní. Má prednosť pred súborom cookies, ak je nastavené. V systéme Windows tu skutočne funguje iba Firefox: Chrome/Edge šifrujú cookies spôsobom viazaným na samotný binárny súbor prehliadača (&quot;App-Bound Encryption&quot;), čo bráni nástroju yt-dlp (a akémukoľvek inému externému nástroju) ich vôbec čítať — ide o obmedzenie na strane Chromu, ktoré vývojári samotného yt-dlp nedokážu obísť. Verzie Chrome/Edge pre Linux a macOS nie sú ovplyvnené.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="554"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="573"/>
         <source>Off (use the cookies file above)</source>
         <translation>Vypnuté (použiť súbor cookies vyššie)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="555"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="574"/>
         <source>Firefox (recommended)</source>
         <translation>Firefox (odporúčané)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="556"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="575"/>
         <source>Chrome</source>
         <translation>Chrome</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="557"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="576"/>
         <source>Edge</source>
         <translation>Edge</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="558"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="577"/>
         <source>Brave</source>
         <translation>Brave</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="559"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="578"/>
         <source>Chromium</source>
         <translation>Chromium</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="560"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="579"/>
         <source>Opera</source>
         <translation>Opera</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="561"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="580"/>
         <source>Safari</source>
         <translation>Safari</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="562"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="581"/>
         <source>Vivaldi</source>
         <translation>Vivaldi</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="563"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="582"/>
         <source>Whale</source>
         <translation>Whale</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="576"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="595"/>
         <source>ffmpeg location:</source>
         <translation>Umiestnenie ffmpeg:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="577"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="596"/>
         <source>Folder containing ffmpeg (yt-dlp needs it to merge HD video+audio). Leave empty to use ffmpeg from the system PATH.</source>
         <translation>Priečinok obsahujúci ffmpeg (yt-dlp ho potrebuje na spojenie HD videa a zvuku). Ponechajte prázdne na použitie ffmpeg zo systémovej premennej PATH.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="588"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="621"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="607"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="640"/>
         <source>empty = use PATH</source>
         <translation>prázdne = použiť PATH</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="601"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="620"/>
         <source>Deno path:</source>
         <translation>Cesta k Deno:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="602"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="621"/>
         <source>yt-dlp uses a separate program, Deno, to solve YouTube&apos;s JavaScript challenges. It&apos;s most needed here: a signed-in (cookie) request — exactly what unlocks HD above — sees severely limited format availability without it. Streaming mode, which never sends cookies, is largely unaffected. Leave empty if &quot;deno&quot; is already on your system PATH; otherwise enter the full path to the deno executable. See Help ▸ Contents ▸ Options for installation instructions.</source>
         <translation>yt-dlp používa samostatný program Deno na riešenie JavaScriptových výziev YouTube. Najviac je to potrebné práve tu: prihlásená (cookie) požiadavka — presne to, čo odomyká HD vyššie — má bez neho výrazne obmedzenú dostupnosť formátov. Režim streamovania, ktorý nikdy neposiela cookies, tým takmer nie je ovplyvnený. Nechajte prázdne, ak je „deno“ už v systémovej premennej PATH; inak zadajte úplnú cestu k spustiteľnému súboru deno. Návod na inštaláciu nájdete v Pomocník ▸ Obsah ▸ Možnosti.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="639"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="658"/>
         <source>Cache folder:</source>
         <translation>Priečinok vyrovnávacej pamäte:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="640"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="659"/>
         <source>Where downloaded videos are kept for reuse. A video already here is replayed without downloading again.</source>
         <translation>Kde sa uchovávajú stiahnuté videá na opätovné použitie. Video, ktoré tu už je, sa prehrá bez opätovného stiahnutia.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="658"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="677"/>
         <source>Cache size:</source>
         <translation>Veľkosť vyrovnávacej pamäte:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="659"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="678"/>
         <source>How many downloaded videos to keep. When the limit is reached, the least-recently-played one is deleted.</source>
         <translation>Koľko stiahnutých videí uchovať. Po dosiahnutí limitu sa odstráni najdlhšie neprehrávané.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="670"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="689"/>
         <source>files</source>
         <translation>súborov</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="676"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="695"/>
         <source>Thumbnail fallback at:</source>
         <translation>Náhradná miniatúra pri:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="677"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="696"/>
         <source>The cache thumbnail is normally YouTube&apos;s own poster image. Only if that is missing or black does Vivace grab a video frame — this is how many seconds in (past a black intro).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="690"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="709"/>
         <source>seconds</source>
         <translation>sekúnd</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="700"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="719"/>
         <source>External downloader tool</source>
         <translation>Externý nástroj na sťahovanie</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="715"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="734"/>
         <source>Downloader command:</source>
         <translation>Príkaz na sťahovanie:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="716"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="735"/>
         <source>The program or .bat/.cmd script that downloads the video; it receives the URL as an argument.</source>
         <translation>Program alebo skript .bat/.cmd, ktorý sťahuje video; dostane URL ako argument.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="726"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="745"/>
         <source>e.g. C:ToolsYouTubeDL.bat</source>
         <translation>napr. C:\Tools\YouTubeDL.bat</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="734"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="753"/>
         <source>Arguments:</source>
         <translation>Argumenty:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="735"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="754"/>
         <source>Arguments passed to the tool; the token {url} is replaced by the video URL (if omitted, the URL is appended). Add any cookies/format flags your tool needs here, e.g. --cookies C:pathcookies.txt.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="750"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="769"/>
         <source>Download folder:</source>
         <translation>Priečinok na sťahovanie:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="751"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="770"/>
         <source>The folder the tool writes the finished file into; Vivace plays the newest media file that appears there, so set it to match your tool&apos;s output folder.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="762"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="781"/>
         <source>your tool&apos;s output folder</source>
         <translation>výstupný priečinok vášho nástroja</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="795"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="814"/>
         <source>Enable proxy</source>
         <translation>Povoliť proxy</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="799"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="818"/>
         <source>Applies to OpenSubtitles search and the update check (both proxy types). Only an HTTP proxy also applies to media playback and yt-dlp — a SOCKS5 proxy does not reach either, since neither goes through Qt&apos;s network stack.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="857"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="876"/>
         <source>The proxy password is stored securely using your operating system&apos;s credential manager.</source>
         <translation>Heslo proxy je bezpečne uložené pomocou správcu poverení vášho operačného systému.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="887"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="906"/>
         <source>The port Play ▸ Cast… listens on. Kept fixed here (rather than editable each time in the Cast dialog) so you can allow it through your firewall/router once and it keeps working.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="908"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="927"/>
         <source>Your OS&apos;s firewall (and most routers) block an app listening on a fresh port until you allow it. Pick a port once here, allow Vivace through your firewall for it, and Cast will keep working without a new prompt each time.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="923"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="942"/>
         <source>Select the cookies.txt file</source>
         <translation>Vyberte súbor cookies.txt</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="952"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="971"/>
         <source>Select the deno executable</source>
         <translation>Vyberte spustiteľný súbor deno</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="958"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="977"/>
         <source>Select the folder containing ffmpeg</source>
         <translation>Vyberte priečinok obsahujúci ffmpeg</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="963"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="982"/>
         <source>Select the download cache folder</source>
         <translation>Vyberte priečinok vyrovnávacej pamäte sťahovania</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="968"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="987"/>
         <source>Select the downloader program</source>
         <translation>Vyberte program na sťahovanie</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="974"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="993"/>
         <source>Select the download folder</source>
         <translation>Vyberte priečinok na sťahovanie</translation>
     </message>
@@ -5454,158 +5480,158 @@
 <context>
     <name>YoutubeResolver</name>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="331"/>
+        <location filename="../src/youtuberesolver.cpp" line="342"/>
         <source>Could not create the download cache folder.</source>
         <translation>Nedá sa vytvoriť priečinok vyrovnávacej pamäte sťahovania.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="345"/>
+        <location filename="../src/youtuberesolver.cpp" line="356"/>
         <source>Could not determine the video id to download.</source>
         <translation>Nedá sa určiť ID videa na stiahnutie.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="470"/>
+        <location filename="../src/youtuberesolver.cpp" line="486"/>
         <source>Could not run yt-dlp (&quot;%1&quot;). Check the path in Preferences &gt; Network.</source>
         <translation>Nedá sa spustiť yt-dlp (&quot;%1&quot;). Skontrolujte cestu v Nastavenia &gt; Sieť.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="492"/>
+        <location filename="../src/youtuberesolver.cpp" line="508"/>
         <source>yt-dlp did not finish normally.</source>
         <translation>yt-dlp neskončil normálne.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="499"/>
+        <location filename="../src/youtuberesolver.cpp" line="515"/>
         <source>yt-dlp exited with code %1.</source>
         <translation>yt-dlp skončil s kódom %1.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="514"/>
+        <location filename="../src/youtuberesolver.cpp" line="530"/>
         <source>yt-dlp returned no playable stream.</source>
         <translation>yt-dlp nevrátil prehrateľný stream.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="536"/>
+        <location filename="../src/youtuberesolver.cpp" line="552"/>
         <source>The download did not finish normally.</source>
         <translation>Sťahovanie neskončilo normálne.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="539"/>
+        <location filename="../src/youtuberesolver.cpp" line="555"/>
         <source>yt-dlp produced no file (exit code %1). If this is an HD video, check the ffmpeg and Deno paths.</source>
         <translation>yt-dlp nevytvoril žiadny súbor (návratový kód %1). Ak ide o video v HD, skontrolujte cesty k ffmpeg a Deno.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="797"/>
+        <location filename="../src/youtuberesolver.cpp" line="813"/>
         <source>Could not create the destination folder</source>
         <translation>Cieľový priečinok sa nepodarilo vytvoriť</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="813"/>
+        <location filename="../src/youtuberesolver.cpp" line="829"/>
         <source>File no longer exists</source>
         <translation>Súbor už neexistuje</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="835"/>
+        <location filename="../src/youtuberesolver.cpp" line="851"/>
         <source>Could not move the file</source>
         <translation>Súbor sa nepodarilo presunúť</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="836"/>
+        <location filename="../src/youtuberesolver.cpp" line="852"/>
         <source>Could not copy the file</source>
         <translation>Súbor sa nepodarilo skopírovať</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="957"/>
-        <location filename="../src/youtuberesolver.cpp" line="1137"/>
+        <location filename="../src/youtuberesolver.cpp" line="973"/>
+        <location filename="../src/youtuberesolver.cpp" line="1153"/>
         <source>Could not write %1.</source>
         <translation>Nedá sa zapísať %1.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="963"/>
+        <location filename="../src/youtuberesolver.cpp" line="979"/>
         <source>Could not save %1.</source>
         <translation>Nedá sa uložiť %1.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="1071"/>
+        <location filename="../src/youtuberesolver.cpp" line="1087"/>
         <source>Could not run %1: %2</source>
         <translation>Nedá sa spustiť %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="1081"/>
+        <location filename="../src/youtuberesolver.cpp" line="1097"/>
         <source>%1 exited with an error (code %2).</source>
         <translation>%1 skončil s chybou (kód %2).</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="1095"/>
+        <location filename="../src/youtuberesolver.cpp" line="1111"/>
         <source>Checking the latest release…</source>
         <translation>Kontrola najnovšej verzie…</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="1105"/>
+        <location filename="../src/youtuberesolver.cpp" line="1121"/>
         <source>Could not check the latest release: %1</source>
         <translation>Nedá sa skontrolovať najnovšia verzia: %1</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="1111"/>
+        <location filename="../src/youtuberesolver.cpp" line="1127"/>
         <source>Could not find the source download URL in the release info.</source>
         <translation>Nedá sa nájsť adresa URL na stiahnutie zdrojového kódu v informáciách o verzii.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="1115"/>
+        <location filename="../src/youtuberesolver.cpp" line="1131"/>
         <source>Downloading source…</source>
         <translation>Sťahovanie zdrojového kódu…</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="1127"/>
+        <location filename="../src/youtuberesolver.cpp" line="1143"/>
         <source>Could not download the source: %1</source>
         <translation>Nedá sa stiahnuť zdrojový kód: %1</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="1149"/>
+        <location filename="../src/youtuberesolver.cpp" line="1165"/>
         <source>Extracting…</source>
         <translation>Rozbaľovanie…</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="1172"/>
+        <location filename="../src/youtuberesolver.cpp" line="1188"/>
         <source>Unexpected archive layout after extracting (expected exactly one top-level folder).</source>
         <translation>Neočakávaná štruktúra archívu po rozbalení (očakával sa presne jeden priečinok najvyššej úrovne).</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="1200"/>
+        <location filename="../src/youtuberesolver.cpp" line="1216"/>
         <source>Installing the yt-dlp plugin…</source>
         <translation>Inštalácia pluginu yt-dlp…</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="1205"/>
+        <location filename="../src/youtuberesolver.cpp" line="1221"/>
         <source>The downloaded source is missing its plugin/yt_dlp_plugins folder (unexpected repository layout).</source>
         <translation>Stiahnutému zdrojovému kódu chýba priečinok plugin/yt_dlp_plugins (neočakávaná štruktúra repozitára).</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="1210"/>
+        <location filename="../src/youtuberesolver.cpp" line="1226"/>
         <source>Could not copy the yt-dlp plugin into %1.</source>
         <translation>Nedá sa skopírovať plugin yt-dlp do %1.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="1221"/>
+        <location filename="../src/youtuberesolver.cpp" line="1237"/>
         <source>The downloaded source is missing its server/ folder (unexpected repository layout).</source>
         <translation>Stiahnutému zdrojovému kódu chýba priečinok server/ (neočakávaná štruktúra repozitára).</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="1231"/>
+        <location filename="../src/youtuberesolver.cpp" line="1247"/>
         <source>Could not move the server/ folder into %1.</source>
         <translation>Nedá sa presunúť priečinok server/ do %1.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="1237"/>
+        <location filename="../src/youtuberesolver.cpp" line="1253"/>
         <source>Installing server dependencies (deno install)…</source>
         <translation>Inštalácia závislostí servera (deno install)…</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="1242"/>
+        <location filename="../src/youtuberesolver.cpp" line="1258"/>
         <source>Compiling TypeScript (deno run tsc)…</source>
         <translation>Kompilácia TypeScriptu (deno run tsc)…</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="1250"/>
+        <location filename="../src/youtuberesolver.cpp" line="1266"/>
         <source>The build finished but generate_once.js was not produced -- check the output above for a compiler error.</source>
         <translation>Zostavenie bolo dokončené, ale súbor generate_once.js nebol vytvorený -- skontrolujte výstup vyššie, či neobsahuje chybu kompilátora.</translation>
     </message>

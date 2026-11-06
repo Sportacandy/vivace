@@ -20,6 +20,20 @@
             <intent-filter>
                 <action android:name="android.intent.action.SEND"/>
                 <category android:name="android.intent.category.DEFAULT"/>
+            <!-- "Open with": lists Vivace as a player for media and playlist
+                 files in file managers. Only content:// URIs: since Android 7
+                 apps can't hand each other file:// URIs, and the content://
+                 grant that comes with the intent lets Vivace read the file
+                 without any storage permission. -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="content"/>
+                <data android:mimeType="video/*"/>
+                <data android:mimeType="audio/*"/>
+                <data android:mimeType="application/x-mpegurl"/>
+                <data android:mimeType="application/vnd.apple.mpegurl"/>
+            </intent-filter>
                 <data android:mimeType="text/plain"/>
             </intent-filter>
             <meta-data android:name="android.app.lib_name" android:value="-- %%INSERT_APP_LIB_NAME%% --"/>

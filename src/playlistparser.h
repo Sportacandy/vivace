@@ -14,8 +14,11 @@
 /*  Playlist file loading (m3u/m3u8 for now; pls/xspf planned — see
     SMPlayer's playlist.cpp for the reference implementations).
 
-    Only local files count as playlist files: a remote *.m3u8 URL is an
-    HLS stream, which QMediaPlayer's FFmpeg backend plays natively.
+    Only local files and Android file-picker documents (content://) count
+    as playlist files: a remote *.m3u8 URL is an HLS stream, which
+    QMediaPlayer's FFmpeg backend plays natively. A content:// playlist's
+    relative entries resolve against its real folder (AndroidContentPath)
+    and are skipped when that folder can't be determined.
 */
 namespace PlaylistParser {
 

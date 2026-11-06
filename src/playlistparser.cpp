@@ -5,6 +5,8 @@
 
 #include "playlistparser.h"
 
+#include "androidcontentpath.h"
+
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
@@ -27,6 +29,34 @@ QUrl entryUrl(const QString &line, const QDir &baseDir)
     if (QDir::isAbsolutePath(path))
         return QUrl::fromLocalFile(QDir::cleanPath(path));
     return QUrl::fromLocalFile(QDir::cleanPath(baseDir.absoluteFilePath(path)));
+}
+
+// True when entryUrl() doesn't need the playlist's folder for `line`.
+bool isAbsoluteEntry(const QString &line)
+{
+    const QUrl asUrl(line);
+    return (!asUrl.scheme().isEmpty() && asUrl.scheme().size() > 1)
+            || QDir::isAbsolutePath(QDir::fromNativeSeparators(line));
+}
+
+// An Android file-picker URI (content://). Its file name is the document's
+// display name, which Qt's Android content file engine resolves for
+// QFileInfo; QFile reads the document through the same engine.
+bool isContentUrl(const QUrl &url)
+{
+    return url.scheme() == QLatin1String("content");
+}
+
+QString playlistSuffix(const QUrl &url)
+{
+    if (url.isLocalFile())
+        return QFileInfo(url.toLocalFile()).suffix().toLower();
+    // QFileInfo::suffix() parses the raw path string, which for a content://
+    // URI ends in a document id ("msf%3A7333"), not a file name. Only
+    // fileName() asks the content engine for the real display name.
+    if (isContentUrl(url))
+        return QFileInfo(QFileInfo(url.toString()).fileName()).suffix().toLower();
+    return {};
 }
 
 // Same folder as the playlist being saved: write just the filename, so the
@@ -54,7 +84,11 @@ QString entryLine(const QUrl &url, const QString &playlistDir)
     return QDir::toNativeSeparators(entryInfo.absoluteFilePath());
 }
 
-QList<PlaylistEntry> loadM3u(const QString &filePath, bool utf8)
+// `baseDir` resolves relative entries; empty when the playlist's folder is
+// unknown (an Android content:// playlist whose real path couldn't be
+// found), in which case relative entries are skipped -- they can't be
+// opened from the one document the file picker granted access to.
+QList<PlaylistEntry> loadM3u(const QString &filePath, bool utf8, const QString &baseDirPath)
 {
     QFile file(filePath);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
@@ -65,7 +99,7 @@ QList<PlaylistEntry> loadM3u(const QString &filePath, bool utf8)
     // BOM (if any) still wins over the encoding set above.
     stream.setAutoDetectUnicode(true);
 
-    const QDir baseDir = QFileInfo(filePath).dir();
+    const QDir baseDir(baseDirPath);
     QList<PlaylistEntry> entries;
     QString pendingTitle;
     qint64 pendingDurationMs = -1;
@@ -87,7 +121,8 @@ QList<PlaylistEntry> loadM3u(const QString &filePath, bool utf8)
         if (line.startsWith(u'#'))
             continue;
 
-        entries.append({ entryUrl(line, baseDir), pendingTitle, pendingDurationMs });
+        if (!baseDirPath.isEmpty() || isAbsoluteEntry(line))
+            entries.append({ entryUrl(line, baseDir), pendingTitle, pendingDurationMs });
         pendingTitle.clear();
         pendingDurationMs = -1;
     }
@@ -98,9 +133,7 @@ QList<PlaylistEntry> loadM3u(const QString &filePath, bool utf8)
 
 bool isPlaylistFile(const QUrl &url)
 {
-    if (!url.isLocalFile())
-        return false;
-    const QString suffix = QFileInfo(url.toLocalFile()).suffix().toLower();
+    const QString suffix = playlistSuffix(url);
     return suffix == QLatin1String("m3u") || suffix == QLatin1String("m3u8");
 }
 
@@ -108,9 +141,15 @@ QList<PlaylistEntry> load(const QUrl &url)
 {
     if (!isPlaylistFile(url))
         return {};
+    const bool utf8 = playlistSuffix(url) == QLatin1String("m3u8");
+    if (isContentUrl(url)) {
+        const QString realPath = AndroidContentPath::contentFilePath(url);
+        const QString baseDir = realPath.isEmpty()
+                ? QString() : QFileInfo(realPath).absolutePath();
+        return loadM3u(url.toString(), utf8, baseDir);
+    }
     const QString filePath = url.toLocalFile();
-    const bool utf8 = QFileInfo(filePath).suffix().toLower() == QLatin1String("m3u8");
-    return loadM3u(filePath, utf8);
+    return loadM3u(filePath, utf8, QFileInfo(filePath).absolutePath());
 }
 
 bool save(const QUrl &url, const QList<PlaylistEntry> &entries)

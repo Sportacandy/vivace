@@ -25,18 +25,28 @@ QString extractUrl(const QString &sharedText)
     return m.hasMatch() ? m.captured(0) : QString();
 }
 
-// `intent` must be ACTION_SEND with a text/* type carrying EXTRA_TEXT --
-// exactly what AndroidManifest.xml's intent-filter declares and what a
-// browser's "Share" action sends for a page URL. Returns an empty string
-// for anything else (a stray VIEW intent, no intent at all, ...).
+// The URL to open for `intent`, matching AndroidManifest.xml's two
+// intent-filters:
+// - ACTION_VIEW ("Open with" in a file manager): the intent's data URI, a
+//   content:// URI that the intent grants Vivace read access to.
+// - ACTION_SEND with a text/* type carrying EXTRA_TEXT (a browser's "Share"
+//   of a page URL): the first http(s) URL in that text.
+// Returns an empty string for anything else (no intent, the launcher's
+// MAIN intent, ...).
 QString sharedUrlFromIntent(const QJniObject &intent)
 {
     if (!intent.isValid())
         return {};
     const QJniObject action =
             intent.callObjectMethod("getAction", "()Ljava/lang/String;");
-    if (!action.isValid()
-        || action.toString() != QStringLiteral("android.intent.action.SEND"))
+    if (!action.isValid())
+        return {};
+    if (action.toString() == QStringLiteral("android.intent.action.VIEW")) {
+        const QJniObject data =
+                intent.callObjectMethod("getDataString", "()Ljava/lang/String;");
+        return data.isValid() ? data.toString() : QString();
+    }
+    if (action.toString() != QStringLiteral("android.intent.action.SEND"))
         return {};
     const QJniObject type =
             intent.callObjectMethod("getType", "()Ljava/lang/String;");

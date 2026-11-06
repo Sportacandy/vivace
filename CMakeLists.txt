@@ -227,6 +227,7 @@ qt_add_qml_module(vivace
         third_party/qrcodegen/qrcodegen.h third_party/qrcodegen/qrcodegen.cpp
         src/screensaver.h src/screensaver.cpp
         src/singleinstance.h src/singleinstance.cpp
+        src/windowplacementguard.h src/windowplacementguard.cpp
         src/shortcuts.h src/shortcuts.cpp
         src/updatechecker.h src/updatechecker.cpp
         src/youtuberesolver.h src/youtuberesolver.cpp
@@ -237,6 +238,7 @@ qt_add_qml_module(vivace
         src/securestore.h src/securestore.cpp
         src/uihelpers.h src/uihelpers.cpp
         src/androidshareintent.h src/androidshareintent.cpp
+        src/androidcontentpath.h src/androidcontentpath.cpp
         src/androidyoutubelogin.h src/androidyoutubelogin.cpp
         src/desktopyoutubelogin.h src/desktopyoutubelogin.cpp
     RESOURCES
@@ -569,6 +571,13 @@ endif()
 if(ANDROID)
     find_package(Qt6 REQUIRED COMPONENTS CorePrivate)
     target_link_libraries(vivace PRIVATE Qt6::CorePrivate)
+
+    # Media-read permission for playlists picked with the system file picker:
+    # their entries are opened by real file path (src/androidcontentpath.*).
+    # Android 13+ splits READ_EXTERNAL_STORAGE (which Qt already declares)
+    # into these; a runtime request only works for declared permissions.
+    qt_add_android_permission(vivace NAME android.permission.READ_MEDIA_VIDEO)
+    qt_add_android_permission(vivace NAME android.permission.READ_MEDIA_AUDIO)
 endif()
 
 # macOS: screensaver inhibition uses an IOKit power-management assertion.
@@ -1049,7 +1058,14 @@ endif()
 option(VIVACE_ENABLE_PYTHON_YOUTUBE
     "Enable embedded-Python YouTube URL resolution (Android only)" ON)
 set(VIVACE_HAVE_PYTHON_YOUTUBE FALSE)
-if(WIN32 AND VIVACE_ENABLE_PYTHON_YOUTUBE)
+# Off by default: with it on, vivace.exe links (and needs at run time) the
+# python3XX.dll of whatever Python CMake finds -- the v0.5.3 Windows release
+# shipped importing python314.dll from the CI runner's Python, so it failed
+# to start on any PC without that exact Python installed. Desktop QML never
+# calls PythonYoutubeResolver anyway (openMediaUrl() uses it on Android only).
+option(VIVACE_DESKTOP_PYTHON_YOUTUBE_TEST
+    "Link the desktop Python for PythonYoutubeResolver testing (Windows, dev builds only)" OFF)
+if(WIN32 AND VIVACE_ENABLE_PYTHON_YOUTUBE AND VIVACE_DESKTOP_PYTHON_YOUTUBE_TEST)
     # TEMPORARY, desktop-testing-only (2026-09-19, user request): the
     # embedded-Python YouTube resolver (PythonYoutubeResolver) was built
     # Android-only, but desktop's own subprocess-based YoutubeResolver has
@@ -1218,6 +1234,11 @@ published tag at https://github.com/Sportacandy/cpython-android-prebuilt/release
                 "${VIVACE_ANDROID_PACKAGE_SOURCE_DIR}/assets"
             COMMAND ${CMAKE_COMMAND} -E copy_directory
                 "${VIVACE_CPYTHON_STDLIB_DIR}" "${VIVACE_CPYTHON_STDLIB_ASSETS_DIR}"
+            # CPython's own test suite: yt-dlp never imports it, and its
+            # test/certdata/*.pem test keys make Android lint fail release
+            # builds ("PackagedPrivateKey").
+            COMMAND ${CMAKE_COMMAND} -E rm -rf
+                "${VIVACE_CPYTHON_STDLIB_ASSETS_DIR}/test"
             COMMAND ${CMAKE_COMMAND} -E touch "${VIVACE_CPYTHON_STDLIB_STAMP}"
             DEPENDS cpython_android_ext
             COMMENT "Copying the embedded CPython stdlib into Android assets"

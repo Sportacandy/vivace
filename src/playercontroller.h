@@ -893,6 +893,9 @@ private:
     bool m_sessionPlaylistEnabled = false;
     bool m_autosavePlaylistOnExit = false;
     bool m_autoAddFolderFiles = false;
+    // Set while open() re-runs after the Android media-read permission
+    // prompt, so a denial doesn't prompt again in a loop.
+    bool m_mediaPermissionAsked = false;
     bool m_rememberTrackSelections = true;
     bool m_autoPlayNext = true;
     bool m_disableScreensaver = true;

@@ -672,27 +672,27 @@
 <context>
     <name>ExternalDownloader</name>
     <message>
-        <location filename="../src/externaldownloader.cpp" line="112"/>
+        <location filename="../src/externaldownloader.cpp" line="117"/>
         <source>No downloader command is configured (Preferences &gt; Network).</source>
         <translation>لم يُضبط أمر تنزيل (التفضيلات &gt; الشبكة).</translation>
     </message>
     <message>
-        <location filename="../src/externaldownloader.cpp" line="117"/>
+        <location filename="../src/externaldownloader.cpp" line="122"/>
         <source>The download folder does not exist (Preferences &gt; Network).</source>
         <translation>مجلد التنزيل غير موجود (التفضيلات &gt; الشبكة).</translation>
     </message>
     <message>
-        <location filename="../src/externaldownloader.cpp" line="184"/>
+        <location filename="../src/externaldownloader.cpp" line="195"/>
         <source>Could not run the downloader (&quot;%1&quot;).</source>
         <translation>تعذّر تشغيل أداة التنزيل (&quot;%1&quot;).</translation>
     </message>
     <message>
-        <location filename="../src/externaldownloader.cpp" line="201"/>
+        <location filename="../src/externaldownloader.cpp" line="212"/>
         <source>The downloader did not finish normally.</source>
         <translation>لم تنتهِ أداة التنزيل بشكل طبيعي.</translation>
     </message>
     <message>
-        <location filename="../src/externaldownloader.cpp" line="204"/>
+        <location filename="../src/externaldownloader.cpp" line="215"/>
         <source>The downloader produced no media file (exit code %1).</source>
         <translation>لم تنتج أداة التنزيل أي ملف وسائط (رمز الخروج %1).</translation>
     </message>
@@ -700,89 +700,110 @@
 <context>
     <name>FavoritesDialog</name>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="22"/>
+        <location filename="../qml/FavoritesDialog.qml" line="23"/>
         <source>Favorite list</source>
         <translation>قائمة المُفضلات</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="26"/>
+        <location filename="../qml/FavoritesDialog.qml" line="27"/>
         <source>Editor</source>
         <translation>المحرِّر</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="141"/>
+        <location filename="../qml/FavoritesDialog.qml" line="142"/>
         <source>You can edit, delete, sort or add new items. Select a submenu and press Open (or double-click it) to edit its contents.</source>
         <translation>يمكنك تحرير العناصر أو حذفها أو فرزها أو إضافتها. حدد قائمة فرعية واضغط على فتح (أو انقر عليها نقراً مزدوجاً) لتحرير محتواها.</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="157"/>
+        <location filename="../qml/FavoritesDialog.qml" line="158"/>
         <source>Up one level</source>
         <translation>مستوى واحد للأعلى</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="197"/>
+        <location filename="../qml/FavoritesDialog.qml" line="198"/>
         <source>&amp;Open</source>
         <translation>فت&amp;ح</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="204"/>
+        <location filename="../qml/FavoritesDialog.qml" line="205"/>
         <source>Submenus group items into folders; select one and press Open (or double-click it) to edit inside, then use the path above to go back.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="236"/>
+        <location filename="../qml/FavoritesDialog.qml" line="237"/>
         <source>Name</source>
         <translation>الاسم</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="246"/>
+        <location filename="../qml/FavoritesDialog.qml" line="247"/>
         <source>Media</source>
         <translation>ملف الوسائط</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="309"/>
+        <location filename="../qml/FavoritesDialog.qml" line="316"/>
         <source>(submenu)</source>
         <translation>(قائمة فرعية)</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="334"/>
+        <location filename="../qml/FavoritesDialog.qml" line="333"/>
+        <location filename="../qml/FavoritesDialog.qml" line="438"/>
+        <source>Choose a media or playlist file</source>
+        <translation>اختر ملف وسائط أو قائمة تشغيل</translation>
+    </message>
+    <message>
+        <location filename="../qml/FavoritesDialog.qml" line="355"/>
         <source>&amp;New item</source>
         <translation>&amp;عنصر جديد</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="344"/>
+        <location filename="../qml/FavoritesDialog.qml" line="365"/>
         <source>D&amp;elete</source>
         <translation>ا&amp;حذف</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="355"/>
+        <location filename="../qml/FavoritesDialog.qml" line="376"/>
         <source>&amp;Up</source>
         <translation>لأ&amp;على</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="367"/>
+        <location filename="../qml/FavoritesDialog.qml" line="388"/>
         <source>New &amp;submenu</source>
         <translation>قائمة &amp;فرعية جديدة</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="371"/>
+        <location filename="../qml/FavoritesDialog.qml" line="392"/>
         <source>New submenu</source>
         <translation>قائمة &amp;فرعية جديدة</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="377"/>
+        <location filename="../qml/FavoritesDialog.qml" line="398"/>
         <source>Delete &amp;all</source>
         <translation>احذف ال&amp;كل</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="388"/>
+        <location filename="../qml/FavoritesDialog.qml" line="409"/>
         <source>&amp;Down</source>
         <translation>للأ&amp;سفل</translation>
     </message>
     <message>
-        <location filename="../qml/FavoritesDialog.qml" line="406"/>
+        <location filename="../qml/FavoritesDialog.qml" line="427"/>
         <source>Close</source>
         <translation>إغلاق</translation>
+    </message>
+    <message>
+        <location filename="../qml/FavoritesDialog.qml" line="442"/>
+        <source>Media files (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</source>
+        <translation>ملفات الوسائط (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</translation>
+    </message>
+    <message>
+        <location filename="../qml/FavoritesDialog.qml" line="443"/>
+        <source>Playlists (*.m3u *.m3u8)</source>
+        <translation>قوائم التشغيل (*.m3u *.m3u8)</translation>
+    </message>
+    <message>
+        <location filename="../qml/FavoritesDialog.qml" line="444"/>
+        <source>All files (*)</source>
+        <translation>كل الملفات (*)</translation>
     </message>
 </context>
 <context>
@@ -806,7 +827,7 @@
 <context>
     <name>FavoritesModel</name>
     <message>
-        <location filename="../src/favoritesmodel.cpp" line="215"/>
+        <location filename="../src/favoritesmodel.cpp" line="228"/>
         <source>New submenu</source>
         <translation>قائمة &amp;فرعية جديدة</translation>
     </message>
@@ -1100,7 +1121,7 @@
     <message>
         <location filename="../qml/Main.qml" line="1427"/>
         <source>Media files (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</source>
-        <translation type="unfinished"></translation>
+        <translation>ملفات الوسائط (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</translation>
     </message>
     <message>
         <location filename="../qml/Main.qml" line="1428"/>
@@ -2228,369 +2249,374 @@
 <context>
     <name>PlayerController</name>
     <message>
-        <location filename="../src/playercontroller.cpp" line="181"/>
-        <location filename="../src/playercontroller.cpp" line="965"/>
-        <location filename="../src/playercontroller.cpp" line="981"/>
-        <location filename="../src/playercontroller.cpp" line="1646"/>
-        <location filename="../src/playercontroller.cpp" line="1662"/>
-        <location filename="../src/playercontroller.cpp" line="2573"/>
+        <location filename="../src/playercontroller.cpp" line="182"/>
+        <location filename="../src/playercontroller.cpp" line="966"/>
+        <location filename="../src/playercontroller.cpp" line="982"/>
+        <location filename="../src/playercontroller.cpp" line="1665"/>
+        <location filename="../src/playercontroller.cpp" line="1681"/>
+        <location filename="../src/playercontroller.cpp" line="2592"/>
         <source>Track %1</source>
         <translation>المسار %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="883"/>
+        <location filename="../src/playercontroller.cpp" line="884"/>
         <source>A/V delay: %1 ms</source>
         <translation>تأخير الصوت/الفيديو: %1 مللي ثانية</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1703"/>
+        <location filename="../src/playercontroller.cpp" line="1722"/>
         <source>DVD title %1 could not be assembled</source>
         <translation>تعذّر تجميع عنوان DVD رقم %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1709"/>
+        <location filename="../src/playercontroller.cpp" line="1728"/>
         <source>DVD title %1 could not be opened</source>
         <translation>تعذّر فتح عنوان DVD رقم %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1523"/>
-        <location filename="../src/playercontroller.cpp" line="1890"/>
+        <location filename="../src/playercontroller.cpp" line="1542"/>
+        <location filename="../src/playercontroller.cpp" line="1909"/>
         <source>Title %1 (%2)</source>
         <translation>العنوان %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="237"/>
+        <location filename="../src/playercontroller.cpp" line="238"/>
         <source>MPEG-1 Audio</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="238"/>
+        <location filename="../src/playercontroller.cpp" line="239"/>
         <source>MPEG-2 Audio</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="239"/>
+        <location filename="../src/playercontroller.cpp" line="240"/>
         <source>LPCM</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="240"/>
+        <location filename="../src/playercontroller.cpp" line="241"/>
         <source>AC-3 (Dolby Digital)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="242"/>
+        <location filename="../src/playercontroller.cpp" line="243"/>
         <source>Dolby TrueHD</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="243"/>
+        <location filename="../src/playercontroller.cpp" line="244"/>
         <source>AC-3 Plus (Dolby Digital Plus)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="244"/>
+        <location filename="../src/playercontroller.cpp" line="245"/>
         <source>DTS-HD High Resolution Audio</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="245"/>
+        <location filename="../src/playercontroller.cpp" line="246"/>
         <source>DTS-HD Master Audio</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="246"/>
+        <location filename="../src/playercontroller.cpp" line="247"/>
         <source>AC-3 Plus (secondary)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="247"/>
+        <location filename="../src/playercontroller.cpp" line="248"/>
         <source>DTS-HD (secondary)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1420"/>
+        <location filename="../src/playercontroller.cpp" line="1439"/>
         <source>Could not open the Blu-ray disc (it may be encrypted, or use an unsupported format).</source>
         <translation>تعذر فتح قرص Blu-ray (قد يكون مشفرًا، أو بتنسيق غير مدعوم).</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1427"/>
+        <location filename="../src/playercontroller.cpp" line="1446"/>
         <source>No playable titles were found on this Blu-ray disc.</source>
         <translation>لم يتم العثور على عناوين قابلة للتشغيل في قرص Blu-ray هذا.</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1472"/>
+        <location filename="../src/playercontroller.cpp" line="1491"/>
         <source>This Blu-ray title could not be selected.</source>
         <translation>تعذر تحديد عنوان Blu-ray هذا.</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1482"/>
-        <location filename="../src/playercontroller.cpp" line="1486"/>
+        <location filename="../src/playercontroller.cpp" line="1501"/>
+        <location filename="../src/playercontroller.cpp" line="1505"/>
         <source>This Blu-ray title could not be opened.</source>
         <translation>تعذر فتح عنوان Blu-ray هذا.</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1906"/>
+        <location filename="../src/playercontroller.cpp" line="1925"/>
         <source>Chapter %1 (%2)</source>
         <translation>الفصل %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3067"/>
+        <location filename="../src/playercontroller.cpp" line="3086"/>
         <source>Could not open the stream</source>
         <translation>تعذّر فتح البث</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3126"/>
+        <location filename="../src/playercontroller.cpp" line="3145"/>
         <source>System default</source>
         <translation>افتراضي النظام</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3305"/>
+        <location filename="../src/playercontroller.cpp" line="3324"/>
         <source>A marker set to %1</source>
         <translation>ضُبطت العلامة A على %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3316"/>
+        <location filename="../src/playercontroller.cpp" line="3335"/>
         <source>B marker set to %1</source>
         <translation>ضُبطت العلامة B على %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3326"/>
+        <location filename="../src/playercontroller.cpp" line="3345"/>
         <source>A-B markers cleared</source>
         <translation>مُسحت الإشارتان &quot;أ&quot; و&quot;ب&quot;</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3400"/>
+        <location filename="../src/playercontroller.cpp" line="3419"/>
         <source>None</source>
         <translation>بدون</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3399"/>
+        <location filename="../src/playercontroller.cpp" line="3418"/>
         <source>Yadif</source>
         <translation>Yadif</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3400"/>
+        <location filename="../src/playercontroller.cpp" line="3419"/>
         <source>Bwdif</source>
         <translation>Bwdif</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3399"/>
+        <location filename="../src/playercontroller.cpp" line="3418"/>
         <source>Auto</source>
         <translation>تلقائي</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3401"/>
+        <location filename="../src/playercontroller.cpp" line="1034"/>
+        <source>Vivace needs permission to read media files to play this playlist.</source>
+        <translation>يحتاج Vivace إلى إذن بقراءة ملفات الوسائط لتشغيل قائمة التشغيل هذه.</translation>
+    </message>
+    <message>
+        <location filename="../src/playercontroller.cpp" line="3420"/>
         <source>Deinterlace: %1</source>
         <translation>فَكّ التشابك: %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3486"/>
+        <location filename="../src/playercontroller.cpp" line="3505"/>
         <source>Could not load subtitles from %1</source>
         <translation>تعذّر تحميل الترجمات من %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3503"/>
+        <location filename="../src/playercontroller.cpp" line="3522"/>
         <source>Subtitles loaded: %1</source>
         <translation>حُمِّلت الترجمات: %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3514"/>
+        <location filename="../src/playercontroller.cpp" line="3533"/>
         <source>Subtitles unloaded</source>
         <translation>أُلغي تحميل الترجمات</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3524"/>
+        <location filename="../src/playercontroller.cpp" line="3543"/>
         <source>Subtitle delay: %1 ms</source>
         <translation>تأخير الترجمة: %1 ميللي ثانية</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3674"/>
+        <location filename="../src/playercontroller.cpp" line="3693"/>
         <source>General</source>
         <translation>عام</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3677"/>
+        <location filename="../src/playercontroller.cpp" line="3696"/>
         <source>File</source>
         <translation>الملف</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3692"/>
+        <location filename="../src/playercontroller.cpp" line="3711"/>
         <source>Size</source>
         <translation>الحجم</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3692"/>
+        <location filename="../src/playercontroller.cpp" line="3711"/>
         <source>%1 KB (%2 MB)</source>
         <translation>%1 ك.ب (%2  م.ب)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3697"/>
-        <location filename="../src/playercontroller.cpp" line="3731"/>
+        <location filename="../src/playercontroller.cpp" line="3716"/>
+        <location filename="../src/playercontroller.cpp" line="3750"/>
         <source>URL</source>
         <translation>الرابط</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3707"/>
+        <location filename="../src/playercontroller.cpp" line="3726"/>
         <source>Length</source>
         <translation>الطول</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3708"/>
+        <location filename="../src/playercontroller.cpp" line="3727"/>
         <source>Demuxer</source>
         <translation>مُلغي التضميم</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3713"/>
-        <location filename="../src/playercontroller.cpp" line="3764"/>
-        <location filename="../src/playercontroller.cpp" line="3827"/>
-        <location filename="../src/playercontroller.cpp" line="3857"/>
+        <location filename="../src/playercontroller.cpp" line="3732"/>
+        <location filename="../src/playercontroller.cpp" line="3783"/>
+        <location filename="../src/playercontroller.cpp" line="3846"/>
+        <location filename="../src/playercontroller.cpp" line="3876"/>
         <source>Name</source>
         <translation>الاسم</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3714"/>
+        <location filename="../src/playercontroller.cpp" line="3733"/>
         <source>Artist</source>
         <translation>الفنان</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3716"/>
+        <location filename="../src/playercontroller.cpp" line="3735"/>
         <source>Album artist</source>
         <translation>فنان الألبوم</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3718"/>
+        <location filename="../src/playercontroller.cpp" line="3737"/>
         <source>Author</source>
         <translation>المؤلف</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3719"/>
+        <location filename="../src/playercontroller.cpp" line="3738"/>
         <source>Composer</source>
         <translation>المؤلف الموسيقي</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3720"/>
+        <location filename="../src/playercontroller.cpp" line="3739"/>
         <source>Album</source>
         <translation>الألبوم</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3721"/>
+        <location filename="../src/playercontroller.cpp" line="3740"/>
         <source>Genre</source>
         <translation>الصنف</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3722"/>
+        <location filename="../src/playercontroller.cpp" line="3741"/>
         <source>Date</source>
         <translation>التاريخ</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3723"/>
+        <location filename="../src/playercontroller.cpp" line="3742"/>
         <source>Track</source>
         <translation>المقطع</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3724"/>
+        <location filename="../src/playercontroller.cpp" line="3743"/>
         <source>Copyright</source>
         <translation>حقوق النسخ</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3725"/>
+        <location filename="../src/playercontroller.cpp" line="3744"/>
         <source>Comment</source>
         <translation>التعليق</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3726"/>
+        <location filename="../src/playercontroller.cpp" line="3745"/>
         <source>Description</source>
         <translation>الوصف</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3728"/>
+        <location filename="../src/playercontroller.cpp" line="3747"/>
         <source>Publisher</source>
         <translation>الناشر</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3729"/>
-        <location filename="../src/playercontroller.cpp" line="3764"/>
-        <location filename="../src/playercontroller.cpp" line="3827"/>
-        <location filename="../src/playercontroller.cpp" line="3857"/>
+        <location filename="../src/playercontroller.cpp" line="3748"/>
+        <location filename="../src/playercontroller.cpp" line="3783"/>
+        <location filename="../src/playercontroller.cpp" line="3846"/>
+        <location filename="../src/playercontroller.cpp" line="3876"/>
         <source>Language</source>
         <translation>اللغة</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3733"/>
+        <location filename="../src/playercontroller.cpp" line="3752"/>
         <source>Clip info</source>
         <translation>معلومات المقطع</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3737"/>
+        <location filename="../src/playercontroller.cpp" line="3756"/>
         <source>Initial Video Stream</source>
         <translation>دفق الفيديو الأولي</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3740"/>
+        <location filename="../src/playercontroller.cpp" line="3759"/>
         <source>Resolution</source>
         <translation>الدقة</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3743"/>
+        <location filename="../src/playercontroller.cpp" line="3762"/>
         <source>Aspect ratio</source>
         <translation>نسبة الأبعاد</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3747"/>
-        <location filename="../src/playercontroller.cpp" line="3787"/>
+        <location filename="../src/playercontroller.cpp" line="3766"/>
+        <location filename="../src/playercontroller.cpp" line="3806"/>
         <source>Format</source>
         <translation>الصيغة</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3750"/>
-        <location filename="../src/playercontroller.cpp" line="3790"/>
+        <location filename="../src/playercontroller.cpp" line="3769"/>
+        <location filename="../src/playercontroller.cpp" line="3809"/>
         <source>Bitrate</source>
         <translation>معدل البتات</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3750"/>
-        <location filename="../src/playercontroller.cpp" line="3790"/>
+        <location filename="../src/playercontroller.cpp" line="3769"/>
+        <location filename="../src/playercontroller.cpp" line="3809"/>
         <source>%1 kbps</source>
         <translation>%1 ك.بت/ثا</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3753"/>
+        <location filename="../src/playercontroller.cpp" line="3772"/>
         <source>Frames per second</source>
         <translation>إطار/ثا</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3756"/>
+        <location filename="../src/playercontroller.cpp" line="3775"/>
         <source>HDR</source>
         <translation>HDR</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3756"/>
+        <location filename="../src/playercontroller.cpp" line="3775"/>
         <source>yes</source>
         <translation>نعم</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3763"/>
+        <location filename="../src/playercontroller.cpp" line="3782"/>
         <source>Video Streams</source>
         <translation>دفقات الفيديو</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3771"/>
+        <location filename="../src/playercontroller.cpp" line="3790"/>
         <source>Initial Audio Stream</source>
         <translation>دفق الصوت الأولي</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3826"/>
+        <location filename="../src/playercontroller.cpp" line="3845"/>
         <source>Audio Streams</source>
         <translation>دفقات الصوت</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3856"/>
+        <location filename="../src/playercontroller.cpp" line="3875"/>
         <source>Subtitles</source>
         <translation>الترجمات</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="4206"/>
+        <location filename="../src/playercontroller.cpp" line="4225"/>
         <source>Chapter %1</source>
         <translation>الفصل %1</translation>
     </message>
@@ -2715,7 +2741,7 @@
     <message>
         <location filename="../qml/PlaylistEditor.qml" line="536"/>
         <source>Media files (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</source>
-        <translation type="unfinished"></translation>
+        <translation>ملفات الوسائط (*.mp4 *.mkv *.avi *.mov *.webm *.wmv *.ts *.m2ts *.flv *.ogv *.mp3 *.m4a *.flac *.ogg *.opus *.wav *.wma *.m3u *.m3u8)</translation>
     </message>
     <message>
         <location filename="../qml/PlaylistEditor.qml" line="537"/>
@@ -3740,7 +3766,7 @@
     </message>
     <message>
         <location filename="../qml/PrefNetworkPage.qml" line="129"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="876"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="895"/>
         <source>Cast</source>
         <translation>البث</translation>
     </message>
@@ -3761,7 +3787,7 @@
     </message>
     <message>
         <location filename="../qml/PrefNetworkPage.qml" line="169"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="828"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="847"/>
         <source>Username:</source>
         <translation>ا&amp;سم المستخدم:</translation>
     </message>
@@ -3772,34 +3798,34 @@
     </message>
     <message>
         <location filename="../qml/PrefNetworkPage.qml" line="177"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="834"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="853"/>
         <source>Password:</source>
         <translation>كلمة الم&amp;رور:</translation>
     </message>
     <message>
         <location filename="../qml/PrefNetworkPage.qml" line="128"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="785"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="804"/>
         <source>Proxy</source>
         <translation>الخادوم الوسيط</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="508"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="527"/>
         <source>Opens a sign-in page inside Vivace itself and saves the resulting session as the cookies file above, with no separate export/transfer step. On Android this is the only way to get fresh cookies at all (there&apos;s no live browser cookie store to read); on desktop it&apos;s mainly a fallback for Chrome/Edge on Windows, where &quot;Get cookies from browser&quot; below can&apos;t read their cookies. Sign in with the YouTube account whose access you want to use, then tap &quot;Save cookies&quot;, then &quot;Close&quot;.</source>
-        <translation>يفتح صفحة تسجيل دخول داخل Vivace نفسه ويحفظ الجلسة الناتجة كملف ملفات تعريف الارتباط أعلاه، دون خطوة تصدير/نقل منفصلة. على Android، هذه هي الطريقة الوحيدة للحصول على ملفات تعريف ارتباط جديدة على الإطلاق (لا يوجد مخزن ملفات تعريف ارتباط حي للمتصفح لقراءته)؛ على سطح المكتب، هي بشكل أساسي بديل لمتصفحي Chrome/Edge على Windows، حيث لا يمكن لـ "الحصول على ملفات تعريف الارتباط من المتصفح" أدناه قراءة ملفات تعريف الارتباط الخاصة بهما. سجّل الدخول بحساب YouTube الذي تريد استخدامه، ثم اضغط "حفظ ملفات تعريف الارتباط"، ثم "إغلاق".</translation>
+        <translation>يفتح صفحة تسجيل دخول داخل Vivace نفسه ويحفظ الجلسة الناتجة كملف ملفات تعريف الارتباط أعلاه، دون خطوة تصدير/نقل منفصلة. على Android، هذه هي الطريقة الوحيدة للحصول على ملفات تعريف ارتباط جديدة على الإطلاق (لا يوجد مخزن ملفات تعريف ارتباط حي للمتصفح لقراءته)؛ على سطح المكتب، هي بشكل أساسي بديل لمتصفحي Chrome/Edge على Windows، حيث لا يمكن لـ &quot;الحصول على ملفات تعريف الارتباط من المتصفح&quot; أدناه قراءة ملفات تعريف الارتباط الخاصة بهما. سجّل الدخول بحساب YouTube الذي تريد استخدامه، ثم اضغط &quot;حفظ ملفات تعريف الارتباط&quot;، ثم &quot;إغلاق&quot;.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="841"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="860"/>
         <source>Type:</source>
         <translation>ال&amp;نوع:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="815"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="834"/>
         <source>Host:</source>
         <translation>المُست&amp;ضيف:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="821"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="886"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="840"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="905"/>
         <source>Port:</source>
         <translation>المن&amp;فذ:</translation>
     </message>
@@ -3991,17 +4017,17 @@
         <translation>تنزيل وتشغيل</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="458"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="474"/>
         <source>Downloads the video (merging HD video and audio with ffmpeg), plays it, and keeps it in a cache folder so replaying it is instant. The cache holds the most recent downloads up to the size below; older ones are removed.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="472"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="489"/>
         <source>Cookies file:</source>
         <translation>ملف ملفات تعريف الارتباط:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="482"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="499"/>
         <source>Optional cookies.txt exported from your browser (yt-dlp --cookies); unlocks HD, members-only and age-restricted videos. Safe here — cookies only affect the download, not a stream a player must open. See Help ▸ Contents ▸ Options for step-by-step export instructions.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4010,87 +4036,87 @@
         <translation type="vanished">يفتح صفحة تسجيل دخول داخل Vivace نفسه ويحفظ الجلسة الناتجة كملف ملفات تعريف الارتباط أعلاه — وهو ما يعادل على Android تصدير cookies.txt من متصفح سطح المكتب، دون خطوة تصدير/نقل منفصلة. سجّل الدخول بحساب YouTube الذي تريد استخدام صلاحية وصوله، ثم اضغط &quot;حفظ ملفات تعريف الارتباط&quot;، ثم &quot;إغلاق&quot;.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="529"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="548"/>
         <source>Get cookies from browser:</source>
         <translation>الحصول على ملفات تعريف الارتباط من المتصفح:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="530"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="549"/>
         <source>Reads cookies live from an installed browser instead of the file above — recommended, since YouTube&apos;s cookie lifetimes are now much shorter, making an exported cookies.txt go stale within days. Takes priority over the cookies file when set. On Windows, only Firefox actually works here: Chrome/Edge encrypt cookies in a way tied to the browser&apos;s own binary (&quot;App-Bound Encryption&quot;), which blocks yt-dlp (and every other external tool) from reading them at all — this is a Chrome-side restriction yt-dlp&apos;s own developers can&apos;t work around. Linux and macOS Chrome/Edge are unaffected.</source>
         <translation>يقرأ ملفات تعريف الارتباط مباشرةً من متصفح مثبت بدلاً من الملف أعلاه — يُنصح به، إذ أصبحت مدة صلاحية ملفات تعريف ارتباط YouTube أقصر بكثير الآن، ما يجعل أي ملف cookies.txt مُصدَّر ينتهي خلال أيام. له الأولوية على ملف ملفات تعريف الارتباط عند تفعيله. على ويندوز، لا يعمل هذا فعليًا إلا مع Firefox: يقوم Chrome/Edge بتشفير ملفات تعريف الارتباط بطريقة مرتبطة بالملف التنفيذي للمتصفح نفسه (&quot;App-Bound Encryption&quot;)، ما يمنع yt-dlp (وأي أداة خارجية أخرى) من قراءتها على الإطلاق — وهذا قيد من جانب Chrome لا يستطيع مطورو yt-dlp أنفسهم تجاوزه. لا يتأثر Chrome/Edge على Linux وmacOS بذلك.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="554"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="573"/>
         <source>Off (use the cookies file above)</source>
         <translation>إيقاف (استخدام ملف ملفات تعريف الارتباط أعلاه)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="555"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="574"/>
         <source>Firefox (recommended)</source>
         <translation>Firefox (يُنصح به)</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="556"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="575"/>
         <source>Chrome</source>
         <translation>Chrome</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="557"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="576"/>
         <source>Edge</source>
         <translation>Edge</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="558"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="577"/>
         <source>Brave</source>
         <translation>Brave</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="559"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="578"/>
         <source>Chromium</source>
         <translation>Chromium</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="560"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="579"/>
         <source>Opera</source>
         <translation>Opera</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="561"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="580"/>
         <source>Safari</source>
         <translation>Safari</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="562"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="581"/>
         <source>Vivaldi</source>
         <translation>Vivaldi</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="563"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="582"/>
         <source>Whale</source>
         <translation>Whale</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="601"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="620"/>
         <source>Deno path:</source>
         <translation>مسار Deno:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="602"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="621"/>
         <source>yt-dlp uses a separate program, Deno, to solve YouTube&apos;s JavaScript challenges. It&apos;s most needed here: a signed-in (cookie) request — exactly what unlocks HD above — sees severely limited format availability without it. Streaming mode, which never sends cookies, is largely unaffected. Leave empty if &quot;deno&quot; is already on your system PATH; otherwise enter the full path to the deno executable. See Help ▸ Contents ▸ Options for installation instructions.</source>
         <translation>يستخدم yt-dlp برنامجًا منفصلاً، Deno، لحل تحديات جافاسكريبت في يوتيوب. هذا مطلوب أكثر ما يكون هنا: فطلب مسجّل الدخول (بملفات تعريف الارتباط) — وهو تمامًا ما يفتح HD أعلاه — تكون فيه صيغ الفيديو المتاحة محدودة جدًا بدونه. أما وضع البث، الذي لا يرسل ملفات تعريف الارتباط أبدًا، فلا يتأثر بذلك كثيرًا. اتركه فارغًا إذا كان &quot;deno&quot; موجودًا بالفعل في PATH النظام؛ وإلا فأدخل المسار الكامل إلى ملف deno التنفيذي. راجع المساعدة ▸ المحتويات ▸ خيارات للحصول على تعليمات التثبيت.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="857"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="876"/>
         <source>The proxy password is stored securely using your operating system&apos;s credential manager.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="887"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="906"/>
         <source>The port Play ▸ Cast… listens on. Kept fixed here (rather than editable each time in the Cast dialog) so you can allow it through your firewall/router once and it keeps working.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="496"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="514"/>
         <source>optional cookies.txt</source>
         <translation>cookies.txt اختياري</translation>
     </message>
@@ -4105,22 +4131,22 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="474"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="491"/>
         <source>Optional cookies.txt; unlocks HD, members-only and age-restricted videos. Safe here — cookies only affect the download, not a stream a player must open. &quot;Log in to YouTube…&quot; below fills this in for you automatically — use it instead of exporting cookies.txt from a desktop browser and transferring it here by hand.</source>
         <translation>ملف cookies.txt اختياري؛ يتيح فيديوهات بدقة HD وفيديوهات للأعضاء فقط وفيديوهات مقيّدة بالعمر. آمن هنا — تؤثر ملفات تعريف الارتباط على التنزيل فقط، وليس على البث الذي يجب على المشغّل فتحه. يملأ &quot;تسجيل الدخول إلى YouTube…&quot; أدناه هذا الحقل تلقائيًا نيابةً عنك — استخدمه بدلاً من تصدير cookies.txt من متصفح سطح المكتب ونقله إلى هنا يدويًا.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="499"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="591"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="624"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="653"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="729"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="765"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="517"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="610"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="643"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="672"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="748"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="784"/>
         <source>Browse…</source>
         <translation>استعراض…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="507"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="526"/>
         <source>Log in to YouTube:</source>
         <translation>تسجيل الدخول إلى YouTube:</translation>
     </message>
@@ -4129,153 +4155,153 @@
         <translation type="vanished">يفتح صفحة تسجيل دخول داخل Vivace نفسه ويحفظ الجلسة الناتجة كملف ملفات تعريف الارتباط أعلاه — وهو ما يعادل على Android تصدير cookies.txt من متصفح سطح المكتب، دون خطوة تصدير/نقل منفصلة. سجّل الدخول بحساب YouTube الذي تريد استخدام صلاحية وصوله، ثم اضغط &quot;تم تسجيل الدخول&quot;.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="521"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="540"/>
         <source>Log in to YouTube…</source>
         <translation>تسجيل الدخول إلى YouTube…</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="576"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="595"/>
         <source>ffmpeg location:</source>
         <translation>موقع ffmpeg:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="577"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="596"/>
         <source>Folder containing ffmpeg (yt-dlp needs it to merge HD video+audio). Leave empty to use ffmpeg from the system PATH.</source>
         <translation>المجلد الذي يحتوي على ffmpeg (يحتاجه yt-dlp لدمج الفيديو والصوت عاليي الدقة). اتركه فارغاً لاستخدام ffmpeg من مسار PATH بالنظام.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="588"/>
-        <location filename="../qml/PrefNetworkPage.qml" line="621"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="607"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="640"/>
         <source>empty = use PATH</source>
         <translation>فارغ = استخدام PATH</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="639"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="658"/>
         <source>Cache folder:</source>
         <translation>مجلد الذاكرة المؤقتة:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="640"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="659"/>
         <source>Where downloaded videos are kept for reuse. A video already here is replayed without downloading again.</source>
         <translation>المكان الذي تُحفظ فيه الفيديوهات المنزَّلة لإعادة استخدامها. يُعاد تشغيل الفيديو الموجود هنا بالفعل دون تنزيله مجدداً.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="658"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="677"/>
         <source>Cache size:</source>
         <translation>حجم الذاكرة المؤقتة:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="659"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="678"/>
         <source>How many downloaded videos to keep. When the limit is reached, the least-recently-played one is deleted.</source>
         <translation>عدد الفيديوهات المنزَّلة المراد الاحتفاظ بها. عند بلوغ الحد، يُحذف الأقدم تشغيلاً.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="670"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="689"/>
         <source>files</source>
         <translation>ملفات</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="676"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="695"/>
         <source>Thumbnail fallback at:</source>
         <translation>الصورة المصغرة البديلة عند:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="677"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="696"/>
         <source>The cache thumbnail is normally YouTube&apos;s own poster image. Only if that is missing or black does Vivace grab a video frame — this is how many seconds in (past a black intro).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="690"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="709"/>
         <source>seconds</source>
         <translation>ثوانٍ</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="700"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="719"/>
         <source>External downloader tool</source>
         <translation>أداة تنزيل خارجية</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="715"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="734"/>
         <source>Downloader command:</source>
         <translation>أمر التنزيل:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="716"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="735"/>
         <source>The program or .bat/.cmd script that downloads the video; it receives the URL as an argument.</source>
         <translation>البرنامج أو نص .bat/.cmd الذي ينزّل الفيديو؛ يتلقى عنوان URL كوسيطة.</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="726"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="745"/>
         <source>e.g. C:ToolsYouTubeDL.bat</source>
         <translation>مثل C:\Tools\YouTubeDL.bat</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="734"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="753"/>
         <source>Arguments:</source>
         <translation>الوسيطات:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="735"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="754"/>
         <source>Arguments passed to the tool; the token {url} is replaced by the video URL (if omitted, the URL is appended). Add any cookies/format flags your tool needs here, e.g. --cookies C:pathcookies.txt.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="750"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="769"/>
         <source>Download folder:</source>
         <translation>مجلد التنزيل:</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="751"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="770"/>
         <source>The folder the tool writes the finished file into; Vivace plays the newest media file that appears there, so set it to match your tool&apos;s output folder.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="762"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="781"/>
         <source>your tool&apos;s output folder</source>
         <translation>مجلد إخراج أداتك</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="795"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="814"/>
         <source>Enable proxy</source>
         <translation>مكّن الخادوم الوسيط</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="799"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="818"/>
         <source>Applies to OpenSubtitles search and the update check (both proxy types). Only an HTTP proxy also applies to media playback and yt-dlp — a SOCKS5 proxy does not reach either, since neither goes through Qt&apos;s network stack.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="908"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="927"/>
         <source>Your OS&apos;s firewall (and most routers) block an app listening on a fresh port until you allow it. Pick a port once here, allow Vivace through your firewall for it, and Cast will keep working without a new prompt each time.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="923"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="942"/>
         <source>Select the cookies.txt file</source>
         <translation>حدد ملف cookies.txt</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="952"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="971"/>
         <source>Select the deno executable</source>
         <translation>حدد ملف deno التنفيذي</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="958"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="977"/>
         <source>Select the folder containing ffmpeg</source>
         <translation>حدد المجلد الذي يحتوي على ffmpeg</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="963"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="982"/>
         <source>Select the download cache folder</source>
         <translation>حدد مجلد الذاكرة المؤقتة للتنزيل</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="968"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="987"/>
         <source>Select the downloader program</source>
         <translation>حدد برنامج التنزيل</translation>
     </message>
     <message>
-        <location filename="../qml/PrefNetworkPage.qml" line="974"/>
+        <location filename="../qml/PrefNetworkPage.qml" line="993"/>
         <source>Select the download folder</source>
         <translation>حدد مجلد التنزيل</translation>
     </message>
@@ -5469,158 +5495,158 @@
 <context>
     <name>YoutubeResolver</name>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="331"/>
+        <location filename="../src/youtuberesolver.cpp" line="342"/>
         <source>Could not create the download cache folder.</source>
         <translation>تعذّر إنشاء مجلد الذاكرة المؤقتة للتنزيل.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="345"/>
+        <location filename="../src/youtuberesolver.cpp" line="356"/>
         <source>Could not determine the video id to download.</source>
         <translation>تعذّر تحديد معرّف الفيديو المراد تنزيله.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="470"/>
+        <location filename="../src/youtuberesolver.cpp" line="486"/>
         <source>Could not run yt-dlp (&quot;%1&quot;). Check the path in Preferences &gt; Network.</source>
         <translation>تعذّر تشغيل yt-dlp (&quot;%1&quot;). تحقق من المسار في التفضيلات &gt; الشبكة.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="492"/>
+        <location filename="../src/youtuberesolver.cpp" line="508"/>
         <source>yt-dlp did not finish normally.</source>
         <translation>لم ينتهِ yt-dlp بشكل طبيعي.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="499"/>
+        <location filename="../src/youtuberesolver.cpp" line="515"/>
         <source>yt-dlp exited with code %1.</source>
         <translation>خرج yt-dlp بالرمز %1.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="514"/>
+        <location filename="../src/youtuberesolver.cpp" line="530"/>
         <source>yt-dlp returned no playable stream.</source>
         <translation>لم يُرجِع yt-dlp أي بث قابل للتشغيل.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="536"/>
+        <location filename="../src/youtuberesolver.cpp" line="552"/>
         <source>The download did not finish normally.</source>
         <translation>لم ينتهِ التنزيل بشكل طبيعي.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="539"/>
+        <location filename="../src/youtuberesolver.cpp" line="555"/>
         <source>yt-dlp produced no file (exit code %1). If this is an HD video, check the ffmpeg and Deno paths.</source>
         <translation>لم ينتج yt-dlp أي ملف (رمز الخروج %1). إذا كان هذا فيديو بجودة HD، فتحقق من مسارات ffmpeg و Deno.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="797"/>
+        <location filename="../src/youtuberesolver.cpp" line="813"/>
         <source>Could not create the destination folder</source>
         <translation>تعذر إنشاء مجلد الوجهة</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="813"/>
+        <location filename="../src/youtuberesolver.cpp" line="829"/>
         <source>File no longer exists</source>
         <translation>لم يعد الملف موجودًا</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="835"/>
+        <location filename="../src/youtuberesolver.cpp" line="851"/>
         <source>Could not move the file</source>
         <translation>تعذر نقل الملف</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="836"/>
+        <location filename="../src/youtuberesolver.cpp" line="852"/>
         <source>Could not copy the file</source>
         <translation>تعذر نسخ الملف</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="957"/>
-        <location filename="../src/youtuberesolver.cpp" line="1137"/>
+        <location filename="../src/youtuberesolver.cpp" line="973"/>
+        <location filename="../src/youtuberesolver.cpp" line="1153"/>
         <source>Could not write %1.</source>
         <translation>تعذّر كتابة %1.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="963"/>
+        <location filename="../src/youtuberesolver.cpp" line="979"/>
         <source>Could not save %1.</source>
         <translation>تعذّر حفظ %1.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="1071"/>
+        <location filename="../src/youtuberesolver.cpp" line="1087"/>
         <source>Could not run %1: %2</source>
         <translation>تعذّر تشغيل %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="1081"/>
+        <location filename="../src/youtuberesolver.cpp" line="1097"/>
         <source>%1 exited with an error (code %2).</source>
         <translation>خرج %1 بخطأ (الرمز %2).</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="1095"/>
+        <location filename="../src/youtuberesolver.cpp" line="1111"/>
         <source>Checking the latest release…</source>
         <translation>التحقق من أحدث إصدار…</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="1105"/>
+        <location filename="../src/youtuberesolver.cpp" line="1121"/>
         <source>Could not check the latest release: %1</source>
         <translation>تعذّر التحقق من أحدث إصدار: %1</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="1111"/>
+        <location filename="../src/youtuberesolver.cpp" line="1127"/>
         <source>Could not find the source download URL in the release info.</source>
         <translation>تعذّر العثور على رابط تنزيل الكود المصدري في معلومات الإصدار.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="1115"/>
+        <location filename="../src/youtuberesolver.cpp" line="1131"/>
         <source>Downloading source…</source>
         <translation>جارٍ تنزيل الكود المصدري…</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="1127"/>
+        <location filename="../src/youtuberesolver.cpp" line="1143"/>
         <source>Could not download the source: %1</source>
         <translation>تعذّر تنزيل الكود المصدري: %1</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="1149"/>
+        <location filename="../src/youtuberesolver.cpp" line="1165"/>
         <source>Extracting…</source>
         <translation>جارٍ الاستخراج…</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="1172"/>
+        <location filename="../src/youtuberesolver.cpp" line="1188"/>
         <source>Unexpected archive layout after extracting (expected exactly one top-level folder).</source>
         <translation>بنية أرشيف غير متوقعة بعد الاستخراج (يُتوقع مجلد واحد فقط من المستوى الأعلى).</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="1200"/>
+        <location filename="../src/youtuberesolver.cpp" line="1216"/>
         <source>Installing the yt-dlp plugin…</source>
         <translation>جارٍ تثبيت إضافة yt-dlp…</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="1205"/>
+        <location filename="../src/youtuberesolver.cpp" line="1221"/>
         <source>The downloaded source is missing its plugin/yt_dlp_plugins folder (unexpected repository layout).</source>
         <translation>الكود المصدري الذي تم تنزيله لا يحتوي على مجلد plugin/yt_dlp_plugins (بنية مستودع غير متوقعة).</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="1210"/>
+        <location filename="../src/youtuberesolver.cpp" line="1226"/>
         <source>Could not copy the yt-dlp plugin into %1.</source>
         <translation>تعذّر نسخ إضافة yt-dlp إلى %1.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="1221"/>
+        <location filename="../src/youtuberesolver.cpp" line="1237"/>
         <source>The downloaded source is missing its server/ folder (unexpected repository layout).</source>
         <translation>الكود المصدري الذي تم تنزيله لا يحتوي على مجلد server/ (بنية مستودع غير متوقعة).</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="1231"/>
+        <location filename="../src/youtuberesolver.cpp" line="1247"/>
         <source>Could not move the server/ folder into %1.</source>
         <translation>تعذّر نقل مجلد server/ إلى %1.</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="1237"/>
+        <location filename="../src/youtuberesolver.cpp" line="1253"/>
         <source>Installing server dependencies (deno install)…</source>
         <translation>جارٍ تثبيت اعتماديات الخادم (deno install)…</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="1242"/>
+        <location filename="../src/youtuberesolver.cpp" line="1258"/>
         <source>Compiling TypeScript (deno run tsc)…</source>
         <translation>جارٍ تجميع TypeScript (deno run tsc)…</translation>
     </message>
     <message>
-        <location filename="../src/youtuberesolver.cpp" line="1250"/>
+        <location filename="../src/youtuberesolver.cpp" line="1266"/>
         <source>The build finished but generate_once.js was not produced -- check the output above for a compiler error.</source>
         <translation>انتهى البناء لكن لم يتم إنتاج generate_once.js -- تحقق من المخرجات أعلاه بحثًا عن خطأ في المُجمّع.</translation>
     </message>
