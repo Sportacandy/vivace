@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Builds qtmultimedia from source (tag v6.11.1, all patches/*.patch applied)
+# Builds qtmultimedia from source (tag v6.12.0, all patches/*.patch applied)
 # against an ALREADY-INSTALLED official Qt kit, in place -- overwriting that
 # kit's own QtMultimedia.framework, QtMultimediaQuick.framework, and
 # plugins/multimedia/libffmpegmediaplugin.dylib. Also deploys the matching
@@ -25,7 +25,7 @@
 # once this is tried for real in CI.
 #
 # Usage: build-patched-qtmultimedia-macos.sh <QT_ROOT_DIR> [<repo-root>]
-#   QT_ROOT_DIR: an aqtinstall/install-qt-action (or equivalent) Qt 6.11.1
+#   QT_ROOT_DIR: an aqtinstall/install-qt-action (or equivalent) Qt 6.12.0
 #                clang_64 kit that already has the qtmultimedia module
 #                installed -- this REBUILDS qtmultimedia in place, it does
 #                not add the module from nothing, and needs the kit's dev
@@ -99,8 +99,8 @@ echo "== Installing dav1d-enabled FFmpeg (Homebrew ffmpeg@7) =="
 brew install ffmpeg@7
 FFMPEG7="$(brew --prefix ffmpeg@7)"
 
-echo "== Cloning qtmultimedia v6.11.1 =="
-git clone --branch v6.11.1 --depth 1 https://github.com/qt/qtmultimedia.git "$WORK/qtmultimedia"
+echo "== Cloning qtmultimedia v6.12.0 =="
+git clone --branch v6.12.0 --depth 1 https://github.com/qt/qtmultimedia.git "$WORK/qtmultimedia"
 
 # NOTE (2026-08-07): an earlier version of this script removed the
 # sse2/ssse3/avx2 SIMD source blocks from src/multimedia's own

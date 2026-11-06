@@ -1,3 +1,4 @@
+.pragma library
 /*  Vivace — a fast, pure-Qt media player.
     Copyright (C) 2026 Hironori Komaba
     SPDX-License-Identifier: GPL-3.0-or-later
@@ -6,7 +7,6 @@
     and PlaylistWindow.qml (the separate-window playlist), so a remembered
     position is validated the same way in both places.
 */
-.pragma library
 
 // True if enough of rect (x,y,w,h) -- in virtual-desktop coordinates --
 // overlaps some CURRENTLY CONNECTED screen to be seen and dragged back into

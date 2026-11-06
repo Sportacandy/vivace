@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Builds qtmultimedia from source (tag v6.11.1, all patches/*.patch applied)
+# Builds qtmultimedia from source (tag v6.12.0, all patches/*.patch applied)
 # against an ALREADY-INSTALLED official Qt kit, in place -- overwriting that
 # kit's own libQt6Multimedia*.so*, libQt6MultimediaQuick*.so*, and
 # plugins/multimedia/libffmpegmediaplugin.so. Also deploys the matching
@@ -22,7 +22,7 @@
 # for local development.
 #
 # Usage: build-patched-qtmultimedia-linux.sh <QT_ROOT_DIR> [<repo-root>]
-#   QT_ROOT_DIR: an aqtinstall/install-qt-action (or equivalent) Qt 6.11.1
+#   QT_ROOT_DIR: an aqtinstall/install-qt-action (or equivalent) Qt 6.12.0
 #                linux_gcc_64 kit that already has the qtmultimedia module
 #                installed -- this REBUILDS qtmultimedia in place, it does
 #                not add the module from nothing, and needs the kit's dev
@@ -96,8 +96,8 @@ curl -L -o "$WORK/ffmpeg.tar.xz" "$FFMPEG_DOWNLOAD_URL"
 mkdir "$WORK/ffmpeg"
 tar -xJf "$WORK/ffmpeg.tar.xz" -C "$WORK/ffmpeg" --strip-components=1
 
-echo "== Cloning qtmultimedia v6.11.1 =="
-git clone --branch v6.11.1 --depth 1 https://github.com/qt/qtmultimedia.git "$WORK/qtmultimedia"
+echo "== Cloning qtmultimedia v6.12.0 =="
+git clone --branch v6.12.0 --depth 1 https://github.com/qt/qtmultimedia.git "$WORK/qtmultimedia"
 
 echo "== Applying patches =="
 for p in "${PATCH_FILES[@]}"; do

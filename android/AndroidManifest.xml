@@ -11,15 +11,15 @@
             </intent-filter>
             <!-- Android's "Share" mechanism: lets a browser (or any other
                  app) hand Vivace a page URL directly via the system Share
-                 sheet, a practical substitute for cross-app drag-and-drop,
-                 which isn't available until Qt 6.11.2 (this project pins
-                 6.11.1; see src/androidshareintent.h's own comment).
+                 sheet (see src/androidshareintent.h's own comment).
                  android:launchMode="singleTop" above means a Share while
                  Vivace is already running delivers via onNewIntent, not a
                  second activity instance. -->
             <intent-filter>
                 <action android:name="android.intent.action.SEND"/>
                 <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="text/plain"/>
+            </intent-filter>
             <!-- "Open with": lists Vivace as a player for media and playlist
                  files in file managers. Only content:// URIs: since Android 7
                  apps can't hand each other file:// URIs, and the content://
@@ -33,8 +33,6 @@
                 <data android:mimeType="audio/*"/>
                 <data android:mimeType="application/x-mpegurl"/>
                 <data android:mimeType="application/vnd.apple.mpegurl"/>
-            </intent-filter>
-                <data android:mimeType="text/plain"/>
             </intent-filter>
             <meta-data android:name="android.app.lib_name" android:value="-- %%INSERT_APP_LIB_NAME%% --"/>
             <meta-data android:name="android.app.arguments" android:value="-- %%INSERT_APP_ARGUMENTS%% --"/>

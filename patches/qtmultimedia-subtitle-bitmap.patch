@@ -1,10 +1,9 @@
 Qt module:   qtmultimedia
-Base tag:    v6.11.1
+Base tag:    v6.12.0
 Applies to:  src/plugins/multimedia/ffmpeg/playbackengine/qffmpegframe_p.h,
              src/plugins/multimedia/ffmpeg/playbackengine/qffmpegstreamdecoder.cpp,
              src/plugins/multimedia/ffmpeg/playbackengine/qffmpegsubtitlerenderer.cpp,
              src/plugins/multimedia/ffmpeg/playbackengine/qffmpegsubtitlerenderer_p.h,
-             src/plugins/multimedia/ffmpeg/playbackengine/qffmpegcodeccontext.cpp,
              src/plugins/multimedia/ffmpeg/playbackengine/qffmpegcodeccontext_p.h,
              src/multimedia/video/qvideoframe_p.h,
              src/multimedia/video/qvideoframe.h,
@@ -15,6 +14,22 @@ Applies to:  src/plugins/multimedia/ffmpeg/playbackengine/qffmpegframe_p.h,
              src/multimedia/video/qvideosink.cpp,
              src/multimediaquick/qsgvideonode_p.h,
              src/multimediaquick/qsgvideonode_p.cpp
+
+Port to v6.12.0 (2026-10-24):
+- qffmpegcodeccontext.cpp is no longer in this patch. v6.12.0 sets
+  AVCodecContext::pkt_timebase for all streams. That includes the
+  subtitle-only fix that the v6.11.1 version of this patch made.
+- v6.12.0 moves the subtitle text join into two new helpers,
+  extractSubtitleText() and subtitleTextFromAVSubtitle(). The null
+  `ass` check is now in extractSubtitleText().
+  subtitleTextFromAVSubtitle() skips bitmap rects. decodeSubtitle()
+  converts the first usable bitmap rect in a separate loop.
+- The subtitle timing fixes in decodeSubtitle() keep their v6.11.1
+  behavior. v6.12.0 changes contextStartOffset() to return
+  std::optional, so the Part 4 fix calls
+  `.value_or(AVContextDuration::zero())`. The offset is 0 when
+  start_time is unset, as in v6.11.1.
+- The history below describes the v6.11.1 version of this patch.
 
 Fixes two related bugs in one patch: (1) Vivace crashes outright when a
 user selects an embedded bitmap-type subtitle track (DVD subtitles, PGS,
@@ -622,10 +637,10 @@ superseded along the way (the original crash-fix's own guessed-duration
 attempt, and Part 2's flat 60-second cap) before arriving at each real
 root cause.
 diff --git a/src/multimedia/platform/qplatformvideosink.cpp b/src/multimedia/platform/qplatformvideosink.cpp
-index cc01257..d3780cf 100644
+index a6af6360b..122d3f59f 100644
 --- a/src/multimedia/platform/qplatformvideosink.cpp
 +++ b/src/multimedia/platform/qplatformvideosink.cpp
-@@ -36,7 +36,24 @@ void QPlatformVideoSink::setVideoFrame(const QVideoFrame &frame)
+@@ -37,7 +37,24 @@ void QPlatformVideoSink::setVideoFrame(const QVideoFrame &frame)
          if (frame == m_currentVideoFrame)
              return;
          m_currentVideoFrame = frame;
@@ -651,7 +666,7 @@ index cc01257..d3780cf 100644
          const QSize size = qRotatedFramePresentationSize(frame);
          if (size != m_nativeSize) {
              m_nativeSize = size;
-@@ -76,6 +93,39 @@ QString QPlatformVideoSink::subtitleText() const
+@@ -77,6 +94,39 @@ QString QPlatformVideoSink::subtitleText() const
      return m_subtitleText;
  }
  
@@ -692,17 +707,17 @@ index cc01257..d3780cf 100644
  
  #include "moc_qplatformvideosink_p.cpp"
 diff --git a/src/multimedia/platform/qplatformvideosink_p.h b/src/multimedia/platform/qplatformvideosink_p.h
-index 333cca4..612c50c 100644
+index 7d0083c69..d5fdc2829 100644
 --- a/src/multimedia/platform/qplatformvideosink_p.h
 +++ b/src/multimedia/platform/qplatformvideosink_p.h
-@@ -21,6 +21,7 @@
- #include <QtCore/qsize.h>
- #include <QtCore/qmutex.h>
- #include <QtGui/qwindowdefs.h>
+@@ -18,6 +18,7 @@
+ #include <QtMultimedia/qtmultimediaglobal.h>
+ #include <QtMultimedia/qvideoframe.h>
+ #include <QtMultimedia/qvideosink.h>
 +#include <QtGui/qimage.h>
- #include <qvideosink.h>
- #include <qvideoframe.h>
- #include <qdebug.h>
+ #include <QtGui/qwindowdefs.h>
+ #include <QtCore/private/qglobal_p.h>
+ #include <QtCore/qdebug.h>
 @@ -64,6 +65,12 @@ public:
  
      QString subtitleText() const;
@@ -727,10 +742,10 @@ index 333cca4..612c50c 100644
  };
  
 diff --git a/src/multimedia/video/qvideoframe.cpp b/src/multimedia/video/qvideoframe.cpp
-index 85c758b..5f85a51 100644
+index 2cc125384..737d79469 100644
 --- a/src/multimedia/video/qvideoframe.cpp
 +++ b/src/multimedia/video/qvideoframe.cpp
-@@ -883,6 +883,51 @@ void QVideoFrame::setSubtitleText(const QString &text)
+@@ -884,6 +884,51 @@ void QVideoFrame::setSubtitleText(const QString &text)
      d->subtitleText = text;
  }
  
@@ -783,7 +798,7 @@ index 85c758b..5f85a51 100644
      Uses a QPainter, \a{painter}, to render this QVideoFrame to \a rect.
      The PaintOptions \a options can be used to specify a background color and
 diff --git a/src/multimedia/video/qvideoframe.h b/src/multimedia/video/qvideoframe.h
-index 069d1d8..eb9afa2 100644
+index 069d1d838..eb9afa2fd 100644
 --- a/src/multimedia/video/qvideoframe.h
 +++ b/src/multimedia/video/qvideoframe.h
 @@ -9,6 +9,7 @@
@@ -811,7 +826,7 @@ index 069d1d8..eb9afa2 100644
  
  #if QT_DEPRECATED_SINCE(6, 8)
 diff --git a/src/multimedia/video/qvideoframe_p.h b/src/multimedia/video/qvideoframe_p.h
-index ed05beb..f201b29 100644
+index ed05bebe4..f201b29b1 100644
 --- a/src/multimedia/video/qvideoframe_p.h
 +++ b/src/multimedia/video/qvideoframe_p.h
 @@ -20,6 +20,8 @@
@@ -837,10 +852,10 @@ index ed05beb..f201b29 100644
      QMutex imageMutex;
      VideoTransformation presentationTransformation;
 diff --git a/src/multimedia/video/qvideosink.cpp b/src/multimedia/video/qvideosink.cpp
-index 2d35c33..9af871a 100644
+index 6969a2f5e..114816941 100644
 --- a/src/multimedia/video/qvideosink.cpp
 +++ b/src/multimedia/video/qvideosink.cpp
-@@ -167,6 +167,44 @@ void QVideoSink::setSubtitleText(const QString &subtitle)
+@@ -171,6 +171,44 @@ void QVideoSink::setSubtitleText(const QString &subtitle)
          d->videoSink->setSubtitleText(subtitle);
  }
  
@@ -886,7 +901,7 @@ index 2d35c33..9af871a 100644
      \property QVideoSink::videoSize
  
 diff --git a/src/multimedia/video/qvideosink.h b/src/multimedia/video/qvideosink.h
-index 06cd163..19d57fd 100644
+index 06cd163d8..19d57fd61 100644
 --- a/src/multimedia/video/qvideosink.h
 +++ b/src/multimedia/video/qvideosink.h
 @@ -6,7 +6,10 @@
@@ -925,18 +940,18 @@ index 06cd163..19d57fd 100644
  
  private:
 diff --git a/src/multimediaquick/qsgvideonode_p.cpp b/src/multimediaquick/qsgvideonode_p.cpp
-index 0c190ba..d39f9b4 100644
+index aa26f2a0d..4f03ece2f 100644
 --- a/src/multimediaquick/qsgvideonode_p.cpp
 +++ b/src/multimediaquick/qsgvideonode_p.cpp
-@@ -3,6 +3,7 @@
+@@ -10,6 +10,7 @@
+ #include <QtMultimediaQuick/private/qsgvideotexture_p.h>
+ #include <QtMultimediaQuick/private/qquickvideooutput_p.h>
  
- #include "qsgvideonode_p.h"
- #include <QtQuick/qsgmaterial.h>
 +#include <QtQuick/qsgimagenode.h>
- #include "qsgvideotexture_p.h"
- #include <QtMultimedia/private/qvideotexturehelper_p.h>
- #include <private/qsginternaltextnode_p.h>
-@@ -263,6 +264,7 @@ QSGVideoNode::QSGVideoNode(QQuickVideoOutput *parent, const QVideoFrameFormat &v
+ #include <QtQuick/qsgmaterial.h>
+ #include <QtQuick/private/qquickitem_p.h>
+ #include <QtQuick/private/qsginternaltextnode_p.h>
+@@ -266,6 +267,7 @@ QSGVideoNode::QSGVideoNode(QQuickVideoOutput *parent, const QVideoFrameFormat &v
  QSGVideoNode::~QSGVideoNode()
  {
      delete m_subtitleTextNode;
@@ -944,7 +959,7 @@ index 0c190ba..d39f9b4 100644
  }
  
  void QSGVideoNode::setCurrentFrame(const QVideoFrame &frame)
-@@ -270,6 +272,7 @@ void QSGVideoNode::setCurrentFrame(const QVideoFrame &frame)
+@@ -273,6 +275,7 @@ void QSGVideoNode::setCurrentFrame(const QVideoFrame &frame)
      texturePool()->setCurrentFrame(frame);
      markDirty(DirtyMaterial);
      updateSubtitle(frame);
@@ -952,7 +967,7 @@ index 0c190ba..d39f9b4 100644
  }
  
  void QSGVideoNode::setSurfaceFormat(const QRhiSwapChain::Format surfaceFormat)
-@@ -312,14 +315,70 @@ void QSGVideoNode::updateSubtitle(const QVideoFrame &frame)
+@@ -316,14 +319,70 @@ void QSGVideoNode::updateSubtitle(const QVideoFrame &frame)
      setSubtitleGeometry();
  }
  
@@ -1027,7 +1042,7 @@ index 0c190ba..d39f9b4 100644
      float rotate = -1.f * qToUnderlying(m_videoOutputTransformation.rotation);
      float yTranslate = 0;
      float xTranslate = 0;
-@@ -338,9 +397,27 @@ void QSGVideoNode::setSubtitleGeometry()
+@@ -342,9 +401,27 @@ void QSGVideoNode::setSubtitleGeometry()
      // TODO: Investigate if we should we mirror subtitles
      // if (m_videoOutputTransformation.mirroredHorizontallyAfterRotation)
      //    transform.scale(-1.f, 1.f);
@@ -1058,12 +1073,12 @@ index 0c190ba..d39f9b4 100644
  
  /* Update the vertices and texture coordinates.*/
 diff --git a/src/multimediaquick/qsgvideonode_p.h b/src/multimediaquick/qsgvideonode_p.h
-index 917e988..67bf4ed 100644
+index a0033db49..7db9bad3c 100644
 --- a/src/multimediaquick/qsgvideonode_p.h
 +++ b/src/multimediaquick/qsgvideonode_p.h
-@@ -23,12 +23,15 @@
- #include <QtMultimedia/qvideoframe.h>
- #include <QtMultimedia/qvideoframeformat.h>
+@@ -22,12 +22,15 @@
+ #include <QtMultimediaQuick/private/qtmultimediaquickglobal_p.h>
+ #include <QtQuick/qsgnode.h>
  #include <QtGui/qopenglfunctions.h>
 +#include <QtGui/qmatrix4x4.h>
  
@@ -1077,7 +1092,7 @@ index 917e988..67bf4ed 100644
  
  class QVideoFrameTexturePool;
  using QVideoFrameTexturePoolPtr = std::shared_ptr<QVideoFrameTexturePool>;
-@@ -52,7 +55,9 @@ public:
+@@ -51,7 +54,9 @@ public:
  
  private:
      void updateSubtitle(const QVideoFrame &frame);
@@ -1087,7 +1102,7 @@ index 917e988..67bf4ed 100644
  
      QQuickVideoOutput *m_parent = nullptr;
      QRectF m_rect;
-@@ -65,6 +70,18 @@ private:
+@@ -64,6 +69,18 @@ private:
  
      QVideoTextureHelper::SubtitleLayout m_subtitleLayout;
      QSGInternalTextNode *m_subtitleTextNode = nullptr;
@@ -1106,40 +1121,8 @@ index 917e988..67bf4ed 100644
  };
  
  QT_END_NAMESPACE
-diff --git a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegcodeccontext.cpp b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegcodeccontext.cpp
-index 040666a..9f462bd 100644
---- a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegcodeccontext.cpp
-+++ b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegcodeccontext.cpp
-@@ -112,6 +112,27 @@ q23::expected<CodecContext, QString> CodecContext::create(AVStream *stream,
-             QStringLiteral("Failed to set FFmpeg codec parameters: %1").arg(err2str(ret))
-         };
- 
-+    // VIVACE FIX 2026-08-17: avcodec_parameters_to_context() does not set
-+    // pkt_timebase -- confirmed by reading it directly, it only copies
-+    // codec parameters (dimensions, sample rate, extradata, ...), never
-+    // AVCodecContext::pkt_timebase. Without it, FFmpeg's generic
-+    // avcodec_decode_subtitle2() wrapper (libavcodec/decode.c) silently
-+    // skips populating AVSubtitle::pts from the packet's own valid pts
-+    // (its rescale is gated on `avctx->pkt_timebase.num`, which stays 0
-+    // forever otherwise) -- confirmed with a real diagnostic against a
-+    // real Blu-ray (PGS/hdmv_pgs_subtitle) disc: subtitle.pts arrived as
-+    // AV_NOPTS_VALUE on every single real subtitle event even though the
-+    // underlying packet's own pts was perfectly valid, which sent
-+    // decodeSubtitle() down its "packet duration" fallback path instead
-+    // -- and MPEG-TS/PES (what Blu-ray muxes PGS over) has no equivalent
-+    // per-packet declared duration, so that fallback always computed a
-+    // zero-length event and got rejected as "Invalid subtitle time".
-+    // Scoped to subtitle streams only (not audio/video, which already
-+    // get correct timing through other means in this codebase and don't
-+    // need this) to keep this fix's surface area minimal.
-+    if (context->codec_type == AVMEDIA_TYPE_SUBTITLE)
-+        context->pkt_timebase = stream->time_base;
-+
-     // ### This still gives errors about wrong HW formats (as we accept all of them)
-     // But it would be good to get so we can filter out pixel format we don't support natively
-     context->get_format = QFFmpeg::getFormat;
 diff --git a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegcodeccontext_p.h b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegcodeccontext_p.h
-index 7dd45f6..4817e93 100644
+index 7dd45f650..4817e93e3 100644
 --- a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegcodeccontext_p.h
 +++ b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegcodeccontext_p.h
 @@ -49,6 +49,7 @@ public:
@@ -1151,13 +1134,13 @@ index 7dd45f6..4817e93 100644
      HWAccel *hwAccel() const { return d->hwAccel.get(); }
      TrackDuration toTrackDuration(AVStreamDuration duration) const
 diff --git a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegframe_p.h b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegframe_p.h
-index 01dfcfe..7406a4a 100644
+index d2c7e01be..2e3857d5e 100644
 --- a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegframe_p.h
 +++ b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegframe_p.h
-@@ -21,7 +21,10 @@
+@@ -19,7 +19,10 @@
+ #include <QtFFmpegMediaPluginImpl/private/qffmpegcodeccontext_p.h>
+ #include <QtFFmpegMediaPluginImpl/private/qffmpegplaybackutils_p.h>
  #include <QtFFmpegMediaPluginImpl/private/qffmpegtime_p.h>
- #include <QtCore/qobject.h>
- #include <QtCore/qpointer.h>
 +#include <QtCore/qrect.h>
  #include <QtCore/qshareddata.h>
 +#include <QtCore/qsize.h>
@@ -1165,7 +1148,7 @@ index 01dfcfe..7406a4a 100644
  
  #include <optional>
  
-@@ -67,8 +70,12 @@ struct Frame
+@@ -65,8 +68,12 @@ struct Frame
              }
          }
          Data(const LoopOffset &offset, const QString &text, TrackPosition pts,
@@ -1180,7 +1163,7 @@ index 01dfcfe..7406a4a 100644
          {
          }
  
-@@ -77,6 +84,19 @@ struct Frame
+@@ -75,6 +82,19 @@ struct Frame
          std::optional<CodecContext> codecContext;
          AVFrameUPtr frame;
          QString text;
@@ -1200,7 +1183,7 @@ index 01dfcfe..7406a4a 100644
          TrackPosition startTime = 0;
          TrackDuration duration = 0;
          PlaybackEngineObjectID sourceID;
-@@ -89,8 +109,9 @@ struct Frame
+@@ -87,8 +107,9 @@ struct Frame
      {
      }
      Frame(const LoopOffset &offset, const QString &text, TrackPosition pts, TrackDuration duration,
@@ -1212,7 +1195,7 @@ index 01dfcfe..7406a4a 100644
      {
      }
      bool isValid() const { return !!d; }
-@@ -105,6 +126,9 @@ struct Frame
+@@ -103,6 +124,9 @@ struct Frame
      TrackDuration duration() const { return data().duration; }
      TrackPosition endTime() const { return data().startTime + data().duration; }
      QString text() const { return data().text; }
@@ -1223,22 +1206,27 @@ index 01dfcfe..7406a4a 100644
      const LoopOffset &loopOffset() const { return data().loopOffset; };
      TrackPosition absolutePts() const
 diff --git a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegstreamdecoder.cpp b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegstreamdecoder.cpp
-index 8f9b203..3426cc0 100644
+index 554b73718..ac4ae74b0 100644
 --- a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegstreamdecoder.cpp
 +++ b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegstreamdecoder.cpp
-@@ -4,6 +4,9 @@
- #include "playbackengine/qffmpegstreamdecoder_p.h"
+@@ -4,10 +4,14 @@
+ #include "qffmpegstreamdecoder_p.h"
+ 
  #include "playbackengine/qffmpegmediadataholder_p.h"
- #include <qloggingcategory.h>
 +#include <QtGui/qimage.h>
 +#include <QtCore/qglobal.h>
-+#include <limits>
+ #include <QtCore/qloggingcategory.h>
+ #include <QtCore/qregularexpression.h>
+ #include <QtCore/qspan.h>
  
++#include <limits>
++
  QT_BEGIN_NAMESPACE
  
-@@ -11,6 +14,72 @@ Q_STATIC_LOGGING_CATEGORY(qLcStreamDecoder, "qt.multimedia.ffmpeg.streamdecoder"
+ Q_STATIC_LOGGING_CATEGORY(qLcStreamDecoder, "qt.multimedia.ffmpeg.streamdecoder");
+@@ -16,6 +20,72 @@ namespace QFFmpeg {
  
- namespace QFFmpeg {
+ using namespace Qt::Literals;
  
 +// Soften a decoded bitmap subtitle's coarse antialiasing steps -- the same
 +// visible "jaggy" issue, and the same triangular-kernel blur fix, as
@@ -1309,7 +1297,7 @@ index 8f9b203..3426cc0 100644
  StreamDecoder::StreamDecoder(const PlaybackEngineObjectID &id, const CodecContext &codecContext,
                               TrackPosition absSeekPos)
      : PlaybackEngineObject(id),
-@@ -219,29 +288,193 @@ void StreamDecoder::decodeSubtitle(const Packet &packet)
+@@ -224,26 +294,206 @@ void StreamDecoder::decodeSubtitle(const Packet &packet)
      // apparently the timestamps in the AVSubtitle structure are not always filled in
      // if they are missing, use the packets pts and duration values instead
      TrackPosition start = 0, end = 0;
@@ -1351,9 +1339,12 @@ index 8f9b203..3426cc0 100644
 +        // this branch also serves have start_time == 0. Fixed by
 +        // subtracting `contextStartOffset(m_codecContext.formatContext())`
 +        // (the exact same helper toTrackPosition() itself uses
-+        // internally) from both `start` and `end`.
-+        const TrackDuration contextOffset =
-+                toTrackDuration(contextStartOffset(m_codecContext.formatContext()));
++        // internally) from both `start` and `end`. contextStartOffset()
++        // returns std::nullopt when start_time is unset; treat that as no
++        // offset, like toTrackPosition() and toContextPosition() do.
++        const TrackDuration contextOffset = toTrackDuration(
++                contextStartOffset(m_codecContext.formatContext())
++                        .value_or(AVContextDuration::zero()));
 +        start = TrackPosition(*pts + qint64(subtitle.start_display_time) * 1000) - contextOffset;
 +        // VIVACE FIX 2026-08-17, PART 3 (real Blu-ray disc testing found
 +        // Part 2's fixed-cap approach below was itself broken -- see that
@@ -1453,74 +1444,48 @@ index 8f9b203..3426cc0 100644
 +    if (hasUnboundedDuration)
 +        end = start + TrackDuration(1);
      //        qCDebug(qLcDecoder) << "    got subtitle (" << start << "--" << end << "):";
-     QString text;
+     QString text = subtitleTextFromAVSubtitle(subtitle);
 +    QImage image;
 +    QRect imageRect;
 +    QSize imageCodedSize;
-     for (uint i = 0; i < subtitle.num_rects; ++i) {
-         const auto *r = subtitle.rects[i];
-         //            qCDebug(qLcDecoder) << "    subtitletext:" << r->text << "/" << r->ass;
-+        if (r->type == SUBTITLE_BITMAP) {
-+            // Bitmap-type rects (DVD/PGS/DVB subtitles) carry neither text
-+            // nor ass -- the decoder already produced an RLE-decoded,
-+            // paletted bitmap instead (data[0]: one palette-index byte per
-+            // pixel; data[1]: nb_colors-entry palette, each entry a native
-+            // 0xAARRGGBB quint32 -- verified against FFmpeg's own
-+            // dvdsubdec.c, matching QImage::Format_ARGB32 exactly with no
-+            // byte-swapping needed). Only the first bitmap rect in the
-+            // event is converted; combining multiple simultaneous bitmap
-+            // rects into one image isn't handled, since these formats
-+            // normally emit exactly one rect per subtitle event.
-+            if (image.isNull() && r->w > 0 && r->h > 0 && r->data[0] && r->data[1]) {
-+                image = QImage(r->w, r->h, QImage::Format_ARGB32);
-+                const auto *palette = reinterpret_cast<const quint32 *>(r->data[1]);
-+                for (int y = 0; y < r->h; ++y) {
-+                    auto *dst = reinterpret_cast<quint32 *>(image.scanLine(y));
-+                    const uint8_t *src = r->data[0] + y * r->linesize[0];
-+                    for (int x = 0; x < r->w; ++x)
-+                        dst[x] = palette[src[x]];
-+                }
-+                image = vivaceSoftenBitmapSubtitle(image);
-+                imageRect = QRect(r->x, r->y, r->w, r->h);
-+                // AVSubtitleRect x/y/w/h are in the subtitle decoder's own
-+                // coded-frame space -- normally the AVCodecContext's
-+                // width/height (set from the container/stream's declared
-+                // subtitle-plane resolution, e.g. the DVD VOB's video size
-+                // for dvdsub). Fall back to the rect's own extent (as if it
-+                // filled the whole coded frame) when the codec context has
-+                // no size at all, rather than leaving it at (0,0) and
-+                // making every consumer divide by zero.
-+                const AVCodecContext *avctx = m_codecContext.context();
-+                imageCodedSize = (avctx->width > 0 && avctx->height > 0)
-+                        ? QSize(avctx->width, avctx->height)
-+                        : QSize(r->x + r->w, r->y + r->h);
-+            }
++    for (const AVSubtitleRect *r : QSpan(subtitle.rects, subtitle.num_rects)) {
++        if (r->type != SUBTITLE_BITMAP)
 +            continue;
++        // Bitmap-type rects (DVD/PGS/DVB subtitles) carry neither text nor
++        // ass -- the decoder already produced an RLE-decoded, paletted
++        // bitmap instead (data[0]: one palette-index byte per pixel;
++        // data[1]: nb_colors-entry palette, each entry a native 0xAARRGGBB
++        // quint32 -- verified against FFmpeg's own dvdsubdec.c, matching
++        // QImage::Format_ARGB32 exactly with no byte-swapping needed). Only
++        // the first usable bitmap rect in the event is converted; combining
++        // multiple simultaneous bitmap rects into one image isn't handled,
++        // since these formats normally emit exactly one rect per subtitle
++        // event.
++        if (r->w <= 0 || r->h <= 0 || !r->data[0] || !r->data[1])
++            continue;
++        image = QImage(r->w, r->h, QImage::Format_ARGB32);
++        const auto *palette = reinterpret_cast<const quint32 *>(r->data[1]);
++        for (int y = 0; y < r->h; ++y) {
++            auto *dst = reinterpret_cast<quint32 *>(image.scanLine(y));
++            const uint8_t *src = r->data[0] + y * r->linesize[0];
++            for (int x = 0; x < r->w; ++x)
++                dst[x] = palette[src[x]];
 +        }
-         if (i)
-             text += QLatin1Char('\n');
-         if (r->text)
-             text += QString::fromUtf8(r->text);
--        else {
-+        else if (r->ass) {
-             const char *ass = r->ass;
-             int nCommas = 0;
-             while (*ass) {
-@@ -253,6 +486,11 @@ void StreamDecoder::decodeSubtitle(const Packet &packet)
-             }
-             text += QString::fromUtf8(ass);
-         }
-+        // else: neither text, ass, nor a bitmap rect for this one -- nothing
-+        // to show for it. (Upstream unconditionally dereferenced r->ass in
-+        // this branch with no null check, which is what actually crashed on
-+        // bitmap-type rects before the SUBTITLE_BITMAP branch above existed
-+        // to intercept them first.)
-     }
-     text.replace(QLatin1String("\\N"), QLatin1String("\n"));
-     text.replace(QLatin1String("\\n"), QLatin1String("\n"));
-@@ -260,10 +498,22 @@ void StreamDecoder::decodeSubtitle(const Packet &packet)
-     if (text.endsWith(QLatin1Char('\n')))
-         text.chop(1);
++        image = vivaceSoftenBitmapSubtitle(image);
++        imageRect = QRect(r->x, r->y, r->w, r->h);
++        // AVSubtitleRect x/y/w/h are in the subtitle decoder's own
++        // coded-frame space -- normally the AVCodecContext's width/height
++        // (set from the container/stream's declared subtitle-plane
++        // resolution, e.g. the DVD VOB's video size for dvdsub). Fall back
++        // to the rect's own extent (as if it filled the whole coded frame)
++        // when the codec context has no size at all, rather than leaving it
++        // at (0,0) and making every consumer divide by zero.
++        const AVCodecContext *avctx = m_codecContext.context();
++        imageCodedSize = (avctx->width > 0 && avctx->height > 0)
++                ? QSize(avctx->width, avctx->height)
++                : QSize(r->x + r->w, r->y + r->h);
++        break;
++    }
  
 -    onFrameFound({ m_sessionCtx.offset, text, start, end - start, id() });
 -
@@ -1543,21 +1508,55 @@ index 8f9b203..3426cc0 100644
 +        onFrameFound({ m_sessionCtx.offset, QString(), end, TrackDuration(0), id() });
 +    }
  }
- } // namespace QFFmpeg
  
+ static QString extractSubtitleText(const AVSubtitleRect &r)
+@@ -251,6 +501,12 @@ static QString extractSubtitleText(const AVSubtitleRect &r)
+     if (r.text)
+         return QString::fromUtf8(r.text);
+ 
++    // VIVACE FIX: a rect can carry neither text nor ass (bitmap-type rects
++    // from DVD/PGS/DVB subtitles carry an image instead). Upstream
++    // dereferenced r.ass unconditionally here, crashing on such rects.
++    if (!r.ass)
++        return {};
++
+     const char *ass = r.ass;
+     int nCommas = 0;
+     while (*ass) {
+@@ -266,10 +522,19 @@ static QString extractSubtitleText(const AVSubtitleRect &r)
+ QString subtitleTextFromAVSubtitle(const AVSubtitle &subtitle)
+ {
+     QString text;
++    bool firstTextRect = true;
+ 
+     for (const AVSubtitleRect *r : QSpan(subtitle.rects, subtitle.num_rects)) {
+-        if (r != subtitle.rects[0])
++        // VIVACE: bitmap rects are converted to an image by
++        // StreamDecoder::decodeSubtitle(), not joined into the text --
++        // otherwise a multi-object PGS event would yield stray separator
++        // newlines, i.e. a non-empty (blank) text subtitle drawn over it.
++        if (r->type == SUBTITLE_BITMAP)
++            continue;
++
++        if (!firstTextRect)
+             text += u'\n';
++        firstTextRect = false;
+ 
+         text += extractSubtitleText(*r);
+     }
 diff --git a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegsubtitlerenderer.cpp b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegsubtitlerenderer.cpp
-index 5c5926e..8239c0e 100644
+index 118503989..775dc25e7 100644
 --- a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegsubtitlerenderer.cpp
 +++ b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegsubtitlerenderer.cpp
-@@ -5,6 +5,7 @@
+@@ -4,6 +4,7 @@
+ #include "qffmpegsubtitlerenderer_p.h"
  
- #include "qvideosink.h"
- #include "qdebug.h"
+ #include <QtMultimedia/qvideosink.h>
 +#include <QtCore/qsize.h>
  
  QT_BEGIN_NAMESPACE
  
-@@ -22,24 +23,63 @@ void SubtitleRenderer::setOutput(QVideoSink *sink, bool cleanPrevSink)
+@@ -21,24 +22,63 @@ void SubtitleRenderer::setOutput(QVideoSink *sink, bool cleanPrevSink)
          if (!prev)
              return;
  
@@ -1626,7 +1625,7 @@ index 5c5926e..8239c0e 100644
      return {};
  }
 diff --git a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegsubtitlerenderer_p.h b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegsubtitlerenderer_p.h
-index e615722..773c681 100644
+index e61572276..773c681f3 100644
 --- a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegsubtitlerenderer_p.h
 +++ b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegsubtitlerenderer_p.h
 @@ -36,6 +36,7 @@ public:

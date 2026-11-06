@@ -3,12 +3,13 @@
     SPDX-License-Identifier: GPL-3.0-or-later
 
     Android's "Share" mechanism (ACTION_SEND): lets another app (a browser,
-    etc.) hand Vivace a URL directly via the system Share sheet -- the
-    practical substitute for cross-app drag-and-drop, which Qt's Android
-    platform plugin doesn't support receiving until 6.11.2 (this project
-    pins 6.11.1 -- confirmed directly against the real qtbase source: the
-    C++ platform-side file and its Java-side companion class both only
-    exist starting at the v6.11.2 tag, neither at v6.11.1).
+    etc.) hand Vivace a URL directly via the system Share sheet. It was
+    added as the substitute for cross-app drag-and-drop, which Qt's Android
+    platform plugin can only receive from 6.11.2 on (confirmed against the
+    qtbase source: the platform-side file and its Java companion class first
+    exist at the v6.11.2 tag). Vivace now builds with 6.12; whether its
+    DropArea receives drops from other Android apps hasn't been tested, and
+    Share is still the natural way for a browser to hand over a page URL.
 
     It also handles "Open with" from a file manager (ACTION_VIEW with a
     content:// media or playlist URI), which arrives the same two ways.

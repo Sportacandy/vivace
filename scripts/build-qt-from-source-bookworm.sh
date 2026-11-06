@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Builds a minimal Qt 6.11.1 SDK from source (qtbase + qtshadertools +
+# Builds a minimal Qt 6.12.0 SDK from source (qtbase + qtshadertools +
 # qtdeclarative + qttools) for Vivace's Linux-arm64-on-Debian-12-"bookworm"
 # build. This exists ONLY because Qt's official prebuilt linux_gcc_arm64 kit
 # requires glibc 2.39+ (confirmed against Qt's own docs,
@@ -40,7 +40,7 @@
 set -euo pipefail
 
 PREFIX="${1:?usage: $0 <INSTALL_PREFIX>}"
-QT_TAG="v6.11.1"
+QT_TAG="v6.12.0"
 
 WORK="$(mktemp -d)"
 trap 'rm -rf "$WORK"' EXIT
@@ -73,7 +73,7 @@ for module in "${MODULES[@]}"; do
         # second, PCH-specific way to hit the same underlying memory
         # ceiling. BUILD_WITH_PCH is a real, documented top-level Qt 6
         # CMake option (confirmed against qtbase's own qt_cmdline.cmake at
-        # this exact v6.11.1 tag: `qt_commandline_option(pch TYPE boolean
+        # the v6.11.1 and v6.12.0 tags: `qt_commandline_option(pch TYPE boolean
         # CMAKE_VARIABLE BUILD_WITH_PCH)`, the CMake variable `configure
         # -no-pch` maps to) -- disabling it removes the memory-hungry PCH-
         # generation step entirely (for all 4 modules, not just qtbase),
@@ -94,7 +94,7 @@ for module in "${MODULES[@]}"; do
         # qttools' src/assistant/CMakeLists.txt unconditionally add_subdirectory()s
         # qlitehtml/src whenever FEATURE_assistant is on and Qt::Sql/Qt::PrintSupport
         # exist (both true here, since qtbase above builds with its own defaults) --
-        # confirmed by reading that file at the v6.11.1 tag directly. qlitehtml is a
+        # confirmed by reading that file at the v6.11.1 and v6.12.0 tags. qlitehtml is a
         # separate git submodule the plain `git clone --depth 1` above never fetches,
         # so it fails with "qlitehtml not found." Vivace doesn't ship or need the
         # standalone Assistant help-browser app (only lrelease/lupdate from qttools),

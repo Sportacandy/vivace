@@ -1,4 +1,4 @@
-# Builds qtmultimedia from source (tag v6.11.1, all patches\*.patch applied)
+# Builds qtmultimedia from source (tag v6.12.0, all patches\*.patch applied)
 # against an ALREADY-INSTALLED official Qt kit, in place -- overwriting that
 # kit's own Qt6Multimedia.dll, Qt6MultimediaQuick.dll, and
 # plugins\multimedia\ffmpegmediaplugin.dll. Also deploys the matching
@@ -20,7 +20,7 @@
 # robust "build against the exact kit that will run it" approach too.
 #
 # Usage: build-patched-qtmultimedia-windows.ps1 -QtDir <QT_ROOT_DIR> [-RepoRoot <repo-root>]
-#   QtDir:    an aqtinstall/install-qt-action (or equivalent) Qt 6.11.1
+#   QtDir:    an aqtinstall/install-qt-action (or equivalent) Qt 6.12.0
 #             win64_msvc2022_64 kit that already has the qtmultimedia
 #             module installed -- this REBUILDS qtmultimedia in place, it
 #             does not add the module from nothing, and needs the kit's
@@ -96,9 +96,9 @@ try {
         throw "Could not locate the extracted FFmpeg root under $ffmpegExtract"
     }
 
-    Write-Host "== Cloning qtmultimedia v6.11.1 =="
+    Write-Host "== Cloning qtmultimedia v6.12.0 =="
     $qtmmSrc = Join-Path $work "qtmultimedia"
-    git clone --branch v6.11.1 --depth 1 https://github.com/qt/qtmultimedia.git $qtmmSrc
+    git clone --branch v6.12.0 --depth 1 https://github.com/qt/qtmultimedia.git $qtmmSrc
     if ($LASTEXITCODE -ne 0) { throw "git clone failed" }
 
     Write-Host "== Applying patches =="

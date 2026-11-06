@@ -21,7 +21,7 @@ jobs:
       - name: Install Qt
         uses: jurplel/install-qt-action@v4
         with:
-          version: '6.11.1'
+          version: '6.12.0'
           arch: 'win64_msvc2022_64'
           modules: 'qtmultimedia qtshadertools qtwebengine qtpositioning qtwebchannel'
           # See build.yml for why this is needed: aqtinstall's last PyPI
@@ -132,7 +132,7 @@ jobs:
       - name: Install Qt
         uses: jurplel/install-qt-action@v4
         with:
-          version: '6.11.1'
+          version: '6.12.0'
           arch: 'linux_gcc_64'
           # The Wayland client platform plugin already ships inside this
           # base linux_gcc_64 package (no separate "qtwayland" add-on
@@ -198,7 +198,7 @@ jobs:
       - name: Install Qt
         uses: jurplel/install-qt-action@v4
         with:
-          version: '6.11.1'
+          version: '6.12.0'
           arch: 'linux_gcc_arm64'
           modules: 'qtmultimedia qtshadertools qtwebengine qtpositioning qtwebchannel'
           aqtsource: 'git+https://github.com/miurahr/aqtinstall.git@8c3695d4a4e1ceabf6a74dc6c79681656dc6b74b'
@@ -238,7 +238,7 @@ jobs:
     # container (native on this arm64 host, no QEMU) produces binaries that
     # only need glibc 2.36, which Raspberry Pi OS already has. Debian's apt
     # only carries Qt 6.4.2 (too old for this project's qtmultimedia patches,
-    # which are diffs against v6.11.1 and reference 6.11-specific internals),
+    # which are diffs against v6.12.0 and reference 6.12-specific internals),
     # so this builds qtbase/qtshadertools/qtdeclarative/qttools from source
     # too, not just qtmultimedia -- see scripts/build-qt-from-source-
     # bookworm.sh's own header comment for why it's plain `cmake`, not Qt's
@@ -283,7 +283,7 @@ jobs:
           path: /opt/qt6
           key: qt6-bookworm-arm64-${{ hashFiles('patches/qtmultimedia-*.patch', 'scripts/build-qt-from-source-bookworm.sh', 'scripts/build-patched-qtmultimedia-linux.sh', '.github/workflows/nightly.yml') }}
 
-      - name: Build Qt 6.11.1 base SDK from source (qtbase + qtshadertools + qtdeclarative + qttools)
+      - name: Build Qt 6.12.0 base SDK from source (qtbase + qtshadertools + qtdeclarative + qttools)
         if: steps.qt-cache.outputs.cache-hit != 'true'
         run: |
           chmod +x scripts/build-qt-from-source-bookworm.sh
@@ -322,7 +322,7 @@ jobs:
       - name: Install Qt
         uses: jurplel/install-qt-action@v4
         with:
-          version: '6.11.1'
+          version: '6.12.0'
           arch: 'clang_64'
           modules: 'qtmultimedia qtshadertools qtwebengine qtpositioning qtwebchannel'
 
@@ -421,7 +421,7 @@ jobs:
       - name: Install host Qt (for cross-compiling)
         uses: jurplel/install-qt-action@v4
         with:
-          version: '6.11.1'
+          version: '6.12.0'
           arch: linux_gcc_64
           # qtwebview added 2026-09-24 (CI fix): CMakeLists.txt's Android-only
           # embedded-YouTube-login feature unconditionally does
@@ -441,7 +441,7 @@ jobs:
       - name: Install Android Qt
         uses: jurplel/install-qt-action@v4
         with:
-          version: '6.11.1'
+          version: '6.12.0'
           host: all_os
           target: android
           arch: android_arm64_v8a

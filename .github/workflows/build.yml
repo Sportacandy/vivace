@@ -77,7 +77,7 @@ jobs:
       - name: Install Qt
         uses: jurplel/install-qt-action@v4
         with:
-          version: '6.11.1'
+          version: '6.12.0'
           arch: ${{ matrix.qt-arch }}
           modules: 'qtmultimedia qtshadertools qtwebengine qtpositioning qtwebchannel'
           # aqtinstall's last PyPI release (3.3.0) predates Qt 6.11's repository
@@ -177,7 +177,7 @@ jobs:
       - name: Install host Qt (for cross-compiling)
         uses: jurplel/install-qt-action@v4
         with:
-          version: '6.11.1'
+          version: '6.12.0'
           arch: linux_gcc_64
           # qtwebview added 2026-09-24 (CI fix): CMakeLists.txt's Android-only
           # embedded-YouTube-login feature unconditionally does
@@ -204,18 +204,18 @@ jobs:
       - name: Install Android Qt
         # CI FIX 2026-09-20 (real run failed here): install-qt-action
         # defaults the `host` input to the runner's own OS ("linux") unless
-        # told otherwise -- but Qt 6.11.1's Android packages are published
+        # told otherwise -- but Qt 6.12.0's Android packages are published
         # ONLY under the host-independent "all_os" directory on Qt's own
         # repository (confirmed directly: download.qt.io/online/
         # qtsdkrepository/linux_x64/android/ tops out at qt6_663 (6.6.3);
-        # .../all_os/android/ has qt6_6111). Without this, aqt's version
-        # lookup ("aqt list-qt linux android --spec 6.11.1 --latest-version")
+        # .../all_os/android/ has qt6_6120). Without this, aqt's version
+        # lookup ("aqt list-qt linux android --spec 6.12.0 --latest-version")
         # returns "No latest version available for this request" and the
         # step fails before any Qt is installed (real log:
         # media/build-android-log-20260920T121700.txt).
         uses: jurplel/install-qt-action@v4
         with:
-          version: '6.11.1'
+          version: '6.12.0'
           host: all_os
           target: android
           arch: android_arm64_v8a

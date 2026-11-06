@@ -1,10 +1,12 @@
 Qt module:   qtmultimedia
-Base tag:    v6.11.1 (qffmpegaudioframeconverter.cpp HEAD at the time of
-             writing: 9a3c39ec39dfe375fe0d6e4008eb1c3cd5c8738d, 2026-03-31)
+Base tag:    v6.12.0
 Applies to:  src/plugins/multimedia/ffmpeg/CMakeLists.txt,
              src/plugins/multimedia/ffmpeg/playbackengine/
                qffmpegaudioframeconverter.cpp,
              src/3rdparty/soundtouch/ (new, vendored)
+
+Port to v6.12.0 (2026-10-24): the patch applies to v6.12.0 without
+changes.
 
 Why: at large playback-rate stretch ratios, Qt's pitch compensation
 (qffmpegaudioframeconverter.cpp's PitchShiftingAudioFrameConverter)
@@ -1021,7 +1023,7 @@ index 000000000..4350dfa20
 +
 diff --git a/src/3rdparty/soundtouch/include/STTypes.h b/src/3rdparty/soundtouch/include/STTypes.h
 new file mode 100644
-index 000000000..41304c589
+index 000000000..afd94593e
 --- /dev/null
 +++ b/src/3rdparty/soundtouch/include/STTypes.h
 @@ -0,0 +1,204 @@
@@ -3654,7 +3656,7 @@ index 000000000..b403917a3
 +
 diff --git a/src/3rdparty/soundtouch/source/SoundTouch/RateTransposer.cpp b/src/3rdparty/soundtouch/source/SoundTouch/RateTransposer.cpp
 new file mode 100644
-index 0000000..9eebd2d
+index 000000000..9eebd2d04
 --- /dev/null
 +++ b/src/3rdparty/soundtouch/source/SoundTouch/RateTransposer.cpp
 @@ -0,0 +1,330 @@
@@ -7057,10 +7059,10 @@ index 000000000..702a5d2de
 +#endif  // SOUNDTOUCH_ALLOW_SSE
 +
 diff --git a/src/plugins/multimedia/ffmpeg/CMakeLists.txt b/src/plugins/multimedia/ffmpeg/CMakeLists.txt
-index 24733b13f..5b018ce2a 100644
+index 643613fbc..5d2de5037 100644
 --- a/src/plugins/multimedia/ffmpeg/CMakeLists.txt
 +++ b/src/plugins/multimedia/ffmpeg/CMakeLists.txt
-@@ -76,6 +76,19 @@ qt_internal_add_module(FFmpegMediaPluginImplPrivate
+@@ -78,6 +78,19 @@ qt_internal_add_module(FFmpegMediaPluginImplPrivate
          recordingengine/qffmpegvideoencoderutils.cpp
          recordingengine/qffmpegvideoframeencoder_p.h
          recordingengine/qffmpegvideoframeencoder.cpp
@@ -7080,7 +7082,7 @@ index 24733b13f..5b018ce2a 100644
      NO_GENERATE_CPP_EXPORTS
      DEFINES
          QT_NO_CAST_FROM_ASCII
-@@ -90,8 +103,11 @@ qt_internal_add_module(FFmpegMediaPluginImplPrivate
+@@ -92,8 +105,11 @@ qt_internal_add_module(FFmpegMediaPluginImplPrivate
  
      SYSTEM_INCLUDE_DIRECTORIES
          ../../../3rdparty/signalsmith-stretch/
@@ -7093,7 +7095,7 @@ index 24733b13f..5b018ce2a 100644
  
  if (LINUX OR ANDROID)
 diff --git a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegaudioframeconverter.cpp b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegaudioframeconverter.cpp
-index 6d79fd63f..04ef5e284 100644
+index f459a87e8..1bdf1353e 100644
 --- a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegaudioframeconverter.cpp
 +++ b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegaudioframeconverter.cpp
 @@ -13,7 +13,42 @@

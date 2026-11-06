@@ -1,11 +1,18 @@
 Qt module:   qtmultimedia
-Base tag:    v6.11.1
+Base tag:    v6.12.0
 Applies to:  src/multimedia/configure.cmake,
              src/plugins/multimedia/ffmpeg/CMakeLists.txt,
              src/plugins/multimedia/ffmpeg/playbackengine/qffmpegdeinterlacer.cpp (new),
              src/plugins/multimedia/ffmpeg/playbackengine/qffmpegdeinterlacer_p.h (new),
              src/plugins/multimedia/ffmpeg/playbackengine/qffmpegvideorenderer.cpp,
              src/plugins/multimedia/ffmpeg/playbackengine/qffmpegvideorenderer_p.h
+
+Port to v6.12.0 (2026-10-24): v6.12.0 removes the component list from
+the qt_find_package(FFmpeg ...) call in configure.cmake. Without a
+component list, FindFFmpeg.cmake searches only AVCODEC, AVFORMAT,
+AVUTIL, SWSCALE, and SWRESAMPLE, so the FFmpeg::avfilter target does
+not exist. The patch adds the full component list again, with
+AVFILTER.
 
 Adds optional software deinterlacing (yadif/bwdif) for the FFmpeg playback
 path, since Qt Multimedia has neither an avfilter/filter-graph stage nor
@@ -375,22 +382,25 @@ per player) -- direct evidence the preview player's own VideoRenderer
 never constructs a Deinterlacer at all anymore.
 
 diff --git a/src/multimedia/configure.cmake b/src/multimedia/configure.cmake
-index 8757b84..be0f105 100644
+index 5e3c31d42..0f9415db5 100644
 --- a/src/multimedia/configure.cmake
 +++ b/src/multimedia/configure.cmake
-@@ -70,7 +70,10 @@ if (DEFINED FFMPEG_DIR)
+@@ -70,7 +70,13 @@ if (DEFINED FFMPEG_DIR)
      set(ffmpeg_required REQUIRED)
  endif()
  
--qt_find_package(FFmpeg OPTIONAL_COMPONENTS AVCODEC AVFORMAT AVUTIL SWRESAMPLE SWSCALE PROVIDED_TARGETS FFmpeg::avcodec FFmpeg::avformat FFmpeg::avutil FFmpeg::swresample FFmpeg::swscale MODULE_NAME multimedia QMAKE_LIB ffmpeg ${ffmpeg_required})
+-qt_find_package(FFmpeg PROVIDED_TARGETS FFmpeg::avcodec FFmpeg::avformat FFmpeg::avutil FFmpeg::swresample FFmpeg::swscale MODULE_NAME multimedia QMAKE_LIB ffmpeg ${ffmpeg_required})
 +# AVFILTER (vivace): needed for the custom deinterlace patch's yadif/bwdif
 +# avfilter graph, spliced into the FFmpeg plugin's VideoRenderer -- see
 +# src/plugins/multimedia/ffmpeg/playbackengine/qffmpegdeinterlacer.cpp.
-+qt_find_package(FFmpeg OPTIONAL_COMPONENTS AVCODEC AVFORMAT AVUTIL SWRESAMPLE SWSCALE AVFILTER PROVIDED_TARGETS FFmpeg::avcodec FFmpeg::avformat FFmpeg::avutil FFmpeg::swresample FFmpeg::swscale FFmpeg::avfilter MODULE_NAME multimedia QMAKE_LIB ffmpeg ${ffmpeg_required})
++# FindFFmpeg.cmake only searches its default component list (AVCODEC
++# AVFORMAT AVUTIL SWSCALE SWRESAMPLE) when none are passed, so the full
++# list has to be spelled out here for FFmpeg::avfilter to exist.
++qt_find_package(FFmpeg OPTIONAL_COMPONENTS AVCODEC AVFORMAT AVUTIL SWSCALE SWRESAMPLE AVFILTER PROVIDED_TARGETS FFmpeg::avcodec FFmpeg::avformat FFmpeg::avutil FFmpeg::swresample FFmpeg::swscale FFmpeg::avfilter MODULE_NAME multimedia QMAKE_LIB ffmpeg ${ffmpeg_required})
  qt_find_package_extend_sbom(
      TARGETS
          FFmpeg::avcodec
-@@ -78,6 +81,7 @@ qt_find_package_extend_sbom(
+@@ -78,6 +84,7 @@ qt_find_package_extend_sbom(
          FFmpeg::avutil
          FFmpeg::swresample
          FFmpeg::swscale
@@ -399,7 +409,7 @@ index 8757b84..be0f105 100644
      ATTRIBUTION_FILE_DIR_PATHS
          # Need to pass an absolute path here, otherwise the file will be relative to the root of
 diff --git a/src/plugins/multimedia/ffmpeg/CMakeLists.txt b/src/plugins/multimedia/ffmpeg/CMakeLists.txt
-index 24733b1..22703b7 100644
+index 643613fbc..257f8c4bc 100644
 --- a/src/plugins/multimedia/ffmpeg/CMakeLists.txt
 +++ b/src/plugins/multimedia/ffmpeg/CMakeLists.txt
 @@ -45,6 +45,7 @@ qt_internal_add_module(FFmpegMediaPluginImplPrivate
@@ -410,7 +420,7 @@ index 24733b1..22703b7 100644
          playbackengine/qffmpegsubtitlerenderer.cpp playbackengine/qffmpegsubtitlerenderer_p.h
          playbackengine/qffmpegtime_p.h
          playbackengine/qffmpegtimecontroller.cpp playbackengine/qffmpegtimecontroller_p.h
-@@ -275,7 +276,10 @@ endif()
+@@ -278,7 +279,10 @@ endif()
  
  
  # TODO: get libs from FindFFmpeg.cmake
@@ -424,7 +434,7 @@ index 24733b1..22703b7 100644
      message(FATAL_ERROR "QT_DEPLOY_FFMPEG is not implemented yet for static builds")
 diff --git a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegdeinterlacer.cpp b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegdeinterlacer.cpp
 new file mode 100644
-index 0000000..9869393
+index 000000000..0fad873cf
 --- /dev/null
 +++ b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegdeinterlacer.cpp
 @@ -0,0 +1,194 @@
@@ -624,7 +634,7 @@ index 0000000..9869393
 +QT_END_NAMESPACE
 diff --git a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegdeinterlacer_p.h b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegdeinterlacer_p.h
 new file mode 100644
-index 0000000..fa6b5fa
+index 000000000..fa6b5fa19
 --- /dev/null
 +++ b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegdeinterlacer_p.h
 @@ -0,0 +1,147 @@
@@ -776,19 +786,19 @@ index 0000000..fa6b5fa
 +
 +#endif // QFFMPEGDEINTERLACER_P_H
 diff --git a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegvideorenderer.cpp b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegvideorenderer.cpp
-index 83792ce..8f1a2b3 100644
+index 1cb24c91b..5282da36f 100644
 --- a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegvideorenderer.cpp
 +++ b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegvideorenderer.cpp
-@@ -6,6 +6,8 @@
- #include "qvideosink.h"
- #include "private/qvideoframe_p.h"
+@@ -8,6 +8,8 @@
+ #include <QtMultimedia/qvideosink.h>
+ #include <QtMultimedia/private/qvideoframe_p.h>
  
 +#include <QtCore/qglobal.h>
 +
  QT_BEGIN_NAMESPACE
  
  namespace QFFmpeg {
-@@ -36,6 +38,8 @@ VideoRenderer::RenderingResult VideoRenderer::renderInternal(Frame frame)
+@@ -38,6 +40,8 @@ VideoRenderer::RenderingResult VideoRenderer::renderInternal(Frame frame)
          return {};
  
      if (!frame.isValid()) {
@@ -797,7 +807,7 @@ index 83792ce..8f1a2b3 100644
          m_sink->setVideoFrame({});
          return {};
      }
-@@ -45,6 +49,125 @@ VideoRenderer::RenderingResult VideoRenderer::renderInternal(Frame frame)
+@@ -47,6 +51,125 @@ VideoRenderer::RenderingResult VideoRenderer::renderInternal(Frame frame)
      const auto codecContext = frame.codecContext();
      Q_ASSERT(codecContext);
  
@@ -923,7 +933,7 @@ index 83792ce..8f1a2b3 100644
  #ifdef Q_OS_ANDROID
      // QTBUG-108446
      // In general case, just creation of frames context is not correct since
-@@ -80,6 +203,16 @@ VideoRenderer::RenderingResult VideoRenderer::renderInternal(Frame frame)
+@@ -82,6 +205,16 @@ VideoRenderer::RenderingResult VideoRenderer::renderInternal(Frame frame)
      return {};
  }
  
@@ -941,7 +951,7 @@ index 83792ce..8f1a2b3 100644
  
  QT_END_NAMESPACE
 diff --git a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegvideorenderer_p.h b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegvideorenderer_p.h
-index e9bbb3f..60e76f5 100644
+index e9bbb3f3e..60e76f58d 100644
 --- a/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegvideorenderer_p.h
 +++ b/src/plugins/multimedia/ffmpeg/playbackengine/qffmpegvideorenderer_p.h
 @@ -15,10 +15,13 @@

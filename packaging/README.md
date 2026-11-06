@@ -34,7 +34,7 @@ and `meta/license.txt` (copied from the repo `LICENSE`).
 
 ## Prerequisites
 
-- The matching Qt 6.11.x kit (MSVC 2022 on Windows, gcc_64 on Linux, macos on
+- The matching Qt 6.12.x kit (MSVC 2022 on Windows, gcc_64 on Linux, macos on
   macOS).
 - **NSIS** (Windows default) — install from https://nsis.sourceforge.io;
   `makensis.exe` is auto-detected under `Program Files\NSIS` (or pass `-NsisDir`).
@@ -48,18 +48,18 @@ and `meta/license.txt` (copied from the repo `LICENSE`).
 
 ```powershell
 # Windows (PowerShell) — NSIS installer (default) -> VivaceSetup-Release.exe
-packaging\windows\build_installer.ps1 -QtDir C:/Qt/6.11.1/msvc2022_64
+packaging\windows\build_installer.ps1 -QtDir C:/Qt/6.12.0/msvc2022_64
 # Windows — Qt IFW installer instead -> VivaceSetup-Release-IFW.exe
-packaging\windows\build_installer.ps1 -Installer IFW -QtDir C:/Qt/6.11.1/msvc2022_64
+packaging\windows\build_installer.ps1 -Installer IFW -QtDir C:/Qt/6.12.0/msvc2022_64
 ```
 ```bash
 # Linux — IFW installer, or a .tar.gz with --tarball
-QT_DIR=~/Qt/6.11.1/gcc_64 packaging/linux/build_installer.sh
-QT_DIR=~/Qt/6.11.1/gcc_64 packaging/linux/build_installer.sh --tarball
+QT_DIR=~/Qt/6.12.0/gcc_64 packaging/linux/build_installer.sh
+QT_DIR=~/Qt/6.12.0/gcc_64 packaging/linux/build_installer.sh --tarball
 
 # macOS — IFW installer, or a .dmg with --dmg
-QT_DIR=~/Qt/6.11.1/macos packaging/macos/build_installer.sh
-QT_DIR=~/Qt/6.11.1/macos packaging/macos/build_installer.sh --dmg
+QT_DIR=~/Qt/6.12.0/macos packaging/macos/build_installer.sh
+QT_DIR=~/Qt/6.12.0/macos packaging/macos/build_installer.sh --dmg
 ```
 
 Each produces `VivaceSetup-*` / `Vivace-linux-$(uname -m).tar.gz` (`x86_64`

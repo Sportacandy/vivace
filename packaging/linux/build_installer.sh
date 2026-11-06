@@ -19,7 +19,7 @@
 #     a fully static build) -- a plain tarball is enough for this stage.
 #
 # Prerequisites:
-#   * Qt 6.11.x gcc_64 kit.
+#   * Qt 6.12.x gcc_64 kit.
 #   * Patchelf (used by the CMake deploy to fix rpaths).
 #   * Qt Installer Framework (binarycreator) via the Qt Maintenance Tool --
 #     only needed without --tarball.
@@ -30,7 +30,7 @@ set -euo pipefail
 MODE="ifw"
 [ "${1:-}" = "--tarball" ] && MODE="tarball"
 
-QT_DIR="${QT_DIR:-$HOME/Qt/6.11.1/gcc_64}"
+QT_DIR="${QT_DIR:-$HOME/Qt/6.12.0/gcc_64}"
 IFW_DIR="${IFW_DIR:-}"
 # Capped, not a plain nproc: GitHub's standard Linux runner (4 vCPU/16GB) hit
 # a silent OOM kill (gmake "Error 2", no compiler/linker diagnostic at all)

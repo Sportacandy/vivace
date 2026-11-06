@@ -23,7 +23,7 @@ set -euo pipefail
 MODE="ifw"
 [ "${1:-}" = "--dmg" ] && MODE="dmg"
 
-QT_DIR="${QT_DIR:-$HOME/Qt/6.11.1/macos}"
+QT_DIR="${QT_DIR:-$HOME/Qt/6.12.0/macos}"
 IFW_DIR="${IFW_DIR:-}"
 
 here="$(cd "$(dirname "$0")" && pwd)"

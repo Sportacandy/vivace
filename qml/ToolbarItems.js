@@ -1,3 +1,4 @@
+.pragma library
 /*  Vivace — a fast, pure-Qt media player.
     Copyright (C) 2026 Hironori Komaba
     SPDX-License-Identifier: GPL-3.0-or-later
@@ -8,7 +9,6 @@
     the data-driven MainToolBar / ControlBar and by Preferences > Toolbars
     (PrefToolsPage.qml)'s embedded dual-list editor.
 */
-.pragma library
 
 // kind: "button" (icon action), "menu" (popup button), "slider" (stretch),
 // "spacer" (stretch filler), "separator".

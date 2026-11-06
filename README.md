@@ -219,7 +219,7 @@ To get AV1 support elsewhere (Linux/macOS, or a Vivace you build yourself):
 **Windows/Linux quick path**: run
 [`scripts/build-patched-qtmultimedia-windows.ps1`](scripts/build-patched-qtmultimedia-windows.ps1) /
 [`scripts/build-patched-qtmultimedia-linux.sh`](scripts/build-patched-qtmultimedia-linux.sh)
-against your own Qt 6.11.1 install (`msvc2022_64` / `gcc_64`) — the same
+against your own Qt 6.12.0 install (`msvc2022_64` / `gcc_64`) — the same
 scripts CI itself now uses. Each one downloads a dav1d-enabled FFmpeg,
 clones `qtmultimedia` at the matching tag, applies all four patches
 (AV1, speed/pitch compensation, bitmap subtitles, deinterlacing), and
@@ -587,7 +587,7 @@ window taller or scroll down if a section seems to be missing.
 ## Building
 
 ```
-cmake -S . -B build -DCMAKE_PREFIX_PATH=C:/Qt/6.11.1/msvc2022_64
+cmake -S . -B build -DCMAKE_PREFIX_PATH=C:/Qt/6.12.0/msvc2022_64
 cmake --build build --config Release
 ```
 
@@ -629,20 +629,20 @@ Build the installer — pick the backend you want:
 
 ```powershell
 # Windows (PowerShell) — NSIS (default)          -> VivaceSetup-Release.exe
-packaging\windows\build_installer.ps1 -QtDir C:/Qt/6.11.1/msvc2022_64
+packaging\windows\build_installer.ps1 -QtDir C:/Qt/6.12.0/msvc2022_64
 
 # Windows — Qt Installer Framework instead        -> VivaceSetup-Release-IFW.exe
-packaging\windows\build_installer.ps1 -Installer IFW -QtDir C:/Qt/6.11.1/msvc2022_64 `
+packaging\windows\build_installer.ps1 -Installer IFW -QtDir C:/Qt/6.12.0/msvc2022_64 `
     -IfwDir C:/Qt/Tools/QtInstallerFramework/<ver>/bin
 ```
 ```bash
 # Linux — Qt Installer Framework installer, or a .tar.gz with --tarball
-QT_DIR=~/Qt/6.11.1/gcc_64 packaging/linux/build_installer.sh
-QT_DIR=~/Qt/6.11.1/gcc_64 packaging/linux/build_installer.sh --tarball
+QT_DIR=~/Qt/6.12.0/gcc_64 packaging/linux/build_installer.sh
+QT_DIR=~/Qt/6.12.0/gcc_64 packaging/linux/build_installer.sh --tarball
 
 # macOS — Qt Installer Framework installer, or a .dmg with --dmg
-QT_DIR=~/Qt/6.11.1/macos packaging/macos/build_installer.sh
-QT_DIR=~/Qt/6.11.1/macos packaging/macos/build_installer.sh --dmg
+QT_DIR=~/Qt/6.12.0/macos packaging/macos/build_installer.sh
+QT_DIR=~/Qt/6.12.0/macos packaging/macos/build_installer.sh --dmg
 ```
 
 `-NsisDir`, `-IfwDir` (and `IFW_DIR` on Unix) are auto-detected if omitted. Each

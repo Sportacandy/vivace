@@ -1,7 +1,11 @@
 Qt module:   qtmultimedia
-Base tag:    v6.11.1 (qtmultimedia HEAD at the time of writing:
-             43b808343682048d5170499217cf8a0f80e421aa, 2025-10-28)
+Base tag:    v6.12.0
 Applies to:  src/plugins/multimedia/ffmpeg/qffmpegcodecstorage.cpp
+
+Port to v6.12.0 (2026-10-24): v6.12.0 adds an Android MediaCodec
+allow-list check to isCodecValid() at the location of this patch. The
+AV1 check is now immediately before that new check. The logic of the
+patch did not change.
 
 Why: AV1 hardware-accelerated decode (via D3D11VA, at least on this
 machine's GPU/driver) hangs and leaks memory rather than failing cleanly,
@@ -36,10 +40,10 @@ patches/qtmultimedia-av1-hwaccel-disable.patch (or `patch -p1 <
 Qt) and Vivace.
 
 diff --git a/src/plugins/multimedia/ffmpeg/qffmpegcodecstorage.cpp b/src/plugins/multimedia/ffmpeg/qffmpegcodecstorage.cpp
-index b297d16aa..249353373 100644
+index d924a0817..e954e00dc 100644
 --- a/src/plugins/multimedia/ffmpeg/qffmpegcodecstorage.cpp
 +++ b/src/plugins/multimedia/ffmpeg/qffmpegcodecstorage.cpp
-@@ -191,6 +191,15 @@ bool isCodecValid(const Codec &codec, const std::vector<AVHWDeviceType> &availab
+@@ -159,6 +159,15 @@ bool isCodecValid(const Codec &codec, QSpan<const AVHWDeviceType> availableHwDev
      if (codec.type() != AVMEDIA_TYPE_VIDEO)
          return true;
  
@@ -52,6 +56,6 @@ index b297d16aa..249353373 100644
 +        && codec.name() != QLatin1StringView("libdav1d"))
 +        return false;
 +
-     const auto pixelFormats = codec.pixelFormats();
-     if (pixelFormats.empty()) {
- #if defined(Q_OS_LINUX) || defined(Q_OS_ANDROID)
+     const bool isHardwareCodec = codec.capabilities() & AV_CODEC_CAP_HARDWARE;
+ 
+     if (codecAvailableOnDevice && isHardwareCodec) {

@@ -12,7 +12,7 @@
     into the standard bin/ + plugins/ + qml/ layout).
 
     Prerequisites:
-      * Qt 6.11.x MSVC 2022 kit.
+      * Qt 6.12.x MSVC 2022 kit.
       * NSIS (makensis) for the default backend — https://nsis.sourceforge.io
         (auto-detected under Program Files; or pass -NsisDir).
       * Qt Installer Framework (binarycreator) for -Installer IFW — install via
@@ -21,11 +21,11 @@
     Usage:
       pwsh packaging/windows/build_installer.ps1                 # NSIS (default)
       pwsh packaging/windows/build_installer.ps1 -Installer IFW
-          [-QtDir C:/Qt/6.11.1/msvc2022_64] [-NsisDir ...] [-IfwDir ...]
+          [-QtDir C:/Qt/6.12.0/msvc2022_64] [-NsisDir ...] [-IfwDir ...]
 #>
 param(
     [ValidateSet("NSIS", "IFW")][string]$Installer = "NSIS",
-    [string]$QtDir      = "C:/Qt/6.11.1/msvc2022_64",
+    [string]$QtDir      = "C:/Qt/6.12.0/msvc2022_64",
     [string]$NsisDir    = "",
     [string]$IfwDir     = "",
     [string]$Config     = "Release",
