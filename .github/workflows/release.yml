@@ -29,6 +29,10 @@ jobs:
           # release (3.3.0) predates Qt 6.11's repository restructuring.
           aqtsource: 'git+https://github.com/miurahr/aqtinstall.git@8c3695d4a4e1ceabf6a74dc6c79681656dc6b74b'        
 
+      - name: Fix Qt 6.12.0 QtWebEngine import (see the script for details)
+        shell: pwsh
+        run: python scripts/fix-qtwebengine-import-windows.py "$env:QT_ROOT_DIR\bin\Qt6WebEngineCore.dll"
+
       - name: Install Meson/Ninja (needed to build libbluray from source for Blu-ray Disc playback)
         shell: pwsh
         run: |
