@@ -17,6 +17,13 @@ is also published from the tip of `main` between tagged releases. See
 
 ## Status
 
+**v0.6.1** — On Android, this release fixes opening files from other
+apps. Vivace is now listed under **Share** for media and playlist files,
+and under **Open with** for network files in file managers such as CX
+File Explorer. Files with spaces or non-ASCII characters in their names
+now open, and opening a file while Vivace runs no longer restarts Vivace
+and loses the file. See CHANGELOG.md for details.
+
 **v0.6.0** — Vivace now uses Qt 6.12.0, with its qtmultimedia patches
 (AV1, speed and pitch compensation, bitmap subtitles, deinterlacing)
 ported to it. On Windows, it fixes three problems: the 0.5.3 release

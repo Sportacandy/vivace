@@ -11,6 +11,28 @@ each get their own entry instead.
 
 ## [Unreleased]
 
+## [0.6.1] — 2026-11-07
+
+### Fixed
+- Android: Vivace wasn't listed under "Share" for video, audio and
+  playlist files. You can now share these files to Vivace from a file
+  manager.
+- Android: Vivace wasn't listed under "Open with" for a file on a network
+  share (SMB or NAS) in file managers that stream such files over HTTP,
+  such as CX File Explorer.
+- Android: a file opened from another app while Vivace was running
+  restarted Vivace, and the file didn't open.
+- Android: a file from another app didn't open if its name had spaces or
+  non-ASCII characters, such as Japanese. Vivace showed "Could not open
+  source device".
+
+### Changed
+- Android: a playlist from another app whose files are all missing now
+  shows "The files in this playlist aren't available" instead of "Could
+  not open file". Some file managers pass only a copy of the playlist
+  file, without the media files it lists. CX File Explorer does this for
+  a playlist on a NAS.
+
 ## [0.6.0] — 2026-11-06
 
 ### Changed
