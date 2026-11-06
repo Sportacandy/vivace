@@ -4,7 +4,7 @@
     <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true"/>
     <!--%%INSERT_FEATURES-->
     <application android:allowBackup="true" android:enableOnBackInvokedCallback="false" android:fullBackupOnly="false" android:hardwareAccelerated="true" android:icon="@mipmap/ic_launcher" android:roundIcon="@mipmap/ic_launcher_round" android:label="-- %%INSERT_APP_NAME%% --" android:name="org.qtproject.qt.android.bindings.QtApplication" android:theme="@style/splashScreenTheme">
-        <activity android:configChanges="orientation|uiMode|screenLayout|screenSize|smallestScreenSize|layoutDirection|locale|fontScale|keyboard|keyboardHidden|navigation|mcc|mnc|density" android:exported="true" android:label="-- %%INSERT_APP_NAME%% --" android:launchMode="singleTop" android:name="org.qtproject.qt.android.bindings.QtActivity" android:screenOrientation="landscape">
+        <activity android:configChanges="orientation|uiMode|screenLayout|screenSize|smallestScreenSize|layoutDirection|locale|fontScale|keyboard|keyboardHidden|navigation|mcc|mnc|density" android:exported="true" android:label="-- %%INSERT_APP_NAME%% --" android:launchMode="singleTask" android:name="org.qtproject.qt.android.bindings.QtActivity" android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -12,23 +12,46 @@
             <!-- Android's "Share" mechanism: lets a browser (or any other
                  app) hand Vivace a page URL directly via the system Share
                  sheet (see src/androidshareintent.h's own comment).
-                 android:launchMode="singleTop" above means a Share while
-                 Vivace is already running delivers via onNewIntent, not a
-                 second activity instance. -->
+                 android:launchMode="singleTask" above means a Share or
+                 "Open with" while Vivace is already running delivers via
+                 onNewIntent, not a second activity instance. singleTop
+                 isn't enough: file managers such as CX File Explorer start
+                 Vivace inside their own task, where singleTop creates a
+                 second activity, and Qt's QtActivityBase.onCreate() then
+                 restarts the whole app with a plain launcher intent,
+                 dropping the file. -->
             <intent-filter>
                 <action android:name="android.intent.action.SEND"/>
                 <category android:name="android.intent.category.DEFAULT"/>
                 <data android:mimeType="text/plain"/>
             </intent-filter>
+            <!-- "Share" of a media or playlist file (a file manager's
+                 Share): the file arrives as a content:// URI in
+                 EXTRA_STREAM, with a read grant like "Open with". -->
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="video/*"/>
+                <data android:mimeType="audio/*"/>
+                <data android:mimeType="application/x-mpegurl"/>
+                <data android:mimeType="application/vnd.apple.mpegurl"/>
+            </intent-filter>
             <!-- "Open with": lists Vivace as a player for media and playlist
-                 files in file managers. Only content:// URIs: since Android 7
-                 apps can't hand each other file:// URIs, and the content://
-                 grant that comes with the intent lets Vivace read the file
-                 without any storage permission. -->
+                 files in file managers. content:// for local files: since
+                 Android 7 apps can't hand each other file:// URIs, and the
+                 content:// grant that comes with the intent lets Vivace read
+                 the file without any storage permission.
+                 http/https: file managers that stream a network (SMB, NAS)
+                 file through their own local HTTP server, such as CX File
+                 Explorer, offer "Open with" for an http://127.0.0.1:... URI.
+                 The media type in the filter keeps Vivace out of the list
+                 for ordinary web links. -->
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>
                 <data android:scheme="content"/>
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
                 <data android:mimeType="video/*"/>
                 <data android:mimeType="audio/*"/>
                 <data android:mimeType="application/x-mpegurl"/>

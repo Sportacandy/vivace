@@ -607,7 +607,7 @@ PlayerController::PlayerController(QObject *parent)
 
     // Learn the playing entry's duration for the playlist's duration column.
     connect(m_player, &QMediaPlayer::durationChanged, this, [this](qint64 d) {
-        if (d > 0 && !m_player->sourceDevice())
+        if (d > 0 && !hasDeviceSource())
             m_playlist->setDuration(m_playlist->currentIndex(), d);
     });
 
@@ -688,6 +688,14 @@ PlayerController::PlayerController(QObject *parent)
 
     connect(m_player, &QMediaPlayer::sourceChanged,
             this, &PlayerController::mediaInfoChanged);
+    // Close a content:// source's file once the player has moved to any
+    // other source (another file, a disc, a stream, or none).
+    connect(m_player, &QMediaPlayer::sourceChanged, this, [this]() {
+        if (m_contentFile && m_player->sourceDevice() != m_contentFile) {
+            m_contentFile->deleteLater();
+            m_contentFile = nullptr;
+        }
+    });
     // A-B markers and external subtitles are per-file; reset on media change.
     connect(m_player, &QMediaPlayer::sourceChanged, this, [this]() {
         m_loadedMediaSetupDone = false;
@@ -1106,6 +1114,22 @@ void PlayerController::open(const QList<QUrl> &urls)
     if (entries.isEmpty())
         return;
 
+    // A playlist handed over by another app (content://) whose media files
+    // are all missing: some file managers pass only a copy of the playlist
+    // file, without the files it lists. CX File Explorer does this for a
+    // playlist on a NAS, so its relative entries resolve against CX's cache
+    // folder, where they don't exist. Say so instead of Qt's generic "Could
+    // not open file", and keep the current playlist.
+    if (openedPlaylist && urls.first().scheme() == QLatin1String("content")
+        && std::all_of(entries.cbegin(), entries.cend(), [](const PlaylistEntry &e) {
+               return e.url.isLocalFile() && !QFileInfo::exists(e.url.toLocalFile());
+           })) {
+        emit errorMessage(tr("The files in this playlist aren't available. The app "
+                             "that opened it passed only the playlist file, not the "
+                             "media files it lists."));
+        return;
+    }
+
     // The in-memory playlist is "backed by" a file only right after loading
     // that file; opening plain media detaches it (see currentPlaylistFile's
     // doc comment in the header).
@@ -1223,7 +1247,28 @@ void PlayerController::playIndex(int index, bool resume)
     }
 
     teardownHttpTsSource(); // leaving a stream for a local/other source
-    m_player->setSource(url);
+    if (scheme == QLatin1String("content")) {
+        // Android content:// URI: open it here from its percent-encoded form.
+        // QMediaPlayer::setSource() opens content:// URIs as
+        // QFile(QUrl::url()), which decodes non-ASCII characters and spaces.
+        // Android grants access to the encoded URI only, so the decoded one
+        // fails its permission check ("openFileDescriptor(): No permission
+        // for URI") for any file whose name isn't plain ASCII, such as a
+        // file shared from CX File Explorer.
+        auto *file = new QFile(url.toString(QUrl::FullyEncoded), this);
+        if (file->open(QIODevice::ReadOnly)) {
+            QFile *previous = m_contentFile;
+            m_contentFile = file;
+            m_player->setSourceDevice(file, url);
+            if (previous)
+                previous->deleteLater(); // the player no longer reads it
+        } else {
+            delete file;
+            m_player->setSource(url); // fails with Qt's own error message
+        }
+    } else {
+        m_player->setSource(url);
+    }
     m_pendingAutoPlay = true;
     m_player->play();
 }
@@ -4410,7 +4455,7 @@ void PlayerController::handleMediaStatus(QMediaPlayer::MediaStatus status)
 
         // Device-based sources (DVD titles) get track preferences only:
         // their hint URL is no good as a recents entry or resume key.
-        if (m_player->sourceDevice()) {
+        if (hasDeviceSource()) {
             // A same-title rebuild (seek / run-boundary advance / chapter
             // jump within it) must PRESERVE whichever audio track was
             // actually playing a moment ago -- including an explicit
@@ -4788,7 +4833,7 @@ void PlayerController::detachCurrentPlaylistFile()
 
 void PlayerController::saveCurrentPosition()
 {
-    if (m_player->sourceDevice())
+    if (hasDeviceSource())
         return; // DVD titles have no stable per-file key yet
 
     const QUrl url = m_player->source();

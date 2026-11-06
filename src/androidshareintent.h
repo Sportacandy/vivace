@@ -12,7 +12,9 @@
     Share is still the natural way for a browser to hand over a page URL.
 
     It also handles "Open with" from a file manager (ACTION_VIEW with a
-    content:// media or playlist URI), which arrives the same two ways.
+    content:// media or playlist URI) and a file manager's "Share" of a
+    media or playlist file (ACTION_SEND with the URI in EXTRA_STREAM), which
+    arrive the same two ways.
 
     AndroidManifest.xml declares an ACTION_SEND/text-plain intent-filter
     (and an ACTION_VIEW one) on the main activity; this class extracts the
@@ -20,10 +22,10 @@
     of Android's own intent-delivery split: the activity's own initial
     intent (a cold launch straight from the Share sheet -- coldStartUrl(),
     called once at startup) and any LATER intent delivered while already
-    running (QtAndroidPrivate::NewIntentListener -- Android's singleTop
-    launch mode, already set in the manifest, means a second "launch" is
-    always this, never a real second process the way desktop single-
-    instance forwarding works). A complete no-op on every other platform.
+    running (QtAndroidPrivate::NewIntentListener -- Android's singleTask
+    launch mode, set in the manifest, means a second "launch" is always
+    this, never a real second process the way desktop single-instance
+    forwarding works). A complete no-op on every other platform.
 */
 
 #ifndef ANDROIDSHAREINTENT_H

@@ -8,6 +8,7 @@
 
 #include <QAudioOutput>
 #include <QElapsedTimer>
+#include <QFile>
 #include <QMediaDevices>
 #include <QMediaPlayer>
 #include <QObject>
@@ -305,6 +306,14 @@ public:
     ~PlayerController() override;
 
     QMediaPlayer *player() const { return m_player; }
+    // True while the player reads from a device Vivace builds itself (a DVD
+    // or Blu-ray title, a live TV stream). False for plain files, including
+    // a content:// file, which also plays through a device (m_contentFile).
+    bool hasDeviceSource() const
+    {
+        return m_player->sourceDevice()
+                && m_player->sourceDevice() != m_contentFile;
+    }
     QAudioOutput *audioOutput() const { return m_audioOutput; }
     PlaylistModel *playlist() const { return m_playlist; }
     RecentFiles *recents() const { return m_recents; }
@@ -670,6 +679,9 @@ private:
     void startHttpTsStream(const QUrl &url); // buffered MPEG-TS network source
     void teardownHttpTsSource();
     HttpTsSource *m_httpTsSource = nullptr;
+    // The file a content:// source plays from (see playIndex()). Deleted
+    // once the player switches to any other source.
+    QFile *m_contentFile = nullptr;
     void saveCurrentPosition();
     // Detaches the in-memory playlist from any backing .m3u/.m3u8 file
     // (clears currentPlaylistFile if set). Called whenever the whole

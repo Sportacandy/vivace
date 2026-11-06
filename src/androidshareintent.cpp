@@ -25,12 +25,14 @@ QString extractUrl(const QString &sharedText)
     return m.hasMatch() ? m.captured(0) : QString();
 }
 
-// The URL to open for `intent`, matching AndroidManifest.xml's two
+// The URL to open for `intent`, matching AndroidManifest.xml's
 // intent-filters:
 // - ACTION_VIEW ("Open with" in a file manager): the intent's data URI, a
 //   content:// URI that the intent grants Vivace read access to.
 // - ACTION_SEND with a text/* type carrying EXTRA_TEXT (a browser's "Share"
 //   of a page URL): the first http(s) URL in that text.
+// - ACTION_SEND with a media or playlist type (a file manager's "Share" of
+//   a file): the content:// URI in EXTRA_STREAM.
 // Returns an empty string for anything else (no intent, the launcher's
 // MAIN intent, ...).
 QString sharedUrlFromIntent(const QJniObject &intent)
@@ -50,8 +52,18 @@ QString sharedUrlFromIntent(const QJniObject &intent)
         return {};
     const QJniObject type =
             intent.callObjectMethod("getType", "()Ljava/lang/String;");
-    if (!type.isValid() || !type.toString().startsWith(QStringLiteral("text/")))
+    if (!type.isValid())
         return {};
+    // ACTION_SEND of a file (a file manager's "Share" of a media or playlist
+    // file): the file's content:// URI is in EXTRA_STREAM.
+    if (!type.toString().startsWith(QStringLiteral("text/"))) {
+        const QJniObject stream = intent.callObjectMethod(
+                "getParcelableExtra", "(Ljava/lang/String;)Landroid/os/Parcelable;",
+                QJniObject::fromString(QStringLiteral("android.intent.extra.STREAM")).object());
+        if (!stream.isValid())
+            return {};
+        return stream.callObjectMethod("toString", "()Ljava/lang/String;").toString();
+    }
     const QJniObject text = intent.callObjectMethod(
             "getStringExtra", "(Ljava/lang/String;)Ljava/lang/String;",
             QJniObject::fromString(QStringLiteral("android.intent.extra.TEXT")).object());

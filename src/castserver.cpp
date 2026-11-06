@@ -282,7 +282,7 @@ bool CastServer::canServeCurrentSource() const
     if (!m_controller || !m_controller->player())
         return false;
     QMediaPlayer *player = m_controller->player();
-    if (player->sourceDevice()) // DVD titles, live TV: not plain local files
+    if (m_controller->hasDeviceSource()) // DVD titles, live TV: not plain local files
         return false;
     const QString path = localEnginePath(player->source());
     return !path.isEmpty() && QFileInfo(path).isFile();
