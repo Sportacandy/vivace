@@ -191,6 +191,17 @@ CMAKE_CONFIGURE_ARGS=(
     -DQT_DEPLOY_FFMPEG=TRUE
     -DCMAKE_BUILD_TYPE=Release
     -DQT_SYNC_HEADERS_AT_CONFIGURE_TIME=ON
+    # The build is universal (see the qt-cmake comment above), but
+    # Homebrew's ffmpeg@7 on this Apple Silicon runner is arm64-only, so the
+    # FFmpeg plugin's x86_64 slice has no FFmpeg to link against. Qt 6.12
+    # fails that link ("Undefined symbols for architecture x86_64:
+    # _av_buffer_create, ..."). Let only the x86_64 slice leave those
+    # symbols to runtime lookup: the arm64 slice still links normally, and
+    # the x86_64 slice never runs, because vivace.app itself (and FFmpeg)
+    # is arm64-only (checked in the v0.5.3 dmg: vivace and libavcodec are
+    # thin arm64, only the Qt libraries are universal).
+    "-DCMAKE_SHARED_LINKER_FLAGS=-Xarch_x86_64 -Wl,-undefined,dynamic_lookup"
+    "-DCMAKE_MODULE_LINKER_FLAGS=-Xarch_x86_64 -Wl,-undefined,dynamic_lookup"
 )
 "$QT_CMAKE" "${CMAKE_CONFIGURE_ARGS[@]}"
 
