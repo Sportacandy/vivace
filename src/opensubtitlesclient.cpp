@@ -19,7 +19,7 @@
 
 namespace {
 constexpr auto kApiBase = "https://api.opensubtitles.com/api/v1";
-const QByteArray kUserAgent = "Vivace v0.5.3";
+const QByteArray kUserAgent = "Vivace v0.6.0";
 } // namespace
 
 OpenSubtitlesClient::OpenSubtitlesClient(QObject *parent) : QObject(parent) {}

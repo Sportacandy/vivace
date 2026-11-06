@@ -11,6 +11,46 @@ each get their own entry instead.
 
 ## [Unreleased]
 
+## [0.6.0] — 2026-11-06
+
+### Changed
+- Vivace now uses Qt 6.12.0 (previously 6.11.1). Vivace's qtmultimedia
+  patches (AV1, speed and pitch compensation, bitmap subtitles,
+  deinterlacing) now apply to Qt 6.12.0.
+
+### Added
+- Android: Vivace is listed under "Open with" in file managers for
+  video, audio and playlist files.
+- Favorites, TV and Radio editors: a "…" button next to each item's
+  Media field picks a media or playlist file. On Android, Vivace stores
+  the file's real path when it can read the file by that path.
+
+### Fixed
+- Windows: Vivace 0.5.3 needed `python314.dll` and didn't start on a PC
+  without Python 3.14 installed.
+- Windows: "Launch Vivace" on the installer's last page didn't start
+  Vivace. Vivace now also starts when another program opens it from the
+  Windows system folder.
+- Windows: on a small screen or with high display scaling (for example
+  1920×1080 at 150%), the title bar of the main window and of large
+  dialogs such as Preferences was above the top of the screen, so you
+  couldn't move, minimize, maximize or close them. Vivace now moves each
+  window so its title bar is visible, and makes a window smaller if it
+  doesn't fit. Windows that span several monitors stay where they are.
+- Android: a playlist opened with the system file picker didn't play,
+  because Vivace didn't read its entries. Vivace now plays the entries,
+  including file names relative to the playlist's folder. The first time,
+  Vivace asks for permission to read media files.
+- Android: "Add current media" saved the playlist's address instead of
+  the video that was playing.
+- Android: the Favorites editor named a new item after an internal
+  document ID (for example `msf:7333`) instead of the file name.
+- Cancel during a YouTube download or address lookup now also stops the
+  ffmpeg processes that yt-dlp starts.
+- Android release builds failed Android's lint check because they
+  included the test files of the embedded Python. The APK is about 36 MB
+  smaller without them.
+
 ## [0.5.3] — 2026-09-26
 
 ### Added

@@ -17,18 +17,29 @@ is also published from the tip of `main` between tagged releases. See
 
 ## Status
 
-**v0.5.3** — the **Log in to YouTube…** button (Preferences ▸ Network ▸
-YouTube ▸ Download & play), previously Android-only, now also works on
-Windows/Linux/macOS: it opens a real sign-in page inside Vivace itself
-(an embedded, Chromium-based view via QtWebEngine on desktop) and saves
-the resulting session as the active cookies file, with no separate
-export/transfer step — mainly useful as a fallback for Chrome/Edge on
-Windows, where **Get cookies from browser** can't read their cookies at
-all. Also fixes a real UI conflict: **Cookies file** and **Log in to
-YouTube** now grey out whenever **Get cookies from browser** is set to
-anything but "Off", since yt-dlp only ever reads one cookie source per
-invocation and silently ignored the others before. See CHANGELOG.md for
-details. Builds on v0.5.2, which added YouTube playback reliability: a
+**v0.6.0** — Vivace now uses Qt 6.12.0, with its qtmultimedia patches
+(AV1, speed and pitch compensation, bitmap subtitles, deinterlacing)
+ported to it. On Windows, it fixes three problems: the 0.5.3 release
+needed `python314.dll` and didn't start without Python 3.14, the
+installer's **Launch Vivace** option didn't start Vivace, and on a small
+or highly scaled screen the title bars of the main window and of large
+dialogs were off-screen. On Android, playlists opened with the system
+file picker now play, Vivace is listed under **Open with** in file
+managers, and the Favorites editor has a file picker for the Media field.
+See CHANGELOG.md for details.
+
+Builds on v0.5.3, which made the **Log in to YouTube…** button
+(Preferences ▸ Network ▸ YouTube ▸ Download & play), previously
+Android-only, also work on Windows/Linux/macOS: it opens a real sign-in
+page inside Vivace itself (an embedded, Chromium-based view via
+QtWebEngine on desktop) and saves the resulting session as the active
+cookies file, with no separate export/transfer step — mainly useful as a
+fallback for Chrome/Edge on Windows, where **Get cookies from browser**
+can't read their cookies at all. It also fixed a UI conflict: **Cookies
+file** and **Log in to YouTube** grey out whenever **Get cookies from
+browser** is set to anything but "Off", since yt-dlp only ever reads one
+cookie source per invocation and silently ignored the others before.
+That builds on v0.5.2, which added YouTube playback reliability: a
 new **Get cookies from browser** option (Preferences ▸ Network ▸
 YouTube ▸ Download & play) reads cookies live from an installed browser
 instead of a previously-exported file — recommended now that YouTube's
