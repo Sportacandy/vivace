@@ -143,7 +143,7 @@ class PlayerController : public QObject
     // VIVACE_DEINTERLACE_MODE env var reads as) -- an accepted, one-time
     // compatibility break: a value a user had previously persisted for one
     // of these two modes is now interpreted as the other. See
-    // patches/qtmultimedia-deinterlace.patch's own qffmpegdeinterlacer_p.h
+    // vivace-qt-build's qtmultimedia-deinterlace.patch's own qffmpegdeinterlacer_p.h
     // file comment for the patch-side half of this swap. The setter relays
     // into VIVACE_DEINTERLACE_MODE, an env var read fresh by the patched
     // qtmultimedia FFmpeg plugin's VideoRenderer on every frame -- the

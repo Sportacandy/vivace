@@ -25,7 +25,7 @@
 # ffmpeg's own configure is a real autotools-style shell script (not
 # CMake/Meson), so this is a plain bash script (matching this project's own
 # established pattern for external-tool builds, e.g.
-# build-patched-qtmultimedia-linux.sh) rather than a CMake
+# build-android-pot-provider.sh) rather than a CMake
 # ExternalProject_Add with inline shell commands.
 #
 # Usage: build-android-youtube-tools.sh <ANDROID_NDK_ROOT> <output-dir> [abi ...]
@@ -125,7 +125,11 @@ fi
 FFMPEG_SRC="$WORK_DIR/ffmpeg-src"
 if [ ! -d "$FFMPEG_SRC" ]; then
     echo "Cloning FFmpeg $FFMPEG_TAG..."
-    git clone --branch "$FFMPEG_TAG" --depth 1 https://github.com/FFmpeg/FFmpeg.git "$FFMPEG_SRC"
+    # core.autocrlf=false: with core.autocrlf=true (for example on GitHub's
+    # windows-latest runners), configure and the other shell scripts would
+    # check out with CRLF line endings, and bash fails on them.
+    git -c core.autocrlf=false clone --branch "$FFMPEG_TAG" --depth 1 \
+        https://github.com/FFmpeg/FFmpeg.git "$FFMPEG_SRC"
 fi
 
 # --- Fetch our own prebuilt nodejs-mobile v22.9.0, one tarball per ABI -----

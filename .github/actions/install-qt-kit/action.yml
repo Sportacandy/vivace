@@ -1,0 +1,160 @@
+name: Install a Qt kit
+description: >-
+  Downloads a Qt kit from a release of Sportacandy/vivace-qt-build, compares
+  the archive with its SHA-256 checksum, and extracts it. The kits contain the
+  Vivace qtmultimedia patches and an LGPL FFmpeg.
+
+inputs:
+  kit:
+    description: >-
+      The kit: msvc2022_64, mingw1310_64, gcc_64, gcc_arm64 (Debian 12),
+      gcc_arm64_ubuntu (Ubuntu 24.04), macos, android_arm64_v8a, or
+      android_x86_64.
+    required: true
+  qt-version:
+    description: The Qt version of the kit.
+    default: '6.12.0'
+  release-tag:
+    description: The vivace-qt-build release that has the kit.
+    default: 'qt-6.12.0-vivace-1'
+  repository:
+    description: The repository of the release.
+    default: 'Sportacandy/vivace-qt-build'
+  prefix:
+    description: >-
+      The directory to extract the kit into. Empty means C:/Qt on Windows
+      and RUNNER_TEMP/Qt elsewhere.
+    default: ''
+  env-var:
+    description: The environment variable that gets the kit directory. Empty means none.
+    default: 'QT_ROOT_DIR'
+  add-to-path:
+    description: "'true' adds the bin directory of the kit to PATH."
+    default: 'true'
+
+outputs:
+  qt-root:
+    description: The kit directory, for example C:/Qt/6.12.0/msvc2022_64.
+    value: ${{ steps.install.outputs.qt-root }}
+
+runs:
+  using: composite
+  steps:
+    - name: Download and extract the ${{ inputs.kit }} kit
+      id: install
+      shell: bash
+      env:
+        KIT: ${{ inputs.kit }}
+        QT_VERSION: ${{ inputs.qt-version }}
+        RELEASE_TAG: ${{ inputs.release-tag }}
+        REPOSITORY: ${{ inputs.repository }}
+        PREFIX: ${{ inputs.prefix }}
+        ENV_VAR: ${{ inputs.env-var }}
+        ADD_TO_PATH: ${{ inputs.add-to-path }}
+      run: |
+        set -euo pipefail
+        # The archive names of the kits are in the README of vivace-qt-build.
+        case "$KIT" in
+          msvc2022_64|mingw1310_64|android_arm64_v8a|android_x86_64) name=$KIT; ext=zip ;;
+          gcc_64) name=linux_x64; ext=tar.xz ;;
+          gcc_arm64) name=linux_arm64; ext=tar.xz ;;
+          gcc_arm64_ubuntu) name=linux_arm64_ubuntu; ext=tar.xz ;;
+          macos) name=macos_arm64; ext=tar.xz ;;
+          *) echo "::error::Unknown kit: $KIT"; exit 1 ;;
+        esac
+        archive="qt-$QT_VERSION-oss-self-built-$name.$ext"
+        url="https://github.com/$REPOSITORY/releases/download/$RELEASE_TAG"
+        # On Windows runners, RUNNER_TEMP is on the smaller D: drive, which
+        # also has the checkout and the build tree. A Windows kit archive
+        # plus its extracted files can fill it, so use C: there.
+        if [ "$RUNNER_OS" = Windows ]; then
+          base_dir=C:
+        else
+          base_dir=$RUNNER_TEMP
+        fi
+        prefix=${PREFIX:-$base_dir/Qt}
+        dl="$base_dir/qt-kit-$KIT"
+        rm -rf "$dl"
+        mkdir -p "$dl" "$prefix"
+
+        # Prints the HTTP status of a release asset (200, or 404 if it does not exist).
+        status() {
+          curl -sSL --retry 5 -o /dev/null -w '%{http_code}' -I "$url/$1"
+        }
+        fetch() {
+          echo "Downloading $url/$1"
+          curl -fsSL --retry 5 -o "$dl/$1" "$url/$1"
+        }
+
+        fetch "$archive.sha256"
+        # An archive larger than 1900 MiB is split into the parts .001, .002, and so on.
+        code=$(status "$archive")
+        if [ "$code" = 200 ]; then
+          fetch "$archive"
+        elif [ "$code" = 404 ]; then
+          i=1
+          while part=$(printf '%s.%03d' "$archive" "$i"); [ "$(status "$part")" = 200 ]; do
+            fetch "$part"
+            i=$((i + 1))
+          done
+          if [ "$i" = 1 ]; then
+            echo "::error::The release $RELEASE_TAG of $REPOSITORY has no $archive and no parts of it."
+            exit 1
+          fi
+          echo "Joining $((i - 1)) parts"
+          for n in $(seq 1 $((i - 1))); do
+            p="$dl/$(printf '%s.%03d' "$archive" "$n")"
+            cat "$p" >> "$dl/$archive"
+            rm -f "$p"
+          done
+        else
+          echo "::error::$url/$archive: HTTP status $code"
+          exit 1
+        fi
+
+        # The .sha256 file has the checksum of the archive (of the joined
+        # archive, for a split one), then the file name.
+        expected=$(tr -d '\r' < "$dl/$archive.sha256" | awk 'NR == 1 { print tolower($1) }')
+        if command -v sha256sum > /dev/null; then
+          actual=$(sha256sum "$dl/$archive" | awk '{ print $1 }')
+        else
+          actual=$(shasum -a 256 "$dl/$archive" | awk '{ print $1 }')
+        fi
+        if [ "$actual" != "$expected" ]; then
+          echo "::error::$archive has the SHA-256 checksum $actual, but $archive.sha256 has $expected."
+          exit 1
+        fi
+        echo "SHA-256 OK: $actual"
+
+        # Each archive has one top-level directory, <qt version>/<kit>/.
+        if [ "$ext" = zip ]; then
+          if command -v 7z > /dev/null; then
+            7z x -y -bso0 -bsp0 -o"$prefix" "$dl/$archive"
+          else
+            unzip -q -o "$dl/$archive" -d "$prefix"
+          fi
+        else
+          tar -xJf "$dl/$archive" -C "$prefix"
+        fi
+        rm -rf "$dl"
+        df -h "$prefix" || true
+
+        root="$prefix/$QT_VERSION/$KIT"
+        if [ ! -f "$root/lib/cmake/Qt6/Qt6Config.cmake" ]; then
+          echo "::error::$archive did not extract to $root."
+          exit 1
+        fi
+        bin="$root/bin"
+        if command -v cygpath > /dev/null; then
+          # Windows: CMake wants C:/a/b, and PATH wants C:\a\b.
+          bin=$(cygpath -w "$bin")
+          root=$(cygpath -m "$root")
+        fi
+        echo "Qt $QT_VERSION $KIT: $root"
+        echo "qt-root=$root" >> "$GITHUB_OUTPUT"
+        if [ -n "$ENV_VAR" ]; then
+          echo "$ENV_VAR=$root" >> "$GITHUB_ENV"
+        fi
+        if [ "$ADD_TO_PATH" = true ]; then
+          echo "$bin" >> "$GITHUB_PATH"
+        fi

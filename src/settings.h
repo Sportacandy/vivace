@@ -75,7 +75,7 @@ class Settings : public QObject
     // choice with no SMPlayer/mplayer/mpv equivalent). Auto uses Bwdif with
     // FFmpeg's own per-frame decoder-reported interlace flag
     // (deint=interlaced instead of deint=all -- see
-    // patches/qtmultimedia-deinterlace.patch), so no media-info scanning of
+    // vivace-qt-build's qtmultimedia-deinterlace.patch), so no media-info scanning of
     // Vivace's own is needed. Auto is deliberately NOT offered on the
     // per-file Video > Deinterlace menu (None/Yadif/Bwdif only) -- it only
     // makes sense as a default, so a file whose active mode is inherited

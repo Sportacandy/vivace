@@ -3,6 +3,10 @@ name: Build
 # Fast feedback: configure + build only, no packaging, across all three
 # target platforms. Runs on every push/PR to main; see release.yml for the
 # tag-triggered Windows installer build.
+#
+# Every job uses a Qt kit from a vivace-qt-build release (see
+# .github/actions/install-qt-kit): the kits already contain the Vivace
+# qtmultimedia patches and an LGPL FFmpeg, so no job builds qtmultimedia.
 on:
   push:
     branches: [main]
@@ -17,11 +21,11 @@ jobs:
       matrix:
         include:
           - os: windows-latest
-            qt-arch: win64_msvc2022_64
+            qt-kit: msvc2022_64
           - os: ubuntu-latest
-            qt-arch: linux_gcc_64
+            qt-kit: gcc_64
           - os: macos-latest
-            qt-arch: clang_64
+            qt-kit: macos
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout
@@ -29,9 +33,15 @@ jobs:
 
       - name: Install Linux system dependencies
         if: runner.os == 'Linux'
+        # libva2/libva-drm2: the FFmpeg of the gcc_64 kit links libva.so.2
+        # and libva-drm.so.2 (VA-API).
+        # The -dev packages after libva-drm2: the system libraries that the Qt
+        # libraries, tools (moc, rcc) and plugins of the kit link, for
+        # example libb2 and ICU. They are packages that built the kit.
         run: |
           sudo apt-get update
-          sudo apt-get install -y libgl1-mesa-dev libxkbcommon-dev patchelf meson ninja-build libminizip1
+          sudo apt-get install -y libgl1-mesa-dev libxkbcommon-dev patchelf meson ninja-build libminizip1 libva2 libva-drm2 \
+            libb2-dev libbrotli-dev libdbus-1-dev libicu-dev libpcre2-dev libzstd-dev libegl-dev libopengl-dev libdrm-dev libinput-dev libmtdev-dev libts-dev libudev-dev
 
       - name: Install Meson/Ninja (Windows/macOS; needed to build libbluray from source for Blu-ray Disc playback)
         if: runner.os != 'Linux'
@@ -75,17 +85,9 @@ jobs:
           fi
 
       - name: Install Qt
-        uses: jurplel/install-qt-action@v4
+        uses: ./.github/actions/install-qt-kit
         with:
-          version: '6.12.0'
-          arch: ${{ matrix.qt-arch }}
-          modules: 'qtmultimedia qtshadertools qtwebengine qtpositioning qtwebchannel'
-          # aqtinstall's last PyPI release (3.3.0) predates Qt 6.11's repository
-          # restructuring (per-toolchain top-level dirs on Windows, modules moved
-          # under an "addons." package namespace) -- see aqtinstall#959, fixed by
-          # aqtinstall PR#1000 (merged, not yet tagged/released to PyPI). Install
-          # aqtinstall from that merge commit until a release picks it up.
-          aqtsource: 'git+https://github.com/miurahr/aqtinstall.git@8c3695d4a4e1ceabf6a74dc6c79681656dc6b74b'
+          kit: ${{ matrix.qt-kit }}
 
       - name: Configure (Windows)
         if: runner.os == 'Windows'
@@ -110,11 +112,9 @@ jobs:
         # Vivace's own translation units (Qt's AOT-compiled QML files, the
         # newer Blu-ray sources) are heavy enough that 4-way parallelism can
         # exceed that comfortably. --parallel 2 halves peak memory at the
-        # cost of some wall-clock time -- the same trade-off already applied
-        # to the arm64/Bookworm from-source Qt build job for the identical
-        # reason (see release.yml/nightly.yml). Windows/macOS didn't fail in
-        # that run, but capping them too keeps this one shared step simple
-        # and is a small, safe cost.
+        # cost of some wall-clock time. Windows/macOS didn't fail in that
+        # run, but capping them too keeps this one shared step simple and is
+        # a small, safe cost.
         run: cmake --build build --config Release --parallel 2
 
   # Android: a genuinely different build shape from the desktop matrix above
@@ -125,25 +125,68 @@ jobs:
   # matrix's shared steps. Compile-only, matching this workflow's own stated
   # "no packaging" scope for every other platform -- QT_NO_GLOBAL_APK_TARGET_
   # PART_OF_ALL keeps a plain build from also invoking Gradle/androiddeployqt
-  # (which would need a JDK/signing setup this job doesn't have). UNVERIFIED:
-  # this is the first CI run ever attempted for Android in this project --
-  # every other new-platform CI job added here (Linux arm64, the Bookworm
-  # from-source job) needed real iteration once actually run, and this one
-  # has more new moving parts (SDK/NDK, two Qt kits, the bundled-tools native
-  # build) than any of those did at the start.
+  # (which would need a JDK/signing setup this job doesn't have).
+  #
+  # Runs on Windows: the Android kits of vivace-qt-build were built with the
+  # mingw1310_64 kit as their host Qt, so this job uses the same host kit,
+  # like the local Qt Creator builds on Windows. The MinGW kit links the GCC
+  # runtime statically, so its host tools need no MinGW installation.
+  # CMakeLists.txt runs the bundled-tools scripts with Git for Windows' bash.
   build-android:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install Linux system dependencies
-        # meson/ninja: builds libbluray from source (VIVACE_ENABLE_BLURAY),
-        # same as the desktop Linux job above -- Vivace's own CMakeLists.txt
-        # treats this identically regardless of target platform.
+      - name: Install Meson, Ninja and GNU Make
+        # Meson/Ninja build libbluray from source. GNU Make runs FFmpeg's
+        # build in scripts/build-android-youtube-tools.sh: Git for Windows
+        # ships no make.exe, and that script expects Chocolatey's GNU Make,
+        # as on the local Windows dev machine. Same choco install and
+        # registry-PATH refresh as the release workflow's Windows job --
+        # see its comment for why.
+        shell: pwsh
         run: |
-          sudo apt-get update
-          sudo apt-get install -y meson ninja-build
+          for ($i = 1; $i -le 3; $i++) {
+            choco install meson ninja make -y
+            if ($LASTEXITCODE -eq 0) { break }
+            Write-Host "choco install meson/ninja/make failed (attempt $i), retrying in 30s..."
+            Start-Sleep -Seconds 30
+            if ($i -eq 3) { exit 1 }
+          }
+          $env:Path = @(
+              [System.Environment]::GetEnvironmentVariable('Path', 'Machine'),
+              [System.Environment]::GetEnvironmentVariable('Path', 'User'),
+              $env:Path
+          ) -join ';'
+          foreach ($tool in @('meson', 'ninja', 'make')) {
+            $cmd = Get-Command $tool -ErrorAction SilentlyContinue
+            if (-not $cmd) {
+              Write-Error "$tool not found on PATH even after refreshing from the registry"
+              exit 1
+            }
+            $dir = Split-Path $cmd.Source -Parent
+            Write-Host "Adding $dir to GITHUB_PATH for $tool"
+            Add-Content -Path $env:GITHUB_PATH -Value $dir
+          }
+
+      - name: Make python3 available to Git Bash
+        # scripts/build-android-youtube-tools.sh and
+        # build-android-pot-provider.sh call python3. The Python of the
+        # Windows runner has only python.exe, and a python3 found elsewhere
+        # on PATH can be the Microsoft Store alias, which doesn't run. So
+        # this step puts a python3 script that runs the runner's python.exe
+        # into a directory at the front of PATH, for the later steps.
+        shell: bash
+        run: |
+          # Windows Python prints \r\n even to a pipe; drop the \r.
+          py=$(cygpath -u "$(python -c 'import sys; print(sys.executable)' | tr -d '\r')")
+          shim="$RUNNER_TEMP/python3-shim"
+          mkdir -p "$shim"
+          printf '#!/bin/sh\nexec "%s" "$@"\n' "$py" > "$shim/python3"
+          chmod +x "$shim/python3"
+          "$shim/python3" -c 'import sys; print(sys.executable, sys.version)'
+          cygpath -w "$shim" >> "$GITHUB_PATH"
 
       - name: Set up Android SDK
         # CI FIX 2026-09-20 (first real run of this job failed here): this
@@ -161,66 +204,30 @@ jobs:
           packages: platform-tools
 
       - name: Install Android NDK
-        # Pinned to the exact version this project's own local (Qt Creator)
-        # Android builds already use (.qtcreator/CMakeLists.txt.user) --
-        # keeping CI on the same NDK as the tested local dev builds avoids
-        # introducing a second, unverified NDK version into the mix.
-        # android-actions/setup-android is expected to put sdkmanager on
-        # PATH and set both ANDROID_HOME/ANDROID_SDK_ROOT, but that isn't
-        # verified against a real run yet (see this job's own top-level
-        # comment) -- the explicit fallback/re-export just makes the later
-        # Configure step robust if only one of the two ends up set.
+        # Pinned to the NDK that built the Android kits of vivace-qt-build,
+        # which is also the one of this project's local (Qt Creator)
+        # Android builds (.qtcreator/CMakeLists.txt.user). PowerShell, not
+        # bash: on Windows, sdkmanager is a .bat file, which Git Bash does
+        # not find by its plain name.
+        shell: pwsh
         run: |
           sdkmanager --install "ndk;26.1.10909125"
-          echo "ANDROID_SDK_ROOT=${ANDROID_SDK_ROOT:-$ANDROID_HOME}" >> "$GITHUB_ENV"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          $sdk = if ($env:ANDROID_SDK_ROOT) { $env:ANDROID_SDK_ROOT } else { $env:ANDROID_HOME }
+          Add-Content -Path $env:GITHUB_ENV -Value "ANDROID_SDK_ROOT=$($sdk -replace '\\', '/')"
 
       - name: Install host Qt (for cross-compiling)
-        uses: jurplel/install-qt-action@v4
+        uses: ./.github/actions/install-qt-kit
         with:
-          version: '6.12.0'
-          arch: linux_gcc_64
-          # qtwebview added 2026-09-24 (CI fix): CMakeLists.txt's Android-only
-          # embedded-YouTube-login feature unconditionally does
-          # find_package(Qt6 REQUIRED COMPONENTS WebView WebViewQuick) once
-          # ANDROID is true -- neither module was ever requested here, so
-          # every Android CI build failed at configure time the moment that
-          # feature landed ("Failed to find required Qt component WebView",
-          # media/build.log). Added to both this host install and the
-          # Android-target install below, matching qtmultimedia/qtshadertools'
-          # own existing host+target pattern.
-          modules: 'qtmultimedia qtshadertools qtwebview'
-          # Same aqtinstall pin as the desktop jobs above -- see that step's
-          # own comment (aqtinstall#959 vs. Qt 6.11's repository layout).
-          aqtsource: 'git+https://github.com/miurahr/aqtinstall.git@8c3695d4a4e1ceabf6a74dc6c79681656dc6b74b'
-
-      - name: Remember the host Qt path
-        # install-qt-action's own QT_ROOT_DIR env var gets overwritten by
-        # the Android Qt install below -- capture it now under its own name
-        # for the Android configure step's -DQT_HOST_PATH (cross-compiling
-        # needs a host Qt for build-time tools like qmlcachegen/qsb, which
-        # can't run as Android binaries on this runner).
-        run: echo "QT_HOST_PATH=$QT_ROOT_DIR" >> "$GITHUB_ENV"
+          kit: mingw1310_64
+          env-var: QT_HOST_PATH
+          add-to-path: 'false'
 
       - name: Install Android Qt
-        # CI FIX 2026-09-20 (real run failed here): install-qt-action
-        # defaults the `host` input to the runner's own OS ("linux") unless
-        # told otherwise -- but Qt 6.12.0's Android packages are published
-        # ONLY under the host-independent "all_os" directory on Qt's own
-        # repository (confirmed directly: download.qt.io/online/
-        # qtsdkrepository/linux_x64/android/ tops out at qt6_663 (6.6.3);
-        # .../all_os/android/ has qt6_6120). Without this, aqt's version
-        # lookup ("aqt list-qt linux android --spec 6.12.0 --latest-version")
-        # returns "No latest version available for this request" and the
-        # step fails before any Qt is installed (real log:
-        # media/build-android-log-20260920T121700.txt).
-        uses: jurplel/install-qt-action@v4
+        uses: ./.github/actions/install-qt-kit
         with:
-          version: '6.12.0'
-          host: all_os
-          target: android
-          arch: android_arm64_v8a
-          modules: 'qtmultimedia qtshadertools qtwebview'
-          aqtsource: 'git+https://github.com/miurahr/aqtinstall.git@8c3695d4a4e1ceabf6a74dc6c79681656dc6b74b'
+          kit: android_arm64_v8a
+          add-to-path: 'false'
 
       - name: Configure
         # Mirrors this project's own real, tested local Android configure
@@ -233,15 +240,11 @@ jobs:
         # compiling, which restricts find_package()'s CONFIG-mode lookup
         # (used by find_package(Qt6 ...)) to the NDK sysroot only --
         # CMAKE_PREFIX_PATH is completely ignored, so Qt6Config.cmake is
-        # never found even though it genuinely exists under $QT_ROOT_DIR
-        # (confirmed directly: reproduced this exact failure locally against
-        # a real aqt-installed Qt-for-Android kit, and confirmed
-        # CMAKE_FIND_ROOT_PATH_MODE_PACKAGE=BOTH fixes it). Qt Creator's own
-        # local Android builds work without this flag only because Qt
-        # Creator auto-injects its own CMAKE_PROJECT_INCLUDE_BEFORE helper
-        # file that sets this (among other things) -- CI's plain cmake
-        # invocation had no equivalent (real log:
-        # media/build-android-log-20260920T125000.txt).
+        # never found even though it genuinely exists under $QT_ROOT_DIR.
+        # Qt Creator's own local Android builds work without this flag only
+        # because Qt Creator auto-injects its own CMAKE_PROJECT_INCLUDE_BEFORE
+        # helper file that sets this (among other things).
+        shell: bash
         run: |
           cmake -B build-android -G Ninja \
             -DCMAKE_TOOLCHAIN_FILE="$ANDROID_SDK_ROOT/ndk/26.1.10909125/build/cmake/android.toolchain.cmake" \
@@ -261,6 +264,6 @@ jobs:
         # --parallel 2, same OOM-avoidance reasoning as the desktop Linux
         # job above -- this build compiles at least as much per translation
         # unit (the same AOT QML/Blu-ray sources, plus the Android-only
-        # embedded-CPython and pythonyoutuberesolver.cpp sources) on the
-        # same class of runner.
+        # embedded-CPython and pythonyoutuberesolver.cpp sources).
+        shell: bash
         run: cmake --build build-android --target vivace --parallel 2

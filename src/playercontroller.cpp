@@ -513,7 +513,7 @@ PlayerController::PlayerController(QObject *parent)
     m_previewPlayer = new QMediaPlayer(this);
     m_previewSink = new QVideoSink(this);
     // Tells the patched qtmultimedia FFmpeg plugin's VideoRenderer (see
-    // patches/qtmultimedia-deinterlace.patch) to skip deinterlacing for
+    // vivace-qt-build's qtmultimedia-deinterlace.patch) to skip deinterlacing for
     // this ONE sink specifically, regardless of the global Video >
     // Deinterlace / Auto-by-default setting -- this player only ever
     // decodes to a single paused position and delivers exactly one frame,
@@ -2995,7 +2995,7 @@ void PlayerController::setDvdSubtitleSmoothing(int radius)
     // Mirrors the same value into the environment so the CUSTOM PATCHED
     // Qt Multimedia's own bitmap-subtitle decode path
     // (qffmpegstreamdecoder.cpp's vivaceSoftenBitmapSubtitle(), added by
-    // patches/qtmultimedia-subtitle-bitmap.patch) can honor the same
+    // vivace-qt-build's qtmultimedia-subtitle-bitmap.patch) can honor the same
     // Preferences setting -- that code renders embedded dvd_subtitle-codec
     // tracks in ordinary media files (as opposed to this class's own
     // DVD-disc-specific rendering, softenSubtitleEdges() below), lives
@@ -3432,7 +3432,7 @@ void PlayerController::setDeinterlaceMode(int mode)
         return;
     m_deinterlaceMode = mode;
     // Mirrors the value into the environment so the CUSTOM PATCHED Qt
-    // Multimedia's VideoRenderer (patches/qtmultimedia-deinterlace.patch,
+    // Multimedia's VideoRenderer (vivace-qt-build's qtmultimedia-deinterlace.patch,
     // playbackengine/qffmpegdeinterlacer.cpp) can build/select the right
     // avfilter graph -- that code lives entirely inside qtmultimedia and has
     // no reach into this class or Settings, so an env var is the same relay

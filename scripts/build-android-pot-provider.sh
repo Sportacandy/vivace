@@ -123,7 +123,11 @@ mkdir -p "$WORK_DIR"
 SRC_DIR="$WORK_DIR/bgutil-ytdlp-pot-provider"
 if [ ! -d "$SRC_DIR" ]; then
     echo "Cloning bgutil-ytdlp-pot-provider v$POT_PROVIDER_VERSION..."
-    git clone --branch "$POT_PROVIDER_VERSION" --depth 1 \
+    # core.autocrlf=false: with core.autocrlf=true (for example on GitHub's
+    # windows-latest runners), the sources would check out with CRLF line
+    # endings, and the anchored sed of patch_session_manager() below would
+    # not match them.
+    git -c core.autocrlf=false clone --branch "$POT_PROVIDER_VERSION" --depth 1 \
         https://github.com/Brainicism/bgutil-ytdlp-pot-provider.git "$SRC_DIR"
 fi
 
@@ -189,14 +193,18 @@ SERVER_SRC="$SRC_DIR/server"
 # the big comment above, point 3) -----------------------------------------
 patch_session_manager() {
     local f="$SERVER_SRC/src/session_manager.ts"
-    if grep -q 'new ResourceLoader(' "$f"; then
+    if grep -q 'new ResourceLoader(' "$f" \
+        && grep -q '^import { JSDOM, ResourceLoader } from "jsdom";' "$f"; then
         return 0  # already patched (idempotent re-run)
     fi
     sed -i \
         -e 's/^import { JSDOM } from "jsdom";$/import { JSDOM, ResourceLoader } from "jsdom";/' \
         -e 's/resources: { userAgent: USER_AGENT },/resources: new ResourceLoader({ userAgent: USER_AGENT }),/' \
         "$f"
-    if ! grep -q 'new ResourceLoader(' "$f"; then
+    # Both edits must apply: without the import, the bundle still builds
+    # (esbuild does not type-check), but fails at run time.
+    if ! grep -q 'new ResourceLoader(' "$f" \
+        || ! grep -q '^import { JSDOM, ResourceLoader } from "jsdom";' "$f"; then
         echo "ERROR: session_manager.ts patch did not apply -- upstream source" >&2
         echo "       may have changed shape; update patch_session_manager()." >&2
         exit 1

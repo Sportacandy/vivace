@@ -11,6 +11,24 @@ each get their own entry instead.
 
 ## [Unreleased]
 
+### Changed
+- All prebuilt packages now use the Qt 6.12.0 kits of
+  [vivace-qt-build](https://github.com/Sportacandy/vivace-qt-build/releases).
+  The kits contain the Vivace Qt Multimedia patches and an LGPL FFmpeg
+  7.1.5. The packages no longer contain GPL FFmpeg libraries, such as
+  `postproc`.
+- macOS: the `.dmg` now has AV1 playback, the improved speed/pitch
+  compensation, bitmap subtitles, and deinterlacing. It is now for Apple
+  silicon only and doesn't run on Intel Macs.
+- Android: the APK now has AV1 playback, the improved speed/pitch
+  compensation, and bitmap subtitles.
+- Linux arm64: the Ubuntu `.tar.gz` is now built against the
+  `gcc_arm64_ubuntu` kit and runs on Ubuntu 24.04 only; the `-bookworm`
+  build is for Debian 12 and Raspberry Pi OS based on it. The embedded
+  YouTube login is in an arm64 build only if its kit has QtWebEngine.
+- Source: the `patches/` folder and the `build-patched-qtmultimedia-*`
+  scripts are gone. The patches are now in vivace-qt-build.
+
 ## [0.6.1] — 2026-11-07
 
 ### Fixed

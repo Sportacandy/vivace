@@ -125,10 +125,11 @@ after installing). UI translated into 24 languages, partial coverage
 elsewhere.
 
 Prebuilt packages: see [Releases](https://github.com/Sportacandy/vivace/releases) —
-a Windows NSIS installer, a Linux `.tar.gz` (x86_64; arm64 for other arm64
-desktop Linux; and a separate `-bookworm` arm64 build specifically for
-Raspberry Pi OS — see "Which Linux arm64 build do I want?" below), and a
-macOS `.dmg`, plus a rolling nightly build from `main`.
+a Windows NSIS installer, a Linux `.tar.gz` (x86_64; arm64 for Ubuntu
+24.04; and a separate `-bookworm` arm64 build specifically for Raspberry
+Pi OS — see "Which Linux arm64 build do I want?" below), and a
+macOS `.dmg` for Apple silicon (arm64; it doesn't run on Intel Macs), plus
+a rolling nightly build from `main`.
 
 ## Requirements
 
@@ -137,6 +138,20 @@ To build from source:
 - Qt 6.11 or later (Quick, Multimedia)
 - CMake 3.24+
 - A C++17 compiler (developed with MSVC 2022 on Windows)
+
+Vivace builds against a stock Qt, but several features need the Vivace
+patches to Qt Multimedia: AV1 playback, the improved speed/pitch
+compensation, bitmap subtitles, and deinterlacing (each is described
+below). The prebuilt packages and CI use the Qt 6.12.0 kits of
+[vivace-qt-build](https://github.com/Sportacandy/vivace-qt-build/releases), which contain these patches and an LGPL FFmpeg
+7.1.5 with the `dav1d` AV1 decoder. To build Vivace with the same
+features, download the kit for your platform, extract it, and pass its
+directory to CMake, for example
+`-DCMAKE_PREFIX_PATH=C:/Qt/6.12.0/msvc2022_64`. The kits are:
+`msvc2022_64` and `mingw1310_64` (Windows), `gcc_64`, `gcc_arm64`
+(Debian 12) and `gcc_arm64_ubuntu` (Ubuntu 24.04) (Linux), `macos` (Apple
+silicon), and `android_arm64_v8a` and
+`android_x86_64` (with `mingw1310_64` as the host Qt).
 
 To run the prebuilt **Linux** `.tar.gz`, `libxcb-cursor0` (some
 distributions call it `xcb-cursor0`) may need to be installed, or Vivace
@@ -155,6 +170,10 @@ for Qt 6 — see `packaging/linux/build_installer.sh`). It's a one-time
 system install (`sudo apt install libxcb-cursor0` on Debian/Ubuntu, or
 the equivalent package elsewhere).
 
+The FFmpeg in the Linux packages uses VA-API, so it needs `libva.so.2` and
+`libva-drm.so.2`. Most desktop systems already have them. If video doesn't
+play, install them (`sudo apt install libva2 libva-drm2` on Debian/Ubuntu).
+
 To add Vivace to your application menu and make it pinnable to your
 taskbar/dock, run `share/applications/install-desktop-entry.sh` once from
 inside the extracted directory. A plain `.tar.gz` has no install step to
@@ -164,22 +183,27 @@ time, including after moving the extracted directory.
 
 ### Which Linux arm64 build do I want?
 
-There are **two** arm64 `.tar.gz` builds, because Qt's official prebuilt
-arm64 binaries need glibc 2.39+ (confirmed against
-[Qt's own docs](https://doc.qt.io/qt-6/linux-building.html); Qt's ARM64
-reference platform is a Raspberry Pi 5 running *Ubuntu*, not Raspberry Pi
-OS), while Raspberry Pi OS — still commonly based on Debian 12 "bookworm"
-(glibc 2.36) as of this writing — doesn't meet that floor:
+There are **two** arm64 `.tar.gz` builds, each built against its own Qt
+kit of vivace-qt-build. A kit links the libraries of the system it was
+built on, for example its ICU version, so each build runs only on systems
+with the same library versions:
 
-- **`Vivace-linux-aarch64.tar.gz`** — built against Qt's official prebuilt
-  kit. Use this on arm64 desktop Linux with glibc 2.39+ (e.g. Ubuntu 24.04
-  on Arm, or Raspberry Pi OS once it moves to a Debian 13 "trixie" base).
-- **`Vivace-linux-aarch64-bookworm.tar.gz`** — the entire Qt SDK is built
-  from source inside a Debian 12 "bookworm" container instead, so it only
-  needs glibc 2.36. **Use this on Raspberry Pi OS today.**
+- **`Vivace-linux-aarch64.tar.gz`** — built on Ubuntu 24.04 with the
+  `gcc_arm64_ubuntu` kit, so it needs glibc 2.39+ and ICU 74. Use this on
+  Ubuntu 24.04 on Arm.
+- **`Vivace-linux-aarch64-bookworm.tar.gz`** — built in a Debian 12
+  "bookworm" container with the `gcc_arm64` kit, so it needs glibc 2.36
+  and ICU 72. **Use this on Raspberry Pi OS (based on Debian 12) today.**
 
-Not sure which glibc you have? Run `ldd --version`. If it reports 2.39 or
-higher, either build works; below that, use the `-bookworm` one.
+An arm64 kit has QtWebEngine only when vivace-qt-build built it on a
+self-hosted arm64 runner. Without it, that build has no embedded YouTube
+login.
+
+Not sure which system you have? Run `cat /etc/os-release`. Use the
+`-bookworm` build on Debian 12 and on Raspberry Pi OS based on it, and the
+other build on Ubuntu 24.04. Other distributions, such as Raspberry Pi OS
+based on Debian 13 "trixie", have other library versions and may need a
+build from source.
 
 ## Android
 
@@ -199,30 +223,26 @@ is an early port. Two things worth knowing before installing it:
   release — expected, not a sign anything is actually wrong with the
   build. Because every CI build reuses the same debug key, installing a
   newer release over an older one works as a normal in-place update.
-- **It doesn't include the custom `qtmultimedia` patches the Windows/
-  Linux builds do.** AV1 decode, the improved speed/pitch compensation,
-  bitmap-subtitle display, and Yadif/Bwdif deinterlacing (all described
-  below) are fixes to a custom-built Qt Multimedia that Android's CI
-  job doesn't produce — it installs the plain, stock Qt-for-Android kit
-  instead, same as building Vivace yourself against a stock Qt on any
-  platform. Deinterlacing is always forced to **None** on Android
-  specifically (not just unpatched-and-inert): MediaCodec-decoded video
-  frames can't be downloaded back to system memory for a software
-  deinterlace filter to run on at all, so `Video ▸ Deinterlace` is
-  disabled there rather than offered with no effect (see "Deinterlacing"
-  below).
+- **It includes the custom `qtmultimedia` patches** (AV1 decode, the
+  improved speed/pitch compensation and bitmap-subtitle display, all
+  described below): CI builds it against the `android_arm64_v8a` kit of
+  vivace-qt-build. Deinterlacing is the exception: it is always forced
+  to **None** on Android, because MediaCodec-decoded video frames can't
+  be downloaded back to system memory for a software deinterlace filter
+  to run on at all, so `Video ▸ Deinterlace` is disabled there rather
+  than offered with no effect (see "Deinterlacing" below).
 
 ## AV1 support
 
-**Windows and Linux** prebuilt releases and the [nightly build](https://github.com/Sportacandy/vivace/releases/tag/nightly)
-play AV1 video: CI swaps in a patched Qt Multimedia FFmpeg plugin plus a
-`libdav1d`-enabled FFmpeg build right after installing Qt. This same swap
-also carries the improved audio speed/pitch compensation described below,
-since both fixes now ship in one combined bundle per platform. **macOS**
-prebuilt releases, and Vivace built normally against a stock Qt on any
-platform, get **neither**: AV1 files show "Unsupported media, a codec is
-missing" and play audio only, and speed control falls back to Qt's stock
-pitch-compensation behavior.
+All prebuilt releases (Windows, Linux, macOS and Android) and the
+[nightly build](https://github.com/Sportacandy/vivace/releases/tag/nightly)
+play AV1 video: CI builds them against the Qt kits of vivace-qt-build,
+whose FFmpeg has the `libdav1d` decoder and whose Qt Multimedia has the
+AV1 patch. The same kits also carry the improved audio speed/pitch
+compensation, bitmap subtitles, and deinterlacing described below.
+Vivace built against a stock Qt gets **none** of these: AV1 files show
+"Unsupported media, a codec is missing" and play audio only, and speed
+control falls back to Qt's stock pitch-compensation behavior.
 
 This isn't a Vivace-specific limitation: Qt's own official FFmpeg build
 ships without `libdav1d`/AV1 decode support at all. Investigation found a
@@ -232,26 +252,16 @@ some GPU/driver combinations, rather than this being a licensing choice —
 enabling AV1 without very careful hwaccel-failure handling is a real
 stability risk across the huge range of real-world hardware.
 
-To get AV1 support elsewhere (Linux/macOS, or a Vivace you build yourself):
-
-**Windows/Linux quick path**: run
-[`scripts/build-patched-qtmultimedia-windows.ps1`](scripts/build-patched-qtmultimedia-windows.ps1) /
-[`scripts/build-patched-qtmultimedia-linux.sh`](scripts/build-patched-qtmultimedia-linux.sh)
-against your own Qt 6.12.0 install (`msvc2022_64` / `gcc_64`) — the same
-scripts CI itself now uses. Each one downloads a dav1d-enabled FFmpeg,
-clones `qtmultimedia` at the matching tag, applies all four patches
-(AV1, speed/pitch compensation, bitmap subtitles, deinterlacing), and
-builds + installs it *against that exact Qt kit*, then deploys the matching FFmpeg runtime
-libraries alongside it. Building against the same kit you'll actually run
-is deliberate, not incidental: `Qt6Multimedia`/`Qt6MultimediaQuick` call
-into `Qt6Gui`/`Qt6Quick` through Qt's *private* (no ABI-stability
-guarantee) API, and an earlier prebuilt-binary-asset approach (built on
-one machine, copied onto another) hit exactly that — a private struct
-layout drift that a mere version-number match couldn't catch, crashing
-some video with no code-level bug on either side. Building against your
-own installed kit removes that risk entirely, since there's only ever one
-build involved. No separate rebuild step needed afterward; just rebuild
-Vivace itself against that same Qt install once the script finishes.
+To get AV1 support in a Vivace you build yourself, build it against a
+vivace-qt-build kit (see "Requirements" above). The patches are in
+[vivace-qt-build's `patches/6.12.0/qtmultimedia/`](https://github.com/Sportacandy/vivace-qt-build/tree/main/patches/6.12.0/qtmultimedia), and its
+README describes how the kits are built. Each kit builds Qt Multimedia
+together with the rest of that kit's Qt. This matters: `Qt6Multimedia`/
+`Qt6MultimediaQuick` call into `Qt6Gui`/`Qt6Quick` through Qt's *private*
+(no ABI-stability guarantee) API, and an earlier approach that copied a
+separately built Qt Multimedia into another Qt install hit exactly that —
+a private struct layout drift that a mere version-number match couldn't
+catch, crashing some video with no code-level bug on either side.
 
 ## Audio speed/pitch compensation
 
@@ -261,13 +271,11 @@ faster or slower than 1x ("pitch compensation" in Preferences). With a
 speed, which sounds clean when slowing down but produces audible vibrato/
 echo when speeding up (e.g. 2x) on speech-heavy content.
 
-**Windows and Linux** prebuilt releases and the nightly build get the fix
-below via the same CI-built `qtmultimedia` described in "AV1 support"
-above. **macOS** prebuilt releases, and Vivace built normally against a
-stock Qt on any platform, use Qt's stock behavior — there is no
-artifact-free option without a custom Qt build, for the same reason as
-AV1: the fix requires source changes to `qtmultimedia` itself, not just
-Vivace.
+All prebuilt releases and the nightly build get the fix below via the
+vivace-qt-build kits described in "AV1 support" above. Vivace built
+against a stock Qt uses Qt's stock behavior — there is no artifact-free
+option without a custom Qt build, for the same reason as AV1: the fix
+requires source changes to `qtmultimedia` itself, not just Vivace.
 
 Investigation found the phase vocoder and the alternative WSOLA (time-
 domain) approach have exactly opposite strengths: the phase vocoder holds
@@ -279,15 +287,10 @@ in the direction it's strong: WSOLA (via the vendored
 [SoundTouch](https://codeberg.org/soundtouch/soundtouch) library) above 1x,
 Qt's original phase vocoder below 1x.
 
-The `build-patched-qtmultimedia-*` scripts under "AV1 support" above apply
-this patch too (along with the other two), so that's the simplest way to
-get it. To apply just this one patch by hand instead: apply
-[`patches/qtmultimedia-wsola-pitch-compensation.patch`](patches/qtmultimedia-wsola-pitch-compensation.patch)
-to your `qtmultimedia` source checkout (vendors SoundTouch alongside Qt's
+The fix is `qtmultimedia-wsola-pitch-compensation.patch` in
+[vivace-qt-build](https://github.com/Sportacandy/vivace-qt-build/tree/main/patches/6.12.0/qtmultimedia). It vendors SoundTouch alongside Qt's
 existing Signalsmith Stretch phase vocoder, then picks per playback
-direction), rebuild `qtmultimedia`, and rebuild Vivace against that Qt.
-(This patch is independent of the AV1 one above and can be applied to the
-same checkout either alongside it or on its own.)
+direction. The vivace-qt-build kits include it.
 
 The vendored SoundTouch sources build on any platform/toolchain: they
 auto-detect (via the standard `__cpp_exceptions` feature-test macro)
@@ -302,7 +305,7 @@ normal `throw`-based error path.
 Selecting certain embedded subtitle tracks from *Subtitles ▸ Track* can
 crash Vivace outright, and even once that's fixed, Qt Multimedia has no
 way to actually *show* that kind of subtitle. This affects **every**
-build — Windows, Linux, macOS, custom or official — because the bug and
+Vivace built against a stock Qt, on any platform, because the bug and
 the missing feature are both inside Qt Multimedia's FFmpeg plugin itself,
 not Vivace: some subtitle formats (DVD subtitles, PGS, DVB — anything
 *image*-based rather than text) don't carry any text data, only an
@@ -325,21 +328,16 @@ subtitle (bitmap *or* text) already attached to the frame. With no
 negative delay configured, this never showed up — which is why it went
 unnoticed until the bitmap-subtitle investigation below turned it up.
 
-To fix all of this — the crash, the missing bitmap display, and the
-delayed-audio subtitle-dropping bug — apply
-[`patches/qtmultimedia-subtitle-bitmap.patch`](patches/qtmultimedia-subtitle-bitmap.patch)
-to your `qtmultimedia` source checkout, rebuild `qtmultimedia`, and
-rebuild Vivace against that Qt (or use the **Windows/Linux quick path**
-scripts under "AV1 support" above — they apply this fix too, alongside
-AV1 and speed/pitch compensation, in the same run). It extends Qt's
-existing subtitle pipeline
+The vivace-qt-build kits fix all of this — the crash, the missing bitmap
+display, and the delayed-audio subtitle-dropping bug — with
+`qtmultimedia-subtitle-bitmap.patch` ([vivace-qt-build](https://github.com/Sportacandy/vivace-qt-build/tree/main/patches/6.12.0/qtmultimedia)). It
+extends Qt's existing subtitle pipeline
 (decoder → renderer → sink → video frame → Qt Quick scene graph) with a
 parallel bitmap-image path alongside the existing text path, so a bitmap
 subtitle is decoded into an image, carried through the same frames as the
 text subtitle would be, and composited onto the video the same way Qt
 already composites text subtitles — no Vivace-side code is needed or
-included. Independent of the AV1 and speed/pitch-compensation patches
-above — apply any combination of these to the same checkout.
+included.
 
 Without this patch, avoid selecting a subtitle track that turns out to be
 image-based; Vivace has no way to warn you before you select it, since it
@@ -364,39 +362,15 @@ but does nothing without the patch). **Android** is the one exception —
 see "Android" above for why the menu is disabled outright there instead
 of just being a no-op.
 
-**Windows and Linux** prebuilt releases and the nightly build get this
-via the same CI-built `qtmultimedia` described in "AV1 support" above
-(both scripts apply all four patches, including this one). **macOS**
-prebuilt releases do **not** — CI's `scripts/build-patched-qtmultimedia-macos.sh`
-deliberately *skips* this one patch, since it's the only one of the four
-that links `FFmpeg::avfilter`, and Homebrew's `ffmpeg@7` on the Apple
-Silicon CI runner ships `libavfilter.dylib` as an **arm64-only** binary
-(confirmed via a real CI failure, 2026-08-16: `ld: warning: ignoring
-file '.../libavfilter.dylib': found architecture 'arm64', required
-architecture 'x86_64'`, then undefined `avfilter_*`/`av_buffersrc_*`/
-`av_buffersink_*` symbols for the x86_64 half of the universal binary)
-— while the other five FFmpeg libraries used by the other three patches
-(avcodec/avformat/avutil/swresample/swscale) genuinely are universal
-from the same Homebrew formula. Root cause not fully chased down (most
-likely libavfilter alone pulls in an optional dependency Homebrew
-doesn't build universal), but the practical effect is that this
-script's Homebrew-based approach cannot link the deinterlace patch on
-macOS today. A real fix would mean building a universal FFmpeg from
-source for macOS (like the BtbN-prebuilt approach Windows/Linux already
-use) instead of relying on Homebrew — not done, since it's a
-substantially bigger undertaking than this feature otherwise needed.
-If you build Vivace yourself on macOS and want Deinterlace anyway, apply
-[`patches/qtmultimedia-deinterlace.patch`](patches/qtmultimedia-deinterlace.patch)
-to your `qtmultimedia` source checkout by hand against a `libavfilter`
-that actually has both architectures (or a single-arch, non-universal
-build), rebuild `qtmultimedia`, and rebuild Vivace against that Qt. It
-splices a small FFmpeg `avfilter` graph
+All prebuilt desktop releases (Windows, Linux and macOS) and the nightly
+build get this via the vivace-qt-build kits described in "AV1 support"
+above. The fix is `qtmultimedia-deinterlace.patch`
+([vivace-qt-build](https://github.com/Sportacandy/vivace-qt-build/tree/main/patches/6.12.0/qtmultimedia)). It splices a small FFmpeg `avfilter` graph
 (`buffer → yadif|bwdif → buffersink`) into the FFmpeg plugin's
 `VideoRenderer`, the one place a decoded frame is converted for display —
 gated by an environment variable Vivace's own `PlayerController` sets
 whenever you change the Video ▸ Deinterlace selection, the same mechanism
-already used for the bitmap-subtitle-smoothing patch above. Independent of
-the other three patches; apply any combination to the same checkout.
+already used for the bitmap-subtitle-smoothing patch above.
 
 Deliberately narrower than SMPlayer's own six-mode Deinterlace menu:
 Yadif and Bwdif only, both single-rate ("one output frame per input").
@@ -407,26 +381,23 @@ video renderer to emit an extra synthesized frame per input, which Qt
 Multimedia's internal frame-scheduling doesn't support without much
 deeper changes.
 
-**Runtime requirement, easy to miss if you rebuild by hand instead of
-using the `build-patched-qtmultimedia-*` scripts**: even though Vivace's
-own code never calls into `libpostproc`, the FFmpeg `avfilter` library
-*itself* dynamically depends on it (`avfilter-10.dll`/`libavfilter.so.10`
-imports `postproc-58.dll`/`libpostproc.so.58` — confirmed by inspecting
-its import table/`DT_NEEDED` entries directly; none of the *other* FFmpeg
-libraries this project already used have this dependency). Without
-`postproc-58.dll`/`libpostproc.so.58` sitting alongside the other FFmpeg
-runtime libraries, `avfilter-10.dll` fails to load, which cascades to the
-whole `ffmpegmediaplugin.dll`/`libffmpegmediaplugin.so` failing to load —
-Qt Multimedia then silently falls back to a different backend (Windows
-Media Foundation on Windows), breaking playback for **every file**,
-regardless of Deinterlace mode (including `None`) — not a subtle,
-avfilter-specific failure. The `build-patched-qtmultimedia-*` scripts copy
-this file automatically now; if you deploy the FFmpeg runtime libraries by
-hand, make sure to grab it from the same BtbN download as the others.
+**Runtime requirement when you deploy by hand**: the
+deinterlace patch links FFmpeg's `avfilter` library into the FFmpeg plugin,
+so `avfilter-10.dll`/`libavfilter.so.10` must sit alongside the other FFmpeg
+runtime libraries. Without it, the whole
+`ffmpegmediaplugin.dll`/`libffmpegmediaplugin.so` fails to load, and Qt
+Multimedia silently falls back to a different backend (Windows Media
+Foundation on Windows), breaking playback for **every file**, regardless of
+Deinterlace mode (including `None`). On Windows, `windeployqt` does not
+deploy `avfilter-10.dll`, so `CMakeLists.txt` copies it from the kit's
+`bin/` directory. The LGPL FFmpeg of the vivace-qt-build kits has no
+`libpostproc` (a GPL library), and its `avfilter` doesn't need it. The
+earlier GPL FFmpeg builds needed `postproc-58.dll` and `libx264-164.dll`
+too; the kits need neither.
 
 **Verified working end to end (2026-08-16)**: real rebuild against a live
-Qt 6.11.1 kit, playback confirmed restored after the `postproc-58.dll` fix
-above, and Video ▸ Deinterlace ▸ Yadif confirmed via `vivace.log`
+Qt 6.11.1 kit with the earlier GPL FFmpeg, playback confirmed restored
+after deploying its missing `postproc-58.dll`, and Video ▸ Deinterlace ▸ Yadif confirmed via `vivace.log`
 diagnostics to genuinely construct the avfilter graph and produce filtered
 output frames, then confirmed visually against real DVD content (a 1979
 film transferred via telecine) to show deinterlaced playback as expected.
@@ -475,7 +446,7 @@ skipping it means the **whole build has zero extra runtime DLLs/shared
 libraries to deploy**: libbluray links in as a plain static library
 (`--default_library=static`), so there's no `libbluray-3.dll`/
 `libbluray.so`, no MSYS2, and no separate runtime-dependency-closure copy
-step at all (unlike this project's own FFmpeg/libx264 note above, which
+step at all (unlike this project's own `avfilter` note above, which
 genuinely does need one).
 
 Verified end to end on Windows: Meson auto-detects `cl.exe`/`link.exe`/
@@ -552,8 +523,8 @@ recognizes FFmpeg's own "display until further notice" sentinel value and
 schedules those frames correctly against Qt's sticky subtitle-sink state,
 plus two follow-on fixes for a playback stall and for a container-time-
 offset that made subtitles drift out of sync with the audio on some
-discs. See `patches/qtmultimedia-subtitle-bitmap.patch`'s own "PART 1"
-through "PART 5" sections for the full investigation if you want the
+discs. See the "PART 1" through "PART 5" sections of
+`qtmultimedia-subtitle-bitmap.patch` ([vivace-qt-build](https://github.com/Sportacandy/vivace-qt-build/tree/main/patches/6.12.0/qtmultimedia)) for the full investigation if you want the
 details. DVD and embedded-file bitmap subtitles were unaffected by this
 bug either way.
 
