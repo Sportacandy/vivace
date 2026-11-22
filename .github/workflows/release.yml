@@ -104,7 +104,9 @@ jobs:
 
   build-and-release-linux:
     needs: build-and-release
-    runs-on: ubuntu-latest
+    # The gcc_64 kit of vivace-qt-build was built on Ubuntu 24.04 and links
+    # its ICU 74, which newer Ubuntu runners don't have.
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -296,19 +298,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install Meson, Ninja and GNU Make
+      - name: Install Meson, Ninja, GNU Make and MinGW GCC
         # Meson/Ninja build libbluray from source. GNU Make runs FFmpeg's
         # build in scripts/build-android-youtube-tools.sh: Git for Windows
         # ships no make.exe, and that script expects Chocolatey's GNU Make,
         # as on the local Windows dev machine. Same choco install and
         # registry-PATH refresh as the Windows job above -- see its comment
         # for why.
+        # MinGW GCC is the host compiler of FFmpeg's configure (HOST_CC):
+        # the clang of the runner is in "C:\Program Files", and configure
+        # cannot use a compiler path with spaces.
         shell: pwsh
         run: |
           for ($i = 1; $i -le 3; $i++) {
-            choco install meson ninja make -y
+            choco install meson ninja make mingw -y
             if ($LASTEXITCODE -eq 0) { break }
-            Write-Host "choco install meson/ninja/make failed (attempt $i), retrying in 30s..."
+            Write-Host "choco install meson/ninja/make/mingw failed (attempt $i), retrying in 30s..."
             Start-Sleep -Seconds 30
             if ($i -eq 3) { exit 1 }
           }
@@ -327,6 +332,28 @@ jobs:
             Write-Host "Adding $dir to GITHUB_PATH for $tool"
             Add-Content -Path $env:GITHUB_PATH -Value $dir
           }
+          # HOST_CC names the GCC of the MinGW package. GITHUB_PATH does not
+          # get its directory, so the later steps do not find GCC instead of
+          # their own compilers. If the package is elsewhere, another native
+          # GCC on PATH does the same job.
+          $chocoGcc = 'C:\ProgramData\mingw64\mingw64\bin\gcc.exe'
+          if (Test-Path $chocoGcc) {
+            $gcc = Get-Command $chocoGcc
+          } else {
+            $gcc = Get-Command gcc -ErrorAction SilentlyContinue
+          }
+          if (-not $gcc) {
+            Write-Error "No gcc found at $chocoGcc or on PATH after the MinGW install"
+            exit 1
+          }
+          $hostCc = $gcc.Source -replace '\\', '/'
+          if ($hostCc -match ' ') {
+            Write-Error "The MinGW GCC path has a space, which FFmpeg's configure cannot use: $hostCc"
+            exit 1
+          }
+          & $gcc.Source --version
+          Write-Host "HOST_CC=$hostCc"
+          Add-Content -Path $env:GITHUB_ENV -Value "HOST_CC=$hostCc"
 
       - name: Make python3 available to Git Bash
         # scripts/build-android-youtube-tools.sh and

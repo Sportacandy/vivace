@@ -125,7 +125,7 @@ after installing). UI translated into 24 languages, partial coverage
 elsewhere.
 
 Prebuilt packages: see [Releases](https://github.com/Sportacandy/vivace/releases) —
-a Windows NSIS installer, a Linux `.tar.gz` (x86_64; arm64 for Ubuntu
+a Windows NSIS installer, a Linux `.tar.gz` (x86_64 and arm64 for Ubuntu
 24.04; and a separate `-bookworm` arm64 build specifically for Raspberry
 Pi OS — see "Which Linux arm64 build do I want?" below), and a
 macOS `.dmg` for Apple silicon (arm64; it doesn't run on Intel Macs), plus
