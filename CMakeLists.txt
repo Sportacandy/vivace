@@ -844,6 +844,19 @@ if(VIVACE_ENABLE_BLURAY)
         # everywhere else -- no .c sources are needed for CMake to just
         # detect a C compiler alongside the C++ one).
         set(VIVACE_LIBBLURAY_MESON_EXTRA_ARGS "")
+        # Meson 1.12 checks --prefix with the path rules of the host
+        # machine, so for Android (POSIX paths) it rejects a Windows path
+        # such as D:/a/vivace/.../install: "prefix value ... must be an
+        # absolute path". The Android build therefore uses the prefix "/"
+        # and installs under DESTDIR, which puts the files in the same
+        # directory (DESTDIR/include, DESTDIR/lib).
+        set(VIVACE_LIBBLURAY_MESON_PREFIX "${VIVACE_LIBBLURAY_INSTALL}")
+        set(VIVACE_LIBBLURAY_INSTALL_ENV "")
+        if(ANDROID)
+            set(VIVACE_LIBBLURAY_MESON_PREFIX "/")
+            set(VIVACE_LIBBLURAY_INSTALL_ENV
+                "${CMAKE_COMMAND}" -E env "DESTDIR=${VIVACE_LIBBLURAY_INSTALL}")
+        endif()
         if(ANDROID)
             if(CMAKE_ANDROID_ARCH_ABI STREQUAL "arm64-v8a")
                 set(_vivace_meson_cpu_family "aarch64")
@@ -918,7 +931,7 @@ endian = 'little'
                 "${VIVACE_LIBBLURAY_BUILD}" "${VIVACE_LIBBLURAY_SRC}"
                 --backend ninja
                 --buildtype release
-                --prefix "${VIVACE_LIBBLURAY_INSTALL}"
+                --prefix "${VIVACE_LIBBLURAY_MESON_PREFIX}"
                 -Dlibdir=lib
                 ${VIVACE_LIBBLURAY_MESON_EXTRA_ARGS}
                 -Ddefault_library=static
@@ -946,7 +959,8 @@ endian = 'little'
                 # project's CMakeLists.txt already assumes.
                 -Dforce_fallback_for=libudfread
             BUILD_COMMAND "${VIVACE_NINJA_EXECUTABLE}" -C "${VIVACE_LIBBLURAY_BUILD}"
-            INSTALL_COMMAND "${VIVACE_NINJA_EXECUTABLE}" -C "${VIVACE_LIBBLURAY_BUILD}" install
+            INSTALL_COMMAND ${VIVACE_LIBBLURAY_INSTALL_ENV}
+                "${VIVACE_NINJA_EXECUTABLE}" -C "${VIVACE_LIBBLURAY_BUILD}" install
             BUILD_BYPRODUCTS "${VIVACE_LIBBLURAY_LIBRARY_FILE}" "${VIVACE_LIBUDFREAD_LIBRARY_FILE}"
             USES_TERMINAL_CONFIGURE TRUE
             USES_TERMINAL_BUILD TRUE
