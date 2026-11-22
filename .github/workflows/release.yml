@@ -121,6 +121,11 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y libgl1-mesa-dev libxkbcommon-dev patchelf ninja-build meson libx11-dev libxext-dev libxrandr-dev libwayland-dev libminizip1 libva2 libva-drm2 \
             libb2-dev libbrotli-dev libdbus-1-dev libicu-dev libpcre2-dev libzstd-dev libegl-dev libopengl-dev libdrm-dev libinput-dev libmtdev-dev libts-dev libudev-dev
+          # The system libraries that the kit links at run time, for the link
+          # of Vivace and the CMake deploy (see the comment in the file).
+          # The assignment fails the step if grep cannot read the file, or finds no package names.
+          pkgs=$(grep -Ev '^[[:space:]]*(#|$)' packaging/linux/qt-kit-runtime-packages-ubuntu-24.04.txt)
+          sudo apt-get install -y $pkgs
 
       - name: Install Qt
         # A kit from a vivace-qt-build release, with the Vivace qtmultimedia
@@ -162,6 +167,11 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y libgl1-mesa-dev libxkbcommon-dev patchelf ninja-build meson libx11-dev libxext-dev libxrandr-dev libwayland-dev libminizip1 libva2 libva-drm2 \
             libb2-dev libbrotli-dev libdbus-1-dev libicu-dev libpcre2-dev libzstd-dev libegl-dev libopengl-dev libdrm-dev libinput-dev libmtdev-dev libts-dev libudev-dev
+          # The system libraries that the kit links at run time, for the link
+          # of Vivace and the CMake deploy (see the comment in the file).
+          # The assignment fails the step if grep cannot read the file, or finds no package names.
+          pkgs=$(grep -Ev '^[[:space:]]*(#|$)' packaging/linux/qt-kit-runtime-packages-ubuntu-24.04.txt)
+          sudo apt-get install -y $pkgs
 
       - name: Install Qt
         # A kit from a vivace-qt-build release, with the Vivace qtmultimedia
