@@ -223,6 +223,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Install the runtime libraries of the Qt kit
+        # The Debian 12 system libraries that the gcc_arm64 kit links at run
+        # time, for the link of Vivace and the CMake deploy (see the comment
+        # in the file). The assignment fails the step if grep cannot read
+        # the file, or finds no package names.
+        run: |
+          pkgs=$(grep -Ev '^[[:space:]]*(#|$)' packaging/linux/qt-kit-runtime-packages-debian-12.txt)
+          apt-get install -y --no-install-recommends $pkgs
+
       - name: Install Qt
         # A kit from a vivace-qt-build release, with the Vivace qtmultimedia
         # patches and an LGPL FFmpeg (see .github/actions/install-qt-kit).
