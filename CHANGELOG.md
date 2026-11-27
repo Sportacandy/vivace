@@ -29,6 +29,14 @@ each get their own entry instead.
 - Source: the `patches/` folder and the `build-patched-qtmultimedia-*`
   scripts are gone. The patches are now in vivace-qt-build.
 
+### Fixed
+- YouTube: cookies saved with **Log in to YouTube…** stopped working after
+  a while. The login window kept the YouTube page open after **Close**,
+  and YouTube changes the sign-in cookies of an open page. Now **Save
+  cookies** leaves the YouTube page before it saves, and **Close** closes
+  the page. Each **Log in to YouTube…** starts a new session, so you sign
+  in again every time.
+
 ## [0.6.1] — 2026-11-07
 
 ### Fixed

@@ -166,6 +166,14 @@ zariadenia.
   cookies z prehliadača** (obsahuje vlastný prehliadací engine), takže
   sa oplatí použiť ju najmä tam, kde táto jednoduchšia možnosť
   nefunguje, teda pre Chrome/Edge v systéme Windows.
+- YouTube z času na čas vymieňa prihlasovacie cookies každej otvorenej
+  stránky YouTube. Po každej výmene uložené cookies prestanú fungovať.
+  Preto **Uložiť cookies** najprv otvorí stránku YouTube, ktorá nespúšťa
+  žiadne skripty, a až potom cookies uloží. **Zavrieť** zatvorí aj stránku
+  YouTube.
+- Každé **Prihlásiť sa do YouTube…** spustí novú reláciu, preto sa musíte
+  zakaždým prihlásiť znova. Súbor cookies z posledného **Uložiť cookies**
+  funguje ďalej, kým neuložíte nové cookies.
 
 ### Export cookies do súboru (záložná možnosť na každej platforme)
 

@@ -162,6 +162,14 @@ att överföra från en annan enhet för hand.
   från webbläsare** (den innehåller en egen webbläsarmotor), så den är
   mest värd att använda där det enklare alternativet inte fungerar,
   det vill säga Chrome/Edge på Windows.
+- YouTube byter då och då ut inloggningscookies för varje öppen
+  YouTube-sida. Efter varje byte slutar de sparade cookies att fungera.
+  Därför öppnar **Spara cookies** först en YouTube-sida som inte kör några
+  skript och sparar först därefter cookies. **Stäng** stänger också
+  YouTube-sidan.
+- Varje **Logga in på YouTube…** startar en ny session, så du måste logga
+  in igen varje gång. Cookiefilen från den senaste **Spara cookies**
+  fortsätter att fungera tills du sparar nya cookies.
 
 ### Exportera cookies till en fil (reserv på alla plattformar)
 

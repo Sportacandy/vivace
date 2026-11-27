@@ -171,6 +171,15 @@ käsin.
   (se sisältää oman selainmoottorinsa), joten sitä kannattaa käyttää
   lähinnä silloin, kun tuo yksinkertaisempi vaihtoehto ei toimi, eli
   Chromen/Edgen kanssa Windowsissa.
+- YouTube vaihtaa ajoittain jokaisen avoimen YouTube-sivun
+  kirjautumisevästeet. Jokaisen vaihdon jälkeen tallennetut evästeet
+  lakkaavat toimimasta. Siksi **Tallenna evästeet** avaa ensin
+  YouTube-sivun, joka ei suorita skriptejä, ja tallentaa evästeet vasta
+  sen jälkeen. **Sulje** sulkee myös YouTube-sivun.
+- Jokainen **Kirjaudu YouTubeen…** aloittaa uuden istunnon, joten sinun on
+  kirjauduttava uudelleen joka kerta. Viimeisimmällä **Tallenna evästeet**
+  -toiminnolla tallennettu evästetiedosto toimii, kunnes tallennat uudet
+  evästeet.
 
 ### Evästeiden vieminen tiedostoon (varavaihtoehto kaikilla alustoilla)
 

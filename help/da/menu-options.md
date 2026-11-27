@@ -164,6 +164,14 @@ eksportere, intet at overføre fra en anden enhed manuelt.
   browser** (den medbringer sin egen browsermotor), så den er primært
   værd at bruge dér, hvor den enklere mulighed ikke virker, altså
   Chrome/Edge på Windows.
+- YouTube udskifter fra tid til anden login-cookies for hver åben
+  YouTube-side. Efter hver udskiftning holder de gemte cookies op med at
+  virke. Derfor åbner **Gem cookies** først en YouTube-side, der ikke
+  kører scripts, og gemmer først derefter cookies. **Luk** lukker også
+  YouTube-siden.
+- Hver **Log ind på YouTube…** starter en ny session, så du skal logge ind
+  igen hver gang. Cookiefilen fra den seneste **Gem cookies** virker
+  fortsat, indtil du gemmer nye cookies.
 
 ### Eksport af cookies til en fil (reserveløsning på alle platforme)
 

@@ -166,6 +166,14 @@ drugog uređaja.
   preglednika), pa je uglavnom vrijedno koristiti je ondje gdje ta
   jednostavnija opcija ne radi, odnosno s Chromeom/Edgeom na
   Windowsima.
+- YouTube povremeno zamjenjuje kolačiće za prijavu svake otvorene YouTube
+  stranice. Nakon svake zamjene spremljeni kolačići prestaju raditi. Zato
+  **Spremi kolačiće** najprije otvara YouTube stranicu koja ne pokreće
+  skripte, a tek zatim sprema kolačiće. **Zatvori** zatvara i YouTube
+  stranicu.
+- Svaka **Prijava na YouTube…** pokreće novu sesiju, pa se svaki put
+  morate ponovno prijaviti. Datoteka kolačića od posljednjeg **Spremi
+  kolačiće** radi i dalje dok ne spremite nove kolačiće.
 
 ### Izvoz kolačića u datoteku (rezervna opcija na svakoj platformi)
 

@@ -164,6 +164,15 @@ elle aktarılacak hiçbir şey yoktur.
   daha "ağır" bir özelliktir (kendi tarayıcı motorunu içinde barındırır),
   bu yüzden esas olarak daha basit seçeneğin işe yaramadığı durumlarda,
   yani Windows'ta Chrome/Edge'de kullanmaya değer.
+- YouTube, açık olan her YouTube sayfasının oturum açma çerezlerini zaman
+  zaman değiştirir. Her değişiklikten sonra kaydedilen çerezler çalışmaz
+  hâle gelir. Bu nedenle **Çerezleri kaydet**, önce komut dosyası
+  çalıştırmayan bir YouTube sayfası açar ve çerezleri ancak ondan sonra
+  kaydeder. **Kapat** YouTube sayfasını da kapatır.
+- Her **YouTube'a giriş yap…** yeni bir oturum başlatır, bu yüzden her
+  seferinde yeniden oturum açmanız gerekir. Son **Çerezleri kaydet** ile
+  kaydedilen çerez dosyası, yeni çerezler kaydedene kadar çalışmaya devam
+  eder.
 
 ### Çerezleri bir dosyaya dışa aktarma (her platformda yedek yöntem)
 

@@ -173,6 +173,15 @@ eksportować ani ręcznie przenosić z innego urządzenia.
   pliki cookie z przeglądarki** (dołącza własny silnik przeglądarki),
   więc warto z niej korzystać głównie tam, gdzie ta prostsza opcja nie
   działa, czyli w przypadku Chrome/Edge w systemie Windows.
+- YouTube od czasu do czasu wymienia pliki cookie logowania każdej
+  otwartej strony YouTube. Po każdej wymianie zapisane pliki cookie
+  przestają działać. Dlatego **Zapisz pliki cookie** najpierw otwiera
+  stronę YouTube, która nie uruchamia skryptów, a dopiero potem zapisuje
+  pliki cookie. **Zamknij** zamyka też stronę YouTube.
+- Każde **Zaloguj się do YouTube…** rozpoczyna nową sesję, więc za każdym
+  razem trzeba zalogować się ponownie. Plik cookie z ostatniego **Zapisz
+  pliki cookie** działa nadal, dopóki nie zostaną zapisane nowe pliki
+  cookie.
 
 ### Eksportowanie plików cookie do pliku (rozwiązanie zastępcze na każdej platformie)
 

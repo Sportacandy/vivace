@@ -34,9 +34,8 @@ DesktopYoutubeLogin::DesktopYoutubeLogin(QObject *parent)
     // since this class keeps its own in-memory copy of every cookie via the
     // signals below and writes cookies.txt itself; it also means Vivace
     // never leaves a stray Chromium profile directory behind. Connected
-    // once, at construction (app startup), not per-dialog-open, so a cookie
-    // set on an EARLIER login attempt this session (e.g. before the user
-    // closed the dialog without clicking Save) is never lost.
+    // once, at construction (app startup); reset() starts each login with
+    // an empty cookie store.
     auto *cookieStore = QQuickWebEngineProfile::defaultProfile()->cookieStore();
     connect(cookieStore, &QWebEngineCookieStore::cookieAdded,
             this, &DesktopYoutubeLogin::onCookieAdded);
@@ -88,8 +87,14 @@ void DesktopYoutubeLogin::onCookieRemoved(const QNetworkCookie &cookie)
 void DesktopYoutubeLogin::reset()
 {
 #ifdef VIVACE_HAVE_DESKTOP_YOUTUBE_LOGIN
+    // Ends the previous login session instead of reusing it. A session that
+    // was saved to cookies.txt must never be opened in a browser again:
+    // YouTube rotates the account cookies of every open YouTube page, and
+    // the rotation invalidates the saved copy (see the yt-dlp wiki,
+    // "Exporting YouTube cookies"). A new login gets a new session, and the
+    // saved file stays valid until the user saves the new one.
     m_cookies.clear();
-    QQuickWebEngineProfile::defaultProfile()->cookieStore()->loadAllCookies();
+    QQuickWebEngineProfile::defaultProfile()->cookieStore()->deleteAllCookies();
 #endif
 }
 

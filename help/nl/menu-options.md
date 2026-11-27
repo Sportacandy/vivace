@@ -170,6 +170,14 @@ van een ander apparaat over te zetten.
   browser** (er wordt een eigen browser-engine meegeleverd), dus is dit
   vooral de moeite waard wanneer die eenvoudigere optie niet werkt, dat
   wil zeggen Chrome/Edge op Windows.
+- YouTube vervangt af en toe de inlogcookies van elke geopende
+  YouTube-pagina. Na elke vervanging werken de bewaarde cookies niet meer.
+  Daarom opent **Cookies bewaren** eerst een YouTube-pagina die geen
+  scripts uitvoert en bewaart pas daarna de cookies. **Sluiten** sluit ook
+  de YouTube-pagina.
+- Elke keer **Inloggen bij YouTube…** start een nieuwe sessie, dus u moet
+  telkens opnieuw inloggen. Het cookiebestand van de laatste keer
+  **Cookies bewaren** blijft werken totdat u nieuwe cookies bewaart.
 
 ### Cookies naar een bestand exporteren (alternatief op elk platform)
 

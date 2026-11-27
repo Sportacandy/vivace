@@ -175,6 +175,15 @@ Hand von einem anderen Gerät zu übertragen.
   **Cookies aus Browser abrufen** (sie bringt eine eigene Browser-Engine
   mit), daher lohnt sie sich vor allem dort, wo die einfachere Option
   nicht funktioniert, also bei Chrome/Edge unter Windows.
+- YouTube ersetzt die Anmelde-Cookies jeder geöffneten YouTube-Seite von
+  Zeit zu Zeit. Danach funktionieren die gespeicherten Cookies nicht mehr.
+  Deshalb öffnet **Cookies speichern** zuerst eine YouTube-Seite, die
+  keine Skripte ausführt, und speichert erst dann die Cookies.
+  **Schließen** schließt auch die YouTube-Seite.
+- Jedes **Bei YouTube anmelden…** startet eine neue Sitzung, daher müssen
+  Sie sich jedes Mal erneut anmelden. Die Cookie-Datei vom letzten
+  **Cookies speichern** funktioniert weiter, bis Sie neue Cookies
+  speichern.
 
 ### Cookies in eine Datei exportieren (Ausweichlösung auf jeder Plattform)
 

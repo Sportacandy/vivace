@@ -68,12 +68,12 @@ public:
     // never silently clobbers a file saved by the other.
     Q_INVOKABLE static QString plannedCookiesPath();
 
-    // Clears the cookies accumulated so far (NOT the browser's own session
-    // -- an already-signed-in Google account stays signed in, so reopening
-    // the dialog within the same app run doesn't force the user to log in
-    // again) and re-primes from whatever the cookie store already holds.
-    // Called by qml/desktop/YoutubeLoginDialog.qml's own open(), before
-    // navigating to the login page.
+    // Clears the cookies accumulated so far and deletes every cookie in the
+    // browser's cookie store, so each login starts a new session. The
+    // previous session must not be reopened: YouTube rotates the account
+    // cookies of an open YouTube page, which invalidates the copy already
+    // saved to cookies.txt. Called by qml/desktop/YoutubeLoginDialog.qml's
+    // own open(), before navigating to the login page.
     Q_INVOKABLE void reset();
 
     // Writes every accumulated cookie whose domain is youtube.com or

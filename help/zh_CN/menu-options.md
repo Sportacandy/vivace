@@ -127,6 +127,13 @@ Cookie** 无法读取它们的 Cookie——无论哪种情况，都无需导出�
   相比 **从浏览器获取 Cookie**，这实际上是一个更"重量级"的功能（它
   内置了自己的浏览器引擎），因此主要值得在那个更简单的选项无法使用时
   才使用，即 Windows 上的 Chrome/Edge。
+- YouTube 会不时更换每个已打开 YouTube 页面的登录 Cookie。
+  每次更换后，已保存的 Cookie 就会失效。因此，**保存 Cookie** 会
+  先打开一个不运行脚本的 YouTube 页面，然后再保存 Cookie。
+  **关闭** 也会关闭 YouTube 页面。
+- 每次 **登录 YouTube…** 都会开始一个新会话，因此每次都需要重新
+  登录。上一次 **保存 Cookie** 得到的 Cookie 文件在保存新的
+  Cookie 之前仍然有效。
 
 ### 导出 Cookie 到文件（各平台通用的备用方案）
 

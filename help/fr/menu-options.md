@@ -180,6 +180,15 @@ un autre appareil.
   propre moteur de navigateur), donc elle est surtout utile là où cette
   option plus simple ne fonctionne pas, c'est-à-dire Chrome/Edge sous
   Windows.
+- YouTube remplace de temps en temps les cookies de connexion de chaque
+  page YouTube ouverte. Après chaque remplacement, les cookies enregistrés
+  ne fonctionnent plus. C'est pourquoi **Enregistrer les cookies** ouvre
+  d'abord une page YouTube qui n'exécute aucun script, puis enregistre les
+  cookies. **Fermer** ferme aussi la page YouTube.
+- Chaque **Se connecter à YouTube…** démarre une nouvelle session : vous
+  devez donc vous reconnecter à chaque fois. Le fichier de cookies de
+  votre dernier **Enregistrer les cookies** reste valable jusqu'à ce que
+  vous enregistriez de nouveaux cookies.
 
 ### Exporter les cookies dans un fichier (solution de repli sur toutes les plateformes)
 

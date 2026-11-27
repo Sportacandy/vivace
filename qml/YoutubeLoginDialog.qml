@@ -49,6 +49,26 @@ Window {
             else
                 hideWhileOpen.visible = true
         }
+        // Closing only hides this window, so unload the page too. A YouTube
+        // page left open keeps rotating the account cookies, and each
+        // rotation invalidates the copy saved to cookies.txt.
+        if (!visible) {
+            savePending = false
+            saveDelay.stop()
+            webView.url = "about:blank"
+        }
+    }
+
+    // A page on youtube.com that runs no scripts, so it can't rotate the
+    // cookies. "Save cookies" loads it before it saves, as the yt-dlp wiki
+    // recommends ("Exporting YouTube cookies").
+    readonly property url isolationUrl: "https://www.youtube.com/robots.txt"
+    property bool savePending: false
+
+    function saveIsolated() {
+        statusLabel.text = ""
+        savePending = true
+        webView.url = isolationUrl
     }
 
     title: qsTr("Log in to YouTube")
@@ -66,6 +86,11 @@ Window {
     minimumHeight: Qt.platform.os === "android" ? 0 : 480
 
     function open() {
+        // Android's WebView keeps its cookies on disk, so the previous login
+        // session would come back here. Delete it, so the user signs in
+        // again and gets a new session: reopening the saved session would
+        // rotate its cookies and invalidate cookies.txt.
+        webView.deleteAllCookies()
         webView.url = "https://www.youtube.com/"
         statusLabel.text = ""
         if (Qt.platform.os === "android") {
@@ -116,9 +141,10 @@ Window {
             }
             Button {
                 text: qsTr("Save cookies")
+                enabled: !dialog.savePending
                 onClicked: {
                     if (dialog.resolver)
-                        dialog.resolver.saveCookies(dialog.resolver.plannedCookiesPath())
+                        dialog.saveIsolated()
                 }
             }
             Button {
@@ -140,6 +166,27 @@ Window {
             id: webView
             Layout.fillWidth: true
             Layout.fillHeight: true
+
+            onLoadingChanged: function(loadRequest) {
+                if (!dialog.savePending
+                        || loadRequest.status === WebView.LoadStartedStatus)
+                    return
+                // Save even if robots.txt failed to load: the YouTube page
+                // is gone either way, and the cookies are already stored.
+                saveDelay.restart()
+            }
+        }
+    }
+
+    // Give the WebView a moment to store the cookies of the last responses
+    // before AndroidYoutubeLogin reads them from CookieManager.
+    Timer {
+        id: saveDelay
+        interval: 500
+        onTriggered: {
+            dialog.savePending = false
+            if (dialog.resolver)
+                dialog.resolver.saveCookies(dialog.resolver.plannedCookiesPath())
         }
     }
 }

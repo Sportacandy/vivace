@@ -163,6 +163,14 @@ zařízení.
   z prohlížeče** (obsahuje vlastní prohlížecí engine), takže se vyplatí
   použít ji hlavně tam, kde tato jednodušší možnost nefunguje, tedy pro
   Chrome/Edge ve Windows.
+- YouTube čas od času vyměňuje přihlašovací soubory cookie každé otevřené
+  stránky YouTube. Po každé výměně uložené soubory cookie přestanou
+  fungovat. Proto **Uložit soubory cookie** nejprve otevře stránku
+  YouTube, která nespouští žádné skripty, a teprve potom soubory cookie
+  uloží. **Zavřít** zavře také stránku YouTube.
+- Každé **Přihlásit se k YouTube…** zahájí novou relaci, proto se musíte
+  pokaždé přihlásit znovu. Soubor cookies z posledního **Uložit soubory
+  cookie** funguje dál, dokud neuložíte nové soubory cookie.
 
 ### Export cookies do souboru (záložní varianta na všech platformách)
 

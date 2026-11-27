@@ -172,6 +172,14 @@ trasferire manualmente da un altro dispositivo.
   proprio motore del browser), quindi conviene usarla soprattutto dove
   quell'opzione più semplice non funziona, cioè con Chrome/Edge su
   Windows.
+- YouTube sostituisce di tanto in tanto i cookie di accesso di ogni pagina
+  YouTube aperta. Dopo ogni sostituzione, i cookie salvati smettono di
+  funzionare. Per questo motivo **Salva i cookie** apre prima una pagina
+  YouTube che non esegue script e poi salva i cookie. **Chiudi** chiude
+  anche la pagina YouTube.
+- Ogni **Accedi a YouTube…** avvia una nuova sessione, quindi è necessario
+  accedere di nuovo ogni volta. Il file dei cookie dell'ultimo **Salva i
+  cookie** continua a funzionare finché non si salvano nuovi cookie.
 
 ### Esportare i cookie in un file (soluzione alternativa su qualsiasi piattaforma)
 

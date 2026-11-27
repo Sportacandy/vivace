@@ -167,6 +167,15 @@ exportar nem para transferir manualmente de outro dispositivo.
   do navegador** (ele traz seu próprio motor de navegador), então vale a
   pena usá-lo principalmente onde essa opção mais simples não funciona,
   ou seja, Chrome/Edge no Windows.
+- O YouTube troca de tempos em tempos os cookies de login de cada página
+  do YouTube aberta. Depois de cada troca, os cookies salvos param de
+  funcionar. Por isso, **Salvar cookies** abre primeiro uma página do
+  YouTube que não executa scripts e só então salva os cookies. **Fechar**
+  também fecha a página do YouTube.
+- Cada **Fazer login no YouTube…** inicia uma nova sessão, então é preciso
+  fazer login novamente todas as vezes. O arquivo de cookies do último
+  **Salvar cookies** continua funcionando até que novos cookies sejam
+  salvos.
 
 ### Exportando cookies para um arquivo (alternativa em qualquer plataforma)
 

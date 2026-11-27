@@ -153,6 +153,14 @@ from another device by hand.
   browser** (it bundles its own browser engine), so it's mainly worth
   using where that simpler option doesn't work, i.e. Chrome/Edge on
   Windows.
+- YouTube changes the sign-in cookies of every open YouTube page from time
+  to time. Each change makes the saved cookies stop working. For this
+  reason, **Save cookies** first opens a YouTube page that runs no
+  scripts, and then saves the cookies. **Close** also closes the YouTube
+  page.
+- Each **Log in to YouTube…** starts a new session, so you must sign in
+  again every time. The cookies file from your last **Save cookies**
+  continues to work until you save new cookies.
 - The cookies file is a one-time snapshot taken the moment you tap **Save
   cookies** — Vivace never reopens the sign-in page or contacts YouTube
   on its own just to keep it fresh. From then on, every ordinary resolve/

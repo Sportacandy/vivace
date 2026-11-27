@@ -42,6 +42,26 @@ Window {
     onVisibleChanged: {
         if (hideWhileOpen)
             hideWhileOpen.visible = !visible
+        // Closing only hides this window, so unload the page too. A YouTube
+        // page left open keeps rotating the account cookies, and each
+        // rotation invalidates the copy saved to cookies.txt.
+        if (!visible) {
+            savePending = false
+            saveDelay.stop()
+            webView.url = "about:blank"
+        }
+    }
+
+    // A page on youtube.com that runs no scripts, so it can't rotate the
+    // cookies. "Save cookies" loads it before it saves, as the yt-dlp wiki
+    // recommends ("Exporting YouTube cookies").
+    readonly property url isolationUrl: "https://www.youtube.com/robots.txt"
+    property bool savePending: false
+
+    function saveIsolated() {
+        statusLabel.text = ""
+        savePending = true
+        webView.url = isolationUrl
     }
 
     title: qsTr("Log in to YouTube")
@@ -53,12 +73,10 @@ Window {
     minimumHeight: 560
 
     function open() {
-        // A fresh reset() before every open (not just once at startup) so
-        // an earlier login attempt's own accumulated cookies never leak
-        // into what looks like a brand new attempt -- the underlying
-        // browser SESSION itself is untouched (see DesktopYoutubeLogin::
-        // reset()'s own comment), so an already-signed-in account doesn't
-        // need signing into again.
+        // reset() deletes the previous session's cookies, so the user signs
+        // in again and gets a new session. Reopening the saved session would
+        // rotate its cookies and invalidate cookies.txt (see
+        // DesktopYoutubeLogin::reset()).
         if (dialog.resolver)
             dialog.resolver.reset()
         webView.url = "https://www.youtube.com/"
@@ -105,9 +123,10 @@ Window {
             }
             Button {
                 text: qsTr("Save cookies")
+                enabled: !dialog.savePending
                 onClicked: {
                     if (dialog.resolver)
-                        dialog.resolver.saveCookies(dialog.resolver.plannedCookiesPath())
+                        dialog.saveIsolated()
                 }
             }
             Button {
@@ -127,6 +146,28 @@ Window {
             id: webView
             Layout.fillWidth: true
             Layout.fillHeight: true
+
+            onLoadingChanged: function(loadingInfo) {
+                if (!dialog.savePending
+                        || loadingInfo.status === WebEngineView.LoadStartedStatus)
+                    return
+                // Save even if robots.txt failed to load: the YouTube page
+                // is gone either way, and the cookies are already stored.
+                saveDelay.restart()
+            }
+        }
+    }
+
+    // DesktopYoutubeLogin receives the cookie store's changes as separate
+    // signals, which can arrive after loadingChanged. Wait briefly so the
+    // last cookies the YouTube page set are in the saved file.
+    Timer {
+        id: saveDelay
+        interval: 500
+        onTriggered: {
+            dialog.savePending = false
+            if (dialog.resolver)
+                dialog.resolver.saveCookies(dialog.resolver.plannedCookiesPath())
         }
     }
 }

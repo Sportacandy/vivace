@@ -177,6 +177,15 @@ exportar res ni transferir res manualment des d'un altre dispositiu.
   navegador), de manera que val la pena utilitzar-la sobretot allà on
   aquella opció més senzilla no funciona, és a dir, amb el Chrome/Edge
   a Windows.
+- YouTube canvia de tant en tant les galetes d'inici de sessió de cada
+  pàgina de YouTube oberta. Després de cada canvi, les galetes desades
+  deixen de funcionar. Per això, **Desa les galetes** obre primer una
+  pàgina de YouTube que no executa cap script i després desa les galetes.
+  **Tanca** també tanca la pàgina de YouTube.
+- Cada **Inicia la sessió a YouTube…** comença una sessió nova, de manera
+  que cal tornar a iniciar la sessió cada vegada. El fitxer de galetes de
+  l'últim **Desa les galetes** continua funcionant fins que se'n desin de
+  noves.
 
 ### Exportar galetes a un fitxer (alternativa a totes les plataformes)
 

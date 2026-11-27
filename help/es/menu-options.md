@@ -171,6 +171,15 @@ otro dispositivo.
   que **Obtener cookies del navegador** (incluye su propio motor de
   navegador), así que conviene usarla sobre todo donde esa opción más
   sencilla no funciona, es decir, Chrome/Edge en Windows.
+- YouTube cambia de vez en cuando las cookies de inicio de sesión de cada
+  página de YouTube abierta. Tras cada cambio, las cookies guardadas dejan
+  de funcionar. Por eso, **Guardar cookies** abre primero una página de
+  YouTube que no ejecuta scripts y después guarda las cookies. **Cerrar**
+  también cierra la página de YouTube.
+- Cada **Iniciar sesión en YouTube…** inicia una sesión nueva, así que hay
+  que volver a iniciar sesión cada vez. El archivo de cookies del último
+  **Guardar cookies** sigue funcionando hasta que se guarden cookies
+  nuevas.
 
 ### Exportar las cookies a un archivo (alternativa en cualquier plataforma)
 

@@ -176,6 +176,15 @@ nincs mit kézzel átvinni egy másik eszközről.
   **Sütik lekérése böngészőből** (saját böngészőmotort is tartalmaz),
   ezért elsősorban ott érdemes használni, ahol az egyszerűbb megoldás
   nem működik, vagyis a Windows alatti Chrome/Edge esetén.
+- A YouTube időnként lecseréli minden megnyitott YouTube-oldal
+  bejelentkezési cookie-jait. Minden csere után a mentett cookie-k
+  használhatatlanná válnak. Ezért a **Sütik mentése** először egy
+  szkripteket nem futtató YouTube-oldalt nyit meg, és csak utána menti a
+  cookie-kat. A **Bezár** a YouTube-oldalt is bezárja.
+- Minden **Bejelentkezés a YouTube-ba…** új munkamenetet indít, ezért
+  minden alkalommal újra be kell jelentkezni. A legutóbbi **Sütik
+  mentése** által mentett cookie-fájl addig működik, amíg új cookie-kat
+  nem ment.
 
 ### Sütik exportálása fájlba (tartalék megoldás minden platformon)
 
