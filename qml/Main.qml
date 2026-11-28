@@ -1694,6 +1694,9 @@ ApplicationWindow {
                 }
             for (let i = 0; i < fileUrls.length; i++)
                 youtubeResolver.removeCacheEntry(fileUrls[i])
+            // The deleted files can't play any more, so drop them from the
+            // playlist too.
+            playerController.playlist.removeLocalFiles(fileUrls)
             cacheBrowser.reload()
         }
         onSaveRequested: (fileUrls, destFolder, moveFiles, playlistAction, playlistFile) => {

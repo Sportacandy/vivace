@@ -60,6 +60,10 @@ public:
     void add(const QList<PlaylistEntry> &entries);
     QList<PlaylistEntry> entries() const { return m_entries; }
     Q_INVOKABLE void removeAt(int index);
+    // Removes every entry that refers to one of the given local files, for
+    // example after the files are deleted. Compares file paths, not URL
+    // strings, and ignores entries that aren't local files.
+    Q_INVOKABLE void removeLocalFiles(const QList<QUrl> &fileUrls);
     Q_INVOKABLE void clear();
     Q_INVOKABLE void move(int from, int to);
 

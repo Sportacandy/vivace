@@ -259,6 +259,33 @@ void PlaylistModel::sortEntries()
                      });
 }
 
+void PlaylistModel::removeLocalFiles(const QList<QUrl> &fileUrls)
+{
+#ifdef Q_OS_WIN
+    constexpr Qt::CaseSensitivity cs = Qt::CaseInsensitive;
+#else
+    constexpr Qt::CaseSensitivity cs = Qt::CaseSensitive;
+#endif
+    // The files may already be deleted, so compare cleaned absolute paths
+    // rather than canonical ones (canonicalFilePath() is empty for a
+    // missing file).
+    auto pathOf = [](const QUrl &url) {
+        return QFileInfo(url.toLocalFile()).absoluteFilePath();
+    };
+    QStringList paths;
+    for (const QUrl &url : fileUrls)
+        if (url.isLocalFile())
+            paths.append(pathOf(url));
+    if (paths.isEmpty())
+        return;
+
+    for (int i = int(m_entries.size()) - 1; i >= 0; --i) {
+        const QUrl &url = m_entries.at(i).url;
+        if (url.isLocalFile() && paths.contains(pathOf(url), cs))
+            removeAt(i);
+    }
+}
+
 int PlaylistModel::indexOfUrl(const QUrl &url) const
 {
     if (url.isEmpty())
