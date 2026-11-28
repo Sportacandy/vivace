@@ -2278,15 +2278,32 @@ ApplicationWindow {
 
     // While nothing plays (no media loaded, or stopped), both bars stay
     // visible: the screen is empty and the next step is always a control.
-    readonly property bool chromePinned:
+    // The player also stops for a moment between two playlist entries, and
+    // while the next entry loads. So the bars are pinned only when playback
+    // has stayed stopped, with no media loading, for chromePinTimer's
+    // interval. At startup nothing plays, so they are pinned at once.
+    property bool chromePinned: true
+    readonly property bool chromeIdle:
         playerController.player.playbackState === MediaPlayer.StoppedState
-    // When playback starts, keep the bars up for the usual few seconds
-    // instead of removing them at once.
-    onChromePinnedChanged: {
-        if (!chromePinned) {
+        && playerController.player.mediaStatus !== MediaPlayer.LoadingMedia
+    onChromeIdleChanged: {
+        if (chromeIdle) {
+            chromePinTimer.restart()
+            return
+        }
+        chromePinTimer.stop()
+        if (chromePinned) {
+            chromePinned = false
+            // When playback starts, keep the bars up for the usual few
+            // seconds instead of removing them at once.
             revealTopChrome()
             revealBottomChrome()
         }
+    }
+    Timer {
+        id: chromePinTimer
+        interval: 1000
+        onTriggered: root.chromePinned = root.chromeIdle
     }
 
     // Touch taps on Android: a tap in the top third shows the menu bar and
