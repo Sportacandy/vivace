@@ -39,6 +39,9 @@ each get their own entry instead.
 - YouTube: after **Save cookies**, the login window showed a plain-text
   page that looked like an error. The window now shows "Saving cookies…"
   and then the result in place of the page.
+- YouTube: a video removed in the **YouTube cache** window stayed in the
+  playlist, and playing it showed an error. Removing a cached video now
+  also removes it from the playlist.
 
 ## [0.6.1] — 2026-11-07
 
