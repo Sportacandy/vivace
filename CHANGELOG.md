@@ -11,6 +11,13 @@ each get their own entry instead.
 
 ## [Unreleased]
 
+### Added
+- Playlist: music files without a picture now show a music icon instead
+  of an empty box. The note's color changes with the row number. Other
+  entries that can't get a thumbnail, such as streams or files that
+  ffmpeg can't read, show a neutral media icon. Embedded cover art still
+  shows when Vivace can read it.
+
 ### Changed
 - All prebuilt packages now use the Qt 6.12.0 kits of
   [vivace-qt-build](https://github.com/Sportacandy/vivace-qt-build/releases).
