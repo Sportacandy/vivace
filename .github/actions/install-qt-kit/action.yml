@@ -82,12 +82,15 @@ runs:
         # it doesn't take space from the build tree on D:.
         dl_dir=$base_dir
         if [ "$RUNNER_OS" = Windows ]; then
-          df -h C:/ "$RUNNER_TEMP" || true
+          # RUNNER_TEMP is D:\a\_temp. Use forward slashes: with a backslash
+          # in the file name, sha256sum prefixes its output with "\".
+          tmp_dir=$(cygpath -m "$RUNNER_TEMP")
+          df -h C:/ "$tmp_dir" || true
           free_c=$(df -k --output=avail C:/ | tail -1 | tr -d ' ')
-          free_tmp=$(df -k --output=avail "$RUNNER_TEMP" | tail -1 | tr -d ' ')
+          free_tmp=$(df -k --output=avail "$tmp_dir" | tail -1 | tr -d ' ')
           if [ "${free_tmp:-0}" -gt $((8 * 1024 * 1024)) ] \
               || [ "${free_tmp:-0}" -gt "${free_c:-0}" ]; then
-            dl_dir=$RUNNER_TEMP
+            dl_dir=$tmp_dir
           fi
           echo "Downloading the archive to $dl_dir"
         fi
@@ -133,10 +136,12 @@ runs:
         # The .sha256 file has the checksum of the archive (of the joined
         # archive, for a split one), then the file name.
         expected=$(tr -d '\r' < "$dl/$archive.sha256" | awk 'NR == 1 { print tolower($1) }')
+        # Read the archive from stdin, so the output never has the file name
+        # (or the "\" prefix sha256sum adds for names with backslashes).
         if command -v sha256sum > /dev/null; then
-          actual=$(sha256sum "$dl/$archive" | awk '{ print $1 }')
+          actual=$(sha256sum < "$dl/$archive" | awk '{ print $1 }')
         else
-          actual=$(shasum -a 256 "$dl/$archive" | awk '{ print $1 }')
+          actual=$(shasum -a 256 < "$dl/$archive" | awk '{ print $1 }')
         fi
         if [ "$actual" != "$expected" ]; then
           echo "::error::$archive has the SHA-256 checksum $actual, but $archive.sha256 has $expected."
