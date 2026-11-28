@@ -654,17 +654,17 @@
 <context>
     <name>DesktopYoutubeLogin</name>
     <message>
-        <location filename="../src/desktopyoutubelogin.cpp" line="100"/>
+        <location filename="../src/desktopyoutubelogin.cpp" line="105"/>
         <source>Embedded YouTube login is not available in this build.</source>
         <translation>이 빌드에서는 내장 YouTube 로그인을 사용할 수 없습니다.</translation>
     </message>
     <message>
-        <location filename="../src/desktopyoutubelogin.cpp" line="148"/>
+        <location filename="../src/desktopyoutubelogin.cpp" line="153"/>
         <source>No YouTube login cookies were found. Make sure you finished signing in before closing the login window.</source>
         <translation>YouTube 로그인 쿠키를 찾을 수 없습니다. 로그인 창을 닫기 전에 로그인을 완료했는지 확인하세요.</translation>
     </message>
     <message>
-        <location filename="../src/desktopyoutubelogin.cpp" line="157"/>
+        <location filename="../src/desktopyoutubelogin.cpp" line="162"/>
         <source>Could not write %1: %2</source>
         <translation>%1 쓰기에 실패했습니다: %2</translation>
     </message>
@@ -2235,32 +2235,32 @@
     <name>PlayerController</name>
     <message>
         <location filename="../src/playercontroller.cpp" line="182"/>
-        <location filename="../src/playercontroller.cpp" line="966"/>
-        <location filename="../src/playercontroller.cpp" line="982"/>
-        <location filename="../src/playercontroller.cpp" line="1665"/>
-        <location filename="../src/playercontroller.cpp" line="1681"/>
-        <location filename="../src/playercontroller.cpp" line="2592"/>
+        <location filename="../src/playercontroller.cpp" line="974"/>
+        <location filename="../src/playercontroller.cpp" line="990"/>
+        <location filename="../src/playercontroller.cpp" line="1710"/>
+        <location filename="../src/playercontroller.cpp" line="1726"/>
+        <location filename="../src/playercontroller.cpp" line="2637"/>
         <source>Track %1</source>
         <translation>트랙 %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="884"/>
+        <location filename="../src/playercontroller.cpp" line="892"/>
         <source>A/V delay: %1 ms</source>
         <translation>A/V 지연: %1 ms</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1722"/>
+        <location filename="../src/playercontroller.cpp" line="1767"/>
         <source>DVD title %1 could not be assembled</source>
         <translation>DVD 타이틀 %1을(를) 조합할 수 없습니다</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1728"/>
+        <location filename="../src/playercontroller.cpp" line="1773"/>
         <source>DVD title %1 could not be opened</source>
         <translation>DVD 타이틀 %1을(를) 열 수 없습니다</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1542"/>
-        <location filename="../src/playercontroller.cpp" line="1909"/>
+        <location filename="../src/playercontroller.cpp" line="1587"/>
+        <location filename="../src/playercontroller.cpp" line="1954"/>
         <source>Title %1 (%2)</source>
         <translation>타이틀 %1 (%2)</translation>
     </message>
@@ -2315,293 +2315,298 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1439"/>
+        <location filename="../src/playercontroller.cpp" line="1484"/>
         <source>Could not open the Blu-ray disc (it may be encrypted, or use an unsupported format).</source>
         <translation>블루레이 디스크를 열 수 없습니다(암호화되어 있거나 지원되지 않는 형식일 수 있습니다).</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1446"/>
+        <location filename="../src/playercontroller.cpp" line="1491"/>
         <source>No playable titles were found on this Blu-ray disc.</source>
         <translation>이 블루레이 디스크에서 재생 가능한 타이틀을 찾을 수 없습니다.</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1491"/>
+        <location filename="../src/playercontroller.cpp" line="1536"/>
         <source>This Blu-ray title could not be selected.</source>
         <translation>이 블루레이 타이틀을 선택할 수 없습니다.</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1501"/>
-        <location filename="../src/playercontroller.cpp" line="1505"/>
+        <location filename="../src/playercontroller.cpp" line="1546"/>
+        <location filename="../src/playercontroller.cpp" line="1550"/>
         <source>This Blu-ray title could not be opened.</source>
         <translation>이 블루레이 타이틀을 열 수 없습니다.</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1925"/>
+        <location filename="../src/playercontroller.cpp" line="1970"/>
         <source>Chapter %1 (%2)</source>
         <translation>챕터 %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3086"/>
+        <location filename="../src/playercontroller.cpp" line="3131"/>
         <source>Could not open the stream</source>
         <translation>스트림을 열 수 없습니다</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3145"/>
+        <location filename="../src/playercontroller.cpp" line="3190"/>
         <source>System default</source>
         <translation>시스템 기본값</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3324"/>
+        <location filename="../src/playercontroller.cpp" line="3369"/>
         <source>A marker set to %1</source>
         <translation>A 마커가 %1(으)로 설정됨</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3335"/>
+        <location filename="../src/playercontroller.cpp" line="3380"/>
         <source>B marker set to %1</source>
         <translation>B 마커가 %1(으)로 설정됨</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3345"/>
+        <location filename="../src/playercontroller.cpp" line="3390"/>
         <source>A-B markers cleared</source>
         <translation>A-B 표시를 지웠습니다</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3419"/>
+        <location filename="../src/playercontroller.cpp" line="3464"/>
         <source>None</source>
         <translation>없음</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3418"/>
+        <location filename="../src/playercontroller.cpp" line="3463"/>
         <source>Yadif</source>
         <translation>Yadif</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3419"/>
+        <location filename="../src/playercontroller.cpp" line="3464"/>
         <source>Bwdif</source>
         <translation>Bwdif</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3418"/>
+        <location filename="../src/playercontroller.cpp" line="3463"/>
         <source>Auto</source>
         <translation>자동</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1034"/>
+        <location filename="../src/playercontroller.cpp" line="1042"/>
         <source>Vivace needs permission to read media files to play this playlist.</source>
         <translation>이 재생 목록을 재생하려면 Vivace에 미디어 파일 읽기 권한이 필요합니다.</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3420"/>
+        <location filename="../src/playercontroller.cpp" line="1127"/>
+        <source>The files in this playlist aren&apos;t available. The app that opened it passed only the playlist file, not the media files it lists.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/playercontroller.cpp" line="3465"/>
         <source>Deinterlace: %1</source>
         <translation>디인터레이스: %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3505"/>
+        <location filename="../src/playercontroller.cpp" line="3550"/>
         <source>Could not load subtitles from %1</source>
         <translation>%1에서 자막을 불러올 수 없습니다</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3522"/>
+        <location filename="../src/playercontroller.cpp" line="3567"/>
         <source>Subtitles loaded: %1</source>
         <translation>자막을 불러옴: %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3533"/>
+        <location filename="../src/playercontroller.cpp" line="3578"/>
         <source>Subtitles unloaded</source>
         <translation>자막을 내림</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3543"/>
+        <location filename="../src/playercontroller.cpp" line="3588"/>
         <source>Subtitle delay: %1 ms</source>
         <translation>자막 싱크: %1 ms</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3693"/>
+        <location filename="../src/playercontroller.cpp" line="3738"/>
         <source>General</source>
         <translation>일반</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3696"/>
+        <location filename="../src/playercontroller.cpp" line="3741"/>
         <source>File</source>
         <translation>파일</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3711"/>
+        <location filename="../src/playercontroller.cpp" line="3756"/>
         <source>Size</source>
         <translation>크기</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3711"/>
+        <location filename="../src/playercontroller.cpp" line="3756"/>
         <source>%1 KB (%2 MB)</source>
         <translation>%1 KB (%2 MB)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3716"/>
-        <location filename="../src/playercontroller.cpp" line="3750"/>
+        <location filename="../src/playercontroller.cpp" line="3761"/>
+        <location filename="../src/playercontroller.cpp" line="3795"/>
         <source>URL</source>
         <translation>주소</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3726"/>
+        <location filename="../src/playercontroller.cpp" line="3771"/>
         <source>Length</source>
         <translation>시간</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3727"/>
+        <location filename="../src/playercontroller.cpp" line="3772"/>
         <source>Demuxer</source>
         <translation>디먹서</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3732"/>
-        <location filename="../src/playercontroller.cpp" line="3783"/>
-        <location filename="../src/playercontroller.cpp" line="3846"/>
-        <location filename="../src/playercontroller.cpp" line="3876"/>
+        <location filename="../src/playercontroller.cpp" line="3777"/>
+        <location filename="../src/playercontroller.cpp" line="3828"/>
+        <location filename="../src/playercontroller.cpp" line="3891"/>
+        <location filename="../src/playercontroller.cpp" line="3921"/>
         <source>Name</source>
         <translation>이름</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3733"/>
+        <location filename="../src/playercontroller.cpp" line="3778"/>
         <source>Artist</source>
         <translation>아티스트</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3735"/>
+        <location filename="../src/playercontroller.cpp" line="3780"/>
         <source>Album artist</source>
         <translation>앨범 아티스트</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3737"/>
+        <location filename="../src/playercontroller.cpp" line="3782"/>
         <source>Author</source>
         <translation>작가</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3738"/>
+        <location filename="../src/playercontroller.cpp" line="3783"/>
         <source>Composer</source>
         <translation>작곡가</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3739"/>
+        <location filename="../src/playercontroller.cpp" line="3784"/>
         <source>Album</source>
         <translation>앨범</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3740"/>
+        <location filename="../src/playercontroller.cpp" line="3785"/>
         <source>Genre</source>
         <translation>장르</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3741"/>
+        <location filename="../src/playercontroller.cpp" line="3786"/>
         <source>Date</source>
         <translation>날짜</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3742"/>
+        <location filename="../src/playercontroller.cpp" line="3787"/>
         <source>Track</source>
         <translation>트랙</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3743"/>
+        <location filename="../src/playercontroller.cpp" line="3788"/>
         <source>Copyright</source>
         <translation>저작권</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3744"/>
+        <location filename="../src/playercontroller.cpp" line="3789"/>
         <source>Comment</source>
         <translation>주석</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3745"/>
+        <location filename="../src/playercontroller.cpp" line="3790"/>
         <source>Description</source>
         <translation>설명</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3747"/>
+        <location filename="../src/playercontroller.cpp" line="3792"/>
         <source>Publisher</source>
         <translation>발행자</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3748"/>
-        <location filename="../src/playercontroller.cpp" line="3783"/>
-        <location filename="../src/playercontroller.cpp" line="3846"/>
-        <location filename="../src/playercontroller.cpp" line="3876"/>
+        <location filename="../src/playercontroller.cpp" line="3793"/>
+        <location filename="../src/playercontroller.cpp" line="3828"/>
+        <location filename="../src/playercontroller.cpp" line="3891"/>
+        <location filename="../src/playercontroller.cpp" line="3921"/>
         <source>Language</source>
         <translation>언어</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3752"/>
+        <location filename="../src/playercontroller.cpp" line="3797"/>
         <source>Clip info</source>
         <translation>클립 정보</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3756"/>
+        <location filename="../src/playercontroller.cpp" line="3801"/>
         <source>Initial Video Stream</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3759"/>
+        <location filename="../src/playercontroller.cpp" line="3804"/>
         <source>Resolution</source>
         <translation>해상도</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3762"/>
+        <location filename="../src/playercontroller.cpp" line="3807"/>
         <source>Aspect ratio</source>
         <translation>화면 비율</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3766"/>
-        <location filename="../src/playercontroller.cpp" line="3806"/>
+        <location filename="../src/playercontroller.cpp" line="3811"/>
+        <location filename="../src/playercontroller.cpp" line="3851"/>
         <source>Format</source>
         <translation>형식</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3769"/>
-        <location filename="../src/playercontroller.cpp" line="3809"/>
+        <location filename="../src/playercontroller.cpp" line="3814"/>
+        <location filename="../src/playercontroller.cpp" line="3854"/>
         <source>Bitrate</source>
         <translation>비트레이트</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3769"/>
-        <location filename="../src/playercontroller.cpp" line="3809"/>
+        <location filename="../src/playercontroller.cpp" line="3814"/>
+        <location filename="../src/playercontroller.cpp" line="3854"/>
         <source>%1 kbps</source>
         <translation>%1 kbps</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3772"/>
+        <location filename="../src/playercontroller.cpp" line="3817"/>
         <source>Frames per second</source>
         <translation>초당 프레임</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3775"/>
+        <location filename="../src/playercontroller.cpp" line="3820"/>
         <source>HDR</source>
         <translation>HDR</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3775"/>
+        <location filename="../src/playercontroller.cpp" line="3820"/>
         <source>yes</source>
         <translation>예</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3782"/>
+        <location filename="../src/playercontroller.cpp" line="3827"/>
         <source>Video Streams</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3790"/>
+        <location filename="../src/playercontroller.cpp" line="3835"/>
         <source>Initial Audio Stream</source>
         <translation>초기 오디오 스트림</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3845"/>
+        <location filename="../src/playercontroller.cpp" line="3890"/>
         <source>Audio Streams</source>
         <translation>오디오 스트림</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3875"/>
+        <location filename="../src/playercontroller.cpp" line="3920"/>
         <source>Subtitles</source>
         <translation>자막</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="4225"/>
+        <location filename="../src/playercontroller.cpp" line="4270"/>
         <source>Chapter %1</source>
         <translation>챕터 %1</translation>
     </message>
@@ -5417,36 +5422,42 @@
 <context>
     <name>YoutubeLoginDialog</name>
     <message>
-        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="47"/>
-        <location filename="../qml/YoutubeLoginDialog.qml" line="54"/>
+        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="73"/>
+        <location filename="../qml/YoutubeLoginDialog.qml" line="80"/>
         <source>Log in to YouTube</source>
         <translation>YouTube에 로그인</translation>
     </message>
     <message numerus="yes">
-        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="79"/>
-        <location filename="../qml/YoutubeLoginDialog.qml" line="87"/>
+        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="104"/>
+        <location filename="../qml/YoutubeLoginDialog.qml" line="119"/>
         <source>%n cookie(s) saved — tap “Close” to finish.</source>
         <translation>
             <numerusform>쿠키 %n개를 저장했습니다 — &quot;닫기&quot;를 눌러 완료하세요.</numerusform>
         </translation>
     </message>
     <message>
-        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="104"/>
-        <location filename="../qml/YoutubeLoginDialog.qml" line="115"/>
+        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="129"/>
+        <location filename="../qml/YoutubeLoginDialog.qml" line="147"/>
         <source>Sign in below, then tap “Save cookies”, then “Close”.</source>
         <translation>아래에서 로그인한 다음 &quot;쿠키 저장&quot;을 누르고 이어서 &quot;닫기&quot;를 누르세요.</translation>
     </message>
     <message>
-        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="107"/>
-        <location filename="../qml/YoutubeLoginDialog.qml" line="118"/>
+        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="132"/>
+        <location filename="../qml/YoutubeLoginDialog.qml" line="150"/>
         <source>Save cookies</source>
         <translation>쿠키 저장</translation>
     </message>
     <message>
-        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="114"/>
-        <location filename="../qml/YoutubeLoginDialog.qml" line="125"/>
+        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="140"/>
+        <location filename="../qml/YoutubeLoginDialog.qml" line="158"/>
         <source>Close</source>
         <translation>닫기</translation>
+    </message>
+    <message>
+        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="181"/>
+        <location filename="../qml/YoutubeLoginDialog.qml" line="181"/>
+        <source>Saving cookies…</source>
+        <translation>쿠키 저장 중…</translation>
     </message>
     <message numerus="yes">
         <source>Signed in — %n cookie(s) saved.</source>

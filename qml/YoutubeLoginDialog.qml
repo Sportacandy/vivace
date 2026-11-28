@@ -55,6 +55,7 @@ Window {
         if (!visible) {
             savePending = false
             saveDelay.stop()
+            saveFallback.stop()
             webView.url = "about:blank"
         }
     }
@@ -64,11 +65,16 @@ Window {
     // recommends ("Exporting YouTube cookies").
     readonly property url isolationUrl: "https://www.youtube.com/robots.txt"
     property bool savePending: false
+    // True from "Save cookies" until the next open(). The WebView is hidden
+    // then, because users read the isolation page as an error.
+    property bool pageCovered: false
 
     function saveIsolated() {
         statusLabel.text = ""
+        pageCovered = true
         savePending = true
         webView.url = isolationUrl
+        saveFallback.restart()
     }
 
     title: qsTr("Log in to YouTube")
@@ -93,6 +99,7 @@ Window {
         webView.deleteAllCookies()
         webView.url = "https://www.youtube.com/"
         statusLabel.text = ""
+        pageCovered = false
         if (Qt.platform.os === "android") {
             x = 0
             y = 0
@@ -157,13 +164,29 @@ Window {
             id: statusLabel
             Layout.fillWidth: true
             wrapMode: Text.WordWrap
-            visible: text !== ""
+            visible: text !== "" && !dialog.pageCovered
         }
 
-        // Deliberately the ONLY item below this point in the ColumnLayout --
-        // see this file's own header comment on why nothing may overlap it.
+        // Shown in place of the WebView after "Save cookies". It takes the
+        // WebView's place rather than covering it, because nothing may
+        // overlap the WebView (see this file's header comment).
+        Label {
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+            visible: dialog.pageCovered
+            wrapMode: Text.WordWrap
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            color: dialog.savePending ? palette.windowText : statusLabel.color
+            text: dialog.savePending ? qsTr("Saving cookies…") : statusLabel.text
+        }
+
+        // Nothing may overlap the WebView (see this file's header comment).
+        // saveFallback saves anyway if the hidden WebView never reports the
+        // load as finished.
         WebView {
             id: webView
+            visible: !dialog.pageCovered
             Layout.fillWidth: true
             Layout.fillHeight: true
 
@@ -184,9 +207,21 @@ Window {
         id: saveDelay
         interval: 500
         onTriggered: {
+            saveFallback.stop()
             dialog.savePending = false
             if (dialog.resolver)
                 dialog.resolver.saveCookies(dialog.resolver.plannedCookiesPath())
+        }
+    }
+
+    // Saves even if the page load never reports that it finished, so the
+    // dialog can't stay on "Saving cookies…".
+    Timer {
+        id: saveFallback
+        interval: 10000
+        onTriggered: {
+            if (dialog.savePending)
+                saveDelay.restart()
         }
     }
 }

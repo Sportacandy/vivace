@@ -654,17 +654,17 @@
 <context>
     <name>DesktopYoutubeLogin</name>
     <message>
-        <location filename="../src/desktopyoutubelogin.cpp" line="100"/>
+        <location filename="../src/desktopyoutubelogin.cpp" line="105"/>
         <source>Embedded YouTube login is not available in this build.</source>
         <translation>Upotettu YouTube-kirjautuminen ei ole käytettävissä tässä koontiversiossa.</translation>
     </message>
     <message>
-        <location filename="../src/desktopyoutubelogin.cpp" line="148"/>
+        <location filename="../src/desktopyoutubelogin.cpp" line="153"/>
         <source>No YouTube login cookies were found. Make sure you finished signing in before closing the login window.</source>
         <translation>YouTube-kirjautumisen evästeitä ei löytynyt. Varmista, että kirjautuminen on suoritettu loppuun ennen kirjautumisikkunan sulkemista.</translation>
     </message>
     <message>
-        <location filename="../src/desktopyoutubelogin.cpp" line="157"/>
+        <location filename="../src/desktopyoutubelogin.cpp" line="162"/>
         <source>Could not write %1: %2</source>
         <translation>Kohdetta %1 ei voitu kirjoittaa: %2</translation>
     </message>
@@ -2238,32 +2238,32 @@
     <name>PlayerController</name>
     <message>
         <location filename="../src/playercontroller.cpp" line="182"/>
-        <location filename="../src/playercontroller.cpp" line="966"/>
-        <location filename="../src/playercontroller.cpp" line="982"/>
-        <location filename="../src/playercontroller.cpp" line="1665"/>
-        <location filename="../src/playercontroller.cpp" line="1681"/>
-        <location filename="../src/playercontroller.cpp" line="2592"/>
+        <location filename="../src/playercontroller.cpp" line="974"/>
+        <location filename="../src/playercontroller.cpp" line="990"/>
+        <location filename="../src/playercontroller.cpp" line="1710"/>
+        <location filename="../src/playercontroller.cpp" line="1726"/>
+        <location filename="../src/playercontroller.cpp" line="2637"/>
         <source>Track %1</source>
         <translation>Kappale %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="884"/>
+        <location filename="../src/playercontroller.cpp" line="892"/>
         <source>A/V delay: %1 ms</source>
         <translation>A/V-viive: %1 ms</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1722"/>
+        <location filename="../src/playercontroller.cpp" line="1767"/>
         <source>DVD title %1 could not be assembled</source>
         <translation>DVD-nimikettä %1 ei voitu koota</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1728"/>
+        <location filename="../src/playercontroller.cpp" line="1773"/>
         <source>DVD title %1 could not be opened</source>
         <translation>DVD-nimikettä %1 ei voitu avata</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1542"/>
-        <location filename="../src/playercontroller.cpp" line="1909"/>
+        <location filename="../src/playercontroller.cpp" line="1587"/>
+        <location filename="../src/playercontroller.cpp" line="1954"/>
         <source>Title %1 (%2)</source>
         <translation>Nimike %1 (%2)</translation>
     </message>
@@ -2318,293 +2318,298 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1439"/>
+        <location filename="../src/playercontroller.cpp" line="1484"/>
         <source>Could not open the Blu-ray disc (it may be encrypted, or use an unsupported format).</source>
         <translation>Blu-ray-levyä ei voitu avata (se saattaa olla salattu tai käyttää tukematonta muotoa).</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1446"/>
+        <location filename="../src/playercontroller.cpp" line="1491"/>
         <source>No playable titles were found on this Blu-ray disc.</source>
         <translation>Tältä Blu-ray-levyltä ei löytynyt toistettavia nimikkeitä.</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1491"/>
+        <location filename="../src/playercontroller.cpp" line="1536"/>
         <source>This Blu-ray title could not be selected.</source>
         <translation>Tätä Blu-ray-nimikettä ei voitu valita.</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1501"/>
-        <location filename="../src/playercontroller.cpp" line="1505"/>
+        <location filename="../src/playercontroller.cpp" line="1546"/>
+        <location filename="../src/playercontroller.cpp" line="1550"/>
         <source>This Blu-ray title could not be opened.</source>
         <translation>Tätä Blu-ray-nimikettä ei voitu avata.</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1925"/>
+        <location filename="../src/playercontroller.cpp" line="1970"/>
         <source>Chapter %1 (%2)</source>
         <translation>Luku %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3086"/>
+        <location filename="../src/playercontroller.cpp" line="3131"/>
         <source>Could not open the stream</source>
         <translation>Suoratoistoa ei voitu avata</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3145"/>
+        <location filename="../src/playercontroller.cpp" line="3190"/>
         <source>System default</source>
         <translation>Järjestelmän oletus</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3324"/>
+        <location filename="../src/playercontroller.cpp" line="3369"/>
         <source>A marker set to %1</source>
         <translation>A-merkki asetettu kohtaan %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3335"/>
+        <location filename="../src/playercontroller.cpp" line="3380"/>
         <source>B marker set to %1</source>
         <translation>B-merkki asetettu kohtaan %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3345"/>
+        <location filename="../src/playercontroller.cpp" line="3390"/>
         <source>A-B markers cleared</source>
         <translation>A-B merkit tyhjennetty</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3419"/>
+        <location filename="../src/playercontroller.cpp" line="3464"/>
         <source>None</source>
         <translation>Ei mitään</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3418"/>
+        <location filename="../src/playercontroller.cpp" line="3463"/>
         <source>Yadif</source>
         <translation>Yadif</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3419"/>
+        <location filename="../src/playercontroller.cpp" line="3464"/>
         <source>Bwdif</source>
         <translation>Bwdif</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3418"/>
+        <location filename="../src/playercontroller.cpp" line="3463"/>
         <source>Auto</source>
         <translation>Automaattinen</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1034"/>
+        <location filename="../src/playercontroller.cpp" line="1042"/>
         <source>Vivace needs permission to read media files to play this playlist.</source>
         <translation>Vivace tarvitsee luvan lukea mediatiedostoja toistaakseen tämän soittolistan.</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3420"/>
+        <location filename="../src/playercontroller.cpp" line="1127"/>
+        <source>The files in this playlist aren&apos;t available. The app that opened it passed only the playlist file, not the media files it lists.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/playercontroller.cpp" line="3465"/>
         <source>Deinterlace: %1</source>
         <translation>Lomituksen poisto: %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3505"/>
+        <location filename="../src/playercontroller.cpp" line="3550"/>
         <source>Could not load subtitles from %1</source>
         <translation>Tekstityksiä ei voitu ladata kohteesta %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3522"/>
+        <location filename="../src/playercontroller.cpp" line="3567"/>
         <source>Subtitles loaded: %1</source>
         <translation>Tekstitykset ladattu: %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3533"/>
+        <location filename="../src/playercontroller.cpp" line="3578"/>
         <source>Subtitles unloaded</source>
         <translation>Tekstitykset poistettu</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3543"/>
+        <location filename="../src/playercontroller.cpp" line="3588"/>
         <source>Subtitle delay: %1 ms</source>
         <translation>Tekstityksen viive: %1 ms</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3693"/>
+        <location filename="../src/playercontroller.cpp" line="3738"/>
         <source>General</source>
         <translation>Yleinen</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3696"/>
+        <location filename="../src/playercontroller.cpp" line="3741"/>
         <source>File</source>
         <translation>Tiedosto</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3711"/>
+        <location filename="../src/playercontroller.cpp" line="3756"/>
         <source>Size</source>
         <translation>Koko</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3711"/>
+        <location filename="../src/playercontroller.cpp" line="3756"/>
         <source>%1 KB (%2 MB)</source>
         <translation>%1 kt (%2 Mt)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3716"/>
-        <location filename="../src/playercontroller.cpp" line="3750"/>
+        <location filename="../src/playercontroller.cpp" line="3761"/>
+        <location filename="../src/playercontroller.cpp" line="3795"/>
         <source>URL</source>
         <translation>Verkko-osoite</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3726"/>
+        <location filename="../src/playercontroller.cpp" line="3771"/>
         <source>Length</source>
         <translation>Pituus</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3727"/>
+        <location filename="../src/playercontroller.cpp" line="3772"/>
         <source>Demuxer</source>
         <translation>Demukseri</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3732"/>
-        <location filename="../src/playercontroller.cpp" line="3783"/>
-        <location filename="../src/playercontroller.cpp" line="3846"/>
-        <location filename="../src/playercontroller.cpp" line="3876"/>
+        <location filename="../src/playercontroller.cpp" line="3777"/>
+        <location filename="../src/playercontroller.cpp" line="3828"/>
+        <location filename="../src/playercontroller.cpp" line="3891"/>
+        <location filename="../src/playercontroller.cpp" line="3921"/>
         <source>Name</source>
         <translation>Nimi</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3733"/>
+        <location filename="../src/playercontroller.cpp" line="3778"/>
         <source>Artist</source>
         <translation>Artisti</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3735"/>
+        <location filename="../src/playercontroller.cpp" line="3780"/>
         <source>Album artist</source>
         <translation>Albumin esittäjä</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3737"/>
+        <location filename="../src/playercontroller.cpp" line="3782"/>
         <source>Author</source>
         <translation>Tekijä</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3738"/>
+        <location filename="../src/playercontroller.cpp" line="3783"/>
         <source>Composer</source>
         <translation>Säveltäjä</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3739"/>
+        <location filename="../src/playercontroller.cpp" line="3784"/>
         <source>Album</source>
         <translation>Albumi</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3740"/>
+        <location filename="../src/playercontroller.cpp" line="3785"/>
         <source>Genre</source>
         <translation>Laji</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3741"/>
+        <location filename="../src/playercontroller.cpp" line="3786"/>
         <source>Date</source>
         <translation>Päivämäärä</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3742"/>
+        <location filename="../src/playercontroller.cpp" line="3787"/>
         <source>Track</source>
         <translation>Kappale</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3743"/>
+        <location filename="../src/playercontroller.cpp" line="3788"/>
         <source>Copyright</source>
         <translation>Tekijänoikeudet</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3744"/>
+        <location filename="../src/playercontroller.cpp" line="3789"/>
         <source>Comment</source>
         <translation>Kommentti</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3745"/>
+        <location filename="../src/playercontroller.cpp" line="3790"/>
         <source>Description</source>
         <translation>Kuvaus</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3747"/>
+        <location filename="../src/playercontroller.cpp" line="3792"/>
         <source>Publisher</source>
         <translation>Julkaisija</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3748"/>
-        <location filename="../src/playercontroller.cpp" line="3783"/>
-        <location filename="../src/playercontroller.cpp" line="3846"/>
-        <location filename="../src/playercontroller.cpp" line="3876"/>
+        <location filename="../src/playercontroller.cpp" line="3793"/>
+        <location filename="../src/playercontroller.cpp" line="3828"/>
+        <location filename="../src/playercontroller.cpp" line="3891"/>
+        <location filename="../src/playercontroller.cpp" line="3921"/>
         <source>Language</source>
         <translation>Kieli</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3752"/>
+        <location filename="../src/playercontroller.cpp" line="3797"/>
         <source>Clip info</source>
         <translation>Tietoja videoleikkeestä</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3756"/>
+        <location filename="../src/playercontroller.cpp" line="3801"/>
         <source>Initial Video Stream</source>
         <translation>Alkuperäinen videovirta</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3759"/>
+        <location filename="../src/playercontroller.cpp" line="3804"/>
         <source>Resolution</source>
         <translation>Resoluutio</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3762"/>
+        <location filename="../src/playercontroller.cpp" line="3807"/>
         <source>Aspect ratio</source>
         <translation>Kuvasuhde</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3766"/>
-        <location filename="../src/playercontroller.cpp" line="3806"/>
+        <location filename="../src/playercontroller.cpp" line="3811"/>
+        <location filename="../src/playercontroller.cpp" line="3851"/>
         <source>Format</source>
         <translation>Muoto</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3769"/>
-        <location filename="../src/playercontroller.cpp" line="3809"/>
+        <location filename="../src/playercontroller.cpp" line="3814"/>
+        <location filename="../src/playercontroller.cpp" line="3854"/>
         <source>Bitrate</source>
         <translation>Bittinopeus</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3769"/>
-        <location filename="../src/playercontroller.cpp" line="3809"/>
+        <location filename="../src/playercontroller.cpp" line="3814"/>
+        <location filename="../src/playercontroller.cpp" line="3854"/>
         <source>%1 kbps</source>
         <translation>%1 kbps</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3772"/>
+        <location filename="../src/playercontroller.cpp" line="3817"/>
         <source>Frames per second</source>
         <translation>Ruutuja per sekunti</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3775"/>
+        <location filename="../src/playercontroller.cpp" line="3820"/>
         <source>HDR</source>
         <translation>HDR</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3775"/>
+        <location filename="../src/playercontroller.cpp" line="3820"/>
         <source>yes</source>
         <translation>kyllä</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3782"/>
+        <location filename="../src/playercontroller.cpp" line="3827"/>
         <source>Video Streams</source>
         <translation>Video suoratoisto</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3790"/>
+        <location filename="../src/playercontroller.cpp" line="3835"/>
         <source>Initial Audio Stream</source>
         <translation>Alkuperäinen äänivirta</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3845"/>
+        <location filename="../src/playercontroller.cpp" line="3890"/>
         <source>Audio Streams</source>
         <translation>Äänivirrat</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3875"/>
+        <location filename="../src/playercontroller.cpp" line="3920"/>
         <source>Subtitles</source>
         <translation>Tekstitykset</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="4225"/>
+        <location filename="../src/playercontroller.cpp" line="4270"/>
         <source>Chapter %1</source>
         <translation>Luku %1</translation>
     </message>
@@ -5420,14 +5425,14 @@
 <context>
     <name>YoutubeLoginDialog</name>
     <message>
-        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="47"/>
-        <location filename="../qml/YoutubeLoginDialog.qml" line="54"/>
+        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="73"/>
+        <location filename="../qml/YoutubeLoginDialog.qml" line="80"/>
         <source>Log in to YouTube</source>
         <translation>Kirjaudu YouTubeen</translation>
     </message>
     <message numerus="yes">
-        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="79"/>
-        <location filename="../qml/YoutubeLoginDialog.qml" line="87"/>
+        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="104"/>
+        <location filename="../qml/YoutubeLoginDialog.qml" line="119"/>
         <source>%n cookie(s) saved — tap “Close” to finish.</source>
         <translation>
             <numerusform>%n eväste tallennettu — lopeta napauttamalla ”Sulje”.</numerusform>
@@ -5435,22 +5440,28 @@
         </translation>
     </message>
     <message>
-        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="104"/>
-        <location filename="../qml/YoutubeLoginDialog.qml" line="115"/>
+        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="129"/>
+        <location filename="../qml/YoutubeLoginDialog.qml" line="147"/>
         <source>Sign in below, then tap “Save cookies”, then “Close”.</source>
         <translation>Kirjaudu alla ja napauta sitten ”Tallenna evästeet” ja lopuksi ”Sulje”.</translation>
     </message>
     <message>
-        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="107"/>
-        <location filename="../qml/YoutubeLoginDialog.qml" line="118"/>
+        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="132"/>
+        <location filename="../qml/YoutubeLoginDialog.qml" line="150"/>
         <source>Save cookies</source>
         <translation>Tallenna evästeet</translation>
     </message>
     <message>
-        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="114"/>
-        <location filename="../qml/YoutubeLoginDialog.qml" line="125"/>
+        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="140"/>
+        <location filename="../qml/YoutubeLoginDialog.qml" line="158"/>
         <source>Close</source>
         <translation>Sulje</translation>
+    </message>
+    <message>
+        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="181"/>
+        <location filename="../qml/YoutubeLoginDialog.qml" line="181"/>
+        <source>Saving cookies…</source>
+        <translation>Tallennetaan evästeitä…</translation>
     </message>
     <message numerus="yes">
         <source>Signed in — %n cookie(s) saved.</source>

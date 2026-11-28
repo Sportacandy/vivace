@@ -654,17 +654,17 @@
 <context>
     <name>DesktopYoutubeLogin</name>
     <message>
-        <location filename="../src/desktopyoutubelogin.cpp" line="100"/>
+        <location filename="../src/desktopyoutubelogin.cpp" line="105"/>
         <source>Embedded YouTube login is not available in this build.</source>
         <translation>Вграденото влизане в YouTube не е налично в тази версия на приложението.</translation>
     </message>
     <message>
-        <location filename="../src/desktopyoutubelogin.cpp" line="148"/>
+        <location filename="../src/desktopyoutubelogin.cpp" line="153"/>
         <source>No YouTube login cookies were found. Make sure you finished signing in before closing the login window.</source>
         <translation>Не са намерени бисквитки от влизането в YouTube. Уверете се, че сте завършили влизането, преди да затворите прозореца за влизане.</translation>
     </message>
     <message>
-        <location filename="../src/desktopyoutubelogin.cpp" line="157"/>
+        <location filename="../src/desktopyoutubelogin.cpp" line="162"/>
         <source>Could not write %1: %2</source>
         <translation>Файлът %1 не можа да бъде записан: %2</translation>
     </message>
@@ -2238,32 +2238,32 @@
     <name>PlayerController</name>
     <message>
         <location filename="../src/playercontroller.cpp" line="182"/>
-        <location filename="../src/playercontroller.cpp" line="966"/>
-        <location filename="../src/playercontroller.cpp" line="982"/>
-        <location filename="../src/playercontroller.cpp" line="1665"/>
-        <location filename="../src/playercontroller.cpp" line="1681"/>
-        <location filename="../src/playercontroller.cpp" line="2592"/>
+        <location filename="../src/playercontroller.cpp" line="974"/>
+        <location filename="../src/playercontroller.cpp" line="990"/>
+        <location filename="../src/playercontroller.cpp" line="1710"/>
+        <location filename="../src/playercontroller.cpp" line="1726"/>
+        <location filename="../src/playercontroller.cpp" line="2637"/>
         <source>Track %1</source>
         <translation>Пътечка %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="884"/>
+        <location filename="../src/playercontroller.cpp" line="892"/>
         <source>A/V delay: %1 ms</source>
         <translation>Забавяне А/В: %1 мс</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1722"/>
+        <location filename="../src/playercontroller.cpp" line="1767"/>
         <source>DVD title %1 could not be assembled</source>
         <translation>Заглавие %1 на DVD не може да се сглоби</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1728"/>
+        <location filename="../src/playercontroller.cpp" line="1773"/>
         <source>DVD title %1 could not be opened</source>
         <translation>Заглавие %1 на DVD не може да се отвори</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1542"/>
-        <location filename="../src/playercontroller.cpp" line="1909"/>
+        <location filename="../src/playercontroller.cpp" line="1587"/>
+        <location filename="../src/playercontroller.cpp" line="1954"/>
         <source>Title %1 (%2)</source>
         <translation>Заглавие %1 (%2)</translation>
     </message>
@@ -2318,293 +2318,298 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1439"/>
+        <location filename="../src/playercontroller.cpp" line="1484"/>
         <source>Could not open the Blu-ray disc (it may be encrypted, or use an unsupported format).</source>
         <translation>Дискът Blu-ray не можа да бъде отворен (може да е криптиран или да използва неподдържан формат).</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1446"/>
+        <location filename="../src/playercontroller.cpp" line="1491"/>
         <source>No playable titles were found on this Blu-ray disc.</source>
         <translation>На този диск Blu-ray не бяха намерени възпроизводими заглавия.</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1491"/>
+        <location filename="../src/playercontroller.cpp" line="1536"/>
         <source>This Blu-ray title could not be selected.</source>
         <translation>Това заглавие на Blu-ray не можа да бъде избрано.</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1501"/>
-        <location filename="../src/playercontroller.cpp" line="1505"/>
+        <location filename="../src/playercontroller.cpp" line="1546"/>
+        <location filename="../src/playercontroller.cpp" line="1550"/>
         <source>This Blu-ray title could not be opened.</source>
         <translation>Това заглавие на Blu-ray не можа да бъде отворено.</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1925"/>
+        <location filename="../src/playercontroller.cpp" line="1970"/>
         <source>Chapter %1 (%2)</source>
         <translation>Глава %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3086"/>
+        <location filename="../src/playercontroller.cpp" line="3131"/>
         <source>Could not open the stream</source>
         <translation>Потокът не може да се отвори</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3145"/>
+        <location filename="../src/playercontroller.cpp" line="3190"/>
         <source>System default</source>
         <translation>По подразбиране за системата</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3324"/>
+        <location filename="../src/playercontroller.cpp" line="3369"/>
         <source>A marker set to %1</source>
         <translation>Маркер A зададен на %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3335"/>
+        <location filename="../src/playercontroller.cpp" line="3380"/>
         <source>B marker set to %1</source>
         <translation>Маркер B зададен на %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3345"/>
+        <location filename="../src/playercontroller.cpp" line="3390"/>
         <source>A-B markers cleared</source>
         <translation>Позициите А и Б са изчистени</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3419"/>
+        <location filename="../src/playercontroller.cpp" line="3464"/>
         <source>None</source>
         <translation>Без</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3418"/>
+        <location filename="../src/playercontroller.cpp" line="3463"/>
         <source>Yadif</source>
         <translation>Yadif</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3419"/>
+        <location filename="../src/playercontroller.cpp" line="3464"/>
         <source>Bwdif</source>
         <translation>Bwdif</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3418"/>
+        <location filename="../src/playercontroller.cpp" line="3463"/>
         <source>Auto</source>
         <translation>Автоматично</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1034"/>
+        <location filename="../src/playercontroller.cpp" line="1042"/>
         <source>Vivace needs permission to read media files to play this playlist.</source>
         <translation>Vivace се нуждае от разрешение за четене на медийни файлове, за да възпроизведе този списък за изпълнение.</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3420"/>
+        <location filename="../src/playercontroller.cpp" line="1127"/>
+        <source>The files in this playlist aren&apos;t available. The app that opened it passed only the playlist file, not the media files it lists.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/playercontroller.cpp" line="3465"/>
         <source>Deinterlace: %1</source>
         <translation>Компенсиране: %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3505"/>
+        <location filename="../src/playercontroller.cpp" line="3550"/>
         <source>Could not load subtitles from %1</source>
         <translation>Субтитрите не могат да се заредят от %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3522"/>
+        <location filename="../src/playercontroller.cpp" line="3567"/>
         <source>Subtitles loaded: %1</source>
         <translation>Субтитрите са заредени: %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3533"/>
+        <location filename="../src/playercontroller.cpp" line="3578"/>
         <source>Subtitles unloaded</source>
         <translation>Субтитрите са премахнати</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3543"/>
+        <location filename="../src/playercontroller.cpp" line="3588"/>
         <source>Subtitle delay: %1 ms</source>
         <translation>Забавяне на субтитрите: %1 мс</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3693"/>
+        <location filename="../src/playercontroller.cpp" line="3738"/>
         <source>General</source>
         <translation>Общи</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3696"/>
+        <location filename="../src/playercontroller.cpp" line="3741"/>
         <source>File</source>
         <translation>Файл</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3711"/>
+        <location filename="../src/playercontroller.cpp" line="3756"/>
         <source>Size</source>
         <translation>Размер</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3711"/>
+        <location filename="../src/playercontroller.cpp" line="3756"/>
         <source>%1 KB (%2 MB)</source>
         <translation>%1 КБ (%2 МБ)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3716"/>
-        <location filename="../src/playercontroller.cpp" line="3750"/>
+        <location filename="../src/playercontroller.cpp" line="3761"/>
+        <location filename="../src/playercontroller.cpp" line="3795"/>
         <source>URL</source>
         <translation>Интернет адрес</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3726"/>
+        <location filename="../src/playercontroller.cpp" line="3771"/>
         <source>Length</source>
         <translation>Времетраене</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3727"/>
+        <location filename="../src/playercontroller.cpp" line="3772"/>
         <source>Demuxer</source>
         <translation>Демултиплексор</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3732"/>
-        <location filename="../src/playercontroller.cpp" line="3783"/>
-        <location filename="../src/playercontroller.cpp" line="3846"/>
-        <location filename="../src/playercontroller.cpp" line="3876"/>
+        <location filename="../src/playercontroller.cpp" line="3777"/>
+        <location filename="../src/playercontroller.cpp" line="3828"/>
+        <location filename="../src/playercontroller.cpp" line="3891"/>
+        <location filename="../src/playercontroller.cpp" line="3921"/>
         <source>Name</source>
         <translation>Име</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3733"/>
+        <location filename="../src/playercontroller.cpp" line="3778"/>
         <source>Artist</source>
         <translation>Изпълнител</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3735"/>
+        <location filename="../src/playercontroller.cpp" line="3780"/>
         <source>Album artist</source>
         <translation>Изпълнител на албума</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3737"/>
+        <location filename="../src/playercontroller.cpp" line="3782"/>
         <source>Author</source>
         <translation>Автор</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3738"/>
+        <location filename="../src/playercontroller.cpp" line="3783"/>
         <source>Composer</source>
         <translation>Композитор</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3739"/>
+        <location filename="../src/playercontroller.cpp" line="3784"/>
         <source>Album</source>
         <translation>Албум</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3740"/>
+        <location filename="../src/playercontroller.cpp" line="3785"/>
         <source>Genre</source>
         <translation>Жанр</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3741"/>
+        <location filename="../src/playercontroller.cpp" line="3786"/>
         <source>Date</source>
         <translation>Дата</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3742"/>
+        <location filename="../src/playercontroller.cpp" line="3787"/>
         <source>Track</source>
         <translation>Пътечка</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3743"/>
+        <location filename="../src/playercontroller.cpp" line="3788"/>
         <source>Copyright</source>
         <translation>Авторско право</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3744"/>
+        <location filename="../src/playercontroller.cpp" line="3789"/>
         <source>Comment</source>
         <translation>Коментар</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3745"/>
+        <location filename="../src/playercontroller.cpp" line="3790"/>
         <source>Description</source>
         <translation>Описание</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3747"/>
+        <location filename="../src/playercontroller.cpp" line="3792"/>
         <source>Publisher</source>
         <translation>Издател</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3748"/>
-        <location filename="../src/playercontroller.cpp" line="3783"/>
-        <location filename="../src/playercontroller.cpp" line="3846"/>
-        <location filename="../src/playercontroller.cpp" line="3876"/>
+        <location filename="../src/playercontroller.cpp" line="3793"/>
+        <location filename="../src/playercontroller.cpp" line="3828"/>
+        <location filename="../src/playercontroller.cpp" line="3891"/>
+        <location filename="../src/playercontroller.cpp" line="3921"/>
         <source>Language</source>
         <translation>Език</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3752"/>
+        <location filename="../src/playercontroller.cpp" line="3797"/>
         <source>Clip info</source>
         <translation>Информация за клипа</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3756"/>
+        <location filename="../src/playercontroller.cpp" line="3801"/>
         <source>Initial Video Stream</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3759"/>
+        <location filename="../src/playercontroller.cpp" line="3804"/>
         <source>Resolution</source>
         <translation>Резолюция</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3762"/>
+        <location filename="../src/playercontroller.cpp" line="3807"/>
         <source>Aspect ratio</source>
         <translation>Съотношение</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3766"/>
-        <location filename="../src/playercontroller.cpp" line="3806"/>
+        <location filename="../src/playercontroller.cpp" line="3811"/>
+        <location filename="../src/playercontroller.cpp" line="3851"/>
         <source>Format</source>
         <translation>Формат</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3769"/>
-        <location filename="../src/playercontroller.cpp" line="3809"/>
+        <location filename="../src/playercontroller.cpp" line="3814"/>
+        <location filename="../src/playercontroller.cpp" line="3854"/>
         <source>Bitrate</source>
         <translation>Побитова скорост</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3769"/>
-        <location filename="../src/playercontroller.cpp" line="3809"/>
+        <location filename="../src/playercontroller.cpp" line="3814"/>
+        <location filename="../src/playercontroller.cpp" line="3854"/>
         <source>%1 kbps</source>
         <translation>%1 кбвс</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3772"/>
+        <location filename="../src/playercontroller.cpp" line="3817"/>
         <source>Frames per second</source>
         <translation>Кадри в секунда</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3775"/>
+        <location filename="../src/playercontroller.cpp" line="3820"/>
         <source>HDR</source>
         <translation>HDR</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3775"/>
+        <location filename="../src/playercontroller.cpp" line="3820"/>
         <source>yes</source>
         <translation>да</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3782"/>
+        <location filename="../src/playercontroller.cpp" line="3827"/>
         <source>Video Streams</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3790"/>
+        <location filename="../src/playercontroller.cpp" line="3835"/>
         <source>Initial Audio Stream</source>
         <translation>Първоначален звуков поток</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3845"/>
+        <location filename="../src/playercontroller.cpp" line="3890"/>
         <source>Audio Streams</source>
         <translation>Звукови потоци</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3875"/>
+        <location filename="../src/playercontroller.cpp" line="3920"/>
         <source>Subtitles</source>
         <translation>Субтитри</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="4225"/>
+        <location filename="../src/playercontroller.cpp" line="4270"/>
         <source>Chapter %1</source>
         <translation>Глава %1</translation>
     </message>
@@ -5420,14 +5425,14 @@
 <context>
     <name>YoutubeLoginDialog</name>
     <message>
-        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="47"/>
-        <location filename="../qml/YoutubeLoginDialog.qml" line="54"/>
+        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="73"/>
+        <location filename="../qml/YoutubeLoginDialog.qml" line="80"/>
         <source>Log in to YouTube</source>
         <translation>Вход в YouTube</translation>
     </message>
     <message numerus="yes">
-        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="79"/>
-        <location filename="../qml/YoutubeLoginDialog.qml" line="87"/>
+        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="104"/>
+        <location filename="../qml/YoutubeLoginDialog.qml" line="119"/>
         <source>%n cookie(s) saved — tap “Close” to finish.</source>
         <translation>
             <numerusform>Запазена е %n бисквитка — докоснете „Затваряне“, за да приключите.</numerusform>
@@ -5435,22 +5440,28 @@
         </translation>
     </message>
     <message>
-        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="104"/>
-        <location filename="../qml/YoutubeLoginDialog.qml" line="115"/>
+        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="129"/>
+        <location filename="../qml/YoutubeLoginDialog.qml" line="147"/>
         <source>Sign in below, then tap “Save cookies”, then “Close”.</source>
         <translation>Впишете се по-долу, след което докоснете „Запази бисквитките“, после „Затваряне“.</translation>
     </message>
     <message>
-        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="107"/>
-        <location filename="../qml/YoutubeLoginDialog.qml" line="118"/>
+        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="132"/>
+        <location filename="../qml/YoutubeLoginDialog.qml" line="150"/>
         <source>Save cookies</source>
         <translation>Запази бисквитките</translation>
     </message>
     <message>
-        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="114"/>
-        <location filename="../qml/YoutubeLoginDialog.qml" line="125"/>
+        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="140"/>
+        <location filename="../qml/YoutubeLoginDialog.qml" line="158"/>
         <source>Close</source>
         <translation>Затваряне</translation>
+    </message>
+    <message>
+        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="181"/>
+        <location filename="../qml/YoutubeLoginDialog.qml" line="181"/>
+        <source>Saving cookies…</source>
+        <translation>Записване на бисквитките…</translation>
     </message>
     <message numerus="yes">
         <source>Signed in — %n cookie(s) saved.</source>

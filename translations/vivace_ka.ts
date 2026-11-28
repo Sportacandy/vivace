@@ -654,17 +654,17 @@
 <context>
     <name>DesktopYoutubeLogin</name>
     <message>
-        <location filename="../src/desktopyoutubelogin.cpp" line="100"/>
+        <location filename="../src/desktopyoutubelogin.cpp" line="105"/>
         <source>Embedded YouTube login is not available in this build.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/desktopyoutubelogin.cpp" line="148"/>
+        <location filename="../src/desktopyoutubelogin.cpp" line="153"/>
         <source>No YouTube login cookies were found. Make sure you finished signing in before closing the login window.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/desktopyoutubelogin.cpp" line="157"/>
+        <location filename="../src/desktopyoutubelogin.cpp" line="162"/>
         <source>Could not write %1: %2</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2238,32 +2238,32 @@
     <name>PlayerController</name>
     <message>
         <location filename="../src/playercontroller.cpp" line="182"/>
-        <location filename="../src/playercontroller.cpp" line="966"/>
-        <location filename="../src/playercontroller.cpp" line="982"/>
-        <location filename="../src/playercontroller.cpp" line="1665"/>
-        <location filename="../src/playercontroller.cpp" line="1681"/>
-        <location filename="../src/playercontroller.cpp" line="2592"/>
+        <location filename="../src/playercontroller.cpp" line="974"/>
+        <location filename="../src/playercontroller.cpp" line="990"/>
+        <location filename="../src/playercontroller.cpp" line="1710"/>
+        <location filename="../src/playercontroller.cpp" line="1726"/>
+        <location filename="../src/playercontroller.cpp" line="2637"/>
         <source>Track %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="884"/>
+        <location filename="../src/playercontroller.cpp" line="892"/>
         <source>A/V delay: %1 ms</source>
         <translation>ა/ვ დაყოვნება: %1 მწმ</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1722"/>
+        <location filename="../src/playercontroller.cpp" line="1767"/>
         <source>DVD title %1 could not be assembled</source>
         <translation>DVD სათაური %1 ვერ აეწყო</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1728"/>
+        <location filename="../src/playercontroller.cpp" line="1773"/>
         <source>DVD title %1 could not be opened</source>
         <translation>DVD სათაური %1 ვერ გაიხსნა</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1542"/>
-        <location filename="../src/playercontroller.cpp" line="1909"/>
+        <location filename="../src/playercontroller.cpp" line="1587"/>
+        <location filename="../src/playercontroller.cpp" line="1954"/>
         <source>Title %1 (%2)</source>
         <translation>სათაური %1 (%2)</translation>
     </message>
@@ -2318,293 +2318,298 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1439"/>
+        <location filename="../src/playercontroller.cpp" line="1484"/>
         <source>Could not open the Blu-ray disc (it may be encrypted, or use an unsupported format).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1446"/>
+        <location filename="../src/playercontroller.cpp" line="1491"/>
         <source>No playable titles were found on this Blu-ray disc.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1491"/>
+        <location filename="../src/playercontroller.cpp" line="1536"/>
         <source>This Blu-ray title could not be selected.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1501"/>
-        <location filename="../src/playercontroller.cpp" line="1505"/>
+        <location filename="../src/playercontroller.cpp" line="1546"/>
+        <location filename="../src/playercontroller.cpp" line="1550"/>
         <source>This Blu-ray title could not be opened.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1925"/>
+        <location filename="../src/playercontroller.cpp" line="1970"/>
         <source>Chapter %1 (%2)</source>
         <translation>თავი %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3086"/>
+        <location filename="../src/playercontroller.cpp" line="3131"/>
         <source>Could not open the stream</source>
         <translation>ნაკადის გახსნა ვერ მოხერხდა</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3145"/>
+        <location filename="../src/playercontroller.cpp" line="3190"/>
         <source>System default</source>
         <translation>სისტემის ნაგულისხმევი</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3324"/>
+        <location filename="../src/playercontroller.cpp" line="3369"/>
         <source>A marker set to %1</source>
         <translation>A მარკერი დაყენდა %1-ზე</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3335"/>
+        <location filename="../src/playercontroller.cpp" line="3380"/>
         <source>B marker set to %1</source>
         <translation>B მარკერი დაყენდა %1-ზე</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3345"/>
+        <location filename="../src/playercontroller.cpp" line="3390"/>
         <source>A-B markers cleared</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3419"/>
+        <location filename="../src/playercontroller.cpp" line="3464"/>
         <source>None</source>
         <translation>არაა</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3418"/>
+        <location filename="../src/playercontroller.cpp" line="3463"/>
         <source>Yadif</source>
         <translation>Yadif</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3419"/>
+        <location filename="../src/playercontroller.cpp" line="3464"/>
         <source>Bwdif</source>
         <translation>Bwdif</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3418"/>
+        <location filename="../src/playercontroller.cpp" line="3463"/>
         <source>Auto</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="1034"/>
+        <location filename="../src/playercontroller.cpp" line="1042"/>
         <source>Vivace needs permission to read media files to play this playlist.</source>
         <translation>ამ დასაკრავი სიის დასაკრავად Vivace-ს მედიაფაილების წაკითხვის ნებართვა სჭირდება.</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3420"/>
+        <location filename="../src/playercontroller.cpp" line="1127"/>
+        <source>The files in this playlist aren&apos;t available. The app that opened it passed only the playlist file, not the media files it lists.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/playercontroller.cpp" line="3465"/>
         <source>Deinterlace: %1</source>
         <translation>დეინტერლაცია: %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3505"/>
+        <location filename="../src/playercontroller.cpp" line="3550"/>
         <source>Could not load subtitles from %1</source>
         <translation>სუბტიტრების ჩატვირთვა %1-დან ვერ მოხერხდა</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3522"/>
+        <location filename="../src/playercontroller.cpp" line="3567"/>
         <source>Subtitles loaded: %1</source>
         <translation>სუბტიტრები ჩაიტვირთა: %1</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3533"/>
+        <location filename="../src/playercontroller.cpp" line="3578"/>
         <source>Subtitles unloaded</source>
         <translation>სუბტიტრები ამოიტვირთა</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3543"/>
+        <location filename="../src/playercontroller.cpp" line="3588"/>
         <source>Subtitle delay: %1 ms</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3693"/>
+        <location filename="../src/playercontroller.cpp" line="3738"/>
         <source>General</source>
         <translation>ძირითადი</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3696"/>
+        <location filename="../src/playercontroller.cpp" line="3741"/>
         <source>File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3711"/>
+        <location filename="../src/playercontroller.cpp" line="3756"/>
         <source>Size</source>
         <translation>ზომა</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3711"/>
+        <location filename="../src/playercontroller.cpp" line="3756"/>
         <source>%1 KB (%2 MB)</source>
         <translation>%1 კბ (%2 მბ)</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3716"/>
-        <location filename="../src/playercontroller.cpp" line="3750"/>
+        <location filename="../src/playercontroller.cpp" line="3761"/>
+        <location filename="../src/playercontroller.cpp" line="3795"/>
         <source>URL</source>
         <translation>URL</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3726"/>
+        <location filename="../src/playercontroller.cpp" line="3771"/>
         <source>Length</source>
         <translation>ხანგრძლივობა</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3727"/>
+        <location filename="../src/playercontroller.cpp" line="3772"/>
         <source>Demuxer</source>
         <translation>დემულტიპლექსორი</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3732"/>
-        <location filename="../src/playercontroller.cpp" line="3783"/>
-        <location filename="../src/playercontroller.cpp" line="3846"/>
-        <location filename="../src/playercontroller.cpp" line="3876"/>
+        <location filename="../src/playercontroller.cpp" line="3777"/>
+        <location filename="../src/playercontroller.cpp" line="3828"/>
+        <location filename="../src/playercontroller.cpp" line="3891"/>
+        <location filename="../src/playercontroller.cpp" line="3921"/>
         <source>Name</source>
         <translation>დასახელება</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3733"/>
+        <location filename="../src/playercontroller.cpp" line="3778"/>
         <source>Artist</source>
         <translation>შემსრულებელი</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3735"/>
+        <location filename="../src/playercontroller.cpp" line="3780"/>
         <source>Album artist</source>
         <translation>ალბომის შემსრულებელი</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3737"/>
+        <location filename="../src/playercontroller.cpp" line="3782"/>
         <source>Author</source>
         <translation>ავტორი</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3738"/>
+        <location filename="../src/playercontroller.cpp" line="3783"/>
         <source>Composer</source>
         <translation>კომპოზიტორი</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3739"/>
+        <location filename="../src/playercontroller.cpp" line="3784"/>
         <source>Album</source>
         <translation>ალბომი</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3740"/>
+        <location filename="../src/playercontroller.cpp" line="3785"/>
         <source>Genre</source>
         <translation>ჟანრი</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3741"/>
+        <location filename="../src/playercontroller.cpp" line="3786"/>
         <source>Date</source>
         <translation>თარიღი</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3742"/>
+        <location filename="../src/playercontroller.cpp" line="3787"/>
         <source>Track</source>
         <translation>ჩანაწერი</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3743"/>
+        <location filename="../src/playercontroller.cpp" line="3788"/>
         <source>Copyright</source>
         <translation>საავტორო უფლებები</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3744"/>
+        <location filename="../src/playercontroller.cpp" line="3789"/>
         <source>Comment</source>
         <translation>კომენტარი</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3745"/>
+        <location filename="../src/playercontroller.cpp" line="3790"/>
         <source>Description</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3747"/>
+        <location filename="../src/playercontroller.cpp" line="3792"/>
         <source>Publisher</source>
         <translation>გამომცემელი</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3748"/>
-        <location filename="../src/playercontroller.cpp" line="3783"/>
-        <location filename="../src/playercontroller.cpp" line="3846"/>
-        <location filename="../src/playercontroller.cpp" line="3876"/>
+        <location filename="../src/playercontroller.cpp" line="3793"/>
+        <location filename="../src/playercontroller.cpp" line="3828"/>
+        <location filename="../src/playercontroller.cpp" line="3891"/>
+        <location filename="../src/playercontroller.cpp" line="3921"/>
         <source>Language</source>
         <translation>ენა</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3752"/>
+        <location filename="../src/playercontroller.cpp" line="3797"/>
         <source>Clip info</source>
         <translation>ინფორმაცია - კლიპი</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3756"/>
+        <location filename="../src/playercontroller.cpp" line="3801"/>
         <source>Initial Video Stream</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3759"/>
+        <location filename="../src/playercontroller.cpp" line="3804"/>
         <source>Resolution</source>
         <translation>გარჩევადობა</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3762"/>
+        <location filename="../src/playercontroller.cpp" line="3807"/>
         <source>Aspect ratio</source>
         <translation>თანაფარდობა</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3766"/>
-        <location filename="../src/playercontroller.cpp" line="3806"/>
+        <location filename="../src/playercontroller.cpp" line="3811"/>
+        <location filename="../src/playercontroller.cpp" line="3851"/>
         <source>Format</source>
         <translation>ფორმატი</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3769"/>
-        <location filename="../src/playercontroller.cpp" line="3809"/>
+        <location filename="../src/playercontroller.cpp" line="3814"/>
+        <location filename="../src/playercontroller.cpp" line="3854"/>
         <source>Bitrate</source>
         <translation>ბიტური სიხშირე</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3769"/>
-        <location filename="../src/playercontroller.cpp" line="3809"/>
+        <location filename="../src/playercontroller.cpp" line="3814"/>
+        <location filename="../src/playercontroller.cpp" line="3854"/>
         <source>%1 kbps</source>
         <translation>%1 კბწმ</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3772"/>
+        <location filename="../src/playercontroller.cpp" line="3817"/>
         <source>Frames per second</source>
         <translation>კადრი წამში</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3775"/>
+        <location filename="../src/playercontroller.cpp" line="3820"/>
         <source>HDR</source>
         <translation>HDR</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3775"/>
+        <location filename="../src/playercontroller.cpp" line="3820"/>
         <source>yes</source>
         <translation>დიახ</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3782"/>
+        <location filename="../src/playercontroller.cpp" line="3827"/>
         <source>Video Streams</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3790"/>
+        <location filename="../src/playercontroller.cpp" line="3835"/>
         <source>Initial Audio Stream</source>
         <translation>საწყისი აუდიონაკადი</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3845"/>
+        <location filename="../src/playercontroller.cpp" line="3890"/>
         <source>Audio Streams</source>
         <translation>აუდიონაკადები</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="3875"/>
+        <location filename="../src/playercontroller.cpp" line="3920"/>
         <source>Subtitles</source>
         <translation>სუბტიტრები</translation>
     </message>
     <message>
-        <location filename="../src/playercontroller.cpp" line="4225"/>
+        <location filename="../src/playercontroller.cpp" line="4270"/>
         <source>Chapter %1</source>
         <translation>თავი %1</translation>
     </message>
@@ -5412,14 +5417,14 @@
 <context>
     <name>YoutubeLoginDialog</name>
     <message>
-        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="47"/>
-        <location filename="../qml/YoutubeLoginDialog.qml" line="54"/>
+        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="73"/>
+        <location filename="../qml/YoutubeLoginDialog.qml" line="80"/>
         <source>Log in to YouTube</source>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
-        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="79"/>
-        <location filename="../qml/YoutubeLoginDialog.qml" line="87"/>
+        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="104"/>
+        <location filename="../qml/YoutubeLoginDialog.qml" line="119"/>
         <source>%n cookie(s) saved — tap “Close” to finish.</source>
         <translation type="unfinished">
             <numerusform></numerusform>
@@ -5427,22 +5432,28 @@
         </translation>
     </message>
     <message>
-        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="104"/>
-        <location filename="../qml/YoutubeLoginDialog.qml" line="115"/>
+        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="129"/>
+        <location filename="../qml/YoutubeLoginDialog.qml" line="147"/>
         <source>Sign in below, then tap “Save cookies”, then “Close”.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="107"/>
-        <location filename="../qml/YoutubeLoginDialog.qml" line="118"/>
+        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="132"/>
+        <location filename="../qml/YoutubeLoginDialog.qml" line="150"/>
         <source>Save cookies</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="114"/>
-        <location filename="../qml/YoutubeLoginDialog.qml" line="125"/>
+        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="140"/>
+        <location filename="../qml/YoutubeLoginDialog.qml" line="158"/>
         <source>Close</source>
         <translation type="unfinished">დაკეტვა</translation>
+    </message>
+    <message>
+        <location filename="../qml/desktop/YoutubeLoginDialog.qml" line="181"/>
+        <location filename="../qml/YoutubeLoginDialog.qml" line="181"/>
+        <source>Saving cookies…</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

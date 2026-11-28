@@ -48,6 +48,7 @@ Window {
         if (!visible) {
             savePending = false
             saveDelay.stop()
+            saveFallback.stop()
             webView.url = "about:blank"
         }
     }
@@ -57,11 +58,16 @@ Window {
     // recommends ("Exporting YouTube cookies").
     readonly property url isolationUrl: "https://www.youtube.com/robots.txt"
     property bool savePending: false
+    // True from "Save cookies" until the next open(). The cover hides the
+    // isolation page, which users otherwise read as an error.
+    property bool pageCovered: false
 
     function saveIsolated() {
         statusLabel.text = ""
+        pageCovered = true
         savePending = true
         webView.url = isolationUrl
+        saveFallback.restart()
     }
 
     title: qsTr("Log in to YouTube")
@@ -81,6 +87,7 @@ Window {
             dialog.resolver.reset()
         webView.url = "https://www.youtube.com/"
         statusLabel.text = ""
+        pageCovered = false
         if (transientParent) {
             x = transientParent.x + (transientParent.width - width) / 2
             y = transientParent.y + (transientParent.height - height) / 2
@@ -139,21 +146,40 @@ Window {
             id: statusLabel
             Layout.fillWidth: true
             wrapMode: Text.WordWrap
-            visible: text !== ""
+            visible: text !== "" && !dialog.pageCovered
         }
 
-        WebEngineView {
-            id: webView
+        Item {
             Layout.fillWidth: true
             Layout.fillHeight: true
 
-            onLoadingChanged: function(loadingInfo) {
-                if (!dialog.savePending
-                        || loadingInfo.status === WebEngineView.LoadStartedStatus)
-                    return
-                // Save even if robots.txt failed to load: the YouTube page
-                // is gone either way, and the cookies are already stored.
-                saveDelay.restart()
+            WebEngineView {
+                id: webView
+                anchors.fill: parent
+
+                onLoadingChanged: function(loadingInfo) {
+                    if (!dialog.savePending
+                            || loadingInfo.status === WebEngineView.LoadStartedStatus)
+                        return
+                    // Save even if robots.txt failed to load: the YouTube page
+                    // is gone either way, and the cookies are already stored.
+                    saveDelay.restart()
+                }
+            }
+
+            Rectangle {
+                anchors.fill: parent
+                visible: dialog.pageCovered
+                color: palette.window
+
+                Label {
+                    anchors.centerIn: parent
+                    width: Math.min(parent.width - 32, implicitWidth)
+                    wrapMode: Text.WordWrap
+                    horizontalAlignment: Text.AlignHCenter
+                    color: dialog.savePending ? palette.windowText : statusLabel.color
+                    text: dialog.savePending ? qsTr("Saving cookies…") : statusLabel.text
+                }
             }
         }
     }
@@ -165,9 +191,21 @@ Window {
         id: saveDelay
         interval: 500
         onTriggered: {
+            saveFallback.stop()
             dialog.savePending = false
             if (dialog.resolver)
                 dialog.resolver.saveCookies(dialog.resolver.plannedCookiesPath())
+        }
+    }
+
+    // Saves even if the page load never reports that it finished, so the
+    // dialog can't stay on "Saving cookies…".
+    Timer {
+        id: saveFallback
+        interval: 10000
+        onTriggered: {
+            if (dialog.savePending)
+                saveDelay.restart()
         }
     }
 }
