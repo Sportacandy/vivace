@@ -4,7 +4,7 @@
 <Package>
     <DisplayName>Vivace Media Player</DisplayName>
     <Description>A fast, pure-Qt media player (QML + Qt Multimedia).</Description>
-    <Version>0.7.0</Version>
+    <Version>0.7.1</Version>
     <ReleaseDate>2026-11-28</ReleaseDate>
     <Default>true</Default>
     <ForcedInstallation>true</ForcedInstallation>

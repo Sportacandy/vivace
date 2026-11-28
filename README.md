@@ -17,6 +17,12 @@ is also published from the tip of `main` between tagged releases. See
 
 ## Status
 
+**v0.7.1** — On Android in fullscreen, a tap in the top third of the
+screen shows or hides the toolbar, and a tap in the bottom third shows or
+hides the control bar, so you no longer have to touch the thin edge of
+the screen. In fullscreen, the toolbar and the control bar stay visible
+while no media plays. See CHANGELOG.md for details.
+
 **v0.7.0** — The first release built with the Qt 6.12.0 kits of
 [vivace-qt-build](https://github.com/Sportacandy/vivace-qt-build/releases),
 which contain Vivace's Qt Multimedia patches and an LGPL FFmpeg. The macOS

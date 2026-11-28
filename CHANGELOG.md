@@ -11,6 +11,8 @@ each get their own entry instead.
 
 ## [Unreleased]
 
+## [0.7.1] — 2026-11-28
+
 ### Changed
 - Android: in fullscreen, a tap in the top third of the screen shows or
   hides the toolbar, and a tap in the bottom third shows or hides the

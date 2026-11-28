@@ -393,7 +393,7 @@ int main(int argc, char *argv[])
 
     QCoreApplication::setApplicationName(QStringLiteral("vivace"));
     QCoreApplication::setOrganizationName(QStringLiteral("vivace-player"));
-    QCoreApplication::setApplicationVersion(QStringLiteral("0.7.0"));
+    QCoreApplication::setApplicationVersion(QStringLiteral("0.7.1"));
     QGuiApplication::setApplicationDisplayName(QStringLiteral("Vivace"));
 
     installFileLogger(); // capture Qt/QML warnings to a file for troubleshooting
