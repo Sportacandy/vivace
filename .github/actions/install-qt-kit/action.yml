@@ -73,7 +73,25 @@ runs:
           base_dir=$RUNNER_TEMP
         fi
         prefix=${PREFIX:-$base_dir/Qt}
-        dl="$base_dir/qt-kit-$KIT"
+        # The archive (up to about 5.6 GB, for the mingw1310_64 kit) and its
+        # extracted files must not both be on C:. On 2026-11-28 the
+        # extraction ran out of space there; the last good run had only
+        # 5.3 GB left on C: after it. So the archive goes to RUNNER_TEMP (D:)
+        # when that drive has room for it (8 GiB free), else to the drive
+        # with more free space. The archive is deleted after extraction, so
+        # it doesn't take space from the build tree on D:.
+        dl_dir=$base_dir
+        if [ "$RUNNER_OS" = Windows ]; then
+          df -h C:/ "$RUNNER_TEMP" || true
+          free_c=$(df -k --output=avail C:/ | tail -1 | tr -d ' ')
+          free_tmp=$(df -k --output=avail "$RUNNER_TEMP" | tail -1 | tr -d ' ')
+          if [ "${free_tmp:-0}" -gt $((8 * 1024 * 1024)) ] \
+              || [ "${free_tmp:-0}" -gt "${free_c:-0}" ]; then
+            dl_dir=$RUNNER_TEMP
+          fi
+          echo "Downloading the archive to $dl_dir"
+        fi
+        dl="$dl_dir/qt-kit-$KIT"
         rm -rf "$dl"
         mkdir -p "$dl" "$prefix"
 
