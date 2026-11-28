@@ -25,6 +25,12 @@
     välimuisti täyttyy); välimuistin koko on määritettävissä kohdassa
     *Asetukset ▸ Soittolista ▸ Muut ▸ Välimuistissa säilytettävien
     pienoiskuvien enimmäismäärä*.
+  - Rivi, jolla ei ole pienoiskuvaa, näyttää tyhjän ruudun sijaan kuvakkeen.
+    Musiikkitiedosto näyttää nuottikuvakkeen yhdessä kymmenestä väristä; väri
+    riippuu rivin numerosta. Muut kohteet, joille pienoiskuvaa ei voi luoda,
+    kuten virta tai tiedosto, jota ffmpeg ei pysty lukemaan, näyttävät harmaan
+    toistokuvakkeen. Upotettu kansikuva näytetään edelleen, jos Vivace pystyy
+    lukemaan sen.
 - **OSD** — videon päällä näytettävä näyttö:
   - yksityiskohtien taso (vain tekstitys; äänenvoimakkuus + kelaus;
     äänenvoimakkuus + kelaus + ajastin) laajenee; OSD:n kesto ja fonttikoko ovat

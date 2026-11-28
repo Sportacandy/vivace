@@ -22,6 +22,11 @@ Nabídka **Zobrazit** ukazuje informace a vedlejší panely.
     mezipaměti (nejdéle nezobrazený se po zaplnění mezipaměti odstraní);
     velikost mezipaměti lze nastavit v *Předvolby ▸ Seznam skladeb ▸ Různé
     ▸ Maximální počet uložených náhledů*.
+  - Řádek bez náhledu zobrazuje místo prázdného rámečku ikonu. Hudební soubor
+    zobrazuje notu v jedné z deseti barev; barva závisí na čísle řádku.
+    Ostatní položky, pro které nelze vytvořit náhled, například stream nebo
+    soubor, který ffmpeg nedokáže přečíst, zobrazují šedou ikonu přehrávání.
+    Vložený obal se zobrazí i nadále, pokud ho Vivace dokáže přečíst.
 - **OSD** — zobrazení na obrazovce nad videem:
   - úroveň podrobností (jen titulky; hlasitost + převíjení; hlasitost +
     převíjení + časovač) se rozšiřuje; délka OSD a velikost písma jsou v

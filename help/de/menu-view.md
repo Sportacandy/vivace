@@ -24,6 +24,12 @@ Das Menü **Anzeigen** zeigt Informationen und zusätzliche Bereiche.
     sobald der Zwischenspeicher voll ist); die Größe des Zwischenspeichers
     lässt sich unter *Einstellungen ▸ Wiedergabeliste ▸ Sonstiges ▸ Maximale
     Anzahl zwischengespeicherter Vorschaubilder* einstellen.
+  - Eine Zeile ohne Vorschaubild zeigt statt eines leeren Felds ein Symbol.
+    Eine Musikdatei zeigt eine Musiknote in einer von zehn Farben; die Farbe
+    hängt von der Zeilennummer ab. Andere Einträge, für die kein Vorschaubild
+    erstellt werden kann, etwa ein Stream oder eine Datei, die ffmpeg nicht
+    lesen kann, zeigen ein graues Wiedergabesymbol. Eingebettete Cover werden
+    weiterhin angezeigt, wenn Vivace sie lesen kann.
 - **OSD** — die über dem Video angezeigte Bildschirmanzeige:
   - Der Detailgrad (nur Untertitel; Lautstärke + Suchlauf; Lautstärke + Suchlauf
     + Zeit) wird erweitert; OSD-Anzeigedauer und Schriftgröße finden Sie unter

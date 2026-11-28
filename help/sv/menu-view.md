@@ -22,6 +22,11 @@ Menyn **Visa** visar information och sekundära paneler.
     miniatyrer cachas (den som visats minst nyligen tas bort när cachen
     är full); cachestorleken kan ställas in under *Inställningar ▸
     Spellista ▸ Misc ▸ Maximalt antal cachade miniatyrer*.
+  - En rad utan miniatyrbild visar en ikon i stället för en tom ruta. En
+    musikfil visar en musiknot i en av tio färger; färgen beror på radnumret.
+    Andra poster som inte kan få en miniatyrbild, till exempel en ström eller
+    en fil som ffmpeg inte kan läsa, visar en grå uppspelningsikon. Inbäddade
+    omslagsbilder visas fortfarande när Vivace kan läsa dem.
 - **OSD** — skärmvisningen över videon:
   - detaljnivån (endast undertexter; volym + spolning; volym + spolning + timer)
     utökas; OSD-varaktighet och teckenstorlek finns i

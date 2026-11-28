@@ -23,6 +23,12 @@ Menu **Widok** pokazuje informacje i dodatkowe panele.
     (najdawniej wyświetlana zostaje usunięta, gdy bufor się zapełni);
     rozmiar bufora można skonfigurować w *Ustawienia ▸ Lista odtwarzania ▸
     Różne ▸ Maksymalna liczba buforowanych miniatur*.
+  - Wiersz bez miniatury pokazuje ikonę zamiast pustego pola. Plik muzyczny
+    pokazuje nutę w jednym z dziesięciu kolorów; kolor zależy od numeru
+    wiersza. Inne pozycje, dla których nie można utworzyć miniatury, na
+    przykład strumień lub plik, którego ffmpeg nie potrafi odczytać, pokazują
+    szarą ikonę odtwarzania. Osadzona okładka jest nadal wyświetlana, gdy
+    Vivace potrafi ją odczytać.
 - **OSD** — wyświetlacz ekranowy pokazywany na wideo:
   - poziom szczegółowości (tylko napisy; głośność + przewijanie; głośność +
     przewijanie + czas) jest rozbudowywany; czas trwania OSD i rozmiar czcionki

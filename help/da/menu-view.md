@@ -24,6 +24,12 @@ Menuen **Vis** viser oplysninger og sekundære paneler.
     nylig, fjernes, når cachen er fuld); cachestørrelsen kan
     konfigureres under *Indstillinger ▸ Afspilningsliste ▸ Diverse ▸
     Maks. antal cachelagrede miniaturer*.
+  - En række uden miniature viser et ikon i stedet for en tom boks. En
+    musikfil viser en node i en af ti farver; farven afhænger af
+    rækkenummeret. Andre poster, der ikke kan få en miniature, for eksempel en
+    stream eller en fil, som ffmpeg ikke kan læse, viser et gråt
+    afspilningsikon. Indlejrede coverbilleder vises stadig, når Vivace kan
+    læse dem.
 - **OSD** — skærmvisningen over videoen:
   - detaljeringsgraden (kun undertekster; lydstyrke + søgning; lydstyrke +
     søgning + timer) udvides; OSD-varighed og skriftstørrelse findes i

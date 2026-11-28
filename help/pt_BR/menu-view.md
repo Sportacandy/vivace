@@ -23,6 +23,12 @@ O menu **Exibir** mostra informações e painéis secundários.
     removida quando o cache fica cheio); o tamanho do cache é configurável
     em *Preferências ▸ Lista de reprodução ▸ Miscelânea ▸ Número máximo de
     miniaturas em cache*.
+  - Uma linha sem miniatura mostra um ícone em vez de uma caixa vazia. Um
+    arquivo de música mostra uma nota musical em uma de dez cores; a cor
+    depende do número da linha. As demais entradas que não podem ter
+    miniatura, como uma transmissão ou um arquivo que o ffmpeg não consegue
+    ler, mostram um ícone de reprodução cinza. A capa incorporada continua
+    sendo exibida quando o Vivace consegue lê-la.
 - **OSD** — a exibição na tela mostrada sobre o vídeo:
   - o nível de detalhe (apenas legendas; volume + busca; volume + busca +
     cronômetro) está sendo ampliado; a duração do OSD e o tamanho da fonte estão

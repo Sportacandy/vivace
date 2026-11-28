@@ -26,6 +26,12 @@ El menú **Visualitza** mostra informació i plafons secundaris.
     la mida de la memòria cau es pot configurar a *Preferències ▸
     Llista de reproducció ▸ Altres ▸ Nombre màxim de miniatures en
     memòria cau*.
+  - Una fila sense miniatura mostra una icona en lloc d'un requadre buit. Un
+    fitxer de música mostra una nota musical en un de deu colors; el color
+    depèn del número de la fila. Les altres entrades que no poden tenir
+    miniatura, com ara una transmissió o un fitxer que ffmpeg no pot llegir,
+    mostren una icona de reproducció grisa. La caràtula incrustada es continua
+    mostrant quan Vivace la pot llegir.
 - **OSD** — la informació en pantalla mostrada sobre el vídeo:
   - el nivell de detall (només subtítols; volum + cerca; volum + cerca +
     temporitzador) s'està ampliant; la durada de l'OSD i la mida de la lletra són a

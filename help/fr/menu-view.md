@@ -25,6 +25,12 @@ Le menu **Afficher** montre des informations et des panneaux secondaires.
     une fois le cache plein) ; la taille du cache se configure dans
     *Préférences ▸ Liste de lecture ▸ Divers ▸ Nombre maximal de vignettes
     en cache*.
+  - Une ligne sans vignette affiche une icône au lieu d'une case vide. Un
+    fichier musical affiche une note de musique dans l'une de dix couleurs ;
+    la couleur dépend du numéro de la ligne. Les autres entrées pour
+    lesquelles aucune vignette ne peut être créée, comme un flux ou un fichier
+    que ffmpeg ne peut pas lire, affichent une icône de lecture grise. Une
+    pochette intégrée s'affiche toujours si Vivace peut la lire.
 - **OSD** — l'affichage à l'écran superposé à la vidéo :
   - le niveau de détail (sous-titres seuls ; volume + navigation ; volume +
     navigation + minuteur) est en cours d'extension ; la durée de l'OSD et la

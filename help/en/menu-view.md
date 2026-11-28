@@ -21,6 +21,11 @@ The **View** menu shows information and secondary panels.
     least-recently-shown one is dropped once the cache is full); the cache
     size is configurable at *Preferences ▸ Playlist ▸ Misc ▸ Maximum
     cached thumbnails*.
+  - A row without a thumbnail shows an icon instead of an empty box. A music
+    file shows a music note in one of ten colors; the color changes with the
+    row number. Any other entry that can't get a thumbnail, such as a stream
+    or a file that ffmpeg can't read, shows a gray play icon. Embedded cover
+    art still shows when Vivace can read it.
 - **OSD** — the on-screen display shown over the video:
   - the level of detail (subtitles only; volume + seek; volume + seek + timer)
     is being expanded; OSD duration and font size are in

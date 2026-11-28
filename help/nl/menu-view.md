@@ -23,6 +23,12 @@ Het menu **Weergave** toont informatie en secundaire panelen.
     (de langst niet getoonde wordt verwijderd zodra de cache vol is); de
     cachegrootte is instelbaar bij *Voorkeuren ▸ Afspeellijst ▸ Diversen ▸
     Maximum aantal gecachte miniaturen*.
+  - Een rij zonder miniatuur toont een pictogram in plaats van een leeg vak.
+    Een muziekbestand toont een muzieknoot in een van tien kleuren; de kleur
+    hangt af van het rijnummer. Andere items waarvoor geen miniatuur kan
+    worden gemaakt, zoals een stream of een bestand dat ffmpeg niet kan lezen,
+    tonen een grijs afspeelpictogram. Ingesloten albumhoezen worden nog steeds
+    getoond als Vivace ze kan lezen.
 - **OSD** — de weergave op het scherm boven de video:
   - het detailniveau (alleen ondertitels; volume + zoeken; volume + zoeken +
     timer) wordt uitgebreid; de OSD-duur en lettergrootte staan bij

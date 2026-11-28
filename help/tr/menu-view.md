@@ -22,6 +22,11 @@
     (önbellek dolduğunda en uzun süredir gösterilmeyen silinir); önbellek
     boyutu *Tercihler ▸ Oynatma listesi ▸ Çeşitli ▸ Önbellekteki küçük
     resimlerin en fazla sayısı* bölümünden yapılandırılabilir.
+  - Küçük resmi olmayan bir satır, boş bir kutu yerine bir simge gösterir. Bir
+    müzik dosyası on renkten birinde bir nota simgesi gösterir; renk satır
+    numarasına göre değişir. Akış veya ffmpeg'in okuyamadığı bir dosya gibi
+    küçük resim oluşturulamayan diğer öğeler gri bir oynatma simgesi gösterir.
+    Gömülü albüm kapağı, Vivace okuyabildiğinde yine gösterilir.
 - **OSD** — videonun üzerinde gösterilen ekran görüntüsü:
   - ayrıntı düzeyi (yalnızca altyazı; ses + sarma; ses + sarma + sayaç)
     genişletiliyor; OSD süresi ve yazı tipi boyutu *Tercihler ▸ Arayüz ▸ Metin*

@@ -24,6 +24,12 @@ El menú **Ver** muestra información y paneles secundarios.
     la caché se llena); el tamaño de la caché se puede configurar en
     *Preferencias ▸ Lista de reproducción ▸ Miscelánea ▸ Número máximo de
     miniaturas en caché*.
+  - Una fila sin miniatura muestra un icono en lugar de un recuadro vacío. Un
+    archivo de música muestra una nota musical en uno de diez colores; el
+    color depende del número de la fila. Las demás entradas que no pueden
+    tener miniatura, como una transmisión o un archivo que ffmpeg no puede
+    leer, muestran un icono de reproducción gris. La carátula incrustada se
+    sigue mostrando cuando Vivace puede leerla.
 - **OSD** — la información en pantalla mostrada sobre el vídeo:
   - el nivel de detalle (solo subtítulos; volumen + búsqueda; volumen + búsqueda
     + tiempo) se está ampliando; la duración del OSD y el tamaño de fuente están

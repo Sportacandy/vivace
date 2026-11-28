@@ -23,6 +23,12 @@ A **Nézet** menü információkat és másodlagos paneleket jelenít meg.
     megjelenített törlődik, ha a gyorsítótár megtelik); a gyorsítótár
     mérete a *Beállítások ▸ Lejátszási lista ▸ Egyéb ▸ Gyorsítótárazott
     bélyegképek legnagyobb száma* alatt állítható be.
+  - A bélyegkép nélküli sor üres keret helyett ikont mutat. A zenefájl tíz
+    szín egyikében mutat egy hangjegyikont; a szín a sor számától függ. Az
+    egyéb elemek, amelyekhez nem készíthető bélyegkép, például egy adatfolyam
+    vagy egy fájl, amelyet az ffmpeg nem tud beolvasni, szürke lejátszás ikont
+    mutatnak. A beágyazott borítókép továbbra is megjelenik, ha a Vivace be
+    tudja olvasni.
 - **OSD** — a videó felett megjelenő képernyőkijelzés:
   - a részletességi szint (csak felirat; hangerő + tekerés; hangerő + tekerés +
     időzítő) bővül; az OSD időtartama és betűmérete a

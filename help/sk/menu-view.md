@@ -22,6 +22,12 @@ Ponuka **Zobraziť** ukazuje informácie a vedľajšie panely.
     (najdávnejšie zobrazený sa po zaplnení vyrovnávacej pamäte odstráni);
     jej veľkosť je možné nastaviť v *Nastavenia ▸ Zoznam skladieb ▸
     Rôzne ▸ Maximálny počet uložených náhľadov*.
+  - Riadok bez náhľadu zobrazuje namiesto prázdneho rámčeka ikonu. Hudobný
+    súbor zobrazuje notu v jednej z desiatich farieb; farba závisí od čísla
+    riadka. Ostatné položky, pre ktoré nemožno vytvoriť náhľad, napríklad
+    stream alebo súbor, ktorý ffmpeg nedokáže prečítať, zobrazujú sivú ikonu
+    prehrávania. Vložený obal sa zobrazí aj naďalej, ak ho Vivace dokáže
+    prečítať.
 - **OSD** — zobrazenie na obrazovke nad videom:
   - úroveň podrobností (len titulky; hlasitosť + prevíjanie; hlasitosť +
     prevíjanie + časovač) sa rozširuje; dĺžka OSD a veľkosť písma sú v

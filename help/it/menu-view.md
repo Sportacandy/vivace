@@ -24,6 +24,12 @@ Il menu **Visualizza** mostra informazioni e pannelli secondari.
     quando la cache è piena); la dimensione della cache è configurabile in
     *Preferenze ▸ Playlist ▸ Varie ▸ Numero massimo di miniature nella
     cache*.
+  - Una riga senza miniatura mostra un'icona invece di un riquadro vuoto. Un
+    file musicale mostra una nota musicale in uno di dieci colori; il colore
+    dipende dal numero della riga. Le altre voci per cui non è possibile
+    creare una miniatura, come uno stream o un file che ffmpeg non riesce a
+    leggere, mostrano un'icona di riproduzione grigia. La copertina
+    incorporata viene comunque mostrata quando Vivace riesce a leggerla.
 - **OSD** — l'indicazione a schermo mostrata sopra il video:
   - il livello di dettaglio (solo sottotitoli; volume + ricerca; volume +
     ricerca + tempo) è in fase di ampliamento; durata dell'OSD e dimensione del

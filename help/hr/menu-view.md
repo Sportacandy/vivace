@@ -22,6 +22,12 @@ Izbornik **Prikaz** prikazuje informacije i sekundarne ploče.
     (ona koja je najdulje neprikazana uklanja se kada se predmemorija
     napuni); veličina predmemorije podesiva je u *Postavke ▸ Popis za
     reprodukciju ▸ Ostalo ▸ Najveći broj predmemoriranih minijatura*.
+  - Redak bez minijature prikazuje ikonu umjesto praznog okvira. Glazbena
+    datoteka prikazuje notu u jednoj od deset boja; boja ovisi o broju retka.
+    Ostale stavke za koje se ne može izraditi minijatura, na primjer stream
+    ili datoteka koju ffmpeg ne može pročitati, prikazuju sivu ikonu
+    reprodukcije. Ugrađeni omot i dalje se prikazuje kada ga Vivace može
+    pročitati.
 - **OSD** — zaslonski prikaz preko videozapisa:
   - razina detalja (samo titlovi; glasnoća + premotavanje; glasnoća +
     premotavanje + mjerač vremena) proširuje se; trajanje OSD-a i veličina fonta
