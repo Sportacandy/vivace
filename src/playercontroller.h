@@ -322,6 +322,13 @@ public:
     FavoritesModel *favorites() const { return m_favorites; }
     Bookmarks *bookmarks() const { return m_bookmarks; }
 
+    // True if url's file name has an audio extension (the Open dialog's
+    // audio list: mp3, m4a, flac, ...). Works for local files, Android
+    // content:// URIs (by their display name) and http(s) URLs. The
+    // playlist shows a music icon for such files when they have no
+    // thumbnail.
+    Q_INVOKABLE bool isAudioFile(const QUrl &url) const;
+
     // Adds what is currently playing (file, stream or DVD folder) to the
     // given list (favorites, TV or radio).
     Q_INVOKABLE void addCurrentTo(FavoritesModel *list);

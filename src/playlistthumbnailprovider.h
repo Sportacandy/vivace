@@ -93,8 +93,15 @@ public:
     // app's one "where's ffmpeg" setting), else the system PATH.
     Q_INVOKABLE void requestThumbnail(const QUrl &mediaUrl);
 
+    // True if mediaUrl will not get a thumbnail: it isn't a local file
+    // (content://, http, ...), the file is missing, or generating one
+    // already failed in this run. False while a generation is pending.
+    Q_INVOKABLE bool isUnavailable(const QUrl &mediaUrl) const;
+
 signals:
     void thumbnailReady(const QUrl &mediaUrl, const QString &thumbnailUrl);
+    // Emitted when a requested thumbnail can't be made (see isUnavailable()).
+    void thumbnailUnavailable(const QUrl &mediaUrl);
     void ffmpegLocationChanged();
     void maxCacheEntriesChanged();
 
@@ -117,6 +124,7 @@ private:
     QSet<QString> m_resolved; // media paths already found/generated/failed
     QStringList m_queue;      // media paths waiting to be generated
     QSet<QString> m_inFlight; // media paths currently running ffmpeg
+    QSet<QString> m_failed;   // media paths that got no thumbnail
     int m_running = 0;
     static constexpr int kMaxConcurrent = 2;
     // "around 20000 or so" (user's original spec, now the Settings

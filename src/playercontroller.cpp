@@ -437,6 +437,22 @@ QList<PlaylistEntry> expandUrls(const QList<QUrl> &urls)
 
 } // namespace
 
+bool PlayerController::isAudioFile(const QUrl &url) const
+{
+    QString fileName;
+    if (url.isLocalFile())
+        fileName = QFileInfo(url.toLocalFile()).fileName();
+    else if (url.scheme() == QLatin1String("content"))
+        // An Android content:// URI ends in a document id, not a file name.
+        // Only QFileInfo::fileName() asks the content engine for the real
+        // display name (see playlistSuffix() in playlistparser.cpp).
+        fileName = QFileInfo(url.toString()).fileName();
+    else
+        fileName = url.fileName(); // http(s): the last path segment
+    return audioExtensions().contains(QFileInfo(fileName).suffix(),
+                                      Qt::CaseInsensitive);
+}
+
 PlayerController::PlayerController(QObject *parent)
     : QObject(parent),
       m_player(new QMediaPlayer(this)),

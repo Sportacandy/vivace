@@ -242,6 +242,13 @@ void PlaylistThumbnailProvider::requestThumbnail(const QUrl &mediaUrl)
     processQueue();
 }
 
+bool PlaylistThumbnailProvider::isUnavailable(const QUrl &mediaUrl) const
+{
+    if (!mediaUrl.isLocalFile())
+        return true; // requestThumbnail() never generates for these
+    return m_failed.contains(mediaUrl.toLocalFile());
+}
+
 void PlaylistThumbnailProvider::processQueue()
 {
     while (m_running < kMaxConcurrent && !m_queue.isEmpty()) {
@@ -249,6 +256,8 @@ void PlaylistThumbnailProvider::processQueue()
         const QFileInfo mediaInfo(mediaPath);
         if (!mediaInfo.exists()) {
             m_resolved.insert(mediaPath);
+            m_failed.insert(mediaPath);
+            emit thumbnailUnavailable(QUrl::fromLocalFile(mediaPath));
             continue;
         }
 
@@ -277,6 +286,7 @@ void PlaylistThumbnailProvider::processQueue()
             m_resolved.insert(mediaPath);
             process->deleteLater();
 
+            bool stored = false;
             QFile file(tempJpgPath);
             if (file.open(QIODevice::ReadOnly)) {
                 const QByteArray bytes = file.readAll();
@@ -285,7 +295,12 @@ void PlaylistThumbnailProvider::processQueue()
                 if (!bytes.isEmpty()) {
                     storeCacheEntry(key, bytes);
                     emit thumbnailReady(mediaUrl, dataUrlFor(bytes));
+                    stored = true;
                 }
+            }
+            if (!stored) {
+                m_failed.insert(mediaPath);
+                emit thumbnailUnavailable(mediaUrl);
             }
             processQueue();
         };

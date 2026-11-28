@@ -307,6 +307,13 @@ Item {
                 // avoid.
                 property string thumbnailSrc:
                         PlaylistThumbnailProvider.thumbnailFor(entry.url)
+                // True once no thumbnail can be made for this entry (not a
+                // local file, or the generation failed); the row then shows
+                // a fallback icon instead of an empty box.
+                property bool thumbnailUnavailable:
+                        PlaylistThumbnailProvider.isUnavailable(entry.url)
+                readonly property bool isAudio:
+                        editor.controller.isAudioFile(entry.url)
 
                 width: ListView.view.width
                 height: matches
@@ -340,6 +347,10 @@ Item {
                         if (UiHelpers.toLocalPath(mediaUrl) === UiHelpers.toLocalPath(entry.url))
                             entry.thumbnailSrc = thumbnailUrl
                     }
+                    function onThumbnailUnavailable(mediaUrl) {
+                        if (UiHelpers.toLocalPath(mediaUrl) === UiHelpers.toLocalPath(entry.url))
+                            entry.thumbnailUnavailable = true
+                    }
                 }
 
                 RowLayout {
@@ -364,6 +375,29 @@ Item {
                             fillMode: Image.PreserveAspectCrop
                             asynchronous: true
                             cache: false
+                        }
+                        // Fallback icons instead of an empty box. A real
+                        // thumbnail (for example embedded cover art) still
+                        // replaces them.
+                        // - Music files usually have no picture to grab, so
+                        //   they show a music icon right away. The note's
+                        //   color follows the resistor color code of the row
+                        //   number's last digit: 1 brown, 2 red, ... 9 white,
+                        //   0 black.
+                        // - Other entries show a neutral media icon once no
+                        //   thumbnail can be made for them.
+                        Image {
+                            anchors.fill: parent
+                            anchors.margins: 2
+                            visible: entry.thumbnailSrc === ""
+                                     && (entry.isAudio || entry.thumbnailUnavailable)
+                            source: !visible ? ""
+                                    : entry.isAudio
+                                      ? "qrc:/qt/qml/Vivace/icons/music_"
+                                        + ((entry.index + 1) % 10) + ".png"
+                                      : "qrc:/qt/qml/Vivace/icons/media_fallback.png"
+                            fillMode: Image.PreserveAspectFit
+                            mipmap: true
                         }
                     }
                     Label {
