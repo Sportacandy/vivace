@@ -36,6 +36,9 @@ each get their own entry instead.
   cookies** leaves the YouTube page before it saves, and **Close** closes
   the page. Each **Log in to YouTube…** starts a new session, so you sign
   in again every time.
+- YouTube: after **Save cookies**, the login window showed a plain-text
+  page that looked like an error. The window now shows "Saving cookies…"
+  and then the result in place of the page.
 
 ## [0.6.1] — 2026-11-07
 
