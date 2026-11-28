@@ -11,6 +11,8 @@ each get their own entry instead.
 
 ## [Unreleased]
 
+## [0.7.0] — 2026-11-28
+
 ### Added
 - Playlist: music files without a picture now show a music icon instead
   of an empty box. The note's color changes with the row number. Other

@@ -17,6 +17,17 @@ is also published from the tip of `main` between tagged releases. See
 
 ## Status
 
+**v0.7.0** — The first release built with the Qt 6.12.0 kits of
+[vivace-qt-build](https://github.com/Sportacandy/vivace-qt-build/releases),
+which contain Vivace's Qt Multimedia patches and an LGPL FFmpeg. The macOS
+`.dmg` and the Android APK now also have AV1 playback, the improved
+speed/pitch compensation and bitmap subtitles; the macOS `.dmg` is now
+for Apple silicon only. The playlist shows a music icon for music files
+without a picture, and a neutral icon for other entries without a
+thumbnail. Cookies saved with **Log in to YouTube…** no longer stop
+working after a while, and a video removed in the **YouTube cache**
+window also leaves the playlist. See CHANGELOG.md for details.
+
 **v0.6.1** — On Android, this release fixes opening files from other
 apps. Vivace is now listed under **Share** for media and playlist files,
 and under **Open with** for network files in file managers such as CX
