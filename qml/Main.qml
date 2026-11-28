@@ -1067,8 +1067,8 @@ ApplicationWindow {
         // and onPositionChanged reveals the pointer on movement.
         hoverEnabled: true
         cursorShape: Qt.ArrowCursor
-        // A long-press near an edge reveals the fullscreen chrome (touch has no
-        // hover). ~0.5 s so it doesn't clash with tap or swipe-seek.
+        // A long-press reveals the fullscreen chrome of the pressed half
+        // (touch has no hover). ~0.5 s so it doesn't clash with tap or swipe-seek.
         pressAndHoldInterval: 500
 
         // --- Gesture seek: swipe left/right (touch or mouse-drag) to seek. ---
@@ -1094,11 +1094,59 @@ ApplicationWindow {
                    && !playerController.dvdPlayback && !playerController.blurayPlayback
         }
 
+        // The tap that may hide a chrome bar again (see onPressed/onClicked):
+        // 0 = none, 1 = top bar, 2 = bottom bar.
+        property int tapHideBar: 0
+        // Android: the third of the window where the current tap began
+        // (see tapZoneOf). 0 = no zone (not Android, or not a chrome tap).
+        property int tapZone: 0
+
+        // Android tap zones: the top third shows or hides the menu bar and
+        // toolbar, the bottom third shows or hides the control bar, and the
+        // middle third runs the single-tap action. Window coordinates, for
+        // the same reason as inTopHalf.
+        // 1 = top third, 2 = middle third, 3 = bottom third.
+        function tapZoneOf(mouse) {
+            const y = videoMouse.mapToItem(null, mouse.x, mouse.y).y
+            if (y < root.height / 3)
+                return 1
+            if (y >= root.height * 2 / 3)
+                return 3
+            return 2
+        }
+
+        // True when a point of this area is in the top half of the window.
+        // The area's own height changes while a chrome bar is visible, so
+        // compare in window coordinates.
+        function inTopHalf(mouse) {
+            return videoMouse.mapToItem(null, mouse.x, mouse.y).y < root.height / 2
+        }
+
         onPressed: mouse => {
             gestureActive = false
             longPressed = false
             gestureStartX = mouse.x
             gesturePendingMs = 0
+            tapHideBar = 0
+            tapZone = 0
+            // Android: a tap in the top or bottom third shows that bar at
+            // touch-down. If it is already visible, a completed tap hides it
+            // (onClicked).
+            if (root.tapRevealsChrome && root.fullscreen
+                    && mouse.button === Qt.LeftButton && !playerController.dvdInMenu) {
+                tapZone = tapZoneOf(mouse)
+                if (tapZone === 1) {
+                    if (root.topChromeShown)
+                        tapHideBar = 1
+                    else
+                        root.revealTopChrome()
+                } else if (tapZone === 3) {
+                    if (root.bottomChromeShown)
+                        tapHideBar = 2
+                    else
+                        root.revealBottomChrome()
+                }
+            }
         }
         // Long-press in fullscreen: top half reveals the menu bar + toolbar,
         // bottom half reveals the transport controls.
@@ -1106,7 +1154,7 @@ ApplicationWindow {
             if (!root.fullscreen)
                 return
             longPressed = true
-            if (mouse.y < height / 2)
+            if (inTopHalf(mouse))
                 root.revealTopChrome()
             else
                 root.revealBottomChrome()
@@ -1144,6 +1192,9 @@ ApplicationWindow {
             if (mouse.button !== Qt.LeftButton)
                 return
             leftClickTimer.stop()
+            // Android: a double tap in a bar's third only shows that bar.
+            if (tapZone === 1 || tapZone === 3)
+                return
             switch (Settings.doubleClickFunction) {
             case 0: root.toggleFullscreen(); break
             case 1: playerController.togglePlayPause(); break
@@ -1161,6 +1212,16 @@ ApplicationWindow {
             if (playerController.dvdInMenu)
                 return
             if (mouse.button === Qt.LeftButton) {
+                // Android: a tap in a bar's third only shows or hides that
+                // bar; the single-tap action runs from the middle third.
+                if (tapZone === 1 || tapZone === 3) {
+                    if (tapHideBar === 1)
+                        root.hideTopChrome()
+                    else if (tapHideBar === 2)
+                        root.hideBottomChrome()
+                    tapHideBar = 0
+                    return
+                }
                 if (Settings.leftClickFunction !== 0)
                     leftClickTimer.restart()
                 return
@@ -2197,8 +2258,10 @@ ApplicationWindow {
 
     // Fullscreen chrome (top menu bar + toolbar, bottom transport controls) is
     // overlaid on the video and auto-hidden. It's revealed by the pointer
-    // approaching an edge (mouse) or a long-press near an edge (touch, since
-    // there's no hover on a tablet), then auto-hidden after a few idle seconds.
+    // approaching an edge (mouse), a long-press in the top or bottom half
+    // (touch, since there's no hover on a tablet), or a tap there (Android),
+    // then auto-hidden after a few idle seconds. It stays visible while
+    // nothing is playing.
     HoverHandler {
         id: windowHover
         target: null
@@ -2210,11 +2273,33 @@ ApplicationWindow {
     Timer { id: bottomHideTimer; interval: 4000; onTriggered: root.bottomChromeShown = false }
     function revealTopChrome() { topChromeShown = true; topHideTimer.restart() }
     function revealBottomChrome() { bottomChromeShown = true; bottomHideTimer.restart() }
+    function hideTopChrome() { topChromeShown = false; topHideTimer.stop() }
+    function hideBottomChrome() { bottomChromeShown = false; bottomHideTimer.stop() }
 
-    // Mouse near an edge reveals (and keeps alive) that chrome.
+    // While nothing plays (no media loaded, or stopped), both bars stay
+    // visible: the screen is empty and the next step is always a control.
+    readonly property bool chromePinned:
+        playerController.player.playbackState === MediaPlayer.StoppedState
+    // When playback starts, keep the bars up for the usual few seconds
+    // instead of removing them at once.
+    onChromePinnedChanged: {
+        if (!chromePinned) {
+            revealTopChrome()
+            revealBottomChrome()
+        }
+    }
+
+    // Touch taps on Android: a tap in the top third shows the menu bar and
+    // toolbar, a tap in the bottom third shows the control bar, and a tap in
+    // the middle third runs the single-tap action (see videoMouse).
+    readonly property bool tapRevealsChrome: Qt.platform.os === "android"
+
+    // Mouse near an edge reveals (and keeps alive) that chrome. Not on
+    // Android: there a tap reveals the chrome, and a tap at an edge would
+    // otherwise also count as hover.
     readonly property real fsPointerY: root.fullscreen ? windowHover.point.position.y : -1
     onFsPointerYChanged: {
-        if (!root.fullscreen || fsPointerY < 0)
+        if (!root.fullscreen || fsPointerY < 0 || tapRevealsChrome)
             return
         if (fsPointerY < fullscreenTopChrome.height)
             revealTopChrome()
@@ -2230,7 +2315,7 @@ ApplicationWindow {
         anchors.right: parent.right
         anchors.top: parent.top
         z: 20
-        visible: root.fullscreen && root.topChromeShown
+        visible: root.fullscreen && (root.topChromeShown || root.chromePinned)
 
         MainMenuBar {
             id: fsMenuBar
@@ -2291,7 +2376,7 @@ ApplicationWindow {
         anchors.right: parent.right
         anchors.bottom: parent.bottom
         z: 20
-        visible: root.fullscreen && root.bottomChromeShown
+        visible: root.fullscreen && (root.bottomChromeShown || root.chromePinned)
         controller: playerController
         guiMode: Settings.gui
         youtubeCacheCount: youtubeResolver.cacheCount
