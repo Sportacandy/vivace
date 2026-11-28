@@ -11,6 +11,14 @@ each get their own entry instead.
 
 ## [Unreleased]
 
+### Changed
+- Android: in fullscreen, a tap in the top third of the screen shows or
+  hides the toolbar, and a tap in the bottom third shows or hides the
+  control bar. Before, you had to touch the thin edge of the screen. A tap
+  in the middle third runs the left click function, as before.
+- In fullscreen, the toolbar and the control bar stay visible while no
+  media plays.
+
 ## [0.7.0] — 2026-11-28
 
 ### Added

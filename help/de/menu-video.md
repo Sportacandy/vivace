@@ -6,6 +6,15 @@ die aktuelle Datei und werden für jede neue zurückgesetzt.
 - **Spur** — unter den eingebetteten Videospuren der Datei wählen.
 - **Vollbild** (`F`) — Vollbild umschalten; `Esc` verlässt es. Sie können auch
   auf das Video doppelklicken.
+  - Im Vollbild bewegen Sie die Maus an den oberen Rand, um die Menüleiste und
+    die Werkzeugleiste anzuzeigen, oder an den unteren Rand, um die
+    Steuerungsleiste anzuzeigen. Beide bleiben sichtbar, solange keine Medien
+    abgespielt werden.
+  - Unter Android tippen Sie auf das obere Drittel des Bildschirms, um die
+    Werkzeugleiste ein- oder auszublenden, und auf das untere Drittel, um die
+    Steuerungsleiste ein- oder auszublenden. Ein Tippen auf das mittlere Drittel
+    führt die **Funktion für Linksklick** aus *Einstellungen ▸ Tastatur und
+    Maus* aus.
 - **Größe** — das Fenster auf **50 % / 100 % / 200 %** der nativen Auflösung des
   Videos anpassen.
 - **Zoom und Verschieben**

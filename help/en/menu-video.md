@@ -6,6 +6,13 @@ the current file and reset for each new one.
 - **Track** — choose among the file's embedded video tracks.
 - **Fullscreen** (`F`) — toggle fullscreen; `Esc` leaves it. You can also
   double-click the video.
+  - In fullscreen, move the mouse to the top edge to show the menu bar and the
+    toolbar, or to the bottom edge to show the control bar. Both stay visible
+    while no media plays.
+  - On Android, tap the top third of the screen to show or hide the toolbar, and
+    tap the bottom third to show or hide the control bar. A tap in the middle
+    third runs the **Left click function** from *Preferences ▸ Keyboard and
+    mouse*.
 - **Size** — resize the window to **50% / 100% / 200%** of the video's native
   resolution.
 - **Zoom and pan**

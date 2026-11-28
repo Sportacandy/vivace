@@ -6,6 +6,13 @@ aktuální soubor a u každého nového se vynulují.
 - **Stopa** — vybrat z vložených videostop souboru.
 - **Celá obrazovka** (`F`) — přepnout celou obrazovku; `Esc` ji opustí. Můžete
   také dvakrát kliknout na video.
+  - Na celé obrazovce přesuňte myš k hornímu okraji, abyste zobrazili řádek menu
+    a panel nástrojů, nebo k dolnímu okraji, abyste zobrazili ovládací panel.
+    Oba zůstanou viditelné, dokud se nic nepřehrává.
+  - V systému Android klepněte na horní třetinu obrazovky pro zobrazení nebo
+    skrytí panelu nástrojů a na dolní třetinu pro zobrazení nebo skrytí
+    ovládacího panelu. Klepnutí na prostřední třetinu provede **Funkce levého
+    kliknutí** z *Předvolby ▸ Klávesnice a myš*.
 - **Velikost** — změnit velikost okna na **50 % / 100 % / 200 %** nativního
   rozlišení videa.
 - **Přiblížení a posun**

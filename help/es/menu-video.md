@@ -6,6 +6,14 @@ archivo actual y se reinician con cada uno nuevo.
 - **Pista** — elegir entre las pistas de vídeo integradas del archivo.
 - **Pantalla completa** (`F`) — alternar pantalla completa; `Esc` la abandona.
   También puede hacer doble clic en el vídeo.
+  - En pantalla completa, mueva el ratón al borde superior para mostrar la barra
+    de menú y la barra de herramientas, o al borde inferior para mostrar la
+    barra de control. Ambas permanecen visibles mientras no se reproduce ningún
+    medio.
+  - En Android, toque el tercio superior de la pantalla para mostrar u ocultar
+    la barra de herramientas, y el tercio inferior para mostrar u ocultar la
+    barra de control. Un toque en el tercio central ejecuta la **Función del
+    clic izquierdo** de *Preferencias ▸ Teclado y ratón*.
 - **Tamaño** — redimensionar la ventana al **50 % / 100 % / 200 %** de la
   resolución nativa del vídeo.
 - **Zoom y desplazamiento**

@@ -5,6 +5,8 @@ fájlra vonatkoznak, és minden újnál visszaállnak.
 
 - **Sáv** — válasszon a fájl beágyazott videosávjai közül.
 - **Teljes képernyő** (`F`) — teljes képernyő be/ki; az `Esc` kilép. Duplán is kattinthat a videóra.
+  - Teljes képernyőn vigye az egeret a felső szélhez a menüsor és az eszköztár megjelenítéséhez, vagy az alsó szélhez a vezérlősáv megjelenítéséhez. Mindkettő látható marad, amíg nem szól semmi.
+  - Androidon koppintson a képernyő felső harmadára az eszköztár megjelenítéséhez vagy elrejtéséhez, és az alsó harmadára a vezérlősáv megjelenítéséhez vagy elrejtéséhez. A középső harmadra koppintás a *Beállítások ▸ Billentyűzet és egér* **Bal kattintás funkciója** beállítását hajtja végre.
 - **Méret** — az ablak átméretezése a videó natív felbontásának **50% / 100% / 200%**-ára.
 - **Nagyítás és pásztázás**
   - **Visszaállítás** (`Shift+E`), **Kicsinyítés** (`W`), **Nagyítás** (`E`).

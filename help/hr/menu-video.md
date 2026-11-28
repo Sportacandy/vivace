@@ -5,6 +5,8 @@ na trenutačnu datoteku i poništavaju za svaku novu.
 
 - **Zapis** — odaberite među ugrađenim videozapisima datoteke.
 - **Cijeli zaslon** (`F`) — prebacivanje cijelog zaslona; `Esc` ga napušta. Možete i dvaput kliknuti na videozapis.
+  - Na cijelom zaslonu pomaknite miš do gornjeg ruba za prikaz trake izbornika i alatne trake ili do donjeg ruba za prikaz upravljačke trake. Obje ostaju vidljive dok se ništa ne reproducira.
+  - Na Androidu dodirnite gornju trećinu zaslona za prikaz ili skrivanje alatne trake, a donju trećinu za prikaz ili skrivanje upravljačke trake. Dodir u srednjoj trećini izvršava **Funkcija lijevog klika** iz *Postavke ▸ Tipkovnica i miš*.
 - **Veličina** — promjena veličine prozora na **50 % / 100 % / 200 %** izvorne razlučivosti videozapisa.
 - **Zumiranje i pomicanje**
   - **Poništi** (`Shift+E`), **Umanji** (`W`), **Uvećaj** (`E`).

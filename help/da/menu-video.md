@@ -5,6 +5,8 @@ aktuelle fil og nulstilles for hver ny.
 
 - **Spor** — vælg blandt filens indlejrede videospor.
 - **Fuldskærm** (`F`) — skift fuldskærm; `Esc` forlader den. Du kan også dobbeltklikke på videoen.
+  - I fuldskærm skal du flytte musen til den øverste kant for at vise menulinjen og værktøjslinjen, eller til den nederste kant for at vise kontrollinjen. Begge forbliver synlige, mens der ikke afspilles medier.
+  - På Android skal du trykke på den øverste tredjedel af skærmen for at vise eller skjule værktøjslinjen og på den nederste tredjedel for at vise eller skjule kontrollinjen. Et tryk på den midterste tredjedel udfører **Funktion for venstreklik** fra *Indstillinger ▸ Tastatur og mus*.
 - **Størrelse** — ændr vinduets størrelse til **50 % / 100 % / 200 %** af videoens egen opløsning.
 - **Zoom og panorering**
   - **Nulstil** (`Skift+E`), **Zoom ud** (`W`), **Zoom ind** (`E`).

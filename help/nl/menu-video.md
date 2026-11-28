@@ -6,6 +6,13 @@ gelden voor het huidige bestand en worden bij elk nieuw bestand gewist.
 - **Spoor** — kiezen uit de ingesloten videosporen van het bestand.
 - **Volledig scherm** (`F`) — volledig scherm in-/uitschakelen; `Esc` verlaat
   het. U kunt ook op de video dubbelklikken.
+  - Beweeg in volledig scherm de muis naar de bovenrand om de menubalk en de
+    werkbalk te tonen, of naar de onderrand om de controlebalk te tonen. Beide
+    blijven zichtbaar zolang er geen media wordt afgespeeld.
+  - Tik op Android op het bovenste derde deel van het scherm om de werkbalk te
+    tonen of te verbergen, en op het onderste derde deel om de controlebalk te
+    tonen of te verbergen. Een tik in het middelste derde deel voert de
+    **Functie voor linkermuisklik** uit *Voorkeuren ▸ Toetsenbord en muis* uit.
 - **Grootte** — het venster naar **50% / 100% / 200%** van de eigen resolutie van
   de video schalen.
 - **Zoomen en verschuiven**

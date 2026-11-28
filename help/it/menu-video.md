@@ -6,6 +6,14 @@ applicano al file corrente e si azzerano a ogni nuovo file.
 - **Traccia** — scegliere tra le tracce video incorporate del file.
 - **Schermo intero** (`F`) — attivare/disattivare lo schermo intero; `Esc` lo
   chiude. Potete anche fare doppio clic sul video.
+  - A schermo intero, spostate il mouse sul bordo superiore per mostrare la
+    barra dei menu e la barra degli strumenti, o sul bordo inferiore per
+    mostrare la barra dei controlli. Entrambe restano visibili finché non è in
+    riproduzione alcun media.
+  - Su Android, toccate il terzo superiore dello schermo per mostrare o
+    nascondere la barra degli strumenti, e il terzo inferiore per mostrare o
+    nascondere la barra dei controlli. Un tocco nel terzo centrale esegue la
+    **Funzione del clic sinistro** di *Preferenze ▸ Tastiera e mouse*.
 - **Dimensione** — ridimensionare la finestra al **50 % / 100 % / 200 %** della
   risoluzione nativa del video.
 - **Zoom e spostamento**

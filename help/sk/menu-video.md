@@ -6,6 +6,13 @@ aktuálny súbor a pri každom novom sa vynulujú.
 - **Stopa** — vybrať z vložených videostôp súboru.
 - **Celá obrazovka** (`F`) — prepnúť celú obrazovku; `Esc` ju opustí. Môžete tiež
   dvakrát kliknúť na video.
+  - Na celej obrazovke presuňte myš k hornému okraju, aby ste zobrazili riadok
+    menu a panel nástrojov, alebo k dolnému okraju, aby ste zobrazili ovládací
+    panel. Oba zostanú viditeľné, kým sa nič neprehráva.
+  - V systéme Android ťuknite na hornú tretinu obrazovky na zobrazenie alebo
+    skrytie panela nástrojov a na dolnú tretinu na zobrazenie alebo skrytie
+    ovládacieho panela. Ťuknutie na strednú tretinu vykoná **Funkcia ľavého
+    kliknutia** z *Nastavenia ▸ Klávesnica a myš*.
 - **Veľkosť** — zmeniť veľkosť okna na **50 % / 100 % / 200 %** natívneho
   rozlíšenia videa.
 - **Priblíženie a posun**

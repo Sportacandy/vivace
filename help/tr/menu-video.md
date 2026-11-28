@@ -5,6 +5,8 @@ dosyaya uygulanır ve her yeni dosyada sıfırlanır.
 
 - **Parça** — dosyanın gömülü video parçaları arasından seçim yapar.
 - **Tam ekran** (`F`) — tam ekranı açıp kapatır; `Esc` çıkar. Videoya çift de tıklayabilirsiniz.
+  - Tam ekranda menü çubuğunu ve araç çubuğunu göstermek için fareyi üst kenara, denetim çubuğunu göstermek için alt kenara götürün. Hiçbir medya oynatılmazken ikisi de görünür kalır.
+  - Android'de araç çubuğunu göstermek veya gizlemek için ekranın üst üçte birine, denetim çubuğunu göstermek veya gizlemek için alt üçte birine dokunun. Orta üçte bire dokunmak, *Tercihler ▸ Klavye ve fare* içindeki **Sol tık işlevi**'ni çalıştırır.
 - **Boyut** — pencereyi videonun özgün çözünürlüğünün **%50 / %100 / %200** oranına getirir.
 - **Yakınlaştırma ve kaydırma**
   - **Sıfırla** (`Shift+E`), **Uzaklaştır** (`W`), **Yakınlaştır** (`E`).

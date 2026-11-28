@@ -6,6 +6,13 @@ ao arquivo atual e são reiniciadas a cada novo.
 - **Faixa** — escolher entre as faixas de vídeo incorporadas do arquivo.
 - **Tela cheia** (`F`) — alternar tela cheia; `Esc` sai dela. Você também pode
   dar um duplo clique no vídeo.
+  - Em tela cheia, mova o mouse para a borda superior para mostrar a barra de
+    menu e a barra de ferramentas, ou para a borda inferior para mostrar a barra
+    de controle. Ambas ficam visíveis enquanto nenhuma mídia é reproduzida.
+  - No Android, toque no terço superior da tela para mostrar ou ocultar a barra
+    de ferramentas, e no terço inferior para mostrar ou ocultar a barra de
+    controle. Um toque no terço central executa a **Função do clique esquerdo**
+    de *Preferências ▸ Teclado e mouse*.
 - **Tamanho** — redimensionar a janela para **50% / 100% / 200%** da resolução
   nativa do vídeo.
 - **Zoom e deslocamento**

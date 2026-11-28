@@ -6,6 +6,14 @@ fichier en cours et sont réinitialisés pour chaque nouveau.
 - **Piste** — choisir parmi les pistes vidéo intégrées du fichier.
 - **Plein écran** (`F`) — basculer en plein écran ; `Échap` en sort. Vous pouvez
   aussi double-cliquer sur la vidéo.
+  - En plein écran, déplacez la souris vers le bord supérieur pour afficher la
+    barre de menus et la barre d'outils, ou vers le bord inférieur pour afficher
+    la barre de contrôle. Les deux restent visibles tant qu'aucun média n'est
+    lu.
+  - Sur Android, touchez le tiers supérieur de l'écran pour afficher ou masquer
+    la barre d'outils, et le tiers inférieur pour afficher ou masquer la barre
+    de contrôle. Une touche dans le tiers central exécute la **Fonction du clic
+    gauche** de *Préférences ▸ Clavier et Souris*.
 - **Taille** — redimensionner la fenêtre à **50 % / 100 % / 200 %** de la
   résolution native de la vidéo.
 - **Zoom et déplacement**

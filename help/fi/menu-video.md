@@ -5,6 +5,8 @@ tiedostoa ja nollataan jokaiselle uudelle.
 
 - **Raita** — valitse tiedoston upotetuista videoraidoista.
 - **Koko näyttö** (`F`) — vaihda koko näyttö; `Esc` poistuu siitä. Voit myös kaksoisnapsauttaa videota.
+  - Koko näytön tilassa siirrä hiiri yläreunaan, niin valikkorivi ja työkalurivi tulevat näkyviin, tai alareunaan, niin ohjauspalkki tulee näkyviin. Molemmat pysyvät näkyvissä, kun mitään ei toisteta.
+  - Androidissa napauta näytön ylintä kolmannesta näyttääksesi tai piilottaaksesi työkalurivin ja alinta kolmannesta näyttääksesi tai piilottaaksesi ohjauspalkin. Keskimmäisen kolmanneksen napautus suorittaa kohdan **Vasemman napsautuksen toiminto** asetuksesta *Asetukset ▸ Näppäimistö ja hiiri*.
 - **Koko** — muuta ikkunan koko videon oman tarkkuuden **50 % / 100 % / 200 %** -kokoon.
 - **Zoomaus ja panorointi**
   - **Palauta** (`Vaihto+E`), **Loitonna** (`W`), **Lähennä** (`E`).

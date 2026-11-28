@@ -6,6 +6,13 @@ bieżącego pliku i są zerowane przy każdym nowym.
 - **Ścieżka** — wybierz spośród osadzonych ścieżek wideo pliku.
 - **Pełny ekran** (`F`) — przełącz pełny ekran; `Esc` go opuszcza. Można też
   dwukrotnie kliknąć wideo.
+  - Na pełnym ekranie przesuń mysz do górnej krawędzi, aby pokazać pasek menu i
+    pasek narzędzi, lub do dolnej krawędzi, aby pokazać pasek kontroli. Oba
+    pozostają widoczne, gdy nic nie jest odtwarzane.
+  - Na Androidzie stuknij górną jedną trzecią ekranu, aby pokazać lub ukryć
+    pasek narzędzi, a dolną jedną trzecią, aby pokazać lub ukryć pasek kontroli.
+    Stuknięcie w środkową jedną trzecią wykonuje **Funkcja lewego kliknięcia** z
+    *Ustawienia ▸ Klawiatura i mysz*.
 - **Rozmiar** — zmień rozmiar okna do **50% / 100% / 200%** natywnej
   rozdzielczości wideo.
 - **Powiększenie i przesuwanie**

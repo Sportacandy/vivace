@@ -5,6 +5,8 @@ filen och nollställs för varje ny.
 
 - **Spår** — välj bland filens inbäddade videospår.
 - **Helskärm** (`F`) — växla helskärm; `Esc` lämnar den. Du kan även dubbelklicka på videon.
+  - I helskärm flyttar du musen till överkanten för att visa menyraden och verktygsfältet, eller till nederkanten för att visa kontrollfältet. Båda förblir synliga medan inget media spelas upp.
+  - På Android trycker du på den översta tredjedelen av skärmen för att visa eller dölja verktygsfältet och på den nedersta tredjedelen för att visa eller dölja kontrollfältet. Ett tryck på den mittersta tredjedelen utför **Funktion för vänsterklick** från *Inställningar ▸ Tangentbord och mus*.
 - **Storlek** — ändra fönstrets storlek till **50 % / 100 % / 200 %** av videons egen upplösning.
 - **Zoom och panorering**
   - **Återställ** (`Skift+E`), **Zooma ut** (`W`), **Zooma in** (`E`).

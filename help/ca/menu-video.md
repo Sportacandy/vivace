@@ -5,6 +5,8 @@ fitxer actual i es reinicien amb cada nou.
 
 - **Pista** — triar entre les pistes de vídeo incrustades del fitxer.
 - **Pantalla completa** (`F`) — alternar la pantalla completa; `Esc` en surt. També podeu fer doble clic al vídeo.
+  - En pantalla completa, moveu el ratolí a la vora superior per mostrar la barra de menú i la barra d'eines, o a la vora inferior per mostrar la barra de control. Totes dues es mantenen visibles mentre no es reprodueix cap mitjà.
+  - A Android, toqueu el terç superior de la pantalla per mostrar o amagar la barra d'eines, i el terç inferior per mostrar o amagar la barra de control. Un toc al terç central executa la **Funció del clic esquerre** de *Preferències ▸ Teclat i ratolí*.
 - **Mida** — redimensionar la finestra al **50% / 100% / 200%** de la resolució nativa del vídeo.
 - **Zoom i desplaçament**
   - **Reinicia** (`Maj+E`), **Allunya** (`W`), **Apropa** (`E`).
